@@ -1,6 +1,10 @@
 # Terraform::Google::IdentityPlatformDefaultSupportedIdpConfig
 
-CloudFormation equivalent of google_identity_platform_default_supported_idp_config
+Configurations options for authenticating with a the standard set of Identity Toolkit-trusted IDPs.
+
+You must enable the
+[Google Identity Platform](https://console.cloud.google.com/marketplace/details/google-cloud-platform/customer-identity) in
+the marketplace prior to using this resource.
 
 ## Syntax
 
@@ -70,6 +74,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::OraclePaaS::JavaAccessRule
 
-CloudFormation equivalent of oraclepaas_java_access_rule
+The `oraclepaas_java_access_rule` resource creates and manages an Access Rule for an Java Cloud service instance.
 
 ## Syntax
 
@@ -45,6 +45,8 @@ Properties:
 
 #### Description
 
+The description of the Access Rule.
+
 _Required_: Yes
 
 _Type_: String
@@ -52,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Destination
+
+Destination to which traffic is allowed. Valid values include `WLS_ADMIN`, `WLS_ADMIN_SERVER`, `OTD_ADMIN_HOST`, `OTD`.
 
 _Required_: Yes
 
@@ -61,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Enabled
 
+Determines whether the access rule is enabled. Default is `true`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -68,6 +74,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the Access Rule.
 
 _Required_: Yes
 
@@ -77,6 +85,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ports
 
+The port or range of ports to allow traffic on.
+
 _Required_: Yes
 
 _Type_: String
@@ -84,6 +94,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Protocol
+
+Specifies the communication protocol. Valid values are `tcp` or `udp`.
+Default is `tcp`.
 
 _Required_: No
 
@@ -93,6 +106,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServiceInstanceId
 
+The name of the java service instance to attach
+the access rule to.
+
 _Required_: Yes
 
 _Type_: String
@@ -100,6 +116,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Source
+
+The IP addresses and subnets from which traffic is allowed. Valid values include `WLS_ADMIN`, `WLS_ADMIN_SERVER`,
+`WLS_MANAGED_SERVER`, `OTD_ADMIN_HOST`, `OTD`, or a single IP address or comma-separated list of subnets (in CIDR format) or IPv4 addresses.
 
 _Required_: Yes
 

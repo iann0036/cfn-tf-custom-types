@@ -1,6 +1,6 @@
 # Terraform::FlexibleEngine::CceClusterV3
 
-CloudFormation equivalent of flexibleengine_cce_cluster_v3
+Provides a cluster resource (CCE).
 
 ## Syntax
 
@@ -66,6 +66,8 @@ Properties:
 
 #### Annotations
 
+Cluster annotation, key/value pair format. Changing this parameter will create a new cluster resource.
+
 _Required_: No
 
 _Type_: List of <a href="annotations.md">Annotations</a>
@@ -82,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### BillingMode
 
+Charging mode of the cluster, which is 0 (on demand). Changing this parameter will create a new cluster resource.
+
 _Required_: No
 
 _Type_: Double
@@ -90,6 +94,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ClusterType
 
+Cluster Type, possible values are VirtualMachine and BareMetal. Changing this parameter will create a new cluster resource.
+
 _Required_: Yes
 
 _Type_: String
@@ -97,6 +103,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClusterVersion
+
+For the cluster version, possible value is 'v1.11.7-r2' and 'v1.13.10-r0'. If this parameter is not set, the latest version will be used.
 
 _Required_: No
 
@@ -114,6 +122,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ContainerNetworkType
 
+Container network parameters. Possible values:.
+
 _Required_: Yes
 
 _Type_: String
@@ -121,6 +131,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Cluster description.
 
 _Required_: No
 
@@ -138,6 +150,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ExtendParam
 
+Extended parameter. Changing this parameter will create a new cluster resource.
+
 _Required_: No
 
 _Type_: List of <a href="extendparam.md">ExtendParam</a>
@@ -145,6 +159,8 @@ _Type_: List of <a href="extendparam.md">ExtendParam</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FlavorId
+
+Cluster specifications. Changing this parameter will create a new cluster resource.
 
 _Required_: Yes
 
@@ -154,6 +170,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HighwaySubnetId
 
+The ID of the high speed network used to create bare metal nodes. Changing this parameter will create a new cluster resource.
+
 _Required_: No
 
 _Type_: String
@@ -162,6 +180,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Labels
 
+Cluster tag, key/value pair format. Changing this parameter will create a new cluster resource.
+
 _Required_: No
 
 _Type_: List of <a href="labels.md">Labels</a>
@@ -169,6 +189,8 @@ _Type_: List of <a href="labels.md">Labels</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Cluster name. Changing this parameter will create a new cluster resource.
 
 _Required_: Yes
 
@@ -186,6 +208,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubnetId
 
+The NETWORK ID of the subnet used to create the node. Changing this parameter will create a new cluster resource.
+
 _Required_: Yes
 
 _Type_: String
@@ -193,6 +217,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+The ID of the VPC used to create the node. Changing this parameter will create a new cluster resource.
 
 _Required_: Yes
 

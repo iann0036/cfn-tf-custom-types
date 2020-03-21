@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::DataFactoryLinkedServiceDataLakeStorageGen2",
-    "description": "CloudFormation equivalent of azurerm_data_factory_linked_service_data_lake_storage_gen2",
+    "description": "Manages a Linked Service (connection) between Data Lake Storage Gen2 and Azure Data Factory.\n\n~> **Note:** All arguments including the `service_principal_key` will be stored in the raw state as plain-text. [Read more about sensitive data in state](/docs/state/sensitive-data.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -46,26 +46,32 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A map of additional properties to associate with the Data Factory Linked Service MySQL."
         },
         "Annotations": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of tags that can be used for describing the Data Factory Linked Service MySQL."
         },
         "DataFactoryName": {
-            "type": "string"
+            "type": "string",
+            "description": "The Data Factory name in which to associate the Linked Service with. Changing this forces a new resource."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description for the Data Factory Linked Service MySQL."
         },
         "IntegrationRuntimeName": {
-            "type": "string"
+            "type": "string",
+            "description": "The integration runtime reference to associate with the Data Factory Linked Service MySQL."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Data Factory Linked Service MySQL. Changing this forces a new resource to be created. Must be globally unique. See the [Microsoft documentation](https://docs.microsoft.com/en-us/azure/data-factory/naming-rules) for all restrictions."
         },
         "Parameters": {
             "type": "array",
@@ -85,22 +91,28 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A map of parameters to associate with the Data Factory Linked Service MySQL."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the Data Factory Linked Service MySQL. Changing this forces a new resource."
         },
         "ServicePrincipalId": {
-            "type": "string"
+            "type": "string",
+            "description": "The service principal id in which to authenticate against the Azure Data Lake Storage Gen2 account."
         },
         "ServicePrincipalKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The service principal key in which to authenticate against the Azure Data Lake Storage Gen2 account."
         },
         "Tenant": {
-            "type": "string"
+            "type": "string",
+            "description": "The tenant id or name in which to authenticate against the Azure Data Lake Storage Gen2 account."
         },
         "Url": {
-            "type": "string"
+            "type": "string",
+            "description": "The endpoint for the Azure Data Lake Storage Gen2 service."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

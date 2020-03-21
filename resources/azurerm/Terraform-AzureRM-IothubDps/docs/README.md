@@ -1,6 +1,6 @@
 # Terraform::AzureRM::IothubDps
 
-CloudFormation equivalent of azurerm_iothub_dps
+Manages an IotHub Device Provisioning Service.
 
 ## Syntax
 
@@ -44,6 +44,8 @@ Properties:
 
 #### Location
 
+Specifies the supported Azure location where the resource has to be createc. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -51,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the Iot Device Provisioning Service resource. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -60,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group under which the Iot Device Provisioning Service resource has to be created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -67,6 +73,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

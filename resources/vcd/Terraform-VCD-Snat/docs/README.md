@@ -1,6 +1,12 @@
 # Terraform::VCD::Snat
 
-CloudFormation equivalent of vcd_snat
+Provides a vCloud Director SNAT resource. This can be used to create, modify,
+and delete source NATs to allow vApps to send external traffic.
+
+~> **Note:** This resource may corrupt UI edited NAT rules when used with advanced
+edge gateways. Please use [`vcd_nsxv_snat`](/docs/providers/vcd/r/nsxv_snat.html) in that case.
+
+!> **Warning:** When advanced edge gateway is used and the rule is updated using UI, then ID mapping will be lost and Terraform won't find the rule anymore and remove it from state.
 
 ## Syntax
 
@@ -43,6 +49,8 @@ Properties:
 
 #### Description
 
+- Description of item.
+
 _Required_: No
 
 _Type_: String
@@ -50,6 +58,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EdgeGateway
+
+The name of the edge gateway on which to apply the SNAT.
 
 _Required_: Yes
 
@@ -59,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ExternalIp
 
+One of the external IPs available on your Edge Gateway.
+
 _Required_: Yes
 
 _Type_: String
@@ -66,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InternalIp
+
+The IP or IP Range of the VM(s) to map from.
 
 _Required_: Yes
 
@@ -75,6 +89,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NetworkName
 
+The name of the network on which to apply the SNAT. *`network_name` will be a required field in the next major version.*.
+
 _Required_: No
 
 _Type_: String
@@ -82,6 +98,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NetworkType
+
+Type of the network on which to apply the NAT rule. Possible values `org` or `ext`. *`network_type` will be a required field in the next major version.*.
 
 _Required_: No
 
@@ -91,6 +109,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Org
 
+The name of organization to use, optional if defined at provider level. Useful when connected as sysadmin working across different organisations.
+
 _Required_: No
 
 _Type_: String
@@ -98,6 +118,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vdc
+
+The name of VDC to use, optional if defined at provider level.
 
 _Required_: No
 

@@ -1,6 +1,12 @@
 # Terraform::Tfe::OauthClient
 
-CloudFormation equivalent of tfe_oauth_client
+An OAuth Client represents the connection between an organization and a VCS
+provider.
+
+-> **Note:** This resource does not currently support creation of Bitbucket
+  Server OAuth clients.
+
+-> **Note:** This resource requires a private key when creating Azure DevOps Server OAuth clients.
 
 ## Syntax
 
@@ -39,6 +45,9 @@ Properties:
 
 #### ApiUrl
 
+The base URL of your VCS provider's API (e.g.
+`https://api.github.com` or `https://ghe.example.com/api/v3`).
+
 _Required_: Yes
 
 _Type_: String
@@ -46,6 +55,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HttpUrl
+
+The homepage of your VCS provider (e.g.
+`https://github.com` or `https://ghe.example.com`).
 
 _Required_: Yes
 
@@ -55,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OauthToken
 
+The token string you were given by your VCS provider.
+
 _Required_: Yes
 
 _Type_: String
@@ -62,6 +76,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Organization
+
+Name of the organization.
 
 _Required_: Yes
 
@@ -71,6 +87,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PrivateKey
 
+The text of the private key associated with your Azure DevOps Server account.
+
 _Required_: No
 
 _Type_: String
@@ -78,6 +96,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServiceProvider
+
+The VCS provider being connected with. Valid
+options are `ado_server`, `ado_services`, `github`, `github_enterprise`, `gitlab_hosted`,
+`gitlab_community_edition`, or `gitlab_enterprise_edition`.
 
 _Required_: Yes
 

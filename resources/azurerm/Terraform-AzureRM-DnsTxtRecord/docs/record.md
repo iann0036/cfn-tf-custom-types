@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Value
 
+The value of the record. Max length: 1024 characters.
+
 _Required_: Yes
 
 _Type_: String

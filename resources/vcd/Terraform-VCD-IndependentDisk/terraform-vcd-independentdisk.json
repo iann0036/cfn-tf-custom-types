@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::VCD::IndependentDisk",
-    "description": "CloudFormation equivalent of vcd_independent_disk",
+    "description": "Provides a vCloud Director independent disk resource. This can be used to create and delete independent disks.\n\nSupported in provider *v2.1+*",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "BusSubType": {
-            "type": "string"
+            "type": "string",
+            "description": "Disk bus subtype. Values can be: `buslogic`, `lsilogic`, `lsilogicsas`, `VirtualSCSI` for `SCSI` and `ahci` for `SATA`."
         },
         "BusType": {
-            "type": "string"
+            "type": "string",
+            "description": "Disk bus type. Values can be: `IDE`, `SCSI`, `SATA`."
         },
         "DatastoreName": {
             "type": "string"
@@ -27,22 +29,27 @@
             "type": "boolean"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Disk name."
         },
         "Org": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of organization to use, optional if defined at provider level. Useful when connected as sysadmin working across different organisations."
         },
         "OwnerName": {
             "type": "string"
         },
         "Size": {
-            "type": "number"
+            "type": "number",
+            "description": "Size of disk in MB. On read this values isn't refreshed."
         },
         "StorageProfile": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of storage profile where disk will be created."
         },
         "Vdc": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of VDC to use, optional if defined at provider level."
         }
     },
     "additionalProperties": false,

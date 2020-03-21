@@ -1,6 +1,21 @@
 # Terraform::OCI::IdentityIdentityProvider
 
-CloudFormation equivalent of oci_identity_identity_provider
+This resource provides the Identity Provider resource in Oracle Cloud Infrastructure Identity service.
+
+Creates a new identity provider in your tenancy. For more information, see
+[Identity Providers and Federation](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/federation.htm).
+
+You must specify your tenancy's OCID as the compartment ID in the request object.
+Remember that the tenancy is simply the root compartment. For information about
+OCIDs, see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+
+You must also specify a *name* for the `IdentityProvider`, which must be unique
+across all `IdentityProvider` objects in your tenancy and cannot be changed.
+
+You must also specify a *description* for the `IdentityProvider` (although
+it can be an empty string). It does not have to be unique, and you can change
+it anytime with
+[UpdateIdentityProvider](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/IdentityProvider/UpdateIdentityProvider).
 
 ## Syntax
 
@@ -52,6 +67,8 @@ Properties:
 
 #### CompartmentId
 
+The OCID of your tenancy.
+
 _Required_: Yes
 
 _Type_: String
@@ -59,6 +76,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefinedTags
+
+(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`.
 
 _Required_: No
 
@@ -68,6 +87,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+(Updatable) The description you assign to the `IdentityProvider` during creation. Does not have to be unique, and it's changeable.
+
 _Required_: Yes
 
 _Type_: String
@@ -75,6 +96,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FreeformAttributes
+
+(Updatable) Extra name value pairs associated with this identity provider. Example: `{"clientId": "app_sf3kdjf3"}`.
 
 _Required_: No
 
@@ -84,6 +107,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FreeformTags
 
+(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`.
+
 _Required_: No
 
 _Type_: List of <a href="freeformtags.md">FreeformTags</a>
@@ -91,6 +116,8 @@ _Type_: List of <a href="freeformtags.md">FreeformTags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Metadata
+
+(Updatable) The XML that contains the information required for federating.
 
 _Required_: Yes
 
@@ -100,6 +127,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MetadataUrl
 
+(Updatable) The URL for retrieving the identity provider's metadata, which contains information required for federating.
+
 _Required_: Yes
 
 _Type_: String
@@ -107,6 +136,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name you assign to the `IdentityProvider` during creation. The name must be unique across all `IdentityProvider` objects in the tenancy and cannot be changed.
 
 _Required_: Yes
 
@@ -116,6 +147,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProductType
 
+The identity provider service or product. Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft Active Directory Federation Services (ADFS).  Example: `IDCS`.
+
 _Required_: Yes
 
 _Type_: String
@@ -123,6 +156,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Protocol
+
+(Updatable) The protocol used for federation.  Example: `SAML2`.
 
 _Required_: Yes
 

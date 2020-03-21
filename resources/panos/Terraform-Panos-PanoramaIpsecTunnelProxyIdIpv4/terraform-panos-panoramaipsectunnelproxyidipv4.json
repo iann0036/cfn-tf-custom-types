@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::PanoramaIpsecTunnelProxyIdIpv4",
-    "description": "CloudFormation equivalent of panos_panorama_ipsec_tunnel_proxy_id_ipv4",
+    "description": "This resource allows you to add/update/delete Panorama IPSec tunnel proxy IDs\nto a parent auto key IPSec tunnel for templates.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,37 +9,48 @@
             "type": "string"
         },
         "IpsecTunnel": {
-            "type": "string"
+            "type": "string",
+            "description": "The auto key IPSec tunnel to attach this\nproxy ID to."
         },
         "Local": {
-            "type": "string"
+            "type": "string",
+            "description": "IP subnet or IP address represents local network."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The object's name."
         },
         "ProtocolAny": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` for any IP protocol."
         },
         "ProtocolNumber": {
-            "type": "number"
+            "type": "number",
+            "description": "IP protocol number."
         },
         "ProtocolTcpLocal": {
-            "type": "number"
+            "type": "number",
+            "description": "Local TCP port number."
         },
         "ProtocolTcpRemote": {
-            "type": "number"
+            "type": "number",
+            "description": "Remote TCP port number."
         },
         "ProtocolUdpLocal": {
-            "type": "number"
+            "type": "number",
+            "description": "Local UDP port number."
         },
         "ProtocolUdpRemote": {
-            "type": "number"
+            "type": "number",
+            "description": "Remote UDP port number."
         },
         "Remote": {
-            "type": "string"
+            "type": "string",
+            "description": "IP subnet or IP address represents remote network."
         },
         "Template": {
-            "type": "string"
+            "type": "string",
+            "description": "The template name."
         }
     },
     "additionalProperties": false,

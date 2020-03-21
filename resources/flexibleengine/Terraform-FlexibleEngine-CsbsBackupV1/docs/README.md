@@ -1,6 +1,6 @@
 # Terraform::FlexibleEngine::CsbsBackupV1
 
-CloudFormation equivalent of flexibleengine_csbs_backup_v1
+Provides an FlexibleEngine Backup of Resources.
 
 ## Syntax
 
@@ -39,6 +39,8 @@ Properties:
 
 #### BackupName
 
+Name for the backup. The value consists of 1 to 255 characters and can contain only letters, digits, underscores (_), and hyphens (-). Changing backup_name creates a new backup.
+
 _Required_: No
 
 _Type_: String
@@ -46,6 +48,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Backup description. The value consists of 0 to 255 characters and must not contain a greater-than sign (>) or less-than sign (<). Changing description creates a new backup.
 
 _Required_: No
 
@@ -63,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceId
 
+ID of the target to which the backup is restored. Changing this creates a new backup.
+
 _Required_: Yes
 
 _Type_: String
@@ -70,6 +76,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceType
+
+Type of the target to which the backup is restored. The default value is **OS::Nova::Server** for an ECS. Changing this creates a new backup.
 
 _Required_: No
 

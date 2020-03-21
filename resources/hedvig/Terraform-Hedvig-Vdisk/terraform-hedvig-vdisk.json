@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Hedvig::Vdisk",
-    "description": "CloudFormation equivalent of hedvig_vdisk",
+    "description": "Manages a Vdisk resource on a Hedvig cluster. For more information, visit [Hedvig's webpage](http://hedvig.io).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,20 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name to be used by the Vdisk for identification."
         },
         "Residence": {
-            "type": "string"
+            "type": "string",
+            "description": "Disk residence; can be either `HDD` or `Flash`."
         },
         "Size": {
-            "type": "number"
+            "type": "number",
+            "description": "The size of the disk in GB."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of the disk; can be either `BLOCK` or `NFS`."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 # Terraform::OpsGenie::ApiIntegration
 
-CloudFormation equivalent of opsgenie_api_integration
+Manages an API Integration within Opsgenie.
 
 ## Syntax
 
@@ -44,6 +44,8 @@ Properties:
 
 #### AllowWriteAccess
 
+This parameter is for configuring the write access of integration. If write access is restricted, the integration will not be authorized to write within any domain. Defaults to true.
+
 _Required_: No
 
 _Type_: Boolean
@@ -51,6 +53,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Enabled
+
+This parameter is for specifying whether the integration will be enabled or not. Defaults to true.
 
 _Required_: No
 
@@ -60,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IgnoreRespondersFromPayload
 
+If enabled, the integration will ignore recipients sent in request payloads. Defaults to false.
+
 _Required_: No
 
 _Type_: Boolean
@@ -67,6 +73,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of the integration. Name must be unique for each integration.
 
 _Required_: Yes
 
@@ -76,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OwnerTeamId
 
+Owner team id of the integration.
+
 _Required_: No
 
 _Type_: String
@@ -84,6 +94,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SuppressNotifications
 
+If enabled, notifications that come from alerts will be suppressed. Defaults to false.
+
 _Required_: No
 
 _Type_: Boolean
@@ -91,6 +103,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+Type of the integration (API, Marid, Prometheus, etc). The full list of options can be found [here](https://docs.opsgenie.com/docs/integration-types-to-use-with-api).
 
 _Required_: No
 

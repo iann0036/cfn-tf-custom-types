@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::FirewallNatRuleCollection",
-    "description": "CloudFormation equivalent of azurerm_firewall_nat_rule_collection",
+    "description": "Manages a NAT Rule Collection within an Azure Firewall.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Rule": {
@@ -8,44 +8,52 @@
             "additionalProperties": false,
             "properties": {
                 "Description": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies a description for the rule."
                 },
                 "DestinationAddresses": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of destination IP addresses and/or IP ranges."
                 },
                 "DestinationPorts": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of destination ports."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the name of the rule."
                 },
                 "Protocols": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of protocols. Possible values are `Any`, `ICMP`, `TCP` and `UDP`.  If `action` is `Dnat`, protocols can only be `TCP` and `UDP`."
                 },
                 "SourceAddresses": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of source IP addresses and/or IP ranges."
                 },
                 "TranslatedAddress": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The address of the service behind the Firewall."
                 },
                 "TranslatedPort": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The port of the service behind the Firewall."
                 }
             },
             "required": [
@@ -84,19 +92,24 @@
             "type": "string"
         },
         "Action": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the action the rule will apply to matching traffic. Possible values are `Dnat` and `Snat`."
         },
         "AzureFirewallName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Firewall in which the NAT Rule Collection should be created. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the NAT Rule Collection which must be unique within the Firewall. Changing this forces a new resource to be created."
         },
         "Priority": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the priority of the rule collection. Possible values are between `100` - `65000`."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Resource Group in which the Firewall exists. Changing this forces a new resource to be created."
         },
         "Rule": {
             "type": "array",

@@ -1,6 +1,8 @@
 # Terraform::Vault::RgpPolicy
 
-CloudFormation equivalent of vault_rgp_policy
+Provides a resource to manage Role Governing Policy (RGP) via [Sentinel](https://www.vaultproject.io/docs/enterprise/sentinel/index.html).
+
+**Note** this feature is available only with Vault Enterprise.
 
 ## Syntax
 
@@ -33,6 +35,8 @@ Properties:
 
 #### EnforcementLevel
 
+Enforcement level of Sentinel policy. Can be either `advisory` or `soft-mandatory` or `hard-mandatory`.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +45,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the policy.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Policy
+
+String containing a Sentinel policy.
 
 _Required_: Yes
 

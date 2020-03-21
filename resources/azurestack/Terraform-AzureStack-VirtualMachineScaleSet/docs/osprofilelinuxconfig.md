@@ -25,6 +25,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### DisablePasswordAuthentication
 
+Specifies whether password authentication should be disabled. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: Boolean

@@ -1,6 +1,6 @@
 # Terraform::Spotinst::OceanAwsLaunchSpec
 
-CloudFormation equivalent of spotinst_ocean_aws_launch_spec
+Provides a custom Spotinst Ocean AWS Launch Spec resource.
 
 ## Syntax
 
@@ -52,6 +52,8 @@ Properties:
 
 #### IamInstanceProfile
 
+The ARN or name of an IAM instance profile to associate with launched instances.
+
 _Required_: No
 
 _Type_: String
@@ -59,6 +61,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ImageId
+
+ID of the image used to launch the instances.
 
 _Required_: No
 
@@ -68,6 +72,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OceanId
 
+The ocean cluster you wish to.
+
 _Required_: Yes
 
 _Type_: String
@@ -75,6 +81,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RootVolumeSize
+
+Set root volume size (in GB).
 
 _Required_: No
 
@@ -84,6 +92,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecurityGroups
 
+Optionally adds security group IDs.
+
 _Required_: No
 
 _Type_: List of String
@@ -92,6 +102,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubnetIds
 
+Set subnets in launchSpec. Each element in array should be subnet ID.
+
 _Required_: No
 
 _Type_: List of String
@@ -99,6 +111,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserData
+
+Base64-encoded MIME user data to make available to the instances.
 
 _Required_: No
 

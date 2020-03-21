@@ -1,6 +1,6 @@
 # Terraform::AzureRM::ApplicationInsightsWebTest
 
-CloudFormation equivalent of azurerm_application_insights_web_test
+Manages an Application Insights WebTest.
 
 ## Syntax
 
@@ -57,6 +57,8 @@ Properties:
 
 #### ApplicationInsightsId
 
+The ID of the Application Insights component on which the WebTest operates. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -64,6 +66,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Configuration
+
+An XML configuration specification for a WebTest.
 
 _Required_: Yes
 
@@ -73,6 +77,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+Purpose/user defined descriptive test for this WebTest.
+
 _Required_: No
 
 _Type_: String
@@ -80,6 +86,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Enabled
+
+Is the test actively being monitored.
 
 _Required_: No
 
@@ -89,6 +97,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Frequency
 
+Interval in seconds between test runs for this WebTest. Default is `300`.
+
 _Required_: No
 
 _Type_: Double
@@ -96,6 +106,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GeoLocations
+
+A list of where to physically run the tests from to give global coverage for accessibility of your application.
 
 _Required_: Yes
 
@@ -105,6 +117,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Kind
 
+The kind of web test that this web test watches. Choices are `ping` and `multistep`.
+
 _Required_: Yes
 
 _Type_: String
@@ -113,6 +127,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Location
 
+The location of the resource group.
+
 _Required_: Yes
 
 _Type_: String
@@ -120,6 +136,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the Application Insights WebTest. Changing this forces a
+new resource to be created.
 
 _Required_: Yes
 
@@ -137,6 +156,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RetryEnabled
 
+Allow for retries should this WebTest fail.
+
 _Required_: No
 
 _Type_: Boolean
@@ -145,6 +166,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+Resource tags.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -152,6 +175,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Timeout
+
+Seconds until this WebTest will timeout and fail. Default is `30`.
 
 _Required_: No
 

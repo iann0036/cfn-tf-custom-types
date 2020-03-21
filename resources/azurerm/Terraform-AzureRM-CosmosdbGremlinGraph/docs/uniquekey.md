@@ -23,6 +23,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Paths
 
+A list of paths to use for this unique key.
+
 _Required_: Yes
 
 _Type_: List of String

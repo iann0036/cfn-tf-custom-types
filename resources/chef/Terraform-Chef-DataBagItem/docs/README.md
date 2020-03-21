@@ -1,6 +1,11 @@
 # Terraform::Chef::DataBagItem
 
-CloudFormation equivalent of chef_data_bag_item
+A [data bag](http://docs.chef.io/data_bags.html) is a collection of
+configuration objects that are stored as JSON in Chef Server and can be
+retrieved and used in Chef recipes.
+
+This resource creates objects within an existing data bag. To create the
+data bag itself, use the ``chef_data_bag`` resource.
 
 ## Syntax
 
@@ -31,6 +36,11 @@ Properties:
 
 #### ContentJson
 
+A string containing a JSON object that will be
+the content of the item. Must at minimum contain a property called "id"
+that is unique within the data bag, which will become the identifier of
+the created item.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +48,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DataBagName
+
+The name of the data bag into which this item
+will be placed.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 # Terraform::NSXT::SwitchSecuritySwitchingProfile
 
-CloudFormation equivalent of nsxt_switch_security_switching_profile
+Provides a resource to configure switch security switching profile on NSX-T manager
 
 ## Syntax
 
@@ -48,6 +48,8 @@ Properties:
 
 #### BlockClientDhcp
 
+Indicates whether DHCP client blocking is enabled.
+
 _Required_: No
 
 _Type_: Boolean
@@ -55,6 +57,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BlockNonIp
+
+Indicates whether blocking of all traffic except IP/(G)ARP/BPDU is enabled.
 
 _Required_: No
 
@@ -64,6 +68,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### BlockServerDhcp
 
+Indicates whether DHCP server blocking is enabled.
+
 _Required_: No
 
 _Type_: Boolean
@@ -71,6 +77,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BpduFilterEnabled
+
+Indicates whether BPDU filter is enabled.
 
 _Required_: No
 
@@ -80,6 +88,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### BpduFilterWhitelist
 
+Set of allowed MAC addresses to be excluded from BPDU filtering, if enabled.
+
 _Required_: No
 
 _Type_: List of String
@@ -88,6 +98,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+Description of this resource.
+
 _Required_: No
 
 _Type_: String
@@ -95,6 +107,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+The display name of this resource. Defaults to ID if not set.
 
 _Required_: No
 

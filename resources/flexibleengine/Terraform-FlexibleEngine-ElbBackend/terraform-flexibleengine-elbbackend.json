@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::FlexibleEngine::ElbBackend",
-    "description": "CloudFormation equivalent of flexibleengine_elb_backend",
+    "description": "Manages an elastic loadbalancer backend resource within FlexibleEngine.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,13 +23,16 @@
             "type": "string"
         },
         "Address": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the private IP address of the backend member."
         },
         "ListenerId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the listener ID."
         },
         "ServerId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the backend member ID."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

@@ -1,6 +1,6 @@
 # Terraform::AzureRM::MysqlDatabase
 
-CloudFormation equivalent of azurerm_mysql_database
+Manages a MySQL Database within a MySQL Server
 
 ## Syntax
 
@@ -39,6 +39,8 @@ Properties:
 
 #### Charset
 
+Specifies the Charset for the MySQL Database, which needs [to be a valid MySQL Charset](https://dev.mysql.com/doc/refman/5.7/en/charset-charsets.html). Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -46,6 +48,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Collation
+
+Specifies the Collation for the MySQL Database, which needs [to be a valid MySQL Collation](https://dev.mysql.com/doc/refman/5.7/en/charset-mysql.html). Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -55,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the MySQL Database, which needs [to be a valid MySQL identifier](https://dev.mysql.com/doc/refman/5.7/en/identifiers.html). Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -63,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which the MySQL Server exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -70,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServerName
+
+Specifies the name of the MySQL Server. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

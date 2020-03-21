@@ -1,6 +1,6 @@
 # Terraform::OVH::IploadbalancingTcpFrontend
 
-CloudFormation equivalent of ovh_iploadbalancing_tcp_frontend
+Creates a backend server group (frontend) to be used by loadbalancing frontend(s)
 
 ## Syntax
 
@@ -49,6 +49,8 @@ Properties:
 
 #### AllowedSource
 
+Restrict IP Load Balancing access to these ip block. No restriction if null. List of IP blocks.
+
 _Required_: No
 
 _Type_: List of String
@@ -56,6 +58,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DedicatedIpfo
+
+Only attach frontend on these ip. No restriction if null. List of Ip blocks.
 
 _Required_: No
 
@@ -65,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DefaultFarmId
 
+Default TCP Farm of your frontend.
+
 _Required_: No
 
 _Type_: Double
@@ -72,6 +78,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefaultSslId
+
+Default ssl served to your customer.
 
 _Required_: No
 
@@ -81,6 +89,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Disabled
 
+Disable your frontend. Default: 'false'.
+
 _Required_: No
 
 _Type_: Boolean
@@ -88,6 +98,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+Human readable name for your frontend, this field is for you.
 
 _Required_: No
 
@@ -97,6 +109,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Port
 
+Port(s) attached to your frontend. Supports single port (numerical value),
+range (2 dash-delimited increasing ports) and comma-separated list of 'single port'
+and/or 'range'. Each port must be in the [1;49151] range.
+
 _Required_: Yes
 
 _Type_: String
@@ -104,6 +120,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServiceName
+
+The internal name of your IP load balancing.
 
 _Required_: Yes
 
@@ -113,6 +131,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ssl
 
+SSL deciphering. Default: 'false'.
+
 _Required_: No
 
 _Type_: Boolean
@@ -120,6 +140,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Zone
+
+Zone where the frontend will be defined (ie. `gra`, `bhs` also supports `all`).
 
 _Required_: Yes
 

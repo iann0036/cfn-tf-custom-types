@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::DatabaseAutonomousDataWarehouseBackup",
-    "description": "CloudFormation equivalent of oci_database_autonomous_data_warehouse_backup",
+    "description": "This resource provides the Autonomous Data Warehouse Backup resource in Oracle Cloud Infrastructure Database service.\n\nCreates a new Autonomous Data Warehouse backup for the specified database based on the provided request parameters.\n\n**IMPORTANT:** This resource is being **deprecated**, use `oci_database_autonomous_database_backup` instead.\nRefer to the [Deprecation Guide](#deprecation-guide) below on how to rename and migrate existing resources.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,13 +26,15 @@
             "type": "string"
         },
         "AutonomousDataWarehouseId": {
-            "type": "string"
+            "type": "string",
+            "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Data Warehouse backup."
         },
         "CompartmentId": {
             "type": "string"
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The user-friendly name for the backup. The name does not have to be unique."
         },
         "IsAutomatic": {
             "type": "boolean"

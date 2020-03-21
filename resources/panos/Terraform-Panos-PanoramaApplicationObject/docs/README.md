@@ -1,6 +1,6 @@
 # Terraform::Panos::PanoramaApplicationObject
 
-CloudFormation equivalent of panos_panorama_application_object
+This resource allows you to add/update/delete Panorama application objects.
 
 ## Syntax
 
@@ -86,6 +86,8 @@ Properties:
 
 #### AbleToFileTransfer
 
+Able to file transfer.
+
 _Required_: No
 
 _Type_: Boolean
@@ -93,6 +95,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AlgDisableCapability
+
+The alg disable capability.
 
 _Required_: No
 
@@ -102,6 +106,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Category
 
+The category.
+
 _Required_: Yes
 
 _Type_: String
@@ -109,6 +115,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ContinueScanningForOtherApplications
+
+Continue scanning for
+other applications.
 
 _Required_: No
 
@@ -118,6 +127,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+The object's description.
+
 _Required_: No
 
 _Type_: String
@@ -125,6 +136,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DeviceGroup
+
+The device group (default: `shared`).
 
 _Required_: No
 
@@ -134,6 +147,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EvasiveBehavior
 
+App is evasive.
+
 _Required_: No
 
 _Type_: Boolean
@@ -141,6 +156,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ExcessiveBandwidth
+
+Excessive bandwidth use.
 
 _Required_: No
 
@@ -150,6 +167,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HasKnownVulnerability
 
+Has known vulnerabilities.
+
 _Required_: No
 
 _Type_: Boolean
@@ -157,6 +176,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The object's name.
 
 _Required_: Yes
 
@@ -166,6 +187,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NoAppIdCaching
 
+No appid caching.
+
 _Required_: No
 
 _Type_: Boolean
@@ -173,6 +196,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ParentApp
+
+The parent application.
 
 _Required_: No
 
@@ -182,6 +207,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PervasiveUse
 
+App is pervasive.
+
 _Required_: No
 
 _Type_: Boolean
@@ -189,6 +216,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProneToMisuse
+
+Prone to misuse.
 
 _Required_: No
 
@@ -198,6 +227,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Risk
 
+The risk (default: 1).
+
 _Required_: No
 
 _Type_: Double
@@ -205,6 +236,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Subcategory
+
+The subcategory.
 
 _Required_: Yes
 
@@ -214,6 +247,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Technology
 
+The technology.
+
 _Required_: Yes
 
 _Type_: String
@@ -222,6 +257,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TunnelsOtherApplications
 
+This application tunnels other apps.
+
 _Required_: No
 
 _Type_: Boolean
@@ -229,6 +266,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UsedByMalware
+
+App is used by malware.
 
 _Required_: No
 

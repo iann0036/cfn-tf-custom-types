@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::EventhubConsumerGroup",
-    "description": "CloudFormation equivalent of azurerm_eventhub_consumer_group",
+    "description": "Manages a Event Hubs Consumer Group as a nested resource within an Event Hub.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,19 +29,24 @@
             "type": "string"
         },
         "EventhubName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the EventHub. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the EventHub Consumer Group resource. Changing this forces a new resource to be created."
         },
         "NamespaceName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the grandparent EventHub Namespace. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which the EventHub Consumer Group's grandparent Namespace exists. Changing this forces a new resource to be created."
         },
         "UserMetadata": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the user metadata."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

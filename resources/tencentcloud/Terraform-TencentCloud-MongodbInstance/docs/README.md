@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::MongodbInstance
 
-CloudFormation equivalent of tencentcloud_mongodb_instance
+Provide a resource to create a Mongodb instance.
 
 ## Syntax
 
@@ -53,6 +53,8 @@ Properties:
 
 #### AvailableZone
 
+The available zone of the Mongodb.
+
 _Required_: Yes
 
 _Type_: String
@@ -60,6 +62,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EngineVersion
+
+Version of the Mongodb, and available values include MONGO_3_WT, MONGO_3_ROCKS and MONGO_36_WT.
 
 _Required_: Yes
 
@@ -69,6 +73,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceName
 
+Name of the Mongodb instance.
+
 _Required_: Yes
 
 _Type_: String
@@ -76,6 +82,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MachineType
+
+Type of Mongodb instance, and available values include GIO and TGIO.
 
 _Required_: Yes
 
@@ -85,6 +93,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Memory
 
+Memory size. The minimum value is 2, and unit is GB.
+
 _Required_: Yes
 
 _Type_: Double
@@ -92,6 +102,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Password
+
+Password of this Mongodb account.
 
 _Required_: Yes
 
@@ -101,6 +113,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProjectId
 
+ID of the project which the instance belongs.
+
 _Required_: No
 
 _Type_: Double
@@ -108,6 +122,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecurityGroups
+
+ID of the security group.
 
 _Required_: No
 
@@ -117,6 +133,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubnetId
 
+ID of the subnet within this VPC. The vaule is required if VpcId is set.
+
 _Required_: No
 
 _Type_: String
@@ -124,6 +142,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+The tags of the Mongodb.
 
 _Required_: No
 
@@ -133,6 +153,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Volume
 
+Disk size. The minimum value is 25, and unit is GB.
+
 _Required_: Yes
 
 _Type_: Double
@@ -140,6 +162,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+ID of the VPC.
 
 _Required_: No
 

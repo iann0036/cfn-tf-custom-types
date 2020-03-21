@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::AsScalingGroup
 
-CloudFormation equivalent of tencentcloud_as_scaling_group
+Provides a resource to create a group of AS (Auto scaling) instances.
 
 ## Syntax
 
@@ -66,6 +66,8 @@ Properties:
 
 #### ConfigurationId
 
+An available ID for a launch configuration.
+
 _Required_: Yes
 
 _Type_: String
@@ -73,6 +75,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefaultCooldown
+
+Default cooldown time in second, and default value is 300.
 
 _Required_: No
 
@@ -82,6 +86,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DesiredCapacity
 
+Desired volume of CVM instances, which is between max_size and min_size.
+
 _Required_: No
 
 _Type_: Double
@@ -89,6 +95,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LoadBalancerIds
+
+ID list of traditional load balancers.
 
 _Required_: No
 
@@ -98,6 +106,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxSize
 
+Maximum number of CVM instances (0~2000).
+
 _Required_: Yes
 
 _Type_: Double
@@ -105,6 +115,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MinSize
+
+Minimum number of CVM instances (0~2000).
 
 _Required_: Yes
 
@@ -114,6 +126,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProjectId
 
+Specifies to which project the scaling group belongs.
+
 _Required_: No
 
 _Type_: Double
@@ -121,6 +135,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RetryPolicy
+
+Available values for retry policies include IMMEDIATE_RETRY and INCREMENTAL_INTERVALS.
 
 _Required_: No
 
@@ -130,6 +146,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ScalingGroupName
 
+Name of a scaling group.
+
 _Required_: Yes
 
 _Type_: String
@@ -137,6 +155,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubnetIds
+
+ID list of subnet, and for VPC it is required.
 
 _Required_: No
 
@@ -146,6 +166,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+Tags of a scaling group.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -153,6 +175,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TerminationPolicies
+
+Available values for termination policies include OLDEST_INSTANCE and NEWEST_INSTANCE.
 
 _Required_: No
 
@@ -162,6 +186,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VpcId
 
+ID of VPC network.
+
 _Required_: Yes
 
 _Type_: String
@@ -169,6 +195,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Zones
+
+List of available zones, for Basic network it is required.
 
 _Required_: No
 

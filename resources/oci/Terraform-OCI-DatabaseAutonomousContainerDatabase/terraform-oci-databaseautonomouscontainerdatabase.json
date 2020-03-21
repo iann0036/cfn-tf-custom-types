@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::DatabaseAutonomousContainerDatabase",
-    "description": "CloudFormation equivalent of oci_database_autonomous_container_database",
+    "description": "This resource provides the Autonomous Container Database resource in Oracle Cloud Infrastructure Database service.\n\nCreate a new Autonomous Container Database in the specified Autonomous Exadata Infrastructure.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "BackupConfig": {
@@ -100,13 +100,15 @@
             "type": "string"
         },
         "AutonomousExadataInfrastructureId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the Autonomous Exadata Infrastructure."
         },
         "AvailabilityDomain": {
             "type": "string"
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database."
         },
         "DefinedTags": {
             "type": "array",
@@ -126,10 +128,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The display name for the Autonomous Container Database."
         },
         "FreeformTags": {
             "type": "array",
@@ -149,7 +153,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
         },
         "LastMaintenanceRunId": {
             "type": "string"
@@ -214,10 +219,12 @@
             "type": "string"
         },
         "PatchModel": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) Database Patch model preference."
         },
         "ServiceLevelAgreementType": {
-            "type": "string"
+            "type": "string",
+            "description": "The service level agreement type of the Autonomous Container Database. The default is STANDARD. For a mission critical Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure."
         },
         "State": {
             "type": "string"

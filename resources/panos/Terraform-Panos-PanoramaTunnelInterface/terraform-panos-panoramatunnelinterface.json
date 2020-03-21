@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::PanoramaTunnelInterface",
-    "description": "CloudFormation equivalent of panos_panorama_tunnel_interface",
+    "description": "This resource allows you to add/update/delete Panorama tunnel interfaces\nfor templates.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,32 +9,40 @@
             "type": "string"
         },
         "Comment": {
-            "type": "string"
+            "type": "string",
+            "description": "The interface comment."
         },
         "ManagementProfile": {
-            "type": "string"
+            "type": "string",
+            "description": "The management profile."
         },
         "Mtu": {
-            "type": "number"
+            "type": "number",
+            "description": "The MTU."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The interface's name.  This must start with `tunnel.`."
         },
         "NetflowProfile": {
-            "type": "string"
+            "type": "string",
+            "description": "The netflow profile."
         },
         "StaticIps": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of static IPv4 addresses to set for this data\ninterface."
         },
         "Template": {
-            "type": "string"
+            "type": "string",
+            "description": "The template name."
         },
         "Vsys": {
-            "type": "string"
+            "type": "string",
+            "description": "The vsys that will use this interface (default: `vsys1`)."
         }
     },
     "additionalProperties": false,

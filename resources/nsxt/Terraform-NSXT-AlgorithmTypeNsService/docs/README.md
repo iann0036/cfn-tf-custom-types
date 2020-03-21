@@ -1,6 +1,6 @@
 # Terraform::NSXT::AlgorithmTypeNsService
 
-CloudFormation equivalent of nsxt_algorithm_type_ns_service
+This resource provides a way to configure a networking and security service which can be used with the NSX firewall. A networking and security service is an object that contains the TCP/UDP algorithm, source ports and destination ports in a single entity.
 
 ## Syntax
 
@@ -41,6 +41,8 @@ Properties:
 
 #### Algorithm
 
+Algorithm one of "ORACLE_TNS", "FTP", "SUN_RPC_TCP", "SUN_RPC_UDP", "MS_RPC_TCP", "MS_RPC_UDP", "NBNS_BROADCAST", "NBDG_BROADCAST", "TFTP".
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +50,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Description.
 
 _Required_: No
 
@@ -57,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DestinationPort
 
+a single destination port.
+
 _Required_: Yes
 
 _Type_: String
@@ -65,6 +71,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+Display name, defaults to ID if not set.
+
 _Required_: No
 
 _Type_: String
@@ -72,6 +80,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SourcePorts
+
+Set of source ports/ranges.
 
 _Required_: No
 

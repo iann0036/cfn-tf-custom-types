@@ -1,6 +1,6 @@
 # Terraform::Panos::ServiceObject
 
-CloudFormation equivalent of panos_service_object
+This resource allows you to add/update/delete service objects.
 
 ## Syntax
 
@@ -50,6 +50,8 @@ Properties:
 
 #### Description
 
+The service object's description.
+
 _Required_: No
 
 _Type_: String
@@ -57,6 +59,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DestinationPort
+
+The destination port.  This can be a single
+port number, range (1-65535), or comma separated (80,8080,443).
 
 _Required_: Yes
 
@@ -66,6 +71,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The service object's name.
+
 _Required_: Yes
 
 _Type_: String
@@ -73,6 +80,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OverrideHalfClosedTimeout
+
+The overridden
+TCP half closed timeout.
 
 _Required_: No
 
@@ -82,6 +92,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OverrideSessionTimeout
 
+Set to `true` to
+override the default application timeouts.
+
 _Required_: No
 
 _Type_: Boolean
@@ -89,6 +102,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OverrideTimeWaitTimeout
+
+The overridden
+TCP wait time.
 
 _Required_: No
 
@@ -98,6 +114,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OverrideTimeout
 
+The overridden TCP timeout.
+
 _Required_: No
 
 _Type_: Double
@@ -105,6 +123,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Protocol
+
+The service's protocol.  This should be `tcp`,
+`udp`, or `sctp` (PAN-OS 8.1+).
 
 _Required_: Yes
 
@@ -114,6 +135,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SourcePort
 
+The source port.  This can be a single port
+number, range (1-65535), or comma separated (80,8080,443).
+
 _Required_: No
 
 _Type_: String
@@ -122,6 +146,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+List of administrative tags.
+
 _Required_: No
 
 _Type_: List of String
@@ -129,6 +155,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vsys
+
+The vsys to put the service object into (default:
+`vsys1`).
 
 _Required_: No
 

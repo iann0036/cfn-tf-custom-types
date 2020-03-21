@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::VCD::LbAppRule",
-    "description": "CloudFormation equivalent of vcd_lb_app_rule",
+    "description": "Provides a vCloud Director Edge Gateway Load Balancer Application Rule resource. An application rule\nallows to directly manipulate and manage IP application traffic with load balancer.\n\n~> **Note:** To make load balancing work one must ensure that load balancing is enabled on edge\ngateway (edge gateway must be advanced).\nThis depends on NSX version to work properly. Please refer to [VMware Product Interoperability\nMatrices](https://www.vmware.com/resources/compatibility/sim/interop_matrix.php#interop&29=&93=) \nto check supported vCloud director and NSX for vSphere configurations.\n\n~> **Note:** The vCloud Director API for NSX supports a subset of the operations and objects defined\nin the NSX vSphere API Guide. The API supports NSX 6.2, 6.3, and 6.4.\n\nSupported in provider *v2.4+*",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,19 +9,24 @@
             "type": "string"
         },
         "EdgeGateway": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the edge gateway on which the application rule is to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Application rule name."
         },
         "Org": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of organization to use, optional if defined at provider level. Useful when connected as sysadmin working across different organisations."
         },
         "Script": {
-            "type": "string"
+            "type": "string",
+            "description": "A multiline application rule script.\nTerraform's [HEREDOC syntax](https://www.terraform.io/docs/configuration/expressions.html#string-literals)\nmay be useful for multiline scripts. **Note:** For information on\nthe application rule syntax, see more in [vCloud Director documentation]\n(https://docs.vmware.com/en/vCloud-Director/9.7/com.vmware.vcloud.tenantportal.doc/GUID-AFF9F70F-85C9-4053-BA69-F2B062F34C7F.html)."
         },
         "Vdc": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of VDC to use, optional if defined at provider level."
         }
     },
     "additionalProperties": false,

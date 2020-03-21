@@ -1,6 +1,6 @@
 # Terraform::OpenStack::DbUserV1
 
-CloudFormation equivalent of openstack_db_user_v1
+Manages a V1 DB user resource within OpenStack.
 
 ## Syntax
 
@@ -42,6 +42,8 @@ Properties:
 
 #### Databases
 
+A list of database user should have access to.
+
 _Required_: No
 
 _Type_: List of String
@@ -66,6 +68,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A unique name for the resource.
+
 _Required_: Yes
 
 _Type_: String
@@ -73,6 +77,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Password
+
+User's password.
 
 _Required_: Yes
 

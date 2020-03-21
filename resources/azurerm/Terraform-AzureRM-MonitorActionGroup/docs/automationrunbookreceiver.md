@@ -34,6 +34,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### AutomationAccountId
 
+The automation account ID which holds this runbook and authenticates to Azure resources.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IsGlobalRunbook
+
+Indicates whether this instance is global runbook.
 
 _Required_: Yes
 
@@ -50,6 +54,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the automation runbook receiver.
+
 _Required_: Yes
 
 _Type_: String
@@ -57,6 +63,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RunbookName
+
+The name for this runbook.
 
 _Required_: Yes
 
@@ -66,6 +74,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServiceUri
 
+The URI where webhooks should be sent.
+
 _Required_: Yes
 
 _Type_: String
@@ -74,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UseCommonAlertSchema
 
+Enables or disables the common alert schema.
+
 _Required_: No
 
 _Type_: Boolean
@@ -81,6 +93,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WebhookResourceId
+
+The resource id for webhook linked to this runbook.
 
 _Required_: Yes
 

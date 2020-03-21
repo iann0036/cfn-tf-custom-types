@@ -24,6 +24,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Name
 
+The name of the custom header.
+
 _Required_: Yes
 
 _Type_: String
@@ -31,6 +33,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Value
+
+The value of custom header. Applicable for Http and Https protocol.
 
 _Required_: Yes
 

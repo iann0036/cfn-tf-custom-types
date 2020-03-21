@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::KeyVaultAccessPolicy",
-    "description": "CloudFormation equivalent of azurerm_key_vault_access_policy",
+    "description": "Manages a Key Vault Access Policy.\n\n~> **NOTE:** It's possible to define Key Vault Access Policies both within [the `azurerm_key_vault` resource](key_vault.html) via the `access_policy` block and by using [the `azurerm_key_vault_access_policy` resource](key_vault_access_policy.html). However it's not possible to use both methods to manage Access Policies within a KeyVault, since there'll be conflicts.\n\n-> **NOTE:** Azure permits a maximum of 1024 Access Policies per Key Vault - [more information can be found in this document](https://docs.microsoft.com/en-us/azure/key-vault/key-vault-secure-your-key-vault#data-plane-access-control).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,44 +29,52 @@
             "type": "string"
         },
         "ApplicationId": {
-            "type": "string"
+            "type": "string",
+            "description": "The object ID of an Application in Azure Active Directory."
         },
         "CertificatePermissions": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of certificate permissions, must be one or more from\nthe following: `backup`, `create`, `delete`, `deleteissuers`, `get`, `getissuers`, `import`, `list`, `listissuers`,\n`managecontacts`, `manageissuers`, `purge`, `recover`, `restore`, `setissuers` and `update`."
         },
         "KeyPermissions": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of key permissions, must be one or more from\nthe following: `backup`, `create`, `decrypt`, `delete`, `encrypt`, `get`, `import`, `list`, `purge`,\n`recover`, `restore`, `sign`, `unwrapKey`, `update`, `verify` and `wrapKey`."
         },
         "KeyVaultId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the id of the Key Vault resource. Changing this\nforces a new resource to be created."
         },
         "ObjectId": {
-            "type": "string"
+            "type": "string",
+            "description": "The object ID of a user, service principal or security\ngroup in the Azure Active Directory tenant for the vault. The object ID must\nbe unique for the list of access policies. Changing this forces a new resource\nto be created."
         },
         "SecretPermissions": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of secret permissions, must be one or more\nfrom the following: `backup`, `delete`, `get`, `list`, `purge`, `recover`, `restore` and `set`."
         },
         "StoragePermissions": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of storage permissions, must be one or more from the following: `backup`, `delete`, `deletesas`, `get`, `getsas`, `list`, `listsas`, `purge`, `recover`, `regeneratekey`, `restore`, `set`, `setsas` and `update`."
         },
         "TenantId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Azure Active Directory tenant ID that should be used\nfor authenticating requests to the key vault. Changing this forces a new resource\nto be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

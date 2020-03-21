@@ -1,6 +1,6 @@
 # Terraform::AzureRM::ApplicationInsightsAnalyticsItem
 
-CloudFormation equivalent of azurerm_application_insights_analytics_item
+Manages an Application Insights Analytics Item component.
 
 ## Syntax
 
@@ -41,6 +41,8 @@ Properties:
 
 #### ApplicationInsightsId
 
+The ID of the Application Insights component on which the Analytics Item exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +50,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Content
+
+The content for the Analytics Item, for example the query text if `type` is `query`.
 
 _Required_: Yes
 
@@ -57,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FunctionAlias
 
+The alias to use for the function. Required when `type` is `function`.
+
 _Required_: No
 
 _Type_: String
@@ -64,6 +70,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the Application Insights Analytics Item. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -73,6 +81,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Scope
 
+The scope for the Analytics Item. Can be `shared` or `user`. Changing this forces a new resource to be created. Must be `shared` for functions.
+
 _Required_: Yes
 
 _Type_: String
@@ -80,6 +90,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The type of Analytics Item to create. Can be one of `query`, `function`, `folder`, `recent`. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

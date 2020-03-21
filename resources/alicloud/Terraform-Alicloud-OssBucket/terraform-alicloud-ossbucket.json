@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::OssBucket",
-    "description": "CloudFormation equivalent of alicloud_oss_bucket",
+    "description": "Provides a resource to create a oss bucket and set its attribution.\n\n-> **NOTE:** The bucket namespace is shared by all users of the OSS system. Please set bucket name as unique as possible.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "CorsRule": {
@@ -186,10 +186,12 @@
             "type": "string"
         },
         "Acl": {
-            "type": "string"
+            "type": "string",
+            "description": "The [canned ACL](https://www.alibabacloud.com/help/doc-detail/31898.htm) to apply. Defaults to \"private\"."
         },
         "Bucket": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the bucket. If omitted, Terraform will assign a random and unique name."
         },
         "CreationDate": {
             "type": "string"
@@ -198,7 +200,8 @@
             "type": "string"
         },
         "ForceDestroy": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "A boolean that indicates all objects should be deleted from the bucket so that the bucket can be destroyed without error. These objects are not recoverable. Defaults to \"false\"."
         },
         "IntranetEndpoint": {
             "type": "string"
@@ -207,16 +210,19 @@
             "type": "string"
         },
         "LoggingIsenable": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "The flag of using logging enable container. Defaults true."
         },
         "Owner": {
             "type": "string"
         },
         "Policy": {
-            "type": "string"
+            "type": "string",
+            "description": "Json format text of bucket policy [bucket policy management](https://www.alibabacloud.com/help/doc-detail/100680.htm) (documented below)."
         },
         "StorageClass": {
-            "type": "string"
+            "type": "string",
+            "description": "The [storage class](https://www.alibabacloud.com/help/doc-detail/51374.htm) to apply. Can be \"Standard\", \"IA\" and \"Archive\". Defaults to \"Standard\"."
         },
         "Tags": {
             "type": "array",
@@ -236,7 +242,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the bucket. The items are no more than 10 for a bucket."
         },
         "CorsRule": {
             "type": "array",

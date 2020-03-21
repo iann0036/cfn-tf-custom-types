@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::RouteEntry",
-    "description": "CloudFormation equivalent of tencentcloud_route_entry",
+    "description": "Provides a resource to create a routing entry in a VPC routing table.\n\n~> **NOTE:** It has been deprecated and replaced by tencentcloud_route_table_entry.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,19 +9,24 @@
             "type": "string"
         },
         "CidrBlock": {
-            "type": "string"
+            "type": "string",
+            "description": "The RouteEntry's target network segment."
         },
         "NextHub": {
-            "type": "string"
+            "type": "string",
+            "description": "The route entry's next hub. CVM instance ID or VPC router interface ID."
         },
         "NextType": {
-            "type": "string"
+            "type": "string",
+            "description": "The next hop type. Available value is `public_gateway`,`vpn_gateway`,`sslvpn_gateway`,`dc_gateway`,`peering_connection`,`nat_gateway` and `instance`. `instance` points to CVM Instance."
         },
         "RouteTableId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the route table."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "The VPC ID."
         }
     },
     "additionalProperties": false,

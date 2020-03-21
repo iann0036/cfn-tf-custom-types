@@ -1,6 +1,10 @@
 # Terraform::Packet::BgpSession
 
-CloudFormation equivalent of packet_bgp_session
+Provides a resource to manage BGP sessions in Packet Host. Refer to [Packet BGP documentation](https://www.packet.com/developers/docs/network/advanced/local-and-global-bgp/) for more details.
+
+You need to have BGP config enabled in your project.
+
+BGP session must be linked to a device running [BIRD](https://bird.network.cz) or other BGP routing daemon which will control route advertisements via the session to Packet's upstream routers.
 
 ## Syntax
 
@@ -33,6 +37,8 @@ Properties:
 
 #### AddressFamily
 
+`ipv4` or `ipv6`.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +47,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DefaultRoute
 
+Boolean flag to set the default route policy. False by default.
+
 _Required_: No
 
 _Type_: Boolean
@@ -48,6 +56,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DeviceId
+
+ID of device.
 
 _Required_: Yes
 

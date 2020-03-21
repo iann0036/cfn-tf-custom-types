@@ -1,6 +1,6 @@
 # Terraform::CloudScale::Network
 
-CloudFormation equivalent of cloudscale_network
+Provides a cloudscale.ch Private Network resource. This can be used to create, modify, and delete networks.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### Mtu
 
+`You can specify the MTU size for the network, defaults to 9000.
+
 _Required_: No
 
 _Type_: Double
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name of the new network.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneSlug
+
+You can specify a zone slug. Options include `lpg1` and `rma1`.
 
 _Required_: No
 

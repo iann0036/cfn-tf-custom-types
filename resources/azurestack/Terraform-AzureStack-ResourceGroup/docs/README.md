@@ -1,6 +1,6 @@
 # Terraform::AzureStack::ResourceGroup
 
-CloudFormation equivalent of azurestack_resource_group
+Creates a new resource group on Azure.
 
 ## Syntax
 
@@ -34,6 +34,9 @@ Properties:
 
 #### Location
 
+The location where the resource group should be created.
+For a list of all Azure locations, please consult [this link](http://azure.microsoft.com/en-us/regions/) or run `az account list-locations --output table`.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +45,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the resource group. Must be unique on your
+Azure subscription.
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

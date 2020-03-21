@@ -1,6 +1,9 @@
 # Terraform::Alicloud::DbConnection
 
-CloudFormation equivalent of alicloud_db_connection
+Provides an RDS connection resource to allocate an Internet connection string for RDS instance.
+
+-> **NOTE:** Each RDS instance will allocate a intranet connnection string automatically and its prifix is RDS instance ID.
+ To avoid unnecessary conflict, please specified a internet connection prefix before applying the resource.
 
 ## Syntax
 
@@ -33,6 +36,8 @@ Properties:
 
 #### ConnectionPrefix
 
+Prefix of an Internet connection string. It must be checked for uniqueness. It may consist of lowercase letters, numbers, and underlines, and must start with a letter and have no more than 30 characters. Default to <instance_id> + 'tf'.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +46,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceId
 
+The Id of instance that can run database.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Port
+
+Internet connection port. Valid value: [3001-3999]. Default to 3306.
 
 _Required_: No
 

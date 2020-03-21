@@ -1,6 +1,8 @@
 # Terraform::AzureRM::PacketCapture
 
-CloudFormation equivalent of azurerm_packet_capture
+Configures Packet Capturing against a Virtual Machine using a Network Watcher.
+
+~> **NOTE:** This resource has been deprecated in favour of the `azurerm_network_connection_monitor` resource and will be removed in the next major version of the AzureRM Provider. The new resource shares the same fields as this one, and information on migrating across [can be found in this guide](../guides/migrating-between-renamed-resources.html).
 
 ## Syntax
 
@@ -49,6 +51,8 @@ Properties:
 
 #### MaximumBytesPerPacket
 
+The number of bytes captured per packet. The remaining bytes are truncated. Defaults to `0` (Entire Packet Captured). Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: Double
@@ -56,6 +60,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MaximumBytesPerSession
+
+Maximum size of the capture in Bytes. Defaults to `1073741824` (1GB). Changing this forces a new resource to be created.
 
 _Required_: No
 
@@ -65,6 +71,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaximumCaptureDuration
 
+The maximum duration of the capture session in seconds. Defaults to `18000` (5 hours). Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: Double
@@ -72,6 +80,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name to use for this Packet Capture. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -81,6 +91,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NetworkWatcherName
 
+The name of the Network Watcher. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -89,6 +101,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which the Network Watcher exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -96,6 +110,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TargetResourceId
+
+The ID of the Resource to capture packets from. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

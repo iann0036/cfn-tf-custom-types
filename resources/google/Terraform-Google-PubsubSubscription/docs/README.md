@@ -1,6 +1,14 @@
 # Terraform::Google::PubsubSubscription
 
-CloudFormation equivalent of google_pubsub_subscription
+A named resource representing the stream of messages from a single,
+specific topic, to be delivered to the subscribing application.
+
+
+To get more information about Subscription, see:
+
+* [API documentation](https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.subscriptions)
+* How-to Guides
+    * [Managing Subscriptions](https://cloud.google.com/pubsub/docs/admin#managing_subscriptions)
 
 ## Syntax
 
@@ -84,6 +92,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
 
 _Required_: No
 

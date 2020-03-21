@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::CloudStack::SecurityGroupRule",
-    "description": "CloudFormation equivalent of cloudstack_security_group_rule",
+    "description": "Authorizes and revokes both ingress and egress rulea for a given security group.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Rule": {
@@ -12,33 +12,40 @@
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A CIDR list to allow access to the given ports."
                 },
                 "IcmpCode": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The ICMP code to allow, or `-1` to allow `any`. This\ncan only be specified if the protocol is ICMP. (defaults 0)."
                 },
                 "IcmpType": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The ICMP type to allow, or `-1` to allow `any`. This\ncan only be specified if the protocol is ICMP. (defaults 0)."
                 },
                 "Ports": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "List of ports and/or port ranges to allow. This can only\nbe specified if the protocol is TCP, UDP, ALL or a valid protocol number."
                 },
                 "Protocol": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the protocol to allow. Valid options are:\n`tcp`, `udp`, `icmp`, `all` or a valid protocol number."
                 },
                 "TrafficType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The traffic type for the rule. Valid options are:\n`ingress` or `egress`. (defaults ingress)."
                 },
                 "UserSecurityGroupList": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of security groups to apply\nthe rules to."
                 }
             },
             "required": [
@@ -55,10 +62,12 @@
             "type": "number"
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or ID of the project in which the security\ngroup is created. Changing this forces a new resource to be created."
         },
         "SecurityGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "The security group ID for which to create\nthe rules. Changing this forces a new resource to be created."
         },
         "Rule": {
             "type": "array",

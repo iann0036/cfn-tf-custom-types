@@ -1,6 +1,11 @@
 # Terraform::TLS::LocallySignedCert
 
-CloudFormation equivalent of tls_locally_signed_cert
+Generates a TLS certificate using a *Certificate Signing Request* (CSR) and
+signs it with a provided certificate authority (CA) private key.
+
+Locally-signed certificates are generally only trusted by client software when
+setup to use the provided CA. They are normally used in development environments
+or when deployed internally to an organization.
 
 ## Syntax
 
@@ -46,6 +51,9 @@ Properties:
 
 #### AllowedUses
 
+List of keywords each describing a use that is permitted
+for the issued certificate. The valid keywords are listed below.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -53,6 +61,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CaCertPem
+
+PEM-encoded certificate data for the CA.
 
 _Required_: Yes
 
@@ -62,6 +72,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CaKeyAlgorithm
 
+The name of the algorithm for the key provided
+in `ca_private_key_pem`.
+
 _Required_: Yes
 
 _Type_: String
@@ -69,6 +82,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CaPrivateKeyPem
+
+PEM-encoded private key data for the CA.
+This can be read from a separate file using the ``file`` interpolation
+function.
 
 _Required_: Yes
 
@@ -78,6 +95,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CertRequestPem
 
+PEM-encoded request certificate data.
+
 _Required_: Yes
 
 _Type_: String
@@ -85,6 +104,14 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EarlyRenewalHours
+
+If set, the resource will consider the certificate to
+have expired the given number of hours before its actual expiry time. This can be useful
+to deploy an updated certificate in advance of the expiration of the current certificate.
+Note however that the old certificate remains valid until its true expiration time, since
+this resource does not (and cannot) support certificate revocation. Note also that this
+advance update can only be performed should the Terraform configuration be applied during the
+early renewal period.
 
 _Required_: No
 
@@ -94,6 +121,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IsCaCertificate
 
+Boolean controlling whether the CA flag will be set in the
+generated certificate. Defaults to `false`, meaning that the certificate does not represent
+a certificate authority.
+
 _Required_: No
 
 _Type_: Boolean
@@ -102,6 +133,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SetSubjectKeyId
 
+If `true`, the certificate will include
+the subject key identifier. Defaults to `false`, in which case the subject
+key identifier is not set at all.
+
 _Required_: No
 
 _Type_: Boolean
@@ -109,6 +144,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ValidityPeriodHours
+
+The number of hours after initial issuing that the
+certificate will become invalid.
 
 _Required_: Yes
 

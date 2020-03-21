@@ -1,6 +1,8 @@
 # Terraform::Scaleway::RdbInstanceBeta
 
-CloudFormation equivalent of scaleway_rdb_instance_beta
+-> **Note:** This terraform resource is flagged beta and might include breaking change in future releases.
+
+Creates and manages Scaleway Database Instances. For more information, see [the documentation](https://developers.scaleway.com/en/products/rdb/api).
 
 ## Syntax
 

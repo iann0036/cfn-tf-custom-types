@@ -1,6 +1,6 @@
 # Terraform::CloudStack::SecurityGroup
 
-CloudFormation equivalent of cloudstack_security_group
+Creates a security group.
 
 ## Syntax
 
@@ -33,6 +33,9 @@ Properties:
 
 #### Description
 
+The description of the security group. Changing
+this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +44,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the security group. Changing this forces a
+new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +54,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The name or ID of the project to create this security
+group in. Changing this forces a new resource to be created.
 
 _Required_: No
 

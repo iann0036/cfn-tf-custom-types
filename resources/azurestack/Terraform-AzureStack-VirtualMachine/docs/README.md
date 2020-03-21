@@ -1,6 +1,6 @@
 # Terraform::AzureStack::VirtualMachine
 
-CloudFormation equivalent of azurestack_virtual_machine
+Manages a virtual machine.
 
 ## Syntax
 
@@ -93,6 +93,8 @@ Properties:
 
 #### AvailabilitySetId
 
+The Id of the Availability Set in which to create the virtual machine.
+
 _Required_: No
 
 _Type_: String
@@ -100,6 +102,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DeleteDataDisksOnTermination
+
+Flag to enable deletion of storage data disk VHD blobs when the VM is deleted, defaults to `false`.
 
 _Required_: No
 
@@ -109,6 +113,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DeleteOsDiskOnTermination
 
+Should the OS Disk be deleted when the Virtual Machine is destroyed? Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -116,6 +122,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LicenseType
+
+Specifies the Windows OS license type. If supplied, the only allowed values are `Windows_Client` and `Windows_Server`.
 
 _Required_: No
 
@@ -125,6 +133,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Location
 
+Specifies the supported Azure Stack Region where the resource exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -132,6 +142,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the image from the marketplace.
 
 _Required_: Yes
 
@@ -141,6 +153,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NetworkInterfaceIds
 
+Specifies the list of resource IDs for the network interfaces associated with the virtual machine.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -148,6 +162,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PrimaryNetworkInterfaceId
+
+Specifies the resource ID for the primary network interface associated with the virtual machine.
 
 _Required_: No
 
@@ -157,6 +173,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to
+create the virtual machine.
+
 _Required_: Yes
 
 _Type_: String
@@ -165,6 +184,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -172,6 +193,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VmSize
+
+Specifies the [size of the virtual machine](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-size-specs/).
 
 _Required_: Yes
 

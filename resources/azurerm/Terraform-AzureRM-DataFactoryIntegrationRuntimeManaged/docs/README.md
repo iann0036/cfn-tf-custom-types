@@ -1,6 +1,6 @@
 # Terraform::AzureRM::DataFactoryIntegrationRuntimeManaged
 
-CloudFormation equivalent of azurerm_data_factory_integration_runtime_managed
+Manages an Azure Data Factory Managed Integration Runtime.
 
 ## Syntax
 
@@ -58,6 +58,8 @@ Properties:
 
 #### DataFactoryName
 
+Specifies the name of the Data Factory the Managed Integration Runtime belongs to. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -74,6 +76,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Edition
 
+The Managed Integration Runtime edition. Valid values are `Standard` and `Enterprise`. Defaults to `Standard`.
+
 _Required_: No
 
 _Type_: String
@@ -81,6 +85,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LicenseType
+
+The type of the license that is used. Valid values are `LicenseIncluded` and `BasePrize`. Defaults to `LicenseIncluded`.
 
 _Required_: No
 
@@ -90,6 +96,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Location
 
+Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -97,6 +105,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MaxParallelExecutionsPerNode
+
+Defines the maximum parallel executions per node. Defaults to `1`. Max is `16`.
 
 _Required_: No
 
@@ -106,6 +116,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the Managed Integration Runtime. Changing this forces a new resource to be created. Must be globally unique. See the [Microsoft documentation](https://docs.microsoft.com/en-us/azure/data-factory/naming-rules) for all restrictions.
+
 _Required_: Yes
 
 _Type_: String
@@ -113,6 +125,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NodeSize
+
+The size of the nodes on which the Managed Integration Runtime runs. Valid values are: `Standard_D2_v3`, `Standard_D4_v3`, `Standard_D8_v3`, `Standard_D16_v3`, `Standard_D32_v3`, `Standard_D64_v3`, `Standard_E2_v3`, `Standard_E4_v3`, `Standard_E8_v3`, `Standard_E16_v3`, `Standard_E32_v3`, `Standard_E64_v3`, `Standard_D1_v2`, `Standard_D2_v2`, `Standard_D3_v2`, `Standard_D4_v2`, `Standard_A4_v2` and `Standard_A8_v2`.
 
 _Required_: Yes
 
@@ -122,6 +136,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NumberOfNodes
 
+Number of nodes for the Managed Integration Runtime. Max is `10`. Defaults to `1`.
+
 _Required_: No
 
 _Type_: Double
@@ -129,6 +145,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which to create the Managed Integration Runtime. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

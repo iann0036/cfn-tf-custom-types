@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Gitlab::ServiceSlack",
-    "description": "CloudFormation equivalent of gitlab_service_slack",
+    "description": "This resource allows you to manage Slack notifications integration.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,73 +9,95 @@
             "type": "string"
         },
         "ConfidentialIssueChannel": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the channel to receive confidential issue events notifications."
         },
         "ConfidentialIssuesEvents": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable notifications for confidential issues events."
         },
         "ConfidentialNoteEvents": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable notifications for confidential note events."
         },
         "IssueChannel": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the channel to receive issue events notifications."
         },
         "IssuesEvents": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable notifications for issues events."
         },
         "JobEvents": {
             "type": "boolean"
         },
         "MergeRequestChannel": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the channel to receive merge request events notifications."
         },
         "MergeRequestsEvents": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable notifications for merge requests events."
         },
         "NoteChannel": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the channel to receive note events notifications."
         },
         "NoteEvents": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable notifications for note events."
         },
         "NotifyOnlyBrokenPipelines": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Send notifications for broken pipelines."
         },
         "NotifyOnlyDefaultBranch": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "DEPRECATED: This parameter has been replaced with `branches_to_be_notified`."
         },
         "PipelineChannel": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the channel to receive pipeline events notifications."
         },
         "PipelineEvents": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable notifications for pipeline events."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the project you want to activate integration on."
         },
         "PushChannel": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the channel to receive push events notifications."
         },
         "PushEvents": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable notifications for push events."
         },
         "TagPushChannel": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the channel to receive tag push events notifications."
         },
         "TagPushEvents": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable notifications for tag push events."
         },
         "Username": {
-            "type": "string"
+            "type": "string",
+            "description": "Username to use."
         },
         "Webhook": {
-            "type": "string"
+            "type": "string",
+            "description": "Webhook URL (ex.: https://hooks.slack.com/services/...)."
         },
         "WikiPageChannel": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the channel to receive wiki page events notifications."
         },
         "WikiPageEvents": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable notifications for wiki page events."
         }
     },
     "additionalProperties": false,

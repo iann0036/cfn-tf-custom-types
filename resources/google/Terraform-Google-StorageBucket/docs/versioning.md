@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Enabled
 
+While set to `true`, versioning is fully enabled for this bucket.
+
 _Required_: Yes
 
 _Type_: Boolean

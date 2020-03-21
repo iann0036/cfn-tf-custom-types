@@ -1,6 +1,8 @@
 # Terraform::OCI::DatascienceModelProvenance
 
-CloudFormation equivalent of oci_datascience_model_provenance
+This resource provides the Model Provenance resource in Oracle Cloud Infrastructure Datascience service.
+
+Creates provenance information for the specified model.
 
 ## Syntax
 
@@ -41,6 +43,8 @@ Properties:
 
 #### GitBranch
 
+(Updatable) For model reproducibility purposes. Branch of the git repository associated with model training.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GitCommit
+
+(Updatable) For model reproducibility purposes. Commit ID of the git repository associated with model training.
 
 _Required_: No
 
@@ -57,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ModelId
 
+The [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the model.
+
 _Required_: Yes
 
 _Type_: String
@@ -64,6 +72,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RepositoryUrl
+
+(Updatable) For model reproducibility purposes. URL of the git repository associated with model training.
 
 _Required_: No
 
@@ -73,6 +83,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ScriptDir
 
+(Updatable) For model reproducibility purposes. Path to model artifacts.
+
 _Required_: No
 
 _Type_: String
@@ -80,6 +92,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TrainingScript
+
+(Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained.".
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::RunScope::Bucket",
-    "description": "CloudFormation equivalent of runscope_bucket",
+    "description": "A [bucket](https://www.runscope.com/docs/api/buckets) resource.\n[Buckets](https://www.runscope.com/docs/buckets) are a simple way to\norganize your requests and tests.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of this bucket."
         },
         "TeamUuid": {
-            "type": "string"
+            "type": "string",
+            "description": "Unique identifier for the team this bucket\nis being created for."
         }
     },
     "additionalProperties": false,

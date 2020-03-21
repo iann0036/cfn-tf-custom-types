@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::ApiManagementUser",
-    "description": "CloudFormation equivalent of azurerm_api_management_user",
+    "description": "Manages an API Management User.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,34 +29,44 @@
             "type": "string"
         },
         "ApiManagementName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the API Management Service in which the User should be created. Changing this forces a new resource to be created."
         },
         "Confirmation": {
-            "type": "string"
+            "type": "string",
+            "description": "The kind of confirmation email which will be sent to this user. Possible values are `invite` and `signup`. Changing this forces a new resource to be created."
         },
         "Email": {
-            "type": "string"
+            "type": "string",
+            "description": "The email address associated with this user."
         },
         "FirstName": {
-            "type": "string"
+            "type": "string",
+            "description": "The first name for this user."
         },
         "LastName": {
-            "type": "string"
+            "type": "string",
+            "description": "The last name for this user."
         },
         "Note": {
-            "type": "string"
+            "type": "string",
+            "description": "A note about this user."
         },
         "Password": {
-            "type": "string"
+            "type": "string",
+            "description": "The password associated with this user."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Resource Group in which the API Management Service exists. Changing this forces a new resource to be created."
         },
         "State": {
-            "type": "string"
+            "type": "string",
+            "description": "The state of this user. Possible values are `active`, `blocked` and `pending`."
         },
         "UserId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Identifier for this User, which must be unique within the API Management Service. Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

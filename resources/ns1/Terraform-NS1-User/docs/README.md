@@ -1,6 +1,8 @@
 # Terraform::NS1::User
 
-CloudFormation equivalent of ns1_user
+Provides a NS1 User resource. Creating a user sends an invitation email to the
+user's email address. This can be used to create, modify, and delete users.
+The credentials used must have the `manage_users` permission set.
 
 ## Syntax
 
@@ -96,6 +98,8 @@ Properties:
 
 #### AccountManageAccountSettings
 
+Whether the user can modify account settings.
+
 _Required_: No
 
 _Type_: Boolean
@@ -103,6 +107,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AccountManageApikeys
+
+Whether the user can modify account apikeys.
 
 _Required_: No
 
@@ -112,6 +118,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AccountManagePaymentMethods
 
+Whether the user can modify account payment methods.
+
 _Required_: No
 
 _Type_: Boolean
@@ -119,6 +127,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AccountManagePlan
+
+Whether the user can modify the account plan.
 
 _Required_: No
 
@@ -128,6 +138,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AccountManageTeams
 
+Whether the user can modify other teams in the account.
+
 _Required_: No
 
 _Type_: Boolean
@@ -135,6 +147,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AccountManageUsers
+
+Whether the user can modify account users.
 
 _Required_: No
 
@@ -144,6 +158,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AccountViewActivityLog
 
+Whether the user can view activity logs.
+
 _Required_: No
 
 _Type_: Boolean
@@ -151,6 +167,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AccountViewInvoices
+
+Whether the user can view invoices.
 
 _Required_: No
 
@@ -160,6 +178,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DataManageDatafeeds
 
+Whether the user can modify data feeds.
+
 _Required_: No
 
 _Type_: Boolean
@@ -167,6 +187,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DataManageDatasources
+
+Whether the user can modify data sources.
 
 _Required_: No
 
@@ -176,6 +198,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DataPushToDatafeeds
 
+Whether the user can publish to data feeds.
+
 _Required_: No
 
 _Type_: Boolean
@@ -183,6 +207,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DhcpManageDhcp
+
+Whether the user can manage DHCP.
+Only relevant for the DDI product.
 
 _Required_: No
 
@@ -192,6 +219,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DhcpViewDhcp
 
+Whether the user can view DHCP.
+Only relevant for the DDI product.
+
 _Required_: No
 
 _Type_: Boolean
@@ -199,6 +229,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DnsManageZones
+
+Whether the user can modify the accounts zones.
 
 _Required_: No
 
@@ -208,6 +240,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DnsViewZones
 
+Whether the user can view the accounts zones.
+
 _Required_: No
 
 _Type_: Boolean
@@ -215,6 +249,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DnsZonesAllow
+
+List of zones that the user may access.
 
 _Required_: No
 
@@ -224,6 +260,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DnsZonesAllowByDefault
 
+If true, enable the `dns_zones_allow` list, otherwise enable the `dns_zones_deny` list.
+
 _Required_: No
 
 _Type_: Boolean
@@ -231,6 +269,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DnsZonesDeny
+
+List of zones that the user may not access.
 
 _Required_: No
 
@@ -240,6 +280,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Email
 
+The email address of the user.
+
 _Required_: Yes
 
 _Type_: String
@@ -247,6 +289,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IpWhitelist
+
+The IP addresses to whitelist for this key.
 
 _Required_: No
 
@@ -256,6 +300,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IpWhitelistStrict
 
+Sets exclusivity on this IP whitelist.
+
 _Required_: No
 
 _Type_: Boolean
@@ -263,6 +309,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IpamManageIpam
+
+Whether the user can manage IPAM.
+Only relevant for the DDI product.
 
 _Required_: No
 
@@ -280,6 +329,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MonitoringManageJobs
 
+Whether the user can modify monitoring jobs.
+
 _Required_: No
 
 _Type_: Boolean
@@ -287,6 +338,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MonitoringManageLists
+
+Whether the user can modify notification lists.
 
 _Required_: No
 
@@ -296,6 +349,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MonitoringViewJobs
 
+Whether the user can view monitoring jobs.
+
 _Required_: No
 
 _Type_: Boolean
@@ -303,6 +358,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The free form name of the user.
 
 _Required_: Yes
 
@@ -312,6 +369,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Notify
 
+Whether or not to notify the user of specified events. Only `billing` is available currently.
+
 _Required_: No
 
 _Type_: List of <a href="notify.md">Notify</a>
@@ -319,6 +378,9 @@ _Type_: List of <a href="notify.md">Notify</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecurityManageActiveDirectory
+
+Whether the user can manage global active directory.
+Only relevant for the DDI product.
 
 _Required_: No
 
@@ -328,6 +390,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecurityManageGlobal2fa
 
+Whether the user can manage global two factor authentication.
+
 _Required_: No
 
 _Type_: Boolean
@@ -336,6 +400,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Teams
 
+The teams that the user belongs to.
+
 _Required_: No
 
 _Type_: List of String
@@ -343,6 +409,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Username
+
+The users login name.
 
 _Required_: Yes
 

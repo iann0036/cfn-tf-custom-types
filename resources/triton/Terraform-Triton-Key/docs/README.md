@@ -1,6 +1,6 @@
 # Terraform::Triton::Key
 
-CloudFormation equivalent of triton_key
+The `triton_key` resource represents an SSH key for a Triton account.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### Key
 
+The SSH key material. In order to read this from a file, use the `file` interpolation.
+
 _Required_: Yes
 
 _Type_: String
@@ -40,6 +42,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the key. If this is left empty, the name is inferred from the comment in the SSH key material.
 
 _Required_: No
 

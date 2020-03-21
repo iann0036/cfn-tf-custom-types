@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::DevTestSchedule",
-    "description": "CloudFormation equivalent of azurerm_dev_test_schedule",
+    "description": "Manages automated startup and shutdown schedules for Azure Dev Test Lab.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "DailyRecurrence": {
@@ -88,19 +88,24 @@
             "type": "string"
         },
         "LabName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the dev test lab. Changing this forces a new resource to be created."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "The location where the schedule is created. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the dev test lab schedule. Valid value for name depends on the `task_type`. For instance for task_type `LabVmsStartupTask` the name needs to be `LabVmAutoStart`."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the dev test lab schedule. Changing this forces a new resource to be created."
         },
         "Status": {
-            "type": "string"
+            "type": "string",
+            "description": "The status of the notification. Possible values are `Enabled` and `Disabled`. Defaults to `Disabled`."
         },
         "Tags": {
             "type": "array",
@@ -120,13 +125,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "TaskType": {
-            "type": "string"
+            "type": "string",
+            "description": "The task type of the schedule. Possible values include `LabVmsShutdownTask` and `LabVmAutoStart`."
         },
         "TimeZoneId": {
-            "type": "string"
+            "type": "string",
+            "description": "The time zone ID (e.g. Pacific Standard time)."
         },
         "DailyRecurrence": {
             "type": "array",

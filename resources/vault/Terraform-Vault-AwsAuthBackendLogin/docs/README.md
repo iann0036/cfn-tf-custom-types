@@ -1,6 +1,9 @@
 # Terraform::Vault::AwsAuthBackendLogin
 
-CloudFormation equivalent of vault_aws_auth_backend_login
+Logs into a Vault server using an AWS auth backend. Login can be
+accomplished using a signed identity request from IAM or using ec2
+instance metadata. For more information, see the [Vault
+documentation](https://www.vaultproject.io/docs/auth/aws.html).
 
 ## Syntax
 
@@ -47,6 +50,9 @@ Properties:
 
 #### Backend
 
+The unique name of the AWS auth backend. Defaults to
+'aws'.
+
 _Required_: No
 
 _Type_: String
@@ -54,6 +60,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IamHttpRequestMethod
+
+The HTTP method used in the signed IAM
+request.
 
 _Required_: No
 
@@ -63,6 +72,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IamRequestBody
 
+The base64-encoded body of the signed
+request.
+
 _Required_: No
 
 _Type_: String
@@ -70,6 +82,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IamRequestHeaders
+
+The base64-encoded, JSON serialized
+representation of the GetCallerIdentity HTTP request headers.
 
 _Required_: No
 
@@ -79,6 +94,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IamRequestUrl
 
+The base64-encoded HTTP URL used in the signed
+request.
+
 _Required_: No
 
 _Type_: String
@@ -86,6 +104,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Identity
+
+The base64-encoded EC2 instance identity document to
+authenticate with. Can be retrieved from the EC2 metadata server.
 
 _Required_: No
 
@@ -95,6 +116,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Nonce
 
+The unique nonce to be used for login requests. Can be
+set to a user-specified value, or will contain the server-generated value
+once a token is issued. EC2 instances can only acquire a single token until
+the whitelist is tidied again unless they keep track of this nonce.
+
 _Required_: No
 
 _Type_: String
@@ -102,6 +128,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Pkcs7
+
+The PKCS#7 signature of the identity document to
+authenticate with, with all newline characters removed. Can be retrieved from
+the EC2 metadata server.
 
 _Required_: No
 
@@ -111,6 +141,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Role
 
+The name of the AWS auth backend role to create tokens
+against.
+
 _Required_: No
 
 _Type_: String
@@ -118,6 +151,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Signature
+
+The base64-encoded SHA256 RSA signature of the
+instance identity document to authenticate with, with all newline characters
+removed. Can be retrieved from the EC2 metadata server.
 
 _Required_: No
 

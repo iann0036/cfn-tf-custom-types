@@ -1,6 +1,6 @@
 # Terraform::OVH::DomainZoneRedirection
 
-CloudFormation equivalent of ovh_domain_zone_redirection
+Provides a OVH domain zone redirection.
 
 ## Syntax
 
@@ -41,6 +41,8 @@ Properties:
 
 #### Description
 
+A description of this redirection.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +50,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Keywords
+
+Keywords to describe this redirection.
 
 _Required_: No
 
@@ -57,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Subdomain
 
+The name of the redirection.
+
 _Required_: No
 
 _Type_: String
@@ -64,6 +70,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Target
+
+The value of the redirection.
 
 _Required_: Yes
 
@@ -73,6 +81,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Title
 
+Title of this redirection.
+
 _Required_: No
 
 _Type_: String
@@ -81,6 +91,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Type
 
+The type of the redirection, with values:
+* `visible` -> Redirection by http code 302
+* `visiblePermanent` -> Redirection by http code 301
+* `invisible` -> Redirection by html frame.
+
 _Required_: Yes
 
 _Type_: String
@@ -88,6 +103,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Zone
+
+The domain to add the redirection to.
 
 _Required_: Yes
 

@@ -9,7 +9,8 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Human-friendly description of the audit device."
         },
         "Options": {
             "type": "array",
@@ -29,13 +30,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Configuration options to pass to the audit device itself."
         },
         "Path": {
-            "type": "string"
+            "type": "string",
+            "description": "The path to mount the audit device. This defaults to the type."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of the audit device, such as 'file'."
         }
     },
     "additionalProperties": false,

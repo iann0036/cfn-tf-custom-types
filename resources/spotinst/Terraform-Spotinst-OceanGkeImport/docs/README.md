@@ -1,6 +1,6 @@
 # Terraform::Spotinst::OceanGkeImport
 
-CloudFormation equivalent of spotinst_ocean_gke_import
+Provides a Spotinst Ocean GKE import resource.
 
 ## Syntax
 
@@ -46,6 +46,8 @@ Properties:
 
 #### ClusterName
 
+The GKE cluster name.
+
 _Required_: Yes
 
 _Type_: String
@@ -53,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DesiredCapacity
+
+The number of instances to launch and maintain in the cluster.
 
 _Required_: No
 
@@ -62,6 +66,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Location
 
+The zone the master cluster is located in.
+
 _Required_: Yes
 
 _Type_: String
@@ -70,6 +76,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxSize
 
+The upper limit of instances the cluster can scale up to.
+
 _Required_: No
 
 _Type_: Double
@@ -77,6 +85,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MinSize
+
+The lower limit of instances the cluster can scale down to.
 
 _Required_: No
 

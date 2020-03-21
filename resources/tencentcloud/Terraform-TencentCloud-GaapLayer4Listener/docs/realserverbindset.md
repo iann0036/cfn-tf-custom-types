@@ -28,6 +28,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Id
 
+ID of the GAAP realserver.
+
 _Required_: Yes
 
 _Type_: String
@@ -35,6 +37,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ip
+
+IP of the GAAP realserver.
 
 _Required_: Yes
 
@@ -44,6 +48,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Port
 
+Port of the GAAP realserver.
+
 _Required_: Yes
 
 _Type_: Double
@@ -51,6 +57,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Weight
+
+Scheduling weight, default value is `1`. The range of values is [1,100].
 
 _Required_: No
 

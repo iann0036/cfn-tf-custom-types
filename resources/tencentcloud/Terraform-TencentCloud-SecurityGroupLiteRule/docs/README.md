@@ -1,6 +1,8 @@
 # Terraform::TencentCloud::SecurityGroupLiteRule
 
-CloudFormation equivalent of tencentcloud_security_group_lite_rule
+Provide a resource to create security group some lite rules quickly.
+
+-> **NOTE:** It can't be used with tencentcloud_security_group_rule.
 
 ## Syntax
 
@@ -35,6 +37,8 @@ Properties:
 
 #### Egress
 
+Egress rules set. A rule must match the following format: [action]#[cidr_ip]#[port]#[protocol]. The available value of 'action' is `ACCEPT` and `DROP`. The 'cidr_ip' must be an IP address network or segment. The 'port' valid format is `80`, `80,443`, `80-90` or `ALL`. The available value of 'protocol' is `TCP`, `UDP`, `ICMP` and `ALL`. When 'protocol' is `ICMP` or `ALL`, the 'port' must be `ALL`.
+
 _Required_: No
 
 _Type_: List of String
@@ -43,6 +47,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ingress
 
+Ingress rules set. A rule must match the following format: [action]#[cidr_ip]#[port]#[protocol]. The available value of 'action' is `ACCEPT` and `DROP`. The 'cidr_ip' must be an IP address network or segment. The 'port' valid format is `80`, `80,443`, `80-90` or `ALL`. The available value of 'protocol' is `TCP`, `UDP`, `ICMP` and `ALL`. When 'protocol' is `ICMP` or `ALL`, the 'port' must be `ALL`.
+
 _Required_: No
 
 _Type_: List of String
@@ -50,6 +56,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecurityGroupId
+
+ID of the security group.
 
 _Required_: Yes
 

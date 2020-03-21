@@ -1,6 +1,15 @@
 # Terraform::VSphere::HostVirtualSwitch
 
-CloudFormation equivalent of vsphere_host_virtual_switch
+The `vsphere_host_virtual_switch` resource can be used to manage vSphere
+standard switches on an ESXi host. These switches can be used as a backing for
+standard port groups, which can be managed by the
+[`vsphere_host_port_group`][host-port-group] resource.
+
+For an overview on vSphere networking concepts, see [this
+page][ref-vsphere-net-concepts].
+
+[host-port-group]: /docs/providers/vsphere/r/host_port_group.html
+[ref-vsphere-net-concepts]: https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.networking.doc/GUID-2B11DBB8-CB3C-4AFF-8885-EFEA0FC562F4.html
 
 ## Syntax
 
@@ -128,6 +137,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HostSystemId
 
+The [managed object ID][docs-about-morefs] of
+the host to set the virtual switch up on. Forces a new resource if changed.
+
 _Required_: Yes
 
 _Type_: String
@@ -152,6 +164,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Mtu
 
+The maximum transmission unit (MTU) for the virtual
+switch. Default: `1500`.
+
 _Required_: No
 
 _Type_: Double
@@ -159,6 +174,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the virtual switch. Forces a new resource if
+changed.
 
 _Required_: Yes
 
@@ -183,6 +201,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NumberOfPorts
+
+The number of ports to create with this
+virtual switch. Default: `128`.
 
 _Required_: No
 

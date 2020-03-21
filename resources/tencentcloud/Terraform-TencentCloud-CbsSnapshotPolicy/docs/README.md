@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::CbsSnapshotPolicy
 
-CloudFormation equivalent of tencentcloud_cbs_snapshot_policy
+Provides a snapshot policy resource.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### RepeatHours
 
+Trigger times of periodic snapshot, the available values are 0 to 23. The 0 means 00:00, and so on.
+
 _Required_: Yes
 
 _Type_: List of Double
@@ -44,6 +46,8 @@ _Type_: List of Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RepeatWeekdays
+
+Periodic snapshot is enabled, the available values are [0, 1, 2, 3, 4, 5, 6]. 0 means Sunday, 1-6 means Monday to Saturday.
 
 _Required_: Yes
 
@@ -53,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RetentionDays
 
+Retention days of the snapshot, and the default value is 7.
+
 _Required_: No
 
 _Type_: Double
@@ -60,6 +66,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SnapshotPolicyName
+
+Name of snapshot policy. The maximum length can not exceed 60 bytes.
 
 _Required_: Yes
 

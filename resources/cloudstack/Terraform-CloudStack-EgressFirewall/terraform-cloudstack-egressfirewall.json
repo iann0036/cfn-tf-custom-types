@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::CloudStack::EgressFirewall",
-    "description": "CloudFormation equivalent of cloudstack_egress_firewall",
+    "description": "Creates egress firewall rules for a given network.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Rule": {
@@ -12,23 +12,28 @@
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A CIDR list to allow access to the given ports."
                 },
                 "IcmpCode": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The ICMP code to allow. This can only be specified if\nthe protocol is ICMP."
                 },
                 "IcmpType": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The ICMP type to allow. This can only be specified if\nthe protocol is ICMP."
                 },
                 "Ports": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "List of ports and/or port ranges to allow. This can only\nbe specified if the protocol is TCP or UDP."
                 },
                 "Protocol": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the protocol to allow. Valid options are:\n`tcp`, `udp` and `icmp`."
                 }
             },
             "required": [
@@ -43,10 +48,12 @@
             "type": "string"
         },
         "Managed": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "USE WITH CAUTION! If enabled all the egress firewall\nrules for this network will be managed by this resource. This means it will\ndelete all firewall rules that are not in your config! (defaults false)."
         },
         "NetworkId": {
-            "type": "string"
+            "type": "string",
+            "description": "The network ID for which to create the egress\nfirewall rules. Changing this forces a new resource to be created."
         },
         "Parallelism": {
             "type": "number"

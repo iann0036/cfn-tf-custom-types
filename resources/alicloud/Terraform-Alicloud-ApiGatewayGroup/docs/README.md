@@ -1,6 +1,10 @@
 # Terraform::Alicloud::ApiGatewayGroup
 
-CloudFormation equivalent of alicloud_api_gateway_group
+Provides an api group resource.To create an API, you must firstly create a group which is a basic attribute of the API.
+
+For information about Api Gateway Group and how to use it, see [Create An Api Group](https://www.alibabacloud.com/help/doc-detail/43611.html)
+
+-> **NOTE:** Terraform will auto build api group while it uses `alicloud_api_gateway_group` to build api group.
 
 ## Syntax
 
@@ -31,6 +35,8 @@ Properties:
 
 #### Description
 
+The description of the api gateway group. Defaults to null.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the api gateway group. Defaults to null.
 
 _Required_: Yes
 

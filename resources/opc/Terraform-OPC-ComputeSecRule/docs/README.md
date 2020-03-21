@@ -1,6 +1,6 @@
 # Terraform::OPC::ComputeSecRule
 
-CloudFormation equivalent of opc_compute_sec_rule
+The ``opc_compute_sec_rule`` resource creates and manages a sec rule in an Oracle Cloud Infrastructure Compute Classic identity domain, which joins together a source security list (or security IP list), a destination security list (or security IP list), and a security application.
 
 ## Syntax
 
@@ -41,6 +41,9 @@ Properties:
 
 #### Action
 
+Whether to `permit`, `refuse` or `deny` packets to which this rule applies. This will ordinarily
+be `permit`.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +51,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Application
+
+The name of the application to which the rule applies.
 
 _Required_: Yes
 
@@ -57,6 +62,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+A description for this security rule.
+
 _Required_: No
 
 _Type_: String
@@ -64,6 +71,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DestinationList
+
+The destination security list (prefixed with `seclist:`), or security IP list (prefixed with
+`seciplist:`).
 
 _Required_: Yes
 
@@ -73,6 +83,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Disabled
 
+Whether to disable this security rule. This is useful if you want to temporarily disable a rule
+without removing it outright from your Terraform resource definition. Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -81,6 +94,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The unique (within the identity domain) name of the security rule.
+
 _Required_: Yes
 
 _Type_: String
@@ -88,6 +103,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SourceList
+
+The source security list (prefixed with `seclist:`), or security IP list (prefixed with
+`seciplist:`).
 
 _Required_: Yes
 

@@ -1,6 +1,8 @@
 # Terraform::AzureAD::Application
 
-CloudFormation equivalent of azuread_application
+Manages an Application within Azure Active Directory.
+
+-> **NOTE:** If you're authenticating using a Service Principal then it must have permissions to both `Read and write owned by applications` and `Sign in and read user profile` within the `Windows Azure Active Directory` API.
 
 ## Syntax
 
@@ -61,6 +63,8 @@ Properties:
 
 #### AvailableToOtherTenants
 
+Is this Azure AD Application available to other tenants? Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -68,6 +72,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GroupMembershipClaims
+
+Configures the `groups` claim issued in a user or OAuth 2.0 access token that the app expects. Defaults to `SecurityGroup`. Possible values are `None`, `SecurityGroup` or `All`.
 
 _Required_: No
 
@@ -77,6 +83,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Homepage
 
+The URL to the application's home page. If no homepage is specified this defaults to `https://{name}`.
+
 _Required_: No
 
 _Type_: String
@@ -84,6 +92,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IdentifierUris
+
+A list of user-defined URI(s) that uniquely identify a Web application within it's Azure AD tenant, or within a verified custom domain if the application is multi-tenant.
 
 _Required_: No
 
@@ -93,6 +103,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LogoutUrl
 
+The URL of the logout page.
+
 _Required_: No
 
 _Type_: String
@@ -100,6 +112,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The display name for the application.
 
 _Required_: Yes
 
@@ -109,6 +123,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Oauth2AllowImplicitFlow
 
+Does this Azure AD Application allow OAuth2.0 implicit flow tokens? Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -116,6 +132,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Owners
+
+A list of Azure AD Object IDs that will be granted ownership of the application. Defaults to the Object ID of the caller creating the application. If a list is specified the caller Object ID will no longer be included unless explicitly added to the list.
 
 _Required_: No
 
@@ -125,6 +143,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PublicClient
 
+Is this Azure AD Application a public client? Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -133,6 +153,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ReplyUrls
 
+A list of URLs that user tokens are sent to for sign in, or the redirect URIs that OAuth 2.0 authorization codes and access tokens are sent to.
+
 _Required_: No
 
 _Type_: List of String
@@ -140,6 +162,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+Type of an application: `webapp/api` or `native`. Defaults to `webapp/api`. For `native` apps type `identifier_uris` property can not not be set.
 
 _Required_: No
 

@@ -1,6 +1,10 @@
 # Terraform::Alicloud::CdnDomain
 
-CloudFormation equivalent of alicloud_cdn_domain
+-> **DEPRECATED:**  This resource is based on CDN's old version OpenAPI and it has been deprecated from version `1.34.0`.
+Please use new resource [alicloud_cdn_domain_new](https://www.terraform.io/docs/providers/alicloud/r/cdn_domain_new.html) and its
+config [alicloud_cdn_domain_config](https://www.terraform.io/docs/providers/alicloud/r/cdn_domain_config.html) instead.
+
+Provides a CDN Accelerated Domain resource.
 
 ## Syntax
 
@@ -80,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CdnType
 
+Cdn type of the accelerated domain. Valid values are `web`, `download`, `video`, `liveStream`.
+
 _Required_: Yes
 
 _Type_: String
@@ -87,6 +93,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DomainName
+
+Name of the accelerated domain. This name without suffix can have a string of 1 to 63 characters, must contain only alphanumeric characters or "-", and must not begin or end with "-", and "-" must not in the 3th and 4th character positions at the same time. Suffix `.sh` and `.tel` are not supported.
 
 _Required_: Yes
 
@@ -120,6 +128,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Scope
 
+Scope of the accelerated domain. Valid values are `domestic`, `overseas`, `global`. Default value is `domestic`. This parameter's setting is valid Only for the international users and domestic L3 and above users .
+
 _Required_: No
 
 _Type_: String
@@ -127,6 +137,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SourcePort
+
+Source port of the accelerated domain. Valid values are `80` and `443`. Default value is `80`. You must use `80` when the `source_type` is `oss`.
 
 _Required_: No
 
@@ -136,6 +148,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SourceType
 
+Source type of the accelerated domain. Valid values are `ipaddr`, `domain`, `oss`. You must set this parameter when `cdn_type` value is not `liveStream`.
+
 _Required_: No
 
 _Type_: String
@@ -143,6 +157,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Sources
+
+Sources of the accelerated domain. It's a list of domain names or IP address and consists of at most 20 items. You must set this parameter when `cdn_type` value is not `liveStream`.
 
 _Required_: No
 

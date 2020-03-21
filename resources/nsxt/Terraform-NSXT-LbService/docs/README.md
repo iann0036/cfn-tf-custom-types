@@ -1,6 +1,15 @@
 # Terraform::NSXT::LbService
 
-CloudFormation equivalent of nsxt_lb_service
+Provides a resource to configure lb service on NSX-T manager.
+Note that lb service needs to be attached to Tier-1 router that satisfies
+following preconditions:
+* It needs to reside on edge cluster
+* It needs to be condigured with either uplink port or centralized service port
+
+In order to enforce correct order of create/delete, it is recommended to add
+depends_on clause to lb service.
+
+~> **NOTE:** This resource requires NSX version 2.3 or higher.
 
 ## Syntax
 
@@ -45,6 +54,8 @@ Properties:
 
 #### Description
 
+Description of this resource.
+
 _Required_: No
 
 _Type_: String
@@ -52,6 +63,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+The display name of this resource. Defaults to ID if not set.
 
 _Required_: No
 
@@ -61,6 +74,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Enabled
 
+whether the load balancer service is enabled.
+
 _Required_: No
 
 _Type_: Boolean
@@ -68,6 +83,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ErrorLogLevel
+
+Load balancer engine writes information about encountered issues of different severity levels to the error log. This setting is used to define the severity level of the error log.
 
 _Required_: No
 
@@ -77,6 +94,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LogicalRouterId
 
+Tier1 logical router this service is attached to. Note that this router needs to have edge cluster configured, and have an uplink port or CSP (centralized service port).
+
 _Required_: Yes
 
 _Type_: String
@@ -85,6 +104,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Size
 
+Size of load balancer service. Accepted values are SMALL/MEDIUM/LARGE.
+
 _Required_: No
 
 _Type_: String
@@ -92,6 +113,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VirtualServerIds
+
+Virtual servers associated with this Load Balancer.
 
 _Required_: No
 

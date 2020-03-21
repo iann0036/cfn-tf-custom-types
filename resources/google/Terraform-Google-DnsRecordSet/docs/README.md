@@ -1,6 +1,9 @@
 # Terraform::Google::DnsRecordSet
 
-CloudFormation equivalent of google_dns_record_set
+Manages a set of DNS records within Google Cloud DNS. For more information see [the official documentation](https://cloud.google.com/dns/records/) and
+[API](https://cloud.google.com/dns/api/v1/resourceRecordSets).
+
+~> **Note:** The provider treats this resource as an authoritative record set. This means existing records (including the default records) for the given type will be overwritten when you create this resource in Terraform. In addition, the Google Cloud DNS API requires NS records to be present at all times, so Terraform will not actually remove NS records during destroy but will report that it did.
 
 ## Syntax
 
@@ -40,6 +43,9 @@ Properties:
 
 #### ManagedZone
 
+The name of the zone in which this record set will
+reside.
+
 _Required_: Yes
 
 _Type_: String
@@ -47,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The DNS name this record set will apply to.
 
 _Required_: Yes
 
@@ -56,6 +64,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Project
 
+The ID of the project in which the resource belongs. If it
+is not provided, the provider project is used.
+
 _Required_: No
 
 _Type_: String
@@ -63,6 +74,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Rrdatas
+
+The string data for the records in this record set
+whose meaning depends on the DNS type. For TXT record, if the string data contains spaces, add surrounding `\"` if you don't want your string to get split on spaces. To specify a single record value longer than 255 characters such as a TXT record for DKIM, add `\"\"` inside the Terraform configuration string (e.g. `"first255characters\"\"morecharacters"`).
 
 _Required_: Yes
 
@@ -72,6 +86,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ttl
 
+The time-to-live of this record set (seconds).
+
 _Required_: Yes
 
 _Type_: Double
@@ -79,6 +95,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The DNS record set type.
 
 _Required_: Yes
 

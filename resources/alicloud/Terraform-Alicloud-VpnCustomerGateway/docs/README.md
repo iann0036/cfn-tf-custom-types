@@ -1,6 +1,8 @@
 # Terraform::Alicloud::VpnCustomerGateway
 
-CloudFormation equivalent of alicloud_vpn_customer_gateway
+Provides a VPN customer gateway resource.
+
+-> **NOTE:** Terraform will auto build vpn customer gateway instance  while it uses `alicloud_vpn_customer_gateway` to build a vpn customer gateway resource.
 
 ## Syntax
 
@@ -33,6 +35,8 @@ Properties:
 
 #### Description
 
+The description of the VPN customer gateway instance.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +45,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IpAddress
 
+The IP address of the customer gateway.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the VPN customer gateway. Defaults to null.
 
 _Required_: No
 

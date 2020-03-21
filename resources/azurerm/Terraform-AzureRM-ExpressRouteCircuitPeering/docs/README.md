@@ -1,6 +1,6 @@
 # Terraform::AzureRM::ExpressRouteCircuitPeering
 
-CloudFormation equivalent of azurerm_express_route_circuit_peering
+Manages an ExpressRoute Circuit Peering.
 
 ## Syntax
 
@@ -48,6 +48,8 @@ Properties:
 
 #### ExpressRouteCircuitName
 
+The name of the ExpressRoute Circuit in which to create the Peering.
+
 _Required_: Yes
 
 _Type_: String
@@ -55,6 +57,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PeerAsn
+
+The Either a 16-bit or a 32-bit ASN. Can either be public or private..
 
 _Required_: No
 
@@ -64,6 +68,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PeeringType
 
+The type of the ExpressRoute Circuit Peering. Acceptable values include `AzurePrivatePeering`, `AzurePublicPeering` and `MicrosoftPeering`. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -71,6 +77,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PrimaryPeerAddressPrefix
+
+A `/30` subnet for the primary link.
 
 _Required_: Yes
 
@@ -80,6 +88,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to
+create the Express Route Circuit Peering. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -87,6 +98,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecondaryPeerAddressPrefix
+
+A `/30` subnet for the secondary link.
 
 _Required_: Yes
 
@@ -96,6 +109,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SharedKey
 
+The shared key. Can be a maximum of 25 characters.
+
 _Required_: No
 
 _Type_: String
@@ -103,6 +118,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VlanId
+
+A valid VLAN ID to establish this peering on.
 
 _Required_: Yes
 

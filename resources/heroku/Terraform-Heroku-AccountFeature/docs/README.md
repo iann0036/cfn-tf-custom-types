@@ -1,6 +1,9 @@
 # Terraform::Heroku::AccountFeature
 
-CloudFormation equivalent of heroku_account_feature
+This resource is used to create and manage [User Features](https://devcenter.heroku.com/articles/heroku-beta-features) on Heroku.
+
+~> **NOTE:** If this resource's HCL is removed from a `.tf` file, the behavior is to disable account feature
+and remove resource from state.
 
 ## Syntax
 
@@ -31,6 +34,8 @@ Properties:
 
 #### Enabled
 
+Enable or disable the account feature.
+
 _Required_: Yes
 
 _Type_: Boolean
@@ -38,6 +43,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of the account feature.
 
 _Required_: Yes
 

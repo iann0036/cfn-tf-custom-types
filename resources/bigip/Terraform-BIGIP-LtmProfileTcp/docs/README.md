@@ -1,6 +1,8 @@
 # Terraform::BIGIP::LtmProfileTcp
 
-CloudFormation equivalent of bigip_ltm_profile_tcp
+`bigip_ltm_profile_tcp` Configures a custom profile_tcp for use by health checks.
+
+For resources should be named with their "full path". The full path is the combination of the partition + name of the resource. For example /Common/my-pool.
 
 ## Syntax
 
@@ -47,6 +49,8 @@ Properties:
 
 #### CloseWaitTimeout
 
+Specifies the number of seconds that a connection remains in a LAST-ACK state before quitting. A value of 0 represents a term of forever (or until the maxrtx of the FIN state). The default value is 5 seconds.
+
 _Required_: No
 
 _Type_: Double
@@ -54,6 +58,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefaultsFrom
+
+Specifies the profile that you want to use as the parent profile. Your new profile inherits all settings and values from the parent profile specified.
 
 _Required_: No
 
@@ -63,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DeferredAccept
 
+Specifies, when enabled, that the system defers allocation of the connection chain context until the client response is received. This option is useful for dealing with 3-way handshake DOS attacks. The default value is disabled.
+
 _Required_: No
 
 _Type_: String
@@ -70,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FastOpen
+
+When enabled, permits TCP Fast Open, allowing properly equipped TCP clients to send data with the SYN packet.
 
 _Required_: No
 
@@ -79,6 +89,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Finwait2timeout
 
+Specifies the number of seconds that a connection is in the FIN-WAIT-2 state before quitting. The default value is 300 seconds. A value of 0 (zero) represents a term of forever (or until the maxrtx of the FIN state).
+
 _Required_: No
 
 _Type_: Double
@@ -86,6 +98,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FinwaitTimeout
+
+Specifies the number of seconds that a connection is in the FIN-WAIT-1 or closing state before quitting. The default value is 5 seconds. A value of 0 (zero) represents a term of forever (or until the maxrtx of the FIN state). You can also specify immediate or indefinite.
 
 _Required_: No
 
@@ -95,6 +109,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IdleTimeout
 
+Specifies the number of seconds that a connection is idle before the connection is eligible for deletion. The default value is 300 seconds.
+
 _Required_: No
 
 _Type_: Double
@@ -102,6 +118,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeepaliveInterval
+
+Specifies the keep alive probe interval, in seconds. The default value is 1800 seconds.
 
 _Required_: No
 
@@ -118,6 +136,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Partition
+
+Displays the administrative partition within which this profile resides.
 
 _Required_: No
 

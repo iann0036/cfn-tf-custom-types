@@ -1,6 +1,11 @@
 # Terraform::OCI::CoreDedicatedVmHost
 
-CloudFormation equivalent of oci_core_dedicated_vm_host
+This resource provides the Dedicated Vm Host resource in Oracle Cloud Infrastructure Core service.
+
+Creates a new dedicated virtual machine host in the specified compartment and the specified availability domain.
+Dedicated virtual machine hosts enable you to run your Compute virtual machine (VM) instances on dedicated servers
+that are a single tenant and not shared with other customers.
+For more information, see [Dedicated Virtual Machine Hosts](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/dedicatedvmhosts.htm).
 
 ## Syntax
 
@@ -45,6 +50,8 @@ Properties:
 
 #### AvailabilityDomain
 
+The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`.
+
 _Required_: Yes
 
 _Type_: String
@@ -52,6 +59,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CompartmentId
+
+(Updatable) The OCID of the compartment.
 
 _Required_: Yes
 
@@ -61,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DedicatedVmHostShape
 
+The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VM instances launched on the dedicated virtual machine host.
+
 _Required_: Yes
 
 _Type_: String
@@ -68,6 +79,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefinedTags
+
+(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`.
 
 _Required_: No
 
@@ -77,6 +90,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+(Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My dedicated VM host`.
+
 _Required_: No
 
 _Type_: String
@@ -85,6 +100,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FaultDomain
 
+The fault domain for the dedicated virtual machine host's assigned instances. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the system selects one for you. To change the fault domain for a dedicated virtual machine host, delete it and create a new dedicated virtual machine host in the preferred fault domain.
+
 _Required_: No
 
 _Type_: String
@@ -92,6 +109,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FreeformTags
+
+(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`.
 
 _Required_: No
 

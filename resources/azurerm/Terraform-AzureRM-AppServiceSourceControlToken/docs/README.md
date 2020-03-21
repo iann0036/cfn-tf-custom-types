@@ -1,6 +1,8 @@
 # Terraform::AzureRM::AppServiceSourceControlToken
 
-CloudFormation equivalent of azurerm_app_service_source_control_token
+Manages an App Service source control token.
+
+~> **NOTE:** Source Control Tokens are configured at the subscription level, not on each App Service - as such this can only be configured Subscription-wide
 
 ## Syntax
 
@@ -35,6 +37,8 @@ Properties:
 
 #### Token
 
+The OAuth access token.
+
 _Required_: Yes
 
 _Type_: String
@@ -43,6 +47,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TokenSecret
 
+The OAuth access token secret.
+
 _Required_: No
 
 _Type_: String
@@ -50,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The source control type. Possible values are `BitBucket`, `Dropbox`, `GitHub` and `OneDrive`.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::NSXT::LbService",
-    "description": "CloudFormation equivalent of nsxt_lb_service",
+    "description": "Provides a resource to configure lb service on NSX-T manager.\nNote that lb service needs to be attached to Tier-1 router that satisfies\nfollowing preconditions:\n* It needs to reside on edge cluster\n* It needs to be condigured with either uplink port or centralized service port\n\nIn order to enforce correct order of create/delete, it is recommended to add\ndepends_on clause to lb service.\n\n~> **NOTE:** This resource requires NSX version 2.3 or higher.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Tag": {
@@ -26,32 +26,39 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of this resource."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The display name of this resource. Defaults to ID if not set."
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "whether the load balancer service is enabled."
         },
         "ErrorLogLevel": {
-            "type": "string"
+            "type": "string",
+            "description": "Load balancer engine writes information about encountered issues of different severity levels to the error log. This setting is used to define the severity level of the error log."
         },
         "LogicalRouterId": {
-            "type": "string"
+            "type": "string",
+            "description": "Tier1 logical router this service is attached to. Note that this router needs to have edge cluster configured, and have an uplink port or CSP (centralized service port)."
         },
         "Revision": {
             "type": "number"
         },
         "Size": {
-            "type": "string"
+            "type": "string",
+            "description": "Size of load balancer service. Accepted values are SMALL/MEDIUM/LARGE."
         },
         "VirtualServerIds": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Virtual servers associated with this Load Balancer."
         },
         "Tag": {
             "type": "array",

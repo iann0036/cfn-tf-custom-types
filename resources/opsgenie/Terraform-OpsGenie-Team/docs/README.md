@@ -1,6 +1,6 @@
 # Terraform::OpsGenie::Team
 
-CloudFormation equivalent of opsgenie_team
+Manages a Team within Opsgenie.
 
 ## Syntax
 
@@ -34,6 +34,8 @@ Properties:
 
 #### Description
 
+A description for this team.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +43,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name associated with this team. Opsgenie defines that this must not be longer than 100 characters.
 
 _Required_: Yes
 

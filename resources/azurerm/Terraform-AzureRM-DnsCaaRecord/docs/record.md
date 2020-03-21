@@ -26,6 +26,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Flags
 
+Extensible CAA flags, currently only 1 is implemented to set the issuer critical flag.
+
 _Required_: Yes
 
 _Type_: Double
@@ -34,6 +36,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tag
 
+A property tag, options are issue, issuewild and iodef.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +45,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Value
+
+A property value such as a registrar domain.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::AutomationAccount",
-    "description": "CloudFormation equivalent of azurerm_automation_account",
+    "description": "Manages a Automation Account.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -38,16 +38,20 @@
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Automation Account. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which the Automation Account is created. Changing this forces a new resource to be created."
         },
         "SkuName": {
-            "type": "string"
+            "type": "string",
+            "description": "The SKU name of the account - only `Basic` is supported at this time."
         },
         "Tags": {
             "type": "array",
@@ -67,7 +71,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

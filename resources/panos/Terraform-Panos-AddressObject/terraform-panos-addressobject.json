@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::AddressObject",
-    "description": "CloudFormation equivalent of panos_address_object",
+    "description": "This resource allows you to add/update/delete address objects.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,26 +9,32 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The address object's description."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The address object's name."
         },
         "Tags": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of administrative tags."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of address object.  This can be `ip-netmask`\n(default), `ip-range`, `fqdn`, or `ip-wildcard` (PAN-OS 9.0+)."
         },
         "Value": {
-            "type": "string"
+            "type": "string",
+            "description": "The address object's value.  This can take various\nforms depending on what type of address object this is, but can be something\nlike `192.168.80.150` or `192.168.80.0/24`."
         },
         "Vsys": {
-            "type": "string"
+            "type": "string",
+            "description": "The vsys to put the address object into (default:\n`vsys1`)."
         }
     },
     "additionalProperties": false,

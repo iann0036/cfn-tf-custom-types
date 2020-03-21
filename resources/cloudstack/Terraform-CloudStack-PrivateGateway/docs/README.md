@@ -1,6 +1,8 @@
 # Terraform::CloudStack::PrivateGateway
 
-CloudFormation equivalent of cloudstack_private_gateway
+Creates a private gateway for the given VPC.
+
+*NOTE: private gateway can only be created using a ROOT account!*
 
 ## Syntax
 
@@ -43,6 +45,8 @@ Properties:
 
 #### AclId
 
+The ACL ID that should be attached to the network.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +54,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Gateway
+
+the gateway of the Private gateway. Changing this
+forces a new resource to be created.
 
 _Required_: Yes
 
@@ -59,6 +66,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IpAddress
 
+the IP address of the Private gateway. Changing this forces
+a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -66,6 +76,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Netmask
+
+The netmask of the Private gateway. Changing
+this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -75,6 +88,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NetworkOffering
 
+The name or ID of the network offering to use for
+the private gateways network connection.
+
 _Required_: No
 
 _Type_: String
@@ -82,6 +98,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PhysicalNetworkId
+
+The ID of the physical network this private
+gateway belongs to.
 
 _Required_: No
 
@@ -91,6 +110,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Vlan
 
+The VLAN number (1-4095) the network will use.
+
 _Required_: Yes
 
 _Type_: String
@@ -98,6 +119,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+The VPC ID in which to create this Private gateway. Changing
+this forces a new resource to be created.
 
 _Required_: Yes
 

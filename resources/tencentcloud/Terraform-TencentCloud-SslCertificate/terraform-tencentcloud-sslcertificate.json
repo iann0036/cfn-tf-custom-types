@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::SslCertificate",
-    "description": "CloudFormation equivalent of tencentcloud_ssl_certificate",
+    "description": "Provides a resource to create a SSL certificate.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,7 +12,8 @@
             "type": "string"
         },
         "Cert": {
-            "type": "string"
+            "type": "string",
+            "description": "Content of the SSL certificate. Not allowed newline at the start and end."
         },
         "CreateTime": {
             "type": "string"
@@ -24,16 +25,19 @@
             "type": "string"
         },
         "Key": {
-            "type": "string"
+            "type": "string",
+            "description": "Key of the SSL certificate and required when certificate type is `SVR`. Not allowed newline at the start and end."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the SSL certificate."
         },
         "ProductZhName": {
             "type": "string"
         },
         "ProjectId": {
-            "type": "number"
+            "type": "number",
+            "description": "Project ID of the SSL certificate. Default is `0`."
         },
         "Status": {
             "type": "number"
@@ -46,7 +50,8 @@
             }
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of the SSL certificate. Available values includes: `CA` and `SVR`."
         }
     },
     "additionalProperties": false,

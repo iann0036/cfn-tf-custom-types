@@ -1,6 +1,6 @@
 # Terraform::AzureRM::StreamAnalyticsOutputMssql
 
-CloudFormation equivalent of azurerm_stream_analytics_output_mssql
+Manages a Stream Analytics Output to Microsoft SQL Server Database.
 
 ## Syntax
 
@@ -53,6 +53,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the Stream Output. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -60,6 +62,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Password
+
+Password used together with username, to login to the Microsoft SQL Server. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -69,6 +73,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the Resource Group where the Stream Analytics Job exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -76,6 +82,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Server
+
+The SQL server url. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -85,6 +93,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StreamAnalyticsJobName
 
+The name of the Stream Analytics Job. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -93,6 +103,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Table
 
+Table in the database that the output points to. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -100,6 +112,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### User
+
+Username used to login to the Microsoft SQL Server. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

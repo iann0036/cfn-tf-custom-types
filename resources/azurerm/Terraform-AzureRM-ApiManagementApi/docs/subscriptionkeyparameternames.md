@@ -24,6 +24,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Header
 
+The name of the HTTP Header which should be used for the Subscription Key.
+
 _Required_: Yes
 
 _Type_: String
@@ -31,6 +33,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Query
+
+The name of the QueryString parameter which should be used for the Subscription Key.
 
 _Required_: Yes
 

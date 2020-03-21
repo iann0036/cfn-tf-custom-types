@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::PanoramaSnmptrapServerProfile",
-    "description": "CloudFormation equivalent of panos_panorama_snmptrap_server_profile",
+    "description": "This resource allows you to add/update/delete Panorama snmptrap server profiles.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "V2cServer": {
@@ -8,13 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "Community": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The SNMP community."
                 },
                 "Manager": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The hostname."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The server name."
                 }
             },
             "required": [
@@ -28,22 +31,28 @@
             "additionalProperties": false,
             "properties": {
                 "AuthPassword": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "SNMP auth password."
                 },
                 "EngineId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The engine ID."
                 },
                 "Manager": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The hostname."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The server name."
                 },
                 "PrivPassword": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "SNMP priv password."
                 },
                 "User": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Username."
                 }
             },
             "required": [
@@ -101,10 +110,12 @@
             }
         },
         "DeviceGroup": {
-            "type": "string"
+            "type": "string",
+            "description": "The device group location.  Mutually exclusive with\n`template` and `template_stack`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The group's name."
         },
         "PrivPasswordEnc": {
             "type": "array",
@@ -147,13 +158,16 @@
             }
         },
         "Template": {
-            "type": "string"
+            "type": "string",
+            "description": "The template location.  Mutually exclusive with\n`template_stack` and `device_group`."
         },
         "TemplateStack": {
-            "type": "string"
+            "type": "string",
+            "description": "The template stack location.  Mutually exclusive\nwith `template` and `device_group`."
         },
         "Vsys": {
-            "type": "string"
+            "type": "string",
+            "description": "The vsys.  This will likely be `shared`, and it should be\ndefined if you specified either `template` or `template_stack`."
         },
         "V2cServer": {
             "type": "array",

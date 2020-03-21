@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OPC::LbaasCertificate",
-    "description": "CloudFormation equivalent of opc_lbaas_certificate",
+    "description": "The `opc_lbaas_certificate` resource creates and manages an Load Balancer Classic TLS/SSL Digital Certificate.\n\nServer certificates are used to secure the connection between clients and the load balancers. Trusted certificates are used to secure the connection between the load balancer and the origin servers in the server pool.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,22 +9,27 @@
             "type": "string"
         },
         "CertificateBody": {
-            "type": "string"
+            "type": "string",
+            "description": "The Certificate data in PEM format."
         },
         "CertificateChain": {
-            "type": "string"
+            "type": "string",
+            "description": "PEM encoded bodies of all certificates in the chain up to and including the CA certificate. This is not need when the certificate is self signed."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Certificate."
         },
         "PrivateKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The private key data in PEM format. Only required for Server Certificates."
         },
         "State": {
             "type": "string"
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "Sets the Certificate Type. `TRUSTED` or `SERVER`."
         },
         "Uri": {
             "type": "string"

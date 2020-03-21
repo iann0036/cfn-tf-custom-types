@@ -1,6 +1,6 @@
 # Terraform::UCloud::VpnConnection
 
-CloudFormation equivalent of ucloud_vpn_connection
+Provides a IPSec VPN Gateway Connection resource.
 
 ## Syntax
 
@@ -45,6 +45,8 @@ Properties:
 
 #### CustomerGatewayId
 
+The grade of the VPN Gateway.
+
 _Required_: Yes
 
 _Type_: String
@@ -52,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the VPN Gateway Connection which contains 1-63 characters and only support Chinese, English, numbers and special characters: `-_.`. If not specified, terraform will auto-generate a name beginning with `tf-vpn-connection-`.
 
 _Required_: No
 
@@ -61,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Remark
 
+The remarks of the VPN Gateway Connection. (Default: `""`).
+
 _Required_: No
 
 _Type_: String
@@ -68,6 +74,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tag
+
+A tag assigned to VPN Gateway Connection, which contains at most 63 characters and only support Chinese, English, numbers, '-', '_', and '.'. If it is not filled in or a empty string is filled in, then default tag will be assigned. (Default: `Default`).
 
 _Required_: No
 
@@ -77,6 +85,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VpcId
 
+The ID of VPC linked to the VPN Gateway Connection.
+
 _Required_: Yes
 
 _Type_: String
@@ -84,6 +94,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpnGatewayId
+
+The ID of  the VPN Customer Gateway.
 
 _Required_: Yes
 

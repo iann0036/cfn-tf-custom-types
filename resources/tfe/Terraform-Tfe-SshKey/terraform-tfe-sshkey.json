@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Tfe::SshKey",
-    "description": "CloudFormation equivalent of tfe_ssh_key",
+    "description": "This resource represents an SSH key which includes a name and the SSH private\nkey. An organization can have multiple SSH keys available.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "Key": {
-            "type": "string"
+            "type": "string",
+            "description": "The text of the SSH private key."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name to identify the SSH key."
         },
         "Organization": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the organization."
         }
     },
     "additionalProperties": false,

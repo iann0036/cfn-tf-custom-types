@@ -1,6 +1,6 @@
 # Terraform::Scaleway::InstanceVolume
 
-CloudFormation equivalent of scaleway_instance_volume
+Creates and manages Scaleway Compute Instance Volumes. For more information, see [the documentation](https://developers.scaleway.com/en/products/instance/api/#volumes-7e8a39).
 
 ## Syntax
 

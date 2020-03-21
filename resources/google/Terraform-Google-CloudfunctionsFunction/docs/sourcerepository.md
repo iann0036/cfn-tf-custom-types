@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Url
 
+The URL pointing to the hosted repository where the function is defined. There are supported Cloud Source Repository URLs in the following formats:.
+
 _Required_: Yes
 
 _Type_: String

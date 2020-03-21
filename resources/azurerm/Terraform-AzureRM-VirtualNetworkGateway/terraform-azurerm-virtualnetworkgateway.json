@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::VirtualNetworkGateway",
-    "description": "CloudFormation equivalent of azurerm_virtual_network_gateway",
+    "description": "Manages a Virtual Network Gateway to establish secure, cross-premises connectivity.\n\n-> **Note:** Please be aware that provisioning a Virtual Network Gateway takes a long time (between 30 minutes and 1 hour)",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "BgpSettings": {
@@ -24,16 +24,20 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A user-defined name of the IP configuration. Defaults to\n`vnetGatewayConfig`."
                 },
                 "PrivateIpAddressAllocation": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Defines how the private IP address\nof the gateways virtual interface is assigned. Valid options are `Static` or\n`Dynamic`. Defaults to `Dynamic`."
                 },
                 "PublicIpAddressId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of the public ip address to associate\nwith the Virtual Network Gateway."
                 },
                 "SubnetId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of the gateway subnet of a virtual network in\nwhich the virtual network gateway will be created. It is mandatory that\nthe associated subnet is named `GatewaySubnet`. Therefore, each virtual\nnetwork can contain at most a single Virtual Network Gateway."
                 }
             },
             "required": [
@@ -68,20 +72,24 @@
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "The address space out of which ip addresses for\nvpn clients will be taken. You can provide more than one address space, e.g.\nin CIDR notation."
                 },
                 "RadiusServerAddress": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The address of the Radius server.\nThis setting is incompatible with the use of `root_certificate` and `revoked_certificate`."
                 },
                 "RadiusServerSecret": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The secret used by the Radius server.\nThis setting is incompatible with the use of `root_certificate` and `revoked_certificate`."
                 },
                 "VpnClientProtocols": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "List of the protocols supported by the vpn client.\nThe supported values are `SSTP`, `IkeV2` and `OpenVPN`."
                 },
                 "RevokedCertificate": {
                     "type": "array",
@@ -123,10 +131,12 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A user-defined name of the revoked certificate."
                 },
                 "PublicCertData": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The SHA1 thumbprint of the certificate to be\nrevoked."
                 }
             },
             "required": [
@@ -141,28 +151,36 @@
             "type": "string"
         },
         "ActiveActive": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If `true`, an active-active Virtual Network Gateway\nwill be created. An active-active gateway requires a `HighPerformance` or an\n`UltraPerformance` sku. If `false`, an active-standby gateway will be created.\nDefaults to `false`."
         },
         "DefaultLocalNetworkGatewayId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the local network gateway\nthrough which outbound Internet traffic from the virtual network in which the\ngateway is created will be routed (*forced tunneling*). Refer to the\n[Azure documentation on forced tunneling](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-forced-tunneling-rm).\nIf not specified, forced tunneling is disabled."
         },
         "EnableBgp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If `true`, BGP (Border Gateway Protocol) will be enabled\nfor this Virtual Network Gateway. Defaults to `false`."
         },
         "Generation": {
-            "type": "string"
+            "type": "string",
+            "description": "The Generation of the Virtual Network gateway. Possible values include `Generation1`, `Generation2` or `None`."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "The location/region where the Virtual Network Gateway is\nlocated. Changing the location/region forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Virtual Network Gateway. Changing the name\nforces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to\ncreate the Virtual Network Gateway. Changing the resource group name forces\na new resource to be created."
         },
         "Sku": {
-            "type": "string"
+            "type": "string",
+            "description": "Configuration of the size and capacity of the virtual network\ngateway. Valid options are `Basic`, `Standard`, `HighPerformance`, `UltraPerformance`,\n`ErGw1AZ`, `ErGw2AZ`, `ErGw3AZ`, `VpnGw1`, `VpnGw2`, `VpnGw3`, `VpnGw4`,`VpnGw5`, `VpnGw1AZ`,\n`VpnGw2AZ`, `VpnGw3AZ`,`VpnGw4AZ` and `VpnGw5AZ` and depend on the `type`, `vpn_type` and\n`generation` arguments.\nA `PolicyBased` gateway only supports the `Basic` sku. Further, the `UltraPerformance`\nsku is only supported by an `ExpressRoute` gateway."
         },
         "Tags": {
             "type": "array",
@@ -182,13 +200,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of the Virtual Network Gateway. Valid options are\n`Vpn` or `ExpressRoute`. Changing the type forces a new resource to be created."
         },
         "VpnType": {
-            "type": "string"
+            "type": "string",
+            "description": "The routing type of the Virtual Network Gateway. Valid\noptions are `RouteBased` or `PolicyBased`. Defaults to `RouteBased`."
         },
         "BgpSettings": {
             "type": "array",

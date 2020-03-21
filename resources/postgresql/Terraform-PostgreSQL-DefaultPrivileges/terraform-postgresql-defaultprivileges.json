@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::PostgreSQL::DefaultPrivileges",
-    "description": "CloudFormation equivalent of postgresql_default_privileges",
+    "description": "The ``postgresql_default_privileges`` resource creates and manages default privileges given to a user for a database schema.\n\n~> **Note:** This resource needs Postgresql version 9 or above.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,26 +9,32 @@
             "type": "string"
         },
         "Database": {
-            "type": "string"
+            "type": "string",
+            "description": "The database to grant default privileges for this role."
         },
         "ObjectType": {
-            "type": "string"
+            "type": "string",
+            "description": "The PostgreSQL object type to set the default privileges on (one of: table, sequence)."
         },
         "Owner": {
-            "type": "string"
+            "type": "string",
+            "description": "Role for which apply default privileges (You can change default privileges only for objects that will be created by yourself or by roles that you are a member of)."
         },
         "Privileges": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The list of privileges to apply as default privileges."
         },
         "Role": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the role to which grant default privileges on."
         },
         "Schema": {
-            "type": "string"
+            "type": "string",
+            "description": "The database schema to set default privileges for this role."
         }
     },
     "additionalProperties": false,

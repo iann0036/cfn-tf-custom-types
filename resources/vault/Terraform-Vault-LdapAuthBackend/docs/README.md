@@ -1,6 +1,6 @@
 # Terraform::Vault::LdapAuthBackend
 
-CloudFormation equivalent of vault_ldap_auth_backend
+Provides a resource for managing an [LDAP auth backend within Vault](https://www.vaultproject.io/docs/auth/ldap.html).
 
 ## Syntax
 
@@ -85,6 +85,8 @@ Properties:
 
 #### Binddn
 
+DN of object to bind when performing user search.
+
 _Required_: No
 
 _Type_: String
@@ -93,6 +95,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Bindpass
 
+Password to use with `binddn` when performing user search.
+
 _Required_: No
 
 _Type_: String
@@ -100,6 +104,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Certificate
+
+Trusted CA to validate TLS certificate.
 
 _Required_: No
 
@@ -117,6 +123,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+Description for the LDAP auth backend mount.
+
 _Required_: No
 
 _Type_: String
@@ -133,6 +141,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Groupattr
 
+LDAP attribute to follow on objects returned by groupfilter.
+
 _Required_: No
 
 _Type_: String
@@ -140,6 +150,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Groupdn
+
+Base DN under which to perform group search.
 
 _Required_: No
 
@@ -149,6 +161,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Groupfilter
 
+Go template used to construct group membership query.
+
 _Required_: No
 
 _Type_: String
@@ -156,6 +170,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InsecureTls
+
+Control whether or TLS certificates must be validated.
 
 _Required_: No
 
@@ -165,6 +181,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Path
 
+Path to mount the LDAP auth backend under.
+
 _Required_: No
 
 _Type_: String
@@ -172,6 +190,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Starttls
+
+Control use of TLS when conecting to LDAP.
 
 _Required_: No
 
@@ -181,6 +201,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TlsMaxVersion
 
+Maximum acceptable version of TLS.
+
 _Required_: No
 
 _Type_: String
@@ -188,6 +210,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TlsMinVersion
+
+Minimum acceptable version of TLS.
 
 _Required_: No
 
@@ -269,6 +293,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Upndomain
 
+The userPrincipalDomain used to construct UPN string.
+
 _Required_: No
 
 _Type_: String
@@ -276,6 +302,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Url
+
+The URL of the LDAP server.
 
 _Required_: Yes
 
@@ -285,6 +313,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UseTokenGroups
 
+Use the Active Directory tokenGroups constructed attribute of the user to find the group memberships.
+
 _Required_: No
 
 _Type_: Boolean
@@ -293,6 +323,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Userattr
 
+Attribute on user object matching username passed in.
+
 _Required_: No
 
 _Type_: String
@@ -300,6 +332,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Userdn
+
+Base DN under which to perform user search.
 
 _Required_: No
 

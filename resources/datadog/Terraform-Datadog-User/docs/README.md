@@ -1,6 +1,6 @@
 # Terraform::Datadog::User
 
-CloudFormation equivalent of datadog_user
+Provides a Datadog user resource. This can be used to create and manage Datadog users.
 
 ## Syntax
 
@@ -41,6 +41,8 @@ Properties:
 
 #### AccessRole
 
+Role description for user. Can be `st` (standard user), `adm` (admin user) or `ro` (read-only user).  Default is `st`.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +50,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Disabled
+
+Whether the user is disabled.
 
 _Required_: No
 
@@ -57,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Email
 
+Email address for user.
+
 _Required_: Yes
 
 _Type_: String
@@ -64,6 +70,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Handle
+
+The user handle, must be a valid email.
 
 _Required_: Yes
 
@@ -73,6 +81,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IsAdmin
 
+(Optional) Whether the user is an administrator. **Warning**: the corresponding query parameter is ignored by the Datadog API, thus the argument would always trigger an execution plan.
+
 _Required_: No
 
 _Type_: Boolean
@@ -81,6 +91,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name for user.
+
 _Required_: Yes
 
 _Type_: String
@@ -88,6 +100,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Role
+
+Role description for user. **Warning**: the corresponding query parameter is ignored by the Datadog API, thus the argument would always trigger an execution plan.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::FlexibleEngine::SdrsProtectedinstanceV1",
-    "description": "CloudFormation equivalent of flexibleengine_sdrs_protectedinstance_v1",
+    "description": "Manages a SDRS protected instance resource within FlexibleEngine.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,31 +23,40 @@
             "type": "string"
         },
         "ClusterId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the ID of a storage pool. Changing this creates a new instance."
         },
         "DeleteTargetEip": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether to delete the EIP of the target server. The default value is false. Changing this creates a new instance."
         },
         "DeleteTargetServer": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether to delete the target server. The default value is false.. Changing this creates a new instance."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of a protected instance. Changing this creates a new instance."
         },
         "GroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the ID of the protection group where a protected instance is added. Changing this creates a new instance."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of a protected instance."
         },
         "PrimaryIpAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the IP address of the primary NIC on the target server. Changing this creates a new instance."
         },
         "PrimarySubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the subnet ID of the primary NIC on the target server. Changing this creates a new instance."
         },
         "ServerId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the ID of the source server. Changing this creates a new instance."
         },
         "TargetServer": {
             "type": "string"

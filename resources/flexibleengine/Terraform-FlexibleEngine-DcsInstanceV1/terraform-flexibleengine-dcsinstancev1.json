@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::FlexibleEngine::DcsInstanceV1",
-    "description": "CloudFormation equivalent of flexibleengine_dcs_instance_v1",
+    "description": "Manages a DCS instance in the flexibleengine DCS Service.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,39 +9,48 @@
             "type": "string"
         },
         "AccessUser": {
-            "type": "string"
+            "type": "string",
+            "description": "Username used for accessing a DCS instance after password\nauthentication. A username starts with a letter, consists of 1 to 64 characters,\nand supports only letters, digits, and hyphens (-).\nChanging this creates a new instance."
         },
         "AvailableZones": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "IDs of the AZs where cache nodes reside. For details\non how to query AZs, see Querying AZ Information.\nChanging this creates a new instance."
         },
         "BackupAt": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "number"
-            }
+            },
+            "description": "Day in a week on which backup starts. Range: 1\u20137. Where: 1\nindicates Monday; 7 indicates Sunday. Changing this creates a new instance."
         },
         "BackupType": {
-            "type": "string"
+            "type": "string",
+            "description": "Backup type. Options:\nauto: automatic backup.\nmanual: manual backup.\nChanging this creates a new instance."
         },
         "BeginAt": {
-            "type": "string"
+            "type": "string",
+            "description": "Time at which backup starts. \"00:00-01:00\" indicates that backup\nstarts at 00:00:00. Changing this creates a new instance."
         },
         "Capacity": {
-            "type": "number"
+            "type": "number",
+            "description": "Indicates the Cache capacity. Unit: GB.\nFor a DCS Redis or Memcached instance in single-node or master/standby mode, the cache\ncapacity can be 2 GB, 4 GB, 8 GB, 16 GB, 32 GB, or 64 GB.\nFor a DCS Redis instance in cluster mode, the cache capacity can be 64, 128, 256, 512,\nor 1024 GB. Changing this creates a new instance."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates the description of an instance. It is a character\nstring containing not more than 1024 characters."
         },
         "Engine": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates a cache engine. Only Redis is supported.\nChanging this creates a new instance."
         },
         "EngineVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates the version of a cache engine, which is 3.0.7.\nChanging this creates a new instance."
         },
         "InternalVersion": {
             "type": "string"
@@ -50,49 +59,59 @@
             "type": "string"
         },
         "MaintainBegin": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates the time at which a maintenance time window starts.\nFormat: HH:mm:ss.\nThe start time and end time of a maintenance time window must indicate the time segment of\na supported maintenance time window. For details, see section Querying Maintenance Time Windows.\nThe start time must be set to 22:00, 02:00, 06:00, 10:00, 14:00, or 18:00.\nParameters maintain_begin and maintain_end must be set in pairs. If parameter maintain_begin\nis left blank, parameter maintain_end is also blank. In this case, the system automatically\nallocates the default start time 02:00."
         },
         "MaintainEnd": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates the time at which a maintenance time window ends.\nFormat: HH:mm:ss.\nThe start time and end time of a maintenance time window must indicate the time segment of\na supported maintenance time window. For details, see section Querying Maintenance Time Windows.\nThe end time is four hours later than the start time. For example, if the start time is 22:00,\nthe end time is 02:00.\nParameters maintain_begin and maintain_end must be set in pairs. If parameter maintain_end is left\nblank, parameter maintain_begin is also blank. In this case, the system automatically allocates\nthe default end time 06:00."
         },
         "MaxMemory": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates the name of an instance. An instance name starts with a letter,\nconsists of 4 to 64 characters, and supports only letters, digits, and hyphens (-)."
         },
         "NetworkId": {
-            "type": "string"
+            "type": "string",
+            "description": "Network ID. Changing this creates a new instance."
         },
         "OrderId": {
             "type": "string"
         },
         "Password": {
-            "type": "string"
+            "type": "string",
+            "description": "Password of a DCS instance.\nThe password of a DCS Redis instance must meet the following complexity requirements:\nChanging this creates a new instance."
         },
         "PeriodType": {
-            "type": "string"
+            "type": "string",
+            "description": "Interval at which backup is performed. Currently, only weekly\nbackup is supported. Changing this creates a new instance."
         },
         "Port": {
             "type": "number"
         },
         "ProductId": {
-            "type": "string"
+            "type": "string",
+            "description": "Product ID used to differentiate DCS instance types.\nChanging this creates a new instance."
         },
         "ResourceSpecCode": {
             "type": "string"
         },
         "SaveDays": {
-            "type": "number"
+            "type": "number",
+            "description": "Retention time. Unit: day. Range: 1\u20137.\nChanging this creates a new instance."
         },
         "SecurityGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "Tenant's security group ID. For details on how to\ncreate security groups, see the Virtual Private Cloud API Reference."
         },
         "SecurityGroupName": {
             "type": "string"
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "Network ID. Changing this creates a new instance."
         },
         "SubnetName": {
             "type": "string"
@@ -104,7 +123,8 @@
             "type": "string"
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "Tenant's VPC ID. For details on how to create VPCs, see the\nVirtual Private Cloud API Reference.\nChanging this creates a new instance."
         },
         "VpcName": {
             "type": "string"

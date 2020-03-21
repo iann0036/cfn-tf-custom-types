@@ -1,6 +1,12 @@
 # Terraform::Alicloud::NasFileSystem
 
-CloudFormation equivalent of alicloud_nas_file_system
+Provides a Nas File System resource.
+
+After activating NAS, you can create a file system and purchase a storage package for it in the NAS console. The NAS console also enables you to view the file system details and remove unnecessary file systems.
+
+For information about NAS file system and how to use it, see [Manage file systems](https://www.alibabacloud.com/help/doc-detail/27530.htm)
+
+-> **NOTE:** Available in v1.33.0+.
 
 ## Syntax
 
@@ -33,6 +39,8 @@ Properties:
 
 #### Description
 
+The File System description.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +49,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProtocolType
 
+The Protocol Type of a File System. Valid values: `NFS` and `SMB`.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +58,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StorageType
+
+The Storage Type of a File System. Valid values: `Capacity` and `Performance`.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::FgsFunctionV2
 
-CloudFormation equivalent of huaweicloud_fgs_function_v2
+Manages a V2 function resource within HuaweiCloud.
 
 ## Syntax
 
@@ -55,6 +55,9 @@ Properties:
 
 #### CodeFilename
 
+Name of a function file, This field is mandatory only when coe_type is
+set to jar or zip. Changing this creates a new function.
+
 _Required_: No
 
 _Type_: String
@@ -62,6 +65,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CodeType
+
+Function code type, which can be inline: inline code, zip: ZIP file,
+jar: JAR file or java functions, obs: function code stored in an OBS bucket. Changing this
+creates a new function.
 
 _Required_: Yes
 
@@ -71,6 +78,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CodeUrl
 
+This parameter is mandatory when code_type is set to obs. Changing this
+creates a new function.
+
 _Required_: No
 
 _Type_: String
@@ -78,6 +88,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Description of the function. Changing this creates a new function.
 
 _Required_: No
 
@@ -87,6 +99,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FuncCode
 
+Function code. When code_type is set to inline, zip, or jar, this parameter is mandatory,
+and the code must be encoded using Base64. Changing this creates a new function.
+
 _Required_: Yes
 
 _Type_: String
@@ -94,6 +109,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Handler
+
+Entry point of the function. Changing this creates a new function.
 
 _Required_: Yes
 
@@ -103,6 +120,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MemorySize
 
+Memory size(MB) allocated to the function. Changing this creates a new function.
+
 _Required_: Yes
 
 _Type_: Double
@@ -110,6 +129,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+A unique name for the function. Changing this creates a new function.
 
 _Required_: Yes
 
@@ -119,6 +140,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Package
 
+Group to which the function belongs. Changing this creates a new function.
+
 _Required_: Yes
 
 _Type_: String
@@ -126,6 +149,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Runtime
+
+Environment for executing the function. Changing this creates a new function.
 
 _Required_: Yes
 
@@ -135,6 +160,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Timeout
 
+Timeout interval of the function, ranges from 3s to 900s. Changing this creates a new function.
+
 _Required_: Yes
 
 _Type_: Double
@@ -143,6 +170,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UserData
 
+Key/Value information defined for the function. Changing this creates a new function.
+
 _Required_: No
 
 _Type_: String
@@ -150,6 +179,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Xrole
+
+This parameter is mandatory if the function needs to access other cloud services.
+Changing this creates a new function.
 
 _Required_: No
 

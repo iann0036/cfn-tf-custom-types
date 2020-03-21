@@ -30,6 +30,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Caching
 
+Specifies the caching requirements. Possible values include: `None` (default), `ReadOnly`, `ReadWrite`.
+
 _Required_: No
 
 _Type_: String
@@ -37,6 +39,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CreateOption
+
+Specifies how the data disk should be created. The only possible options are `FromImage` and `Empty`.
 
 _Required_: Yes
 
@@ -46,6 +50,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DiskSizeGb
 
+Specifies the size of the disk in GB. This element is required when creating an empty disk.
+
 _Required_: No
 
 _Type_: Double
@@ -53,6 +59,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Lun
+
+Specifies the Logical Unit Number of the disk in each virtual machine in the scale set.
 
 _Required_: Yes
 

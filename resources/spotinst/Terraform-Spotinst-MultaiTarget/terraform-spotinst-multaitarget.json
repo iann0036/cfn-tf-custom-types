@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Spotinst::MultaiTarget",
-    "description": "CloudFormation equivalent of spotinst_multai_target",
+    "description": "Provides a Spotinst Multai Target.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Tags": {
@@ -26,22 +26,28 @@
             "type": "string"
         },
         "BalancerId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the balancer."
         },
         "Host": {
-            "type": "string"
+            "type": "string",
+            "description": "The address (IP or URL) of the targets to register."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Target . Must contain only alphanumeric characters or hyphens, and must not begin or end with a hyphen."
         },
         "Port": {
-            "type": "number"
+            "type": "number",
+            "description": "The port the target will register to."
         },
         "TargetSetId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the target set."
         },
         "Weight": {
-            "type": "number"
+            "type": "number",
+            "description": "Defines how traffic is distributed between targets."
         },
         "Tags": {
             "type": "array",

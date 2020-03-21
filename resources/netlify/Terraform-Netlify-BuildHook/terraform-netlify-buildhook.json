@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Netlify::BuildHook",
-    "description": "CloudFormation equivalent of netlify_build_hook",
+    "description": "Manages build hooks, also known as [incoming webhooks]\n(https://www.netlify.com/docs/webhooks/#outgoing-webhooks). These can,\nat the time of writing, only be used to trigger new builds of the site.\nTo create one, provide your site id along with the name of the hook, and\nthe branch to be built when the hook is triggered.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "Branch": {
-            "type": "string"
+            "type": "string",
+            "description": "branch to be built when the hook is triggered."
         },
         "SiteId": {
-            "type": "string"
+            "type": "string",
+            "description": "Your netlify site's unique id."
         },
         "Title": {
-            "type": "string"
+            "type": "string",
+            "description": "name of the webhook - this is purely for organization and\ncan be any name you want."
         },
         "Url": {
             "type": "string"

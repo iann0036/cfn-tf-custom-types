@@ -1,6 +1,8 @@
 # Terraform::Gitlab::DeployKeyEnable
 
-CloudFormation equivalent of gitlab_deploy_key_enable
+This resource allows you to enable pre-existing deploy keys for your GitLab projects.
+
+**the GITLAB KEY_ID for the deploy key must be known**
 
 ## Syntax
 
@@ -53,6 +55,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KeyId
 
+The Gitlab key id for the pre-existing deploy key.
+
 _Required_: Yes
 
 _Type_: String
@@ -60,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The name or id of the project to add the deploy key to.
 
 _Required_: Yes
 

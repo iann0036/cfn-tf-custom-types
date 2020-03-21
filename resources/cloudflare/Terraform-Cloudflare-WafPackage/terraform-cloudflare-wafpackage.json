@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Cloudflare::WafPackage",
-    "description": "CloudFormation equivalent of cloudflare_waf_package",
+    "description": "Provides a Cloudflare WAF rule package resource for a particular zone. This can be used to configure firewall behaviour for pre-defined firewall packages.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,20 @@
             "type": "string"
         },
         "ActionMode": {
-            "type": "string"
+            "type": "string",
+            "description": "The action mode of the package, can be one of [\"block\", \"challenge\", \"simulate\"]."
         },
         "PackageId": {
-            "type": "string"
+            "type": "string",
+            "description": "The WAF Package ID."
         },
         "Sensitivity": {
-            "type": "string"
+            "type": "string",
+            "description": "The sensitivity of the package, can be one of [\"high\", \"medium\", \"low\", \"off\"]."
         },
         "ZoneId": {
-            "type": "string"
+            "type": "string",
+            "description": "The DNS zone ID to apply to."
         }
     },
     "additionalProperties": false,

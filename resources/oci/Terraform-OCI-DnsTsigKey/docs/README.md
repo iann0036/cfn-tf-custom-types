@@ -1,6 +1,9 @@
 # Terraform::OCI::DnsTsigKey
 
-CloudFormation equivalent of oci_dns_tsig_key
+This resource provides the Tsig Key resource in Oracle Cloud Infrastructure Dns service.
+
+Creates a new TSIG key in the specified compartment. There is no
+`opc-retry-token` header since TSIG key names must be globally unique.
 
 ## Syntax
 
@@ -43,6 +46,8 @@ Properties:
 
 #### Algorithm
 
+TSIG key algorithms are encoded as domain names, but most consist of only one non-empty label, which is not required to be explicitly absolute. Applicable algorithms include: hmac-sha1, hmac-sha224, hmac-sha256, hmac-sha512. For more information on these algorithms, see [RFC 4635](https://tools.ietf.org/html/rfc4635#section-2).
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CompartmentId
+
+(Updatable) The OCID of the compartment containing the TSIG key.
 
 _Required_: Yes
 
@@ -59,6 +66,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DefinedTags
 
+(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+
 _Required_: No
 
 _Type_: List of <a href="definedtags.md">DefinedTags</a>
@@ -66,6 +75,8 @@ _Type_: List of <a href="definedtags.md">DefinedTags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FreeformTags
+
+(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 
 _Required_: No
 
@@ -75,6 +86,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A globally unique domain name identifying the key for a given pair of hosts.
+
 _Required_: Yes
 
 _Type_: String
@@ -82,6 +95,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Secret
+
+A base64 string encoding the binary shared secret.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::DnsPtrRecord",
-    "description": "CloudFormation equivalent of azurerm_dns_ptr_record",
+    "description": "Enables you to manage DNS PTR Records within Azure DNS.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -32,17 +32,20 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the DNS PTR Record."
         },
         "Records": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of Fully Qualified Domain Names."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the resource group where the resource exists. Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -62,13 +65,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Ttl": {
-            "type": "number"
+            "type": "number",
+            "description": "The Time To Live (TTL) of the DNS record in seconds."
         },
         "ZoneName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the DNS Zone where the DNS Zone (parent resource) exists. Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

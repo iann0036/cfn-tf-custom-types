@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Spotinst::ElastigroupGcp",
-    "description": "CloudFormation equivalent of spotinst_elastigroup_gcp",
+    "description": "Provides a Spotinst elastigroup GCP resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "BackendServices": {
@@ -518,19 +518,24 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of availability zones for the group."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The region your GCP group will be created in."
         },
         "DesiredCapacity": {
-            "type": "number"
+            "type": "number",
+            "description": "The desired number of instances the group should have at any time."
         },
         "DrainingTimeout": {
-            "type": "number"
+            "type": "number",
+            "description": "Time (seconds) the instance is allowed to run after it is detached from the group. This is to allow the instance time to drain all the current TCP connections before terminating it."
         },
         "FallbackToOndemand": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Activate fallback-to-on-demand. When provisioning an instance, if no Preemptible market is available, fallback-to-on-demand will provision an On-Demand instance to maintain the group capacity."
         },
         "HealthCheckGracePeriod": {
             "type": "number"
@@ -539,48 +544,58 @@
             "type": "string"
         },
         "InstanceTypesOndemand": {
-            "type": "string"
+            "type": "string",
+            "description": "The regular VM instance type to use for mixed-type groups and when falling back to on-demand. Required if instance_types_preemptible is not set."
         },
         "InstanceTypesPreemptible": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The preemptible VMs instance type. To maximize cost savings and market availability, select as many types as possible. Required if instance_types_ondemand is not set."
         },
         "IpForwarding": {
             "type": "boolean"
         },
         "MaxSize": {
-            "type": "number"
+            "type": "number",
+            "description": "The maximum number of instances the group should have at any time."
         },
         "MinSize": {
-            "type": "number"
+            "type": "number",
+            "description": "The minimum number of instances the group should have at any time."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The group name."
         },
         "OndemandCount": {
             "type": "number"
         },
         "PreemptiblePercentage": {
-            "type": "number"
+            "type": "number",
+            "description": "Percentage of Preemptible VMs to spin up from the \"desired_capacity\"."
         },
         "ServiceAccount": {
-            "type": "string"
+            "type": "string",
+            "description": "The email of the service account in which the group instances will be launched."
         },
         "ShutdownScript": {
-            "type": "string"
+            "type": "string",
+            "description": "The Base64-encoded shutdown script that executes prior to instance termination, for more information please see: [Shutdown Script](https://api.spotinst.com/integration-docs/elastigroup/concepts/compute-concepts/shutdown-scripts/)."
         },
         "StartupScript": {
-            "type": "string"
+            "type": "string",
+            "description": "Create and run your own startup scripts on your virtual machines to perform automated tasks every time your instance boots up."
         },
         "Tags": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Tags to mark created instances."
         },
         "UnhealthyDuration": {
             "type": "number"

@@ -1,6 +1,6 @@
 # Terraform::Alicloud::KvstoreBackupPolicy
 
-CloudFormation equivalent of alicloud_kvstore_backup_policy
+Provides a backup policy for ApsaraDB Redis / Memcache instance resource.
 
 ## Syntax
 
@@ -34,6 +34,8 @@ Properties:
 
 #### BackupPeriod
 
+Backup Cycle. Allowed values: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday.
+
 _Required_: No
 
 _Type_: List of String
@@ -42,6 +44,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### BackupTime
 
+Backup time, in the format of HH:mmZ- HH:mm Z.
+
 _Required_: No
 
 _Type_: String
@@ -49,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceId
+
+The id of ApsaraDB for Redis or Memcache intance.
 
 _Required_: Yes
 

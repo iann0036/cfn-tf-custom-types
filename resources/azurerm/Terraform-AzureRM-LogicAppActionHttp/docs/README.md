@@ -1,6 +1,6 @@
 # Terraform::AzureRM::LogicAppActionHttp
 
-CloudFormation equivalent of azurerm_logic_app_action_http
+Manages an HTTP Action within a Logic App Workflow
 
 ## Syntax
 
@@ -42,6 +42,8 @@ Properties:
 
 #### Body
 
+Specifies the HTTP Body that should be sent to the `uri` when this HTTP Action is triggered.
+
 _Required_: No
 
 _Type_: String
@@ -49,6 +51,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Headers
+
+Specifies a Map of Key-Value Pairs that should be sent to the `uri` when this HTTP Action is triggered.
 
 _Required_: No
 
@@ -58,6 +62,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LogicAppId
 
+Specifies the ID of the Logic App Workflow. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -65,6 +71,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Method
+
+Specifies the HTTP Method which should be used for this HTTP Action. Possible values include `DELETE`, `GET`, `PATCH`, `POST` and `PUT`.
 
 _Required_: Yes
 
@@ -74,6 +82,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the HTTP Action to be created within the Logic App Workflow. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -81,6 +91,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Uri
+
+Specifies the URI which will be called when this HTTP Action is triggered.
 
 _Required_: Yes
 

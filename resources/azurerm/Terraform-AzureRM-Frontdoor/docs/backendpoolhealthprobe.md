@@ -32,6 +32,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Enabled
 
+Is this health probe enabled? Dafaults to `true`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -39,6 +41,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IntervalInSeconds
+
+The number of seconds between each Health Probe. Defaults to `120`.
 
 _Required_: No
 
@@ -48,6 +52,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the Health Probe.
+
 _Required_: Yes
 
 _Type_: String
@@ -55,6 +61,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Path
+
+The path to use for the Health Probe. Default is `/`.
 
 _Required_: No
 
@@ -64,6 +72,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProbeMethod
 
+Specifies HTTP method the health probe uses when querying the backend pool instances. Possible values include: `Get` and `Head`. Defaults to `Get`.
+
 _Required_: No
 
 _Type_: String
@@ -71,6 +81,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Protocol
+
+Protocol scheme to use for the Health Probe. Defaults to `Http`.
 
 _Required_: No
 

@@ -1,6 +1,8 @@
 # Terraform::Alicloud::Actiontrail
 
-CloudFormation equivalent of alicloud_actiontrail
+Provides a new resource to manage [Action Trail](https://www.alibabacloud.com/help/doc-detail/28804.htm).
+
+-> **NOTE:** Available in 1.35.0+
 
 ## Syntax
 
@@ -41,6 +43,8 @@ Properties:
 
 #### EventRw
 
+Indicates whether the event is a read or a write event. Valid values: Read, Write, and All. Default value: Write.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the trail to be created, which must be unique for an account.
 
 _Required_: Yes
 
@@ -57,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OssBucketName
 
+The OSS bucket to which the trail delivers logs. Ensure that this is an existing OSS bucket.
+
 _Required_: Yes
 
 _Type_: String
@@ -64,6 +72,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OssKeyPrefix
+
+The prefix of the specified OSS bucket name. This parameter can be left empty.
 
 _Required_: No
 
@@ -73,6 +83,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RoleName
 
+The RAM role in ActionTrail permitted by the user.
+
 _Required_: Yes
 
 _Type_: String
@@ -81,6 +93,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SlsProjectArn
 
+The unique ARN of the Log Service project.
+
 _Required_: No
 
 _Type_: String
@@ -88,6 +102,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SlsWriteRoleArn
+
+The unique ARN of the Log Service role.
 
 _Required_: No
 

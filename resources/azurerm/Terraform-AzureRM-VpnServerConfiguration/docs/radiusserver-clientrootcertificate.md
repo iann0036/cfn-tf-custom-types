@@ -24,6 +24,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Name
 
+A name used to uniquely identify this certificate.
+
 _Required_: Yes
 
 _Type_: String

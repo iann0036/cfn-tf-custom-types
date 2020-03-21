@@ -25,6 +25,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Uri
 
+The uri of the module content (zip or nupkg).
+
 _Required_: Yes
 
 _Type_: String

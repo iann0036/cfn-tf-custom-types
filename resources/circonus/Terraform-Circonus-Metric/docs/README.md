@@ -1,6 +1,9 @@
 # Terraform::Circonus::Metric
 
-CloudFormation equivalent of circonus_metric
+The ``circonus_metric`` resource creates and manages a
+single [metric resource](https://login.circonus.com/resources/api/calls/metric)
+that will be instantiated only once a referencing `circonus_check` has been
+created.
 
 ## Syntax
 
@@ -38,6 +41,9 @@ Properties:
 
 #### Active
 
+A boolean indicating if the metric is being filtered out
+at the `circonus_check`'s collector(s) or not.
+
 _Required_: No
 
 _Type_: Boolean
@@ -45,6 +51,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the metric.  A `name` must be unique within a
+`circonus_check` and its meaning is `circonus_check.type` specific.
 
 _Required_: Yes
 
@@ -54,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A list of tags assigned to the metric.
+
 _Required_: No
 
 _Type_: List of String
@@ -62,6 +73,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Type
 
+The type of metric.  This value must be present and can be
+one of the following values: `numeric`, `text`, `histogram`, `composite`, or
+`caql`.
+
 _Required_: Yes
 
 _Type_: String
@@ -69,6 +84,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Unit
+
+The unit of measurement for this `circonus_metric`.
 
 _Required_: No
 

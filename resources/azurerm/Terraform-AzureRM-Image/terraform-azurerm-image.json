@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::Image",
-    "description": "CloudFormation equivalent of azurerm_image",
+    "description": "Manages a custom virtual machine image that can be used to create virtual machines.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "DataDisk": {
@@ -8,19 +8,24 @@
             "additionalProperties": false,
             "properties": {
                 "BlobUri": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the URI in Azure storage of the blob that you want to use to create the image."
                 },
                 "Caching": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the caching mode as `ReadWrite`, `ReadOnly`, or `None`. The default is `None`."
                 },
                 "Lun": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Specifies the logical unit number of the data disk."
                 },
                 "ManagedDiskId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the ID of the managed disk resource that you want to use to create the image."
                 },
                 "SizeGb": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Specifies the size of the image to be created. The target size can't be smaller than the source size."
                 }
             },
             "required": []
@@ -30,22 +35,28 @@
             "additionalProperties": false,
             "properties": {
                 "BlobUri": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the URI in Azure storage of the blob that you want to use to create the image."
                 },
                 "Caching": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the caching mode as `ReadWrite`, `ReadOnly`, or `None`. The default is `None`."
                 },
                 "ManagedDiskId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the ID of the managed disk resource that you want to use to create the image."
                 },
                 "OsState": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the state of the operating system contained in the blob. Currently, the only value is Generalized."
                 },
                 "OsType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the type of operating system contained in the virtual machine image. Possible values are: Windows or Linux."
                 },
                 "SizeGb": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Specifies the size of the image to be created. The target size can't be smaller than the source size."
                 }
             },
             "required": []
@@ -76,19 +87,24 @@
             "type": "string"
         },
         "HyperVGeneration": {
-            "type": "string"
+            "type": "string",
+            "description": "The HyperVGenerationType of the VirtualMachine created from the image as `V1`, `V2`. The default is `V1`."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specified the supported Azure location where the resource exists.\nChanging this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the image. Changing this forces a\nnew resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create\nthe image. Changing this forces a new resource to be created."
         },
         "SourceVirtualMachineId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Virtual Machine ID from which to create the image."
         },
         "Tags": {
             "type": "array",
@@ -108,10 +124,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "ZoneResilient": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is zone resiliency enabled?  Defaults to `false`.  Changing this forces a new resource to be created."
         },
         "DataDisk": {
             "type": "array",

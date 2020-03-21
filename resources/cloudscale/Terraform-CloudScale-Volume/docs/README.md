@@ -1,6 +1,6 @@
 # Terraform::CloudScale::Volume
 
-CloudFormation equivalent of cloudscale_volume
+Provides a cloudscale.ch Volume (block storage) resource. This can be used to create, modify, and delete Volumes.
 
 ## Syntax
 
@@ -38,6 +38,8 @@ Properties:
 
 #### Name
 
+Name of the new volume.
+
 _Required_: Yes
 
 _Type_: String
@@ -45,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServerUuids
+
+A list of server UUIDs. Default to an empty list. Currently a volume can only be attached to one server UUID.
 
 _Required_: No
 
@@ -54,6 +58,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SizeGb
 
+The volume size in GB. Valid values are multiples of 1 for type "ssd" and multiples of 100 for type "bulk".
+
 _Required_: Yes
 
 _Type_: Double
@@ -62,6 +68,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Type
 
+For SSD/NVMe volumes specify "ssd" (default) or use "bulk" for our HDD cluster with NVMe caching. This is the only attribute that cannot be altered.
+
 _Required_: No
 
 _Type_: String
@@ -69,6 +77,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneSlug
+
+You can specify a zone slug. Options include `lpg1` and `rma1`.
 
 _Required_: No
 

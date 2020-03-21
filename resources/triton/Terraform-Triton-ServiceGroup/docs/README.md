@@ -1,6 +1,8 @@
 # Terraform::Triton::ServiceGroup
 
-CloudFormation equivalent of triton_service_group
+The `triton_service_group` resource represents a Triton Service Group.
+
+~> **NOTE:**  Triton Service Groups are in Preview and only supported in specific regions at this time. They will become Generally Available in the near future.
 
 ## Syntax
 
@@ -35,6 +37,8 @@ Properties:
 
 #### Capacity
 
+Number of instances to launch and monitor.
+
 _Required_: No
 
 _Type_: Double
@@ -43,6 +47,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GroupName
 
+Friendly name for the service group.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Template
+
+Identifier of an instance template.
 
 _Required_: Yes
 

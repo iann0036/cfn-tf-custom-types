@@ -1,6 +1,6 @@
 # Terraform::Rancher::Environment
 
-CloudFormation equivalent of rancher_environment
+Provides a Rancher Environment resource. This can be used to create and manage environments on rancher.
 
 ## Syntax
 
@@ -38,6 +38,8 @@ Properties:
 
 #### Description
 
+An environment description.
+
 _Required_: No
 
 _Type_: String
@@ -45,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the environment.
 
 _Required_: Yes
 
@@ -54,6 +58,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Orchestration
 
+Must be one of **cattle**, **swarm**, **mesos**, **windows** or **kubernetes**. This is a helper for setting the project_template_ids for the included Rancher templates. This will conflict with project_template_id setting. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -61,6 +67,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProjectTemplateId
+
+This can be any valid project template ID. If this is set, then orchestration can not be. Changing this forces a new resource to be created.
 
 _Required_: No
 

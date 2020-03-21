@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::NS1::Datafeed",
-    "description": "CloudFormation equivalent of ns1_datafeed",
+    "description": "Provides a NS1 Data Feed resource. This can be used to create, modify, and delete data feeds.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -26,13 +26,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "The feeds configuration matching the specification in\n`feed_config` from /data/sourcetypes."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The free form name of the data feed."
         },
         "SourceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The data source id that this feed is connected to."
         }
     },
     "additionalProperties": false,

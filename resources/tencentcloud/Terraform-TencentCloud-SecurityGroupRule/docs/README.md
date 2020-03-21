@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::SecurityGroupRule
 
-CloudFormation equivalent of tencentcloud_security_group_rule
+Provides a resource to create security group rule.
 
 ## Syntax
 
@@ -43,6 +43,8 @@ Properties:
 
 #### CidrIp
 
+An IP address network or segment, and conflict with `source_sgid`.
+
 _Required_: No
 
 _Type_: String
@@ -50,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Description of the security group rule.
 
 _Required_: No
 
@@ -59,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IpProtocol
 
+Type of ip protocol, the available value include `TCP`, `UDP` and `ICMP`. Default to all types protocol.
+
 _Required_: No
 
 _Type_: String
@@ -66,6 +72,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Policy
+
+Rule policy of security group, the available value include `ACCEPT` and `DROP`.
 
 _Required_: Yes
 
@@ -75,6 +83,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PortRange
 
+Range of the port. The available value can be one, multiple or one segment. E.g. `80`, `80,90` and `80-90`. Default to all ports.
+
 _Required_: No
 
 _Type_: String
@@ -82,6 +92,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecurityGroupId
+
+ID of the security group to be queried.
 
 _Required_: Yes
 
@@ -91,6 +103,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SourceSgid
 
+ID of the nested security group, and conflict with `cidr_ip`.
+
 _Required_: No
 
 _Type_: String
@@ -98,6 +112,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+Type of the security group rule, the available value include `ingress` and `egress`.
 
 _Required_: Yes
 

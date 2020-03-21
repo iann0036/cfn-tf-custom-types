@@ -28,6 +28,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### AllocationWeight
 
+The weight applied to the IoT Hub. Defaults to 0.
+
 _Required_: No
 
 _Type_: Double
@@ -44,6 +46,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ConnectionString
 
+The connection string to connect to the IoT Hub. Changing this forces a new resource.
+
 _Required_: Yes
 
 _Type_: String
@@ -51,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Location
+
+The location of the IoT hub. Changing this forces a new resource.
 
 _Required_: Yes
 

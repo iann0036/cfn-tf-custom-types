@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::BIGIP::LtmVirtualAddress",
-    "description": "CloudFormation equivalent of bigip_ltm_virtual_address",
+    "description": "`bigip_ltm_virtual_address` Configures Virtual Server\n\nFor resources should be named with their \"full path\". The full path is the combination of the partition + name of the resource. For example /Common/my-pool.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,28 +9,36 @@
             "type": "string"
         },
         "AdvertizeRoute": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enabled dynamic routing of the address."
         },
         "Arp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable or disable ARP for the virtual address."
         },
         "AutoDelete": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Automatically delete the virtual address with the virtual server."
         },
         "ConnLimit": {
-            "type": "number"
+            "type": "number",
+            "description": "Max number of connections for virtual address."
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable or disable the virtual address."
         },
         "IcmpEcho": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable/Disable ICMP response to the virtual address."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the virtual address."
         },
         "TrafficGroup": {
-            "type": "string"
+            "type": "string",
+            "description": "Specify the partition and traffic group."
         }
     },
     "additionalProperties": false,

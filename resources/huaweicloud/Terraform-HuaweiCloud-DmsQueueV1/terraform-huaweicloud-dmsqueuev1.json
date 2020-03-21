@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HuaweiCloud::DmsQueueV1",
-    "description": "CloudFormation equivalent of huaweicloud_dms_queue_v1",
+    "description": "Manages a DMS queue in the huaweicloud DMS Service.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,28 +12,33 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates the basic information about a queue. The queue\ndescription must be 0 to 160 characters in length, and does not contain angle\nbrackets (<) and (>)."
         },
         "GroupCount": {
             "type": "number"
         },
         "MaxConsumeCount": {
-            "type": "number"
+            "type": "number",
+            "description": "This parameter is mandatory only when redrive_policy is\nset to enable. This parameter indicates the maximum number of allowed message consumption\nfailures. When a message fails to be consumed after the number of consumption attempts of\nthis message reaches this value, DMS stores this message into the dead letter queue.\nThe max_consume_count value range is 1\u2013100."
         },
         "MaxMsgSizeByte": {
             "type": "number"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates the unique name of a queue. A string of 1 to 64\ncharacters that contain a-z, A-Z, 0-9, hyphens (-), and underscores (_).\nThe name cannot be modified once specified."
         },
         "ProducedMessages": {
             "type": "number"
         },
         "QueueMode": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates the queue type. It only support 'NORMAL' and 'FIFO'.\nNORMAL: Standard queue. Best-effort ordering. Messages might be retrieved in an order\ndifferent from which they were sent. Select standard queues when throughput is important.\nFIFO: First-ln-First-out (FIFO) queue. FIFO delivery. Messages are retrieved in the\norder they were sent. Select FIFO queues when the order of messages is important.\nDefault value: NORMAL."
         },
         "RedrivePolicy": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates whether to enable dead letter messages.\nDead letter messages indicate messages that cannot be normally consumed.\nThe redrive_policy should be set to 'enable' or 'disable'. The default value is 'disable'."
         },
         "Reservation": {
             "type": "number"

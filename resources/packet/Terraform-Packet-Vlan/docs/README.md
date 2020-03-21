@@ -1,6 +1,10 @@
 # Terraform::Packet::Vlan
 
-CloudFormation equivalent of packet_vlan
+Provides a resource to allow users to manage Virtual Networks in their projects.
+
+To learn more about Layer 2 networking in Packet, refer to
+* https://www.packet.com/resources/guides/layer-2-configurations/
+* https://www.packet.com/developers/docs/network/advanced/layer-2/
 
 ## Syntax
 
@@ -33,6 +37,8 @@ Properties:
 
 #### Description
 
+Description string.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +47,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Facility
 
+Facility where to create the VLAN.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProjectId
+
+ID of parent project.
 
 _Required_: Yes
 

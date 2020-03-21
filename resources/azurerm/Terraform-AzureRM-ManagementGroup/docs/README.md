@@ -1,6 +1,6 @@
 # Terraform::AzureRM::ManagementGroup
 
-CloudFormation equivalent of azurerm_management_group
+Manages a Management Group.
 
 ## Syntax
 
@@ -38,6 +38,8 @@ Properties:
 
 #### DisplayName
 
+A friendly name for this Management Group. If not specified, this'll be the same as the `group_id`.
+
 _Required_: No
 
 _Type_: String
@@ -45,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GroupId
+
+The UUID for this Management Group, which needs to be unique across your tenant - which will be generated if not provided. Changing this forces a new resource to be created.
 
 _Required_: No
 
@@ -54,6 +58,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ParentManagementGroupId
 
+The ID of the Parent Management Group. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -61,6 +67,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubscriptionIds
+
+A list of Subscription GUIDs which should be assigned to the Management Group.
 
 _Required_: No
 

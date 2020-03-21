@@ -1,6 +1,6 @@
 # Terraform::Vault::IdentityGroupPolicies
 
-CloudFormation equivalent of vault_identity_group_policies
+Manages policies for an Identity Group for Vault. The [Identity secrets engine](https://www.vaultproject.io/docs/secrets/identity/index.html) is the identity management solution for Vault.
 
 ## Syntax
 
@@ -34,6 +34,8 @@ Properties:
 
 #### Exclusive
 
+Defaults to `true`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -42,6 +44,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GroupId
 
+Group ID to assign policies to.
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Policies
+
+List of policies to assign to the group.
 
 _Required_: Yes
 

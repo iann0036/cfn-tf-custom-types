@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::RdsInstanceV3
 
-CloudFormation equivalent of huaweicloud_rds_instance_v3
+instance management
 
 ## Syntax
 

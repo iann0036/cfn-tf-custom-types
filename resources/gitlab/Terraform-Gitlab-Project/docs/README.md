@@ -1,6 +1,7 @@
 # Terraform::Gitlab::Project
 
-CloudFormation equivalent of gitlab_project
+This resource allows you to create and manage projects within your
+GitLab group or within your user.
 
 ## Syntax
 
@@ -75,6 +76,8 @@ Properties:
 
 #### ApprovalsBeforeMerge
 
+Number of merge request approvals required for merging. Default is 0.
+
 _Required_: No
 
 _Type_: Double
@@ -82,6 +85,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Archived
+
+Whether the project is in read-only mode (archived). Repositories can be archived/unarchived by toggling this parameter.
 
 _Required_: No
 
@@ -91,6 +96,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ContainerRegistryEnabled
 
+Enable container registry for the project.
+
 _Required_: No
 
 _Type_: Boolean
@@ -98,6 +105,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefaultBranch
+
+The default branch for the project.
 
 _Required_: No
 
@@ -107,6 +116,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+A description of the project.
+
 _Required_: No
 
 _Type_: String
@@ -114,6 +125,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InitializeWithReadme
+
+Create master branch with first commit containing a README.md file.
 
 _Required_: No
 
@@ -123,6 +136,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IssuesEnabled
 
+Enable issue tracking for the project.
+
 _Required_: No
 
 _Type_: Boolean
@@ -130,6 +145,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LfsEnabled
+
+Enable LFS for the project.
 
 _Required_: No
 
@@ -139,6 +156,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MergeMethod
 
+Set to `ff` to create fast-forward merges
+Valid values are `merge`, `rebase_merge`, `ff`
+Repositories are created with `merge` by default.
+
 _Required_: No
 
 _Type_: String
@@ -146,6 +167,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MergeRequestsEnabled
+
+Enable merge requests for the project.
 
 _Required_: No
 
@@ -155,6 +178,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the project.
+
 _Required_: Yes
 
 _Type_: String
@@ -162,6 +187,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NamespaceId
+
+The namespace (group or user) of the project. Defaults to your user.
+See [`gitlab_group`](group.html) for an example.
 
 _Required_: No
 
@@ -171,6 +199,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OnlyAllowMergeIfAllDiscussionsAreResolved
 
+Set to true if you want allow merges only if all discussions are resolved.
+
 _Required_: No
 
 _Type_: Boolean
@@ -178,6 +208,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OnlyAllowMergeIfPipelineSucceeds
+
+Set to true if you want allow merges only if a pipeline succeeds.
 
 _Required_: No
 
@@ -187,6 +219,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Path
 
+The path of the repository.
+
 _Required_: No
 
 _Type_: String
@@ -194,6 +228,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PipelinesEnabled
+
+Enable pipelines for the project.
 
 _Required_: No
 
@@ -203,6 +239,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RequestAccessEnabled
 
+Allow users to request member access.
+
 _Required_: No
 
 _Type_: Boolean
@@ -210,6 +248,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SharedRunnersEnabled
+
+Enable shared runners for this project.
 
 _Required_: No
 
@@ -219,6 +259,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SnippetsEnabled
 
+Enable snippets for the project.
+
 _Required_: No
 
 _Type_: Boolean
@@ -226,6 +268,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Tags (topics) of the project.
 
 _Required_: No
 
@@ -235,6 +279,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VisibilityLevel
 
+Set to `public` to create a public project.
+Valid values are `private`, `internal`, `public`.
+Repositories are created as private by default.
+
 _Required_: No
 
 _Type_: String
@@ -242,6 +290,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WikiEnabled
+
+Enable wiki for the project.
 
 _Required_: No
 

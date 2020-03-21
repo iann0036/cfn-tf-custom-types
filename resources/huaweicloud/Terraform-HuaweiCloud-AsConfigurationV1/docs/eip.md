@@ -25,6 +25,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### IpType
 
+The IP address type. The system only supports `5_bgp` (indicates dynamic BGP).
+
 _Required_: Yes
 
 _Type_: String

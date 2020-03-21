@@ -1,6 +1,9 @@
 # Terraform::Cloudflare::FirewallRule
 
-CloudFormation equivalent of cloudflare_firewall_rule
+Define Firewall rules using filter expressions for more control over how traffic is matched to the rule.
+A filter expression permits selecting traffic by multiple criteria allowing greater freedom in rule creation.
+
+Filter expressions needs to be created first before using Firewall Rule. See [Filter](filter.html).
 
 ## Syntax
 
@@ -42,6 +45,8 @@ Properties:
 
 #### Action
 
+The action to apply to a matched request. Allowed values: "block", "challenge", "allow", "js_challenge", "bypass". Enterprise plan also allows "log".
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+A description of the rule to help identify it.
 
 _Required_: No
 
@@ -66,6 +73,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Paused
 
+Whether this filter based firewall rule is currently paused. Boolean value.
+
 _Required_: No
 
 _Type_: Boolean
@@ -73,6 +82,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Priority
+
+The priority of the rule to allow control of processing order. A lower number indicates high priority. If not provided, any rules with a priority will be sequenced before those without.
 
 _Required_: No
 
@@ -82,6 +93,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Products
 
+List of products to bypass for a request when the bypass action is used. Allowed values: "zoneLockdown", "uaBlock", "bic", "hot", "securityLevel", "rateLimit", "waf".
+
 _Required_: No
 
 _Type_: List of String
@@ -89,6 +102,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneId
+
+The DNS zone to which the Filter should be added.
 
 _Required_: Yes
 

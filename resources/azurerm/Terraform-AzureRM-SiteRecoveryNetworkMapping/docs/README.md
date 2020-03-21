@@ -1,6 +1,6 @@
 # Terraform::AzureRM::SiteRecoveryNetworkMapping
 
-CloudFormation equivalent of azurerm_site_recovery_network_mapping
+Manages a site recovery network mapping on Azure. A network mapping decides how to translate connected netwroks when a VM is migrated from one region to another.
 
 ## Syntax
 
@@ -43,6 +43,8 @@ Properties:
 
 #### Name
 
+The name of the network mapping.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RecoveryVaultName
+
+The name of the vault that should be updated.
 
 _Required_: Yes
 
@@ -59,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+Name of the resource group where the vault that should be updated is located.
+
 _Required_: Yes
 
 _Type_: String
@@ -66,6 +72,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SourceNetworkId
+
+The id of the primary network.
 
 _Required_: Yes
 
@@ -75,6 +83,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SourceRecoveryFabricName
 
+Specifies the ASR fabric where mapping should be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -83,6 +93,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TargetNetworkId
 
+The id of the recovery network.
+
 _Required_: Yes
 
 _Type_: String
@@ -90,6 +102,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TargetRecoveryFabricName
+
+The Azure Site Recovery fabric object corresponding to the recovery Azure region.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::MysqlAccount",
-    "description": "CloudFormation equivalent of tencentcloud_mysql_account",
+    "description": "Provides a MySQL account resource for database management. A MySQL instance supports multiple database account.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,20 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Database description."
         },
         "MysqlId": {
-            "type": "string"
+            "type": "string",
+            "description": "Instance ID to which the account belongs."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Account name."
         },
         "Password": {
-            "type": "string"
+            "type": "string",
+            "description": "Operation password."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::StreamAnalyticsStreamInputEventhub",
-    "description": "CloudFormation equivalent of azurerm_stream_analytics_stream_input_eventhub",
+    "description": "Manages a Stream Analytics Stream Input EventHub.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Serialization": {
@@ -8,13 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "Encoding": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The encoding of the incoming data in the case of input and the encoding of outgoing data in the case of output. It currently can only be set to `UTF8`."
                 },
                 "FieldDelimiter": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The delimiter that will be used to separate comma-separated value (CSV) records. Possible values are ` ` (space), `,` (comma), `   ` (tab), `|` (pipe) and `;`."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The serialization format used for incoming data streams. Possible values are `Avro`, `Csv` and `Json`."
                 }
             },
             "required": [
@@ -47,28 +50,36 @@
             "type": "string"
         },
         "EventhubConsumerGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of an Event Hub Consumer Group that should be used to read events from the Event Hub. Specifying distinct consumer group names for multiple inputs allows each of those inputs to receive the same events from the Event Hub."
         },
         "EventhubName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Event Hub."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Stream Input EventHub. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Resource Group where the Stream Analytics Job exists. Changing this forces a new resource to be created."
         },
         "ServicebusNamespace": {
-            "type": "string"
+            "type": "string",
+            "description": "The namespace that is associated with the desired Event Hub, Service Bus Queue, Service Bus Topic, etc."
         },
         "SharedAccessPolicyKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The shared access policy key for the specified shared access policy."
         },
         "SharedAccessPolicyName": {
-            "type": "string"
+            "type": "string",
+            "description": "The shared access policy name for the Event Hub, Service Bus Queue, Service Bus Topic, etc."
         },
         "StreamAnalyticsJobName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Stream Analytics Job. Changing this forces a new resource to be created."
         },
         "Serialization": {
             "type": "array",

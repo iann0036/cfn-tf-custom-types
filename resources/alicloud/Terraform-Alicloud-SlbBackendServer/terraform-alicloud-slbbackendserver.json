@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::SlbBackendServer",
-    "description": "CloudFormation equivalent of alicloud_slb_backend_server",
+    "description": "Add a group of backend servers (ECS or ENI instance) to the Server Load Balancer or remove them from it.\n\n-> **NOTE:** Available in 1.53.0+",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "BackendServers": {
@@ -29,10 +29,12 @@
             "type": "string"
         },
         "DeleteProtectionValidation": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Checking DeleteProtection of SLB instance before deleting. If true, this resource will not be deleted when its SLB instance enabled DeleteProtection. Default to false."
         },
         "LoadBalancerId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the load balancer."
         },
         "BackendServers": {
             "type": "array",

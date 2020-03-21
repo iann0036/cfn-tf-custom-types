@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::FlexibleEngine::KmsKeyV1",
-    "description": "CloudFormation equivalent of flexibleengine_kms_key_v1",
+    "description": "Manages a V1 key resource within KMS.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -21,22 +21,27 @@
             "type": "string"
         },
         "IsEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether the key is enabled. Defaults to true.\nChanging this updates the state of existing key."
         },
         "KeyAlias": {
-            "type": "string"
+            "type": "string",
+            "description": "The alias in which to create the key. It is required when\nwe create a new key. Changing this updates the alias of key."
         },
         "KeyDescription": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the key as viewed in FlexibleEngine console.\nChanging this updates the description of key."
         },
         "Origin": {
             "type": "string"
         },
         "PendingDays": {
-            "type": "string"
+            "type": "string",
+            "description": "Duration in days after which the key is deleted\nafter destruction of the resource, must be between 7 and 1096 days. Defaults to 7.\nIt only be used when delete a key."
         },
         "Realm": {
-            "type": "string"
+            "type": "string",
+            "description": "Region where a key resides. Changing this creates a new key."
         },
         "ScheduledDeletionDate": {
             "type": "string"

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::SlbServerGroup",
-    "description": "CloudFormation equivalent of alicloud_slb_server_group",
+    "description": "A virtual server group contains several ECS instances. The virtual server group can help you to define multiple listening dimension,\nand to meet the personalized requirements of domain name and URL forwarding.\n\n-> **NOTE:** One ECS instance can be added into multiple virtual server groups.\n\n-> **NOTE:** One virtual server group can be attached with multiple listeners in one load balancer.\n\n-> **NOTE:** One Classic and Internet load balancer, its virtual server group can add Classic and VPC ECS instances.\n\n-> **NOTE:** One Classic and Intranet load balancer, its virtual server group can only add Classic ECS instances.\n\n-> **NOTE:** One VPC load balancer, its virtual server group can only add the same VPC ECS instances.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Servers": {
@@ -36,13 +36,16 @@
             "type": "string"
         },
         "DeleteProtectionValidation": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Checking DeleteProtection of SLB instance before deleting. If true, this resource will not be deleted when its SLB instance enabled DeleteProtection. Default to false."
         },
         "LoadBalancerId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Load Balancer ID which is used to launch a new virtual server group."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the virtual server group. Our plugin provides a default name: \"tf-server-group\"."
         },
         "Servers": {
             "type": "array",

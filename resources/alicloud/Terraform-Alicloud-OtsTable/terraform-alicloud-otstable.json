@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::OtsTable",
-    "description": "CloudFormation equivalent of alicloud_ots_table",
+    "description": "Provides an OTS table resource.\n\n-> **NOTE:** From Provider version 1.10.0, the provider field 'ots_instance_name' has been deprecated and\nyou should use resource alicloud_ots_table's new field 'instance_name' and 'table_name' to re-import this resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "PrimaryKey": {
@@ -26,19 +26,24 @@
             "type": "string"
         },
         "DeviationCellVersionInSec": {
-            "type": "string"
+            "type": "string",
+            "description": "The max version offset of the table. The valid value is 1-9223372036854775807. Defaults to 86400."
         },
         "InstanceName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the OTS instance in which table will located."
         },
         "MaxVersion": {
-            "type": "number"
+            "type": "number",
+            "description": "The maximum number of versions stored in this table. The valid value is 1-2147483647."
         },
         "TableName": {
-            "type": "string"
+            "type": "string",
+            "description": "The table name of the OTS instance. If changed, a new table would be created."
         },
         "TimeToLive": {
-            "type": "number"
+            "type": "number",
+            "description": "The retention time of data stored in this table (unit: second). The value maximum is 2147483647 and -1 means never expired."
         },
         "PrimaryKey": {
             "type": "array",

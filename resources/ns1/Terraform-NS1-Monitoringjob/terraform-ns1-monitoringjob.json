@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::NS1::Monitoringjob",
-    "description": "CloudFormation equivalent of ns1_monitoringjob",
+    "description": "Provides a NS1 Monitoring Job resource. This can be used to create, modify, and delete monitoring jobs.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Rules": {
@@ -8,13 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "Comparison": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The comparison to perform on the the output."
                 },
                 "Key": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The output key."
                 },
                 "Value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The value to compare to."
                 }
             },
             "required": [
@@ -30,7 +33,8 @@
             "type": "string"
         },
         "Active": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates if the job is active or temporarily disabled."
         },
         "Config": {
             "type": "array",
@@ -50,47 +54,60 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A configuration dictionary with keys and values depending on the jobs' type."
         },
         "Frequency": {
-            "type": "number"
+            "type": "number",
+            "description": "The frequency, in seconds, at which to run the monitoring job in each region."
         },
         "JobType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of monitoring job to be run. See NS1 API\ndocs for supported values."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The free-form display name for the monitoring job."
         },
         "Notes": {
-            "type": "string"
+            "type": "string",
+            "description": "Freeform notes to be included in any notifications about this job."
         },
         "NotifyDelay": {
-            "type": "number"
+            "type": "number",
+            "description": "The time in seconds after a failure to wait before sending a notification."
         },
         "NotifyFailback": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If true, a notification is sent when a job returns to an \"up\" state."
         },
         "NotifyList": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the notification list to send notifications to."
         },
         "NotifyRegional": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If true, notifications are sent for any regional failure (and failback if desired), in addition to global state notifications."
         },
         "NotifyRepeat": {
-            "type": "number"
+            "type": "number",
+            "description": "The time in seconds between repeat notifications of a failed job."
         },
         "Policy": {
-            "type": "string"
+            "type": "string",
+            "description": "The policy for determining the monitor's global status\nbased on the status of the job in all regions. See NS1 API docs for supported values."
         },
         "RapidRecheck": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If true, on any apparent state change, the job is quickly re-run after one second to confirm the state change before notification."
         },
         "Regions": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The list of region codes in which to run the monitoring\njob. See NS1 API docs for supported values."
         },
         "Rules": {
             "type": "array",

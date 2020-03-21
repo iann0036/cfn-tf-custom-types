@@ -1,6 +1,6 @@
 # Terraform::AzureRM::MysqlConfiguration
 
-CloudFormation equivalent of azurerm_mysql_configuration
+Sets a MySQL Configuration value on a MySQL Server.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### Name
 
+Specifies the name of the MySQL Configuration, which needs [to be a valid MySQL configuration name](https://dev.mysql.com/doc/refman/5.7/en/server-configuration.html). Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which the MySQL Server exists. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -53,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServerName
 
+Specifies the name of the MySQL Server. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -60,6 +66,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Value
+
+Specifies the value of the MySQL Configuration. See the MySQL documentation for valid values.
 
 _Required_: Yes
 

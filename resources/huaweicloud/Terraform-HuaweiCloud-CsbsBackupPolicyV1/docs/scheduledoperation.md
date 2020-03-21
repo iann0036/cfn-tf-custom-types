@@ -36,6 +36,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Description
 
+Specifies Scheduling period description.The value consists of 0 to 255 characters and must not contain a greater-than sign (>) or less-than sign (<).
+
 _Required_: No
 
 _Type_: String
@@ -43,6 +45,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Enabled
+
+Specifies whether the scheduling period is enabled. Default value is **true**.
 
 _Required_: No
 
@@ -52,6 +56,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxBackups
 
+Specifies maximum number of backups that can be automatically created for a backup object.
+
 _Required_: No
 
 _Type_: Double
@@ -59,6 +65,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies Scheduling period name.The value consists of 1 to 255 characters and can contain only letters, digits, underscores (_), and hyphens (-).
 
 _Required_: No
 
@@ -68,6 +76,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OperationType
 
+Specifies Operation type, which can be backup.
+
 _Required_: Yes
 
 _Type_: String
@@ -75,6 +85,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Permanent
+
+Specifies whether backups are permanently retained.
 
 _Required_: No
 
@@ -84,6 +96,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RetentionDurationDays
 
+Specifies duration of retaining a backup, in days.
+
 _Required_: No
 
 _Type_: Double
@@ -91,6 +105,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TriggerPattern
+
+Specifies Scheduling policy of the scheduler.
 
 _Required_: Yes
 

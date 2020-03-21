@@ -1,6 +1,8 @@
 # Terraform::AzureRM::LbOutboundRule
 
-CloudFormation equivalent of azurerm_lb_outbound_rule
+Manages a Load Balancer Outbound Rule.
+
+~> **NOTE** When using this resource, the Load Balancer needs to have a FrontEnd IP Configuration and a Backend Address Pool Attached.
 
 ## Syntax
 
@@ -48,6 +50,8 @@ Properties:
 
 #### AllocatedOutboundPorts
 
+The number of outbound ports to be used for NAT.
+
 _Required_: No
 
 _Type_: Double
@@ -55,6 +59,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BackendAddressPoolId
+
+The ID of the Backend Address Pool. Outbound traffic is randomly load balanced across IPs in the backend IPs.
 
 _Required_: Yes
 
@@ -64,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableTcpReset
 
+Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected connection termination. This element is only used when the protocol is set to TCP.
+
 _Required_: No
 
 _Type_: Boolean
@@ -71,6 +79,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IdleTimeoutInMinutes
+
+The timeout for the TCP idle connection.
 
 _Required_: No
 
@@ -80,6 +90,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LoadbalancerId
 
+The ID of the Load Balancer in which to create the Outbound Rule. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -87,6 +99,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the Outbound Rule. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -96,6 +110,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Protocol
 
+The transport protocol for the external endpoint. Possible values are `Udp`, `Tcp` or `All`.
+
 _Required_: Yes
 
 _Type_: String
@@ -103,6 +119,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which to create the resource. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

@@ -1,6 +1,10 @@
 # Terraform::TencentCloud::Instance
 
-CloudFormation equivalent of tencentcloud_instance
+Provides a CVM instance resource.
+
+~> **NOTE:** You can launch an CVM instance for a VPC network via specifying parameter `vpc_id`. One instance can only belong to one VPC.
+
+~> **NOTE:** At present, 'PREPAID' instance cannot be deleted and must wait it to be outdated and released automatically.
 
 ## Syntax
 
@@ -92,6 +96,8 @@ Properties:
 
 #### AllocatePublicIp
 
+Associate a public ip address with an instance in a VPC or Classic. Boolean value, Default is false.
+
 _Required_: No
 
 _Type_: Boolean
@@ -99,6 +105,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AvailabilityZone
+
+The available zone that the CVM instance locates at.
 
 _Required_: Yes
 
@@ -108,6 +116,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisableMonitorService
 
+Disable enhance service for monitor, it is enabled by default. When this options is set, monitor agent won't be installed.
+
 _Required_: No
 
 _Type_: Boolean
@@ -115,6 +125,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisableSecurityService
+
+Disable enhance service for security, it is enabled by default. When this options is set, security agent won't be installed.
 
 _Required_: No
 
@@ -124,6 +136,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Hostname
 
+The hostname of CVM. Windows instance: The name should be a combination of 2 to 15 characters comprised of letters (case insensitive), numbers, and hyphens (-). Period (.) is not supported, and the name cannot be a string of pure numbers. Other types (such as Linux) of instances: The name should be a combination of 2 to 60 characters, supporting multiple periods (.). The piece between two periods is composed of letters (case insensitive), numbers, and hyphens (-).
+
 _Required_: No
 
 _Type_: String
@@ -131,6 +145,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ImageId
+
+The Image to use for the instance. Change 'image_id' will case instance destroy and re-created.
 
 _Required_: Yes
 
@@ -140,6 +156,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceChargeType
 
+The charge type of instance. Valid values are `PREPAID`, `POSTPAID_BY_HOUR` and `SPOTPAID`, The default is `POSTPAID_BY_HOUR`. Note: TencentCloud International only supports `POSTPAID_BY_HOUR`. `PREPAID` instance may not allow to delete before expired. `SPOTPAID` instance must set `spot_instance_type` and `spot_max_price` at the same time.
+
 _Required_: No
 
 _Type_: String
@@ -147,6 +165,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceChargeTypePrepaidPeriod
+
+The tenancy (time unit is month) of the prepaid instance, NOTE: it only works when instance_charge_type is set to `PREPAID`. Valid values are 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36.
 
 _Required_: No
 
@@ -156,6 +176,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceChargeTypePrepaidRenewFlag
 
+When enabled, the CVM instance will be renew automatically when it reach the end of the prepaid tenancy. Valid values are `NOTIFY_AND_AUTO_RENEW`, `NOTIFY_AND_MANUAL_RENEW` and `DISABLE_NOTIFY_AND_MANUAL_RENEW`. NOTE: it only works when instance_charge_type is set to `PREPAID`.
+
 _Required_: No
 
 _Type_: String
@@ -163,6 +185,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceName
+
+The name of the CVM. The max length of instance_name is 60, and default value is `Terraform-CVM-Instance`.
 
 _Required_: No
 
@@ -172,6 +196,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceType
 
+The type of instance to start.
+
 _Required_: No
 
 _Type_: String
@@ -179,6 +205,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InternetChargeType
+
+Internet charge type of the instance, Valid values are `BANDWIDTH_PREPAID`, `TRAFFIC_POSTPAID_BY_HOUR`, `BANDWIDTH_POSTPAID_BY_HOUR` and `BANDWIDTH_PACKAGE`. The default is `TRAFFIC_POSTPAID_BY_HOUR`.
 
 _Required_: No
 
@@ -188,6 +216,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InternetMaxBandwidthOut
 
+Maximum outgoing bandwidth to the public network, measured in Mbps (Mega bit per second). If this value is not specified, then automatically sets it to 0 Mbps.
+
 _Required_: No
 
 _Type_: Double
@@ -195,6 +225,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeyName
+
+The key pair to use for the instance, it looks like skey-16jig7tx.
 
 _Required_: No
 
@@ -204,6 +236,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Password
 
+Password to an instance. In order to take effect new password, the instance will be restarted after modifying the password.
+
 _Required_: No
 
 _Type_: String
@@ -211,6 +245,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PlacementGroupId
+
+The id of a placement group.
 
 _Required_: No
 
@@ -220,6 +256,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PrivateIp
 
+The private ip to be assigned to this instance, must be in the provided subnet and available.
+
 _Required_: No
 
 _Type_: String
@@ -227,6 +265,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProjectId
+
+The project CVM belongs to, default to 0.
 
 _Required_: No
 
@@ -236,6 +276,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RunningFlag
 
+Set instance to running or stop. Default value is true, the instance will shutdown when flag is false.
+
 _Required_: No
 
 _Type_: Boolean
@@ -243,6 +285,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecurityGroups
+
+A list of security group ids to associate with.
 
 _Required_: No
 
@@ -252,6 +296,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SpotInstanceType
 
+Type of spot instance, only support `ONE-TIME` now. Note: it only works when instance_charge_type is set to `SPOTPAID`.
+
 _Required_: No
 
 _Type_: String
@@ -259,6 +305,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SpotMaxPrice
+
+Max price of spot instance, is the format of decimal string, for example "0.50". Note: it only works when instance_charge_type is set to `SPOTPAID`.
 
 _Required_: No
 
@@ -268,6 +316,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubnetId
 
+The id of a VPC subnetwork. If you want to create instances in VPC network, this parameter must be set.
+
 _Required_: No
 
 _Type_: String
@@ -275,6 +325,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SystemDiskId
+
+System disk snapshot ID used to initialize the system disk. When system disk type is `LOCAL_BASIC` and `LOCAL_SSD`, disk id is not supported.
 
 _Required_: No
 
@@ -284,6 +336,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SystemDiskSize
 
+Size of the system disk. Value range: [50, 1000], and unit is GB. Default is 50GB.
+
 _Required_: No
 
 _Type_: Double
@@ -291,6 +345,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SystemDiskType
+
+Type of the system disk. Valid values are `LOCAL_BASIC`, `LOCAL_SSD`, `CLOUD_BASIC`, `CLOUD_SSD` and `CLOUD_PREMIUM`, default value is `CLOUD_BASIC`. NOTE: `LOCAL_BASIC` and `LOCAL_SSD` are deprecated.
 
 _Required_: No
 
@@ -300,6 +356,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource. For tag limits, please refer to [Use Limits](https://intl.cloud.tencent.com/document/product/651/13354).
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -307,6 +365,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserData
+
+The user data to be specified into this instance. Must be encrypted in base64 format and limited in 16 KB.
 
 _Required_: No
 
@@ -316,6 +376,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UserDataRaw
 
+The user data to be specified into this instance, plain text. Conflicts with `user_data`. Limited in 16 KB after encrypted in base64 format.
+
 _Required_: No
 
 _Type_: String
@@ -323,6 +385,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+The id of a VPC network. If you want to create instances in VPC network, this parameter must be set.
 
 _Required_: No
 

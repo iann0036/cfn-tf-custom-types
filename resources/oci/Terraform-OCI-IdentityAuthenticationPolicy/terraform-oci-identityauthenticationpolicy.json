@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::IdentityAuthenticationPolicy",
-    "description": "CloudFormation equivalent of oci_identity_authentication_policy",
+    "description": "This resource provides the Authentication Policy resource in Oracle Cloud Infrastructure Identity service.\n\nUpdates authentication policy for the specified tenancy",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "PasswordPolicy": {
@@ -51,7 +51,8 @@
             "type": "string"
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the compartment."
         },
         "PasswordPolicy": {
             "type": "array",

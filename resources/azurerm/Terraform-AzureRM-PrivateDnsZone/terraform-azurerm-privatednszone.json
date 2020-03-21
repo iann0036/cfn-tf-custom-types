@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::PrivateDnsZone",
-    "description": "CloudFormation equivalent of azurerm_private_dns_zone",
+    "description": "Enables you to manage Private DNS zones within Azure DNS. These zones are hosted on Azure's name servers.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -38,13 +38,15 @@
             "type": "number"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Private DNS Zone. Must be a valid domain name."
         },
         "NumberOfRecordSets": {
             "type": "number"
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the resource group where the resource exists. Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -64,7 +66,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

@@ -1,6 +1,8 @@
 # Terraform::NSXT::LogicalRouterCentralizedServicePort
 
-CloudFormation equivalent of nsxt_logical_router_centralized_service_port
+This resource provides a means to define a centralized service port on a logical router to connect a logical tier0 or tier1 router to a logical switch. This allows the router to be used for E-W load balancing
+
+~> **NOTE:** This resource requires NSX version 2.3 or higher.
 
 ## Syntax
 
@@ -42,6 +44,8 @@ Properties:
 
 #### Description
 
+Description of the resource.
+
 _Required_: No
 
 _Type_: String
@@ -49,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+Display name, defaults to ID if not set.
 
 _Required_: No
 
@@ -58,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IpAddress
 
+Logical router port subnet (ip_address / prefix length).
+
 _Required_: Yes
 
 _Type_: String
@@ -65,6 +73,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LinkedLogicalSwitchPortId
+
+Identifier for port on logical switch to connect to.
 
 _Required_: Yes
 
@@ -74,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LogicalRouterId
 
+Identifier for logical Tier-0 or Tier-1 router on which this port is created.
+
 _Required_: Yes
 
 _Type_: String
@@ -81,6 +93,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UrpfMode
+
+Unicast Reverse Path Forwarding mode. Accepted values are "NONE" and "STRICT" which is the default value.
 
 _Required_: No
 

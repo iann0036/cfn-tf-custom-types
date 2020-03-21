@@ -1,6 +1,6 @@
 # Terraform::OCI::CoreAppCatalogListingResourceVersionAgreement
 
-CloudFormation equivalent of oci_core_app_catalog_listing_resource_version_agreement
+The `oci_core_app_catalog_listing_resource_version_agreement` resource creates AppCatalogListingResourceVersionAgreement for a particular resource version of a listing.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### ListingId
 
+The OCID of the listing.
+
 _Required_: Yes
 
 _Type_: String
@@ -40,6 +42,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ListingResourceVersion
+
+Listing Resource Version.
 
 _Required_: Yes
 

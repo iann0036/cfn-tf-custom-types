@@ -1,6 +1,14 @@
 # Terraform::VCD::FirewallRules
 
-CloudFormation equivalent of vcd_firewall_rules
+Provides a vCloud Director Firewall resource. This can be used to create,
+modify, and delete firewall settings and rules.
+
+~> **Note:** Please use the improved [`vcd_nsxv_firewall_rule`](/docs/providers/vcd/r/nsxv_firewall_rule.html)
+resource with advanced edge gateways (NSX-V).
+
+~> **Note:** Using this resource automatically enables default firewall rule logging. This may cause
+[`vcd_edgegateway`](/docs/providers/vcd/r/edgegateway.html) resource to report changes for field
+ `fw_default_rule_logging_enabled` during `plan`/`apply` phases.
 
 ## Syntax
 
@@ -38,6 +46,8 @@ Properties:
 
 #### DefaultAction
 
+Either "allow" or "drop". Specifies what to do should none of the rules match.
+
 _Required_: Yes
 
 _Type_: String
@@ -45,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EdgeGateway
+
+The name of the edge gateway on which to apply the Firewall Rules.
 
 _Required_: Yes
 
@@ -54,6 +66,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Org
 
+The name of organization to use, optional if defined at provider level. Useful when connected as sysadmin working across different organisations.
+
 _Required_: No
 
 _Type_: String
@@ -61,6 +75,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vdc
+
+The name of VDC to use, optional if defined at provider level.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::DigitalOcean::Loadbalancer",
-    "description": "CloudFormation equivalent of digitalocean_loadbalancer",
+    "description": "Provides a DigitalOcean Load Balancer resource. This can be used to create,\nmodify, and delete Load Balancers.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ForwardingRule": {
@@ -8,22 +8,28 @@
             "additionalProperties": false,
             "properties": {
                 "CertificateId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of the TLS certificate to be used for SSL termination."
                 },
                 "EntryPort": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "An integer representing the port on which the Load Balancer instance will listen."
                 },
                 "EntryProtocol": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The protocol used for traffic to the Load Balancer. The possible values are: `http`, `https`, `http2` or `tcp`."
                 },
                 "TargetPort": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "An integer representing the port on the backend Droplets to which the Load Balancer will send traffic."
                 },
                 "TargetProtocol": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The protocol used for traffic from the Load Balancer to the backend Droplets. The possible values are: `http`, `https`, `http2` or `tcp`."
                 },
                 "TlsPassthrough": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "A boolean value indicating whether SSL encrypted traffic will be passed through to the backend Droplets. The default value is `false`."
                 }
             },
             "required": [
@@ -38,25 +44,32 @@
             "additionalProperties": false,
             "properties": {
                 "CheckIntervalSeconds": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The number of seconds between between two consecutive health checks. If not specified, the default value is `10`."
                 },
                 "HealthyThreshold": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The number of times a health check must pass for a backend Droplet to be marked \"healthy\" and be re-added to the pool. If not specified, the default value is `5`."
                 },
                 "Path": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The path on the backend Droplets to which the Load Balancer instance will send a request."
                 },
                 "Port": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "An integer representing the port on the backend Droplets on which the health check will attempt a connection."
                 },
                 "Protocol": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The protocol used for health checks sent to the backend Droplets. The possible values are `http` or `tcp`."
                 },
                 "ResponseTimeoutSeconds": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The number of seconds the Load Balancer instance will wait for a response until marking a health check as failed. If not specified, the default value is `5`."
                 },
                 "UnhealthyThreshold": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The number of times a health check must fail for a backend Droplet to be marked \"unhealthy\" and be removed from the pool. If not specified, the default value is `3`."
                 }
             },
             "required": [
@@ -69,13 +82,16 @@
             "additionalProperties": false,
             "properties": {
                 "CookieName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name to be used for the cookie sent to the client. This attribute is required when using `cookies` for the sticky sessions type."
                 },
                 "CookieTtlSeconds": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The number of seconds until the cookie set by the Load Balancer expires. This attribute is required when using `cookies` for the sticky sessions type."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "An attribute indicating how and if requests from a client will be persistently served by the same backend Droplet. The possible values are `cookies` or `none`. If not specified, the default value is `none`."
                 }
             },
             "required": []
@@ -87,7 +103,8 @@
             "type": "string"
         },
         "Algorithm": {
-            "type": "string"
+            "type": "string",
+            "description": "The load balancing algorithm used to determine\nwhich backend Droplet will be selected by a client. It must be either `round_robin`\nor `least_connections`. The default value is `round_robin`."
         },
         "DropletIds": {
             "type": "array",
@@ -100,19 +117,23 @@
             "type": "string"
         },
         "EnableProxyProtocol": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "A boolean value indicating whether PROXY\nProtocol should be used to pass information from connecting client requests to\nthe backend service. Default value is `false`."
         },
         "Ip": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The Load Balancer name."
         },
         "RedirectHttpToHttps": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "A boolean value indicating whether\nHTTP requests to the Load Balancer on port 80 will be redirected to HTTPS on port 443.\nDefault value is `false`."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region to start in."
         },
         "Status": {
             "type": "string"

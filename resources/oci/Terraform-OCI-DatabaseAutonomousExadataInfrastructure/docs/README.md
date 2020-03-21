@@ -1,6 +1,8 @@
 # Terraform::OCI::DatabaseAutonomousExadataInfrastructure
 
-CloudFormation equivalent of oci_database_autonomous_exadata_infrastructure
+This resource provides the Autonomous Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
+
+Launches a new Autonomous Exadata Infrastructure in the specified compartment and availability domain.
 
 ## Syntax
 
@@ -61,6 +63,8 @@ Properties:
 
 #### AvailabilityDomain
 
+The availability domain where the Autonomous Exadata Infrastructure is located.
+
 _Required_: Yes
 
 _Type_: String
@@ -68,6 +72,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CompartmentId
+
+(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the Autonomous Exadata Infrastructure belongs in.
 
 _Required_: Yes
 
@@ -77,6 +83,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DefinedTags
 
+(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+
 _Required_: No
 
 _Type_: List of <a href="definedtags.md">DefinedTags</a>
@@ -84,6 +92,8 @@ _Type_: List of <a href="definedtags.md">DefinedTags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+(Updatable) The user-friendly name for the Autonomous Exadata Infrastructure. It does not have to be unique.
 
 _Required_: No
 
@@ -93,6 +103,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Domain
 
+A domain name used for the Autonomous Exadata Infrastructure. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (don't provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+
 _Required_: No
 
 _Type_: String
@@ -100,6 +112,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FreeformTags
+
+(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`.
 
 _Required_: No
 
@@ -109,6 +123,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LicenseModel
 
+The Oracle license model that applies to all the databases in the Autonomous Exadata Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+
 _Required_: No
 
 _Type_: String
@@ -116,6 +132,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NsgIds
+
+(Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+* Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
 
 _Required_: No
 
@@ -125,6 +144,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Shape
 
+The shape of the Autonomous Exadata Infrastructure. The shape determines resources allocated to the Autonomous Exadata Infrastructure (CPU cores, memory and storage). To get a list of shapes, use the ListDbSystemShapes operation.
+
 _Required_: Yes
 
 _Type_: String
@@ -132,6 +153,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubnetId
+
+The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Autonomous Exadata Infrastructure is associated with.
 
 _Required_: Yes
 

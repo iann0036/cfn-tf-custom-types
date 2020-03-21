@@ -58,6 +58,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### BadConnThreshold
 
+The number of new connections based on destination IP that trigger suppression of connections, and valid value is range from 0 to 4294967295.
+
 _Required_: Yes
 
 _Type_: Double
@@ -65,6 +67,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CheckSyncConn
+
+Indicate whether to check null connection or not.
 
 _Required_: Yes
 
@@ -74,6 +78,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ConnTimeout
 
+Connection timeout of abnormal connection check, and valid value is range from 0 to 65535.
+
 _Required_: Yes
 
 _Type_: Double
@@ -81,6 +87,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DConnLimit
+
+The limit of concurrent connections based on destination IP, and valid value is range from 0 to 4294967295.
 
 _Required_: Yes
 
@@ -90,6 +98,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DNewLimit
 
+The limit of new connections based on destination IP, and valid value is range from 0 to 4294967295.
+
 _Required_: Yes
 
 _Type_: Double
@@ -97,6 +107,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DropAbroad
+
+Indicate whether to drop abroad traffic or not.
 
 _Required_: Yes
 
@@ -106,6 +118,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DropIcmp
 
+Indicate whether to drop ICMP protocol or not.
+
 _Required_: Yes
 
 _Type_: Boolean
@@ -113,6 +127,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DropOther
+
+Indicate whether to drop other protocols(exclude TCP/UDP/ICMP) or not.
 
 _Required_: Yes
 
@@ -122,6 +138,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DropTcp
 
+Indicate whether to drop TCP protocol or not.
+
 _Required_: Yes
 
 _Type_: Boolean
@@ -129,6 +147,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DropUdp
+
+Indicate to drop UDP protocol or not.
 
 _Required_: Yes
 
@@ -138,6 +158,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IcmpMbpsLimit
 
+The limit of ICMP traffic rate, and valid value is range from 0 to 4294967295(Mbps).
+
 _Required_: Yes
 
 _Type_: Double
@@ -145,6 +167,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NullConnEnable
+
+Indicate to enable null connection or not.
 
 _Required_: Yes
 
@@ -154,6 +178,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OtherMbpsLimit
 
+The limit of other protocols(exclude TCP/UDP/ICMP) traffic rate, and valid value is range from 0 to 4294967295(Mbps).
+
 _Required_: Yes
 
 _Type_: Double
@@ -161,6 +187,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SConnLimit
+
+The limit of concurrent connections based on source IP, and valid value is range from 0 to 4294967295.
 
 _Required_: Yes
 
@@ -170,6 +198,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SNewLimit
 
+The limit of new connections based on source IP, and valid value is range from 0 to 4294967295.
+
 _Required_: Yes
 
 _Type_: Double
@@ -177,6 +207,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SynLimit
+
+The limit of syn of abnormal connection check, and valid value is range from 0 to 100.
 
 _Required_: Yes
 
@@ -186,6 +218,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SynRate
 
+The percentage of syn in ack of abnormal connection check, and valid value is range from 0 to 100.
+
 _Required_: No
 
 _Type_: Double
@@ -194,6 +228,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TcpMbpsLimit
 
+The limit of TCP traffic, and valid value is range from 0 to 4294967295(Mbps).
+
 _Required_: Yes
 
 _Type_: Double
@@ -201,6 +237,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UdpMbpsLimit
+
+The limit of UDP traffic rate, and valid value is range from 0 to 4294967295(Mbps).
 
 _Required_: Yes
 

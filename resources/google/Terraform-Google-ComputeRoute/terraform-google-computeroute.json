@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::ComputeRoute",
-    "description": "CloudFormation equivalent of google_compute_route",
+    "description": "Represents a Route resource.\n\nA route is a rule that specifies how certain packets should be handled by\nthe virtual network. Routes are associated with virtual machines by tag,\nand the set of routes for a particular virtual machine is called its\nrouting table. For each packet leaving a virtual machine, the system\nsearches that virtual machine's routing table for a single best matching\nroute.\n\nRoutes match packets by destination IP address, preferring smaller or more\nspecific ranges over larger ones. If there is a tie, the system selects\nthe route with the smallest priority value. If there is still a tie, it\nuses the layer three and four packet headers to select just one of the\nremaining matching routes. The packet is then forwarded as specified by\nthe next_hop field of the winning route -- either to another virtual\nmachine destination, a virtual machine gateway or a Compute\nEngine-operated gateway. Packets that do not match any route in the\nsending virtual machine's routing table will be dropped.\n\nA Route resource must have exactly one specification of either\nnextHopGateway, nextHopInstance, nextHopIp, nextHopVpnTunnel, or\nnextHopIlb.\n\n\nTo get more information about Route, see:\n\n* [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/routes)\n* How-to Guides\n    * [Using Routes](https://cloud.google.com/vpc/docs/using-routes)\n\n<div class = \"oics-button\" style=\"float: right; margin: 0 0 -15px\">\n  <a href=\"https://console.cloud.google.com/cloudshell/open?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fterraform-google-modules%2Fdocs-examples.git&cloudshell_working_dir=route_basic&cloudshell_image=gcr.io%2Fgraphite-cloud-shell-images%2Fterraform%3Alatest&open_in_editor=main.tf&cloudshell_print=.%2Fmotd&cloudshell_tutorial=.%2Ftutorial.md\" target=\"_blank\">\n    <img alt=\"Open in Cloud Shell\" src=\"//gstatic.com/cloudssh/images/open-btn.svg\" style=\"max-height: 44px; margin: 32px auto; max-width: 100%;\">\n  </a>\n</div>",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -44,7 +44,8 @@
             "type": "string"
         },
         "NextHopInstanceZone": {
-            "type": "string"
+            "type": "string",
+            "description": "The zone of the instance specified in\n`next_hop_instance`.  Omit if `next_hop_instance` is specified as\na URL."
         },
         "NextHopIp": {
             "type": "string"
@@ -59,7 +60,8 @@
             "type": "number"
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used."
         },
         "SelfLink": {
             "type": "string"

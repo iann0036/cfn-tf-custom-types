@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Scaleway::VolumeAttachment",
-    "description": "CloudFormation equivalent of scaleway_volume_attachment",
+    "description": "**DEPRECATED**: This resource is deprecated and will be removed in `v2.0+`.\nPlease use `scaleway_instance_server.additional_volumes` instead.\n\nThis allows volumes to be attached to servers.\n\n~> **Warning:** Attaching volumes requires the servers to be powered off. This will lead to downtime if the server is already in use.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "Server": {
-            "type": "string"
+            "type": "string",
+            "description": "id of the server."
         },
         "Volume": {
-            "type": "string"
+            "type": "string",
+            "description": "id of the volume to be attached."
         }
     },
     "additionalProperties": false,

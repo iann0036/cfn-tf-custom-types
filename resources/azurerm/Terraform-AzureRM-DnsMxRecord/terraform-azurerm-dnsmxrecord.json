@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::DnsMxRecord",
-    "description": "CloudFormation equivalent of azurerm_dns_mx_record",
+    "description": "Enables you to manage DNS MX Records within Azure DNS.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Record": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "Exchange": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The mail server responsible for the domain covered by the MX record."
                 },
                 "Preference": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "String representing the \"preference\u201d value of the MX records. Records with lower preference value take priority."
                 }
             },
             "required": [
@@ -48,10 +50,12 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the DNS MX Record. Defaults to `@` (root). Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the resource group where the resource exists. Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -71,13 +75,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Ttl": {
-            "type": "number"
+            "type": "number",
+            "description": "The Time To Live (TTL) of the DNS record in seconds."
         },
         "ZoneName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the DNS Zone where the DNS Zone (parent resource) exists. Changing this forces a new resource to be created."
         },
         "Record": {
             "type": "array",

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Spotinst::OceanEcs",
-    "description": "CloudFormation equivalent of spotinst_ocean_ecs",
+    "description": "Provides a Spotinst Ocean ECS resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Autoscaler": {
@@ -133,60 +133,76 @@
             "type": "string"
         },
         "AssociatePublicIpAddress": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Configure public IP address allocation."
         },
         "ClusterName": {
-            "type": "string"
+            "type": "string",
+            "description": "The ocean cluster name."
         },
         "DesiredCapacity": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of instances to launch and maintain in the cluster."
         },
         "DrainingTimeout": {
-            "type": "number"
+            "type": "number",
+            "description": "The time in seconds, the instance is allowed to run while detached from the ELB. This is to allow the instance time to be drained from incoming TCP connections before terminating it, during a scale down operation."
         },
         "EbsOptimized": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable EBS optimized for cluster. Flag will enable optimized capacity for high bandwidth connectivity to the EB service for non EBS optimized instance types. For instances that are EBS optimized this flag will be ignored."
         },
         "IamInstanceProfile": {
-            "type": "string"
+            "type": "string",
+            "description": "The instance profile iam role."
         },
         "ImageId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the image used to launch the instances."
         },
         "KeyPair": {
-            "type": "string"
+            "type": "string",
+            "description": "The key pair to attach the instances."
         },
         "MaxSize": {
-            "type": "number"
+            "type": "number",
+            "description": "The upper limit of instances the cluster can scale up to."
         },
         "MinSize": {
-            "type": "number"
+            "type": "number",
+            "description": "The lower limit of instances the cluster can scale down to."
         },
         "Monitoring": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable detailed monitoring for cluster. Flag will enable Cloud Watch detailed detailed monitoring (one minute increments). Note: there are additional hourly costs for this service based on the region used."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The Ocean cluster name."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region the cluster will run in."
         },
         "SecurityGroupIds": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "One or more security group ids."
         },
         "SubnetIds": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A comma-separated list of subnet identifiers for the Ocean cluster. Subnet IDs should be configured with auto assign public ip."
         },
         "UserData": {
-            "type": "string"
+            "type": "string",
+            "description": "Base64-encoded MIME user data to make available to the instances."
         },
         "UtilizeReservedInstances": {
             "type": "boolean"
@@ -196,7 +212,8 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Instance types allowed in the Ocean cluster."
         },
         "Autoscaler": {
             "type": "array",

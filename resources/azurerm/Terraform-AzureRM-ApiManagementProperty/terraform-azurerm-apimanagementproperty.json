@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::ApiManagementProperty",
-    "description": "CloudFormation equivalent of azurerm_api_management_property",
+    "description": "Manages an API Management Property.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,29 +29,36 @@
             "type": "string"
         },
         "ApiManagementName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the [API Management Service](api_management.html) in which the API Management Property should exist. Changing this forces a new resource to be created."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The display name of this API Management Property."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the API Management Property. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Resource Group in which the API Management Property should exist. Changing this forces a new resource to be created."
         },
         "Secret": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether the API Management Property is secret. Valid values are `true` or `false`. The default value is `false`."
         },
         "Tags": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of tags to be applied to the API Management Property."
         },
         "Value": {
-            "type": "string"
+            "type": "string",
+            "description": "The value of this API Management Property."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::IothubConsumerGroup",
-    "description": "CloudFormation equivalent of azurerm_iothub_consumer_group",
+    "description": "Manages a Consumer Group within an IotHub",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,16 +29,20 @@
             "type": "string"
         },
         "EventhubEndpointName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Event Hub-compatible endpoint in the IoT hub. Changing this forces a new resource to be created."
         },
         "IothubName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the IoT Hub. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of this Consumer Group. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group that contains the IoT hub. Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

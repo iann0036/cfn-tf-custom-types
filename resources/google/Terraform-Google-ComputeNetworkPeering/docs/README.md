@@ -1,6 +1,14 @@
 # Terraform::Google::ComputeNetworkPeering
 
-CloudFormation equivalent of google_compute_network_peering
+Manages a network peering within GCE. For more information see
+[the official documentation](https://cloud.google.com/compute/docs/vpc/vpc-peering)
+and
+[API](https://cloud.google.com/compute/docs/reference/latest/networks).
+
+-> Both network must create a peering with each other for the peering
+to be functional.
+
+~> Subnets IP ranges across peered VPC networks cannot overlap.
 
 ## Syntax
 
@@ -47,6 +55,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ExportCustomRoutes
 
+Whether to export the custom routes to the peer network. Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -54,6 +64,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ImportCustomRoutes
+
+Whether to export the custom routes from the peer network. Defaults to `false`.
 
 _Required_: No
 
@@ -63,6 +75,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name of the peering.
+
 _Required_: Yes
 
 _Type_: String
@@ -71,6 +85,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Network
 
+The primary network of the peering.
+
 _Required_: Yes
 
 _Type_: String
@@ -78,6 +94,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PeerNetwork
+
+The peer network in the peering. The peer network
+may belong to a different project.
 
 _Required_: Yes
 

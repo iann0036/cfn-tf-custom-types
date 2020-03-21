@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::AutomationDscConfiguration",
-    "description": "CloudFormation equivalent of azurerm_automation_dsc_configuration",
+    "description": "Manages a Automation DSC Configuration.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,25 +29,32 @@
             "type": "string"
         },
         "AutomationAccountName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the automation account in which the DSC Configuration is created. Changing this forces a new resource to be created."
         },
         "ContentEmbedded": {
-            "type": "string"
+            "type": "string",
+            "description": "The PowerShell DSC Configuration script."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description to go with DSC Configuration."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Must be the same location as the Automation Account."
         },
         "LogVerbose": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Verbose log option."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the DSC Configuration. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which the DSC Configuration is created. Changing this forces a new resource to be created."
         },
         "State": {
             "type": "string"
@@ -70,7 +77,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

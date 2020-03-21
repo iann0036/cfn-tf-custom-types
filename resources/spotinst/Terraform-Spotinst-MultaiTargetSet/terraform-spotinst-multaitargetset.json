@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Spotinst::MultaiTargetSet",
-    "description": "CloudFormation equivalent of spotinst_multai_target_set",
+    "description": "Provides a Spotinst Multai Target Set.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "HealthCheck": {
@@ -61,22 +61,28 @@
             "type": "string"
         },
         "BalancerId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the balancer."
         },
         "DeploymentId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the deployment."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Target Set. Must contain only alphanumeric characters or hyphens, and must not begin or end with a hyphen."
         },
         "Port": {
-            "type": "number"
+            "type": "number",
+            "description": "The port on which the load balancer is listening."
         },
         "Protocol": {
-            "type": "string"
+            "type": "string",
+            "description": "The protocol to allow connections to the target for the health check."
         },
         "Weight": {
-            "type": "number"
+            "type": "number",
+            "description": "Defines how traffic is distributed between the Target Set."
         },
         "HealthCheck": {
             "type": "array",

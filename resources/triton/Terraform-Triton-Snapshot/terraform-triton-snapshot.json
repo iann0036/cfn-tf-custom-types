@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Triton::Snapshot",
-    "description": "CloudFormation equivalent of triton_snapshot",
+    "description": "The `triton_snapshot` resource represents a snapshot of a Triton machine.\nSnapshots are not usable with other instances; they are a point-in-time snapshot of the current instance.\nSnapshots can also only be taken of instances that are not of brand `kvm`.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "MachineId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the machine of which to take a snapshot."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name for the snapshot."
         },
         "State": {
             "type": "string"

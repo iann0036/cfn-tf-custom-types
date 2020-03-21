@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::MonitorMetricAlert",
-    "description": "CloudFormation equivalent of azurerm_monitor_metric_alert",
+    "description": "Manages a Metric Alert within Azure Monitor.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Action": {
@@ -8,7 +8,8 @@
             "additionalProperties": false,
             "properties": {
                 "ActionGroupId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of the Action Group can be sourced from [the `azurerm_monitor_action_group` resource](./monitor_action_group.html)."
                 },
                 "WebhookProperties": {
                     "type": "array",
@@ -28,7 +29,8 @@
                             "Key",
                             "Value"
                         ]
-                    }
+                    },
+                    "description": "The map of custom string properties to include with the post operation. These data are appended to the webhook payload."
                 }
             },
             "required": [
@@ -40,19 +42,24 @@
             "additionalProperties": false,
             "properties": {
                 "Aggregation": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The statistic that runs over the metric values. Possible values are `Average`, `Count`, `Minimum`, `Maximum` and `Total`."
                 },
                 "MetricName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "One of the metric names to be monitored."
                 },
                 "MetricNamespace": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "One of the metric namespaces to be monitored."
                 },
                 "Operator": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The criteria operator. Possible values are `Equals`, `NotEquals`, `GreaterThan`, `GreaterThanOrEqual`, `LessThan` and `LessThanOrEqual`."
                 },
                 "Threshold": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The criteria threshold value that activates the alert."
                 },
                 "Dimension": {
                     "type": "array",
@@ -94,17 +101,20 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "One of the dimension names."
                 },
                 "Operator": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The dimension operator. Possible values are `Include` and `Exclude`."
                 },
                 "Values": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "The list of dimension values."
                 }
             },
             "required": [
@@ -120,32 +130,40 @@
             "type": "string"
         },
         "AutoMitigate": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Should the alerts in this Metric Alert be auto resolved? Defaults to `true`."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of this Metric Alert."
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Should this Metric Alert be enabled? Defaults to `true`."
         },
         "Frequency": {
-            "type": "string"
+            "type": "string",
+            "description": "The evaluation frequency of this Metric Alert, represented in ISO 8601 duration format. Possible values are `PT1M`, `PT5M`, `PT15M`, `PT30M` and `PT1H`. Defaults to `PT1M`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Metric Alert. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the Metric Alert instance."
         },
         "Scopes": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A set of strings of resource IDs at which the metric criteria should be applied."
         },
         "Severity": {
-            "type": "number"
+            "type": "number",
+            "description": "The severity of this Metric Alert. Possible values are `0`, `1`, `2`, `3` and `4`. Defaults to `3`."
         },
         "Tags": {
             "type": "array",
@@ -165,10 +183,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "WindowSize": {
-            "type": "string"
+            "type": "string",
+            "description": "The period of time that is used to monitor alert activity, represented in ISO 8601 duration format. This value must be greater than `frequency`. Possible values are `PT1M`, `PT5M`, `PT15M`, `PT30M`, `PT1H`, `PT6H`, `PT12H` and `P1D`. Defaults to `PT5M`."
         },
         "Action": {
             "type": "array",

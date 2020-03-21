@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::LogicAppActionHttp",
-    "description": "CloudFormation equivalent of azurerm_logic_app_action_http",
+    "description": "Manages an HTTP Action within a Logic App Workflow",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,7 +29,8 @@
             "type": "string"
         },
         "Body": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the HTTP Body that should be sent to the `uri` when this HTTP Action is triggered."
         },
         "Headers": {
             "type": "array",
@@ -49,19 +50,24 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Specifies a Map of Key-Value Pairs that should be sent to the `uri` when this HTTP Action is triggered."
         },
         "LogicAppId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the ID of the Logic App Workflow. Changing this forces a new resource to be created."
         },
         "Method": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the HTTP Method which should be used for this HTTP Action. Possible values include `DELETE`, `GET`, `PATCH`, `POST` and `PUT`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the HTTP Action to be created within the Logic App Workflow. Changing this forces a new resource to be created."
         },
         "Uri": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the URI which will be called when this HTTP Action is triggered."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

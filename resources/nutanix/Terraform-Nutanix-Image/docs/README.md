@@ -1,6 +1,6 @@
 # Terraform::Nutanix::Image
 
-CloudFormation equivalent of nutanix_image
+Provides a Nutanix Image resource to Create a image.
 
 ## Syntax
 

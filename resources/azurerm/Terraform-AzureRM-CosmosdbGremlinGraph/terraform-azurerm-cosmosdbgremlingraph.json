@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::CosmosdbGremlinGraph",
-    "description": "CloudFormation equivalent of azurerm_cosmosdb_gremlin_graph",
+    "description": "Manages a Gremlin Graph within a Cosmos DB Account.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ConflictResolutionPolicy": {
@@ -8,13 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "ConflictResolutionPath": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The conflict resolution path in the case of LastWriterWins mode."
                 },
                 "ConflictResolutionProcedure": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The procedure to resolve conflicts in the case of custom mode."
                 },
                 "Mode": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Indicates the conflict resolution mode. Possible values include: `LastWriterWins`, `Custom`."
                 }
             },
             "required": [
@@ -26,24 +29,28 @@
             "additionalProperties": false,
             "properties": {
                 "Automatic": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates if the indexing policy is automatic. Defaults to `true`."
                 },
                 "ExcludedPaths": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "List of paths to exclude from indexing. Required if `indexing_mode` is `Consistent` or `Lazy`."
                 },
                 "IncludedPaths": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "List of paths to include in the indexing. Required if `indexing_mode` is `Consistent` or `Lazy`."
                 },
                 "IndexingMode": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Indicates the indexing mode. Possible values include: `Consistent`, `Lazy`, `None`."
                 }
             },
             "required": [
@@ -78,7 +85,8 @@
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of paths to use for this unique key."
                 }
             },
             "required": [
@@ -92,22 +100,28 @@
             "type": "string"
         },
         "AccountName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the CosmosDB Account to create the Gremlin Graph within. Changing this forces a new resource to be created."
         },
         "DatabaseName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Cosmos DB Graph Database in which the Cosmos DB Gremlin Graph is created. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Cosmos DB Gremlin Graph. Changing this forces a new resource to be created."
         },
         "PartitionKeyPath": {
-            "type": "string"
+            "type": "string",
+            "description": "Define a partition key. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which the Cosmos DB Gremlin Graph is created. Changing this forces a new resource to be created."
         },
         "Throughput": {
-            "type": "number"
+            "type": "number",
+            "description": "The throughput of the Gremlin database (RU/s). Must be set in increments of `100`. The minimum value is `400`. This must be set upon database creation otherwise it cannot be updated without a manual terraform destroy-apply."
         },
         "ConflictResolutionPolicy": {
             "type": "array",

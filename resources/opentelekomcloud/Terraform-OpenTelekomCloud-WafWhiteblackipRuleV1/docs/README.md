@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::WafWhiteblackipRuleV1
 
-CloudFormation equivalent of opentelekomcloud_waf_whiteblackip_rule_v1
+Manages a WAF WhiteBlackIP Rule resource within OpenTelekomCloud.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### Addr
 
+Specifies the IP address or range. For example, 192.168.0.125 or 192.168.0.0/24.
+
 _Required_: Yes
 
 _Type_: String
@@ -43,6 +45,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PolicyId
 
+The WAF policy ID. Changing this creates a new rule.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +54,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### White
+
+Specifies the IP address type. 1: Whitelist, 0: Blacklist. If you do not configure
+the white parameter, the value is Blacklist by default.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Cloudflare::AccountMember",
-    "description": "CloudFormation equivalent of cloudflare_account_member",
+    "description": "Provides a resource which manages Cloudflare account members.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,14 +9,16 @@
             "type": "string"
         },
         "EmailAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "The email address of the user who you wish to manage. Note: Following creation, this field becomes read only via the API and cannot be updated."
         },
         "RoleIds": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Array of account role IDs that you want to assign to a member."
         }
     },
     "additionalProperties": false,

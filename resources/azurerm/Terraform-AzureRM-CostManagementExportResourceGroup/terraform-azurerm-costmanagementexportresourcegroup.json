@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::CostManagementExportResourceGroup",
-    "description": "CloudFormation equivalent of azurerm_cost_management_export_resource_group",
+    "description": "Manages an Azure Cost Management Export for a Resource Group.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "DeliveryInfo": {
@@ -8,13 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "ContainerName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the container where exports will be uploaded."
                 },
                 "RootFolderPath": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The path of the directory where exports will be uploaded."
                 },
                 "StorageAccountId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The storage account id where exports will be delivered."
                 }
             },
             "required": [
@@ -28,10 +31,12 @@
             "additionalProperties": false,
             "properties": {
                 "TimeFrame": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The time frame for pulling data for the query. If custom, then a specific time period must be provided. Possible values include: `WeekToDate`, `MonthToDate`, `YearToDate`, `TheLastWeek`, `TheLastMonth`, `TheLastYear`, `Custom`."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The type of the query."
                 }
             },
             "required": [
@@ -65,22 +70,28 @@
             "type": "string"
         },
         "Active": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is the cost management export active? Default is `true`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Cost Management Export. Changing this forces a new resource to be created."
         },
         "RecurrencePeriodEnd": {
-            "type": "string"
+            "type": "string",
+            "description": "The date the export will stop capturing information."
         },
         "RecurrencePeriodStart": {
-            "type": "string"
+            "type": "string",
+            "description": "The date the export will start capturing information."
         },
         "RecurrenceType": {
-            "type": "string"
+            "type": "string",
+            "description": "How often the requested information will be exported. Valid values include `Annually`, `Daily`, `Monthly`, `Weekly`."
         },
         "ResourceGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the resource group in which to export information."
         },
         "DeliveryInfo": {
             "type": "array",

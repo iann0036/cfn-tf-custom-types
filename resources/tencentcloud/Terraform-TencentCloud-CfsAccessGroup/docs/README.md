@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::CfsAccessGroup
 
-CloudFormation equivalent of tencentcloud_cfs_access_group
+Provides a resource to create a CFS access group.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### Description
 
+Description of the access group, and max length is 255.
+
 _Required_: No
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of the access group, and max length is 64.
 
 _Required_: Yes
 

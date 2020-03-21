@@ -1,6 +1,8 @@
 # Terraform::OCI::DatabaseDatabase
 
-CloudFormation equivalent of oci_database_database
+This resource provides the Database resource in Oracle Cloud Infrastructure Database service.
+
+Creates a new database in the specified Database Home. If the database version is provided, it must match the version of the Database Home. Applies only to Exadata DB systems.
 
 ## Syntax
 
@@ -105,7 +107,7 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CharacterSet
 
-Returns the <code>CharacterSet</code> value.
+The character set for the database.  The default is AL32UTF8. Allowed values are:.
 
 #### CompartmentId
 

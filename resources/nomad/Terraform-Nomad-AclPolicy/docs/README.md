@@ -1,6 +1,6 @@
 # Terraform::Nomad::AclPolicy
 
-CloudFormation equivalent of nomad_acl_policy
+Manages an ACL policy registered in Nomad.
 
 ## Syntax
 

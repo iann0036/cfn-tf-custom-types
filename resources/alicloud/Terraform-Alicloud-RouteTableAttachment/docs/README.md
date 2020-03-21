@@ -1,6 +1,10 @@
 # Terraform::Alicloud::RouteTableAttachment
 
-CloudFormation equivalent of alicloud_route_table_attachment
+Provides an Alicloud Route Table Attachment resource for associating Route Table to VSwitch Instance.
+
+-> **NOTE:** Terraform will auto build route table attachment while it uses `alicloud_route_table_attachment` to build a route table attachment resource.
+
+For information about route table and how to use it, see [What is Route Table](https://www.alibabacloud.com/help/doc-detail/87057.htm).
 
 ## Syntax
 
@@ -31,6 +35,8 @@ Properties:
 
 #### RouteTableId
 
+The route_table_id of the route table attachment, the field can't be changed.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VswitchId
+
+The vswitch_id of the route table attachment, the field can't be changed.
 
 _Required_: Yes
 

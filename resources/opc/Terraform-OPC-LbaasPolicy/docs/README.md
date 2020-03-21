@@ -1,6 +1,19 @@
 # Terraform::OPC::LbaasPolicy
 
-CloudFormation equivalent of opc_lbaas_policy
+The `opc_lbaas_policy` resource creates and manages a Load Balancer Classic Policy for a Load Balancer Classic instance.
+
+The Policy resource supports the definition of distinct Policy types:
+
+- [Application Cookie Stickiness Policy](#application-cookie-stickiness-policy)
+- [CloudGate Policy](#cloudgate-policy)
+- [Load Balancer Cookie Stickiness Policy](#load-balancer-cookie-stickiness-policy)
+- [Load Balancing Mechanism Policy](#load-balancing-mechanism-policy)
+- [Rate Limiting Request Policy](#rate-limiting-request-policy)
+- [Redirect Policy](#redirect-policy)
+- [Resource Access Control Policy](#resource-access-control-policy)
+- [Set Request Header Policy](#set-request-header-policy)
+- [SSL Negotiation Policy](#set-negotiation-policy)
+- [Trusted Certificate Policy](#trusted-certificate-policy)
 
 ## Syntax
 
@@ -61,6 +74,8 @@ Properties:
 
 #### LoadBalancer
 
+The parent Load Balancer the Listener.
+
 _Required_: Yes
 
 _Type_: String
@@ -68,6 +83,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the Listener.
 
 _Required_: Yes
 

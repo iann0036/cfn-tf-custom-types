@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Scaleway::Token",
-    "description": "CloudFormation equivalent of scaleway_token",
+    "description": "**DEPRECATED**: This resource is deprecated and will be removed in `v2.0+`.\n\nProvides Tokens for scaleway API access. For additional details please refer to [API documentation](https://developer.scaleway.com/#tokens-tokens-post).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -15,19 +15,23 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Token description."
         },
         "Email": {
-            "type": "string"
+            "type": "string",
+            "description": "Scaleway account email. Defaults to registered account."
         },
         "ExpirationDate": {
             "type": "string"
         },
         "Expires": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Define if the token should automatically expire or not."
         },
         "Password": {
-            "type": "string"
+            "type": "string",
+            "description": "Scaleway account password. Required for cross-account token management."
         },
         "SecretKey": {
             "type": "string"

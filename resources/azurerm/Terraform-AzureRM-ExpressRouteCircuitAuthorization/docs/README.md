@@ -1,6 +1,6 @@
 # Terraform::AzureRM::ExpressRouteCircuitAuthorization
 
-CloudFormation equivalent of azurerm_express_route_circuit_authorization
+Manages an ExpressRoute Circuit Authorization.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### ExpressRouteCircuitName
 
+The name of the Express Route Circuit in which to create the Authorization.
+
 _Required_: Yes
 
 _Type_: String
@@ -43,6 +45,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the ExpressRoute circuit. Changing this forces a
+new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +55,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which to
+create the ExpressRoute circuit. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

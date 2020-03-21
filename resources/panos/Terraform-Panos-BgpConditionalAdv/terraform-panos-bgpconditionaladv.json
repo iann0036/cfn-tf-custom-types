@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::BgpConditionalAdv",
-    "description": "CloudFormation equivalent of panos_bgp_conditional_adv",
+    "description": "This resource allows you to add/update/delete a Panorama BGP conditional advertisement.\n\n~> **Note:** In the PAN-OS GUI, this resource cannot be created without also\ncreating at least one non-exist filter and one advertise filter.  The API behaves\na little differently:  you can create the conditional advertisement itself, but\nthe API will start throwing errors if you try to update it and there is not at\nleast one non-exist filter and one advertise filter.  In order for a conditional\nadvertisement to be valid, you must specify at least one non-exist and one\nadvertise filter.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,20 +9,24 @@
             "type": "string"
         },
         "Enable": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable or not (default: `true`)."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name."
         },
         "UsedBy": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of BGP peer groups that use this rule."
         },
         "VirtualRouter": {
-            "type": "string"
+            "type": "string",
+            "description": "The virtual router to add this BGP\nconditional advertisement to."
         }
     },
     "additionalProperties": false,

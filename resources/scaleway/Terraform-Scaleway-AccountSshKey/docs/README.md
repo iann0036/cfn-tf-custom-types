@@ -1,6 +1,6 @@
 # Terraform::Scaleway::AccountSshKey
 
-CloudFormation equivalent of scaleway_account_ssh_key
+Manages user SSH keys to access servers provisioned on Scaleway.
 
 ## Syntax
 

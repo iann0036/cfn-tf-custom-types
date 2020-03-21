@@ -1,6 +1,11 @@
 # Terraform::AzureRM::VirtualNetwork
 
-CloudFormation equivalent of azurerm_virtual_network
+Manages a virtual network including any configured subnets. Each subnet can
+optionally be configured with a security group to be associated with the subnet.
+
+~> **NOTE on Virtual Networks and Subnet's:** Terraform currently
+provides both a standalone [Subnet resource](subnet.html), and allows for Subnets to be defined in-line within the [Virtual Network resource](virtual_network.html).
+At this time you cannot use a Virtual Network with in-line Subnets in conjunction with any Subnet resources. Doing so will cause a conflict of Subnet configurations and will overwrite Subnet's.
 
 ## Syntax
 
@@ -50,6 +55,10 @@ Properties:
 
 #### AddressSpace
 
+The address space that is used the virtual
+network. You can supply more than one address space. Changing this forces
+a new resource to be created.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -57,6 +66,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DnsServers
+
+List of IP addresses of DNS servers.
 
 _Required_: No
 
@@ -66,6 +77,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Location
 
+The location/region where the virtual network is
+created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -73,6 +87,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the virtual network. Changing this forces a
+new resource to be created.
 
 _Required_: Yes
 
@@ -82,6 +99,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to
+create the virtual network.
+
 _Required_: Yes
 
 _Type_: String
@@ -89,6 +109,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

@@ -1,6 +1,10 @@
 # Terraform::Scaleway::UserData
 
-CloudFormation equivalent of scaleway_user_data
+**DEPRECATED**: This resource is deprecated and will be removed in `v2.0+`.
+Please use `scaleway_instance_server` instead.
+
+Provides user data for servers.
+For additional details please refer to [API documentation](https://developer.scaleway.com/#user-data).
 
 ## Syntax
 
@@ -33,6 +37,8 @@ Properties:
 
 #### Key
 
+The key of the user data object.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +47,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Server
 
+ID of server to associate the user data with.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Value
+
+The value of the user data object.
 
 _Required_: Yes
 

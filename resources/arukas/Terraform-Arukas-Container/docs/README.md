@@ -1,6 +1,8 @@
 # Terraform::Arukas::Container
 
-CloudFormation equivalent of arukas_container
+Provides container resource. This allows container to be created, updated and deleted.
+
+For additional details please refer to [API documentation](https://arukas.io/en/documents-en/arukas-api-reference-en/).
 
 ## Syntax
 
@@ -47,6 +49,8 @@ Properties:
 
 #### Cmd
 
+The command of the container.
+
 _Required_: No
 
 _Type_: String
@@ -54,6 +58,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Endpoint
+
+The subdomain part of the endpoint assigned by Arukas. If it is not set, Arukas will do automatic assignment.
 
 _Required_: No
 
@@ -63,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Image
 
+The ID of the image to back this container.It must be a public image on DockerHub.
+
 _Required_: Yes
 
 _Type_: String
@@ -70,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Instances
+
+The count of the instance. It must be between `1` and `10`.
 
 _Required_: No
 
@@ -87,6 +97,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the container.
+
 _Required_: Yes
 
 _Type_: String
@@ -94,6 +106,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Plan
+
+The plan of the Arukas. It must be `free` or `hobby` or `standard-1` or `standard-2`.
 
 _Required_: No
 

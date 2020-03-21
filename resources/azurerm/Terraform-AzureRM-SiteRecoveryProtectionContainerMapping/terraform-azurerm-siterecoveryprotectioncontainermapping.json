@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::SiteRecoveryProtectionContainerMapping",
-    "description": "CloudFormation equivalent of azurerm_site_recovery_protection_container_mapping",
+    "description": "Manages a Azure recovery vault protection container mapping. A protection container mapping decides how to translate the protection container when a VM is migrated from one region to another.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,25 +29,32 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the network mapping."
         },
         "RecoveryFabricName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of fabric that should contains the protection container to map."
         },
         "RecoveryReplicationPolicyId": {
-            "type": "string"
+            "type": "string",
+            "description": "Id of the policy to use for this mapping."
         },
         "RecoverySourceProtectionContainerName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the source protection container to map."
         },
         "RecoveryTargetProtectionContainerId": {
-            "type": "string"
+            "type": "string",
+            "description": "Id of target protection container to map to."
         },
         "RecoveryVaultName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the vault that should be updated."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the resource group where the vault that should be updated is located."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

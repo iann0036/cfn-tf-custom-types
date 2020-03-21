@@ -1,6 +1,14 @@
 # Terraform::Alicloud::CsKubernetesAutoscaler
 
-CloudFormation equivalent of alicloud_cs_kubernetes_autoscaler
+This resource will help you to manager cluster-autoscaler in Kubernetes Cluster. 
+
+-> **NOTE:** The scaling group must use CentOS7 or AliyunLinux2 as base image.
+
+-> **NOTE:** The cluster-autoscaler can only use the same size of instanceTypes in one scaling group. 
+
+-> **NOTE:** Add Policy to RAM role of the node to deploy cluster-autoscaler if you need.
+
+-> **NOTE:** Available in 1.65.0+.
 
 ## Syntax
 
@@ -40,6 +48,8 @@ Properties:
 
 #### ClusterId
 
+The id of kubernetes cluster.
+
 _Required_: Yes
 
 _Type_: String
@@ -63,6 +73,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Utilization
+
+The utilization option of cluster-autoscaler.
 
 _Required_: Yes
 

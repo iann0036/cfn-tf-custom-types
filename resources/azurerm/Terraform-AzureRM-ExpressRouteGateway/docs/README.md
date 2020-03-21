@@ -1,6 +1,6 @@
 # Terraform::AzureRM::ExpressRouteGateway
 
-CloudFormation equivalent of azurerm_express_route_gateway
+Manages an ExpressRoute gateway.
 
 ## Syntax
 
@@ -42,6 +42,8 @@ Properties:
 
 #### Location
 
+Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +51,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the ExpressRoute gateway. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -58,6 +62,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to create the ExpressRoute gateway. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -65,6 +71,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ScaleUnits
+
+The number of scale units with which to provision the ExpressRoute gateway. Each scale unit is equal to 2Gbps, with support for up to 10 scale units (20Gbps).
 
 _Required_: Yes
 
@@ -74,6 +82,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -81,6 +91,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VirtualHubId
+
+The ID of a Virtual HUB within which the ExpressRoute gateway should be created.
 
 _Required_: Yes
 

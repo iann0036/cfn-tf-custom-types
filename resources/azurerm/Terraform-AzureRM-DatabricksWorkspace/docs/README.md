@@ -1,6 +1,6 @@
 # Terraform::AzureRM::DatabricksWorkspace
 
-CloudFormation equivalent of azurerm_databricks_workspace
+Manages a Databricks Workspace
 
 ## Syntax
 
@@ -45,6 +45,8 @@ Properties:
 
 #### Location
 
+Specifies the supported Azure location where the resource has to be created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -52,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ManagedResourceGroupName
+
+The name of the resource group where Azure should place the managed Databricks resources. Changing this forces a new resource to be created.
 
 _Required_: No
 
@@ -61,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the Databricks Workspace resource. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -68,6 +74,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the Resource Group in which the Databricks Workspace should exist. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -77,6 +85,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Sku
 
+The `sku` to use for the Databricks Workspace. Possible values are `standard`, `premium`, or `trial`. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -84,6 +94,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

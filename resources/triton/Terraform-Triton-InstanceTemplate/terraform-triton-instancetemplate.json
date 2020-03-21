@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Triton::InstanceTemplate",
-    "description": "CloudFormation equivalent of triton_instance_template",
+    "description": "The `triton_instance_template` resource represents a Triton Service Group instance template.\n\n~> **NOTE:**  Triton Service Groups are in Preview and only supported in specific regions at this time. They will become Generally Available in the near future.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,10 +29,12 @@
             "type": "string"
         },
         "FirewallEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to enable the firewall for group instances. Default is `false`."
         },
         "Image": {
-            "type": "string"
+            "type": "string",
+            "description": "UUID of the image."
         },
         "Metadata": {
             "type": "array",
@@ -52,17 +54,20 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Metadata for group instances."
         },
         "Networks": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Network IDs for group instances."
         },
         "Package": {
-            "type": "string"
+            "type": "string",
+            "description": "Package name used for provisioning."
         },
         "Tags": {
             "type": "array",
@@ -82,13 +87,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Tags for group instances."
         },
         "TemplateName": {
-            "type": "string"
+            "type": "string",
+            "description": "Friendly name for the instance template."
         },
         "Userdata": {
-            "type": "string"
+            "type": "string",
+            "description": "Data copied to instance on boot."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

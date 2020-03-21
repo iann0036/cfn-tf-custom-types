@@ -1,6 +1,10 @@
 # Terraform::Alicloud::NasAccessGroup
 
-CloudFormation equivalent of alicloud_nas_access_group
+Provides a Nas Access Group resource.
+
+In NAS, the permission group acts as a whitelist that allows you to restrict file system access. You can allow specified IP addresses or CIDR blocks to access the file system, and assign different levels of access permission to different IP addresses or CIDR blocks by adding rules to the permission group.
+
+-> **NOTE:** Available in v1.33.0+.
 
 ## Syntax
 
@@ -33,6 +37,8 @@ Properties:
 
 #### Description
 
+The Access Group description.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +47,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A Name of one Access Group.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+A Type of one Access Group. Valid values: `Vpc` and `Classic`.
 
 _Required_: Yes
 

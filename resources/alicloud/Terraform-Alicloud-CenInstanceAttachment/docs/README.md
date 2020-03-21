@@ -1,6 +1,6 @@
 # Terraform::Alicloud::CenInstanceAttachment
 
-CloudFormation equivalent of alicloud_cen_instance_attachment
+Provides a CEN child instance attachment resource.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### ChildInstanceId
 
+The ID of the child instance to attach.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ChildInstanceOwnerId
+
+The uid of the child instance. Only used when attach a child instance of other account.
 
 _Required_: No
 
@@ -51,6 +55,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ChildInstanceRegionId
 
+The region ID of the child instance to attach.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceId
+
+The ID of the CEN.
 
 _Required_: Yes
 

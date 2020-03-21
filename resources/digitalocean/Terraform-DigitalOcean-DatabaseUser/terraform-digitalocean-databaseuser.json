@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::DigitalOcean::DatabaseUser",
-    "description": "CloudFormation equivalent of digitalocean_database_user",
+    "description": "Provides a DigitalOcean database user resource. When creating a new database cluster, a default admin user with name `doadmin` will be created. Then, this resource can be used to provide additional normal users inside the cluster.\n\n~> **NOTE:** Any new users created will always have `normal` role, only the default user that comes with database cluster creation has `primary` role. Additional permissions must be managed manually.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "ClusterId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the original source database cluster."
         },
         "MysqlAuthPlugin": {
-            "type": "string"
+            "type": "string",
+            "description": "The authentication method to use for connections to the MySQL user account. The valid values are `mysql_native_password` or `caching_sha2_password` (this is the default)."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name for the database user."
         },
         "Password": {
             "type": "string"

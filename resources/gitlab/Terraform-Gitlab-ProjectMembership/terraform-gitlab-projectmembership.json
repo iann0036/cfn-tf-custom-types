@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Gitlab::ProjectMembership",
-    "description": "CloudFormation equivalent of gitlab_project_membership",
+    "description": "This resource allows you to add a current user to an existing project with a set access level.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "AccessLevel": {
-            "type": "string"
+            "type": "string",
+            "description": "One of five levels of access to the project."
         },
         "ProjectId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the project."
         },
         "UserId": {
-            "type": "number"
+            "type": "number",
+            "description": "The id of the user."
         }
     },
     "additionalProperties": false,

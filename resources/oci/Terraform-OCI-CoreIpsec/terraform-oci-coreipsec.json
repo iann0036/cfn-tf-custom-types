@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::CoreIpsec",
-    "description": "CloudFormation equivalent of oci_core_ipsec",
+    "description": "This resource provides the Ip Sec Connection resource in Oracle Cloud Infrastructure Core service.\n\nCreates a new IPSec connection between the specified DRG and CPE. For more information, see\n[IPSec VPNs](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPsec.htm).\n\nIf you configure at least one tunnel to use static routing, then in the request you must provide\nat least one valid static route (you're allowed a maximum of 10). For example: 10.0.0.0/16.\nIf you configure both tunnels to use BGP dynamic routing, you can provide an empty list for\nthe static routes. For more information, see the important note in\n[IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/).\n\nFor the purposes of access control, you must provide the OCID of the compartment where you want the\nIPSec connection to reside. Notice that the IPSec connection doesn't have to be in the same compartment\nas the DRG, CPE, or other Networking Service components. If you're not sure which compartment to\nuse, put the IPSec connection in the same compartment as the DRG. For more information about\ncompartments and access control, see\n[Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).\nFor information about OCIDs, see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).\n\nYou may optionally specify a *display name* for the IPSec connection, otherwise a default is provided.\nIt does not have to be unique, and you can change it. Avoid entering confidential information.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,16 +26,20 @@
             "type": "string"
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The OCID of the compartment to contain the IPSec connection."
         },
         "CpeId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/) object."
         },
         "CpeLocalIdentifier": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) Your identifier for your CPE device. Can be either an IP address or a hostname (specifically, the fully qualified domain name (FQDN)). The type of identifier you provide here must correspond to the value for `cpeLocalIdentifierType`."
         },
         "CpeLocalIdentifierType": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The type of identifier for your CPE device. The value you provide here must correspond to the value for `cpeLocalIdentifier`."
         },
         "DefinedTags": {
             "type": "array",
@@ -55,13 +59,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Operations.CostCenter\": \"42\"}`."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information."
         },
         "DrgId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the DRG."
         },
         "FreeformTags": {
             "type": "array",
@@ -81,7 +88,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
         },
         "State": {
             "type": "string"
@@ -91,7 +99,8 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "(Updatable) Static routes to the CPE. A static route's CIDR must not be a multicast address or class E address."
         },
         "TimeCreated": {
             "type": "string"

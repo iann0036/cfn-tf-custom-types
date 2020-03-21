@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Days
 
+Number of days before applying GC policy.
+
 _Required_: Yes
 
 _Type_: Double

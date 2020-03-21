@@ -1,6 +1,19 @@
 # Terraform::OCI::OsmanagementManagedInstanceManagement
 
-CloudFormation equivalent of oci_osmanagement_managed_instance_management
+This resource provides the Managed Instance Management in Oracle Cloud Infrastructure Osmanagement service.
+The resource can be used to attach/detach parent software source, child software sources and managed instance groups from managed instances.
+
+Adds a parent software source to a managed instance. After the software source has been added, then packages from that software source can be installed on the managed instance. Software sources that have this software source as a parent will be able to be added to this managed instance.
+Removes a software source from a managed instance. All child software sources will also be removed from the managed instance. Packages will no longer be able to be installed from these software sources.
+        
+Adds a child software source to a managed instance. After the software source has been added, then packages from that software source can be installed on the managed instance.   
+Removes a child software source from a managed instance. Packages will no longer be able to be installed from these software sources.
+
+Adds a Managed Instance to a Managed Instance Group. After the Managed Instance has been added, then operations can be performed on the Managed Instance Group which will then apply to all Managed Instances in the group. 
+Removes a Managed Instance from a Managed Instance Group.
+        
+**NOTE** The resource on CREATE will detach any already attached parent software source, child software sources, managed instance groups to the managed instance. 
+Destroying this resource will not delete any associations.
 
 ## Syntax
 
@@ -39,6 +52,8 @@ Properties:
 ## Properties
 
 #### ManagedInstanceId
+
+OCID for the managed instance.
 
 _Required_: Yes
 
@@ -104,7 +119,8 @@ Returns the <code>Description</code> value.
 
 #### DisplayName
 
-Returns the <code>DisplayName</code> value.
+User friendly name
+* `id` - unique identifier that is immutable on creation.
 
 #### LastBoot
 

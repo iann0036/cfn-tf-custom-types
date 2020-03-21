@@ -1,6 +1,8 @@
 # Terraform::Gitlab::Label
 
-CloudFormation equivalent of gitlab_label
+This resource allows you to create and manage labels for your GitLab projects.
+For further information on labels, consult the [gitlab
+documentation](https://docs.gitlab.com/ee/user/project/labels.html#project-labels).
 
 ## Syntax
 
@@ -35,6 +37,8 @@ Properties:
 
 #### Color
 
+The color of the label given in 6-digit hex notation with leading '#' sign (e.g. #FFAABB) or one of the [CSS color names](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Color_keywords).
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+The description of the label.
 
 _Required_: No
 
@@ -51,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the label.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +66,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The name or id of the project to add the label to.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::MariadbDatabase",
-    "description": "CloudFormation equivalent of azurerm_mariadb_database",
+    "description": "Manages a MariaDB Database within a MariaDB Server",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,19 +29,24 @@
             "type": "string"
         },
         "Charset": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the Charset for the MariaDB Database, which needs [to be a valid MariaDB Charset](https://mariadb.com/kb/en/library/setting-character-sets-and-collations). Changing this forces a new resource to be created."
         },
         "Collation": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the Collation for the MariaDB Database, which needs [to be a valid MariaDB Collation](https://mariadb.com/kb/en/library/setting-character-sets-and-collations). Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the MariaDB Database, which needs [to be a valid MariaDB identifier](https://mariadb.com/kb/en/library/identifier-names/). Changing this forces a\nnew resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which the MariaDB Server exists. Changing this forces a new resource to be created."
         },
         "ServerName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the MariaDB Server. Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

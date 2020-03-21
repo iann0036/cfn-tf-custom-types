@@ -1,6 +1,6 @@
 # Terraform::AzureRM::ServicebusTopicAuthorizationRule
 
-CloudFormation equivalent of azurerm_servicebus_topic_authorization_rule
+Manages a ServiceBus Topic authorization Rule within a ServiceBus Topic.
 
 ## Syntax
 
@@ -43,6 +43,8 @@ Properties:
 
 #### Listen
 
+Grants listen access to this this Authorization Rule. Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -50,6 +52,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Manage
+
+Grants manage access to this this Authorization Rule. When this property is `true` - both `listen` and `send` must be too. Defaults to `false`.
 
 _Required_: No
 
@@ -59,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the ServiceBus Topic Authorization Rule resource. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -66,6 +72,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NamespaceName
+
+Specifies the name of the ServiceBus Namespace. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -75,6 +83,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which the ServiceBus Namespace exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -83,6 +93,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Send
 
+Grants send access to this this Authorization Rule. Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -90,6 +102,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TopicName
+
+Specifies the name of the ServiceBus Topic. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

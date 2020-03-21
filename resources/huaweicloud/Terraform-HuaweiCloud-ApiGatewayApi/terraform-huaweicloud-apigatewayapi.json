@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HuaweiCloud::ApiGatewayApi",
-    "description": "CloudFormation equivalent of huaweicloud_api_gateway_api",
+    "description": "Provides an API gateway API resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "BackendParameter": {
@@ -8,19 +8,24 @@
             "additionalProperties": false,
             "properties": {
                 "Description": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the description of the parameter. The description cannot exceed 255 characters."
                 },
                 "Location": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the parameter location, which can be 'PATH', 'QUERY' or 'HEADER'."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the parameter name. A parameter name consists of 1\u201332 characters, starting with a letter.\nOnly letters, digits, periods (.), hyphens (-), and underscores (_) are allowed."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the parameter type, which can be 'REQUEST', 'CONSTANT', or 'SYSTEM'."
                 },
                 "Value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the parameter value, which is a string of not more than 255 characters.\nThe value varies depending on the parameter type:\n- 'REQUEST': parameter name in `request_parameter`\n- 'CONSTANT': real value of the parameter\n- 'SYSTEM': gateway parameter name."
                 }
             },
             "required": [
@@ -34,16 +39,20 @@
             "additionalProperties": false,
             "properties": {
                 "FunctionUrn": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the function URN."
                 },
                 "InvocationType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the invocation mode, which can be 'async' or 'sync'."
                 },
                 "Timeout": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Timeout duration (in ms) for API Gateway to request for FunctionGraph. Defaults to 50000."
                 },
                 "Version": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the function version."
                 }
             },
             "required": [
@@ -57,22 +66,28 @@
             "additionalProperties": false,
             "properties": {
                 "Method": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the backend request method, including 'GET','POST','PUT' and etc.."
                 },
                 "Protocol": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the backend request protocol. The value can be 'HTTP' and 'HTTPS'."
                 },
                 "Timeout": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Timeout duration (in ms) for API Gateway to request for the backend service. Defaults to 50000."
                 },
                 "Uri": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the backend request path. The value must comply with URI specifications."
                 },
                 "UrlDomain": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the backend service address. An endpoint URL is in the format of\n\"domain name (or IP address):port number\", with up to 255 characters. This parameter and `vpc_channel` are alternative."
                 },
                 "VpcChannel": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the VPC channel ID. This parameter and `url_domain` are alternative."
                 }
             },
             "required": [
@@ -102,22 +117,28 @@
             "additionalProperties": false,
             "properties": {
                 "Default": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the default value when the parameter is optional."
                 },
                 "Description": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the description of the parameter. The description cannot exceed 255 characters."
                 },
                 "Location": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the input parameter location, which can be 'PATH', 'QUERY' or 'HEADER'."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the input parameter name. A parameter name consists of 1\u201332 characters, starting with a letter.\nOnly letters, digits, periods (.), hyphens (-), and underscores (_) are allowed."
                 },
                 "Required": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Specifies whether the parameter is mandatory or not."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the input parameter type, which can be 'STRING' or 'NUMBER'."
                 }
             },
             "required": [
@@ -147,53 +168,67 @@
             "type": "string"
         },
         "AuthType": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the security authentication mode.\nThe value can be 'App', 'IAM', and 'NONE'."
         },
         "BackendType": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the service backend type. The value can be:\n- 'HTTP': the web service backend\n- 'FUNCTION': the FunctionGraph service backend\n- 'MOCK': the Mock service backend."
         },
         "Cors": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether CORS is supported or not."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the description of the API.\nThe description cannot exceed 255 characters."
         },
         "ExampleFailureResponse": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the example response for a failed request\nThe length cannot exceed 20,480 characters."
         },
         "ExampleSuccessResponse": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the example response for a successful request.\nThe length cannot exceed 20,480 characters."
         },
         "GroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the ID of the API group.\nChanging this creates a new resource."
         },
         "GroupName": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the API. An API name consists of 3\u201364 characters,\nstarting with a letter. Only letters, digits, and underscores (_) are allowed."
         },
         "RequestMethod": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the request method, including 'GET','POST','PUT' and etc.."
         },
         "RequestProtocol": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the request protocol. The value can be 'HTTP', 'HTTPS', and 'BOTH'\nwhich means the API can be accessed through both 'HTTP' and 'HTTPS'. Defaults to 'HTTPS'."
         },
         "RequestUri": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the request path of the API. The value must comply with URI specifications."
         },
         "Tags": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "the tags of API in format of string list."
         },
         "Version": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the version of the API. A maximum of 16 characters are allowed."
         },
         "Visibility": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies whether the API is available to the public.\nThe value can be 1 (public) and 2 (private). Defaults to 2."
         },
         "BackendParameter": {
             "type": "array",

@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Id
 
+The UUID of the security group.
+
 _Required_: Yes
 
 _Type_: String

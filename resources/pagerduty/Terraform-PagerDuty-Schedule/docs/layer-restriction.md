@@ -28,6 +28,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### DurationSeconds
 
+The duration of the restriction in `seconds`.
+
 _Required_: Yes
 
 _Type_: Double
@@ -35,6 +37,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StartDayOfWeek
+
+Number of the day when restriction starts. From 1 to 7 where 1 is Monday and 7 is Sunday.
 
 _Required_: No
 
@@ -44,6 +48,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StartTimeOfDay
 
+The start time in `HH:mm:ss` format.
+
 _Required_: Yes
 
 _Type_: String
@@ -51,6 +57,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+Can be `daily_restriction` or `weekly_restriction`.
 
 _Required_: Yes
 

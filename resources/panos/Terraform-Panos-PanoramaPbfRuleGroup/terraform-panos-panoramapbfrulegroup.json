@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::PanoramaPbfRuleGroup",
-    "description": "CloudFormation equivalent of panos_panorama_pbf_rule_group",
+    "description": "This resource allows you to add/update/delete Panorama policy based forwarding rule groups.\n\nThis resource manages clusters of policy based forwarding rules in a single vsys,\nenforcing both the contents of individual rules as well as their\nordering.  Rules are defined in a `rule` config block.\n\nAlthough you cannot modify non-group PBF rules with this\nresource, the `position_keyword` and `position_reference` parameters allow you\nto reference some other PBF rule that already exists, using it as\na means to ensure some rough placement within the ruleset as a whole.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Rule": {
@@ -8,32 +8,40 @@
             "additionalProperties": false,
             "properties": {
                 "ActiveActiveDeviceBinding": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The active-active device binding."
                 },
                 "Description": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The rule description."
                 },
                 "Disabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Set to `true` to disable this rule."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The rule name."
                 },
                 "NegateTarget": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Instead of applying the rule for the\ngiven serial numbers, apply it to everything except them."
                 },
                 "Schedule": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The schedule."
                 },
                 "Tags": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "List of tags for this rule."
                 },
                 "Uuid": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The UUID for the rule."
                 },
                 "Destination": {
                     "type": "array",
@@ -239,16 +247,20 @@
             "type": "string"
         },
         "DeviceGroup": {
-            "type": "string"
+            "type": "string",
+            "description": "The device group to put the rules into\n(default: `shared`)."
         },
         "PositionKeyword": {
-            "type": "string"
+            "type": "string",
+            "description": "A positioning keyword for this group.  This\ncan be `before`, `directly before`, `after`, `directly after`, `top`,\n`bottom`, or left empty (the default) to have no particular placement.  This\nparam works in combination with the `position_reference` param."
         },
         "PositionReference": {
-            "type": "string"
+            "type": "string",
+            "description": "Required if `position_keyword` is one of the\n\"above\" or \"below\" variants, this is the name of a non-group rule to use\nas a reference to place this group."
         },
         "Rulebase": {
-            "type": "string"
+            "type": "string",
+            "description": "The rulebase.  This can be `pre-rulebase` (default),\n`post-rulebase`, or `rulebase`."
         },
         "Rule": {
             "type": "array",

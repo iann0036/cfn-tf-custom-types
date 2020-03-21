@@ -1,6 +1,6 @@
 # Terraform::AzureRM::DevspaceController
 
-CloudFormation equivalent of azurerm_devspace_controller
+Manages a DevSpace Controller.
 
 ## Syntax
 
@@ -44,6 +44,8 @@ Properties:
 
 #### Location
 
+Specifies the supported location where the DevSpace Controller should exist. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -51,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the DevSpace Controller. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -60,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group under which the DevSpace Controller resource has to be created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -67,6 +73,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SkuName
+
+Specifies the SKU Name for this DevSpace Controller. Possible values are `S1`.
 
 _Required_: Yes
 
@@ -76,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -84,6 +94,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TargetContainerHostCredentialsBase64
 
+Base64 encoding of `kube_config_raw` of Azure Kubernetes Service cluster. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -91,6 +103,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TargetContainerHostResourceId
+
+The resource id of Azure Kubernetes Service cluster. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Consul::CatalogEntry",
-    "description": "CloudFormation equivalent of consul_catalog_entry",
+    "description": "!> The `consul_catalog_entry` resource has been deprecated in version 2.0.0 of the provider\nand will be removed in a future release. Please read the [upgrade guide](/docs/providers/consul/guides/upgrading.html#deprecation-of-consul_catalog_entry)\nfor more information.\n\nRegisters a node or service with the [Consul Catalog](https://www.consul.io/docs/agent/http/catalog.html#catalog_register).\nCurrently, defining health checks is not supported.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Service": {
@@ -8,23 +8,28 @@
             "additionalProperties": false,
             "properties": {
                 "Address": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The address of the service. Defaults to the\nnode address."
                 },
                 "Id": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of the service. Defaults to the `name`."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the service."
                 },
                 "Port": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The port of the service."
                 },
                 "Tags": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of values that are opaque to Consul,\nbut can be used to distinguish between services or nodes."
                 }
             },
             "required": [
@@ -38,16 +43,20 @@
             "type": "string"
         },
         "Address": {
-            "type": "string"
+            "type": "string",
+            "description": "The address of the node being added to,\nor referenced in the catalog."
         },
         "Datacenter": {
-            "type": "string"
+            "type": "string",
+            "description": "The datacenter to use. This overrides the\nagent's default datacenter and the datacenter in the provider setup."
         },
         "Node": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the node being added to, or\nreferenced in the catalog."
         },
         "Token": {
-            "type": "string"
+            "type": "string",
+            "description": "ACL token."
         },
         "Service": {
             "type": "array",

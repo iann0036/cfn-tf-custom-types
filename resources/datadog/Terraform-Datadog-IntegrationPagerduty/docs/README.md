@@ -1,6 +1,6 @@
 # Terraform::Datadog::IntegrationPagerduty
 
-CloudFormation equivalent of datadog_integration_pagerduty
+Provides a Datadog - PagerDuty resource. This can be used to create and manage Datadog - PagerDuty integration.
 
 ## Syntax
 
@@ -39,6 +39,8 @@ Properties:
 
 #### ApiToken
 
+Your PagerDuty API token.
+
 _Required_: No
 
 _Type_: String
@@ -46,6 +48,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IndividualServices
+
+Boolean to specify whether or not individual service objects specified by [datadog_integration_pagerduty_service_object](/docs/providers/datadog/r/integration_pagerduty_service_object.html) resource are to be used. Mutually exclusive with `services` key.
 
 _Required_: No
 
@@ -55,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Schedules
 
+Array of your schedule URLs.
+
 _Required_: No
 
 _Type_: List of String
@@ -62,6 +68,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Subdomain
+
+Your PagerDuty account’s personalized subdomain name.
 
 _Required_: Yes
 

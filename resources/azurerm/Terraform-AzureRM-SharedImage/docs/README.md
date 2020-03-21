@@ -1,6 +1,6 @@
 # Terraform::AzureRM::SharedImage
 
-CloudFormation equivalent of azurerm_shared_image
+Manages a Shared Image within a Shared Image Gallery.
 
 ## Syntax
 
@@ -53,6 +53,8 @@ Properties:
 
 #### Description
 
+A description of this Shared Image.
+
 _Required_: No
 
 _Type_: String
@@ -60,6 +62,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Eula
+
+The End User Licence Agreement for the Shared Image.
 
 _Required_: No
 
@@ -69,6 +73,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GalleryName
 
+Specifies the name of the Shared Image Gallery in which this Shared Image should exist. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -76,6 +82,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Location
+
+Specifies the supported Azure location where the Shared Image Gallery exists. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -85,6 +93,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the Shared Image. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -92,6 +102,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OsType
+
+The type of Operating System present in this Shared Image. Possible values are `Linux` and `Windows`.
 
 _Required_: Yes
 
@@ -101,6 +113,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PrivacyStatementUri
 
+The URI containing the Privacy Statement associated with this Shared Image.
+
 _Required_: No
 
 _Type_: String
@@ -108,6 +122,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ReleaseNoteUri
+
+The URI containing the Release Notes associated with this Shared Image.
 
 _Required_: No
 
@@ -117,6 +133,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which the Shared Image Gallery exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -124,6 +142,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the Shared Image.
 
 _Required_: No
 

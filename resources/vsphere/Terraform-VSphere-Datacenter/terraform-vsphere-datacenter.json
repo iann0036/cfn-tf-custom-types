@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::VSphere::Datacenter",
-    "description": "CloudFormation equivalent of vsphere_datacenter",
+    "description": "Provides a VMware vSphere datacenter resource. This can be used as the primary\ncontainer of inventory objects such as hosts and virtual machines.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -26,23 +26,27 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Map of custom attribute ids to value\nstrings to set for datacenter resource. See\n[here][docs-setting-custom-attributes] for a reference on how to set values\nfor custom attributes."
         },
         "Folder": {
-            "type": "string"
+            "type": "string",
+            "description": "The folder where the datacenter should be created.\nForces a new resource if changed."
         },
         "Moid": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the datacenter. This name needs to be unique\nwithin the folder. Forces a new resource if changed."
         },
         "Tags": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The IDs of any tags to attach to this resource. See\n[here][docs-applying-tags] for a reference on how to apply tags."
         }
     },
     "additionalProperties": false,

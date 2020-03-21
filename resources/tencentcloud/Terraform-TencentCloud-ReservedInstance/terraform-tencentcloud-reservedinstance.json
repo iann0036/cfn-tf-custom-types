@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::ReservedInstance",
-    "description": "CloudFormation equivalent of tencentcloud_reserved_instance",
+    "description": "Provides a reserved instance resource.\n\n~> **NOTE:** Reserved instance cannot be deleted and updated. The reserved instance still exist which can be extracted by reserved_instances data source when reserved instance is destroied.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,15 @@
             "type": "string"
         },
         "ConfigId": {
-            "type": "string"
+            "type": "string",
+            "description": "Configuration id of the reserved instance."
         },
         "EndTime": {
             "type": "string"
         },
         "InstanceCount": {
-            "type": "number"
+            "type": "number",
+            "description": "Number of reserved instances to be purchased."
         },
         "StartTime": {
             "type": "string"

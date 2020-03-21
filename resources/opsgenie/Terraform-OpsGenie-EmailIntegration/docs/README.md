@@ -1,6 +1,6 @@
 # Terraform::OpsGenie::EmailIntegration
 
-CloudFormation equivalent of opsgenie_email_integration
+Manages an Email Integration within Opsgenie.
 
 ## Syntax
 
@@ -42,6 +42,8 @@ Properties:
 
 #### EmailUsername
 
+The username part of the email address. It must be unique for each integration.
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +51,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Enabled
+
+A Member block as documented below.
 
 _Required_: No
 
@@ -58,6 +62,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IgnoreRespondersFromPayload
 
+If enabled, the integration will ignore recipients sent in request payloads. Defaults to false.
+
 _Required_: No
 
 _Type_: Boolean
@@ -65,6 +71,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of the integration. Name must be unique for each integration.
 
 _Required_: Yes
 
@@ -74,6 +82,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OwnerTeamId
 
+Owner team id of the integration.
+
 _Required_: No
 
 _Type_: String
@@ -81,6 +91,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SuppressNotifications
+
+If enabled, notifications that come from alerts will be suppressed. Defaults to false.
 
 _Required_: No
 

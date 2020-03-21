@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::LoadBalancerCertificate",
-    "description": "CloudFormation equivalent of oci_load_balancer_certificate",
+    "description": "This resource provides the Certificate resource in Oracle Cloud Infrastructure Load Balancer service.\n\nCreates an asynchronous request to add an SSL certificate bundle.\n\nSet the terraform flag `lifecycle { create_before_destroy = true }` in your certificate to facilitate rotating certificates. \nA certificate cannot be deleted if it is attached to another resource (a listener or a backend set for example).\nBecause certificate_name in the listener is an updatable parameter, terraform will attempt to recreate the certificate first and then update the listener but the certificate cannot be deleted while it is attached to a listener so it will fail.\nSetting the flag makes it so that when a certificate is recreated, the new certificate will be created first before the old one gets deleted.\nWhenever you change any values on a certificate that causes it to be recreated the certificate_name MUST also change. Otherwise you will get an error saying that a certificate with that name already exists.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,22 +26,28 @@
             "type": "string"
         },
         "CaCertificate": {
-            "type": "string"
+            "type": "string",
+            "description": "The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider."
         },
         "CertificateName": {
-            "type": "string"
+            "type": "string",
+            "description": "A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`."
         },
         "LoadBalancerId": {
-            "type": "string"
+            "type": "string",
+            "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add the certificate bundle."
         },
         "Passphrase": {
-            "type": "string"
+            "type": "string",
+            "description": "A passphrase for encrypted private keys. This is needed only if you created your certificate with a passphrase."
         },
         "PrivateKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The SSL private key for your certificate, in PEM format."
         },
         "PublicCertificate": {
-            "type": "string"
+            "type": "string",
+            "description": "The public certificate, in PEM format, that you received from your SSL certificate provider."
         },
         "State": {
             "type": "string"

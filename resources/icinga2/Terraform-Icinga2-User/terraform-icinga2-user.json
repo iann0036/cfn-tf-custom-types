@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Icinga2::User",
-    "description": "CloudFormation equivalent of icinga2_user",
+    "description": "Configures an Icinga2 user resource. This allows users to be configured, updated,\nand deleted.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "Email": {
-            "type": "string"
+            "type": "string",
+            "description": "An email string for this user. Useful for notification commands."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The user."
         }
     },
     "additionalProperties": false,

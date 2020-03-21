@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Gitlab::BranchProtection",
-    "description": "CloudFormation equivalent of gitlab_branch_protection",
+    "description": "This resource allows you to protect a specific branch by an access level so that the user with less access level cannot Merge/Push to the branch. GitLab EE features to protect by group or user are not supported.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,20 @@
             "type": "string"
         },
         "Branch": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the branch."
         },
         "MergeAccessLevel": {
-            "type": "string"
+            "type": "string",
+            "description": "One of five levels of access to the project."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the project."
         },
         "PushAccessLevel": {
-            "type": "string"
+            "type": "string",
+            "description": "One of five levels of access to the project."
         }
     },
     "additionalProperties": false,

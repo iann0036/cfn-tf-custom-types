@@ -1,6 +1,6 @@
 # Terraform::AzureRM::WindowsVirtualMachine
 
-CloudFormation equivalent of azurerm_windows_virtual_machine
+Manages a Windows Virtual Machine.
 
 ## Syntax
 
@@ -110,6 +110,8 @@ Properties:
 
 #### AdminPassword
 
+The Password which should be used for the local-administrator on this Virtual Machine. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -117,6 +119,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AdminUsername
+
+The username of the local administrator used for the Virtual Machine. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -126,6 +130,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AllowExtensionOperations
 
+Should Extension Operations be allowed on this Virtual Machine? Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: Boolean
@@ -133,6 +139,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AvailabilitySetId
+
+Specifies the ID of the Availability Set in which the Virtual Machine should exist. Changing this forces a new resource to be created.
 
 _Required_: No
 
@@ -142,6 +150,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ComputerName
 
+Specifies the Hostname which should be used for this Virtual Machine. If unspecified this defaults to the value for the `name` field. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -149,6 +159,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CustomData
+
+The Base64-Encoded Custom Data which should be used for this Virtual Machine. Changing this forces a new resource to be created.
 
 _Required_: No
 
@@ -158,6 +170,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DedicatedHostId
 
+The ID of a Dedicated Host where this machine should be run on. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -165,6 +179,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableAutomaticUpdates
+
+Specifies if Automatic Updates are Enabled for the Windows Virtual Machine. Changing this forces a new resource to be created.
 
 _Required_: No
 
@@ -174,6 +190,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EvictionPolicy
 
+Specifies what should happen when the Virtual Machine is evicted for price reasons when using a Spot instance. At this time the only supported value is `Deallocate`. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -181,6 +199,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LicenseType
+
+Specifies the type of on-premise license (also known as [Azure Hybrid Use Benefit](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-hybrid-use-benefit-licensing)) which should be used for this Virtual Machine. Possible values are `None`, `Windows_Client` and `Windows_Server`. Changing this forces a new resource to be created.
 
 _Required_: No
 
@@ -190,6 +210,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Location
 
+The Azure location where the Windows Virtual Machine should exist. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -197,6 +219,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MaxBidPrice
+
+The maximum price you're willing to pay for this Virtual Machine, in US Dollars; which must be greater than the current spot price. If this bid price falls below the current spot price the Virtual Machine will be evicted using the `eviction_policy`. Defaults to `-1`, which means that the Virtual Machine should not be evicted for price reasons.
 
 _Required_: No
 
@@ -206,6 +230,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the Windows Virtual Machine. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -213,6 +239,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NetworkInterfaceIds
+
+. A list of Network Interface ID's which should be attached to this Virtual Machine. The first Network Interface ID in this list will be the Primary Network Interface on the Virtual Machine.
 
 _Required_: Yes
 
@@ -222,6 +250,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Priority
 
+Specifies the priority of this Virtual Machine. Possible values are `Regular` and `Spot`. Defaults to `Regular`. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -229,6 +259,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProvisionVmAgent
+
+Should the Azure VM Agent be provisioned on this Virtual Machine? Defaults to `true`. Changing this forces a new resource to be created.
 
 _Required_: No
 
@@ -238,6 +270,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProximityPlacementGroupId
 
+The ID of the Proximity Placement Group which the Virtual Machine should be assigned to. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -245,6 +279,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the Resource Group in which the Windows Virtual Machine should be exist. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -254,6 +290,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Size
 
+The SKU which should be used for this Virtual Machine, such as `Standard_F2`.
+
 _Required_: Yes
 
 _Type_: String
@@ -261,6 +299,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SourceImageId
+
+The ID of the Image which this Virtual Machine should be created from. Changing this forces a new resource to be created.
 
 _Required_: No
 
@@ -270,6 +310,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags which should be assigned to this Virtual Machine.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -278,6 +320,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Timezone
 
+Specifies the Time Zone which should be used by the Virtual Machine, [the possible values are defined here](https://jackstromberg.com/2017/01/list-of-time-zones-consumed-by-azure/).
+
 _Required_: No
 
 _Type_: String
@@ -285,6 +329,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Zone
+
+The Zone in which this Virtual Machine should be created. Changing this forces a new resource to be created.
 
 _Required_: No
 

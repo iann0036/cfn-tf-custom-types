@@ -1,6 +1,11 @@
 # Terraform::Google::AppEngineApplication
 
-CloudFormation equivalent of google_app_engine_application
+Allows creation and management of an App Engine application.
+
+~> App Engine applications cannot be deleted once they're created; you have to delete the
+   entire project to delete the application. Terraform will report the application has been
+   successfully deleted; this is a limitation of Terraform, and will go away in the future.
+   Terraform is not able to delete App Engine applications.
 
 ## Syntax
 
@@ -41,6 +46,8 @@ Properties:
 
 #### AuthDomain
 
+The domain to authenticate users with when using App Engine's User API.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +55,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LocationId
+
+The [location](https://cloud.google.com/appengine/docs/locations)
+to serve the app from.
 
 _Required_: Yes
 
@@ -57,6 +67,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Project
 
+The project ID to create the application under.
+~>**NOTE**: GCP only accepts project ID, not project number. If you are using number,
+you may get a "Permission denied" error.
+
 _Required_: No
 
 _Type_: String
@@ -64,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServingStatus
+
+The serving status of the app.
 
 _Required_: No
 

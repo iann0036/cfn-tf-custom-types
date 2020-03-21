@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::CloudStack::StaticNat",
-    "description": "CloudFormation equivalent of cloudstack_static_nat",
+    "description": "Enables static NAT for a given IP address",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,20 @@
             "type": "string"
         },
         "IpAddressId": {
-            "type": "string"
+            "type": "string",
+            "description": "The public IP address ID for which static\nNAT will be enabled. Changing this forces a new resource to be created."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or ID of the project to deploy this\ninstance to. Changing this forces a new resource to be created."
         },
         "VirtualMachineId": {
-            "type": "string"
+            "type": "string",
+            "description": "The virtual machine ID to enable the\nstatic NAT feature for. Changing this forces a new resource to be created."
         },
         "VmGuestIp": {
-            "type": "string"
+            "type": "string",
+            "description": "The virtual machine IP address to forward the\nstatic NAT traffic to (useful when the virtual machine has secondary\nNICs or IP addresses). Changing this forces a new resource to be created."
         }
     },
     "additionalProperties": false,

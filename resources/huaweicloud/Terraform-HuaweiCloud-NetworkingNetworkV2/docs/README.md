@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::NetworkingNetworkV2
 
-CloudFormation equivalent of huaweicloud_networking_network_v2
+Manages a V2 Neutron network resource within HuaweiCloud.
 
 ## Syntax
 
@@ -45,6 +45,10 @@ Properties:
 
 #### AdminStateUp
 
+The administrative state of the network.
+Acceptable values are "true" and "false". Changing this value updates the
+state of the existing network.
+
 _Required_: No
 
 _Type_: String
@@ -52,6 +56,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the network. Changing this updates the name of
+the existing network.
 
 _Required_: No
 
@@ -61,6 +68,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region in which to obtain the V2 Networking client.
+A Networking client is needed to create a Neutron network. If omitted, the
+`region` argument of the provider is used. Changing this creates a new
+network.
+
 _Required_: No
 
 _Type_: String
@@ -68,6 +80,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Shared
+
+Specifies whether the network resource can be accessed
+by any tenant or not. Changing this updates the sharing capabalities of the
+existing network.
 
 _Required_: No
 
@@ -77,6 +93,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TenantId
 
+The owner of the network. Required if admin wants to
+create a network for another tenant. Changing this creates a new network.
+
 _Required_: No
 
 _Type_: String
@@ -84,6 +103,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ValueSpecs
+
+Map of additional options.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::ApiManagementIdentityProviderGoogle",
-    "description": "CloudFormation equivalent of azurerm_api_management_identity_provider_google",
+    "description": "Manages an API Management Google Identity Provider.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,16 +29,20 @@
             "type": "string"
         },
         "ApiManagementName": {
-            "type": "string"
+            "type": "string",
+            "description": "The Name of the API Management Service where this Google Identity Provider should be created. Changing this forces a new resource to be created."
         },
         "ClientId": {
-            "type": "string"
+            "type": "string",
+            "description": "Client Id for Google Sign-in."
         },
         "ClientSecret": {
-            "type": "string"
+            "type": "string",
+            "description": "Client secret for Google Sign-in."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The Name of the Resource Group where the API Management Service exists. Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

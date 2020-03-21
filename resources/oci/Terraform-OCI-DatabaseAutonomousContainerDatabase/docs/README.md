@@ -1,6 +1,8 @@
 # Terraform::OCI::DatabaseAutonomousContainerDatabase
 
-CloudFormation equivalent of oci_database_autonomous_container_database
+This resource provides the Autonomous Container Database resource in Oracle Cloud Infrastructure Database service.
+
+Create a new Autonomous Container Database in the specified Autonomous Exadata Infrastructure.
 
 ## Syntax
 
@@ -57,6 +59,8 @@ Properties:
 
 #### AutonomousExadataInfrastructureId
 
+The OCID of the Autonomous Exadata Infrastructure.
+
 _Required_: Yes
 
 _Type_: String
@@ -64,6 +68,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CompartmentId
+
+(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
 
 _Required_: No
 
@@ -73,6 +79,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DefinedTags
 
+(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+
 _Required_: No
 
 _Type_: List of <a href="definedtags.md">DefinedTags</a>
@@ -80,6 +88,8 @@ _Type_: List of <a href="definedtags.md">DefinedTags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+(Updatable) The display name for the Autonomous Container Database.
 
 _Required_: Yes
 
@@ -89,6 +99,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FreeformTags
 
+(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`.
+
 _Required_: No
 
 _Type_: List of <a href="freeformtags.md">FreeformTags</a>
@@ -97,6 +109,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PatchModel
 
+(Updatable) Database Patch model preference.
+
 _Required_: Yes
 
 _Type_: String
@@ -104,6 +118,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServiceLevelAgreementType
+
+The service level agreement type of the Autonomous Container Database. The default is STANDARD. For a mission critical Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
 
 _Required_: No
 

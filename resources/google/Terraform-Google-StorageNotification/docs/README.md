@@ -1,6 +1,16 @@
 # Terraform::Google::StorageNotification
 
-CloudFormation equivalent of google_storage_notification
+Creates a new notification configuration on a specified bucket, establishing a flow of event notifications from GCS to a Cloud Pub/Sub topic.
+ For more information see 
+[the official documentation](https://cloud.google.com/storage/docs/pubsub-notifications) 
+and 
+[API](https://cloud.google.com/storage/docs/json_api/v1/notifications).
+
+In order to enable notifications, a special Google Cloud Storage service account unique to the project
+must have the IAM permission "projects.topics.publish" for a Cloud Pub/Sub topic in the project. To get the service
+account's email address, use the `google_storage_project_service_account` datasource's `email_address` value, and see below
+for an example of enabling notifications by granting the correct IAM permission. See
+[the notifications documentation](https://cloud.google.com/storage/docs/gsutil/commands/notification) for more details.
 
 ## Syntax
 
@@ -41,6 +51,8 @@ Properties:
 
 #### Bucket
 
+The name of the bucket.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +60,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CustomAttributes
+
+A set of key/value attribute pairs to attach to each Cloud PubSub message published for this notification subscription.
 
 _Required_: No
 
@@ -57,6 +71,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EventTypes
 
+List of event type filters for this notification config. If not specified, Cloud Storage will send notifications for all event types. The valid types are: `"OBJECT_FINALIZE"`, `"OBJECT_METADATA_UPDATE"`, `"OBJECT_DELETE"`, `"OBJECT_ARCHIVE"`.
+
 _Required_: No
 
 _Type_: List of String
@@ -64,6 +80,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ObjectNamePrefix
+
+Specifies a prefix path filter for this notification config. Cloud Storage will only send notifications for objects in this bucket whose names begin with the specified prefix.
 
 _Required_: No
 
@@ -73,6 +91,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PayloadFormat
 
+The desired content of the Payload. One of `"JSON_API_V1"` or `"NONE"`.
+
 _Required_: Yes
 
 _Type_: String
@@ -80,6 +100,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Topic
+
+The Cloud PubSub topic to which this subscription publishes. Expects either the
+topic name, assumed to belong to the default GCP provider project, or the project-level name,
+i.e. `projects/my-gcp-project/topics/my-topic` or `my-topic`. If the project is not set in the provider,
+you will need to use the project-level name.
 
 _Required_: Yes
 

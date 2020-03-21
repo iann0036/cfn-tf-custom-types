@@ -1,6 +1,6 @@
 # Terraform::AzureRM::KustoEventhubDataConnection
 
-CloudFormation equivalent of azurerm_kusto_eventhub_data_connection
+Manages a Kusto (also known as Azure Data Explorer) EventHub Data Connection
 
 ## Syntax
 
@@ -49,6 +49,8 @@ Properties:
 
 #### ClusterName
 
+Specifies the name of the Kusto Cluster this data connection will be added to. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -56,6 +58,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ConsumerGroup
+
+Specifies the EventHub consumer group this data connection will use for ingestion. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -65,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DataFormat
 
+Specifies the data format of the EventHub messages. Allowed values: `AVRO`, `CSV`, `JSON`, `MULTIJSON`, `PSV`, `RAW`, `SCSV`, `SINGLEJSON`, `SOHSV`, `TSV` and `TXT`.
+
 _Required_: No
 
 _Type_: String
@@ -72,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DatabaseName
+
+Specifies the name of the Kusto Database this data connection will be added to. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -81,6 +89,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EventhubId
 
+Specifies the resource id of the EventHub this data connection will use for ingestion. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -88,6 +98,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Location
+
+The location where the Kusto Database should be created. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -97,6 +109,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MappingRuleName
 
+Specifies the mapping rule used for the message ingestion. Mapping rule must exist before resource is created.
+
 _Required_: No
 
 _Type_: String
@@ -104,6 +118,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the Kusto EventHub Data Connection to create. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -113,6 +129,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+Specifies the Resource Group where the Kusto Database should exist. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -120,6 +138,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TableName
+
+Specifies the target table name used for the message ingestion. Table must exist before resource is created.
 
 _Required_: No
 

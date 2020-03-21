@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::GaapProxy",
-    "description": "CloudFormation equivalent of tencentcloud_gaap_proxy",
+    "description": "Provides a resource to create a GAAP proxy.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "AccessRegion": {
-            "type": "string"
+            "type": "string",
+            "description": "Access region of the GAAP proxy, the available values include `NorthChina`, `EastChina`, `SouthChina`, `SouthwestChina`, `Hongkong`, `SL_TAIWAN`, `SoutheastAsia`, `Korea`, `SL_India`, `SL_Australia`, `Europe`, `SL_UK`, `SL_SouthAmerica`, `NorthAmerica`, `SL_MiddleUSA`, `Canada`, `SL_VIET`, `WestIndia`, `Thailand`, `Virginia`, `Russia`, `Japan` and `SL_Indonesia`."
         },
         "Bandwidth": {
-            "type": "number"
+            "type": "number",
+            "description": "Maximum bandwidth of the GAAP proxy, unit is Mbps, the available values include `10`, `20`, `50`, `100`, `200`, `500` and `1000`."
         },
         "Concurrent": {
-            "type": "number"
+            "type": "number",
+            "description": "Maximum concurrency of the GAAP proxy, unit is 10k, the available values include `2`, `5`, `10`, `20`, `30`, `40`, `50`, `60`, `70`, `80`, `90` and `100`."
         },
         "CreateTime": {
             "type": "string"
@@ -24,7 +27,8 @@
             "type": "string"
         },
         "Enable": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether GAAP proxy is enabled, default value is `true`."
         },
         "ForwardIp": {
             "type": "string"
@@ -33,13 +37,16 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the GAAP proxy, the maximum length is 30."
         },
         "ProjectId": {
-            "type": "number"
+            "type": "number",
+            "description": "ID of the project within the GAAP proxy, '0' means is default project."
         },
         "RealserverRegion": {
-            "type": "string"
+            "type": "string",
+            "description": "Region of the GAAP realserver, the available values include `NorthChina`, `EastChina`, `SouthChina`, `SouthwestChina`, `Hongkong`, `SL_TAIWAN`, `SoutheastAsia`, `Korea`, `SL_India`, `SL_Australia`, `Europe`, `SL_UK`, `SL_SouthAmerica`, `NorthAmerica`, `SL_MiddleUSA`, `Canada`, `SL_VIET`, `WestIndia`, `Thailand`, `Virginia`, `Russia`, `Japan` and `SL_Indonesia`."
         },
         "Scalable": {
             "type": "boolean"
@@ -72,7 +79,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Tags of the GAAP proxy."
         }
     },
     "additionalProperties": false,

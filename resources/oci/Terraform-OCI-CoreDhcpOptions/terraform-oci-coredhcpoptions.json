@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::CoreDhcpOptions",
-    "description": "CloudFormation equivalent of oci_core_dhcp_options",
+    "description": "This resource provides the Dhcp Options resource in Oracle Cloud Infrastructure Core service.\n\nCreates a new set of DHCP options for the specified VCN. For more information, see\n[DhcpOptions](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/).\n\nFor the purposes of access control, you must provide the OCID of the compartment where you want the set of\nDHCP options to reside. Notice that the set of options doesn't have to be in the same compartment as the VCN,\nsubnets, or other Networking Service components. If you're not sure which compartment to use, put the set\nof DHCP options in the same compartment as the VCN. For more information about compartments and access control, see\n[Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For information about OCIDs, see\n[Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).\n\nYou may optionally specify a *display name* for the set of DHCP options, otherwise a default is provided.\nIt does not have to be unique, and you can change it. Avoid entering confidential information.\n\nFor more information on configuring a VCN's default DHCP options, see [Managing Default VCN Resources](/docs/providers/oci/guides/managing_default_resources.html)",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Options": {
@@ -55,7 +55,8 @@
             "type": "string"
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The OCID of the compartment to contain the set of DHCP options."
         },
         "DefinedTags": {
             "type": "array",
@@ -75,10 +76,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Operations.CostCenter\": \"42\"}`."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information."
         },
         "FreeformTags": {
             "type": "array",
@@ -98,7 +101,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
         },
         "State": {
             "type": "string"
@@ -107,7 +111,8 @@
             "type": "string"
         },
         "VcnId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the VCN the set of DHCP options belongs to."
         },
         "Options": {
             "type": "array",

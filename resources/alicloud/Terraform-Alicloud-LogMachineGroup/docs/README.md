@@ -1,6 +1,7 @@
 # Terraform::Alicloud::LogMachineGroup
 
-CloudFormation equivalent of alicloud_log_machine_group
+Log Service manages all the ECS instances whose logs need to be collected by using the Logtail client in the form of machine groups.
+ [Refer to details](https://www.alibabacloud.com/help/doc-detail/28966.htm)
 
 ## Syntax
 
@@ -38,6 +39,8 @@ Properties:
 
 #### IdentifyList
 
+The specific machine identification, which can be an IP address or user-defined identity.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -45,6 +48,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IdentifyType
+
+The machine identification type, including IP and user-defined identity. Valid values are "ip" and "userdefined". Default to "ip".
 
 _Required_: No
 
@@ -54,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The machine group name, which is unique in the same project.
+
 _Required_: Yes
 
 _Type_: String
@@ -62,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Project
 
+The project name to the machine group belongs.
+
 _Required_: Yes
 
 _Type_: String
@@ -69,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Topic
+
+The topic of a machine group.
 
 _Required_: No
 

@@ -1,6 +1,8 @@
 # Terraform::VCD::Catalog
 
-CloudFormation equivalent of vcd_catalog
+Provides a vCloud Director catalog resource. This can be used to create and delete a catalog.
+
+Supported in provider *v2.0+*
 
 ## Syntax
 
@@ -45,6 +47,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DeleteRecursive
 
+- When destroying use delete_recursive=True to remove the catalog and any objects it contains that are in a state that normally allows removal.
+
 _Required_: Yes
 
 _Type_: Boolean
@@ -52,6 +56,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+- Description of catalog.
 
 _Required_: No
 
@@ -61,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Catalog name.
+
 _Required_: Yes
 
 _Type_: String
@@ -68,6 +76,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Org
+
+The name of organization to use, optional if defined at provider level. Useful when connected as sysadmin working across different organisations.
 
 _Required_: No
 

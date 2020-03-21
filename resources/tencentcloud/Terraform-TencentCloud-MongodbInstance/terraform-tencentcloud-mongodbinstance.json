@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::MongodbInstance",
-    "description": "CloudFormation equivalent of tencentcloud_mongodb_instance",
+    "description": "Provide a resource to create a Mongodb instance.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,41 +9,50 @@
             "type": "string"
         },
         "AvailableZone": {
-            "type": "string"
+            "type": "string",
+            "description": "The available zone of the Mongodb."
         },
         "CreateTime": {
             "type": "string"
         },
         "EngineVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "Version of the Mongodb, and available values include MONGO_3_WT, MONGO_3_ROCKS and MONGO_36_WT."
         },
         "InstanceName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the Mongodb instance."
         },
         "MachineType": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of Mongodb instance, and available values include GIO and TGIO."
         },
         "Memory": {
-            "type": "number"
+            "type": "number",
+            "description": "Memory size. The minimum value is 2, and unit is GB."
         },
         "Password": {
-            "type": "string"
+            "type": "string",
+            "description": "Password of this Mongodb account."
         },
         "ProjectId": {
-            "type": "number"
+            "type": "number",
+            "description": "ID of the project which the instance belongs."
         },
         "SecurityGroups": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "ID of the security group."
         },
         "Status": {
             "type": "number"
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the subnet within this VPC. The vaule is required if VpcId is set."
         },
         "Tags": {
             "type": "array",
@@ -63,16 +72,19 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "The tags of the Mongodb."
         },
         "Vip": {
             "type": "string"
         },
         "Volume": {
-            "type": "number"
+            "type": "number",
+            "description": "Disk size. The minimum value is 25, and unit is GB."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the VPC."
         },
         "Vport": {
             "type": "number"

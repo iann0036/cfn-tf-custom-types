@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::DatascienceModel",
-    "description": "CloudFormation equivalent of oci_datascience_model",
+    "description": "This resource provides the Model resource in Oracle Cloud Infrastructure Datascience service.\n\nCreates a new model.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,10 +26,12 @@
             "type": "string"
         },
         "ArtifactContentDisposition": {
-            "type": "string"
+            "type": "string",
+            "description": "The content disposition of the artifact to upload."
         },
         "ArtifactContentLength": {
-            "type": "string"
+            "type": "string",
+            "description": "The length of the artifact to upload."
         },
         "ArtifactContentMd5": {
             "type": "string"
@@ -38,7 +40,8 @@
             "type": "string"
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the compartment to create the model in."
         },
         "CreatedBy": {
             "type": "string"
@@ -61,13 +64,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Operations.CostCenter\": \"42\"}`."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) A short blurb describing the model."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information. Example: `My Model`."
         },
         "EmptyModel": {
             "type": "boolean"
@@ -90,13 +96,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{\"Department\": \"Finance\"}`."
         },
         "ModelArtifact": {
-            "type": "string"
+            "type": "string",
+            "description": "The model artifact to upload."
         },
         "ProjectId": {
-            "type": "string"
+            "type": "string",
+            "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the project to associate with the model."
         },
         "State": {
             "type": "string"

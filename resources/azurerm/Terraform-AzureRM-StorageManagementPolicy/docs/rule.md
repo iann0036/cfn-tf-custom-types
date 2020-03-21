@@ -30,6 +30,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Enabled
 
+Boolean to specify whether the rule is enabled.
+
 _Required_: Yes
 
 _Type_: Boolean
@@ -37,6 +39,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+A rule name can contain any combination of alpha numeric characters. Rule name is case-sensitive. It must be unique within a policy.
 
 _Required_: Yes
 

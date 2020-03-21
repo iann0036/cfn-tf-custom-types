@@ -1,6 +1,6 @@
 # Terraform::AzureRM::EventhubNamespaceAuthorizationRule
 
-CloudFormation equivalent of azurerm_eventhub_namespace_authorization_rule
+Manages an Authorization Rule for an Event Hub Namespace.
 
 ## Syntax
 
@@ -41,6 +41,8 @@ Properties:
 
 #### Listen
 
+Grants listen access to this this Authorization Rule. Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -48,6 +50,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Manage
+
+Grants manage access to this this Authorization Rule. When this property is `true` - both `listen` and `send` must be too. Defaults to `false`.
 
 _Required_: No
 
@@ -57,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the Authorization Rule. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -64,6 +70,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NamespaceName
+
+Specifies the name of the EventHub Namespace. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -73,6 +81,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which the EventHub Namespace exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -80,6 +90,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Send
+
+Grants send access to this this Authorization Rule. Defaults to `false`.
 
 _Required_: No
 

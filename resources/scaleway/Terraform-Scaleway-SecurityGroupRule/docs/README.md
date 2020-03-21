@@ -1,6 +1,10 @@
 # Terraform::Scaleway::SecurityGroupRule
 
-CloudFormation equivalent of scaleway_security_group_rule
+**DEPRECATED**: This resource is deprecated and will be removed in `v2.0+`.
+Please use `scaleway_instance_security_group_rule` instead.
+
+Provides security group rules. This allows security group rules to be created, updated and deleted.
+For additional details please refer to [API documentation](https://developer.scaleway.com/#security-groups-manage-rules).
 
 ## Syntax
 
@@ -39,6 +43,8 @@ Properties:
 
 #### Action
 
+action of rule (`accept`, `drop`).
+
 _Required_: Yes
 
 _Type_: String
@@ -46,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Direction
+
+direction of rule (`inbound`, `outbound`).
 
 _Required_: Yes
 
@@ -55,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IpRange
 
+ip_range of rule.
+
 _Required_: Yes
 
 _Type_: String
@@ -62,6 +72,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Port
+
+port of the rule.
 
 _Required_: No
 
@@ -71,6 +83,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Protocol
 
+protocol of rule (`ICMP`, `TCP`, `UDP`).
+
 _Required_: Yes
 
 _Type_: String
@@ -78,6 +92,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecurityGroup
+
+the security group which should be associated with this rule.
 
 _Required_: Yes
 

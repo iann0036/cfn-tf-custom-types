@@ -1,6 +1,10 @@
 # Terraform::Scaleway::SecurityGroup
 
-CloudFormation equivalent of scaleway_security_group
+**DEPRECATED**: This resource is deprecated and will be removed in `v2.0+`.
+Please use `scaleway_instance_security_group` instead.
+
+Provides security groups. This allows security groups to be created, updated and deleted.
+For additional details please refer to [API documentation](https://developer.scaleway.com/#security-groups).
 
 ## Syntax
 
@@ -39,6 +43,8 @@ Properties:
 
 #### Description
 
+description of security group.
+
 _Required_: Yes
 
 _Type_: String
@@ -46,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableDefaultSecurity
+
+default: true. Add default security group rules.
 
 _Required_: No
 
@@ -55,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InboundDefaultPolicy
 
+default policy for inbound traffic. Can be one of accept or drop.
+
 _Required_: No
 
 _Type_: String
@@ -62,6 +72,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+name of security group.
 
 _Required_: Yes
 
@@ -71,6 +83,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OutboundDefaultPolicy
 
+default policy for outbound traffic. Can be one of accept or drop.
+
 _Required_: No
 
 _Type_: String
@@ -78,6 +92,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Stateful
+
+default: false. Mark the security group as stateful. Note that stateful security groups can not be associated with bare metal servers.
 
 _Required_: No
 

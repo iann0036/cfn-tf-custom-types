@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::FlexibleEngine::MrsClusterV1",
-    "description": "CloudFormation equivalent of flexibleengine_mrs_cluster_v1",
+    "description": "Manages resource cluster within FlexibleEngine MRS.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "AddJobs": {
@@ -56,7 +56,8 @@
             "additionalProperties": false,
             "properties": {
                 "ComponentName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Component name Currently, Hadoop, Spark, HBase,\nHive, Hue, Loader, Flume, Kafka and Storm are supported. Loader and Flume are\nnot supported by MRS 1.3.0."
                 }
             },
             "required": [
@@ -83,43 +84,51 @@
             "type": "string"
         },
         "AvailableZoneId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of an available zone. Obtain the value\nfrom Regions and Endpoints."
         },
         "AvailableZoneName": {
             "type": "string"
         },
         "BillingType": {
-            "type": "number"
+            "type": "number",
+            "description": "The value is 12, indicating on-demand payment."
         },
         "ChargingStartTime": {
             "type": "string"
         },
         "ClusterAdminSecret": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates the password of the MRS Manager\nadministrator. The password for MRS 1.5.0: Must contain 6 to 32 characters.\nMust contain at least two types of the following: Lowercase letters Uppercase\nletters Digits Special characters of `~!@#$%^&*()-_=+\\|[{}];:'\",<.>/? Spaces\nMust be different from the username. Must be different from the username written\nin reverse order. The password for MRS 1.3.0: Must contain 8 to 64 characters.\nMust contain at least four types of the following: Lowercase letters Uppercase\nletters Digits Special characters of `~!@#$%^&*()-_=+\\|[{}];:'\",<.>/? Spaces\nMust be different from the username. Must be different from the username written\nin reverse order. This parameter needs to be configured only when safe_mode\nis set to 1."
         },
         "ClusterId": {
             "type": "string"
         },
         "ClusterName": {
-            "type": "string"
+            "type": "string",
+            "description": "Cluster name, which is globally unique and contains\nonly 1 to 64 letters, digits, hyphens (-), and underscores (_)."
         },
         "ClusterState": {
             "type": "string"
         },
         "ClusterType": {
-            "type": "number"
+            "type": "number",
+            "description": "Type of clusters 0: analysis cluster 1: streaming\ncluster The default value is 0."
         },
         "ClusterVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "Version of the clusters.You can refer to the online documentation to have the full list of available versions. The latest version of MRS is used by default."
         },
         "CoreNodeNum": {
-            "type": "number"
+            "type": "number",
+            "description": "Number of Core nodes Value range: 3 to 100 A\nmaximum of 100 Core nodes are supported by default. If more than 100 Core nodes\nare required, contact technical support engineers or invoke background APIs\nto modify the database."
         },
         "CoreNodeProductId": {
             "type": "string"
         },
         "CoreNodeSize": {
-            "type": "string"
+            "type": "string",
+            "description": "Instance specification of a Core node Configuration\nmethod of this parameter is identical to that of master_node_size."
         },
         "CoreNodeSpecId": {
             "type": "string"
@@ -155,25 +164,29 @@
             "type": "string"
         },
         "LogCollection": {
-            "type": "number"
+            "type": "number",
+            "description": "Indicates whether logs are collected when cluster\ninstallation fails. 0: not collected 1: collected The default value is 0. If\nlog_collection is set to 1, OBS buckets will be created to collect the MRS logs.\nThese buckets will be charged."
         },
         "MasterNodeIp": {
             "type": "string"
         },
         "MasterNodeNum": {
-            "type": "number"
+            "type": "number",
+            "description": "Number of Master nodes The value is 2."
         },
         "MasterNodeProductId": {
             "type": "string"
         },
         "MasterNodeSize": {
-            "type": "string"
+            "type": "string",
+            "description": "Best match based on several years of commissioning\nexperience. MRS supports specifications of hosts, and host specifications are\ndetermined by CPUs, memory, and disks space. Master nodes support s1.4xlarge.linux.mrs,\nand s1.8xlarge.linux.mrs. Core nodes of a streaming cluster support s1.xlarge.linux.mrs,\nc2.2xlarge.linux.mrs, s1.2xlarge.linux.mrs, s1.4xlarge.linux.mrs, s1.8xlarge.linux.mrs,\nand d1.8xlarge.linux.mrs. Core nodes of an analysis cluster support all specifications.\ns1.xlarge.linux.mrs CPU: 4-core Memory: 16 GB System Disk: 40 GB\nc2.2xlarge.linux.mrs CPU: 8-core Memory: 16 GB System Disk: 40 GB\ns1.4xlarge.linux.mrs CPU: 16-core Memory: 64 GB System Disk: 40 GB\ns1.8xlarge.linux.mrs CPU: 32-core Memory: 128 GB System Disk: 40 GB\nd1.xlarge.linux.mrs CPU: 6-core Memory: 55 GB System Disk: 40 GB Data Disk: 1.8 TB x 3 HDDs\nd1.2xlarge.linux.mrs CPU: 12-core Memory: 110 GB System Disk: 40 GB Data Disk: 1.8 TB x 6 HDDs\nd1.4xlarge.linux.mrs CPU: 24-core Memory: 220 GB System Disk: 40 GB Data Disk: 1.8 TB x 12 HDDs\nd1.8xlarge.linux.mrs CPU: 48-core Memory: 440 GB System Disk: 40 GB Data Disk: 1.8 TB x 24 HDDs."
         },
         "MasterNodeSpecId": {
             "type": "string"
         },
         "NodePublicCertName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of a key pair You can use a key\nto log in to the Master node in the cluster."
         },
         "OrderId": {
             "type": "string"
@@ -182,13 +195,15 @@
             "type": "string"
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "Cluster region information. Obtain the value from\nRegions and Endpoints."
         },
         "Remark": {
             "type": "string"
         },
         "SafeMode": {
-            "type": "number"
+            "type": "number",
+            "description": "MRS cluster running mode 0: common mode The value\nindicates that the Kerberos authentication is disabled. Users can use all functions\nprovided by the cluster. 1: safe mode The value indicates that the Kerberos\nauthentication is enabled. Common users cannot use the file management or job\nmanagement functions of an MRS cluster and cannot view cluster resource usage\nor the job records of Hadoop and Spark. To use these functions, the users must\nobtain the relevant permissions from the MRS Manager administrator. The request\nhas the cluster_admin_secret parameter only when safe_mode is set to 1."
         },
         "SecurityGroupsId": {
             "type": "string"
@@ -197,7 +212,8 @@
             "type": "string"
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "Subnet ID Obtain the subnet ID from the management\nconsole as follows: Register an account and log in to the management console.\nClick Virtual Private Cloud and select Virtual Private Cloud from the left list.\nOn the Virtual Private Cloud page, obtain the subnet ID from the list."
         },
         "TenantId": {
             "type": "string"
@@ -209,13 +225,16 @@
             "type": "string"
         },
         "VolumeSize": {
-            "type": "number"
+            "type": "number",
+            "description": "Data disk storage space of a Core node Users can\nadd disks to expand storage capacity when creating a cluster. There are the\nfollowing scenarios: Separation of data storage and computing: Data is stored\nin the OBS system. Costs of clusters are relatively low but computing performance\nis poor. The clusters can be deleted at any time. It is recommended when data\ncomputing is not frequently performed. Integration of data storage and computing:\nData is stored in the HDFS system. Costs of clusters are relatively high but\ncomputing performance is good. The clusters cannot be deleted in a short term.\nIt is recommended when data computing is frequently performed. Value range:\n100 GB to 32000 GB."
         },
         "VolumeType": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of disks SATA and SSD are supported. SATA:\ncommon I/O SSD: super high-speed I/O."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the VPC where the subnet locates Obtain the VPC\nID from the management console as follows: Register an account and log in to\nthe management console. Click Virtual Private Cloud and select Virtual Private\nCloud from the left list. On the Virtual Private Cloud page, obtain the VPC\nID from the list."
         },
         "AddJobs": {
             "type": "array",

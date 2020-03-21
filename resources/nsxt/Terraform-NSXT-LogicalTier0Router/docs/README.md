@@ -1,6 +1,6 @@
 # Terraform::NSXT::LogicalTier0Router
 
-CloudFormation equivalent of nsxt_logical_tier0_router
+This resource provides a method for the management of a tier 0 logical router.
 
 ## Syntax
 
@@ -43,6 +43,8 @@ Properties:
 
 #### Description
 
+Description of the resource.
+
 _Required_: No
 
 _Type_: String
@@ -50,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+Display name, defaults to ID if not set.
 
 _Required_: No
 
@@ -59,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EdgeClusterId
 
+Edge Cluster ID for the logical Tier0 router. Changing this setting on existing router will re-create the router.
+
 _Required_: Yes
 
 _Type_: String
@@ -67,6 +73,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FailoverMode
 
+Failover mode which determines whether the preferred service router instance for given logical router will preempt the peer. Accepted values are PREEMPTIVE/NON_PREEMPTIVE. This setting is relevant only for ACTIVE_STANDBY high availability mode.
+
 _Required_: No
 
 _Type_: String
@@ -74,6 +82,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HighAvailabilityMode
+
+High availability mode "ACTIVE_ACTIVE"/"ACTIVE_STANDBY". Changing this setting on existing router will re-create the router.
 
 _Required_: No
 

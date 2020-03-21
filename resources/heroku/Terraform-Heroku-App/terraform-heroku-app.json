@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Heroku::App",
-    "description": "CloudFormation equivalent of heroku_app",
+    "description": "Provides a Heroku App resource. This can be used to\ncreate and manage applications on Heroku.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Organization": {
@@ -28,7 +28,8 @@
             "type": "string"
         },
         "Acm": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "The flag representing Automated Certificate Management for the app."
         },
         "AllConfigVars": {
             "type": "array",
@@ -55,7 +56,8 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Buildpack names or URLs for the application.\nBuildpacks configured externally won't be altered if this is not present."
         },
         "ConfigVars": {
             "type": "array",
@@ -84,13 +86,16 @@
             "type": "string"
         },
         "InternalRouting": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If true, the application will be routable\nonly internally in a private space. This option is only available for apps\nthat also specify `space`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the application. In Heroku, this is also the\nunique ID, so it must be unique and have a minimum of 3 characters."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region that the app should be deployed in."
         },
         "SensitiveConfigVars": {
             "type": "array",
@@ -113,10 +118,12 @@
             }
         },
         "Space": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of a private space to create the app in."
         },
         "Stack": {
-            "type": "string"
+            "type": "string",
+            "description": "The application stack is what platform to run the application\nin."
         },
         "Uuid": {
             "type": "string"

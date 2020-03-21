@@ -1,6 +1,10 @@
 # Terraform::Netlify::BuildHook
 
-CloudFormation equivalent of netlify_build_hook
+Manages build hooks, also known as [incoming webhooks]
+(https://www.netlify.com/docs/webhooks/#outgoing-webhooks). These can,
+at the time of writing, only be used to trigger new builds of the site.
+To create one, provide your site id along with the name of the hook, and
+the branch to be built when the hook is triggered.
 
 ## Syntax
 
@@ -33,6 +37,8 @@ Properties:
 
 #### Branch
 
+branch to be built when the hook is triggered.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +47,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SiteId
 
+Your netlify site's unique id.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +56,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Title
+
+name of the webhook - this is purely for organization and
+can be any name you want.
 
 _Required_: Yes
 

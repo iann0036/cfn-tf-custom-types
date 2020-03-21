@@ -32,6 +32,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### BackendPoolName
 
+Specifies the name of the Backend Pool to forward the incoming traffic to.
+
 _Required_: Yes
 
 _Type_: String
@@ -39,6 +41,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CacheEnabled
+
+Specifies whether to Enable caching or not. Valid options are `true` or `false`. Defaults to `false`.
 
 _Required_: No
 
@@ -48,6 +52,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CacheQueryParameterStripDirective
 
+Defines cache behavior in releation to query string parameters. Valid options are `StripAll` or `StripNone`. Defaults to `StripAll`.
+
 _Required_: No
 
 _Type_: String
@@ -55,6 +61,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CacheUseDynamicCompression
+
+Whether to use dynamic compression when caching. Valid options are `true` or `false`. Defaults to `false`.
 
 _Required_: No
 
@@ -64,6 +72,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CustomForwardingPath
 
+Path to use when constructing the request to forward to the backend. This functions as a URL Rewrite. Default behavior preserves the URL path.
+
 _Required_: No
 
 _Type_: String
@@ -71,6 +81,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ForwardingProtocol
+
+Protocol to use when redirecting. Valid options are `HttpOnly`, `HttpsOnly`, or `MatchRequest`. Defaults to `HttpsOnly`.
 
 _Required_: No
 

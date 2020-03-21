@@ -1,6 +1,12 @@
 # Terraform::Panos::IpsecTunnel
 
-CloudFormation equivalent of panos_ipsec_tunnel
+This resource allows you to add/update/delete IPSec tunnels.
+
+A large number of params have prefixes:
+
+* `ak` - Auto key
+* `mk` - Manual key
+* `gps` - GlobalProtect Satellite
 
 ## Syntax
 
@@ -102,6 +108,8 @@ Properties:
 
 #### AkIkeGateway
 
+IKE gateway name.
+
 _Required_: No
 
 _Type_: String
@@ -109,6 +117,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AkIpsecCryptoProfile
+
+IPSec crypto profile name.
 
 _Required_: No
 
@@ -118,6 +128,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AntiReplay
 
+Set to `true` to enable Anti-Replay check
+on this tunnel.
+
 _Required_: No
 
 _Type_: Boolean
@@ -125,6 +138,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CopyFlowLabel
+
+Set to `true` to copy IPv6
+flow label for 6in6 tunnel from inner packet to IPSec packet (not recommended).
 
 _Required_: No
 
@@ -134,6 +150,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CopyTos
 
+Set to `true` to copy IP TOS bits from inner
+packet to IPSec packet (not recommended).
+
 _Required_: No
 
 _Type_: Boolean
@@ -141,6 +160,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Disabled
+
+Set to `true` to disable this
+IPSec tunnel.
 
 _Required_: No
 
@@ -150,6 +172,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableIpv6
 
+Set to `true` to enable IPv6.
+
 _Required_: No
 
 _Type_: Boolean
@@ -157,6 +181,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableTunnelMonitor
+
+Enable tunnel monitoring on this tunnel.
 
 _Required_: No
 
@@ -166,6 +192,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GpsCertificateProfile
 
+Profile for authenticating
+GlobalProtect gateway certificates.
+
 _Required_: No
 
 _Type_: String
@@ -173,6 +202,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GpsInterface
+
+Interface to communicate with portal.
 
 _Required_: No
 
@@ -182,6 +213,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GpsInterfaceFloatingIpIpv4
 
+Floating IPv4
+address in HA Active-Active configuration.
+
 _Required_: No
 
 _Type_: String
@@ -189,6 +223,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GpsInterfaceFloatingIpIpv6
+
+Floating IPv6
+address in HA Active-Active configuration.
 
 _Required_: No
 
@@ -198,6 +235,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GpsInterfaceIpIpv4
 
+specify exact IP address if interface
+has multiple addresses (IPv4).
+
 _Required_: No
 
 _Type_: String
@@ -205,6 +245,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GpsInterfaceIpIpv6
+
+specify exact IP address if interface
+has multiple addresses (IPv6).
 
 _Required_: No
 
@@ -214,6 +257,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GpsLocalCertificate
 
+GlobalProtect satellite certificate
+file name.
+
 _Required_: No
 
 _Type_: String
@@ -221,6 +267,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GpsPortalAddress
+
+GlobalProtect portal address.
 
 _Required_: No
 
@@ -230,6 +278,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GpsPreferIpv6
 
+Prefer to register the
+portal in IPv6. Only applicable to FQDN portal-address.
+
 _Required_: No
 
 _Type_: Boolean
@@ -237,6 +288,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GpsPublishConnectedRoutes
+
+Set to `true` to to publish
+connected and static routes.
 
 _Required_: No
 
@@ -246,6 +300,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GpsPublishRoutes
 
+Specify list of routes to publish
+to Global Protect Gateway.
+
 _Required_: No
 
 _Type_: List of String
@@ -253,6 +310,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MkAuthKey
+
+The auth key for the given auth type.
 
 _Required_: No
 
@@ -262,6 +321,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MkAuthType
 
+Authentication algorithm.  Valid values are
+`md5`, `sha1`, `sha256`, `sha384`, `sha512`, or `none`.
+
 _Required_: No
 
 _Type_: String
@@ -270,6 +332,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MkEspEncryptionKey
 
+The encryption key.
+
 _Required_: No
 
 _Type_: String
@@ -277,6 +341,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MkEspEncryptionType
+
+The encryption algorithm.  Valid values
+are `des`, `3des`, `aes-128-cbc`, `aes-192-cbc`, `aes-256-cbc`, or `null`.
 
 _Required_: No
 
@@ -294,6 +361,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MkLocalAddressFloatingIp
 
+Floating IP address in HA
+Active-Active configuration.
+
 _Required_: No
 
 _Type_: String
@@ -301,6 +371,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MkLocalAddressIp
+
+Specify exact IP address if interface
+has multiple addresses.
 
 _Required_: No
 
@@ -310,6 +383,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MkLocalSpi
 
+Outbound SPI, hex format.
+
 _Required_: No
 
 _Type_: String
@@ -317,6 +392,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MkProtocol
+
+Manual key protocol.  Valid valies are
+`esp` or `ah`.
 
 _Required_: No
 
@@ -334,6 +412,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MkRemoteSpi
 
+Inbound SPI, hex format.
+
 _Required_: No
 
 _Type_: String
@@ -341,6 +421,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The object's name.
 
 _Required_: Yes
 
@@ -350,6 +432,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TunnelInterface
 
+The tunnel interface.
+
 _Required_: Yes
 
 _Type_: String
@@ -357,6 +441,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TunnelMonitorDestinationIp
+
+Destination IP to send ICMP probe.
 
 _Required_: No
 
@@ -366,6 +452,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TunnelMonitorProfile
 
+Tunnel monitor profile.
+
 _Required_: No
 
 _Type_: String
@@ -373,6 +461,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TunnelMonitorProxyId
+
+Which proxy-id (or
+proxy-id-v6) the monitoring traffic will use.
 
 _Required_: No
 
@@ -382,6 +473,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TunnelMonitorSourceIp
 
+Source IP to send ICMP probe.
+
 _Required_: No
 
 _Type_: String
@@ -389,6 +482,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The type.  Valid values are `auto-key` (the default),
+`manual-key`, or `global-protect-satellite`.
 
 _Required_: No
 

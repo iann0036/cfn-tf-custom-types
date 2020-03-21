@@ -1,6 +1,6 @@
 # Terraform::PagerDuty::TeamMembership
 
-CloudFormation equivalent of pagerduty_team_membership
+A [team membership](https://v2.developer.pagerduty.com/v2/page/api-reference#!/Teams/put_teams_id_users_user_id) manages memberships within a team.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### Role
 
+The role of the user in the team. One of `observer`, `responder`, or `manager`. Defaults to `observer`.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +43,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TeamId
 
+The ID of the team in which the user will belong.
+* `role`    - (Optional) The role of the user in the team. One of `observer`, `responder`, or `manager`. Defaults to `observer`.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +53,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserId
+
+The ID of the user to add to the team.
+* `team_id` - (Required) The ID of the team in which the user will belong.
+* `role`    - (Optional) The role of the user in the team. One of `observer`, `responder`, or `manager`. Defaults to `observer`.
 
 _Required_: Yes
 

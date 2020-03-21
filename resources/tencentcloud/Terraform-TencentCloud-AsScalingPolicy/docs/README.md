@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::AsScalingPolicy
 
-CloudFormation equivalent of tencentcloud_as_scaling_policy
+Provides a resource for an AS (Auto scaling) policy.
 
 ## Syntax
 
@@ -52,6 +52,8 @@ Properties:
 
 #### AdjustmentType
 
+Specifies whether the adjustment is an absolute number or a percentage of the current capacity. Available values include CHANGE_IN_CAPACITY, EXACT_CAPACITY and PERCENT_CHANGE_IN_CAPACITY.
+
 _Required_: Yes
 
 _Type_: String
@@ -59,6 +61,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AdjustmentValue
+
+Define the number of instances by which to scale.For CHANGE_IN_CAPACITY type or PERCENT_CHANGE_IN_CAPACITY, a positive increment adds to the current capacity and a negative value removes from the current capacity. For EXACT_CAPACITY type, it defines an absolute number of the existing Auto Scaling group size.
 
 _Required_: Yes
 
@@ -68,6 +72,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ComparisonOperator
 
+Comparison operator, of which valid values can be GREATER_THAN, GREATER_THAN_OR_EQUAL_TO, LESS_THAN, LESS_THAN_OR_EQUAL_TO, EQUAL_TO and NOT_EQUAL_TO.
+
 _Required_: Yes
 
 _Type_: String
@@ -75,6 +81,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ContinuousTime
+
+Retry times (1~10).
 
 _Required_: Yes
 
@@ -84,6 +92,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Cooldown
 
+Cooldwon time in second. Default is 300.
+
 _Required_: No
 
 _Type_: Double
@@ -91,6 +101,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MetricName
+
+Name of an indicator, which can be CPU_UTILIZATION, MEM_UTILIZATION, LAN_TRAFFIC_OUT, LAN_TRAFFIC_IN, WAN_TRAFFIC_OUT and WAN_TRAFFIC_IN.
 
 _Required_: Yes
 
@@ -100,6 +112,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NotificationUserGroupIds
 
+An ID group of users to be notified when an alarm is triggered.
+
 _Required_: No
 
 _Type_: List of String
@@ -107,6 +121,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Period
+
+Time period in second, of which valid values can be 60 and 300.
 
 _Required_: Yes
 
@@ -116,6 +132,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PolicyName
 
+Name of a policy used to define a reaction when an alarm is triggered.
+
 _Required_: Yes
 
 _Type_: String
@@ -123,6 +141,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ScalingGroupId
+
+ID of a scaling group.
 
 _Required_: Yes
 
@@ -132,6 +152,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Statistic
 
+Statistic types, include AVERAGE, MAXIMUM and MINIMUM. Default is AVERAGE.
+
 _Required_: No
 
 _Type_: String
@@ -139,6 +161,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Threshold
+
+Alarm threshold.
 
 _Required_: Yes
 

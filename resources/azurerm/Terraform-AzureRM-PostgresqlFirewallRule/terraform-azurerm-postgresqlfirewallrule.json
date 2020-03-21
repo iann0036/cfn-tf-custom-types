@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::PostgresqlFirewallRule",
-    "description": "CloudFormation equivalent of azurerm_postgresql_firewall_rule",
+    "description": "Manages a Firewall Rule for a PostgreSQL Server",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,19 +29,24 @@
             "type": "string"
         },
         "EndIpAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the End IP Address associated with this Firewall Rule. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the PostgreSQL Firewall Rule. Changing this forces a\nnew resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which the PostgreSQL Server exists. Changing this forces a new resource to be created."
         },
         "ServerName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the PostgreSQL Server. Changing this forces a new resource to be created."
         },
         "StartIpAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the Start IP Address associated with this Firewall Rule. Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

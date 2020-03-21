@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::MlsInstance
 
-CloudFormation equivalent of huaweicloud_mls_instance
+mls instance
 
 ## Syntax
 

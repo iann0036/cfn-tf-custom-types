@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HCloud::Network",
-    "description": "CloudFormation equivalent of hcloud_network",
+    "description": "Provides a Hetzner Cloud Network to represent a Network in the Hetzner Cloud.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "IpRange": {
-            "type": "string"
+            "type": "string",
+            "description": "IP Range of the whole Network which must span all included subnets and route destinations. Must be one of the private ipv4 ranges of RFC1918.\n- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with."
         },
         "Labels": {
             "type": "array",
@@ -29,10 +30,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "User-defined labels (key-value pairs) should be created with."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the Network to create (must be unique per project).\n- `ip_range` - (Required, string) IP Range of the whole Network which must span all included subnets and route destinations. Must be one of the private ipv4 ranges of RFC1918.\n- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with."
         }
     },
     "additionalProperties": false,

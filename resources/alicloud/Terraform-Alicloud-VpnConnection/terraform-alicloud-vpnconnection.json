@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::VpnConnection",
-    "description": "CloudFormation equivalent of alicloud_vpn_connection",
+    "description": "Provides a VPN connection resource.\n\n-> **NOTE:** Terraform will auto build vpn connection while it uses `alicloud_vpn_connection` to build a vpn connection resource.\n             The vpn connection depends on VPN and VPN customer gateway.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "IkeConfig": {
@@ -63,33 +63,39 @@
             "type": "string"
         },
         "CustomerGatewayId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the customer gateway."
         },
         "EffectImmediately": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to delete a successfully negotiated IPsec tunnel and initiate a negotiation again. Valid value:true,false."
         },
         "LocalSubnet": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The CIDR block of the VPC to be connected with the local data center. This parameter is used for phase-two negotiation."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the IPsec connection."
         },
         "RemoteSubnet": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The CIDR block of the local data center. This parameter is used for phase-two negotiation."
         },
         "Status": {
             "type": "string"
         },
         "VpnGatewayId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the VPN gateway."
         },
         "IkeConfig": {
             "type": "array",

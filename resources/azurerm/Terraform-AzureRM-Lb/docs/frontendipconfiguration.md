@@ -37,6 +37,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Name
 
+Specifies the name of the frontend ip configuration.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PrivateIpAddress
+
+Private IP Address to assign to the Load Balancer. The last one and first four IPs in any range are reserved and cannot be manually assigned.
 
 _Required_: No
 
@@ -53,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PrivateIpAddressAllocation
 
+The allocation method for the Private IP Address used by this Load Balancer. Possible values as `Dynamic` and `Static`.
+
 _Required_: No
 
 _Type_: String
@@ -60,6 +66,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PrivateIpAddressVersion
+
+The version of IP that the Private IP Address is. Possible values are `IPv4` or `IPv6`.
 
 _Required_: No
 
@@ -69,6 +77,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PublicIpAddressId
 
+The ID of a Public IP Address which should be associated with the Load Balancer.
+
 _Required_: No
 
 _Type_: String
@@ -76,6 +86,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PublicIpPrefixId
+
+The ID of a Public IP Prefix which should be associated with the Load Balancer. Public IP Prefix can only be used with outbound rules.
 
 _Required_: No
 
@@ -85,6 +97,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubnetId
 
+The ID of the Subnet which should be associated with the IP Configuration.
+
 _Required_: No
 
 _Type_: String
@@ -92,6 +106,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Zones
+
+A list of Availability Zones which the Load Balancer's IP Addresses should be created in.
 
 _Required_: No
 

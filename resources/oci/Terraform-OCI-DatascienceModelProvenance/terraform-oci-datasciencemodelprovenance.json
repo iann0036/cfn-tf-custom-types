@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::DatascienceModelProvenance",
-    "description": "CloudFormation equivalent of oci_datascience_model_provenance",
+    "description": "This resource provides the Model Provenance resource in Oracle Cloud Infrastructure Datascience service.\n\nCreates provenance information for the specified model.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,22 +26,28 @@
             "type": "string"
         },
         "GitBranch": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) For model reproducibility purposes. Branch of the git repository associated with model training."
         },
         "GitCommit": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) For model reproducibility purposes. Commit ID of the git repository associated with model training."
         },
         "ModelId": {
-            "type": "string"
+            "type": "string",
+            "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the model."
         },
         "RepositoryUrl": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) For model reproducibility purposes. URL of the git repository associated with model training."
         },
         "ScriptDir": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) For model reproducibility purposes. Path to model artifacts."
         },
         "TrainingScript": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained.\"."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

@@ -1,6 +1,6 @@
 # Terraform::Heroku::SpacePeeringConnectionAccepter
 
-CloudFormation equivalent of heroku_space_peering_connection_accepter
+Provides a resource for accepting VPC peering requests to Heroku Private Spaces.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### Space
 
+The name of the space.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcPeeringConnectionId
+
+The peering connection request ID.
 
 _Required_: Yes
 

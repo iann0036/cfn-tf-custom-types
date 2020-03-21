@@ -1,6 +1,8 @@
 # Terraform::AzureRM::IothubEndpointEventhub
 
-CloudFormation equivalent of azurerm_iothub_endpoint_eventhub
+Manages an IotHub ServiceBus Queue Endpoint
+
+~> **NOTE:** Endpoints can be defined either directly on the `azurerm_iothub` resource, or using the `azurerm_iothub_endpoint_*` resources - but the two ways of defining the endpoints cannot be used together. If both are used against the same IoTHub, spurious changes will occur. Also, defining a `azurerm_iothub_endpoint_*` resource and another endpoint of a different type directly on the `azurerm_iothub` resource is not supported.
 
 ## Syntax
 
@@ -37,6 +39,8 @@ Properties:
 
 #### ConnectionString
 
+The connection string for the endpoint.
+
 _Required_: Yes
 
 _Type_: String
@@ -52,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the endpoint. The name must be unique across endpoint types. The following names are reserved:  `events`, `operationsMonitoringEvents`, `fileNotifications` and `$default`.
 
 _Required_: Yes
 

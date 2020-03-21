@@ -1,6 +1,6 @@
 # Terraform::Panos::PanoramaAddressObject
 
-CloudFormation equivalent of panos_panorama_address_object
+This resource allows you to add/update/delete address objects on Panorama.
 
 ## Syntax
 
@@ -40,6 +40,8 @@ Properties:
 
 #### Description
 
+The address object's description.
+
 _Required_: No
 
 _Type_: String
@@ -47,6 +49,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DeviceGroup
+
+The device group to put the address object
+into (default: `shared`).
 
 _Required_: No
 
@@ -56,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The address object's name.
+
 _Required_: Yes
 
 _Type_: String
@@ -63,6 +70,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+List of administrative tags.
 
 _Required_: No
 
@@ -72,6 +81,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Type
 
+The type of address object.  This can be `ip-netmask`
+(default), `ip-range`, `fqdn`, or `ip-wildcard` (PAN-OS 9.0+).
+
 _Required_: No
 
 _Type_: String
@@ -79,6 +91,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Value
+
+The address object's value.  This can take various
+forms depending on what type of address object this is, but can be something
+like `192.168.80.150` or `192.168.80.0/24`.
 
 _Required_: Yes
 

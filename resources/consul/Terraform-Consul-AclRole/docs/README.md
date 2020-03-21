@@ -1,6 +1,6 @@
 # Terraform::Consul::AclRole
 
-CloudFormation equivalent of consul_acl_role
+Starting with Consul 1.5.0, the consul_acl_role can be used to managed Consul ACL roles.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### Description
 
+A free form human readable description of the role.
+
 _Required_: No
 
 _Type_: String
@@ -45,6 +47,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the ACL role.
+
 _Required_: Yes
 
 _Type_: String
@@ -52,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Policies
+
+The list of policies that should be applied to the role.
 
 _Required_: No
 

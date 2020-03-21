@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::FlexibleEngine::NetworkingRouterInterfaceV2",
-    "description": "CloudFormation equivalent of flexibleengine_networking_router_interface_v2",
+    "description": "Manages a V2 router interface resource within FlexibleEngine.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,16 +23,20 @@
             "type": "string"
         },
         "PortId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the port this interface connects to. Changing\nthis creates a new router interface."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the V2 networking client.\nA networking client is needed to create a router. If omitted, the\n`region` argument of the provider is used. Changing this creates a new\nrouter interface."
         },
         "RouterId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the router this interface belongs to. Changing\nthis creates a new router interface."
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the subnet this interface connects to. Changing\nthis creates a new router interface."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

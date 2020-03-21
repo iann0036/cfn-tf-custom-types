@@ -24,6 +24,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### CertificateUrl
 
+The Secret URL of a Key Vault Certificate, which must be specified when `protocol` is set to `Https`.
+
 _Required_: No
 
 _Type_: String
@@ -31,6 +33,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Protocol
+
+The Protocol of the WinRM Listener. Possible values are `Http` and `Https`.
 
 _Required_: Yes
 

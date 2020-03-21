@@ -1,6 +1,34 @@
 # Terraform::Google::SqlDatabaseInstance
 
-CloudFormation equivalent of google_sql_database_instance
+Creates a new Google SQL Database Instance. For more information, see the [official documentation](https://cloud.google.com/sql/),
+or the [JSON API](https://cloud.google.com/sql/docs/admin-api/v1beta4/instances).
+
+~> **NOTE on `google_sql_database_instance`:** - First-generation instances have been
+deprecated and should no longer be created, see [upgrade docs](https://cloud.google.com/sql/docs/mysql/upgrade-2nd-gen)
+for more details.
+To upgrade your First-generation instance, update your Terraform config that the instance has
+* `settings.ip_configuration.ipv4_enabled=true`
+* `settings.backup_configuration.enabled=true`
+* `settings.backup_configuration.binary_log_enabled=true`.  
+Apply the terraform config, then upgrade the instance in the console as described in the documentation.
+Once upgraded, update the following attributes in your Terraform config to the correct value according to
+the above documentation:
+* `region`
+* `database_version` (if applicable)
+* `tier`  
+Remove any fields that are not applicable to Second-generation instances:
+* `settings.crash_safe_replication`
+* `settings.replication_type`
+* `settings.authorized_gae_applications`
+And change values to appropriate values for Second-generation instances for:
+* `activation_policy` ("ON_DEMAND" is no longer an option)
+* `pricing_plan` ("PER_USE" is now the only valid option)
+Change `settings.backup_configuration.enabled` attribute back to its desired value and apply as necessary.
+
+~> **NOTE on `google_sql_database_instance`:** - Second-generation instances include a
+default 'root'@'%' user with no password. This user will be deleted by Terraform on
+instance creation. You should use `google_sql_user` to define a custom user with
+a restricted host and strong password.
 
 ## Syntax
 
@@ -63,6 +91,13 @@ Properties:
 
 #### DatabaseVersion
 
+The MySQL, PostgreSQL or
+SQL Server (beta) version to use. Supported values include `MYSQL_5_6`,
+`MYSQL_5_7`, `POSTGRES_9_6`,`POSTGRES_11`, `SQLSERVER_2017_STANDARD`,
+`SQLSERVER_2017_ENTERPRISE`, `SQLSERVER_2017_EXPRESS`, `SQLSERVER_2017_WEB`.
+[Database Version Policies](https://cloud.google.com/sql/docs/sqlserver/db-versions)
+includes an up-to-date reference of supported versions.
+
 _Required_: No
 
 _Type_: String
@@ -70,6 +105,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MasterInstanceName
+
+The name of the instance that will act as
+the master in the replication setup. Note, this requires the master to have
+`binary_log_enabled` set, as well as existing backups.
 
 _Required_: No
 
@@ -79,6 +118,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the instance. If the name is left
+blank, Terraform will randomly generate one when the instance is first
+created. This is done because after a name is used, it cannot be reused for
+up to [one week](https://cloud.google.com/sql/docs/delete-instance).
+
 _Required_: No
 
 _Type_: String
@@ -87,6 +131,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Project
 
+The ID of the project in which the resource belongs. If it
+is not provided, the provider project is used.
+
 _Required_: No
 
 _Type_: String
@@ -94,6 +141,13 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region the instance will sit in. Note, Cloud SQL is not
+available in all regions - choose from one of the options listed [here](https://cloud.google.com/sql/docs/mysql/instance-locations).
+A valid region must be provided to use this resource. If a region is not provided in the resource definition,
+the provider region will be used instead, but this will be an apply-time error for instances if the provider
+region is not supported with Cloud SQL. If you choose not to provide the `region` argument for this resource,
+make sure you understand this.
 
 _Required_: No
 

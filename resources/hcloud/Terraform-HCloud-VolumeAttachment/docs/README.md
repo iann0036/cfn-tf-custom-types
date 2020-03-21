@@ -1,6 +1,6 @@
 # Terraform::HCloud::VolumeAttachment
 
-CloudFormation equivalent of hcloud_volume_attachment
+Provides a Hetzner Cloud Volume attachment to attach a Volume to a Hetzner Cloud Server. Deleting a Volume Attachment will detach the Volume from the Server.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### Automount
 
+Automount the volume upon attaching it.
+
 _Required_: No
 
 _Type_: Boolean
@@ -41,6 +43,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServerId
 
+Server to attach the Volume to.
+- `automount` - (Optional, bool) Automount the volume upon attaching it.
+
 _Required_: Yes
 
 _Type_: Double
@@ -48,6 +53,10 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VolumeId
+
+ID of the Volume.
+- `server_id` - (Required, int) Server to attach the Volume to.
+- `automount` - (Optional, bool) Automount the volume upon attaching it.
 
 _Required_: Yes
 

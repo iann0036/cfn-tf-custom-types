@@ -1,6 +1,17 @@
 # Terraform::VSphere::File
 
-CloudFormation equivalent of vsphere_file
+The `vsphere_file` resource can be used to upload files (such as virtual disk
+files) from the host machine that Terraform is running on to a target
+datastore.  The resource can also be used to copy files between datastores, or
+from one location to another on the same datastore.
+
+Updates to destination parameters such as `datacenter`, `datastore`, or
+`destination_file` will move the managed file a new destination based on the
+values of the new settings.  If any source parameter is changed, such as
+`source_datastore`, `source_datacenter` or `source_file`), the resource will be
+re-created. Depending on if destination parameters are being changed as well,
+this may result in the destination file either being overwritten or deleted at
+the old location.
 
 ## Syntax
 
@@ -41,6 +52,9 @@ Properties:
 
 #### CreateDirectories
 
+Create directories in `destination_file`
+path parameter if any missing for copy operation.
+
 _Required_: No
 
 _Type_: Boolean
@@ -48,6 +62,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Datacenter
+
+The name of a datacenter in which the file will be
+uploaded to.
 
 _Required_: No
 
@@ -57,6 +74,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Datastore
 
+The name of the datastore in which to upload the
+file to.
+
 _Required_: Yes
 
 _Type_: String
@@ -64,6 +84,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DestinationFile
+
+The path to where the file should be uploaded
+or copied to on vSphere.
 
 _Required_: Yes
 
@@ -73,6 +96,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SourceDatacenter
 
+The name of a datacenter in which the file
+will be copied from. Forces a new resource if changed.
+
 _Required_: No
 
 _Type_: String
@@ -81,6 +107,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SourceDatastore
 
+The name of the datastore in which file will
+be copied from. Forces a new resource if changed.
+
 _Required_: No
 
 _Type_: String
@@ -88,6 +117,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SourceFile
+
+The path to the file being uploaded from the
+Terraform host to vSphere or copied within vSphere. Forces a new resource if
+changed.
 
 _Required_: Yes
 

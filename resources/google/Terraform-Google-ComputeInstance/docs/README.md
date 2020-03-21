@@ -1,6 +1,9 @@
 # Terraform::Google::ComputeInstance
 
-CloudFormation equivalent of google_compute_instance
+Manages a VM instance resource within GCE. For more information see
+[the official documentation](https://cloud.google.com/compute/docs/instances)
+and
+[API](https://cloud.google.com/compute/docs/reference/latest/instances).
 
 ## Syntax
 
@@ -100,6 +103,9 @@ Properties:
 
 #### AllowStoppingForUpdate
 
+If true, allows Terraform to stop the instance to update its properties.
+If you try to update a property that requires stopping the instance without setting this field, the update will fail.
+
 _Required_: No
 
 _Type_: Boolean
@@ -107,6 +113,10 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CanIpForward
+
+Whether to allow sending and receiving of
+packets with non-matching source or destination IPs.
+This defaults to false.
 
 _Required_: No
 
@@ -116,6 +126,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DeletionProtection
 
+Enable deletion protection on this instance. Defaults to false.
+**Note:** you must disable deletion protection before removing the resource (e.g., via `terraform destroy`), or the instance cannot be deleted and the Terraform run will not complete successfully.
+
 _Required_: No
 
 _Type_: Boolean
@@ -123,6 +136,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+A brief description of this resource.
 
 _Required_: No
 
@@ -132,6 +147,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DesiredStatus
 
+Desired status of the instance. Either
+`"RUNNING"` or `"TERMINATED"`.
+
 _Required_: No
 
 _Type_: String
@@ -139,6 +157,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableDisplay
+
+Enable [Virtual Displays](https://cloud.google.com/compute/docs/instances/enable-instance-virtual-display#verify_display_driver) on this instance.
+**Note**: [`allow_stopping_for_update`](#allow_stopping_for_update) must be set to true or your instance must have a `desired_status` of `TERMINATED` in order to update this field.
 
 _Required_: No
 
@@ -148,6 +169,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GuestAccelerator
 
+List of the type and count of accelerator cards attached to the instance. Structure documented below.
+**Note:** GPU accelerators can only be used with [`on_host_maintenance`](#on_host_maintenance) option set to TERMINATE.
+**Note**: This field uses [attr-as-block mode](https://www.terraform.io/docs/configuration/attr-as-blocks.html) to avoid
+breaking users during the 0.12 upgrade. To explicitly send a list
+of zero objects you must use the following syntax:
+`example=[]`
+For more details about this behavior, see [this section](https://www.terraform.io/docs/configuration/attr-as-blocks.html#defining-a-fixed-object-collection-value).
+
 _Required_: No
 
 _Type_: List of <a href="guestaccelerator.md">GuestAccelerator</a>
@@ -155,6 +184,10 @@ _Type_: List of <a href="guestaccelerator.md">GuestAccelerator</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Hostname
+
+A custom hostname for the instance. Must be a fully qualified DNS name and RFC-1035-valid.
+Valid format is a series of labels 1-63 characters long matching the regular expression `[a-z]([-a-z0-9]*[a-z0-9])`, concatenated with periods.
+The entire hostname must not exceed 253 characters. Changing this forces a new resource to be created.
 
 _Required_: No
 
@@ -164,6 +197,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Labels
 
+A map of key/value label pairs to assign to the instance.
+
 _Required_: No
 
 _Type_: List of <a href="labels.md">Labels</a>
@@ -171,6 +206,8 @@ _Type_: List of <a href="labels.md">Labels</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MachineType
+
+The machine type to create.
 
 _Required_: Yes
 
@@ -180,6 +217,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Metadata
 
+Metadata key/value pairs to make available from
+within the instance. Ssh keys attached in the Cloud Console will be removed.
+Add them to your config in order to keep them attached to your instance.
+
 _Required_: No
 
 _Type_: List of <a href="metadata.md">Metadata</a>
@@ -187,6 +228,18 @@ _Type_: List of <a href="metadata.md">Metadata</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MetadataStartupScript
+
+An alternative to using the
+startup-script metadata key, except this one forces the instance to be
+recreated (thus re-running the script) if it is changed. This replaces the
+startup-script metadata key on the created instance and thus the two
+mechanisms are not allowed to be used simultaneously.  Users are free to use
+either mechanism - the only distinction is that this separate attribute
+willl cause a recreate on modification.  On import, `metadata_startup_script`
+will be set, but `metadata.startup-script` will not - if you choose to use the
+other mechanism, you will see a diff immediately after import, which will cause a
+destroy/recreate operation.  You may want to modify your state file manually
+using `terraform state` commands, depending on your use case.
 
 _Required_: No
 
@@ -196,6 +249,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MinCpuPlatform
 
+Specifies a minimum CPU platform for the VM instance. Applicable values are the friendly names of CPU platforms, such as
+`Intel Haswell` or `Intel Skylake`. See the complete list [here](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform).
+**Note**: [`allow_stopping_for_update`](#allow_stopping_for_update) must be set to true or your instance must have a `desired_status` of `TERMINATED` in order to update this field.
+
 _Required_: No
 
 _Type_: String
@@ -203,6 +260,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+A unique name for the resource, required by GCE.
+Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -212,6 +272,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Project
 
+The ID of the project in which the resource belongs. If it
+is not provided, the provider project is used.
+
 _Required_: No
 
 _Type_: String
@@ -220,6 +283,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A list of tags to attach to the instance.
+
 _Required_: No
 
 _Type_: List of String
@@ -227,6 +292,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Zone
+
+The zone that the machine should be created in.
 
 _Required_: No
 

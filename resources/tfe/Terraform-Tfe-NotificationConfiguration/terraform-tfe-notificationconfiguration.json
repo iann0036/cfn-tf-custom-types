@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Tfe::NotificationConfiguration",
-    "description": "CloudFormation equivalent of tfe_notification_configuration",
+    "description": "Terraform Cloud can be configured to send notifications for run state transitions. \nNotification configurations allow you to specify a URL, destination type, and what events will trigger the notification. \nEach workspace can have up to 20 notification configurations, and they apply to all runs for that workspace.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,29 +9,36 @@
             "type": "string"
         },
         "DestinationType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of notification configuration payload to send.\nValid values are `generic` or `slack`."
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the notification configuration should be enabled or not.\nDisabled configurations will not send any notifications. Defaults to `false`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the notification configuration."
         },
         "Token": {
-            "type": "string"
+            "type": "string",
+            "description": "A write-only secure token for the notification configuration, which can\nbe used by the receiving server to verify request authenticity when configured for notification\nconfigurations with a destination type of `generic`. A token set for notification configurations\nwith a destination type of `slack` is not allowed and will result in an error. Defaults to `null`."
         },
         "Triggers": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The array of triggers for which this notification configuration will\nsend notifications. Valid values are `run:created`, `run:planning`, `run:needs_attention`, `run:applying`\n`run:completed`, `run:errored`. If omitted, no notification triggers are configured."
         },
         "Url": {
-            "type": "string"
+            "type": "string",
+            "description": "The HTTP or HTTPS URL of the notification configuration where notification\nrequests will be made."
         },
         "WorkspaceExternalId": {
-            "type": "string"
+            "type": "string",
+            "description": "The external id of the workspace that owns the notification configuration."
         }
     },
     "additionalProperties": false,

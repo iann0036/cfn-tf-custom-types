@@ -1,6 +1,6 @@
 # Terraform::AzureRM::VirtualWan
 
-CloudFormation equivalent of azurerm_virtual_wan
+Manages a Virtual WAN.
 
 ## Syntax
 
@@ -48,6 +48,8 @@ Properties:
 
 #### AllowBranchToBranchTraffic
 
+Boolean flag to specify whether branch to branch traffic is allowed. Defaults to `true`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -55,6 +57,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowVnetToVnetTraffic
+
+Boolean flag to specify whether VNet to VNet traffic is allowed. Defaults to `false`.
 
 _Required_: No
 
@@ -64,6 +68,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisableVpnEncryption
 
+Boolean flag to specify whether VPN encryption is disabled. Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -71,6 +77,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Location
+
+Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -80,6 +88,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the Virtual WAN. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -87,6 +97,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Office365LocalBreakoutCategory
+
+Specifies the Office365 local breakout category. Possible values include: `Optimize`, `OptimizeAndAllow`, `All`, `None`. Defaults to `None`.
 
 _Required_: No
 
@@ -96,6 +108,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to create the Virtual WAN. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -104,6 +118,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the Virtual WAN.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -111,6 +127,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+Specifies the Virtual WAN type. Possible Values include: `Basic` and `Standard`. Defaults to `Standard`.
 
 _Required_: No
 

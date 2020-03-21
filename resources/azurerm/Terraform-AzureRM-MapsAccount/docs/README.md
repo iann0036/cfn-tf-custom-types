@@ -1,6 +1,6 @@
 # Terraform::AzureRM::MapsAccount
 
-CloudFormation equivalent of azurerm_maps_account
+Manages an Azure Maps Account.
 
 ## Syntax
 
@@ -38,6 +38,8 @@ Properties:
 
 #### Name
 
+The name of the Azure Maps Account. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -45,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the Resource Group in which the Azure Maps Account should exist. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -54,6 +58,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SkuName
 
+The sku of the Azure Maps Account. Possible values are `S0` and `S1`.
+
 _Required_: Yes
 
 _Type_: String
@@ -61,6 +67,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the Azure Maps Account.
 
 _Required_: No
 

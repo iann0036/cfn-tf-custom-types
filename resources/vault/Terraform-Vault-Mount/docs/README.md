@@ -44,6 +44,8 @@ Properties:
 
 #### DefaultLeaseTtlSeconds
 
+Default lease duration for tokens and secrets in seconds.
+
 _Required_: No
 
 _Type_: Double
@@ -51,6 +53,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Human-friendly description of the mount.
 
 _Required_: No
 
@@ -60,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Local
 
+Boolean flag that can be explicitly set to true to enforce local mount in HA environment.
+
 _Required_: No
 
 _Type_: Boolean
@@ -67,6 +73,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MaxLeaseTtlSeconds
+
+Maximum possible lease duration for tokens and secrets in seconds.
 
 _Required_: No
 
@@ -76,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Options
 
+Specifies mount type specific options that are passed to the backend.
+
 _Required_: No
 
 _Type_: List of <a href="options.md">Options</a>
@@ -83,6 +93,8 @@ _Type_: List of <a href="options.md">Options</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Path
+
+Where the secret backend will be mounted.
 
 _Required_: Yes
 
@@ -92,6 +104,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SealWrap
 
+Boolean flag that can be explicitly set to true to enable seal wrapping for the mount, causing values stored by the mount to be wrapped by the seal's encryption capability.
+
 _Required_: No
 
 _Type_: Boolean
@@ -99,6 +113,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+Type of the backend, such as "aws".
 
 _Required_: Yes
 

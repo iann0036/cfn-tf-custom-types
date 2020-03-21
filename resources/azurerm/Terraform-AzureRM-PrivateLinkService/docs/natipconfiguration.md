@@ -30,6 +30,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Name
 
+Specifies the name which should be used for the NAT IP Configuration. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -37,6 +39,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Primary
+
+Is this is the Primary IP Configuration? Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -46,6 +50,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PrivateIpAddress
 
+Specifies a Private Static IP Address for this IP Configuration.
+
 _Required_: No
 
 _Type_: String
@@ -54,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PrivateIpAddressVersion
 
+The version of the IP Protocol which should be used. At this time the only supported value is `IPv4`. Defaults to `IPv4`.
+
 _Required_: No
 
 _Type_: String
@@ -61,6 +69,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubnetId
+
+Specifies the ID of the Subnet which should be used for the Private Link Service.
 
 _Required_: Yes
 

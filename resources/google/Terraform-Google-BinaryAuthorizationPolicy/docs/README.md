@@ -1,6 +1,13 @@
 # Terraform::Google::BinaryAuthorizationPolicy
 
-CloudFormation equivalent of google_binary_authorization_policy
+A policy for container image binary authorization.
+
+
+To get more information about Policy, see:
+
+* [API documentation](https://cloud.google.com/binary-authorization/docs/reference/rest/)
+* How-to Guides
+    * [Official Documentation](https://cloud.google.com/binary-authorization/)
 
 ## Syntax
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenTelekomCloud::ImsImageV2",
-    "description": "CloudFormation equivalent of opentelekomcloud_ims_image_v2",
+    "description": "Manages a V2 Image resource within OpenTelekomCloud IMS.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,13 +23,15 @@
             "type": "string"
         },
         "CmkId": {
-            "type": "string"
+            "type": "string",
+            "description": "The master key used for encrypting an image.\nChanging this creates a new image."
         },
         "DataOrigin": {
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description of the image. Changing this creates a new image."
         },
         "DiskFormat": {
             "type": "string"
@@ -38,28 +40,36 @@
             "type": "string"
         },
         "ImageUrl": {
-            "type": "string"
+            "type": "string",
+            "description": "The URL of the external image file in the OBS bucket.\nThis parameter is mandatory when you create a private image from an external file\nuploaded to an OBS bucket. The format is *OBS bucket name:Image file name*.\nChanging this creates a new image."
         },
         "InstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the ECS that needs to be converted into an image.\nThis parameter is mandatory when you create a privete image from an ECS.\nChanging this creates a new image."
         },
         "IsConfig": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If automatic configuration is required, set the value to true.\nOtherwise, set the value to false. Changing this creates a new image."
         },
         "MaxRam": {
-            "type": "number"
+            "type": "number",
+            "description": "The maximum memory of the image in the unit of MB.\nChanging this creates a new image."
         },
         "MinDisk": {
-            "type": "number"
+            "type": "number",
+            "description": "The minimum size of the system disk in the unit of GB.\nThis parameter is mandatory when you create a private image from an external file\nuploaded to an OBS bucket. The value ranges from 1 GB to 1024 GB.\nChanging this creates a new image."
         },
         "MinRam": {
-            "type": "number"
+            "type": "number",
+            "description": "The minimum memory of the image in the unit of MB.\nThe default value is 0, indicating that the memory is not restricted.\nChanging this creates a new image."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the image."
         },
         "OsVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "The OS version.\nThis parameter is valid when you create a private image from an external file\nuploaded to an OBS bucket. Changing this creates a new image."
         },
         "Tags": {
             "type": "array",
@@ -79,10 +89,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "The tags of the image."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The image type. Must be one of \"ECS\", \"FusionCompute\", \"BMS\",\nor \"Ironic\". Changing this creates a new image."
         },
         "Visibility": {
             "type": "string"

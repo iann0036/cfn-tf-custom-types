@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::HealthcareService",
-    "description": "CloudFormation equivalent of azurerm_healthcare_service",
+    "description": "Manages a Healthcare Service.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "AuthenticationConfiguration": {
@@ -8,13 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "Audience": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The intended audience to receive authentication tokens for the service. The default value is https://azurehealthcareapis.com."
                 },
                 "Authority": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Azure Active Directory (tenant) that serves as the authentication authority to access the service. The default authority is the Directory defined in the authentication scheme in use when running Terraform.\nAuthority must be registered to Azure AD and in the following format: https://{Azure-AD-endpoint}/{tenant-id}."
                 },
                 "SmartProxyEnabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Enables the 'SMART on FHIR' option for mobile and web implementations."
                 }
             },
             "required": []
@@ -24,31 +27,36 @@
             "additionalProperties": false,
             "properties": {
                 "AllowCredentials": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "If credentials are allowed via CORS."
                 },
                 "AllowedHeaders": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A set of headers to be allowed via CORS."
                 },
                 "AllowedMethods": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "The methods to be allowed via CORS."
                 },
                 "AllowedOrigins": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A set of origins to be allowed via CORS."
                 },
                 "MaxAgeInSeconds": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The max age to be allowed via CORS."
                 }
             },
             "required": []
@@ -86,19 +94,24 @@
             }
         },
         "CosmosdbThroughput": {
-            "type": "number"
+            "type": "number",
+            "description": "The provisioned throughput for the backing database. Range of `400`-`1000`. Defaults to `400`."
         },
         "Kind": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of the service. Values at time of publication are: `fhir`, `fhir-Stu3` and `fhir-R4`. Default value is `fhir`."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure Region where the Service should be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the service instance. Used for service endpoint, must be unique within the audience."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Resource Group in which to create the Service."
         },
         "Tags": {
             "type": "array",
@@ -118,7 +131,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "AuthenticationConfiguration": {
             "type": "array",

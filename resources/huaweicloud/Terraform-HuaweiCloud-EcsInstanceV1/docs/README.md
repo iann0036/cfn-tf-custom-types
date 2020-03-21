@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::EcsInstanceV1
 
-CloudFormation equivalent of huaweicloud_ecs_instance_v1
+Manages a V1 ECS instance resource within HuaweiCloud.
 
 ## Syntax
 
@@ -75,6 +75,8 @@ Properties:
 
 #### AutoRecovery
 
+Whether configure automatic recovery of an instance.
+
 _Required_: No
 
 _Type_: Boolean
@@ -82,6 +84,10 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AvailabilityZone
+
+The availability zone in which to create
+the server. Please refer to https://developer.huaweicloud.com/endpoint
+for the values. Changing this creates a new server.
 
 _Required_: Yes
 
@@ -91,6 +97,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ChargingMode
 
+The charging mode of the instance. Valid options are: prePaid and postPaid, defaults to postPaid. Changing this creates a new server.
+
 _Required_: No
 
 _Type_: String
@@ -98,6 +106,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DeleteDisksOnTermination
+
+Delete the data disks upon termination of the instance. Defaults to false. Changing this creates a new server.
 
 _Required_: No
 
@@ -107,6 +117,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnterpriseProjectId
 
+The enterprise project id. Changing this creates a new server.
+
 _Required_: No
 
 _Type_: String
@@ -114,6 +126,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Flavor
+
+The name of the desired flavor for the server. Changing this resizes the existing server.
 
 _Required_: Yes
 
@@ -123,6 +137,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ImageId
 
+The ID of the desired image for the server. Changing this creates a new server.
+
 _Required_: Yes
 
 _Type_: String
@@ -130,6 +146,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeyName
+
+The name of a key pair to put on the server. The key
+pair must already be created and associated with the tenant's account.
+Changing this creates a new server.
 
 _Required_: No
 
@@ -139,6 +159,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A unique name for the instance.
+
 _Required_: Yes
 
 _Type_: String
@@ -146,6 +168,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OpSvcUserid
+
+User ID, required when using key_name. Changing this creates a new server.
 
 _Required_: No
 
@@ -155,6 +179,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Password
 
+The administrative password to assign to the server.
+Changing this creates a new server.
+
 _Required_: No
 
 _Type_: String
@@ -162,6 +189,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Period
+
+The charging period of the instance. Changing this creates a new server.
 
 _Required_: No
 
@@ -171,6 +200,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PeriodUnit
 
+The charging period unit of the instance. Valid options are: month and year, defaults to month. Changing this creates a new server.
+
 _Required_: No
 
 _Type_: String
@@ -178,6 +209,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecurityGroups
+
+An array of one or more security group names
+to associate with the server. Changing this results in adding/removing
+security groups from the existing server.
 
 _Required_: No
 
@@ -187,6 +222,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SystemDiskSize
 
+The system disk size in GB, The value range is 1 to 1024. Changing this creates a new server.
+
 _Required_: No
 
 _Type_: Double
@@ -194,6 +231,14 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SystemDiskType
+
+The system disk type of the server. For HANA, HL1, and HL2 ECSs use co-p1 and uh-l1 disks.
+Changing this creates a new server. Available options are:
+* `SATA`: common I/O disk type.
+* `SAS`: high I/O disk type.
+* `SSD`: ultra-high I/O disk type.
+* `co-p1`: high I/O(performance-optimized) disk type.
+* `uh-l1`: ultra-high I/O(latency-optimized) disk type.
 
 _Required_: No
 
@@ -203,6 +248,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+Tags key/value pairs to associate with the instance.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -211,6 +258,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UserData
 
+The user data to provide when launching the instance.
+Changing this creates a new server.
+
 _Required_: No
 
 _Type_: String
@@ -218,6 +268,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+The ID of the desired VPC for the server. Changing this creates a new server.
 
 _Required_: Yes
 

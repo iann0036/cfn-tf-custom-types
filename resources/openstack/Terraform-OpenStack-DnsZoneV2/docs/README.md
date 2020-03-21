@@ -1,6 +1,6 @@
 # Terraform::OpenStack::DnsZoneV2
 
-CloudFormation equivalent of openstack_dns_zone_v2
+Manages a DNS zone in the OpenStack DNS Service.
 
 ## Syntax
 
@@ -50,6 +50,9 @@ Properties:
 
 #### Attributes
 
+Attributes for the DNS Service scheduler.
+Changing this creates a new zone.
+
 _Required_: No
 
 _Type_: List of <a href="attributes.md">Attributes</a>
@@ -57,6 +60,8 @@ _Type_: List of <a href="attributes.md">Attributes</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+A description of the zone.
 
 _Required_: No
 
@@ -66,6 +71,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Email
 
+The email contact for the zone record.
+
 _Required_: No
 
 _Type_: String
@@ -73,6 +80,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Masters
+
+An array of master DNS servers. For when `type` is
+`SECONDARY`.
 
 _Required_: No
 
@@ -82,6 +92,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the zone. Note the `.` at the end of the name.
+Changing this creates a new DNS zone.
+
 _Required_: Yes
 
 _Type_: String
@@ -89,6 +102,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region in which to obtain the V2 Compute client.
+Keypairs are associated with accounts, but a Compute client is needed to
+create one. If omitted, the `region` argument of the provider is used.
+Changing this creates a new DNS zone.
 
 _Required_: No
 
@@ -98,6 +116,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ttl
 
+The time to live (TTL) of the zone.
+
 _Required_: No
 
 _Type_: Double
@@ -106,6 +126,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Type
 
+The type of zone. Can either be `PRIMARY` or `SECONDARY`.
+Changing this creates a new zone.
+
 _Required_: No
 
 _Type_: String
@@ -113,6 +136,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ValueSpecs
+
+Map of additional options. Changing this creates a
+new zone.
 
 _Required_: No
 

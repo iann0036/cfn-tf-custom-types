@@ -1,6 +1,7 @@
 # Terraform::CloudStack::Disk
 
-CloudFormation equivalent of cloudstack_disk
+Creates a disk volume from a disk offering. This disk volume will be attached to
+a virtual machine if the optional parameters are configured.
 
 ## Syntax
 
@@ -45,6 +46,9 @@ Properties:
 
 #### Attach
 
+Determines whether or not to attach the disk volume to a
+virtual machine (defaults false).
+
 _Required_: No
 
 _Type_: Boolean
@@ -52,6 +56,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DeviceId
+
+The device ID to map the disk volume to within the guest OS.
 
 _Required_: No
 
@@ -61,6 +67,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DiskOffering
 
+The name or ID of the disk offering to use for
+this disk volume.
+
 _Required_: No
 
 _Type_: String
@@ -68,6 +77,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the disk volume. Changing this forces a new
+resource to be created.
 
 _Required_: Yes
 
@@ -77,6 +89,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Project
 
+The name or ID of the project to deploy this
+instance to. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -84,6 +99,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ShrinkOk
+
+Verifies if the disk volume is allowed to shrink when
+resizing (defaults false).
 
 _Required_: No
 
@@ -93,6 +111,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Size
 
+The size of the disk volume in gigabytes.
+
 _Required_: No
 
 _Type_: Double
@@ -101,6 +121,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VirtualMachineId
 
+The ID of the virtual machine to which you want
+to attach the disk volume.
+
 _Required_: No
 
 _Type_: String
@@ -108,6 +131,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Zone
+
+The name or ID of the zone where this disk volume will be available.
+Changing this forces a new resource to be created.
 
 _Required_: Yes
 

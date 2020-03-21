@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::GaapLayer4Listener
 
-CloudFormation equivalent of tencentcloud_gaap_layer4_listener
+Provides a resource to create a layer4 listener of GAAP.
 
 ## Syntax
 
@@ -48,6 +48,8 @@ Properties:
 
 #### ConnectTimeout
 
+Timeout of the health check response, should less than interval, default value is 2s. NOTES: Only supports listeners of `TCP` protocol and require less than `interval`.
+
 _Required_: No
 
 _Type_: Double
@@ -55,6 +57,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HealthCheck
+
+Indicates whether health check is enable, default value is `false`. NOTES: Only supports listeners of `TCP` protocol.
 
 _Required_: No
 
@@ -64,6 +68,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Interval
 
+Interval of the health check, default value is 5s. NOTES: Only supports listeners of `TCP` protocol.
+
 _Required_: No
 
 _Type_: Double
@@ -71,6 +77,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of the layer4 listener, the maximum length is 30.
 
 _Required_: Yes
 
@@ -80,6 +88,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Port
 
+Port of the layer4 listener.
+
 _Required_: Yes
 
 _Type_: Double
@@ -87,6 +97,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Protocol
+
+Protocol of the layer4 listener, the available values include `TCP` and `UDP`.
 
 _Required_: Yes
 
@@ -96,6 +108,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProxyId
 
+ID of the GAAP proxy.
+
 _Required_: Yes
 
 _Type_: String
@@ -104,6 +118,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RealserverType
 
+Type of the realserver, the available values include `IP` and `DOMAIN`. NOTES: when the `protocol` is specified as `TCP` and the `scheduler` is specified as `wrr`, the item can only be set to `IP`.
+
 _Required_: Yes
 
 _Type_: String
@@ -111,6 +127,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Scheduler
+
+Scheduling policy of the layer4 listener, default value is `rr`, the available values include `rr`, `wrr` and `lc`.
 
 _Required_: No
 

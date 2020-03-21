@@ -1,6 +1,6 @@
 # Terraform::AzureRM::DedicatedHostGroup
 
-CloudFormation equivalent of azurerm_dedicated_host_group
+Manage a Dedicated Host Group.
 
 ## Syntax
 
@@ -43,6 +43,8 @@ Properties:
 
 #### Location
 
+The Azure location where the Dedicated Host Group exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the Dedicated Host Group. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -59,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PlatformFaultDomainCount
 
+The number of fault domains that the Dedicated Host Group spans. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: Double
@@ -66,6 +72,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+Specifies the name of the resource group the Dedicated Host Group is located in. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -75,6 +83,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -82,6 +92,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Zones
+
+A list of Availability Zones in which the Dedicated Host Group should be located. Changing this forces a new resource to be created.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::Datadog::ServiceLevelObjective
 
-CloudFormation equivalent of datadog_service_level_objective
+Provides a Datadog service level objective resource. This can be used to create and manage Datadog service level objectives.
 
 ## Syntax
 
@@ -50,6 +50,8 @@ Properties:
 
 #### Description
 
+A description of this service level objective.
+
 _Required_: No
 
 _Type_: String
@@ -82,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name of Datadog service level objective.
+
 _Required_: Yes
 
 _Type_: String
@@ -97,6 +101,10 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The type of the service level objective. The mapping from these types to the types found in the Datadog Web UI can be found in the Datadog API [documentation](https://docs.datadoghq.com/api/?lang=python#create-a-service-level-objective) page. Available options to choose from are:
+* `metric`
+* `monitor`.
 
 _Required_: Yes
 

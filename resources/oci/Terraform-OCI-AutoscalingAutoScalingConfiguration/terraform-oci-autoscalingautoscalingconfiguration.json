@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::AutoscalingAutoScalingConfiguration",
-    "description": "CloudFormation equivalent of oci_autoscaling_auto_scaling_configuration",
+    "description": "This resource provides the Auto Scaling Configuration resource in Oracle Cloud Infrastructure Auto Scaling service.\n\nCreates an autoscaling configuration.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "AutoScalingResources": {
@@ -168,10 +168,12 @@
             "type": "string"
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the autoscaling configuration."
         },
         "CoolDownInSeconds": {
-            "type": "number"
+            "type": "number",
+            "description": "(Updatable) The minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default."
         },
         "DefinedTags": {
             "type": "array",
@@ -191,10 +193,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Operations.CostCenter\": \"42\"}`."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "A user-friendly name. Does not have to be unique. Avoid entering confidential information. This value is not changeable through Terraform.\n* `metric` - (Required)\n* `metric_type` - (Required)\n* `threshold` - (Required)\n* `operator` - (Required) The comparison operator to use. Options are greater than (`GT`), greater than or equal to (`GTE`), less than (`LT`), and less than or equal to (`LTE`).\n* `value` - (Required)."
         },
         "FreeformTags": {
             "type": "array",
@@ -214,10 +218,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
         },
         "IsEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "(Updatable) Whether the autoscaling configuration is enabled."
         },
         "TimeCreated": {
             "type": "string"

@@ -1,6 +1,8 @@
 # Terraform::Alicloud::PvtzZoneAttachment
 
-CloudFormation equivalent of alicloud_pvtz_zone_attachment
+Provides vpcs bound to Alicloud Private Zone resource.
+
+-> **NOTE:** Terraform will auto bind vpc to a Private Zone while it uses `alicloud_pvtz_zone_attachment` to build a Private Zone and VPC binding resource.
 
 ## Syntax
 
@@ -39,6 +41,8 @@ Properties:
 
 #### Lang
 
+The language of code.
+
 _Required_: No
 
 _Type_: String
@@ -46,6 +50,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserClientIp
+
+The user custom IP address.
 
 _Required_: No
 
@@ -55,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VpcIds
 
+The id List of the VPC with the same region, for example:["vpc-1","vpc-2"].
+
 _Required_: No
 
 _Type_: List of String
@@ -62,6 +70,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneId
+
+The name of the Private Zone Record.
 
 _Required_: Yes
 

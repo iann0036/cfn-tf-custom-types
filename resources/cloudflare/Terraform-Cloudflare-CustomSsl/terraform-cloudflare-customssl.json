@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Cloudflare::CustomSsl",
-    "description": "CloudFormation equivalent of cloudflare_custom_ssl",
+    "description": "Provides a Cloudflare custom ssl resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "CustomSslPriority": {
@@ -40,7 +40,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "The certificate, private key and associated optional parameters, such as bundle_method, geo_restrictions, and type."
         },
         "ExpiresOn": {
             "type": "string"
@@ -71,7 +72,8 @@
             "type": "string"
         },
         "ZoneId": {
-            "type": "string"
+            "type": "string",
+            "description": "The DNS zone id to the custom ssl cert should be added."
         },
         "CustomSslPriority": {
             "type": "array",

@@ -1,6 +1,6 @@
 # Terraform::OVH::VrackIploadbalancing
 
-CloudFormation equivalent of ovh_vrack_iploadbalancing
+Attach a ip loadbalancing to a VRack.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### IpLoadbalancing
 
+The id of the ip loadbalancing.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServiceName
+
+The id of the vrack.
 
 _Required_: Yes
 

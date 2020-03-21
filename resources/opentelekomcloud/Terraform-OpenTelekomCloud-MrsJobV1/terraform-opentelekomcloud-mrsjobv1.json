@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenTelekomCloud::MrsJobV1",
-    "description": "CloudFormation equivalent of opentelekomcloud_mrs_job_v1",
+    "description": "Manages resource job within OpenTelekomCloud MRS.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,40 +26,51 @@
             "type": "string"
         },
         "Arguments": {
-            "type": "string"
+            "type": "string",
+            "description": "Key parameter for program execution. The parameter\nis specified by the function of the user's program. MRS is only responsible\nfor loading the parameter. The parameter contains a maximum of 2047 characters,\nexcluding special characters such as ;|&>'<$, and can be empty."
         },
         "ClusterId": {
-            "type": "string"
+            "type": "string",
+            "description": "Cluster ID."
         },
         "HiveScriptPath": {
-            "type": "string"
+            "type": "string",
+            "description": "SQL program path This parameter is needed\nby Spark Script and Hive Script jobs only and must meet the following requirements:\nContains a maximum of 1023 characters, excluding special characters such as\n;|&><'$. The address cannot be empty or full of spaces. Starts with / or s3a://.\nEnds with .sql. sql is case-insensitive."
         },
         "Input": {
-            "type": "string"
+            "type": "string",
+            "description": "Path for inputting data, which must start with / or s3a://.\nA correct OBS path is required. The parameter contains a maximum of 1023 characters,\nexcluding special characters such as ;|&>'<$, and can be empty."
         },
         "IsProtected": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether a job is protected true false The current\nversion does not support this function."
         },
         "IsPublic": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether a job is public true false The current version\ndoes not support this function."
         },
         "JarPath": {
-            "type": "string"
+            "type": "string",
+            "description": "Path of the .jar package or .sql file for program\nexecution The parameter must meet the following requirements: Contains a maximum\nof 1023 characters, excluding special characters such as ;|&><'$. The address\ncannot be empty or full of spaces. Starts with / or s3a://. Spark Script must\nend with .sql; while MapReduce and Spark Jar must end with .jar. sql and jar\nare case-insensitive."
         },
         "JobLog": {
-            "type": "string"
+            "type": "string",
+            "description": "Path for storing job logs that record job running status.\nThis path must start with / or s3a://. A correct OBS path is required. The parameter\ncontains a maximum of 1023 characters, excluding special characters such as\n;|&>'<$, and can be empty."
         },
         "JobName": {
-            "type": "string"
+            "type": "string",
+            "description": "Job name Contains only 1 to 64 letters, digits, hyphens\n(-), and underscores (_). NOTE: Identical job names are allowed but not recommended."
         },
         "JobState": {
             "type": "string"
         },
         "JobType": {
-            "type": "number"
+            "type": "number",
+            "description": "Job type 1: MapReduce 2: Spark 3: Hive Script 4: HiveQL\n(not supported currently) 5: DistCp, importing and exporting data.  6: Spark\nScript 7: Spark SQL, submitting Spark SQL statements. (not supported in this\nAPIcurrently) NOTE: Spark and Hive jobs can be added to only clusters including\nSpark and Hive components."
         },
         "Output": {
-            "type": "string"
+            "type": "string",
+            "description": "Path for outputting data, which must start with / or\ns3a://. A correct OBS path is required. If the path does not exist, the system\nautomatically creates it. The parameter contains a maximum of 1023 characters,\nexcluding special characters such as ;|&>'<$, and can be empty."
         },
         "Region": {
             "type": "string"

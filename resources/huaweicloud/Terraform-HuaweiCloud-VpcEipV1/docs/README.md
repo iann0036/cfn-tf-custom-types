@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::VpcEipV1
 
-CloudFormation equivalent of huaweicloud_vpc_eip_v1
+Manages a V1 EIP resource within Huawei Cloud VPC.
 
 ## Syntax
 
@@ -39,6 +39,9 @@ Properties:
 ## Properties
 
 #### Region
+
+The region in which to create the eip. If omitted,
+the `region` argument of the provider is used. Changing this creates a new eip.
 
 _Required_: No
 

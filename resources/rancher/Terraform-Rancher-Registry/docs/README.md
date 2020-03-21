@@ -1,6 +1,6 @@
 # Terraform::Rancher::Registry
 
-CloudFormation equivalent of rancher_registry
+Provides a Rancher Registy resource. This can be used to create registries for rancher environments and retrieve their information
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### Description
 
+A registry description.
+
 _Required_: No
 
 _Type_: String
@@ -42,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnvironmentId
+
+The ID of the environment to create the registry for.
 
 _Required_: Yes
 
@@ -51,6 +55,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the registry.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServerAddress
+
+The server address for the registry.
 
 _Required_: Yes
 

@@ -1,6 +1,7 @@
 # Terraform::MySQL::Grant
 
-CloudFormation equivalent of mysql_grant
+The ``mysql_grant`` resource creates and manages privileges given to
+a user on a MySQL server.
 
 ## Syntax
 
@@ -47,6 +48,8 @@ Properties:
 
 #### Database
 
+The database to grant privileges on.
+
 _Required_: Yes
 
 _Type_: String
@@ -54,6 +57,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Grant
+
+Whether to also give the user privileges to grant the same privileges to other users.
 
 _Required_: No
 
@@ -63,6 +68,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Host
 
+The source host of the user. Defaults to "localhost". Conflicts with `role`.
+
 _Required_: No
 
 _Type_: String
@@ -70,6 +77,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Privileges
+
+A list of privileges to grant to the user. Refer to a list of privileges (such as [here](https://dev.mysql.com/doc/refman/5.5/en/grant.html)) for applicable privileges. Conflicts with `roles`.
 
 _Required_: No
 
@@ -79,6 +88,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Role
 
+The role to grant `privileges` to. Conflicts with `user` and `host`.
+
 _Required_: No
 
 _Type_: String
@@ -86,6 +97,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Roles
+
+A list of rols to grant to the user. Conflicts with `privileges`.
 
 _Required_: No
 
@@ -95,6 +108,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Table
 
+Which table to grant `privileges` on. Defaults to `*`, which is all tables.
+
 _Required_: No
 
 _Type_: String
@@ -103,6 +118,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TlsOption
 
+An TLS-Option for the `GRANT` statement. The value is suffixed to `REQUIRE`. A value of 'SSL' will generate a `GRANT ... REQUIRE SSL` statement. See the [MYSQL `GRANT` documentation](https://dev.mysql.com/doc/refman/5.7/en/grant.html) for more. Ignored if MySQL version is under 5.7.0.
+
 _Required_: No
 
 _Type_: String
@@ -110,6 +127,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### User
+
+The name of the user. Conflicts with `role`.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::RabbitMQ::Policy",
-    "description": "CloudFormation equivalent of rabbitmq_policy",
+    "description": "The ``rabbitmq_policy`` resource creates and manages policies for exchanges\nand queues.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Policy": {
@@ -8,7 +8,8 @@
             "additionalProperties": false,
             "properties": {
                 "ApplyTo": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Can either be \"exchanges\", \"queues\", or \"all\"."
                 },
                 "Definition": {
                     "type": "array",
@@ -28,13 +29,16 @@
                             "Key",
                             "Value"
                         ]
-                    }
+                    },
+                    "description": "Key/value pairs of the policy definition. See the\nRabbitMQ documentation for definition references and examples."
                 },
                 "Pattern": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A pattern to match an exchange or queue name."
                 },
                 "Priority": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The policy with the greater priority is applied first."
                 }
             },
             "required": [
@@ -51,10 +55,12 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the policy."
         },
         "Vhost": {
-            "type": "string"
+            "type": "string",
+            "description": "The vhost to create the resource in."
         },
         "Policy": {
             "type": "array",

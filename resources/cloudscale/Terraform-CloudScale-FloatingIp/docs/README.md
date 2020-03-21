@@ -1,6 +1,6 @@
 # Terraform::CloudScale::FloatingIp
 
-CloudFormation equivalent of cloudscale_floating_ip
+Provides a cloudscale.ch Floating IP to represent a publicly-accessible static IP address or IP network that can be assigned to one of your cloudscale.ch servers. Floating IPs can be moved between servers. Possible use cases include: High-availability, non-disruptive maintenance, multiple IPs per server, or re-using the same IP after replacing a server.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### IpVersion
 
+`4` or `6`, for an IPv4 or IPv6 address or network respectively.
+
 _Required_: Yes
 
 _Type_: Double
@@ -44,6 +46,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PrefixLength
+
+If you want to assign an entire network instead of a single IP address to your server, you must specify the prefix length. Currently, there is only support for `ip_version=6` and `prefix_length=56`.
 
 _Required_: No
 
@@ -53,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RegionSlug
 
+You can specify a region slug. Options include `lpg` and `rma`.
+
 _Required_: No
 
 _Type_: String
@@ -61,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ReversePtr
 
+You can specify the PTR record (reverse DNS pointer) in case of a single Floating IP address.
+
 _Required_: No
 
 _Type_: String
@@ -68,6 +76,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Server
+
+(Re-)Assign the Floating IP to this server (UUID).
 
 _Required_: Yes
 

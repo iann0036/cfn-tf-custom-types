@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::HealthChecksPingProbe",
-    "description": "CloudFormation equivalent of oci_health_checks_ping_probe",
+    "description": "This resource provides the Ping Probe resource in Oracle Cloud Infrastructure Health Checks service.\n\nCreates an on-demand ping probe. The location response header contains the URL for\nfetching probe results.\n\n*Note:* The on-demand probe configuration is not saved.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,16 +26,19 @@
             "type": "string"
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the compartment."
         },
         "HomeRegion": {
             "type": "string"
         },
         "Port": {
-            "type": "number"
+            "type": "number",
+            "description": "The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol."
         },
         "Protocol": {
-            "type": "string"
+            "type": "string",
+            "description": "The protocols for ping probes."
         },
         "ResultsUrl": {
             "type": "string"
@@ -45,20 +48,23 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of targets (hostnames or IP addresses) of the probe."
         },
         "TimeCreated": {
             "type": "string"
         },
         "TimeoutInSeconds": {
-            "type": "number"
+            "type": "number",
+            "description": "The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors."
         },
         "VantagePointNames": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of names of vantage points from which to execute the probe."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

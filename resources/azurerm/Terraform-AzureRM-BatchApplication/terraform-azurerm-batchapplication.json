@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::BatchApplication",
-    "description": "CloudFormation equivalent of azurerm_batch_application",
+    "description": "Manages Azure Batch Application instance.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,22 +29,28 @@
             "type": "string"
         },
         "AccountName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Batch account. Changing this forces a new resource to be created."
         },
         "AllowUpdates": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "A value indicating whether packages within the application may be overwritten using the same version string. Defaults to `true`."
         },
         "DefaultVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "The package to use if a client requests the application but does not specify a version. This property can only be set to the name of an existing package."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The display name for the application."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the application. This must be unique within the account. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group that contains the Batch account. Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

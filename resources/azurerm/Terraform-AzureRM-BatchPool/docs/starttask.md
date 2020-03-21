@@ -35,6 +35,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### CommandLine
 
+The command line executed by the start task.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Environment
+
+A map of strings (key,value) that represents the environment variables to set in the start task.
 
 _Required_: No
 
@@ -51,6 +55,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxTaskRetryCount
 
+The number of retry count. Defaults to `1`.
+
 _Required_: No
 
 _Type_: Double
@@ -58,6 +64,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WaitForSuccess
+
+A flag that indicates if the Batch pool should wait for the start task to be completed. Default to `false`.
 
 _Required_: No
 

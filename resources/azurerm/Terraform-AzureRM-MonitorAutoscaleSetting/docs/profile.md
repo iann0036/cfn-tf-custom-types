@@ -34,6 +34,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Name
 
+Specifies the name of the profile.
+
 _Required_: Yes
 
 _Type_: String

@@ -1,6 +1,8 @@
 # Terraform::TencentCloud::VpnGateway
 
-CloudFormation equivalent of tencentcloud_vpn_gateway
+Provides a resource to create a VPN gateway.
+
+-> **NOTE:** The prepaid VPN gateway do not support renew operation or delete operation with terraform.
 
 ## Syntax
 
@@ -44,6 +46,8 @@ Properties:
 
 #### Bandwidth
 
+The maximum public network output bandwidth of VPN gateway (unit: Mbps), the available values include: 5,10,20,50,100. Default is 5. When charge type is `PREPAID`, bandwidth degradation operation is unsupported.
+
 _Required_: No
 
 _Type_: Double
@@ -51,6 +55,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ChargeType
+
+Charge Type of the VPN gateway, valid values are `PREPAID`, `POSTPAID_BY_HOUR` and default is `POSTPAID_BY_HOUR`.
 
 _Required_: No
 
@@ -60,6 +66,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name of the VPN gateway. The length of character is limited to 1-60.
+
 _Required_: Yes
 
 _Type_: String
@@ -67,6 +75,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PrepaidPeriod
+
+Period of instance to be prepaid. Valid values are 1, 2, 3, 4, 6, 7, 8, 9, 12, 24, 36 and unit is month. Caution: when this para and renew_flag para are valid, the request means to renew several months more pre-paid period. This para can only be set to take effect in create operation.
 
 _Required_: No
 
@@ -76,6 +86,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PrepaidRenewFlag
 
+Flag indicates whether to renew or not, valid values are `NOTIFY_AND_RENEW`, `NOTIFY_AND_AUTO_RENEW`, `NOT_NOTIFY_AND_NOT_RENEW`. This para can only be set to take effect in create operation.
+
 _Required_: No
 
 _Type_: String
@@ -83,6 +95,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A list of tags used to associate different resources.
 
 _Required_: No
 
@@ -92,6 +106,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VpcId
 
+ID of the VPC.
+
 _Required_: Yes
 
 _Type_: String
@@ -99,6 +115,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Zone
+
+Zone of the VPN gateway.
 
 _Required_: Yes
 

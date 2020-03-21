@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::SlbServerCertificate",
-    "description": "CloudFormation equivalent of alicloud_slb_server_certificate",
+    "description": "A Load Balancer Server Certificate is an ssl Certificate used by the listener of the protocol https.\n\nFor information about slb and how to use it, see [What is Server Load Balancer](https://www.alibabacloud.com/help/doc-detail/27539.htm).\n\nFor information about Server Certificate and how to use it, see [Configure Server Certificate](https://www.alibabacloud.com/help/doc-detail/85968.htm).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -15,25 +15,32 @@
             "type": "string"
         },
         "AlicloudCertificateId": {
-            "type": "string"
+            "type": "string",
+            "description": "an id of server certificate ssued/proxied by alibaba cloud. but it is not supported on the international site of alibaba cloud now."
         },
         "AlicloudCertificateName": {
-            "type": "string"
+            "type": "string",
+            "description": "the name of the certificate specified by `alicloud_certificate_id`.but it is not supported on the international site of alibaba cloud now."
         },
         "AlicloudCertificateRegionId": {
-            "type": "string"
+            "type": "string",
+            "description": "the region of the certificate specified by `alicloud_certificate_id`. but it is not supported on the international site of alibaba cloud now."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the Server Certificate."
         },
         "PrivateKey": {
-            "type": "string"
+            "type": "string",
+            "description": "the content of privat key of the ssl certificate specified by `server_certificate`. where `alicloud_certificate_id` is null, it is required, otherwise it is ignored."
         },
         "ResourceGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Id of resource group which the slb server certificate belongs."
         },
         "ServerCertificate": {
-            "type": "string"
+            "type": "string",
+            "description": "the content of the ssl certificate. where `alicloud_certificate_id` is null, it is required, otherwise it is ignored."
         },
         "Tags": {
             "type": "array",
@@ -53,7 +60,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         }
     },
     "additionalProperties": false,

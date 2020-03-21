@@ -1,6 +1,6 @@
 # Terraform::OVH::IploadbalancingHttpRoute
 
-CloudFormation equivalent of ovh_iploadbalancing_http_route
+Manage http route for a loadbalancer service
 
 ## Syntax
 
@@ -38,6 +38,8 @@ Properties:
 
 #### DisplayName
 
+Human readable name for your route, this field is for you.
+
 _Required_: No
 
 _Type_: String
@@ -45,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FrontendId
+
+Route traffic for this frontend.
 
 _Required_: No
 
@@ -54,6 +58,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServiceName
 
+The internal name of your IP load balancing.
+
 _Required_: Yes
 
 _Type_: String
@@ -61,6 +67,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Weight
+
+Route priority ([0..255]). 0 if null. Highest priority routes are evaluated first. Only the first matching route will trigger an action.
 
 _Required_: No
 

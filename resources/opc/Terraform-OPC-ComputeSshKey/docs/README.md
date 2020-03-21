@@ -1,6 +1,6 @@
 # Terraform::OPC::ComputeSshKey
 
-CloudFormation equivalent of opc_compute_ssh_key
+The ``opc_compute_ssh_key`` resource creates and manages an SSH key in an Oracle Cloud Infrastructure Compute Classic identity domain.
 
 ## Syntax
 
@@ -33,6 +33,9 @@ Properties:
 
 #### Enabled
 
+Whether or not the key is enabled. This is useful if you want to temporarily disable an SSH key,
+without removing it entirely from your Terraform resource definition. Defaults to `true`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -41,6 +44,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Key
 
+The SSH key itself.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The unique (within this identity domain) name of the SSH key.
 
 _Required_: Yes
 

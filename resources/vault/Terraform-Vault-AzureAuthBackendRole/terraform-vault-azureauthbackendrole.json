@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Vault::AzureAuthBackendRole",
-    "description": "CloudFormation equivalent of vault_azure_auth_backend_role",
+    "description": "Manages an Azure auth backend role in a Vault server. Roles constrain the\ninstances or principals that can perform the login operation against the\nbackend. See the [Vault\ndocumentation](https://www.vaultproject.io/docs/auth/azure.html) for more\ninformation.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -16,42 +16,48 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "If set, defines a constraint on the groups\nthat can perform the login operation that they should be using the group\nID specified by this field."
         },
         "BoundLocations": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "If set, defines a constraint on the virtual machines\nthat can perform the login operation that the location in their identity\ndocument must match the one specified by this field."
         },
         "BoundResourceGroups": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "If set, defines a constraint on the virtual\nmachiness that can perform the login operation that they be associated with\nthe resource group that matches the value specified by this field."
         },
         "BoundScaleSets": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "If set, defines a constraint on the virtual\nmachines that can perform the login operation that they must match the scale set\nspecified by this field."
         },
         "BoundServicePrincipalIds": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "If set, defines a constraint on the\nservice principals that can perform the login operation that they should be possess\nthe ids specified by this field."
         },
         "BoundSubscriptionIds": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "If set, defines a constraint on the subscriptions\nthat can perform the login operation to ones which  matches the value specified by this\nfield."
         },
         "MaxTtl": {
             "type": "number"
@@ -67,7 +73,8 @@
             }
         },
         "Role": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the role."
         },
         "TokenBoundCidrs": {
             "type": "array",

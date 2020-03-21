@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::MysqlServer",
-    "description": "CloudFormation equivalent of azurerm_mysql_server",
+    "description": "Manages a MySQL Server.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "StorageProfile": {
@@ -8,16 +8,20 @@
             "additionalProperties": false,
             "properties": {
                 "AutoGrow": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Defines whether autogrow is enabled or disabled for the storage. Valid values are `Enabled` or `Disabled`."
                 },
                 "BackupRetentionDays": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Backup retention days for the server, supported values are between `7` and `35` days."
                 },
                 "GeoRedundantBackup": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Enable Geo-redundant or not for server backup. Valid values for this property are `Enabled` or `Disabled`, not supported for the `basic` tier."
                 },
                 "StorageMb": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Max storage allowed for a server. Possible values are between `5120` MB(5GB) and `1048576` MB(1TB) for the Basic SKU and between `5120` MB(5GB) and `4194304` MB(4TB) for General Purpose/Memory Optimized SKUs. For more information see the [product documentation](https://docs.microsoft.com/en-us/rest/api/mysql/servers/create#StorageProfile)."
                 }
             },
             "required": [
@@ -50,28 +54,35 @@
             "type": "string"
         },
         "AdministratorLogin": {
-            "type": "string"
+            "type": "string",
+            "description": "The Administrator Login for the MySQL Server. Changing this forces a new resource to be created."
         },
         "AdministratorLoginPassword": {
-            "type": "string"
+            "type": "string",
+            "description": "The Password associated with the `administrator_login` for the MySQL Server."
         },
         "Fqdn": {
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the MySQL Server. Changing this forces a new resource to be created. This needs to be globally unique within Azure."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the MySQL Server. Changing this forces a new resource to be created."
         },
         "SkuName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the SKU Name for this MySQL Server. The name of the SKU, follows the `tier` + `family` + `cores` pattern (e.g. `B_Gen4_1`, `GP_Gen5_8`). For more information see the [product documentation](https://docs.microsoft.com/en-us/rest/api/mysql/servers/create#sku)."
         },
         "SslEnforcement": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies if SSL should be enforced on connections. Possible values are `Enabled` and `Disabled`."
         },
         "Tags": {
             "type": "array",
@@ -91,10 +102,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Version": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the version of MySQL to use. Valid values are `5.6`, `5.7`, and `8.0`. Changing this forces a new resource to be created."
         },
         "StorageProfile": {
             "type": "array",

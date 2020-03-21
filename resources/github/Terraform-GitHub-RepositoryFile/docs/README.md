@@ -1,6 +1,7 @@
 # Terraform::GitHub::RepositoryFile
 
-CloudFormation equivalent of github_repository_file
+This resource allows you to create and manage files within a
+GitHub repository.
 
 ## Syntax
 
@@ -41,6 +42,9 @@ Properties:
 
 #### Branch
 
+Git branch (defaults to `master`).
+The branch must already exist, it will not be created if it does not already exist.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CommitAuthor
+
+Committer author name to use.
 
 _Required_: No
 
@@ -57,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CommitEmail
 
+Committer email address to use.
+
 _Required_: No
 
 _Type_: String
@@ -64,6 +72,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CommitMessage
+
+Commit message when adding or updating the managed file.
 
 _Required_: No
 
@@ -73,6 +83,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Content
 
+The file content.
+
 _Required_: Yes
 
 _Type_: String
@@ -80,6 +92,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### File
+
+The path of the file to manage.
 
 _Required_: Yes
 

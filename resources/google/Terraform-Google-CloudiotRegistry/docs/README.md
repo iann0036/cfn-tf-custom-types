@@ -1,6 +1,8 @@
 # Terraform::Google::CloudiotRegistry
 
-CloudFormation equivalent of google_cloudiot_registry
+Creates a device registry in Google's Cloud IoT Core platform. For more information see
+[the official documentation](https://cloud.google.com/iot/docs/) and
+[API](https://cloud.google.com/iot/docs/reference/cloudiot/rest/v1/projects.locations.registries).
 
 ## Syntax
 
@@ -61,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HttpConfig
 
+Activate or deactivate HTTP. Structure is documented below.
+
 _Required_: No
 
 _Type_: List of <a href="httpconfig.md">HttpConfig</a>
@@ -77,6 +81,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MqttConfig
 
+Activate or deactivate MQTT. Structure is documented below.
+
 _Required_: No
 
 _Type_: List of <a href="mqttconfig.md">MqttConfig</a>
@@ -84,6 +90,9 @@ _Type_: List of <a href="mqttconfig.md">MqttConfig</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+A unique name for the resource, required by device registry.
+Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -93,6 +102,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Project
 
+The project in which the resource belongs. If it is not provided, the provider project is used.
+
 _Required_: No
 
 _Type_: String
@@ -101,6 +112,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The Region in which the created address should reside. If it is not provided, the provider region is used.
+
 _Required_: No
 
 _Type_: String
@@ -108,6 +121,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StateNotificationConfig
+
+A PubSub topic to publish device state updates. Structure is documented below.
 
 _Required_: No
 

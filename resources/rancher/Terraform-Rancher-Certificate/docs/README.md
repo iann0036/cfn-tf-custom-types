@@ -1,6 +1,6 @@
 # Terraform::Rancher::Certificate
 
-CloudFormation equivalent of rancher_certificate
+Provides a Rancher Certificate resource. This can be used to create certificates for rancher environments and retrieve their information.
 
 ## Syntax
 
@@ -39,6 +39,8 @@ Properties:
 
 #### Cert
 
+The certificate content.
+
 _Required_: Yes
 
 _Type_: String
@@ -46,6 +48,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CertChain
+
+The certificate chain.
 
 _Required_: No
 
@@ -55,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+A certificate description.
+
 _Required_: No
 
 _Type_: String
@@ -62,6 +68,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnvironmentId
+
+The ID of the environment to create the certificate for.
 
 _Required_: Yes
 
@@ -71,6 +79,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Key
 
+The certificate key.
+
 _Required_: Yes
 
 _Type_: String
@@ -78,6 +88,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the certificate.
 
 _Required_: Yes
 

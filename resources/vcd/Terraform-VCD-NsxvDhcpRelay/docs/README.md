@@ -1,6 +1,16 @@
 # Terraform::VCD::NsxvDhcpRelay
 
-CloudFormation equivalent of vcd_nsxv_dhcp_relay
+Provides a vCloud Director Edge Gateway DHCP relay configuration resource. The DHCP relay capability
+provided by NSX in vCloud Director environment allows to leverage existing DHCP infrastructure from
+within vCloud Director environment without any interruption to the IP address management in existing
+DHCP infrastructure. DHCP messages are relayed from virtual machines to the designated DHCP servers
+in your physical DHCP infrastructure, which allows IP addresses controlled by the NSX software to
+continue to be in sync with IP addresses in the rest of your DHCP-controlled environments. 
+
+~> **Note:** This resource is a "singleton". Because DHCP relay settings are just edge gateway
+properties - only one resource per Edge Gateway is useful.
+
+Supported in provider *v2.6+*
 
 ## Syntax
 
@@ -45,6 +55,8 @@ Properties:
 
 #### DomainNames
 
+A set of domain names.
+
 _Required_: No
 
 _Type_: List of String
@@ -52,6 +64,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EdgeGateway
+
+The name of the edge gateway on which DHCP relay is to be configured.
 
 _Required_: Yes
 
@@ -61,6 +75,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IpAddresses
 
+A set of IP addresses.
+
 _Required_: No
 
 _Type_: List of String
@@ -68,6 +84,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IpSets
+
+A set of IP set names.
 
 _Required_: No
 
@@ -77,6 +95,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Org
 
+The name of organization to use, optional if defined at provider level. Useful
+when connected as sysadmin working across different organisations.
+
 _Required_: No
 
 _Type_: String
@@ -84,6 +105,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vdc
+
+The name of VDC to use, optional if defined at provider level.
 
 _Required_: No
 

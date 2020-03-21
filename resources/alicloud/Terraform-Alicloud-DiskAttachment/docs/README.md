@@ -1,6 +1,6 @@
 # Terraform::Alicloud::DiskAttachment
 
-CloudFormation equivalent of alicloud_disk_attachment
+Provides an Alicloud ECS Disk Attachment as a resource, to attach and detach disks from ECS Instances.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### DeviceName
 
+The device name has been deprecated, and when attaching disk, it will be allocated automatically by system according to default order from /dev/xvdb to /dev/xvdz.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DiskId
 
+ID of the Disk to be attached.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceId
+
+ID of the Instance to attach to.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 # Terraform::Netlify::Hook
 
-CloudFormation equivalent of netlify_hook
+An [outgoing webhook](https://www.netlify.com/docs/webhooks/#outgoing-webhooks-and-notifications), typically used to notify a third party service about deploys.
 
 ## Syntax
 
@@ -36,6 +36,8 @@ Properties:
 
 #### Data
 
+object/hash of data to be sent along with the webhook. this varies depending on the `type`.
+
 _Required_: Yes
 
 _Type_: List of <a href="data.md">Data</a>
@@ -43,6 +45,8 @@ _Type_: List of <a href="data.md">Data</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Event
+
+- when to send the data, for example on deploy create, succeed, fail, etc.
 
 _Required_: Yes
 
@@ -52,6 +56,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SiteId
 
+- id of the site on netlify.
+
 _Required_: Yes
 
 _Type_: String
@@ -59,6 +65,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+- type of outgoing webhook, for example slack, email, github commit status, etc.
 
 _Required_: Yes
 

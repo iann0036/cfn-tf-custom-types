@@ -33,6 +33,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### DefaultValue
 
+The default value for this Template Parameter.
+
 _Required_: No
 
 _Type_: String
@@ -40,6 +42,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+A description of this Template Parameter.
 
 _Required_: No
 
@@ -49,6 +53,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The Name of this Template Parameter.
+
 _Required_: Yes
 
 _Type_: String
@@ -56,6 +62,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Required
+
+Is this Template Parameter Required?.
 
 _Required_: Yes
 
@@ -65,6 +73,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Type
 
+The Type of this Template Parameter, such as a `string`.
+
 _Required_: Yes
 
 _Type_: String
@@ -72,6 +82,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Values
+
+One or more acceptable values for this Template Parameter.
 
 _Required_: No
 

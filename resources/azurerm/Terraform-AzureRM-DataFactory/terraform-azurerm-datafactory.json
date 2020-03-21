@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::DataFactory",
-    "description": "CloudFormation equivalent of azurerm_data_factory",
+    "description": "Manages an Azure Data Factory (Version 2).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "GithubConfiguration": {
@@ -8,19 +8,24 @@
             "additionalProperties": false,
             "properties": {
                 "AccountName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the GitHub account name."
                 },
                 "BranchName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the branch of the repository to get code from."
                 },
                 "GitUrl": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the GitHub Enterprise host name. For example: https://github.mydomain.com. Use https://github.com for open source repositories."
                 },
                 "RepositoryName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the name of the git repository."
                 },
                 "RootFolder": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the root folder within the repository. Set to `/` for the top level."
                 }
             },
             "required": [
@@ -36,7 +41,8 @@
             "additionalProperties": false,
             "properties": {
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the identity type of the Data Factory. At this time the only allowed value is `SystemAssigned`."
                 }
             },
             "required": [
@@ -67,22 +73,28 @@
             "additionalProperties": false,
             "properties": {
                 "AccountName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the VSTS account name."
                 },
                 "BranchName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the branch of the repository to get code from."
                 },
                 "ProjectName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the name of the VSTS project."
                 },
                 "RepositoryName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the name of the git repository."
                 },
                 "RootFolder": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the root folder within the repository. Set to `/` for the top level."
                 },
                 "TenantId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the Tenant ID associated with the VSTS account."
                 }
             },
             "required": [
@@ -101,13 +113,16 @@
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Data Factory. Changing this forces a new resource to be created. Must be globally unique. See the [Microsoft documentation](https://docs.microsoft.com/en-us/azure/data-factory/naming-rules) for all restrictions."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the Data Factory."
         },
         "Tags": {
             "type": "array",
@@ -127,7 +142,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "GithubConfiguration": {
             "type": "array",

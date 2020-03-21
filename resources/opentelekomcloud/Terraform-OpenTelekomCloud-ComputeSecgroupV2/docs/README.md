@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::ComputeSecgroupV2
 
-CloudFormation equivalent of opentelekomcloud_compute_secgroup_v2
+Manages a V2 security group resource within OpenTelekomCloud.
 
 ## Syntax
 
@@ -38,6 +38,9 @@ Properties:
 
 #### Description
 
+A description for the security group. Changing this
+updates the `description` of an existing security group.
+
 _Required_: Yes
 
 _Type_: String
@@ -45,6 +48,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+A unique name for the security group. Changing this
+updates the `name` of an existing security group.
 
 _Required_: Yes
 

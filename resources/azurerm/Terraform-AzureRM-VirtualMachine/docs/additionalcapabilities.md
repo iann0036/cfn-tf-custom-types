@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### UltraSsdEnabled
 
+Should Ultra SSD disk be enabled for this Virtual Machine?.
+
 _Required_: Yes
 
 _Type_: Boolean

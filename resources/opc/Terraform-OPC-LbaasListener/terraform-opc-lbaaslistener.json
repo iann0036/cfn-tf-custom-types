@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OPC::LbaasListener",
-    "description": "CloudFormation equivalent of opc_lbaas_listener",
+    "description": "The `opc_lbaas_listener` resource creates and manages a Load Balancer Classic Listener for a Load Balancer Classic instance.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,23 +9,28 @@
             "type": "string"
         },
         "BalancerProtocol": {
-            "type": "string"
+            "type": "string",
+            "description": "transport protocol that will be accepted for all incoming requests to the selected load balancer listener. `HTTP` or `HTTPS`. If set to HTTPS then you must also set the server `certificates`."
         },
         "Certificates": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The URI of the server security certificate."
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean flag to enable or disable the Listener. Default is `true` (enabled)."
         },
         "LoadBalancer": {
-            "type": "string"
+            "type": "string",
+            "description": "The parent Load Balancer the Listener."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Listener."
         },
         "OperationDetails": {
             "type": "string"
@@ -38,7 +43,8 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of paths to configure the listener to accept only requests that are targeted to a specific path within the URI of the request."
         },
         "Policies": {
             "type": "array",
@@ -48,13 +54,16 @@
             }
         },
         "Port": {
-            "type": "number"
+            "type": "number",
+            "description": "The port on which the Load Balancer is listening."
         },
         "ServerPool": {
-            "type": "string"
+            "type": "string",
+            "description": "URI of the Server Pool resource to which the load balancer distributes requests."
         },
         "ServerProtocol": {
-            "type": "string"
+            "type": "string",
+            "description": "The protocol to be used for routing traffic to the origin servers in the server pool. `HTTP` or `HTTPS`. If set to `HTTPS` then you must include a Trusted Certificate Policy in the `policies`."
         },
         "State": {
             "type": "boolean"
@@ -64,7 +73,8 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of tags."
         },
         "Uri": {
             "type": "string"
@@ -74,7 +84,8 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Configure the listener to only accept URI requests that include the host names listed in this field."
         }
     },
     "additionalProperties": false,

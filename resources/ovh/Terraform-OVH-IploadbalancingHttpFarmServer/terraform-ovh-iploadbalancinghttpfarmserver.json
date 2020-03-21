@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OVH::IploadbalancingHttpFarmServer",
-    "description": "CloudFormation equivalent of ovh_iploadbalancing_http_farm_server",
+    "description": "Creates a backend server entry linked to http loadbalancing group (farm)",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "Address": {
-            "type": "string"
+            "type": "string",
+            "description": "Address of the backend server (IP from either internal or OVH network)."
         },
         "Backup": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "is it a backup server used in case of failure of all the non-backup backends."
         },
         "Chain": {
             "type": "string"
@@ -21,31 +23,40 @@
             "type": "string"
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "Label for the server."
         },
         "FarmId": {
-            "type": "number"
+            "type": "number",
+            "description": "ID of the farm this server is attached to."
         },
         "Port": {
-            "type": "number"
+            "type": "number",
+            "description": "Port that backend will respond on."
         },
         "Probe": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "defines if backend will be probed to determine health and keep as active in farm if healthy."
         },
         "ProxyProtocolVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "version of the PROXY protocol used to pass origin connection information from loadbalancer to recieving service (`v1`, `v2`, `v2-ssl`, `v2-ssl-cn`)."
         },
         "ServiceName": {
-            "type": "string"
+            "type": "string",
+            "description": "The internal name of your IP load balancing."
         },
         "Ssl": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "is the connection ciphered with SSL (TLS)."
         },
         "Status": {
-            "type": "string"
+            "type": "string",
+            "description": "backend status - `active` or `inactive`."
         },
         "Weight": {
-            "type": "number"
+            "type": "number",
+            "description": "used in loadbalancing algorithm."
         }
     },
     "additionalProperties": false,

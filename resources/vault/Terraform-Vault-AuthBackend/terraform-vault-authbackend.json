@@ -15,19 +15,22 @@
             "type": "number"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description of the auth method."
         },
         "ListingVisibility": {
             "type": "string"
         },
         "Local": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if the auth method is local only."
         },
         "MaxLeaseTtlSeconds": {
             "type": "number"
         },
         "Path": {
-            "type": "string"
+            "type": "string",
+            "description": "The path to mount the auth method \u2014 this defaults to the name of the type."
         },
         "Tune": {
             "type": "array",
@@ -77,10 +80,12 @@
                         "type": "string"
                     }
                 }
-            }
+            },
+            "description": "Extra configuration block. Structure is documented below."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the auth method type."
         }
     },
     "additionalProperties": false,

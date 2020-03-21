@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Spotinst::OceanAws",
-    "description": "CloudFormation equivalent of spotinst_ocean_aws",
+    "description": "Provides a Spotinst Ocean AWS resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Autoscaler": {
@@ -155,86 +155,108 @@
             "type": "string"
         },
         "AssociatePublicIpAddress": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Configure public IP address allocation."
         },
         "Blacklist": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Instance types not allowed in the Ocean cluster. Cannot be configured if `whitelist` is configured."
         },
         "ControllerId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ocean cluster identifier. Example: `ocean.k8s`."
         },
         "DesiredCapacity": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of instances to launch and maintain in the cluster."
         },
         "DrainingTimeout": {
-            "type": "number"
+            "type": "number",
+            "description": "The time in seconds, the instance is allowed to run while detached from the ELB. This is to allow the instance time to be drained from incoming TCP connections before terminating it, during a scale down operation."
         },
         "EbsOptimized": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable EBS optimized for cluster. Flag will enable optimized capacity for high bandwidth connectivity to the EB service for non EBS optimized instance types. For instances that are EBS optimized this flag will be ignored."
         },
         "FallbackToOndemand": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If not Spot instance markets are available, enable Ocean to launch On-Demand instances instead."
         },
         "IamInstanceProfile": {
-            "type": "string"
+            "type": "string",
+            "description": "The instance profile iam role."
         },
         "ImageId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the image used to launch the instances."
         },
         "KeyName": {
-            "type": "string"
+            "type": "string",
+            "description": "The key pair to attach the instances."
         },
         "MaxSize": {
-            "type": "number"
+            "type": "number",
+            "description": "The upper limit of instances the cluster can scale up to."
         },
         "MinSize": {
-            "type": "number"
+            "type": "number",
+            "description": "The lower limit of instances the cluster can scale down to."
         },
         "Monitoring": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable detailed monitoring for cluster. Flag will enable Cloud Watch detailed detailed monitoring (one minute increments). Note: there are additional hourly costs for this service based on the region used."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Required if type is set to CLASSIC\n* `type` - (Required) Can be set to CLASSIC or TARGET_GROUP."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region the cluster will run in."
         },
         "RootVolumeSize": {
-            "type": "number"
+            "type": "number",
+            "description": "The size (in Gb) to allocate for the root volume. Minimum `20`."
         },
         "SecurityGroups": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "One or more security group ids."
         },
         "SpotPercentage": {
-            "type": "number"
+            "type": "number",
+            "description": "The percentage of Spot instances the cluster should maintain. Min 0, max 100."
         },
         "SubnetIds": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A comma-separated list of subnet identifiers for the Ocean cluster. Subnet IDs should be configured with auto assign public ip."
         },
         "UserData": {
-            "type": "string"
+            "type": "string",
+            "description": "Base64-encoded MIME user data to make available to the instances."
         },
         "UtilizeReservedInstances": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If Reserved instances exist, OCean will utilize them before launching Spot instances."
         },
         "Whitelist": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Instance types allowed in the Ocean cluster. Cannot be configured if `blacklist` is configured."
         },
         "Autoscaler": {
             "type": "array",

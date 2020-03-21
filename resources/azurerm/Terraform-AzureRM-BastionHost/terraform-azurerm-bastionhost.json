@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::BastionHost",
-    "description": "CloudFormation equivalent of azurerm_bastion_host",
+    "description": "Manages a Bastion Host.\n\n~> **Note:** Bastion Hosts are a preview feature in Azure, and therefore are only supported in a select number of regions. [Read more](https://docs.microsoft.com/en-us/azure/bastion/bastion-faq).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "IpConfiguration": {
@@ -8,13 +8,15 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the IP configuration."
                 },
                 "PublicIpAddressId": {
                     "type": "string"
                 },
                 "SubnetId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Reference to a subnet in which this Bastion Host has been created."
                 }
             },
             "required": [
@@ -52,13 +54,16 @@
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Bastion Host. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the Bastion Host."
         },
         "Tags": {
             "type": "array",
@@ -78,7 +83,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "IpConfiguration": {
             "type": "array",

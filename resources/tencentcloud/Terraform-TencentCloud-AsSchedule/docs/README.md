@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::AsSchedule
 
-CloudFormation equivalent of tencentcloud_as_schedule
+Provides a resource for an AS (Auto scaling) schedule.
 
 ## Syntax
 
@@ -43,6 +43,8 @@ Properties:
 
 #### DesiredCapacity
 
+The desired number of CVM instances that should be running in the group.
+
 _Required_: Yes
 
 _Type_: Double
@@ -50,6 +52,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EndTime
+
+The time for this action to end, in "YYYY-MM-DDThh:mm:ss+08:00" format (UTC+8).
 
 _Required_: No
 
@@ -59,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxSize
 
+The maximum size for the Auto Scaling group.
+
 _Required_: Yes
 
 _Type_: Double
@@ -66,6 +72,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MinSize
+
+The minimum size for the Auto Scaling group.
 
 _Required_: Yes
 
@@ -75,6 +83,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Recurrence
 
+The time when recurring future actions will start. Start time is specified by the user following the Unix cron syntax format. And this argument should be set with end_time together.
+
 _Required_: No
 
 _Type_: String
@@ -82,6 +92,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ScalingGroupId
+
+ID of a scaling group.
 
 _Required_: Yes
 
@@ -91,6 +103,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ScheduleActionName
 
+The name of this scaling action.
+
 _Required_: Yes
 
 _Type_: String
@@ -98,6 +112,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StartTime
+
+The time for this action to start, in "YYYY-MM-DDThh:mm:ss+08:00" format (UTC+8).
 
 _Required_: Yes
 

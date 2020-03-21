@@ -1,6 +1,6 @@
 # Terraform::Heroku::AddonAttachment
 
-CloudFormation equivalent of heroku_addon_attachment
+Attaches a Heroku Addon Resource to an additional Heroku App.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### AddonId
 
+The ID of the existing Heroku Addon to attach.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AppId
 
+The ID of the Heroku App to attach to.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+A friendly name for the Heroku Addon Attachment.
 
 _Required_: No
 

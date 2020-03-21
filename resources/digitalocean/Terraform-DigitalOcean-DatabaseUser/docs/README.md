@@ -1,6 +1,8 @@
 # Terraform::DigitalOcean::DatabaseUser
 
-CloudFormation equivalent of digitalocean_database_user
+Provides a DigitalOcean database user resource. When creating a new database cluster, a default admin user with name `doadmin` will be created. Then, this resource can be used to provide additional normal users inside the cluster.
+
+~> **NOTE:** Any new users created will always have `normal` role, only the default user that comes with database cluster creation has `primary` role. Additional permissions must be managed manually.
 
 ## Syntax
 
@@ -33,6 +35,8 @@ Properties:
 
 #### ClusterId
 
+The ID of the original source database cluster.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +45,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MysqlAuthPlugin
 
+The authentication method to use for connections to the MySQL user account. The valid values are `mysql_native_password` or `caching_sha2_password` (this is the default).
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name for the database user.
 
 _Required_: Yes
 

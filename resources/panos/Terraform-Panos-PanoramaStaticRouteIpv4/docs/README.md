@@ -1,6 +1,7 @@
 # Terraform::Panos::PanoramaStaticRouteIpv4
 
-CloudFormation equivalent of panos_panorama_static_route_ipv4
+This resource allows you to add/update/delete Panorama IPv4 static routes on a
+virtual router for either a template or a template stack.
 
 ## Syntax
 
@@ -51,6 +52,8 @@ Properties:
 
 #### AdminDistance
 
+The admin distance.
+
 _Required_: No
 
 _Type_: Double
@@ -58,6 +61,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BfdProfile
+
+BFD configuration.
 
 _Required_: No
 
@@ -67,6 +72,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Destination
 
+Destination IP address / prefix.
+
 _Required_: Yes
 
 _Type_: String
@@ -74,6 +81,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Interface
+
+Interface to use.
 
 _Required_: No
 
@@ -83,6 +92,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Metric
 
+Metric value / path cost (default: `10`).
+
 _Required_: No
 
 _Type_: Double
@@ -90,6 +101,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The static route's name.
 
 _Required_: Yes
 
@@ -99,6 +112,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NextHop
 
+The value for the `type` setting.
+
 _Required_: No
 
 _Type_: String
@@ -106,6 +121,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RouteTable
+
+Target routing table to install the route.  Valid
+values are `unicast` (the default), `no install`, `multicast`, or `both`.
 
 _Required_: No
 
@@ -115,6 +133,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Template
 
+The template name.
+
 _Required_: No
 
 _Type_: String
@@ -122,6 +142,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TemplateStack
+
+The template stack name.
 
 _Required_: No
 
@@ -131,6 +153,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Type
 
+The next hop type.  Valid values are `ip-address` (the
+default), `discard`, `next-vr`, or an empty string for `None`.
+
 _Required_: No
 
 _Type_: String
@@ -138,6 +163,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VirtualRouter
+
+The virtual router to add the static
+route to.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::BigtableTable",
-    "description": "CloudFormation equivalent of google_bigtable_table",
+    "description": "Creates a Google Cloud Bigtable table inside an instance. For more information see\n[the official documentation](https://cloud.google.com/bigtable/) and\n[API](https://cloud.google.com/bigtable/docs/go/reference).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ColumnFamily": {
@@ -8,7 +8,8 @@
             "additionalProperties": false,
             "properties": {
                 "Family": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the column family."
                 }
             },
             "required": [
@@ -22,20 +23,24 @@
             "type": "string"
         },
         "InstanceName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Bigtable instance."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the table."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used."
         },
         "SplitKeys": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of predefined keys to split the table on."
         },
         "ColumnFamily": {
             "type": "array",

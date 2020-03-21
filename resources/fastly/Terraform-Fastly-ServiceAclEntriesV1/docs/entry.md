@@ -28,6 +28,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Comment
 
+A personal freeform descriptive note.
+
 _Required_: No
 
 _Type_: String
@@ -35,6 +37,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ip
+
+An IP address that is the focus for the ACL.
 
 _Required_: Yes
 
@@ -44,6 +48,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Negated
 
+A boolean that will negate the match if true.
+
 _Required_: No
 
 _Type_: Boolean
@@ -51,6 +57,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Subnet
+
+An optional subnet mask applied to the IP address.
 
 _Required_: No
 

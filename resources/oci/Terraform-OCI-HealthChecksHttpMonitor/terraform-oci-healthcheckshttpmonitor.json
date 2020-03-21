@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::HealthChecksHttpMonitor",
-    "description": "CloudFormation equivalent of oci_health_checks_http_monitor",
+    "description": "This resource provides the Http Monitor resource in Oracle Cloud Infrastructure Health Checks service.\n\nCreates an HTTP monitor. Vantage points will be automatically selected if not specified,\nand probes will be initiated from each vantage point to each of the targets at the frequency\nspecified by `intervalInSeconds`.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,7 +26,8 @@
             "type": "string"
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The OCID of the compartment."
         },
         "DefinedTags": {
             "type": "array",
@@ -46,10 +47,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{\"Operations.CostCenter\": \"42\"}`."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) A user-friendly and mutable name suitable for display in a user interface."
         },
         "FreeformTags": {
             "type": "array",
@@ -69,7 +72,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{\"Department\": \"Finance\"}`."
         },
         "Headers": {
             "type": "array",
@@ -89,28 +93,35 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) A dictionary of HTTP request headers."
         },
         "HomeRegion": {
             "type": "string"
         },
         "IntervalInSeconds": {
-            "type": "number"
+            "type": "number",
+            "description": "(Updatable) The monitor interval in seconds. Valid values: 10, 30, and 60."
         },
         "IsEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "(Updatable) Enables or disables the monitor. Set to 'true' to launch monitoring."
         },
         "Method": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The supported HTTP methods available for probes."
         },
         "Path": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The optional URL path to probe, including query parameters."
         },
         "Port": {
-            "type": "number"
+            "type": "number",
+            "description": "(Updatable) The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol."
         },
         "Protocol": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The supported protocols available for HTTP probes."
         },
         "ResultsUrl": {
             "type": "string"
@@ -120,20 +131,23 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "(Updatable) A list of targets (hostnames or IP addresses) of the probe."
         },
         "TimeCreated": {
             "type": "string"
         },
         "TimeoutInSeconds": {
-            "type": "number"
+            "type": "number",
+            "description": "(Updatable) The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors."
         },
         "VantagePointNames": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "(Updatable) A list of names of vantage points from which to execute the probe."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

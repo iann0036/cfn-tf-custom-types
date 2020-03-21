@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### EnableHttp2
 
+Should HTTP/2 be supported by the API Management Service? Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean

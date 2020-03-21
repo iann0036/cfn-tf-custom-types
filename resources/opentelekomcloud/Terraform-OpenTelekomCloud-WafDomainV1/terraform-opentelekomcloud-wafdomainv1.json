@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenTelekomCloud::WafDomainV1",
-    "description": "CloudFormation equivalent of opentelekomcloud_waf_domain_v1",
+    "description": "Manages a WAF domain resource within OpenTelekomCloud.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Server": {
@@ -8,16 +8,20 @@
             "additionalProperties": false,
             "properties": {
                 "Address": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "IP address or domain name of the web server that the client accesses. For example, 192.168.1.1 or www.a.com."
                 },
                 "BackProtocol": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Protocl used by WAF to forward client requests to the server. The options are HTTP and HTTPS."
                 },
                 "FrontProtocol": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Protocol type of the client. The options are HTTP and HTTPS."
                 },
                 "Port": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Port number used by the web server. The value ranges from 0 to 65535, for example, 8080."
                 }
             },
             "required": [
@@ -53,16 +57,19 @@
             "type": "number"
         },
         "CertificateId": {
-            "type": "string"
+            "type": "string",
+            "description": "The certificate ID. This parameter is mandatory when front_protocol is set to HTTPS."
         },
         "Cname": {
             "type": "string"
         },
         "Hostname": {
-            "type": "string"
+            "type": "string",
+            "description": "The domain name. For example, www.example.com or *.example.com. Changing this creates a new domain."
         },
         "PolicyId": {
-            "type": "string"
+            "type": "string",
+            "description": "The policy ID associate with the domain. Changing this create a new domain."
         },
         "ProtectStatus": {
             "type": "number"
@@ -71,17 +78,20 @@
             "type": "string"
         },
         "Proxy": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether a proxy is configured."
         },
         "SipHeaderList": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Array of HTTP request header for identifying the real source IP address. This parameter is required only when proxy is set to true."
         },
         "SipHeaderName": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of the source IP header. This parameter is required only when proxy is set to true. The options are as follows: default, cloudflare, akamai, and custom."
         },
         "SubDomain": {
             "type": "string"

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenTelekomCloud::RtsSoftwareConfigV1",
-    "description": "CloudFormation equivalent of opentelekomcloud_rts_software_config_v1",
+    "description": "Provides an RTS software config resource.\n\n# Example Usage\n\n ```hcl\nvariable \"config_name\" {}\n \nresource \"opentelekomcloud_rts_software_config_v1\" \"myconfig\" {\n  name = \"${var.config_name}\"\n}\n ```\n\n# Argument Reference\n\nThe following arguments are supported:\n\n* `name` - (Required) The name of the software configuration.\n\n* `group` - (Optional) The namespace that groups this software configuration by when it is delivered to a server.\n\n* `input_values` - (Optional) A list of software configuration inputs.\n\n* `output_values` - (Optional) A list of software configuration outputs.\n\n* `config` - (Optional) The software configuration code.\n\n* `options` - (Optional) The software configuration options.\n\n\n# Attributes Reference\n\nIn addition to all arguments above, the following attributes are exported:\n\n* `id` - The id of the software config.\n \n# Import\n\nSoftware Config can be imported using the `config id`, e.g.\n```\n $ terraform import opentelekomcloud_rts_software_config_v1 4779ab1c-7c1a-44b1-a02e-93dfc361b32d\n```",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {

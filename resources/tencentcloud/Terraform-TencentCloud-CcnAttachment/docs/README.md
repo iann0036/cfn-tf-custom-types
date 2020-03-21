@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::CcnAttachment
 
-CloudFormation equivalent of tencentcloud_ccn_attachment
+Provides a CCN attaching resource.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### CcnId
 
+ID of the CCN.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceId
+
+ID of instance is attached.
 
 _Required_: Yes
 
@@ -51,6 +55,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceRegion
 
+The region that the instance locates at.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceType
+
+Type of attached instance network, and available values include VPC, DIRECTCONNECT and BMVPC.
 
 _Required_: Yes
 

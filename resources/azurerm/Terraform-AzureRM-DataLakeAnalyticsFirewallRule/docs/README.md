@@ -1,6 +1,6 @@
 # Terraform::AzureRM::DataLakeAnalyticsFirewallRule
 
-CloudFormation equivalent of azurerm_data_lake_analytics_firewall_rule
+Manages a Azure Data Lake Analytics Firewall Rule.
 
 ## Syntax
 
@@ -39,6 +39,8 @@ Properties:
 
 #### AccountName
 
+Specifies the name of the Data Lake Analytics for which the Firewall Rule should take effect.
+
 _Required_: Yes
 
 _Type_: String
@@ -46,6 +48,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EndIpAddress
+
+The End IP Address for the firewall rule.
 
 _Required_: Yes
 
@@ -55,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the Data Lake Analytics. Changing this forces a new resource to be created. Has to be between 3 to 24 characters.
+
 _Required_: Yes
 
 _Type_: String
@@ -63,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to create the Data Lake Analytics.
+
 _Required_: Yes
 
 _Type_: String
@@ -70,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StartIpAddress
+
+The Start IP address for the firewall rule.
 
 _Required_: Yes
 

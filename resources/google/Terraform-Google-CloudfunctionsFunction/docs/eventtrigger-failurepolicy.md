@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Retry
 
+Whether the function should be retried on failure. Defaults to `false`.
+
 _Required_: Yes
 
 _Type_: Boolean

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::LoggingProjectSink",
-    "description": "CloudFormation equivalent of google_logging_project_sink",
+    "description": "Manages a project-level logging sink. For more information see\n[the official documentation](https://cloud.google.com/logging/docs/),\n[Exporting Logs in the API](https://cloud.google.com/logging/docs/api/tasks/exporting-logs)\nand\n[API](https://cloud.google.com/logging/docs/reference/v2/rest/).\n\n~> **Note:** You must have [granted the \"Logs Configuration Writer\"](https://cloud.google.com/logging/docs/access-control) IAM role (`roles/logging.configWriter`) to the credentials used with terraform.\n\n~> **Note** You must [enable the Cloud Resource Manager API](https://console.cloud.google.com/apis/library/cloudresourcemanager.googleapis.com)",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "BigqueryOptions": {
@@ -8,7 +8,8 @@
             "additionalProperties": false,
             "properties": {
                 "UsePartitionedTables": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Whether to use [BigQuery's partition tables](https://cloud.google.com/bigquery/docs/partitioned-tables).\nBy default, Logging creates dated tables based on the log entries' timestamps, e.g. syslog_20170523. With partitioned\ntables the date suffix is no longer present and [special query syntax](https://cloud.google.com/bigquery/docs/querying-partitioned-tables)\nhas to be used instead. In both cases, tables are sharded based on UTC timezone."
                 }
             },
             "required": [
@@ -22,19 +23,24 @@
             "type": "string"
         },
         "Destination": {
-            "type": "string"
+            "type": "string",
+            "description": "The destination of the sink (or, in other words, where logs are written to). Can be a\nCloud Storage bucket, a PubSub topic, or a BigQuery dataset. Examples:\n```\n\"storage.googleapis.com/[GCS_BUCKET]\"\n\"bigquery.googleapis.com/projects/[PROJECT_ID]/datasets/[DATASET]\"\n\"pubsub.googleapis.com/projects/[PROJECT_ID]/topics/[TOPIC_ID]\"\n```\nThe writer associated with the sink must have access to write to the above resource."
         },
         "Filter": {
-            "type": "string"
+            "type": "string",
+            "description": "The filter to apply when exporting logs. Only log entries that match the filter are exported.\nSee [Advanced Log Filters](https://cloud.google.com/logging/docs/view/advanced_filters) for information on how to\nwrite a filter."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the logging sink."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the project to create the sink in. If omitted, the project associated with the provider is\nused."
         },
         "UniqueWriterIdentity": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether or not to create a unique identity associated with this sink. If `false`\n(the default), then the `writer_identity` used is `serviceAccount:cloud-logs@system.gserviceaccount.com`. If `true`,\nthen a unique service account is created and used for this sink. If you wish to publish logs across projects, you\nmust set `unique_writer_identity` to true."
         },
         "WriterIdentity": {
             "type": "string"

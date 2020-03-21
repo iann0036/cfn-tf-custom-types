@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::DayuDdosPolicyCase",
-    "description": "CloudFormation equivalent of tencentcloud_dayu_ddos_policy_case",
+    "description": "Use this resource to create dayu DDoS policy case\n\n~> **NOTE:** when a dayu DDoS policy case is created, there will be a dayu DDoS policy created with the same prefix name in the same time. This resource only supports Anti-DDoS of type `bgp`, `bgp-multip` and `bgpip`. One Anti-DDoS resource can only has one DDoS policy case resource. When there is only one Anti-DDoS resource and one policy case, those two resource will be bind automatically.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -13,84 +13,106 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "App protocol set of the DDoS policy case."
         },
         "AppType": {
-            "type": "string"
+            "type": "string",
+            "description": "App type of the DDoS policy case, and valid values are `WEB`, `GAME`, `APP` and `OTHER`."
         },
         "CreateTime": {
             "type": "string"
         },
         "HasAbroad": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicate whether the service involves overseas or not, valid values are `no` and `yes`."
         },
         "HasInitiateTcp": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicate whether the service actively initiates TCP requests or not, valid values are `no` and `yes`."
         },
         "HasInitiateUdp": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicate whether the actively initiate UDP requests or not, valid values are `no` and `yes`."
         },
         "HasVpn": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicate whether the service involves VPN service or not, valid values are `no` and `yes`."
         },
         "MaxTcpPackageLen": {
-            "type": "string"
+            "type": "string",
+            "description": "The max length of TCP message package, valid value length should be greater than 0 and less than 1500. It should be greater than `min_tcp_package_len`."
         },
         "MaxUdpPackageLen": {
-            "type": "string"
+            "type": "string",
+            "description": "The max length of UDP message package, valid value length should be greater than 0 and less than 1500. It should be greater than `min_udp_package_len`."
         },
         "MinTcpPackageLen": {
-            "type": "string"
+            "type": "string",
+            "description": "The minimum length of TCP message package, valid value length should be greater than 0 and less than 1500."
         },
         "MinUdpPackageLen": {
-            "type": "string"
+            "type": "string",
+            "description": "The minimum length of UDP message package, valid value length should be greater than 0 and less than 1500."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the DDoS policy case. Length should between 1 and 64."
         },
         "PeerTcpPort": {
-            "type": "string"
+            "type": "string",
+            "description": "The port that actively initiates TCP requests, valid value is range from 1 to 65535."
         },
         "PeerUdpPort": {
-            "type": "string"
+            "type": "string",
+            "description": "The port that actively initiates UDP requests, valid value is range from 1 to 65535."
         },
         "PlatformTypes": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Platform set of the DDoS policy case."
         },
         "ResourceType": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of the resource that the DDoS policy case works for, valid values are `bgpip`, `bgp` and `bgp-multip`."
         },
         "SceneId": {
             "type": "string"
         },
         "TcpEndPort": {
-            "type": "string"
+            "type": "string",
+            "description": "End port of the TCP service, valid value is range from 0 to 65535. It must be greater than `tcp_start_port`."
         },
         "TcpFootprint": {
-            "type": "string"
+            "type": "string",
+            "description": "The fixed signature of TCP protocol load, valid value length is range from 1 to 512."
         },
         "TcpStartPort": {
-            "type": "string"
+            "type": "string",
+            "description": "Start port of the TCP service, valid value is range from 0 to 65535."
         },
         "UdpEndPort": {
-            "type": "string"
+            "type": "string",
+            "description": "End port of the UDP service, valid value is range from 0 to 65535. It must be greater than `udp_start_port`."
         },
         "UdpFootprint": {
-            "type": "string"
+            "type": "string",
+            "description": "The fixed signature of TCP protocol load, valid value length is range from 1 to 512."
         },
         "UdpStartPort": {
-            "type": "string"
+            "type": "string",
+            "description": "Start port of the UDP service, valid value is range from 0 to 65535."
         },
         "WebApiUrls": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Web API url set."
         }
     },
     "additionalProperties": false,

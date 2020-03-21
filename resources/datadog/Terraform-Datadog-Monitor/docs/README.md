@@ -1,6 +1,6 @@
 # Terraform::Datadog::Monitor
 
-CloudFormation equivalent of datadog_monitor
+Provides a Datadog monitor resource. This can be used to create and manage Datadog monitors.
 
 ## Syntax
 
@@ -79,6 +79,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EscalationMessage
 
+A message to include with a re-notification. Supports the '@username'
+notification allowed elsewhere.
+
 _Required_: No
 
 _Type_: String
@@ -111,6 +114,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Message
 
+A message to include with notifications for this monitor.
+Email notifications can be sent to specific users by using the same '@username' notation as events.
+
 _Required_: Yes
 
 _Type_: String
@@ -118,6 +124,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of Datadog monitor.
 
 _Required_: Yes
 
@@ -158,6 +166,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Query
+
+The monitor query to notify on. Note this is not the same query you see in the UI and
+the syntax is different depending on the monitor `type`, please see the [API Reference](https://docs.datadoghq.com/api/?lang=python#create-a-monitor) for details. **Warning:** `terraform plan` won't perform any validation of the query contents.
 
 _Required_: Yes
 
@@ -207,6 +218,31 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Thresholds
 
+* Metric alerts:
+A dictionary of thresholds by threshold type. Currently we have four threshold types for metric alerts: critical, critical recovery, warning, and warning recovery. Critical is defined in the query, but can also be specified in this option. Warning and recovery thresholds can only be specified using the thresholds option.
+Example usage:
+```
+thresholds = {
+critical          = 90
+critical_recovery = 85
+warning           = 80
+warning_recovery  = 75
+}
+```
+**Warning:** the `critical` threshold value must match the one contained in the `query` argument. The `threshold` from the previous example is valid along with a query like `avg(last_1h):avg:system.disk.in_use{role:sqlserver} by {host} > 90` but
+along with something like `avg(last_1h):avg:system.disk.in_use{role:sqlserver} by {host} > 95` would make the Datadog API return a HTTP error 400, complaining "The value provided for parameter 'query' is invalid".
+* Service checks:
+A dictionary of thresholds by status. Because service checks can have multiple thresholds, we don't define them directly in the query.
+Default values:
+```
+thresholds = {
+ok       = 1
+critical = 1
+warning  = 1
+unknown  = 1
+}
+```.
+
 _Required_: No
 
 _Type_: List of <a href="thresholds.md">Thresholds</a>
@@ -222,6 +258,14 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The type of the monitor. The mapping from these types to the types found in the Datadog Web UI can be found in the Datadog API [documentation](https://docs.datadoghq.com/api/?lang=python#create-a-monitor) page. The available options are below. **Note**: The monitor type cannot be changed after a monitor is created.
+* `metric alert`
+* `service check`
+* `event alert`
+* `query alert`
+* `composite`
+* `log alert`.
 
 _Required_: Yes
 

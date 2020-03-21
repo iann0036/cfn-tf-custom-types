@@ -1,6 +1,6 @@
 # Terraform::OPC::ComputeIpNetworkExchange
 
-CloudFormation equivalent of opc_compute_ip_network_exchange
+The `opc_compute_ip_network_exchange` resource creates and manages an IP network exchange in an Oracle Cloud Infrastructure Compute Classic identity domain.
 
 ## Syntax
 
@@ -34,6 +34,8 @@ Properties:
 
 #### Description
 
+A description of the ip network exchange.
+
 _Required_: No
 
 _Type_: String
@@ -42,6 +44,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the ip network exchange.
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+List of tags that may be applied to the IP network exchange.
 
 _Required_: No
 

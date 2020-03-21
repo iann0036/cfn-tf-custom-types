@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::MySQL::User",
-    "description": "CloudFormation equivalent of mysql_user",
+    "description": "The ``mysql_user`` resource creates and manages a user on a MySQL\nserver.\n\n~> **Note:** The password for the user is provided in plain text, and is\nobscured by an unsalted hash in the state\n[Read more about sensitive data in state](/docs/state/sensitive-data.html).\nCare is required when using this resource, to avoid disclosing the password.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,22 +9,28 @@
             "type": "string"
         },
         "AuthPlugin": {
-            "type": "string"
+            "type": "string",
+            "description": "Use an [authentication plugin][ref-auth-plugins] to authenticate the user instead of using password authentication.  Description of the fields allowed in the block below. Conflicts with `password` and `plaintext_password`."
         },
         "Host": {
-            "type": "string"
+            "type": "string",
+            "description": "The source host of the user. Defaults to \"localhost\"."
         },
         "Password": {
-            "type": "string"
+            "type": "string",
+            "description": "Deprecated alias of `plaintext_password`, whose value is *stored as plaintext in state*. Prefer to use `plaintext_password` instead, which stores the password as an unsalted hash. Conflicts with `auth_plugin`."
         },
         "PlaintextPassword": {
-            "type": "string"
+            "type": "string",
+            "description": "The password for the user. This must be provided in plain text, so the data source for it must be secured. An _unsalted_ hash of the provided password is stored in state. Conflicts with `auth_plugin`."
         },
         "TlsOption": {
-            "type": "string"
+            "type": "string",
+            "description": "An TLS-Option for the `CREATE USER` or `ALTER USER` statement. The value is suffixed to `REQUIRE`. A value of 'SSL' will generate a `CREATE USER ... REQUIRE SSL` statement. See the [MYSQL `CREATE USER` documentation](https://dev.mysql.com/doc/refman/5.7/en/create-user.html) for more. Ignored if MySQL version is under 5.7.0."
         },
         "User": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the user."
         }
     },
     "additionalProperties": false,

@@ -30,6 +30,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### BlobEndpoint
 
+The Blob Endpoint of the Storage Account.
+
 _Required_: Yes
 
 _Type_: String
@@ -37,6 +39,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProtectedAccountKeyName
+
+The protected diagnostics storage key name, such as `StorageAccountKey1`.
 
 _Required_: Yes
 
@@ -46,6 +50,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### QueueEndpoint
 
+The Queue Endpoint of the Storage Account.
+
 _Required_: Yes
 
 _Type_: String
@@ -54,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StorageAccountName
 
+The name of the Storage Account where the Diagnostics should be sent to.
+
 _Required_: Yes
 
 _Type_: String
@@ -61,6 +69,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TableEndpoint
+
+The Table Endpoint of the Storage Account.
 
 _Required_: Yes
 

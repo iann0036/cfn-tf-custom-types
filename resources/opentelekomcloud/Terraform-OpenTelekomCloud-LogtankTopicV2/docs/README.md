@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::LogtankTopicV2
 
-CloudFormation equivalent of opentelekomcloud_logtank_topic_v2
+Manage a log topic resource within OpenTelekomCloud.
 
 ## Syntax
 
@@ -31,6 +31,9 @@ Properties:
 
 #### GroupId
 
+Specifies the ID of a created log group.
+Changing this parameter will create a new resource.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +41,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TopicName
+
+Specifies the log topic name.
+Changing this parameter will create a new resource.
 
 _Required_: Yes
 

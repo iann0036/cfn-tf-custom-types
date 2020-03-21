@@ -1,6 +1,9 @@
 # Terraform::OpenTelekomCloud::IdentityGroupV3
 
-CloudFormation equivalent of opentelekomcloud_identity_group_v3
+Manages a User Group resource within OpentelekomCloud IAM service.
+
+Note: You _must_ have admin privileges in your OpentelekomCloud cloud to use
+this resource.
 
 ## Syntax
 
@@ -35,6 +38,8 @@ Properties:
 
 #### Description
 
+A description of the group.
+
 _Required_: No
 
 _Type_: String
@@ -43,6 +48,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DomainId
 
+The domain this group belongs to.
+
 _Required_: No
 
 _Type_: String
@@ -50,6 +57,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the group.The length is less than or equal
+to 64 bytes.
 
 _Required_: Yes
 

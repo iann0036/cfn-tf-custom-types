@@ -1,6 +1,6 @@
 # Terraform::Kubernetes::ClusterRole
 
-CloudFormation equivalent of kubernetes_cluster_role
+A ClusterRole creates a role at the cluster level and in all namespaces.
 
 ## Syntax
 

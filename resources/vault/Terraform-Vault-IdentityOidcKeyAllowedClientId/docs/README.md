@@ -1,6 +1,21 @@
 # Terraform::Vault::IdentityOidcKeyAllowedClientId
 
-CloudFormation equivalent of vault_identity_oidc_key_allowed_client_id
+Allows an Identity OIDC Role to use an OIDC Named key to generate
+[identity tokens](https://www.vaultproject.io/docs/secrets/identity/index.html#identity-tokens).
+
+The Identity secrets engine is the identity management solution for Vault. It internally
+maintains the clients who are recognized by Vault.
+
+Use this with [`vault_identity_oidc_key`](identity_oidc_key.html)
+and [`vault_identity_oidc_key_allowed_client_id`](identity_oidc_key_allowed_client_id.html)
+to configure a Role to generate Identity Tokens.
+
+~> **NOTE on `allowed_client_ids`:** Terraform currently
+provides both a standalone [Allowed Client ID](identity_oidc_key_allowed_client_id.html) (a single
+Client ID), and a [OIDC Named Key](identity_oidc_key.html) with a inline list of Allowed Client IDs.
+At this time you cannot use an OIDC Named Key inline list of Allowed Client IDs
+in conjunction with any Allowed Client ID resources. Doing so will cause
+a conflict of the list of Allowed Client IDs for the named Key.
 
 ## Syntax
 
@@ -31,6 +46,8 @@ Properties:
 
 #### AllowedClientId
 
+Client ID to allow usage with the OIDC named key.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeyName
+
+Name of the OIDC Key allow the Client ID.
 
 _Required_: Yes
 

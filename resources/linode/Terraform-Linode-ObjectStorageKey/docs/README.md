@@ -1,6 +1,6 @@
 # Terraform::Linode::ObjectStorageKey
 
-CloudFormation equivalent of linode_object_storage_key
+Provides a Linode Object Storage Key resource. This can be used to create, modify, and delete Linodes Object Storage Keys.
 
 ## Syntax
 
@@ -28,6 +28,8 @@ Properties:
 ## Properties
 
 #### Label
+
+The label given to this key. For display purposes only.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OPC::ComputeSecurityIpList",
-    "description": "CloudFormation equivalent of opc_compute_security_ip_list",
+    "description": "The ``opc_compute_security_ip_list`` resource creates and manages a security IP list in an Oracle Cloud Infrastructure Compute Classic identity domain.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,17 +9,20 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the security ip list."
         },
         "IpEntries": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The IP addresses to include in the list."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The unique (within the identity domain) name of the security IP list."
         }
     },
     "additionalProperties": false,

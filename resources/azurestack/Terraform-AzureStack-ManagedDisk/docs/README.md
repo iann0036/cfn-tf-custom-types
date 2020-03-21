@@ -1,6 +1,6 @@
 # Terraform::AzureStack::ManagedDisk
 
-CloudFormation equivalent of azurestack_managed_disk
+Manage a managed disk.
 
 ## Syntax
 
@@ -50,6 +50,12 @@ Properties:
 
 #### CreateOption
 
+The method to use when creating the managed disk. Possible values include:
+* `Import` - Import a VHD file in to the managed disk (VHD specified with `source_uri`).
+* `Empty` - Create an empty managed disk.
+* `Copy` - Copy an existing managed disk or snapshot (specified with `source_resource_id`).
+* `FromImage` - Copy a Platform Image (specified with `image_reference_id`).
+
 _Required_: Yes
 
 _Type_: String
@@ -57,6 +63,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DiskSizeGb
+
+Specifies the size of the managed disk to create in gigabytes.
+If `create_option` is `Copy` or `FromImage`, then the value must be equal to or greater than the source's size.
 
 _Required_: No
 
@@ -66,6 +75,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ImageReferenceId
 
+ID of an existing platform/marketplace disk image to copy when `create_option` is `FromImage`.
+
 _Required_: No
 
 _Type_: String
@@ -73,6 +84,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Location
+
+Specified the supported Azure location where the resource exists.
+Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -82,6 +96,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the managed disk. Changing this forces a
+new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -89,6 +106,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OsType
+
+Specify a value when the source of an `Import` or `Copy`
+operation targets a source that contains an operating system. Valid values are `Linux` or `Windows`.
 
 _Required_: No
 
@@ -98,6 +118,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to create
+the managed disk.
+
 _Required_: Yes
 
 _Type_: String
@@ -105,6 +128,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SourceResourceId
+
+ID of an existing managed disk to copy `create_option` is `Copy`.
 
 _Required_: No
 
@@ -114,6 +139,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SourceUri
 
+URI to a valid VHD file to be used when `create_option` is `Import`.
+
 _Required_: No
 
 _Type_: String
@@ -122,6 +149,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StorageAccountType
 
+The type of storage to use for the managed disk.
+Allowable values are `Standard_LRS` or `Premium_LRS`.
+
 _Required_: Yes
 
 _Type_: String
@@ -129,6 +159,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

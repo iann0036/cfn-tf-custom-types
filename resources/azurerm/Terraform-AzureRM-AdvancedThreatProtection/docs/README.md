@@ -1,6 +1,6 @@
 # Terraform::AzureRM::AdvancedThreatProtection
 
-CloudFormation equivalent of azurerm_advanced_threat_protection
+Manages a resources Advanced Threat Protection setting.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### Enabled
 
+Should Advanced Threat Protection be enabled on this resource?.
+
 _Required_: Yes
 
 _Type_: Boolean
@@ -40,6 +42,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TargetResourceId
+
+The ID of the Azure Resource which to enable Advanced Threat Protection on. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

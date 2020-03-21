@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::OtsInstance",
-    "description": "CloudFormation equivalent of alicloud_ots_instance",
+    "description": "This resource will help you to manager a [Table Store](https://www.alibabacloud.com/help/doc-detail/27280.htm) Instance.\nIt is foundation of creating data table.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,20 @@
             "type": "string"
         },
         "AccessedBy": {
-            "type": "string"
+            "type": "string",
+            "description": "The network limitation of accessing instance. Valid values:\n* `Any` - Allow all network to access the instance.\n* `Vpc` - Only can the attached VPC allow to access the instance.\n* `ConsoleOrVpc` - Allow web console or the attached VPC to access the instance."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the instance. Currently, it does not support modifying."
         },
         "InstanceType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of instance. Valid values are \"Capacity\" and \"HighPerformance\". Default to \"HighPerformance\"."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the instance."
         },
         "Tags": {
             "type": "array",
@@ -38,7 +42,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the instance."
         }
     },
     "additionalProperties": false,

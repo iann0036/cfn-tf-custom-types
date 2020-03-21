@@ -1,6 +1,11 @@
 # Terraform::Consul::CatalogEntry
 
-CloudFormation equivalent of consul_catalog_entry
+!> The `consul_catalog_entry` resource has been deprecated in version 2.0.0 of the provider
+and will be removed in a future release. Please read the [upgrade guide](/docs/providers/consul/guides/upgrading.html#deprecation-of-consul_catalog_entry)
+for more information.
+
+Registers a node or service with the [Consul Catalog](https://www.consul.io/docs/agent/http/catalog.html#catalog_register).
+Currently, defining health checks is not supported.
 
 ## Syntax
 
@@ -38,6 +43,9 @@ Properties:
 
 #### Address
 
+The address of the node being added to,
+or referenced in the catalog.
+
 _Required_: Yes
 
 _Type_: String
@@ -45,6 +53,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Datacenter
+
+The datacenter to use. This overrides the
+agent's default datacenter and the datacenter in the provider setup.
 
 _Required_: No
 
@@ -54,6 +65,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Node
 
+The name of the node being added to, or
+referenced in the catalog.
+
 _Required_: Yes
 
 _Type_: String
@@ -61,6 +75,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Token
+
+ACL token.
 
 _Required_: No
 

@@ -1,6 +1,10 @@
 # Terraform::Fastly::ServiceDynamicSnippetContentV1
 
-CloudFormation equivalent of fastly_service_dynamic_snippet_content_v1
+Defines content that represents blocks of VCL logic that is inserted into your service.  This resource will populate the content of a dynamic snippet and allow it to be manged without the creation of a new service verison. 
+ 
+~> **Warning:** Terraform will take precedence over any changes you make through the API. Such changes are likely to be reversed if you run Terraform again.  
+
+If Terraform is being used to populate the initial content of a dynamic snippet which you intend to manage via the API, then the lifecycle `ignore_changes` field can be used with the resource.  An example of this configuration is provided below.
 
 ## Syntax
 
@@ -33,6 +37,8 @@ Properties:
 
 #### Content
 
+The VCL code that specifies exactly what the snippet does.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +47,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServiceId
 
+The ID of the service that the dynamic snippet belongs to.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SnippetId
+
+The ID of the dynamic snippet that the content belong to.
 
 _Required_: Yes
 

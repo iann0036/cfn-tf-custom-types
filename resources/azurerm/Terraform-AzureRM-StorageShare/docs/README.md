@@ -1,6 +1,6 @@
 # Terraform::AzureRM::StorageShare
 
-CloudFormation equivalent of azurerm_storage_share
+Manages a File Share within Azure Storage.
 
 ## Syntax
 
@@ -44,6 +44,8 @@ Properties:
 
 #### Metadata
 
+A mapping of MetaData for this File Share.
+
 _Required_: No
 
 _Type_: List of <a href="metadata.md">Metadata</a>
@@ -51,6 +53,8 @@ _Type_: List of <a href="metadata.md">Metadata</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the share. Must be unique within the storage account where the share is located.
 
 _Required_: Yes
 
@@ -60,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Quota
 
+The maximum size of the share, in gigabytes. For Standard storage accounts, this must be greater than 0 and less than 5120 GB (5 TB). For Premium FileStorage storage accounts, this must be greater than 100 GB and less than 102400 GB (100 TB). Default is 5120.
+
 _Required_: No
 
 _Type_: Double
@@ -67,6 +73,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StorageAccountName
+
+Specifies the storage account in which to create the share.
+Changing this forces a new resource to be created.
 
 _Required_: Yes
 

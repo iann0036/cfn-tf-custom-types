@@ -1,6 +1,6 @@
 # Terraform::OVH::IpReverse
 
-CloudFormation equivalent of ovh_ip_reverse
+Provides a OVH IP reverse.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### Ip
 
+The IP block to which the IP belongs.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ipreverse
 
+The IP to set the reverse of, default to `ip` if `ip` is a /32 (IPv4) or a /128 (IPv6).
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Reverse
+
+The value of the reverse.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 # Terraform::AzureRM::AutomationDscConfiguration
 
-CloudFormation equivalent of azurerm_automation_dsc_configuration
+Manages a Automation DSC Configuration.
 
 ## Syntax
 
@@ -46,6 +46,8 @@ Properties:
 
 #### AutomationAccountName
 
+The name of the automation account in which the DSC Configuration is created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -53,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ContentEmbedded
+
+The PowerShell DSC Configuration script.
 
 _Required_: Yes
 
@@ -62,6 +66,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+Description to go with DSC Configuration.
+
 _Required_: No
 
 _Type_: String
@@ -69,6 +75,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Location
+
+Must be the same location as the Automation Account.
 
 _Required_: Yes
 
@@ -78,6 +86,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LogVerbose
 
+Verbose log option.
+
 _Required_: No
 
 _Type_: Boolean
@@ -85,6 +95,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the DSC Configuration. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -94,6 +106,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which the DSC Configuration is created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -101,6 +115,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

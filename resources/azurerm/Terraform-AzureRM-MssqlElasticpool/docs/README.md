@@ -1,6 +1,6 @@
 # Terraform::AzureRM::MssqlElasticpool
 
-CloudFormation equivalent of azurerm_mssql_elasticpool
+Allows you to manage an Azure SQL Elastic Pool via the `2017-10-01-preview` API which allows for `vCore` and `DTU` based configurations.
 
 ## Syntax
 
@@ -52,6 +52,8 @@ Properties:
 
 #### Location
 
+Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -59,6 +61,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MaxSizeBytes
+
+The max data size of the elastic pool in bytes. Conflicts with `max_size_gb`.
 
 _Required_: No
 
@@ -68,6 +72,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxSizeGb
 
+The max data size of the elastic pool in gigabytes. Conflicts with `max_size_bytes`.
+
 _Required_: No
 
 _Type_: Double
@@ -75,6 +81,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the elastic pool. This needs to be globally unique. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -84,6 +92,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to create the elastic pool. This must be the same as the resource group of the underlying SQL server.
+
 _Required_: Yes
 
 _Type_: String
@@ -91,6 +101,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServerName
+
+The name of the SQL Server on which to create the elastic pool. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -100,6 +112,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -107,6 +121,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneRedundant
+
+Whether or not this elastic pool is zone redundant. `tier` needs to be `Premium` for `DTU` based  or `BusinessCritical` for `vCore` based `sku`. Defaults to `false`.
 
 _Required_: No
 

@@ -1,6 +1,15 @@
 # Terraform::OCI::IdentityTagDefault
 
-CloudFormation equivalent of oci_identity_tag_default
+This resource provides the Tag Default resource in Oracle Cloud Infrastructure Identity service.
+
+Creates a new tag default in the specified compartment for the specified tag definition.
+
+If you specify that a value is required, a value is set during resource creation (either by 
+the user creating the resource or another tag defualt). If no value is set, resource creation 
+is blocked.
+
+* If the `isRequired` flag is set to "true", the value is set during resource creation.
+* If the `isRequired` flag is set to "false", the value you enter is set during resource creation.
 
 ## Syntax
 
@@ -37,6 +46,8 @@ Properties:
 
 #### CompartmentId
 
+The OCID of the compartment. The tag default will be applied to all new resources created in this compartment.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +55,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IsRequired
+
+(Updatable) If you specify that a value is required, a value is set during resource creation (either by  the user creating the resource or another tag defualt). If no value is set, resource  creation is blocked.
+* If the `isRequired` flag is set to "true", the value is set during resource creation.
+* If the `isRequired` flag is set to "false", the value you enter is set during resource creation.
 
 _Required_: No
 
@@ -53,6 +68,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TagDefinitionId
 
+The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
+
 _Required_: Yes
 
 _Type_: String
@@ -60,6 +77,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Value
+
+(Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment.
 
 _Required_: Yes
 

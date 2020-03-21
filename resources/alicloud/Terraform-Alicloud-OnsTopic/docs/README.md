@@ -1,6 +1,10 @@
 # Terraform::Alicloud::OnsTopic
 
-CloudFormation equivalent of alicloud_ons_topic
+Provides an ONS topic resource.
+
+For more information about how to use it, see [RocketMQ Topic Management API](https://www.alibabacloud.com/help/doc-detail/29591.html). 
+
+-> **NOTE:** Available in 1.53.0+
 
 ## Syntax
 
@@ -37,6 +41,8 @@ Properties:
 
 #### InstanceId
 
+ID of the ONS Instance that owns the topics.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +50,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MessageType
+
+The type of the message. Read [Ons Topic Create](https://www.alibabacloud.com/help/doc-detail/29591.html) for further details.
 
 _Required_: Yes
 
@@ -53,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Perm
 
+This attribute is used to set the read-write mode for the topic. Read [Request parameters](https://www.alibabacloud.com/help/doc-detail/56880.html) for further details.
+
 _Required_: No
 
 _Type_: Double
@@ -61,6 +71,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Remark
 
+This attribute is a concise description of topic. The length cannot exceed 128.
+
 _Required_: No
 
 _Type_: String
@@ -68,6 +80,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Topic
+
+Name of the topic. Two topics on a single instance cannot have the same name and the name cannot start with 'GID' or 'CID'. The length cannot exceed 64 characters.
 
 _Required_: Yes
 

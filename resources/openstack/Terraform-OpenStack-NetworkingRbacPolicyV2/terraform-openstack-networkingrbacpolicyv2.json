@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::NetworkingRbacPolicyV2",
-    "description": "CloudFormation equivalent of openstack_networking_rbac_policy_v2",
+    "description": "The RBAC policy resource contains functionality for working with Neutron RBAC\nPolicies. Role-Based Access Control (RBAC) policy framework enables both\noperators and users to grant access to resources for specific projects.\n\nSharing an object with a specific project is accomplished by creating a\npolicy entry that permits the target project the `access_as_shared` action\non that object.\n\nTo make a network available as an external network for specific projects\nrather than all projects, use the `access_as_external` action.\nIf a network is marked as external during creation, it now implicitly creates\na wildcard RBAC policy granting everyone access to preserve previous behavior\nbefore this feature was added.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,22 +9,27 @@
             "type": "string"
         },
         "Action": {
-            "type": "string"
+            "type": "string",
+            "description": "Action for the RBAC policy. Can either be\n`access_as_external` or `access_as_shared`."
         },
         "ObjectId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the `object_type` resource. An\n`object_type` of `network` returns a network ID and an `object_type` of\n`qos_policy` returns a QoS ID."
         },
         "ObjectType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of the object that the RBAC policy\naffects. Can either be `qos-policy` or `network`."
         },
         "ProjectId": {
             "type": "string"
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the V2 networking client.\nA networking client is needed to configure a routing entry on a subnet. If omitted, the\n`region` argument of the provider is used. Changing this creates a new\nrouting entry."
         },
         "TargetTenant": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the tenant to which the RBAC policy\nwill be enforced."
         }
     },
     "additionalProperties": false,

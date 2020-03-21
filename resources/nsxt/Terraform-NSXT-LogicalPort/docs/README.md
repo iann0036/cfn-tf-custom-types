@@ -1,6 +1,6 @@
 # Terraform::NSXT::LogicalPort
 
-CloudFormation equivalent of nsxt_logical_port
+This resource provides a resource to configure a logical port on a logical switch in the NSX system. Like physical switches a logical switch can have one or more ports which can be connected to virtual machines or logical routers.
 
 ## Syntax
 
@@ -41,6 +41,8 @@ Properties:
 
 #### AdminState
 
+Admin state for the logical port. Accepted values - 'UP' or 'DOWN'. The default value is 'UP'.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +50,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Description of this resource.
 
 _Required_: No
 
@@ -57,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+Display name, defaults to ID if not set.
+
 _Required_: No
 
 _Type_: String
@@ -64,6 +70,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LogicalSwitchId
+
+Logical switch ID for the logical port.
 
 _Required_: Yes
 

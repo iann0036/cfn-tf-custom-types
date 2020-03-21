@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::VCD::EdgegatewayVpn",
-    "description": "CloudFormation equivalent of vcd_edgegateway_vpn",
+    "description": "Provides a vCloud Director IPsec VPN. This can be used to create,\nmodify, and delete VPN settings and rules.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "LocalSubnets": {
@@ -50,40 +50,52 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description for the VPN."
         },
         "EdgeGateway": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the edge gateway on which to apply the Firewall Rules."
         },
         "EncryptionProtocol": {
-            "type": "string"
+            "type": "string",
+            "description": "- E.g. `AES256`."
         },
         "LocalId": {
-            "type": "string"
+            "type": "string",
+            "description": "- Local ID."
         },
         "LocalIpAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "- Local IP Address."
         },
         "Mtu": {
-            "type": "number"
+            "type": "number",
+            "description": "- The MTU setting."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the VPN."
         },
         "Org": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of organization to use, optional if defined at provider level. Useful when connected as sysadmin working across different organisations."
         },
         "PeerId": {
-            "type": "string"
+            "type": "string",
+            "description": "- Peer ID."
         },
         "PeerIpAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "- Peer IP Address."
         },
         "SharedSecret": {
-            "type": "string"
+            "type": "string",
+            "description": "- Shared Secret."
         },
         "Vdc": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of VDC to use, optional if defined at provider level."
         },
         "LocalSubnets": {
             "type": "array",

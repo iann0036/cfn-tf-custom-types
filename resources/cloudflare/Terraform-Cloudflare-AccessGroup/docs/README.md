@@ -1,6 +1,8 @@
 # Terraform::Cloudflare::AccessGroup
 
-CloudFormation equivalent of cloudflare_access_group
+Provides a Cloudflare Access Group resource. Access Groups are used
+in conjunction with Access Policies to restrict access to a
+particular resource based on group membership.
 
 ## Syntax
 
@@ -40,6 +42,9 @@ Properties:
 
 #### AccountId
 
+The ID of the account the group is
+associated with.
+
 _Required_: Yes
 
 _Type_: String
@@ -47,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Friendly name of the Access Group.
 
 _Required_: Yes
 

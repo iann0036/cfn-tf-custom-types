@@ -1,6 +1,8 @@
 # Terraform::Alicloud::NetworkAclAttachment
 
-CloudFormation equivalent of alicloud_network_acl_attachment
+Provides a network acl attachment resource to associate network acls to vswitches.
+
+-> **NOTE:** Available in 1.44.0+. Currently, the resource are only available in Hongkong(cn-hongkong), India(ap-south-1), and Indonesia(ap-southeast-1) regions.
 
 ## Syntax
 
@@ -31,6 +33,8 @@ Properties:
 ## Properties
 
 #### NetworkAclId
+
+The id of the network acl, the field can't be changed.
 
 _Required_: Yes
 

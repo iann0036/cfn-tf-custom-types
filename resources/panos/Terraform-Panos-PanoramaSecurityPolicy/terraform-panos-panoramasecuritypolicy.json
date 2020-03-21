@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::PanoramaSecurityPolicy",
-    "description": "CloudFormation equivalent of panos_panorama_security_policy",
+    "description": "This resource allows you to manage the full security posture.\n\n-> **Note:** `panos_panorama_security_policies` is known as `panos_panorama_security_policy`.\n\nThis resource manages the full set of security rules, enforcing both the\ncontents of individual rules as well as their ordering.  Rules are defined in\na `rule` config block.  As this manages the full set of security rules for\na given rulebase, any extraneous rules are removed on `terraform apply`.\n\n!> **Note**: This resource will remove any security rule not defined in your plan file.\n\nFor each security rule, there are three styles of profile settings:\n\n* `None` (the default)\n* `Group`\n* `Profiles`\n\nThe Profile Setting is implicitly chosen based on what params are configured\nfor the security rule.  If you want a Profile Setting of `Group`, then the\n`group` param should be set to the desired Group Profile.  If you want a\nProfile Setting of `Profiles`, then you will need to specify one or more of\nthe following params:\n\n* `virus`\n* `spyware`\n* `vulnerability`\n* `url_filtering`\n* `file_blocking`\n* `wildfire_analysis`\n* `data_filtering`\n\nIf the `group` param and none of the `Profiles` params are specified, then\nthe Profile Setting is set to `None`.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Rule": {
@@ -8,140 +8,172 @@
             "additionalProperties": false,
             "properties": {
                 "Action": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Action for the matched traffic.  This can be `allow`\n(default), `deny`, `drop`, `reset-client`, `reset-server`, or `reset-both`."
                 },
                 "Applications": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "List of applications."
                 },
                 "Categories": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "List of categories."
                 },
                 "DataFiltering": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Profile Setting: `Profiles` - The Data\nFiltering setting."
                 },
                 "Description": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The description."
                 },
                 "DestinationAddresses": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "List of destination addresses."
                 },
                 "DestinationZones": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "List of destination zones."
                 },
                 "DisableServerResponseInspection": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Set to `true` to disable\nserver response inspection."
                 },
                 "Disabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Set to `true` to disable this rule."
                 },
                 "FileBlocking": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Profile Setting: `Profiles` - The file blocking\nsetting."
                 },
                 "Group": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Profile Setting: `Group` - The group profile name."
                 },
                 "HipProfiles": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "List of HIP profiles."
                 },
                 "IcmpUnreachable": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Set to `true` to enable ICMP unreachable."
                 },
                 "LogEnd": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Log the end of the traffic flow (default: `true`)."
                 },
                 "LogSetting": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Log forwarding profile."
                 },
                 "LogStart": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Log the start of the traffic flow."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The security rule name."
                 },
                 "NegateDestination": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "If the destination should be negated."
                 },
                 "NegateSource": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "If the source should be negated."
                 },
                 "NegateTarget": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Instead of applying the rule for the\ngiven serial numbers, apply it to everything except them."
                 },
                 "Schedule": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The security rule schedule."
                 },
                 "Services": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "List of services."
                 },
                 "SourceAddresses": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "List of source addresses."
                 },
                 "SourceUsers": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "List of source users."
                 },
                 "SourceZones": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "List of source zones."
                 },
                 "Spyware": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Profile Setting: `Profiles` - The anti-spyware\nsetting."
                 },
                 "Tags": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "List of tags for this security rule."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Rule type.  This can be `universal` (default),\n`interzone`, or `intrazone`."
                 },
                 "UrlFiltering": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Profile Setting: `Profiles` - The URL filtering\nsetting."
                 },
                 "Virus": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Profile Setting: `Profiles` - The antivirus setting."
                 },
                 "Vulnerability": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Profile Setting: `Profiles` - The Vulnerability\nProtection setting."
                 },
                 "WildfireAnalysis": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Profile Setting: `Profiles` - The WildFire\nAnalysis setting."
                 },
                 "Target": {
                     "type": "array",
@@ -169,14 +201,16 @@
             "additionalProperties": false,
             "properties": {
                 "Serial": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The serial number of the firewall."
                 },
                 "VsysList": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A subset of all available vsys on the firewall\nthat should be in this device group.  If the firewall is a virtual firewall,\nthen this parameter should just be omitted."
                 }
             },
             "required": [
@@ -190,10 +224,12 @@
             "type": "string"
         },
         "DeviceGroup": {
-            "type": "string"
+            "type": "string",
+            "description": "The device group to put the security policy into\n(default: `shared`)."
         },
         "Rulebase": {
-            "type": "string"
+            "type": "string",
+            "description": "The rulebase.  This can be `pre-rulebase` (default),\n`post-rulebase`, or `rulebase`."
         },
         "Rule": {
             "type": "array",

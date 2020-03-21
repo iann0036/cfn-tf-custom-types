@@ -41,6 +41,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Host
 
+The Hostname used for this Probe. If the Application Gateway is configured for a single site, by default the Host name should be specified as ‘127.0.0.1’, unless otherwise configured in custom probe. Cannot be set if `pick_host_name_from_backend_http_settings` is set to `true`.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +50,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Interval
+
+The Interval between two consecutive probes in seconds. Possible values range from 1 second to a maximum of 86,400 seconds.
 
 _Required_: Yes
 
@@ -57,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MinimumServers
 
+The minimum number of servers that are always marked as healthy. Defaults to `0`.
+
 _Required_: No
 
 _Type_: Double
@@ -64,6 +70,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The Name of the Probe.
 
 _Required_: Yes
 
@@ -73,6 +81,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Path
 
+The Path used for this Probe.
+
 _Required_: Yes
 
 _Type_: String
@@ -80,6 +90,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PickHostNameFromBackendHttpSettings
+
+Whether the host header should be picked from the backend http settings. Defaults to `false`.
 
 _Required_: No
 
@@ -89,6 +101,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Protocol
 
+The Protocol used for this Probe. Possible values are `Http` and `Https`.
+
 _Required_: Yes
 
 _Type_: String
@@ -97,6 +111,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Timeout
 
+The Timeout used for this Probe, which indicates when a probe becomes unhealthy. Possible values range from 1 second to a maximum of 86,400 seconds.
+
 _Required_: Yes
 
 _Type_: Double
@@ -104,6 +120,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UnhealthyThreshold
+
+The Unhealthy Threshold for this Probe, which indicates the amount of retries which should be attempted before a node is deemed unhealthy. Possible values are from 1 - 20 seconds.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 # Terraform::Datadog::SyntheticsTest
 
-CloudFormation equivalent of datadog_synthetics_test
+Provides a Datadog synthetics test resource. This can be used to create and manage Datadog synthetics test.
 
 ## Syntax
 
@@ -58,6 +58,21 @@ Properties:
 
 #### Assertions
 
+Array of 1 to 10 items, only some combinations of type/operator are valid (please refer to Datadog documentation)
+- `type` - (Required) body, header, responseTime, statusCode
+- `operator` - (Required) Please refer to [Datadog documentation](https://docs.datadoghq.com/synthetics/api_test/#validation) as operator depend on assertion type
+- `target` - (Required) Expected value, please refer to [Datadog documentation](https://docs.datadoghq.com/synthetics/api_test/#validation) as target depend on assertion type
+- `property` - (Optional) if assertion type is "header", this is a the header name
+- `options` - (Required)
+- `tick_every` - (Required)  How often the test should run (in seconds). Current possible values are 900, 1800, 3600, 21600, 43200, 86400, 604800 plus 60 if type=api or 300 if type=browser
+- `follow_redirects` - (Optional) For type=api, true or false
+- `min_failure_duration` - (Optional) How long the test should be in failure before alerting (integer, number of seconds, max 7200). Default is 0.
+- `min_location_failed` - (Optional) Threshold below which a synthetics test is allowed to fail before sending notifications
+- `accept_self_signed` - (Optional) For type=ssl, true or false
+- `locations` - (Required) Please refer to [Datadog documentation](https://docs.datadoghq.com/synthetics/api_test/#request) for available locations (e.g. "aws:eu-central-1")
+- `device_ids` - (Optional) "laptop_large", "tablet" or "mobile_small" (only available if type=browser)
+- `status` - (Required) "live", "paused".
+
 _Required_: No
 
 _Type_: List of List of <a href="assertions.md">Assertions</a>
@@ -65,6 +80,9 @@ _Type_: List of List of <a href="assertions.md">Assertions</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DeviceIds
+
+"laptop_large", "tablet" or "mobile_small" (only available if type=browser)
+- `status` - (Required) "live", "paused".
 
 _Required_: No
 
@@ -74,6 +92,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Locations
 
+Please refer to [Datadog documentation](https://docs.datadoghq.com/synthetics/api_test/#request) for available locations (e.g. "aws:eu-central-1")
+- `device_ids` - (Optional) "laptop_large", "tablet" or "mobile_small" (only available if type=browser)
+- `status` - (Required) "live", "paused".
+
 _Required_: Yes
 
 _Type_: List of String
@@ -81,6 +103,37 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Message
+
+A message to include with notifications for this synthetics test.
+Email notifications can be sent to specific users by using the same '@username' notation as events.
+- `tags` - (Required) A list of tags to associate with your synthetics test. This can help you categorize and filter tests in the manage synthetics page of the UI.
+- `request` - (Required) if type=api and subtype=http
+- `method` - (Optional) For type=api and subtype=http, one of DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT
+- `url` - (Required) Any url
+- `timeout` - (Optional) For type=api, any value between 0 and 60 (Default = 60)
+- `body` - (Optional) Request body
+- `request` - (Required) if type=api and subtype=ssl
+- `host` - (Required) host name
+- `port` - (Required) port number
+- `timeout` - (Optional) For type=api, any value between 0 and 60 (Default = 60)
+- `request` - (Required) if type=browser
+- `method` - (Required) no-op, use GET
+- `url` - (Required) Any url
+- `request_headers` - (Optional) Header name and value map
+- `assertions` - (Required) Array of 1 to 10 items, only some combinations of type/operator are valid (please refer to Datadog documentation)
+- `type` - (Required) body, header, responseTime, statusCode
+- `operator` - (Required) Please refer to [Datadog documentation](https://docs.datadoghq.com/synthetics/api_test/#validation) as operator depend on assertion type
+- `target` - (Required) Expected value, please refer to [Datadog documentation](https://docs.datadoghq.com/synthetics/api_test/#validation) as target depend on assertion type
+- `property` - (Optional) if assertion type is "header", this is a the header name
+- `options` - (Required)
+- `tick_every` - (Required)  How often the test should run (in seconds). Current possible values are 900, 1800, 3600, 21600, 43200, 86400, 604800 plus 60 if type=api or 300 if type=browser
+- `follow_redirects` - (Optional) For type=api, true or false
+- `min_failure_duration` - (Optional) How long the test should be in failure before alerting (integer, number of seconds, max 7200). Default is 0.
+- `min_location_failed` - (Optional) Threshold below which a synthetics test is allowed to fail before sending notifications
+- `accept_self_signed` - (Optional) For type=ssl, true or false
+- `locations` - (Required) Please refer to [Datadog documentation](https://docs.datadoghq.com/synthetics/api_test/#request) for available locations (e.g. "aws:eu-central-1")
+- `device_ids` - (Optional) "laptop_large", "tablet" or "mobile_small" (only available if type=browser)
+- `status` - (Required) "live", "paused".
 
 _Required_: No
 
@@ -90,6 +143,38 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name of Datadog synthetics test
+- `message` - (Required) A message to include with notifications for this synthetics test.
+Email notifications can be sent to specific users by using the same '@username' notation as events.
+- `tags` - (Required) A list of tags to associate with your synthetics test. This can help you categorize and filter tests in the manage synthetics page of the UI.
+- `request` - (Required) if type=api and subtype=http
+- `method` - (Optional) For type=api and subtype=http, one of DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT
+- `url` - (Required) Any url
+- `timeout` - (Optional) For type=api, any value between 0 and 60 (Default = 60)
+- `body` - (Optional) Request body
+- `request` - (Required) if type=api and subtype=ssl
+- `host` - (Required) host name
+- `port` - (Required) port number
+- `timeout` - (Optional) For type=api, any value between 0 and 60 (Default = 60)
+- `request` - (Required) if type=browser
+- `method` - (Required) no-op, use GET
+- `url` - (Required) Any url
+- `request_headers` - (Optional) Header name and value map
+- `assertions` - (Required) Array of 1 to 10 items, only some combinations of type/operator are valid (please refer to Datadog documentation)
+- `type` - (Required) body, header, responseTime, statusCode
+- `operator` - (Required) Please refer to [Datadog documentation](https://docs.datadoghq.com/synthetics/api_test/#validation) as operator depend on assertion type
+- `target` - (Required) Expected value, please refer to [Datadog documentation](https://docs.datadoghq.com/synthetics/api_test/#validation) as target depend on assertion type
+- `property` - (Optional) if assertion type is "header", this is a the header name
+- `options` - (Required)
+- `tick_every` - (Required)  How often the test should run (in seconds). Current possible values are 900, 1800, 3600, 21600, 43200, 86400, 604800 plus 60 if type=api or 300 if type=browser
+- `follow_redirects` - (Optional) For type=api, true or false
+- `min_failure_duration` - (Optional) How long the test should be in failure before alerting (integer, number of seconds, max 7200). Default is 0.
+- `min_location_failed` - (Optional) Threshold below which a synthetics test is allowed to fail before sending notifications
+- `accept_self_signed` - (Optional) For type=ssl, true or false
+- `locations` - (Required) Please refer to [Datadog documentation](https://docs.datadoghq.com/synthetics/api_test/#request) for available locations (e.g. "aws:eu-central-1")
+- `device_ids` - (Optional) "laptop_large", "tablet" or "mobile_small" (only available if type=browser)
+- `status` - (Required) "live", "paused".
+
 _Required_: Yes
 
 _Type_: String
@@ -97,6 +182,15 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Options
+
+- `tick_every` - (Required)  How often the test should run (in seconds). Current possible values are 900, 1800, 3600, 21600, 43200, 86400, 604800 plus 60 if type=api or 300 if type=browser
+- `follow_redirects` - (Optional) For type=api, true or false
+- `min_failure_duration` - (Optional) How long the test should be in failure before alerting (integer, number of seconds, max 7200). Default is 0.
+- `min_location_failed` - (Optional) Threshold below which a synthetics test is allowed to fail before sending notifications
+- `accept_self_signed` - (Optional) For type=ssl, true or false
+- `locations` - (Required) Please refer to [Datadog documentation](https://docs.datadoghq.com/synthetics/api_test/#request) for available locations (e.g. "aws:eu-central-1")
+- `device_ids` - (Optional) "laptop_large", "tablet" or "mobile_small" (only available if type=browser)
+- `status` - (Required) "live", "paused".
 
 _Required_: No
 
@@ -106,6 +200,25 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Request
 
+if type=browser
+- `method` - (Required) no-op, use GET
+- `url` - (Required) Any url
+- `request_headers` - (Optional) Header name and value map
+- `assertions` - (Required) Array of 1 to 10 items, only some combinations of type/operator are valid (please refer to Datadog documentation)
+- `type` - (Required) body, header, responseTime, statusCode
+- `operator` - (Required) Please refer to [Datadog documentation](https://docs.datadoghq.com/synthetics/api_test/#validation) as operator depend on assertion type
+- `target` - (Required) Expected value, please refer to [Datadog documentation](https://docs.datadoghq.com/synthetics/api_test/#validation) as target depend on assertion type
+- `property` - (Optional) if assertion type is "header", this is a the header name
+- `options` - (Required)
+- `tick_every` - (Required)  How often the test should run (in seconds). Current possible values are 900, 1800, 3600, 21600, 43200, 86400, 604800 plus 60 if type=api or 300 if type=browser
+- `follow_redirects` - (Optional) For type=api, true or false
+- `min_failure_duration` - (Optional) How long the test should be in failure before alerting (integer, number of seconds, max 7200). Default is 0.
+- `min_location_failed` - (Optional) Threshold below which a synthetics test is allowed to fail before sending notifications
+- `accept_self_signed` - (Optional) For type=ssl, true or false
+- `locations` - (Required) Please refer to [Datadog documentation](https://docs.datadoghq.com/synthetics/api_test/#request) for available locations (e.g. "aws:eu-central-1")
+- `device_ids` - (Optional) "laptop_large", "tablet" or "mobile_small" (only available if type=browser)
+- `status` - (Required) "live", "paused".
+
 _Required_: Yes
 
 _Type_: List of <a href="request.md">Request</a>
@@ -113,6 +226,22 @@ _Type_: List of <a href="request.md">Request</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RequestHeaders
+
+Header name and value map
+- `assertions` - (Required) Array of 1 to 10 items, only some combinations of type/operator are valid (please refer to Datadog documentation)
+- `type` - (Required) body, header, responseTime, statusCode
+- `operator` - (Required) Please refer to [Datadog documentation](https://docs.datadoghq.com/synthetics/api_test/#validation) as operator depend on assertion type
+- `target` - (Required) Expected value, please refer to [Datadog documentation](https://docs.datadoghq.com/synthetics/api_test/#validation) as target depend on assertion type
+- `property` - (Optional) if assertion type is "header", this is a the header name
+- `options` - (Required)
+- `tick_every` - (Required)  How often the test should run (in seconds). Current possible values are 900, 1800, 3600, 21600, 43200, 86400, 604800 plus 60 if type=api or 300 if type=browser
+- `follow_redirects` - (Optional) For type=api, true or false
+- `min_failure_duration` - (Optional) How long the test should be in failure before alerting (integer, number of seconds, max 7200). Default is 0.
+- `min_location_failed` - (Optional) Threshold below which a synthetics test is allowed to fail before sending notifications
+- `accept_self_signed` - (Optional) For type=ssl, true or false
+- `locations` - (Required) Please refer to [Datadog documentation](https://docs.datadoghq.com/synthetics/api_test/#request) for available locations (e.g. "aws:eu-central-1")
+- `device_ids` - (Optional) "laptop_large", "tablet" or "mobile_small" (only available if type=browser)
+- `status` - (Required) "live", "paused".
 
 _Required_: No
 
@@ -122,6 +251,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Status
 
+"live", "paused".
+
 _Required_: Yes
 
 _Type_: String
@@ -129,6 +260,39 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Subtype
+
+For type=api, http or ssl (Default = http)
+- `name` - (Required) Name of Datadog synthetics test
+- `message` - (Required) A message to include with notifications for this synthetics test.
+Email notifications can be sent to specific users by using the same '@username' notation as events.
+- `tags` - (Required) A list of tags to associate with your synthetics test. This can help you categorize and filter tests in the manage synthetics page of the UI.
+- `request` - (Required) if type=api and subtype=http
+- `method` - (Optional) For type=api and subtype=http, one of DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT
+- `url` - (Required) Any url
+- `timeout` - (Optional) For type=api, any value between 0 and 60 (Default = 60)
+- `body` - (Optional) Request body
+- `request` - (Required) if type=api and subtype=ssl
+- `host` - (Required) host name
+- `port` - (Required) port number
+- `timeout` - (Optional) For type=api, any value between 0 and 60 (Default = 60)
+- `request` - (Required) if type=browser
+- `method` - (Required) no-op, use GET
+- `url` - (Required) Any url
+- `request_headers` - (Optional) Header name and value map
+- `assertions` - (Required) Array of 1 to 10 items, only some combinations of type/operator are valid (please refer to Datadog documentation)
+- `type` - (Required) body, header, responseTime, statusCode
+- `operator` - (Required) Please refer to [Datadog documentation](https://docs.datadoghq.com/synthetics/api_test/#validation) as operator depend on assertion type
+- `target` - (Required) Expected value, please refer to [Datadog documentation](https://docs.datadoghq.com/synthetics/api_test/#validation) as target depend on assertion type
+- `property` - (Optional) if assertion type is "header", this is a the header name
+- `options` - (Required)
+- `tick_every` - (Required)  How often the test should run (in seconds). Current possible values are 900, 1800, 3600, 21600, 43200, 86400, 604800 plus 60 if type=api or 300 if type=browser
+- `follow_redirects` - (Optional) For type=api, true or false
+- `min_failure_duration` - (Optional) How long the test should be in failure before alerting (integer, number of seconds, max 7200). Default is 0.
+- `min_location_failed` - (Optional) Threshold below which a synthetics test is allowed to fail before sending notifications
+- `accept_self_signed` - (Optional) For type=ssl, true or false
+- `locations` - (Required) Please refer to [Datadog documentation](https://docs.datadoghq.com/synthetics/api_test/#request) for available locations (e.g. "aws:eu-central-1")
+- `device_ids` - (Optional) "laptop_large", "tablet" or "mobile_small" (only available if type=browser)
+- `status` - (Required) "live", "paused".
 
 _Required_: No
 
@@ -138,6 +302,35 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A list of tags to associate with your synthetics test. This can help you categorize and filter tests in the manage synthetics page of the UI.
+- `request` - (Required) if type=api and subtype=http
+- `method` - (Optional) For type=api and subtype=http, one of DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT
+- `url` - (Required) Any url
+- `timeout` - (Optional) For type=api, any value between 0 and 60 (Default = 60)
+- `body` - (Optional) Request body
+- `request` - (Required) if type=api and subtype=ssl
+- `host` - (Required) host name
+- `port` - (Required) port number
+- `timeout` - (Optional) For type=api, any value between 0 and 60 (Default = 60)
+- `request` - (Required) if type=browser
+- `method` - (Required) no-op, use GET
+- `url` - (Required) Any url
+- `request_headers` - (Optional) Header name and value map
+- `assertions` - (Required) Array of 1 to 10 items, only some combinations of type/operator are valid (please refer to Datadog documentation)
+- `type` - (Required) body, header, responseTime, statusCode
+- `operator` - (Required) Please refer to [Datadog documentation](https://docs.datadoghq.com/synthetics/api_test/#validation) as operator depend on assertion type
+- `target` - (Required) Expected value, please refer to [Datadog documentation](https://docs.datadoghq.com/synthetics/api_test/#validation) as target depend on assertion type
+- `property` - (Optional) if assertion type is "header", this is a the header name
+- `options` - (Required)
+- `tick_every` - (Required)  How often the test should run (in seconds). Current possible values are 900, 1800, 3600, 21600, 43200, 86400, 604800 plus 60 if type=api or 300 if type=browser
+- `follow_redirects` - (Optional) For type=api, true or false
+- `min_failure_duration` - (Optional) How long the test should be in failure before alerting (integer, number of seconds, max 7200). Default is 0.
+- `min_location_failed` - (Optional) Threshold below which a synthetics test is allowed to fail before sending notifications
+- `accept_self_signed` - (Optional) For type=ssl, true or false
+- `locations` - (Required) Please refer to [Datadog documentation](https://docs.datadoghq.com/synthetics/api_test/#request) for available locations (e.g. "aws:eu-central-1")
+- `device_ids` - (Optional) "laptop_large", "tablet" or "mobile_small" (only available if type=browser)
+- `status` - (Required) "live", "paused".
+
 _Required_: Yes
 
 _Type_: List of String
@@ -145,6 +338,20 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+body, header, responseTime, statusCode
+- `operator` - (Required) Please refer to [Datadog documentation](https://docs.datadoghq.com/synthetics/api_test/#validation) as operator depend on assertion type
+- `target` - (Required) Expected value, please refer to [Datadog documentation](https://docs.datadoghq.com/synthetics/api_test/#validation) as target depend on assertion type
+- `property` - (Optional) if assertion type is "header", this is a the header name
+- `options` - (Required)
+- `tick_every` - (Required)  How often the test should run (in seconds). Current possible values are 900, 1800, 3600, 21600, 43200, 86400, 604800 plus 60 if type=api or 300 if type=browser
+- `follow_redirects` - (Optional) For type=api, true or false
+- `min_failure_duration` - (Optional) How long the test should be in failure before alerting (integer, number of seconds, max 7200). Default is 0.
+- `min_location_failed` - (Optional) Threshold below which a synthetics test is allowed to fail before sending notifications
+- `accept_self_signed` - (Optional) For type=ssl, true or false
+- `locations` - (Required) Please refer to [Datadog documentation](https://docs.datadoghq.com/synthetics/api_test/#request) for available locations (e.g. "aws:eu-central-1")
+- `device_ids` - (Optional) "laptop_large", "tablet" or "mobile_small" (only available if type=browser)
+- `status` - (Required) "live", "paused".
 
 _Required_: Yes
 

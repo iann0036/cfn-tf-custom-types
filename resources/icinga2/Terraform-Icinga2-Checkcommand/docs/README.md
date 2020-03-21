@@ -1,6 +1,7 @@
 # Terraform::Icinga2::Checkcommand
 
-CloudFormation equivalent of icinga2_checkcommand
+Configures an Icinga2 checkcommand resource. This allows checkcommands to be configured, updated,
+and deleted.
 
 ## Syntax
 
@@ -37,6 +38,8 @@ Properties:
 
 #### Arguments
 
+A mapping of arguments to include with the command.
+
 _Required_: No
 
 _Type_: List of <a href="arguments.md">Arguments</a>
@@ -44,6 +47,8 @@ _Type_: List of <a href="arguments.md">Arguments</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Command
+
+Path to the command te be executed.
 
 _Required_: Yes
 
@@ -53,6 +58,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name by which to reference the checkcommand.
+
 _Required_: Yes
 
 _Type_: String
@@ -60,6 +67,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Templates
+
+A list of Icinga2 templates to assign to the host.
 
 _Required_: Yes
 

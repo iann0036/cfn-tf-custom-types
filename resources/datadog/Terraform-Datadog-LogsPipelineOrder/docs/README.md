@@ -1,6 +1,6 @@
 # Terraform::Datadog::LogsPipelineOrder
 
-CloudFormation equivalent of datadog_logs_pipeline_order
+Provides a Datadog [Logs Pipeline API](https://docs.datadoghq.com/api/?lang=python#logs-pipelines) resource, which is used to manage Datadog log pipelines order.
 
 ## Syntax
 
@@ -32,6 +32,9 @@ Properties:
 
 #### Name
 
+The name attribute in the resource `datadog_logs_pipeline_order` needs to be unique. It's recommended to use the same value as the resource `NAME`.
+No related field is available in  [Logs Pipeline API](https://docs.datadoghq.com/api/?lang=python#get-pipeline-order).
+
 _Required_: Yes
 
 _Type_: String
@@ -39,6 +42,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Pipelines
+
+The pipeline IDs list. The order of pipeline IDs in this attribute defines the overall pipeline order for logs.
 
 _Required_: Yes
 

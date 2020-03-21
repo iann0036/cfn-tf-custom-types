@@ -28,6 +28,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### IgnoreCase
 
+Perform a case in-sensitive comparison. Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -35,6 +37,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Negate
+
+Negate the result of the condition evaluation. Defaults to `false`.
 
 _Required_: No
 
@@ -44,6 +48,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Pattern
 
+The pattern, either fixed string or regular expression, that evaluates the truthfulness of the condition.
+
 _Required_: Yes
 
 _Type_: String
@@ -51,6 +57,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Variable
+
+The [variable](https://docs.microsoft.com/en-us/azure/application-gateway/rewrite-http-headers#server-variables) of the condition.
 
 _Required_: Yes
 

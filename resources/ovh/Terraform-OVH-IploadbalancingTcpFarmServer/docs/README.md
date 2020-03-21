@@ -1,6 +1,6 @@
 # Terraform::OVH::IploadbalancingTcpFarmServer
 
-CloudFormation equivalent of ovh_iploadbalancing_tcp_farm_server
+Creates a backend server entry linked to loadbalancing group (farm)
 
 ## Syntax
 
@@ -51,6 +51,8 @@ Properties:
 
 #### Address
 
+Address of the backend server (IP from either internal or OVH network).
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +60,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Backup
+
+is it a backup server used in case of failure of all the non-backup backends.
 
 _Required_: No
 
@@ -75,6 +79,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+Label for the server.
+
 _Required_: No
 
 _Type_: String
@@ -82,6 +88,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FarmId
+
+ID of the farm this server is attached to.
 
 _Required_: Yes
 
@@ -91,6 +99,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Port
 
+Port that backend will respond on.
+
 _Required_: No
 
 _Type_: Double
@@ -98,6 +108,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Probe
+
+defines if backend will be probed to determine health and keep as active in farm if healthy.
 
 _Required_: No
 
@@ -107,6 +119,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProxyProtocolVersion
 
+version of the PROXY protocol used to pass origin connection information from loadbalancer to recieving service (`v1`, `v2`, `v2-ssl`, `v2-ssl-cn`).
+
 _Required_: No
 
 _Type_: String
@@ -114,6 +128,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServiceName
+
+The internal name of your IP load balancing.
 
 _Required_: Yes
 
@@ -123,6 +139,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ssl
 
+is the connection ciphered with SSL (TLS).
+
 _Required_: No
 
 _Type_: Boolean
@@ -131,6 +149,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Status
 
+backend status - `active` or `inactive`.
+
 _Required_: Yes
 
 _Type_: String
@@ -138,6 +158,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Weight
+
+used in loadbalancing algorithm.
 
 _Required_: No
 

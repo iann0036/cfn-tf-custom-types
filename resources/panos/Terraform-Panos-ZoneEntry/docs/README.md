@@ -1,6 +1,14 @@
 # Terraform::Panos::ZoneEntry
 
-CloudFormation equivalent of panos_zone_entry
+This resource allows you to add/update/delete a specific interface in a zone.
+
+This resource has some overlap with the `panos_zone`
+resource.  If you want to use this resource with the other one, then make
+sure that your `panos_zone` spec does not define the
+`interfaces` field.
+
+This is the appropriate resource to use if you have a pre-existing zone
+and don't want Terraform to delete it on `terraform destroy`.
 
 ## Syntax
 
@@ -35,6 +43,8 @@ Properties:
 
 #### Interface
 
+The interface's name.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +52,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Mode
+
+The mode.  Can be `layer3` (default), `layer2`,
+`virtual-wire`, `tap`, or `external`.
 
 _Required_: No
 
@@ -51,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Vsys
 
+The vsys (default: `vsys1`).
+
 _Required_: No
 
 _Type_: String
@@ -58,6 +73,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Zone
+
+The zone's name.
 
 _Required_: Yes
 

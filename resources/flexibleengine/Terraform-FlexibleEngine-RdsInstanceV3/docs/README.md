@@ -1,6 +1,6 @@
 # Terraform::FlexibleEngine::RdsInstanceV3
 
-CloudFormation equivalent of flexibleengine_rds_instance_v3
+instance management
 
 ## Syntax
 

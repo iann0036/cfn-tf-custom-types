@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::OsmanagementManagedInstanceManagement",
-    "description": "CloudFormation equivalent of oci_osmanagement_managed_instance_management",
+    "description": "This resource provides the Managed Instance Management in Oracle Cloud Infrastructure Osmanagement service.\nThe resource can be used to attach/detach parent software source, child software sources and managed instance groups from managed instances.\n\nAdds a parent software source to a managed instance. After the software source has been added, then packages from that software source can be installed on the managed instance. Software sources that have this software source as a parent will be able to be added to this managed instance.\nRemoves a software source from a managed instance. All child software sources will also be removed from the managed instance. Packages will no longer be able to be installed from these software sources.\n        \nAdds a child software source to a managed instance. After the software source has been added, then packages from that software source can be installed on the managed instance.   \nRemoves a child software source from a managed instance. Packages will no longer be able to be installed from these software sources.\n\nAdds a Managed Instance to a Managed Instance Group. After the Managed Instance has been added, then operations can be performed on the Managed Instance Group which will then apply to all Managed Instances in the group. \nRemoves a Managed Instance from a Managed Instance Group.\n        \n**NOTE** The resource on CREATE will detach any already attached parent software source, child software sources, managed instance groups to the managed instance. \nDestroying this resource will not delete any associations.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ChildSoftwareSources": {
@@ -71,7 +71,8 @@
             "type": "string"
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "User friendly name\n* `id` - unique identifier that is immutable on creation."
         },
         "LastBoot": {
             "type": "string"
@@ -80,7 +81,8 @@
             "type": "string"
         },
         "ManagedInstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "OCID for the managed instance."
         },
         "OsKernelVersion": {
             "type": "string"

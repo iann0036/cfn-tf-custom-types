@@ -1,6 +1,6 @@
 # Terraform::NS1::Monitoringjob
 
-CloudFormation equivalent of ns1_monitoringjob
+Provides a NS1 Monitoring Job resource. This can be used to create, modify, and delete monitoring jobs.
 
 ## Syntax
 
@@ -60,6 +60,8 @@ Properties:
 
 #### Active
 
+Indicates if the job is active or temporarily disabled.
+
 _Required_: No
 
 _Type_: Boolean
@@ -67,6 +69,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Config
+
+A configuration dictionary with keys and values depending on the jobs' type.
 
 _Required_: Yes
 
@@ -76,6 +80,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Frequency
 
+The frequency, in seconds, at which to run the monitoring job in each region.
+
 _Required_: Yes
 
 _Type_: Double
@@ -83,6 +89,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### JobType
+
+The type of monitoring job to be run. See NS1 API
+docs for supported values.
 
 _Required_: Yes
 
@@ -92,6 +101,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The free-form display name for the monitoring job.
+
 _Required_: Yes
 
 _Type_: String
@@ -99,6 +110,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Notes
+
+Freeform notes to be included in any notifications about this job.
 
 _Required_: No
 
@@ -108,6 +121,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NotifyDelay
 
+The time in seconds after a failure to wait before sending a notification.
+
 _Required_: No
 
 _Type_: Double
@@ -115,6 +130,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NotifyFailback
+
+If true, a notification is sent when a job returns to an "up" state.
 
 _Required_: No
 
@@ -124,6 +141,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NotifyList
 
+The id of the notification list to send notifications to.
+
 _Required_: No
 
 _Type_: String
@@ -131,6 +150,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NotifyRegional
+
+If true, notifications are sent for any regional failure (and failback if desired), in addition to global state notifications.
 
 _Required_: No
 
@@ -140,6 +161,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NotifyRepeat
 
+The time in seconds between repeat notifications of a failed job.
+
 _Required_: No
 
 _Type_: Double
@@ -147,6 +170,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Policy
+
+The policy for determining the monitor's global status
+based on the status of the job in all regions. See NS1 API docs for supported values.
 
 _Required_: No
 
@@ -156,6 +182,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RapidRecheck
 
+If true, on any apparent state change, the job is quickly re-run after one second to confirm the state change before notification.
+
 _Required_: No
 
 _Type_: Boolean
@@ -163,6 +191,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Regions
+
+The list of region codes in which to run the monitoring
+job. See NS1 API docs for supported values.
 
 _Required_: Yes
 

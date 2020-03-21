@@ -1,6 +1,6 @@
 # Terraform::Cobbler::Repo
 
-CloudFormation equivalent of cobbler_repo
+Manages a repo within Cobbler.
 
 ## Syntax
 
@@ -59,6 +59,9 @@ Properties:
 
 #### AptComponents
 
+List of Apt components such as main,
+restricted, universe. Applicable to apt breeds only.
+
 _Required_: No
 
 _Type_: List of String
@@ -66,6 +69,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AptDists
+
+List of Apt distribution names such as trusty,
+trusty-updates. Applicable to apt breeds only.
 
 _Required_: No
 
@@ -75,6 +81,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Arch
 
+The architecture of the repo. Valid options
+are: i386, x86_64, ia64, ppc, ppc64, s390, arm.
+
 _Required_: No
 
 _Type_: String
@@ -82,6 +91,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Breed
+
+The "breed" of distribution. Valid options
+are: rsync, rhn, yum, apt, and wget. These choices may vary depending on the
+version of Cobbler in use.
 
 _Required_: Yes
 
@@ -91,6 +104,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Comment
 
+Free form text description.
+
 _Required_: No
 
 _Type_: String
@@ -98,6 +113,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CreaterepoFlags
+
+Flags to use with `createrepo`.
 
 _Required_: No
 
@@ -107,6 +124,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Environment
 
+Environment variables to use during repo command
+execution.
+
 _Required_: No
 
 _Type_: String
@@ -114,6 +134,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeepUpdated
+
+Update the repo upon Cobbler sync. Valid values
+are true or false.
 
 _Required_: No
 
@@ -123,6 +146,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Mirror
 
+Address of the repo to mirror.
+
 _Required_: Yes
 
 _Type_: String
@@ -130,6 +155,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MirrorLocally
+
+Whether to copy the files locally or just
+references to the external files. Valid values are true or false.
 
 _Required_: No
 
@@ -139,6 +167,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A name for the repo.
+
 _Required_: Yes
 
 _Type_: String
@@ -146,6 +176,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Owners
+
+List of Owners for authz_ownership.
 
 _Required_: No
 
@@ -155,6 +187,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Proxy
 
+Proxy to use for downloading the repo. This argument does
+not work on older versions of Cobbler.
+
 _Required_: No
 
 _Type_: String
@@ -162,6 +197,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RpmList
+
+List of specific RPMs to mirror.
 
 _Required_: No
 

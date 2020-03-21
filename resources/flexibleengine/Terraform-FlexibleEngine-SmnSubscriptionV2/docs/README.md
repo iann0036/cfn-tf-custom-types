@@ -1,6 +1,6 @@
 # Terraform::FlexibleEngine::SmnSubscriptionV2
 
-CloudFormation equivalent of flexibleengine_smn_subscription_v2
+Manages a V2 subscription resource within FlexibleEngine.
 
 ## Syntax
 
@@ -41,6 +41,12 @@ Properties:
 
 #### Endpoint
 
+Message endpoint.
+For an HTTP subscription, the endpoint starts with http\://.
+For an HTTPS subscription, the endpoint starts with https\://.
+For an email subscription, the endpoint is a mail address.
+For an SMS message subscription, the endpoint is a phone number.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Owner
+
+Project ID of the topic creator.
 
 _Required_: No
 
@@ -57,6 +65,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Protocol
 
+Protocol of the message endpoint. Currently, email,
+sms, http, and https are supported.
+
 _Required_: Yes
 
 _Type_: String
@@ -64,6 +75,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Remark
+
+Remark information. The remarks must be a UTF-8-coded
+character string containing 128 bytes.
 
 _Required_: No
 
@@ -73,6 +87,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Status
 
+Subscription status.
+0 indicates that the subscription is not confirmed.
+1 indicates that the subscription is confirmed.
+3 indicates that the subscription is canceled.
+
 _Required_: No
 
 _Type_: Double
@@ -81,6 +100,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubscriptionUrn
 
+Resource identifier of a subscription, which
+is unique.
+
 _Required_: No
 
 _Type_: String
@@ -88,6 +110,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TopicUrn
+
+Resource identifier of a topic, which is unique.
 
 _Required_: Yes
 

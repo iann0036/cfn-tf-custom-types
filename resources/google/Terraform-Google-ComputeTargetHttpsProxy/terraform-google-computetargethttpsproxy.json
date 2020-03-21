@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::ComputeTargetHttpsProxy",
-    "description": "CloudFormation equivalent of google_compute_target_https_proxy",
+    "description": "Represents a TargetHttpsProxy resource, which is used by one or more\nglobal forwarding rule to route incoming HTTPS requests to a URL map.\n\n\nTo get more information about TargetHttpsProxy, see:\n\n* [API documentation](https://cloud.google.com/compute/docs/reference/v1/targetHttpsProxies)\n* How-to Guides\n    * [Official Documentation](https://cloud.google.com/compute/docs/load-balancing/http/target-proxies)\n\n<div class = \"oics-button\" style=\"float: right; margin: 0 0 -15px\">\n  <a href=\"https://console.cloud.google.com/cloudshell/open?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fterraform-google-modules%2Fdocs-examples.git&cloudshell_working_dir=target_https_proxy_basic&cloudshell_image=gcr.io%2Fgraphite-cloud-shell-images%2Fterraform%3Alatest&open_in_editor=main.tf&cloudshell_print=.%2Fmotd&cloudshell_tutorial=.%2Ftutorial.md\" target=\"_blank\">\n    <img alt=\"Open in Cloud Shell\" src=\"//gstatic.com/cloudssh/images/open-btn.svg\" style=\"max-height: 44px; margin: 32px auto; max-width: 100%;\">\n  </a>\n</div>",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -35,7 +35,8 @@
             "type": "string"
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used."
         },
         "ProxyId": {
             "type": "number"

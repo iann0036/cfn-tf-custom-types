@@ -1,6 +1,9 @@
 # Terraform::Google::ComputeProjectMetadataItem
 
-CloudFormation equivalent of google_compute_project_metadata_item
+Manages a single key/value pair on metadata common to all instances for
+a project in GCE. Using `google_compute_project_metadata_item` lets you
+manage a single key/value setting in Terraform rather than the entire
+project metadata map.
 
 ## Syntax
 
@@ -35,6 +38,8 @@ Properties:
 
 #### Key
 
+The metadata key to set.
+
 _Required_: Yes
 
 _Type_: String
@@ -43,6 +48,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Project
 
+The ID of the project in which the resource belongs. If it
+is not provided, the provider project is used.
+
 _Required_: No
 
 _Type_: String
@@ -50,6 +58,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Value
+
+The value to set for the given metadata key.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 # Terraform::Datadog::IntegrationGcp
 
-CloudFormation equivalent of datadog_integration_gcp
+Provides a Datadog - Google Cloud Platform integration resource. This can be used to create and manage Datadog - Google Cloud Platform integration.
 
 ## Syntax
 
@@ -39,6 +39,8 @@ Properties:
 
 #### ClientEmail
 
+Your email found in your JSON service account key.
+
 _Required_: Yes
 
 _Type_: String
@@ -46,6 +48,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClientId
+
+Your ID found in your JSON service account key.
 
 _Required_: Yes
 
@@ -55,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HostFilters
 
+Limit the GCE instances that are pulled into Datadog by using tags. Only hosts that match one of the defined tags are imported into Datadog.
+
 _Required_: No
 
 _Type_: String
@@ -62,6 +68,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PrivateKey
+
+Your private key name found in your JSON service account key.
 
 _Required_: Yes
 
@@ -71,6 +79,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PrivateKeyId
 
+Your private key ID found in your JSON service account key.
+
 _Required_: Yes
 
 _Type_: String
@@ -78,6 +88,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProjectId
+
+Your Google Cloud project ID found in your JSON service account key.
 
 _Required_: Yes
 

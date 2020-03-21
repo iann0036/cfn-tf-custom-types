@@ -1,6 +1,9 @@
 # Terraform::Circonus::Graph
 
-CloudFormation equivalent of circonus_graph
+The ``circonus_graph`` resource creates and manages a
+[Circonus Graph](https://login.circonus.com/user/docs/Visualization/Graph/Create).
+
+https://login.circonus.com/resources/api/calls/graph).
 
 ## Syntax
 
@@ -55,6 +58,8 @@ Properties:
 
 #### Description
 
+Description of what the graph is for.
+
 _Required_: No
 
 _Type_: String
@@ -62,6 +67,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GraphStyle
+
+How the graph should be rendered.  Valid options
+are `area` or `line` (default).
 
 _Required_: No
 
@@ -71,6 +79,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Left
 
+A map of graph left axis options.  Valid values in `left`
+include: `logarithmic` can be set to `0` (default) or `1`; `min` is the `min`
+Y axis value on the left; and `max` is the Y axis max value on the left.
+
 _Required_: No
 
 _Type_: List of <a href="left.md">Left</a>
@@ -78,6 +90,9 @@ _Type_: List of <a href="left.md">Left</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LineStyle
+
+How the line should change between points.  Can be
+either `stepped` (default) or `interpolated`.
 
 _Required_: No
 
@@ -87,6 +102,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The title of the graph.
+
 _Required_: Yes
 
 _Type_: String
@@ -94,6 +111,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Notes
+
+A place for storing notes about this graph.
 
 _Required_: No
 
@@ -103,6 +122,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Right
 
+A map of graph right axis options.  Valid values in
+`right` include: `logarithmic` can be set to `0` (default) or `1`; `min` is
+the `min` Y axis value on the right; and `max` is the Y axis max value on the
+right.
+
 _Required_: No
 
 _Type_: List of <a href="right.md">Right</a>
@@ -110,6 +134,8 @@ _Type_: List of <a href="right.md">Right</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A list of tags assigned to this graph.
 
 _Required_: No
 

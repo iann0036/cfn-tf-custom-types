@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::DNS::MxRecordSet",
-    "description": "CloudFormation equivalent of dns_mx_record_set",
+    "description": "Creates an MX type DNS record set.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Mx": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "Exchange": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The FQDN of the mail exchange, include the trailing dot."
                 },
                 "Preference": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The preference for the record."
                 }
             },
             "required": [
@@ -26,13 +28,16 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the record set. The `zone` argument will be appended to this value to create the full record path."
         },
         "Ttl": {
-            "type": "number"
+            "type": "number",
+            "description": "The TTL of the record set. Defaults to `3600`."
         },
         "Zone": {
-            "type": "string"
+            "type": "string",
+            "description": "DNS zone the record set belongs to. It must be an FQDN, that is, include the trailing dot."
         },
         "Mx": {
             "type": "array",

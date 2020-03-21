@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::BIGIP::LtmNode",
-    "description": "CloudFormation equivalent of bigip_ltm_node",
+    "description": "`bigip_ltm_node` Manages a node configuration\n\nFor resources should be named with their \"full path\". The full path is the combination of the partition + name of the resource. For example /Common/my-pool.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Fqdn": {
@@ -32,31 +32,39 @@
             "type": "string"
         },
         "Address": {
-            "type": "string"
+            "type": "string",
+            "description": "IP or hostname of the node."
         },
         "ConnectionLimit": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the maximum number of connections allowed for the node or node address."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "User-defined description give ltm_node."
         },
         "DynamicRatio": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the fixed ratio value used for a node during ratio load balancing."
         },
         "Monitor": {
-            "type": "string"
+            "type": "string",
+            "description": "specifies the name of the monitor or monitor rule that you want to associate with the node."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the node."
         },
         "RateLimit": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the maximum number of connections per second allowed for a node or node address. The default value is 'disabled'."
         },
         "Ratio": {
             "type": "number"
         },
         "State": {
-            "type": "string"
+            "type": "string",
+            "description": "Default is \"user-up\" you can set to \"user-down\" if you want to disable."
         },
         "Fqdn": {
             "type": "array",

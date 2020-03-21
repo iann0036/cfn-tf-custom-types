@@ -1,6 +1,8 @@
 # Terraform::BIGIP::NetSelfip
 
-CloudFormation equivalent of bigip_net_selfip
+`bigip_net_selfip` Manages a selfip configuration
+
+Resource should be named with their "full path". The full path is the combination of the partition + name of the resource, for example /Common/my-selfip.
 
 ## Syntax
 
@@ -35,6 +37,8 @@ Properties:
 
 #### Ip
 
+The Self IP's address and netmask.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of the selfip.
 
 _Required_: Yes
 
@@ -51,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TrafficGroup
 
+Specifies the traffic group, defaults to `traffic-group-local-only` if not specified.
+
 _Required_: No
 
 _Type_: String
@@ -58,6 +66,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vlan
+
+Specifies the VLAN for which you are setting a self IP address. This setting must be provided when a self IP is created.
 
 _Required_: Yes
 

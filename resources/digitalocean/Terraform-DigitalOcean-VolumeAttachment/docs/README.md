@@ -1,6 +1,8 @@
 # Terraform::DigitalOcean::VolumeAttachment
 
-CloudFormation equivalent of digitalocean_volume_attachment
+Manages attaching a Volume to a Droplet.
+
+~> **NOTE:** Volumes can be attached either directly on the `digitalocean_droplet` resource, or using the `digitalocean_volume_attachment` resource - but the two cannot be used together. If both are used against the same Droplet, the volume attachments will constantly drift.
 
 ## Syntax
 
@@ -31,6 +33,8 @@ Properties:
 
 #### DropletId
 
+ID of the Droplet to attach the volume to.
+
 _Required_: Yes
 
 _Type_: Double
@@ -38,6 +42,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VolumeId
+
+ID of the Volume to be attached to the Droplet.
 
 _Required_: Yes
 

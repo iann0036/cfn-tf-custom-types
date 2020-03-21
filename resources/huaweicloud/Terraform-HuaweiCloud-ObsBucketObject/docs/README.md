@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::ObsBucketObject
 
-CloudFormation equivalent of huaweicloud_obs_bucket_object
+Provides an OBS bucket object resource.
 
 ## Syntax
 
@@ -47,6 +47,8 @@ Properties:
 
 #### Acl
 
+The ACL policy to apply. Defaults to `private`.
+
 _Required_: No
 
 _Type_: String
@@ -54,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Bucket
+
+The name of the bucket to put the file in.
 
 _Required_: Yes
 
@@ -63,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Content
 
+The literal content being uploaded to the bucket.
+
 _Required_: No
 
 _Type_: String
@@ -70,6 +76,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ContentType
+
+A standard MIME type describing the format of the object data, e.g. application/octet-stream.
+All Valid MIME Types are valid for this input.
 
 _Required_: No
 
@@ -79,6 +88,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Encryption
 
+Whether enable server-side encryption of the object in SSE-KMS mode.
+
 _Required_: No
 
 _Type_: Boolean
@@ -87,6 +98,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Etag
 
+Specifies the unique identifier of the object content. It can be used to trigger updates.
+The only meaningful value is `md5(file("path_to_file"))`.
+
 _Required_: No
 
 _Type_: String
@@ -94,6 +108,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Key
+
+The name of the object once it is in the bucket.
 
 _Required_: Yes
 
@@ -111,6 +127,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Source
 
+The path to the source file being uploaded to the bucket.
+
 _Required_: No
 
 _Type_: String
@@ -118,6 +136,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StorageClass
+
+Specifies the storage class of the object. Defaults to `STANDARD`.
 
 _Required_: No
 

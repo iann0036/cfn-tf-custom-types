@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HuaweiCloud::DmsGroupV1",
-    "description": "CloudFormation equivalent of huaweicloud_dms_group_v1",
+    "description": "Manages a DMS group in the huaweicloud DMS Service.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -18,7 +18,8 @@
             "type": "number"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates the unique name of a group. A string of 1 to 64\ncharacters that contain a-z, A-Z, 0-9, hyphens (-), and underscores (_).\nThe name cannot be modified once specified."
         },
         "ProducedDeadletters": {
             "type": "number"
@@ -27,7 +28,8 @@
             "type": "number"
         },
         "QueueId": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates the ID of a specified queue."
         }
     },
     "additionalProperties": false,

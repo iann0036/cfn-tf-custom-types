@@ -26,6 +26,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Thumbprint
 
+The Thumbprint of the Certificate.
+
 _Required_: Yes
 
 _Type_: String
@@ -34,6 +36,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ThumbprintSecondary
 
+The Secondary Thumbprint of the Certificate.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +45,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### X509StoreName
+
+The X509 Store where the Certificate Exists, such as `My`.
 
 _Required_: Yes
 

@@ -1,6 +1,12 @@
 # Terraform::Local::File
 
-CloudFormation equivalent of local_file
+Generates a local file with the given content.
+
+~> **Note** When working with local files, Terraform will detect the resource
+as having been deleted each time a configuration is applied on a new machine
+where the file is not present and will generate a diff to re-create it. This
+may cause "noise" in diffs in environments where configurations are routinely
+applied by many different users or within automation systems.
 
 ## Syntax
 
@@ -39,6 +45,8 @@ Properties:
 
 #### Content
 
+The content of file to create. Conflicts with `sensitive_content` and `content_base64`.
+
 _Required_: No
 
 _Type_: String
@@ -46,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ContentBase64
+
+The base64 encoded content of the file to create. Use this when dealing with binary data. Conflicts with `content` and `sensitive_content`.
 
 _Required_: No
 
@@ -55,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DirectoryPermission
 
+The permission to set for any directories created. Expects a string. The default value is `"0777"`.
+
 _Required_: No
 
 _Type_: String
@@ -62,6 +74,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FilePermission
+
+The permission to set for the created file. Expects an a string. The default value is `"0777"`.
 
 _Required_: No
 
@@ -71,6 +85,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Filename
 
+The path of the file to create.
+
 _Required_: Yes
 
 _Type_: String
@@ -78,6 +94,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SensitiveContent
+
+The content of file to create. Will not be displayed in diffs. Conflicts with `content` and `content_base64`.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::OraclePaaS::JavaServiceInstance
 
-CloudFormation equivalent of oraclepaas_java_service_instance
+The `oraclepaas_java_service_instance` resource creates and manages an Oracle Java Cloud Service instance on Oracle Cloud Infrastructure and Oracle Cloud Infrastructure Classic.
 
 ## Syntax
 
@@ -110,6 +110,8 @@ Properties:
 
 #### AssignPublicIp
 
+Flag that specifies whether to assign (true) or not assign (false) public IP addresses to the nodes in your service instance. The default is `true`, which means any node added during service instance provisioning, or later added as part of a scaling operation, will have a public IP address assigned to it. This attribute is only applicable when provisioning an Oracle Java Cloud Service instance in a region on Oracle Cloud Infrastructure Classic, and a custom IP network is specified in `ip_network`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -117,6 +119,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AvailabilityDomain
+
+Name of a data center location in the Oracle Cloud Infrastructure region that is specified in region. This is
+only available for OCI.
 
 _Required_: No
 
@@ -126,6 +131,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### BackupDestination
 
+Specifies whether to enable backups for this Oracle Java Cloud Service instance.
+Valid values are `BOTH` or `NONE`. Defaults to `BOTH`.
+
 _Required_: No
 
 _Type_: String
@@ -133,6 +141,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BringYourOwnLicense
+
+Flag that specifies whether to apply an existing on-premises license for Oracle WebLogic Server (true) to the new
+Oracle Java Cloud Service instance you are provisioning. The default value is `false`.
 
 _Required_: No
 
@@ -142,6 +153,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+Provides additional on the java service instance.
+
 _Required_: No
 
 _Type_: String
@@ -149,6 +162,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DesiredState
+
+Specifies the desired state of the service instance. Allowed values are `running` or `shutdown`.
+The default is `running`.
 
 _Required_: No
 
@@ -158,6 +174,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Edition
 
+The edition for the service instance. Possible values are `SE`, `EE`, or `SUITE`.
+
 _Required_: Yes
 
 _Type_: String
@@ -165,6 +183,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableAdminConsole
+
+Flag that specifies whether to enable (true) or disable (false) the access
+rules that control external communication to the WebLogic Server Administration Console, Fusion Middleware Control,
+and Load Balancer Console.
 
 _Required_: No
 
@@ -174,6 +196,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ForceDelete
 
+Flag that specifies whether you want to force the removal of the service instance even if the database
+instance cannot be reached to delete the database schemas. Default value is `true`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -181,6 +206,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IpNetwork
+
+The three-part name of a custom IP network to attach this service instance to. For example: `/Compute-identity_domain/user/object`.
 
 _Required_: No
 
@@ -190,6 +217,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Level
 
+Service level for the service instance. Possible values are `BASIC` or `PAAS`. Default
+value is `PAAS`.
+
 _Required_: No
 
 _Type_: String
@@ -198,6 +228,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MeteringFrequency
 
+Billing unit. Possible values are `HOURLY` or `MONTHLY`. Default value is `HOURLY`.
+
 _Required_: No
 
 _Type_: String
@@ -205,6 +237,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the Service Instance.
 
 _Required_: Yes
 
@@ -222,6 +256,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+Name of the region where the Oracle Java Cloud Service instance is to be provisioned.
+This attribute is only applicable to accounts where regions are supported. A region name must be specified if you
+want to use ipReservations or ipNetwork.
+
 _Required_: No
 
 _Type_: String
@@ -229,6 +267,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServiceVersion
+
+Oracle WebLogic Server software version. Valid values are: `12cRelease213`, `12cRelease212`, `12cR3`, or `11gR1`.
 
 _Required_: No
 
@@ -238,6 +278,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SnapshotName
 
+Name of the snapshot to clone from.
+
 _Required_: No
 
 _Type_: String
@@ -245,6 +287,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SourceServiceName
+
+Name of the existing Oracle Java Cloud Service instance that has the snapshot from which you are creating a clone.
 
 _Required_: No
 
@@ -254,6 +298,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SshPublicKey
 
+The ssh key to connect to the java service instance.
+
 _Required_: Yes
 
 _Type_: String
@@ -262,6 +308,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Subnet
 
+A subdivision of a cloud network that is set up in the data center as specified in `availability_domain`.
+This is only available for OCI.
+
 _Required_: No
 
 _Type_: String
@@ -269,6 +318,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UseIdentityService
+
+Flag that specifies whether to use Oracle Identity Cloud Service (true) or the local WebLogic identity store
+(false) for user authentication and to maintain administrators, application users, groups and roles. The default
+value is false.
 
 _Required_: No
 

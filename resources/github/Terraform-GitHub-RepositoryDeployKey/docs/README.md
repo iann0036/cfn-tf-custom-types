@@ -1,6 +1,15 @@
 # Terraform::GitHub::RepositoryDeployKey
 
-CloudFormation equivalent of github_repository_deploy_key
+Provides a GitHub repository deploy key resource.
+
+A deploy key is an SSH key that is stored on your server and grants
+access to a single GitHub repository. This key is attached directly to the repository instead of to a personal user
+account.
+
+This resource allows you to add/remove repository deploy keys.
+
+Further documentation on GitHub repository deploy keys:
+- [About deploy keys](https://developer.github.com/guides/managing-deploy-keys/#deploy-keys)
 
 ## Syntax
 
@@ -35,6 +44,8 @@ Properties:
 
 #### Key
 
+A SSH key.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ReadOnly
+
+A boolean qualifying the key to be either read only or read/write.
 
 _Required_: No
 
@@ -51,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Repository
 
+Name of the GitHub repository.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +73,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Title
+
+A title.
 
 _Required_: Yes
 

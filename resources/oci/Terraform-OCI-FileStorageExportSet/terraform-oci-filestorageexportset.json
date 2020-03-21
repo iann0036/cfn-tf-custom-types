@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::FileStorageExportSet",
-    "description": "CloudFormation equivalent of oci_file_storage_export_set",
+    "description": "This resource provides the Export Set resource in Oracle Cloud Infrastructure File Storage service.\n\nThe export set resource can neither be directly created, nor destroyed.\n\nAn export set is created by the service automatically when a mount target is created.\nWhen a mount target is deleted, the export set associated with it is also deleted automatically.\n\nHowever, export sets expose a few attributes that can be updated.\n\nHence we provide this resource for managing the already created export set from within Terraform.\nOnly one export set resource should be created per mount target.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -32,16 +32,20 @@
             "type": "string"
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My export set`."
         },
         "MaxFsStatBytes": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) Controls the maximum `tbytes`, `fbytes`, and `abytes`, values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tbytes` value reported by `FSSTAT` will be `maxFsStatBytes`. The value of `fbytes` and `abytes` will be `maxFsStatBytes` minus the metered size of the file system. If the metered size is larger than `maxFsStatBytes`, then `fbytes` and `abytes` will both be '0'."
         },
         "MaxFsStatFiles": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) Controls the maximum `tfiles`, `ffiles`, and `afiles` values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tfiles` value reported by `FSSTAT` will be `maxFsStatFiles`. The value of `ffiles` and `afiles` will be `maxFsStatFiles` minus the metered size of the file system. If the metered size is larger than `maxFsStatFiles`, then `ffiles` and `afiles` will both be '0'."
         },
         "MountTargetId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The OCID of the mount target that the export set is associated with."
         },
         "State": {
             "type": "string"

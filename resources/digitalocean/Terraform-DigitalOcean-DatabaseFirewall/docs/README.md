@@ -1,6 +1,8 @@
 # Terraform::DigitalOcean::DatabaseFirewall
 
-CloudFormation equivalent of digitalocean_database_firewall
+Provides a DigitalOcean database firewall resource allowing you to restrict
+connections to your database to trusted sources. You may limit connections to
+specific Droplets, Kubernetes clusters, or IP addresses.
 
 ## Syntax
 
@@ -31,6 +33,8 @@ Properties:
 ## Properties
 
 #### ClusterId
+
+The ID of the target database cluster.
 
 _Required_: Yes
 

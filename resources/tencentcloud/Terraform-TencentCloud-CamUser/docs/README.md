@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::CamUser
 
-CloudFormation equivalent of tencentcloud_cam_user
+Provides a resource to create a CAM user.
 
 ## Syntax
 
@@ -45,6 +45,8 @@ Properties:
 
 #### ConsoleLogin
 
+Indicade whether the CAM user can login or not.
+
 _Required_: No
 
 _Type_: Boolean
@@ -52,6 +54,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CountryCode
+
+Country code of the phone num, like '86'.
 
 _Required_: No
 
@@ -61,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Email
 
+Email of the CAM user.
+
 _Required_: No
 
 _Type_: String
@@ -68,6 +74,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of CAM user.
 
 _Required_: Yes
 
@@ -77,6 +85,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NeedResetPassword
 
+Indicate whether the CAM user will reset the password the next time he/her logs in.
+
 _Required_: No
 
 _Type_: Boolean
@@ -84,6 +94,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Password
+
+The password of the CAM user. The password should be set with 8 characters or more and contains uppercase small letters, numbers, and special characters. Only valid when console_login set true. If not set and the value of console_login is true, a random password is automatically generated.
 
 _Required_: No
 
@@ -93,6 +105,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PhoneNum
 
+Phone num of the CAM user.
+
 _Required_: No
 
 _Type_: String
@@ -101,6 +115,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Remark
 
+Remark of the CAM user.
+
 _Required_: No
 
 _Type_: String
@@ -108,6 +124,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UseApi
+
+Indicate whether to generate a secret key or not.
 
 _Required_: No
 

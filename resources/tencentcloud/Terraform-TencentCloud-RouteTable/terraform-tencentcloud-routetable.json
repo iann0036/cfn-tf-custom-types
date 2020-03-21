@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::RouteTable",
-    "description": "CloudFormation equivalent of tencentcloud_route_table",
+    "description": "Provides a resource to create a VPC routing table.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -15,7 +15,8 @@
             "type": "boolean"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of routing table."
         },
         "RouteEntryIds": {
             "type": "array",
@@ -49,10 +50,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "The tags of routing table."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of VPC to which the route table should be associated."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 # Terraform::Kubernetes::PriorityClass
 
-CloudFormation equivalent of kubernetes_priority_class
+A PriorityClass is a non-namespaced object that defines a mapping from a priority class name to the integer value of the priority.
 
 ## Syntax
 
@@ -36,6 +36,8 @@ Properties:
 
 #### Description
 
+An arbitrary string that usually provides guidelines on when this priority class should be used.
+
 _Required_: No
 
 _Type_: String
@@ -44,6 +46,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GlobalDefault
 
+Boolean that specifies whether this PriorityClass should be considered as the default priority for pods that do not have any priority class.
+
 _Required_: No
 
 _Type_: Boolean
@@ -51,6 +55,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Value
+
+The value of this priority class. This is the actual priority that pods receive when they have the name of this class in their pod spec.
 
 _Required_: Yes
 

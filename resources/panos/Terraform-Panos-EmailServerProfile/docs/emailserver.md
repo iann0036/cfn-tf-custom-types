@@ -32,6 +32,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### AlsoToEmail
 
+Secondary to email address.
+
 _Required_: No
 
 _Type_: String
@@ -39,6 +41,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+The display name.
 
 _Required_: No
 
@@ -48,6 +52,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EmailGateway
 
+The email server.
+
 _Required_: Yes
 
 _Type_: String
@@ -55,6 +61,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FromEmail
+
+From email address.
 
 _Required_: Yes
 
@@ -64,6 +72,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Server name.
+
 _Required_: Yes
 
 _Type_: String
@@ -71,6 +81,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ToEmail
+
+To email address.
 
 _Required_: Yes
 

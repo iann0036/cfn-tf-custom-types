@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Name
 
+A unique name to identify this ACL.
+
 _Required_: Yes
 
 _Type_: String

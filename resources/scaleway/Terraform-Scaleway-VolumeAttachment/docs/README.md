@@ -1,6 +1,11 @@
 # Terraform::Scaleway::VolumeAttachment
 
-CloudFormation equivalent of scaleway_volume_attachment
+**DEPRECATED**: This resource is deprecated and will be removed in `v2.0+`.
+Please use `scaleway_instance_server.additional_volumes` instead.
+
+This allows volumes to be attached to servers.
+
+~> **Warning:** Attaching volumes requires the servers to be powered off. This will lead to downtime if the server is already in use.
 
 ## Syntax
 
@@ -31,6 +36,8 @@ Properties:
 
 #### Server
 
+id of the server.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +45,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Volume
+
+id of the volume to be attached.
 
 _Required_: Yes
 

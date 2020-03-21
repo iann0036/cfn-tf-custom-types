@@ -1,6 +1,6 @@
 # Terraform::UCloud::LbSsl
 
-CloudFormation equivalent of ucloud_lb_ssl
+Provides a Load Balancer SSL certificate resource.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### CaCert
 
+The content of the CA certificate about ssl certificate.
+
 _Required_: No
 
 _Type_: String
@@ -42,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the LB ssl, which contains 1-63 characters and only support Chinese, English, numbers, '-', '_', '.'. If not specified, terraform will auto-generate a name beginning with `tf-lb-ssl`.
 
 _Required_: No
 
@@ -51,6 +55,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PrivateKey
 
+The content of the private key about ssl certificate.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserCert
+
+The content of the user certificate about ssl certificate.
 
 _Required_: Yes
 

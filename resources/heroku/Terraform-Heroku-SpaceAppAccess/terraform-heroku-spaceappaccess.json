@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Heroku::SpaceAppAccess",
-    "description": "CloudFormation equivalent of heroku_space_app_access",
+    "description": "Provides a resource for managing permissions for the entire Private Space. Members with the admin role will always have full permissions in the Private Space, so using this resource on an admin will have no effect. The provided email must already be a member of the Heroku Team. Currently the only supported permission is `create_apps`.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,17 +9,20 @@
             "type": "string"
         },
         "Email": {
-            "type": "string"
+            "type": "string",
+            "description": "The email of the existing Heroku Team member."
         },
         "Permissions": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The permissions to grant the team member for the Private Space. Currently `create_apps` is the only supported permission. If not provided the member will have no permissions to the space. Members with admin role will always have `create_apps` permissions, which cannot be removed."
         },
         "Space": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Private Space."
         }
     },
     "additionalProperties": false,

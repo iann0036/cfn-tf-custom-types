@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::SqlSslCert",
-    "description": "CloudFormation equivalent of google_sql_ssl_cert",
+    "description": "Creates a new Google SQL SSL Cert on a Google SQL Instance. For more information, see the [official documentation](https://cloud.google.com/sql/), or the [JSON API](https://cloud.google.com/sql/docs/mysql/admin-api/v1beta4/sslCerts).\n\n~> **Note:** All arguments including the private key will be stored in the raw state as plain-text.\n[Read more about sensitive data in state](/docs/state/sensitive-data.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -15,7 +15,8 @@
             "type": "string"
         },
         "CommonName": {
-            "type": "string"
+            "type": "string",
+            "description": "The common name to be used in the certificate to identify the\nclient. Constrained to [a-zA-Z.-_ ]+. Changing this forces a new resource to be created."
         },
         "CreateTime": {
             "type": "string"
@@ -24,13 +25,15 @@
             "type": "string"
         },
         "Instance": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Cloud SQL instance. Changing this\nforces a new resource to be created."
         },
         "PrivateKey": {
             "type": "string"
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used."
         },
         "ServerCaCert": {
             "type": "string"

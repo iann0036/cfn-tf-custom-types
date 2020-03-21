@@ -1,6 +1,6 @@
 # Terraform::Vault::AwsAuthBackendRoleTag
 
-CloudFormation equivalent of vault_aws_auth_backend_role_tag
+Reads role tag information from an AWS auth backend in Vault.
 
 ## Syntax
 
@@ -42,6 +42,8 @@ Properties:
 
 #### AllowInstanceMigration
 
+If set, allows migration of the underlying instances where the client resides. Use with caution.
+
 _Required_: No
 
 _Type_: Boolean
@@ -49,6 +51,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Backend
+
+The path to the AWS auth backend to
+read role tags from, with no leading or trailing `/`s. Defaults to "aws".
 
 _Required_: No
 
@@ -58,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisallowReauthentication
 
+If set, only allows a single token to be granted per instance ID.
+
 _Required_: No
 
 _Type_: Boolean
@@ -65,6 +72,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceId
+
+Instance ID for which this tag is intended for. If set, the created tag can only be used by the instance with the given ID.
 
 _Required_: No
 
@@ -74,6 +83,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxTtl
 
+The maximum TTL of the tokens issued using this role.
+
 _Required_: No
 
 _Type_: String
@@ -82,6 +93,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Policies
 
+The policies to be associated with the tag. Must be a subset of the policies associated with the role.
+
 _Required_: No
 
 _Type_: List of String
@@ -89,6 +102,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Role
+
+The name of the AWS auth backend role to read
+role tags from, with no leading or trailing `/`s.
 
 _Required_: Yes
 

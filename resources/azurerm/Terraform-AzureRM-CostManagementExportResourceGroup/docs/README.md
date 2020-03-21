@@ -1,6 +1,6 @@
 # Terraform::AzureRM::CostManagementExportResourceGroup
 
-CloudFormation equivalent of azurerm_cost_management_export_resource_group
+Manages an Azure Cost Management Export for a Resource Group.
 
 ## Syntax
 
@@ -47,6 +47,8 @@ Properties:
 
 #### Active
 
+Is the cost management export active? Default is `true`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -54,6 +56,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the Cost Management Export. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -63,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RecurrencePeriodEnd
 
+The date the export will stop capturing information.
+
 _Required_: Yes
 
 _Type_: String
@@ -70,6 +76,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RecurrencePeriodStart
+
+The date the export will start capturing information.
 
 _Required_: Yes
 
@@ -79,6 +87,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RecurrenceType
 
+How often the requested information will be exported. Valid values include `Annually`, `Daily`, `Monthly`, `Weekly`.
+
 _Required_: Yes
 
 _Type_: String
@@ -86,6 +96,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupId
+
+The id of the resource group in which to export information.
 
 _Required_: Yes
 

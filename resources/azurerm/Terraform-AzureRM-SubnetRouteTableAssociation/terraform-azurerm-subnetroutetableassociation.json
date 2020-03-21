@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::SubnetRouteTableAssociation",
-    "description": "CloudFormation equivalent of azurerm_subnet_route_table_association",
+    "description": "Associates a [Route Table](route_table.html) with a [Subnet](subnet.html) within a [Virtual Network](virtual_network.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,10 +29,12 @@
             "type": "string"
         },
         "RouteTableId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Route Table which should be associated with the Subnet. Changing this forces a new resource to be created."
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Subnet. Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

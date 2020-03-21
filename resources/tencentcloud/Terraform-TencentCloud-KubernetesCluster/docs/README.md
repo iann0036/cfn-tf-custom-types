@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::KubernetesCluster
 
-CloudFormation equivalent of tencentcloud_kubernetes_cluster
+Provide a resource to create a kubernetes cluster.
 
 ## Syntax
 
@@ -76,6 +76,8 @@ Properties:
 
 #### ClusterCidr
 
+A network address block of the cluster. Different from vpc cidr and cidr of other clusters within this vpc. Must be in  10./192.168/172.[16-31] segments.
+
 _Required_: Yes
 
 _Type_: String
@@ -83,6 +85,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClusterDeployType
+
+Deployment type of the cluster, the available values include: 'MANAGED_CLUSTER' and 'INDEPENDENT_CLUSTER', Default is 'MANAGED_CLUSTER'.
 
 _Required_: No
 
@@ -92,6 +96,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ClusterDesc
 
+Description of the cluster.
+
 _Required_: No
 
 _Type_: String
@@ -99,6 +105,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClusterInternet
+
+Open internet access or not.
 
 _Required_: No
 
@@ -108,6 +116,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ClusterIntranet
 
+Open intranet access or not.
+
 _Required_: No
 
 _Type_: Boolean
@@ -115,6 +125,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClusterIntranetSubnetId
+
+Subnet id who can access this independent cluster, this field must and can only set  when `cluster_intranet` is true. `cluster_intranet_subnet_id` can not modify once be set.
 
 _Required_: No
 
@@ -124,6 +136,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ClusterIpvs
 
+Indicates whether ipvs is enabled. Default is true.
+
 _Required_: No
 
 _Type_: Boolean
@@ -131,6 +145,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClusterMaxPodNum
+
+The maximum number of Pods per node in the cluster. Default is 256. Must be a multiple of 16 and large than 32.
 
 _Required_: No
 
@@ -140,6 +156,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ClusterMaxServiceNum
 
+The maximum number of services in the cluster. Default is 256. Must be a multiple of 16.
+
 _Required_: No
 
 _Type_: Double
@@ -147,6 +165,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClusterName
+
+Name of the cluster.
 
 _Required_: No
 
@@ -156,6 +176,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ClusterOs
 
+Operating system of the cluster, the available values include: 'centos7.2x86_64','centos7.6x86_64','ubuntu16.04.1 LTSx86_64','ubuntu18.04.1 LTSx86_64'. Default is 'ubuntu16.04.1 LTSx86_64'.
+
 _Required_: No
 
 _Type_: String
@@ -163,6 +185,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClusterOsType
+
+Image type of the cluster os, the available values include: 'DOCKER_CUSTOMIZE','GENERAL'. Default is 'GENERAL'. 'DOCKER_CUSTOMIZE' means 'TKE-Optimized'. Only 'centos7.6x86_64' or 'ubuntu18.04.1 LTSx86_64' support 'DOCKER_CUSTOMIZE' now.
 
 _Required_: No
 
@@ -172,6 +196,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ClusterVersion
 
+Version of the cluster, Default is '1.10.5'.
+
 _Required_: No
 
 _Type_: String
@@ -179,6 +205,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ContainerRuntime
+
+Runtime type of the cluster, the available values include: 'docker' and 'containerd'. Default is 'docker'.
 
 _Required_: No
 
@@ -188,6 +216,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IgnoreClusterCidrConflict
 
+Indicates whether to ignore the cluster cidr conflict error. Default is false.
+
 _Required_: No
 
 _Type_: Boolean
@@ -195,6 +225,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ManagedClusterInternetSecurityPolicies
+
+Security policies for managed cluster internet, like:'192.168.1.0/24' or '113.116.51.27', '0.0.0.0/0' means all. This field can only set when field `cluster_deploy_type` is 'MANAGED_CLUSTER' and `cluster_internet` is true. `managed_cluster_internet_security_policies` can not delete or empty once be set.
 
 _Required_: No
 
@@ -204,6 +236,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProjectId
 
+Project ID, default value is 0.
+
 _Required_: No
 
 _Type_: Double
@@ -212,6 +246,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+The tags of the cluster.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -219,6 +255,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+Vpc Id of the cluster.
 
 _Required_: Yes
 

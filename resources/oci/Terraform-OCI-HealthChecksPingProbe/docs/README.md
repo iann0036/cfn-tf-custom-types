@@ -1,6 +1,11 @@
 # Terraform::OCI::HealthChecksPingProbe
 
-CloudFormation equivalent of oci_health_checks_ping_probe
+This resource provides the Ping Probe resource in Oracle Cloud Infrastructure Health Checks service.
+
+Creates an on-demand ping probe. The location response header contains the URL for
+fetching probe results.
+
+*Note:* The on-demand probe configuration is not saved.
 
 ## Syntax
 
@@ -43,6 +48,8 @@ Properties:
 
 #### CompartmentId
 
+The OCID of the compartment.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +57,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Port
+
+The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
 
 _Required_: No
 
@@ -59,6 +68,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Protocol
 
+The protocols for ping probes.
+
 _Required_: Yes
 
 _Type_: String
@@ -66,6 +77,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Targets
+
+A list of targets (hostnames or IP addresses) of the probe.
 
 _Required_: Yes
 
@@ -75,6 +88,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TimeoutInSeconds
 
+The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
+
 _Required_: No
 
 _Type_: Double
@@ -82,6 +97,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VantagePointNames
+
+A list of names of vantage points from which to execute the probe.
 
 _Required_: No
 

@@ -1,6 +1,10 @@
 # Terraform::Alicloud::ApiGatewayApi
 
-CloudFormation equivalent of alicloud_api_gateway_api
+Provides an api resource.When you create an API, you must enter the basic information about the API, and define the API request information, the API backend service and response information.
+
+For information about Api Gateway Api and how to use it, see [Create an API](https://www.alibabacloud.com/help/doc-detail/29478.htm)
+
+-> **NOTE:** Terraform will auto build api while it uses `alicloud_api_gateway_api` to build api.
 
 ## Syntax
 
@@ -64,6 +68,8 @@ Properties:
 
 #### AuthType
 
+The authorization Type including APP and ANONYMOUS. Defaults to null.
+
 _Required_: Yes
 
 _Type_: String
@@ -71,6 +77,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+The description of the api. Defaults to null.
 
 _Required_: Yes
 
@@ -80,6 +88,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GroupId
 
+The api gateway that the api belongs to. Defaults to null.
+
 _Required_: Yes
 
 _Type_: String
@@ -87,6 +97,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the api gateway api. Defaults to null.
 
 _Required_: Yes
 
@@ -96,6 +108,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServiceType
 
+The type of backend service. Type including HTTP,VPC and MOCK. Defaults to null.
+
 _Required_: Yes
 
 _Type_: String
@@ -103,6 +117,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StageNames
+
+Stages that the api need to be deployed. Valid value: RELEASE | PRE | TEST.
 
 _Required_: No
 

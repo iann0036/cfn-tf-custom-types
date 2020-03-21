@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::IamAgencyV3
 
-CloudFormation equivalent of huaweicloud_iam_agency_v3
+Manages an agency resource within huawei cloud.
 
 ## Syntax
 
@@ -43,6 +43,8 @@ Properties:
 
 #### DelegatedDomainName
 
+The name of delegated domain.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +52,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Provides supplementary information about the
+agency. The value is a string of 0 to 255 characters.
 
 _Required_: No
 
@@ -59,6 +64,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DomainRoles
 
+An array of role names which stand for the
+permissionis to be granted to agency on domain.
+
 _Required_: No
 
 _Type_: List of String
@@ -66,6 +74,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of agency. The name is a string of 1 to 64
+characters.
 
 _Required_: Yes
 

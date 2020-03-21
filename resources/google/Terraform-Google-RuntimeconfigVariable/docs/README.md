@@ -1,6 +1,9 @@
 # Terraform::Google::RuntimeconfigVariable
 
-CloudFormation equivalent of google_runtimeconfig_variable
+Manages a RuntimeConfig variable in Google Cloud. For more information, see the
+[official documentation](https://cloud.google.com/deployment-manager/runtime-configurator/),
+or the
+[JSON API](https://cloud.google.com/deployment-manager/runtime-configurator/reference/rest/).
 
 ## Syntax
 
@@ -37,6 +40,9 @@ Properties:
 
 #### Name
 
+The name of the variable to manage. Note that variable
+names can be hierarchical using slashes (e.g. "prod-variables/hostname").
+
 _Required_: Yes
 
 _Type_: String
@@ -45,6 +51,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Parent
 
+The name of the RuntimeConfig resource containing this
+variable.
+
 _Required_: Yes
 
 _Type_: String
@@ -52,6 +61,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The ID of the project in which the resource belongs. If it
+is not provided, the provider project is used.
 
 _Required_: No
 

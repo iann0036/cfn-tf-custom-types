@@ -1,6 +1,6 @@
 # Terraform::AzureRM::CosmosdbAccount
 
-CloudFormation equivalent of azurerm_cosmosdb_account
+Manages a CosmosDB (formally DocumentDB) Account.
 
 ## Syntax
 
@@ -62,6 +62,8 @@ Properties:
 
 #### EnableAutomaticFailover
 
+Enable automatic fail over for this Cosmos DB account.
+
 _Required_: No
 
 _Type_: Boolean
@@ -69,6 +71,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableMultipleWriteLocations
+
+Enable multi-master support for this Cosmos DB account.
 
 _Required_: No
 
@@ -78,6 +82,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IpRangeFilter
 
+CosmosDB Firewall Support: This value specifies the set of IP addresses or IP address ranges in CIDR form to be included as the allowed list of client IP's for a given database account. IP addresses/ranges must be comma separated and must not contain any spaces.
+
 _Required_: No
 
 _Type_: String
@@ -85,6 +91,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IsVirtualNetworkFilterEnabled
+
+Enables virtual network filtering for this Cosmos DB account.
 
 _Required_: No
 
@@ -94,6 +102,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Kind
 
+Specifies the Kind of CosmosDB to create - possible values are `GlobalDocumentDB` and `MongoDB`. Defaults to `GlobalDocumentDB`. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -101,6 +111,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Location
+
+Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -110,6 +122,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the CosmosDB Account. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -117,6 +131,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OfferType
+
+Specifies the Offer Type to use for this CosmosDB Account - currently this can only be set to `Standard`.
 
 _Required_: Yes
 
@@ -126,6 +142,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which the CosmosDB Account is created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -133,6 +151,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

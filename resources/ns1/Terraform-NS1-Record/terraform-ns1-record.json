@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::NS1::Record",
-    "description": "CloudFormation equivalent of ns1_record",
+    "description": "Provides a NS1 Record resource. This can be used to create, modify, and delete records.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Answers": {
@@ -110,10 +110,12 @@
             "type": "string"
         },
         "Domain": {
-            "type": "string"
+            "type": "string",
+            "description": "The records' domain.\nCannot have leading or trailing dots - see the example above."
         },
         "Link": {
-            "type": "string"
+            "type": "string",
+            "description": "The target record to link to. This means this record is a\n'linked' record, and it inherits all properties from its target."
         },
         "Meta": {
             "type": "array",
@@ -143,16 +145,20 @@
             }
         },
         "Ttl": {
-            "type": "number"
+            "type": "number",
+            "description": "The records' time to live."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The records' RR type."
         },
         "UseClientSubnet": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to use EDNS client subnet data when\navailable(in filter chain)."
         },
         "Zone": {
-            "type": "string"
+            "type": "string",
+            "description": "The zone the record belongs to.\nCannot have leading or trailing dots (\".\") - see the example above."
         },
         "Answers": {
             "type": "array",

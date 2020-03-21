@@ -1,6 +1,6 @@
 # Terraform::Alicloud::KeyPair
 
-CloudFormation equivalent of alicloud_key_pair
+Provides a key pair resource.
 
 ## Syntax
 
@@ -40,6 +40,8 @@ Properties:
 
 #### KeyFile
 
+The name of file to save your new key pair's private key. Strongly suggest you to specified it when you creating key pair, otherwise, you wouldn't get its private key ever.
+
 _Required_: No
 
 _Type_: String
@@ -47,6 +49,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeyName
+
+The key pair's name. It is the only in one Alicloud account.
 
 _Required_: No
 
@@ -56,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KeyNamePrefix
 
+The key pair name's prefix. It is conflict with `key_name`. If it is specified, terraform will using it to build the only key name.
+
 _Required_: No
 
 _Type_: String
@@ -63,6 +69,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PublicKey
+
+You can import an existing public key and using Alicloud key pair to manage it.
 
 _Required_: No
 
@@ -72,6 +80,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupId
 
+The Id of resource group which the key pair belongs.
+
 _Required_: No
 
 _Type_: String
@@ -79,6 +89,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
+-> **NOTE:** If `key_name` and `key_name_prefix` are not set, terraform will produce a specified ID to replace.
 
 _Required_: No
 

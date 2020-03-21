@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::NSXT::DhcpServerProfile",
-    "description": "CloudFormation equivalent of nsxt_dhcp_server_profile",
+    "description": "Provides a resource to configure DHCP server profile on NSX-T manager",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Tag": {
@@ -26,20 +26,24 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of this resource."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The display name of this resource. Defaults to ID if not set."
         },
         "EdgeClusterId": {
-            "type": "string"
+            "type": "string",
+            "description": "Edge cluster uuid."
         },
         "EdgeClusterMemberIndexes": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "number"
-            }
+            },
+            "description": "Up to 2 edge nodes from the given cluster. If none is provided, the NSX will auto-select two edge-nodes from the given edge cluster. If user provides only one edge node, there will be no HA support."
         },
         "Revision": {
             "type": "number"

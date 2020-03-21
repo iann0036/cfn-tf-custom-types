@@ -1,6 +1,10 @@
 # Terraform::AzureRM::Route
 
-CloudFormation equivalent of azurerm_route
+Manages a Route within a Route Table.
+
+~> **NOTE on Route Tables and Routes:** Terraform currently
+provides both a standalone [Route resource](route.html), and allows for Routes to be defined in-line within the [Route Table resource](route_table.html).
+At this time you cannot use a Route Table with in-line Routes in conjunction with any Route resources. Doing so will cause a conflict of Route configurations and will overwrite Routes.
 
 ## Syntax
 
@@ -41,6 +45,8 @@ Properties:
 
 #### AddressPrefix
 
+The destination CIDR to which the route applies, such as `10.1.0.0/16`.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the route. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -57,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NextHopInIpAddress
 
+Contains the IP address packets should be forwarded to. Next hop values are only allowed in routes where the next hop type is `VirtualAppliance`.
+
 _Required_: No
 
 _Type_: String
@@ -64,6 +74,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NextHopType
+
+The type of Azure hop the packet should be sent to. Possible values are `VirtualNetworkGateway`, `VnetLocal`, `Internet`, `VirtualAppliance` and `None`.
 
 _Required_: Yes
 
@@ -73,6 +85,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to create the route. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -80,6 +94,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RouteTableName
+
+The name of the route table within which create the route. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

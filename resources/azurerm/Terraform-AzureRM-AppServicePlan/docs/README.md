@@ -1,6 +1,6 @@
 # Terraform::AzureRM::AppServicePlan
 
-CloudFormation equivalent of azurerm_app_service_plan
+Manages an App Service Plan component.
 
 ## Syntax
 
@@ -53,6 +53,8 @@ Properties:
 
 #### AppServiceEnvironmentId
 
+The ID of the App Service Environment where the App Service Plan should be located. Changing forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -69,6 +71,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Kind
 
+The kind of the App Service Plan to create. Possible values are `Windows` (also available as `App`), `Linux`, `elastic` (for Premium Consumption) and `FunctionApp` (for a Consumption Plan). Defaults to `Windows`. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -76,6 +80,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Location
+
+Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -85,6 +91,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaximumElasticWorkerCount
 
+The maximum number of total workers allowed for this ElasticScaleEnabled App Service Plan.
+
 _Required_: No
 
 _Type_: Double
@@ -92,6 +100,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the App Service Plan component. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -101,6 +111,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PerSiteScaling
 
+Can Apps assigned to this App Service Plan be scaled independently? If set to `false` apps assigned to this plan will scale to all instances of the plan.  Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -108,6 +120,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Reserved
+
+Is this App Service Plan `Reserved`. Defaults to `false`.
 
 _Required_: No
 
@@ -117,6 +131,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to create the App Service Plan component.
+
 _Required_: Yes
 
 _Type_: String
@@ -124,6 +140,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

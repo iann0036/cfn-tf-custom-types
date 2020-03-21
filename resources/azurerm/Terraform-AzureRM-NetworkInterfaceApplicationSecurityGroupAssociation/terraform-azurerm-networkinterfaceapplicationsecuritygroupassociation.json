@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::NetworkInterfaceApplicationSecurityGroupAssociation",
-    "description": "CloudFormation equivalent of azurerm_network_interface_application_security_group_association",
+    "description": "Manages the association between a Network Interface and a Application Security Group.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,10 +29,12 @@
             "type": "string"
         },
         "ApplicationSecurityGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Application Security Group which this Network Interface which should be connected to. Changing this forces a new resource to be created."
         },
         "NetworkInterfaceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Network Interface. Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

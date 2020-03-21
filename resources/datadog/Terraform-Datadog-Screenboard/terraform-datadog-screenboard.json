@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Datadog::Screenboard",
-    "description": "CloudFormation equivalent of datadog_screenboard",
+    "description": "Provides a Datadog screenboard resource. This can be used to create and manage Datadog screenboards.\n\n~> **Note:** This resource is outdated. Use the new [`datadog_dashboard`](dashboard.html) resource instead.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "TemplateVariable": {
@@ -727,19 +727,24 @@
             "type": "string"
         },
         "Height": {
-            "type": "string"
+            "type": "string",
+            "description": "The screenboard's height.\n- `width` - (Optional) The screenboard's width.\n- `read_only` - (Optional) The read-only status of the screenboard. Default is false.\n- `shared` - (Optional) Whether the screenboard is shared or not. Default is false.\n- `widget` - (Required) Nested block describing a widget. The structure of this block is described below. Multiple widget blocks are allowed within a datadog_screenboard resource.\n- `template_variable` - (Optional) Nested block describing a template variable. The structure of this block is described below. Multiple template_variable blocks are allowed within a datadog_screenboard resource."
         },
         "ReadOnly": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "The read-only status of the screenboard. Default is false.\n- `shared` - (Optional) Whether the screenboard is shared or not. Default is false.\n- `widget` - (Required) Nested block describing a widget. The structure of this block is described below. Multiple widget blocks are allowed within a datadog_screenboard resource.\n- `template_variable` - (Optional) Nested block describing a template variable. The structure of this block is described below. Multiple template_variable blocks are allowed within a datadog_screenboard resource."
         },
         "Shared": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the screenboard is shared or not. Default is false.\n- `widget` - (Required) Nested block describing a widget. The structure of this block is described below. Multiple widget blocks are allowed within a datadog_screenboard resource.\n- `template_variable` - (Optional) Nested block describing a template variable. The structure of this block is described below. Multiple template_variable blocks are allowed within a datadog_screenboard resource."
         },
         "Title": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the screenboard.\n- `height` - (Optional) The screenboard's height.\n- `width` - (Optional) The screenboard's width.\n- `read_only` - (Optional) The read-only status of the screenboard. Default is false.\n- `shared` - (Optional) Whether the screenboard is shared or not. Default is false.\n- `widget` - (Required) Nested block describing a widget. The structure of this block is described below. Multiple widget blocks are allowed within a datadog_screenboard resource.\n- `template_variable` - (Optional) Nested block describing a template variable. The structure of this block is described below. Multiple template_variable blocks are allowed within a datadog_screenboard resource."
         },
         "Width": {
-            "type": "string"
+            "type": "string",
+            "description": "The screenboard's width.\n- `read_only` - (Optional) The read-only status of the screenboard. Default is false.\n- `shared` - (Optional) Whether the screenboard is shared or not. Default is false.\n- `widget` - (Required) Nested block describing a widget. The structure of this block is described below. Multiple widget blocks are allowed within a datadog_screenboard resource.\n- `template_variable` - (Optional) Nested block describing a template variable. The structure of this block is described below. Multiple template_variable blocks are allowed within a datadog_screenboard resource."
         },
         "TemplateVariable": {
             "type": "array",

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::AlikafkaSaslAcl",
-    "description": "CloudFormation equivalent of alicloud_alikafka_sasl_acl",
+    "description": "Provides an ALIKAFKA sasl acl resource.\n\n-> **NOTE:** Available in 1.66.0+\n\n-> **NOTE:**  Only the following regions support create alikafka sasl user.\n[`cn-hangzhou`,`cn-beijing`,`cn-shenzhen`,`cn-shanghai`,`cn-qingdao`,`cn-hongkong`,`cn-huhehaote`,`cn-zhangjiakou`,`ap-southeast-1`,`ap-south-1`,`ap-southeast-5`]",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,25 +9,31 @@
             "type": "string"
         },
         "AclOperationType": {
-            "type": "string"
+            "type": "string",
+            "description": "Operation type for this acl. The operation type can only be \"Write\" and \"Read\"."
         },
         "AclResourceName": {
-            "type": "string"
+            "type": "string",
+            "description": "Resource name for this acl. The resource name should be a topic or consumer group name."
         },
         "AclResourcePatternType": {
-            "type": "string"
+            "type": "string",
+            "description": "Resource pattern type for this acl. The resource pattern support two types \"LITERAL\" and \"PREFIXED\". \"LITERAL\": A literal name defines the full name of a resource. The special wildcard character \"*\" can be used to represent a resource with any name. \"PREFIXED\": A prefixed name defines a prefix for a resource."
         },
         "AclResourceType": {
-            "type": "string"
+            "type": "string",
+            "description": "Resource type for this acl. The resource type can only be \"Topic\" and \"Group\"."
         },
         "Host": {
             "type": "string"
         },
         "InstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the ALIKAFKA Instance that owns the groups."
         },
         "Username": {
-            "type": "string"
+            "type": "string",
+            "description": "Username for the sasl user. The length should between 1 to 64 characters. The user should be an existed sasl user."
         }
     },
     "additionalProperties": false,

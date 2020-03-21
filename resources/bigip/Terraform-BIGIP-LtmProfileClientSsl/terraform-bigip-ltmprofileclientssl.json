@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::BIGIP::LtmProfileClientSsl",
-    "description": "CloudFormation equivalent of bigip_ltm_profile_client_ssl",
+    "description": "`bigip_ltm_profile_client_ssl` Manages client SSL profiles on a BIG-IP",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "CertKeyChain": {
@@ -35,13 +35,16 @@
             "type": "string"
         },
         "AllowNonSsl": {
-            "type": "string"
+            "type": "string",
+            "description": "Enables or disables acceptance of non-SSL connections, When creating a new profile, the setting is provided by the parent profile."
         },
         "Authenticate": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the frequency of client authentication for an SSL session.When `once`,specifies that the system authenticates the client once for an SSL session.\nWhen `always`, specifies that the system authenticates the client once for an SSL session and also upon reuse of that session."
         },
         "AuthenticateDepth": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the maximum number of certificates to be traversed in a client certificate chain."
         },
         "CaFile": {
             "type": "string"
@@ -53,7 +56,8 @@
             "type": "number"
         },
         "Cert": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies a cert name for use."
         },
         "CertExtensionIncludes": {
             "type": "array",
@@ -69,10 +73,12 @@
             "type": "string"
         },
         "Chain": {
-            "type": "string"
+            "type": "string",
+            "description": "Contains a certificate chain that is relevant to the certificate and key mentioned earlier.This key is optional."
         },
         "Ciphers": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the list of ciphers that the system supports. When creating a new profile, the default cipher list is provided by the parent profile."
         },
         "ClientCertCa": {
             "type": "string"
@@ -81,7 +87,8 @@
             "type": "string"
         },
         "DefaultsFrom": {
-            "type": "string"
+            "type": "string",
+            "description": "The parent template of this monitor template. Once this value has been set, it cannot be changed. By default, this value is the `clientssl` parent on the `Common` partition."
         },
         "ForwardProxyBypassDefaultAction": {
             "type": "string"
@@ -102,7 +109,8 @@
             "type": "string"
         },
         "Key": {
-            "type": "string"
+            "type": "string",
+            "description": "Contains a key name."
         },
         "ModSslMethods": {
             "type": "string"
@@ -114,13 +122,15 @@
             "type": "string"
         },
         "Partition": {
-            "type": "string"
+            "type": "string",
+            "description": "Device partition to manage resources on."
         },
         "Passphrase": {
             "type": "string"
         },
         "PeerCertMode": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the way the system handles client certificates.When ignore, specifies that the system ignores certificates from client systems.When require, specifies that the system requires a client to present a valid certificate.When request, specifies that the system requests a valid certificate from a client but always authenticate the client."
         },
         "ProxyCaCert": {
             "type": "string"
@@ -144,16 +154,20 @@
             "type": "string"
         },
         "Renegotiation": {
-            "type": "string"
+            "type": "string",
+            "description": "Enables or disables SSL renegotiation.When creating a new profile, the setting is provided by the parent profile."
         },
         "RetainCertificate": {
-            "type": "string"
+            "type": "string",
+            "description": "When `true`, client certificate is retained in SSL session."
         },
         "SecureRenegotiation": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the method of secure renegotiations for SSL connections. When creating a new profile, the setting is provided by the parent profile.\nWhen `request` is set the system request secure renegotation of SSL connections.\n`require` is a default setting and when set the system permits initial SSL handshakes from clients but terminates renegotiations from unpatched clients.\nThe `require-strict` setting the system requires strict renegotiation of SSL connections. In this mode the system refuses connections to insecure servers, and terminates existing SSL connections to insecure servers."
         },
         "ServerName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the fully qualified DNS hostname of the server used in Server Name Indication communications. When creating a new profile, the setting is provided by the parent profile.The server name can also be a wildcard string containing the asterisk `*` character."
         },
         "SessionMirroring": {
             "type": "string"
@@ -162,10 +176,12 @@
             "type": "string"
         },
         "SniDefault": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates that the system uses this profile as the default SSL profile when there is no match to the server name, or when the client provides no SNI extension support.When creating a new profile, the setting is provided by the parent profile.\nThere can be only one SSL profile with this setting enabled."
         },
         "SniRequire": {
-            "type": "string"
+            "type": "string",
+            "description": "Requires that the network peers also provide SNI support, this setting only takes effect when `sni_default` is set to `true`.When creating a new profile, the setting is provided by the parent profile."
         },
         "SslForwardProxy": {
             "type": "string"
@@ -177,7 +193,8 @@
             "type": "string"
         },
         "StrictResume": {
-            "type": "string"
+            "type": "string",
+            "description": "Enables or disables the resumption of SSL sessions after an unclean shutdown.When creating a new profile, the setting is provided by the parent profile."
         },
         "TmOptions": {
             "type": "array",

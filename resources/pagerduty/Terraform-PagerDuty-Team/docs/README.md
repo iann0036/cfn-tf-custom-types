@@ -1,6 +1,8 @@
 # Terraform::PagerDuty::Team
 
-CloudFormation equivalent of pagerduty_team
+A [team](https://v2.developer.pagerduty.com/v2/page/api-reference#!/Teams/get_teams) is a collection of users and escalation policies that represent a group of people within an organization.
+
+The account must have the `teams` ability to use the following resource.
 
 ## Syntax
 
@@ -31,6 +33,9 @@ Properties:
 
 #### Description
 
+A human-friendly description of the team.
+If not set, a placeholder of "Managed by Terraform" will be set.
+
 _Required_: No
 
 _Type_: String
@@ -38,6 +43,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the group.
+* `description` - (Optional) A human-friendly description of the team.
+If not set, a placeholder of "Managed by Terraform" will be set.
 
 _Required_: Yes
 

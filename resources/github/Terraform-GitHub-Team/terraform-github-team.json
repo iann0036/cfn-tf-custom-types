@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::GitHub::Team",
-    "description": "CloudFormation equivalent of github_team",
+    "description": "Provides a GitHub team resource.\n\nThis resource allows you to add/remove teams from your organization. When applied,\na new team will be created. When destroyed, that team will be removed.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,22 +9,27 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description of the team."
         },
         "Etag": {
             "type": "string"
         },
         "LdapDn": {
-            "type": "string"
+            "type": "string",
+            "description": "The LDAP Distinguished Name of the group where membership will be synchronized. Only available in GitHub Enterprise."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the team."
         },
         "ParentTeamId": {
-            "type": "number"
+            "type": "number",
+            "description": "The ID of the parent team, if this is a nested team."
         },
         "Privacy": {
-            "type": "string"
+            "type": "string",
+            "description": "The level of privacy for the team. Must be one of `secret` or `closed`.\nDefaults to `secret`."
         },
         "Slug": {
             "type": "string"

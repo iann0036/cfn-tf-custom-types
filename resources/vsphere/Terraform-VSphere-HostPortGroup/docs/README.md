@@ -1,6 +1,14 @@
 # Terraform::VSphere::HostPortGroup
 
-CloudFormation equivalent of vsphere_host_port_group
+The `vsphere_host_port_group` resource can be used to manage vSphere standard
+port groups on an ESXi host. These port groups are connected to standard
+virtual switches, which can be managed by the
+[`vsphere_host_virtual_switch`][host-virtual-switch] resource.
+
+For an overview on vSphere networking concepts, see [this page][ref-vsphere-net-concepts].
+
+[host-virtual-switch]: /docs/providers/vsphere/r/host_virtual_switch.html
+[ref-vsphere-net-concepts]: https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.networking.doc/GUID-2B11DBB8-CB3C-4AFF-8885-EFEA0FC562F4.html
 
 ## Syntax
 
@@ -111,6 +119,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HostSystemId
 
+The [managed object ID][docs-about-morefs] of
+the host to set the port group up on. Forces a new resource if changed.
+
 _Required_: Yes
 
 _Type_: String
@@ -118,6 +129,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the port group.  Forces a new resource if
+changed.
 
 _Required_: Yes
 
@@ -183,6 +197,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VirtualSwitchName
 
+The name of the virtual switch to bind
+this port group to. Forces a new resource if changed.
+
 _Required_: Yes
 
 _Type_: String
@@ -190,6 +207,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VlanId
+
+The VLAN ID/trunk mode for this port group.  An ID of
+`0` denotes no tagging, an ID of `1`-`4094` tags with the specific ID, and an
+ID of `4095` enables trunk mode, allowing the guest to manage its own
+tagging. Default: `0`.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::VpnaasServiceV2
 
-CloudFormation equivalent of huaweicloud_vpnaas_service_v2
+Manages a V2 VPN service resource within HuaweiCloud.
 
 ## Syntax
 
@@ -46,6 +46,9 @@ Properties:
 
 #### AdminStateUp
 
+The administrative state of the resource. Can either be up(true) or down(false).
+Changing this updates the administrative state of the existing service.
+
 _Required_: No
 
 _Type_: Boolean
@@ -53,6 +56,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+The human-readable description for the service.
+Changing this updates the description of the existing service.
 
 _Required_: No
 
@@ -62,6 +68,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the service. Changing this updates the name of
+the existing service.
+
 _Required_: No
 
 _Type_: String
@@ -69,6 +78,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region in which to obtain the V2 Networking client.
+A Networking client is needed to create a VPN service. If omitted, the
+`region` argument of the provider is used. Changing this creates a new
+service.
 
 _Required_: No
 
@@ -78,6 +92,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RouterId
 
+The ID of the router. Changing this creates a new service.
+
 _Required_: Yes
 
 _Type_: String
@@ -85,6 +101,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubnetId
+
+SubnetID is the ID of the subnet. Default is null.
 
 _Required_: No
 
@@ -94,6 +112,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TenantId
 
+The owner of the service. Required if admin wants to
+create a service for another project. Changing this creates a new service.
+
 _Required_: No
 
 _Type_: String
@@ -101,6 +122,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ValueSpecs
+
+Map of additional options.
 
 _Required_: No
 

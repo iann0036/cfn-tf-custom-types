@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::EipAssociation",
-    "description": "CloudFormation equivalent of tencentcloud_eip_association",
+    "description": "Provides an eip resource associated with other resource like CVM, ENI and CLB.\n\n~> **NOTE:** Please DO NOT define `allocate_public_ip` in `tencentcloud_instance` resource when using `tencentcloud_eip_association`.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,20 @@
             "type": "string"
         },
         "EipId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of eip."
         },
         "InstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The CVM or CLB instance id going to bind with the eip. This field is conflict with `network_interface_id` and `private_ip fields`."
         },
         "NetworkInterfaceId": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates the network interface id like `eni-xxxxxx`. This field is conflict with `instance_id`."
         },
         "PrivateIp": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates an IP belongs to the `network_interface_id`. This field is conflict with `instance_id`."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Docker::Config",
-    "description": "CloudFormation equivalent of docker_config",
+    "description": "Manages the configuration of a Docker service in a swarm.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "Data": {
-            "type": "string"
+            "type": "string",
+            "description": "The base64 encoded data of the config."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Docker config."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,10 @@
 # Terraform::OCI::StreamingStreamArchiver
 
-CloudFormation equivalent of oci_streaming_stream_archiver
+This resource provides the Stream Archiver resource in Oracle Cloud Infrastructure Streaming service.
+
+Starts the provisioning of a new stream archiver.
+To track the progress of the provisioning, you can periodically call [GetArchiver](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/Stream/GetArchiver).
+In the response, the `lifecycleState` parameter of the [Stream](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/Archiver) object tells you its current state.
 
 ## Syntax
 
@@ -43,6 +47,8 @@ Properties:
 
 #### BatchRolloverSizeInMbs
 
+(Updatable) The batch rollover size in megabytes.
+
 _Required_: Yes
 
 _Type_: Double
@@ -50,6 +56,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BatchRolloverTimeInSeconds
+
+(Updatable) The rollover time in seconds.
 
 _Required_: Yes
 
@@ -59,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Bucket
 
+(Updatable) The name of the bucket.
+
 _Required_: Yes
 
 _Type_: String
@@ -66,6 +76,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StartPosition
+
+(Updatable) The start message.
 
 _Required_: Yes
 
@@ -75,6 +87,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### State
 
+(Updatable) The target state for the instance pool. Could be set to RUNNING or STOPPED.
+
 _Required_: No
 
 _Type_: String
@@ -83,6 +97,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StreamId
 
+The OCID of the stream.
+
 _Required_: Yes
 
 _Type_: String
@@ -90,6 +106,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UseExistingBucket
+
+(Updatable) The flag to create a new bucket or use existing one.
 
 _Required_: Yes
 

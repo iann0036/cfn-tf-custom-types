@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OPC::StorageObject",
-    "description": "CloudFormation equivalent of opc_storage_object",
+    "description": "Creates and manages a Object in an Oracle Cloud Infrastructure Storage Classic container. `storage_endpoint` must be set in the provider or environment to manage these resources.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,34 +12,43 @@
             "type": "string"
         },
         "Container": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of Storage Container the store the object in."
         },
         "Content": {
-            "type": "string"
+            "type": "string",
+            "description": "Raw content in string-form of the data."
         },
         "ContentDisposition": {
-            "type": "string"
+            "type": "string",
+            "description": "Set the HTTP `Content-Disposition` header to specify the override behaviour for the browser, e.g. `inline` or `attachment`."
         },
         "ContentEncoding": {
-            "type": "string"
+            "type": "string",
+            "description": "set the HTTP `Content-Encoding` for the object."
         },
         "ContentLength": {
             "type": "number"
         },
         "ContentType": {
-            "type": "string"
+            "type": "string",
+            "description": "set the MIME type for the object."
         },
         "CopyFrom": {
-            "type": "string"
+            "type": "string",
+            "description": "name of an existing object used to create the new object as a copy. The value is in form `container/object`. You must UTF-8-encode and then URL-encode the names of the container and object."
         },
         "DeleteAt": {
-            "type": "number"
+            "type": "number",
+            "description": "The date and time in UNIX Epoch time stamp format when the system removes the object."
         },
         "Etag": {
-            "type": "string"
+            "type": "string",
+            "description": "MD5 checksum value of the request body. Strongly Recommended."
         },
         "File": {
-            "type": "string"
+            "type": "string",
+            "description": "File path for the content to use for data."
         },
         "LastModified": {
             "type": "string"
@@ -62,10 +71,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Additional object metadata headers. See [Object Metadata ](#object-metadata) below for more information."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Storage Object."
         },
         "ObjectManifest": {
             "type": "string"
@@ -77,7 +88,8 @@
             "type": "string"
         },
         "TransferEncoding": {
-            "type": "string"
+            "type": "string",
+            "description": "Set to `chunked` to enable chunked transfer encoding."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 # Terraform::AzureRM::ExpressRouteCircuit
 
-CloudFormation equivalent of azurerm_express_route_circuit
+Manages an ExpressRoute circuit.
 
 ## Syntax
 
@@ -49,6 +49,8 @@ Properties:
 
 #### AllowClassicOperations
 
+Allow the circuit to interact with classic (RDFE) resources. The default value is `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -56,6 +58,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BandwidthInMbps
+
+The bandwidth in Mbps of the circuit being created.
 
 _Required_: Yes
 
@@ -65,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Location
 
+Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -72,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the ExpressRoute circuit. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -81,6 +89,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PeeringLocation
 
+The name of the peering location and **not** the Azure resource location.
+
 _Required_: Yes
 
 _Type_: String
@@ -88,6 +98,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which to create the ExpressRoute circuit. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -97,6 +109,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServiceProviderName
 
+The name of the ExpressRoute Service Provider.
+
 _Required_: Yes
 
 _Type_: String
@@ -104,6 +118,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::MysqlConfiguration",
-    "description": "CloudFormation equivalent of azurerm_mysql_configuration",
+    "description": "Sets a MySQL Configuration value on a MySQL Server.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,16 +29,20 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the MySQL Configuration, which needs [to be a valid MySQL configuration name](https://dev.mysql.com/doc/refman/5.7/en/server-configuration.html). Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which the MySQL Server exists. Changing this forces a new resource to be created."
         },
         "ServerName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the MySQL Server. Changing this forces a new resource to be created."
         },
         "Value": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the value of the MySQL Configuration. See the MySQL documentation for valid values."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

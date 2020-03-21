@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::ApiManagementLogger",
-    "description": "CloudFormation equivalent of azurerm_api_management_logger",
+    "description": "Manages a Logger within an API Management Service.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ApplicationInsights": {
@@ -8,7 +8,8 @@
             "additionalProperties": false,
             "properties": {
                 "InstrumentationKey": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The instrumentation key used to push data to Application Insights."
                 }
             },
             "required": [
@@ -20,10 +21,12 @@
             "additionalProperties": false,
             "properties": {
                 "ConnectionString": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The connection string of an EventHub Namespace."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of an EventHub."
                 }
             },
             "required": [
@@ -57,19 +60,24 @@
             "type": "string"
         },
         "ApiManagementName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the API Management Service. Changing this forces a new resource to be created."
         },
         "Buffered": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether records should be buffered in the Logger prior to publishing. Defaults to `true`."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description of this Logger."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of this Logger, which must be unique within the API Management Service. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Resource Group in which the API Management Service exists. Changing this forces a new resource to be created."
         },
         "ApplicationInsights": {
             "type": "array",

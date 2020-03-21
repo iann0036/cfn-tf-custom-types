@@ -1,6 +1,8 @@
 # Terraform::OCI::NosqlIndex
 
-CloudFormation equivalent of oci_nosql_index
+This resource provides the Index resource in Oracle Cloud Infrastructure Nosql service.
+
+Create a new index on the table identified by tableNameOrId.
 
 ## Syntax
 
@@ -40,6 +42,8 @@ Properties:
 
 #### CompartmentId
 
+The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
+
 _Required_: No
 
 _Type_: String
@@ -47,6 +51,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IsIfNotExists
+
+If true, the operation completes successfully even when the index exists.  Otherwise, an attempt to create an index that already exists will return an error.
 
 _Required_: No
 
@@ -56,6 +62,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Index name.
+
 _Required_: Yes
 
 _Type_: String
@@ -63,6 +71,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TableNameOrId
+
+A table name within the compartment, or a table OCID.
 
 _Required_: Yes
 

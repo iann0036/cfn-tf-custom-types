@@ -1,6 +1,13 @@
 # Terraform::OpenStack::NetworkingPortSecgroupAssociateV2
 
-CloudFormation equivalent of openstack_networking_port_secgroup_associate_v2
+Manages a V2 port's security groups within OpenStack. Useful, when the port was
+created not by Terraform (e.g. Manila or LBaaS). It should not be used, when the
+port was created directly within Terraform.
+
+When the resource is deleted, Terraform doesn't delete the port, but unsets the
+list of user defined security group IDs.  However, if `enforce` is set to `true`
+and the resource is deleted, Terraform will remove all assigned security group
+IDs.
 
 ## Syntax
 
@@ -36,6 +43,9 @@ Properties:
 
 #### Enforce
 
+Whether to replace or append the list of security
+groups, specified in the `security_group_ids`. Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -43,6 +53,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PortId
+
+An UUID of the port to apply security groups to.
 
 _Required_: Yes
 
@@ -52,6 +64,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region in which to obtain the V2 networking client.
+A networking client is needed to manage a port. If omitted, the
+`region` argument of the provider is used. Changing this creates a new
+resource.
+
 _Required_: No
 
 _Type_: String
@@ -59,6 +76,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecurityGroupIds
+
+A list of security group IDs to apply to
+the port. The security groups must be specified by ID and not name (as
+opposed to how they are configured with the Compute Instance).
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::DatabaseMaintenanceRun",
-    "description": "CloudFormation equivalent of oci_database_maintenance_run",
+    "description": "This resource provides the Maintenance Run resource in Oracle Cloud Infrastructure Database service.\n\nUpdates the properties of a Maintenance Run, such as the state of a Maintenance Run.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -35,13 +35,15 @@
             "type": "string"
         },
         "IsEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "(Updatable) If set to false, skips the Maintenance Run."
         },
         "LifecycleDetails": {
             "type": "string"
         },
         "MaintenanceRunId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Maintenance Run OCID."
         },
         "MaintenanceSubtype": {
             "type": "string"

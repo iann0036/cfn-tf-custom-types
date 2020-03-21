@@ -1,6 +1,10 @@
 # Terraform::Alicloud::NetworkInterface
 
-CloudFormation equivalent of alicloud_network_interface
+Provides an ECS Elastic Network Interface resource.
+
+For information about Elastic Network Interface and how to use it, see [Elastic Network Interface](https://www.alibabacloud.com/help/doc-detail/58496.html).
+
+-> **NOTE** Only one of private_ips or private_ips_count can be specified when assign private IPs.
 
 ## Syntax
 
@@ -48,6 +52,8 @@ Properties:
 
 #### Description
 
+Description of the ENI. This description can have a string of 2 to 256 characters, It cannot begin with http:// or https://. Default value is null.
+
 _Required_: No
 
 _Type_: String
@@ -55,6 +61,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of the ENI. This name can have a string of 2 to 128 characters, must contain only alphanumeric characters or hyphens, such as "-", ".", "_", and must not begin or end with a hyphen, and must not begin with http:// or https://. Default value is null.
 
 _Required_: No
 
@@ -64,6 +72,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PrivateIp
 
+The primary private IP of the ENI.
+
 _Required_: No
 
 _Type_: String
@@ -71,6 +81,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PrivateIps
+
+List of secondary private IPs to assign to the ENI. Don't use both private_ips and private_ips_count in the same ENI resource block.
 
 _Required_: No
 
@@ -80,6 +92,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PrivateIpsCount
 
+Number of secondary private IPs to assign to the ENI. Don't use both private_ips and private_ips_count in the same ENI resource block.
+
 _Required_: No
 
 _Type_: Double
@@ -87,6 +101,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupId
+
+The Id of resource group which the network interface belongs.
 
 _Required_: No
 
@@ -96,6 +112,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecurityGroups
 
+A list of security group ids to associate with.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -104,6 +122,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -111,6 +131,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VswitchId
+
+The VSwitch to create the ENI in.
 
 _Required_: Yes
 

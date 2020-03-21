@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::WafDomainV1
 
-CloudFormation equivalent of opentelekomcloud_waf_domain_v1
+Manages a WAF domain resource within OpenTelekomCloud.
 
 ## Syntax
 
@@ -45,6 +45,8 @@ Properties:
 
 #### CertificateId
 
+The certificate ID. This parameter is mandatory when front_protocol is set to HTTPS.
+
 _Required_: No
 
 _Type_: String
@@ -52,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Hostname
+
+The domain name. For example, www.example.com or *.example.com. Changing this creates a new domain.
 
 _Required_: Yes
 
@@ -61,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PolicyId
 
+The policy ID associate with the domain. Changing this create a new domain.
+
 _Required_: No
 
 _Type_: String
@@ -68,6 +74,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Proxy
+
+Specifies whether a proxy is configured.
 
 _Required_: Yes
 
@@ -77,6 +85,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SipHeaderList
 
+Array of HTTP request header for identifying the real source IP address. This parameter is required only when proxy is set to true.
+
 _Required_: No
 
 _Type_: List of String
@@ -84,6 +94,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SipHeaderName
+
+The type of the source IP header. This parameter is required only when proxy is set to true. The options are as follows: default, cloudflare, akamai, and custom.
 
 _Required_: No
 

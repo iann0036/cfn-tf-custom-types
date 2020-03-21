@@ -1,6 +1,8 @@
 # Terraform::OCI::DatabaseVmCluster
 
-CloudFormation equivalent of oci_database_vm_cluster
+This resource provides the Vm Cluster resource in Oracle Cloud Infrastructure Database service.
+
+Creates a VM cluster.
 
 ## Syntax
 
@@ -58,6 +60,8 @@ Properties:
 
 #### CompartmentId
 
+(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+
 _Required_: Yes
 
 _Type_: String
@@ -65,6 +69,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CpuCoreCount
+
+(Updatable) The number of CPU cores to enable for the VM cluster.
 
 _Required_: Yes
 
@@ -74,6 +80,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DefinedTags
 
+(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+
 _Required_: No
 
 _Type_: List of <a href="definedtags.md">DefinedTags</a>
@@ -81,6 +89,8 @@ _Type_: List of <a href="definedtags.md">DefinedTags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+The user-friendly name for the VM cluster. The name does not need to be unique.
 
 _Required_: Yes
 
@@ -90,6 +100,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ExadataInfrastructureId
 
+The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+
 _Required_: Yes
 
 _Type_: String
@@ -97,6 +109,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FreeformTags
+
+(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`.
 
 _Required_: No
 
@@ -106,6 +120,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GiVersion
 
+The Oracle Grid Infrastructure software version for the VM cluster.
+
 _Required_: Yes
 
 _Type_: String
@@ -113,6 +129,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IsLocalBackupEnabled
+
+If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
 
 _Required_: No
 
@@ -122,6 +140,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IsSparseDiskgroupEnabled
 
+If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created.
+
 _Required_: No
 
 _Type_: Boolean
@@ -129,6 +149,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LicenseModel
+
+(Updatable) The Oracle license model that applies to the VM cluster. The default is BRING_YOUR_OWN_LICENSE.
 
 _Required_: No
 
@@ -138,6 +160,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SshPublicKeys
 
+(Updatable) The public key portion of one or more key pairs used for SSH access to the VM cluster.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -146,6 +170,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TimeZone
 
+The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+
 _Required_: No
 
 _Type_: String
@@ -153,6 +179,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VmClusterNetworkId
+
+The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
 
 _Required_: Yes
 

@@ -1,6 +1,22 @@
 # Terraform::DigitalOcean::Project
 
-CloudFormation equivalent of digitalocean_project
+Provides a DigitalOcean Project resource.
+
+Projects allow you to organize your resources into groups that fit the way you work.
+You can group resources (like Droplets, Spaces, Load Balancers, domains, and Floating IPs)
+in ways that align with the applications you host on DigitalOcean.
+
+The following resource types can be associated with a project:
+
+* Database Clusters
+* Domains
+* Droplets
+* Floating IP
+* Load Balancers
+* Spaces Bucket
+* Volume
+
+**Note:** A Terraform managed project cannot be set as a default project.
 
 ## Syntax
 
@@ -38,6 +54,8 @@ Properties:
 
 #### Description
 
+the description of the project.
+
 _Required_: No
 
 _Type_: String
@@ -45,6 +63,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Environment
+
+the environment of the project's resources. The possible values are: `Development`, `Staging`, `Production`).
 
 _Required_: No
 
@@ -54,6 +74,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the Project.
+
 _Required_: Yes
 
 _Type_: String
@@ -62,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Purpose
 
+the purpose of the project, (Default: "Web Application").
+
 _Required_: No
 
 _Type_: String
@@ -69,6 +93,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Resources
+
+a list of uniform resource names (URNs) for the resources associated with the project.
 
 _Required_: No
 

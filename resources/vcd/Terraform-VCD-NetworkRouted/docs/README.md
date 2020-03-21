@@ -1,6 +1,9 @@
 # Terraform::VCD::NetworkRouted
 
-CloudFormation equivalent of vcd_network_routed
+Provides a vCloud Director Org VDC routed Network. This can be used to create,
+modify, and delete internal networks for vApps to connect.
+
+Supported in provider *v2.0+*
 
 ## Syntax
 
@@ -59,6 +62,8 @@ Properties:
 
 #### Description
 
+An optional description of the network.
+
 _Required_: No
 
 _Type_: String
@@ -66,6 +71,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Dns1
+
+First DNS server to use.
 
 _Required_: No
 
@@ -75,6 +82,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Dns2
 
+Second DNS server to use.
+
 _Required_: No
 
 _Type_: String
@@ -83,6 +92,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DnsSuffix
 
+A FQDN for the virtual machines on this network.
+
 _Required_: No
 
 _Type_: String
@@ -90,6 +101,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EdgeGateway
+
+The name of the edge gateway.
 
 _Required_: Yes
 
@@ -115,6 +128,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InterfaceType
 
+An interface for the network. One of `internal` (default), `subinterface`,
+`distributed` (requires the edge gateway to support distributed networks).
+
 _Required_: No
 
 _Type_: String
@@ -122,6 +138,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+A unique name for the network.
 
 _Required_: Yes
 
@@ -131,6 +149,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Netmask
 
+The netmask for the new network. Defaults to `255.255.255.0`.
+
 _Required_: No
 
 _Type_: String
@@ -138,6 +158,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Org
+
+The name of organization to use, optional if defined at provider level. Useful when
+connected as sysadmin working across different organisations.
 
 _Required_: No
 
@@ -147,6 +170,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Shared
 
+Defines if this network is shared between multiple VDCs
+in the Org.  Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -154,6 +180,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vdc
+
+The name of VDC to use, optional if defined at provider level.
 
 _Required_: No
 

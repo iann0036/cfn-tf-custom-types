@@ -1,6 +1,9 @@
 # Terraform::NSXT::DhcpRelayService
 
-CloudFormation equivalent of nsxt_dhcp_relay_service
+This resource provides a way to configure the DHCP relay service on the NSX manager.
+The DHCP relay service uses a DHCP relay profile and later consumed by a router
+downlink port to provide DHCP addresses to virtual machines connected to a logical switch.
+Currently the DHCP relay is not supported for logical routers link ports on Tier0 or Tier1.
 
 ## Syntax
 
@@ -36,6 +39,8 @@ Properties:
 
 #### Description
 
+Description of this resource.
+
 _Required_: No
 
 _Type_: String
@@ -44,6 +49,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DhcpRelayProfileId
 
+DHCP relay profile referenced by the DHCP relay service.
+
 _Required_: Yes
 
 _Type_: String
@@ -51,6 +58,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+The display name of this resource. Defaults to ID if not set.
 
 _Required_: No
 

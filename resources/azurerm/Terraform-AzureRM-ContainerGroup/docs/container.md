@@ -52,6 +52,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Commands
 
+A list of commands which should be run on the container. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: List of String
@@ -59,6 +61,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Cpu
+
+The required number of CPU cores of the containers. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -68,6 +72,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnvironmentVariables
 
+A list of environment variables to be set on the container. Specified as a map of name/value pairs. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: List of <a href="container-environmentvariables.md">EnvironmentVariables</a>
@@ -75,6 +81,8 @@ _Type_: List of <a href="container-environmentvariables.md">EnvironmentVariables
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Image
+
+The container image name. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -84,6 +92,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Memory
 
+The required memory of the containers in GB. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: Double
@@ -92,6 +102,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the Container. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -99,6 +111,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecureEnvironmentVariables
+
+A list of sensitive environment variables to be set on the container. Specified as a map of name/value pairs. Changing this forces a new resource to be created.
 
 _Required_: No
 

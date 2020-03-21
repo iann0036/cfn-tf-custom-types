@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::NSXT::LbHttpMonitor",
-    "description": "CloudFormation equivalent of nsxt_lb_http_monitor",
+    "description": "Provides a resource to configure lb http monitor on NSX-T manager\n\n~> **NOTE:** This resource requires NSX version 2.3 or higher.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "RequestHeader": {
@@ -42,50 +42,63 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of this resource."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The display name of this resource. Defaults to ID if not set."
         },
         "FallCount": {
-            "type": "number"
+            "type": "number",
+            "description": "Number of consecutive checks that must fail before marking it down."
         },
         "Interval": {
-            "type": "number"
+            "type": "number",
+            "description": "The frequency at which the system issues the monitor check (in seconds)."
         },
         "MonitorPort": {
-            "type": "string"
+            "type": "string",
+            "description": "If the monitor port is specified, it would override pool member port setting for healthcheck. A port range is not supported."
         },
         "RequestBody": {
-            "type": "string"
+            "type": "string",
+            "description": "String to send as HTTP health check request body. Valid only for certain HTTP methods like POST."
         },
         "RequestMethod": {
-            "type": "string"
+            "type": "string",
+            "description": "Health check method for HTTP monitor type. Valid values are GET, HEAD, PUT, POST and OPTIONS."
         },
         "RequestUrl": {
-            "type": "string"
+            "type": "string",
+            "description": "URL used for HTTP monitor."
         },
         "RequestVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "HTTP request version. Valid values are HTTP_VERSION_1_0 and HTTP_VERSION_1_1."
         },
         "ResponseBody": {
-            "type": "string"
+            "type": "string",
+            "description": "If response body is specified, healthcheck HTTP response body is matched against the specified string and server is considered healthy only if there is a match (regular expressions not supported). If response body string is not specified, HTTP healthcheck is considered successful if the HTTP response status code is among configured values."
         },
         "ResponseStatusCodes": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "number"
-            }
+            },
+            "description": "HTTP response status code should be a valid HTTP status code."
         },
         "Revision": {
             "type": "number"
         },
         "RiseCount": {
-            "type": "number"
+            "type": "number",
+            "description": "Number of consecutive checks that must pass before marking it up."
         },
         "Timeout": {
-            "type": "number"
+            "type": "number",
+            "description": "Number of seconds the target has to respond to the monitor request."
         },
         "RequestHeader": {
             "type": "array",

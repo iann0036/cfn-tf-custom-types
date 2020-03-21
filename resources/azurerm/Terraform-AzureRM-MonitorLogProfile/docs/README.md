@@ -1,6 +1,8 @@
 # Terraform::AzureRM::MonitorLogProfile
 
-CloudFormation equivalent of azurerm_monitor_log_profile
+Manages a [Log Profile](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs#export-the-activity-log-with-a-log-profile). A Log Profile configures how Activity Logs are exported.
+
+-> **NOTE:** It's only possible to configure one Log Profile per Subscription. If you are trying to create more than one Log Profile, an error with `StatusCode=409` will occur.
 
 ## Syntax
 
@@ -44,6 +46,8 @@ Properties:
 
 #### Categories
 
+List of categories of the logs.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -51,6 +55,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Locations
+
+List of regions for which Activity Log events are stored or streamed.
 
 _Required_: Yes
 
@@ -60,6 +66,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the Log Profile. Changing this forces a
+new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -68,6 +77,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServicebusRuleId
 
+The service bus (or event hub) rule ID of the service bus (or event hub) namespace in which the Activity Log is streamed to. At least one of `storage_account_id` or `servicebus_rule_id` must be set.
+
 _Required_: No
 
 _Type_: String
@@ -75,6 +86,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StorageAccountId
+
+The resource ID of the storage account in which the Activity Log is stored. At least one of `storage_account_id` or `servicebus_rule_id` must be set.
 
 _Required_: No
 

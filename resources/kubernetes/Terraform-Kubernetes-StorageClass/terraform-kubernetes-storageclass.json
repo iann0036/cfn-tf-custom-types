@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Kubernetes::StorageClass",
-    "description": "CloudFormation equivalent of kubernetes_storage_class",
+    "description": "Storage class is the foundation of dynamic provisioning, allowing cluster administrators to define abstractions for the underlying storage platform.\n\nRead more at https://kubernetes.io/blog/2017/03/dynamic-provisioning-and-storage-classes-kubernetes/",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Metadata": {
@@ -63,14 +63,16 @@
             "type": "string"
         },
         "AllowVolumeExpansion": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether the storage class allow volume expand, default true."
         },
         "MountOptions": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Persistent Volumes that are dynamically created by a storage class will have the mount options specified."
         },
         "Parameters": {
             "type": "array",
@@ -90,13 +92,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "The parameters for the provisioner that should create volumes of this storage class.\nRead more about [available parameters](https://kubernetes.io/docs/concepts/storage/storage-classes/#parameters)."
         },
         "ReclaimPolicy": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates the reclaim policy to use.  If no reclaimPolicy is specified when a StorageClass object is created, it will default to Delete."
         },
         "StorageProvisioner": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates the type of the provisioner."
         },
         "VolumeBindingMode": {
             "type": "string"

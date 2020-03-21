@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::SlbCaCertificate",
-    "description": "CloudFormation equivalent of alicloud_slb_ca_certificate",
+    "description": "A Load Balancer CA Certificate is used by the listener of the protocol https.\n\nFor information about slb and how to use it, see [What is Server Load Balancer](https://www.alibabacloud.com/help/doc-detail/27539.htm).\n\nFor information about CA Certificate and how to use it, see [Configure CA Certificate](https://www.alibabacloud.com/help/doc-detail/85968.htm).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "CaCertificate": {
-            "type": "string"
+            "type": "string",
+            "description": "the content of the CA certificate."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the CA Certificate."
         },
         "ResourceGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Id of resource group which the slb_ca certificate belongs."
         },
         "Tags": {
             "type": "array",
@@ -35,7 +38,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         }
     },
     "additionalProperties": false,

@@ -38,6 +38,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### DisabledAlerts
 
+Specifies a list of alerts which should be disabled. Possible values include `Access_Anomaly`, `Sql_Injection` and `Sql_Injection_Vulnerability`.
+
 _Required_: No
 
 _Type_: List of String
@@ -45,6 +47,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EmailAccountAdmins
+
+Should the account administrators be emailed when this alert is triggered?.
 
 _Required_: No
 
@@ -54,6 +58,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EmailAddresses
 
+A list of email addresses which alerts should be sent to.
+
 _Required_: No
 
 _Type_: List of String
@@ -61,6 +67,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RetentionDays
+
+Specifies the number of days to keep in the Threat Detection audit logs.
 
 _Required_: No
 
@@ -70,6 +78,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### State
 
+The State of the Policy. Possible values are `Enabled`, `Disabled` or `New`.
+
 _Required_: No
 
 _Type_: String
@@ -77,6 +87,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StorageAccountAccessKey
+
+Specifies the identifier key of the Threat Detection audit storage account. Required if `state` is `Enabled`.
 
 _Required_: No
 
@@ -86,6 +98,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StorageEndpoint
 
+Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit logs. Required if `state` is `Enabled`.
+
 _Required_: No
 
 _Type_: String
@@ -93,6 +107,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UseServerDefault
+
+Should the default server policy be used? Defaults to `Disabled`.
 
 _Required_: No
 

@@ -1,6 +1,8 @@
 # Terraform::NSXT::LbSourceIpPersistenceProfile
 
-CloudFormation equivalent of nsxt_lb_source_ip_persistence_profile
+Provides a resource to configure lb source ip persistence profile on NSX-T manager
+
+~> **NOTE:** This resource requires NSX version 2.3 or higher.
 
 ## Syntax
 
@@ -42,6 +44,8 @@ Properties:
 
 #### Description
 
+Description of this resource.
+
 _Required_: No
 
 _Type_: String
@@ -49,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+The display name of this resource. Defaults to ID if not set.
 
 _Required_: No
 
@@ -58,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HaPersistenceMirroring
 
+A boolean flag which reflects whether persistence entries will be synchronized to the HA peer.
+
 _Required_: No
 
 _Type_: Boolean
@@ -65,6 +73,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PersistenceShared
+
+A boolean flag which reflects whether the cookie persistence is private or shared.
 
 _Required_: No
 
@@ -74,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PurgeWhenFull
 
+A boolean flag which reflects whether entries will be purged when the persistence table is full. Defaults to true.
+
 _Required_: No
 
 _Type_: Boolean
@@ -81,6 +93,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Timeout
+
+Persistence expiration time in seconds, counted from the time all the connections are completed. Defaults to 300 seconds.
 
 _Required_: No
 

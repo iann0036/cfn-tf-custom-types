@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::PrivateDnsSrvRecord",
-    "description": "CloudFormation equivalent of azurerm_private_dns_srv_record",
+    "description": "Enables you to manage DNS SRV Records within Azure Private DNS.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Record": {
@@ -8,16 +8,20 @@
             "additionalProperties": false,
             "properties": {
                 "Port": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The Port the service is listening on."
                 },
                 "Priority": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The priority of the SRV record."
                 },
                 "Target": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The FQDN of the service."
                 },
                 "Weight": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The Weight of the SRV record."
                 }
             },
             "required": [
@@ -56,10 +60,12 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the DNS SRV Record. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the resource group where the resource exists. Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -79,13 +85,15 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Ttl": {
             "type": "number"
         },
         "ZoneName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the Private DNS Zone where the resource exists. Changing this forces a new resource to be created."
         },
         "Record": {
             "type": "array",

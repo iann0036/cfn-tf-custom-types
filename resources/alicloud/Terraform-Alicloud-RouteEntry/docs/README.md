@@ -1,6 +1,6 @@
 # Terraform::Alicloud::RouteEntry
 
-CloudFormation equivalent of alicloud_route_entry
+Provides a route entry resource. A route entry represents a route item of one VPC route table.
 
 ## Syntax
 
@@ -39,6 +39,8 @@ Properties:
 
 #### DestinationCidrblock
 
+The RouteEntry's target network segment.
+
 _Required_: No
 
 _Type_: String
@@ -46,6 +48,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the route entry. This name can have a string of 2 to 128 characters, must contain only alphanumeric characters or hyphens, such as "-",".","_", and must not begin or end with a hyphen, and must not begin with http:// or https://.
 
 _Required_: No
 
@@ -55,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NexthopId
 
+The route entry's next hop. ECS instance ID or VPC router interface ID.
+
 _Required_: No
 
 _Type_: String
@@ -62,6 +68,14 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NexthopType
+
+The next hop type. Available values:
+- `Instance` (Default): Route the traffic destined for the destination CIDR block to an ECS instance in the VPC.
+- `RouterInterface`: Route the traffic destined for the destination CIDR block to a router interface.
+- `VpnGateway`: Route the traffic destined for the destination CIDR block to a VPN Gateway.
+- `HaVip`: Route the traffic destined for the destination CIDR block to an HAVIP.
+- `NetworkInterface`: Route the traffic destined for the destination CIDR block to an NetworkInterface.
+- `NatGateway`: Route the traffic destined for the destination CIDR block to an Nat Gateway.
 
 _Required_: No
 
@@ -71,6 +85,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RouteTableId
 
+The ID of the route table.
+
 _Required_: Yes
 
 _Type_: String
@@ -78,6 +94,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RouterId
+
+This argument has beeb deprecated. Please use other arguments to launch a custom route entry.
 
 _Required_: No
 

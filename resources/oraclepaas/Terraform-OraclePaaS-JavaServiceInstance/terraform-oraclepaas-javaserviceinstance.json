@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OraclePaaS::JavaServiceInstance",
-    "description": "CloudFormation equivalent of oraclepaas_java_service_instance",
+    "description": "The `oraclepaas_java_service_instance` resource creates and manages an Oracle Java Cloud Service instance on Oracle Cloud Infrastructure and Oracle Cloud Infrastructure Classic.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Backups": {
@@ -396,70 +396,90 @@
             "type": "string"
         },
         "AssignPublicIp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Flag that specifies whether to assign (true) or not assign (false) public IP addresses to the nodes in your service instance. The default is `true`, which means any node added during service instance provisioning, or later added as part of a scaling operation, will have a public IP address assigned to it. This attribute is only applicable when provisioning an Oracle Java Cloud Service instance in a region on Oracle Cloud Infrastructure Classic, and a custom IP network is specified in `ip_network`."
         },
         "AvailabilityDomain": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of a data center location in the Oracle Cloud Infrastructure region that is specified in region. This is\nonly available for OCI."
         },
         "BackupDestination": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies whether to enable backups for this Oracle Java Cloud Service instance.\nValid values are `BOTH` or `NONE`. Defaults to `BOTH`."
         },
         "BringYourOwnLicense": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Flag that specifies whether to apply an existing on-premises license for Oracle WebLogic Server (true) to the new\nOracle Java Cloud Service instance you are provisioning. The default value is `false`."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Provides additional on the java service instance."
         },
         "DesiredState": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the desired state of the service instance. Allowed values are `running` or `shutdown`.\nThe default is `running`."
         },
         "Edition": {
-            "type": "string"
+            "type": "string",
+            "description": "The edition for the service instance. Possible values are `SE`, `EE`, or `SUITE`."
         },
         "EnableAdminConsole": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Flag that specifies whether to enable (true) or disable (false) the access\nrules that control external communication to the WebLogic Server Administration Console, Fusion Middleware Control,\nand Load Balancer Console."
         },
         "ForceDelete": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Flag that specifies whether you want to force the removal of the service instance even if the database\ninstance cannot be reached to delete the database schemas. Default value is `true`."
         },
         "IpNetwork": {
-            "type": "string"
+            "type": "string",
+            "description": "The three-part name of a custom IP network to attach this service instance to. For example: `/Compute-identity_domain/user/object`."
         },
         "Level": {
-            "type": "string"
+            "type": "string",
+            "description": "Service level for the service instance. Possible values are `BASIC` or `PAAS`. Default\nvalue is `PAAS`."
         },
         "MeteringFrequency": {
-            "type": "string"
+            "type": "string",
+            "description": "Billing unit. Possible values are `HOURLY` or `MONTHLY`. Default value is `HOURLY`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Service Instance."
         },
         "NotificationEmail": {
             "type": "string"
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the region where the Oracle Java Cloud Service instance is to be provisioned.\nThis attribute is only applicable to accounts where regions are supported. A region name must be specified if you\nwant to use ipReservations or ipNetwork."
         },
         "ServiceVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "Oracle WebLogic Server software version. Valid values are: `12cRelease213`, `12cRelease212`, `12cR3`, or `11gR1`."
         },
         "SnapshotName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the snapshot to clone from."
         },
         "SourceServiceName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the existing Oracle Java Cloud Service instance that has the snapshot from which you are creating a clone."
         },
         "SshPublicKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The ssh key to connect to the java service instance."
         },
         "Status": {
             "type": "string"
         },
         "Subnet": {
-            "type": "string"
+            "type": "string",
+            "description": "A subdivision of a cloud network that is set up in the data center as specified in `availability_domain`.\nThis is only available for OCI."
         },
         "UseIdentityService": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Flag that specifies whether to use Oracle Identity Cloud Service (true) or the local WebLogic identity store\n(false) for user authentication and to maintain administrators, application users, groups and roles. The default\nvalue is false."
         },
         "Backups": {
             "type": "array",

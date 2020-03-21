@@ -1,6 +1,6 @@
 # Terraform::AzureRM::DnsAaaaRecord
 
-CloudFormation equivalent of azurerm_dns_aaaa_record
+Enables you to manage DNS AAAA Records within Azure DNS.
 
 ## Syntax
 
@@ -45,6 +45,8 @@ Properties:
 
 #### Name
 
+The name of the DNS AAAA Record.
+
 _Required_: Yes
 
 _Type_: String
@@ -52,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Records
+
+List of IPv4 Addresses. Conflicts with `target_resource_id`.
 
 _Required_: No
 
@@ -61,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+Specifies the resource group where the DNS Zone (parent resource) exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -69,6 +75,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -76,6 +84,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TargetResourceId
+
+The Azure resource id of the target object. Conflicts with `records`.
 
 _Required_: No
 
@@ -92,6 +102,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneName
+
+Specifies the DNS Zone where the resource exists. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

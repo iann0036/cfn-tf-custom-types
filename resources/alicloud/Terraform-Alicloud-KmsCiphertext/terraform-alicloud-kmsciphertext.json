@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::KmsCiphertext",
-    "description": "CloudFormation equivalent of alicloud_kms_ciphertext",
+    "description": "Encrypt a given plaintext with KMS. The produced ciphertext stays stable across applies. If the plaintext should be re-encrypted on each apply use the [`alicloud_kms_ciphertext`](/docs/providers/alicloud/d/kms_ciphertext.html) data source.\n\n~> **NOTE**: Using this data provider will allow you to conceal secret data within your resource definitions but does not take care of protecting that data in all Terraform logging and state output. Please take care to secure your secret data beyond just the Terraform configuration.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -32,10 +32,12 @@
             }
         },
         "KeyId": {
-            "type": "string"
+            "type": "string",
+            "description": "The globally unique ID of the CMK."
         },
         "Plaintext": {
-            "type": "string"
+            "type": "string",
+            "description": "The plaintext to be encrypted which must be encoded in Base64."
         }
     },
     "additionalProperties": false,

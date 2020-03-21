@@ -1,6 +1,6 @@
 # Terraform::PagerDuty::UserNotificationRule
 
-CloudFormation equivalent of pagerduty_user_notification_rule
+A [notification rule](https://v2.developer.pagerduty.com/v2/page/api-reference#!/Users/get_users_id_notification_rules_notification_rule_id) configures where and when a PagerDuty user is notified when a triggered incident is assigned to him. Unique notification rules can be created for both high and low-urgency incidents.
 
 ## Syntax
 
@@ -36,6 +36,8 @@ Properties:
 
 #### ContactMethod
 
+A contact method block, configured as a block described below.
+
 _Required_: Yes
 
 _Type_: List of <a href="contactmethod.md">ContactMethod</a>
@@ -43,6 +45,10 @@ _Type_: List of <a href="contactmethod.md">ContactMethod</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StartDelayInMinutes
+
+The delay before firing the rule, in minutes.
+* `urgency` - (Required) Which incident urgency this rule is used for. Account must have the `urgencies` ability to have a low urgency notification rule. Can be `high` or `low`.
+* `contact_method` - (Required) A contact method block, configured as a block described below.
 
 _Required_: Yes
 
@@ -52,6 +58,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Urgency
 
+Which incident urgency this rule is used for. Account must have the `urgencies` ability to have a low urgency notification rule. Can be `high` or `low`.
+* `contact_method` - (Required) A contact method block, configured as a block described below.
+
 _Required_: Yes
 
 _Type_: String
@@ -59,6 +68,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserId
+
+The ID of the user.
+* `start_delay_in_minutes` - (Required) The delay before firing the rule, in minutes.
+* `urgency` - (Required) Which incident urgency this rule is used for. Account must have the `urgencies` ability to have a low urgency notification rule. Can be `high` or `low`.
+* `contact_method` - (Required) A contact method block, configured as a block described below.
 
 _Required_: Yes
 

@@ -1,6 +1,14 @@
 # Terraform::Panos::BgpConditionalAdv
 
-CloudFormation equivalent of panos_bgp_conditional_adv
+This resource allows you to add/update/delete a Panorama BGP conditional advertisement.
+
+~> **Note:** In the PAN-OS GUI, this resource cannot be created without also
+creating at least one non-exist filter and one advertise filter.  The API behaves
+a little differently:  you can create the conditional advertisement itself, but
+the API will start throwing errors if you try to update it and there is not at
+least one non-exist filter and one advertise filter.  In order for a conditional
+advertisement to be valid, you must specify at least one non-exist and one
+advertise filter.
 
 ## Syntax
 
@@ -36,6 +44,8 @@ Properties:
 
 #### Enable
 
+Enable or not (default: `true`).
+
 _Required_: No
 
 _Type_: Boolean
@@ -43,6 +53,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name.
 
 _Required_: Yes
 
@@ -52,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UsedBy
 
+List of BGP peer groups that use this rule.
+
 _Required_: No
 
 _Type_: List of String
@@ -59,6 +73,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VirtualRouter
+
+The virtual router to add this BGP
+conditional advertisement to.
 
 _Required_: Yes
 

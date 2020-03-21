@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::KvstoreAccount",
-    "description": "CloudFormation equivalent of alicloud_kvstore_account",
+    "description": "Provides a kvstore account resource and used to manage databases.\n\n-> **NOTE:** Available in 1.66.0+",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,25 +9,32 @@
             "type": "string"
         },
         "AccountName": {
-            "type": "string"
+            "type": "string",
+            "description": "Operation account requiring a uniqueness check. It may consist of lower case letters, numbers, and underlines, and must start with a letter and have no more than 16 characters."
         },
         "AccountPassword": {
-            "type": "string"
+            "type": "string",
+            "description": "Operation password. It may consist of letters, digits, or underlines, with a length of 6 to 32 characters. You have to specify one of `account_password` and `kms_encrypted_password` fields."
         },
         "AccountPrivilege": {
-            "type": "string"
+            "type": "string",
+            "description": "The privilege of account access database. Valid values:\n- RoleReadOnly: This value is only for Redis and Memcache\n- RoleReadWrite: This value is only for Redis and Memcache\n- RoleRepl: This value supports instance to read, write, and open SYNC / PSYNC commands.\nOnly for Redis which engine version is 4.0 and architecture type is standard."
         },
         "AccountType": {
-            "type": "string"
+            "type": "string",
+            "description": "Privilege type of account.\n- Normal: Common privilege.\nDefault to Normal."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Database description. It cannot begin with https://. It must start with a Chinese character or English letter. It can include Chinese and English characters, underlines (_), hyphens (-), and numbers. The length may be 2-256 characters."
         },
         "InstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Id of instance in which account belongs. (The engine version of instance must be 4.0 or 4.0+)."
         },
         "KmsEncryptedPassword": {
-            "type": "string"
+            "type": "string",
+            "description": "An KMS encrypts password used to a KVStore account. If the `account_password` is filled in, this field will be ignored."
         },
         "KmsEncryptionContext": {
             "type": "array",
@@ -47,7 +54,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "An KMS encryption context used to decrypt `kms_encrypted_password` before creating or updating a KVStore account with `kms_encrypted_password`. See [Encryption Context](https://www.alibabacloud.com/help/doc-detail/42975.htm). It is valid when `kms_encrypted_password` is set."
         }
     },
     "additionalProperties": false,

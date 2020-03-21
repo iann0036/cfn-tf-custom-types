@@ -1,6 +1,6 @@
 # Terraform::AzureRM::ApiManagementSubscription
 
-CloudFormation equivalent of azurerm_api_management_subscription
+Manages a Subscription within a API Management Service.
 
 ## Syntax
 
@@ -47,6 +47,8 @@ Properties:
 
 #### ApiManagementName
 
+The name of the API Management Service where this Subscription should be created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -54,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+The display name of this Subscription.
 
 _Required_: Yes
 
@@ -71,6 +75,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProductId
 
+The ID of the Product which should be assigned to this Subscription. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -78,6 +84,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the Resource Group in which the API Management Service exists. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -95,6 +103,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### State
 
+The state of this Subscription. Possible values are `active`, `cancelled`, `expired`, `rejected`, `submitted` and `suspended`. Defaults to `submitted`.
+
 _Required_: No
 
 _Type_: String
@@ -103,6 +113,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubscriptionId
 
+An Identifier which should used as the ID of this Subscription. If not specified a new Subscription ID will be generated. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -110,6 +122,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserId
+
+The ID of the User which should be assigned to this Subscription. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

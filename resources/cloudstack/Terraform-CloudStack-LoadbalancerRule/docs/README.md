@@ -1,6 +1,6 @@
 # Terraform::CloudStack::LoadbalancerRule
 
-CloudFormation equivalent of cloudstack_loadbalancer_rule
+Creates a loadbalancer rule.
 
 ## Syntax
 
@@ -50,6 +50,9 @@ Properties:
 
 #### Algorithm
 
+Load balancer rule algorithm (source, roundrobin,
+leastconn). Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -66,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+The description of the load balancer rule.
+
 _Required_: No
 
 _Type_: String
@@ -73,6 +78,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IpAddressId
+
+Public IP address ID from where the network
+traffic will be load balanced from. Changing this forces a new resource
+to be created.
 
 _Required_: Yes
 
@@ -82,6 +91,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MemberIds
 
+List of instance IDs to assign to the load balancer
+rule. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -89,6 +101,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of the loadbalancer rule.
+Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -98,6 +113,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NetworkId
 
+The network ID this rule will be created for.
+Required when public IP address is not associated with any network yet
+(VPC case).
+
 _Required_: No
 
 _Type_: String
@@ -105,6 +124,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PrivatePort
+
+The private port of the private IP address
+(virtual machine) where the network traffic will be load balanced to.
+Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -114,6 +137,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Project
 
+The name or ID of the project to deploy this
+instance to. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -122,6 +148,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Protocol
 
+Load balancer protocol (tcp, udp, tcp-proxy).
+Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -129,6 +158,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PublicPort
+
+The public port from where the network traffic
+will be load balanced from. Changing this forces a new resource to be
+created.
 
 _Required_: Yes
 

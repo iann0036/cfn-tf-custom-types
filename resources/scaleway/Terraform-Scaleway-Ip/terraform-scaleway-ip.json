@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Scaleway::Ip",
-    "description": "CloudFormation equivalent of scaleway_ip",
+    "description": "**DEPRECATED**: This resource is deprecated and will be removed in `v2.0+`.\nPlease use `scaleway_instance_ip` instead.\n\nProvides IPs for servers. This allows IPs to be created, updated and deleted.\nFor additional details please refer to [API documentation](https://developer.scaleway.com/#ips).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,10 +12,12 @@
             "type": "string"
         },
         "Reverse": {
-            "type": "string"
+            "type": "string",
+            "description": "Please us the scaleway_ip_reverse_dns resource instead."
         },
         "Server": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of server to associate IP with."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 # Terraform::AzureRM::VirtualHub
 
-CloudFormation equivalent of azurerm_virtual_hub
+Manages a Virtual Hub within a Virtual WAN.
 
 ## Syntax
 
@@ -45,6 +45,8 @@ Properties:
 
 #### AddressPrefix
 
+The Address Prefix which should be used for this Virtual Hub.
+
 _Required_: Yes
 
 _Type_: String
@@ -52,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Location
+
+Specifies the supported Azure location where the Virtual Hub should exist. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -61,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the Virtual Hub. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -68,6 +74,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+Specifies the name of the Resource Group where the Virtual Hub should exist. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -77,6 +85,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the Virtual Hub.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -84,6 +94,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VirtualWanId
+
+The ID of a Virtual WAN within which the Virtual Hub should be created.
 
 _Required_: Yes
 

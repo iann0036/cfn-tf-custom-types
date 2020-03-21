@@ -25,6 +25,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Config
 
+Map of arbitrary configuration properties for the selected resource model
+plugin.
+
 _Required_: Yes
 
 _Type_: List of <a href="resourcemodelsource-config.md">Config</a>
@@ -32,6 +35,8 @@ _Type_: List of <a href="resourcemodelsource-config.md">Config</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The name of the resource model plugin to use.
 
 _Required_: Yes
 

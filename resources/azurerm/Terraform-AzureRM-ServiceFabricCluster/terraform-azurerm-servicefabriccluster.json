@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::ServiceFabricCluster",
-    "description": "CloudFormation equivalent of azurerm_service_fabric_cluster",
+    "description": "Manages a Service Fabric Cluster.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "AzureActiveDirectory": {
@@ -8,13 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "ClientApplicationId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Azure Active Directory Client ID which should be used for the Client Application."
                 },
                 "ClusterApplicationId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Azure Active Directory Cluster Application ID."
                 },
                 "TenantId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Azure Active Directory Tenant ID."
                 }
             },
             "required": [
@@ -28,13 +31,16 @@
             "additionalProperties": false,
             "properties": {
                 "Thumbprint": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Thumbprint of the Certificate."
                 },
                 "ThumbprintSecondary": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Secondary Thumbprint of the Certificate."
                 },
                 "X509StoreName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The X509 Store where the Certificate Exists, such as `My`."
                 }
             },
             "required": [
@@ -47,7 +53,8 @@
             "additionalProperties": false,
             "properties": {
                 "X509StoreName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The X509 Store where the Certificate Exists, such as `My`."
                 },
                 "CommonNames": {
                     "type": "array",
@@ -66,10 +73,12 @@
             "additionalProperties": false,
             "properties": {
                 "IsAdmin": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Does the Client Certificate have Admin Access to the cluster? Non-admin clients can only perform read only operations on the cluster."
                 },
                 "Thumbprint": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Thumbprint associated with the Client Certificate."
                 }
             },
             "required": [
@@ -82,19 +91,24 @@
             "additionalProperties": false,
             "properties": {
                 "BlobEndpoint": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Blob Endpoint of the Storage Account."
                 },
                 "ProtectedAccountKeyName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The protected diagnostics storage key name, such as `StorageAccountKey1`."
                 },
                 "QueueEndpoint": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Queue Endpoint of the Storage Account."
                 },
                 "StorageAccountName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the Storage Account where the Diagnostics should be sent to."
                 },
                 "TableEndpoint": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Table Endpoint of the Storage Account."
                 }
             },
             "required": [
@@ -110,7 +124,8 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the Fabric Setting, such as `Security` or `Federation`."
                 },
                 "Parameters": {
                     "type": "array",
@@ -130,7 +145,8 @@
                             "Key",
                             "Value"
                         ]
-                    }
+                    },
+                    "description": "A map containing settings for the specified Fabric Setting."
                 }
             },
             "required": [
@@ -159,25 +175,32 @@
                             "Key",
                             "Value"
                         ]
-                    }
+                    },
+                    "description": "The capacity tags applied to the nodes in the node type, the cluster resource manager uses these tags to understand how much resource a node has."
                 },
                 "ClientEndpointPort": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The Port used for the Client Endpoint for this Node Type. Changing this forces a new resource to be created."
                 },
                 "DurabilityLevel": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Durability Level for this Node Type. Possible values include `Bronze`, `Gold` and `Silver`. Defaults to `Bronze`. Changing this forces a new resource to be created."
                 },
                 "HttpEndpointPort": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The Port used for the HTTP Endpoint for this Node Type. Changing this forces a new resource to be created."
                 },
                 "InstanceCount": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The number of nodes for this Node Type."
                 },
                 "IsPrimary": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Is this the Primary Node Type? Changing this forces a new resource to be created."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the Node Type. Changing this forces a new resource to be created."
                 },
                 "PlacementProperties": {
                     "type": "array",
@@ -197,10 +220,12 @@
                             "Key",
                             "Value"
                         ]
-                    }
+                    },
+                    "description": "The placement tags applied to nodes in the node type, which can be used to indicate where certain services (workload) should run."
                 },
                 "ReverseProxyEndpointPort": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The Port used for the Reverse Proxy Endpoint  for this Node Type. Changing this will upgrade the cluster."
                 },
                 "ApplicationPorts": {
                     "type": "array",
@@ -230,13 +255,16 @@
             "additionalProperties": false,
             "properties": {
                 "Thumbprint": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Thumbprint of the Certificate."
                 },
                 "ThumbprintSecondary": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Secondary Thumbprint of the Certificate."
                 },
                 "X509StoreName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The X509 Store where the Certificate Exists, such as `My`."
                 }
             },
             "required": [
@@ -268,10 +296,12 @@
             "additionalProperties": false,
             "properties": {
                 "CertificateCommonName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The common or subject name of the certificate."
                 },
                 "CertificateIssuerThumbprint": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Issuer Thumbprint of the Certificate."
                 }
             },
             "required": [
@@ -283,10 +313,12 @@
             "additionalProperties": false,
             "properties": {
                 "EndPort": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The end of the Application Port Range on this Node Type."
                 },
                 "StartPort": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The start of the Application Port Range on this Node Type."
                 }
             },
             "required": [
@@ -299,10 +331,12 @@
             "additionalProperties": false,
             "properties": {
                 "EndPort": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The end of the Ephemeral Port Range on this Node Type."
                 },
                 "StartPort": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The start of the Ephemeral Port Range on this Node Type."
                 }
             },
             "required": [
@@ -321,28 +355,35 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A List of one or more features which should be enabled, such as `DnsService`."
         },
         "ClusterCodeVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "Required if Upgrade Mode set to `Manual`, Specifies the Version of the Cluster Code of the cluster."
         },
         "ClusterEndpoint": {
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the Azure Region where the Service Fabric Cluster should exist. Changing this forces a new resource to be created."
         },
         "ManagementEndpoint": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the Management Endpoint of the cluster such as `http://example.com`. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Service Fabric Cluster. Changing this forces a new resource to be created."
         },
         "ReliabilityLevel": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the Reliability Level of the Cluster. Possible values include `None`, `Bronze`, `Silver`, `Gold` and `Platinum`."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Resource Group in which the Service Fabric Cluster exists. Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -362,13 +403,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "UpgradeMode": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the Upgrade Mode of the cluster. Possible values are `Automatic` or `Manual`."
         },
         "VmImage": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the Image expected for the Service Fabric Cluster, such as `Windows`. Changing this forces a new resource to be created."
         },
         "AzureActiveDirectory": {
             "type": "array",

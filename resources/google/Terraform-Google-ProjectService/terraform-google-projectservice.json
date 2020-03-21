@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::ProjectService",
-    "description": "CloudFormation equivalent of google_project_service",
+    "description": "Allows management of a single API service for an existing Google Cloud Platform project. \n\nFor a list of services available, visit the\n[API library page](https://console.cloud.google.com/apis/library) or run `gcloud services list`.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,16 +29,20 @@
             "type": "string"
         },
         "DisableDependentServices": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If `true`, services that are enabled and which depend on this service should also be disabled when this service is destroyed.\nIf `false` or unset, an error will be generated if any enabled services depend on this service when destroying it."
         },
         "DisableOnDestroy": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If true, disable the service when the terraform resource is destroyed.  Defaults to true.  May be useful in the event that a project is long-lived but the infrastructure running in that project changes frequently."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The project ID. If not provided, the provider project is used."
         },
         "Service": {
-            "type": "string"
+            "type": "string",
+            "description": "The service to enable."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

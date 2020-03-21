@@ -1,6 +1,18 @@
 # Terraform::OpenStack::NetworkingRbacPolicyV2
 
-CloudFormation equivalent of openstack_networking_rbac_policy_v2
+The RBAC policy resource contains functionality for working with Neutron RBAC
+Policies. Role-Based Access Control (RBAC) policy framework enables both
+operators and users to grant access to resources for specific projects.
+
+Sharing an object with a specific project is accomplished by creating a
+policy entry that permits the target project the `access_as_shared` action
+on that object.
+
+To make a network available as an external network for specific projects
+rather than all projects, use the `access_as_external` action.
+If a network is marked as external during creation, it now implicitly creates
+a wildcard RBAC policy granting everyone access to preserve previous behavior
+before this feature was added.
 
 ## Syntax
 
@@ -37,6 +49,9 @@ Properties:
 
 #### Action
 
+Action for the RBAC policy. Can either be
+`access_as_external` or `access_as_shared`.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +59,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ObjectId
+
+The ID of the `object_type` resource. An
+`object_type` of `network` returns a network ID and an `object_type` of
+`qos_policy` returns a QoS ID.
 
 _Required_: Yes
 
@@ -53,6 +72,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ObjectType
 
+The type of the object that the RBAC policy
+affects. Can either be `qos-policy` or `network`.
+
 _Required_: Yes
 
 _Type_: String
@@ -61,6 +83,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region in which to obtain the V2 networking client.
+A networking client is needed to configure a routing entry on a subnet. If omitted, the
+`region` argument of the provider is used. Changing this creates a new
+routing entry.
+
 _Required_: No
 
 _Type_: String
@@ -68,6 +95,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TargetTenant
+
+The ID of the tenant to which the RBAC policy
+will be enforced.
 
 _Required_: Yes
 

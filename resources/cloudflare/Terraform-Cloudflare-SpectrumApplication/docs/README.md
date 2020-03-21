@@ -1,6 +1,6 @@
 # Terraform::Cloudflare::SpectrumApplication
 
-CloudFormation equivalent of cloudflare_spectrum_application
+Provides a Cloudflare Spectrum Application. You can extend the power of Cloudflare's DDoS, TLS, and IP Firewall to your other TCP-based services.
 
 ## Syntax
 
@@ -50,6 +50,8 @@ Properties:
 
 #### IpFirewall
 
+Enables the IP Firewall for this application. Defaults to `true`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -57,6 +59,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OriginDirect
+
+A list of destination addresses to the origin. e.g. `tcp://192.0.2.1:22`.
 
 _Required_: No
 
@@ -66,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OriginPort
 
+If using `origin_dns` this is a required attribute. Origin port to proxy traffice to e.g. `22`.
+
 _Required_: No
 
 _Type_: Double
@@ -73,6 +79,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Protocol
+
+The port configuration at Cloudflare’s edge. e.g. `tcp/22`.
 
 _Required_: Yes
 
@@ -82,6 +90,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProxyProtocol
 
+Enables a proxy protocol to the origin. Valid values are: `off`, `v1`, `v2`, and `simple`. Defaults to `off`.
+
 _Required_: No
 
 _Type_: String
@@ -89,6 +99,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tls
+
+TLS configuration option for Cloudflare to connect to your origin. Valid values are: `off`, `flexible`, `full` and `strict`. Defaults to `off`.
 
 _Required_: No
 
@@ -98,6 +110,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TrafficType
 
+Set's application type. Valid values are: `direct`, `http`, `https`.  Defaults to `direct`.
+
 _Required_: No
 
 _Type_: String
@@ -105,6 +119,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneId
+
+The DNS zone ID to add the application to.
 
 _Required_: Yes
 

@@ -1,6 +1,11 @@
 # Terraform::Heroku::AppRelease
 
-CloudFormation equivalent of heroku_app_release
+Provides a [Heroku App Release](https://devcenter.heroku.com/articles/platform-api-reference#release)
+resource.
+
+An app release represents a combination of code, config vars and add-ons for an app on Heroku.
+
+~> **NOTE:** This resource requires the slug be uploaded to Heroku using [`heroku_slug`](slug.html) or with external tooling prior to running terraform.
 
 ## Syntax
 
@@ -33,6 +38,8 @@ Properties:
 
 #### App
 
+The name of the application.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +48,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+description of changes in this release.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +57,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SlugId
+
+unique identifier of slug.
 
 _Required_: Yes
 

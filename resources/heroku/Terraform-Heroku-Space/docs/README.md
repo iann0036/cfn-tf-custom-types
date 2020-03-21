@@ -1,6 +1,6 @@
 # Terraform::Heroku::Space
 
-CloudFormation equivalent of heroku_space
+Provides a Heroku Private Space resource for running apps in isolated, highly available, secure app execution environments.
 
 ## Syntax
 
@@ -42,6 +42,8 @@ Properties:
 
 #### Cidr
 
+The RFC-1918 CIDR the Private Space will use. It must be a /16 in 10.0.0.0/8, 172.16.0.0/12 or 192.168.0.0/16.
+
 _Required_: No
 
 _Type_: String
@@ -49,6 +51,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DataCidr
+
+The RFC-1918 CIDR that the Private Space will use for the Heroku-managed peering connection that’s automatically created when using Heroku Data add-ons. It must be between a /16 and a /20.
 
 _Required_: No
 
@@ -58,6 +62,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the Private Space.
+
 _Required_: Yes
 
 _Type_: String
@@ -65,6 +71,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Organization
+
+The name of the Heroku Team which will own the Private Space.
 
 _Required_: Yes
 
@@ -74,6 +82,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+provision in a specific [Private Spaces region](https://devcenter.heroku.com/articles/regions#viewing-available-regions).
+
 _Required_: No
 
 _Type_: String
@@ -81,6 +91,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Shield
+
+provision as a [Shield Private Space](https://devcenter.heroku.com/articles/private-spaces#shield-private-spaces).
 
 _Required_: No
 

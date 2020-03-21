@@ -24,6 +24,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### DrainTimeoutSec
 
+The number of seconds connection draining is active. Acceptable values are from `1` second to `3600` seconds.
+
 _Required_: Yes
 
 _Type_: Double
@@ -31,6 +33,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Enabled
+
+If connection draining is enabled or not.
 
 _Required_: Yes
 

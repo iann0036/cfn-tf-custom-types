@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenTelekomCloud::ComputeSecgroupV2",
-    "description": "CloudFormation equivalent of opentelekomcloud_compute_secgroup_v2",
+    "description": "Manages a V2 security group resource within OpenTelekomCloud.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Rule": {
@@ -8,22 +8,28 @@
             "additionalProperties": false,
             "properties": {
                 "Cidr": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Required if `from_group_id` or `self` is empty. The IP range\nthat will be the source of network traffic to the security group. Use 0.0.0.0/0\nto allow all IP addresses. Changing this creates a new security group rule. Cannot\nbe combined with `from_group_id` or `self`."
                 },
                 "FromGroupId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Required if `cidr` or `self` is empty. The ID of a\ngroup from which to forward traffic to the parent group. Changing this creates a\nnew security group rule. Cannot be combined with `cidr` or `self`."
                 },
                 "FromPort": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "An integer representing the lower bound of the port\nrange to open. Changing this creates a new security group rule."
                 },
                 "IpProtocol": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The protocol type that will be allowed. Changing\nthis creates a new security group rule."
                 },
                 "Self": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Required if `cidr` and `from_group_id` is empty. If true,\nthe security group itself will be added as a source to this ingress rule. Cannot\nbe combined with `cidr` or `from_group_id`."
                 },
                 "ToPort": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "An integer representing the upper bound of the port\nrange to open. Changing this creates a new security group rule."
                 }
             },
             "required": [
@@ -49,10 +55,12 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description for the security group. Changing this\nupdates the `description` of an existing security group."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique name for the security group. Changing this\nupdates the `name` of an existing security group."
         },
         "Region": {
             "type": "string"

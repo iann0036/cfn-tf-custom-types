@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureStack::RouteTable",
-    "description": "CloudFormation equivalent of azurestack_route_table",
+    "description": "Manages a Route Table",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the route table. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the route table. Changing this forces a new resource to be created."
         },
         "Route": {
             "type": "array",
@@ -37,7 +40,8 @@
                         "type": "string"
                     }
                 }
-            }
+            },
+            "description": "Can be specified multiple times to define multiple routes. Each `route` block supports fields documented below."
         },
         "Subnets": {
             "type": "array",
@@ -64,7 +68,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         }
     },
     "additionalProperties": false,

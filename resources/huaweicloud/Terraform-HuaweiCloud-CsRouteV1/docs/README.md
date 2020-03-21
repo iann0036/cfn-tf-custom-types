@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::CsRouteV1
 
-CloudFormation equivalent of huaweicloud_cs_route_v1
+Cloud Stream Service cluster peering connect route management
 
 ## Syntax
 

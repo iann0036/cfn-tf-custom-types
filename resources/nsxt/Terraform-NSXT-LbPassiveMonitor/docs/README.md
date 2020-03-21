@@ -1,6 +1,8 @@
 # Terraform::NSXT::LbPassiveMonitor
 
-CloudFormation equivalent of nsxt_lb_passive_monitor
+Provides a resource to configure lb passive monitor on NSX-T manager
+
+~> **NOTE:** This resource requires NSX version 2.3 or higher.
 
 ## Syntax
 
@@ -38,6 +40,8 @@ Properties:
 
 #### Description
 
+Description of this resource.
+
 _Required_: No
 
 _Type_: String
@@ -45,6 +49,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+The display name of this resource. Defaults to ID if not set.
 
 _Required_: No
 
@@ -54,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxFails
 
+When consecutive failures reach this value, the member is considered temporarily unavailable for a configurable period.
+
 _Required_: No
 
 _Type_: Double
@@ -61,6 +69,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Timeout
+
+After this timeout period, the member is probed again.
 
 _Required_: No
 

@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Mode
 
+Failover policy for the read-only endpoint. Possible values are `Enabled`, and `Disabled`.
+
 _Required_: Yes
 
 _Type_: String

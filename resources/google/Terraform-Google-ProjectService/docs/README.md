@@ -1,6 +1,9 @@
 # Terraform::Google::ProjectService
 
-CloudFormation equivalent of google_project_service
+Allows management of a single API service for an existing Google Cloud Platform project. 
+
+For a list of services available, visit the
+[API library page](https://console.cloud.google.com/apis/library) or run `gcloud services list`.
 
 ## Syntax
 
@@ -37,6 +40,9 @@ Properties:
 
 #### DisableDependentServices
 
+If `true`, services that are enabled and which depend on this service should also be disabled when this service is destroyed.
+If `false` or unset, an error will be generated if any enabled services depend on this service when destroying it.
+
 _Required_: No
 
 _Type_: Boolean
@@ -44,6 +50,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisableOnDestroy
+
+If true, disable the service when the terraform resource is destroyed.  Defaults to true.  May be useful in the event that a project is long-lived but the infrastructure running in that project changes frequently.
 
 _Required_: No
 
@@ -53,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Project
 
+The project ID. If not provided, the provider project is used.
+
 _Required_: No
 
 _Type_: String
@@ -60,6 +70,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Service
+
+The service to enable.
 
 _Required_: Yes
 

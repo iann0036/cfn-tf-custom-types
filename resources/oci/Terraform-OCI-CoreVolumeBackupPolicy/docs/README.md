@@ -1,6 +1,11 @@
 # Terraform::OCI::CoreVolumeBackupPolicy
 
-CloudFormation equivalent of oci_core_volume_backup_policy
+This resource provides the Volume Backup Policy resource in Oracle Cloud Infrastructure Core service.
+
+Creates a new user defined backup policy.
+
+For more information about Oracle defined backup policies and user defined backup policies,
+see [Policy-Based Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm).
 
 ## Syntax
 
@@ -42,6 +47,8 @@ Properties:
 
 #### CompartmentId
 
+The OCID of the compartment.
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefinedTags
+
+(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`.
 
 _Required_: No
 
@@ -58,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+(Updatable) A user-friendly name for the volume backup policy. Does not have to be unique and it's changeable. Avoid entering confidential information.
+
 _Required_: No
 
 _Type_: String
@@ -65,6 +76,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FreeformTags
+
+(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`.
 
 _Required_: No
 

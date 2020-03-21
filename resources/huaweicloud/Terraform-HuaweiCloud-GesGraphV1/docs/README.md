@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::GesGraphV1
 
-CloudFormation equivalent of huaweicloud_ges_graph_v1
+graph management
 
 ## Syntax
 

@@ -1,6 +1,10 @@
 # Terraform::Scaleway::Volume
 
-CloudFormation equivalent of scaleway_volume
+**DEPRECATED**: This resource is deprecated and will be removed in `v2.0+`.
+Please use `scaleway_instance_volume` instead.
+
+Provides volumes. This allows volumes to be created, updated and deleted.
+For additional details please refer to [API documentation](https://developer.scaleway.com/#volumes).
 
 ## Syntax
 
@@ -33,6 +37,8 @@ Properties:
 
 #### Name
 
+name of volume.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +47,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SizeInGb
 
+size of the volume in GB.
+
 _Required_: Yes
 
 _Type_: Double
@@ -48,6 +56,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+type of volume.
 
 _Required_: Yes
 

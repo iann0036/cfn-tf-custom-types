@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::UCloud::RedisInstance",
-    "description": "CloudFormation equivalent of ucloud_redis_instance",
+    "description": "The UCloud Redis instance is a key-value online storage service compatible with the Redis protocol.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,25 +9,30 @@
             "type": "string"
         },
         "AvailabilityZone": {
-            "type": "string"
+            "type": "string",
+            "description": "Availability zone where Redis instance is located. Such as: \"cn-bj2-02\". You may refer to [list of availability zone](https://docs.ucloud.cn/api/summary/regionlist)."
         },
         "ChargeType": {
-            "type": "string"
+            "type": "string",
+            "description": "The charge type of Redis instance, possible values are: `year`, `month` and `dynamic` as pay by hour (specific permission required). (Default: `month`)."
         },
         "CreateTime": {
             "type": "string"
         },
         "Duration": {
-            "type": "number"
+            "type": "number",
+            "description": "The duration that you will buy the Redis instance (Default: `1`). The value is `0` when pay by month and the instance will be valid till the last day of that month. It is not required when `dynamic` (pay by hour)."
         },
         "EngineVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "The version of engine of active-standby Redis. Possible values are: 3.0, 3.2 and 4.0."
         },
         "ExpireTime": {
             "type": "string"
         },
         "InstanceType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of Redis instance, please visit the [instance type table](https://www.terraform.io/docs/providers/ucloud/appendix/redis_instance_type.html) for more details."
         },
         "IpSet": {
             "type": "array",
@@ -46,22 +51,27 @@
             }
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of Redis instance, which contains 6-63 characters and only support English, numbers, '-', '_'. If not specified, terraform will auto-generate a name beginning with `tf-redis-instance`."
         },
         "Password": {
-            "type": "string"
+            "type": "string",
+            "description": "The password for  active-standby Redis instance which should have 6-36 characters. It must contain at least 3 items of Capital letters, small letter, numbers and special characters. The special characters include `-_`."
         },
         "Status": {
             "type": "string"
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of subnet linked to the Redis instance."
         },
         "Tag": {
-            "type": "string"
+            "type": "string",
+            "description": "A tag assigned to Redis instance, which contains at most 63 characters and only support Chinese, English, numbers, '-', '_', and '.'. If it is not filled in or a empty string is filled in, then default tag will be assigned. (Default: `Default`)."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of VPC linked to the Redis instance."
         }
     },
     "additionalProperties": false,

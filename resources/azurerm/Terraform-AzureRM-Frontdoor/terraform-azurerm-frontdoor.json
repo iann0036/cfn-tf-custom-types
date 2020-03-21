@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::Frontdoor",
-    "description": "CloudFormation equivalent of azurerm_frontdoor",
+    "description": "Manages an Azure Front Door instance.\n\nAzure Front Door Service is Microsoft's highly available and scalable web application acceleration platform and global HTTP(s) load balancer. It provides built-in DDoS protection and application layer security and caching. Front Door enables you to build applications that maximize and automate high-availability and performance for your end-users. Use Front Door with Azure services including Web/Mobile Apps, Cloud Services and Virtual Machines \u2013 or combine it with on-premises services for hybrid deployments and smooth cloud migration.\n\nBelow are some of the key scenarios that Azure Front Door Service addresses:\n* Use Front Door to improve application scale and availability with instant multi-region failover\n* Use Front Door to improve application performance with SSL offload and routing requests to the fastest available application backend.\n* Use Front Door for application layer security and DDoS protection for your application.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "BackendPool": {
@@ -8,13 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "HealthProbeName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the name of the `backend_pool_health_probe` block whithin this resource to use for this `Backend Pool`."
                 },
                 "LoadBalancingName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the name of the `backend_pool_load_balancing` block within this resource to use for this `Backend Pool`."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the name of the Backend Pool."
                 },
                 "Backend": {
                     "type": "array",
@@ -35,22 +38,28 @@
             "additionalProperties": false,
             "properties": {
                 "Enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Is this health probe enabled? Dafaults to `true`."
                 },
                 "IntervalInSeconds": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The number of seconds between each Health Probe. Defaults to `120`."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the name of the Health Probe."
                 },
                 "Path": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The path to use for the Health Probe. Default is `/`."
                 },
                 "ProbeMethod": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies HTTP method the health probe uses when querying the backend pool instances. Possible values include: `Get` and `Head`. Defaults to `Get`."
                 },
                 "Protocol": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Protocol scheme to use for the Health Probe. Defaults to `Http`."
                 }
             },
             "required": [
@@ -62,16 +71,20 @@
             "additionalProperties": false,
             "properties": {
                 "AdditionalLatencyMilliseconds": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The additional latency in milliseconds for probes to fall into the lowest latency bucket. Defaults to `0`."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the name of the Load Balancer."
                 },
                 "SampleSize": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The number of samples to consider for load balancing decisions. Defaults to `4`."
                 },
                 "SuccessfulSamplesRequired": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The number of samples within the sample period that must succeed. Defaults to `2`."
                 }
             },
             "required": [
@@ -83,22 +96,28 @@
             "additionalProperties": false,
             "properties": {
                 "CustomHttpsProvisioningEnabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Should the HTTPS protocol be enabled for a custom domain associated with the Front Door?."
                 },
                 "HostName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the host name of the `frontend_endpoint`. Must be a domain name."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the name of the `frontend_endpoint`."
                 },
                 "SessionAffinityEnabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Whether to allow session affinity on this host. Valid options are `true` or `false` Defaults to `false`."
                 },
                 "SessionAffinityTtlSeconds": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The TTL to use in seconds for session affinity, if applicable. Defaults to `0`."
                 },
                 "WebApplicationFirewallPolicyLinkId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Defines the Web Application Firewall policy `ID` for each host."
                 },
                 "CustomHttpsConfiguration": {
                     "type": "array",
@@ -123,27 +142,32 @@
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Protocol schemes to match for the Backend Routing Rule. Defaults to `Http`."
                 },
                 "Enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "`Enable` or `Disable` use of this Backend Routing Rule. Permitted values are `true` or `false`. Defaults to `true`."
                 },
                 "FrontendEndpoints": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "The names of the `frontend_endpoint` blocks whithin this resource to associate with this `routing_rule`."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the name of the Routing Rule."
                 },
                 "PatternsToMatch": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "The route patterns for the Backend Routing Rule. Defaults to `/*`."
                 },
                 "ForwardingConfiguration": {
                     "type": "array",
@@ -191,25 +215,32 @@
             "additionalProperties": false,
             "properties": {
                 "Address": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Location of the backend (IP address or FQDN)."
                 },
                 "Enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Specifies if the backend is enabled or not. Valid options are `true` or `false`. Defaults to `true`."
                 },
                 "HostHeader": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The value to use as the host header sent to the backend."
                 },
                 "HttpPort": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The HTTP TCP port number. Possible values are between `1` - `65535`."
                 },
                 "HttpsPort": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The HTTPS TCP port number. Possible values are between `1` - `65535`."
                 },
                 "Priority": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Priority to use for load balancing. Higher priorities will not be used for load balancing if any lower priority backend is healthy. Defaults to `1`."
                 },
                 "Weight": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Weight of this endpoint for load balancing purposes. Defaults to `50`."
                 }
             },
             "required": [
@@ -233,7 +264,8 @@
                     "type": "string"
                 },
                 "CertificateSource": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Certificate source to encrypted `HTTPS` traffic with. Allowed values are `FrontDoor` or `AzureKeyVault`. Defaults to `FrontDoor`."
                 }
             },
             "required": []
@@ -243,22 +275,28 @@
             "additionalProperties": false,
             "properties": {
                 "BackendPoolName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the name of the Backend Pool to forward the incoming traffic to."
                 },
                 "CacheEnabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Specifies whether to Enable caching or not. Valid options are `true` or `false`. Defaults to `false`."
                 },
                 "CacheQueryParameterStripDirective": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Defines cache behavior in releation to query string parameters. Valid options are `StripAll` or `StripNone`. Defaults to `StripAll`."
                 },
                 "CacheUseDynamicCompression": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Whether to use dynamic compression when caching. Valid options are `true` or `false`. Defaults to `false`."
                 },
                 "CustomForwardingPath": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Path to use when constructing the request to forward to the backend. This functions as a URL Rewrite. Default behavior preserves the URL path."
                 },
                 "ForwardingProtocol": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Protocol to use when redirecting. Valid options are `HttpOnly`, `HttpsOnly`, or `MatchRequest`. Defaults to `HttpsOnly`."
                 }
             },
             "required": [
@@ -270,22 +308,28 @@
             "additionalProperties": false,
             "properties": {
                 "CustomFragment": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The destination fragment in the portion of URL after '#'. Set this to add a fragment to the redirect URL."
                 },
                 "CustomHost": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Set this to change the URL for the redirection."
                 },
                 "CustomPath": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The path to retain as per the incoming request, or update in the URL for the redirection."
                 },
                 "CustomQueryString": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Replace any existing query string from the incoming request URL."
                 },
                 "RedirectProtocol": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Protocol to use when redirecting. Valid options are `HttpOnly`, `HttpsOnly`, or `MatchRequest`. Defaults to `MatchRequest`."
                 },
                 "RedirectType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Status code for the redirect. Valida options are `Moved`, `Found`, `TemporaryRedirect`, `PermanentRedirect`. Defaults to `Found`."
                 }
             },
             "required": [
@@ -303,22 +347,27 @@
             "type": "string"
         },
         "EnforceBackendPoolsCertificateNameCheck": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enforce certificate name check on `HTTPS` requests to all backend pools, this setting will have no effect on `HTTP` requests. Permitted values are `true` or `false`."
         },
         "FriendlyName": {
-            "type": "string"
+            "type": "string",
+            "description": "A friendly name for the Front Door service."
         },
         "LoadBalancerEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Should the Front Door Load Balancer be Enabled? Defaults to `true`."
         },
         "Location": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Front Door service. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Resource Group in which the Front Door service should exist. Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -338,7 +387,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "BackendPool": {
             "type": "array",

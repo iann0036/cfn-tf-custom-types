@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Gitlab::GroupMembership",
-    "description": "CloudFormation equivalent of gitlab_group_membership",
+    "description": "This resource allows you to add a user to an existing group.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,20 @@
             "type": "string"
         },
         "AccessLevel": {
-            "type": "string"
+            "type": "string",
+            "description": "Acceptable values are: guest, reporter, developer, maintainer, owner."
         },
         "ExpiresAt": {
-            "type": "string"
+            "type": "string",
+            "description": "Expiration date for the group membership. Format: `YYYY-MM-DD`."
         },
         "GroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the group."
         },
         "UserId": {
-            "type": "number"
+            "type": "number",
+            "description": "The id of the user."
         }
     },
     "additionalProperties": false,

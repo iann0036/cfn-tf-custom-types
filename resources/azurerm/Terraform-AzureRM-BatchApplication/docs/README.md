@@ -1,6 +1,6 @@
 # Terraform::AzureRM::BatchApplication
 
-CloudFormation equivalent of azurerm_batch_application
+Manages Azure Batch Application instance.
 
 ## Syntax
 
@@ -41,6 +41,8 @@ Properties:
 
 #### AccountName
 
+The name of the Batch account. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +50,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowUpdates
+
+A value indicating whether packages within the application may be overwritten using the same version string. Defaults to `true`.
 
 _Required_: No
 
@@ -57,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DefaultVersion
 
+The package to use if a client requests the application but does not specify a version. This property can only be set to the name of an existing package.
+
 _Required_: No
 
 _Type_: String
@@ -64,6 +70,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+The display name for the application.
 
 _Required_: No
 
@@ -73,6 +81,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the application. This must be unique within the account. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -80,6 +90,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group that contains the Batch account. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

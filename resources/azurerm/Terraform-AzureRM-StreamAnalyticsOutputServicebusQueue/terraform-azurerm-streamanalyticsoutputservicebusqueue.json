@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::StreamAnalyticsOutputServicebusQueue",
-    "description": "CloudFormation equivalent of azurerm_stream_analytics_output_servicebus_queue",
+    "description": "Manages a Stream Analytics Output to a ServiceBus Queue.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Serialization": {
@@ -8,16 +8,20 @@
             "additionalProperties": false,
             "properties": {
                 "Encoding": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The encoding of the incoming data in the case of input and the encoding of outgoing data in the case of output. It currently can only be set to `UTF8`."
                 },
                 "FieldDelimiter": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The delimiter that will be used to separate comma-separated value (CSV) records. Possible values are ` ` (space), `,` (comma), `   ` (tab), `|` (pipe) and `;`."
                 },
                 "Format": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the format of the JSON the output will be written in. Possible values are `Array` and `LineSeparated`."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The serialization format used for outgoing data streams. Possible values are `Avro`, `Csv` and `Json`."
                 }
             },
             "required": [
@@ -50,25 +54,32 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Stream Output. Changing this forces a new resource to be created."
         },
         "QueueName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Service Bus Queue."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Resource Group where the Stream Analytics Job exists. Changing this forces a new resource to be created."
         },
         "ServicebusNamespace": {
-            "type": "string"
+            "type": "string",
+            "description": "The namespace that is associated with the desired Event Hub, Service Bus Queue, Service Bus Topic, etc."
         },
         "SharedAccessPolicyKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The shared access policy key for the specified shared access policy."
         },
         "SharedAccessPolicyName": {
-            "type": "string"
+            "type": "string",
+            "description": "The shared access policy name for the Event Hub, Service Bus Queue, Service Bus Topic, etc."
         },
         "StreamAnalyticsJobName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Stream Analytics Job. Changing this forces a new resource to be created."
         },
         "Serialization": {
             "type": "array",

@@ -1,6 +1,16 @@
 # Terraform::Alicloud::HbaseInstance
 
-CloudFormation equivalent of alicloud_hbase_instance
+Provides a HBase instance resource supports replica set instances only. the HBase provides stable, reliable, and automatic scalable database services. 
+It offers a full range of database solutions, such as disaster recovery, backup, recovery, monitoring, and alarms.
+You can see detail product introduction [here](https://help.aliyun.com/product/49055.html)
+
+-> **NOTE:**  Available in 1.67.0+
+
+-> **NOTE:**  The following regions don't support create Classic network HBase instance.
+[`cn-hangzhou`,`cn-shanghai`,`cn-qingdao`,`cn-beijing`,`cn-shenzhen`,`ap-southeast-1a`,.....]
+the official website mark  more regions. or you can call [DescribeRegions](https://help.aliyun.com/document_detail/144489.html)
+
+-> **NOTE:**  Create HBase instance or change instance type and storage would cost 15 minutes. Please make full preparation
 
 ## Syntax
 
@@ -66,6 +76,8 @@ Properties:
 
 #### AutoRenew
 
+`true`, `false`, System default to `false`, valid when pay_type = PrePaid.
+
 _Required_: No
 
 _Type_: Boolean
@@ -73,6 +85,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ColdStorageSize
+
+0 or 0+. 0 means is_cold_storage = false. 0+ means is_cold_storage = true.
 
 _Required_: No
 
@@ -82,6 +96,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CoreDiskSize
 
+User-defined HBase instance one core node's storage space.Unit: GB. Value range:
+- Custom storage space; value range: [100,2000]
+- 10-GB increments.
+
 _Required_: No
 
 _Type_: Double
@@ -90,6 +108,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CoreDiskType
 
+Valid values are `cloud_ssd`, `cloud_efficiency`, `local_hdd_pro`, `local_ssd_pro`. local_disk size is fixed.
+
 _Required_: Yes
 
 _Type_: String
@@ -97,6 +117,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CoreInstanceQuantity
+
+default=2. if core_instance_quantity > 1,this is cluster's instance.  if core_instance_quantity = 1,this is a single instance.
 
 _Required_: No
 
@@ -114,6 +136,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DeletionProtection
 
+the switch of delete protection. true: delete protect, false: no delete protect. you must set false when you want to delete cluster.
+
 _Required_: No
 
 _Type_: Boolean
@@ -121,6 +145,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Duration
+
+1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36, 60, valid when pay_type = PrePaid. unit: month.
 
 _Required_: No
 
@@ -138,6 +164,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EngineVersion
 
+hbase major version. hbase:1.1/2.0, hbaseue:2.0, bds:1.0, unsupport other engine temporarily. Value options can refer to the latest docs [CreateInstance](https://help.aliyun.com/document_detail/144607.html).
+
 _Required_: Yes
 
 _Type_: String
@@ -146,6 +174,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaintainEndTime
 
+The end time of the operation and maintenance time period of the instance, in the format of HH:mmZ (UTC time).
+
 _Required_: No
 
 _Type_: String
@@ -153,6 +183,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MaintainStartTime
+
+The start time of the operation and maintenance time period of the instance, in the format of HH:mmZ (UTC time).
 
 _Required_: No
 
@@ -170,6 +202,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+HBase instance name. Length must be 2-128 characters long. Only Chinese characters, English letters, numbers, period (.), underline (_), or dash (-) are permitted.
+
 _Required_: Yes
 
 _Type_: String
@@ -177,6 +211,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PayType
+
+Valid values are `PrePaid`, `PostPaid`,System default to `PostPaid`.
 
 _Required_: No
 
@@ -186,6 +222,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -194,6 +232,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VswitchId
 
+if vswitch_id is not empty, that mean net_type = vpc and has a same region. if vswitch_id is empty, net_type_classic.
+
 _Required_: No
 
 _Type_: String
@@ -201,6 +241,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneId
+
+The Zone to launch the HBase instance. if vswitch_id is not empty, this zone_id can be "" or consistent.
 
 _Required_: No
 

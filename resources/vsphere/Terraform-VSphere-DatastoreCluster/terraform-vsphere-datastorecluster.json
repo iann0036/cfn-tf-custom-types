@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::VSphere::DatastoreCluster",
-    "description": "CloudFormation equivalent of vsphere_datastore_cluster",
+    "description": "The `vsphere_datastore_cluster` resource can be used to create and manage\ndatastore clusters. This can be used to create groups of datastores with a\nshared management interface, allowing for resource control and load balancing\nthrough Storage DRS.\n\nFor more information on vSphere datastore clusters and Storage DRS, see [this\npage][ref-vsphere-datastore-clusters].\n\n[ref-vsphere-datastore-clusters]: https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.resmgmt.doc/GUID-598DF695-107E-406B-9C95-0AF961FC227A.html\n\n~> **NOTE:** This resource requires vCenter and is not available on direct ESXi\nconnections.\n\n~> **NOTE:** Storage DRS requires a vSphere Enterprise Plus license.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -26,16 +26,20 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A map of custom attribute ids to attribute\nvalue strings to set for the datastore cluster. See\n[here][docs-setting-custom-attributes] for a reference on how to set values\nfor custom attributes."
         },
         "DatacenterId": {
-            "type": "string"
+            "type": "string",
+            "description": "The [managed object ID][docs-about-morefs] of\nthe datacenter to create the datastore cluster in. Forces a new resource if\nchanged."
         },
         "Folder": {
-            "type": "string"
+            "type": "string",
+            "description": "The relative path to a folder to put this datastore\ncluster in.  This is a path relative to the datacenter you are deploying the\ndatastore to.  Example: for the `dc1` datacenter, and a provided `folder` of\n`foo/bar`, Terraform will place a datastore cluster named\n`terraform-datastore-cluster-test` in a datastore folder located at\n`/dc1/datastore/foo/bar`, with the final inventory path being\n`/dc1/datastore/foo/bar/terraform-datastore-cluster-test`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the datastore cluster."
         },
         "SdrsAdvancedOptions": {
             "type": "array",
@@ -64,7 +68,8 @@
             "type": "boolean"
         },
         "SdrsEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable Storage DRS for this datastore cluster.\nDefault: `false`."
         },
         "SdrsFreeSpaceThreshold": {
             "type": "number"
@@ -119,7 +124,8 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The IDs of any tags to attach to this resource. See\n[here][docs-applying-tags] for a reference on how to apply tags."
         }
     },
     "additionalProperties": false,

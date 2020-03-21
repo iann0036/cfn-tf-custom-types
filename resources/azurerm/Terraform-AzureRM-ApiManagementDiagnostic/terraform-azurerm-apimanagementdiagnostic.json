@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::ApiManagementDiagnostic",
-    "description": "CloudFormation equivalent of azurerm_api_management_diagnostic",
+    "description": "Manages an API Management Service Diagnostic.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,16 +29,20 @@
             "type": "string"
         },
         "ApiManagementName": {
-            "type": "string"
+            "type": "string",
+            "description": "The Name of the API Management Service where this Diagnostic should be created. Changing this forces a new resource to be created."
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether a Diagnostic should receive data or not."
         },
         "Identifier": {
-            "type": "string"
+            "type": "string",
+            "description": "The diagnostic identifier for the API Management Service. At this time the only supported value is `applicationinsights`. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The Name of the Resource Group where the API Management Service exists. Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

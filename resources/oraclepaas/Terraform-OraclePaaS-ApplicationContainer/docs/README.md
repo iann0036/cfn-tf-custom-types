@@ -1,6 +1,6 @@
 # Terraform::OraclePaaS::ApplicationContainer
 
-CloudFormation equivalent of oraclepaas_application_container
+The `oraclepaas_application_container` resource creates and manages an Application Container.
 
 ## Syntax
 
@@ -77,6 +77,8 @@ Properties:
 
 #### ArchiveUrl
 
+Location of the application archive file in Oracle Storage Cloud Service, in the format app-name/file-name.
+
 _Required_: No
 
 _Type_: String
@@ -84,6 +86,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AuthType
+
+Uses Oracle Identity Cloud Service to control who can access your Java SE 7 or 8, Node.js, or PHP application. Allowed values are `basic` and `oauth`.
 
 _Required_: No
 
@@ -93,6 +97,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AvailabilityDomain
 
+A list of one or more datacenter locations in the OCI region. Required on OCI.
+
 _Required_: No
 
 _Type_: List of String
@@ -100,6 +106,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DeploymentFile
+
+The json deployment file containing the attributes related to deploying an application. Use either `deployment_file` or `deployment_attributes` when specifying
+deployment information.
 
 _Required_: No
 
@@ -109,6 +118,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GitPassword
 
+The password for the user with access to the git repository if the repository is private.
+
 _Required_: No
 
 _Type_: String
@@ -116,6 +127,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GitRepository
+
+The URL of the git repository to use the application container.
 
 _Required_: No
 
@@ -125,6 +138,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GitUsername
 
+The username of a user with access to the git respository if the repository is private.
+
 _Required_: No
 
 _Type_: String
@@ -132,6 +147,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LoadBalancerSubnets
+
+Two load balancer subnets. Required on OCI.
 
 _Required_: No
 
@@ -141,6 +158,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ManifestFile
 
+The json manifest file containing the attributes related to launching an application. Use either `manifest_file` or `manifest_attributes` when specifying
+launch information.
+
 _Required_: No
 
 _Type_: String
@@ -148,6 +168,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the existing service.
 
 _Required_: Yes
 
@@ -157,6 +179,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Notes
 
+Comments about the deployment.
+
 _Required_: No
 
 _Type_: String
@@ -165,6 +189,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NotificationEmail
 
+Email address to which application deployment status updates are sent.
+
 _Required_: No
 
 _Type_: String
@@ -172,6 +198,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The name of the region where the application container will be deployed. Required on OCI.
 
 _Required_: No
 
@@ -189,6 +217,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubscriptionType
 
+Whether the subscription type is `hourly` or `monthly`. The default is `hourly`.
+
 _Required_: No
 
 _Type_: String
@@ -196,6 +226,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A map of tags for the application container.
 
 _Required_: No
 
@@ -261,9 +293,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AppUrl
 
-Returns the <code>AppUrl</code> value.
+URL of the created application.
 
 #### WebUrl
 
-Returns the <code>WebUrl</code> value.
+Web URL of the application.
 

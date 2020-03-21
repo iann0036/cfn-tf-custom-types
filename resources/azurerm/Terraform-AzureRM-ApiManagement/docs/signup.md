@@ -25,6 +25,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Enabled
 
+Can users sign up on the development portal?.
+
 _Required_: Yes
 
 _Type_: Boolean

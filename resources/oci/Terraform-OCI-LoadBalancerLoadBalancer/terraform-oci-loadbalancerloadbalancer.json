@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::LoadBalancerLoadBalancer",
-    "description": "CloudFormation equivalent of oci_load_balancer_load_balancer",
+    "description": "This resource provides the Load Balancer resource in Oracle Cloud Infrastructure Load Balancer service.\n\nCreates a new load balancer in the specified compartment. For general information about load balancers,\nsee [Overview of the Load Balancing Service](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm).\n\nFor the purposes of access control, you must provide the OCID of the compartment where you want\nthe load balancer to reside. Notice that the load balancer doesn't have to be in the same compartment as the VCN\nor backend set. If you're not sure which compartment to use, put the load balancer in the same compartment as the VCN.\nFor information about access control and compartments, see\n[Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).\n\nYou must specify a display name for the load balancer. It does not have to be unique, and you can change it.\n\nFor information about Availability Domains, see\n[Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).\nTo get a list of Availability Domains, use the `ListAvailabilityDomains` operation\nin the Identity and Access Management Service API.\n\nAll Oracle Cloud Infrastructure resources, including load balancers, get an Oracle-assigned,\nunique ID called an Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID\nin the response. You can also retrieve a resource's OCID by using a List API operation on that resource type,\nor by viewing the resource in the Console. Fore more information, see\n[Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).\n\nWhen you create a load balancer, the system assigns an IP address.\nTo get the IP address, use the [GetLoadBalancer](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancer/GetLoadBalancer) operation.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,7 +26,8 @@
             "type": "string"
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the load balancer."
         },
         "DefinedTags": {
             "type": "array",
@@ -46,10 +47,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Operations.CostCenter\": \"42\"}`."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `example_load_balancer`."
         },
         "FreeformTags": {
             "type": "array",
@@ -69,7 +72,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
         },
         "IpAddressDetails": {
             "type": "array",
@@ -95,20 +99,24 @@
             }
         },
         "IpMode": {
-            "type": "string"
+            "type": "string",
+            "description": "IPv6 is currently supported only in the Government Cloud. Whether the load balancer has an IPv4 or IPv6 IP address."
         },
         "IsPrivate": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the load balancer has a VCN-local (private) IP address."
         },
         "NetworkSecurityGroupIds": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "(Updatable) An array of NSG [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this load balancer."
         },
         "Shape": {
-            "type": "string"
+            "type": "string",
+            "description": "A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `100Mbps`."
         },
         "State": {
             "type": "string"
@@ -118,7 +126,8 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)."
         },
         "SystemTags": {
             "type": "array",

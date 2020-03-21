@@ -1,6 +1,7 @@
 # Terraform::Vault::PkiSecretBackend
 
-CloudFormation equivalent of vault_pki_secret_backend
+Creates an PKI Secret Backend for Vault. PKI secret backends can then issue certificates, once a role has been added to
+the backend.
 
 ## Syntax
 
@@ -35,6 +36,8 @@ Properties:
 
 #### DefaultLeaseTtlSeconds
 
+The default TTL for credentials issued by this backend.
+
 _Required_: No
 
 _Type_: Double
@@ -42,6 +45,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+A human-friendly description for this backend.
 
 _Required_: No
 
@@ -51,6 +56,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxLeaseTtlSeconds
 
+The maximum TTL that can be requested for credentials issued by this backend.
+
 _Required_: No
 
 _Type_: Double
@@ -58,6 +65,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Path
+
+The unique path this backend should be mounted at. Must not begin or end with a `/`.
 
 _Required_: Yes
 

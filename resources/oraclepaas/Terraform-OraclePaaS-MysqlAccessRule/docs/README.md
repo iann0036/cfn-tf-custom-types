@@ -45,6 +45,8 @@ Properties:
 
 #### Description
 
+Description of the rule.
+
 _Required_: No
 
 _Type_: String
@@ -52,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Destination
+
+The service component to allow traffic to. For example, mysql_MASTER.
 
 _Required_: Yes
 
@@ -61,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Enabled
 
+Determines whether the access rule is enabled. Valid values are `true` and `false`. The Default is `true`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -68,6 +74,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of the rule.
 
 _Required_: Yes
 
@@ -77,6 +85,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ports
 
+Ports for the rule. This can be a single port or a port range.
+
 _Required_: Yes
 
 _Type_: String
@@ -84,6 +94,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Protocol
+
+Communication protocol for the rule. For example, tcp.
 
 _Required_: No
 
@@ -93,6 +105,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServiceInstanceId
 
+The name of MySQL instance to attach the access rule to.
+
 _Required_: Yes
 
 _Type_: String
@@ -100,6 +114,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Source
+
+The hosts from which traffic is allowed. For example, PUBLIC-INTERNET for any host on the Internet, a single IP address or a comma-separated list of subnets (in CIDR format) or IPv4 addresses.
 
 _Required_: Yes
 

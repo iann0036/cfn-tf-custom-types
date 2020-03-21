@@ -1,6 +1,8 @@
 # Terraform::Vault::Namespace
 
-CloudFormation equivalent of vault_namespace
+Provides a resource to manage [Namespaces](https://www.vaultproject.io/docs/enterprise/namespaces/index.html).
+
+**Note** this feature is available only with Vault Enterprise.
 
 ## Syntax
 
@@ -28,6 +30,8 @@ Properties:
 ## Properties
 
 #### Path
+
+The path of the namespace. Must not have a trailing `/`.
 
 _Required_: Yes
 

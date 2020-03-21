@@ -1,6 +1,10 @@
 # Terraform::Packet::Volume
 
-CloudFormation equivalent of packet_volume
+Provides a Packet Block Storage Volume resource to allow you to
+manage block volumes on your account.
+Once created by Terraform, they must then be attached and mounted
+using the api and `packet_block_attach` and `packet_block_detach`
+scripts.
 
 ## Syntax
 
@@ -44,6 +48,8 @@ Properties:
 
 #### BillingCycle
 
+The billing cycle, defaults to "hourly".
+
 _Required_: No
 
 _Type_: String
@@ -51,6 +57,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Optional description for the volume.
 
 _Required_: No
 
@@ -60,6 +68,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Facility
 
+The facility to create the volume in.
+
 _Required_: Yes
 
 _Type_: String
@@ -67,6 +77,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Locked
+
+Lock or unlock the volume.
 
 _Required_: No
 
@@ -76,6 +88,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Plan
 
+The service plan slug of the volume.
+
 _Required_: Yes
 
 _Type_: String
@@ -84,6 +98,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProjectId
 
+The packet project ID to deploy the volume in.
+
 _Required_: Yes
 
 _Type_: String
@@ -91,6 +107,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Size
+
+The size in GB to make the volume.
 
 _Required_: Yes
 

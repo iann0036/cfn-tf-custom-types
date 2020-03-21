@@ -1,6 +1,6 @@
 # Terraform::Tfe::TeamToken
 
-CloudFormation equivalent of tfe_team_token
+Generates a new team token and overrides existing token if one exists.
 
 ## Syntax
 
@@ -31,6 +31,10 @@ Properties:
 
 #### ForceRegenerate
 
+If set to `true`, a new token will be
+generated even if a token already exists. This will invalidate the existing
+token!.
+
 _Required_: No
 
 _Type_: Boolean
@@ -38,6 +42,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TeamId
+
+ID of the team.
 
 _Required_: Yes
 

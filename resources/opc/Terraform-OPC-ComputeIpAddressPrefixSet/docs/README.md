@@ -1,6 +1,6 @@
 # Terraform::OPC::ComputeIpAddressPrefixSet
 
-CloudFormation equivalent of opc_compute_ip_address_prefix_set
+The ``opc_compute_ip_address_prefix_set`` resource creates and manages an IP address prefix set in an Oracle Cloud Infrastructure Compute Classic identity domain.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### Description
 
+A description of the ip address prefix set.
+
 _Required_: No
 
 _Type_: String
@@ -44,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the ip address prefix set.
 
 _Required_: Yes
 
@@ -53,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Prefixes
 
+List of CIDR IPv4 prefixes assigned in the virtual network.
+
 _Required_: No
 
 _Type_: List of String
@@ -60,6 +66,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+List of tags that may be applied to the ip address prefix set.
 
 _Required_: No
 
@@ -85,5 +93,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Uri
 
-Returns the <code>Uri</code> value.
+The Uniform Resource Identifier of the ip address prefix set.
 

@@ -1,6 +1,10 @@
 # Terraform::OpenStack::SharedfilesystemShareAccessV2
 
-CloudFormation equivalent of openstack_sharedfilesystem_share_access_v2
+Use this resource to control the share access lists.
+
+~> **Important Security Notice** The access key retrieved by this resource will
+be stored *unencrypted* in your Terraform state file. If you use this resource
+in production, please make sure your state file is sufficiently protected.
 
 ## Syntax
 
@@ -39,6 +43,8 @@ Properties:
 
 #### AccessLevel
 
+The access level to the share. Can either be `rw` or `ro`.
+
 _Required_: Yes
 
 _Type_: String
@@ -46,6 +52,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AccessTo
+
+The value that defines the access. Can either be an IP
+address or a username verified by configured Security Service of the Share Network.
 
 _Required_: Yes
 
@@ -55,6 +64,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AccessType
 
+The access rule type. Can either be an ip, user,
+cert, or cephx. cephx support requires an OpenStack environment that supports
+Shared Filesystem microversion 2.13 (Mitaka) or later.
+
 _Required_: Yes
 
 _Type_: String
@@ -63,6 +76,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region in which to obtain the V2 Shared File System client.
+A Shared File System client is needed to create a share access. Changing this
+creates a new share access.
+
 _Required_: No
 
 _Type_: String
@@ -70,6 +87,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ShareId
+
+The UUID of the share to which you are granted access.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 # Terraform::Kubernetes::Role
 
-CloudFormation equivalent of kubernetes_role
+A role contains rules that represent a set of permissions. Permissions are purely additive (there are no “deny” rules).
 
 ## Syntax
 

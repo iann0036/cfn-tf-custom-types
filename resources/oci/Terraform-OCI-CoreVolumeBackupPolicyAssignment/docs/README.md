@@ -1,6 +1,10 @@
 # Terraform::OCI::CoreVolumeBackupPolicyAssignment
 
-CloudFormation equivalent of oci_core_volume_backup_policy_assignment
+This resource provides the Volume Backup Policy Assignment resource in Oracle Cloud Infrastructure Core service.
+
+Assigns a volume backup policy to the specified volume. Note that a given volume can
+only have one backup policy assigned to it. If this operation is used for a volume that already
+has a different backup policy assigned, the prior backup policy will be silently unassigned.
 
 ## Syntax
 
@@ -33,6 +37,8 @@ Properties:
 
 #### AssetId
 
+The OCID of the volume to assign the policy to.
+
 _Required_: Yes
 
 _Type_: String
@@ -40,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PolicyId
+
+The OCID of the volume backup policy to assign to the volume.
 
 _Required_: Yes
 

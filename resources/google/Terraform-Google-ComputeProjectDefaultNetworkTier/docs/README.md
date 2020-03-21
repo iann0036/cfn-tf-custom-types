@@ -1,6 +1,11 @@
 # Terraform::Google::ComputeProjectDefaultNetworkTier
 
-CloudFormation equivalent of google_compute_project_default_network_tier
+Configures the Google Compute Engine
+[Default Network Tier](https://cloud.google.com/network-tiers/docs/using-network-service-tiers#setting_the_tier_for_all_resources_in_a_project)
+for a project.
+
+For more information, see,
+[the Project API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/projects/setDefaultNetworkTier).
 
 ## Syntax
 
@@ -31,6 +36,9 @@ Properties:
 
 #### NetworkTier
 
+The default network tier to be configured for the project.
+This field can take the following values: `PREMIUM` or `STANDARD`.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +46,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The ID of the project in which the resource belongs. If it
+is not provided, the provider project is used.
 
 _Required_: No
 

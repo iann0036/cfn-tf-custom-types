@@ -1,6 +1,6 @@
 # Terraform::Linode::ObjectStorageBucket
 
-CloudFormation equivalent of linode_object_storage_bucket
+Provides a Linode Object Storage Bucket resource. This can be used to create, modify, and delete Linodes Object Storage Buckets.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### Cluster
 
+The cluster of the Linode Object Storage Bucket.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Label
+
+The label of the Linode Object Storage Bucket.
 
 _Required_: Yes
 

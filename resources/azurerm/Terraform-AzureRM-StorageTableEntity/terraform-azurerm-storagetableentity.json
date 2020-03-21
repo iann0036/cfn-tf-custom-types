@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::StorageTableEntity",
-    "description": "CloudFormation equivalent of azurerm_storage_table_entity",
+    "description": "Manages an Entity within a Table in an Azure Storage Account.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -46,19 +46,24 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A map of key/value pairs that describe the entity to be inserted/merged in to the storage table."
         },
         "PartitionKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The key for the partition where the entity will be inserted/merged. Changing this forces a new resource."
         },
         "RowKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The key for the row where the entity will be inserted/merged. Changing this forces a new resource."
         },
         "StorageAccountName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the storage account in which to create the storage table entity.\nChanging this forces a new resource to be created."
         },
         "TableName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the storage table in which to create the storage table entity.\nChanging this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

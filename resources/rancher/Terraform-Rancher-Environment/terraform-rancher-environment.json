@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Rancher::Environment",
-    "description": "CloudFormation equivalent of rancher_environment",
+    "description": "Provides a Rancher Environment resource. This can be used to create and manage environments on rancher.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Member": {
@@ -30,16 +30,20 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "An environment description."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the environment."
         },
         "Orchestration": {
-            "type": "string"
+            "type": "string",
+            "description": "Must be one of **cattle**, **swarm**, **mesos**, **windows** or **kubernetes**. This is a helper for setting the project_template_ids for the included Rancher templates. This will conflict with project_template_id setting. Changing this forces a new resource to be created."
         },
         "ProjectTemplateId": {
-            "type": "string"
+            "type": "string",
+            "description": "This can be any valid project template ID. If this is set, then orchestration can not be. Changing this forces a new resource to be created."
         },
         "Member": {
             "type": "array",

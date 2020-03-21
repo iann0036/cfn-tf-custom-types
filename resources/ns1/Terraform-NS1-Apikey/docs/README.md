@@ -1,6 +1,6 @@
 # Terraform::NS1::Apikey
 
-CloudFormation equivalent of ns1_apikey
+Provides a NS1 Api Key resource. This can be used to create, modify, and delete api keys.
 
 ## Syntax
 
@@ -89,6 +89,8 @@ Properties:
 
 #### AccountManageAccountSettings
 
+Whether the apikey can modify account settings.
+
 _Required_: No
 
 _Type_: Boolean
@@ -96,6 +98,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AccountManageApikeys
+
+Whether the apikey can modify account apikeys.
 
 _Required_: No
 
@@ -105,6 +109,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AccountManagePaymentMethods
 
+Whether the apikey can modify account payment methods.
+
 _Required_: No
 
 _Type_: Boolean
@@ -112,6 +118,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AccountManagePlan
+
+Whether the apikey can modify the account plan.
 
 _Required_: No
 
@@ -121,6 +129,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AccountManageTeams
 
+Whether the apikey can modify other teams in the account.
+
 _Required_: No
 
 _Type_: Boolean
@@ -128,6 +138,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AccountManageUsers
+
+Whether the apikey can modify account users.
 
 _Required_: No
 
@@ -137,6 +149,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AccountViewActivityLog
 
+Whether the apikey can view activity logs.
+
 _Required_: No
 
 _Type_: Boolean
@@ -144,6 +158,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AccountViewInvoices
+
+Whether the apikey can view invoices.
 
 _Required_: No
 
@@ -153,6 +169,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DataManageDatafeeds
 
+Whether the apikey can modify data feeds.
+
 _Required_: No
 
 _Type_: Boolean
@@ -160,6 +178,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DataManageDatasources
+
+Whether the apikey can modify data sources.
 
 _Required_: No
 
@@ -169,6 +189,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DataPushToDatafeeds
 
+Whether the apikey can publish to data feeds.
+
 _Required_: No
 
 _Type_: Boolean
@@ -176,6 +198,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DhcpManageDhcp
+
+Whether the apikey can manage DHCP.
+Only relevant for the DDI product.
 
 _Required_: No
 
@@ -185,6 +210,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DhcpViewDhcp
 
+Whether the apikey can view DHCP.
+Only relevant for the DDI product.
+
 _Required_: No
 
 _Type_: Boolean
@@ -192,6 +220,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DnsManageZones
+
+Whether the apikey can modify the accounts zones.
 
 _Required_: No
 
@@ -201,6 +231,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DnsViewZones
 
+Whether the apikey can view the accounts zones.
+
 _Required_: No
 
 _Type_: Boolean
@@ -208,6 +240,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DnsZonesAllow
+
+List of zones that the apikey may access.
 
 _Required_: No
 
@@ -217,6 +251,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DnsZonesAllowByDefault
 
+If true, enable the `dns_zones_allow` list, otherwise enable the `dns_zones_deny` list.
+
 _Required_: No
 
 _Type_: Boolean
@@ -224,6 +260,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DnsZonesDeny
+
+List of zones that the apikey may not access.
 
 _Required_: No
 
@@ -233,6 +271,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IpWhitelist
 
+The IP addresses to whitelist for this key.
+
 _Required_: No
 
 _Type_: List of String
@@ -240,6 +280,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IpWhitelistStrict
+
+Sets exclusivity on this IP whitelist.
 
 _Required_: No
 
@@ -249,6 +291,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IpamManageIpam
 
+Whether the apikey can manage IPAM.
+Only relevant for the DDI product.
+
 _Required_: No
 
 _Type_: Boolean
@@ -256,6 +301,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IpamViewIpam
+
+Whether the apikey can view IPAM.
+Only relevant for the DDI product.
 
 _Required_: No
 
@@ -265,6 +313,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MonitoringManageJobs
 
+Whether the apikey can modify monitoring jobs.
+
 _Required_: No
 
 _Type_: Boolean
@@ -272,6 +322,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MonitoringManageLists
+
+Whether the apikey can modify notification lists.
 
 _Required_: No
 
@@ -281,6 +333,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MonitoringViewJobs
 
+Whether the apikey can view monitoring jobs.
+
 _Required_: No
 
 _Type_: Boolean
@@ -288,6 +342,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The free form name of the apikey.
 
 _Required_: Yes
 
@@ -297,6 +353,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecurityManageActiveDirectory
 
+Whether the apikey can manage global active directory.
+Only relevant for the DDI product.
+
 _Required_: No
 
 _Type_: Boolean
@@ -305,6 +364,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecurityManageGlobal2fa
 
+Whether the apikey can manage global two factor authentication.
+
 _Required_: No
 
 _Type_: Boolean
@@ -312,6 +373,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Teams
+
+The teams that the apikey belongs to.
 
 _Required_: No
 
@@ -337,5 +400,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Key
 
-Returns the <code>Key</code> value.
+The apikeys authentication token.
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::RecoveryServicesVault",
-    "description": "CloudFormation equivalent of azurerm_recovery_services_vault",
+    "description": "Manages an Recovery Services Vault.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,19 +29,24 @@
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Recovery Services Vault. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the Recovery Services Vault. Changing this forces a new resource to be created."
         },
         "Sku": {
-            "type": "string"
+            "type": "string",
+            "description": "Sets the vault's SKU. Possible values include: `Standard`, `RS0`."
         },
         "SoftDeleteEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is soft delete enable for this Vault? Defaults to `true`."
         },
         "Tags": {
             "type": "array",
@@ -61,7 +66,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

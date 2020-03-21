@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OVH::VrackIploadbalancing",
-    "description": "CloudFormation equivalent of ovh_vrack_iploadbalancing",
+    "description": "Attach a ip loadbalancing to a VRack.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "IpLoadbalancing": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the ip loadbalancing."
         },
         "ServiceName": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the vrack."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Consul::ConfigEntry",
-    "description": "CloudFormation equivalent of consul_config_entry",
+    "description": "The [Configuration Entry](https://www.consul.io/docs/agent/config_entries.html)\nresource can be used to provide cluster-wide defaults for various aspects of\nConsul.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "ConfigJson": {
-            "type": "string"
+            "type": "string",
+            "description": "An arbitrary map of configuration values."
         },
         "Kind": {
-            "type": "string"
+            "type": "string",
+            "description": "The kind of configuration entry to register."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the configuration entry being registred."
         }
     },
     "additionalProperties": false,

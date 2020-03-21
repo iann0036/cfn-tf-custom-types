@@ -1,6 +1,8 @@
 # Terraform::BIGIP::As3
 
-CloudFormation equivalent of bigip_as3
+`bigip_as3` provides details about bigip as3 resource
+
+This resource is helpful to configure as3 declarative JSON on BIG-IP.
 
 ## Syntax
 
@@ -31,6 +33,8 @@ Properties:
 
 #### As3Json
 
+Path/Filename of Declarative AS3 JSON which can be a template/json file used with builtin ```templatefile``` function (or) ```file``` function.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +42,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TenantName
+
+Tenant name used to set the terraform state changes for as3 resource.
 
 _Required_: Yes
 

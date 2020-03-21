@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenTelekomCloud::RtsStackV1",
-    "description": "CloudFormation equivalent of opentelekomcloud_rts_stack_v1",
+    "description": "Provides an OpenTelekomCloud Stack.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -33,10 +33,12 @@
             }
         },
         "DisableRollback": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to true to disable rollback of the stack if stack creation failed."
         },
         "Environment": {
-            "type": "string"
+            "type": "string",
+            "description": "Tthe environment information about the stack."
         },
         "Files": {
             "type": "array",
@@ -56,10 +58,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Files used in the environment."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique name for the stack. The value must meet the regular expression rule (`^[a-zA-Z][a-zA-Z0-9_.-]{0,254}$`). Changing this creates a new stack."
         },
         "NotificationTopics": {
             "type": "array",
@@ -106,7 +110,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A list of Parameter structures that specify input parameters for the stack."
         },
         "Region": {
             "type": "string"
@@ -118,13 +123,16 @@
             "type": "string"
         },
         "TemplateBody": {
-            "type": "string"
+            "type": "string",
+            "description": "Structure containing the template body. The template content must use the yaml syntax."
         },
         "TemplateUrl": {
-            "type": "string"
+            "type": "string",
+            "description": "Location of a file containing the template body."
         },
         "TimeoutMins": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the timeout duration."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

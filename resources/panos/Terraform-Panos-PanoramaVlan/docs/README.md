@@ -1,6 +1,6 @@
 # Terraform::Panos::PanoramaVlan
 
-CloudFormation equivalent of panos_panorama_vlan
+This resource allows you to add/update/delete Panorama VLANs.
 
 ## Syntax
 
@@ -38,6 +38,9 @@ Properties:
 
 #### Interfaces
 
+List of layer2 interfaces.  You can also leave
+this blank and also use [panos_vlan_entry](./vlan_entry.html) for more control.
+
 _Required_: No
 
 _Type_: List of String
@@ -45,6 +48,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The object's name.
 
 _Required_: Yes
 
@@ -54,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Template
 
+The template name.
+
 _Required_: Yes
 
 _Type_: String
@@ -62,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VlanInterface
 
+The VLAN interface.
+
 _Required_: No
 
 _Type_: String
@@ -69,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vsys
+
+The vsys to put the object into (default: `vsys1`).
 
 _Required_: No
 

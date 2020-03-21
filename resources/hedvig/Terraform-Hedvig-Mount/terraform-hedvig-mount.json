@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Hedvig::Mount",
-    "description": "CloudFormation equivalent of hedvig_mount",
+    "description": "A Hedvig Mount mounts a vdisk resource with a particular controller. It can then be used to connect ACL access resources to the vdisk as well.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "Controller": {
-            "type": "string"
+            "type": "string",
+            "description": "The fully qualified domain name for the controller that the Mount is to attach to."
         },
         "Vdisk": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the vdisk the Mount is on."
         }
     },
     "additionalProperties": false,

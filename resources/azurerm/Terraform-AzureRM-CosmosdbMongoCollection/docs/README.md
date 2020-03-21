@@ -1,6 +1,6 @@
 # Terraform::AzureRM::CosmosdbMongoCollection
 
-CloudFormation equivalent of azurerm_cosmosdb_mongo_collection
+Manages a Mongo Collection within a Cosmos DB Account.
 
 ## Syntax
 
@@ -51,6 +51,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DatabaseName
 
+The name of the Cosmos DB Mongo Database in which the Cosmos DB Mongo Collection is created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +60,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefaultTtlSeconds
+
+The default Time To Live in seconds. If the value is `0` items are not automatically expired.
 
 _Required_: No
 
@@ -67,6 +71,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the Cosmos DB Mongo Collection. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -74,6 +80,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which the Cosmos DB Mongo Collection is created. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -83,6 +91,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ShardKey
 
+The name of the key to partition on for sharding. There must not be any other unique index keys.
+
 _Required_: No
 
 _Type_: String
@@ -90,6 +100,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Throughput
+
+The throughput of the MongoDB collection (RU/s). Must be set in increments of `100`. The minimum value is `400`. This must be set upon database creation otherwise it cannot be updated without a manual terraform destroy-apply.
 
 _Required_: No
 

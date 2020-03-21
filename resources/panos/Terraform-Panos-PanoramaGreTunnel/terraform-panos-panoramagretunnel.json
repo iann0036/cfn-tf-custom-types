@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::PanoramaGreTunnel",
-    "description": "CloudFormation equivalent of panos_panorama_gre_tunnel",
+    "description": "This resource allows you to add/update/delete Panorama GRE tunnels.\n\n*Minimum PAN-OS version*: 9.0",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,46 +9,60 @@
             "type": "string"
         },
         "CopyTos": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Copy IP TOS bits from inner packet to GRE packet."
         },
         "Disabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Disable the GRE tunnel."
         },
         "EnableKeepAlive": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable tunnel monitoring."
         },
         "Interface": {
-            "type": "string"
+            "type": "string",
+            "description": "Interface to terminate tunnel."
         },
         "KeepAliveHoldTimer": {
-            "type": "number"
+            "type": "number",
+            "description": "Keep alive hold timer."
         },
         "KeepAliveInterval": {
-            "type": "number"
+            "type": "number",
+            "description": "Keep alive interval."
         },
         "KeepAliveRetry": {
-            "type": "number"
+            "type": "number",
+            "description": "Keep alive retry."
         },
         "LocalAddressType": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of local address.  Valid values are\n`ip` (default) or `floating-ip`."
         },
         "LocalAddressValue": {
-            "type": "string"
+            "type": "string",
+            "description": "IP address value."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The GRE tunnel name."
         },
         "PeerAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "Peer IP address."
         },
         "Template": {
-            "type": "string"
+            "type": "string",
+            "description": "The template name."
         },
         "Ttl": {
-            "type": "number"
+            "type": "number",
+            "description": "Time to live."
         },
         "TunnelInterface": {
-            "type": "string"
+            "type": "string",
+            "description": "Tunnel interface to apply the GRE tunnel to."
         }
     },
     "additionalProperties": false,

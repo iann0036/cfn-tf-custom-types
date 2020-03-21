@@ -25,6 +25,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Config
 
+Map of arbitrary configuration properties for the selected plugin.
+
 _Required_: No
 
 _Type_: List of <a href="plugin-config.md">Config</a>
@@ -32,6 +34,8 @@ _Type_: List of <a href="plugin-config.md">Config</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The name of the plugin to use.
 
 _Required_: Yes
 

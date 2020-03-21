@@ -1,6 +1,8 @@
 # Terraform::Gitlab::PipelineSchedule
 
-CloudFormation equivalent of gitlab_pipeline_schedule
+This resource allows you to create and manage pipeline schedules.
+For further information on clusters, consult the [gitlab
+documentation](https://docs.gitlab.com/ce/user/project/pipelines/schedules.html).
 
 ## Syntax
 
@@ -39,6 +41,8 @@ Properties:
 
 #### Active
 
+The activation of pipeline schedule. If false is set, the pipeline schedule will deactivated initially.
+
 _Required_: No
 
 _Type_: Boolean
@@ -46,6 +50,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Cron
+
+The cron (e.g. `0 1 * * *`).
 
 _Required_: Yes
 
@@ -55,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CronTimezone
 
+The timezone.
+
 _Required_: No
 
 _Type_: String
@@ -62,6 +70,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+The description of the pipeline schedule.
 
 _Required_: Yes
 
@@ -71,6 +81,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Project
 
+The name or id of the project to add the schedule to.
+
 _Required_: Yes
 
 _Type_: String
@@ -78,6 +90,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ref
+
+The branch/tag name to be triggered.
 
 _Required_: Yes
 

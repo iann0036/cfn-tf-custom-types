@@ -1,6 +1,6 @@
 # Terraform::Alicloud::ForwardEntry
 
-CloudFormation equivalent of alicloud_forward_entry
+Provides a forward resource.
 
 ## Syntax
 
@@ -41,6 +41,8 @@ Properties:
 
 #### ExternalIp
 
+The external ip address, the ip must along bandwidth package public ip which `alicloud_nat_gateway` argument `bandwidth_packages`.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +50,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ExternalPort
+
+The external port, valid value is 1~65535|any.
 
 _Required_: Yes
 
@@ -57,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ForwardTableId
 
+The value can get from `alicloud_nat_gateway` Attributes "forward_table_ids".
+
 _Required_: Yes
 
 _Type_: String
@@ -64,6 +70,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InternalIp
+
+The internal ip, must a private ip.
 
 _Required_: Yes
 
@@ -73,6 +81,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InternalPort
 
+The internal port, valid value is 1~65535|any.
+
 _Required_: Yes
 
 _Type_: String
@@ -81,6 +91,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IpProtocol
 
+The ip protocal, valid value is tcp|udp|any.
+
 _Required_: Yes
 
 _Type_: String
@@ -88,6 +100,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of forward entry.
 
 _Required_: No
 

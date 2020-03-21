@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::NotificationHubAuthorizationRule",
-    "description": "CloudFormation equivalent of azurerm_notification_hub_authorization_rule",
+    "description": "Manages an Authorization Rule associated with a Notification Hub within a Notification Hub Namespace.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,31 +29,38 @@
             "type": "string"
         },
         "Listen": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Does this Authorization Rule have Listen access to the Notification Hub? Defaults to `false`."
         },
         "Manage": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Does this Authorization Rule have Manage access to the Notification Hub? Defaults to `false`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name to use for this Authorization Rule. Changing this forces a new resource to be created."
         },
         "NamespaceName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Notification Hub Namespace in which the Notification Hub exists. Changing this forces a new resource to be created."
         },
         "NotificationHubName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Notification Hub for which the Authorization Rule should be created. Changing this forces a new resource to be created."
         },
         "PrimaryAccessKey": {
             "type": "string"
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Resource Group in which the Notification Hub Namespace exists. Changing this forces a new resource to be created."
         },
         "SecondaryAccessKey": {
             "type": "string"
         },
         "Send": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Does this Authorization Rule have Send access to the Notification Hub? Defaults to `false`."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

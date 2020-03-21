@@ -1,6 +1,9 @@
 # Terraform::HuaweiCloud::IdentityRoleAssignmentV3
 
-CloudFormation equivalent of huaweicloud_identity_role_assignment_v3
+Manages a V3 Role assignment within group on HuaweiCloud IAM Service.
+
+Note: You _must_ have admin privileges in your HuaweiCloud cloud to use
+this resource.
 
 ## Syntax
 
@@ -37,6 +40,8 @@ Properties:
 
 #### DomainId
 
+The domain to assign the role in.
+
 _Required_: No
 
 _Type_: String
@@ -44,6 +49,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GroupId
+
+The group to assign the role to.
 
 _Required_: No
 
@@ -53,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProjectId
 
+The project to assign the role in.
+
 _Required_: No
 
 _Type_: String
@@ -60,6 +69,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RoleId
+
+The role to assign.
 
 _Required_: Yes
 

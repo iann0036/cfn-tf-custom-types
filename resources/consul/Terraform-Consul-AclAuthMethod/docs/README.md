@@ -1,6 +1,7 @@
 # Terraform::Consul::AclAuthMethod
 
-CloudFormation equivalent of consul_acl_auth_method
+Starting with Consul 1.5.0, the consul_acl_auth_method resource can be used to
+managed Consul ACL auth methods.
 
 ## Syntax
 
@@ -36,6 +37,8 @@ Properties:
 
 #### Config
 
+The raw configuration for this ACL auth method.
+
 _Required_: Yes
 
 _Type_: List of <a href="config.md">Config</a>
@@ -43,6 +46,8 @@ _Type_: List of <a href="config.md">Config</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+A free form human readable description of the auth method.
 
 _Required_: No
 
@@ -52,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the ACL auth method.
+
 _Required_: Yes
 
 _Type_: String
@@ -59,6 +66,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The type of the ACL auth method.
 
 _Required_: Yes
 

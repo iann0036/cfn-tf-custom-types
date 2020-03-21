@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::VpcEipV1
 
-CloudFormation equivalent of opentelekomcloud_vpc_eip_v1
+Manages a V1 EIP resource within OpenTelekomCloud VPC.
 
 ## Syntax
 

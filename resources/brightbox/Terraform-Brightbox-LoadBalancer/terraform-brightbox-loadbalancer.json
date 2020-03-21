@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Brightbox::LoadBalancer",
-    "description": "CloudFormation equivalent of brightbox_load_balancer",
+    "description": "Provides a Brightbox Load Balancer resource. This can be used to create,\nmodify, and delete Load Balancers.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Healthcheck": {
@@ -77,32 +77,39 @@
             "type": "string"
         },
         "BufferSize": {
-            "type": "number"
+            "type": "number",
+            "description": "Buffer size in bytes."
         },
         "CertificatePem": {
-            "type": "string"
+            "type": "string",
+            "description": "A X509 SSL certificate in PEM format. Must be included along with `certificate_key`. If intermediate certificates are required they should be concatenated after the main certificate."
         },
         "CertificatePrivateKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The RSA private key used to sign the certificate in PEM format. Must be included along with `certificate_pem`."
         },
         "Locked": {
             "type": "boolean"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A label assigned to the Load Balancer."
         },
         "Nodes": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "An array of Server IDs."
         },
         "Policy": {
-            "type": "string"
+            "type": "string",
+            "description": "Method of load balancing to use, either `least-connections` or `round-robin`."
         },
         "Sslv3": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Allow SSL v3 to be used. Default is `false`."
         },
         "Status": {
             "type": "string"

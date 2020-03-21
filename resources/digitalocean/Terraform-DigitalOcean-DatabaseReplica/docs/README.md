@@ -1,6 +1,6 @@
 # Terraform::DigitalOcean::DatabaseReplica
 
-CloudFormation equivalent of digitalocean_database_replica
+Provides a DigitalOcean database replica resource.
 
 ## Syntax
 
@@ -38,6 +38,8 @@ Properties:
 
 #### ClusterId
 
+The ID of the original source database cluster.
+
 _Required_: Yes
 
 _Type_: String
@@ -45,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name for the database replica.
 
 _Required_: Yes
 
@@ -54,6 +58,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+DigitalOcean region where the replica will reside.
+
 _Required_: No
 
 _Type_: String
@@ -61,6 +67,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Size
+
+Database Droplet size associated with the replica (ex. `db-s-1vcpu-1gb`).
 
 _Required_: No
 

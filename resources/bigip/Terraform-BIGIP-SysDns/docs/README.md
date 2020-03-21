@@ -1,6 +1,6 @@
 # Terraform::BIGIP::SysDns
 
-CloudFormation equivalent of bigip_sys_dns
+`bigip_sys_dns` Configures DNS server on F5 BIG-IP
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### Description
 
+Provide description for your DNS server.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NameServers
+
+Name or IP address of the DNS server.
 
 _Required_: No
 
@@ -53,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NumberOfDots
 
+Configures the number of dots needed in a name before an initial absolute query will be made.
+
 _Required_: No
 
 _Type_: Double
@@ -60,6 +66,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Search
+
+Specify what domains you want to search.
 
 _Required_: No
 

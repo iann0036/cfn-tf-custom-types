@@ -24,6 +24,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Size
 
+Specifies the volume size.
+Its value must be a multiple of 10 and the value range is 100 GB to 2000 GB.
+
 _Required_: Yes
 
 _Type_: Double
@@ -31,6 +34,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+Specifies the volume type. Valid value:
+It must be COMMON (SATA) or ULTRAHIGH (SSD) and is case-sensitive.
 
 _Required_: Yes
 

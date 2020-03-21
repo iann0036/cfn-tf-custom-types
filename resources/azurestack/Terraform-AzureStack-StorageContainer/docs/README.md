@@ -1,6 +1,6 @@
 # Terraform::AzureStack::StorageContainer
 
-CloudFormation equivalent of azurestack_storage_container
+Manages an Azure Storage Container.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### ContainerAccessType
 
+The 'interface' for access the container provides. Can be either `blob`, `container` or `private`. Defaults to `private`. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -42,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the storage container. Must be unique within the storage service the container is located.
 
 _Required_: Yes
 
@@ -51,6 +55,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to
+create the storage container. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +65,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StorageAccountName
+
+Specifies the storage account in which to create the storage container.
+Changing this forces a new resource to be created.
 
 _Required_: Yes
 

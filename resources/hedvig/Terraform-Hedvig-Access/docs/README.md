@@ -1,6 +1,6 @@
 # Terraform::Hedvig::Access
 
-CloudFormation equivalent of hedvig_access
+A Hedvig Access adds an address to an ACL of a controller of a vdisk. This allows for management of access resources.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### Address
 
+The actual address that this Access is providing access to.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Host
+
+The fully qualified domain name of the controller this Access is associated with.
 
 _Required_: Yes
 
@@ -51,6 +55,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Type
 
+The type of address provided in `address`. Can be `host`, `ip` or `iqn`.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vdisk
+
+The name of the Vdisk that this Access is associated with.
 
 _Required_: Yes
 

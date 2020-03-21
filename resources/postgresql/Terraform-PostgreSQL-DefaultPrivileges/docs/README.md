@@ -1,6 +1,8 @@
 # Terraform::PostgreSQL::DefaultPrivileges
 
-CloudFormation equivalent of postgresql_default_privileges
+The ``postgresql_default_privileges`` resource creates and manages default privileges given to a user for a database schema.
+
+~> **Note:** This resource needs Postgresql version 9 or above.
 
 ## Syntax
 
@@ -40,6 +42,8 @@ Properties:
 
 #### Database
 
+The database to grant default privileges for this role.
+
 _Required_: Yes
 
 _Type_: String
@@ -47,6 +51,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ObjectType
+
+The PostgreSQL object type to set the default privileges on (one of: table, sequence).
 
 _Required_: Yes
 
@@ -56,6 +62,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Owner
 
+Role for which apply default privileges (You can change default privileges only for objects that will be created by yourself or by roles that you are a member of).
+
 _Required_: Yes
 
 _Type_: String
@@ -63,6 +71,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Privileges
+
+The list of privileges to apply as default privileges.
 
 _Required_: Yes
 
@@ -72,6 +82,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Role
 
+The name of the role to which grant default privileges on.
+
 _Required_: Yes
 
 _Type_: String
@@ -79,6 +91,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Schema
+
+The database schema to set default privileges for this role.
 
 _Required_: Yes
 

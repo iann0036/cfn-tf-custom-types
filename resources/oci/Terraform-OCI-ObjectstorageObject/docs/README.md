@@ -1,6 +1,9 @@
 # Terraform::OCI::ObjectstorageObject
 
-CloudFormation equivalent of oci_objectstorage_object
+This resource provides the Object resource in Oracle Cloud Infrastructure Object Storage service.
+
+Creates a new object or overwrites an existing one. See [Special Instructions for Object Storage
+PUT](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/signingrequests.htm#ObjectStoragePut) for request signature requirements.
 
 ## Syntax
 
@@ -55,6 +58,12 @@ Properties:
 
 #### Bucket
 
+The name of the bucket for the source object.
+* `object` - (Required) The name of the source object.
+* `source_object_if_match_etag` - (Optional) The entity tag to match the source object.
+* `destination_object_if_match_etag` - (Optional) The entity tag to match the target object.
+* `destination_object_if_none_match_etag` - (Optional) The entity tag to not match the target object.
+
 _Required_: Yes
 
 _Type_: String
@@ -62,6 +71,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CacheControl
+
+The cache-control header value to be returned in GetObjectResponse.
 
 _Required_: No
 
@@ -71,6 +82,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Content
 
+The object to upload to the object store. Cannot be defined if `source` or `source_uri_details` is defined.
+
 _Required_: No
 
 _Type_: String
@@ -78,6 +91,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ContentDisposition
+
+The Content-Disposition header value to be returned in GetObjectResponse.
 
 _Required_: No
 
@@ -87,6 +102,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ContentEncoding
 
+The content encoding of the object.
+
 _Required_: No
 
 _Type_: String
@@ -94,6 +111,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ContentLanguage
+
+The content language of the object.
 
 _Required_: No
 
@@ -103,6 +122,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ContentType
 
+The content type of the object.  Defaults to 'application/octet-stream' if not overridden during the PutObject call.
+
 _Required_: No
 
 _Type_: String
@@ -110,6 +131,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Metadata
+
+Optional user-defined metadata key and value.
+Note: All specified keys must be in lower case.
 
 _Required_: No
 
@@ -119,6 +143,13 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Namespace
 
+The top-level namespace of the source object.
+* `bucket` - (Required) The name of the bucket for the source object.
+* `object` - (Required) The name of the source object.
+* `source_object_if_match_etag` - (Optional) The entity tag to match the source object.
+* `destination_object_if_match_etag` - (Optional) The entity tag to match the target object.
+* `destination_object_if_none_match_etag` - (Optional) The entity tag to not match the target object.
+
 _Required_: Yes
 
 _Type_: String
@@ -127,6 +158,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Object
 
+The name of the source object.
+* `source_object_if_match_etag` - (Optional) The entity tag to match the source object.
+* `destination_object_if_match_etag` - (Optional) The entity tag to match the target object.
+* `destination_object_if_none_match_etag` - (Optional) The entity tag to not match the target object.
+
 _Required_: Yes
 
 _Type_: String
@@ -134,6 +170,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Source
+
+An absolute path to a file on the local system. Cannot be defined if `content` or `source_uri_details` is defined.
 
 _Required_: No
 

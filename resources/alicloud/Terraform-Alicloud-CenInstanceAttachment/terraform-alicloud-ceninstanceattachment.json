@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::CenInstanceAttachment",
-    "description": "CloudFormation equivalent of alicloud_cen_instance_attachment",
+    "description": "Provides a CEN child instance attachment resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,20 @@
             "type": "string"
         },
         "ChildInstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the child instance to attach."
         },
         "ChildInstanceOwnerId": {
-            "type": "string"
+            "type": "string",
+            "description": "The uid of the child instance. Only used when attach a child instance of other account."
         },
         "ChildInstanceRegionId": {
-            "type": "string"
+            "type": "string",
+            "description": "The region ID of the child instance to attach."
         },
         "InstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the CEN."
         }
     },
     "additionalProperties": false,

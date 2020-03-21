@@ -1,6 +1,6 @@
 # Terraform::NSXT::IpSet
 
-CloudFormation equivalent of nsxt_ip_set
+This resources provides a way to configure an IP set in NSX. An IP set is a collection of IP addresses. It is often used in the configuration of the NSX firewall.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### Description
 
+Description of this resource.
+
 _Required_: No
 
 _Type_: String
@@ -45,6 +47,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+The display name of this resource. Defaults to ID if not set.
+
 _Required_: No
 
 _Type_: String
@@ -52,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IpAddresses
+
+IP addresses.
 
 _Required_: No
 

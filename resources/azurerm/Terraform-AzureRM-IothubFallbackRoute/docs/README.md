@@ -1,6 +1,6 @@
 # Terraform::AzureRM::IothubFallbackRoute
 
-CloudFormation equivalent of azurerm_iothub_fallback_route
+Manages an IotHub Fallback Route
 
 ## Syntax
 
@@ -40,6 +40,8 @@ Properties:
 
 #### Condition
 
+The condition that is evaluated to apply the routing rule. If no condition is provided, it evaluates to `true` by default. For grammar, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-query-language.
+
 _Required_: No
 
 _Type_: String
@@ -47,6 +49,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Enabled
+
+Used to specify whether the fallback route is enabled.
 
 _Required_: Yes
 
@@ -56,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EndpointNames
 
+The endpoints to which messages that satisfy the condition are routed. Currently only 1 endpoint is allowed.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -64,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IothubName
 
+The name of the IoTHub to which this Fallback Route belongs. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -71,6 +79,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group under which the IotHub Storage Container Endpoint resource has to be created. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 # Terraform::OpenStack::ContainerinfraClustertemplateV1
 
-CloudFormation equivalent of openstack_containerinfra_clustertemplate_v1
+Manages a V1 Magnum cluster template resource within OpenStack.
 
 ## Syntax
 

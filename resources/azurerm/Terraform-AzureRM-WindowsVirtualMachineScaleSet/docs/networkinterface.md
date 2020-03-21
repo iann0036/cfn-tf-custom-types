@@ -36,6 +36,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### DnsServers
 
+A list of IP Addresses of DNS Servers which should be assigned to the Network Interface.
+
 _Required_: No
 
 _Type_: List of String
@@ -43,6 +45,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableAcceleratedNetworking
+
+Does this Network Interface support Accelerated Networking? Defaults to `false`.
 
 _Required_: No
 
@@ -52,6 +56,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableIpForwarding
 
+Does this Network Interface support IP Forwarding? Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -59,6 +65,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The Name which should be used for this Network Interface. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -68,6 +76,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NetworkSecurityGroupId
 
+The ID of a Network Security Group which should be assigned to this Network Interface.
+
 _Required_: No
 
 _Type_: String
@@ -75,6 +85,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Primary
+
+Is this the Primary IP Configuration?.
 
 _Required_: No
 

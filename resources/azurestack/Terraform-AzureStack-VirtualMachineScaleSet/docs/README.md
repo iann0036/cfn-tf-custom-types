@@ -1,6 +1,9 @@
 # Terraform::AzureStack::VirtualMachineScaleSet
 
-CloudFormation equivalent of azurestack_virtual_machine_scale_set
+Manages a virtual machine scale set.
+
+~> **Note:** All arguments including the administrator login and password will be stored in the raw state as plain-text.
+[Read more about sensitive data in state](/docs/state/sensitive-data.html).
 
 ## Syntax
 
@@ -100,6 +103,8 @@ Properties:
 
 #### LicenseType
 
+Specifies the Windows OS license type. If supplied, the only allowed values are `Windows_Client` and `Windows_Server`.
+
 _Required_: No
 
 _Type_: String
@@ -107,6 +112,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Location
+
+Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -116,6 +123,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the virtual machine scale set resource. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -123,6 +132,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Overprovision
+
+Specifies whether the virtual machine scale set should be overprovisioned. Defaults to `true`.
 
 _Required_: No
 
@@ -132,6 +143,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Priority
 
+Specifies the priority for the virtual machines in the scale set, defaults to `Regular`. Possible values are `Low` and `Regular`.
+
 _Required_: No
 
 _Type_: String
@@ -139,6 +152,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which to create the virtual machine scale set. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -156,6 +171,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -163,6 +180,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UpgradePolicyMode
+
+Specifies the mode of an upgrade to virtual machines in the scale set. Possible values, `Manual` or `Automatic`.
 
 _Required_: Yes
 

@@ -1,6 +1,7 @@
 # Terraform::DigitalOcean::Loadbalancer
 
-CloudFormation equivalent of digitalocean_loadbalancer
+Provides a DigitalOcean Load Balancer resource. This can be used to create,
+modify, and delete Load Balancers.
 
 ## Syntax
 
@@ -51,6 +52,10 @@ Properties:
 
 #### Algorithm
 
+The load balancing algorithm used to determine
+which backend Droplet will be selected by a client. It must be either `round_robin`
+or `least_connections`. The default value is `round_robin`.
+
 _Required_: No
 
 _Type_: String
@@ -75,6 +80,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableProxyProtocol
 
+A boolean value indicating whether PROXY
+Protocol should be used to pass information from connecting client requests to
+the backend service. Default value is `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -82,6 +91,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The Load Balancer name.
 
 _Required_: Yes
 
@@ -91,6 +102,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RedirectHttpToHttps
 
+A boolean value indicating whether
+HTTP requests to the Load Balancer on port 80 will be redirected to HTTPS on port 443.
+Default value is `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -98,6 +113,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region to start in.
 
 _Required_: Yes
 

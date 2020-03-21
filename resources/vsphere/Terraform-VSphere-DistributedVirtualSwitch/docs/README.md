@@ -1,6 +1,26 @@
 # Terraform::VSphere::DistributedVirtualSwitch
 
-CloudFormation equivalent of vsphere_distributed_virtual_switch
+The `vsphere_distributed_virtual_switch` resource can be used to manage VMware
+Distributed Virtual Switches.
+
+An essential component of a distributed, scalable VMware datacenter, the
+vSphere Distributed Virtual Switch (DVS) provides centralized management and
+monitoring of the networking configuration of all the hosts that are associated
+with the switch. In addition to adding port groups (see the
+[`vsphere_distributed_port_group`][distributed-port-group] resource) that can
+be used as networks for virtual machines, a DVS can be configured to perform
+advanced high availability, traffic shaping, network monitoring, and more.
+
+For an overview on vSphere networking concepts, see [this
+page][ref-vsphere-net-concepts]. For more information on vSphere DVS, see [this
+page][ref-vsphere-dvs].
+
+[distributed-port-group]: /docs/providers/vsphere/r/distributed_port_group.html
+[ref-vsphere-net-concepts]: https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.networking.doc/GUID-2B11DBB8-CB3C-4AFF-8885-EFEA0FC562F4.html
+[ref-vsphere-dvs]: https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.networking.doc/GUID-375B45C7-684C-4C51-BA3C-70E48DFABF04.html
+
+~> **NOTE:** This resource requires vCenter and is not available on direct ESXi
+connections.
 
 ## Syntax
 
@@ -258,6 +278,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ContactDetail
 
+The detailed contact information for the person
+who is responsible for the DVS.
+
 _Required_: No
 
 _Type_: String
@@ -265,6 +288,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ContactName
+
+The name of the person who is responsible for the
+DVS.
 
 _Required_: No
 
@@ -274,6 +300,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CustomAttributes
 
+Map of custom attribute ids to attribute
+value strings to set for virtual switch. See
+[here][docs-setting-custom-attributes] for a reference on how to set values
+for custom attributes.
+
 _Required_: No
 
 _Type_: List of <a href="customattributes.md">CustomAttributes</a>
@@ -282,6 +313,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DatacenterId
 
+The ID of the datacenter where the distributed
+virtual switch will be created. Forces a new resource if changed.
+
 _Required_: Yes
 
 _Type_: String
@@ -289,6 +323,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+A detailed description for the DVS.
 
 _Required_: No
 
@@ -378,6 +414,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Folder
 
+The folder to create the DVS in. Forces a new resource
+if changed.
+
 _Required_: No
 
 _Type_: String
@@ -450,6 +489,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ipv4Address
 
+An IPv4 address to identify the switch. This is
+mostly useful when used with the [Netflow arguments](#netflow-arguments) found
+below.
+
 _Required_: No
 
 _Type_: String
@@ -490,6 +533,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LacpApiVersion
 
+The Link Aggregation Control Protocol group
+version to use with the switch. Possible values are `singleLag` and
+`multipleLag`.
+
 _Required_: No
 
 _Type_: String
@@ -514,6 +561,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LinkDiscoveryOperation
 
+Whether to `advertise` or `listen`
+for link discovery traffic.
+
 _Required_: No
 
 _Type_: String
@@ -521,6 +571,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LinkDiscoveryProtocol
+
+The discovery protocol type. Valid
+types are `cdp` and `lldp`.
 
 _Required_: No
 
@@ -562,6 +615,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxMtu
 
+The maximum transmission unit (MTU) for the virtual
+switch.
+
 _Required_: No
 
 _Type_: Double
@@ -570,6 +626,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MulticastFilteringMode
 
+The multicast filtering mode to use
+with the switch. Can be one of `legacyFiltering` or `snooping`.
+
 _Required_: No
 
 _Type_: String
@@ -577,6 +636,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the distributed virtual switch.
 
 _Required_: Yes
 
@@ -722,6 +783,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+The IDs of any tags to attach to this resource. See
+[here][docs-applying-tags] for a reference on how to apply tags.
+
 _Required_: No
 
 _Type_: List of String
@@ -785,6 +849,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Version
+
+- The version of the DVS to create. The default is to
+create the DVS at the latest version supported by the version of vSphere
+being used. A DVS can be upgraded to another version, but cannot be
+downgraded.
 
 _Required_: No
 

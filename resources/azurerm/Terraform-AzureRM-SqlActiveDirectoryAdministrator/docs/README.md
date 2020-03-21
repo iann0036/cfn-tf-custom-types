@@ -1,6 +1,6 @@
 # Terraform::AzureRM::SqlActiveDirectoryAdministrator
 
-CloudFormation equivalent of azurerm_sql_active_directory_administrator
+Allows you to set a user or group as the AD administrator for an Azure SQL server
 
 ## Syntax
 
@@ -39,6 +39,8 @@ Properties:
 
 #### Login
 
+The login name of the principal to set as the server administrator.
+
 _Required_: Yes
 
 _Type_: String
@@ -46,6 +48,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ObjectId
+
+The ID of the principal to set as the server administrator.
 
 _Required_: Yes
 
@@ -55,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group for the SQL server. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -63,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServerName
 
+The name of the SQL Server on which to set the administrator. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -70,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TenantId
+
+The Azure Tenant ID.
 
 _Required_: Yes
 

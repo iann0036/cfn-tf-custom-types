@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::KustoEventhubDataConnection",
-    "description": "CloudFormation equivalent of azurerm_kusto_eventhub_data_connection",
+    "description": "Manages a Kusto (also known as Azure Data Explorer) EventHub Data Connection",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,34 +29,44 @@
             "type": "string"
         },
         "ClusterName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Kusto Cluster this data connection will be added to. Changing this forces a new resource to be created."
         },
         "ConsumerGroup": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the EventHub consumer group this data connection will use for ingestion. Changing this forces a new resource to be created."
         },
         "DataFormat": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the data format of the EventHub messages. Allowed values: `AVRO`, `CSV`, `JSON`, `MULTIJSON`, `PSV`, `RAW`, `SCSV`, `SINGLEJSON`, `SOHSV`, `TSV` and `TXT`."
         },
         "DatabaseName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Kusto Database this data connection will be added to. Changing this forces a new resource to be created."
         },
         "EventhubId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the resource id of the EventHub this data connection will use for ingestion. Changing this forces a new resource to be created."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "The location where the Kusto Database should be created. Changing this forces a new resource to be created."
         },
         "MappingRuleName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the mapping rule used for the message ingestion. Mapping rule must exist before resource is created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Kusto EventHub Data Connection to create. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the Resource Group where the Kusto Database should exist. Changing this forces a new resource to be created."
         },
         "TableName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the target table name used for the message ingestion. Table must exist before resource is created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

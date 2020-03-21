@@ -1,6 +1,6 @@
 # Terraform::NSXT::DhcpServerIpPool
 
-CloudFormation equivalent of nsxt_dhcp_server_ip_pool
+Provides a resource to configure IP Pool for logical DHCP server on NSX-T manager
 
 ## Syntax
 
@@ -53,6 +53,8 @@ Properties:
 
 #### Description
 
+Description of this resource.
+
 _Required_: No
 
 _Type_: String
@@ -60,6 +62,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+The display name of this resource. Defaults to ID if not set.
 
 _Required_: No
 
@@ -69,6 +73,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ErrorThreshold
 
+Error threshold in percent. Valid values are from 80 to 100, default is 100.
+
 _Required_: No
 
 _Type_: Double
@@ -76,6 +82,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GatewayIp
+
+Gateway IP.
 
 _Required_: No
 
@@ -85,6 +93,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LeaseTime
 
+Lease time in seconds. Default is 86400.
+
 _Required_: No
 
 _Type_: Double
@@ -93,6 +103,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LogicalDhcpServerId
 
+DHCP server uuid. Changing this would force new pool to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -100,6 +112,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WarningThreshold
+
+Warning threshold in percent. Valid values are from 50 to 80, default is 80.
 
 _Required_: No
 

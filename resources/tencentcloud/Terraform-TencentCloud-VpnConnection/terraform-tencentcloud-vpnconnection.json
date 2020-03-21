@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::VpnConnection",
-    "description": "CloudFormation equivalent of tencentcloud_vpn_connection",
+    "description": "Provides a resource to create a VPN connection.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "SecurityGroupPolicy": {
@@ -8,14 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "LocalCidrBlock": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Local cidr block."
                 },
                 "RemoteCidrBlock": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Remote cidr block list."
                 }
             },
             "required": [
@@ -33,70 +35,90 @@
             "type": "string"
         },
         "CustomerGatewayId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the customer gateway."
         },
         "EncryptProto": {
             "type": "string"
         },
         "IkeDhGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "DH group name of the IKE operation specification, valid values are `GROUP1`, `GROUP2`, `GROUP5`, `GROUP14`, `GROUP24`. Default value is `GROUP1`."
         },
         "IkeExchangeMode": {
-            "type": "string"
+            "type": "string",
+            "description": "Exchange mode of the IKE operation specification, valid values are `AGGRESSIVE`, `MAIN`. Default value is `MAIN`."
         },
         "IkeLocalAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "Local address of IKE operation specification, valid when ike_local_identity is `ADDRESS`, generally the value is public_ip_address of the related VPN gateway."
         },
         "IkeLocalFqdnName": {
-            "type": "string"
+            "type": "string",
+            "description": "Local FQDN name of the IKE operation specification."
         },
         "IkeLocalIdentity": {
-            "type": "string"
+            "type": "string",
+            "description": "Local identity way of IKE operation specification, valid values are `ADDRESS`, `FQDN`. Default value is `ADDRESS`."
         },
         "IkeProtoAuthenAlgorithm": {
-            "type": "string"
+            "type": "string",
+            "description": "Proto authenticate algorithm of the IKE operation specification, valid values are `MD5`, `SHA`. Default Value is `MD5`."
         },
         "IkeProtoEncryAlgorithm": {
-            "type": "string"
+            "type": "string",
+            "description": "Proto encrypt algorithm of the IKE operation specification, valid values are `3DES-CBC`, `AES-CBC-128`, `AES-CBC-128`, `AES-CBC-256`, `DES-CBC`. Default value is `3DES-CBC`."
         },
         "IkeRemoteAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "Remote address of IKE operation specification, valid when ike_remote_identity is `ADDRESS`, generally the value is public_ip_address of the related customer gateway."
         },
         "IkeRemoteFqdnName": {
-            "type": "string"
+            "type": "string",
+            "description": "Remote FQDN name of the IKE operation specification."
         },
         "IkeRemoteIdentity": {
-            "type": "string"
+            "type": "string",
+            "description": "Remote identity way of IKE operation specification, valid values are `ADDRESS`, `FQDN`. Default value is `ADDRESS`."
         },
         "IkeSaLifetimeSeconds": {
-            "type": "number"
+            "type": "number",
+            "description": "SA lifetime of the IKE operation specification, unit is `second`. The value ranges from 60 to 604800. Default value is 86400 seconds."
         },
         "IkeVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "Version of the IKE operation specification. Default value is `IKEV1`."
         },
         "IpsecEncryptAlgorithm": {
-            "type": "string"
+            "type": "string",
+            "description": "Encrypt algorithm of the IPSEC operation specification, valid values are `3DES-CBC`, `AES-CBC-128`, `AES-CBC-128`, `AES-CBC-256`, `DES-CBC`. Default value is `3DES-CBC`."
         },
         "IpsecIntegrityAlgorithm": {
-            "type": "string"
+            "type": "string",
+            "description": "Integrity algorithm of the IPSEC operation specification, valid values are `SHA1`, `MD5`. Default value is `MD5`."
         },
         "IpsecPfsDhGroup": {
-            "type": "string"
+            "type": "string",
+            "description": "PFS DH group, valid values are `GROUP1`, `GROUP2`, `GROUP5`, `GROUP14`, `GROUP24`, `NULL`. Default value is `NULL`."
         },
         "IpsecSaLifetimeSeconds": {
-            "type": "number"
+            "type": "number",
+            "description": "SA lifetime of the IPSEC operation specification, unit is `second`. The value ranges from 180 to 604800. Default value is 3600 seconds."
         },
         "IpsecSaLifetimeTraffic": {
-            "type": "number"
+            "type": "number",
+            "description": "SA lifetime of the IPSEC operation specification, unit is `KB`. The value should not be less then 2560. Default value is 1843200."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the VPN connection. The length of character is limited to 1-60."
         },
         "NetStatus": {
             "type": "string"
         },
         "PreShareKey": {
-            "type": "string"
+            "type": "string",
+            "description": "Pre-shared key of the VPN connection."
         },
         "RouteType": {
             "type": "string"
@@ -122,13 +144,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A list of tags used to associate different resources."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the VPC."
         },
         "VpnGatewayId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the VPN gateway."
         },
         "VpnProto": {
             "type": "string"

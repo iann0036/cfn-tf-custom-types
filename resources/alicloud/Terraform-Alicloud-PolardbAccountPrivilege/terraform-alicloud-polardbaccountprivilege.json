@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::PolardbAccountPrivilege",
-    "description": "CloudFormation equivalent of alicloud_polardb_account_privilege",
+    "description": "Provides a PolarDB account privilege resource and used to grant several database some access privilege. A database can be granted by multiple account.\n\n-> **NOTE:** Available in v1.67.0+.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,20 +9,24 @@
             "type": "string"
         },
         "AccountName": {
-            "type": "string"
+            "type": "string",
+            "description": "A specified account name."
         },
         "AccountPrivilege": {
-            "type": "string"
+            "type": "string",
+            "description": "The privilege of one account access database. Valid values: [\"ReadOnly\", \"ReadWrite\"]. Default to \"ReadOnly\"."
         },
         "DbClusterId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Id of cluster in which account belongs."
         },
         "DbNames": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of specified database name."
         }
     },
     "additionalProperties": false,

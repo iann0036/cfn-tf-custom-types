@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::Eni
 
-CloudFormation equivalent of tencentcloud_eni
+Provides a resource to create an ENI.
 
 ## Syntax
 
@@ -46,6 +46,8 @@ Properties:
 
 #### Description
 
+Description of the ENI, maximum length 60.
+
 _Required_: No
 
 _Type_: String
@@ -53,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ipv4Count
+
+The number of intranet IPv4s. When it is greater than 1, there is only one primary intranet IP. The others are auxiliary intranet IPs, which conflict with `ipv4s`.
 
 _Required_: No
 
@@ -62,6 +66,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name of the ENI, maximum length 60.
+
 _Required_: Yes
 
 _Type_: String
@@ -69,6 +75,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecurityGroups
+
+A set of security group IDs.
 
 _Required_: No
 
@@ -78,6 +86,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubnetId
 
+ID of the subnet within this vpc.
+
 _Required_: Yes
 
 _Type_: String
@@ -86,6 +96,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+Tags of the ENI.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -93,6 +105,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+ID of the vpc.
 
 _Required_: Yes
 

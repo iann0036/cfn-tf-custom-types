@@ -1,6 +1,14 @@
 # Terraform::VSphere::Folder
 
-CloudFormation equivalent of vsphere_folder
+The `vsphere_folder` resource can be used to manage vSphere inventory folders.
+The resource supports creating folders of the 5 major types - datacenter
+folders, host and cluster folders, virtual machine folders, datastore folders,
+and network folders.
+
+Paths are always relative to the specific type of folder you are creating.
+Subfolders are discovered by parsing the relative path specified in `path`, so
+`foo/bar` will create a folder named `bar` in the parent folder `foo`, as long
+as that folder exists.
 
 ## Syntax
 
@@ -39,6 +47,10 @@ Properties:
 
 #### CustomAttributes
 
+Map of custom attribute ids to attribute
+value strings to set for folder. See [here][docs-setting-custom-attributes]
+for a reference on how to set values for custom attributes.
+
 _Required_: No
 
 _Type_: List of <a href="customattributes.md">CustomAttributes</a>
@@ -46,6 +58,10 @@ _Type_: List of <a href="customattributes.md">CustomAttributes</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DatacenterId
+
+The ID of the datacenter the folder will be created in.
+Required for all folder types except for datacenter folders. Forces a new
+resource if changed.
 
 _Required_: No
 
@@ -55,6 +71,13 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Path
 
+The path of the folder to be created. This is relative to
+the root of the type of folder you are creating, and the supplied datacenter.
+For example, given a default datacenter of `default-dc`, a folder of type
+`vm` (denoting a virtual machine folder), and a supplied folder of
+`terraform-test-folder`, the resulting path would be
+`/default-dc/vm/terraform-test-folder`.
+
 _Required_: Yes
 
 _Type_: String
@@ -63,6 +86,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+The IDs of any tags to attach to this resource. See
+[here][docs-applying-tags] for a reference on how to apply tags.
+
 _Required_: No
 
 _Type_: List of String
@@ -70,6 +96,11 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The type of folder to create. Allowed options are
+`datacenter` for datacenter folders, `host` for host and cluster folders,
+`vm` for virtual machine folders, `datastore` for datastore folders, and
+`network` for network folders. Forces a new resource if changed.
 
 _Required_: Yes
 

@@ -1,6 +1,9 @@
 # Terraform::OCI::MarketplaceAcceptedAgreement
 
-CloudFormation equivalent of oci_marketplace_accepted_agreement
+This resource provides the Accepted Agreement resource in Oracle Cloud Infrastructure Marketplace service.
+
+Accepts a terms of use agreement for a specific package version of a listing. You must accept all
+terms of use for a package before you can deploy the package.
 
 ## Syntax
 
@@ -47,6 +50,8 @@ Properties:
 
 #### AgreementId
 
+The agreement to accept.
+
 _Required_: Yes
 
 _Type_: String
@@ -54,6 +59,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CompartmentId
+
+The unique identifier for the compartment where the agreement will be accepted.
 
 _Required_: Yes
 
@@ -63,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DefinedTags
 
+(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`.
+
 _Required_: No
 
 _Type_: List of <a href="definedtags.md">DefinedTags</a>
@@ -70,6 +79,8 @@ _Type_: List of <a href="definedtags.md">DefinedTags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+(Updatable) A display name for the accepted agreement.
 
 _Required_: No
 
@@ -79,6 +90,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FreeformTags
 
+(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`.
+
 _Required_: No
 
 _Type_: List of <a href="freeformtags.md">FreeformTags</a>
@@ -86,6 +99,8 @@ _Type_: List of <a href="freeformtags.md">FreeformTags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ListingId
+
+The unique identifier for the listing associated with the agreement.
 
 _Required_: Yes
 
@@ -95,6 +110,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PackageVersion
 
+The package version associated with the agreement.
+
 _Required_: Yes
 
 _Type_: String
@@ -102,6 +119,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Signature
+
+A signature generated for the listing package agreements that you can retrieve with [GetAgreement](https://docs.cloud.oracle.com/iaas/api/#/en/marketplace/20181001/Agreement/GetAgreement).
 
 _Required_: Yes
 

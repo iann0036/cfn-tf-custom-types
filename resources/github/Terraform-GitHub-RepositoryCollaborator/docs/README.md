@@ -1,6 +1,20 @@
 # Terraform::GitHub::RepositoryCollaborator
 
-CloudFormation equivalent of github_repository_collaborator
+Provides a GitHub repository collaborator resource.
+
+This resource allows you to add/remove collaborators from repositories in your
+organization. Collaborators can have explicit (and differing levels of) read,
+write, or administrator access to specific repositories in your organization,
+without giving the user full organization membership.
+
+When applied, an invitation will be sent to the user to become a collaborator
+on a repository. When destroyed, either the invitation will be cancelled or the
+collaborator will be removed from the repository.
+
+Further documentation on GitHub collaborators:
+
+- [Adding outside collaborators to repositories in your organization](https://help.github.com/articles/adding-outside-collaborators-to-repositories-in-your-organization/)
+- [Converting an organization member to an outside collaborator](https://help.github.com/articles/converting-an-organization-member-to-an-outside-collaborator/)
 
 ## Syntax
 
@@ -33,6 +47,9 @@ Properties:
 
 #### Permission
 
+The permission of the outside collaborator for the repository.
+Must be one of `pull`, `push`, or `admin`. Defaults to `push`.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +58,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Repository
 
+The GitHub repository.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +67,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Username
+
+The user to add to the repository as a collaborator.
 
 _Required_: Yes
 

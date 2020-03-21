@@ -1,6 +1,6 @@
 # Terraform::Panos::PanoramaBgpPeer
 
-CloudFormation equivalent of panos_panorama_bgp_peer
+This resource allows you to add/update/delete a Panorama BGP peer.
 
 ## Syntax
 
@@ -87,6 +87,9 @@ Properties:
 
 #### AddressFamilyType
 
+Set the AFI for this
+peer.  Valid values are `ipv4` or `ipv6`.
+
 _Required_: No
 
 _Type_: String
@@ -94,6 +97,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowIncomingConnections
+
+Allow incoming connections
+(default: `true`).
 
 _Required_: No
 
@@ -103,6 +109,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AllowOutgoingConnections
 
+Allow outgoing connections
+(default: `true`).
+
 _Required_: No
 
 _Type_: Boolean
@@ -110,6 +119,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AuthProfile
+
+Auth profile.
 
 _Required_: No
 
@@ -119,6 +130,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### BfdProfile
 
+BFD profile.  This can be a specific
+BFD profile name, `None` (disables BFD), or `Inherit-vr-global-setting`.
+
 _Required_: No
 
 _Type_: String
@@ -126,6 +140,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BgpPeerGroup
+
+The BGP peer group to put this peer into.
 
 _Required_: Yes
 
@@ -135,6 +151,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Enable
 
+Enable or not (default: `true`).
+
 _Required_: No
 
 _Type_: Boolean
@@ -142,6 +160,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableMpBgp
+
+Enable MP BGP.
 
 _Required_: No
 
@@ -151,6 +171,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableSenderSideLoopDetection
 
+Enable
+sender side loop detection.
+
 _Required_: No
 
 _Type_: Boolean
@@ -158,6 +181,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HoldTime
+
+Hold time, in seconds.
 
 _Required_: No
 
@@ -167,6 +192,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IdleHoldTime
 
+Idle hold time, in seconds.
+
 _Required_: No
 
 _Type_: Double
@@ -174,6 +201,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IncomingConnectionsRemotePort
+
+Restrict remote port for
+incoming BGP connections.
 
 _Required_: No
 
@@ -183,6 +213,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KeepAliveInterval
 
+Keep alive interval, in
+seconds (default: `30`).
+
 _Required_: No
 
 _Type_: Double
@@ -190,6 +223,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LocalAddressInterface
+
+Interface to accept BGP session.
 
 _Required_: Yes
 
@@ -199,6 +234,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LocalAddressIp
 
+Specify exact IP address if interface has
+multiple addresses.
+
 _Required_: No
 
 _Type_: String
@@ -206,6 +244,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MaxPrefixes
+
+Maximum of prefixes to receive from the
+peer.  This can be a number such as `"5000"` (default) or `unlimited`.
 
 _Required_: No
 
@@ -215,6 +256,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MinRouteAdvertisementInterval
 
+Minimum
+route advertisement interval, in seconds.
+
 _Required_: No
 
 _Type_: Double
@@ -222,6 +266,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MultiHop
+
+IP TTL value used for sending BGP packet.
 
 _Required_: No
 
@@ -231,6 +277,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name.
+
 _Required_: Yes
 
 _Type_: String
@@ -238,6 +286,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OpenDelayTime
+
+Open delay time, in seconds.
 
 _Required_: No
 
@@ -247,6 +297,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OutgoingConnectionsLocalPort
 
+Use specific local
+port for outgoing BGP connections.
+
 _Required_: No
 
 _Type_: Double
@@ -254,6 +307,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PeerAddressIp
+
+Peer IP address configuration.
 
 _Required_: Yes
 
@@ -263,6 +318,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PeerAs
 
+Peer AS number.
+
 _Required_: No
 
 _Type_: String
@@ -270,6 +327,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PeeringType
+
+Peering type that affects NOPEER
+community value handling.  Valid values are `unspecified` (default) or
+`bilateral`.
 
 _Required_: No
 
@@ -279,6 +340,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ReflectorClient
 
+This peer is reflector client.  Valid
+values are `non-client`, `client`, or `meshed-client`.
+
 _Required_: No
 
 _Type_: String
@@ -286,6 +350,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubsequentAddressFamilyMulticast
+
+Enable
+multicast subsequent address family for this peer.
 
 _Required_: No
 
@@ -295,6 +362,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubsequentAddressFamilyUnicast
 
+Enable
+unicast subsequent address family for this peer.
+
 _Required_: No
 
 _Type_: Boolean
@@ -302,6 +372,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Template
+
+The template name.
 
 _Required_: No
 
@@ -311,6 +383,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TemplateStack
 
+The template stack name.
+
 _Required_: No
 
 _Type_: String
@@ -318,6 +392,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VirtualRouter
+
+The virtual router to add this BGP
+peer to.
 
 _Required_: Yes
 

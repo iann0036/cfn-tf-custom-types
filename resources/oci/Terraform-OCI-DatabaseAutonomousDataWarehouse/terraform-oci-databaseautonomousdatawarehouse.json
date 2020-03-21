@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::DatabaseAutonomousDataWarehouse",
-    "description": "CloudFormation equivalent of oci_database_autonomous_data_warehouse",
+    "description": "This resource provides the Autonomous Data Warehouse resource in Oracle Cloud Infrastructure Database service.\n\nCreates a new Autonomous Data Warehouse.\n\n**IMPORTANT:** This resource is being **deprecated**, use `oci_database_autonomous_database` with `db_workload=DW` to provision Autonomous Data Warehouse.\nRefer to the [Deprecation Guide](#deprecation-guide) below on how to rename and migrate existing resources.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,10 +26,12 @@
             "type": "string"
         },
         "AdminPassword": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (\") or the username \"admin\", regardless of casing."
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Data Warehouse."
         },
         "ConnectionStrings": {
             "type": "array",
@@ -71,13 +73,16 @@
             }
         },
         "CpuCoreCount": {
-            "type": "number"
+            "type": "number",
+            "description": "(Updatable) The number of CPU Cores to be made available to the database."
         },
         "DataStorageSizeInTbs": {
-            "type": "number"
+            "type": "number",
+            "description": "(Updatable) Size, in terabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed."
         },
         "DbName": {
-            "type": "string"
+            "type": "string",
+            "description": "The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy."
         },
         "DbVersion": {
             "type": "string"
@@ -100,10 +105,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The user-friendly name for the Autonomous Data Warehouse. The name does not have to be unique."
         },
         "FreeformTags": {
             "type": "array",
@@ -123,10 +130,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
         },
         "LicenseModel": {
-            "type": "string"
+            "type": "string",
+            "description": "The Oracle license model that applies to the Oracle Autonomous Data Warehouse. The default is BRING_YOUR_OWN_LICENSE."
         },
         "LifecycleDetails": {
             "type": "string"

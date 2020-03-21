@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::FlexibleEngine::AsPolicyV1",
-    "description": "CloudFormation equivalent of flexibleengine_as_policy_v1",
+    "description": "Manages a V1 AS Policy resource within flexibleengine.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ScalingPolicyAction": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "InstanceNumber": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The number of instances to be operated. The default number is 1."
                 },
                 "Operation": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The operation to be performed. The options include `ADD` (default), `REMOVE`,\nand `SET`."
                 }
             },
             "required": []
@@ -21,19 +23,24 @@
             "additionalProperties": false,
             "properties": {
                 "EndTime": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The end time of the scaling action triggered periodically.\nThe time format complies with UTC. This argument is mandatory when `scaling_policy_type`\nis set to `RECURRENCE`. The time format is YYYY-MM-DDThh:mmZ."
                 },
                 "LaunchTime": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The time when the scaling action is triggered. If `scaling_policy_type`\nis set to `SCHEDULED`, the time format is YYYY-MM-DDThh:mmZ. If `scaling_policy_type` is set to\n`RECURRENCE`, the time format is hh:mm."
                 },
                 "RecurrenceType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The periodic triggering type. This argument is mandatory when\n`scaling_policy_type` is set to `RECURRENCE`. The options include `Daily`, `Weekly`, and `Monthly`."
                 },
                 "RecurrenceValue": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The frequency at which scaling actions are triggered."
                 },
                 "StartTime": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The start time of the scaling action triggered periodically.\nThe time format complies with UTC. The current time is used by default. The time\nformat is YYYY-MM-DDThh:mmZ."
                 }
             },
             "required": [
@@ -47,22 +54,28 @@
             "type": "string"
         },
         "AlarmId": {
-            "type": "string"
+            "type": "string",
+            "description": "The alarm rule ID. This argument is mandatory\nwhen `scaling_policy_type` is set to `ALARM`."
         },
         "CoolDownTime": {
-            "type": "number"
+            "type": "number",
+            "description": "The cooling duration (in seconds), and is 900 by default."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to create the AS policy. If\nomitted, the `region` argument of the provider is used. Changing this\ncreates a new AS policy."
         },
         "ScalingGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "The AS group ID. Changing this creates a new AS policy."
         },
         "ScalingPolicyName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the AS policy. The name can contain letters,\ndigits, underscores(_), and hyphens(-),and cannot exceed 64 characters."
         },
         "ScalingPolicyType": {
-            "type": "string"
+            "type": "string",
+            "description": "The AS policy type. The values can be `ALARM`, `SCHEDULED`,\nand `RECURRENCE`."
         },
         "ScalingPolicyAction": {
             "type": "array",

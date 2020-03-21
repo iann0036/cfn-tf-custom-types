@@ -1,6 +1,10 @@
 # Terraform::OCI::FunctionsFunction
 
-CloudFormation equivalent of oci_functions_function
+This resource provides the Function resource in Oracle Cloud Infrastructure Functions service.
+
+Creates a new function.
+
+**NOTE:** Terraform will take 40 minutes after destroying a function due to a known service issue. Refer [here](https://docs.cloud.oracle.com/iaas/Content/Functions/Tasks/functionsdeleting.htm)
 
 ## Syntax
 
@@ -50,6 +54,8 @@ Properties:
 
 #### ApplicationId
 
+The OCID of the application this function belongs to.
+
 _Required_: Yes
 
 _Type_: String
@@ -57,6 +63,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Config
+
+(Updatable) Function configuration. These values are passed on to the function as environment variables, this overrides application configuration values. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`.
 
 _Required_: No
 
@@ -66,6 +74,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DefinedTags
 
+(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`.
+
 _Required_: No
 
 _Type_: List of <a href="definedtags.md">DefinedTags</a>
@@ -73,6 +83,8 @@ _Type_: List of <a href="definedtags.md">DefinedTags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+The display name of the function. The display name must be unique within the application containing the function. Avoid entering confidential information.
 
 _Required_: Yes
 
@@ -82,6 +94,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FreeformTags
 
+(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`.
+
 _Required_: No
 
 _Type_: List of <a href="freeformtags.md">FreeformTags</a>
@@ -89,6 +103,8 @@ _Type_: List of <a href="freeformtags.md">FreeformTags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Image
+
+(Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`.
 
 _Required_: Yes
 
@@ -98,6 +114,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ImageDigest
 
+(Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`.
+
 _Required_: No
 
 _Type_: String
@@ -106,6 +124,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MemoryInMbs
 
+(Updatable) Maximum usable memory for the function (MiB).
+
 _Required_: Yes
 
 _Type_: String
@@ -113,6 +133,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TimeoutInSeconds
+
+(Updatable) Timeout for executions of the function. Value in seconds.
 
 _Required_: No
 

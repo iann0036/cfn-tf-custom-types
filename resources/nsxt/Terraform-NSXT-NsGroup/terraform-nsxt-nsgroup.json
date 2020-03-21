@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::NSXT::NsGroup",
-    "description": "CloudFormation equivalent of nsxt_ns_group",
+    "description": "This resource provides a method to create and manage a network and security (NS) group in NSX. A NS group is used to group other objects into collections for application of other settings.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Member": {
@@ -66,10 +66,12 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of this resource."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The display name of this resource. Defaults to ID if not set."
         },
         "Revision": {
             "type": "number"

@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::KmsKeyV1
 
-CloudFormation equivalent of huaweicloud_kms_key_v1
+Manages a V1 key resource within KMS.
 
 ## Syntax
 
@@ -37,6 +37,9 @@ Properties:
 
 #### IsEnabled
 
+Specifies whether the key is enabled. Defaults to true.
+Changing this updates the state of existing key.
+
 _Required_: No
 
 _Type_: Boolean
@@ -44,6 +47,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeyAlias
+
+The alias in which to create the key. It is required when
+we create a new key. Changing this updates the alias of key.
 
 _Required_: Yes
 
@@ -53,6 +59,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KeyDescription
 
+The description of the key as viewed in Huawei console.
+Changing this updates the description of key.
+
 _Required_: No
 
 _Type_: String
@@ -61,6 +70,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PendingDays
 
+Duration in days after which the key is deleted
+after destruction of the resource, must be between 7 and 1096 days. It doesn't
+have default value. It only be used when delete a key.
+
 _Required_: No
 
 _Type_: String
@@ -68,6 +81,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Realm
+
+Region where a key resides. Changing this creates a new key.
 
 _Required_: No
 

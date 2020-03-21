@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Cloudflare::LoadBalancerMonitor",
-    "description": "CloudFormation equivalent of cloudflare_load_balancer_monitor",
+    "description": "If you're using Cloudflare's Load Balancing to load-balance across multiple origin servers or data centers, you configure one of these Monitors to actively check the availability of those servers over HTTP(S) or TCP.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Header": {
@@ -30,46 +30,57 @@
             "type": "string"
         },
         "AllowInsecure": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Do not validate the certificate when monitor use HTTPS. Only valid if `type` is \"http\" or \"https\"."
         },
         "CreatedOn": {
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Free text description."
         },
         "ExpectedBody": {
-            "type": "string"
+            "type": "string",
+            "description": "A case-insensitive sub-string to look for in the response body. If this string is not found, the origin will be marked as unhealthy. Only valid if `type` is \"http\" or \"https\". Default: \"\"."
         },
         "ExpectedCodes": {
-            "type": "string"
+            "type": "string",
+            "description": "The expected HTTP response code or code range of the health check. Eg `2xx`. Only valid and required if `type` is \"http\" or \"https\"."
         },
         "FollowRedirects": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Follow redirects if returned by the origin. Only valid if `type` is \"http\" or \"https\"."
         },
         "Interval": {
-            "type": "number"
+            "type": "number",
+            "description": "The interval between each health check. Shorter intervals may improve failover time, but will increase load on the origins as we check from multiple locations. Default: 60."
         },
         "Method": {
-            "type": "string"
+            "type": "string",
+            "description": "The method to use for the health check. Valid values are any valid HTTP verb if `type` is \"http\" or \"https\", or `connection_established` if `type` is \"tcp\". Default: \"GET\" if `type` is \"http\" or \"https\", or \"connection_established\" if `type` is \"tcp\" ."
         },
         "ModifiedOn": {
             "type": "string"
         },
         "Path": {
-            "type": "string"
+            "type": "string",
+            "description": "The endpoint path to health check against. Default: \"/\". Only valid if `type` is \"http\" or \"https\"."
         },
         "Port": {
             "type": "number"
         },
         "Retries": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of retries to attempt in case of a timeout before marking the origin as unhealthy. Retries are attempted immediately. Default: 2."
         },
         "Timeout": {
-            "type": "number"
+            "type": "number",
+            "description": "The timeout (in seconds) before marking the health check as failed. Default: 5."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The protocol to use for the healthcheck. Currently supported protocols are 'HTTP', 'HTTPS' and 'TCP'. Default: \"http\"."
         },
         "Header": {
             "type": "array",

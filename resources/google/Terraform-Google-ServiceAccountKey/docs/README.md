@@ -1,6 +1,6 @@
 # Terraform::Google::ServiceAccountKey
 
-CloudFormation equivalent of google_service_account_key
+Creates and manages service account key-pairs, which allow the user to establish identity of a service account outside of GCP. For more information, see [the official documentation](https://cloud.google.com/iam/docs/creating-managing-service-account-keys) and [API](https://cloud.google.com/iam/reference/rest/v1/projects.serviceAccounts.keys).
 
 ## Syntax
 
@@ -37,6 +37,11 @@ Properties:
 
 #### KeyAlgorithm
 
+The algorithm used to generate the key. KEY_ALG_RSA_2048 is the default algorithm.
+Valid values are listed at
+[ServiceAccountPrivateKeyType](https://cloud.google.com/iam/reference/rest/v1/projects.serviceAccounts.keys#ServiceAccountKeyAlgorithm)
+(only used on create).
+
 _Required_: No
 
 _Type_: String
@@ -68,6 +73,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServiceAccountId
+
+The Service account id of the Key Pair. This can be a string in the format
+`{ACCOUNT}` or `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`, where `{ACCOUNT}` is the email address or
+unique id of the service account. If the `{ACCOUNT}` syntax is used, the project will be inferred from the account.
 
 _Required_: Yes
 

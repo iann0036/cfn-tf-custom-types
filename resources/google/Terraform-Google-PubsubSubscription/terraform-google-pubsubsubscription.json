@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::PubsubSubscription",
-    "description": "CloudFormation equivalent of google_pubsub_subscription",
+    "description": "A named resource representing the stream of messages from a single,\nspecific topic, to be delivered to the subscribing application.\n\n\nTo get more information about Subscription, see:\n\n* [API documentation](https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.subscriptions)\n* How-to Guides\n    * [Managing Subscriptions](https://cloud.google.com/pubsub/docs/admin#managing_subscriptions)",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ExpirationPolicy": {
@@ -124,7 +124,8 @@
             "type": "string"
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used."
         },
         "RetainAckedMessages": {
             "type": "boolean"

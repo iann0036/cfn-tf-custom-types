@@ -1,6 +1,6 @@
 # Terraform::OPC::ComputeAcl
 
-CloudFormation equivalent of opc_compute_acl
+The ``opc_compute_acl`` resource creates and manages an ACL in an Oracle Cloud Infrastructure Compute Classic identity domain.
 
 ## Syntax
 
@@ -36,6 +36,8 @@ Properties:
 
 #### Description
 
+A description of the ACL.
+
 _Required_: No
 
 _Type_: String
@@ -43,6 +45,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Enabled
+
+Enables or disables the ACL. Set to true by default.
 
 _Required_: No
 
@@ -52,6 +56,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the ACL.
+
 _Required_: Yes
 
 _Type_: String
@@ -59,6 +65,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+List of tags that may be applied to the ACL.
 
 _Required_: No
 
@@ -84,5 +92,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Uri
 
-Returns the <code>Uri</code> value.
+The Uniform Resource Identifier for the ACL.
 

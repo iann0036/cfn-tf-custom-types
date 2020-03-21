@@ -1,6 +1,12 @@
 # Terraform::Skytap::Vm
 
-CloudFormation equivalent of skytap_vm
+Provides a Skytap Virtual Machine (VM) resource. The environment VM resource represents an image of a single virtual machine.
+
+~> **NOTE:**
+* VMs do not exist outside of environments or templates.
+* An environment or template can have multiple VMs.
+* Each VM is a unique resource. Therefore, a VM in a template will have a different ID than a VM in an environment created from that template.
+* The VM will be run immediately after creation.
 
 ## Syntax
 
@@ -55,6 +61,8 @@ Properties:
 
 #### Cpus
 
+Number of CPUs allocated to this virtual machine. Valid range is 1 to 12. Maximum limit depends on the `max_cpus` setting.
+
 _Required_: No
 
 _Type_: Double
@@ -62,6 +70,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnvironmentId
+
+ID of the environment you want to add the VM to. If updating with a new one then the VM will be recreated.
 
 _Required_: Yes
 
@@ -71,6 +81,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A unique name for the published service.
+* `internal_port` - (Required, Force New) The port that is exposed on the interface. Typically this will be dictated by standard usage (e.g., port 80 for http traffic, port 22 for SSH).
+
 _Required_: No
 
 _Type_: String
@@ -78,6 +91,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OsDiskSize
+
+The size of the OS disk. The disk size is in MiB; it will be converted to GiB in the Skytap UI. The maximum disk size is 2,096,128 MiB (1.999 TiB).
 
 _Required_: No
 
@@ -87,6 +102,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ram
 
+Amount of RAM allocated to this VM. Valid range is 256 and 131,072 (MB). Maximum limit depends on `max_ram` setting.
+
 _Required_: No
 
 _Type_: Double
@@ -94,6 +111,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TemplateId
+
+ID of the template you want to create the vm from. If updating with a new one then the VM will be recreated.
 
 _Required_: Yes
 
@@ -103,6 +122,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UserData
 
+VM user data, available from the metadata server and the skytap api.
+
 _Required_: No
 
 _Type_: String
@@ -110,6 +131,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VmId
+
+ID of the VM you want to create the VM from. If updating with a new one then the VM will be recreated.
 
 _Required_: Yes
 

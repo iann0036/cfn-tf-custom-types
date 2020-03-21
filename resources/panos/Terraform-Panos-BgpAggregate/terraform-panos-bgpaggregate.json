@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::BgpAggregate",
-    "description": "CloudFormation equivalent of panos_bgp_aggregate",
+    "description": "This resource allows you to add/update/delete BGP address aggregation\nrules.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,58 +9,75 @@
             "type": "string"
         },
         "AsPathLimit": {
-            "type": "number"
+            "type": "number",
+            "description": "Add AS path limit attribute if it does\nnot exist."
         },
         "AsPathType": {
-            "type": "string"
+            "type": "string",
+            "description": "AS path update options.  Valid values are\n`none` (default) or `prepend`."
         },
         "AsPathValue": {
-            "type": "string"
+            "type": "string",
+            "description": "For `as_path_type` of `prepend`, the value to\nprepend."
         },
         "AsSet": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Generate AS-set attribute."
         },
         "CommunityType": {
-            "type": "string"
+            "type": "string",
+            "description": "Community update options.  Valid values are\n`none` (default), `remove-all`, `remove-regex`, `append`, or `overwrite`."
         },
         "CommunityValue": {
-            "type": "string"
+            "type": "string",
+            "description": "If `community_type` is `remove-regex`,\n`append`, or `overwrite`, the value associated with that setting.  For the\n`append` and `overwrite` types specifically, valid values are\n`no-export`, `no-advertise`, `local-as`, or `nopeer`."
         },
         "Enable": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable this rule (default: `true`)."
         },
         "ExtendedCommunityType": {
-            "type": "string"
+            "type": "string",
+            "description": "Extended community update options.  Valid\nvalues are `none` (default), `remove-all`, `remove-regex`, `append`, or `overwrite`."
         },
         "ExtendedCommunityValue": {
             "type": "string"
         },
         "LocalPreference": {
-            "type": "string"
+            "type": "string",
+            "description": "New local preference value."
         },
         "Med": {
-            "type": "string"
+            "type": "string",
+            "description": "New MED value."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The rule name."
         },
         "NextHop": {
-            "type": "string"
+            "type": "string",
+            "description": "Next hop address."
         },
         "Origin": {
-            "type": "string"
+            "type": "string",
+            "description": "New route origin.  Valid values are `incomplete`\n(default), `igp`, or `egp`."
         },
         "Prefix": {
-            "type": "string"
+            "type": "string",
+            "description": "Aggregating address prefix."
         },
         "Summary": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Summarize route."
         },
         "VirtualRouter": {
-            "type": "string"
+            "type": "string",
+            "description": "The virtual router to put the rule into."
         },
         "Weight": {
-            "type": "number"
+            "type": "number",
+            "description": "New weight value."
         }
     },
     "additionalProperties": false,

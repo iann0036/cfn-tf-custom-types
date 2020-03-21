@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::PrivateDnsZoneVirtualNetworkLink",
-    "description": "CloudFormation equivalent of azurerm_private_dns_zone_virtual_network_link",
+    "description": "Enables you to manage Private DNS zone Virtual Network Links. These Links enable DNS resolution and registration inside Azure Virtual Networks using Azure Private DNS.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,16 +29,20 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Private DNS Zone Virtual Network Link. Changing this forces a new resource to be created."
         },
         "PrivateDnsZoneName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Private DNS zone (without a terminating dot). Changing this forces a new resource to be created."
         },
         "RegistrationEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is auto-registration of virtual machine records in the virtual network in the Private DNS zone enabled? Defaults to `false`."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the resource group where the resource exists. Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -58,10 +62,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "VirtualNetworkId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Resource ID of the Virtual Network that should be linked to the DNS Zone. Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

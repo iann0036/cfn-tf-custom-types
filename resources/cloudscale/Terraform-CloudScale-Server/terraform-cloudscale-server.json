@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::CloudScale::Server",
-    "description": "CloudFormation equivalent of cloudscale_server",
+    "description": "Provides a cloudscale.ch Server resource. This can be used to create, modify, and delete servers.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Interfaces": {
@@ -25,25 +25,31 @@
             "type": "string"
         },
         "AllowStoppingForUpdate": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If true, allows Terraform to stop the instance to update its properties. If you try to update a property that requires stopping the instance without setting this field, the update will fail."
         },
         "BulkVolumeSizeGb": {
-            "type": "number"
+            "type": "number",
+            "description": "The size in GB of the bulk storage volume of the new server. If this parameter is not specified, no bulk storage volume will be attached to the server. Valid values are multiples of 100."
         },
         "FlavorSlug": {
-            "type": "string"
+            "type": "string",
+            "description": "The slug (name) of the flavor to use for the new server. Possible values can be found in our [API documentation](https://www.cloudscale.ch/en/api/v1#flavors).\n**Note:** If you want to update this value after initial creation, you must set [`allow_stopping_for_update`](#allow_stopping_for_update) to `true`."
         },
         "Href": {
             "type": "string"
         },
         "ImageSlug": {
-            "type": "string"
+            "type": "string",
+            "description": "The slug (name) of the image to use for the new server. Possible values can be found in our [API documentation](https://www.cloudscale.ch/en/api/v1#images)."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the new server. The name has to be a valid host name or a fully qualified domain name (FQDN)."
         },
         "Password": {
-            "type": "string"
+            "type": "string",
+            "description": "The password of the default user of the new server. When omitted, no password will be set."
         },
         "PrivateIpv4Address": {
             "type": "string"
@@ -99,25 +105,32 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of SSH public keys. Use the full content of your \\*.pub file here."
         },
         "Status": {
-            "type": "string"
+            "type": "string",
+            "description": "The desired state of a server. Can be `running` (default) or `stopped`."
         },
         "UseIpv6": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable/disable IPv6 on the public network interface of the new server. Can be `true` (default) or `false`."
         },
         "UsePrivateNetwork": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Attach the `default` private network interface to the new server. Can be `true` or `false` (default). Use [`interfaces`](#interfaces) option for advanced setups."
         },
         "UsePublicNetwork": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Attach the public network interface to the new server. Can be `true` (default) or `false`. Use [`interfaces`](#interfaces) option for advanced setups."
         },
         "UserData": {
-            "type": "string"
+            "type": "string",
+            "description": "User data (custom cloud-config settings) to use for the new server. Needs to be valid YAML. A default configuration will be used if this parameter is not specified or set to null. Use only if you are an advanced user with knowledge of cloud-config and cloud-init."
         },
         "VolumeSizeGb": {
-            "type": "number"
+            "type": "number",
+            "description": "The size in GB of the SSD root volume of the new server."
         },
         "Volumes": {
             "type": "array",
@@ -142,7 +155,8 @@
             }
         },
         "ZoneSlug": {
-            "type": "string"
+            "type": "string",
+            "description": "You can specify a zone slug. Options include `lpg1` and `rma1`."
         },
         "Interfaces": {
             "type": "array",

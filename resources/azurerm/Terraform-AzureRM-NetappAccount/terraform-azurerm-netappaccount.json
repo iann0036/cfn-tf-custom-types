@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::NetappAccount",
-    "description": "CloudFormation equivalent of azurerm_netapp_account",
+    "description": "Manages a NetApp Account.\n\n~> **NOTE:** Azure allows only one active directory can be joined to a single subscription at a time for NetApp Account.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ActiveDirectory": {
@@ -12,22 +12,28 @@
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of DNS server IP addresses for the Active Directory domain. Only allows `IPv4` address."
                 },
                 "Domain": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the Active Directory domain."
                 },
                 "OrganizationalUnit": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Organizational Unit (OU) within the Active Directory Domain."
                 },
                 "Password": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The password associated with the `username`."
                 },
                 "SmbServerName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The NetBIOS name which should be used for the NetApp SMB Server, which will be registered as a computer account in the AD and used to mount volumes."
                 },
                 "Username": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Username of Active Directory Domain Administrator."
                 }
             },
             "required": [
@@ -64,13 +70,16 @@
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the NetApp Account. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group where the NetApp Account should be created. Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -90,7 +99,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "ActiveDirectory": {
             "type": "array",

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::ApplicationObject",
-    "description": "CloudFormation equivalent of panos_application_object",
+    "description": "This resource allows you to add/update/delete application objects.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Defaults": {
@@ -43,13 +43,16 @@
             "additionalProperties": false,
             "properties": {
                 "DataPatterns": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Data pattern scanning."
                 },
                 "FileTypes": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "File type scanning."
                 },
                 "Viruses": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Virus scanning."
                 }
             },
             "required": []
@@ -59,19 +62,24 @@
             "additionalProperties": false,
             "properties": {
                 "TcpHalfClosed": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "TCP half closed timeout."
                 },
                 "TcpTimeWait": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "TCP time wait timeout."
                 },
                 "TcpTimeout": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "TCP timeout."
                 },
                 "Timeout": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The timeout."
                 },
                 "UdpTimeout": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "UDP timeout."
                 }
             },
             "required": []
@@ -141,61 +149,80 @@
             "type": "string"
         },
         "AbleToFileTransfer": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Able to file transfer."
         },
         "AlgDisableCapability": {
-            "type": "string"
+            "type": "string",
+            "description": "The alg disable capability."
         },
         "Category": {
-            "type": "string"
+            "type": "string",
+            "description": "The category."
         },
         "ContinueScanningForOtherApplications": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Continue scanning for\nother applications."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The object's description."
         },
         "EvasiveBehavior": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "App is evasive."
         },
         "ExcessiveBandwidth": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Excessive bandwidth use."
         },
         "HasKnownVulnerability": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Has known vulnerabilities."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The object's name."
         },
         "NoAppIdCaching": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "No appid caching."
         },
         "ParentApp": {
-            "type": "string"
+            "type": "string",
+            "description": "The parent application."
         },
         "PervasiveUse": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "App is pervasive."
         },
         "ProneToMisuse": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Prone to misuse."
         },
         "Risk": {
-            "type": "number"
+            "type": "number",
+            "description": "The risk (default: 1)."
         },
         "Subcategory": {
-            "type": "string"
+            "type": "string",
+            "description": "The subcategory."
         },
         "Technology": {
-            "type": "string"
+            "type": "string",
+            "description": "The technology."
         },
         "TunnelsOtherApplications": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "This application tunnels other apps."
         },
         "UsedByMalware": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "App is used by malware."
         },
         "Vsys": {
-            "type": "string"
+            "type": "string",
+            "description": "The object's vsys (default: `vsys1`)."
         },
         "Defaults": {
             "type": "array",

@@ -31,6 +31,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### AvailableZone
 
+Specifies the AZ of the instance.
+Changing this creates a new instance.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +41,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecurityGroup
+
+Specifies the ID of the security group of the instance.
+Changing this creates a new instance.
 
 _Required_: No
 
@@ -47,6 +53,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubnetId
 
+Specifies the ID of the subnet where the instance resides.
+Changing this creates a new instance.
+
 _Required_: Yes
 
 _Type_: String
@@ -54,6 +63,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+Specifies the ID of the virtual private cloud (VPC) where the
+instance resides. Changing this creates a new instance.
 
 _Required_: Yes
 

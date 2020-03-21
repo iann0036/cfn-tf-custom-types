@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Consul::AclTokenPolicyAttachment",
-    "description": "CloudFormation equivalent of consul_acl_token_policy_attachment",
+    "description": "The `consul_acl_token_attachment` resource links a Consul Token and an ACL\npolicy. The link is implemented through an update to the Consul ACL token.\n\n~> **NOTE:** This resource is only useful to attach policies to an ACL token\nthat has been created outside the current Terraform configuration, like the\nanonymous or the master token. If the token you need to attach a policy to has\nbeen created in the current Terraform configuration and will only be used in it,\nyou should use the `policies` attribute of [`consul_acl_token`](/docs/providers/consul/r/acl_token.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "Policy": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the policy attached to the token."
         },
         "TokenId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the token."
         }
     },
     "additionalProperties": false,

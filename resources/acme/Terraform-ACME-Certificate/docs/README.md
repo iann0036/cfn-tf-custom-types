@@ -1,6 +1,11 @@
 # Terraform::ACME::Certificate
 
-CloudFormation equivalent of acme_certificate
+The `acme_certificate` resource can be used to create and manage an ACME TLS
+certificate.
+
+-> **NOTE:** As the usage model of Terraform generally sees it as being run on
+a different server than a certificate would normally be placed on, the
+`acme_certificate` resource only supports DNS challenges.
 
 ## Syntax
 
@@ -58,6 +63,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CertificateP12Password
 
+Password to be used when generating
+the PFX file stored in [`certificate_p12`](#certificate_p12). Defaults to an
+empty string.
+
 _Required_: No
 
 _Type_: String
@@ -65,6 +74,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CertificateRequestPem
+
+A pre-created certificate request, such as one
+from [`tls_cert_request`][tls-cert-request], or one from an external source,
+in PEM format.  Either this, or the in-resource request options (`common_name`,
+`key_type`, and optionally `subject_alternative_names`) need to be specified.
 
 _Required_: No
 
@@ -74,6 +88,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CommonName
 
+The certificate's common name, the primary domain that the
+certificate will be recognized for. Required when not specifying a CSR.
+
 _Required_: No
 
 _Type_: String
@@ -81,6 +98,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeyType
+
+The key type for the certificate's private key. Can be one of:
+`P256` and `P384` (for ECDSA keys of respective length) or `2048`, `4096`, and
+`8192` (for RSA keys of respective length). Required when not specifying a
+CSR. The default is `2048` (RSA key of 2048 bits).
 
 _Required_: No
 
@@ -113,6 +135,10 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubjectAlternativeNames
+
+The certificate's subject alternative names,
+domains that this certificate will also be recognized for. Only valid when not
+specifying a CSR.
 
 _Required_: No
 

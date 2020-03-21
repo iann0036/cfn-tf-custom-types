@@ -1,6 +1,8 @@
 # Terraform::OCI::LimitsQuota
 
-CloudFormation equivalent of oci_limits_quota
+This resource provides the Quota resource in Oracle Cloud Infrastructure Limits service.
+
+Creates a new quota with the details supplied.
 
 ## Syntax
 
@@ -44,6 +46,8 @@ Properties:
 
 #### CompartmentId
 
+The OCID of the compartment containing the resource this quota applies to.
+
 _Required_: Yes
 
 _Type_: String
@@ -51,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefinedTags
+
+(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`.
 
 _Required_: No
 
@@ -60,6 +66,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+(Updatable) The description you assign to the quota.
+
 _Required_: Yes
 
 _Type_: String
@@ -67,6 +75,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FreeformTags
+
+(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`.
 
 _Required_: No
 
@@ -76,6 +86,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name you assign to the quota during creation. The name must be unique across all quotas in the tenancy and cannot be changed.
+
 _Required_: Yes
 
 _Type_: String
@@ -83,6 +95,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Statements
+
+(Updatable) An array of quota statements written in the declarative quota statement language.
 
 _Required_: Yes
 

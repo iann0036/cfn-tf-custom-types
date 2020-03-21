@@ -1,6 +1,8 @@
 # Terraform::AzureRM::KubernetesClusterNodePool
 
-CloudFormation equivalent of azurerm_kubernetes_cluster_node_pool
+Manages a Node Pool within a Kubernetes Cluster
+
+~> **NOTE:** Multiple Node Pools are only supported when the Kubernetes Cluster is using Virtual Machine Scale Sets.
 
 ## Syntax
 
@@ -65,6 +67,8 @@ Properties:
 
 #### AvailabilityZones
 
+A list of Availability Zones where the Nodes in this Node Pool should be created in.
+
 _Required_: No
 
 _Type_: List of String
@@ -72,6 +76,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableAutoScaling
+
+Whether to enable [auto-scaler](https://docs.microsoft.com/en-us/azure/aks/cluster-autoscaler). Defaults to `false`.
 
 _Required_: No
 
@@ -81,6 +87,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableNodePublicIp
 
+Should each node have a Public IP Address? Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -88,6 +96,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KubernetesClusterId
+
+The ID of the Kubernetes Cluster where this Node Pool should exist. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -105,6 +115,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxPods
 
+The maximum number of pods that can run on each agent. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: Double
@@ -120,6 +132,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the Node Pool which should be created within the Kubernetes Cluster. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -137,6 +151,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NodeLabels
 
+A map of Kubernetes labels which should be applied to nodes in this Node Pool.
+
 _Required_: No
 
 _Type_: List of <a href="nodelabels.md">NodeLabels</a>
@@ -144,6 +160,8 @@ _Type_: List of <a href="nodelabels.md">NodeLabels</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NodeTaints
+
+A list of Kubernetes taints which should be applied to nodes in the agent pool (e.g `key=value:NoSchedule`).
 
 _Required_: No
 
@@ -153,6 +171,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OsDiskSizeGb
 
+The Agent Operating System disk size in GB. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: Double
@@ -160,6 +180,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OsType
+
+The Operating System which should be used for this Node Pool. Changing this forces a new resource to be created. Possible values are `Linux` and `Windows`. Defaults to `Linux`.
 
 _Required_: No
 
@@ -169,6 +191,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -177,6 +201,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VmSize
 
+The SKU which should be used for the Virtual Machines used in this Node Pool. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -184,6 +210,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VnetSubnetId
+
+The ID of the Subnet where this Node Pool should exist.
 
 _Required_: No
 

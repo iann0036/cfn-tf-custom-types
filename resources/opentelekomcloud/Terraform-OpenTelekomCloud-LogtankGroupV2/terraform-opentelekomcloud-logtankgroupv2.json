@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenTelekomCloud::LogtankGroupV2",
-    "description": "CloudFormation equivalent of opentelekomcloud_logtank_group_v2",
+    "description": "Manages a log group resource within OpenTelekomCloud.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "GroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the log group name.\nChanging this parameter will create a new resource."
         },
         "TtlInDays": {
             "type": "number"

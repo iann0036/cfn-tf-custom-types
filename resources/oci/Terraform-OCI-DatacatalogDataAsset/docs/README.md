@@ -1,6 +1,8 @@
 # Terraform::OCI::DatacatalogDataAsset
 
-CloudFormation equivalent of oci_datacatalog_data_asset
+This resource provides the Data Asset resource in Oracle Cloud Infrastructure Data Catalog service.
+
+Create a new data asset.
 
 ## Syntax
 
@@ -40,6 +42,8 @@ Properties:
 
 #### CatalogId
 
+Unique catalog identifier.
+
 _Required_: Yes
 
 _Type_: String
@@ -47,6 +51,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+(Updatable) Detailed description of the data asset.
 
 _Required_: No
 
@@ -56,6 +62,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+(Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+
 _Required_: Yes
 
 _Type_: String
@@ -64,6 +72,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Properties
 
+(Updatable) A map of maps that contains the properties which are specific to the data asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. To determine the set of optional and required properties for a data asset type, a query can be done on '/types?type=dataAsset' that returns a collection of all data asset types. The appropriate data asset type, which includes definitions of all of it's properties, can be identified from this collection. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}` . Terraform treats all map of maps as a flattened map with `.` denoting each level. For more information check out this [example](https://github.com/terraform-providers/terraform-provider-oci/blob/master/examples/datacatalog/main.tf).
+
 _Required_: No
 
 _Type_: List of <a href="properties.md">Properties</a>
@@ -71,6 +81,8 @@ _Type_: List of <a href="properties.md">Properties</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TypeKey
+
+The key of the data asset type. This can be obtained via the '/types' endpoint.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::BlockstorageVolumeV2
 
-CloudFormation equivalent of huaweicloud_blockstorage_volume_v2
+Manages a V2 volume resource within HuaweiCloud.
 
 ## Syntax
 
@@ -56,6 +56,9 @@ Properties:
 
 #### AvailabilityZone
 
+The availability zone for the volume.
+Changing this creates a new volume.
+
 _Required_: No
 
 _Type_: String
@@ -63,6 +66,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Cascade
+
+Specifies to delete all snapshots associated with the EVS disk.
 
 _Required_: No
 
@@ -72,6 +77,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ConsistencyGroupId
 
+The consistency group to place the volume
+in.
+
 _Required_: No
 
 _Type_: String
@@ -79,6 +87,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+A description of the volume. Changing this updates
+the volume's description.
 
 _Required_: No
 
@@ -88,6 +99,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ImageId
 
+The image ID from which to create the volume.
+Changing this creates a new volume.
+
 _Required_: No
 
 _Type_: String
@@ -95,6 +109,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Metadata
+
+Metadata key/value pairs to associate with the volume.
+Changing this updates the existing volume metadata.
 
 _Required_: No
 
@@ -104,6 +121,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A unique name for the volume. Changing this updates the
+volume's name.
+
 _Required_: No
 
 _Type_: String
@@ -111,6 +131,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region in which to create the volume. If
+omitted, the `region` argument of the provider is used. Changing this
+creates a new volume.
 
 _Required_: No
 
@@ -120,6 +144,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Size
 
+The size of the volume to create (in gigabytes).
+
 _Required_: Yes
 
 _Type_: Double
@@ -127,6 +153,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SnapshotId
+
+The snapshot ID from which to create the volume.
+Changing this creates a new volume.
 
 _Required_: No
 
@@ -136,6 +165,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SourceReplica
 
+The volume ID to replicate with.
+
 _Required_: No
 
 _Type_: String
@@ -144,6 +175,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SourceVolId
 
+The volume ID from which to create the volume.
+Changing this creates a new volume.
+
 _Required_: No
 
 _Type_: String
@@ -151,6 +185,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VolumeType
+
+The type of volume to create. Available types are
+`SSD`, `SAS` and `SATA`. Changing this creates a new volume.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::LogAnalyticsSolution",
-    "description": "CloudFormation equivalent of azurerm_log_analytics_solution",
+    "description": "Manages a Log Analytics (formally Operational Insights) Solution.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Plan": {
@@ -8,13 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "Product": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The product name of the solution. For example `OMSGallery/Containers`. Changing this forces a new resource to be created."
                 },
                 "PromotionCode": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A promotion code to be used with the solution."
                 },
                 "Publisher": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The publisher of the solution. For example `Microsoft`. Changing this forces a new resource to be created."
                 }
             },
             "required": [
@@ -48,19 +51,24 @@
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which the Log Analytics solution is created. Changing this forces a new resource to be created. Note: The solution and it's related workspace can only exist in the same resource group."
         },
         "SolutionName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the solution to be deployed. See [here for options](https://docs.microsoft.com/en-us/azure/log-analytics/log-analytics-add-solutions).Changing this forces a new resource to be created."
         },
         "WorkspaceName": {
-            "type": "string"
+            "type": "string",
+            "description": "The full name of the Log Analytics workspace with which the solution will be linked. Changing this forces a new resource to be created."
         },
         "WorkspaceResourceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The full resource ID of the Log Analytics workspace with which the solution will be linked. Changing this forces a new resource to be created."
         },
         "Plan": {
             "type": "array",

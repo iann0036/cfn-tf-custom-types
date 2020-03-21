@@ -1,6 +1,8 @@
 # Terraform::OCI::WaasHttpRedirect
 
-CloudFormation equivalent of oci_waas_http_redirect
+This resource provides the Http Redirect resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
+
+Creates a new HTTP Redirect on the WAF edge.
 
 ## Syntax
 
@@ -46,6 +48,8 @@ Properties:
 
 #### CompartmentId
 
+(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirects compartment.
+
 _Required_: Yes
 
 _Type_: String
@@ -53,6 +57,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefinedTags
+
+(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`.
 
 _Required_: No
 
@@ -62,6 +68,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+(Updatable) The user-friendly name of the HTTP Redirect. The name can be changed and does not need to be unique.
+
 _Required_: No
 
 _Type_: String
@@ -69,6 +77,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Domain
+
+The domain from which traffic will be redirected.
 
 _Required_: Yes
 
@@ -78,6 +88,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FreeformTags
 
+(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`.
+
 _Required_: No
 
 _Type_: List of <a href="freeformtags.md">FreeformTags</a>
@@ -85,6 +97,8 @@ _Type_: List of <a href="freeformtags.md">FreeformTags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResponseCode
+
+(Updatable) The response code returned for the redirect to the client. reference - https://tools.ietf.org/html/rfc7231#section-6.4.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::PanoramaVirtualRouter",
-    "description": "CloudFormation equivalent of panos_panorama_virtual_router",
+    "description": "This resource allows you to add/update/delete Panorama virtual routers\nfor templates.\n\n**Note** - The `default` virtual router may be configured with this resource,\nhowever it will not be deleted from Panorama.  It will only be unexported\nfrom the vsys that it is currently imported in, and any interfaces imported\ninto the virtual router will be removed.\n\nThis resource has some overlap with the `panos_panorama_virtual_router_entry`\nresource.  If you want to use this resource with the other one, then make\nsure that your `panos_panorama_virtual_router` spec does not define the\n`interfaces` field.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,47 +9,60 @@
             "type": "string"
         },
         "EbgpDist": {
-            "type": "number"
+            "type": "number",
+            "description": "Admin distance - EBGP (default: `20`)."
         },
         "IbgpDist": {
-            "type": "number"
+            "type": "number",
+            "description": "Admin distance - IBGP (default: `200`)."
         },
         "Interfaces": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of interfaces that should use this virtual\nrouter."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The virtual router's name."
         },
         "OspfExtDist": {
-            "type": "number"
+            "type": "number",
+            "description": "Admin distance - OSPF Ext (default: `110`)."
         },
         "OspfIntDist": {
-            "type": "number"
+            "type": "number",
+            "description": "Admin distance - OSPF Int (default: `30`)."
         },
         "Ospfv3ExtDist": {
-            "type": "number"
+            "type": "number",
+            "description": "Admin distance - OSPFv3 Ext (default:\n`110`)."
         },
         "Ospfv3IntDist": {
-            "type": "number"
+            "type": "number",
+            "description": "Admin distance - OSPFv3 Int (default:\n`30`)."
         },
         "RipDist": {
-            "type": "number"
+            "type": "number",
+            "description": "Admin distance - RIP (default: `120`)."
         },
         "StaticDist": {
-            "type": "number"
+            "type": "number",
+            "description": "Admin distance - Static (default: `10`)."
         },
         "StaticIpv6Dist": {
-            "type": "number"
+            "type": "number",
+            "description": "Admin distance - Static IPv6 (default: `10`)."
         },
         "Template": {
-            "type": "string"
+            "type": "string",
+            "description": "The template name."
         },
         "Vsys": {
-            "type": "string"
+            "type": "string",
+            "description": "The vsys that will use this virtual router.  This should\nbe something like `vsys1` or `vsys3`."
         }
     },
     "additionalProperties": false,

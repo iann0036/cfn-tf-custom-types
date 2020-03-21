@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::ComputeProjectDefaultNetworkTier",
-    "description": "CloudFormation equivalent of google_compute_project_default_network_tier",
+    "description": "Configures the Google Compute Engine\n[Default Network Tier](https://cloud.google.com/network-tiers/docs/using-network-service-tiers#setting_the_tier_for_all_resources_in_a_project)\nfor a project.\n\nFor more information, see,\n[the Project API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/projects/setDefaultNetworkTier).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "NetworkTier": {
-            "type": "string"
+            "type": "string",
+            "description": "The default network tier to be configured for the project.\nThis field can take the following values: `PREMIUM` or `STANDARD`."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used."
         }
     },
     "additionalProperties": false,

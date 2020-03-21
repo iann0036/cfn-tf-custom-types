@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HuaweiCloud::IamAgencyV3",
-    "description": "CloudFormation equivalent of huaweicloud_iam_agency_v3",
+    "description": "Manages an agency resource within huawei cloud.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ProjectRole": {
@@ -8,14 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "Project": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of project."
                 },
                 "Roles": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "An array of role names."
                 }
             },
             "required": [
@@ -49,17 +51,20 @@
             "type": "string"
         },
         "DelegatedDomainName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of delegated domain."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Provides supplementary information about the\nagency. The value is a string of 0 to 255 characters."
         },
         "DomainRoles": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "An array of role names which stand for the\npermissionis to be granted to agency on domain."
         },
         "Duration": {
             "type": "string"
@@ -68,7 +73,8 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of agency. The name is a string of 1 to 64\ncharacters."
         },
         "Region": {
             "type": "string"

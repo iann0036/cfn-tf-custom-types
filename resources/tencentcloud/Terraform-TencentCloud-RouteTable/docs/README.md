@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::RouteTable
 
-CloudFormation equivalent of tencentcloud_route_table
+Provides a resource to create a VPC routing table.
 
 ## Syntax
 
@@ -34,6 +34,8 @@ Properties:
 
 #### Name
 
+The name of routing table.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +44,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+The tags of routing table.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -49,6 +53,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+ID of VPC to which the route table should be associated.
 
 _Required_: Yes
 

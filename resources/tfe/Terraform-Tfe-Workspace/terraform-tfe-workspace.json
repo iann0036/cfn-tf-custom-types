@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Tfe::Workspace",
-    "description": "CloudFormation equivalent of tfe_workspace",
+    "description": "Provides a workspace resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "VcsRepo": {
@@ -8,16 +8,20 @@
             "additionalProperties": false,
             "properties": {
                 "Branch": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The repository branch that Terraform will execute from.\nDefault to `master`."
                 },
                 "Identifier": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A reference to your VCS repository in the format\n`:org/:repo` where `:org` and `:repo` refer to the organization and repository\nin your VCS provider."
                 },
                 "IngressSubmodules": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Whether submodules should be fetched when\ncloning the VCS repository. Defaults to `false`."
                 },
                 "OauthTokenId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Token ID of the VCS Connection (OAuth Conection Token)\nto use."
                 }
             },
             "required": [
@@ -32,41 +36,51 @@
             "type": "string"
         },
         "AutoApply": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to automatically apply changes when a\nTerraform plan is successful. Defaults to `false`."
         },
         "ExternalId": {
             "type": "string"
         },
         "FileTriggersEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to filter runs based on the changed files in a VCS push. If enabled, the working directory and trigger prefixes describe a set of paths which must contain changes for a VCS push to trigger a run. If disabled, any push will trigger a run. Defaults to `true`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the workspace."
         },
         "Operations": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to use remote execution mode. When set\nto `false`, the workspace will be used for state storage only.\nDefaults to `true`."
         },
         "Organization": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the organization."
         },
         "QueueAllRuns": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether all runs should be queued. When set\nto `false`, runs triggered by a VCS change will not be queued until at least\none run is manually queued. Defaults to `true`."
         },
         "SshKeyId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of an SSH key to assign to the workspace."
         },
         "TerraformVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "The version of Terraform to use for this workspace. Defaults to the latest available version."
         },
         "TriggerPrefixes": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of repository-root-relative paths which describe all locations to be tracked for changes."
         },
         "WorkingDirectory": {
-            "type": "string"
+            "type": "string",
+            "description": "A relative path that Terraform will execute\nwithin.  Defaults to the root of your repository."
         },
         "VcsRepo": {
             "type": "array",

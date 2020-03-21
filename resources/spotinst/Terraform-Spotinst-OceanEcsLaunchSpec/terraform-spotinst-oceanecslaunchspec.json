@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Spotinst::OceanEcsLaunchSpec",
-    "description": "CloudFormation equivalent of spotinst_ocean_ecs_launch_spec",
+    "description": "Provides a custom Spotinst Ocean ECS Launch Spec resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Attributes": {
@@ -44,26 +44,32 @@
             "type": "string"
         },
         "IamInstanceProfile": {
-            "type": "string"
+            "type": "string",
+            "description": "The ARN or name of an IAM instance profile to associate with launched instances."
         },
         "ImageId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the image used to launch the instances."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The Ocean Launch Specification name."
         },
         "OceanId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Ocean cluster ID ."
         },
         "SecurityGroupIds": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "One or more security group ids."
         },
         "UserData": {
-            "type": "string"
+            "type": "string",
+            "description": "Base64-encoded MIME user data to make available to the instances."
         },
         "Attributes": {
             "type": "array",

@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::CceClusterV3
 
-CloudFormation equivalent of opentelekomcloud_cce_cluster_v3
+Provides a cluster resource (CCE).
 
 ## Syntax
 
@@ -68,6 +68,8 @@ Properties:
 
 #### Annotations
 
+Cluster annotation, key/value pair format. Changing this parameter will create a new cluster resource.
+
 _Required_: No
 
 _Type_: List of <a href="annotations.md">Annotations</a>
@@ -75,6 +77,9 @@ _Type_: List of <a href="annotations.md">Annotations</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AuthenticationMode
+
+Authentication mode of the cluster, possible values are x509 and rbac. Defaults to x509.
+Changing this parameter will create a new cluster resource.
 
 _Required_: No
 
@@ -84,6 +89,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### BillingMode
 
+Charging mode of the cluster, which is 0 (on demand). Changing this parameter will create a new cluster resource.
+
 _Required_: No
 
 _Type_: Double
@@ -91,6 +98,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClusterType
+
+Cluster Type, possible values are VirtualMachine and BareMetal. Changing this parameter will create a new cluster resource.
 
 _Required_: Yes
 
@@ -100,6 +109,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ClusterVersion
 
+For the cluster version, possible values are v1.9.2-r2 or v1.11.3-r1. Changing this parameter will create a new cluster resource.
+[OTC-API](https://docs.otc.t-systems.com/en-us/api2/cce/cce_02_0236.html).
+
 _Required_: No
 
 _Type_: String
@@ -107,6 +119,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ContainerNetworkCidr
+
+Container network segment. Changing this parameter will create a new cluster resource.
 
 _Required_: No
 
@@ -116,6 +130,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ContainerNetworkType
 
+Container network type.
+
 _Required_: Yes
 
 _Type_: String
@@ -123,6 +139,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Cluster description.
 
 _Required_: No
 
@@ -132,6 +150,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Eip
 
+EIP address of the cluster.
+
 _Required_: No
 
 _Type_: String
@@ -139,6 +159,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ExtendParam
+
+Extended parameter. Changing this parameter will create a new cluster resource.
 
 _Required_: No
 
@@ -148,6 +170,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FlavorId
 
+Cluster specifications. Changing this parameter will create a new cluster resource.
+
 _Required_: Yes
 
 _Type_: String
@@ -155,6 +179,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HighwaySubnetId
+
+The ID of the high speed network used to create bare metal nodes. Changing this parameter will create a new cluster resource.
 
 _Required_: No
 
@@ -164,6 +190,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Labels
 
+Cluster tag, key/value pair format. Changing this parameter will create a new cluster resource.
+
 _Required_: No
 
 _Type_: List of <a href="labels.md">Labels</a>
@@ -172,6 +200,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MultiAz
 
+Enable multiple AZs for the cluster, only when using HA flavors. Changing this parameter will create a new cluster resource.
+
 _Required_: No
 
 _Type_: Boolean
@@ -179,6 +209,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Cluster name. Changing this parameter will create a new cluster resource.
 
 _Required_: Yes
 
@@ -196,6 +228,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubnetId
 
+The ID of the subnet used to create the node. Changing this parameter will create a new cluster resource.
+
 _Required_: Yes
 
 _Type_: String
@@ -203,6 +237,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+The ID of the VPC used to create the node. Changing this parameter will create a new cluster resource.
 
 _Required_: Yes
 

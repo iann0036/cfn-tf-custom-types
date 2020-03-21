@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::IpsecTunnel",
-    "description": "CloudFormation equivalent of panos_ipsec_tunnel",
+    "description": "This resource allows you to add/update/delete IPSec tunnels.\n\nA large number of params have prefixes:\n\n* `ak` - Auto key\n* `mk` - Manual key\n* `gps` - GlobalProtect Satellite",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,125 +9,160 @@
             "type": "string"
         },
         "AkIkeGateway": {
-            "type": "string"
+            "type": "string",
+            "description": "IKE gateway name."
         },
         "AkIpsecCryptoProfile": {
-            "type": "string"
+            "type": "string",
+            "description": "IPSec crypto profile name."
         },
         "AntiReplay": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` to enable Anti-Replay check\non this tunnel."
         },
         "CopyFlowLabel": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` to copy IPv6\nflow label for 6in6 tunnel from inner packet to IPSec packet (not recommended)."
         },
         "CopyTos": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` to copy IP TOS bits from inner\npacket to IPSec packet (not recommended)."
         },
         "Disabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` to disable this\nIPSec tunnel."
         },
         "EnableIpv6": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` to enable IPv6."
         },
         "EnableTunnelMonitor": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable tunnel monitoring on this tunnel."
         },
         "GpsCertificateProfile": {
-            "type": "string"
+            "type": "string",
+            "description": "Profile for authenticating\nGlobalProtect gateway certificates."
         },
         "GpsInterface": {
-            "type": "string"
+            "type": "string",
+            "description": "Interface to communicate with portal."
         },
         "GpsInterfaceFloatingIpIpv4": {
-            "type": "string"
+            "type": "string",
+            "description": "Floating IPv4\naddress in HA Active-Active configuration."
         },
         "GpsInterfaceFloatingIpIpv6": {
-            "type": "string"
+            "type": "string",
+            "description": "Floating IPv6\naddress in HA Active-Active configuration."
         },
         "GpsInterfaceIpIpv4": {
-            "type": "string"
+            "type": "string",
+            "description": "specify exact IP address if interface\nhas multiple addresses (IPv4)."
         },
         "GpsInterfaceIpIpv6": {
-            "type": "string"
+            "type": "string",
+            "description": "specify exact IP address if interface\nhas multiple addresses (IPv6)."
         },
         "GpsLocalCertificate": {
-            "type": "string"
+            "type": "string",
+            "description": "GlobalProtect satellite certificate\nfile name."
         },
         "GpsPortalAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "GlobalProtect portal address."
         },
         "GpsPreferIpv6": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Prefer to register the\nportal in IPv6. Only applicable to FQDN portal-address."
         },
         "GpsPublishConnectedRoutes": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` to to publish\nconnected and static routes."
         },
         "GpsPublishRoutes": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Specify list of routes to publish\nto Global Protect Gateway."
         },
         "MkAuthKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The auth key for the given auth type."
         },
         "MkAuthKeyEnc": {
             "type": "string"
         },
         "MkAuthType": {
-            "type": "string"
+            "type": "string",
+            "description": "Authentication algorithm.  Valid values are\n`md5`, `sha1`, `sha256`, `sha384`, `sha512`, or `none`."
         },
         "MkEspEncryptionKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The encryption key."
         },
         "MkEspEncryptionKeyEnc": {
             "type": "string"
         },
         "MkEspEncryptionType": {
-            "type": "string"
+            "type": "string",
+            "description": "The encryption algorithm.  Valid values\nare `des`, `3des`, `aes-128-cbc`, `aes-192-cbc`, `aes-256-cbc`, or `null`."
         },
         "MkInterface": {
             "type": "string"
         },
         "MkLocalAddressFloatingIp": {
-            "type": "string"
+            "type": "string",
+            "description": "Floating IP address in HA\nActive-Active configuration."
         },
         "MkLocalAddressIp": {
-            "type": "string"
+            "type": "string",
+            "description": "Specify exact IP address if interface\nhas multiple addresses."
         },
         "MkLocalSpi": {
-            "type": "string"
+            "type": "string",
+            "description": "Outbound SPI, hex format."
         },
         "MkProtocol": {
-            "type": "string"
+            "type": "string",
+            "description": "Manual key protocol.  Valid valies are\n`esp` or `ah`."
         },
         "MkRemoteAddress": {
             "type": "string"
         },
         "MkRemoteSpi": {
-            "type": "string"
+            "type": "string",
+            "description": "Inbound SPI, hex format."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The object's name."
         },
         "TunnelInterface": {
-            "type": "string"
+            "type": "string",
+            "description": "The tunnel interface."
         },
         "TunnelMonitorDestinationIp": {
-            "type": "string"
+            "type": "string",
+            "description": "Destination IP to send ICMP probe."
         },
         "TunnelMonitorProfile": {
-            "type": "string"
+            "type": "string",
+            "description": "Tunnel monitor profile."
         },
         "TunnelMonitorProxyId": {
-            "type": "string"
+            "type": "string",
+            "description": "Which proxy-id (or\nproxy-id-v6) the monitoring traffic will use."
         },
         "TunnelMonitorSourceIp": {
-            "type": "string"
+            "type": "string",
+            "description": "Source IP to send ICMP probe."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The type.  Valid values are `auto-key` (the default),\n`manual-key`, or `global-protect-satellite`."
         }
     },
     "additionalProperties": false,

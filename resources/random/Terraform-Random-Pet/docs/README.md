@@ -1,6 +1,12 @@
 # Terraform::Random::Pet
 
-CloudFormation equivalent of random_pet
+The resource `random_pet` generates random pet names that are intended to be
+used as unique identifiers for other resources.
+
+This resource can be used in conjunction with resources that have
+the `create_before_destroy` lifecycle flag set, to avoid conflicts with
+unique names during the brief period where both the old and new resources
+exist concurrently.
 
 ## Syntax
 
@@ -36,6 +42,10 @@ Properties:
 
 #### Keepers
 
+Arbitrary map of values that, when changed, will
+trigger a new id to be generated. See
+[the main provider documentation](../index.html) for more information.
+
 _Required_: No
 
 _Type_: List of <a href="keepers.md">Keepers</a>
@@ -43,6 +53,8 @@ _Type_: List of <a href="keepers.md">Keepers</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Length
+
+The length (in words) of the pet name.
 
 _Required_: No
 
@@ -52,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Prefix
 
+A string to prefix the name with.
+
 _Required_: No
 
 _Type_: String
@@ -59,6 +73,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Separator
+
+The character to separate words in the pet name.
 
 _Required_: No
 

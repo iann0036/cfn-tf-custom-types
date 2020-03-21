@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Icinga2::Host",
-    "description": "CloudFormation equivalent of icinga2_host",
+    "description": "Configures an Icinga2 host resource. This allows hosts to be configured, updated,\nand deleted.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,27 +9,32 @@
             "type": "string"
         },
         "Address": {
-            "type": "string"
+            "type": "string",
+            "description": "The address of the host."
         },
         "CheckCommand": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of an existing Icinga2 CheckCommand object that is used to determine if the host is available or not."
         },
         "Groups": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The groups of the host."
         },
         "Hostname": {
-            "type": "string"
+            "type": "string",
+            "description": "The hostname of the host."
         },
         "Templates": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of Icinga2 templates to assign to the host."
         },
         "Vars": {
             "type": "array",
@@ -49,7 +54,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of variables to assign to the host."
         }
     },
     "additionalProperties": false,

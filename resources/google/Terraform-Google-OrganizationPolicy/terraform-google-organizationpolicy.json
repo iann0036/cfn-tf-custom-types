@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::OrganizationPolicy",
-    "description": "CloudFormation equivalent of google_organization_policy",
+    "description": "Allows management of Organization policies for a Google Organization. For more information see\n[the official\ndocumentation](https://cloud.google.com/resource-manager/docs/organization-policy/overview) and\n[API](https://cloud.google.com/resource-manager/reference/rest/v1/organizations/setOrgPolicy).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "BooleanPolicy": {
@@ -8,7 +8,8 @@
             "additionalProperties": false,
             "properties": {
                 "Enforced": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "If true, then the Policy is enforced. If false, then any configuration is acceptable."
                 }
             },
             "required": [
@@ -20,10 +21,12 @@
             "additionalProperties": false,
             "properties": {
                 "InheritFromParent": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "If set to true, the values from the effective Policy of the parent resource\nare inherited, meaning the values set in this Policy are added to the values inherited up the hierarchy."
                 },
                 "SuggestedValue": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Google Cloud Console will try to default to a configuration that matches the value specified in this field."
                 },
                 "Allow": {
                     "type": "array",
@@ -47,7 +50,8 @@
             "additionalProperties": false,
             "properties": {
                 "Default": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "May only be set to true. If set, then the default Policy is restored."
                 }
             },
             "required": [
@@ -78,14 +82,16 @@
             "additionalProperties": false,
             "properties": {
                 "All": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "The policy allows or denies all values."
                 },
                 "Values": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "The policy can define specific values that are allowed or denied."
                 }
             },
             "required": []
@@ -114,19 +120,22 @@
             "type": "string"
         },
         "Constraint": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Constraint the Policy is configuring, for example, `serviceuser.services`. Check out the [complete list of available constraints](https://cloud.google.com/resource-manager/docs/organization-policy/understanding-constraints#available_constraints)."
         },
         "Etag": {
             "type": "string"
         },
         "OrgId": {
-            "type": "string"
+            "type": "string",
+            "description": "The numeric ID of the organization to set the policy for."
         },
         "UpdateTime": {
             "type": "string"
         },
         "Version": {
-            "type": "number"
+            "type": "number",
+            "description": "Version of the Policy. Default version is 0."
         },
         "BooleanPolicy": {
             "type": "array",

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Vault::GithubAuthBackend",
-    "description": "CloudFormation equivalent of vault_github_auth_backend",
+    "description": "Manages a Github Auth mount in a Vault server. See the [Vault\ndocumentation](https://www.vaultproject.io/docs/auth/github.html) for more\ninformation.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,19 +12,23 @@
             "type": "string"
         },
         "BaseUrl": {
-            "type": "string"
+            "type": "string",
+            "description": "The API endpoint to use. Useful if you\nare running GitHub Enterprise or an API-compatible authentication server."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the description of the mount.\nThis overrides the current stored value, if any."
         },
         "MaxTtl": {
             "type": "string"
         },
         "Organization": {
-            "type": "string"
+            "type": "string",
+            "description": "The organization configured users must be part of."
         },
         "Path": {
-            "type": "string"
+            "type": "string",
+            "description": "Path where the auth backend is mounted. Defaults to `auth/github`\nif not specified."
         },
         "TokenBoundCidrs": {
             "type": "array",
@@ -59,7 +63,8 @@
             "type": "number"
         },
         "TokenType": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the type of tokens that should be returned by\nthe mount. Valid values are \"default-service\", \"default-batch\", \"service\", \"batch\"."
         },
         "Ttl": {
             "type": "string"

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Vault::AwsAuthBackendRoleTag",
-    "description": "CloudFormation equivalent of vault_aws_auth_backend_role_tag",
+    "description": "Reads role tag information from an AWS auth backend in Vault.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,29 +9,36 @@
             "type": "string"
         },
         "AllowInstanceMigration": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If set, allows migration of the underlying instances where the client resides. Use with caution."
         },
         "Backend": {
-            "type": "string"
+            "type": "string",
+            "description": "The path to the AWS auth backend to\nread role tags from, with no leading or trailing `/`s. Defaults to \"aws\"."
         },
         "DisallowReauthentication": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If set, only allows a single token to be granted per instance ID."
         },
         "InstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "Instance ID for which this tag is intended for. If set, the created tag can only be used by the instance with the given ID."
         },
         "MaxTtl": {
-            "type": "string"
+            "type": "string",
+            "description": "The maximum TTL of the tokens issued using this role."
         },
         "Policies": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The policies to be associated with the tag. Must be a subset of the policies associated with the role."
         },
         "Role": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the AWS auth backend role to read\nrole tags from, with no leading or trailing `/`s."
         },
         "TagKey": {
             "type": "string"

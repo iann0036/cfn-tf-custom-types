@@ -1,6 +1,7 @@
 # Terraform::Vault::SshSecretBackendRole
 
-CloudFormation equivalent of vault_ssh_secret_backend_role
+Provides a resource to manage roles in an SSH secret backend
+[SSH secret backend within Vault](https://www.vaultproject.io/docs/secrets/ssh/index.html).
 
 ## Syntax
 
@@ -70,6 +71,8 @@ Properties:
 
 #### AllowBareDomains
 
+Specifies if host certificates that are requested are allowed to use the base domains listed in `allowed_domains`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -77,6 +80,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowHostCertificates
+
+Specifies if certificates are allowed to be signed for use as a 'host'.
 
 _Required_: No
 
@@ -86,6 +91,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AllowSubdomains
 
+Specifies if host certificates that are requested are allowed to be subdomains of those listed in `allowed_domains`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -93,6 +100,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowUserCertificates
+
+Specifies if certificates are allowed to be signed for use as a 'user'.
 
 _Required_: No
 
@@ -102,6 +111,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AllowUserKeyIds
 
+Specifies if users can override the key ID for a signed certificate with the `key_id` field.
+
 _Required_: No
 
 _Type_: Boolean
@@ -109,6 +120,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowedCriticalOptions
+
+Specifies a comma-separated list of critical options that certificates can have when signed.
 
 _Required_: No
 
@@ -118,6 +131,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AllowedDomains
 
+The list of domains for which a client can request a host certificate.
+
 _Required_: No
 
 _Type_: String
@@ -125,6 +140,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowedExtensions
+
+Specifies a comma-separated list of extensions that certificates can have when signed.
 
 _Required_: No
 
@@ -134,6 +151,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AllowedUserKeyLengths
 
+Specifies a map of ssh key types and their expected sizes which are allowed to be signed by the CA type.
+
 _Required_: No
 
 _Type_: List of <a href="alloweduserkeylengths.md">AllowedUserKeyLengths</a>
@@ -141,6 +160,8 @@ _Type_: List of <a href="alloweduserkeylengths.md">AllowedUserKeyLengths</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowedUsers
+
+Specifies a comma-separated list of usernames that are to be allowed, only if certain usernames are to be allowed.
 
 _Required_: No
 
@@ -150,6 +171,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Backend
 
+The path where the SSH secret backend is mounted.
+
 _Required_: Yes
 
 _Type_: String
@@ -157,6 +180,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CidrList
+
+The comma-separated string of CIDR blocks for which this role is applicable.
 
 _Required_: No
 
@@ -166,6 +191,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DefaultCriticalOptions
 
+Specifies a map of critical options that certificates have when signed.
+
 _Required_: No
 
 _Type_: List of <a href="defaultcriticaloptions.md">DefaultCriticalOptions</a>
@@ -173,6 +200,8 @@ _Type_: List of <a href="defaultcriticaloptions.md">DefaultCriticalOptions</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefaultExtensions
+
+Specifies a map of extensions that certificates have when signed.
 
 _Required_: No
 
@@ -182,6 +211,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DefaultUser
 
+Specifies the default username for which a credential will be generated.
+
 _Required_: No
 
 _Type_: String
@@ -189,6 +220,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeyIdFormat
+
+Specifies a custom format for the key id of a signed certificate.
 
 _Required_: No
 
@@ -198,6 +231,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KeyType
 
+Specifies the type of credentials generated by this role. This can be either `otp`, `dynamic` or `ca`.
+
 _Required_: Yes
 
 _Type_: String
@@ -205,6 +240,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MaxTtl
+
+Specifies the maximum Time To Live value.
 
 _Required_: No
 
@@ -214,6 +251,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the role to create.
+
 _Required_: Yes
 
 _Type_: String
@@ -221,6 +260,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ttl
+
+Specifies the Time To Live value.
 
 _Required_: No
 

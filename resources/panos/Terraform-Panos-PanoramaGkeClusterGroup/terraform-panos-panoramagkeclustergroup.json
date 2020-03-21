@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::PanoramaGkeClusterGroup",
-    "description": "CloudFormation equivalent of panos_panorama_gke_cluster_group",
+    "description": "This resource allows you to add/update/delete a GKE cluster group.\n\nThis resource requires that the GCP plugin be installed.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,19 +9,24 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description."
         },
         "DeviceGroup": {
-            "type": "string"
+            "type": "string",
+            "description": "The device group."
         },
         "GcpProjectCredential": {
-            "type": "string"
+            "type": "string",
+            "description": "The GCP account to use."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The cluster group's name."
         },
         "TemplateStack": {
-            "type": "string"
+            "type": "string",
+            "description": "The template stack."
         }
     },
     "additionalProperties": false,

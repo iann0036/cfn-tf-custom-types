@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::AppConfiguration",
-    "description": "CloudFormation equivalent of azurerm_app_configuration",
+    "description": "Manages an Azure App Configuration.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -32,10 +32,12 @@
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the App Configuration. Changing this forces a new resource to be created."
         },
         "PrimaryReadKey": {
             "type": "array",
@@ -76,7 +78,8 @@
             }
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the App Configuration. Changing this forces a new resource to be created."
         },
         "SecondaryReadKey": {
             "type": "array",
@@ -117,7 +120,8 @@
             }
         },
         "Sku": {
-            "type": "string"
+            "type": "string",
+            "description": "The SKU name of the the App Configuration. Possible values are `free` and `standard`."
         },
         "Tags": {
             "type": "array",
@@ -137,7 +141,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

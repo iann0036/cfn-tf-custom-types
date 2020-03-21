@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::VSphere::HostPortGroup",
-    "description": "CloudFormation equivalent of vsphere_host_port_group",
+    "description": "The `vsphere_host_port_group` resource can be used to manage vSphere standard\nport groups on an ESXi host. These port groups are connected to standard\nvirtual switches, which can be managed by the\n[`vsphere_host_virtual_switch`][host-virtual-switch] resource.\n\nFor an overview on vSphere networking concepts, see [this page][ref-vsphere-net-concepts].\n\n[host-virtual-switch]: /docs/providers/vsphere/r/host_virtual_switch.html\n[ref-vsphere-net-concepts]: https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.networking.doc/GUID-2B11DBB8-CB3C-4AFF-8885-EFEA0FC562F4.html",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -51,13 +51,15 @@
             "type": "boolean"
         },
         "HostSystemId": {
-            "type": "string"
+            "type": "string",
+            "description": "The [managed object ID][docs-about-morefs] of\nthe host to set the port group up on. Forces a new resource if changed."
         },
         "Key": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the port group.  Forces a new resource if\nchanged."
         },
         "NotifySwitches": {
             "type": "boolean"
@@ -108,10 +110,12 @@
             "type": "string"
         },
         "VirtualSwitchName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the virtual switch to bind\nthis port group to. Forces a new resource if changed."
         },
         "VlanId": {
-            "type": "number"
+            "type": "number",
+            "description": "The VLAN ID/trunk mode for this port group.  An ID of\n`0` denotes no tagging, an ID of `1`-`4094` tags with the specific ID, and an\nID of `4095` enables trunk mode, allowing the guest to manage its own\ntagging. Default: `0`."
         }
     },
     "additionalProperties": false,

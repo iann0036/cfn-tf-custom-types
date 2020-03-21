@@ -1,6 +1,6 @@
 # Terraform::AzureRM::KeyVaultKey
 
-CloudFormation equivalent of azurerm_key_vault_key
+Manages a Key Vault Key.
 
 ## Syntax
 
@@ -49,6 +49,8 @@ Properties:
 
 #### Curve
 
+Specifies the curve to use when creating an `EC` key. Possible values are `P-256`, `P-384`, `P-521`, and `SECP256K1`. This field will be required in a future release if `key_type` is `EC` or `EC-HSM`. The API will default to `P-256` if nothing is specified. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -56,6 +58,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ExpirationDate
+
+Expiration UTC datetime (Y-m-d'T'H:M:S'Z').
 
 _Required_: No
 
@@ -65,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KeyOpts
 
+A list of JSON web key operations. Possible values include: `decrypt`, `encrypt`, `sign`, `unwrapKey`, `verify` and `wrapKey`. Please note these values are case sensitive.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -72,6 +78,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeySize
+
+Specifies the Size of the RSA key to create in bytes. For example, 1024 or 2048. *Note*: This field is required if `key_type` is `RSA` or `RSA-HSM`. Changing this forces a new resource to be created.
 
 _Required_: No
 
@@ -81,6 +89,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KeyType
 
+Specifies the Key Type to use for this Key Vault Key. Possible values are `EC` (Elliptic Curve), `EC-HSM`, `Oct` (Octet), `RSA` and `RSA-HSM`. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -88,6 +98,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeyVaultId
+
+The ID of the Key Vault where the Key should be created. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -97,6 +109,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the Key Vault Key. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -105,6 +119,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NotBeforeDate
 
+Key not usable before the provided UTC datetime (Y-m-d'T'H:M:S'Z').
+
 _Required_: No
 
 _Type_: String
@@ -112,6 +128,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

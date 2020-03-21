@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::LogForwardingProfile",
-    "description": "CloudFormation equivalent of panos_log_forwarding_profile",
+    "description": "This resource allows you to add/update/delete log forwarding profiles.\n\n**Minimum PAN-OS version**:  8.0",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "MatchList": {
@@ -8,47 +8,56 @@
             "additionalProperties": false,
             "properties": {
                 "Description": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The description."
                 },
                 "EmailServerProfiles": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "List of email server profiles."
                 },
                 "Filter": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The filter (default: `All Logs`)."
                 },
                 "HttpServerProfiles": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "List of http server profiles."
                 },
                 "LogType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The log type.  Valid values are `traffic` (default),\n`threat`, `wildfire`, `url`, `data`, `gtp`, `tunnel`, `auth`, or `sctp`."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name."
                 },
                 "SendToPanorama": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Set to `true` to send to Panorama."
                 },
                 "SnmptrapServerProfiles": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "List of SNMP server profiles."
                 },
                 "SyslogServerProfiles": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "List of syslog server profiles."
                 },
                 "Action": {
                     "type": "array",
@@ -194,16 +203,20 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description."
         },
         "EnhancedLogging": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` to enable enhanced logging."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The group's name."
         },
         "Vsys": {
-            "type": "string"
+            "type": "string",
+            "description": "The vsys (default: `vsys1`)."
         },
         "MatchList": {
             "type": "array",

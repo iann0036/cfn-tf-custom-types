@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::CoreSubnet",
-    "description": "CloudFormation equivalent of oci_core_subnet",
+    "description": "This resource provides the Subnet resource in Oracle Cloud Infrastructure Core service.\n\nCreates a new subnet in the specified VCN. You can't change the size of the subnet after creation,\nso it's important to think about the size of subnets you need before creating them.\nFor more information, see [VCNs and Subnets](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVCNs.htm).\nFor information on the number of subnets you can have in a VCN, see\n[Service Limits](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).\n\nFor the purposes of access control, you must provide the OCID of the compartment where you want the subnet\nto reside. Notice that the subnet doesn't have to be in the same compartment as the VCN, route tables, or\nother Networking Service components. If you're not sure which compartment to use, put the subnet in\nthe same compartment as the VCN. For more information about compartments and access control, see\n[Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For information about OCIDs,\nsee [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).\n\nYou may optionally associate a route table with the subnet. If you don't, the subnet will use the\nVCN's default route table. For more information about route tables, see\n[Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).\n\nYou may optionally associate a security list with the subnet. If you don't, the subnet will use the\nVCN's default security list. For more information about security lists, see\n[Security Lists](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm).\n\nYou may optionally associate a set of DHCP options with the subnet. If you don't, the subnet will use the\nVCN's default set. For more information about DHCP options, see\n[DHCP Options](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingDHCP.htm).\n\nYou may optionally specify a *display name* for the subnet, otherwise a default is provided.\nIt does not have to be unique, and you can change it. Avoid entering confidential information.\n\nYou can also add a DNS label for the subnet, which is required if you want the Internet and\nVCN Resolver to resolve hostnames for instances in the subnet. For more information, see\n[DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,13 +26,16 @@
             "type": "string"
         },
         "AvailabilityDomain": {
-            "type": "string"
+            "type": "string",
+            "description": "Controls whether the subnet is regional or specific to an availability domain. Oracle recommends creating regional subnets because they're more flexible and make it easier to implement failover across availability domains. Originally, AD-specific subnets were the only kind available to use."
         },
         "CidrBlock": {
-            "type": "string"
+            "type": "string",
+            "description": "The CIDR IP address range of the subnet.  Example: `172.16.1.0/24`."
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The OCID of the compartment to contain the subnet."
         },
         "DefinedTags": {
             "type": "array",
@@ -52,16 +55,20 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Operations.CostCenter\": \"42\"}`."
         },
         "DhcpOptionsId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The OCID of the set of DHCP options the subnet will use. If you don't provide a value, the subnet uses the VCN's default set of DHCP options."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information."
         },
         "DnsLabel": {
-            "type": "string"
+            "type": "string",
+            "description": "A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance-1.subnet123.vcn1.oraclevcn.com`). Must be an alphanumeric string that begins with a letter and is unique within the VCN. The value cannot be changed."
         },
         "FreeformTags": {
             "type": "array",
@@ -81,10 +88,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
         },
         "Ipv6cidrBlock": {
-            "type": "string"
+            "type": "string",
+            "description": "IPv6 is currently supported only in the Government Cloud. Use this to enable IPv6 addressing for this subnet. The VCN must be enabled for IPv6. You can't change this subnet characteristic later. All subnets are /64 in size. The subnet portion of the IPv6 address is the fourth hextet from the left (1111 in the following example)."
         },
         "Ipv6publicCidrBlock": {
             "type": "string"
@@ -93,17 +102,20 @@
             "type": "string"
         },
         "ProhibitPublicIpOnVnic": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether VNICs within this subnet can have public IP addresses. Defaults to false, which means VNICs created in this subnet will automatically be assigned public IP addresses unless specified otherwise during instance launch or VNIC creation (with the `assignPublicIp` flag in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/)). If `prohibitPublicIpOnVnic` is set to true, VNICs created in this subnet cannot have public IP addresses (that is, it's a private subnet)."
         },
         "RouteTableId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The OCID of the route table the subnet will use. If you don't provide a value, the subnet uses the VCN's default route table."
         },
         "SecurityListIds": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "(Updatable) The OCIDs of the security list or lists the subnet will use. If you don't provide a value, the subnet uses the VCN's default security list. Remember that security lists are associated *with the subnet*, but the rules are applied to the individual VNICs in the subnet."
         },
         "State": {
             "type": "string"
@@ -115,7 +127,8 @@
             "type": "string"
         },
         "VcnId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the VCN to contain the subnet."
         },
         "VirtualRouterIp": {
             "type": "string"

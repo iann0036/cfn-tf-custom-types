@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::RabbitMQ::TopicPermissions",
-    "description": "CloudFormation equivalent of rabbitmq_topic_permissions",
+    "description": "The ``rabbitmq_topic_permissions`` resource creates and manages a user's set of\ntopic permissions.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Permissions": {
@@ -8,13 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "Exchange": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The exchange to set the permissions for."
                 },
                 "Read": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The \"read\" ACL."
                 },
                 "Write": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The \"write\" ACL."
                 }
             },
             "required": [
@@ -30,10 +33,12 @@
             "type": "string"
         },
         "User": {
-            "type": "string"
+            "type": "string",
+            "description": "The user to apply the permissions to."
         },
         "Vhost": {
-            "type": "string"
+            "type": "string",
+            "description": "The vhost to create the resource in."
         },
         "Permissions": {
             "type": "array",

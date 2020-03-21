@@ -1,6 +1,8 @@
 # Terraform::OpenStack::IdentityServiceV3
 
-CloudFormation equivalent of openstack_identity_service_v3
+Manages a V3 Service resource within OpenStack Keystone.
+
+~> **Note:** This usually requires admin privileges.
 
 ## Syntax
 
@@ -37,6 +39,8 @@ Properties:
 
 #### Description
 
+The service description.
+
 _Required_: No
 
 _Type_: String
@@ -44,6 +48,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Enabled
+
+The service status. Defaults to `true`.
 
 _Required_: No
 
@@ -53,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The service name.
+
 _Required_: Yes
 
 _Type_: String
@@ -61,6 +69,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region in which to obtain the V3 Keystone client.
+If omitted, the `region` argument of the provider is used.
+
 _Required_: No
 
 _Type_: String
@@ -68,6 +79,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The service type.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Random::String",
-    "description": "CloudFormation equivalent of random_string",
+    "description": "The resource `random_string` generates a random permutation of alphanumeric\ncharacters and optionally special characters.\n\nThis resource *does* use a cryptographic random number generator.\n\nHistorically this resource's intended usage has been ambiguous as the original example\nused it in a password. For backwards compatibility it will\ncontinue to exist. For unique ids please use [random_id](id.html), for sensitive\nrandom values please use [random_password](password.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -26,40 +26,51 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Arbitrary map of values that, when changed, will\ntrigger a new id to be generated. See\n[the main provider documentation](../index.html) for more information."
         },
         "Length": {
-            "type": "number"
+            "type": "number",
+            "description": "The length of the string desired."
         },
         "Lower": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "(default true) Include lowercase alphabet characters\nin random string."
         },
         "MinLower": {
-            "type": "number"
+            "type": "number",
+            "description": "(default 0) Minimum number of lowercase alphabet\ncharacters in random string."
         },
         "MinNumeric": {
-            "type": "number"
+            "type": "number",
+            "description": "(default 0) Minimum number of numeric characters\nin random string."
         },
         "MinSpecial": {
-            "type": "number"
+            "type": "number",
+            "description": "(default 0) Minimum number of special characters\nin random string."
         },
         "MinUpper": {
-            "type": "number"
+            "type": "number",
+            "description": "(default 0) Minimum number of uppercase alphabet\ncharacters in random string."
         },
         "Number": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "(default true) Include numeric characters in random\nstring."
         },
         "OverrideSpecial": {
-            "type": "string"
+            "type": "string",
+            "description": "Supply your own list of special characters to\nuse for string generation.  This overrides the default character list in the special\nargument.  The special argument must still be set to true for any overwritten\ncharacters to be used in generation."
         },
         "Result": {
             "type": "string"
         },
         "Special": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "(default true) Include special characters in random\nstring. These are `!@#$%&*()-_=+[]{}<>:?`."
         },
         "Upper": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "(default true) Include uppercase alphabet characters\nin random string."
         }
     },
     "additionalProperties": false,

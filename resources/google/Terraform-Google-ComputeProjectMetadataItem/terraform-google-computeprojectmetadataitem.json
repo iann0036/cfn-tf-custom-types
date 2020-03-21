@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::ComputeProjectMetadataItem",
-    "description": "CloudFormation equivalent of google_compute_project_metadata_item",
+    "description": "Manages a single key/value pair on metadata common to all instances for\na project in GCE. Using `google_compute_project_metadata_item` lets you\nmanage a single key/value setting in Terraform rather than the entire\nproject metadata map.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,13 +26,16 @@
             "type": "string"
         },
         "Key": {
-            "type": "string"
+            "type": "string",
+            "description": "The metadata key to set."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used."
         },
         "Value": {
-            "type": "string"
+            "type": "string",
+            "description": "The value to set for the given metadata key."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

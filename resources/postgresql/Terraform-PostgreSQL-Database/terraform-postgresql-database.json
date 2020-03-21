@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::PostgreSQL::Database",
-    "description": "CloudFormation equivalent of postgresql_database",
+    "description": "The ``postgresql_database`` resource creates and manages [database\nobjects](https://www.postgresql.org/docs/current/static/managing-databases.html)\nwithin a PostgreSQL server instance.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,34 +9,44 @@
             "type": "string"
         },
         "AllowConnections": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If `false` then no one can connect to this\ndatabase. The default is `true`, allowing connections (except as restricted by\nother mechanisms, such as `GRANT` or `REVOKE CONNECT`)."
         },
         "ConnectionLimit": {
-            "type": "number"
+            "type": "number",
+            "description": "How many concurrent connections can be\nestablished to this database. `-1` (the default) means no limit."
         },
         "Encoding": {
-            "type": "string"
+            "type": "string",
+            "description": "Character set encoding to use in the database.\nSpecify a string constant (e.g. `UTF8` or `SQL_ASCII`), or an integer encoding\nnumber.  If unset or set to an empty string the default encoding is set to\n`UTF8`.  If set to `DEFAULT` Terraform will use the same encoding as the\ntemplate database.  Changing this value will force the creation of a new\nresource as this value can only be changed when a database is created."
         },
         "IsTemplate": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If `true`, then this database can be cloned by any\nuser with `CREATEDB` privileges; if `false` (the default), then only\nsuperusers or the owner of the database can clone it."
         },
         "LcCollate": {
-            "type": "string"
+            "type": "string",
+            "description": "Collation order (`LC_COLLATE`) to use in the\ndatabase.  This affects the sort order applied to strings, e.g. in queries\nwith `ORDER BY`, as well as the order used in indexes on text columns. If\nunset or set to an empty string the default collation is set to `C`.  If set\nto `DEFAULT` Terraform will use the same collation order as the specified\n`template` database.  Changing this value will force the creation of a new\nresource as this value can only be changed when a database is created."
         },
         "LcCtype": {
-            "type": "string"
+            "type": "string",
+            "description": "Character classification (`LC_CTYPE`) to use in the\ndatabase. This affects the categorization of characters, e.g. lower, upper and\ndigit. If unset or set to an empty string the default character classification\nis set to `C`.  If set to `DEFAULT` Terraform will use the character\nclassification of the specified `template` database.  Changing this value will\nforce the creation of a new resource as this value can only be changed when a\ndatabase is created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the database. Must be unique on the PostgreSQL\nserver instance where it is configured."
         },
         "Owner": {
-            "type": "string"
+            "type": "string",
+            "description": "The role name of the user who will own the database, or\n`DEFAULT` to use the default (namely, the user executing the command). To\ncreate a database owned by another role or to change the owner of an existing\ndatabase, you must be a direct or indirect member of the specified role, or\nthe username in the provider is a superuser."
         },
         "TablespaceName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the tablespace that will be\nassociated with the database, or `DEFAULT` to use the template database's\ntablespace.  This tablespace will be the default tablespace used for objects\ncreated in this database."
         },
         "Template": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the template database from which to create\nthe database, or `DEFAULT` to use the default template (`template0`).  NOTE:\nthe default in Terraform is `template0`, not `template1`.  Changing this value\nwill force the creation of a new resource as this value can only be changed\nwhen a database is created."
         }
     },
     "additionalProperties": false,

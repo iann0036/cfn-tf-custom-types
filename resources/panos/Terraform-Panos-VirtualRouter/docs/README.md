@@ -1,6 +1,16 @@
 # Terraform::Panos::VirtualRouter
 
-CloudFormation equivalent of panos_virtual_router
+This resource allows you to add/update/delete virtual routers.
+
+**Note** - The `default` virtual router may be configured with this resource,
+however it will not be deleted from the firewall.  It will only be unexported
+from the vsys that it is currently imported in, and any interfaces imported
+into the virtual router will be removed.
+
+This resource has some overlap with the `panos_virtual_router_entry`
+resource.  If you want to use this resource with the other one, then make
+sure that your `panos_virtual_router` spec does not define the
+`interfaces` field.
 
 ## Syntax
 
@@ -52,6 +62,8 @@ Properties:
 
 #### EbgpDist
 
+Admin distance - EBGP (default: `20`).
+
 _Required_: No
 
 _Type_: Double
@@ -59,6 +71,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IbgpDist
+
+Admin distance - IBGP (default: `200`).
 
 _Required_: No
 
@@ -68,6 +82,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Interfaces
 
+List of interfaces that should use this virtual
+router.
+
 _Required_: No
 
 _Type_: List of String
@@ -75,6 +92,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The virtual router's name.
 
 _Required_: Yes
 
@@ -84,6 +103,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OspfExtDist
 
+Admin distance - OSPF Ext (default: `110`).
+
 _Required_: No
 
 _Type_: Double
@@ -91,6 +112,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OspfIntDist
+
+Admin distance - OSPF Int (default: `30`).
 
 _Required_: No
 
@@ -100,6 +123,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ospfv3ExtDist
 
+Admin distance - OSPFv3 Ext (default:
+`110`).
+
 _Required_: No
 
 _Type_: Double
@@ -107,6 +133,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ospfv3IntDist
+
+Admin distance - OSPFv3 Int (default:
+`30`).
 
 _Required_: No
 
@@ -116,6 +145,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RipDist
 
+Admin distance - RIP (default: `120`).
+
 _Required_: No
 
 _Type_: Double
@@ -123,6 +154,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StaticDist
+
+Admin distance - Static (default: `10`).
 
 _Required_: No
 
@@ -132,6 +165,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StaticIpv6Dist
 
+Admin distance - Static IPv6 (default: `10`).
+
 _Required_: No
 
 _Type_: Double
@@ -139,6 +174,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vsys
+
+The vsys that will use this virtual router.  This should
+be something like `vsys1` or `vsys3`.
 
 _Required_: No
 

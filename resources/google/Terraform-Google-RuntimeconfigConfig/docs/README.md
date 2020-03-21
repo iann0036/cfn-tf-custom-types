@@ -1,6 +1,9 @@
 # Terraform::Google::RuntimeconfigConfig
 
-CloudFormation equivalent of google_runtimeconfig_config
+Manages a RuntimeConfig resource in Google Cloud. For more information, see the
+[official documentation](https://cloud.google.com/deployment-manager/runtime-configurator/),
+or the
+[JSON API](https://cloud.google.com/deployment-manager/runtime-configurator/reference/rest/).
 
 ## Syntax
 
@@ -33,6 +36,9 @@ Properties:
 
 #### Description
 
+The description to associate with the runtime
+config.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +47,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the runtime config.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +56,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The ID of the project in which the resource belongs. If it
+is not provided, the provider project is used.
 
 _Required_: No
 

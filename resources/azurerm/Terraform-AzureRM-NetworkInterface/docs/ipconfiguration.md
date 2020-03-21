@@ -34,6 +34,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Name
 
+A name used for this IP Configuration.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Primary
+
+Is this the Primary IP Configuration? Must be `true` for the first `ip_configuration` when multiple are specified. Defaults to `false`.
 
 _Required_: No
 
@@ -58,6 +62,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PrivateIpAddressAllocation
 
+The allocation method used for the Private IP Address. Possible values are `Dynamic` and `Static`.
+
 _Required_: Yes
 
 _Type_: String
@@ -65,6 +71,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PrivateIpAddressVersion
+
+The IP Version to use. Possible values are `IPv4` or `IPv6`. Defaults to `IPv4`.
 
 _Required_: No
 
@@ -74,6 +82,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PublicIpAddressId
 
+Reference to a Public IP Address to associate with this NIC.
+
 _Required_: No
 
 _Type_: String
@@ -81,6 +91,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubnetId
+
+The ID of the Subnet where this Network Interface should be located in.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureStack::ResourceGroup",
-    "description": "CloudFormation equivalent of azurestack_resource_group",
+    "description": "Creates a new resource group on Azure.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "The location where the resource group should be created.\nFor a list of all Azure locations, please consult [this link](http://azure.microsoft.com/en-us/regions/) or run `az account list-locations --output table`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group. Must be unique on your\nAzure subscription."
         },
         "Tags": {
             "type": "array",
@@ -32,7 +34,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         }
     },
     "additionalProperties": false,

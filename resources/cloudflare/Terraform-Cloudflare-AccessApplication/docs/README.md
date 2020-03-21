@@ -1,6 +1,8 @@
 # Terraform::Cloudflare::AccessApplication
 
-CloudFormation equivalent of cloudflare_access_application
+Provides a Cloudflare Access Application resource. Access Applications
+are used to restrict access to a whole application using an
+authorisation gateway managed by Cloudflare.
 
 ## Syntax
 
@@ -35,6 +37,9 @@ Properties:
 
 #### Domain
 
+The complete URL of the asset you wish to put
+Cloudflare Access in front of. Can include subdomains or paths. Or both.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Friendly name of the Access Application.
 
 _Required_: Yes
 
@@ -51,6 +58,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SessionDuration
 
+How often a user will be forced to
+re-authorise. Must be one of `30m`, `6h`, `12h`, `24h`, `168h`, `730h`.
+
 _Required_: No
 
 _Type_: String
@@ -58,6 +68,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneId
+
+The DNS zone to which the access rule should be added.
 
 _Required_: Yes
 

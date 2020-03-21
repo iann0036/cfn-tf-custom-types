@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::RtsStackV1
 
-CloudFormation equivalent of opentelekomcloud_rts_stack_v1
+Provides an OpenTelekomCloud Stack.
 
 ## Syntax
 
@@ -49,6 +49,8 @@ Properties:
 
 #### DisableRollback
 
+Set to true to disable rollback of the stack if stack creation failed.
+
 _Required_: No
 
 _Type_: Boolean
@@ -56,6 +58,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Environment
+
+Tthe environment information about the stack.
 
 _Required_: No
 
@@ -65,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Files
 
+Files used in the environment.
+
 _Required_: No
 
 _Type_: List of <a href="files.md">Files</a>
@@ -73,6 +79,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A unique name for the stack. The value must meet the regular expression rule (`^[a-zA-Z][a-zA-Z0-9_.-]{0,254}$`). Changing this creates a new stack.
+
 _Required_: Yes
 
 _Type_: String
@@ -80,6 +88,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Parameters
+
+A list of Parameter structures that specify input parameters for the stack.
 
 _Required_: No
 
@@ -97,6 +107,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TemplateBody
 
+Structure containing the template body. The template content must use the yaml syntax.
+
 _Required_: No
 
 _Type_: String
@@ -105,6 +117,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TemplateUrl
 
+Location of a file containing the template body.
+
 _Required_: No
 
 _Type_: String
@@ -112,6 +126,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TimeoutMins
+
+Specifies the timeout duration.
 
 _Required_: No
 

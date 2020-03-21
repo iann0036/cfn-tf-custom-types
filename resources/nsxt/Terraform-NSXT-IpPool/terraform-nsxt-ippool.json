@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::NSXT::IpPool",
-    "description": "CloudFormation equivalent of nsxt_ip_pool",
+    "description": "Provides a resource to configure IP pool on NSX-T manager",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Subnet": {
@@ -59,10 +59,12 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of this resource."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The display name of this resource. Defaults to ID if not set."
         },
         "Revision": {
             "type": "number"

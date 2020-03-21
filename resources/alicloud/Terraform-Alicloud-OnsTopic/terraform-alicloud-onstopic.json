@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::OnsTopic",
-    "description": "CloudFormation equivalent of alicloud_ons_topic",
+    "description": "Provides an ONS topic resource.\n\nFor more information about how to use it, see [RocketMQ Topic Management API](https://www.alibabacloud.com/help/doc-detail/29591.html). \n\n-> **NOTE:** Available in 1.53.0+",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,19 +9,24 @@
             "type": "string"
         },
         "InstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the ONS Instance that owns the topics."
         },
         "MessageType": {
-            "type": "number"
+            "type": "number",
+            "description": "The type of the message. Read [Ons Topic Create](https://www.alibabacloud.com/help/doc-detail/29591.html) for further details."
         },
         "Perm": {
-            "type": "number"
+            "type": "number",
+            "description": "This attribute is used to set the read-write mode for the topic. Read [Request parameters](https://www.alibabacloud.com/help/doc-detail/56880.html) for further details."
         },
         "Remark": {
-            "type": "string"
+            "type": "string",
+            "description": "This attribute is a concise description of topic. The length cannot exceed 128."
         },
         "Topic": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the topic. Two topics on a single instance cannot have the same name and the name cannot start with 'GID' or 'CID'. The length cannot exceed 64 characters."
         }
     },
     "additionalProperties": false,

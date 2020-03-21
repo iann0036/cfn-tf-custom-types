@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Chef::Node",
-    "description": "CloudFormation equivalent of chef_node",
+    "description": "A [node](http://docs.chef.io/nodes.html) is a computer whose\nconfiguration is managed by Chef.\n\nAlthough this resource allows a node to be registered, it does not actually\nconfigure the computer in question to interact with Chef. In most cases it\nis better to use [the `chef` provisioner](/docs/provisioners/chef.html) to\nconfigure the Chef client on a computer and have it register itself with the\nChef server.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,29 +9,36 @@
             "type": "string"
         },
         "AutomaticAttributesJson": {
-            "type": "string"
+            "type": "string",
+            "description": "String containing a JSON-serialized\nobject containing the automatic attributes for the node."
         },
         "DefaultAttributesJson": {
-            "type": "string"
+            "type": "string",
+            "description": "String containing a JSON-serialized\nobject containing the default attributes for the node."
         },
         "EnvironmentName": {
-            "type": "string"
+            "type": "string",
+            "description": "the nodes environment name (default: _default)."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The unique name to assign to the node."
         },
         "NormalAttributesJson": {
-            "type": "string"
+            "type": "string",
+            "description": "String containing a JSON-serialized\nobject containing the normal attributes for the node."
         },
         "OverrideAttributesJson": {
-            "type": "string"
+            "type": "string",
+            "description": "String containing a JSON-serialized\nobject containing the override attributes for the node."
         },
         "RunList": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of strings to set as the\n[run list](https://docs.chef.io/run_lists.html) for the node."
         }
     },
     "additionalProperties": false,

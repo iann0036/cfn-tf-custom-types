@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Cloudflare::LogpushJob",
-    "description": "CloudFormation equivalent of cloudflare_logpush_job",
+    "description": "Provides a resource which manages Cloudflare logpush jobs.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,22 +9,27 @@
             "type": "string"
         },
         "DestinationConf": {
-            "type": "string"
+            "type": "string",
+            "description": "Uniquely identifies a resource (such as an s3 bucket) where data will be pushed. Additional configuration parameters supported by the destination may be included. See [Logpush destination documentation](https://developers.cloudflare.com/logs/logpush/logpush-configuration-api/understanding-logpush-api/#destination)."
         },
         "Enabled": {
             "type": "boolean"
         },
         "LogpullOptions": {
-            "type": "string"
+            "type": "string",
+            "description": "Configuration string for the Logshare API. It specifies things like requested fields and timestamp formats. See [Logpull options documentation](https://developers.cloudflare.com/logs/logpush/logpush-configuration-api/understanding-logpush-api/#options)."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the logpush job to create. Must match the regular expression `^[a-zA-Z0-9\\-\\.]*$`."
         },
         "OwnershipChallenge": {
-            "type": "string"
+            "type": "string",
+            "description": "Ownership challenge token to prove destination ownership. See [Developer documentation](https://developers.cloudflare.com/logs/logpush/logpush-configuration-api/understanding-logpush-api/#usage)."
         },
         "ZoneId": {
-            "type": "string"
+            "type": "string",
+            "description": "The zone ID where the logpush job should be created."
         }
     },
     "additionalProperties": false,

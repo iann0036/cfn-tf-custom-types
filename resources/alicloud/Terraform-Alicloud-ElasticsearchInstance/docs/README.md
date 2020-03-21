@@ -1,6 +1,10 @@
 # Terraform::Alicloud::ElasticsearchInstance
 
-CloudFormation equivalent of alicloud_elasticsearch_instance
+Provides a Elasticsearch instance resource. It contains data nodes, dedicated master node(optional) and etc. It can be associated with private IP whitelists and kibana IP whitelist.
+
+-> **NOTE:** Only one operation is supported in a request. So if `data_node_spec` and `data_node_disk_size` are both changed, system will respond error.
+
+-> **NOTE:** At present, `version` can not be modified once instance has been created.
 
 ## Syntax
 
@@ -70,6 +74,8 @@ Properties:
 
 #### DataNodeAmount
 
+The Elasticsearch cluster's data node quantity, between 2 and 50.
+
 _Required_: Yes
 
 _Type_: Double
@@ -77,6 +83,10 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DataNodeDiskSize
+
+The single data node storage space.
+- `cloud_ssd`: An SSD disk, supports a maximum of 2048 GiB (2 TB).
+- `cloud_efficiency` An ultra disk, supports a maximum of 5120 GiB (5 TB). If the data to be stored is larger than 2048 GiB, an ultra disk can only support the following data sizes (GiB): [`2560`, `3072`, `3584`, `4096`, `4608`, `5120`].
 
 _Required_: Yes
 
@@ -86,6 +96,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DataNodeDiskType
 
+The data node disk type. Supported values: cloud_ssd, cloud_efficiency.
+
 _Required_: Yes
 
 _Type_: String
@@ -93,6 +105,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DataNodeSpec
+
+The data node specifications of the Elasticsearch instance.
 
 _Required_: Yes
 
@@ -102,6 +116,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+The description of instance. It a string of 0 to 30 characters.
+
 _Required_: No
 
 _Type_: String
@@ -109,6 +125,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceChargeType
+
+Valid values are `PrePaid`, `PostPaid`, Default to `PostPaid`. From version 1.69.0, the Elasticsearch cluster allows you to update your instance_charge_ype from `PostPaid` to `PrePaid`, the following attributes are required: `period`. But, updating from `PostPaid` to `PrePaid` is not supported.
 
 _Required_: No
 
@@ -118,6 +136,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KibanaWhitelist
 
+Set the Kibana's IP whitelist in internet network.
+
 _Required_: No
 
 _Type_: List of String
@@ -125,6 +145,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KmsEncryptedPassword
+
+An KMS encrypts password used to a instance. If the `password` is filled in, this field will be ignored, but you have to specify one of `password` and `kms_encrypted_password` fields.
 
 _Required_: No
 
@@ -134,6 +156,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KmsEncryptionContext
 
+An KMS encryption context used to decrypt `kms_encrypted_password` before creating or updating instance with `kms_encrypted_password`. See [Encryption Context](https://www.alibabacloud.com/help/doc-detail/42975.htm). It is valid when `kms_encrypted_password` is set.
+
 _Required_: No
 
 _Type_: List of <a href="kmsencryptioncontext.md">KmsEncryptionContext</a>
@@ -141,6 +165,8 @@ _Type_: List of <a href="kmsencryptioncontext.md">KmsEncryptionContext</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MasterNodeSpec
+
+The dedicated master node spec. If specified, dedicated master node will be created.
 
 _Required_: No
 
@@ -150,6 +176,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Password
 
+The password of the instance. The password can be 8 to 30 characters in length and must contain three of the following conditions: uppercase letters, lowercase letters, numbers, and special characters (`!@#$%^&*()_+-=`).
+
 _Required_: No
 
 _Type_: String
@@ -158,6 +186,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Period
 
+The duration that you will buy Elasticsearch instance (in month). It is valid when instance_charge_type is `PrePaid`. Valid values: [1~9], 12, 24, 36. Default to 1. From version 1.69.2, when to modify this value, the resource can renewal a `PrePaid` instance.
+
 _Required_: No
 
 _Type_: Double
@@ -165,6 +195,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PrivateWhitelist
+
+Set the instance's IP whitelist in VPC network.
 
 _Required_: No
 
@@ -182,6 +214,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+- key: It can be up to 128 characters in length. It cannot begin with "aliyun", "acs:". It cannot contain "http://" and "https://". It cannot be a null string.
+- value: It can be up to 128 characters in length. It cannot contain "http://" and "https://". It can be a null string.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -189,6 +225,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Version
+
+Elasticsearch version. Supported values: `5.5.3_with_X-Pack`, `6.3_with_X-Pack` and `6.7_with_X-Pack`.
 
 _Required_: Yes
 
@@ -198,6 +236,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VswitchId
 
+The ID of VSwitch.
+
 _Required_: Yes
 
 _Type_: String
@@ -205,6 +245,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneCount
+
+The Multi-AZ supported for Elasticsearch, between 1 and 3. The `data_node_amount` value must be an integral multiple of the `zone_count` value.
 
 _Required_: No
 

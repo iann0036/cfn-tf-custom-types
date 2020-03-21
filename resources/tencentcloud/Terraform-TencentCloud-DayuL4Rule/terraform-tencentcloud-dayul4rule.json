@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::DayuL4Rule",
-    "description": "CloudFormation equivalent of tencentcloud_dayu_l4_rule",
+    "description": "Use this resource to create dayu layer 4 rule\n\n~> **NOTE:** This resource only support resource Anti-DDoS of type `bgpip` and `net`",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "SourceList": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "Source": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Source ip or domain, valid format of ip is like `1.1.1.1` and valid format of host source is like `abc.com`."
                 },
                 "Weight": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Weight of the source, the valid value ranges from 0 to 100."
                 }
             },
             "required": [
@@ -26,52 +28,66 @@
             "type": "string"
         },
         "DPort": {
-            "type": "number"
+            "type": "number",
+            "description": "The destination port of the L4 rule."
         },
         "HealthCheckHealthNum": {
-            "type": "number"
+            "type": "number",
+            "description": "Health threshold of health check, and the default is 3. If a success result is returned for the health check 3 consecutive times, indicates that the forwarding is normal. The value range is 2-10."
         },
         "HealthCheckInterval": {
-            "type": "number"
+            "type": "number",
+            "description": "Interval time of health check. The value range is 10-60 sec, and the default is 15 sec."
         },
         "HealthCheckSwitch": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether health check is enabled. The default is `false`. Only valid when source list has more than one source item."
         },
         "HealthCheckTimeout": {
-            "type": "number"
+            "type": "number",
+            "description": "HTTP Status Code. The default is 26 and value range is 2-60."
         },
         "HealthCheckUnhealthNum": {
-            "type": "number"
+            "type": "number",
+            "description": "Unhealthy threshold of health check, and the default is 3. If the unhealthy result is returned 3 consecutive times, indicates that the forwarding is abnormal. The value range is 2-10."
         },
         "LbType": {
             "type": "number"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the rule. When the `resource_type` is `net`, this field should be set with valid domain."
         },
         "Protocol": {
-            "type": "string"
+            "type": "string",
+            "description": "Protocol of the rule, valid values are `http`, `https`. When `source_type` is 1(host source), the value of this field can only set with `tcp`."
         },
         "ResourceId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the resource that the layer 4 rule works for."
         },
         "ResourceType": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of the resource that the layer 4 rule works for, valid values are `bgpip` and `net`."
         },
         "RuleId": {
             "type": "string"
         },
         "SPort": {
-            "type": "number"
+            "type": "number",
+            "description": "The source port of the L4 rule."
         },
         "SessionSwitch": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicate that the session will keep or not, and default value is `false`."
         },
         "SessionTime": {
-            "type": "number"
+            "type": "number",
+            "description": "Session keep time, only valid when `session_switch` is true, the available value ranges from 1 to 300 and unit is second."
         },
         "SourceType": {
-            "type": "number"
+            "type": "number",
+            "description": "Source type, 1 for source of host, 2 for source of ip."
         },
         "SourceList": {
             "type": "array",

@@ -1,6 +1,6 @@
 # Terraform::AzureRM::NetworkWatcherFlowLog
 
-CloudFormation equivalent of azurerm_network_watcher_flow_log
+Manages a Network Watcher Flow Log.
 
 ## Syntax
 
@@ -47,6 +47,8 @@ Properties:
 
 #### Enabled
 
+Should Network Flow Logging be Enabled?.
+
 _Required_: Yes
 
 _Type_: Boolean
@@ -54,6 +56,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NetworkSecurityGroupId
+
+The ID of the Network Security Group for which to enable flow logs for. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -63,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NetworkWatcherName
 
+The name of the Network Watcher. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -70,6 +76,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which the Network Watcher was deployed. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -79,6 +87,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StorageAccountId
 
+The ID of the Storage Account where flow logs are stored.
+
 _Required_: Yes
 
 _Type_: String
@@ -86,6 +96,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Version
+
+The version (revision) of the flow log. Possible values are `1` and `2`.
 
 _Required_: No
 

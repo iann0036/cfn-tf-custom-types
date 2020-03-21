@@ -1,6 +1,8 @@
 # Terraform::OCI::DatabaseBackup
 
-CloudFormation equivalent of oci_database_backup
+This resource provides the Backup resource in Oracle Cloud Infrastructure Database service.
+
+Creates a new backup in the specified database based on the request parameters you provide. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
 
 ## Syntax
 
@@ -33,6 +35,8 @@ Properties:
 
 #### DatabaseId
 
+The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+
 _Required_: Yes
 
 _Type_: String
@@ -40,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+The user-friendly name for the backup. The name does not have to be unique.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HuaweiCloud::VpcBandwidthV2",
-    "description": "CloudFormation equivalent of huaweicloud_vpc_bandwidth_v2",
+    "description": "Manages a Shared Bandwidth resource within HuaweiCloud.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,13 +26,16 @@
             "type": "string"
         },
         "EnterpriseProjectId": {
-            "type": "string"
+            "type": "string",
+            "description": "The enterprise project id of the Shared Bandwidth. Changing this creates a new bandwidth."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Shared Bandwidth."
         },
         "Size": {
-            "type": "number"
+            "type": "number",
+            "description": "The size of the Shared Bandwidth. The value ranges from 5 to 2000 G."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

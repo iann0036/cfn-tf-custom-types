@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Rancher::Stack",
-    "description": "CloudFormation equivalent of rancher_stack",
+    "description": "Provides a Rancher Stack resource. This can be used to create and manage stacks on rancher.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "CatalogId": {
-            "type": "string"
+            "type": "string",
+            "description": "The catalog ID to link this stack to. When provided, `docker_compose` and `rancher_compose` will be retrieved from the catalog unless they are overridden."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A stack description."
         },
         "DockerCompose": {
-            "type": "string"
+            "type": "string",
+            "description": "The `docker-compose.yml` content to apply for the stack."
         },
         "Environment": {
             "type": "array",
@@ -35,19 +38,24 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "The environment to apply to interpret the docker-compose and rancher-compose files."
         },
         "EnvironmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the environment to create the stack for."
         },
         "FinishUpgrade": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to automatically finish upgrades to this stack."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the stack."
         },
         "RancherCompose": {
-            "type": "string"
+            "type": "string",
+            "description": "The `rancher-compose.yml` content to apply for the stack."
         },
         "RenderedDockerCompose": {
             "type": "string"
@@ -56,10 +64,12 @@
             "type": "string"
         },
         "Scope": {
-            "type": "string"
+            "type": "string",
+            "description": "The scope to attach the stack to. Must be one of **user** or **system**. Defaults to **user**."
         },
         "StartOnCreate": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to start the stack automatically."
         }
     },
     "additionalProperties": false,

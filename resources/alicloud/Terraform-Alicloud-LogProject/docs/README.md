@@ -1,6 +1,7 @@
 # Terraform::Alicloud::LogProject
 
-CloudFormation equivalent of alicloud_log_project
+The project is the resource management unit in Log Service and is used to isolate and control resources.
+You can manage all the logs and the related log sources of an application by using projects. [Refer to details](https://www.alibabacloud.com/help/doc-detail/48873.htm).
 
 ## Syntax
 
@@ -31,6 +32,8 @@ Properties:
 
 #### Description
 
+Description of the log project.
+
 _Required_: No
 
 _Type_: String
@@ -38,6 +41,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the log project. It is the only in one Alicloud account.
 
 _Required_: Yes
 

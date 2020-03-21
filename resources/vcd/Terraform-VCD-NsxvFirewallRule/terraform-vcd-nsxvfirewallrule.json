@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::VCD::NsxvFirewallRule",
-    "description": "CloudFormation equivalent of vcd_nsxv_firewall_rule",
+    "description": "Provides a vCloud Director firewall rule resource for advanced edge gateways (NSX-V). This can be\nused to create, modify, and delete firewall rules. Replaces\n[`vcd_firewall_rules`](/docs/providers/vcd/r/firewall_rules.html) resource.\n\n~> **Note:** This resource requires advanced edge gateway (NSX-V). For non-advanced edge gateways please\nuse the [`vcd_firewall_rules`](/docs/providers/vcd/r/firewall_rules.html) resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Destination": {
@@ -118,34 +118,43 @@
             "type": "string"
         },
         "AboveRuleId": {
-            "type": "string"
+            "type": "string",
+            "description": "This can be used to alter default rule placement order. By default\nevery rule is appended to the end of firewall rule list. When a value of another rule is set - this\nrule will be placed above the specified rule."
         },
         "Action": {
-            "type": "string"
+            "type": "string",
+            "description": "Defines if the rule is set to `accept` or `deny` traffic. Default `accept`."
         },
         "EdgeGateway": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the edge gateway on which to apply the firewall rule."
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Defines if the rule is enabaled. Default `true`."
         },
         "LoggingEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Defines if the logging for this rule is enabaled. Default `false`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Free text name. Can be duplicate."
         },
         "Org": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of organization to use, optional if defined at provider level. Useful\nwhen connected as sysadmin working across different organisations."
         },
         "RuleTag": {
-            "type": "number"
+            "type": "number",
+            "description": "This can be used to specify user-controlled rule tag. If not specified,\nit will report rule ID after creation. Must be between 65537-131072."
         },
         "RuleType": {
             "type": "string"
         },
         "Vdc": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of VDC to use, optional if defined at provider level."
         },
         "Destination": {
             "type": "array",

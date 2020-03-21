@@ -1,6 +1,6 @@
 # Terraform::AzureRM::FrontdoorFirewallPolicy
 
-CloudFormation equivalent of azurerm_frontdoor_firewall_policy
+Manages an Azure Front Door Web Application Firewall Policy instance.
 
 ## Syntax
 
@@ -64,6 +64,8 @@ Properties:
 
 #### CustomBlockResponseBody
 
+If a `custom_rule` block's action type is `block`, this is the response body. The body must be specified in base64 encoding.
+
 _Required_: No
 
 _Type_: String
@@ -71,6 +73,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CustomBlockResponseStatusCode
+
+If a `custom_rule` block's action type is `block`, this is the response status code. Possible values are `200`, `403`, `405`, `406`, or `429`.
 
 _Required_: No
 
@@ -80,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Enabled
 
+Is the policy a enabled state or disabled state. Defaults to `true`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -87,6 +93,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Mode
+
+The firewall policy mode. Possible values are `Detection`, `Prevention` and defaults to `Prevention`.
 
 _Required_: No
 
@@ -96,6 +104,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the policy. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -103,6 +113,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RedirectUrl
+
+If action type is redirect, this field represents redirect URL for the client.
 
 _Required_: No
 
@@ -112,6 +124,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -119,6 +133,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the Web Application Firewall Policy.
 
 _Required_: No
 

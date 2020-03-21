@@ -1,6 +1,10 @@
 # Terraform::Nomad::AclToken
 
-CloudFormation equivalent of nomad_acl_token
+Manages an ACL token in Nomad.
+
+~> **Warning:** this resource will store any tokens it creates in
+  Terraform's state file. Take care to
+  [protect your state file](/docs/state/sensitive-data.html).
 
 ## Syntax
 

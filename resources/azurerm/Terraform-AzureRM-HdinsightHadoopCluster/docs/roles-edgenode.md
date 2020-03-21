@@ -35,6 +35,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VmSize
 
+The Size of the Virtual Machine which should be used as the Edge Nodes. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String

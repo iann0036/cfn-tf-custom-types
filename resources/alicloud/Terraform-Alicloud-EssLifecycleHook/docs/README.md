@@ -1,6 +1,6 @@
 # Terraform::Alicloud::EssLifecycleHook
 
-CloudFormation equivalent of alicloud_ess_lifecycle_hook
+Provides a ESS lifecycle hook resource. More about Ess lifecycle hook, see [LifecycleHook](https://www.alibabacloud.com/help/doc-detail/73839.htm).
 
 ## Syntax
 
@@ -41,6 +41,8 @@ Properties:
 
 #### DefaultResult
 
+Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses. Applicable value: CONTINUE, ABANDON, default value: CONTINUE.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +50,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HeartbeatTimeout
+
+Defines the amount of time, in seconds, that can elapse before the lifecycle hook times out. When the lifecycle hook times out, Auto Scaling performs the action defined in the default_result parameter. Default value: 600.
 
 _Required_: No
 
@@ -57,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LifecycleTransition
 
+Type of Scaling activity attached to lifecycle hook. Supported value: SCALE_OUT, SCALE_IN.
+
 _Required_: Yes
 
 _Type_: String
@@ -64,6 +70,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the lifecycle hook, which must contain 2-64 characters (English or Chinese), starting with numbers, English letters or Chinese characters, and can contain number, underscores `_`, hypens `-`, and decimal point `.`. If this parameter value is not specified, the default value is lifecycle hook id.
 
 _Required_: No
 
@@ -73,6 +81,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NotificationArn
 
+The Arn of notification target.
+
 _Required_: No
 
 _Type_: String
@@ -81,6 +91,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NotificationMetadata
 
+Additional information that you want to include when Auto Scaling sends a message to the notification target.
+
 _Required_: No
 
 _Type_: String
@@ -88,6 +100,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ScalingGroupId
+
+The ID of the Auto Scaling group to which you want to assign the lifecycle hook.
 
 _Required_: Yes
 

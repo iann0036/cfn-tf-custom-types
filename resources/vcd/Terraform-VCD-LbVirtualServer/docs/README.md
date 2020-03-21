@@ -1,6 +1,16 @@
 # Terraform::VCD::LbVirtualServer
 
-CloudFormation equivalent of vcd_lb_virtual_server
+Provides a vCloud Director edge gateway load balancer virtual server resource. Adds an edge gateway
+internal or uplink interface as a virtual server. A virtual server has a public IP address and services all incoming client requests. 
+
+~> **Note:** To make load balancing work one must ensure that load balancing is enabled on edge gateway (edge gateway must be advanced).
+This depends on NSX version to work properly. Please refer to [VMware Product Interoperability Matrices](https://www.vmware.com/resources/compatibility/sim/interop_matrix.php#interop&29=&93=) 
+to check supported vCloud director and NSX for vSphere configurations.
+
+~> **Note:** The vCloud Director API for NSX supports a subset of the operations and objects defined in the NSX vSphere 
+API Guide. The API supports NSX 6.2, 6.3, and 6.4.
+
+Supported in provider *v2.4+*
 
 ## Syntax
 
@@ -58,6 +68,8 @@ Properties:
 
 #### AppProfileId
 
+Application profile ID to be associated with the virtual server.
+
 _Required_: No
 
 _Type_: String
@@ -65,6 +77,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AppRuleIds
+
+List of attached application rule IDs.
 
 _Required_: No
 
@@ -74,6 +88,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ConnectionLimit
 
+Maximum concurrent connections that the virtual server can process.
+
 _Required_: No
 
 _Type_: Double
@@ -81,6 +97,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ConnectionRateLimit
+
+Maximum incoming new connection requests per second.
 
 _Required_: No
 
@@ -90,6 +108,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+Virtual server description.
+
 _Required_: No
 
 _Type_: String
@@ -97,6 +117,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EdgeGateway
+
+The name of the edge gateway on which the virtual server is to be
+created.
 
 _Required_: Yes
 
@@ -106,6 +129,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableAcceleration
 
+Defines if the virtual server uses acceleration. Default
+`false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -113,6 +139,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Enabled
+
+Defines if the virtual server is enabled. Default `true`.
 
 _Required_: No
 
@@ -122,6 +150,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IpAddress
 
+Set the IP address that the load balancer listens on.
+
 _Required_: Yes
 
 _Type_: String
@@ -129,6 +159,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Virtual server name.
 
 _Required_: Yes
 
@@ -138,6 +170,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Org
 
+The name of organization to use, optional if defined at provider level. Useful
+when connected as sysadmin working across different organisations.
+
 _Required_: No
 
 _Type_: String
@@ -145,6 +180,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Port
+
+The port number that the load balancer listens on.
 
 _Required_: Yes
 
@@ -154,6 +191,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Protocol
 
+Select the protocol that the virtual server accepts. One of `tcp`, `udp`,
+`http`, or `https` **Note**: You must select the same protocol used by the selected
+**Application Profile**.
+
 _Required_: Yes
 
 _Type_: String
@@ -162,6 +203,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServerPoolId
 
+The server pool that the load balancer will use.
+
 _Required_: No
 
 _Type_: String
@@ -169,6 +212,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vdc
+
+The name of VDC to use, optional if defined at provider level.
 
 _Required_: No
 

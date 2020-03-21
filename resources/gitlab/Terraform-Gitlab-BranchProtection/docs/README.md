@@ -1,6 +1,6 @@
 # Terraform::Gitlab::BranchProtection
 
-CloudFormation equivalent of gitlab_branch_protection
+This resource allows you to protect a specific branch by an access level so that the user with less access level cannot Merge/Push to the branch. GitLab EE features to protect by group or user are not supported.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### Branch
 
+Name of the branch.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MergeAccessLevel
+
+One of five levels of access to the project.
 
 _Required_: Yes
 
@@ -51,6 +55,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Project
 
+The id of the project.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PushAccessLevel
+
+One of five levels of access to the project.
 
 _Required_: Yes
 

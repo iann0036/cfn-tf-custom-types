@@ -1,6 +1,6 @@
 # Terraform::AzureRM::VpnGateway
 
-CloudFormation equivalent of azurerm_vpn_gateway
+Manages a VPN Gateway within a Virtual Hub, which enables Site-to-Site communication.
 
 ## Syntax
 
@@ -45,6 +45,8 @@ Properties:
 
 #### Location
 
+The Azure location where this VPN Gateway should be created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -52,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The Name which should be used for this VPN Gateway. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -61,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The Name of the Resource Group in which this VPN Gateway should be created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -68,6 +74,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ScaleUnit
+
+The Scale Unit for this VPN Gateway. Defaults to `1`.
 
 _Required_: No
 
@@ -77,6 +85,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the VPN Gateway.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -84,6 +94,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VirtualHubId
+
+The ID of the Virtual Hub within which this VPN Gateway should be created. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

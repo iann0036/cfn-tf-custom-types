@@ -1,6 +1,8 @@
 # Terraform::TencentCloud::DayuCcHttpsPolicy
 
-CloudFormation equivalent of tencentcloud_dayu_cc_https_policy
+Use this resource to create a dayu CC self-define https policy
+
+~> **NOTE:** creating CC self-define https policy need a valid resource `tencentcloud_dayu_l7_rule`; The resource only support Anti-DDoS of resource type `bgpip`.
 
 ## Syntax
 
@@ -44,6 +46,8 @@ Properties:
 
 #### Action
 
+Action mode. Valid values are `alg` and `drop`.
+
 _Required_: No
 
 _Type_: String
@@ -51,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Domain
+
+Domain that the CC self-define https policy works for, only valid when `protocol` is `https`.
 
 _Required_: Yes
 
@@ -60,6 +66,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name of the CC self-define https policy. Length should between 1 and 20.
+
 _Required_: Yes
 
 _Type_: String
@@ -67,6 +75,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceId
+
+ID of the resource that the CC self-define https policy works for.
 
 _Required_: Yes
 
@@ -76,6 +86,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceType
 
+Type of the resource that the CC self-define https policy works for, valid value is `bgpip`.
+
 _Required_: Yes
 
 _Type_: String
@@ -84,6 +96,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RuleId
 
+Rule id of the domain that the CC self-define https policy works for, only valid when `protocol` is `https`.
+
 _Required_: Yes
 
 _Type_: String
@@ -91,6 +105,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Switch
+
+Indicate the CC self-define https policy takes effect or not.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Packet::Device",
-    "description": "CloudFormation equivalent of packet_device",
+    "description": "Provides a Packet device resource. This can be used to create,\nmodify, and delete devices.\n\n~> **Note:** All arguments including the `root_password` and `user_data` will be stored in\n the raw state as plain-text.\n[Read more about sensitive data in state](/docs/state/sensitive-data.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "IpAddress": {
@@ -8,17 +8,20 @@
             "additionalProperties": false,
             "properties": {
                 "Cidr": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "CIDR suffix for IP address block to be assigned, i.e. amount of addresses."
                 },
                 "ReservationIds": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "String of UUID of [IP block reservations](https://www.terraform.io/docs/providers/packet/r/reserved_ip_block.html) from which the public IPv4 address should be taken."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "One of [`private_ipv4`, `public_ipv4`, `public_ipv6`]."
                 }
             },
             "required": [
@@ -60,7 +63,8 @@
             "type": "boolean"
         },
         "BillingCycle": {
-            "type": "string"
+            "type": "string",
+            "description": "monthly or hourly."
         },
         "Created": {
             "type": "string"
@@ -69,14 +73,16 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description string for the device."
         },
         "Facilities": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of facility codes with deployment preferences. Packet API will go through the list and will deploy your device to first facility with free capacity. List items must be facility codes or `any` (a wildcard). To find the facility code, visit [Facilities API docs](https://www.packet.com/developers/api/facilities), set your API auth token in the top of the page and see JSON from the API response."
         },
         "Facility": {
             "type": "string"
@@ -88,7 +94,8 @@
             "type": "string"
         },
         "Hostname": {
-            "type": "string"
+            "type": "string",
+            "description": "The device name."
         },
         "IpAddressTypes": {
             "type": "array",
@@ -132,10 +139,12 @@
             "type": "string"
         },
         "OperatingSystem": {
-            "type": "string"
+            "type": "string",
+            "description": "The operating system slug. To find the slug, or visit [Operating Systems API docs](https://www.packet.com/developers/api/operatingsystems), set your API auth token in the top of the page and see JSON from the API response."
         },
         "Plan": {
-            "type": "string"
+            "type": "string",
+            "description": "The device plan slug. To find the plan slug, visit [Device plans API docs](https://www.packet.com/developers/api/plans), set your auth token in the top of the page and see JSON from the API response."
         },
         "Ports": {
             "type": "array",
@@ -163,14 +172,16 @@
             }
         },
         "ProjectId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the project in which to create the device."
         },
         "ProjectSshKeyIds": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Array of IDs of the project SSH keys which should be added to the device. If you omit this, SSH keys of all the members of the parent project will be added to the device. If you specify this array, only the listed project SSH keys will be added. Project SSH keys can be created with the [packet_project_ssh_key][https://www.terraform.io/docs/providers/packet/r/project_ssh_key.html] resource."
         },
         "PublicIpv4SubnetSize": {
             "type": "number"
@@ -196,7 +207,8 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Tags attached to the device."
         },
         "Updated": {
             "type": "string"

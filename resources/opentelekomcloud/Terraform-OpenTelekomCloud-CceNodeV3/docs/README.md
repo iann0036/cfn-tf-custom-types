@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::CceNodeV3
 
-CloudFormation equivalent of opentelekomcloud_cce_node_v3
+Add a node to a container cluster.
 
 ## Syntax
 
@@ -84,6 +84,8 @@ Properties:
 
 #### Annotations
 
+Node annotation, key/value pair format. Changing this parameter will create a new resource.
+
 _Required_: No
 
 _Type_: List of <a href="annotations.md">Annotations</a>
@@ -91,6 +93,8 @@ _Type_: List of <a href="annotations.md">Annotations</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AvailabilityZone
+
+specify the name of the available partition (AZ). Changing this parameter will create a new resource.
 
 _Required_: Yes
 
@@ -100,6 +104,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### BandwidthChargeMode
 
+Bandwidth billing type. Changing this parameter will create a new resource.
+
 _Required_: No
 
 _Type_: String
@@ -107,6 +113,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BandwidthSize
+
+Bandwidth size. Changing this parameter will create a new resource.
 
 _Required_: No
 
@@ -116,6 +124,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### BillingMode
 
+Node's billing mode: The value is 0 (on demand). Changing this parameter will create a new resource.
+
 _Required_: No
 
 _Type_: Double
@@ -123,6 +133,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClusterId
+
+ID of the cluster. Changing this parameter will create a new resource.
 
 _Required_: Yes
 
@@ -132,6 +144,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EcsPerformanceType
 
+Classification of cloud server specifications. Changing this parameter will create a new cluster resource.
+
 _Required_: No
 
 _Type_: String
@@ -139,6 +153,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EipCount
+
+Number of elastic IPs to be dynamically created. Changing this parameter will create a new resource.
 
 _Required_: No
 
@@ -148,6 +164,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EipIds
 
+List of existing elastic IP IDs. Changing this parameter will create a new resource.
+
 _Required_: No
 
 _Type_: List of String
@@ -155,6 +173,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ExtendParamChargingMode
+
+Node charging mode, 0 is on-demand charging. Changing this parameter will create a new cluster resource.
 
 _Required_: No
 
@@ -164,6 +184,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FlavorId
 
+Specifies the flavor id. Changing this parameter will create a new resource.
+
 _Required_: Yes
 
 _Type_: String
@@ -171,6 +193,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Iptype
+
+Elastic IP type.
 
 _Required_: No
 
@@ -180,6 +204,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KeyPair
 
+Key pair name when logging in to select the key pair mode. Changing this parameter will create a new resource.
+
 _Required_: Yes
 
 _Type_: String
@@ -187,6 +213,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Labels
+
+Node tag, key/value pair format. Changing this parameter will create a new resource.
 
 _Required_: No
 
@@ -196,6 +224,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxPods
 
+The maximum number of instances a node is allowed to create. Changing this parameter will create a new cluster resource.
+
 _Required_: No
 
 _Type_: Double
@@ -203,6 +233,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Node Name.
 
 _Required_: No
 
@@ -212,6 +244,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OrderId
 
+Order ID, mandatory when the node payment type is the automatic payment package period type. Changing this parameter will create a new cluster resource.
+
 _Required_: No
 
 _Type_: String
@@ -219,6 +253,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Postinstall
+
+Script required after installation. The input value can be a Base64 encoded string or not.
+Changing this parameter will create a new resource.
 
 _Required_: No
 
@@ -228,6 +265,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Preinstall
 
+Script required before installation. The input value can be a Base64 encoded string or not.
+Changing this parameter will create a new resource.
+
 _Required_: No
 
 _Type_: String
@@ -236,6 +276,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProductId
 
+The Product ID. Changing this parameter will create a new cluster resource.
+
 _Required_: No
 
 _Type_: String
@@ -243,6 +285,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PublicKey
+
+The Public key. Changing this parameter will create a new cluster resource.
 
 _Required_: No
 
@@ -259,6 +303,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Sharetype
+
+Bandwidth sharing type. Changing this parameter will create a new resource.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::AzureRM::AvailabilitySet
 
-CloudFormation equivalent of azurerm_availability_set
+Manages an Availability Set for Virtual Machines.
 
 ## Syntax
 
@@ -46,6 +46,8 @@ Properties:
 
 #### Location
 
+Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -53,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Managed
+
+Specifies whether the availability set is managed or not. Possible values are `true` (to specify aligned) or `false` (to specify classic). Default is `true`.
 
 _Required_: No
 
@@ -62,6 +66,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the availability set. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -69,6 +75,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PlatformFaultDomainCount
+
+Specifies the number of fault domains that are used. Defaults to `3`.
 
 _Required_: No
 
@@ -78,6 +86,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PlatformUpdateDomainCount
 
+Specifies the number of update domains that are used. Defaults to `5`.
+
 _Required_: No
 
 _Type_: Double
@@ -85,6 +95,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProximityPlacementGroupId
+
+The ID of the Proximity Placement Group to which this Virtual Machine should be assigned. Changing this forces a new resource to be created.
 
 _Required_: No
 
@@ -94,6 +106,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to create the availability set. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -101,6 +115,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

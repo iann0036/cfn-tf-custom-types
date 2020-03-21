@@ -1,6 +1,6 @@
 # Terraform::CloudStack::PortForward
 
-CloudFormation equivalent of cloudstack_port_forward
+Creates port forwards.
 
 ## Syntax
 
@@ -36,6 +36,9 @@ Properties:
 
 #### IpAddressId
 
+The IP address ID for which to create the port
+forwards. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +47,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Managed
 
+USE WITH CAUTION! If enabled all the port forwards for
+this IP address will be managed by this resource. This means it will delete
+all port forwards that are not in your config! (defaults false).
+
 _Required_: No
 
 _Type_: Boolean
@@ -51,6 +58,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The name or ID of the project to create this port forward
+in. Changing this forces a new resource to be created.
 
 _Required_: No
 

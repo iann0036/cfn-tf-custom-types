@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::AutomationDscNodeconfiguration",
-    "description": "CloudFormation equivalent of azurerm_automation_dsc_nodeconfiguration",
+    "description": "Manages a Automation DSC Node Configuration.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,19 +29,23 @@
             "type": "string"
         },
         "AutomationAccountName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the automation account in which the DSC Node Configuration is created. Changing this forces a new resource to be created."
         },
         "ConfigurationName": {
             "type": "string"
         },
         "ContentEmbedded": {
-            "type": "string"
+            "type": "string",
+            "description": "The PowerShell DSC Node Configuration (mof content)."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the DSC Node Configuration. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which the DSC Node Configuration is created. Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

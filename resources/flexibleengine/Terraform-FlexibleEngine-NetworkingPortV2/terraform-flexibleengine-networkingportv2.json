@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::FlexibleEngine::NetworkingPortV2",
-    "description": "CloudFormation equivalent of flexibleengine_networking_port_v2",
+    "description": "Manages a V2 port resource within FlexibleEngine.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "AllowedAddressPairs": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "IpAddress": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The additional IP address."
                 },
                 "MacAddress": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The additional MAC address."
                 }
             },
             "required": [
@@ -23,10 +25,12 @@
             "additionalProperties": false,
             "properties": {
                 "IpAddress": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "IP address desired in the subnet for this port. If\nyou don't specify `ip_address`, an available IP address from the specified\nsubnet will be allocated to this port."
                 },
                 "SubnetId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Subnet in which to allocate IP address for\nthis port."
                 }
             },
             "required": [
@@ -53,7 +57,8 @@
             "type": "string"
         },
         "AdminStateUp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Administrative up/down status for the port\n(must be \"true\" or \"false\" if provided). Changing this updates the\n`admin_state_up` of an existing port."
         },
         "AllFixedIps": {
             "type": "array",
@@ -63,32 +68,40 @@
             }
         },
         "DeviceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the device attached to the port. Changing this\ncreates a new port."
         },
         "DeviceOwner": {
-            "type": "string"
+            "type": "string",
+            "description": "The device owner of the Port. Changing this creates\na new port."
         },
         "MacAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "Specify a specific MAC address for the port. Changing\nthis creates a new port."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique name for the port. Changing this\nupdates the `name` of an existing port."
         },
         "NetworkId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the network to attach the port to. Changing\nthis creates a new port."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the V2 networking client.\nA networking client is needed to create a port. If omitted, the\n`region` argument of the provider is used. Changing this creates a new\nport."
         },
         "SecurityGroupIds": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of security group IDs to apply to the\nport. The security groups must be specified by ID and not name (as opposed\nto how they are configured with the Compute Instance)."
         },
         "TenantId": {
-            "type": "string"
+            "type": "string",
+            "description": "The owner of the Port. Required if admin wants\nto create a port for another tenant. Changing this creates a new port."
         },
         "ValueSpecs": {
             "type": "array",
@@ -108,7 +121,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Map of additional options."
         },
         "AllowedAddressPairs": {
             "type": "array",

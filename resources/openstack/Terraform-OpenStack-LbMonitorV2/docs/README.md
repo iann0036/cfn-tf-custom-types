@@ -1,6 +1,6 @@
 # Terraform::OpenStack::LbMonitorV2
 
-CloudFormation equivalent of openstack_lb_monitor_v2
+Manages a V2 monitor resource within OpenStack.
 
 ## Syntax
 
@@ -55,6 +55,9 @@ Properties:
 
 #### AdminStateUp
 
+The administrative state of the monitor.
+A valid value is true (UP) or false (DOWN).
+
 _Required_: No
 
 _Type_: Boolean
@@ -62,6 +65,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Delay
+
+The time, in seconds, between sending probes to members.
 
 _Required_: Yes
 
@@ -71,6 +76,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ExpectedCodes
 
+Required for HTTP(S) types. Expected HTTP codes
+for a passing HTTP(S) monitor. You can either specify a single status like
+"200", or a range like "200-202".
+
 _Required_: No
 
 _Type_: String
@@ -78,6 +87,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HttpMethod
+
+Required for HTTP(S) types. The HTTP method used
+for requests by the monitor. If this attribute is not specified, it
+defaults to "GET".
 
 _Required_: No
 
@@ -87,6 +100,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxRetries
 
+Number of permissible ping failures before
+changing the member's status to INACTIVE. Must be a number between 1
+and 10.
+
 _Required_: Yes
 
 _Type_: Double
@@ -94,6 +111,10 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MaxRetriesDown
+
+Number of permissible ping failures befor changing the member's
+status to ERROR. Must be a number between 1 and 10 (supported only in Octavia).
+Changing this updates the max_retries_down of the existing monitor.
 
 _Required_: No
 
@@ -103,6 +124,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The Name of the Monitor.
+
 _Required_: No
 
 _Type_: String
@@ -110,6 +133,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PoolId
+
+The id of the pool that this monitor will be assigned to.
 
 _Required_: Yes
 
@@ -119,6 +144,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region in which to obtain the V2 Networking client.
+A Networking client is needed to create an . If omitted, the
+`region` argument of the provider is used. Changing this creates a new
+monitor.
+
 _Required_: No
 
 _Type_: String
@@ -126,6 +156,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TenantId
+
+Required for admins. The UUID of the tenant who owns
+the monitor.  Only administrative users can specify a tenant UUID
+other than their own. Changing this creates a new monitor.
 
 _Required_: No
 
@@ -135,6 +169,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Timeout
 
+Maximum number of seconds for a monitor to wait for a
+ping reply before it times out. The value must be less than the delay
+value.
+
 _Required_: Yes
 
 _Type_: Double
@@ -143,6 +181,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Type
 
+The type of probe, which is PING, TCP, HTTP, HTTPS,
+TLS-HELLO or UDP-CONNECT (supported only in Octavia), that is sent by the load
+balancer to verify the member state. Changing this creates a new monitor.
+
 _Required_: Yes
 
 _Type_: String
@@ -150,6 +192,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UrlPath
+
+Required for HTTP(S) types. URI path that will be
+accessed if monitor type is HTTP or HTTPS.
 
 _Required_: No
 

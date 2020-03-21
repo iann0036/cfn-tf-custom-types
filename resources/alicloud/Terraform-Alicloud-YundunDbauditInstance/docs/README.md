@@ -1,6 +1,12 @@
 # Terraform::Alicloud::YundunDbauditInstance
 
-CloudFormation equivalent of alicloud_yundun_dbaudit_instance
+Cloud DBaudit instance resource ("Yundun_dbaudit" is the short term of this product).
+
+-> **NOTE:** The endpoint of bssopenapi used only support "business.aliyuncs.com" at present.
+
+-> **NOTE:** Available in 1.62.0+ .
+
+-> **NOTE:** In order to destroy Cloud DBaudit instance , users are required to apply for white list first
 
 ## Syntax
 
@@ -40,6 +46,8 @@ Properties:
 
 #### Description
 
+Description of the instance. This name can have a string of 1 to 63 characters.
+
 _Required_: Yes
 
 _Type_: String
@@ -47,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Period
+
+Duration for initially producing the instance. Valid values: [1~9], 12, 24, 36. Default to 12. At present, the provider does not support modify "period".
 
 _Required_: No
 
@@ -56,6 +66,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PlanCode
 
+Plan code of the Cloud DBAudit to produce. (alpha.professional, alpha.basic, alpha.premium).
+
 _Required_: Yes
 
 _Type_: String
@@ -64,6 +76,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -71,6 +85,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VswitchId
+
+vSwtich ID configured to audit.
 
 _Required_: Yes
 

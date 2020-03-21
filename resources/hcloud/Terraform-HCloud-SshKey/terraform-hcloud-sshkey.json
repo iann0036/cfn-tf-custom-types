@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HCloud::SshKey",
-    "description": "CloudFormation equivalent of hcloud_ssh_key",
+    "description": "Provides a Hetzner Cloud SSH key resource to manage SSH keys for server access.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -32,10 +32,12 @@
             }
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the SSH key.\n- `public_key` - (Required, string) The public key. If this is a file, it can be read using the file interpolation function."
         },
         "PublicKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The public key. If this is a file, it can be read using the file interpolation function."
         }
     },
     "additionalProperties": false,

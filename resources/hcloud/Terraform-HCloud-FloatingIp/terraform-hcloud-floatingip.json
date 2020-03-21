@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HCloud::FloatingIp",
-    "description": "CloudFormation equivalent of hcloud_floating_ip",
+    "description": "Provides a Hetzner Cloud Floating IP to represent a publicly-accessible static IP address that can be mapped to one of your servers.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the Floating IP.\n- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with."
         },
         "HomeLocation": {
-            "type": "string"
+            "type": "string",
+            "description": "Home location (routing is optimized for that location). Optional if server_id argument is passed.\n- `description` - (Optional, string) Description of the Floating IP.\n- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with."
         },
         "IpAddress": {
             "type": "string"
@@ -38,16 +40,20 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "User-defined labels (key-value pairs) should be created with."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the Floating IP.\n- `server_id` - (Optional, int) Server to assign the Floating IP to.\n- `home_location` - (Optional, string) Home location (routing is optimized for that location). Optional if server_id argument is passed.\n- `description` - (Optional, string) Description of the Floating IP.\n- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with."
         },
         "ServerId": {
-            "type": "number"
+            "type": "number",
+            "description": "Server to assign the Floating IP to.\n- `home_location` - (Optional, string) Home location (routing is optimized for that location). Optional if server_id argument is passed.\n- `description` - (Optional, string) Description of the Floating IP.\n- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of the Floating IP. `ipv4` `ipv6`\n- `name` - (Optional, string) Name of the Floating IP.\n- `server_id` - (Optional, int) Server to assign the Floating IP to.\n- `home_location` - (Optional, string) Home location (routing is optimized for that location). Optional if server_id argument is passed.\n- `description` - (Optional, string) Description of the Floating IP.\n- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with."
         }
     },
     "additionalProperties": false,

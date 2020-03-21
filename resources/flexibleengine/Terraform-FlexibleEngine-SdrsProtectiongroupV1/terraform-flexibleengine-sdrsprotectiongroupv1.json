@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::FlexibleEngine::SdrsProtectiongroupV1",
-    "description": "CloudFormation equivalent of flexibleengine_sdrs_protectiongroup_v1",
+    "description": "Manages a SDRS protection group resource within FlexibleEngine.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,28 +23,36 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of a protection group. Changing this creates a new group."
         },
         "DomainId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the ID of an active-active domain. Changing this creates a new group."
         },
         "DrType": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the deployment model. The default value is migration indicating migration within a VPC.\nChanging this creates a new group."
         },
         "Enable": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable protection or not. It can only be set to true when there's replication pairs within the protection group."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of a protection group."
         },
         "SourceAvailabilityZone": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the source AZ of a protection group. Changing this creates a new group."
         },
         "SourceVpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the ID of the source VPC. Changing this creates a new group."
         },
         "TargetAvailabilityZone": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the target AZ of a protection group. Changing this creates a new group."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

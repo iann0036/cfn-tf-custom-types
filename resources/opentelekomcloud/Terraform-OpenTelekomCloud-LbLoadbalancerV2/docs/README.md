@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::LbLoadbalancerV2
 
-CloudFormation equivalent of opentelekomcloud_lb_loadbalancer_v2
+Manages an Enhanced loadbalancer resource within OpenTelekomCloud.
 
 ## Syntax
 
@@ -48,6 +48,9 @@ Properties:
 
 #### AdminStateUp
 
+The administrative state of the Loadbalancer.
+A valid value is only true (UP).
+
 _Required_: No
 
 _Type_: Boolean
@@ -55,6 +58,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Human-readable description for the Loadbalancer.
 
 _Required_: No
 
@@ -64,6 +69,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LoadbalancerProvider
 
+The name of the provider. Changing this
+creates a new loadbalancer.
+
 _Required_: No
 
 _Type_: String
@@ -71,6 +79,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Human-readable name for the Loadbalancer. Does not have
+to be unique.
 
 _Required_: No
 
@@ -88,6 +99,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecurityGroupIds
 
+A list of security group IDs to apply to the
+loadbalancer. The security groups must be specified by ID and not name (as
+opposed to how they are configured with the Compute Instance).
+
 _Required_: No
 
 _Type_: List of String
@@ -95,6 +110,10 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TenantId
+
+Required for admins. The UUID of the tenant who owns
+the Loadbalancer.  Only administrative users can specify a tenant UUID
+other than their own.  Changing this creates a new loadbalancer.
 
 _Required_: No
 
@@ -104,6 +123,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VipAddress
 
+The ip address of the load balancer.
+Changing this creates a new loadbalancer.
+
 _Required_: No
 
 _Type_: String
@@ -111,6 +133,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VipSubnetId
+
+The network on which to allocate the
+Loadbalancer's address. A tenant can only create Loadbalancers on networks
+authorized by policy (e.g. networks that belong to them or networks that
+are shared).  Changing this creates a new loadbalancer.
 
 _Required_: Yes
 

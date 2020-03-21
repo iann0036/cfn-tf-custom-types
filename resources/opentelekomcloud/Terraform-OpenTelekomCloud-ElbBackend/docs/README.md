@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::ElbBackend
 
-CloudFormation equivalent of opentelekomcloud_elb_backend
+Manages a classic loadbalancer backend resource within OpentelekomCloud.
 
 ## Syntax
 
@@ -35,6 +35,9 @@ Properties:
 
 #### Address
 
+Specifies the private IP address of the backend member.
+Changing this creates a new elb backend.
+
 _Required_: Yes
 
 _Type_: String
@@ -43,6 +46,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ListenerId
 
+Specifies the listener ID. Changing this creates a new
+elb backend.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +56,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServerId
+
+Specifies the backend member ID. Changing this creates a
+new elb backend.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::NSXT::IpBlockSubnet",
-    "description": "CloudFormation equivalent of nsxt_ip_block_subnet",
+    "description": "Provides a resource to configure IP block subnet on NSX-T manager",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Tag": {
@@ -42,22 +42,26 @@
             }
         },
         "BlockId": {
-            "type": "string"
+            "type": "string",
+            "description": "Block id for which the subnet is created."
         },
         "Cidr": {
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of this resource."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The display name of this resource. Defaults to ID if not set."
         },
         "Revision": {
             "type": "number"
         },
         "Size": {
-            "type": "number"
+            "type": "number",
+            "description": "Represents the size or number of IP addresses in the subnet."
         },
         "Tag": {
             "type": "array",

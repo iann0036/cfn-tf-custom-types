@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::Dnat",
-    "description": "CloudFormation equivalent of tencentcloud_dnat",
+    "description": "Provides a resource to create a NAT forwarding.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,28 +9,36 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the NAT forward."
         },
         "ElasticIp": {
-            "type": "string"
+            "type": "string",
+            "description": "Network address of the EIP."
         },
         "ElasticPort": {
-            "type": "string"
+            "type": "string",
+            "description": "Port of the EIP."
         },
         "NatId": {
-            "type": "string"
+            "type": "string",
+            "description": "Id of the NAT gateway."
         },
         "PrivateIp": {
-            "type": "string"
+            "type": "string",
+            "description": "Network address of the backend service."
         },
         "PrivatePort": {
-            "type": "string"
+            "type": "string",
+            "description": "Port of intranet."
         },
         "Protocol": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of the network protocol, the available values are: `TCP` and `UDP`."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "Id of the VPC."
         }
     },
     "additionalProperties": false,

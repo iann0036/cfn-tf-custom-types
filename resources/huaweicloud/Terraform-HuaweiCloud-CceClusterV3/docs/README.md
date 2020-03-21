@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::CceClusterV3
 
-CloudFormation equivalent of huaweicloud_cce_cluster_v3
+Provides a cluster resource (CCE).
 
 ## Syntax
 
@@ -67,6 +67,8 @@ Properties:
 ## Properties
 
 #### Annotations
+
+Cluster annotation, key/value pair format. Changing this parameter will create a new cluster resource.
 
 _Required_: No
 
@@ -148,6 +150,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FlavorId
 
+Cluster specifications. Changing this parameter will create a new cluster resource. Possible values:.
+
 _Required_: Yes
 
 _Type_: String
@@ -164,6 +168,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Labels
 
+Cluster tag, key/value pair format. Changing this parameter will create a new cluster resource.
+
 _Required_: No
 
 _Type_: List of <a href="labels.md">Labels</a>
@@ -179,6 +185,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Cluster name. Changing this parameter will create a new cluster resource.
 
 _Required_: Yes
 

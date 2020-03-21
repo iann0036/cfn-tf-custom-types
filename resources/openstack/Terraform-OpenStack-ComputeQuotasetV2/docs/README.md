@@ -1,6 +1,11 @@
 # Terraform::OpenStack::ComputeQuotasetV2
 
-CloudFormation equivalent of openstack_compute_quotaset_v2
+Manages a V2 compute quotaset resource within OpenStack.
+
+~> **Note:** This usually requires admin privileges.
+
+~> **Note:** This resource has a no-op deletion so no actual actions will be done against the OpenStack API 
+    in case of delete call.
 
 ## Syntax
 
@@ -61,6 +66,9 @@ Properties:
 
 #### Cores
 
+Quota value for cores.
+Changing this updates the existing quotaset.
+
 _Required_: No
 
 _Type_: Double
@@ -68,6 +76,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FixedIps
+
+Quota value for fixed IPs.
+Changing this updates the existing quotaset.
 
 _Required_: No
 
@@ -77,6 +88,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FloatingIps
 
+Quota value for floating IPs.
+Changing this updates the existing quotaset.
+
 _Required_: No
 
 _Type_: Double
@@ -84,6 +98,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InjectedFileContentBytes
+
+Quota value for content bytes
+of injected files. Changing this updates the existing quotaset.
 
 _Required_: No
 
@@ -93,6 +110,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InjectedFilePathBytes
 
+Quota value for path bytes of
+injected files. Changing this updates the existing quotaset.
+
 _Required_: No
 
 _Type_: Double
@@ -100,6 +120,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InjectedFiles
+
+Quota value for injected files.
+Changing this updates the existing quotaset.
 
 _Required_: No
 
@@ -109,6 +132,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Instances
 
+Quota value for instances.
+Changing this updates the existing quotaset.
+
 _Required_: No
 
 _Type_: Double
@@ -116,6 +142,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeyPairs
+
+Quota value for key pairs.
+Changing this updates the existing quotaset.
 
 _Required_: No
 
@@ -125,6 +154,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MetadataItems
 
+Quota value for metadata items.
+Changing this updates the existing quotaset.
+
 _Required_: No
 
 _Type_: Double
@@ -132,6 +164,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProjectId
+
+ID of the project to manage quotas.
+Changing this creates a new quotaset.
 
 _Required_: Yes
 
@@ -141,6 +176,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ram
 
+Quota value for RAM.
+Changing this updates the existing quotaset.
+
 _Required_: No
 
 _Type_: Double
@@ -148,6 +186,10 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region in which to create the volume. If
+omitted, the `region` argument of the provider is used. Changing this
+creates a new quotaset.
 
 _Required_: No
 
@@ -157,6 +199,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecurityGroupRules
 
+Quota value for security group rules.
+Changing this updates the existing quotaset.
+
 _Required_: No
 
 _Type_: Double
@@ -164,6 +209,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecurityGroups
+
+Quota value for security groups.
+Changing this updates the existing quotaset.
 
 _Required_: No
 
@@ -173,6 +221,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServerGroupMembers
 
+Quota value for server groups members.
+Changing this updates the existing quotaset.
+
 _Required_: No
 
 _Type_: Double
@@ -180,6 +231,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServerGroups
+
+Quota value for server groups.
+Changing this updates the existing quotaset.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::BlockstorageVolumeV2
 
-CloudFormation equivalent of opentelekomcloud_blockstorage_volume_v2
+Manages a V2 volume resource within OpenTelekomCloud.
 
 ## Syntax
 
@@ -61,6 +61,9 @@ Properties:
 
 #### AvailabilityZone
 
+The availability zone for the volume.
+Changing this creates a new volume.
+
 _Required_: No
 
 _Type_: String
@@ -68,6 +71,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Cascade
+
+Specifies to delete all snapshots associated with the EVS disk.
 
 _Required_: No
 
@@ -77,6 +82,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ConsistencyGroupId
 
+The consistency group to place the volume
+in.
+
 _Required_: No
 
 _Type_: String
@@ -84,6 +92,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+A description of the volume. Changing this updates
+the volume's description.
 
 _Required_: No
 
@@ -93,6 +104,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DeviceType
 
+The device type of volume to create. Valid options are VBD and SCSI.
+Defaults to VBD. Changing this creates a new volume.
+
 _Required_: No
 
 _Type_: String
@@ -100,6 +114,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ImageId
+
+The image ID from which to create the volume.
+Changing this creates a new volume.
 
 _Required_: No
 
@@ -109,6 +126,13 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Metadata
 
+Metadata key/value pairs to associate with the volume.
+Changing this updates the existing volume metadata.
+The EVS encryption capability with KMS key can be set with the following parameters:
+* `__system__encrypted` - The default value is set to '0', which means
+the volume is not encrypted, the value '1' indicates volume is encrypted.
+* `__system__cmkid` - (Optional) The ID of the kms key.
+
 _Required_: No
 
 _Type_: List of <a href="metadata.md">Metadata</a>
@@ -116,6 +140,9 @@ _Type_: List of <a href="metadata.md">Metadata</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+A unique name for the volume. Changing this updates the
+volume's name.
 
 _Required_: No
 
@@ -133,6 +160,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Size
 
+The size of the volume to create (in gigabytes). Changing
+this creates a new volume.
+
 _Required_: Yes
 
 _Type_: Double
@@ -140,6 +170,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SnapshotId
+
+The snapshot ID from which to create the volume.
+Changing this creates a new volume.
 
 _Required_: No
 
@@ -149,6 +182,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SourceReplica
 
+The volume ID to replicate with.
+
 _Required_: No
 
 _Type_: String
@@ -156,6 +191,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SourceVolId
+
+The volume ID from which to create the volume.
+Changing this creates a new volume.
 
 _Required_: No
 
@@ -165,6 +203,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+Tags key/value pairs to associate with the volume.
+Changing this updates the existing volume tags.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -172,6 +213,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VolumeType
+
+Currently, the value can be `SSD` (ultra-high I/O disk type), `SAS` (high I/O disk type), `SATA` (common I/O disk type), `co-p1` (Exclusive HPC/ SAP HANA: high I/O, performance optimized), or `uh-l1` (Exclusive HPC/ SAP HANA: ultra-high-I/O, latency optimized), Read Note for `uh-l1` and `co-p1`: [OTC-API](https://docs.otc.t-systems.com/en-us/api/ecs/en-us_topic_0065817708.html). Changing this creates a new volume.
 
 _Required_: No
 

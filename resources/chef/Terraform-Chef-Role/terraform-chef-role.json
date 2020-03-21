@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Chef::Role",
-    "description": "CloudFormation equivalent of chef_role",
+    "description": "A [role](http://docs.chef.io/roles.html) is a set of standard configuration\nthat can apply across multiple nodes that perform the same function.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,23 +9,28 @@
             "type": "string"
         },
         "DefaultAttributesJson": {
-            "type": "string"
+            "type": "string",
+            "description": "String containing a JSON-serialized\nobject containing the default attributes for the role."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A human-friendly description of the role.\nIf not set, a placeholder of \"Managed by Terraform\" will be set."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The unique name to assign to the role."
         },
         "OverrideAttributesJson": {
-            "type": "string"
+            "type": "string",
+            "description": "String containing a JSON-serialized\nobject containing the override attributes for the role."
         },
         "RunList": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of strings to set as the\n[run list](https://docs.chef.io/run_lists.html) for any nodes that belong\nto this role."
         }
     },
     "additionalProperties": false,

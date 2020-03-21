@@ -1,6 +1,7 @@
 # Terraform::Panos::PanoramaIpsecTunnelProxyIdIpv4
 
-CloudFormation equivalent of panos_panorama_ipsec_tunnel_proxy_id_ipv4
+This resource allows you to add/update/delete Panorama IPSec tunnel proxy IDs
+to a parent auto key IPSec tunnel for templates.
 
 ## Syntax
 
@@ -49,6 +50,9 @@ Properties:
 
 #### IpsecTunnel
 
+The auto key IPSec tunnel to attach this
+proxy ID to.
+
 _Required_: Yes
 
 _Type_: String
@@ -56,6 +60,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Local
+
+IP subnet or IP address represents local network.
 
 _Required_: No
 
@@ -65,6 +71,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The object's name.
+
 _Required_: Yes
 
 _Type_: String
@@ -72,6 +80,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProtocolAny
+
+Set to `true` for any IP protocol.
 
 _Required_: No
 
@@ -81,6 +91,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProtocolNumber
 
+IP protocol number.
+
 _Required_: No
 
 _Type_: Double
@@ -88,6 +100,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProtocolTcpLocal
+
+Local TCP port number.
 
 _Required_: No
 
@@ -97,6 +111,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProtocolTcpRemote
 
+Remote TCP port number.
+
 _Required_: No
 
 _Type_: Double
@@ -104,6 +120,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProtocolUdpLocal
+
+Local UDP port number.
 
 _Required_: No
 
@@ -113,6 +131,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProtocolUdpRemote
 
+Remote UDP port number.
+
 _Required_: No
 
 _Type_: Double
@@ -121,6 +141,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Remote
 
+IP subnet or IP address represents remote network.
+
 _Required_: No
 
 _Type_: String
@@ -128,6 +150,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Template
+
+The template name.
 
 _Required_: Yes
 

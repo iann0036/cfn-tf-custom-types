@@ -1,6 +1,8 @@
 # Terraform::AzureRM::IothubRoute
 
-CloudFormation equivalent of azurerm_iothub_route
+Manages an IotHub Route
+
+~> **NOTE:** Routes can be defined either directly on the `azurerm_iothub` resource, or using the `azurerm_iothub_route` resourcs - but the two cannot be used together. If both are used against the same IoTHub, spurious changes will occur.
 
 ## Syntax
 
@@ -44,6 +46,8 @@ Properties:
 
 #### Condition
 
+The condition that is evaluated to apply the routing rule. If no condition is provided, it evaluates to `true` by default. For grammar, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-query-language.
+
 _Required_: No
 
 _Type_: String
@@ -51,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Enabled
+
+Specifies whether a route is enabled.
 
 _Required_: Yes
 
@@ -60,6 +66,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EndpointNames
 
+The list of endpoints to which messages that satisfy the condition are routed. Currently only one endpoint is allowed.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -67,6 +75,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IothubName
+
+The name of the IoTHub to which this Route belongs. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -76,6 +86,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the route.
+
 _Required_: Yes
 
 _Type_: String
@@ -84,6 +96,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group under which the IotHub Route resource has to be created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -91,6 +105,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Source
+
+The source that the routing rule is to be applied to. Possible values include: `DeviceJobLifecycleEvents`, `DeviceLifecycleEvents`, `DeviceMessages`, `Invalid`, `TwinChangeEvents`.
 
 _Required_: Yes
 

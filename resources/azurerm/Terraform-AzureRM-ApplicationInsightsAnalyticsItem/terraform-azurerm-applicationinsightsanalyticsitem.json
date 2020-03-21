@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::ApplicationInsightsAnalyticsItem",
-    "description": "CloudFormation equivalent of azurerm_application_insights_analytics_item",
+    "description": "Manages an Application Insights Analytics Item component.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,19 +29,24 @@
             "type": "string"
         },
         "ApplicationInsightsId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Application Insights component on which the Analytics Item exists. Changing this forces a new resource to be created."
         },
         "Content": {
-            "type": "string"
+            "type": "string",
+            "description": "The content for the Analytics Item, for example the query text if `type` is `query`."
         },
         "FunctionAlias": {
-            "type": "string"
+            "type": "string",
+            "description": "The alias to use for the function. Required when `type` is `function`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Application Insights Analytics Item. Changing this forces a new resource to be created."
         },
         "Scope": {
-            "type": "string"
+            "type": "string",
+            "description": "The scope for the Analytics Item. Can be `shared` or `user`. Changing this forces a new resource to be created. Must be `shared` for functions."
         },
         "TimeCreated": {
             "type": "string"
@@ -50,7 +55,8 @@
             "type": "string"
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of Analytics Item to create. Can be one of `query`, `function`, `folder`, `recent`. Changing this forces a new resource to be created."
         },
         "Version": {
             "type": "string"

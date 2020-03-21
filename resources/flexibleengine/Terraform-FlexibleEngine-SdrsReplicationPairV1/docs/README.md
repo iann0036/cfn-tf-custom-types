@@ -1,6 +1,6 @@
 # Terraform::FlexibleEngine::SdrsReplicationPairV1
 
-CloudFormation equivalent of flexibleengine_sdrs_replication_pair_v1
+Manages a SDRS replication pair resource within FlexibleEngine.
 
 ## Syntax
 
@@ -47,6 +47,9 @@ Properties:
 
 #### DeleteTargetVolume
 
+Specifies whether to delete the target disk.
+The default value is `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -54,6 +57,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+The description of a replication pair. Changing this creates a new pair.
 
 _Required_: No
 
@@ -71,6 +76,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GroupId
 
+Specifies the ID of a protection group. Changing this creates a new pair.
+
 _Required_: Yes
 
 _Type_: String
@@ -78,6 +85,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of a replication pair. The name can contain a maximum of 64 bytes.
+The value can contain only letters (a to z and A to Z), digits (0 to 9), decimal points (.),
+underscores (_), and hyphens (-).
 
 _Required_: Yes
 
@@ -110,6 +121,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VolumeId
+
+Specifies the ID of a source disk. Changing this creates a new pair.
 
 _Required_: Yes
 

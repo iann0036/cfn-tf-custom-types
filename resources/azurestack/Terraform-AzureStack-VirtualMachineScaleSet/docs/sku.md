@@ -26,6 +26,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Capacity
 
+Specifies the number of virtual machines in the scale set.
+
 _Required_: Yes
 
 _Type_: Double
@@ -34,6 +36,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the size of virtual machines in a scale set.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +45,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tier
+
+Specifies the tier of virtual machines in a scale set. Possible values, `standard` or `basic`.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::PanoramaTemplate",
-    "description": "CloudFormation equivalent of panos_panorama_template",
+    "description": "This resource allows you to add/update/delete Panorama templates.\n\nThis resource has some overlap with the `panos_panorama_template_entry`\nresource.  If you want to use this resource with the other one, then make\nsure that your `panos_panorama_template` spec does not define any\n`device` blocks, and just stays as \"computed\".\n\nThis is the appropriate resource to use if `terraform destroy` should delete\nthe template.\n\n**Note** - In PAN-OS 8.1, it looks like the `devices` field has\nbeen removed.  Creating a template stack and specifying devices in the template\nstack is still present in PAN-OS 8.1.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Devices": {
@@ -32,10 +32,12 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The template's description."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The template's name."
         },
         "Devices": {
             "type": "array",

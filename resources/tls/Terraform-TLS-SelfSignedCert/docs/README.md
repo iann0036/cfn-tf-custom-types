@@ -1,6 +1,21 @@
 # Terraform::TLS::SelfSignedCert
 
-CloudFormation equivalent of tls_self_signed_cert
+Generates a *self-signed* TLS certificate in PEM format, which is the typical
+format used to configure TLS server software.
+
+Self-signed certificates are generally not trusted by client software such
+as web browsers. Therefore clients are likely to generate trust warnings when
+connecting to a server that has a self-signed certificate. Self-signed certificates
+are usually used only in development environments or apps deployed internally
+to an organization.
+
+This resource is intended to be used in conjunction with a Terraform provider
+that has a resource that requires a TLS certificate, such as:
+
+* ``aws_iam_server_certificate`` to register certificates for use with AWS *Elastic
+Load Balancer*, *Elastic Beanstalk*, *CloudFront* or *OpsWorks*.
+
+* ``heroku_cert`` to register certificates for applications deployed on Heroku.
 
 ## Syntax
 
@@ -54,6 +69,9 @@ Properties:
 
 #### AllowedUses
 
+List of keywords each describing a use that is permitted
+for the issued certificate. The valid keywords are listed below.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -61,6 +79,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DnsNames
+
+List of DNS names for which a certificate is being requested.
 
 _Required_: No
 
@@ -70,6 +90,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EarlyRenewalHours
 
+If set, the resource will consider the certificate to
+have expired the given number of hours before its actual expiry time. This can be useful
+to deploy an updated certificate in advance of the expiration of the current certificate.
+Note however that the old certificate remains valid until its true expiration time, since
+this resource does not (and cannot) support certificate revocation. Note also that this
+advance update can only be performed should the Terraform configuration be applied during the
+early renewal period.
+
 _Required_: No
 
 _Type_: Double
@@ -77,6 +105,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IpAddresses
+
+List of IP addresses for which a certificate is being requested.
 
 _Required_: No
 
@@ -86,6 +116,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IsCaCertificate
 
+Boolean controlling whether the CA flag will be set in the
+generated certificate. Defaults to `false`, meaning that the certificate does not represent
+a certificate authority.
+
 _Required_: No
 
 _Type_: Boolean
@@ -93,6 +127,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeyAlgorithm
+
+The name of the algorithm for the key provided
+in `private_key_pem`.
 
 _Required_: Yes
 
@@ -102,6 +139,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PrivateKeyPem
 
+PEM-encoded private key data. This can be
+read from a separate file using the ``file`` interpolation function. If the
+certificate is being generated to be used for a throwaway development
+environment or other non-critical application, the `tls_private_key` resource
+can be used to generate a TLS private key from within Terraform. Only
+an irreversable secure hash of the private key will be stored in the Terraform
+state.
+
 _Required_: Yes
 
 _Type_: String
@@ -109,6 +154,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SetSubjectKeyId
+
+If `true`, the certificate will include
+the subject key identifier. Defaults to `false`, in which case the subject
+key identifier is not set at all.
 
 _Required_: No
 
@@ -118,6 +167,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Uris
 
+List of URIs for which a certificate is being requested.
+
 _Required_: No
 
 _Type_: List of String
@@ -125,6 +176,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ValidityPeriodHours
+
+The number of hours after initial issuing that the
+certificate will become invalid.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpsGenie::ApiIntegration",
-    "description": "CloudFormation equivalent of opsgenie_api_integration",
+    "description": "Manages an API Integration within Opsgenie.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Responders": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "Id": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The id of the responder."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The responder type."
                 }
             },
             "required": []
@@ -23,28 +25,35 @@
             "type": "string"
         },
         "AllowWriteAccess": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "This parameter is for configuring the write access of integration. If write access is restricted, the integration will not be authorized to write within any domain. Defaults to true."
         },
         "ApiKey": {
             "type": "string"
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "This parameter is for specifying whether the integration will be enabled or not. Defaults to true."
         },
         "IgnoreRespondersFromPayload": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If enabled, the integration will ignore recipients sent in request payloads. Defaults to false."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the integration. Name must be unique for each integration."
         },
         "OwnerTeamId": {
-            "type": "string"
+            "type": "string",
+            "description": "Owner team id of the integration."
         },
         "SuppressNotifications": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If enabled, notifications that come from alerts will be suppressed. Defaults to false."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of the integration (API, Marid, Prometheus, etc). The full list of options can be found [here](https://docs.opsgenie.com/docs/integration-types-to-use-with-api)."
         },
         "Responders": {
             "type": "array",

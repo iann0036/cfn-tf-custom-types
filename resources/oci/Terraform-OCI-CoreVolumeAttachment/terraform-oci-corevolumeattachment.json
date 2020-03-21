@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::CoreVolumeAttachment",
-    "description": "CloudFormation equivalent of oci_core_volume_attachment",
+    "description": "This resource provides the Volume Attachment resource in Oracle Cloud Infrastructure Core service.\n\nAttaches the specified storage volume to the specified instance.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,7 +26,8 @@
             "type": "string"
         },
         "AttachmentType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of volume. The only supported value are \"iscsi\" and \"paravirtualized\"."
         },
         "AvailabilityDomain": {
             "type": "string"
@@ -41,13 +42,16 @@
             "type": "string"
         },
         "Device": {
-            "type": "string"
+            "type": "string",
+            "description": "The device name."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "A user-friendly name. Does not have to be unique, and it cannot be changed. Avoid entering confidential information."
         },
         "InstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the instance."
         },
         "Ipv4": {
             "type": "string"
@@ -56,13 +60,16 @@
             "type": "string"
         },
         "IsPvEncryptionInTransitEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false."
         },
         "IsReadOnly": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the attachment was created in read-only mode."
         },
         "IsShareable": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified."
         },
         "Port": {
             "type": "number"
@@ -74,10 +81,12 @@
             "type": "string"
         },
         "UseChap": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to use CHAP authentication for the volume attachment. Defaults to false."
         },
         "VolumeId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the volume."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

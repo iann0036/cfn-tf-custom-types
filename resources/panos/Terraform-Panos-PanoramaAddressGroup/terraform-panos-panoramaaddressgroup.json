@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::PanoramaAddressGroup",
-    "description": "CloudFormation equivalent of panos_panorama_address_group",
+    "description": "This resource allows you to add/update/delete Panorama address groups.\n\nAddress groups are either statically defined or dynamically defined, so only\n`static_addresses` or `dynamic_match` should be defined within a given address\ngroup.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,30 +9,36 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The address group's description."
         },
         "DeviceGroup": {
-            "type": "string"
+            "type": "string",
+            "description": "The device group to put the address group into\n(default: `shared`)."
         },
         "DynamicMatch": {
-            "type": "string"
+            "type": "string",
+            "description": "The IP tags to include in this DAG."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The address group's name."
         },
         "StaticAddresses": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The address objects to include in this\nstatically defined address group."
         },
         "Tags": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of administrative tags."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::CamUserPolicyAttachment
 
-CloudFormation equivalent of tencentcloud_cam_user_policy_attachment
+Provides a resource to create a CAM user policy attachment.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### PolicyId
 
+Id of the policy.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserId
+
+Id of the attached CAM user.
 
 _Required_: Yes
 

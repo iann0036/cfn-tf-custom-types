@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::RelayNamespace",
-    "description": "CloudFormation equivalent of azurerm_relay_namespace",
+    "description": "Manages an Azure Relay Namespace.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,13 +29,15 @@
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the Azure Relay Namespace exists. Changing this forces a new resource to be created."
         },
         "MetricId": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Azure Relay Namespace. Changing this forces a new resource to be created."
         },
         "PrimaryConnectionString": {
             "type": "string"
@@ -44,7 +46,8 @@
             "type": "string"
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the Azure Relay Namespace."
         },
         "SecondaryConnectionString": {
             "type": "string"
@@ -53,7 +56,8 @@
             "type": "string"
         },
         "SkuName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the SKU to use. At this time the only supported value is `Standard`."
         },
         "Tags": {
             "type": "array",
@@ -73,7 +77,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

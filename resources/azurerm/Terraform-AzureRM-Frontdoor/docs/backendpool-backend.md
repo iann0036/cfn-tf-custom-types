@@ -34,6 +34,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Address
 
+Location of the backend (IP address or FQDN).
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Enabled
+
+Specifies if the backend is enabled or not. Valid options are `true` or `false`. Defaults to `true`.
 
 _Required_: No
 
@@ -50,6 +54,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HostHeader
 
+The value to use as the host header sent to the backend.
+
 _Required_: Yes
 
 _Type_: String
@@ -57,6 +63,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HttpPort
+
+The HTTP TCP port number. Possible values are between `1` - `65535`.
 
 _Required_: Yes
 
@@ -66,6 +74,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HttpsPort
 
+The HTTPS TCP port number. Possible values are between `1` - `65535`.
+
 _Required_: Yes
 
 _Type_: Double
@@ -74,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Priority
 
+Priority to use for load balancing. Higher priorities will not be used for load balancing if any lower priority backend is healthy. Defaults to `1`.
+
 _Required_: No
 
 _Type_: Double
@@ -81,6 +93,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Weight
+
+Weight of this endpoint for load balancing purposes. Defaults to `50`.
 
 _Required_: No
 

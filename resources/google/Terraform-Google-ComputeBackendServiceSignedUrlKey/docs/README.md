@@ -1,6 +1,18 @@
 # Terraform::Google::ComputeBackendServiceSignedUrlKey
 
-CloudFormation equivalent of google_compute_backend_service_signed_url_key
+A key for signing Cloud CDN signed URLs for Backend Services.
+
+
+To get more information about BackendServiceSignedUrlKey, see:
+
+* [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/backendServices)
+* How-to Guides
+    * [Using Signed URLs](https://cloud.google.com/cdn/docs/using-signed-urls/)
+
+~> **Warning:** All arguments including the key's value will be stored in the raw
+state as plain-text. [Read more about sensitive data in state](/docs/state/sensitive-data.html).
+Because the API does not return the sensitive key value,
+we cannot confirm or reverse changes to a key outside of Terraform.
 
 ## Syntax
 
@@ -60,6 +72,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
 
 _Required_: No
 

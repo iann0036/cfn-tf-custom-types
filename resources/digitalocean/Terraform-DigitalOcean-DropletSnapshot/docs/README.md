@@ -1,6 +1,6 @@
 # Terraform::DigitalOcean::DropletSnapshot
 
-CloudFormation equivalent of digitalocean_droplet_snapshot
+Provides a resource which can be used to create a snapshot from an existing DigitalOcean Droplet.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### DropletId
 
+The ID of the Droplet from which the snapshot will be taken.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+A name for the Droplet snapshot.
 
 _Required_: Yes
 

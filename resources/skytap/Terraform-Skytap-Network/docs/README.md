@@ -1,6 +1,8 @@
 # Terraform::Skytap::Network
 
-CloudFormation equivalent of skytap_network
+Provides a Skytap Network resource. Networks are not top-level elements of the Skytap API.
+Rather, they are elements properly contained within an environment.
+Operations on them are implicitly on the containing environment.
 
 ## Syntax
 
@@ -39,6 +41,8 @@ Properties:
 
 #### Domain
 
+Domain name for the Skytap network. Limited to 64 characters.
+
 _Required_: Yes
 
 _Type_: String
@@ -46,6 +50,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnvironmentId
+
+ID of the environment you want to attach the network to. If updating with a new one then the network will be recreated.
 
 _Required_: Yes
 
@@ -55,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Gateway
 
+Gateway IP address.
+
 _Required_: No
 
 _Type_: String
@@ -62,6 +70,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+User-defined name of the network. Limited to 255 characters. UTF-8 character type.
 
 _Required_: Yes
 
@@ -71,6 +81,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Subnet
 
+Defines the subnet address and subnet mask size in CIDR format (for example, 10.0.0.0/24). IP addresses for the VMs are assigned from this subnet and standard network services (DNS resolution, CIFS share, routes to Internet) are defined appropriately for it.
+
 _Required_: Yes
 
 _Type_: String
@@ -78,6 +90,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tunnelable
+
+If true, this network can be connected to other networks.
 
 _Required_: No
 

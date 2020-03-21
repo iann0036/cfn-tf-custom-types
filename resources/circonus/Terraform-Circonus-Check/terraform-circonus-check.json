@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Circonus::Check",
-    "description": "CloudFormation equivalent of circonus_check",
+    "description": "The ``circonus_check`` resource creates and manages a\n[Circonus Check](https://login.circonus.com/resources/api/calls/check_bundle).\n\n~> **NOTE regarding `circonus_check` vs a Circonus Check Bundle:** The\n`circonus_check` resource is implemented in terms of a\n[Circonus Check Bundle](https://login.circonus.com/resources/api/calls/check_bundle).\nThe `circonus_check` creates a higher-level abstraction over the implementation\nof a Check Bundle.  As such, the naming and structure does not map 1:1 with the\nunderlying Circonus API.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Caql": {
@@ -714,7 +714,8 @@
             "type": "string"
         },
         "Active": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether or not the check is enabled or not (default\n`true`)."
         },
         "CheckByCollector": {
             "type": "array",
@@ -756,16 +757,20 @@
             "type": "string"
         },
         "MetricLimit": {
-            "type": "number"
+            "type": "number",
+            "description": "Setting a metric limit will tell the Circonus\nbackend to periodically look at the check to see if there are additional\nmetrics the collector has seen that we should collect. It will not reactivate\nmetrics previously collected and then marked as inactive. Values are `0` to\ndisable, `-1` to enable all metrics or `N+` to collect up to the value `N`\n(both `-1` and `N+` can not exceed other account restrictions)."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the check that will be displayed in the web\ninterface."
         },
         "Notes": {
-            "type": "string"
+            "type": "string",
+            "description": "Notes about this check."
         },
         "Period": {
-            "type": "string"
+            "type": "string",
+            "description": "The period between each time the check is made in\nseconds. Default is `\"60s\"`."
         },
         "ReverseConnectUrls": {
             "type": "array",
@@ -779,13 +784,16 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of tags assigned to this check."
         },
         "Target": {
-            "type": "string"
+            "type": "string",
+            "description": "A string containing the location of the thing being\nchecked.  This value changes based on the check type.  For example, for an\n`http` check type this would be the URL you're checking. For a DNS check it\nwould be the hostname you wanted to look up."
         },
         "Timeout": {
-            "type": "string"
+            "type": "string",
+            "description": "A string representing the maximum number\nof seconds this check should wait for a result.  Defaults to `\"10s\"`."
         },
         "Type": {
             "type": "string"

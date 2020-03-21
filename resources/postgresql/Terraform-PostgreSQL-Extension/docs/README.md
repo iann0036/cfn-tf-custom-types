@@ -1,6 +1,7 @@
 # Terraform::PostgreSQL::Extension
 
-CloudFormation equivalent of postgresql_extension
+The ``postgresql_extension`` resource creates and manages an extension on a PostgreSQL
+server.
 
 ## Syntax
 
@@ -35,6 +36,8 @@ Properties:
 
 #### Database
 
+Which database to create the extension on. Defaults to provider database.
+
 _Required_: No
 
 _Type_: String
@@ -42,6 +45,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the extension.
 
 _Required_: Yes
 
@@ -51,6 +56,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Schema
 
+Sets the schema of an extension.
+
 _Required_: No
 
 _Type_: String
@@ -58,6 +65,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Version
+
+Sets the version number of the extension.
 
 _Required_: No
 

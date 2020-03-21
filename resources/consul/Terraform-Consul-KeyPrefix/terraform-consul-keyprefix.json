@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Consul::KeyPrefix",
-    "description": "CloudFormation equivalent of consul_key_prefix",
+    "description": "Allows Terraform to manage a \"namespace\" of Consul keys that share a common\nname prefix.\n\nLike `consul_keys`, this resource can write values into the Consul key/value\nstore, but *unlike* `consul_keys` this resource can detect and remove extra\nkeys that have been added some other way, thus ensuring that rogue data\nadded outside of Terraform will be removed on the next run.\n\nThis resource is thus useful in the case where Terraform is exclusively\nmanaging a set of related keys.\n\nTo avoid accidentally clobbering matching data that existed in Consul before\na `consul_key_prefix` resource was created, creation of a key prefix instance\nwill fail if any matching keys are already present in the key/value store.\nIf any conflicting data is present, you must first delete it manually or\nexplicitly import the prefix.\n\n~> **Warning** After this resource is instantiated, Terraform takes control\nover *all* keys with the given path prefix, and will remove any matching keys\nthat are not present in the configuration. It will also delete *all* keys under\nthe given prefix when a `consul_key_prefix` resource is destroyed, even if\nthose keys were created outside of Terraform.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Subkey": {
@@ -8,13 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "Flags": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "An [unsigned integer value](https://www.consul.io/api/kv.html#flags-1)\nto attach to the key (defaults to 0)."
                 },
                 "Path": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "This is the path (which will be appended to the given\n`path_prefix`) in Consul that should be written to."
                 },
                 "Value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The value to write to the given path."
                 }
             },
             "required": [
@@ -29,10 +32,12 @@
             "type": "string"
         },
         "Datacenter": {
-            "type": "string"
+            "type": "string",
+            "description": "The datacenter to use. This overrides the\nagent's default datacenter and the datacenter in the provider setup."
         },
         "PathPrefix": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the common prefix shared by all keys\nthat will be managed by this resource instance. In most cases this will\nend with a slash, to manage a \"folder\" of keys."
         },
         "Subkeys": {
             "type": "array",
@@ -52,10 +57,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping from subkey name (which will be appended\nto the given `path_prefix`) to the value that should be stored at that key.\nUse slashes, as shown in the above example, to create \"sub-folders\" under\nthe given path prefix."
         },
         "Token": {
-            "type": "string"
+            "type": "string",
+            "description": "The ACL token to use. This overrides the\ntoken that the agent provides by default."
         },
         "Subkey": {
             "type": "array",

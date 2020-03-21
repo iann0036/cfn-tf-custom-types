@@ -1,6 +1,7 @@
 # Terraform::Panos::PanoramaIkeGateway
 
-CloudFormation equivalent of panos_panorama_ike_gateway
+This resource allows you to add/update/delete Panorama IKE gateways
+for both templates and template stacks.
 
 ## Syntax
 
@@ -105,6 +106,9 @@ Properties:
 
 #### AuthType
 
+The auth type.  Valid values are `pre-shared-key`
+(the default), or `certificate`.
+
 _Required_: No
 
 _Type_: String
@@ -112,6 +116,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CertBaseUrl
+
+The host and directory part of URL for local
+certificates.
 
 _Required_: No
 
@@ -121,6 +128,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CertEnableHashAndUrl
 
+Set to `true` to use
+hash-and-url for local certificate.
+
 _Required_: No
 
 _Type_: Boolean
@@ -128,6 +138,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CertEnableStrictValidation
+
+Set to `true` to enable
+strict validation of peer's extended key use.
 
 _Required_: No
 
@@ -137,6 +150,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CertPermitPayloadMismatch
 
+Set to `true` to permit
+peer identification and certificate payload identification mismatch.
+
 _Required_: No
 
 _Type_: Boolean
@@ -144,6 +160,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CertProfile
+
+Profile for certificate valdiation during IKE
+negotiation.
 
 _Required_: No
 
@@ -153,6 +172,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CertUseManagementAsSource
 
+Set to `true` to
+use management interface IP as source to retrieve http certificates.
+
 _Required_: No
 
 _Type_: Boolean
@@ -160,6 +182,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DeadPeerDetectionInterval
+
+The dead peer detection interval.
 
 _Required_: No
 
@@ -169,6 +193,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DeadPeerDetectionRetry
 
+Number of retries before disconnection.
+
 _Required_: No
 
 _Type_: Double
@@ -176,6 +202,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Disabled
+
+Set to `true` to disable.
 
 _Required_: No
 
@@ -185,6 +213,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableDeadPeerDetection
 
+Set to `true` to enable dead
+peer detection.
+
 _Required_: No
 
 _Type_: Boolean
@@ -192,6 +223,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableFragmentation
+
+Set to `true` to enable fragmentation.
 
 _Required_: No
 
@@ -201,6 +234,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableIpv6
 
+Enable IPv6 or not.
+
 _Required_: No
 
 _Type_: Boolean
@@ -208,6 +243,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableLivenessCheck
+
+Set to `true` to
+enable sending empty information liveness check message.
 
 _Required_: No
 
@@ -217,6 +255,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableNatTraversal
 
+Set to `true` to enable NAT
+traversal.
+
 _Required_: No
 
 _Type_: Boolean
@@ -224,6 +265,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnablePassiveMode
+
+Set to `true` to enable passive
+mode (responder only).
 
 _Required_: No
 
@@ -233,6 +277,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ikev1CryptoProfile
 
+IKEv1 crypto profile.
+
 _Required_: No
 
 _Type_: String
@@ -240,6 +286,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ikev1ExchangeMode
+
+The IKEv1 exchange mode.
 
 _Required_: No
 
@@ -249,6 +297,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ikev2CookieValidation
 
+Set to `true` to require cookie.
+
 _Required_: No
 
 _Type_: Boolean
@@ -256,6 +306,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ikev2CryptoProfile
+
+IKEv2 crypto profile.
 
 _Required_: No
 
@@ -265,6 +317,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Interface
 
+The interface.
+
 _Required_: Yes
 
 _Type_: String
@@ -272,6 +326,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LivenessCheckInterval
+
+Delay interval before
+sending probing packets (in seconds).
 
 _Required_: No
 
@@ -281,6 +338,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LocalCert
 
+The local certificate name.
+
 _Required_: No
 
 _Type_: String
@@ -288,6 +347,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LocalIdType
+
+The local ID type.  Valid values are `ipaddr`,
+`fqdn`, `ufqdn`, `keyid`, or `dn`.
 
 _Required_: No
 
@@ -297,6 +359,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LocalIdValue
 
+The local ID value.
+
 _Required_: No
 
 _Type_: String
@@ -304,6 +368,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LocalIpAddressType
+
+The local IP address type.  Valid
+values for this are `ip`, `floating-ip`, or an empty string (the default)
+which is `None`.
 
 _Required_: No
 
@@ -313,6 +381,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LocalIpAddressValue
 
+The IP address if `local_ip_address_type`
+is set to `ip`.
+
 _Required_: No
 
 _Type_: String
@@ -320,6 +391,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The object's name.
 
 _Required_: Yes
 
@@ -329,6 +402,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NatTraversalEnableUdpChecksum
 
+Set to `true` to enable
+NAT traversal UDP checksum.
+
 _Required_: No
 
 _Type_: Boolean
@@ -336,6 +412,10 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NatTraversalKeepAlive
+
+Sending interval for NAT
+keep-alive packets (in seconds).  For versions 6.1 - 8.1, this param, if specified,
+should be a multiple of 10 between 10 and 3600 to be valid.
 
 _Required_: No
 
@@ -345,6 +425,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PeerIdCheck
 
+Enable peer ID wildcard match for certificate
+authentication.  Valid values are `exact` or `wildcard`.
+
 _Required_: No
 
 _Type_: String
@@ -352,6 +435,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PeerIdType
+
+The peer ID type.  Valid values are `ipaddr`,
+`fqdn`, `ufqdn`, `keyid`, or `dn`.
 
 _Required_: No
 
@@ -361,6 +447,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PeerIdValue
 
+The peer ID value.
+
 _Required_: No
 
 _Type_: String
@@ -368,6 +456,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PeerIpType
+
+The peer IP type.  Valid values are `ip`,
+`dynamic`, and `fqdn` (PANOS 8.1+).
 
 _Required_: No
 
@@ -377,6 +468,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PeerIpValue
 
+The peer IP value.
+
 _Required_: No
 
 _Type_: String
@@ -384,6 +477,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PreSharedKey
+
+The pre-shared key value.
 
 _Required_: No
 
@@ -393,6 +488,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Template
 
+The template name.
+
 _Required_: No
 
 _Type_: String
@@ -401,6 +498,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TemplateStack
 
+The template stack name.
+
 _Required_: No
 
 _Type_: String
@@ -408,6 +507,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Version
+
+The IKE gateway version.  Valid values are
+`ikev1`, (the default), `ikev2`, or `ikev2-preferred`.  For PAN-OS 6.1, only
+`ikev1` is acceptable.
 
 _Required_: No
 

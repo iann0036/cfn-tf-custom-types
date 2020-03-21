@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::VirtualHub",
-    "description": "CloudFormation equivalent of azurerm_virtual_hub",
+    "description": "Manages a Virtual Hub within a Virtual WAN.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Route": {
@@ -12,10 +12,12 @@
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of Address Prefixes."
                 },
                 "NextHopIpAddress": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The IP Address that Packets should be forwarded to as the Next Hop."
                 }
             },
             "required": [
@@ -49,16 +51,20 @@
             "type": "string"
         },
         "AddressPrefix": {
-            "type": "string"
+            "type": "string",
+            "description": "The Address Prefix which should be used for this Virtual Hub."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the Virtual Hub should exist. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Virtual Hub. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Resource Group where the Virtual Hub should exist. Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -78,10 +84,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the Virtual Hub."
         },
         "VirtualWanId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of a Virtual WAN within which the Virtual Hub should be created."
         },
         "Route": {
             "type": "array",

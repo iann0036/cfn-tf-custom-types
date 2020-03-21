@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::RabbitMQ::Exchange",
-    "description": "CloudFormation equivalent of rabbitmq_exchange",
+    "description": "The ``rabbitmq_exchange`` resource creates and manages an exchange.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Settings": {
@@ -25,16 +25,20 @@
                             "Key",
                             "Value"
                         ]
-                    }
+                    },
+                    "description": "Additional key/value settings for the exchange."
                 },
                 "AutoDelete": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Whether the exchange will self-delete when all\nqueues have finished using it."
                 },
                 "Durable": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Whether the exchange survives server restarts.\nDefaults to `false`."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The type of exchange."
                 }
             },
             "required": [
@@ -48,10 +52,12 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the exchange."
         },
         "Vhost": {
-            "type": "string"
+            "type": "string",
+            "description": "The vhost to create the resource in."
         },
         "Settings": {
             "type": "array",

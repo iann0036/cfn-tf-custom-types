@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::CtsTrackerV1
 
-CloudFormation equivalent of huaweicloud_cts_tracker_v1
+Allows you to collect, store, and query cloud resource operation records.
 
 ## Syntax
 
@@ -49,6 +49,8 @@ Properties:
 
 #### BucketName
 
+The OBS bucket name for a tracker.
+
 _Required_: Yes
 
 _Type_: String
@@ -56,6 +58,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FilePrefixName
+
+The prefix of a log that needs to be stored in an OBS bucket.
 
 _Required_: No
 
@@ -65,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IsSendAllKeyOperation
 
+When the value is **false**, operations cannot be left empty.
+
 _Required_: Yes
 
 _Type_: Boolean
@@ -72,6 +78,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IsSupportSmn
+
+Specifies whether SMN is supported. When the value is false, topic_id and operations can be left empty.
 
 _Required_: Yes
 
@@ -81,6 +89,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NeedNotifyUserList
 
+The users using the login function. When these users log in, notifications will be sent.
+
 _Required_: No
 
 _Type_: List of String
@@ -88,6 +98,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Operations
+
+Trigger conditions for sending a notification.
 
 _Required_: Yes
 
@@ -112,6 +124,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TopicId
+
+The theme of the SMN service, Is obtained from SMN and in the format of **urn:smn:([a-z]|[A-Z]|[0-9]|\-){1,32}:([a-z]|[A-Z]|[0-9]){32}:([a-z]|[A-Z]|[0-9]|\-|\_){1,256}**.
 
 _Required_: Yes
 

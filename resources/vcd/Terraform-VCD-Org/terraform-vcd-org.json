@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::VCD::Org",
-    "description": "CloudFormation equivalent of vcd_org",
+    "description": "Provides a vCloud Director Org resource. This can be used to create, update, and delete an organization.\nRequires system administrator privileges.\n\nSupported in provider *v2.0+*",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "VappLease": {
@@ -50,34 +50,44 @@
             "type": "string"
         },
         "CanPublishCatalogs": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "- True if this organization is allowed to share catalogs. Default is `true`."
         },
         "DelayAfterPowerOnSeconds": {
-            "type": "number"
+            "type": "number",
+            "description": "- Specifies this organization's default for virtual machine boot delay after power on. Default is `0`."
         },
         "DeleteForce": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "- pass `delete_force=true` and `delete_recursive=true` to remove an organization or VDC and any objects it contains, regardless of their state."
         },
         "DeleteRecursive": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "- pass `delete_recursive`=true as query parameter to remove an organization or VDC and any objects it contains that are in a state that normally allows removal."
         },
         "DeployedVmQuota": {
-            "type": "number"
+            "type": "number",
+            "description": "- Maximum number of virtual machines that can be deployed simultaneously by a member of this organization. Default is unlimited (0)."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "- Org description. Default is empty."
         },
         "FullName": {
-            "type": "string"
+            "type": "string",
+            "description": "Org full name."
         },
         "IsEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "- True if this organization is enabled (allows login and all other operations). Default is `true`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Org name."
         },
         "StoredVmQuota": {
-            "type": "number"
+            "type": "number",
+            "description": "- Maximum number of virtual machines in vApps or vApp templates that can be stored in an undeployed state by a member of this organization. Default is unlimited (0)."
         },
         "VappLease": {
             "type": "array",

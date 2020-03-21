@@ -1,6 +1,6 @@
 # Terraform::Datadog::LogsIndexOrder
 
-CloudFormation equivalent of datadog_logs_index_order
+Provides a Datadog [Logs Index API](https://docs.datadoghq.com/api/?lang=python#logs-indexes) resource. This can be used to manage the order of Datadog logs indexes.
 
 ## Syntax
 
@@ -32,6 +32,8 @@ Properties:
 
 #### Indexes
 
+The index resource list. Logs are tested against the query filter of each index one by one following the order of the list.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -39,6 +41,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The unique name of the index order resource.
 
 _Required_: Yes
 

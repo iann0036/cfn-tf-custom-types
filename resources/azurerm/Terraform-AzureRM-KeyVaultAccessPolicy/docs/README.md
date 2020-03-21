@@ -1,6 +1,10 @@
 # Terraform::AzureRM::KeyVaultAccessPolicy
 
-CloudFormation equivalent of azurerm_key_vault_access_policy
+Manages a Key Vault Access Policy.
+
+~> **NOTE:** It's possible to define Key Vault Access Policies both within [the `azurerm_key_vault` resource](key_vault.html) via the `access_policy` block and by using [the `azurerm_key_vault_access_policy` resource](key_vault_access_policy.html). However it's not possible to use both methods to manage Access Policies within a KeyVault, since there'll be conflicts.
+
+-> **NOTE:** Azure permits a maximum of 1024 Access Policies per Key Vault - [more information can be found in this document](https://docs.microsoft.com/en-us/azure/key-vault/key-vault-secure-your-key-vault#data-plane-access-control).
 
 ## Syntax
 
@@ -49,6 +53,8 @@ Properties:
 
 #### ApplicationId
 
+The object ID of an Application in Azure Active Directory.
+
 _Required_: No
 
 _Type_: String
@@ -56,6 +62,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CertificatePermissions
+
+List of certificate permissions, must be one or more from
+the following: `backup`, `create`, `delete`, `deleteissuers`, `get`, `getissuers`, `import`, `list`, `listissuers`,
+`managecontacts`, `manageissuers`, `purge`, `recover`, `restore`, `setissuers` and `update`.
 
 _Required_: No
 
@@ -65,6 +75,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KeyPermissions
 
+List of key permissions, must be one or more from
+the following: `backup`, `create`, `decrypt`, `delete`, `encrypt`, `get`, `import`, `list`, `purge`,
+`recover`, `restore`, `sign`, `unwrapKey`, `update`, `verify` and `wrapKey`.
+
 _Required_: No
 
 _Type_: List of String
@@ -72,6 +86,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeyVaultId
+
+Specifies the id of the Key Vault resource. Changing this
+forces a new resource to be created.
 
 _Required_: Yes
 
@@ -81,6 +98,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ObjectId
 
+The object ID of a user, service principal or security
+group in the Azure Active Directory tenant for the vault. The object ID must
+be unique for the list of access policies. Changing this forces a new resource
+to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -88,6 +110,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecretPermissions
+
+List of secret permissions, must be one or more
+from the following: `backup`, `delete`, `get`, `list`, `purge`, `recover`, `restore` and `set`.
 
 _Required_: No
 
@@ -97,6 +122,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StoragePermissions
 
+List of storage permissions, must be one or more from the following: `backup`, `delete`, `deletesas`, `get`, `getsas`, `list`, `listsas`, `purge`, `recover`, `regeneratekey`, `restore`, `set`, `setsas` and `update`.
+
 _Required_: No
 
 _Type_: List of String
@@ -104,6 +131,10 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TenantId
+
+The Azure Active Directory tenant ID that should be used
+for authenticating requests to the key vault. Changing this forces a new resource
+to be created.
 
 _Required_: Yes
 

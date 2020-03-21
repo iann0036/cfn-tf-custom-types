@@ -1,6 +1,6 @@
 # Terraform::Panos::Layer2Subinterface
 
-CloudFormation equivalent of panos_layer2_subinterface
+This resource allows you to add/update/delete layer2 subinterfaces.
 
 ## Syntax
 
@@ -43,6 +43,8 @@ Properties:
 
 #### Comment
 
+The interface comment.
+
 _Required_: No
 
 _Type_: String
@@ -50,6 +52,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InterfaceType
+
+The interface type.  Valid values are `ethernet` (default)
+or `aggregate-ethernet`.
 
 _Required_: No
 
@@ -59,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The interface's name.
+
 _Required_: Yes
 
 _Type_: String
@@ -66,6 +73,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NetflowProfile
+
+The netflow profile.
 
 _Required_: No
 
@@ -75,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ParentInterface
 
+The name of the parent interface.
+
 _Required_: Yes
 
 _Type_: String
@@ -82,6 +93,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ParentMode
+
+The parent's mode.  Valid values are `layer2` (default)
+or `virtual-wire`.
 
 _Required_: No
 
@@ -91,6 +105,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tag
 
+The interface's tag.
+
 _Required_: No
 
 _Type_: Double
@@ -98,6 +114,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vsys
+
+The vsys that will use this interface.  This should be
+something like `vsys1` or `vsys3`.
 
 _Required_: No
 

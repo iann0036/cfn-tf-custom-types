@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::DatabaseBackup",
-    "description": "CloudFormation equivalent of oci_database_backup",
+    "description": "This resource provides the Backup resource in Oracle Cloud Infrastructure Database service.\n\nCreates a new backup in the specified database based on the request parameters you provide. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -35,13 +35,15 @@
             "type": "string"
         },
         "DatabaseId": {
-            "type": "string"
+            "type": "string",
+            "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database."
         },
         "DatabaseSizeInGbs": {
             "type": "number"
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The user-friendly name for the backup. The name does not have to be unique."
         },
         "LifecycleDetails": {
             "type": "string"

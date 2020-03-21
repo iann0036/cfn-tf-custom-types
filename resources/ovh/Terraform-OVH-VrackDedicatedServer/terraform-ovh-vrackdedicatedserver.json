@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OVH::VrackDedicatedServer",
-    "description": "CloudFormation equivalent of ovh_vrack_dedicated_server",
+    "description": "Attach a dedicated server to a VRack.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "ServerId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the dedicated server."
         },
         "VrackId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the vrack."
         }
     },
     "additionalProperties": false,

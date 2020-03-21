@@ -36,6 +36,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### DestinationAddresses
 
+An array of strings containing the IPv4
+addresses, IPv6 addresses, IPv4 CIDRs, and/or IPv6 CIDRs to which the
+outbound traffic will be allowed.
+
 _Required_: No
 
 _Type_: List of String
@@ -43,6 +47,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DestinationDropletIds
+
+An array containing the IDs of
+the Droplets to which the outbound traffic will be allowed.
 
 _Required_: No
 
@@ -52,6 +59,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DestinationLoadBalancerUids
 
+An array containing the IDs
+of the Load Balancers to which the outbound traffic will be allowed.
+
 _Required_: No
 
 _Type_: List of String
@@ -59,6 +69,11 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DestinationTags
+
+An array containing the names of Tags
+corresponding to groups of Droplets to which the outbound traffic will
+be allowed.
+traffic.
 
 _Required_: No
 
@@ -68,6 +83,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PortRange
 
+The ports on which traffic will be allowed
+specified as a string containing a single port, a range (e.g. "8000-9000"),
+or "1-65535" to open all ports for a protocol. Required for when protocol is
+`tcp` or `udp`.
+
 _Required_: No
 
 _Type_: String
@@ -75,6 +95,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Protocol
+
+The type of traffic to be allowed.
+This may be one of "tcp", "udp", or "icmp".
 
 _Required_: Yes
 

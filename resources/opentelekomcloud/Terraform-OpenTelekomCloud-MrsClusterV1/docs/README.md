@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::MrsClusterV1
 
-CloudFormation equivalent of opentelekomcloud_mrs_cluster_v1
+Manages resource cluster within OpenTelekomCloud MRS.
 
 ## Syntax
 
@@ -89,6 +89,9 @@ Properties:
 
 #### AvailableZoneId
 
+ID of an available zone. Obtain the value
+from Regions and Endpoints.
+
 _Required_: Yes
 
 _Type_: String
@@ -96,6 +99,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BillingType
+
+The value is 12, indicating on-demand payment.
 
 _Required_: Yes
 
@@ -105,6 +110,18 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ClusterAdminSecret
 
+Indicates the password of the MRS Manager
+administrator. The password for MRS 1.5.0: Must contain 6 to 32 characters.
+Must contain at least two types of the following: Lowercase letters Uppercase
+letters Digits Special characters of `~!@#$%^&*()-_=+\|[{}];:'",<.>/? Spaces
+Must be different from the username. Must be different from the username written
+in reverse order. The password for MRS 1.3.0: Must contain 8 to 64 characters.
+Must contain at least four types of the following: Lowercase letters Uppercase
+letters Digits Special characters of `~!@#$%^&*()-_=+\|[{}];:'",<.>/? Spaces
+Must be different from the username. Must be different from the username written
+in reverse order. This parameter needs to be configured only when safe_mode
+is set to 1.
+
 _Required_: No
 
 _Type_: String
@@ -112,6 +129,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClusterName
+
+Cluster name, which is globally unique and contains
+only 1 to 64 letters, digits, hyphens (-), and underscores (_).
 
 _Required_: Yes
 
@@ -121,6 +141,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ClusterType
 
+Type of clusters 0: analysis cluster 1: streaming
+cluster The default value is 0.
+
 _Required_: No
 
 _Type_: Double
@@ -128,6 +151,10 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClusterVersion
+
+Version of the clusters Currently, MRS 1.2, MRS 1.3.0,
+MRS 1.5.0, MRS 1.6.0 and MRS 1.6.3 are supported. The latest version of MRS is used
+by default. Currently, the latest version is MRS 1.6.3.
 
 _Required_: No
 
@@ -137,6 +164,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CoreDataVolumeCount
 
+Number of data disks of the Core node.
+Value range: 1 to 10. This parameter is a multi-disk parameter available
+for MRS 1.6.0 or later versions.
+
 _Required_: No
 
 _Type_: Double
@@ -144,6 +175,10 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CoreDataVolumeSize
+
+Data disk size of the Core node.
+Value range: 100 GB to 32000 GB. This parameter is a multi-disk parameter available
+for MRS 1.6.0 or later versions.
 
 _Required_: No
 
@@ -153,6 +188,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CoreDataVolumeType
 
+Data disk storage type of the Core node,
+supporting SATA, SAS and SSD. SATA: Common I/O, SAS: High I/O, SSD: Ultra-high I/O.
+This parameter is a multi-disk parameter available for MRS 1.6.0 or later versions.
+
 _Required_: No
 
 _Type_: String
@@ -160,6 +199,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CoreNodeNum
+
+Number of Core nodes Value range: 1 to 500 A
+maximum of 500 Core nodes are supported by default. If more than 500 Core nodes
+are required, contact technical support engineers or invoke background APIs
+to modify the database.
 
 _Required_: Yes
 
@@ -169,6 +213,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CoreNodeSize
 
+Instance specification of a Core node Configuration
+method of this parameter is identical to that of master_node_size.
+
 _Required_: Yes
 
 _Type_: String
@@ -176,6 +223,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LogCollection
+
+Indicates whether logs are collected when cluster
+installation fails. 0: not collected 1: collected The default value is 0. If
+log_collection is set to 1, OBS buckets will be created to collect the MRS logs.
+These buckets will be charged.
 
 _Required_: No
 
@@ -185,6 +237,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MasterDataVolumeCount
 
+Number of data disks of the Master node.
+The value can be set to 1 only. This parameter is a multi-disk parameter available
+for MRS 1.6.0 or later versions.
+
 _Required_: No
 
 _Type_: Double
@@ -192,6 +248,10 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MasterDataVolumeSize
+
+Data disk size of the Master node.
+Value range: 100 GB to 32000 GB. This parameter is a multi-disk parameter available
+for MRS 1.6.0 or later versions.
 
 _Required_: No
 
@@ -201,6 +261,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MasterDataVolumeType
 
+Data disk storage type of the Master node,
+supporting SATA, SAS and SSD. SATA: Common I/O, SAS: High I/O, SSD: Ultra-high I/O.
+This parameter is a multi-disk parameter available for MRS 1.6.0 or later versions.
+
 _Required_: No
 
 _Type_: String
@@ -208,6 +272,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MasterNodeNum
+
+Number of Master nodes The value is 2.
 
 _Required_: Yes
 
@@ -217,6 +283,18 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MasterNodeSize
 
+Best match based on several years of commissioning
+experience. MRS supports specifications of hosts, and host specifications are
+determined by CPUs, memory, and disks space. Master nodes support h1.2xlarge.linux.mrs
+h1.4xlarge.linux.mrs, h1.8xlarge.linux.mrs, s1.4xlarge.linux.mrs,
+and s1.8xlarge.linux.mrs. Core nodes of a streaming cluster support all specifications
+c2.2xlarge.linux.mrs, c2.4xlarge.linux.mrs, s1.xlarge.linux.mrs, s1.4xlarge.linux.mrs,
+s1.8xlarge.linux.mrs, d1.xlarge.linux.mrs, d1.2xlarge.linux.mrs, d1.4xlarge.linux.mrs,
+d1.8xlarge.linux.mrs, h1.2xlarge.linux.mrs, h1.4xlarge.linux.mrs and h1.8xlarge.linux.mrs.
+Task nodes support c2.2xlarge.linux.mrs, c2.4xlarge.linux.mrs, s1.xlarge.linux.mrs,
+s1.4xlarge.linux.mrs, s1.8xlarge.linux.mrs, h1.2xlarge.linux.mrs, h1.4xlarge.linux.mrs,
+and h1.8xlarge.linux.mrs.
+
 _Required_: Yes
 
 _Type_: String
@@ -224,6 +302,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NodePublicCertName
+
+Name of a key pair You can use a key
+to log in to the Master node in the cluster.
 
 _Required_: Yes
 
@@ -241,6 +322,15 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SafeMode
 
+MRS cluster running mode 0: common mode The value
+indicates that the Kerberos authentication is disabled. Users can use all functions
+provided by the cluster. 1: safe mode The value indicates that the Kerberos
+authentication is enabled. Common users cannot use the file management or job
+management functions of an MRS cluster and cannot view cluster resource usage
+or the job records of Hadoop and Spark. To use these functions, the users must
+obtain the relevant permissions from the MRS Manager administrator. The request
+has the cluster_admin_secret parameter only when safe_mode is set to 1.
+
 _Required_: Yes
 
 _Type_: Double
@@ -248,6 +338,11 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubnetId
+
+Subnet ID Obtain the subnet ID from the management
+console as follows: Register an account and log in to the management console.
+Click Virtual Private Cloud and select Virtual Private Cloud from the left list.
+On the Virtual Private Cloud page, obtain the subnet ID from the list.
 
 _Required_: Yes
 
@@ -257,6 +352,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+Tags key/value pairs to associate with the cluster.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -264,6 +361,17 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VolumeSize
+
+Data disk storage space of a Core node Users can
+add disks to expand storage capacity when creating a cluster. There are the
+following scenarios: Separation of data storage and computing: Data is stored
+in the OBS system. Costs of clusters are relatively low but computing performance
+is poor. The clusters can be deleted at any time. It is recommended when data
+computing is not frequently performed. Integration of data storage and computing:
+Data is stored in the HDFS system. Costs of clusters are relatively high but
+computing performance is good. The clusters cannot be deleted in a short term.
+It is recommended when data computing is frequently performed. Value range:
+100 GB to 32000 GB.
 
 _Required_: No
 
@@ -273,6 +381,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VolumeType
 
+Type of disks SATA, SAS and SSD are supported. SATA:
+common I/O, SAS: High I/O, SSD: Ultra-high I/O.
+
 _Required_: No
 
 _Type_: String
@@ -280,6 +391,12 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+ID of the VPC where the subnet locates Obtain the VPC
+ID from the management console as follows: Register an account and log in to
+the management console. Click Virtual Private Cloud and select Virtual Private
+Cloud from the left list. On the Virtual Private Cloud page, obtain the VPC
+ID from the list.
 
 _Required_: Yes
 

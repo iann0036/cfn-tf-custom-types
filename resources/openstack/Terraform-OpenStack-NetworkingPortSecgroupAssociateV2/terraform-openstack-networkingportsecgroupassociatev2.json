@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::NetworkingPortSecgroupAssociateV2",
-    "description": "CloudFormation equivalent of openstack_networking_port_secgroup_associate_v2",
+    "description": "Manages a V2 port's security groups within OpenStack. Useful, when the port was\ncreated not by Terraform (e.g. Manila or LBaaS). It should not be used, when the\nport was created directly within Terraform.\n\nWhen the resource is deleted, Terraform doesn't delete the port, but unsets the\nlist of user defined security group IDs.  However, if `enforce` is set to `true`\nand the resource is deleted, Terraform will remove all assigned security group\nIDs.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -16,20 +16,24 @@
             }
         },
         "Enforce": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to replace or append the list of security\ngroups, specified in the `security_group_ids`. Defaults to `false`."
         },
         "PortId": {
-            "type": "string"
+            "type": "string",
+            "description": "An UUID of the port to apply security groups to."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the V2 networking client.\nA networking client is needed to manage a port. If omitted, the\n`region` argument of the provider is used. Changing this creates a new\nresource."
         },
         "SecurityGroupIds": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of security group IDs to apply to\nthe port. The security groups must be specified by ID and not name (as\nopposed to how they are configured with the Compute Instance)."
         }
     },
     "additionalProperties": false,

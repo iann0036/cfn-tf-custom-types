@@ -35,6 +35,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ClientId
 
+The Client ID of this relying party application. Enables OpenIDConnection authentication with Azure Active Directory.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClientSecret
+
+The Client Secret of this relying party application. If no secret is provided, implicit flow will be used.
 
 _Required_: No
 

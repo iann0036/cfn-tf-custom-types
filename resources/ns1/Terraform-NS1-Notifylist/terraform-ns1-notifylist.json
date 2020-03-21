@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::NS1::Notifylist",
-    "description": "CloudFormation equivalent of ns1_notifylist",
+    "description": "Provides a NS1 Notify List resource. This can be used to create, modify, and delete notify lists.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Notifications": {
@@ -25,10 +25,12 @@
                             "Key",
                             "Value"
                         ]
-                    }
+                    },
+                    "description": "Configuration details for the given notifier type."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The type of notifier. Available notifiers are indicated in /notifytypes endpoint."
                 }
             },
             "required": [
@@ -43,7 +45,8 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The free-form display name for the notify list."
         },
         "Notifications": {
             "type": "array",

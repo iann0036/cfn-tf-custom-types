@@ -1,6 +1,9 @@
 # Terraform::Google::SqlSslCert
 
-CloudFormation equivalent of google_sql_ssl_cert
+Creates a new Google SQL SSL Cert on a Google SQL Instance. For more information, see the [official documentation](https://cloud.google.com/sql/), or the [JSON API](https://cloud.google.com/sql/docs/mysql/admin-api/v1beta4/sslCerts).
+
+~> **Note:** All arguments including the private key will be stored in the raw state as plain-text.
+[Read more about sensitive data in state](/docs/state/sensitive-data.html).
 
 ## Syntax
 
@@ -33,6 +36,9 @@ Properties:
 
 #### CommonName
 
+The common name to be used in the certificate to identify the
+client. Constrained to [a-zA-Z.-_ ]+. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +47,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Instance
 
+The name of the Cloud SQL instance. Changing this
+forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +57,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The ID of the project in which the resource belongs. If it
+is not provided, the provider project is used.
 
 _Required_: No
 

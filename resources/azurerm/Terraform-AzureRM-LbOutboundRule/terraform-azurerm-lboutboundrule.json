@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::LbOutboundRule",
-    "description": "CloudFormation equivalent of azurerm_lb_outbound_rule",
+    "description": "Manages a Load Balancer Outbound Rule.\n\n~> **NOTE** When using this resource, the Load Balancer needs to have a FrontEnd IP Configuration and a Backend Address Pool Attached.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "FrontendIpConfiguration": {
@@ -8,7 +8,8 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the Frontend IP Configuration."
                 }
             },
             "required": [
@@ -41,28 +42,36 @@
             "type": "string"
         },
         "AllocatedOutboundPorts": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of outbound ports to be used for NAT."
         },
         "BackendAddressPoolId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Backend Address Pool. Outbound traffic is randomly load balanced across IPs in the backend IPs."
         },
         "EnableTcpReset": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected connection termination. This element is only used when the protocol is set to TCP."
         },
         "IdleTimeoutInMinutes": {
-            "type": "number"
+            "type": "number",
+            "description": "The timeout for the TCP idle connection."
         },
         "LoadbalancerId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Load Balancer in which to create the Outbound Rule. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Outbound Rule. Changing this forces a new resource to be created."
         },
         "Protocol": {
-            "type": "string"
+            "type": "string",
+            "description": "The transport protocol for the external endpoint. Possible values are `Udp`, `Tcp` or `All`."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the resource. Changing this forces a new resource to be created."
         },
         "FrontendIpConfiguration": {
             "type": "array",

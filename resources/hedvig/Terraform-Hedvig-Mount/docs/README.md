@@ -1,6 +1,6 @@
 # Terraform::Hedvig::Mount
 
-CloudFormation equivalent of hedvig_mount
+A Hedvig Mount mounts a vdisk resource with a particular controller. It can then be used to connect ACL access resources to the vdisk as well.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### Controller
 
+The fully qualified domain name for the controller that the Mount is to attach to.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vdisk
+
+The name of the vdisk the Mount is on.
 
 _Required_: Yes
 

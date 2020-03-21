@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::PanoramaLayer3Subinterface",
-    "description": "CloudFormation equivalent of panos_panorama_layer3_subinterface",
+    "description": "This resource allows you to add/update/delete Panorama layer3 subinterfaces.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,74 +9,96 @@
             "type": "string"
         },
         "AdjustTcpMss": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Adjust TCP MSS (default: false)."
         },
         "Comment": {
-            "type": "string"
+            "type": "string",
+            "description": "The interface comment."
         },
         "CreateDhcpDefaultRoute": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` to create a DHCP\ndefault route."
         },
         "DecryptForward": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` to enable decrypt forward."
         },
         "DhcpDefaultRouteMetric": {
-            "type": "number"
+            "type": "number",
+            "description": "The metric for the DHCP default\nroute."
         },
         "DhcpSendHostnameEnable": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "For DHCP layer3 interfaces:\nenable sending the firewall or a custom hostname to DHCP server."
         },
         "DhcpSendHostnameValue": {
-            "type": "string"
+            "type": "string",
+            "description": "For DHCP layer3 interfaces:\nthe interface hostname.  Leaving this unspecified with `dhcp_send_hostname_enable`\nset means to send the system hostname."
         },
         "EnableDhcp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` to enable DHCP."
         },
         "InterfaceType": {
-            "type": "string"
+            "type": "string",
+            "description": "The interface type.  Valid values are `ethernet` (default)\nor `aggregate-ethernet`."
         },
         "Ipv4MssAdjust": {
-            "type": "number"
+            "type": "number",
+            "description": "The IPv4 MSS adjust value."
         },
         "Ipv6Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` to enable IPv6."
         },
         "Ipv6InterfaceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The IPv6 interface ID."
         },
         "Ipv6MssAdjust": {
-            "type": "number"
+            "type": "number",
+            "description": "The IPv6 MSS adjust value."
         },
         "ManagementProfile": {
-            "type": "string"
+            "type": "string",
+            "description": "The management profile."
         },
         "Mtu": {
-            "type": "number"
+            "type": "number",
+            "description": "The MTU."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The interface's name."
         },
         "NetflowProfile": {
-            "type": "string"
+            "type": "string",
+            "description": "The netflow profile."
         },
         "ParentInterface": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the parent interface."
         },
         "StaticIps": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of static IPv4 addresses."
         },
         "Tag": {
-            "type": "number"
+            "type": "number",
+            "description": "The interface's tag."
         },
         "Template": {
-            "type": "string"
+            "type": "string",
+            "description": "The template name."
         },
         "Vsys": {
-            "type": "string"
+            "type": "string",
+            "description": "The vsys that will use this interface.  This should be\nsomething like `vsys1` or `vsys3`."
         }
     },
     "additionalProperties": false,

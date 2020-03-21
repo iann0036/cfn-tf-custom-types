@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::NetworkAclEntries",
-    "description": "CloudFormation equivalent of alicloud_network_acl_entries",
+    "description": "Provides a network acl entries resource to create ingress and egress entries.\n\n-> **NOTE:** Available in 1.45.0+. Currently, the resource are only available in Hongkong(cn-hongkong), India(ap-south-1), and Indonesia(ap-southeast-1) regions.\n\n-> **NOTE:** It doesn't support concurrency and the order of the ingress and egress entries determines the priority.\n\n-> **NOTE:** Using this resource need to open a whitelist.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Egress": {
@@ -66,7 +66,8 @@
             "type": "string"
         },
         "NetworkAclId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the network acl, the field can't be changed."
         },
         "Egress": {
             "type": "array",

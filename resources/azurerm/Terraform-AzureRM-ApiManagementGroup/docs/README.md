@@ -1,6 +1,6 @@
 # Terraform::AzureRM::ApiManagementGroup
 
-CloudFormation equivalent of azurerm_api_management_group
+Manages an API Management Group.
 
 ## Syntax
 
@@ -43,6 +43,8 @@ Properties:
 
 #### ApiManagementName
 
+The name of the [API Management Service](api_management.html) in which the API Management Group should exist. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+The description of this API Management Group.
 
 _Required_: No
 
@@ -59,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+The display name of this API Management Group.
+
 _Required_: Yes
 
 _Type_: String
@@ -66,6 +72,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ExternalId
+
+The identifier of the external Group. For example, an Azure Active Directory group `aad://<tenant>.onmicrosoft.com/groups/<group object id>`.
 
 _Required_: No
 
@@ -75,6 +83,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the API Management Group. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -83,6 +93,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the Resource Group in which the API Management Group should exist. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -90,6 +102,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The type of this API Management Group. Possible values are `custom` and `external`. Default is `custom`.
 
 _Required_: No
 

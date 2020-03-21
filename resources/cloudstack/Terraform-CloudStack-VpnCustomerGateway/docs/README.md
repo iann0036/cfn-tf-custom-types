@@ -1,6 +1,6 @@
 # Terraform::CloudStack::VpnCustomerGateway
 
-CloudFormation equivalent of cloudstack_vpn_customer_gateway
+Creates a site to site VPN local customer gateway.
 
 ## Syntax
 
@@ -47,6 +47,8 @@ Properties:
 
 #### Cidr
 
+The CIDR block that needs to be routed through this gateway.
+
 _Required_: Yes
 
 _Type_: String
@@ -54,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Dpd
+
+If DPD is enabled for the related VPN connection (defaults false).
 
 _Required_: No
 
@@ -63,6 +67,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EspLifetime
 
+The ESP lifetime of phase 2 VPN connection to this
+VPN Customer Gateway in seconds (defaults 86400).
+
 _Required_: No
 
 _Type_: Double
@@ -70,6 +77,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EspPolicy
+
+The ESP policy to use for this VPN Customer Gateway.
 
 _Required_: Yes
 
@@ -79,6 +88,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Gateway
 
+The public IP address of the related VPN Gateway.
+
 _Required_: Yes
 
 _Type_: String
@@ -86,6 +97,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IkeLifetime
+
+The IKE lifetime of phase 2 VPN connection to this
+VPN Customer Gateway in seconds (defaults 86400).
 
 _Required_: No
 
@@ -95,6 +109,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IkePolicy
 
+The IKE policy to use for this VPN Customer Gateway.
+
 _Required_: Yes
 
 _Type_: String
@@ -102,6 +118,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IpsecPsk
+
+The IPSEC pre-shared key used for this gateway.
 
 _Required_: Yes
 
@@ -111,6 +129,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the VPN Customer Gateway.
+
 _Required_: Yes
 
 _Type_: String
@@ -118,6 +138,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The name or ID of the project to create this VPN Customer
+Gateway in. Changing this forces a new resource to be created.
 
 _Required_: No
 

@@ -1,6 +1,11 @@
 # Terraform::AzureRM::VirtualMachineExtension
 
-CloudFormation equivalent of azurerm_virtual_machine_extension
+Manages a Virtual Machine Extension to provide post deployment configuration
+and run automated tasks.
+
+~> **NOTE:** Custom Script Extensions for Linux & Windows require that the `commandToExecute` returns a `0` exit code to be classified as successfully deployed. You can achieve this by appending `exit 0` to the end of your `commandToExecute`.
+
+-> **NOTE:** Custom Script Extensions require that the Azure Virtual Machine Guest Agent is running on the Virtual Machine.
 
 ## Syntax
 
@@ -48,6 +53,9 @@ Properties:
 
 #### AutoUpgradeMinorVersion
 
+Specifies if the platform deploys
+the latest minor version update to the `type_handler_version` specified.
+
 _Required_: No
 
 _Type_: Boolean
@@ -55,6 +63,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the virtual machine extension peering. Changing
+this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -64,6 +75,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProtectedSettings
 
+The protected_settings passed to the
+extension, like settings, these are specified as a JSON object in a string.
+
 _Required_: No
 
 _Type_: String
@@ -71,6 +85,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Publisher
+
+The publisher of the extension, available publishers
+can be found by using the Azure CLI.
 
 _Required_: Yes
 
@@ -80,6 +97,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Settings
 
+The settings passed to the extension, these are
+specified as a JSON object in a string.
+
 _Required_: No
 
 _Type_: String
@@ -87,6 +107,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 
@@ -96,6 +118,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Type
 
+The type of extension, available types for a publisher can
+be found using the Azure CLI.
+
 _Required_: Yes
 
 _Type_: String
@@ -104,6 +129,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TypeHandlerVersion
 
+Specifies the version of the extension to
+use, available versions can be found using the Azure CLI.
+
 _Required_: Yes
 
 _Type_: String
@@ -111,6 +139,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VirtualMachineId
+
+The ID of the Virtual Machine. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

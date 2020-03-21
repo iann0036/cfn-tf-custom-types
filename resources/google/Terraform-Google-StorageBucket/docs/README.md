@@ -1,6 +1,17 @@
 # Terraform::Google::StorageBucket
 
-CloudFormation equivalent of google_storage_bucket
+Creates a new bucket in Google cloud storage service (GCS).
+Once a bucket has been created, its location can't be changed.
+[ACLs](https://cloud.google.com/storage/docs/access-control/lists) can be applied
+using the [`google_storage_bucket_acl`](/docs/providers/google/r/storage_bucket_acl.html) resource.
+
+For more information see
+[the official documentation](https://cloud.google.com/storage/docs/overview)
+and
+[API](https://cloud.google.com/storage/docs/json_api/v1/buckets).
+
+**Note**: If the project id is not set on the resource or in the provider block it will be dynamically
+determined which will require enabling the compute api.
 
 ## Syntax
 
@@ -73,6 +84,8 @@ Properties:
 
 #### BucketPolicyOnly
 
+Enables [Bucket Policy Only](https://cloud.google.com/storage/docs/bucket-policy-only) access to a bucket.
+
 _Required_: No
 
 _Type_: Boolean
@@ -89,6 +102,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ForceDestroy
 
+When deleting a bucket, this
+boolean option will delete all contained objects. If you try to delete a
+bucket that contains objects, Terraform will fail that run.
+
 _Required_: No
 
 _Type_: Boolean
@@ -96,6 +113,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Labels
+
+A set of key/value label pairs to assign to the bucket.
 
 _Required_: No
 
@@ -105,6 +124,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Location
 
+The [GCS location](https://cloud.google.com/storage/docs/bucket-locations).
+
 _Required_: No
 
 _Type_: String
@@ -112,6 +133,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the bucket.
 
 _Required_: Yes
 
@@ -121,6 +144,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Project
 
+The ID of the project in which the resource belongs. If it
+is not provided, the provider project is used.
+
 _Required_: No
 
 _Type_: String
@@ -129,6 +155,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RequesterPays
 
+Enables [Requester Pays](https://cloud.google.com/storage/docs/requester-pays) on a storage bucket.
+
 _Required_: No
 
 _Type_: Boolean
@@ -136,6 +164,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StorageClass
+
+The [Storage Class](https://cloud.google.com/storage/docs/storage-classes) of the new bucket. Supported values include: `STANDARD`, `MULTI_REGIONAL`, `REGIONAL`, `NEARLINE`, `COLDLINE`.
 
 _Required_: No
 

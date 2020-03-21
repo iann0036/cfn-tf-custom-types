@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::CamGroup
 
-CloudFormation equivalent of tencentcloud_cam_group
+Provides a resource to create a CAM group.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### Name
 
+Name of CAM group.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Remark
+
+Description of the CAM group.
 
 _Required_: No
 

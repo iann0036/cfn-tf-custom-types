@@ -1,6 +1,6 @@
 # Terraform::AzureRM::PrivateDnsZoneVirtualNetworkLink
 
-CloudFormation equivalent of azurerm_private_dns_zone_virtual_network_link
+Enables you to manage Private DNS zone Virtual Network Links. These Links enable DNS resolution and registration inside Azure Virtual Networks using Azure Private DNS.
 
 ## Syntax
 
@@ -42,6 +42,8 @@ Properties:
 
 #### Name
 
+The name of the Private DNS Zone Virtual Network Link. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +51,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PrivateDnsZoneName
+
+The name of the Private DNS zone (without a terminating dot). Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -58,6 +62,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RegistrationEnabled
 
+Is auto-registration of virtual machine records in the virtual network in the Private DNS zone enabled? Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -65,6 +71,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+Specifies the resource group where the resource exists. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -74,6 +82,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -81,6 +91,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VirtualNetworkId
+
+The Resource ID of the Virtual Network that should be linked to the DNS Zone. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

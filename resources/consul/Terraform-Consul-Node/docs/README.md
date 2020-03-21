@@ -1,6 +1,7 @@
 # Terraform::Consul::Node
 
-CloudFormation equivalent of consul_node
+Provides access to Node data in Consul. This can be used to define a
+node. Currently, defining health checks is not supported.
 
 ## Syntax
 
@@ -38,6 +39,9 @@ Properties:
 
 #### Address
 
+The address of the node being added to,
+or referenced in the catalog.
+
 _Required_: Yes
 
 _Type_: String
@@ -45,6 +49,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Datacenter
+
+The datacenter to use. This overrides the agent's
+default datacenter and the datacenter in the provider setup.
 
 _Required_: No
 
@@ -54,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Meta
 
+Key/value pairs that are associated with the node.
+
 _Required_: No
 
 _Type_: List of <a href="meta.md">Meta</a>
@@ -61,6 +70,9 @@ _Type_: List of <a href="meta.md">Meta</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the node being added to, or
+referenced in the catalog.
 
 _Required_: Yes
 

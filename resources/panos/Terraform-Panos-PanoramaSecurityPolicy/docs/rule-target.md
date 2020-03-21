@@ -25,6 +25,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Serial
 
+The serial number of the firewall.
+
 _Required_: Yes
 
 _Type_: String
@@ -32,6 +34,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VsysList
+
+A subset of all available vsys on the firewall
+that should be in this device group.  If the firewall is a virtual firewall,
+then this parameter should just be omitted.
 
 _Required_: No
 

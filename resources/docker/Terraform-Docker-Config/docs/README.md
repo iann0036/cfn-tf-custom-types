@@ -1,6 +1,6 @@
 # Terraform::Docker::Config
 
-CloudFormation equivalent of docker_config
+Manages the configuration of a Docker service in a swarm.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### Data
 
+The base64 encoded data of the config.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the Docker config.
 
 _Required_: Yes
 

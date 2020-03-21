@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Spotinst::OceanAwsLaunchSpec",
-    "description": "CloudFormation equivalent of spotinst_ocean_aws_launch_spec",
+    "description": "Provides a custom Spotinst Ocean AWS Launch Spec resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "AutoscaleHeadrooms": {
@@ -67,33 +67,40 @@
             "type": "string"
         },
         "IamInstanceProfile": {
-            "type": "string"
+            "type": "string",
+            "description": "The ARN or name of an IAM instance profile to associate with launched instances."
         },
         "ImageId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the image used to launch the instances."
         },
         "OceanId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ocean cluster you wish to."
         },
         "RootVolumeSize": {
-            "type": "number"
+            "type": "number",
+            "description": "Set root volume size (in GB)."
         },
         "SecurityGroups": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Optionally adds security group IDs."
         },
         "SubnetIds": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Set subnets in launchSpec. Each element in array should be subnet ID."
         },
         "UserData": {
-            "type": "string"
+            "type": "string",
+            "description": "Base64-encoded MIME user data to make available to the instances."
         },
         "AutoscaleHeadrooms": {
             "type": "array",

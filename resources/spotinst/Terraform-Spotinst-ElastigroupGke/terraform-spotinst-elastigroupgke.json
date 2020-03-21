@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Spotinst::ElastigroupGke",
-    "description": "CloudFormation equivalent of spotinst_elastigroup_gke",
+    "description": "Provides a Spotinst Elastigroup GKE resource. Please see [Importing a GKE cluster](https://api.spotinst.com/elastigroup-for-google-cloud/tutorials/import-a-gke-cluster-as-an-elastigroup/) for detailed information.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "BackendServices": {
@@ -464,10 +464,12 @@
             "type": "string"
         },
         "ClusterId": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the GKE cluster you wish to import."
         },
         "ClusterZoneName": {
-            "type": "string"
+            "type": "string",
+            "description": "The zone where the cluster is hosted."
         },
         "DesiredCapacity": {
             "type": "number"
@@ -501,7 +503,8 @@
             "type": "string"
         },
         "NodeImage": {
-            "type": "string"
+            "type": "string",
+            "description": "The image that will be used for the node VMs. Possible values: COS, UBUNTU."
         },
         "OndemandCount": {
             "type": "number"

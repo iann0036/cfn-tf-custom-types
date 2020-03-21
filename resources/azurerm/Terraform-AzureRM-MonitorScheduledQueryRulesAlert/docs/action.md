@@ -27,6 +27,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### ActionGroup
 
+List of action group reference resource IDs.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -35,6 +37,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CustomWebhookPayload
 
+Custom payload to be sent for all webhook payloads in alerting action.
+
 _Required_: No
 
 _Type_: String
@@ -42,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EmailSubject
+
+Custom subject override for all email ids in Azure action group.
 
 _Required_: No
 

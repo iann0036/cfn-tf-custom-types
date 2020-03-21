@@ -1,6 +1,6 @@
 # Terraform::Brightbox::ApiClient
 
-CloudFormation equivalent of brightbox_api_client
+Provides a Brightbox API Client resource.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### Description
 
+A further description of the API Client.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A label to assign to the API Client.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PermissionsGroup
+
+The type of API Client required, either `full` or `storage`. The default is `full`.
 
 _Required_: No
 

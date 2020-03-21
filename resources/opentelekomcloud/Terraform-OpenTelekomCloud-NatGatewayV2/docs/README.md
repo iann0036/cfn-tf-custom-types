@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::NatGatewayV2
 
-CloudFormation equivalent of opentelekomcloud_nat_gateway_v2
+Manages a V2 nat gateway resource within OpenTelekomCloud Nat
 
 ## Syntax
 
@@ -43,6 +43,8 @@ Properties:
 
 #### Description
 
+The description of the nat gateway.
+
 _Required_: No
 
 _Type_: String
@@ -51,6 +53,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InternalNetworkId
 
+ID of the network this nat gateway connects to.
+Changing this creates a new nat gateway.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +63,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the nat gateway.
 
 _Required_: Yes
 
@@ -75,6 +82,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RouterId
 
+ID of the router this nat gateway belongs to. Changing
+this creates a new nat gateway.
+
 _Required_: Yes
 
 _Type_: String
@@ -83,6 +93,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Spec
 
+The specification of the nat gateway, valid values are "1",
+"2", "3", "4".
+
 _Required_: Yes
 
 _Type_: String
@@ -90,6 +103,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TenantId
+
+The target tenant ID in which to allocate the nat
+gateway. Changing this creates a new nat gateway.
 
 _Required_: No
 

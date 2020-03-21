@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::BackupProtectedVm",
-    "description": "CloudFormation equivalent of azurerm_backup_protected_vm",
+    "description": "Manages Azure Backup for an Azure VM",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,16 +29,20 @@
             "type": "string"
         },
         "BackupPolicyId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the id of the backup policy to use."
         },
         "RecoveryVaultName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Recovery Services Vault to use. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the Recovery Services Protected VM. Changing this forces a new resource to be created."
         },
         "SourceVmId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the ID of the VM to backup. Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -58,7 +62,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

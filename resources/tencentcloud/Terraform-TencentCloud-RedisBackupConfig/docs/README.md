@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::RedisBackupConfig
 
-CloudFormation equivalent of tencentcloud_redis_backup_config
+Use this data source to query which instance types of Redis are available in a specific region.
 
 ## Syntax
 
@@ -34,6 +34,8 @@ Properties:
 
 #### BackupPeriod
 
+Specifys which day the backup action should take place. Supported values include: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday and Sunday.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -42,6 +44,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### BackupTime
 
+Specifys what time the backup action should take place.
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RedisId
+
+ID of a Redis instance to which the policy will be applied.
 
 _Required_: Yes
 

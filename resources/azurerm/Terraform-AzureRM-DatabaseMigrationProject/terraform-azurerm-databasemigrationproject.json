@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::DatabaseMigrationProject",
-    "description": "CloudFormation equivalent of azurerm_database_migration_project",
+    "description": "Manage a Azure Database Migration Project.\n\n~> **NOTE:** Destroying a Database Migration Project will leave any outstanding tasks untouched. This is to avoid unexpectedly deleting any tasks managed outside of terraform.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,19 +29,24 @@
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specify the name of the database migration project. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the resource group in which to create the database migration project. Changing this forces a new resource to be created."
         },
         "ServiceName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the database migration service where resource belongs to. Changing this forces a new resource to be created."
         },
         "SourcePlatform": {
-            "type": "string"
+            "type": "string",
+            "description": "The platform type of the migration source. Currently only support: `SQL`(on-premises SQL Server). Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -61,10 +66,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assigned to the resource."
         },
         "TargetPlatform": {
-            "type": "string"
+            "type": "string",
+            "description": "The platform type of the migration target. Currently only support: `SQLDB`(Azure SQL Database). Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

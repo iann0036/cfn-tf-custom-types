@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::ComputeQuotasetV2",
-    "description": "CloudFormation equivalent of openstack_compute_quotaset_v2",
+    "description": "Manages a V2 compute quotaset resource within OpenStack.\n\n~> **Note:** This usually requires admin privileges.\n\n~> **Note:** This resource has a no-op deletion so no actual actions will be done against the OpenStack API \n    in case of delete call.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,52 +26,68 @@
             "type": "string"
         },
         "Cores": {
-            "type": "number"
+            "type": "number",
+            "description": "Quota value for cores.\nChanging this updates the existing quotaset."
         },
         "FixedIps": {
-            "type": "number"
+            "type": "number",
+            "description": "Quota value for fixed IPs.\nChanging this updates the existing quotaset."
         },
         "FloatingIps": {
-            "type": "number"
+            "type": "number",
+            "description": "Quota value for floating IPs.\nChanging this updates the existing quotaset."
         },
         "InjectedFileContentBytes": {
-            "type": "number"
+            "type": "number",
+            "description": "Quota value for content bytes\nof injected files. Changing this updates the existing quotaset."
         },
         "InjectedFilePathBytes": {
-            "type": "number"
+            "type": "number",
+            "description": "Quota value for path bytes of\ninjected files. Changing this updates the existing quotaset."
         },
         "InjectedFiles": {
-            "type": "number"
+            "type": "number",
+            "description": "Quota value for injected files.\nChanging this updates the existing quotaset."
         },
         "Instances": {
-            "type": "number"
+            "type": "number",
+            "description": "Quota value for instances.\nChanging this updates the existing quotaset."
         },
         "KeyPairs": {
-            "type": "number"
+            "type": "number",
+            "description": "Quota value for key pairs.\nChanging this updates the existing quotaset."
         },
         "MetadataItems": {
-            "type": "number"
+            "type": "number",
+            "description": "Quota value for metadata items.\nChanging this updates the existing quotaset."
         },
         "ProjectId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the project to manage quotas.\nChanging this creates a new quotaset."
         },
         "Ram": {
-            "type": "number"
+            "type": "number",
+            "description": "Quota value for RAM.\nChanging this updates the existing quotaset."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to create the volume. If\nomitted, the `region` argument of the provider is used. Changing this\ncreates a new quotaset."
         },
         "SecurityGroupRules": {
-            "type": "number"
+            "type": "number",
+            "description": "Quota value for security group rules.\nChanging this updates the existing quotaset."
         },
         "SecurityGroups": {
-            "type": "number"
+            "type": "number",
+            "description": "Quota value for security groups.\nChanging this updates the existing quotaset."
         },
         "ServerGroupMembers": {
-            "type": "number"
+            "type": "number",
+            "description": "Quota value for server groups members.\nChanging this updates the existing quotaset."
         },
         "ServerGroups": {
-            "type": "number"
+            "type": "number",
+            "description": "Quota value for server groups.\nChanging this updates the existing quotaset."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

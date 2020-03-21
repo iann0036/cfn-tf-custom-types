@@ -1,6 +1,11 @@
 # Terraform::OVH::DedicatedServerUpdate
 
-CloudFormation equivalent of ovh_dedicated_server_update
+Update various properties of your Dedicated Server.
+
+~> __WARNING__: `rescue_mail` and `root_device` properties aren't
+updated consistently. This is an issue on the OVH API which 
+has been reported. Meanwhile, these properties aren't not mapped
+on this terraform resource.
 
 ## Syntax
 
@@ -35,6 +40,8 @@ Properties:
 
 #### BootId
 
+boot id of the server.
+
 _Required_: No
 
 _Type_: Double
@@ -42,6 +49,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Monitoring
+
+Icmp monitoring state.
 
 _Required_: No
 
@@ -51,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServiceName
 
+The service_name of your dedicated server.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +69,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### State
+
+error, hacked, hackedBlocked, ok.
 
 _Required_: No
 

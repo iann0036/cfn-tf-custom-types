@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::IothubDps",
-    "description": "CloudFormation equivalent of azurerm_iothub_dps",
+    "description": "Manages an IotHub Device Provisioning Service.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "LinkedHub": {
@@ -8,16 +8,19 @@
             "additionalProperties": false,
             "properties": {
                 "AllocationWeight": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The weight applied to the IoT Hub. Defaults to 0."
                 },
                 "ApplyAllocationPolicy": {
                     "type": "boolean"
                 },
                 "ConnectionString": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The connection string to connect to the IoT Hub. Changing this forces a new resource."
                 },
                 "Location": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The location of the IoT hub. Changing this forces a new resource."
                 }
             },
             "required": [
@@ -30,10 +33,12 @@
             "additionalProperties": false,
             "properties": {
                 "Capacity": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The number of provisioned IoT Device Provisioning Service units."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the sku. Possible values are `B1`, `B2`, `B3`, `F1`, `S1`, `S2`, and `S3`."
                 }
             },
             "required": [
@@ -76,13 +81,16 @@
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource has to be createc. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Iot Device Provisioning Service resource. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group under which the Iot Device Provisioning Service resource has to be created. Changing this forces a new resource to be created."
         },
         "ServiceOperationsHostName": {
             "type": "string"
@@ -105,7 +113,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "LinkedHub": {
             "type": "array",

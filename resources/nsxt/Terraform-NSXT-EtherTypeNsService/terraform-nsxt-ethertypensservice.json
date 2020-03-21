@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::NSXT::EtherTypeNsService",
-    "description": "CloudFormation equivalent of nsxt_ether_type_ns_service",
+    "description": "This resource provides a way to configure a networking and security service which can be used within NSX. This specific service is for the layer 2 Ethernet protocol.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Tag": {
@@ -29,13 +29,16 @@
             "type": "boolean"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "Display name, defaults to ID if not set."
         },
         "EtherType": {
-            "type": "number"
+            "type": "number",
+            "description": "Type of the encapsulated protocol."
         },
         "Revision": {
             "type": "number"

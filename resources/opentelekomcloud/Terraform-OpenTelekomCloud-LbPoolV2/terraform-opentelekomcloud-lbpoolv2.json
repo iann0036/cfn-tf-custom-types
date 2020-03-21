@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenTelekomCloud::LbPoolV2",
-    "description": "CloudFormation equivalent of opentelekomcloud_lb_pool_v2",
+    "description": "Manages an Enhanced LB pool resource within OpenTelekomCloud.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Persistence": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "CookieName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the cookie if persistence mode is set\nappropriately. Required if `type = APP_COOKIE`."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The type of persistence mode. The current specification\nsupports SOURCE_IP, HTTP_COOKIE, and APP_COOKIE."
                 }
             },
             "required": [
@@ -41,31 +43,39 @@
             "type": "string"
         },
         "AdminStateUp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "The administrative state of the pool.\nA valid value is true (UP) or false (DOWN)."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Human-readable description for the pool."
         },
         "LbMethod": {
-            "type": "string"
+            "type": "string",
+            "description": "The load balancing algorithm to\ndistribute traffic to the pool's members. Must be one of\nROUND_ROBIN, LEAST_CONNECTIONS, or SOURCE_IP."
         },
         "ListenerId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Listener on which the members of the pool\nwill be associated with. Changing this creates a new pool.\nNote:  One of LoadbalancerID or ListenerID must be provided."
         },
         "LoadbalancerId": {
-            "type": "string"
+            "type": "string",
+            "description": "The load balancer on which to provision this\npool. Changing this creates a new pool.\nNote:  One of LoadbalancerID or ListenerID must be provided."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Human-readable name for the pool."
         },
         "Protocol": {
-            "type": "string"
+            "type": "string",
+            "description": "The protocol - can either be TCP, UDP or HTTP.\nChanging this creates a new pool."
         },
         "Region": {
             "type": "string"
         },
         "TenantId": {
-            "type": "string"
+            "type": "string",
+            "description": "Required for admins. The UUID of the tenant who owns\nthe pool.  Only administrative users can specify a tenant UUID\nother than their own. Changing this creates a new pool."
         },
         "Persistence": {
             "type": "array",

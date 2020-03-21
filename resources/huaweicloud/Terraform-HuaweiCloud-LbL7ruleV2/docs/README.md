@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::LbL7ruleV2
 
-CloudFormation equivalent of huaweicloud_lb_l7rule_v2
+Manages a V2 L7 Rule resource within HuaweiCloud.
 
 ## Syntax
 
@@ -45,6 +45,9 @@ Properties:
 
 #### AdminStateUp
 
+The administrative state of the L7 Rule.
+The value can only be true (UP).
+
 _Required_: No
 
 _Type_: Boolean
@@ -52,6 +55,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CompareType
+
+The comparison type for the L7 rule - can either be
+STARTS\_WITH, EQUAL_TO or REGEX.
 
 _Required_: Yes
 
@@ -61,6 +67,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Key
 
+The key to use for the comparison. For example, the name of the cookie to
+evaluate. Valid when `type` is set to COOKIE or HEADER. Changing this creates a new L7 Rule.
+
 _Required_: No
 
 _Type_: String
@@ -68,6 +77,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### L7policyId
+
+The ID of the L7 Policy to query. Changing this creates a new
+L7 Rule.
 
 _Required_: Yes
 
@@ -77,6 +89,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region in which to obtain the V2 Networking client.
+A Networking client is needed to create an . If omitted, the
+`region` argument of the provider is used. Changing this creates a new
+L7 Rule.
+
 _Required_: No
 
 _Type_: String
@@ -84,6 +101,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TenantId
+
+Required for admins. The UUID of the tenant who owns
+the L7 Rule.  Only administrative users can specify a tenant UUID
+other than their own. Changing this creates a new L7 Rule.
 
 _Required_: No
 
@@ -93,6 +114,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Type
 
+The L7 Rule type - can either be HOST\_NAME or PATH. Changing this creates a new L7 Rule.
+
 _Required_: Yes
 
 _Type_: String
@@ -100,6 +123,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Value
+
+The value to use for the comparison. For example, the file type to
+compare.
 
 _Required_: Yes
 

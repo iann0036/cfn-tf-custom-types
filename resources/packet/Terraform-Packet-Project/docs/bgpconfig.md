@@ -26,6 +26,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Asn
 
+Autonomous System Numer for local BGP deployment.
+
 _Required_: Yes
 
 _Type_: Double
@@ -34,6 +36,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DeploymentType
 
+`private` or `public`, the `private` is likely to be usable immediately, the `public` will need to be review by Packet engineers.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +45,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Md5
+
+Password for BGP session in plaintext (not a checksum).
 
 _Required_: No
 

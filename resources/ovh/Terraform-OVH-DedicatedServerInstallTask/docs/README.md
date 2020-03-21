@@ -1,6 +1,11 @@
 # Terraform::OVH::DedicatedServerInstallTask
 
-CloudFormation equivalent of ovh_dedicated_server_install_task
+Install your Dedicated Server.
+
+> NOTE: After some delay, if the task is marked as `done`, the Provider
+may purge it. To avoid raising errors when terraform refreshes its plan, 
+404 errors are ignored on Resource Read, thus some information may be lost
+after a while.
 
 ## Syntax
 
@@ -40,6 +45,8 @@ Properties:
 
 #### BootidOnDestroy
 
+If set, reboot the server on the specified boot id during destroy phase.
+
 _Required_: No
 
 _Type_: Double
@@ -47,6 +54,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PartitionSchemeName
+
+Partition scheme name.
 
 _Required_: No
 
@@ -56,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServiceName
 
+The service_name of your dedicated server.
+
 _Required_: Yes
 
 _Type_: String
@@ -63,6 +74,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TemplateName
+
+Template name.
 
 _Required_: Yes
 

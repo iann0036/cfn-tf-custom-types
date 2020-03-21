@@ -1,6 +1,8 @@
 # Terraform::BIGIP::Do
 
-CloudFormation equivalent of bigip_do
+`bigip_do` provides details about bigip do resource
+
+This resource is helpful to configure do declarative JSON on BIG-IP.
 
 ## Syntax
 
@@ -30,6 +32,8 @@ Properties:
 ## Properties
 
 #### DoJson
+
+Name of the of the Declarative DO JSON file.
 
 _Required_: Yes
 

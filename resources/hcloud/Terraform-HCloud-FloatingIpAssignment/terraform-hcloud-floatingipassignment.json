@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HCloud::FloatingIpAssignment",
-    "description": "CloudFormation equivalent of hcloud_floating_ip_assignment",
+    "description": "Provides a Hetzner Cloud Floating IP Assignment to assign a Floating IP to a Hetzner Cloud Server. Deleting a Floating IP Assignment will unassign the Floating IP from the Server.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "FloatingIpId": {
-            "type": "number"
+            "type": "number",
+            "description": "ID of the Floating IP.\n- `server_id` - (Required, int) Server to assign the Floating IP to."
         },
         "ServerId": {
-            "type": "number"
+            "type": "number",
+            "description": "Server to assign the Floating IP to."
         }
     },
     "additionalProperties": false,

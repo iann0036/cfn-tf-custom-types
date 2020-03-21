@@ -23,6 +23,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### PublicKeyCertificate
 
+The certificate format and data.
+
 _Required_: Yes
 
 _Type_: List of <a href="credentials-publickeycertificate.md">PublicKeyCertificate</a>

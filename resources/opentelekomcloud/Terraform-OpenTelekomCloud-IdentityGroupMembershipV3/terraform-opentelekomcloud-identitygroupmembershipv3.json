@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenTelekomCloud::IdentityGroupMembershipV3",
-    "description": "CloudFormation equivalent of opentelekomcloud_identity_group_membership_v3",
+    "description": "Manages a User Group Membership resource within OpentelekomCloud IAM service.\n\nNote: You _must_ have admin privileges in your OpentelekomCloud cloud to use\nthis resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,14 +9,16 @@
             "type": "string"
         },
         "Group": {
-            "type": "string"
+            "type": "string",
+            "description": "The group ID of this membership."
         },
         "Users": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A List of user IDs to associate to the group."
         }
     },
     "additionalProperties": false,

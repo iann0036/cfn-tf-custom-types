@@ -1,6 +1,6 @@
 # Terraform::Datadog::LogsIndex
 
-CloudFormation equivalent of datadog_logs_index
+Provides a Datadog [Logs Index API](https://docs.datadoghq.com/api/?lang=python#logs-indexes) resource. This can be used to create and manage Datadog logs indexes.
 
 ## Syntax
 
@@ -34,6 +34,9 @@ Properties:
 ## Properties
 
 #### Name
+
+The name of the exclusion filter.
+* `is_enabled` - (Optional, default = false) A boolean stating if the exclusion is active or not.
 
 _Required_: Yes
 

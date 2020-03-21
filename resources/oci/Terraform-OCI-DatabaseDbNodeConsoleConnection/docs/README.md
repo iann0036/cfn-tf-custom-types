@@ -1,6 +1,10 @@
 # Terraform::OCI::DatabaseDbNodeConsoleConnection
 
-CloudFormation equivalent of oci_database_db_node_console_connection
+This resource provides the Db Node Console Connection resource in Oracle Cloud Infrastructure Database service.
+
+Creates a new console connection to the specified dbNode.
+After the console connection has been created and is available,
+you connect to the console using SSH.
 
 ## Syntax
 
@@ -33,6 +37,8 @@ Properties:
 
 #### DbNodeId
 
+The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+
 _Required_: Yes
 
 _Type_: String
@@ -40,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PublicKey
+
+The SSH public key used to authenticate the console connection.
 
 _Required_: Yes
 

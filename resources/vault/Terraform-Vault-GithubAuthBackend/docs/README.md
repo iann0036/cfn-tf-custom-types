@@ -1,6 +1,8 @@
 # Terraform::Vault::GithubAuthBackend
 
-CloudFormation equivalent of vault_github_auth_backend
+Manages a Github Auth mount in a Vault server. See the [Vault
+documentation](https://www.vaultproject.io/docs/auth/github.html) for more
+information.
 
 ## Syntax
 
@@ -62,6 +64,9 @@ Properties:
 
 #### BaseUrl
 
+The API endpoint to use. Useful if you
+are running GitHub Enterprise or an API-compatible authentication server.
+
 _Required_: No
 
 _Type_: String
@@ -69,6 +74,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Specifies the description of the mount.
+This overrides the current stored value, if any.
 
 _Required_: No
 
@@ -86,6 +94,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Organization
 
+The organization configured users must be part of.
+
 _Required_: Yes
 
 _Type_: String
@@ -93,6 +103,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Path
+
+Path where the auth backend is mounted. Defaults to `auth/github`
+if not specified.
 
 _Required_: No
 
@@ -165,6 +178,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TokenType
+
+Specifies the type of tokens that should be returned by
+the mount. Valid values are "default-service", "default-batch", "service", "batch".
 
 _Required_: No
 

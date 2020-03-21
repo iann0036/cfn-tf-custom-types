@@ -27,6 +27,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Name
 
+One of the dimension names.
+
 _Required_: Yes
 
 _Type_: String
@@ -35,6 +37,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Operator
 
+The dimension operator. Possible values are `Include` and `Exclude`.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Values
+
+The list of dimension values.
 
 _Required_: Yes
 

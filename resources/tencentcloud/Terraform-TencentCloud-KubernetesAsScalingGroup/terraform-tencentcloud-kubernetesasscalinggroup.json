@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::KubernetesAsScalingGroup",
-    "description": "CloudFormation equivalent of tencentcloud_kubernetes_as_scaling_group",
+    "description": "Provide a resource to create an auto scaling group for kubernetes cluster.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "AutoScalingConfig": {
@@ -8,13 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "ConfigurationName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Name of a launch configuration."
                 },
                 "EnhancedMonitorService": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "To specify whether to enable cloud monitor service. Default is TRUE."
                 },
                 "EnhancedSecurityService": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "To specify whether to enable cloud security service. Default is TRUE."
                 },
                 "InstanceTags": {
                     "type": "array",
@@ -34,45 +37,56 @@
                             "Key",
                             "Value"
                         ]
-                    }
+                    },
+                    "description": "A list of tags used to associate different resources."
                 },
                 "InstanceType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specified types of CVM instance."
                 },
                 "InternetChargeType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Charge types for network traffic. Available values include `BANDWIDTH_PREPAID`, `TRAFFIC_POSTPAID_BY_HOUR`, `TRAFFIC_POSTPAID_BY_HOUR` and `BANDWIDTH_PACKAGE`."
                 },
                 "InternetMaxBandwidthOut": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Max bandwidth of Internet access in Mbps. Default is 0."
                 },
                 "KeyIds": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "ID list of keys."
                 },
                 "Password": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Password to access."
                 },
                 "ProjectId": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Specifys to which project the configuration belongs."
                 },
                 "PublicIpAssigned": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Specify whether to assign an Internet IP address."
                 },
                 "SecurityGroupIds": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Security groups to which a CVM instance belongs."
                 },
                 "SystemDiskSize": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Volume of system disk in GB. Default is 50."
                 },
                 "SystemDiskType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Type of a CVM disk, and available values include CLOUD_PREMIUM and CLOUD_SSD. Default is CLOUD_PREMIUM."
                 },
                 "DataDisk": {
                     "type": "array",
@@ -92,39 +106,48 @@
             "additionalProperties": false,
             "properties": {
                 "DefaultCooldown": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Default cooldown time in second, and default value is 300."
                 },
                 "DesiredCapacity": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Desired volume of CVM instances, which is between max_size and min_size."
                 },
                 "LoadBalancerIds": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "ID list of traditional load balancers."
                 },
                 "MaxSize": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Maximum number of CVM instances (0~2000)."
                 },
                 "MinSize": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Minimum number of CVM instances (0~2000)."
                 },
                 "ProjectId": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Specifys to which project the scaling group belongs."
                 },
                 "RetryPolicy": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Available values for retry policies include IMMEDIATE_RETRY and INCREMENTAL_INTERVALS."
                 },
                 "ScalingGroupName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Name of a scaling group."
                 },
                 "SubnetIds": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "ID list of subnet, and for VPC it is required."
                 },
                 "Tags": {
                     "type": "array",
@@ -144,24 +167,28 @@
                             "Key",
                             "Value"
                         ]
-                    }
+                    },
+                    "description": "Tags of a scaling group."
                 },
                 "TerminationPolicies": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Available values for termination policies include OLDEST_INSTANCE and NEWEST_INSTANCE."
                 },
                 "VpcId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "ID of VPC network."
                 },
                 "Zones": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "List of available zones, for Basic network it is required."
                 },
                 "ForwardBalancerIds": {
                     "type": "array",
@@ -183,13 +210,16 @@
             "additionalProperties": false,
             "properties": {
                 "DiskSize": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Volume of disk in GB. Default is 0."
                 },
                 "DiskType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Types of disk, available values: CLOUD_PREMIUM and CLOUD_SSD."
                 },
                 "SnapshotId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Data disk snapshot ID."
                 }
             },
             "required": []
@@ -199,13 +229,16 @@
             "additionalProperties": false,
             "properties": {
                 "ListenerId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Listener ID for application load balancers."
                 },
                 "LoadBalancerId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "ID of available load balancers."
                 },
                 "RuleId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "ID of forwarding rules."
                 },
                 "TargetAttribute": {
                     "type": "array",
@@ -225,10 +258,12 @@
             "additionalProperties": false,
             "properties": {
                 "Port": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Port number."
                 },
                 "Weight": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Weight."
                 }
             },
             "required": [
@@ -243,7 +278,8 @@
             "type": "string"
         },
         "ClusterId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the cluster."
         },
         "AutoScalingConfig": {
             "type": "array",

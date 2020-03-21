@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::DnsCaaRecord",
-    "description": "CloudFormation equivalent of azurerm_dns_caa_record",
+    "description": "Enables you to manage DNS CAA Records within Azure DNS.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Record": {
@@ -8,13 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "Flags": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Extensible CAA flags, currently only 1 is implemented to set the issuer critical flag."
                 },
                 "Tag": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A property tag, options are issue, issuewild and iodef."
                 },
                 "Value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A property value such as a registrar domain."
                 }
             },
             "required": [
@@ -52,10 +55,12 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the DNS CAA Record. If you are creating the record in the apex of the zone use `\"@\"` as the name."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the resource group where the DNS Zone (parent resource) exists. Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -75,13 +80,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Ttl": {
-            "type": "number"
+            "type": "number",
+            "description": "The Time To Live (TTL) of the DNS record in seconds."
         },
         "ZoneName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the DNS Zone where the resource exists. Changing this forces a new resource to be created."
         },
         "Record": {
             "type": "array",

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::ObjectstorageObjectV1",
-    "description": "CloudFormation equivalent of openstack_objectstorage_object_v1",
+    "description": "Manages a V1 container object resource within OpenStack.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,40 +9,50 @@
             "type": "string"
         },
         "ContainerName": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique (within an account) name for the container.\nThe container name must be from 1 to 256 characters long and can start\nwith any character and contain any pattern. Character set must be UTF-8.\nThe container name cannot contain a slash (/) character because this\ncharacter delimits the container and object name. For example, the path\n/v1/account/www/pages specifies the www container, not the www/pages container."
         },
         "Content": {
-            "type": "string"
+            "type": "string",
+            "description": "A string representing the content of the object. Conflicts with\n`source` and `copy_from`."
         },
         "ContentDisposition": {
-            "type": "string"
+            "type": "string",
+            "description": "A string which specifies the override behavior for\nthe browser. For example, this header might specify that the browser use a download\nprogram to save this file rather than show the file, which is the default."
         },
         "ContentEncoding": {
-            "type": "string"
+            "type": "string",
+            "description": "A string representing the value of the Content-Encoding\nmetadata."
         },
         "ContentLength": {
             "type": "number"
         },
         "ContentType": {
-            "type": "string"
+            "type": "string",
+            "description": "A string which sets the MIME type for the object."
         },
         "CopyFrom": {
-            "type": "string"
+            "type": "string",
+            "description": "A string representing the name of an object\nused to create the new object by copying the `copy_from` object. The value is in form\n{container}/{object}. You must UTF-8-encode and then URL-encode the names of the\ncontainer and object before you include them in the header. Conflicts with `source` and\n`content`."
         },
         "Date": {
             "type": "string"
         },
         "DeleteAfter": {
-            "type": "number"
+            "type": "number",
+            "description": "An integer representing the number of seconds after which the\nsystem removes the object. Internally, the Object Storage system stores this value in\nthe X-Delete-At metadata item."
         },
         "DeleteAt": {
-            "type": "string"
+            "type": "string",
+            "description": "An string representing the date when the system removes the object.\nFor example, \"2015-08-26\" is equivalent to Mon, Wed, 26 Aug 2015 00:00:00 GMT."
         },
         "DetectContentType": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If set to true, Object Storage guesses the content\ntype based on the file extension and ignores the value sent in the Content-Type\nheader, if present."
         },
         "Etag": {
-            "type": "string"
+            "type": "string",
+            "description": "Used to trigger updates. The only meaningful value is ${md5(file(\"path/to/file\"))}."
         },
         "LastModified": {
             "type": "string"
@@ -68,16 +78,20 @@
             }
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique name for the object."
         },
         "ObjectManifest": {
-            "type": "string"
+            "type": "string",
+            "description": "A string set to specify that this is a dynamic large\nobject manifest object. The value is the container and object name prefix of the\nsegment objects in the form container/prefix. You must UTF-8-encode and then\nURL-encode the names of the container and prefix before you include them in this\nheader."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to create the container. If\nomitted, the `region` argument of the provider is used. Changing this\ncreates a new container."
         },
         "Source": {
-            "type": "string"
+            "type": "string",
+            "description": "A string representing the local path of a file which will be used\nas the object's content. Conflicts with `source` and `copy_from`."
         },
         "TransId": {
             "type": "string"

@@ -1,6 +1,6 @@
 # Terraform::OpsGenie::TeamRoutingRule
 
-CloudFormation equivalent of opsgenie_team_routing_rule
+Manages a Team Routing Rule within Opsgenie.
 
 ## Syntax
 
@@ -53,6 +53,8 @@ Properties:
 
 #### Name
 
+(Optional) Name of the team routing rule.
+
 _Required_: Yes
 
 _Type_: String
@@ -60,6 +62,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Order
+
+(Optional) The order of the team routing rule within the rules. order value is actually the index of the team routing rule whose minimum value is 0 and whose maximum value is n-1 (number of team routing rules is n).
 
 _Required_: Yes
 
@@ -76,6 +80,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Timezone
+
+(Optional) Timezone of team routing rule. If timezone field is not given, account timezone is used as default.You can refer to Supported Locale IDs for available timezones.
 
 _Required_: Yes
 

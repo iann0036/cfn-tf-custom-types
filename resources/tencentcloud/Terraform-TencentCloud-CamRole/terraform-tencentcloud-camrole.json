@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::CamRole",
-    "description": "CloudFormation equivalent of tencentcloud_cam_role",
+    "description": "Provides a resource to create a CAM role.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,19 +9,23 @@
             "type": "string"
         },
         "ConsoleLogin": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicade whether the CAM role can login or not."
         },
         "CreateTime": {
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the CAM role."
         },
         "Document": {
-            "type": "string"
+            "type": "string",
+            "description": "Document of the CAM role. The syntax refers to https://intl.cloud.tencent.com/document/product/598/10604. There are some notes when using this para in terraform: 1. The elements in json claimed supporting two types as `string` and `array` only support type `array`; 2. Terraform does not support the `root` syntax, when appears, it must be replaced with the uin it stands for."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of CAM role."
         },
         "UpdateTime": {
             "type": "string"

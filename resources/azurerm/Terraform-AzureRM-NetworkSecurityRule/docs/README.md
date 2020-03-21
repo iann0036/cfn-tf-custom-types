@@ -1,6 +1,10 @@
 # Terraform::AzureRM::NetworkSecurityRule
 
-CloudFormation equivalent of azurerm_network_security_rule
+Manages a Network Security Rule.
+
+~> **NOTE on Network Security Groups and Network Security Rules:** Terraform currently
+provides both a standalone [Network Security Rule resource](network_security_rule.html), and allows for Network Security Rules to be defined in-line within the [Network Security Group resource](network_security_group.html).
+At this time you cannot use a Network Security Group with in-line Network Security Rules in conjunction with any Network Security Rule resources. Doing so will cause a conflict of rule settings and will overwrite rules.
 
 ## Syntax
 
@@ -71,6 +75,8 @@ Properties:
 
 #### Access
 
+Specifies whether network traffic is allowed or denied. Possible values are `Allow` and `Deny`.
+
 _Required_: Yes
 
 _Type_: String
@@ -78,6 +84,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+A description for this rule. Restricted to 140 characters.
 
 _Required_: No
 
@@ -87,6 +95,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DestinationAddressPrefix
 
+CIDR or destination IP range or * to match any IP. Tags such as ‘VirtualNetwork’, ‘AzureLoadBalancer’ and ‘Internet’ can also be used. This is required if `destination_address_prefixes` is not specified.
+
 _Required_: No
 
 _Type_: String
@@ -94,6 +104,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DestinationAddressPrefixes
+
+List of destination address prefixes. Tags may not be used. This is required if `destination_address_prefix` is not specified.
 
 _Required_: No
 
@@ -103,6 +115,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DestinationApplicationSecurityGroupIds
 
+A List of destination Application Security Group ID's.
+
 _Required_: No
 
 _Type_: List of String
@@ -110,6 +124,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DestinationPortRange
+
+Destination Port or Range. Integer or range between `0` and `65535` or `*` to match any. This is required if `destination_port_ranges` is not specified.
 
 _Required_: No
 
@@ -119,6 +135,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DestinationPortRanges
 
+List of destination ports or port ranges. This is required if `destination_port_range` is not specified.
+
 _Required_: No
 
 _Type_: List of String
@@ -126,6 +144,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Direction
+
+The direction specifies if rule will be evaluated on incoming or outgoing traffic. Possible values are `Inbound` and `Outbound`.
 
 _Required_: Yes
 
@@ -135,6 +155,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the security rule. This needs to be unique across all Rules in the Network Security Group. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -142,6 +164,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NetworkSecurityGroupName
+
+The name of the Network Security Group that we want to attach the rule to. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -151,6 +175,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Priority
 
+Specifies the priority of the rule. The value can be between 100 and 4096. The priority number must be unique for each rule in the collection. The lower the priority number, the higher the priority of the rule.
+
 _Required_: Yes
 
 _Type_: Double
@@ -158,6 +184,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Protocol
+
+Network protocol this rule applies to. Possible values include `Tcp`, `Udp`, `Icmp`, or `*` (which matches all).
 
 _Required_: Yes
 
@@ -167,6 +195,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to create the Network Security Rule. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -174,6 +204,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SourceAddressPrefix
+
+CIDR or source IP range or * to match any IP. Tags such as ‘VirtualNetwork’, ‘AzureLoadBalancer’ and ‘Internet’ can also be used. This is required if `source_address_prefixes` is not specified.
 
 _Required_: No
 
@@ -183,6 +215,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SourceAddressPrefixes
 
+List of source address prefixes. Tags may not be used. This is required if `source_address_prefix` is not specified.
+
 _Required_: No
 
 _Type_: List of String
@@ -190,6 +224,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SourceApplicationSecurityGroupIds
+
+A List of source Application Security Group ID's.
 
 _Required_: No
 
@@ -199,6 +235,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SourcePortRange
 
+Source Port or Range. Integer or range between `0` and `65535` or `*` to match any. This is required if `source_port_ranges` is not specified.
+
 _Required_: No
 
 _Type_: String
@@ -206,6 +244,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SourcePortRanges
+
+List of source ports or port ranges. This is required if `source_port_range` is not specified.
 
 _Required_: No
 

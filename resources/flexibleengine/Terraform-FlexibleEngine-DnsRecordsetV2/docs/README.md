@@ -1,6 +1,6 @@
 # Terraform::FlexibleEngine::DnsRecordsetV2
 
-CloudFormation equivalent of flexibleengine_dns_recordset_v2
+Manages a DNS record set in the FlexibleEngine DNS Service.
 
 ## Syntax
 
@@ -47,6 +47,8 @@ Properties:
 
 #### Description
 
+A description of the record set.
+
 _Required_: No
 
 _Type_: String
@@ -54,6 +56,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the record set. Note the `.` at the end of the name.
+Changing this creates a new DNS record set.
 
 _Required_: Yes
 
@@ -63,6 +68,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Records
 
+An array of DNS records.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -70,6 +77,10 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region in which to obtain the V2 DNS client.
+If omitted, the `region` argument of the provider is used.
+Changing this creates a new DNS record set.
 
 _Required_: No
 
@@ -79,6 +90,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ttl
 
+The time to live (TTL) of the record set (in seconds). The value
+range is 300–2147483647. The default value is 300.
+
 _Required_: No
 
 _Type_: Double
@@ -86,6 +100,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The type of record set. The options include `A`, `AAAA`, `MX`,
+`CNAME`, `TXT`, `NS`, `SRV`, and `PTR`. Changing this creates a new DNS record set.
 
 _Required_: Yes
 
@@ -95,6 +112,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ValueSpecs
 
+Map of additional options. Changing this creates a
+new record set.
+
 _Required_: No
 
 _Type_: List of <a href="valuespecs.md">ValueSpecs</a>
@@ -102,6 +122,9 @@ _Type_: List of <a href="valuespecs.md">ValueSpecs</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneId
+
+The ID of the zone in which to create the record set.
+Changing this creates a new DNS  record set.
 
 _Required_: Yes
 

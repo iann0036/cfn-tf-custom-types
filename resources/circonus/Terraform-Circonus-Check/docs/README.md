@@ -1,6 +1,14 @@
 # Terraform::Circonus::Check
 
-CloudFormation equivalent of circonus_check
+The ``circonus_check`` resource creates and manages a
+[Circonus Check](https://login.circonus.com/resources/api/calls/check_bundle).
+
+~> **NOTE regarding `circonus_check` vs a Circonus Check Bundle:** The
+`circonus_check` resource is implemented in terms of a
+[Circonus Check Bundle](https://login.circonus.com/resources/api/calls/check_bundle).
+The `circonus_check` creates a higher-level abstraction over the implementation
+of a Check Bundle.  As such, the naming and structure does not map 1:1 with the
+underlying Circonus API.
 
 ## Syntax
 
@@ -115,6 +123,9 @@ Properties:
 
 #### Active
 
+Whether or not the check is enabled or not (default
+`true`).
+
 _Required_: No
 
 _Type_: Boolean
@@ -122,6 +133,13 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MetricLimit
+
+Setting a metric limit will tell the Circonus
+backend to periodically look at the check to see if there are additional
+metrics the collector has seen that we should collect. It will not reactivate
+metrics previously collected and then marked as inactive. Values are `0` to
+disable, `-1` to enable all metrics or `N+` to collect up to the value `N`
+(both `-1` and `N+` can not exceed other account restrictions).
 
 _Required_: No
 
@@ -131,6 +149,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the check that will be displayed in the web
+interface.
+
 _Required_: No
 
 _Type_: String
@@ -138,6 +159,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Notes
+
+Notes about this check.
 
 _Required_: No
 
@@ -147,6 +170,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Period
 
+The period between each time the check is made in
+seconds. Default is `"60s"`.
+
 _Required_: No
 
 _Type_: String
@@ -154,6 +180,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A list of tags assigned to this check.
 
 _Required_: No
 
@@ -163,6 +191,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Target
 
+A string containing the location of the thing being
+checked.  This value changes based on the check type.  For example, for an
+`http` check type this would be the URL you're checking. For a DNS check it
+would be the hostname you wanted to look up.
+
 _Required_: No
 
 _Type_: String
@@ -170,6 +203,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Timeout
+
+A string representing the maximum number
+of seconds this check should wait for a result.  Defaults to `"10s"`.
 
 _Required_: No
 

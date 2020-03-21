@@ -1,6 +1,28 @@
 # Terraform::Alicloud::CsKubernetes
 
-CloudFormation equivalent of alicloud_cs_kubernetes
+This resource will help you to manage a Kubernetes Cluster in Alibaba Cloud Kubernetes Service. 
+
+-> **NOTE:** Kubernetes cluster only supports VPC network and it can access internet while creating kubernetes cluster.
+A Nat Gateway and configuring a SNAT for it can ensure one VPC network access internet. If there is no nat gateway in the
+VPC, you can set `new_nat_gateway` to "true" to create one automatically.
+
+-> **NOTE:** Each kubernetes cluster contains 3 master nodes and those number cannot be changed at now.
+
+-> **NOTE:** Creating kubernetes cluster need to install several packages and it will cost about 15 minutes. Please be patient.
+
+-> **NOTE:** From version 1.9.4, the provider supports to download kube config, client certificate, client key and cluster ca certificate
+after creating cluster successfully, and you can put them into the specified location, like '~/.kube/config'.
+
+-> **NOTE:** From version 1.16.0, the provider supports Multiple Availability Zones Kubernetes Cluster. To create a cluster of this kind, you must specify 3 or 5 items in `master_vswitch_ids` and `master_instance_types`.
+
+-> **NOTE:** From version 1.20.0, the provider supports disabling internet load balancer for API Server by setting `false` to `slb_internet_enabled`.
+
+-> **NOTE:** If you want to manage Kubernetes, you can use [Kubernetes Provider](https://www.terraform.io/docs/providers/kubernetes/index.html).
+
+-> **NOTE:** You need to activate several other products and confirm Authorization Policy used by Container Service before using this resource.
+Please refer to the `Authorization management` and `Cluster management` sections in the [Document Center](https://www.alibabacloud.com/help/doc-detail/86488.htm).
+
+-> **NOTE:** From version 1.75.0, Some parameters have been removed from resource,You can check them below and re-import the cluster if necessary.
 
 ## Syntax
 

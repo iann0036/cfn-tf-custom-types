@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::UCloud::LbSsl",
-    "description": "CloudFormation equivalent of ucloud_lb_ssl",
+    "description": "Provides a Load Balancer SSL certificate resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,19 +9,23 @@
             "type": "string"
         },
         "CaCert": {
-            "type": "string"
+            "type": "string",
+            "description": "The content of the CA certificate about ssl certificate."
         },
         "CreateTime": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the LB ssl, which contains 1-63 characters and only support Chinese, English, numbers, '-', '_', '.'. If not specified, terraform will auto-generate a name beginning with `tf-lb-ssl`."
         },
         "PrivateKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The content of the private key about ssl certificate."
         },
         "UserCert": {
-            "type": "string"
+            "type": "string",
+            "description": "The content of the user certificate about ssl certificate."
         }
     },
     "additionalProperties": false,

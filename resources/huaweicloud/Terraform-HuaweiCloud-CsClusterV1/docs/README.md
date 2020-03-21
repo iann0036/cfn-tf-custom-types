@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::CsClusterV1
 
-CloudFormation equivalent of huaweicloud_cs_cluster_v1
+Cloud Stream Service cluster management
 
 ## Syntax
 

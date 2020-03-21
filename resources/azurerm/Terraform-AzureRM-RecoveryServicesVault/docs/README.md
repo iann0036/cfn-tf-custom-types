@@ -1,6 +1,6 @@
 # Terraform::AzureRM::RecoveryServicesVault
 
-CloudFormation equivalent of azurerm_recovery_services_vault
+Manages an Recovery Services Vault.
 
 ## Syntax
 
@@ -42,6 +42,8 @@ Properties:
 
 #### Location
 
+Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +51,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the Recovery Services Vault. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -58,6 +62,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to create the Recovery Services Vault. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -65,6 +71,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Sku
+
+Sets the vault's SKU. Possible values include: `Standard`, `RS0`.
 
 _Required_: Yes
 
@@ -74,6 +82,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SoftDeleteEnabled
 
+Is soft delete enable for this Vault? Defaults to `true`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -81,6 +91,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

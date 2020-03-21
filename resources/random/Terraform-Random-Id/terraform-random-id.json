@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Random::Id",
-    "description": "CloudFormation equivalent of random_id",
+    "description": "The resource `random_id` generates random numbers that are intended to be\nused as unique identifiers for other resources.\n\nThis resource *does* use a cryptographic random number generator in order\nto minimize the chance of collisions, making the results of this resource\nwhen a 16-byte identifier is requested of equivalent uniqueness to a\ntype-4 UUID.\n\nThis resource can be used in conjunction with resources that have\nthe `create_before_destroy` lifecycle flag set to avoid conflicts with\nunique names during the brief period where both the old and new resources\nexist concurrently.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -18,7 +18,8 @@
             "type": "string"
         },
         "ByteLength": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of random bytes to produce. The\nminimum value is 1, which produces eight bits of randomness."
         },
         "Dec": {
             "type": "string"
@@ -44,10 +45,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Arbitrary map of values that, when changed, will\ntrigger a new id to be generated. See\n[the main provider documentation](../index.html) for more information."
         },
         "Prefix": {
-            "type": "string"
+            "type": "string",
+            "description": "Arbitrary string to prefix the output value with. This\nstring is supplied as-is, meaning it is not guaranteed to be URL-safe or\nbase64 encoded."
         }
     },
     "additionalProperties": false,

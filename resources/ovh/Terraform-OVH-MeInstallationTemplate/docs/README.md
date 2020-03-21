@@ -1,6 +1,6 @@
 # Terraform::OVH::MeInstallationTemplate
 
-CloudFormation equivalent of ovh_me_installation_template
+Use this resource to create a custom installation template available for dedicated servers.
 
 ## Syntax
 

@@ -1,6 +1,6 @@
 # Terraform::AzureRM::MonitorActionGroup
 
-CloudFormation equivalent of azurerm_monitor_action_group
+Manages an Action Group within Azure Monitor.
 
 ## Syntax
 
@@ -70,6 +70,8 @@ Properties:
 
 #### Enabled
 
+Whether this action group is enabled. If an action group is not enabled, then none of its receivers will receive communications. Defaults to `true`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -77,6 +79,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the Action Group. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -86,6 +90,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to create the Action Group instance.
+
 _Required_: Yes
 
 _Type_: String
@@ -94,6 +100,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ShortName
 
+The short name of the action group. This will be used in SMS messages.
+
 _Required_: Yes
 
 _Type_: String
@@ -101,6 +109,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::SecurityGroup",
-    "description": "CloudFormation equivalent of tencentcloud_security_group",
+    "description": "Provides a resource to create security group.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the security group."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the security group to be queried."
         },
         "ProjectId": {
-            "type": "number"
+            "type": "number",
+            "description": "Project ID of the security group."
         },
         "Tags": {
             "type": "array",
@@ -35,7 +38,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Tags of the security group."
         }
     },
     "additionalProperties": false,

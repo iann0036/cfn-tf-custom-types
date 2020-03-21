@@ -1,6 +1,6 @@
 # Terraform::AzureRM::LogAnalyticsLinkedService
 
-CloudFormation equivalent of azurerm_log_analytics_linked_service
+Links a Log Analytics (formally Operational Insights) Workspace to another resource. The (currently) only linkable service is an Azure Automation Account.
 
 ## Syntax
 
@@ -40,6 +40,8 @@ Properties:
 
 #### LinkedServiceName
 
+Name of the type of linkedServices resource to connect to the Log Analytics Workspace specified in `workspace_name`. Currently it defaults to and only supports `automation` as a value. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -47,6 +49,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which the Log Analytics Linked Service is created. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -56,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceId
 
+The ID of the Resource that will be linked to the workspace. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -64,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -71,6 +79,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WorkspaceName
+
+Name of the Log Analytics Workspace that will contain the linkedServices resource. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

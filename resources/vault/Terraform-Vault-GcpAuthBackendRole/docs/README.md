@@ -1,6 +1,6 @@
 # Terraform::Vault::GcpAuthBackendRole
 
-CloudFormation equivalent of vault_gcp_auth_backend_role
+Provides a resource to create a role in an [GCP auth backend within Vault](https://www.vaultproject.io/docs/auth/gcp.html).
 
 ## Syntax
 
@@ -104,6 +104,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Backend
 
+Path to the mounted GCP auth backend.
+
 _Required_: No
 
 _Type_: String
@@ -128,6 +130,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### BoundProjects
 
+An array of GCP project IDs. Only entities belonging to this project can authenticate under the role.
+
 _Required_: No
 
 _Type_: List of String
@@ -143,6 +147,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BoundServiceAccounts
+
+GCP Service Accounts allowed to issue tokens under this role. (Note: **Required** if role is `iam`).
 
 _Required_: No
 
@@ -192,6 +198,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProjectId
 
+GCP Project that the role exists within.
+
 _Required_: No
 
 _Type_: String
@@ -199,6 +207,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Role
+
+Name of the GCP role.
 
 _Required_: Yes
 
@@ -287,6 +297,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+Type of GCP authentication role (either `gce` or `iam`).
 
 _Required_: Yes
 

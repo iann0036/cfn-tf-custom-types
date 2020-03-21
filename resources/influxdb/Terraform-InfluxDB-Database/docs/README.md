@@ -1,6 +1,6 @@
 # Terraform::InfluxDB::Database
 
-CloudFormation equivalent of influxdb_database
+The database resource allows a database to be created on an InfluxDB server.
 
 ## Syntax
 
@@ -31,6 +31,9 @@ Properties:
 ## Properties
 
 #### Name
+
+The name for the database. This must be unique on the
+InfluxDB server.
 
 _Required_: Yes
 

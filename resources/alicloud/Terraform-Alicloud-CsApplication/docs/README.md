@@ -1,6 +1,13 @@
 # Terraform::Alicloud::CsApplication
 
-CloudFormation equivalent of alicloud_cs_application
+-> **DEPRECATED:** This resource manages applications in swarm cluster only, which is being deprecated and will be replaced by Kubernetes cluster.
+
+This resource use an orchestration template to define and deploy a multi-container application. An application is created by using an orchestration template.
+Each application can contain one or more services.
+
+-> **NOTE:** Application orchestration template must be a valid Docker Compose YAML template.
+
+-> **NOTE:** At present, this resource only support swarm cluster.
 
 ## Syntax
 
@@ -46,6 +53,8 @@ Properties:
 
 #### BlueGreen
 
+Wherther to use "Blue Green" method when release a new version. Default to false.
+
 _Required_: No
 
 _Type_: Boolean
@@ -53,6 +62,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BlueGreenConfirm
+
+Whether to confirm a "Blue Green" application. Default to false. It will be ignored when `blue_green` is false.
 
 _Required_: No
 
@@ -62,6 +73,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ClusterName
 
+The swarm cluster's name.
+
 _Required_: Yes
 
 _Type_: String
@@ -69,6 +82,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+The description of application.
 
 _Required_: No
 
@@ -78,6 +93,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Environment
 
+A key/value map used to replace the variable parameter in the Compose template.
+
 _Required_: No
 
 _Type_: List of <a href="environment.md">Environment</a>
@@ -85,6 +102,8 @@ _Type_: List of <a href="environment.md">Environment</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LatestImage
+
+Whether to use latest docker image while each updating application. Default to false.
 
 _Required_: No
 
@@ -94,6 +113,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The application name. It should be 1-64 characters long, and can contain numbers, English letters and hyphens, but cannot start with hyphens.
+
 _Required_: Yes
 
 _Type_: String
@@ -102,6 +123,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Template
 
+The application deployment template and it must be [Docker Compose format](https://docs.docker.com/compose/).
+
 _Required_: Yes
 
 _Type_: String
@@ -109,6 +132,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Version
+
+The application deploying version. Each updating, it must be different with current. Default to "1.0".
 
 _Required_: No
 

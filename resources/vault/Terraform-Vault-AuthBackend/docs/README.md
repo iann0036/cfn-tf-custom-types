@@ -52,6 +52,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+A description of the auth method.
+
 _Required_: No
 
 _Type_: String
@@ -67,6 +69,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Local
+
+Specifies if the auth method is local only.
 
 _Required_: No
 
@@ -84,6 +88,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Path
 
+The path to mount the auth method — this defaults to the name of the type.
+
 _Required_: No
 
 _Type_: String
@@ -92,6 +98,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tune
 
+Extra configuration block. Structure is documented below.
+
 _Required_: No
 
 _Type_: List of <a href="tune.md">Tune</a>
@@ -99,6 +107,8 @@ _Type_: List of <a href="tune.md">Tune</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The name of the auth method type.
 
 _Required_: Yes
 

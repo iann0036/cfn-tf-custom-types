@@ -24,6 +24,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### TargetBucket
 
+The name of the bucket that will receive the log objects.
+The acl policy of the target bucket should be `log-delivery-write`.
+
 _Required_: Yes
 
 _Type_: String
@@ -31,6 +34,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TargetPrefix
+
+To specify a key prefix for log objects.
 
 _Required_: No
 

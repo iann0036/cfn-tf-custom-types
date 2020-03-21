@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::DayuCcHttpPolicy
 
-CloudFormation equivalent of tencentcloud_dayu_cc_http_policy
+Use this resource to create a dayu CC self-define http policy
 
 ## Syntax
 
@@ -46,6 +46,8 @@ Properties:
 
 #### Action
 
+Action mode, only valid when `smode` is `matching`. Valid values are `alg` and `drop`.
+
 _Required_: No
 
 _Type_: String
@@ -53,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Frequency
+
+Max frequency per minute, only valid when `smode` is `speedlimit`, the valid value ranges from 1 to 10000.
 
 _Required_: No
 
@@ -62,6 +66,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ip
 
+Ip of the CC self-define http policy, only valid when `resource_type` is `bgp-multip`. The num of list items can only be set one.
+
 _Required_: No
 
 _Type_: String
@@ -69,6 +75,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of the CC self-define http policy. Length should between 1 and 20.
 
 _Required_: Yes
 
@@ -78,6 +86,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceId
 
+ID of the resource that the CC self-define http policy works for.
+
 _Required_: Yes
 
 _Type_: String
@@ -85,6 +95,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceType
+
+Type of the resource that the CC self-define http policy works for, valid values are `bgpip`, `bgp`, `bgp-multip` and `net`.
 
 _Required_: Yes
 
@@ -94,6 +106,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Smode
 
+Match mode, and valid values are `matching`, `speedlimit`. Note: the speed limit type CC self-define policy can only set one.
+
 _Required_: No
 
 _Type_: String
@@ -101,6 +115,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Switch
+
+Indicate the CC self-define http policy takes effect or not.
 
 _Required_: No
 

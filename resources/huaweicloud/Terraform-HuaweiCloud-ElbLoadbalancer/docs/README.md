@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::ElbLoadbalancer
 
-CloudFormation equivalent of huaweicloud_elb_loadbalancer
+Manages an elastic loadbalancer resource within huawei cloud.
 
 ## Syntax
 
@@ -55,6 +55,12 @@ Properties:
 
 #### AdminStateUp
 
+Specifies the status of the load balancer.
+Value range: 0 or false: indicates that the load balancer is stopped. Only
+tenants are allowed to enter these two values. 1 or true: indicates that
+the load balancer is running properly. 2 or false: indicates that the load
+balancer is frozen. Only tenants are allowed to enter these two values.
+
 _Required_: Yes
 
 _Type_: Double
@@ -62,6 +68,10 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Az
+
+Specifies the ID of the availability zone (AZ). This
+parameter is mandatory when type is set to Internal, and it is invalid
+when type is set to External.
 
 _Required_: No
 
@@ -71,6 +81,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Bandwidth
 
+Specifies the bandwidth (Mbit/s). This parameter
+is mandatory when type is set to External, and it is invalid when type
+is set to Internal. The value ranges from 1 to 300.
+
 _Required_: No
 
 _Type_: Double
@@ -78,6 +92,10 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ChargeMode
+
+This is a reserved field. If the system supports
+charging by traffic and this field is specified, then you are charged by
+traffic for elastic IP addresses. The value is traffic.
 
 _Required_: No
 
@@ -87,6 +105,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+Provides supplementary information about the
+listener. The value is a string of 0 to 128 characters and cannot be <>.
+
 _Required_: No
 
 _Type_: String
@@ -94,6 +115,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EipType
+
+This parameter is reserved.
 
 _Required_: No
 
@@ -103,6 +126,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the load balancer name. The name is a string
+of 1 to 64 characters that consist of letters, digits, underscores (_),
+and hyphens (-).
+
 _Required_: Yes
 
 _Type_: String
@@ -110,6 +137,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecurityGroupId
+
+Specifies the security group ID. The
+value is a string of 1 to 200 characters that consists of uppercase and
+lowercase letters, digits, and hyphens (-). This parameter is mandatory
+only when type is set to Internal.
 
 _Required_: No
 
@@ -119,6 +151,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tenantid
 
+Specifies the tenant ID. This parameter is mandatory
+only when type is set to Internal.
+
 _Required_: No
 
 _Type_: String
@@ -126,6 +161,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+Specifies the load balancer type. The value can be
+Internal or External.
 
 _Required_: Yes
 
@@ -135,6 +173,13 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VipAddress
 
+Specifies the IP address provided by ELB.
+When typeis set to External, the value of this parameter is the elastic
+IP address. When type is set to Internal, the value of this parameter is
+the private network IP address. You can select an existing elastic IP address
+and create a public network load balancer. When this parameter is configured,
+parameters bandwidth, charge_mode, and eip_type are invalid.
+
 _Required_: No
 
 _Type_: String
@@ -143,6 +188,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VipSubnetId
 
+Specifies the ID of the private network
+to be added. This parameter is mandatory when type is set to Internal,
+and it is invalid when type is set to External.
+
 _Required_: No
 
 _Type_: String
@@ -150,6 +199,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+Specifies the VPC ID.
 
 _Required_: Yes
 

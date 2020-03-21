@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Linode::NodebalancerNode",
-    "description": "CloudFormation equivalent of linode_nodebalancer_node",
+    "description": "Provides a Linode NodeBalancer Node resource.  This can be used to create, modify, and delete Linodes NodeBalancer Nodes.\nFor more information, see [Getting Started with NodeBalancers](https://www.linode.com/docs/platform/nodebalancer/getting-started-with-nodebalancers/) and the [Linode APIv4 docs](https://developers.linode.com/api/v4#operation/createNodeBalancerNode).\n\nThe Linode Guide, [Create a NodeBalancer with Terraform](https://www.linode.com/docs/applications/configuration-management/create-a-nodebalancer-with-terraform/), provides step-by-step guidance and additional examples.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,25 +9,31 @@
             "type": "string"
         },
         "Address": {
-            "type": "string"
+            "type": "string",
+            "description": "The private IP Address where this backend can be reached. This must be a private IP address."
         },
         "ConfigId": {
-            "type": "number"
+            "type": "number",
+            "description": "The ID of the NodeBalancerConfig to access."
         },
         "Label": {
-            "type": "string"
+            "type": "string",
+            "description": "The label of the Linode NodeBalancer Node. This is for display purposes only."
         },
         "Mode": {
-            "type": "string"
+            "type": "string",
+            "description": "The mode this NodeBalancer should use when sending traffic to this backend. If set to `accept` this backend is accepting traffic. If set to `reject` this backend will not receive traffic. If set to `drain` this backend will not receive new traffic, but connections already pinned to it will continue to be routed to it."
         },
         "NodebalancerId": {
-            "type": "number"
+            "type": "number",
+            "description": "The ID of the NodeBalancer to access."
         },
         "Status": {
             "type": "string"
         },
         "Weight": {
-            "type": "number"
+            "type": "number",
+            "description": "Used when picking a backend to serve a request and is not pinned to a single backend yet. Nodes with a higher weight will receive more traffic. (1-255)."
         }
     },
     "additionalProperties": false,

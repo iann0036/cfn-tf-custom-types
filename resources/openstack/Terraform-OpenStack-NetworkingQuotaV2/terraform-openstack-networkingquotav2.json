@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::NetworkingQuotaV2",
-    "description": "CloudFormation equivalent of openstack_networking_quota_v2",
+    "description": "Manages a V2 networking quota resource within OpenStack.\n\n~> **Note:** This usually requires admin privileges.\n\n~> **Note:** This resource has a no-op deletion so no actual actions will be done against the OpenStack API \n    in case of delete call.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,37 +26,48 @@
             "type": "string"
         },
         "Floatingip": {
-            "type": "number"
+            "type": "number",
+            "description": "Quota value for floating IPs. Changing this updates the\nexisting quota."
         },
         "Network": {
-            "type": "number"
+            "type": "number",
+            "description": "Quota value for networks. Changing this updates the\nexisting quota."
         },
         "Port": {
-            "type": "number"
+            "type": "number",
+            "description": "Quota value for ports. Changing this updates the\nexisting quota."
         },
         "ProjectId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the project to manage quota. Changing this\ncreates new quota."
         },
         "RbacPolicy": {
-            "type": "number"
+            "type": "number",
+            "description": "Quota value for RBAC policies.\nChanging this updates the existing quota."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to create the quota. If\nomitted, the `region` argument of the provider is used. Changing this\ncreates new quota."
         },
         "Router": {
-            "type": "number"
+            "type": "number",
+            "description": "Quota value for routers. Changing this updates the\nexisting quota."
         },
         "SecurityGroup": {
-            "type": "number"
+            "type": "number",
+            "description": "Quota value for security groups. Changing\nthis updates the existing quota."
         },
         "SecurityGroupRule": {
-            "type": "number"
+            "type": "number",
+            "description": "Quota value for security group rules.\nChanging this updates the existing quota."
         },
         "Subnet": {
-            "type": "number"
+            "type": "number",
+            "description": "Quota value for subnets. Changing\nthis updates the existing quota."
         },
         "Subnetpool": {
-            "type": "number"
+            "type": "number",
+            "description": "Quota value for subnetpools.\nChanging this updates the existing quota."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

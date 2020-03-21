@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Category
 
+Specifies the protective action.
+
 _Required_: Yes
 
 _Type_: String

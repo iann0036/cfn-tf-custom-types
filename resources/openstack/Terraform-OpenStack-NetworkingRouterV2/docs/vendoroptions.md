@@ -22,6 +22,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### SetRouterGatewayAfterCreate
 
+Boolean to control whether
+the Router gateway is assigned during creation or updated after creation.
+
 _Required_: No
 
 _Type_: Boolean

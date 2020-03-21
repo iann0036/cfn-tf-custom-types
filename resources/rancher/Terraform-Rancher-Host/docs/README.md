@@ -1,6 +1,6 @@
 # Terraform::Rancher::Host
 
-CloudFormation equivalent of rancher_host
+Provides a Rancher Host resource. This can be used to manage and delete hosts on Rancher.
 
 ## Syntax
 
@@ -38,6 +38,8 @@ Properties:
 
 #### Description
 
+A host description.
+
 _Required_: No
 
 _Type_: String
@@ -45,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnvironmentId
+
+The ID of the environment the host is associated to.
 
 _Required_: Yes
 
@@ -54,6 +58,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Hostname
 
+The host name. Used as the primary key to detect the host ID.
+
 _Required_: Yes
 
 _Type_: String
@@ -62,6 +68,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Labels
 
+A dictionary of labels to apply to the host. Computed internal labels are excluded from that list.
+
 _Required_: No
 
 _Type_: List of <a href="labels.md">Labels</a>
@@ -69,6 +77,8 @@ _Type_: List of <a href="labels.md">Labels</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the host.
 
 _Required_: Yes
 

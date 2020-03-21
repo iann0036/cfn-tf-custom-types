@@ -1,6 +1,12 @@
 # Terraform::Alicloud::ImageImport
 
-CloudFormation equivalent of alicloud_image_import
+Import a copy of your local on-premise file to ECS, and appear as a custom replacement in the corresponding domain.
+
+-> **NOTE:** You must upload the image file to the object storage OSS in advance.
+
+-> **NOTE:** The region where the image is imported must be the same region as the OSS bucket where the image file is uploaded.
+
+-> **NOTE:** Available in 1.69.0+.
 
 ## Syntax
 
@@ -44,6 +50,8 @@ Properties:
 
 #### Architecture
 
+(Optional, ForceNew) Specifies the architecture of the system disk after you specify a data disk snapshot as the data source of the system disk for creating an image. Valid values: `i386` , Default is `x86_64`.
+
 _Required_: No
 
 _Type_: String
@@ -51,6 +59,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+(Optional) Description of the image. The length is 2 to 256 English or Chinese characters, and cannot begin with http: // and https: //.
 
 _Required_: No
 
@@ -60,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ImageName
 
+(Optional) The image name. The length is 2 ~ 128 English or Chinese characters. Must start with a capital letter or Chinese, and cannot start with http: // and https: //. Can contain numbers, colons (:), underscores (_), or hyphens (-).
+
 _Required_: No
 
 _Type_: String
@@ -67,6 +79,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LicenseType
+
+(Optional, ForceNew).
 
 _Required_: No
 
@@ -76,6 +90,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OsType
 
+(Optional, ForceNew) Operating system platform type. Valid values: `windows`, Default is `linux`.
+
 _Required_: No
 
 _Type_: String
@@ -83,6 +99,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Platform
+
+(Optional, ForceNew) Specifies the operating system platform of the system disk after you specify a data disk snapshot as the data source of the system disk for creating an image. Valid values: `CentOS`, `Ubuntu`, `SUSE`, `OpenSUSE`, `Debian`, `CoreOS`, `Windows Server 2003`, `Windows Server 2008`, `Windows Server 2012`, `Windows 7`, Default is `Others Linux`, `Customized Linux`.
 
 _Required_: No
 

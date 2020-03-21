@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::Lb",
-    "description": "CloudFormation equivalent of tencentcloud_lb",
+    "description": "Provides a Load Balancer resource.\n\n~> **NOTE:** It has been deprecated and replaced by `tencentcloud_clb_instance`.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,22 +9,27 @@
             "type": "string"
         },
         "Forward": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of the LB, valid choices: 'CLASSIC', 'APPLICATION'."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the LB."
         },
         "ProjectId": {
-            "type": "number"
+            "type": "number",
+            "description": "The project id of the LB, unspecified or 0 stands for default project."
         },
         "Status": {
             "type": "string"
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The network type of the LB, valid choices: 'OPEN', 'INTERNAL'."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "The VPC ID of the LB, unspecified or 0 stands for CVM basic network."
         }
     },
     "additionalProperties": false,

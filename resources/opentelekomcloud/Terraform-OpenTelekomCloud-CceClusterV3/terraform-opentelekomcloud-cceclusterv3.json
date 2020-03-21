@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenTelekomCloud::CceClusterV3",
-    "description": "CloudFormation equivalent of opentelekomcloud_cce_cluster_v3",
+    "description": "Provides a cluster resource (CCE).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -40,13 +40,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Cluster annotation, key/value pair format. Changing this parameter will create a new cluster resource."
         },
         "AuthenticationMode": {
-            "type": "string"
+            "type": "string",
+            "description": "Authentication mode of the cluster, possible values are x509 and rbac. Defaults to x509.\nChanging this parameter will create a new cluster resource."
         },
         "BillingMode": {
-            "type": "number"
+            "type": "number",
+            "description": "Charging mode of the cluster, which is 0 (on demand). Changing this parameter will create a new cluster resource."
         },
         "CertificateClusters": {
             "type": "array",
@@ -87,22 +90,28 @@
             }
         },
         "ClusterType": {
-            "type": "string"
+            "type": "string",
+            "description": "Cluster Type, possible values are VirtualMachine and BareMetal. Changing this parameter will create a new cluster resource."
         },
         "ClusterVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "For the cluster version, possible values are v1.9.2-r2 or v1.11.3-r1. Changing this parameter will create a new cluster resource.\n[OTC-API](https://docs.otc.t-systems.com/en-us/api2/cce/cce_02_0236.html)."
         },
         "ContainerNetworkCidr": {
-            "type": "string"
+            "type": "string",
+            "description": "Container network segment. Changing this parameter will create a new cluster resource."
         },
         "ContainerNetworkType": {
-            "type": "string"
+            "type": "string",
+            "description": "Container network type."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Cluster description."
         },
         "Eip": {
-            "type": "string"
+            "type": "string",
+            "description": "EIP address of the cluster."
         },
         "ExtendParam": {
             "type": "array",
@@ -122,7 +131,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Extended parameter. Changing this parameter will create a new cluster resource."
         },
         "External": {
             "type": "string"
@@ -131,10 +141,12 @@
             "type": "string"
         },
         "FlavorId": {
-            "type": "string"
+            "type": "string",
+            "description": "Cluster specifications. Changing this parameter will create a new cluster resource."
         },
         "HighwaySubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the high speed network used to create bare metal nodes. Changing this parameter will create a new cluster resource."
         },
         "Internal": {
             "type": "string"
@@ -157,13 +169,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Cluster tag, key/value pair format. Changing this parameter will create a new cluster resource."
         },
         "MultiAz": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable multiple AZs for the cluster, only when using HA flavors. Changing this parameter will create a new cluster resource."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Cluster name. Changing this parameter will create a new cluster resource."
         },
         "Region": {
             "type": "string"
@@ -172,10 +187,12 @@
             "type": "string"
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the subnet used to create the node. Changing this parameter will create a new cluster resource."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the VPC used to create the node. Changing this parameter will create a new cluster resource."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

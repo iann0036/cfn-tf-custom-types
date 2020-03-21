@@ -1,6 +1,6 @@
 # Terraform::Cloudflare::AccessRule
 
-CloudFormation equivalent of cloudflare_access_rule
+Provides a Cloudflare IP Firewall Access Rule resource. Access control can be applied on basis of IP addresses, IP ranges, AS numbers or countries.
 
 ## Syntax
 
@@ -36,6 +36,8 @@ Properties:
 
 #### Configuration
 
+Rule configuration to apply to a matched request. It's a complex value. See description below.
+
 _Required_: Yes
 
 _Type_: List of <a href="configuration.md">Configuration</a>
@@ -43,6 +45,8 @@ _Type_: List of <a href="configuration.md">Configuration</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Mode
+
+The action to apply to a matched request. Allowed values: "block", "challenge", "whitelist", "js_challenge".
 
 _Required_: Yes
 
@@ -52,6 +56,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Notes
 
+A personal note about the rule. Typically used as a reminder or explanation for the rule.
+
 _Required_: No
 
 _Type_: String
@@ -59,6 +65,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneId
+
+The DNS zone to which the access rule should be added.
 
 _Required_: No
 

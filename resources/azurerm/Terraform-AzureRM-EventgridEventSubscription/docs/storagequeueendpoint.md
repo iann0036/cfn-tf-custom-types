@@ -24,6 +24,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### QueueName
 
+Specifies the name of the storage queue where the Event Subscriptio will receive events.
+
 _Required_: Yes
 
 _Type_: String
@@ -31,6 +33,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StorageAccountId
+
+Specifies the id of the storage account id where the storage queue is located.
 
 _Required_: Yes
 

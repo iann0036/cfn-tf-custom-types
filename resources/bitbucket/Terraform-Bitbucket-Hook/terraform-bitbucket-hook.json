@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Bitbucket::Hook",
-    "description": "CloudFormation equivalent of bitbucket_hook",
+    "description": "Provides a Bitbucket hook resource.\n\nThis allows you to manage your webhooks on a repository.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,26 +12,31 @@
             "type": "boolean"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The name / description to show in the UI."
         },
         "Events": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The event you want to react on."
         },
         "Owner": {
-            "type": "string"
+            "type": "string",
+            "description": "The owner of this repository. Can be you or any team you\nhave write access to."
         },
         "Repository": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the repository."
         },
         "SkipCertVerification": {
             "type": "boolean"
         },
         "Url": {
-            "type": "string"
+            "type": "string",
+            "description": "Where to POST to."
         },
         "Uuid": {
             "type": "string"

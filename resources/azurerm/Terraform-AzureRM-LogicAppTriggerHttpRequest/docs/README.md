@@ -1,6 +1,6 @@
 # Terraform::AzureRM::LogicAppTriggerHttpRequest
 
-CloudFormation equivalent of azurerm_logic_app_trigger_http_request
+Manages a HTTP Request Trigger within a Logic App Workflow
 
 ## Syntax
 
@@ -39,6 +39,8 @@ Properties:
 
 #### LogicAppId
 
+Specifies the ID of the Logic App Workflow. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -46,6 +48,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Method
+
+Specifies the HTTP Method which the request be using. Possible values include `DELETE`, `GET`, `PATCH`, `POST` or `PUT`.
 
 _Required_: No
 
@@ -55,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the HTTP Request Trigger to be created within the Logic App Workflow. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -63,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RelativePath
 
+Specifies the Relative Path used for this Request.
+
 _Required_: No
 
 _Type_: String
@@ -70,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Schema
+
+A JSON Blob defining the Schema of the incoming request. This needs to be valid JSON.
 
 _Required_: Yes
 

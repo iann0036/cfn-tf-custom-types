@@ -1,6 +1,6 @@
 # Terraform::AzureRM::VirtualMachine
 
-CloudFormation equivalent of azurerm_virtual_machine
+Manages a Virtual Machine.
 
 ## Syntax
 
@@ -103,6 +103,8 @@ Properties:
 
 #### AvailabilitySetId
 
+The ID of the Availability Set in which the Virtual Machine should exist. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -110,6 +112,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DeleteDataDisksOnTermination
+
+Should the Data Disks (either the Managed Disks / VHD Blobs) be deleted when the Virtual Machine is destroyed? Defaults to `false`.
 
 _Required_: No
 
@@ -119,6 +123,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DeleteOsDiskOnTermination
 
+Should the OS Disk (either the Managed Disk / VHD Blob) be deleted when the Virtual Machine is destroyed? Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -126,6 +132,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LicenseType
+
+Specifies the BYOL Type for this Virtual Machine. This is only applicable to Windows Virtual Machines. Possible values are `Windows_Client` and `Windows_Server`.
 
 _Required_: No
 
@@ -135,6 +143,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Location
 
+Specifies the Azure Region where the Virtual Machine exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -142,6 +152,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the Virtual Machine. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -151,6 +163,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NetworkInterfaceIds
 
+A list of Network Interface ID's which should be associated with the Virtual Machine.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -158,6 +172,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PrimaryNetworkInterfaceId
+
+The ID of the Network Interface (which must be attached to the Virtual Machine) which should be the Primary Network Interface for this Virtual Machine.
 
 _Required_: No
 
@@ -167,6 +183,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProximityPlacementGroupId
 
+The ID of the Proximity Placement Group to which this Virtual Machine should be assigned. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -174,6 +192,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+Specifies the name of the Resource Group in which the Virtual Machine should exist. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -183,6 +203,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the Virtual Machine.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -191,6 +213,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VmSize
 
+Specifies the [size of the Virtual Machine](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-size-specs/).
+
 _Required_: Yes
 
 _Type_: String
@@ -198,6 +222,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Zones
+
+A list of a single item of the Availability Zone which the Virtual Machine should be allocated in.
 
 _Required_: No
 

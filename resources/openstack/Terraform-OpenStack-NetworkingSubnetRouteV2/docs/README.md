@@ -1,6 +1,6 @@
 # Terraform::OpenStack::NetworkingSubnetRouteV2
 
-CloudFormation equivalent of openstack_networking_subnet_route_v2
+Creates a routing entry on a OpenStack V2 subnet.
 
 ## Syntax
 
@@ -35,6 +35,9 @@ Properties:
 
 #### DestinationCidr
 
+CIDR block to match on the packet’s destination IP. Changing
+this creates a new routing entry.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +45,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NextHop
+
+IP address of the next hop gateway.  Changing
+this creates a new routing entry.
 
 _Required_: Yes
 
@@ -51,6 +57,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region in which to obtain the V2 networking client.
+A networking client is needed to configure a routing entry on a subnet. If omitted, the
+`region` argument of the provider is used. Changing this creates a new
+routing entry.
+
 _Required_: No
 
 _Type_: String
@@ -58,6 +69,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubnetId
+
+ID of the subnet this routing entry belongs to. Changing
+this creates a new routing entry.
 
 _Required_: Yes
 

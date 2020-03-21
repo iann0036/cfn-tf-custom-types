@@ -33,6 +33,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### AllowCredentials
 
+If credentials are allowed via CORS.
+
 _Required_: No
 
 _Type_: Boolean
@@ -40,6 +42,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowedHeaders
+
+A set of headers to be allowed via CORS.
 
 _Required_: No
 
@@ -49,6 +53,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AllowedMethods
 
+The methods to be allowed via CORS.
+
 _Required_: No
 
 _Type_: List of String
@@ -57,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AllowedOrigins
 
+A set of origins to be allowed via CORS.
+
 _Required_: No
 
 _Type_: List of String
@@ -64,6 +72,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MaxAgeInSeconds
+
+The max age to be allowed via CORS.
 
 _Required_: No
 

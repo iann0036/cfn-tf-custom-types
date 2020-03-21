@@ -1,6 +1,9 @@
 # Terraform::Alicloud::RamPolicy
 
-CloudFormation equivalent of alicloud_ram_policy
+Provides a RAM Policy resource. 
+
+-> **NOTE:** When you want to destroy this resource forcefully(means remove all the relationships associated with it automatically and then destroy it) without set `force`  with `true` at beginning, you need add `force = true` to configuration file and run `terraform plan`, then you can delete resource forcefully.
+-> **NOTE:** Each policy can own at most 5 versions and the oldest version will be removed after its version achieves 5.
 
 ## Syntax
 
@@ -40,6 +43,8 @@ Properties:
 
 #### Description
 
+Description of the RAM policy. This name can have a string of 1 to 1024 characters.
+
 _Required_: No
 
 _Type_: String
@@ -47,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Document
+
+Document of the RAM policy. It is required when the `statement` is not specified.
 
 _Required_: No
 
@@ -56,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Force
 
+This parameter is used for resource destroy. Default value is `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -64,6 +73,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name of the RAM policy. This name can have a string of 1 to 128 characters, must contain only alphanumeric characters or hyphen "-", and must not begin with a hyphen.
+
 _Required_: Yes
 
 _Type_: String
@@ -71,6 +82,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Version
+
+(It has been deprecated from version 1.49.0, and use field 'document' to replace.) Version of the RAM policy document. Valid value is `1`. Default value is `1`.
 
 _Required_: No
 

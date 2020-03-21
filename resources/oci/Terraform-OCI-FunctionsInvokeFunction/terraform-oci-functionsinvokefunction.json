@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::FunctionsInvokeFunction",
-    "description": "CloudFormation equivalent of oci_functions_invoke_function",
+    "description": "This resource provides the Invoke Function resource in Oracle Cloud Infrastructure Functions service.\n\nInvokes a function",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,31 +26,38 @@
             "type": "string"
         },
         "Base64EncodeContent": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Encodes the response returned, if any, in base64. It is recommended to set this to `true` to avoid corrupting the returned response, if any, in Terraform state. The default value is `false`."
         },
         "Content": {
             "type": "string"
         },
         "FnIntent": {
-            "type": "string"
+            "type": "string",
+            "description": "An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'."
         },
         "FnInvokeType": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates whether the functions platform should execute the request directly and return the result ('sync') or whether the platform should enqueue the request for later processing and acknowledge that it has been processed ('detached')."
         },
         "FunctionId": {
-            "type": "string"
+            "type": "string",
+            "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function."
         },
         "InputBodySourcePath": {
-            "type": "string"
+            "type": "string",
+            "description": "An absolute path to a file on the local system that contains the input to be provided to the function. Cannot be defined if `invoke_function_body` or `invoke_function_body_base64_encoded` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit."
         },
         "InvokeEndpoint": {
             "type": "string"
         },
         "InvokeFunctionBody": {
-            "type": "string"
+            "type": "string",
+            "description": "The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `input_body_source_path` or `invoke_function_body_base64_encoded` is defined."
         },
         "InvokeFunctionBodyBase64Encoded": {
-            "type": "string"
+            "type": "string",
+            "description": "The Base64 encoded body of the function invocation. Base64 encoded input avoids corruption in Terraform state. Cannot be defined if `invoke_function_body` or `input_body_source_path` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

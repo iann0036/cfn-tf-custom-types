@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OPC::ComputeInstance",
-    "description": "CloudFormation equivalent of opc_compute_instance",
+    "description": "The ``opc_compute_instance`` resource creates and manages an instance in an Oracle Cloud Infrastructure Compute Classic identity domain.\n\n~> **Caution:** The ``opc_compute_instance`` resource can completely delete your\ninstance just as easily as it can create it. To avoid costly accidents,\nconsider setting\n[``prevent_destroy``](/docs/configuration/resources.html#prevent_destroy)\non your instance resources as an extra safety measure.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "NetworkingInfo": {
@@ -124,10 +124,12 @@
             "insertionOrder": false,
             "items": {
                 "type": "number"
-            }
+            },
+            "description": "The index number of the bootable storage volume, presented as a list, that should be used to boot the instance. The only valid value is `[1]`. If you set this attribute, you must also specify a bootable storage volume with index number 1 in the volume sub-parameter of storage_attachments. When you specify boot_order, you don't need to specify the imagelist attribute, because the instance is booted using the image on the specified bootable storage volume. If you specify both boot_order and imagelist, the imagelist attribute is ignored."
         },
         "DesiredState": {
-            "type": "string"
+            "type": "string",
+            "description": "Set the desire state of the instance to `running` (default) or `shutdown`. You can use this request to shut down and restart individual instances which use a persistent bootable storage volume."
         },
         "Domain": {
             "type": "string"
@@ -142,25 +144,30 @@
             "type": "string"
         },
         "Hostname": {
-            "type": "string"
+            "type": "string",
+            "description": "The host name assigned to the instance. On an Oracle Linux instance, this host name is displayed in response to the hostname command. Only relative DNS is supported. The domain name is suffixed to the host name that you specify. The host name must not end with a period. If you don't specify a host name, then a name is generated automatically."
         },
         "ImageFormat": {
             "type": "string"
         },
         "ImageList": {
-            "type": "string"
+            "type": "string",
+            "description": "The imageList of the instance, e.g. `/oracle/public/oel_6.4_2GB_v1`."
         },
         "InstanceAttributes": {
-            "type": "string"
+            "type": "string",
+            "description": "A JSON string of custom attributes. See [Attributes](#attributes) below for more information."
         },
         "IpAddress": {
             "type": "string"
         },
         "Label": {
-            "type": "string"
+            "type": "string",
+            "description": "The label to apply to the instance."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the instance."
         },
         "PlacementRequirements": {
             "type": "array",
@@ -193,10 +200,12 @@
             }
         },
         "ReverseDns": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If set to `true` (default), then reverse DNS records are created. If set to `false`, no reverse DNS records are created."
         },
         "Shape": {
-            "type": "string"
+            "type": "string",
+            "description": "The shape of the instance, e.g. `oc4`."
         },
         "Site": {
             "type": "string"
@@ -206,7 +215,8 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of the names of the SSH Keys that can be used to log into the instance."
         },
         "StartTime": {
             "type": "string"
@@ -219,7 +229,8 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of strings that should be supplied to the instance as tags."
         },
         "Vcable": {
             "type": "string"

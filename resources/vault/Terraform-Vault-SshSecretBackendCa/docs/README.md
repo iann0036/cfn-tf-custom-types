@@ -1,6 +1,7 @@
 # Terraform::Vault::SshSecretBackendCa
 
-CloudFormation equivalent of vault_ssh_secret_backend_ca
+Provides a resource to manage CA information in an SSH secret backend
+[SSH secret backend within Vault](https://www.vaultproject.io/docs/secrets/ssh/index.html).
 
 ## Syntax
 
@@ -35,6 +36,8 @@ Properties:
 
 #### Backend
 
+The path where the SSH secret backend is mounted. Defaults to 'ssh'.
+
 _Required_: No
 
 _Type_: String
@@ -42,6 +45,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GenerateSigningKey
+
+Whether Vault should generate the signing key pair internally. Defaults to true.
 
 _Required_: No
 
@@ -51,6 +56,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PrivateKey
 
+The private key part the SSH CA key pair; required if generate_signing_key is false.
+
 _Required_: No
 
 _Type_: String
@@ -58,6 +65,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PublicKey
+
+The public key part the SSH CA key pair; required if generate_signing_key is false.
 
 _Required_: No
 

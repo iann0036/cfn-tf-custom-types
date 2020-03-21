@@ -1,6 +1,10 @@
 # Terraform::Google::SqlUser
 
-CloudFormation equivalent of google_sql_user
+Creates a new Google SQL User on a Google SQL User Instance. For more information, see the [official documentation](https://cloud.google.com/sql/), or the [JSON API](https://cloud.google.com/sql/docs/admin-api/v1beta4/users).
+
+~> **Note:** All arguments including the username and password will be stored in the raw state as plain-text.
+[Read more about sensitive data in state](/docs/state/sensitive-data.html). Passwords will not be retrieved when running
+"terraform import".
 
 ## Syntax
 
@@ -37,6 +41,10 @@ Properties:
 
 #### Host
 
+The host the user can connect from. This is only supported
+for MySQL instances. Don't set this field for PostgreSQL instances.
+Can be an IP address. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -44,6 +52,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Instance
+
+The name of the Cloud SQL instance. Changing this
+forces a new resource to be created.
 
 _Required_: Yes
 
@@ -53,6 +64,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the user. Changing this forces a new resource
+to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -61,6 +75,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Password
 
+The password for the user. Can be updated. For Postgres
+instances this is a Required field.
+
 _Required_: No
 
 _Type_: String
@@ -68,6 +85,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The ID of the project in which the resource belongs. If it
+is not provided, the provider project is used.
 
 _Required_: No
 

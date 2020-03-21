@@ -1,6 +1,7 @@
 # Terraform::CloudStack::Instance
 
-CloudFormation equivalent of cloudstack_instance
+Creates and automatically starts a virtual machine based on a service offering,
+disk offering, and template.
 
 ## Syntax
 
@@ -67,6 +68,9 @@ Properties:
 
 #### AffinityGroupIds
 
+List of affinity group IDs to apply to this
+instance.
+
 _Required_: No
 
 _Type_: List of String
@@ -74,6 +78,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AffinityGroupNames
+
+List of affinity group names to apply to
+this instance.
 
 _Required_: No
 
@@ -83,6 +90,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+The display name of the instance.
+
 _Required_: No
 
 _Type_: String
@@ -90,6 +99,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Expunge
+
+This determines if the instance is expunged when it is
+destroyed (defaults false).
 
 _Required_: No
 
@@ -99,6 +111,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Group
 
+The group name of the instance.
+
 _Required_: No
 
 _Type_: String
@@ -106,6 +120,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IpAddress
+
+The IP address to assign to this instance. Changing
+this forces a new resource to be created.
 
 _Required_: No
 
@@ -115,6 +132,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Keypair
 
+The name of the SSH key pair that will be used to
+access this instance.
+
 _Required_: No
 
 _Type_: String
@@ -122,6 +142,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the instance.
 
 _Required_: No
 
@@ -131,6 +153,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NetworkId
 
+The ID of the network to connect this instance
+to. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -138,6 +163,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The name or ID of the project to deploy this
+instance to. Changing this forces a new resource to be created.
 
 _Required_: No
 
@@ -147,6 +175,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RootDiskSize
 
+The size of the root disk in gigabytes. The
+root disk is resized on deploy. Only applies to template-based deployments.
+Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: Double
@@ -154,6 +186,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecurityGroupIds
+
+List of security group IDs to apply to this
+instance. Changing this forces a new resource to be created.
 
 _Required_: No
 
@@ -163,6 +198,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecurityGroupNames
 
+List of security group names to apply to
+this instance. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: List of String
@@ -170,6 +208,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServiceOffering
+
+The name or ID of the service offering used
+for this instance.
 
 _Required_: Yes
 
@@ -179,6 +220,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StartVm
 
+This determines if the instances is started after it
+is created (defaults true).
+
 _Required_: No
 
 _Type_: Boolean
@@ -186,6 +230,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Template
+
+The name or ID of the template used for this
+instance. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -195,6 +242,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UserData
 
+The user data to provide when launching the
+instance. This can be either plain text or base64 encoded text.
+
 _Required_: No
 
 _Type_: String
@@ -202,6 +252,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Zone
+
+The name or ID of the zone where this instance will be
+created. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

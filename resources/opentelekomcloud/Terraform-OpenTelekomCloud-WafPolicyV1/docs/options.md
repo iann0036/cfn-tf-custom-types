@@ -48,6 +48,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Antitamper
 
+Specifies whether Web Tamper Protection is enabled.
+
 _Required_: No
 
 _Type_: Boolean
@@ -55,6 +57,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Cc
+
+Specifies whether CC Attack Protection is enabled.
 
 _Required_: No
 
@@ -64,6 +68,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Common
 
+Specifies whether General Check in Basic Web Protection is enabled.
+
 _Required_: No
 
 _Type_: Boolean
@@ -71,6 +77,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Crawler
+
+Specifies whether the master crawler detection switch in Basic Web Protection is enabled.
 
 _Required_: No
 
@@ -80,6 +88,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CrawlerEngine
 
+Specifies whether the Search Engine switch in Basic Web Protection is enabled.
+
 _Required_: No
 
 _Type_: Boolean
@@ -87,6 +97,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CrawlerOther
+
+Specifies whether detection of other crawlers in Basic Web Protection is enabled.
 
 _Required_: No
 
@@ -96,6 +108,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CrawlerScanner
 
+Specifies whether the Scanner switch in Basic Web Protection is enabled.
+
 _Required_: No
 
 _Type_: Boolean
@@ -103,6 +117,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CrawlerScript
+
+Specifies whether the Script Tool switch in Basic Web Protection is enabled.
 
 _Required_: No
 
@@ -112,6 +128,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Custom
 
+Specifies whether Precise Protection is enabled.
+
 _Required_: No
 
 _Type_: Boolean
@@ -119,6 +137,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ignore
+
+Specifies whether False Alarm Masking is enabled.
 
 _Required_: No
 
@@ -128,6 +148,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Privacy
 
+Specifies whether Data Masking is enabled.
+
 _Required_: No
 
 _Type_: Boolean
@@ -135,6 +157,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Webattack
+
+Specifies whether Basic Web Protection is enabled.
 
 _Required_: No
 
@@ -144,6 +168,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Webshell
 
+Specifies whether webshell detection in Basic Web Protection is enabled.
+
 _Required_: No
 
 _Type_: Boolean
@@ -151,6 +177,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Whiteblackip
+
+Specifies whether Blacklist and Whitelist is enabled.
 
 _Required_: No
 

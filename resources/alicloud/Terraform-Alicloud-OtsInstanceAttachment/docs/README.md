@@ -1,6 +1,6 @@
 # Terraform::Alicloud::OtsInstanceAttachment
 
-CloudFormation equivalent of alicloud_ots_instance_attachment
+This resource will help you to bind a VPC to an OTS instance.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### InstanceName
 
+The name of the OTS instance.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VpcName
 
+The name of attaching VPC to instance.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VswitchId
+
+The ID of attaching VSwitch to instance.
 
 _Required_: Yes
 

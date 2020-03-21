@@ -1,6 +1,13 @@
 # Terraform::OCI::CoreBootVolumeBackup
 
-CloudFormation equivalent of oci_core_boot_volume_backup
+This resource provides the Boot Volume Backup resource in Oracle Cloud Infrastructure Core service.
+
+Creates a new boot volume backup of the specified boot volume. For general information about boot volume backups,
+see [Overview of Boot Volume Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/bootvolumebackups.htm)
+
+When the request is received, the backup object is in a REQUEST_RECEIVED state.
+When the data is imaged, it goes into a CREATING state.
+After the backup is fully uploaded to the cloud, it goes into an AVAILABLE state.
 
 ## Syntax
 
@@ -46,6 +53,8 @@ Properties:
 
 #### BootVolumeId
 
+The OCID of the boot volume that needs to be backed up. Cannot be defined if `source_details` is defined.
+
 _Required_: No
 
 _Type_: String
@@ -53,6 +62,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CompartmentId
+
+(Updatable) The OCID of the compartment that contains the boot volume backup.
 
 _Required_: No
 
@@ -62,6 +73,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DefinedTags
 
+(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`.
+
 _Required_: No
 
 _Type_: List of <a href="definedtags.md">DefinedTags</a>
@@ -69,6 +82,8 @@ _Type_: List of <a href="definedtags.md">DefinedTags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+(Updatable) A user-friendly name for the boot volume backup. Does not have to be unique and it's changeable. Avoid entering confidential information.
 
 _Required_: No
 
@@ -78,6 +93,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FreeformTags
 
+(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`.
+
 _Required_: No
 
 _Type_: List of <a href="freeformtags.md">FreeformTags</a>
@@ -85,6 +102,8 @@ _Type_: List of <a href="freeformtags.md">FreeformTags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The type of backup to create. If omitted, defaults to incremental.
 
 _Required_: No
 
@@ -134,7 +153,9 @@ Returns the <code>ImageId</code> value.
 
 #### KmsKeyId
 
-Returns the <code>KmsKeyId</code> value.
+The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
+* `region` - The region of the volume backup source.
+* `volume_backup_id` - The OCID of the source volume backup.
 
 #### SizeInGbs
 

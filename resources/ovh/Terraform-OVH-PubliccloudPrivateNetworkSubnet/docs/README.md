@@ -1,6 +1,8 @@
 # Terraform::OVH::PubliccloudPrivateNetworkSubnet
 
-CloudFormation equivalent of ovh_publiccloud_private_network_subnet
+~> __DEPRECATED:__ Use [`ovh_cloud_network_private_subnet`](./cloud_network_private_subnet.html) instead.
+
+Creates a subnet in a private network of a public cloud project.
 
 ## Syntax
 
@@ -43,6 +45,10 @@ Properties:
 
 #### Dhcp
 
+Enable DHCP.
+Changing this forces a new resource to be created. Defaults to false.
+_.
+
 _Required_: No
 
 _Type_: Boolean
@@ -50,6 +56,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### End
+
+Last ip for this region.
+Changing this value recreates the subnet.
 
 _Required_: Yes
 
@@ -59,6 +68,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Network
 
+Global network in CIDR format.
+Changing this value recreates the subnet.
+
 _Required_: Yes
 
 _Type_: String
@@ -66,6 +78,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NetworkId
+
+The id of the network.
+Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -75,6 +90,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NoGateway
 
+Set to true if you don't want to set a default gateway IP.
+Changing this value recreates the resource. Defaults to false.
+
 _Required_: No
 
 _Type_: Boolean
@@ -82,6 +100,10 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProjectId
+
+The id of the public cloud project. If omitted,
+the `OVH_PROJECT_ID` environment variable is used.
+Changing this forces a new resource to be created.
 
 _Required_: No
 
@@ -91,6 +113,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region in which the network subnet will be created.
+Ex.: "GRA1". Changing this value recreates the resource.
+
 _Required_: Yes
 
 _Type_: String
@@ -98,6 +123,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Start
+
+First ip for this region.
+Changing this value recreates the subnet.
 
 _Required_: Yes
 

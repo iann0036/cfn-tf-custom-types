@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::LogtailAttachment",
-    "description": "CloudFormation equivalent of alicloud_logtail_attachment",
+    "description": "The Logtail access service is a log collection agent provided by Log Service.\nYou can use Logtail to collect logs from servers such as Alibaba Cloud Elastic\nCompute Service (ECS) instances in real time in the Log Service console. [Refer to details](https://www.alibabacloud.com/help/doc-detail/29058.htm)\n\nThis resource amis to attach one logtail configure to a machine group.\n\n-> **NOTE:** One logtail configure can be attached to multiple machine groups and one machine group can attach several logtail configures.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "LogtailConfigName": {
-            "type": "string"
+            "type": "string",
+            "description": "The Logtail configuration name, which is unique in the same project."
         },
         "MachineGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The machine group name, which is unique in the same project."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The project name to the log store belongs."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenTelekomCloud::WafPreciseprotectionRuleV1",
-    "description": "CloudFormation equivalent of opentelekomcloud_waf_preciseprotection_rule_v1",
+    "description": "Manages a WAF Precise Protection Rule resource within OpenTelekomCloud.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Conditions": {
@@ -8,20 +8,24 @@
             "additionalProperties": false,
             "properties": {
                 "Category": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the condition type. The value can be url, user-agent, ip, params, cookie, referer, or header."
                 },
                 "Contents": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Specifies a list of content matching the condition. Currently, only one value is accepted."
                 },
                 "Index": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "If `category` is set to cookie, index indicates cookie name, if set to params, index indicates param name,\nif set to header, index indicates an option in the header."
                 },
                 "Logic": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "1,2,3,4,5,6,7, and 8 indicate include, exclude, equal to, not equal to, prefix is, prefix is not, suffix is,\nand suffix is not, respectively. If `category` is set to ip, logic can only be 3 or 4."
                 }
             },
             "required": [
@@ -53,22 +57,28 @@
             "type": "string"
         },
         "End": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the time when the precise protection rule expires. If time is set to true,\neither the start time or the end time must be set. Changing this creates a new rule."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of a precise protection rule. Changing this creates a new rule."
         },
         "PolicyId": {
-            "type": "string"
+            "type": "string",
+            "description": "The WAF policy ID. Changing this creates a new rule."
         },
         "Priority": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the priority of a rule being executed. Smaller values correspond to higher priorities.\nIf two rules are assigned with the same priority, the rule added earlier has higher priority, the rule added earlier\nhas higher priority. The value ranges from 0 to 65535. Changing this creates a new rule."
         },
         "Start": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the time when the precise protection rule takes effect. If time is set to true,\neither the start time or the end time must be set. Changing this creates a new rule."
         },
         "Time": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies the effect time of the precise protection rule. Changing this creates a new rule.\n* `false` - The rule takes effect immediately.\n* `true` - The rule takes effect at the scheduled time."
         },
         "Conditions": {
             "type": "array",

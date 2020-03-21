@@ -40,6 +40,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Caller
 
+The email address or Azure Active Directory identifier of the user who performed the operation.
+
 _Required_: No
 
 _Type_: String
@@ -47,6 +49,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Category
+
+The category of the operation. Possible values are `Administrative`, `Autoscale`, `Policy`, `Recommendation`, `ResourceHealth`, `Security` and `ServiceHealth`.
 
 _Required_: Yes
 
@@ -56,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Level
 
+The severity level of the event. Possible values are `Verbose`, `Informational`, `Warning`, `Error`, and `Critical`.
+
 _Required_: No
 
 _Type_: String
@@ -63,6 +69,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OperationName
+
+The Resource Manager Role-Based Access Control operation name. Supported operation should be of the form: `<resourceProvider>/<resourceType>/<operation>`.
 
 _Required_: No
 
@@ -72,6 +80,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroup
 
+The name of resource group monitored by the activity log alert.
+
 _Required_: No
 
 _Type_: String
@@ -79,6 +89,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceId
+
+The specific resource monitored by the activity log alert. It should be within one of the `scopes`.
 
 _Required_: No
 
@@ -88,6 +100,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceProvider
 
+The name of the resource provider monitored by the activity log alert.
+
 _Required_: No
 
 _Type_: String
@@ -95,6 +109,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceType
+
+The resource type monitored by the activity log alert.
 
 _Required_: No
 
@@ -104,6 +120,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Status
 
+The status of the event. For example, `Started`, `Failed`, or `Succeeded`.
+
 _Required_: No
 
 _Type_: String
@@ -111,6 +129,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubStatus
+
+The sub status of the event.
 
 _Required_: No
 

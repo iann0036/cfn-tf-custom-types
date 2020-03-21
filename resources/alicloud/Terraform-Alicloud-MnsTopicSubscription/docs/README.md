@@ -1,6 +1,8 @@
 # Terraform::Alicloud::MnsTopicSubscription
 
-CloudFormation equivalent of alicloud_mns_topic_subscription
+Provides a MNS topic subscription resource.
+
+-> **NOTE:** Terraform will auto build a mns topic subscription  while it uses `alicloud_mns_topic_subscription` to build a mns topic subscription resource.
 
 ## Syntax
 
@@ -39,6 +41,11 @@ Properties:
 
 #### Endpoint
 
+The endpoint has three format. Available values format:
+- HTTP Format: http://xxx.com/xxx
+- Queue Format: acs:mns:{REGION}:{AccountID}:queues/{QueueName}
+- Email Format: mail:directmail:{MailAddress}.
+
 _Required_: Yes
 
 _Type_: String
@@ -46,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FilterTag
+
+The length should be shorter than 16.
 
 _Required_: No
 
@@ -55,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Two topics subscription on a single account in the same topic cannot have the same name. A topic subscription name must start with an English letter or a digit, and can contain English letters, digits, and hyphens, with the length not exceeding 256 characters.
+
 _Required_: Yes
 
 _Type_: String
@@ -62,6 +73,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NotifyContentFormat
+
+The NotifyContentFormat attribute of Subscription. This attribute specifies the content format of the messages pushed to users. The valid values: 'SIMPLIFIED', 'XML' and 'JSON'. Default to 'SIMPLIFIED'.
 
 _Required_: No
 
@@ -71,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NotifyStrategy
 
+The NotifyStrategy attribute of Subscription. This attribute specifies the retry strategy when message sending fails. the attribute has two value EXPONENTIAL_DECAY_RETR or BACKOFF_RETRY. Default value to BACKOFF_RETRY .
+
 _Required_: No
 
 _Type_: String
@@ -78,6 +93,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TopicName
+
+The topic which The subscription belongs to was named with the name.A topic name must start with an English letter or a digit, and can contain English letters, digits, and hyphens, with the length not exceeding 256 characters.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpsGenie::User",
-    "description": "CloudFormation equivalent of opsgenie_user",
+    "description": "Manages a User within Opsgenie.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,19 +9,24 @@
             "type": "string"
         },
         "FullName": {
-            "type": "string"
+            "type": "string",
+            "description": "The Full Name of the User."
         },
         "Locale": {
-            "type": "string"
+            "type": "string",
+            "description": "Location information for the user. Please look at [Supported Locale Ids](https://docs.opsgenie.com/docs/supported-locales) for available locales."
         },
         "Role": {
-            "type": "string"
+            "type": "string",
+            "description": "The Role assigned to the User. Either a built-in such as 'Admin' or 'User' - or the name of a custom role."
         },
         "Timezone": {
-            "type": "string"
+            "type": "string",
+            "description": "Timezone information of the user. Please look at [Supported Timezone Ids](https://docs.opsgenie.com/docs/supported-timezone-ids) for available timezones."
         },
         "Username": {
-            "type": "string"
+            "type": "string",
+            "description": "The email address associated with this user. Opsgenie defines that this must not be longer than 100 characters and must contain lowercase characters only."
         }
     },
     "additionalProperties": false,

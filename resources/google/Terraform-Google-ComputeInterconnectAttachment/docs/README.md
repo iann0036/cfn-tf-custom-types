@@ -1,6 +1,7 @@
 # Terraform::Google::ComputeInterconnectAttachment
 
-CloudFormation equivalent of google_compute_interconnect_attachment
+Represents an InterconnectAttachment (VLAN attachment) resource. For more
+information, see Creating VLAN Attachments.
 
 ## Syntax
 
@@ -109,6 +110,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
 
 _Required_: No
 

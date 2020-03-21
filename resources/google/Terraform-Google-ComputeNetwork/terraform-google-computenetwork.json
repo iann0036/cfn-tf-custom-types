@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::ComputeNetwork",
-    "description": "CloudFormation equivalent of google_compute_network",
+    "description": "Manages a VPC network or legacy network resource on GCP.\n\n\nTo get more information about Network, see:\n\n* [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/networks)\n* How-to Guides\n    * [Official Documentation](https://cloud.google.com/vpc/docs/vpc)\n\n<div class = \"oics-button\" style=\"float: right; margin: 0 0 -15px\">\n  <a href=\"https://console.cloud.google.com/cloudshell/open?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fterraform-google-modules%2Fdocs-examples.git&cloudshell_working_dir=network_basic&cloudshell_image=gcr.io%2Fgraphite-cloud-shell-images%2Fterraform%3Alatest&open_in_editor=main.tf&cloudshell_print=.%2Fmotd&cloudshell_tutorial=.%2Ftutorial.md\" target=\"_blank\">\n    <img alt=\"Open in Cloud Shell\" src=\"//gstatic.com/cloudssh/images/open-btn.svg\" style=\"max-height: 44px; margin: 32px auto; max-width: 100%;\">\n  </a>\n</div>",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,7 +29,8 @@
             "type": "boolean"
         },
         "DeleteDefaultRoutesOnCreate": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If set to `true`, default routes (`0.0.0.0/0`) will be deleted\nimmediately after network creation. Defaults to `false`."
         },
         "Description": {
             "type": "string"
@@ -44,7 +45,8 @@
             "type": "string"
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used."
         },
         "RoutingMode": {
             "type": "string"

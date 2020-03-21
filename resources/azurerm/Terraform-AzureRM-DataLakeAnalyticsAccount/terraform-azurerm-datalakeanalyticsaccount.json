@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::DataLakeAnalyticsAccount",
-    "description": "CloudFormation equivalent of azurerm_data_lake_analytics_account",
+    "description": "Manages an Azure Data Lake Analytics Account.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,16 +29,20 @@
             "type": "string"
         },
         "DefaultStoreAccountName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the data lake store to use by default. Changing this forces a new resource to be created."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Data Lake Analytics Account. Changing this forces a new resource to be created. Has to be between 3 to 24 characters."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the Data Lake Analytics Account."
         },
         "Tags": {
             "type": "array",
@@ -58,10 +62,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Tier": {
-            "type": "string"
+            "type": "string",
+            "description": "The monthly commitment tier for Data Lake Analytics Account. Accepted values are `Consumption`, `Commitment_100000AUHours`, `Commitment_10000AUHours`, `Commitment_1000AUHours`, `Commitment_100AUHours`, `Commitment_500000AUHours`, `Commitment_50000AUHours`, `Commitment_5000AUHours`, or `Commitment_500AUHours`."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

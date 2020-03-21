@@ -1,6 +1,6 @@
 # Terraform::AzureRM::ApiManagementApiSchema
 
-CloudFormation equivalent of azurerm_api_management_api_schema
+Manages an API Schema within an API Management Service.
 
 ## Syntax
 
@@ -41,6 +41,8 @@ Properties:
 
 #### ApiManagementName
 
+The Name of the API Management Service where the API exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +50,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ApiName
+
+The name of the API within the API Management Service where this API Schema should be created. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -57,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ContentType
 
+The content type of the API Schema.
+
 _Required_: Yes
 
 _Type_: String
@@ -64,6 +70,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The Name of the Resource Group in which the API Management Service exists. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -73,6 +81,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SchemaId
 
+A unique identifier for this API Schema. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -80,6 +90,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Value
+
+The JSON escaped string defining the document representing the Schema.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::BIGIP::NetVlan",
-    "description": "CloudFormation equivalent of bigip_net_vlan",
+    "description": "`bigip_net_vlan` Manages a vlan configuration\n\nFor resources should be named with their \"full path\". The full path is the combination of the partition + name of the resource. For example /Common/my-pool.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Interfaces": {
@@ -23,10 +23,12 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the vlan."
         },
         "Tag": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies a number that the system adds into the header of any frame passing through the VLAN."
         },
         "Interfaces": {
             "type": "array",

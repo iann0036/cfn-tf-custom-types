@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Gitlab::ServiceJira",
-    "description": "CloudFormation equivalent of gitlab_service_jira",
+    "description": "This resource allows you to manage Jira integration.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -15,16 +15,20 @@
             "type": "string"
         },
         "JiraIssueTransitionId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of a transition that moves issues to a closed state. You can find this number under the JIRA workflow administration (Administration > Issues > Workflows) by selecting View under Operations of the desired workflow of your project. By default, this ID is set to 2."
         },
         "Password": {
-            "type": "string"
+            "type": "string",
+            "description": "The password of the user created to be used with GitLab/JIRA."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the project you want to activate integration on."
         },
         "ProjectKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The short identifier for your JIRA project, all uppercase, e.g., PROJ."
         },
         "Title": {
             "type": "string"
@@ -33,10 +37,12 @@
             "type": "string"
         },
         "Url": {
-            "type": "string"
+            "type": "string",
+            "description": "The URL to the JIRA project which is being linked to this GitLab project. For example, https://jira.example.com."
         },
         "Username": {
-            "type": "string"
+            "type": "string",
+            "description": "The username of the user created to be used with GitLab/JIRA."
         }
     },
     "additionalProperties": false,

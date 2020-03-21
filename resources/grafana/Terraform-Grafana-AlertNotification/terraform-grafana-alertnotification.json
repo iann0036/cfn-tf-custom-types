@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Grafana::AlertNotification",
-    "description": "CloudFormation equivalent of grafana_alert_notification",
+    "description": "The alert notification resource allows an alert notification channel to be created on a Grafana server.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "IsDefault": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is this the default channel for all your alerts."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the alert notification channel."
         },
         "Settings": {
             "type": "array",
@@ -32,10 +34,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Additional settings, for full reference lookup [Grafana HTTP API documentation](http://docs.grafana.org/http_api/alerting)."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of the alert notification channel."
         }
     },
     "additionalProperties": false,

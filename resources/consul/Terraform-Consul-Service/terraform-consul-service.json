@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Consul::Service",
-    "description": "CloudFormation equivalent of consul_service",
+    "description": "A high-level resource for creating a Service in Consul in the Consul catalog. This\nis appropriate for registering [external services](https://www.consul.io/docs/guides/external.html) and\ncan be used to create services addressable by Consul that cannot be registered\nwith a [local agent](https://www.consul.io/docs/agent/basics.html).\n\nIf the Consul agent is running on the node where this service is registered, it is\nnot recommended to use this resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Check": {
@@ -82,10 +82,12 @@
             "type": "string"
         },
         "Address": {
-            "type": "string"
+            "type": "string",
+            "description": "The address of the service. Defaults to the\naddress of the node."
         },
         "Datacenter": {
-            "type": "string"
+            "type": "string",
+            "description": "The datacenter to use. This overrides the\nagent's default datacenter and the datacenter in the provider setup."
         },
         "External": {
             "type": "boolean"
@@ -108,16 +110,20 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A map of arbitrary KV metadata linked to the service\ninstance."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the header."
         },
         "Node": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the node the to register the service on."
         },
         "Port": {
-            "type": "number"
+            "type": "number",
+            "description": "The port of the service."
         },
         "ServiceId": {
             "type": "string"
@@ -127,7 +133,8 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of values that are opaque to Consul,\nbut can be used to distinguish between services or nodes."
         },
         "Check": {
             "type": "array",

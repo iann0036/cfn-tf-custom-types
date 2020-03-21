@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::CbsSnapshot
 
-CloudFormation equivalent of tencentcloud_cbs_snapshot
+Provides a resource to create a CBS snapshot.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### SnapshotName
 
+Name of the snapshot.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StorageId
+
+ID of the the CBS which this snapshot created from.
 
 _Required_: Yes
 

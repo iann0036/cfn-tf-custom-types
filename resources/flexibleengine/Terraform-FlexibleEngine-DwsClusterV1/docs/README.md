@@ -1,6 +1,6 @@
 # Terraform::FlexibleEngine::DwsClusterV1
 
-CloudFormation equivalent of flexibleengine_dws_cluster_v1
+Manages a DWS cluster resource within FlexibleEngine
 
 ## Syntax
 
@@ -51,6 +51,8 @@ Properties:
 
 #### AvailabilityZone
 
+AZ in a cluster.
+
 _Required_: No
 
 _Type_: String
@@ -58,6 +60,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Cluster name, which must be unique and contains 4 to 64
+characters, which consist of letters, digits, hyphens (-), or underscores
+(_) only and must start with a letter.
 
 _Required_: Yes
 
@@ -67,6 +73,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NodeType
 
+Node type.
+
 _Required_: Yes
 
 _Type_: String
@@ -75,6 +83,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NumberOfNode
 
+Number of nodes in a cluster. The value ranges
+from 3 to 32.
+
 _Required_: Yes
 
 _Type_: Double
@@ -82,6 +93,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Port
+
+Service port of a cluster (8000 to 10000). The default
+value is 8000.
 
 _Required_: No
 
@@ -99,6 +113,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecurityGroupId
 
+ID of a security group. The ID is used for
+configuring cluster network.
+
 _Required_: Yes
 
 _Type_: String
@@ -106,6 +123,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubnetId
+
+Subnet ID, which is used for configuring cluster
+network.
 
 _Required_: Yes
 
@@ -115,6 +135,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UserName
 
+Administrator username for logging in to a data
+warehouse cluster The administrator username must:.
+
 _Required_: Yes
 
 _Type_: String
@@ -123,6 +146,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UserPwd
 
+Administrator password for logging in to a data
+warehouse cluster.
+
 _Required_: Yes
 
 _Type_: String
@@ -130,6 +156,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+VPC ID, which is used for configuring cluster network.
 
 _Required_: Yes
 

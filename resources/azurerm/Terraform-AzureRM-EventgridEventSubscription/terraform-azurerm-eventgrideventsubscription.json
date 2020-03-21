@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::EventgridEventSubscription",
-    "description": "CloudFormation equivalent of azurerm_eventgrid_event_subscription",
+    "description": "Manages an EventGrid Event Subscription",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "EventhubEndpoint": {
@@ -8,7 +8,8 @@
             "additionalProperties": false,
             "properties": {
                 "EventhubId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the id of the eventhub where the Event Subscription will receive events."
                 }
             },
             "required": [
@@ -20,7 +21,8 @@
             "additionalProperties": false,
             "properties": {
                 "HybridConnectionId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the id of the hybrid connection where the Event Subscription will receive events."
                 }
             },
             "required": [
@@ -32,10 +34,12 @@
             "additionalProperties": false,
             "properties": {
                 "EventTimeToLive": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Specifies the time to live (in minutes) for events."
                 },
                 "MaxDeliveryAttempts": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Specifies the maximum number of delivery retry attempts for events."
                 }
             },
             "required": [
@@ -48,10 +52,12 @@
             "additionalProperties": false,
             "properties": {
                 "StorageAccountId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the id of the storage account id where the storage blob is located."
                 },
                 "StorageBlobContainerName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the name of the Storage blob container that is the destination of the deadletter events."
                 }
             },
             "required": [
@@ -64,10 +70,12 @@
             "additionalProperties": false,
             "properties": {
                 "QueueName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the name of the storage queue where the Event Subscriptio will receive events."
                 },
                 "StorageAccountId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the id of the storage account id where the storage queue is located."
                 }
             },
             "required": [
@@ -80,13 +88,16 @@
             "additionalProperties": false,
             "properties": {
                 "CaseSensitive": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Specifies if `subject_begins_with` and `subject_ends_with` case sensitive. This value defaults to `false`."
                 },
                 "SubjectBeginsWith": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A string to filter events for an event subscription based on a resource path prefix."
                 },
                 "SubjectEndsWith": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A string to filter events for an event subscription based on a resource path suffix."
                 }
             },
             "required": []
@@ -115,7 +126,8 @@
             "additionalProperties": false,
             "properties": {
                 "Url": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the url of the webhook where the Event Subscription will receive events."
                 }
             },
             "required": [
@@ -129,30 +141,36 @@
             "type": "string"
         },
         "EventDeliverySchema": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the event delivery schema for the event subscription. Possible values include: `EventGridSchema`, `CloudEventV01Schema`, `CustomInputSchema`."
         },
         "IncludedEventTypes": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of applicable event types that need to be part of the event subscription."
         },
         "Labels": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of labels to assign to the event subscription."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the EventGrid Event Subscription resource. Changing this forces a new resource to be created."
         },
         "Scope": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the scope at which the EventGrid Event Subscription should be created. Changing this forces a new resource to be created."
         },
         "TopicName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the topic to associate with the event subscription."
         },
         "EventhubEndpoint": {
             "type": "array",

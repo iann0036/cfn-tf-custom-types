@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::ComputeSharedVpcHostProject",
-    "description": "CloudFormation equivalent of google_compute_shared_vpc_host_project",
+    "description": "Enables the Google Compute Engine\n[Shared VPC](https://cloud.google.com/compute/docs/shared-vpc)\nfeature for a project, assigning it as a Shared VPC host project.\n\nFor more information, see,\n[the Project API documentation](https://cloud.google.com/compute/docs/reference/latest/projects),\nwhere the Shared VPC feature is referred to by its former name \"XPN\".",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the project that will serve as a Shared VPC host project."
         }
     },
     "additionalProperties": false,

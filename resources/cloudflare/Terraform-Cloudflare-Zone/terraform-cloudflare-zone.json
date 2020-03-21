@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Cloudflare::Zone",
-    "description": "CloudFormation equivalent of cloudflare_zone",
+    "description": "Provides a Cloudflare Zone resource. Zone is the basic resource for working with Cloudflare and is roughly equivalent to a domain name that the user purchases.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "JumpStart": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean of whether to scan for DNS records on creation. Ignored after zone is created. Default: false."
         },
         "Meta": {
             "type": "array",
@@ -39,16 +40,19 @@
             }
         },
         "Paused": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean of whether this zone is paused (traffic bypasses Cloudflare). Default: false."
         },
         "Plan": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the commercial plan to apply to the zone, can be updated once the one is created; one of `free`, `pro`, `business`, `enterprise`."
         },
         "Status": {
             "type": "string"
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "A full zone implies that DNS is hosted with Cloudflare. A partial zone is typically a partner-hosted zone or a CNAME setup. Valid values: `full`, `partial`. Default is `full`."
         },
         "VanityNameServers": {
             "type": "array",
@@ -61,7 +65,8 @@
             "type": "string"
         },
         "Zone": {
-            "type": "string"
+            "type": "string",
+            "description": "The DNS zone name which will be added."
         }
     },
     "additionalProperties": false,

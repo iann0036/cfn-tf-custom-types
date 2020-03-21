@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenTelekomCloud::ComputeInstanceV2",
-    "description": "CloudFormation equivalent of opentelekomcloud_compute_instance_v2",
+    "description": "Manages a V2 VM instance resource within OpenTelekomCloud.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "BlockDevice": {
@@ -8,13 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "BootIndex": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The boot index of the volume. It defaults to 0.\nChanging this creates a new server."
                 },
                 "DeleteOnTermination": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Delete the volume / block device upon\ntermination of the instance. Defaults to false. Changing this creates a\nnew server."
                 },
                 "DestinationType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The type that gets created. Currently only\nsupport \"volume\". Changing this creates a new server."
                 },
                 "DeviceName": {
                     "type": "string"
@@ -23,16 +26,20 @@
                     "type": "string"
                 },
                 "SourceType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The source type of the device. Must be one of\n\"blank\", \"image\", \"volume\", or \"snapshot\". Changing this creates a new\nserver."
                 },
                 "Uuid": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The UUID of\nthe image, volume, or snapshot. Changing this creates a new server."
                 },
                 "VolumeSize": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The size of the volume to create (in gigabytes). Required\nin the following combinations: source=image and destination=volume,\nand source=blank and destination=volume. Changing this creates a new server."
                 },
                 "VolumeType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Currently, the value can be `SSD` (ultra-I/O disk type), `SAS` (high I/O disk type), or `SATA` (common I/O disk type)\n[OTC-API](https://docs.otc.t-systems.com/en-us/api/ecs/en-us_topic_0065817708.html)."
                 }
             },
             "required": [
@@ -44,25 +51,31 @@
             "additionalProperties": false,
             "properties": {
                 "AccessNetwork": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Specifies if this network should be used for\nprovisioning access. Accepts true or false. Defaults to false."
                 },
                 "FixedIpV4": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies a fixed IPv4 address to be used on this\nnetwork. Changing this creates a new server."
                 },
                 "FixedIpV6": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies a fixed IPv6 address to be used on this\nnetwork. Changing this creates a new server."
                 },
                 "FloatingIp": {
                     "type": "string"
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The human-readable\nname of the network. Changing this creates a new server."
                 },
                 "Port": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The port UUID of a\nnetwork to attach to the server. Changing this creates a new server."
                 },
                 "Uuid": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The network UUID to\nattach to the server. Changing this creates a new server."
                 }
             },
             "required": []
@@ -88,40 +101,48 @@
             "additionalProperties": false,
             "properties": {
                 "BuildNearHostIp": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "An IP Address in CIDR form. The instance\nwill be placed on a compute node that is in the same subnet."
                 },
                 "DehId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of DeH. This parameter takes effect only when the value\nof tenancy is dedicated."
                 },
                 "DifferentHost": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of instance UUIDs. The instance will\nbe scheduled on a different host than all other instances."
                 },
                 "Group": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A UUID of a Server Group. The instance will be placed\ninto that group."
                 },
                 "Query": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A conditional query that a compute node must pass in\norder to host an instance."
                 },
                 "SameHost": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of instance UUIDs. The instance will be\nscheduled on the same host of those specified."
                 },
                 "TargetCell": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of a cell to host the instance."
                 },
                 "Tenancy": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The tenancy specifies whether the ECS is to be created on a Dedicated Host\n(DeH) or in a shared pool."
                 }
             },
             "required": []
@@ -173,7 +194,8 @@
             "type": "string"
         },
         "AdminPass": {
-            "type": "string"
+            "type": "string",
+            "description": "The administrative password to assign to the server.\nChanging this changes the root password on the existing server."
         },
         "AllMetadata": {
             "type": "array",
@@ -196,31 +218,39 @@
             }
         },
         "AutoRecovery": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Configures or deletes automatic recovery of an instance."
         },
         "AvailabilityZone": {
-            "type": "string"
+            "type": "string",
+            "description": "The availability zone in which to create\nthe server. Changing this creates a new server."
         },
         "ConfigDrive": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to use the config_drive feature to\nconfigure the instance. Changing this creates a new server."
         },
         "FlavorId": {
-            "type": "string"
+            "type": "string",
+            "description": "The flavor ID of\nthe desired flavor for the server. Changing this resizes the existing server."
         },
         "FlavorName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the\ndesired flavor for the server. Changing this resizes the existing server."
         },
         "FloatingIp": {
             "type": "string"
         },
         "ImageId": {
-            "type": "string"
+            "type": "string",
+            "description": "The image ID of\nthe desired image for the server. Changing this creates a new server."
         },
         "ImageName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the\ndesired image for the server. Changing this creates a new server."
         },
         "KeyPair": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of a key pair to put on the server. The key\npair must already be created and associated with the tenant's account.\nChanging this creates a new server."
         },
         "Metadata": {
             "type": "array",
@@ -240,10 +270,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Metadata key/value pairs to make available from\nwithin the instance. Changing this updates the existing server metadata."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique name for the resource."
         },
         "Region": {
             "type": "string"
@@ -253,10 +285,12 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "An array of one or more security group names\nto associate with the server. Changing this results in adding/removing\nsecurity groups from the existing server. *Note*: When attaching the\ninstance to networks using Ports, place the security groups on the Port\nand not the instance."
         },
         "StopBeforeDestroy": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to try stop instance gracefully\nbefore destroying it, thus giving chance for guest OS daemons to stop correctly.\nIf instance doesn't stop within timeout, it will be destroyed anyway."
         },
         "Tag": {
             "type": "array",
@@ -276,17 +310,20 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Tags key/value pairs to associate with the instance."
         },
         "Tags": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "**DEPRECATED** (Optional) The tags of the image. It must be a list of strings."
         },
         "UserData": {
-            "type": "string"
+            "type": "string",
+            "description": "The user data to provide when launching the instance.\nChanging this creates a new server."
         },
         "VolumeAttached": {
             "type": "array",

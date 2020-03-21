@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::IdentityRoleAssignmentV3",
-    "description": "CloudFormation equivalent of openstack_identity_role_assignment_v3",
+    "description": "Manages a V3 Role assignment within OpenStack Keystone.\n\nNote: You _must_ have admin privileges in your OpenStack cloud to use\nthis resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,22 +9,27 @@
             "type": "string"
         },
         "DomainId": {
-            "type": "string"
+            "type": "string",
+            "description": "The domain to assign the role in."
         },
         "GroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "The group to assign the role to."
         },
         "ProjectId": {
-            "type": "string"
+            "type": "string",
+            "description": "The project to assign the role in."
         },
         "Region": {
             "type": "string"
         },
         "RoleId": {
-            "type": "string"
+            "type": "string",
+            "description": "The role to assign."
         },
         "UserId": {
-            "type": "string"
+            "type": "string",
+            "description": "The user to assign the role to."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::UCloud::NatGatewayRule",
-    "description": "CloudFormation equivalent of ucloud_nat_gateway_rule",
+    "description": "Provides a Nat Gateway resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,25 +9,32 @@
             "type": "string"
         },
         "DstIp": {
-            "type": "string"
+            "type": "string",
+            "description": "The private ip of instance bound to the jNAT gateway."
         },
         "DstPortRange": {
-            "type": "string"
+            "type": "string",
+            "description": "The range of port numbers of the private ip, range: 1-65535. (eg: `port` or `port1-port2`)."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Nat Gateway Rule which contains 6-63 characters and only support Chinese, English, numbers, '-', '_' and '.'. If not specified, terraform will auto-generate a name beginning with `tf-nat-gateway-rule-`."
         },
         "NatGatewayId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Nat Gateway."
         },
         "Protocol": {
-            "type": "string"
+            "type": "string",
+            "description": "The protocol of the Nat Gateway Rule. Possible values: `tcp`, `udp`."
         },
         "SrcEipId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of eip associate to the Nat Gateway."
         },
         "SrcPortRange": {
-            "type": "string"
+            "type": "string",
+            "description": "The range of port numbers of the eip, range: 1-65535. (eg: `port` or `port1-port2`)."
         }
     },
     "additionalProperties": false,

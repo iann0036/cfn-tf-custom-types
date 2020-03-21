@@ -1,6 +1,10 @@
 # Terraform::Google::ComputeSecurityPolicy
 
-CloudFormation equivalent of google_compute_security_policy
+A Security Policy defines an IP blacklist or whitelist that protects load balanced Google Cloud services by denying or permitting traffic from specified IP ranges. For more information
+see the [official documentation](https://cloud.google.com/armor/docs/configure-security-policies)
+and the [API](https://cloud.google.com/compute/docs/reference/rest/beta/securityPolicies).
+
+Security Policy is used by [`google_compute_backend_service`](https://www.terraform.io/docs/providers/google/r/compute_backend_service.html#security_policy).
 
 ## Syntax
 
@@ -47,6 +51,8 @@ Properties:
 
 #### Description
 
+An optional description of this security policy. Max size is 2048.
+
 _Required_: No
 
 _Type_: String
@@ -55,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the security policy.
+
 _Required_: Yes
 
 _Type_: String
@@ -62,6 +70,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The project in which the resource belongs. If it
+is not provided, the provider project is used.
 
 _Required_: No
 

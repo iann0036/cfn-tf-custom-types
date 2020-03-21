@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::ExpressRouteCircuitAuthorization",
-    "description": "CloudFormation equivalent of azurerm_express_route_circuit_authorization",
+    "description": "Manages an ExpressRoute Circuit Authorization.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -35,13 +35,16 @@
             "type": "string"
         },
         "ExpressRouteCircuitName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Express Route Circuit in which to create the Authorization."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the ExpressRoute circuit. Changing this forces a\nnew resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to\ncreate the ExpressRoute circuit. Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

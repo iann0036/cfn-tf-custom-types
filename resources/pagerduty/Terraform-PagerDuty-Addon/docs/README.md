@@ -1,6 +1,6 @@
 # Terraform::PagerDuty::Addon
 
-CloudFormation equivalent of pagerduty_addon
+With [add-ons](https://v2.developer.pagerduty.com/v2/page/api-reference#!/Add-ons/get_addons), third-party developers can write their own add-ons to PagerDuty's UI. Given a configuration containing a src parameter, that URL will be embedded in an iframe on a page that's available to users from a drop-down menu.
 
 ## Syntax
 
@@ -31,6 +31,9 @@ Properties:
 
 #### Name
 
+The name of the add-on.
+* `src` - (Required) The source URL to display in a frame in the PagerDuty UI. `HTTPS` is required.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +41,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Src
+
+The source URL to display in a frame in the PagerDuty UI. `HTTPS` is required.
 
 _Required_: Yes
 

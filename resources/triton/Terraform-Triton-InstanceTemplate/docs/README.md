@@ -1,6 +1,8 @@
 # Terraform::Triton::InstanceTemplate
 
-CloudFormation equivalent of triton_instance_template
+The `triton_instance_template` resource represents a Triton Service Group instance template.
+
+~> **NOTE:**  Triton Service Groups are in Preview and only supported in specific regions at this time. They will become Generally Available in the near future.
 
 ## Syntax
 
@@ -48,6 +50,8 @@ Properties:
 
 #### FirewallEnabled
 
+Whether to enable the firewall for group instances. Default is `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -55,6 +59,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Image
+
+UUID of the image.
 
 _Required_: Yes
 
@@ -64,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Metadata
 
+Metadata for group instances.
+
 _Required_: No
 
 _Type_: List of <a href="metadata.md">Metadata</a>
@@ -71,6 +79,8 @@ _Type_: List of <a href="metadata.md">Metadata</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Networks
+
+Network IDs for group instances.
 
 _Required_: No
 
@@ -80,6 +90,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Package
 
+Package name used for provisioning.
+
 _Required_: Yes
 
 _Type_: String
@@ -87,6 +99,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Tags for group instances.
 
 _Required_: No
 
@@ -96,6 +110,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TemplateName
 
+Friendly name for the instance template.
+
 _Required_: Yes
 
 _Type_: String
@@ -103,6 +119,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Userdata
+
+Data copied to instance on boot.
 
 _Required_: No
 

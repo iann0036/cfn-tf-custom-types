@@ -1,6 +1,6 @@
 # Terraform::Scaleway::InstancePlacementGroup
 
-CloudFormation equivalent of scaleway_instance_placement_group
+Creates and manages Compute Instance Placement Groups. For more information, see [the documentation](https://developers.scaleway.com/en/products/instance/api/#placement-groups-d8f653).
 
 ## Syntax
 

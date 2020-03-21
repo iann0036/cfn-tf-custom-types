@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::ClbAttachment",
-    "description": "CloudFormation equivalent of tencentcloud_clb_attachment",
+    "description": "Provides a resource to create a CLB attachment.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Targets": {
@@ -8,13 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "InstanceId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Id of the backend server."
                 },
                 "Port": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Port of the backend server."
                 },
                 "Weight": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Forwarding weight of the backend service, the range of [0, 100], defaults to 10."
                 }
             },
             "required": [
@@ -29,16 +32,19 @@
             "type": "string"
         },
         "ClbId": {
-            "type": "string"
+            "type": "string",
+            "description": "Id of the CLB."
         },
         "ListenerId": {
-            "type": "string"
+            "type": "string",
+            "description": "Id of the CLB listener."
         },
         "ProtocolType": {
             "type": "string"
         },
         "RuleId": {
-            "type": "string"
+            "type": "string",
+            "description": "Id of the CLB listener rule. Only supports listeners of 'HTTPS' and 'HTTP' protocol."
         },
         "Targets": {
             "type": "array",

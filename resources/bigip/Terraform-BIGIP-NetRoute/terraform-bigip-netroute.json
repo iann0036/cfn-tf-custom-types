@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::BIGIP::NetRoute",
-    "description": "CloudFormation equivalent of bigip_net_route",
+    "description": "`bigip_net_route` Manages a route configuration\n\nFor resources should be named with their \"full path\". The full path is the combination of the partition + name of the resource. For example /Common/my-pool.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,10 +12,12 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the route."
         },
         "Network": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies a gateway address for the route."
         }
     },
     "additionalProperties": false,

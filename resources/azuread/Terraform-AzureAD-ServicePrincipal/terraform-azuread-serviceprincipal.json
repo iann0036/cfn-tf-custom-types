@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureAD::ServicePrincipal",
-    "description": "CloudFormation equivalent of azuread_service_principal",
+    "description": "Manages a Service Principal associated with an Application within Azure Active Directory.\n\n-> **NOTE:** If you're authenticating using a Service Principal then it must have permissions to both `Read and write all applications` and `Sign in and read user profile` within the `Windows Azure Active Directory` API. Please see The [Granting a Service Principal permission to manage AAD](../guides/service_principal_configuration.html) for the required steps.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "AppRoleAssignmentRequired": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Does this Service Principal require an AppRoleAssignment to a user or group before Azure AD will issue a user or access token to the application? Defaults to `false`."
         },
         "ApplicationId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Azure AD Application for which to create a Service Principal."
         },
         "DisplayName": {
             "type": "string"
@@ -25,7 +27,8 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of tags to apply to the Service Principal."
         }
     },
     "additionalProperties": false,

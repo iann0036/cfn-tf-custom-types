@@ -30,6 +30,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### InheritFromParent
 
+If set to true, the values from the effective Policy of the parent resource
+are inherited, meaning the values set in this Policy are added to the values inherited up the hierarchy.
+
 _Required_: No
 
 _Type_: Boolean
@@ -37,6 +40,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SuggestedValue
+
+The Google Cloud Console will try to default to a configuration that matches the value specified in this field.
 
 _Required_: No
 

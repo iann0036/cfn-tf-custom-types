@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::DcGatewayCcnRoute
 
-CloudFormation equivalent of tencentcloud_dc_gateway_ccn_route
+Provides a resource to creating direct connect gateway route entry.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### CidrBlock
 
+A network address segment of IDC.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DcgId
+
+ID of the DCG.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Heroku::AppRelease",
-    "description": "CloudFormation equivalent of heroku_app_release",
+    "description": "Provides a [Heroku App Release](https://devcenter.heroku.com/articles/platform-api-reference#release)\nresource.\n\nAn app release represents a combination of code, config vars and add-ons for an app on Heroku.\n\n~> **NOTE:** This resource requires the slug be uploaded to Heroku using [`heroku_slug`](slug.html) or with external tooling prior to running terraform.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "App": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the application."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "description of changes in this release."
         },
         "SlugId": {
-            "type": "string"
+            "type": "string",
+            "description": "unique identifier of slug."
         }
     },
     "additionalProperties": false,

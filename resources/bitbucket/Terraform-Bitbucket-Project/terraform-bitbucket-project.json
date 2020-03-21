@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Bitbucket::Project",
-    "description": "CloudFormation equivalent of bitbucket_project",
+    "description": "This resource allows you to manage your projects in your bitbucket team. \n\n# Example Usage\n\n```hcl\n# Manage your repository\nresource \"bitbucket_project\" \"devops\" {\n  owner = \"my-team\"\n  name  = \"devops\"\n  key = \"DEVOPS\"\n}\n```",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,19 +9,24 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the project."
         },
         "IsPrivate": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If you want to keep the project private - defaults to true."
         },
         "Key": {
-            "type": "string"
+            "type": "string",
+            "description": "The key used for this project."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the project."
         },
         "Owner": {
-            "type": "string"
+            "type": "string",
+            "description": "The owner of this project. Can be you or any team you have write access to."
         }
     },
     "additionalProperties": false,

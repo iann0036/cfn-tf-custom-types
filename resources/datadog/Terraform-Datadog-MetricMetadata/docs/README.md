@@ -1,6 +1,6 @@
 # Terraform::Datadog::MetricMetadata
 
-CloudFormation equivalent of datadog_metric_metadata
+Provides a Datadog metric_metadata resource. This can be used to manage a metric's metadata.
 
 ## Syntax
 
@@ -41,6 +41,8 @@ Properties:
 
 #### Description
 
+A description of the metric.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +50,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Metric
+
+The name of the metric.
 
 _Required_: Yes
 
@@ -57,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PerUnit
 
+'Per' unit of the metric such as 'second' in 'bytes per second'.
+
 _Required_: No
 
 _Type_: String
@@ -65,6 +71,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ShortName
 
+A short name of the metric.
+
 _Required_: No
 
 _Type_: String
@@ -72,6 +80,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StatsdInterval
+
+If applicable, stasd flush interval in seconds for the metric.
 
 _Required_: No
 
@@ -88,6 +98,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Unit
+
+Primary unit of the metric such as 'byte' or 'operation'.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Cloudflare::PageRule",
-    "description": "CloudFormation equivalent of cloudflare_page_rule",
+    "description": "Provides a Cloudflare page rule resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Actions": {
@@ -166,16 +166,20 @@
             "type": "string"
         },
         "Priority": {
-            "type": "number"
+            "type": "number",
+            "description": "The priority of the page rule among others for this target, the higher the number the higher the priority as per [API documentation](https://api.cloudflare.com/#page-rules-for-a-zone-create-page-rule)."
         },
         "Status": {
-            "type": "string"
+            "type": "string",
+            "description": "Whether the page rule is active or disabled."
         },
         "Target": {
-            "type": "string"
+            "type": "string",
+            "description": "The URL pattern to target with the page rule."
         },
         "ZoneId": {
-            "type": "string"
+            "type": "string",
+            "description": "The DNS zone ID to which the page rule should be added."
         },
         "Actions": {
             "type": "array",

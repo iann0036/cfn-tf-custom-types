@@ -1,6 +1,13 @@
 # Terraform::OpenTelekomCloud::ComputeFloatingipV2
 
-CloudFormation equivalent of opentelekomcloud_compute_floatingip_v2
+Manages a V2 floating IP resource within OpenTelekomCloud Nova (compute)
+that can be used for compute instances.
+These are similar to Neutron (networking) floating IP resources,
+but only networking floating IPs can be used with load balancers.
+
+Floating IPs created with this module will have a bandwidth of 1000Mbit/s,
+for manually specifying the bandwidth please use the
+[`opentelekomcloud_vpc_eip_v1`](vpc_eip_v1.html) module.
 
 ## Syntax
 
@@ -30,6 +37,9 @@ Properties:
 ## Properties
 
 #### Pool
+
+The name of the pool from which to obtain the floating
+IP. Default value is admin_external_net. Changing this creates a new floating IP.
 
 _Required_: No
 

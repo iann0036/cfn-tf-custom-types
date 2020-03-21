@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::BIGIP::NetSelfip",
-    "description": "CloudFormation equivalent of bigip_net_selfip",
+    "description": "`bigip_net_selfip` Manages a selfip configuration\n\nResource should be named with their \"full path\". The full path is the combination of the partition + name of the resource, for example /Common/my-selfip.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,20 @@
             "type": "string"
         },
         "Ip": {
-            "type": "string"
+            "type": "string",
+            "description": "The Self IP's address and netmask."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the selfip."
         },
         "TrafficGroup": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the traffic group, defaults to `traffic-group-local-only` if not specified."
         },
         "Vlan": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the VLAN for which you are setting a self IP address. This setting must be provided when a self IP is created."
         }
     },
     "additionalProperties": false,

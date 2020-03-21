@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::CamUser",
-    "description": "CloudFormation equivalent of tencentcloud_cam_user",
+    "description": "Provides a resource to create a CAM user.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,28 +9,36 @@
             "type": "string"
         },
         "ConsoleLogin": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicade whether the CAM user can login or not."
         },
         "CountryCode": {
-            "type": "string"
+            "type": "string",
+            "description": "Country code of the phone num, like '86'."
         },
         "Email": {
-            "type": "string"
+            "type": "string",
+            "description": "Email of the CAM user."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of CAM user."
         },
         "NeedResetPassword": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicate whether the CAM user will reset the password the next time he/her logs in."
         },
         "Password": {
-            "type": "string"
+            "type": "string",
+            "description": "The password of the CAM user. The password should be set with 8 characters or more and contains uppercase small letters, numbers, and special characters. Only valid when console_login set true. If not set and the value of console_login is true, a random password is automatically generated."
         },
         "PhoneNum": {
-            "type": "string"
+            "type": "string",
+            "description": "Phone num of the CAM user."
         },
         "Remark": {
-            "type": "string"
+            "type": "string",
+            "description": "Remark of the CAM user."
         },
         "SecretId": {
             "type": "string"
@@ -45,7 +53,8 @@
             "type": "number"
         },
         "UseApi": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicate whether to generate a secret key or not."
         }
     },
     "additionalProperties": false,

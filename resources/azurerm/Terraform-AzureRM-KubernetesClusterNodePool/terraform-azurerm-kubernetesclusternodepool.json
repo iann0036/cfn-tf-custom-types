@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::KubernetesClusterNodePool",
-    "description": "CloudFormation equivalent of azurerm_kubernetes_cluster_node_pool",
+    "description": "Manages a Node Pool within a Kubernetes Cluster\n\n~> **NOTE:** Multiple Node Pools are only supported when the Kubernetes Cluster is using Virtual Machine Scale Sets.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -33,28 +33,34 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of Availability Zones where the Nodes in this Node Pool should be created in."
         },
         "EnableAutoScaling": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to enable [auto-scaler](https://docs.microsoft.com/en-us/azure/aks/cluster-autoscaler). Defaults to `false`."
         },
         "EnableNodePublicIp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Should each node have a Public IP Address? Defaults to `false`."
         },
         "KubernetesClusterId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Kubernetes Cluster where this Node Pool should exist. Changing this forces a new resource to be created."
         },
         "MaxCount": {
             "type": "number"
         },
         "MaxPods": {
-            "type": "number"
+            "type": "number",
+            "description": "The maximum number of pods that can run on each agent. Changing this forces a new resource to be created."
         },
         "MinCount": {
             "type": "number"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Node Pool which should be created within the Kubernetes Cluster. Changing this forces a new resource to be created."
         },
         "NodeCount": {
             "type": "number"
@@ -77,20 +83,24 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A map of Kubernetes labels which should be applied to nodes in this Node Pool."
         },
         "NodeTaints": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of Kubernetes taints which should be applied to nodes in the agent pool (e.g `key=value:NoSchedule`)."
         },
         "OsDiskSizeGb": {
-            "type": "number"
+            "type": "number",
+            "description": "The Agent Operating System disk size in GB. Changing this forces a new resource to be created."
         },
         "OsType": {
-            "type": "string"
+            "type": "string",
+            "description": "The Operating System which should be used for this Node Pool. Changing this forces a new resource to be created. Possible values are `Linux` and `Windows`. Defaults to `Linux`."
         },
         "Tags": {
             "type": "array",
@@ -110,13 +120,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "VmSize": {
-            "type": "string"
+            "type": "string",
+            "description": "The SKU which should be used for the Virtual Machines used in this Node Pool. Changing this forces a new resource to be created."
         },
         "VnetSubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Subnet where this Node Pool should exist."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

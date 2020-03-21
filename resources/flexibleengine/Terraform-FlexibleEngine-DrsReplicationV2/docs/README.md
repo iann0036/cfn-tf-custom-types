@@ -1,6 +1,6 @@
 # Terraform::FlexibleEngine::DrsReplicationV2
 
-CloudFormation equivalent of flexibleengine_drs_replication_v2
+Manages a V2 replication resource within FlexibleEngine.
 
 ## Syntax
 
@@ -38,6 +38,8 @@ Properties:
 
 #### Description
 
+The description of the EVS replication pair. The description can contain a maximum of 255 bytes.
+
 _Required_: No
 
 _Type_: String
@@ -45,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the EVS replication pair. The name can contain a maximum of 255 bytes.
 
 _Required_: No
 
@@ -54,6 +58,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PriorityStation
 
+The primary AZ of the EVS replication pair. That is the AZ where the production disk belongs.
+
 _Required_: Yes
 
 _Type_: String
@@ -62,6 +68,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ReplicationModel
 
+The type of the EVS replication pair. Currently only type hypermetro is supported.
+
 _Required_: No
 
 _Type_: String
@@ -69,6 +77,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VolumeIds
+
+An array of one or more IDs of the EVS disks used to create the EVS replication pair.
 
 _Required_: Yes
 

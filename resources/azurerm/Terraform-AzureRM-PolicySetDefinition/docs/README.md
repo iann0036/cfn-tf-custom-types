@@ -1,6 +1,8 @@
 # Terraform::AzureRM::PolicySetDefinition
 
-CloudFormation equivalent of azurerm_policy_set_definition
+Manages a policy set definition.
+
+-> **NOTE:**  Policy set definitions (also known as policy initiatives) do not take effect until they are assigned to a scope using a Policy Set Assignment.
 
 ## Syntax
 
@@ -45,6 +47,8 @@ Properties:
 
 #### Description
 
+The description of the policy set definition.
+
 _Required_: No
 
 _Type_: String
@@ -52,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+The display name of the policy set definition.
 
 _Required_: Yes
 
@@ -61,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ManagementGroupId
 
+The ID of the Management Group where this policy should be defined. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -68,6 +76,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Metadata
+
+The metadata for the policy set definition. This is a json object representing additional metadata that should be stored with the policy definition.
 
 _Required_: No
 
@@ -77,6 +87,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the policy set definition. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -84,6 +96,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Parameters
+
+Parameters for the policy set definition. This field is a json object that allows you to parameterize your policy definition.
 
 _Required_: No
 
@@ -93,6 +107,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PolicyDefinitions
 
+The policy definitions for the policy set definition. This is a json object representing the bundled policy definitions .
+
 _Required_: No
 
 _Type_: String
@@ -100,6 +116,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PolicyType
+
+The policy set type. Possible values are `BuiltIn` or `Custom`. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

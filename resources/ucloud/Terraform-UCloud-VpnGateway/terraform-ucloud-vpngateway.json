@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::UCloud::VpnGateway",
-    "description": "CloudFormation equivalent of ucloud_vpn_gateway",
+    "description": "Provides a VPN Gateway resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,34 +9,42 @@
             "type": "string"
         },
         "ChargeType": {
-            "type": "string"
+            "type": "string",
+            "description": "The charge type of VPN Gateway, possible values are: `year`, `month` and `dynamic` as pay by hour (specific permission required). (Default: `month`)."
         },
         "CreateTime": {
             "type": "string"
         },
         "Duration": {
-            "type": "number"
+            "type": "number",
+            "description": "The duration that you will buy the VPN Gateway (Default: `1`). The value is `0` when pay by month and the instance will be valid till the last day of that month. It is not required when `dynamic` (pay by hour)."
         },
         "EipId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of eip associate to the VPN Gateway."
         },
         "ExpireTime": {
             "type": "string"
         },
         "Grade": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of the VPN Gateway. Possible values: `standard`, `enhanced`. `standard` recommended application scenario: Applicable to services with bidirectional peak bandwidth of 1M~50M; `enhanced` recommended application scenario: Suitable for services with bidirectional peak bandwidths of 50M~100M."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the VPN Gateway which contains 1-63 characters and only support Chinese, English, numbers, '-', '_' and '.'. If not specified, terraform will auto-generate a name beginning with `tf-vpn-gateway-`."
         },
         "Remark": {
-            "type": "string"
+            "type": "string",
+            "description": "The remarks of the VPN Gateway. (Default: `\"\"`)."
         },
         "Tag": {
-            "type": "string"
+            "type": "string",
+            "description": "A tag assigned to VPN Gateway, which contains at most 63 characters and only support Chinese, English, numbers, '-', '_', and '.'. If it is not filled in or a empty string is filled in, then default tag will be assigned. (Default: `Default`)."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of VPC linked to the VPN Gateway."
         }
     },
     "additionalProperties": false,

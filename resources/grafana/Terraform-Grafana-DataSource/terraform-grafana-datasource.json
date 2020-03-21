@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Grafana::DataSource",
-    "description": "CloudFormation equivalent of grafana_data_source",
+    "description": "The data source resource allows a data source to be created on a Grafana server.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "JsonData": {
@@ -8,13 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "AssumeRoleArn": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The role\nARN to be assumed by Grafana when using the CloudWatch data source."
                 },
                 "AuthType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The authentication type\ntype used to access the data source."
                 },
                 "CustomMetricsNamespaces": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A comma-separated list of custom namespaces to be queried by the CloudWatch\ndata source."
                 },
                 "DefaultRegion": {
                     "type": "string"
@@ -30,10 +33,12 @@
             "additionalProperties": false,
             "properties": {
                 "AccessKey": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The access key required\nto access the data source."
                 },
                 "SecretKey": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The secret key required\nto access the data source."
                 }
             },
             "required": [
@@ -48,37 +53,48 @@
             "type": "string"
         },
         "AccessMode": {
-            "type": "string"
+            "type": "string",
+            "description": "The method by which the browser-based Grafana\napplication will access the data source. The default is \"proxy\", which means\nthat the application will make requests via a proxy endpoint on the Grafana\nserver."
         },
         "BasicAuthEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "- If true, HTTP basic authentication will\nbe used to make requests."
         },
         "BasicAuthPassword": {
-            "type": "string"
+            "type": "string",
+            "description": "The\npassword to use for basic auth."
         },
         "BasicAuthUsername": {
-            "type": "string"
+            "type": "string",
+            "description": "The\nusername to use for basic auth."
         },
         "DatabaseName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the\ndatabase to use on the selected data source server."
         },
         "IsDefault": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If true, the data source will be the default\nsource used by the Grafana server. Only one data source on a server can be\nthe default."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique name for the data source within the Grafana\nserver."
         },
         "Password": {
-            "type": "string"
+            "type": "string",
+            "description": "The password to use to\nauthenticate to the data source."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The data source type. Must be one of the data source\nkeywords supported by the Grafana server."
         },
         "Url": {
-            "type": "string"
+            "type": "string",
+            "description": "The URL for the data source. The type of URL required\nvaries depending on the chosen data source type."
         },
         "Username": {
-            "type": "string"
+            "type": "string",
+            "description": "The username to use to\nauthenticate to the data source."
         },
         "JsonData": {
             "type": "array",

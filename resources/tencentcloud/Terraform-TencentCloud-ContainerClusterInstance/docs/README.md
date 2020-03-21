@@ -1,6 +1,8 @@
 # Terraform::TencentCloud::ContainerClusterInstance
 
-CloudFormation equivalent of tencentcloud_container_cluster_instance
+Provides a TencentCloud Container Cluster Instance resource.
+
+~> **NOTE:** It has been deprecated and replaced by  tencentcloud_kubernetes_scale_worker.
 
 ## Syntax
 
@@ -75,6 +77,8 @@ Properties:
 
 #### Bandwidth
 
+The network bandwidth of the node.
+
 _Required_: Yes
 
 _Type_: Double
@@ -82,6 +86,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BandwidthType
+
+The network type of the node.
 
 _Required_: Yes
 
@@ -91,6 +97,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ClusterId
 
+The id of the cluster.
+
 _Required_: Yes
 
 _Type_: String
@@ -98,6 +106,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Cpu
+
+It has been deprecated from version 1.16.0. Set 'instance_type' instead. The cpu of the node.
 
 _Required_: No
 
@@ -107,6 +117,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CvmType
 
+The type of node needed by cvm.
+
 _Required_: No
 
 _Type_: String
@@ -114,6 +126,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DockerGraphPath
+
+The docker graph path is going to mounted.
 
 _Required_: No
 
@@ -123,6 +137,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceName
 
+The name ot node.
+
 _Required_: No
 
 _Type_: String
@@ -130,6 +146,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceType
+
+The instance type of the node needed by cvm.
 
 _Required_: No
 
@@ -139,6 +157,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IsVpcGateway
 
+Describe whether the node enable the gateway capability.
+
 _Required_: Yes
 
 _Type_: Double
@@ -146,6 +166,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeyId
+
+The key_id of each node(if using key pair to access).
 
 _Required_: No
 
@@ -155,6 +177,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Mem
 
+It has been deprecated from version 1.16.0. Set 'instance_type' instead. The memory of the node.
+
 _Required_: No
 
 _Type_: Double
@@ -162,6 +186,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MountTarget
+
+The path which volume is going to be mounted.
 
 _Required_: No
 
@@ -171,6 +197,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Password
 
+The password of each node.
+
 _Required_: No
 
 _Type_: String
@@ -178,6 +206,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Period
+
+The puchase duration of the node needed by cvm.
 
 _Required_: No
 
@@ -187,6 +217,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RequireWanIp
 
+Indicate whether wan ip is needed.
+
 _Required_: No
 
 _Type_: Double
@@ -194,6 +226,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RootSize
+
+The size of the root volume.
 
 _Required_: Yes
 
@@ -203,6 +237,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RootType
 
+The type of the root volume. see more from CVM.
+
 _Required_: No
 
 _Type_: String
@@ -210,6 +246,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SgId
+
+The security group id.
 
 _Required_: No
 
@@ -219,6 +257,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StorageSize
 
+The size of the data volume.
+
 _Required_: Yes
 
 _Type_: Double
@@ -226,6 +266,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StorageType
+
+The type of the data volume. see more from CVM.
 
 _Required_: No
 
@@ -235,6 +277,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubnetId
 
+The subnet id which the node stays in.
+
 _Required_: Yes
 
 _Type_: String
@@ -242,6 +286,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Unschedulable
+
+Determine whether the node will be schedulable. 0 is the default meaning node will be schedulable. 1 for unschedulable.
 
 _Required_: No
 
@@ -251,6 +297,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UserScript
 
+User defined script in a base64-format. The script runs after the kubernetes component is ready on node. see more from CCS api documents.
+
 _Required_: No
 
 _Type_: String
@@ -258,6 +306,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneId
+
+The zone which the node stays in.
 
 _Required_: Yes
 

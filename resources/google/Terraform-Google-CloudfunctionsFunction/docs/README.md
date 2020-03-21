@@ -1,6 +1,15 @@
 # Terraform::Google::CloudfunctionsFunction
 
-CloudFormation equivalent of google_cloudfunctions_function
+Creates a new Cloud Function. For more information see
+[the official documentation](https://cloud.google.com/functions/docs/)
+and
+[API](https://cloud.google.com/functions/docs/apis).
+
+~> **Warning:** As of November 1, 2019, newly created Functions are
+private-by-default and will require [appropriate IAM permissions](https://cloud.google.com/functions/docs/reference/iam/roles)
+to be invoked. See below examples for how to set up the appropriate permissions,
+or view the [Cloud Functions IAM resources](/docs/providers/google/r/cloudfunctions_cloud_function_iam.html)
+for Cloud Functions.
 
 ## Syntax
 
@@ -74,6 +83,8 @@ Properties:
 
 #### AvailableMemoryMb
 
+Memory (in MB), available to the function. Default value is 256MB. Allowed values are: 128MB, 256MB, 512MB, 1024MB, and 2048MB.
+
 _Required_: No
 
 _Type_: Double
@@ -81,6 +92,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Description of the function.
 
 _Required_: No
 
@@ -90,6 +103,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EntryPoint
 
+Name of the function that will be executed when the Google Cloud Function is triggered.
+
 _Required_: No
 
 _Type_: String
@@ -97,6 +112,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnvironmentVariables
+
+A set of key/value environment variable pairs to assign to the function.
 
 _Required_: No
 
@@ -114,6 +131,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Labels
 
+A set of key/value label pairs to assign to the function.
+
 _Required_: No
 
 _Type_: List of <a href="labels.md">Labels</a>
@@ -122,6 +141,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxInstances
 
+The limit on the maximum number of function instances that may coexist at a given time.
+
 _Required_: No
 
 _Type_: Double
@@ -129,6 +150,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+A user-defined name of the function. Function names must be unique globally.
 
 _Required_: Yes
 
@@ -154,6 +177,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Runtime
 
+The runtime in which the function is going to run.
+Eg. `"nodejs8"`, `"nodejs10"`, `"python37"`, `"go111"`.
+
 _Required_: Yes
 
 _Type_: String
@@ -161,6 +187,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServiceAccountEmail
+
+If provided, the self-provided service account to run the function with.
 
 _Required_: No
 
@@ -170,6 +198,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SourceArchiveBucket
 
+The GCS bucket containing the zip archive which contains the function.
+
 _Required_: No
 
 _Type_: String
@@ -177,6 +207,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SourceArchiveObject
+
+The source archive object (file) in archive bucket.
 
 _Required_: No
 
@@ -186,6 +218,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Timeout
 
+Timeout (in seconds) for the function. Default value is 60 seconds. Cannot be more than 540 seconds.
+
 _Required_: No
 
 _Type_: Double
@@ -194,6 +228,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TriggerHttp
 
+Boolean variable. Any HTTP request (of a supported type) to the endpoint will trigger function execution. Supported HTTP request types are: POST, PUT, GET, DELETE, and OPTIONS. Endpoint is returned as `https_trigger_url`. Cannot be used with `trigger_bucket` and `trigger_topic`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -201,6 +237,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcConnector
+
+The VPC Network Connector that this cloud function can connect to. It can be either the fully-qualified URI, or the short name of the network connector resource. The format of this field is `projects/*/locations/*/connectors/*`.
 
 _Required_: No
 

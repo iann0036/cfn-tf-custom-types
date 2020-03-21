@@ -1,6 +1,8 @@
 # Terraform::PagerDuty::MaintenanceWindow
 
-CloudFormation equivalent of pagerduty_maintenance_window
+A [maintenance window](https://v2.developer.pagerduty.com/v2/page/api-reference#!/Maintenance_Windows/get_maintenance_windows) is used to temporarily disable one or more services for a set period of time. No incidents will be triggered and no notifications will be received while a service is disabled by a maintenance window.
+
+Maintenance windows are specified to start at a certain time and end after they have begun. Once started, a maintenance window cannot be deleted; it can only be ended immediately to re-enable the service.
 
 ## Syntax
 
@@ -36,6 +38,8 @@ Properties:
 
 #### Description
 
+A description for the maintenance window.
+
 _Required_: No
 
 _Type_: String
@@ -43,6 +47,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EndTime
+
+The maintenance window's end time. This is when the services will start creating incidents again. This date must be in the future and after the `start_time`.
+* `services`    - (Required) A list of service IDs to include in the maintenance window.
+* `description` - (Optional) A description for the maintenance window.
 
 _Required_: Yes
 
@@ -52,6 +60,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Services
 
+A list of service IDs to include in the maintenance window.
+* `description` - (Optional) A description for the maintenance window.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -59,6 +70,11 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StartTime
+
+The maintenance window's start time. This is when the services will stop creating incidents. If this date is in the past, it will be updated to be the current time.
+* `end_time`    - (Required) The maintenance window's end time. This is when the services will start creating incidents again. This date must be in the future and after the `start_time`.
+* `services`    - (Required) A list of service IDs to include in the maintenance window.
+* `description` - (Optional) A description for the maintenance window.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HuaweiCloud::AsConfigurationV1",
-    "description": "CloudFormation equivalent of huaweicloud_as_configuration_v1",
+    "description": "Manages a V1 AS Configuration resource within HuaweiCloud.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "InstanceConfig": {
@@ -8,16 +8,20 @@
             "additionalProperties": false,
             "properties": {
                 "Flavor": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The flavor ID."
                 },
                 "Image": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The image ID."
                 },
                 "InstanceId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "When using the existing instance specifications as the template to\ncreate AS configurations, specify this argument. In this case, flavor, image,\nand disk arguments do not take effect. If the instance_id argument is not specified,\nflavor, image, and disk arguments are mandatory."
                 },
                 "KeyName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the SSH key pair used to log in to the instance."
                 },
                 "Metadata": {
                     "type": "array",
@@ -37,10 +41,12 @@
                             "Key",
                             "Value"
                         ]
-                    }
+                    },
+                    "description": "Metadata key/value pairs to make available from\nwithin the instance."
                 },
                 "UserData": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The user data to provide when launching the instance.\nThe file content must be encoded with Base64."
                 },
                 "Disk": {
                     "type": "array",
@@ -73,16 +79,20 @@
             "additionalProperties": false,
             "properties": {
                 "DiskType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Whether the disk is a system disk or a data disk. Option `DATA` indicates\na data disk. option `SYS` indicates a system disk."
                 },
                 "KmsId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Encryption KMS ID of the data disk."
                 },
                 "Size": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The disk size. The unit is GB. The system disk size ranges from 40 to 32768,\nand the data disk size ranges from 10 to 32768."
                 },
                 "VolumeType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The disk type, which must be the same as the disk type available in the system.\nThe options include `SATA` (common I/O disk type) and `SSD` (ultra-high I/O disk type)."
                 }
             },
             "required": [
@@ -99,7 +109,8 @@
                     "type": "string"
                 },
                 "Path": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The absolute path of the destination file."
                 }
             },
             "required": [
@@ -126,7 +137,8 @@
             "additionalProperties": false,
             "properties": {
                 "IpType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The IP address type. The system only supports `5_bgp` (indicates dynamic BGP)."
                 },
                 "Bandwidth": {
                     "type": "array",
@@ -145,13 +157,16 @@
             "additionalProperties": false,
             "properties": {
                 "ChargingMode": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The bandwidth charging mode. The system only supports `traffic`."
                 },
                 "ShareType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The bandwidth sharing type. The system only supports `PER` (indicates exclusive bandwidth)."
                 },
                 "Size": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The bandwidth (Mbit/s). The value range is 1 to 300."
                 }
             },
             "required": [
@@ -167,10 +182,12 @@
             "type": "string"
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to create the AS configuration. If\nomitted, the `region` argument of the provider is used. Changing this\ncreates a new AS configuration."
         },
         "ScalingConfigurationName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the AS configuration. The name can contain letters,\ndigits, underscores(_), and hyphens(-), and cannot exceed 64 characters."
         },
         "InstanceConfig": {
             "type": "array",

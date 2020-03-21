@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::UCloud::EipAssociation",
-    "description": "CloudFormation equivalent of ucloud_eip_association",
+    "description": "Provides an EIP Association resource for associating Elastic IP to UHost Instance, Load Balancer, etc.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "EipId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of EIP."
         },
         "ResourceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of resource with EIP attached."
         },
         "ResourceType": {
-            "type": "string"
+            "type": "string",
+            "description": "**Deprecated**, attribute `resource_type` is deprecated for optimizing parameters."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Spotinst::ManagedInstanceAws",
-    "description": "CloudFormation equivalent of spotinst_managed_instance_aws",
+    "description": "Provides a Spotinst AWS ManagedInstance resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "IntegrationRoute53": {
@@ -158,119 +158,151 @@
             "type": "string"
         },
         "AutoHealing": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable the auto healing which auto replaces the instance in case the health check fails, default: `\u201ctrue\u201d`."
         },
         "BlockDevicesMode": {
-            "type": "string"
+            "type": "string",
+            "description": "Determine the way we attach the data volumes to the data devices. Valid values: `\"reattach\"`, `\"onLaunch\"`.\nDefault: `\"onLaunch\"`."
         },
         "CpuCredits": {
-            "type": "string"
+            "type": "string",
+            "description": "cpuCredits can have one of two values: \u201cunlimited\u201d, \u201cstandard\u201d.\nDefault: unlimited."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The ManagedInstance description."
         },
         "DrainingTimeout": {
-            "type": "number"
+            "type": "number",
+            "description": "The time in seconds to allow the instance be drained from incoming TCP connections and detached from ELB before terminating it, during a scale down operation."
         },
         "EbsOptimized": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable EBS optimization for supported instance which is not enabled by default. Note - additional charges will be applied.\nDefault: false."
         },
         "ElasticIp": {
-            "type": "string"
+            "type": "string",
+            "description": "Elastic IP Allocation Id to associate to the instance."
         },
         "EnableMonitoring": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Describes whether instance Enhanced Monitoring is enabled.\nDefault: false."
         },
         "FallBackToOd": {
             "type": "boolean"
         },
         "GracePeriod": {
-            "type": "number"
+            "type": "number",
+            "description": "The amount of time, in seconds, after the instance has launched to starts and check its health, default `\u201c120\"`."
         },
         "HealthCheckType": {
-            "type": "string"
+            "type": "string",
+            "description": "The service to use for the health check. Valid values: `\u201cEC2\u201d`, `\u201cELB\u201d`, `\u201cTARGET_GROUP\u201d`, `\u201cMULTAI_TARGET_SET\u201d`.\nDefault: `\u201cEC2\u201d`."
         },
         "IamInstanceProfile": {
-            "type": "string"
+            "type": "string",
+            "description": "Set IAM profile to instance. Set only one of ARN or Name."
         },
         "ImageId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the image used to launch the instance."
         },
         "InstanceTypes": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Comma separated list of available instance types for instance."
         },
         "KeyPair": {
-            "type": "string"
+            "type": "string",
+            "description": "Specify a Key Pair to attach to the instances."
         },
         "LifeCycle": {
-            "type": "string"
+            "type": "string",
+            "description": "Set lifecycle, valid values: `\u201cspot\u201d`, `\u201con_demand\u201d`.\nDefault `\"spot\"`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The ManagedInstance name."
         },
         "OptimizationWindows": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "When performAt is 'timeWindow': must specify a list of 'timeWindows' with at least one time window Each string is in the format of - ddd:hh:mm-ddd:hh:mm ddd = day of week = Sun | Mon | Tue | Wed | Thu | Fri | Sat hh = hour 24 = 0 -23 mm = minute = 0 - 59."
         },
         "Orientation": {
-            "type": "string"
+            "type": "string",
+            "description": "Select a prediction strategy. Valid values: `\"balanced\"`, `\"costOriented\"`, `\"availabilityOriented\"`, `\"cheapest\"`.\nDefault: `\"availabilityOriented\"`."
         },
         "PersistBlockDevices": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Should the instance maintain its Data volumes."
         },
         "PersistPrivateIp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Should the instance maintain its private IP."
         },
         "PersistRootDevice": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Should the instance maintain its root device volumes."
         },
         "PlacementTenancy": {
-            "type": "string"
+            "type": "string",
+            "description": "Valid values: \"default\", \"dedicated\"\nDefault: default."
         },
         "PreferredType": {
-            "type": "string"
+            "type": "string",
+            "description": "Preferred instance types for the instance. We will automatically select optional similar instance types to ensure optimized cost efficiency."
         },
         "PrivateIp": {
-            "type": "string"
+            "type": "string",
+            "description": "Private IP Allocation Id to associate to the instance."
         },
         "Product": {
-            "type": "string"
+            "type": "string",
+            "description": "Operation system type. Valid values: `\"Linux/UNIX\"`, `\"SUSE Linux\"`, `\"Windows\"`, `\"Red Hat Enterprise Linux\"`, `\"Linux/UNIX (Amazon VPC)\"`, `\"SUSE Linux (Amazon VPC)\"`, `\"Windows (Amazon VPC)\"`,  `\"Red Hat Enterprise Linux (Amazon VPC)\"`."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The AWS region your group will be created in."
         },
         "SecurityGroupIds": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "One or more security group IDs."
         },
         "ShutdownScript": {
-            "type": "string"
+            "type": "string",
+            "description": "The Base64-encoded shutdown script to execute prior to instance termination."
         },
         "SubnetIds": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A comma-separated list of subnet identifiers for your instance."
         },
         "UnhealthyDuration": {
-            "type": "number"
+            "type": "number",
+            "description": "The amount of time, in seconds, an existing instance should remain active after becoming unhealthy. After the set time out the instance will be replaced, default `\u201c120\"`."
         },
         "UserData": {
-            "type": "string"
+            "type": "string",
+            "description": "The Base64-encoded MIME user data to make available to the instances."
         },
         "UtilizeReservedInstances": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "In case of any available Reserved Instances, Managed Instance will utilize them before purchasing Spot instances.\nDefault: `\"false\"`."
         },
         "VpcId": {
             "type": "string"

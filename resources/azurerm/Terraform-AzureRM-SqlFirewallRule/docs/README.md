@@ -1,6 +1,6 @@
 # Terraform::AzureRM::SqlFirewallRule
 
-CloudFormation equivalent of azurerm_sql_firewall_rule
+Allows you to manage an Azure SQL Firewall Rule
 
 ## Syntax
 
@@ -39,6 +39,8 @@ Properties:
 
 #### EndIpAddress
 
+The ending IP address to allow through the firewall for this rule.
+
 _Required_: Yes
 
 _Type_: String
@@ -46,6 +48,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the firewall rule.
 
 _Required_: Yes
 
@@ -55,6 +59,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to
+create the sql server.
+
 _Required_: Yes
 
 _Type_: String
@@ -63,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServerName
 
+The name of the SQL Server on which to create the Firewall Rule.
+
 _Required_: Yes
 
 _Type_: String
@@ -70,6 +79,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StartIpAddress
+
+The starting IP address to allow through the firewall for this rule.
 
 _Required_: Yes
 

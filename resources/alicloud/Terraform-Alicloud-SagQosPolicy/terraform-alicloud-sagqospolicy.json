@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::SagQosPolicy",
-    "description": "CloudFormation equivalent of alicloud_sag_qos_policy",
+    "description": "Provides a Sag qos policy resource. \nYou need to create a QoS policy to set priorities, rate limits, and quintuple rules for different messages.\n\nFor information about Sag Qos Policy and how to use it, see [What is Qos Policy](https://www.alibabacloud.com/help/doc-detail/140065.htm).\n\n-> **NOTE:** Available in 1.60.0+\n\n-> **NOTE:** Only the following regions support. [`cn-shanghai`, `cn-shanghai-finance-1`, `cn-hongkong`, `ap-southeast-1`, `ap-southeast-2`, `ap-southeast-3`, `ap-southeast-5`, `ap-northeast-1`, `eu-central-1`]",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,37 +9,48 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the QoS policy."
         },
         "DestCidr": {
-            "type": "string"
+            "type": "string",
+            "description": "The destination CIDR block."
         },
         "DestPortRange": {
-            "type": "string"
+            "type": "string",
+            "description": "The destination port range."
         },
         "EndTime": {
-            "type": "string"
+            "type": "string",
+            "description": "The expiration time of the quintuple rule."
         },
         "IpProtocol": {
-            "type": "string"
+            "type": "string",
+            "description": "The transport layer protocol."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the QoS policy."
         },
         "Priority": {
-            "type": "number"
+            "type": "number",
+            "description": "The priority of the quintuple rule. A smaller value indicates a higher priority. If the priorities of two quintuple rules are the same, the rule created earlier is applied first.Value range: 1 to 7."
         },
         "QosId": {
-            "type": "string"
+            "type": "string",
+            "description": "The instance ID of the QoS policy to which the quintuple rule is created."
         },
         "SourceCidr": {
-            "type": "string"
+            "type": "string",
+            "description": "The source CIDR block."
         },
         "SourcePortRange": {
-            "type": "string"
+            "type": "string",
+            "description": "The source port range of the transport layer."
         },
         "StartTime": {
-            "type": "string"
+            "type": "string",
+            "description": "The time when the quintuple rule takes effect."
         }
     },
     "additionalProperties": false,

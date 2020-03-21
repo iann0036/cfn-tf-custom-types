@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::GaapProxy
 
-CloudFormation equivalent of tencentcloud_gaap_proxy
+Provides a resource to create a GAAP proxy.
 
 ## Syntax
 
@@ -44,6 +44,8 @@ Properties:
 
 #### AccessRegion
 
+Access region of the GAAP proxy, the available values include `NorthChina`, `EastChina`, `SouthChina`, `SouthwestChina`, `Hongkong`, `SL_TAIWAN`, `SoutheastAsia`, `Korea`, `SL_India`, `SL_Australia`, `Europe`, `SL_UK`, `SL_SouthAmerica`, `NorthAmerica`, `SL_MiddleUSA`, `Canada`, `SL_VIET`, `WestIndia`, `Thailand`, `Virginia`, `Russia`, `Japan` and `SL_Indonesia`.
+
 _Required_: Yes
 
 _Type_: String
@@ -51,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Bandwidth
+
+Maximum bandwidth of the GAAP proxy, unit is Mbps, the available values include `10`, `20`, `50`, `100`, `200`, `500` and `1000`.
 
 _Required_: Yes
 
@@ -60,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Concurrent
 
+Maximum concurrency of the GAAP proxy, unit is 10k, the available values include `2`, `5`, `10`, `20`, `30`, `40`, `50`, `60`, `70`, `80`, `90` and `100`.
+
 _Required_: Yes
 
 _Type_: Double
@@ -67,6 +73,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Enable
+
+Indicates whether GAAP proxy is enabled, default value is `true`.
 
 _Required_: No
 
@@ -76,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name of the GAAP proxy, the maximum length is 30.
+
 _Required_: Yes
 
 _Type_: String
@@ -83,6 +93,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProjectId
+
+ID of the project within the GAAP proxy, '0' means is default project.
 
 _Required_: No
 
@@ -92,6 +104,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RealserverRegion
 
+Region of the GAAP realserver, the available values include `NorthChina`, `EastChina`, `SouthChina`, `SouthwestChina`, `Hongkong`, `SL_TAIWAN`, `SoutheastAsia`, `Korea`, `SL_India`, `SL_Australia`, `Europe`, `SL_UK`, `SL_SouthAmerica`, `NorthAmerica`, `SL_MiddleUSA`, `Canada`, `SL_VIET`, `WestIndia`, `Thailand`, `Virginia`, `Russia`, `Japan` and `SL_Indonesia`.
+
 _Required_: Yes
 
 _Type_: String
@@ -99,6 +113,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Tags of the GAAP proxy.
 
 _Required_: No
 

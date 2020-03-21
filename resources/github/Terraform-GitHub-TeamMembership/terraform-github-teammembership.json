@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::GitHub::TeamMembership",
-    "description": "CloudFormation equivalent of github_team_membership",
+    "description": "Provides a GitHub team membership resource.\n\nThis resource allows you to add/remove users from teams in your organization. When applied,\nthe user will be added to the team. If the user hasn't accepted their invitation to the\norganization, they won't be part of the team until they do. When\ndestroyed, the user will be removed from the team.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,13 +12,16 @@
             "type": "string"
         },
         "Role": {
-            "type": "string"
+            "type": "string",
+            "description": "The role of the user within the team.\nMust be one of `member` or `maintainer`. Defaults to `member`."
         },
         "TeamId": {
-            "type": "string"
+            "type": "string",
+            "description": "The GitHub team id."
         },
         "Username": {
-            "type": "string"
+            "type": "string",
+            "description": "The user to add to the team."
         }
     },
     "additionalProperties": false,

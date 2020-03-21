@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Vault::AwsAuthBackendRoletagBlacklist",
-    "description": "CloudFormation equivalent of vault_aws_auth_backend_roletag_blacklist",
+    "description": "Configures the periodic tidying operation of the blacklisted role tag entries.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "Backend": {
-            "type": "string"
+            "type": "string",
+            "description": "The path the AWS auth backend being configured was\nmounted at."
         },
         "DisablePeriodicTidy": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If set to true, disables the periodic\ntidying of the roletag blacklist entries. Defaults to false."
         },
         "SafetyBuffer": {
-            "type": "number"
+            "type": "number",
+            "description": "The amount of extra time that must have passed\nbeyond the roletag expiration, before it is removed from the backend storage.\nDefaults to 259,200 seconds, or 72 hours."
         }
     },
     "additionalProperties": false,

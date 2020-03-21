@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Gitlab::DeployKeyEnable",
-    "description": "CloudFormation equivalent of gitlab_deploy_key_enable",
+    "description": "This resource allows you to enable pre-existing deploy keys for your GitLab projects.\n\n**the GITLAB KEY_ID for the deploy key must be known**",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -15,10 +15,12 @@
             "type": "string"
         },
         "KeyId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Gitlab key id for the pre-existing deploy key."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or id of the project to add the deploy key to."
         },
         "Title": {
             "type": "string"

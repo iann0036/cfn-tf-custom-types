@@ -1,6 +1,9 @@
 # Terraform::OCI::KmsEncryptedData
 
-CloudFormation equivalent of oci_kms_encrypted_data
+This resource provides the Encrypted Data resource in Oracle Cloud Infrastructure Kms service.
+
+Encrypts data using the given [EncryptDataDetails](https://docs.cloud.oracle.com/iaas/api/#/en/key/release/datatypes/EncryptDataDetails) resource.
+Plaintext included in the example request is a base64-encoded value of a UTF-8 string.
 
 ## Syntax
 
@@ -41,6 +44,8 @@ Properties:
 
 #### AssociatedData
 
+Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
+
 _Required_: No
 
 _Type_: List of <a href="associateddata.md">AssociatedData</a>
@@ -48,6 +53,8 @@ _Type_: List of <a href="associateddata.md">AssociatedData</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CryptoEndpoint
+
+The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
 
 _Required_: Yes
 
@@ -57,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KeyId
 
+The OCID of the key to encrypt with.
+
 _Required_: Yes
 
 _Type_: String
@@ -65,6 +74,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LoggingContext
 
+Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled.
+
 _Required_: No
 
 _Type_: List of <a href="loggingcontext.md">LoggingContext</a>
@@ -72,6 +83,8 @@ _Type_: List of <a href="loggingcontext.md">LoggingContext</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Plaintext
+
+The plaintext data to encrypt.
 
 _Required_: Yes
 

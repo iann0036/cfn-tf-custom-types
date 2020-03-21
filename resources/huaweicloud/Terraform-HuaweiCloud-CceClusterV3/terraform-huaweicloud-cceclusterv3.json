@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HuaweiCloud::CceClusterV3",
-    "description": "CloudFormation equivalent of huaweicloud_cce_cluster_v3",
+    "description": "Provides a cluster resource (CCE).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -40,7 +40,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Cluster annotation, key/value pair format. Changing this parameter will create a new cluster resource."
         },
         "AuthenticationMode": {
             "type": "string"
@@ -125,7 +126,8 @@
             }
         },
         "FlavorId": {
-            "type": "string"
+            "type": "string",
+            "description": "Cluster specifications. Changing this parameter will create a new cluster resource. Possible values:."
         },
         "HighwaySubnetId": {
             "type": "string"
@@ -148,13 +150,15 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Cluster tag, key/value pair format. Changing this parameter will create a new cluster resource."
         },
         "MultiAz": {
             "type": "boolean"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Cluster name. Changing this parameter will create a new cluster resource."
         },
         "Region": {
             "type": "string"

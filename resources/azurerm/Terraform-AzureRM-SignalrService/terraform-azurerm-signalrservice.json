@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::SignalrService",
-    "description": "CloudFormation equivalent of azurerm_signalr_service",
+    "description": "Manages an Azure SignalR service.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Cors": {
@@ -12,7 +12,8 @@
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of origins which should be able to make cross-origin calls. `*` can be used to allow all calls."
                 }
             },
             "required": [
@@ -24,10 +25,12 @@
             "additionalProperties": false,
             "properties": {
                 "Flag": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The kind of Feature. Possible values are `EnableConnectivityLogs` and `ServiceMode`."
                 },
                 "Value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A value of a feature flag. Possible values are `Classic`, `Default` and `Serverless`."
                 }
             },
             "required": [
@@ -40,10 +43,12 @@
             "additionalProperties": false,
             "properties": {
                 "Capacity": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Specifies the number of units associated with this SignalR service. Valid values are `1`, `2`, `5`, `10`, `20`, `50` and `100`."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies which tier to use. Valid values are `Free_F1` and `Standard_S1`."
                 }
             },
             "required": [
@@ -83,10 +88,12 @@
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the SignalR service exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the SignalR service. Changing this forces a new resource to be created."
         },
         "PrimaryAccessKey": {
             "type": "string"
@@ -98,7 +105,8 @@
             "type": "number"
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the SignalR service. Changing this forces a new resource to be created."
         },
         "SecondaryAccessKey": {
             "type": "string"
@@ -127,7 +135,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Cors": {
             "type": "array",

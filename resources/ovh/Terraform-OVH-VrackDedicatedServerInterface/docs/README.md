@@ -1,6 +1,6 @@
 # Terraform::OVH::VrackDedicatedServerInterface
 
-CloudFormation equivalent of ovh_vrack_dedicated_server_interface
+Attach a Dedicated Server Network Interface to a VRack.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### InterfaceId
 
+The id of dedicated server network interface.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VrackId
+
+The id of the vrack.
 
 _Required_: Yes
 

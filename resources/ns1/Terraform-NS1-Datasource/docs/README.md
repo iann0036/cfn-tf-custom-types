@@ -1,6 +1,6 @@
 # Terraform::NS1::Datasource
 
-CloudFormation equivalent of ns1_datasource
+Provides a NS1 Data Source resource. This can be used to create, modify, and delete data sources.
 
 ## Syntax
 
@@ -34,6 +34,9 @@ Properties:
 
 #### Config
 
+The data source configuration, determined by its type,
+matching the specification in `config` from /data/sourcetypes.
+
 _Required_: No
 
 _Type_: List of <a href="config.md">Config</a>
@@ -42,6 +45,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The free form name of the data source.
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Sourcetype
+
+The data sources type, listed in API endpoint https://api.nsone.net/v1/data/sourcetypes.
 
 _Required_: Yes
 

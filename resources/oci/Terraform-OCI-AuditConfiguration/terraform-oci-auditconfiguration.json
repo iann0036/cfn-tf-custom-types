@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::AuditConfiguration",
-    "description": "CloudFormation equivalent of oci_audit_configuration",
+    "description": "This resource provides the Configuration resource in Oracle Cloud Infrastructure Audit service.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,10 +26,12 @@
             "type": "string"
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the root compartment (tenancy)."
         },
         "RetentionPeriodDays": {
-            "type": "number"
+            "type": "number",
+            "description": "(Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90`."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

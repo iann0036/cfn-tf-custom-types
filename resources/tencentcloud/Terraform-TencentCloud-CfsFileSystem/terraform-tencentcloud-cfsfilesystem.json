@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::CfsFileSystem",
-    "description": "CloudFormation equivalent of tencentcloud_cfs_file_system",
+    "description": "Provides a resource to create a cloud file system(CFS).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,28 +9,35 @@
             "type": "string"
         },
         "AccessGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of a access group."
         },
         "AvailabilityZone": {
-            "type": "string"
+            "type": "string",
+            "description": "The available zone that the file system locates at."
         },
         "CreateTime": {
             "type": "string"
         },
         "MountIp": {
-            "type": "string"
+            "type": "string",
+            "description": "IP of mount point."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of a file system."
         },
         "Protocol": {
-            "type": "string"
+            "type": "string",
+            "description": "File service protocol. Valid values are `NFS` and `CIFS`, and the default is `NFS`."
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of a subnet."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of a VPC network."
         }
     },
     "additionalProperties": false,

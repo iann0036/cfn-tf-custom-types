@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::UCloud::Lb",
-    "description": "CloudFormation equivalent of ucloud_lb",
+    "description": "Provides a Load Balancer resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "ChargeType": {
-            "type": "string"
+            "type": "string",
+            "description": "**Deprecated**, argument `charge_type` is deprecated for optimizing parameters."
         },
         "CreateTime": {
             "type": "string"
@@ -18,7 +19,8 @@
             "type": "string"
         },
         "Internal": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicate whether the load balancer is intranet mode.(Default: `\"false\"`)."
         },
         "IpSet": {
             "type": "array",
@@ -37,22 +39,27 @@
             }
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the load balancer. If not specified, terraform will auto-generate a name beginning with `tf-lb`."
         },
         "PrivateIp": {
             "type": "string"
         },
         "Remark": {
-            "type": "string"
+            "type": "string",
+            "description": "The remarks of the load balancer. (Default: `\"\"`)."
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of subnet that intranet load balancer belongs to. This argument is not required if default subnet."
         },
         "Tag": {
-            "type": "string"
+            "type": "string",
+            "description": "A tag assigned to load balancer, which contains at most 63 characters and only support Chinese, English, numbers, '-', '_', and '.'. If it is not filled in or a empty string is filled in, then default tag will be assigned. (Default: `Default`)."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the VPC linked to the Load balancer, This argument is not required if default VPC."
         }
     },
     "additionalProperties": false,

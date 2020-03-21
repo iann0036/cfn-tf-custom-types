@@ -1,6 +1,6 @@
 # Terraform::InfluxDB::User
 
-CloudFormation equivalent of influxdb_user
+The user resource allows a user to be created on an InfluxDB server.
 
 ## Syntax
 
@@ -36,6 +36,8 @@ Properties:
 
 #### Admin
 
+Mark the user as admin.
+
 _Required_: No
 
 _Type_: Boolean
@@ -44,6 +46,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name for the user.
+
 _Required_: Yes
 
 _Type_: String
@@ -51,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Password
+
+The password for the user.
 
 _Required_: Yes
 

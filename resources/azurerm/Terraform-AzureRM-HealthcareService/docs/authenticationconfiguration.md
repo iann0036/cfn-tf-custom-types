@@ -26,6 +26,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Audience
 
+The intended audience to receive authentication tokens for the service. The default value is https://azurehealthcareapis.com.
+
 _Required_: No
 
 _Type_: String
@@ -34,6 +36,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Authority
 
+The Azure Active Directory (tenant) that serves as the authentication authority to access the service. The default authority is the Directory defined in the authentication scheme in use when running Terraform.
+Authority must be registered to Azure AD and in the following format: https://{Azure-AD-endpoint}/{tenant-id}.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SmartProxyEnabled
+
+Enables the 'SMART on FHIR' option for mobile and web implementations.
 
 _Required_: No
 

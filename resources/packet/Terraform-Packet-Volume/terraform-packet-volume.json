@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Packet::Volume",
-    "description": "CloudFormation equivalent of packet_volume",
+    "description": "Provides a Packet Block Storage Volume resource to allow you to\nmanage block volumes on your account.\nOnce created by Terraform, they must then be attached and mounted\nusing the api and `packet_block_attach` and `packet_block_detach`\nscripts.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "SnapshotPolicies": {
@@ -39,31 +39,38 @@
             }
         },
         "BillingCycle": {
-            "type": "string"
+            "type": "string",
+            "description": "The billing cycle, defaults to \"hourly\"."
         },
         "Created": {
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Optional description for the volume."
         },
         "Facility": {
-            "type": "string"
+            "type": "string",
+            "description": "The facility to create the volume in."
         },
         "Locked": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Lock or unlock the volume."
         },
         "Name": {
             "type": "string"
         },
         "Plan": {
-            "type": "string"
+            "type": "string",
+            "description": "The service plan slug of the volume."
         },
         "ProjectId": {
-            "type": "string"
+            "type": "string",
+            "description": "The packet project ID to deploy the volume in."
         },
         "Size": {
-            "type": "number"
+            "type": "number",
+            "description": "The size in GB to make the volume."
         },
         "State": {
             "type": "string"

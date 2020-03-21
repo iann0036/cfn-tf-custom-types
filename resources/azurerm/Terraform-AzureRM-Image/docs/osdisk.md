@@ -32,6 +32,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### BlobUri
 
+Specifies the URI in Azure storage of the blob that you want to use to create the image.
+
 _Required_: No
 
 _Type_: String
@@ -39,6 +41,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Caching
+
+Specifies the caching mode as `ReadWrite`, `ReadOnly`, or `None`. The default is `None`.
 
 _Required_: No
 
@@ -48,6 +52,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ManagedDiskId
 
+Specifies the ID of the managed disk resource that you want to use to create the image.
+
 _Required_: No
 
 _Type_: String
@@ -55,6 +61,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OsState
+
+Specifies the state of the operating system contained in the blob. Currently, the only value is Generalized.
 
 _Required_: No
 
@@ -64,6 +72,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OsType
 
+Specifies the type of operating system contained in the virtual machine image. Possible values are: Windows or Linux.
+
 _Required_: No
 
 _Type_: String
@@ -71,6 +81,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SizeGb
+
+Specifies the size of the image to be created. The target size can't be smaller than the source size.
 
 _Required_: No
 

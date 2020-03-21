@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::BgpPeer",
-    "description": "CloudFormation equivalent of panos_bgp_peer",
+    "description": "This resource allows you to add/update/delete a BGP peer.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,88 +9,116 @@
             "type": "string"
         },
         "AddressFamilyType": {
-            "type": "string"
+            "type": "string",
+            "description": "Set the AFI for this\npeer.  Valid values are `ipv4` or `ipv6`."
         },
         "AllowIncomingConnections": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Allow incoming connections\n(default: `true`)."
         },
         "AllowOutgoingConnections": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Allow outgoing connections\n(default: `true`)."
         },
         "AuthProfile": {
-            "type": "string"
+            "type": "string",
+            "description": "Auth profile."
         },
         "BfdProfile": {
-            "type": "string"
+            "type": "string",
+            "description": "BFD profile.  This can be a specific\nBFD profile name, `None` (disables BFD), or `Inherit-vr-global-setting`."
         },
         "BgpPeerGroup": {
-            "type": "string"
+            "type": "string",
+            "description": "The BGP peer group to put this peer into."
         },
         "Enable": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable or not (default: `true`)."
         },
         "EnableMpBgp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable MP BGP."
         },
         "EnableSenderSideLoopDetection": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable\nsender side loop detection."
         },
         "HoldTime": {
-            "type": "number"
+            "type": "number",
+            "description": "Hold time, in seconds."
         },
         "IdleHoldTime": {
-            "type": "number"
+            "type": "number",
+            "description": "Idle hold time, in seconds."
         },
         "IncomingConnectionsRemotePort": {
-            "type": "number"
+            "type": "number",
+            "description": "Restrict remote port for\nincoming BGP connections."
         },
         "KeepAliveInterval": {
-            "type": "number"
+            "type": "number",
+            "description": "Keep alive interval, in\nseconds (default: `30`)."
         },
         "LocalAddressInterface": {
-            "type": "string"
+            "type": "string",
+            "description": "Interface to accept BGP session."
         },
         "LocalAddressIp": {
-            "type": "string"
+            "type": "string",
+            "description": "Specify exact IP address if interface has\nmultiple addresses."
         },
         "MaxPrefixes": {
-            "type": "string"
+            "type": "string",
+            "description": "Maximum of prefixes to receive from the\npeer.  This can be a number such as `\"5000\"` (default) or `unlimited`."
         },
         "MinRouteAdvertisementInterval": {
-            "type": "number"
+            "type": "number",
+            "description": "Minimum\nroute advertisement interval, in seconds."
         },
         "MultiHop": {
-            "type": "number"
+            "type": "number",
+            "description": "IP TTL value used for sending BGP packet."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name."
         },
         "OpenDelayTime": {
-            "type": "number"
+            "type": "number",
+            "description": "Open delay time, in seconds."
         },
         "OutgoingConnectionsLocalPort": {
-            "type": "number"
+            "type": "number",
+            "description": "Use specific local\nport for outgoing BGP connections."
         },
         "PeerAddressIp": {
-            "type": "string"
+            "type": "string",
+            "description": "Peer IP address configuration."
         },
         "PeerAs": {
-            "type": "string"
+            "type": "string",
+            "description": "Peer AS number."
         },
         "PeeringType": {
-            "type": "string"
+            "type": "string",
+            "description": "Peering type that affects NOPEER\ncommunity value handling.  Valid values are `unspecified` (default) or\n`bilateral`."
         },
         "ReflectorClient": {
-            "type": "string"
+            "type": "string",
+            "description": "This peer is reflector client.  Valid\nvalues are `non-client`, `client`, or `meshed-client`."
         },
         "SubsequentAddressFamilyMulticast": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable\nmulticast subsequent address family for this peer."
         },
         "SubsequentAddressFamilyUnicast": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable\nunicast subsequent address family for this peer."
         },
         "VirtualRouter": {
-            "type": "string"
+            "type": "string",
+            "description": "The virtual router to add this BGP\npeer to."
         }
     },
     "additionalProperties": false,

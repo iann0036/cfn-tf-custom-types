@@ -1,6 +1,6 @@
 # Terraform::AzureRM::SqlFailoverGroup
 
-CloudFormation equivalent of azurerm_sql_failover_group
+Create a failover group of databases on a collection of Azure SQL servers.
 
 ## Syntax
 
@@ -50,6 +50,8 @@ Properties:
 
 #### Databases
 
+A list of database ids to add to the failover group.
+
 _Required_: No
 
 _Type_: List of String
@@ -57,6 +59,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the failover group. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -66,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group containing the SQL server.
+
 _Required_: Yes
 
 _Type_: String
@@ -74,6 +80,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServerName
 
+The name of the primary SQL server. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -81,6 +89,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::Datadog::IntegrationPagerdutyServiceObject
 
-CloudFormation equivalent of datadog_integration_pagerduty_service_object
+Provides access to individual Service Objects of Datadog - PagerDuty integrations. Note that the Datadog - PagerDuty integration must be activated (either manually in the Datadog UI or by using [datadog_integration_pagerduty](/docs/providers/datadog/r/integration_pagerduty.html)) in order for this resource to be usable.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### ServiceKey
 
+Your Service name associated service key in PagerDuty. Note: Since the Datadog API never returns service keys, it is impossible to detect [drifts](https://www.hashicorp.com/blog/detecting-and-managing-drift-with-terraform). The best way to solve a drift is to manually mark the Service Object resource with [terraform taint](https://www.terraform.io/docs/commands/taint.html) to have it destroyed and recreated.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServiceName
+
+Your Service name in PagerDuty.
 
 _Required_: Yes
 

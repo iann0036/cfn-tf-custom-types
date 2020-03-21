@@ -1,6 +1,6 @@
 # Terraform::FlexibleEngine::DrsReplicationconsistencygroupV2
 
-CloudFormation equivalent of flexibleengine_drs_replicationconsistencygroup_v2
+Manages a V2 replicationconsistencygroup resource within FlexibleEngine.
 
 ## Syntax
 
@@ -38,6 +38,8 @@ Properties:
 
 #### Description
 
+The description of the replication consistency group. The description can contain a maximum of 255 bytes.
+
 _Required_: No
 
 _Type_: String
@@ -45,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the replication consistency group. The name can contain a maximum of 255 bytes.
 
 _Required_: No
 
@@ -54,6 +58,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PriorityStation
 
+The primary AZ of the replication consistency group. That is the AZ where the production disk belongs.
+
 _Required_: Yes
 
 _Type_: String
@@ -62,6 +68,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ReplicationIds
 
+An array of one or more IDs of the EVS replication pairs used to create the replication consistency group.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -69,6 +77,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ReplicationModel
+
+The type of the created replication consistency group. Currently only type hypermetro is supported.
 
 _Required_: No
 

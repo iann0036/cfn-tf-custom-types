@@ -25,6 +25,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### UserName
 
+The username to be used by the Batch pool start task.
+
 _Required_: No
 
 _Type_: String

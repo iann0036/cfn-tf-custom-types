@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::LogicMonitor::Collector",
-    "description": "CloudFormation equivalent of logicmonitor_collector",
+    "description": "Provides a LogicMonitor collector resource. This can be used to create and manage LogicMonitor collectors.\n\n*Note:* This resource will only create the collector device in your account. See [Downloading a Collector Installer](https://www.logicmonitor.com/support/rest-api-developers-guide/collectors/downloading-a-collector-installer/) for\ninformation on how to download and install an existing collector.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,22 +9,28 @@
             "type": "string"
         },
         "BackupCollectorId": {
-            "type": "number"
+            "type": "number",
+            "description": "The Id of the failover Collector configured for this Collector."
         },
         "CollectorGroupId": {
-            "type": "number"
+            "type": "number",
+            "description": "The Id of the group the Collector is in."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The Collector's description."
         },
         "EnableCollectorDeviceFailover": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether or not the device the Collector is installed on is enabled for fail over."
         },
         "EnableFailback": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether or not automatic failback is enabled for the Collector."
         },
         "EscalationChainId": {
-            "type": "number"
+            "type": "number",
+            "description": "The Id of the escalation chain associated with this Collector."
         },
         "Properties": {
             "type": "array",
@@ -47,10 +53,12 @@
             }
         },
         "ResendInterval": {
-            "type": "number"
+            "type": "number",
+            "description": "The interval, in minutes, after which alert notifications for the Collector will be resent."
         },
         "SuppressAlertClear": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether alert clear notifications are suppressed for the Collector."
         }
     },
     "additionalProperties": false,

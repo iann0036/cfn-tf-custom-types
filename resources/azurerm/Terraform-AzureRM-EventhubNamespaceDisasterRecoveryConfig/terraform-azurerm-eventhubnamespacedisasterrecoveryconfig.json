@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::EventhubNamespaceDisasterRecoveryConfig",
-    "description": "CloudFormation equivalent of azurerm_eventhub_namespace_disaster_recovery_config",
+    "description": "Manages an Disaster Recovery Config for an Event Hub Namespace.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,19 +29,24 @@
             "type": "string"
         },
         "AlternateName": {
-            "type": "string"
+            "type": "string",
+            "description": "An alternate name to use when the Disaster Recovery Config's name is the same as the replicated namespace's name."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Disaster Recovery Config. Changing this forces a new resource to be created."
         },
         "NamespaceName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the primary EventHub Namespace to replicate. Changing this forces a new resource to be created."
         },
         "PartnerNamespaceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the EventHub Namespace to replicate to."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which the Disaster Recovery Config exists. Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

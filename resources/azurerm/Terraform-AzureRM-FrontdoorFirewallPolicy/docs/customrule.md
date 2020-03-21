@@ -37,6 +37,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Action
 
+The action to perform when the rule is matched. Possible values are `Allow`, `Block`, `Log`, or `Redirect`.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Enabled
+
+Is the rule is enabled or disabled? Defaults to `true`.
 
 _Required_: No
 
@@ -53,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Gets name of the resource that is unique within a policy. This name can be used to access the resource.
+
 _Required_: Yes
 
 _Type_: String
@@ -60,6 +66,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Priority
+
+The priority of the rule. Rules with a lower value will be evaluated before rules with a higher value. Defaults to `1`.
 
 _Required_: No
 
@@ -69,6 +77,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RateLimitDurationInMinutes
 
+The rate limit duration in minutes. Defaults to `1`.
+
 _Required_: No
 
 _Type_: Double
@@ -77,6 +87,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RateLimitThreshold
 
+The rate limit threshold. Defaults to `10`.
+
 _Required_: No
 
 _Type_: Double
@@ -84,6 +96,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The type of rule. Possible values are `MatchRule` or `RateLimitRule`.
 
 _Required_: Yes
 

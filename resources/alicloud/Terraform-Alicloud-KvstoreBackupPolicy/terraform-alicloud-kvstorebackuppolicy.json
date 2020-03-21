@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::KvstoreBackupPolicy",
-    "description": "CloudFormation equivalent of alicloud_kvstore_backup_policy",
+    "description": "Provides a backup policy for ApsaraDB Redis / Memcache instance resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -13,13 +13,16 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Backup Cycle. Allowed values: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday."
         },
         "BackupTime": {
-            "type": "string"
+            "type": "string",
+            "description": "Backup time, in the format of HH:mmZ- HH:mm Z."
         },
         "InstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of ApsaraDB for Redis or Memcache intance."
         }
     },
     "additionalProperties": false,

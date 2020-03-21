@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::AsSchedule",
-    "description": "CloudFormation equivalent of tencentcloud_as_schedule",
+    "description": "Provides a resource for an AS (Auto scaling) schedule.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,28 +9,36 @@
             "type": "string"
         },
         "DesiredCapacity": {
-            "type": "number"
+            "type": "number",
+            "description": "The desired number of CVM instances that should be running in the group."
         },
         "EndTime": {
-            "type": "string"
+            "type": "string",
+            "description": "The time for this action to end, in \"YYYY-MM-DDThh:mm:ss+08:00\" format (UTC+8)."
         },
         "MaxSize": {
-            "type": "number"
+            "type": "number",
+            "description": "The maximum size for the Auto Scaling group."
         },
         "MinSize": {
-            "type": "number"
+            "type": "number",
+            "description": "The minimum size for the Auto Scaling group."
         },
         "Recurrence": {
-            "type": "string"
+            "type": "string",
+            "description": "The time when recurring future actions will start. Start time is specified by the user following the Unix cron syntax format. And this argument should be set with end_time together."
         },
         "ScalingGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of a scaling group."
         },
         "ScheduleActionName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of this scaling action."
         },
         "StartTime": {
-            "type": "string"
+            "type": "string",
+            "description": "The time for this action to start, in \"YYYY-MM-DDThh:mm:ss+08:00\" format (UTC+8)."
         }
     },
     "additionalProperties": false,

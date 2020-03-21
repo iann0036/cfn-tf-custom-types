@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::MysqlReadonlyInstance",
-    "description": "CloudFormation equivalent of tencentcloud_mysql_readonly_instance",
+    "description": "Provides a mysql instance resource to create read-only database instances.\n\n~> **NOTE:** The terminate operation of read only mysql does NOT take effect immediately, maybe takes for several hours. so during that time, VPCs associated with that mysql instance can't be terminated also.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,44 +9,53 @@
             "type": "string"
         },
         "AutoRenewFlag": {
-            "type": "number"
+            "type": "number",
+            "description": "Auto renew flag. NOTES: Only supported prepay instance."
         },
         "InstanceName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of a mysql instance."
         },
         "IntranetIp": {
             "type": "string"
         },
         "IntranetPort": {
-            "type": "number"
+            "type": "number",
+            "description": "Public access port, rang form 1024 to 65535 and default value is 3306."
         },
         "Locked": {
             "type": "number"
         },
         "MasterInstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates the master instance ID of recovery instances."
         },
         "MemSize": {
-            "type": "number"
+            "type": "number",
+            "description": "Memory size (in MB)."
         },
         "PayType": {
-            "type": "number"
+            "type": "number",
+            "description": "Pay type of instance, 0: prepay, 1: postpay. NOTES: Only supported prepay instance."
         },
         "Period": {
-            "type": "number"
+            "type": "number",
+            "description": "Period of instance. NOTES: Only supported prepay instance."
         },
         "SecurityGroups": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Security groups to use."
         },
         "Status": {
             "type": "number"
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "Private network ID. If vpc_id is set, this value is required."
         },
         "Tags": {
             "type": "array",
@@ -66,16 +75,19 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Instance tags."
         },
         "TaskStatus": {
             "type": "number"
         },
         "VolumeSize": {
-            "type": "number"
+            "type": "number",
+            "description": "Disk size (in GB)."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of VPC, which can be modified once every 24 hours and can't be removed."
         }
     },
     "additionalProperties": false,

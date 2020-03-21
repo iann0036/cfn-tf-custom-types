@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Triton::ServiceGroup",
-    "description": "CloudFormation equivalent of triton_service_group",
+    "description": "The `triton_service_group` resource represents a Triton Service Group.\n\n~> **NOTE:**  Triton Service Groups are in Preview and only supported in specific regions at this time. They will become Generally Available in the near future.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,13 +29,16 @@
             "type": "string"
         },
         "Capacity": {
-            "type": "number"
+            "type": "number",
+            "description": "Number of instances to launch and monitor."
         },
         "GroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "Friendly name for the service group."
         },
         "Template": {
-            "type": "string"
+            "type": "string",
+            "description": "Identifier of an instance template."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

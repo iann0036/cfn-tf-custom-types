@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::PanoramaVlanEntry",
-    "description": "CloudFormation equivalent of panos_panorama_vlan_entry",
+    "description": "This resource allows you to add/update/delete an interface in a VLAN on Panorama.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "Interface": {
-            "type": "string"
+            "type": "string",
+            "description": "The interface's name."
         },
         "LiveMacAddresses": {
             "type": "array",
@@ -23,13 +24,16 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of MAC addresses that should go with this entry."
         },
         "Template": {
-            "type": "string"
+            "type": "string",
+            "description": "The template name."
         },
         "Vlan": {
-            "type": "string"
+            "type": "string",
+            "description": "The VLAN's name."
         }
     },
     "additionalProperties": false,

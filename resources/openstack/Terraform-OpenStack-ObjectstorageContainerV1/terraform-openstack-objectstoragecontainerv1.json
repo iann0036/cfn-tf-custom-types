@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::ObjectstorageContainerV1",
-    "description": "CloudFormation equivalent of openstack_objectstorage_container_v1",
+    "description": "Manages a V1 container resource within OpenStack.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Versioning": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "Location": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Container in which versions will be stored."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Versioning type which can be `versions` or `history` according to [Openstack documentation](https://docs.openstack.org/swift/latest/overview_object_versioning.html).\n* `location` - (Required) Container in which versions will be stored."
                 }
             },
             "required": [
@@ -26,22 +28,28 @@
             "type": "string"
         },
         "ContainerRead": {
-            "type": "string"
+            "type": "string",
+            "description": "Sets an access control list (ACL) that grants\nread access. This header can contain a comma-delimited list of users that\ncan read the container (allows the GET method for all objects in the\ncontainer). Changing this updates the access control list read access."
         },
         "ContainerSyncKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The secret key for container synchronization.\nChanging this updates container synchronization."
         },
         "ContainerSyncTo": {
-            "type": "string"
+            "type": "string",
+            "description": "The destination for container synchronization.\nChanging this updates container synchronization."
         },
         "ContainerWrite": {
-            "type": "string"
+            "type": "string",
+            "description": "Sets an ACL that grants write access.\nChanging this updates the access control list write access."
         },
         "ContentType": {
-            "type": "string"
+            "type": "string",
+            "description": "The MIME type for the container. Changing this\nupdates the MIME type."
         },
         "ForceDestroy": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "A boolean that indicates all objects should be deleted from the container so that the container can be destroyed without error. These objects are not recoverable."
         },
         "Metadata": {
             "type": "array",
@@ -61,13 +69,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Custom key/value pairs to associate with the container.\nChanging this updates the existing container metadata."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique name for the container. Changing this creates a\nnew container."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to create the container. If\nomitted, the `region` argument of the provider is used. Changing this\ncreates a new container."
         },
         "Versioning": {
             "type": "array",

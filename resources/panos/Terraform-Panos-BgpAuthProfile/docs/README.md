@@ -1,6 +1,6 @@
 # Terraform::Panos::BgpAuthProfile
 
-CloudFormation equivalent of panos_bgp_auth_profile
+This resource allows you to add/update/delete a BGP auth profile.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### Name
 
+The name.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Secret
 
+Shared secret for the TCP MD5 authentication.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +52,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VirtualRouter
+
+The virtual router to add this BGP
+auth profile to.
 
 _Required_: Yes
 

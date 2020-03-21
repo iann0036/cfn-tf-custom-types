@@ -1,6 +1,6 @@
 # Terraform::Datadog::DashboardList
 
-CloudFormation equivalent of datadog_dashboard_list
+Provides a Datadog dashboard_list resource. This can be used to create and manage Datadog Dashboard Lists and the individual dashboards within them.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 ## Properties
 
 #### Name
+
+The name of this Dashbaord List.
 
 _Required_: Yes
 

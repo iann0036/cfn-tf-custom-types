@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::ComputeProjectMetadata",
-    "description": "CloudFormation equivalent of google_compute_project_metadata",
+    "description": "Authoritatively manages metadata common to all instances for a project in GCE. For more information see\n[the official documentation](https://cloud.google.com/compute/docs/storing-retrieving-metadata)\nand\n[API](https://cloud.google.com/compute/docs/reference/latest/projects/setCommonInstanceMetadata).\n\n~> **Note:**  This resource manages all project-level metadata including project-level ssh keys.\nKeys unset in config but set on the server will be removed. If you want to manage only single\nkey/value pairs within the project metadata rather than the entire set, then use\n[google_compute_project_metadata_item](compute_project_metadata_item.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -26,10 +26,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A series of key value pairs."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used."
         }
     },
     "additionalProperties": false,

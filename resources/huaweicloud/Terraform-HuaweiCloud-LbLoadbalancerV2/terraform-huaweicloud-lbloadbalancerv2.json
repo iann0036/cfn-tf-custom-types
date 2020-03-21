@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HuaweiCloud::LbLoadbalancerV2",
-    "description": "CloudFormation equivalent of huaweicloud_lb_loadbalancer_v2",
+    "description": "Manages a V2 loadbalancer resource within HuaweiCloud.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,41 +26,51 @@
             "type": "string"
         },
         "AdminStateUp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "The administrative state of the Loadbalancer.\nA valid value is true (UP) or false (DOWN)."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Human-readable description for the Loadbalancer."
         },
         "Flavor": {
-            "type": "string"
+            "type": "string",
+            "description": "The UUID of a flavor. Changing this creates a new\nloadbalancer."
         },
         "LoadbalancerProvider": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the provider. Changing this\ncreates a new loadbalancer."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Human-readable name for the Loadbalancer. Does not have\nto be unique."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the V2 Networking client.\nA Networking client is needed to create an LB member. If omitted, the\n`region` argument of the provider is used. Changing this creates a new\nLB member."
         },
         "SecurityGroupIds": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of security group IDs to apply to the\nloadbalancer. The security groups must be specified by ID and not name (as\nopposed to how they are configured with the Compute Instance)."
         },
         "TenantId": {
-            "type": "string"
+            "type": "string",
+            "description": "Required for admins. The UUID of the tenant who owns\nthe Loadbalancer.  Only administrative users can specify a tenant UUID\nother than their own.  Changing this creates a new loadbalancer."
         },
         "VipAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "The ip address of the load balancer.\nChanging this creates a new loadbalancer."
         },
         "VipPortId": {
             "type": "string"
         },
         "VipSubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "The network on which to allocate the\nLoadbalancer's address. A tenant can only create Loadbalancers on networks\nauthorized by policy (e.g. networks that belong to them or networks that\nare shared).  Changing this creates a new loadbalancer."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

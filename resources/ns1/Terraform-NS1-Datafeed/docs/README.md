@@ -1,6 +1,6 @@
 # Terraform::NS1::Datafeed
 
-CloudFormation equivalent of ns1_datafeed
+Provides a NS1 Data Feed resource. This can be used to create, modify, and delete data feeds.
 
 ## Syntax
 
@@ -34,6 +34,9 @@ Properties:
 
 #### Config
 
+The feeds configuration matching the specification in
+`feed_config` from /data/sourcetypes.
+
 _Required_: No
 
 _Type_: List of <a href="config.md">Config</a>
@@ -42,6 +45,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The free form name of the data feed.
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SourceId
+
+The data source id that this feed is connected to.
 
 _Required_: Yes
 

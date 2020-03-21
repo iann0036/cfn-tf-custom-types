@@ -1,6 +1,6 @@
 # Terraform::CloudStack::Ipaddress
 
-CloudFormation equivalent of cloudstack_ipaddress
+Acquires and associates a public IP.
 
 ## Syntax
 
@@ -37,6 +37,9 @@ Properties:
 
 #### IsPortable
 
+This determines if the IP address should be transferable
+across zones (defaults false).
+
 _Required_: No
 
 _Type_: Boolean
@@ -44,6 +47,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NetworkId
+
+The ID of the network for which an IP address should
+be acquired and associated. Changing this forces a new resource to be created.
 
 _Required_: No
 
@@ -53,6 +59,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Project
 
+The name or ID of the project to deploy this
+instance to. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -61,6 +70,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VpcId
 
+The ID of the VPC for which an IP address should be
+acquired and associated. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -68,6 +80,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Zone
+
+The name or ID of the zone for which an IP address should be
+acquired and associated. Changing this forces a new resource to be created.
 
 _Required_: No
 

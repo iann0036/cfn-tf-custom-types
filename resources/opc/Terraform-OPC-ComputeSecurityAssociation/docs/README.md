@@ -1,6 +1,7 @@
 # Terraform::OPC::ComputeSecurityAssociation
 
-CloudFormation equivalent of opc_compute_security_association
+The ``opc_compute_security_association`` resource creates and manages an association between an instance and a security
+list in an Oracle Cloud Infrastructure Compute Classic identity domain.
 
 ## Syntax
 
@@ -33,6 +34,8 @@ Properties:
 
 #### Name
 
+The Name for the Security Association. If not specified, one is created automatically. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +44,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Seclist
 
+The name of the security list to associate the instance to.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vcable
+
+The `vcable` of the instance to associate to the security list.
 
 _Required_: Yes
 

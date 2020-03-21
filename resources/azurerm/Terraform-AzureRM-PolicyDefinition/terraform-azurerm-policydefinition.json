@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::PolicyDefinition",
-    "description": "CloudFormation equivalent of azurerm_policy_definition",
+    "description": "Manages a policy rule definition on a management group or your provider subscription.\n\nPolicy definitions do not take effect until they are assigned to a scope using a Policy Assignment.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,31 +29,40 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the policy definition."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The display name of the policy definition."
         },
         "ManagementGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Management Group where this policy should be defined. Changing this forces a new resource to be created."
         },
         "Metadata": {
-            "type": "string"
+            "type": "string",
+            "description": "The metadata for the policy definition. This\nis a json object representing additional metadata that should be stored\nwith the policy definition."
         },
         "Mode": {
-            "type": "string"
+            "type": "string",
+            "description": "The policy mode that allows you to specify which resource\ntypes will be evaluated.  The value can be \"All\", \"Indexed\" or\n\"NotSpecified\". Changing this resource forces a new resource to be\ncreated."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the policy definition. Changing this forces a\nnew resource to be created."
         },
         "Parameters": {
-            "type": "string"
+            "type": "string",
+            "description": "Parameters for the policy definition. This field\nis a json object that allows you to parameterize your policy definition."
         },
         "PolicyRule": {
-            "type": "string"
+            "type": "string",
+            "description": "The policy rule for the policy definition. This\nis a json object representing the rule that contains an if and\na then block."
         },
         "PolicyType": {
-            "type": "string"
+            "type": "string",
+            "description": "The policy type.  The value can be \"BuiltIn\", \"Custom\"\nor \"NotSpecified\". Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

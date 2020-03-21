@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Mailgun::Route",
-    "description": "CloudFormation equivalent of mailgun_route",
+    "description": "Provides a Mailgun Route resource. This can be used to create and manage routes on Mailgun.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -16,16 +16,20 @@
             }
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": null
         },
         "Expression": {
-            "type": "string"
+            "type": "string",
+            "description": "A filter expression like `match_recipient('.*@gmail.com')`."
         },
         "Priority": {
-            "type": "number"
+            "type": "number",
+            "description": "Smaller number indicates higher priority. Higher priority routes are handled first."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region where domain will be created. Default value is `us`."
         }
     },
     "additionalProperties": false,

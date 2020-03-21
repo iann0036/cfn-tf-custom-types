@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::IdentityIdpGroupMapping",
-    "description": "CloudFormation equivalent of oci_identity_idp_group_mapping",
+    "description": "This resource provides the Idp Group Mapping resource in Oracle Cloud Infrastructure Identity service.\n\nCreates a single mapping between an IdP group and an IAM Service\n[group](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/Group/).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,13 +29,16 @@
             "type": "string"
         },
         "GroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The OCID of the IAM Service [group](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/Group/) you want to map to the IdP group."
         },
         "IdentityProviderId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the identity provider."
         },
         "IdpGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The name of the IdP group you want to map."
         },
         "InactiveState": {
             "type": "string"

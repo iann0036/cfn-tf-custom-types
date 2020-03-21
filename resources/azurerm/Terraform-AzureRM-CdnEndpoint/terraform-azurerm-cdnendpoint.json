@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::CdnEndpoint",
-    "description": "CloudFormation equivalent of azurerm_cdn_endpoint",
+    "description": "A CDN Endpoint is the entity within a CDN Profile containing configuration information regarding caching behaviors and origins. The CDN Endpoint is exposed using the URL format <endpointname>.azureedge.net.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "GeoFilter": {
@@ -8,17 +8,20 @@
             "additionalProperties": false,
             "properties": {
                 "Action": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Action of the Geo Filter. Possible values include `Allow` and `Block`."
                 },
                 "CountryCodes": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A List of two letter country codes (e.g. `US`, `GB`) to be associated with this Geo Filter."
                 },
                 "RelativePath": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The relative path applicable to geo filter."
                 }
             },
             "required": [
@@ -32,16 +35,20 @@
             "additionalProperties": false,
             "properties": {
                 "HostName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A string that determines the hostname/IP address of the origin server. This string can be a domain name, Storage Account endpoint, Web App endpoint, IPv4 address or IPv6 address. Changing this forces a new resource to be created."
                 },
                 "HttpPort": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The HTTP port of the origin. Defaults to `80`. Changing this forces a new resource to be created."
                 },
                 "HttpsPort": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The HTTPS port of the origin. Defaults to `443`. Changing this forces a new resource to be created."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the origin. This is an arbitrary value. However, this value needs to be unique under the endpoint. Changing this forces a new resource to be created."
                 }
             },
             "required": [
@@ -79,46 +86,59 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "An array of strings that indicates a content types on which compression will be applied. The value for the elements should be MIME types."
         },
         "HostName": {
             "type": "string"
         },
         "IsCompressionEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether compression is to be enabled. Defaults to false."
         },
         "IsHttpAllowed": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Defaults to `true`."
         },
         "IsHttpsAllowed": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Defaults to `true`."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the CDN Endpoint. Changing this forces a new resource to be created."
         },
         "OptimizationType": {
-            "type": "string"
+            "type": "string",
+            "description": "What types of optimization should this CDN Endpoint optimize for? Possible values include `DynamicSiteAcceleration`, `GeneralMediaStreaming`, `GeneralWebDelivery`, `LargeFileDownload` and `VideoOnDemandMediaStreaming`."
         },
         "OriginHostHeader": {
-            "type": "string"
+            "type": "string",
+            "description": "The host header CDN provider will send along with content requests to origins. Defaults to the host name of the origin."
         },
         "OriginPath": {
-            "type": "string"
+            "type": "string",
+            "description": "The path used at for origin requests."
         },
         "ProbePath": {
-            "type": "string"
+            "type": "string",
+            "description": "the path to a file hosted on the origin which helps accelerate delivery of the dynamic content and calculate the most optimal routes for the CDN. This is relative to the `origin_path`."
         },
         "ProfileName": {
-            "type": "string"
+            "type": "string",
+            "description": "The CDN Profile to which to attach the CDN Endpoint."
         },
         "QuerystringCachingBehaviour": {
-            "type": "string"
+            "type": "string",
+            "description": "Sets query string caching behavior. Allowed values are `IgnoreQueryString`, `BypassCaching` and `UseQueryString`. Defaults to `IgnoreQueryString`."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the CDN Endpoint."
         },
         "Tags": {
             "type": "array",
@@ -138,7 +158,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "GeoFilter": {
             "type": "array",

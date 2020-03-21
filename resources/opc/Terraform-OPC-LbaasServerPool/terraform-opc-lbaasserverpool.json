@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OPC::LbaasServerPool",
-    "description": "CloudFormation equivalent of opc_lbaas_server_pool",
+    "description": "The `opc_lbaas_server_pool` resource creates and manages a Load Balancer Classic Origin Server Pool for a Load Balancer Classic instance. The Server Pool defines one or more servers (referred to as origin servers) to which the load balancer can distribute requests.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "HealthCheck": {
@@ -48,13 +48,16 @@
             "type": "string"
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean flag to enable or disable the Server Pool. Default is `true` (enabled)."
         },
         "LoadBalancer": {
-            "type": "string"
+            "type": "string",
+            "description": "The parent Load Balancer the Origin Server Pool."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Server Pool."
         },
         "OperationDetails": {
             "type": "boolean"
@@ -64,7 +67,8 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of servers in the Server Pool. To define the server in the server pool, provide IP address or DNS name of the compute instances, and port for load balancer to direct traffic to, in the format `host:port`."
         },
         "State": {
             "type": "string"
@@ -77,13 +81,15 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of tags."
         },
         "Uri": {
             "type": "string"
         },
         "VnicSet": {
-            "type": "string"
+            "type": "string",
+            "description": "Fully qualified three part name of a vNICSet to be associated with the server pool vNIC. Load Balancer uses this vNICSet to set the right ACLs to allow egress traffic from the load balancer."
         },
         "HealthCheck": {
             "type": "array",

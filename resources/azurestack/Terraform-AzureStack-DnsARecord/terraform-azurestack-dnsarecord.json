@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureStack::DnsARecord",
-    "description": "CloudFormation equivalent of azurestack_dns_a_record",
+    "description": "Enables you to manage DNS A Records within Azure DNS.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,17 +9,20 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the DNS A Record."
         },
         "Records": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of IPv4 Addresses."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the resource group where the resource exists. Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -39,13 +42,15 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Ttl": {
             "type": "number"
         },
         "ZoneName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the DNS Zone where the resource exists. Changing this forces a new resource to be created."
         }
     },
     "additionalProperties": false,

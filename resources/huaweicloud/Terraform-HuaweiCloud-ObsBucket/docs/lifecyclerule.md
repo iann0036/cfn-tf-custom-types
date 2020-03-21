@@ -38,6 +38,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Enabled
 
+Specifies lifecycle rule status.
+
 _Required_: Yes
 
 _Type_: Boolean
@@ -46,6 +48,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Unique identifier for lifecycle rules. The Rule Name contains a maximum of 255 characters.
+
 _Required_: Yes
 
 _Type_: String
@@ -53,6 +57,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Prefix
+
+Object key prefix identifying one or more objects to which the rule applies.
+If omitted, all objects in the bucket will be managed by the lifecycle rule.
+The prefix cannot start or end with a slash (/), cannot have consecutive slashes (/), and cannot contain the following special characters: \:*?"<>|.
 
 _Required_: No
 

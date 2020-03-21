@@ -1,6 +1,11 @@
 # Terraform::Random::Integer
 
-CloudFormation equivalent of random_integer
+The resource `random_integer` generates random values from a given range, described by the `min` and `max` attributes of a given resource.
+
+This resource can be used in conjunction with resources that have
+the `create_before_destroy` lifecycle flag set, to avoid conflicts with
+unique names during the brief period where both the old and new resources
+exist concurrently.
 
 ## Syntax
 
@@ -36,6 +41,10 @@ Properties:
 
 #### Keepers
 
+Arbitrary map of values that, when changed, will
+trigger a new id to be generated. See
+[the main provider documentation](../index.html) for more information.
+
 _Required_: No
 
 _Type_: List of <a href="keepers.md">Keepers</a>
@@ -43,6 +52,8 @@ _Type_: List of <a href="keepers.md">Keepers</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Max
+
+The maximum inclusive value of the range.
 
 _Required_: Yes
 
@@ -52,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Min
 
+The minimum inclusive value of the range.
+
 _Required_: Yes
 
 _Type_: Double
@@ -59,6 +72,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Seed
+
+A custom seed to always produce the same value.
 
 _Required_: No
 

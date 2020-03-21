@@ -1,6 +1,12 @@
 # Terraform::OpenStack::ComputeSecgroupV2
 
-CloudFormation equivalent of openstack_compute_secgroup_v2
+Manages a V2 security group resource within OpenStack.
+
+Please note that managing security groups through the OpenStack Compute API
+has been deprecated. Unless you are using an older OpenStack environment, it is
+recommended to use the [`openstack_networking_secgroup_v2`](networking_secgroup_v2.html)
+and [`openstack_networking_secgroup_rule_v2`](networking_secgroup_rule_v2.html)
+resources instead, which uses the OpenStack Networking API.
 
 ## Syntax
 
@@ -38,6 +44,9 @@ Properties:
 
 #### Description
 
+A description for the security group. Changing this
+updates the `description` of an existing security group.
+
 _Required_: Yes
 
 _Type_: String
@@ -46,6 +55,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A unique name for the security group. Changing this
+updates the `name` of an existing security group.
+
 _Required_: Yes
 
 _Type_: String
@@ -53,6 +65,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region in which to obtain the V2 Compute client.
+A Compute client is needed to create a security group. If omitted, the
+`region` argument of the provider is used. Changing this creates a new
+security group.
 
 _Required_: No
 

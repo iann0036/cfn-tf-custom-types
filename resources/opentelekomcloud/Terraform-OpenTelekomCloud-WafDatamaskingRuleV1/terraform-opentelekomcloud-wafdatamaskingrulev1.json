@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenTelekomCloud::WafDatamaskingRuleV1",
-    "description": "CloudFormation equivalent of opentelekomcloud_waf_datamasking_rule_v1",
+    "description": "Manages a WAF Data Masking Rule resource within OpenTelekomCloud.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,16 +23,20 @@
             "type": "string"
         },
         "Category": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the masked field. The options are params and header."
         },
         "Index": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the masked subfield."
         },
         "PolicyId": {
-            "type": "string"
+            "type": "string",
+            "description": "The WAF policy ID. Changing this creates a new rule."
         },
         "Url": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the URL to which the data masking rule applies."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

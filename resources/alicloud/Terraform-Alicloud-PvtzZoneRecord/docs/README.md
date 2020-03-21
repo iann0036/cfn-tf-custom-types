@@ -1,6 +1,8 @@
 # Terraform::Alicloud::PvtzZoneRecord
 
-CloudFormation equivalent of alicloud_pvtz_zone_record
+Provides a Private Zone Record resource.
+
+-> **NOTE:** Terraform will auto Create a Private Zone Record while it uses `alicloud_pvtz_zone_record` to build a Private Zone Record resource.
 
 ## Syntax
 
@@ -39,6 +41,8 @@ Properties:
 
 #### Priority
 
+The priority of the Private Zone Record. At present, only can "MX" record support it. Valid values: [1-50]. Default to 1.
+
 _Required_: No
 
 _Type_: Double
@@ -46,6 +50,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceRecord
+
+The resource record of the Private Zone Record.
 
 _Required_: Yes
 
@@ -55,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ttl
 
+The ttl of the Private Zone Record.
+
 _Required_: No
 
 _Type_: Double
@@ -62,6 +70,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The type of the Private Zone Record. Valid values: A, CNAME, TXT, MX, PTR.
 
 _Required_: Yes
 
@@ -71,6 +81,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Value
 
+The value of the Private Zone Record.
+
 _Required_: Yes
 
 _Type_: String
@@ -78,6 +90,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneId
+
+The name of the Private Zone Record.
 
 _Required_: Yes
 

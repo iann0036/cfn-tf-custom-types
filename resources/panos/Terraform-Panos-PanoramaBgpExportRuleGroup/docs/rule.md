@@ -70,6 +70,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Action
 
+Rule action.  Valid values are `allow` (default) or
+`deny`.
+
 _Required_: No
 
 _Type_: String
@@ -77,6 +80,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AsPathLimit
+
+Add AS path limit attribute if it does
+not exist.
 
 _Required_: No
 
@@ -86,6 +92,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AsPathType
 
+AS path update options.  Valid values are
+`none`, `remove`, `prepend` or `remove-and-prepend`.
+
 _Required_: No
 
 _Type_: String
@@ -93,6 +102,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AsPathValue
+
+If `as_path_type` is `prepend` or `remove-and-prepend`,
+the value to prepend.
 
 _Required_: No
 
@@ -102,6 +114,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CommunityType
 
+Community update options.  Valid values are
+`none`, `remove-all`, `remove-regex`, `append`, or `overwrite`.
+
 _Required_: No
 
 _Type_: String
@@ -109,6 +124,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CommunityValue
+
+If `community_type` is `remove-regex`,
+`append`, or `overwrite`, the value associated with that setting.  For the
+`append` and `overwrite` types specifically, valid values for `community_value`
+are `no-export`, `no-advertise`, `local-as`, or `nopeer`.
 
 _Required_: No
 
@@ -118,6 +138,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Enable
 
+Enable this export rule (default: `true`).
+
 _Required_: No
 
 _Type_: Boolean
@@ -125,6 +147,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ExtendedCommunityType
+
+Extended community update options.  Valid
+values are `none`, `remove-all`, `remove-regex`, `append`, or `overwrite`.
 
 _Required_: No
 
@@ -142,6 +167,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LocalPreference
 
+New local preference value.
+
 _Required_: No
 
 _Type_: String
@@ -149,6 +176,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MatchAsPathRegex
+
+AS path to match.
 
 _Required_: No
 
@@ -158,6 +187,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MatchCommunityRegex
 
+Community to match.
+
 _Required_: No
 
 _Type_: String
@@ -165,6 +196,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MatchExtendedCommunityRegex
+
+Extended community to match.
 
 _Required_: No
 
@@ -174,6 +207,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MatchFromPeers
 
+List of peers that advertised the route entry.
+
 _Required_: No
 
 _Type_: List of String
@@ -181,6 +216,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MatchMed
+
+Match MED.
 
 _Required_: No
 
@@ -190,6 +227,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MatchNextHops
 
+List of next hop attributes.
+
 _Required_: No
 
 _Type_: List of String
@@ -197,6 +236,12 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MatchRouteTable
+
+Route table to match rule.  Valid
+values are `unicast`, `multicast`, or `both`.  As of PAN-OS 8.1, there doesn't
+seem to be a way to configure this in the GUI, it is always set to `unicast`.
+Thus, if you're running this resource against PAN-OS 8.0+, the appropriate
+thing to do is set this value to `unicast` as well to match the GUI functionality.
 
 _Required_: No
 
@@ -206,6 +251,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Med
 
+New MED value.
+
 _Required_: No
 
 _Type_: String
@@ -213,6 +260,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The security rule name.
 
 _Required_: Yes
 
@@ -222,6 +271,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NextHop
 
+Next hop address.
+
 _Required_: No
 
 _Type_: String
@@ -230,6 +281,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Origin
 
+New route origin.  Valid values are `igp`, `egp`, or
+`incomplete`.
+
 _Required_: No
 
 _Type_: String
@@ -237,6 +291,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UsedBy
+
+List of auth profiles.
 
 _Required_: No
 

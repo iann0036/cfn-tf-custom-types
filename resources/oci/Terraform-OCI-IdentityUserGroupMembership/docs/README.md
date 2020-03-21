@@ -1,6 +1,8 @@
 # Terraform::OCI::IdentityUserGroupMembership
 
-CloudFormation equivalent of oci_identity_user_group_membership
+This resource provides the User Group Membership resource in Oracle Cloud Infrastructure Identity service.
+
+Adds the specified user to the specified group and returns a `UserGroupMembership` object with its own OCID.
 
 ## Syntax
 
@@ -43,6 +45,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GroupId
 
+The OCID of the group.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserId
+
+The OCID of the user.
 
 _Required_: Yes
 

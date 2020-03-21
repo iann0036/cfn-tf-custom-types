@@ -1,6 +1,10 @@
 # Terraform::Alicloud::CrNamespace
 
-CloudFormation equivalent of alicloud_cr_namespace
+This resource will help you to manager Container Registry namespaces.
+
+-> **NOTE:** Available in v1.34.0+.
+
+-> **NOTE:** You need to set your registry password in Container Registry console before use this resource.
 
 ## Syntax
 
@@ -33,6 +37,8 @@ Properties:
 
 #### AutoCreate
 
+Boolean, when it set to true, repositories are automatically created when pushing new images. If it set to false, you create repository for images before pushing.
+
 _Required_: Yes
 
 _Type_: Boolean
@@ -41,6 +47,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DefaultVisibility
 
+`PUBLIC` or `PRIVATE`, default repository visibility in this namespace.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of Container Registry namespace.
 
 _Required_: Yes
 

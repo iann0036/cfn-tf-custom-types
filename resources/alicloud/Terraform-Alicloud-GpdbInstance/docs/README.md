@@ -1,6 +1,14 @@
 # Terraform::Alicloud::GpdbInstance
 
-CloudFormation equivalent of alicloud_gpdb_instance
+Provides a AnalyticDB for PostgreSQL instance resource supports replica set instances only. the AnalyticDB for PostgreSQL provides stable, reliable, and automatic scalable database services. 
+You can see detail product introduction [here](https://www.alibabacloud.com/help/doc-detail/35387.htm)
+
+-> **NOTE:**  Available in 1.47.0+
+
+-> **NOTE:**  The following regions don't support create Classic network Gpdb instance.
+[`ap-southeast-2`,`ap-southeast-3`,`ap-southeast-5`,`ap-south-1`,`me-east-1`,`ap-northeast-1`,`eu-west-1`,`us-east-1`,`eu-central-1`,`cn-shanghai-finance-1`,`cn-shenzhen-finance-1`,`cn-hangzhou-finance`]
+
+-> **NOTE:**  Create instance or change instance would cost 10~15 minutes. Please make full preparation.
 
 ## Syntax
 
@@ -59,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+The name of DB instance. It a string of 2 to 256 characters.
+
 _Required_: No
 
 _Type_: String
@@ -75,6 +85,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EngineVersion
 
+Database version. Value options can refer to the latest docs [CreateDBInstance](https://www.alibabacloud.com/help/doc-detail/86908.htm) `EngineVersion`.
+
 _Required_: No
 
 _Type_: String
@@ -82,6 +94,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceChargeType
+
+Valid values are `PrePaid`, `PostPaid`,System default to `PostPaid`.
 
 _Required_: No
 
@@ -91,6 +105,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceClass
 
+Instance specification. see [Instance specifications](https://www.alibabacloud.com/help/doc-detail/86942.htm).
+
 _Required_: Yes
 
 _Type_: String
@@ -98,6 +114,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceGroupCount
+
+The number of groups. Valid values: [2,4,8,16,32].
 
 _Required_: Yes
 
@@ -107,6 +125,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecurityIpList
 
+List of IP addresses allowed to access all databases of an instance. The list contains up to 1,000 IP addresses, separated by commas. Supported formats include 0.0.0.0/0, 10.23.12.24 (IP), and 10.23.12.24/24 (Classless Inter-Domain Routing (CIDR) mode. /24 represents the length of the prefix in an IP address. The range of the prefix length is [1,32]).
+
 _Required_: No
 
 _Type_: List of String
@@ -115,6 +135,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -122,6 +144,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VswitchId
+
+The virtual switch ID to launch DB instances in one VPC.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Vault::LdapAuthBackendGroup",
-    "description": "CloudFormation equivalent of vault_ldap_auth_backend_group",
+    "description": "Provides a resource to create a group in an [LDAP auth backend within Vault](https://www.vaultproject.io/docs/auth/ldap.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,17 +9,20 @@
             "type": "string"
         },
         "Backend": {
-            "type": "string"
+            "type": "string",
+            "description": "Path to the authentication backend."
         },
         "Groupname": {
-            "type": "string"
+            "type": "string",
+            "description": "The LDAP groupname."
         },
         "Policies": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Policies which should be granted to members of the group."
         }
     },
     "additionalProperties": false,

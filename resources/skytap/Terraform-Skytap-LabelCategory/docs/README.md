@@ -1,6 +1,12 @@
 # Terraform::Skytap::LabelCategory
 
-CloudFormation equivalent of skytap_label_category
+Provides a Skytap label category resource. Label categories provide a taxonomy of the usa reporting, once the label category is define it can be use to label resources. There are [restrictions for the use of labels](https://help.skytap.com/using-labels-for-in-depth-reporting.html#Restrictions) for example:
+
+* An account can have a maximum of 100 active categories.
+* An account can have a maximum combined total active and inactive (deleted) 200 categories.
+ 
+
+~> **NOTE:** Creating a label category fail when we reuse the name and change for label single value.
 
 ## Syntax
 
@@ -31,6 +37,8 @@ Properties:
 
 #### Name
 
+User-defined label category name.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SingleValue
+
+With single value labels can have only one value for a category, with false labels can have multiple values.
 
 _Required_: Yes
 

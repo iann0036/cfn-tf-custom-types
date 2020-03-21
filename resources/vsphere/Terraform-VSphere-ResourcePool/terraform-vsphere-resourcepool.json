@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::VSphere::ResourcePool",
-    "description": "CloudFormation equivalent of vsphere_resource_pool",
+    "description": "The `vsphere_resource_pool` resource can be used to create and manage\nresource pools in standalone hosts or on compute clusters.\n\nFor more information on vSphere resource pools, see [this\npage][ref-vsphere-resource_pools].\n\n[ref-vsphere-resource_pools]: https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.resmgmt.doc/GUID-60077B40-66FF-4625-934A-641703ED7601.html",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,19 +9,24 @@
             "type": "string"
         },
         "CpuExpandable": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Determines if the reservation on a resource\npool can grow beyond the specified value if the parent resource pool has\nunreserved resources. Default: `true`."
         },
         "CpuLimit": {
-            "type": "number"
+            "type": "number",
+            "description": "The CPU utilization of a resource pool will not exceed\nthis limit, even if there are available resources. Set to `-1` for unlimited.\nDefault: `-1`."
         },
         "CpuReservation": {
-            "type": "number"
+            "type": "number",
+            "description": "Amount of CPU (MHz) that is guaranteed\navailable to the resource pool. Default: `0`."
         },
         "CpuShareLevel": {
-            "type": "string"
+            "type": "string",
+            "description": "The CPU allocation level. The level is a\nsimplified view of shares. Levels map to a pre-determined set of numeric\nvalues for shares. Can be one of `low`, `normal`, `high`, or `custom`. When\n`low`, `normal`, or `high` are specified values in `cpu_shares` will be\nignored.  Default: `normal`."
         },
         "CpuShares": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of shares allocated for CPU. Used to\ndetermine resource allocation in case of resource contention. If this is set,\n`cpu_share_level` must be `custom`."
         },
         "CustomAttributes": {
             "type": "array",
@@ -44,32 +49,40 @@
             }
         },
         "MemoryExpandable": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Determines if the reservation on a resource\npool can grow beyond the specified value if the parent resource pool has\nunreserved resources. Default: `true`."
         },
         "MemoryLimit": {
-            "type": "number"
+            "type": "number",
+            "description": "The CPU utilization of a resource pool will not exceed\nthis limit, even if there are available resources. Set to `-1` for unlimited.\nDefault: `-1`."
         },
         "MemoryReservation": {
-            "type": "number"
+            "type": "number",
+            "description": "Amount of CPU (MHz) that is guaranteed\navailable to the resource pool. Default: `0`."
         },
         "MemoryShareLevel": {
-            "type": "string"
+            "type": "string",
+            "description": "The CPU allocation level. The level is a\nsimplified view of shares. Levels map to a pre-determined set of numeric\nvalues for shares. Can be one of `low`, `normal`, `high`, or `custom`. When\n`low`, `normal`, or `high` are specified values in `memory_shares` will be\nignored.  Default: `normal`."
         },
         "MemoryShares": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of shares allocated for CPU. Used to\ndetermine resource allocation in case of resource contention. If this is set,\n`memory_share_level` must be `custom`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource pool."
         },
         "ParentResourcePoolId": {
-            "type": "string"
+            "type": "string",
+            "description": "The [managed object ID][docs-about-morefs]\nof the parent resource pool. This can be the root resource pool for a cluster\nor standalone host, or a resource pool itself. When moving a resource pool\nfrom one parent resource pool to another, both must share a common root\nresource pool or the move will fail."
         },
         "Tags": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The IDs of any tags to attach to this resource. See\n[here][docs-applying-tags] for a reference on how to apply tags."
         }
     },
     "additionalProperties": false,

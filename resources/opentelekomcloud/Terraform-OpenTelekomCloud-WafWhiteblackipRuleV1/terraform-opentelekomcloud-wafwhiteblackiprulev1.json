@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenTelekomCloud::WafWhiteblackipRuleV1",
-    "description": "CloudFormation equivalent of opentelekomcloud_waf_whiteblackip_rule_v1",
+    "description": "Manages a WAF WhiteBlackIP Rule resource within OpenTelekomCloud.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,13 +23,16 @@
             "type": "string"
         },
         "Addr": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the IP address or range. For example, 192.168.0.125 or 192.168.0.0/24."
         },
         "PolicyId": {
-            "type": "string"
+            "type": "string",
+            "description": "The WAF policy ID. Changing this creates a new rule."
         },
         "White": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the IP address type. 1: Whitelist, 0: Blacklist. If you do not configure\nthe white parameter, the value is Blacklist by default."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

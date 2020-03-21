@@ -1,6 +1,6 @@
 # Terraform::AzureRM::ManagedDisk
 
-CloudFormation equivalent of azurerm_managed_disk
+Manages a managed disk.
 
 ## Syntax
 
@@ -72,6 +72,13 @@ Properties:
 
 #### CreateOption
 
+The method to use when creating the managed disk. Changing this forces a new resource to be created. Possible values include:
+* `Import` - Import a VHD file in to the managed disk (VHD specified with `source_uri`).
+* `Empty` - Create an empty managed disk.
+* `Copy` - Copy an existing managed disk or snapshot (specified with `source_resource_id`).
+* `FromImage` - Copy a Platform Image (specified with `image_reference_id`)
+* `Restore` - Set by Azure Backup or Site Recovery on a restored disk (specified with `source_resource_id`).
+
 _Required_: Yes
 
 _Type_: String
@@ -79,6 +86,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DiskEncryptionSetId
+
+The ID of a Disk Encryption Set which should be used to encrypt this Managed Disk. Changing this forces a new resource to be created.
 
 _Required_: No
 
@@ -88,6 +97,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DiskIopsReadWrite
 
+The number of IOPS allowed for this disk; only settable for UltraSSD disks. One operation can transfer between 4k and 256k bytes.
+
 _Required_: No
 
 _Type_: Double
@@ -95,6 +106,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DiskMbpsReadWrite
+
+The bandwidth allowed for this disk; only settable for UltraSSD disks. MBps means millions of bytes per second.
 
 _Required_: No
 
@@ -104,6 +117,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DiskSizeGb
 
+Specifies the size of the managed disk to create in gigabytes. If `create_option` is `Copy` or `FromImage`, then the value must be equal to or greater than the source's size.
+
 _Required_: No
 
 _Type_: Double
@@ -111,6 +126,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ImageReferenceId
+
+ID of an existing platform/marketplace disk image to copy when `create_option` is `FromImage`.
 
 _Required_: No
 
@@ -120,6 +137,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Location
 
+Specified the supported Azure location where the resource exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -127,6 +146,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the Managed Disk. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -136,6 +157,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OsType
 
+Specify a value when the source of an `Import` or `Copy` operation targets a source that contains an operating system. Valid values are `Linux` or `Windows`.
+
 _Required_: No
 
 _Type_: String
@@ -143,6 +166,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the Resource Group where the Managed Disk should exist.
 
 _Required_: Yes
 
@@ -152,6 +177,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SourceResourceId
 
+The ID of an existing Managed Disk to copy `create_option` is `Copy` or the recovery point to restore when `create_option` is `Restore`.
+
 _Required_: No
 
 _Type_: String
@@ -159,6 +186,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SourceUri
+
+URI to a valid VHD file to be used when `create_option` is `Import`.
 
 _Required_: No
 
@@ -168,6 +197,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StorageAccountId
 
+The ID of the Storage Account where the `source_uri` is located. Required when `create_option` is set to `Import`.  Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -175,6 +206,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StorageAccountType
+
+The type of storage to use for the managed disk. Possible values are `Standard_LRS`, `Premium_LRS`, `StandardSSD_LRS` or `UltraSSD_LRS`.
 
 _Required_: Yes
 
@@ -184,6 +217,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -191,6 +226,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Zones
+
+A collection containing the availability zone to allocate the Managed Disk in.
 
 _Required_: No
 

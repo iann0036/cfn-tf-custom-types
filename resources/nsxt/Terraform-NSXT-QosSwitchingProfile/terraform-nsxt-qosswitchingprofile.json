@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::NSXT::QosSwitchingProfile",
-    "description": "CloudFormation equivalent of nsxt_qos_switching_profile",
+    "description": "Provides a resource to configure Qos switching profile on NSX-T manager",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "EgressRateShaper": {
@@ -83,19 +83,24 @@
             "type": "string"
         },
         "ClassOfService": {
-            "type": "number"
+            "type": "number",
+            "description": "Class of service."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of this resource."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The display name of this resource. Defaults to ID if not set."
         },
         "DscpPriority": {
-            "type": "number"
+            "type": "number",
+            "description": "DSCP Priority (0-63)."
         },
         "DscpTrusted": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Trust mode for DSCP (False by default)."
         },
         "Revision": {
             "type": "number"

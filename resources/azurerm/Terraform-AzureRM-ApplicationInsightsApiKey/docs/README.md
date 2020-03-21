@@ -1,6 +1,6 @@
 # Terraform::AzureRM::ApplicationInsightsApiKey
 
-CloudFormation equivalent of azurerm_application_insights_api_key
+Manages an Application Insights API key.
 
 ## Syntax
 
@@ -39,6 +39,8 @@ Properties:
 
 #### ApplicationInsightsId
 
+The ID of the Application Insights component on which the API key operates. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -46,6 +48,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the Application Insights API key. Changing this forces a
+new resource to be created.
 
 _Required_: Yes
 
@@ -55,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ReadPermissions
 
+Specifies the list of read permissions granted to the API key. Valid values are `agentconfig`, `aggregate`, `api`, `draft`, `extendqueries`, `search`. Please note these values are case sensitive. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: List of String
@@ -62,6 +69,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WritePermissions
+
+Specifies the list of write permissions granted to the API key. Valid values are `annotations`. Please note these values are case sensitive. Changing this forces a new resource to be created.
 
 _Required_: No
 

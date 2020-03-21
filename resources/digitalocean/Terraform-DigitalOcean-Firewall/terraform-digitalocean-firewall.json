@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::DigitalOcean::Firewall",
-    "description": "CloudFormation equivalent of digitalocean_firewall",
+    "description": "Provides a DigitalOcean Cloud Firewall resource. This can be used to create,\nmodify, and delete Firewalls.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "InboundRule": {
@@ -8,38 +8,44 @@
             "additionalProperties": false,
             "properties": {
                 "PortRange": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ports on which traffic will be allowed\nspecified as a string containing a single port, a range (e.g. \"8000-9000\"),\nor \"1-65535\" to open all ports for a protocol. Required for when protocol is\n`tcp` or `udp`."
                 },
                 "Protocol": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The type of traffic to be allowed.\nThis may be one of \"tcp\", \"udp\", or \"icmp\"."
                 },
                 "SourceAddresses": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "An array of strings containing the IPv4\naddresses, IPv6 addresses, IPv4 CIDRs, and/or IPv6 CIDRs from which the\ninbound traffic will be accepted."
                 },
                 "SourceDropletIds": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "number"
-                    }
+                    },
+                    "description": "An array containing the IDs of\nthe Droplets from which the inbound traffic will be accepted."
                 },
                 "SourceLoadBalancerUids": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "An array containing the IDs\nof the Load Balancers from which the inbound traffic will be accepted."
                 },
                 "SourceTags": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "An array containing the names of Tags\ncorresponding to groups of Droplets from which the inbound traffic\nwill be accepted."
                 }
             },
             "required": [
@@ -55,34 +61,40 @@
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "An array of strings containing the IPv4\naddresses, IPv6 addresses, IPv4 CIDRs, and/or IPv6 CIDRs to which the\noutbound traffic will be allowed."
                 },
                 "DestinationDropletIds": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "number"
-                    }
+                    },
+                    "description": "An array containing the IDs of\nthe Droplets to which the outbound traffic will be allowed."
                 },
                 "DestinationLoadBalancerUids": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "An array containing the IDs\nof the Load Balancers to which the outbound traffic will be allowed."
                 },
                 "DestinationTags": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "An array containing the names of Tags\ncorresponding to groups of Droplets to which the outbound traffic will\nbe allowed.\ntraffic."
                 },
                 "PortRange": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ports on which traffic will be allowed\nspecified as a string containing a single port, a range (e.g. \"8000-9000\"),\nor \"1-65535\" to open all ports for a protocol. Required for when protocol is\n`tcp` or `udp`."
                 },
                 "Protocol": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The type of traffic to be allowed.\nThis may be one of \"tcp\", \"udp\", or \"icmp\"."
                 }
             },
             "required": [
@@ -106,7 +118,8 @@
             }
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The Firewall name."
         },
         "PendingChanges": {
             "type": "array",

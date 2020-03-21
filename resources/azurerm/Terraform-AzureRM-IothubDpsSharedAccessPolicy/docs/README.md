@@ -1,6 +1,6 @@
 # Terraform::AzureRM::IothubDpsSharedAccessPolicy
 
-CloudFormation equivalent of azurerm_iothub_dps_shared_access_policy
+Manages an IotHub Device Provisioning Service Shared Access Policy
 
 ## Syntax
 
@@ -45,6 +45,8 @@ Properties:
 
 #### EnrollmentRead
 
+Adds `EnrollmentRead` permission to this Shared Access Account. It allows read access to enrollment data.
+
 _Required_: No
 
 _Type_: Boolean
@@ -52,6 +54,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnrollmentWrite
+
+Adds `EnrollmentWrite` permission to this Shared Access Account. It allows write access to enrollment data.
 
 _Required_: No
 
@@ -61,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IothubDpsName
 
+The name of the IoT Hub Device Provisioning service to which this Shared Access Policy belongs. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -68,6 +74,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the IotHub Shared Access Policy resource. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -77,6 +85,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RegistrationRead
 
+Adds `RegistrationStatusRead` permission to this Shared Access Account. It allows read access to device registrations.
+
 _Required_: No
 
 _Type_: Boolean
@@ -84,6 +94,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RegistrationWrite
+
+Adds `RegistrationStatusWrite` permission to this Shared Access Account. It allows write access to device registrations.
 
 _Required_: No
 
@@ -93,6 +105,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group under which the IotHub Shared Access Policy resource has to be created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -100,6 +114,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServiceConfig
+
+Adds `ServiceConfig` permission to this Shared Access Account. It allows configuration of the Device Provisioning Service.
 
 _Required_: No
 

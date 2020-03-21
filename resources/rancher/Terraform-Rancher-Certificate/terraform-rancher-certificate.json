@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Rancher::Certificate",
-    "description": "CloudFormation equivalent of rancher_certificate",
+    "description": "Provides a Rancher Certificate resource. This can be used to create certificates for rancher environments and retrieve their information.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,10 +12,12 @@
             "type": "string"
         },
         "Cert": {
-            "type": "string"
+            "type": "string",
+            "description": "The certificate content."
         },
         "CertChain": {
-            "type": "string"
+            "type": "string",
+            "description": "The certificate chain."
         },
         "CertFingerprint": {
             "type": "string"
@@ -24,10 +26,12 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A certificate description."
         },
         "EnvironmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the environment to create the certificate for."
         },
         "ExpiresAt": {
             "type": "string"
@@ -39,13 +43,15 @@
             "type": "string"
         },
         "Key": {
-            "type": "string"
+            "type": "string",
+            "description": "The certificate key."
         },
         "KeySize": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the certificate."
         },
         "SerialNumber": {
             "type": "string"

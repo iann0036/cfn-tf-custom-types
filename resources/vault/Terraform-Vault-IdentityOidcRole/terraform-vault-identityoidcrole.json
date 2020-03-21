@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Vault::IdentityOidcRole",
-    "description": "CloudFormation equivalent of vault_identity_oidc_role",
+    "description": "Creates an Identity OIDC Role for Vault Identity secrets engine to issue\n[identity tokens](https://www.vaultproject.io/docs/secrets/identity/index.html#identity-tokens).\n\nThe Identity secrets engine is the identity management solution for Vault. It internally maintains\nthe clients who are recognized by Vault.\n\nUse this with [`vault_identity_oidc_key`](identity_oidc_key.html)\nand [`vault_identity_oidc_key_allowed_client_id`](identity_oidc_key_allowed_client_id.html)\nto configure a Role to generate Identity Tokens.\n\n~> **NOTE on `allowed_client_ids`:** Terraform currently\nprovides both a standalone [Allowed Client ID](identity_oidc_key_allowed_client_id.html) (a single\nClient ID), and a [OIDC Named Key](identity_oidc_key.html) with a inline list of Allowed Client IDs.\nAt this time you cannot use an OIDC Named Key inline list of Allowed Client IDs\nin conjunction with any Allowed Client ID resources. Doing so will cause\na conflict of the list of Allowed Client IDs for the named Key.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,16 +12,20 @@
             "type": "string"
         },
         "Key": {
-            "type": "string"
+            "type": "string",
+            "description": "A configured named key, the key must already exist\nbefore tokens can be issued."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the OIDC Role to create."
         },
         "Template": {
-            "type": "string"
+            "type": "string",
+            "description": "The template string to use for generating tokens. This may be in\nstring-ified JSON or base64 format. See the\n[documentation](https://www.vaultproject.io/docs/secrets/identity/index.html#token-contents-and-templates)\nfor the template format."
         },
         "Ttl": {
-            "type": "number"
+            "type": "number",
+            "description": "TTL of the tokens generated against the role in number of seconds."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::EventhubNamespaceAuthorizationRule",
-    "description": "CloudFormation equivalent of azurerm_eventhub_namespace_authorization_rule",
+    "description": "Manages an Authorization Rule for an Event Hub Namespace.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,16 +29,20 @@
             "type": "string"
         },
         "Listen": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Grants listen access to this this Authorization Rule. Defaults to `false`."
         },
         "Manage": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Grants manage access to this this Authorization Rule. When this property is `true` - both `listen` and `send` must be too. Defaults to `false`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Authorization Rule. Changing this forces a new resource to be created."
         },
         "NamespaceName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the EventHub Namespace. Changing this forces a new resource to be created."
         },
         "PrimaryConnectionString": {
             "type": "string"
@@ -47,7 +51,8 @@
             "type": "string"
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which the EventHub Namespace exists. Changing this forces a new resource to be created."
         },
         "SecondaryConnectionString": {
             "type": "string"
@@ -56,7 +61,8 @@
             "type": "string"
         },
         "Send": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Grants send access to this this Authorization Rule. Defaults to `false`."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

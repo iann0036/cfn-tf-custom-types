@@ -36,6 +36,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Description
 
+Specifies a description for the rule.
+
 _Required_: No
 
 _Type_: String
@@ -43,6 +45,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DestinationAddresses
+
+A list of destination IP addresses and/or IP ranges.
 
 _Required_: Yes
 
@@ -52,6 +56,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DestinationPorts
 
+A list of destination ports.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -59,6 +65,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the rule.
 
 _Required_: Yes
 
@@ -68,6 +76,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Protocols
 
+A list of protocols. Possible values are `Any`, `ICMP`, `TCP` and `UDP`.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -75,6 +85,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SourceAddresses
+
+A list of source IP addresses and/or IP ranges.
 
 _Required_: Yes
 

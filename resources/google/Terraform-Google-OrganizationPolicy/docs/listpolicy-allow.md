@@ -25,6 +25,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### All
 
+The policy allows or denies all values.
+
 _Required_: No
 
 _Type_: Boolean
@@ -32,6 +34,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Values
+
+The policy can define specific values that are allowed or denied.
 
 _Required_: No
 

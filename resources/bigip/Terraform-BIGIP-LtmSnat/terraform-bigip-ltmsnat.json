@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::BIGIP::LtmSnat",
-    "description": "CloudFormation equivalent of bigip_ltm_snat",
+    "description": "`bigip_ltm_snat` Manages a snat configuration\n\nFor resources should be named with their \"full path\". The full path is the combination of the partition + name of the resource. For example /Common/my-pool.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Origins": {
@@ -29,32 +29,40 @@
             "type": "string"
         },
         "Mirror": {
-            "type": "string"
+            "type": "string",
+            "description": "Enables or disables mirroring of SNAT connections."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the snat."
         },
         "Partition": {
-            "type": "string"
+            "type": "string",
+            "description": "Displays the administrative partition within which this profile resides."
         },
         "Snatpool": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of a SNAT pool. You can only use this option when automap and translation are not used."
         },
         "Sourceport": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies whether the system preserves the source port of the connection. The default is preserve. Use of the preserve-strict setting should be restricted to UDP only under very special circumstances such as nPath or transparent (that is, no translation of any other L3/L4 field), where there is a 1:1 relationship between virtual IP addresses and node addresses, or when clustered multi-processing (CMP) is disabled. The change setting is useful for obfuscating internal network addresses."
         },
         "Translation": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of a translated IP address. Note that translated addresses are outside the traffic management system. You can only use this option when automap and snatpool are not used."
         },
         "Vlans": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Specifies the name of the VLAN to which you want to assign the SNAT. The default is vlans-enabled."
         },
         "Vlansdisabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Disables the SNAT on all VLANs."
         },
         "Origins": {
             "type": "array",

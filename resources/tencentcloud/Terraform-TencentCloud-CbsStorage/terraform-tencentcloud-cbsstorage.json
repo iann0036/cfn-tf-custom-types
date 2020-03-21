@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::CbsStorage",
-    "description": "CloudFormation equivalent of tencentcloud_cbs_storage",
+    "description": "Provides a resource to create a CBS.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,31 +12,39 @@
             "type": "boolean"
         },
         "AvailabilityZone": {
-            "type": "string"
+            "type": "string",
+            "description": "The available zone that the CBS instance locates at."
         },
         "Encrypt": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether CBS is encrypted."
         },
         "Period": {
-            "type": "number"
+            "type": "number",
+            "description": "The purchased usage period of CBS, and value range [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36]."
         },
         "ProjectId": {
-            "type": "number"
+            "type": "number",
+            "description": "ID of the project to which the instance belongs."
         },
         "SnapshotId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the snapshot. If specified, created the CBS by this snapshot."
         },
         "StorageName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of CBS. The maximum length can not exceed 60 bytes."
         },
         "StorageSize": {
-            "type": "number"
+            "type": "number",
+            "description": "Volume of CBS, and unit is GB. If storage type is `CLOUD_SSD`, the size range is [100, 16000], and the others are [10-16000]."
         },
         "StorageStatus": {
             "type": "string"
         },
         "StorageType": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of CBS medium, and available values include CLOUD_BASIC, CLOUD_PREMIUM and CLOUD_SSD."
         },
         "Tags": {
             "type": "array",
@@ -56,7 +64,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "The available tags within this CBS."
         }
     },
     "additionalProperties": false,

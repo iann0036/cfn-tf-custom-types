@@ -1,6 +1,8 @@
 # Terraform::AzureRM::PrivateLinkService
 
-CloudFormation equivalent of azurerm_private_link_service
+Manages a Private Link Service.
+
+-> **NOTE** Private Link is now in [GA](https://docs.microsoft.com/en-gb/azure/private-link/).
 
 ## Syntax
 
@@ -52,6 +54,8 @@ Properties:
 
 #### AutoApprovalSubscriptionIds
 
+A list of Subscription UUID/GUID's that will be automatically be able to use this Private Link Service.
+
 _Required_: No
 
 _Type_: List of String
@@ -59,6 +63,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableProxyProtocol
+
+Should the Private Link Service support the Proxy Protocol? Defaults to `false`.
 
 _Required_: No
 
@@ -68,6 +74,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LoadBalancerFrontendIpConfigurationIds
 
+A list of Frontend IP Configuration ID's from a Standard Load Balancer, where traffic from the Private Link Service should be routed. You can use Load Balancer Rules to direct this traffic to appropriate backend pools where your applications are running.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -75,6 +83,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Location
+
+Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -84,6 +94,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of this Private Link Service. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -91,6 +103,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the Resource Group where the Private Link Service should exist. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -100,6 +114,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -107,6 +123,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VisibilitySubscriptionIds
+
+A list of Subscription UUID/GUID's that will be able to see this Private Link Service.
 
 _Required_: No
 

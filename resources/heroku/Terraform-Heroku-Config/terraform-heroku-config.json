@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Heroku::Config",
-    "description": "CloudFormation equivalent of heroku_config",
+    "description": "Provides a Heroku Config resource, making it possible to define variables \nto be used throughout your Heroku terraform configurations. Combined with `heroku_app_config_association`,\nthese two resources enable users to decouple setting config var(s) from the `heroku_app` resource.\n\n~> **NOTE:** Unlike most Terraform resources, this resource **DOES NOT** by itself create, update or delete anything in Heroku. \nA [`heroku_app_config_association`](app_config_association.html), `heroku_app.config_vars`, or `heroku_app.sensitive_config_vars` is required to actually set these values on Heroku apps.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -26,7 +26,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "This is the same as `vars`. The main difference between the two\nattributes is `sensitive_vars` outputs are redacted on-screen and replaced by a <sensitive> placeholder, following a terraform\n`plan` or `apply`. It is recommended to put private keys, passwords, etc in this argument."
         },
         "Vars": {
             "type": "array",
@@ -46,7 +47,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Map of vars that are can be outputted in plaintext."
         }
     },
     "additionalProperties": false,

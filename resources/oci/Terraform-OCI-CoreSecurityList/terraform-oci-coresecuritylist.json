@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::CoreSecurityList",
-    "description": "CloudFormation equivalent of oci_core_security_list",
+    "description": "This resource provides the Security List resource in Oracle Cloud Infrastructure Core service.\n\nCreates a new security list for the specified VCN. For more information\nabout security lists, see [Security Lists](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm).\nFor information on the number of rules you can have in a security list, see\n[Service Limits](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).\n\nFor the purposes of access control, you must provide the OCID of the compartment where you want the security\nlist to reside. Notice that the security list doesn't have to be in the same compartment as the VCN, subnets,\nor other Networking Service components. If you're not sure which compartment to use, put the security\nlist in the same compartment as the VCN. For more information about compartments and access control, see\n[Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For information about OCIDs, see\n[Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).\n\nYou may optionally specify a *display name* for the security list, otherwise a default is provided.\nIt does not have to be unique, and you can change it. Avoid entering confidential information.\n\nFor more information on configuring a VCN's default security list, see [Managing Default VCN Resources](/docs/providers/oci/guides/managing_default_resources.html)",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "EgressSecurityRules": {
@@ -189,7 +189,8 @@
             "type": "string"
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The OCID of the compartment to contain the security list."
         },
         "DefinedTags": {
             "type": "array",
@@ -209,10 +210,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Operations.CostCenter\": \"42\"}`."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information."
         },
         "FreeformTags": {
             "type": "array",
@@ -232,7 +235,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
         },
         "State": {
             "type": "string"
@@ -241,7 +245,8 @@
             "type": "string"
         },
         "VcnId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the VCN the security list belongs to."
         },
         "EgressSecurityRules": {
             "type": "array",

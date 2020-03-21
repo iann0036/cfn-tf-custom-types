@@ -1,6 +1,10 @@
 # Terraform::Alicloud::CdnDomainConfig
 
-CloudFormation equivalent of alicloud_cdn_domain_config
+Provides a CDN Accelerated Domain resource.
+
+For information about domain config and how to use it, see [Batch set config](https://www.alibabacloud.com/help/zh/doc-detail/90915.htm)
+
+-> **NOTE:** Available in v1.34.0+.
 
 ## Syntax
 
@@ -34,6 +38,8 @@ Properties:
 
 #### DomainName
 
+Name of the accelerated domain. This name without suffix can have a string of 1 to 63 characters, must contain only alphanumeric characters or "-", and must not begin or end with "-", and "-" must not in the 3th and 4th character positions at the same time. Suffix `.sh` and `.tel` are not supported.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FunctionName
+
+The name of the domain config.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HuaweiCloud::FgsFunctionV2",
-    "description": "CloudFormation equivalent of huaweicloud_fgs_function_v2",
+    "description": "Manages a V2 function resource within HuaweiCloud.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,43 +23,56 @@
             "type": "string"
         },
         "CodeFilename": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of a function file, This field is mandatory only when coe_type is\nset to jar or zip. Changing this creates a new function."
         },
         "CodeType": {
-            "type": "string"
+            "type": "string",
+            "description": "Function code type, which can be inline: inline code, zip: ZIP file,\njar: JAR file or java functions, obs: function code stored in an OBS bucket. Changing this\ncreates a new function."
         },
         "CodeUrl": {
-            "type": "string"
+            "type": "string",
+            "description": "This parameter is mandatory when code_type is set to obs. Changing this\ncreates a new function."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the function. Changing this creates a new function."
         },
         "FuncCode": {
-            "type": "string"
+            "type": "string",
+            "description": "Function code. When code_type is set to inline, zip, or jar, this parameter is mandatory,\nand the code must be encoded using Base64. Changing this creates a new function."
         },
         "Handler": {
-            "type": "string"
+            "type": "string",
+            "description": "Entry point of the function. Changing this creates a new function."
         },
         "MemorySize": {
-            "type": "number"
+            "type": "number",
+            "description": "Memory size(MB) allocated to the function. Changing this creates a new function."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique name for the function. Changing this creates a new function."
         },
         "Package": {
-            "type": "string"
+            "type": "string",
+            "description": "Group to which the function belongs. Changing this creates a new function."
         },
         "Runtime": {
-            "type": "string"
+            "type": "string",
+            "description": "Environment for executing the function. Changing this creates a new function."
         },
         "Timeout": {
-            "type": "number"
+            "type": "number",
+            "description": "Timeout interval of the function, ranges from 3s to 900s. Changing this creates a new function."
         },
         "UserData": {
-            "type": "string"
+            "type": "string",
+            "description": "Key/Value information defined for the function. Changing this creates a new function."
         },
         "Xrole": {
-            "type": "string"
+            "type": "string",
+            "description": "This parameter is mandatory if the function needs to access other cloud services.\nChanging this creates a new function."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

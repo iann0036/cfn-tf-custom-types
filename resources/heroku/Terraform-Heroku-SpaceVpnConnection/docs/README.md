@@ -1,6 +1,6 @@
 # Terraform::Heroku::SpaceVpnConnection
 
-CloudFormation equivalent of heroku_space_vpn_connection
+Provides a resource for creating a VPN connection between a network and a Heroku Private Space. For more information, see [Private Spaces VPN Connection](https://devcenter.heroku.com/articles/private-space-vpn-connection?preview=1) in the Heroku DevCenter.
 
 ## Syntax
 
@@ -39,6 +39,8 @@ Properties:
 
 #### Name
 
+The name of the VPN connection.
+
 _Required_: Yes
 
 _Type_: String
@@ -46,6 +48,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PublicIp
+
+The public IP address of the VPN endpoint on the network where the VPN connection will be established.
 
 _Required_: Yes
 
@@ -55,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RoutableCidrs
 
+A list of IPv4 CIDR blocks used by the network where the VPN connection will be established.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -62,6 +68,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Space
+
+The name of the Heroku Private Space where the VPN connection will be established.
 
 _Required_: Yes
 

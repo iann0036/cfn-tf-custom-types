@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::HttpServerProfile",
-    "description": "CloudFormation equivalent of panos_http_server_profile",
+    "description": "This resource allows you to add/update/delete HTTP server profiles.\n\n**Minimum PAN-OS version**:  7.1",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "AuthFormat": {
@@ -288,31 +288,40 @@
             "additionalProperties": false,
             "properties": {
                 "Address": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The server address."
                 },
                 "CertificateProfile": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The certificate profile."
                 },
                 "HttpMethod": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The HTTP method (default: `POST`)."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The server name."
                 },
                 "Password": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The password."
                 },
                 "Port": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The port number (default: 443)."
                 },
                 "Protocol": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The protocol.  Valid values are `HTTPS` (default)\nor `HTTP`."
                 },
                 "TlsVersion": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The TLS version."
                 },
                 "Username": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The username."
                 }
             },
             "required": [
@@ -831,7 +840,8 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name."
         },
         "PasswordEnc": {
             "type": "array",
@@ -874,10 +884,12 @@
             }
         },
         "TagRegistration": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Perform tag registration."
         },
         "Vsys": {
-            "type": "string"
+            "type": "string",
+            "description": "The vsys (default: `shared`)."
         },
         "AuthFormat": {
             "type": "array",

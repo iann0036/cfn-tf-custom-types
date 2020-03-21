@@ -54,6 +54,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### DefaultCooldown
 
+Default cooldown time in second, and default value is 300.
+
 _Required_: No
 
 _Type_: Double
@@ -61,6 +63,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DesiredCapacity
+
+Desired volume of CVM instances, which is between max_size and min_size.
 
 _Required_: No
 
@@ -70,6 +74,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LoadBalancerIds
 
+ID list of traditional load balancers.
+
 _Required_: No
 
 _Type_: List of String
@@ -77,6 +83,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MaxSize
+
+Maximum number of CVM instances (0~2000).
 
 _Required_: Yes
 
@@ -86,6 +94,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MinSize
 
+Minimum number of CVM instances (0~2000).
+
 _Required_: Yes
 
 _Type_: Double
@@ -93,6 +103,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProjectId
+
+Specifys to which project the scaling group belongs.
 
 _Required_: No
 
@@ -102,6 +114,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RetryPolicy
 
+Available values for retry policies include IMMEDIATE_RETRY and INCREMENTAL_INTERVALS.
+
 _Required_: No
 
 _Type_: String
@@ -109,6 +123,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ScalingGroupName
+
+Name of a scaling group.
 
 _Required_: Yes
 
@@ -118,6 +134,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubnetIds
 
+ID list of subnet, and for VPC it is required.
+
 _Required_: No
 
 _Type_: List of String
@@ -125,6 +143,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Tags of a scaling group.
 
 _Required_: No
 
@@ -134,6 +154,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TerminationPolicies
 
+Available values for termination policies include OLDEST_INSTANCE and NEWEST_INSTANCE.
+
 _Required_: No
 
 _Type_: List of String
@@ -142,6 +164,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VpcId
 
+ID of VPC network.
+
 _Required_: Yes
 
 _Type_: String
@@ -149,6 +173,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Zones
+
+List of available zones, for Basic network it is required.
 
 _Required_: No
 

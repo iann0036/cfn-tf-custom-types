@@ -1,6 +1,6 @@
 # Terraform::Alicloud::CenBandwidthPackageAttachment
 
-CloudFormation equivalent of alicloud_cen_bandwidth_package_attachment
+Provides a CEN bandwidth package attachment resource. The resource can be used to bind a bandwidth package to a specified CEN instance.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### BandwidthPackageId
 
+The ID of the bandwidth package.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceId
+
+The ID of the CEN.
 
 _Required_: Yes
 

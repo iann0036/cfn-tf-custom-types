@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::TcaplusZone
 
-CloudFormation equivalent of tencentcloud_tcaplus_zone
+Use this resource to create tcaplus zone
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### AppId
 
+Application of the tcapplus zone belongs.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneName
+
+Name of the tcapplus zone. length should between 1 and 30.
 
 _Required_: Yes
 

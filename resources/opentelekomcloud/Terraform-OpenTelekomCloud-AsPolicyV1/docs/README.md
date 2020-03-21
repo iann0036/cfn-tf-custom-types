@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::AsPolicyV1
 
-CloudFormation equivalent of opentelekomcloud_as_policy_v1
+Manages a V1 AS Policy resource within OpenTelekomCloud.
 
 ## Syntax
 
@@ -45,6 +45,9 @@ Properties:
 
 #### AlarmId
 
+The alarm rule ID. This argument is mandatory
+when `scaling_policy_type` is set to `ALARM`.
+
 _Required_: No
 
 _Type_: String
@@ -52,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CoolDownTime
+
+The cooling duration (in seconds), and is 900 by default.
 
 _Required_: No
 
@@ -69,6 +74,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ScalingGroupId
 
+The AS group ID. Changing this creates a new AS policy.
+
 _Required_: Yes
 
 _Type_: String
@@ -77,6 +84,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ScalingPolicyName
 
+The name of the AS policy. The name can contain letters,
+digits, underscores(_), and hyphens(-),and cannot exceed 64 characters.
+
 _Required_: Yes
 
 _Type_: String
@@ -84,6 +94,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ScalingPolicyType
+
+The AS policy type. The values can be `ALARM`, `SCHEDULED`,
+and `RECURRENCE`.
 
 _Required_: Yes
 

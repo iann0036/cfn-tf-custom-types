@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::NSXT::LbFastTcpApplicationProfile",
-    "description": "CloudFormation equivalent of nsxt_lb_fast_tcp_application_profile",
+    "description": "Provides a resource to configure LB fast TCP application profile on NSX-T manager\n\n~> **NOTE:** This resource requires NSX version 2.3 or higher.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Tag": {
@@ -26,19 +26,24 @@
             "type": "string"
         },
         "CloseTimeout": {
-            "type": "number"
+            "type": "number",
+            "description": "Timeout in seconds to specify how long a closed TCP connection should be kept for this application before cleaning up the connection. Value can range between 1-60, with a default of 8 seconds."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of this resource."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The display name of this resource. Defaults to ID if not set."
         },
         "HaFlowMirroring": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "A boolean flag which reflects whether flow mirroring is enabled, and all the flows to the bounded virtual server are mirrored to the standby node. By default this is disabled."
         },
         "IdleTimeout": {
-            "type": "number"
+            "type": "number",
+            "description": "Timeout in seconds to specify how long an idle TCP connection in ESTABLISHED state should be kept for this application before cleaning up. The default value will be 1800 seconds."
         },
         "Revision": {
             "type": "number"

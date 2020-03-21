@@ -1,6 +1,6 @@
 # Terraform::AzureRM::IothubConsumerGroup
 
-CloudFormation equivalent of azurerm_iothub_consumer_group
+Manages a Consumer Group within an IotHub
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### EventhubEndpointName
 
+The name of the Event Hub-compatible endpoint in the IoT hub. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IothubName
+
+The name of the IoT Hub. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -53,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of this Consumer Group. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -60,6 +66,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group that contains the IoT hub. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

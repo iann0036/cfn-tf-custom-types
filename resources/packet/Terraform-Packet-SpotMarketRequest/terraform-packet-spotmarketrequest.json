@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Packet::SpotMarketRequest",
-    "description": "CloudFormation equivalent of packet_spot_market_request",
+    "description": "Provides a Packet Spot Market Request resource to allow you to\nmanage spot market requests on your account. For more detail on Spot Market, see [this article in Packing documentaion](https://www.packet.com/developers/docs/getting-started/deployment-options/spot-market/).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "InstanceParameters": {
@@ -80,26 +80,32 @@
             "type": "string"
         },
         "DevicesMax": {
-            "type": "number"
+            "type": "number",
+            "description": "Maximum number devices to be created."
         },
         "DevicesMin": {
-            "type": "number"
+            "type": "number",
+            "description": "Miniumum number devices to be created."
         },
         "Facilities": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Facility IDs where devices should be created."
         },
         "MaxBidPrice": {
-            "type": "number"
+            "type": "number",
+            "description": "Maximum price user is willing to pay per hour per device."
         },
         "ProjectId": {
-            "type": "string"
+            "type": "string",
+            "description": "Project ID."
         },
         "WaitForDevices": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "On resource creation - wait until all desired devices are active, on resource destruction - wait until devices are removed."
         },
         "InstanceParameters": {
             "type": "array",

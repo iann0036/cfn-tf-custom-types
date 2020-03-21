@@ -1,6 +1,6 @@
 # Terraform::NSXT::LogicalRouterLinkPortOnTier1
 
-CloudFormation equivalent of nsxt_logical_router_link_port_on_tier1
+This resource provides the ability to configure a logical router link port on a tier 1 logical router. This port can then be used to connect the tier 1 logical router to another logical router.
 
 ## Syntax
 
@@ -38,6 +38,8 @@ Properties:
 
 #### Description
 
+Description of the resource.
+
 _Required_: No
 
 _Type_: String
@@ -45,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+Display name, defaults to ID if not set.
 
 _Required_: No
 
@@ -61,6 +65,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LogicalRouterId
+
+Identifier for logical tier-1 router on which this port is created.
 
 _Required_: Yes
 

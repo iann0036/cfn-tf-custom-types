@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::DnsRecordsetV2",
-    "description": "CloudFormation equivalent of openstack_dns_recordset_v2",
+    "description": "Manages a DNS record set in the OpenStack DNS Service.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,26 +26,32 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description of the  record set."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the record set. Note the `.` at the end of the name.\nChanging this creates a new DNS  record set."
         },
         "Records": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "An array of DNS records. _Note:_ if an IPv6 address\ncontains brackets (`[ ]`), the brackets will be stripped and the modified\naddress will be recorded in the state."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the V2 DNS client.\nIf omitted, the `region` argument of the provider is used.\nChanging this creates a new DNS  record set."
         },
         "Ttl": {
-            "type": "number"
+            "type": "number",
+            "description": "The time to live (TTL) of the record set."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of record set. Examples: \"A\", \"MX\".\nChanging this creates a new DNS  record set."
         },
         "ValueSpecs": {
             "type": "array",
@@ -65,10 +71,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Map of additional options. Changing this creates a\nnew record set."
         },
         "ZoneId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the zone in which to create the record set.\nChanging this creates a new DNS  record set."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

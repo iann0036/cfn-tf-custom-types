@@ -1,6 +1,8 @@
 # Terraform::UCloud::LbRule
 
-CloudFormation equivalent of ucloud_lb_rule
+Provides a Load Balancer Rule resource to add content forwarding policies for Load Balancer backend resource.
+ 
+~> **Note** The Load Balancer Rule can only be define while the `protocol` of lb listener is one of HTTP and HTTPS. In addition, should set one of `domain` and `path` if defined.
 
 ## Syntax
 
@@ -38,6 +40,8 @@ Properties:
 
 #### BackendIds
 
+The IDs of the backend servers where rule applies, this argument is populated base on the `backend_id` responded from `lb_attachment` create.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -45,6 +49,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Domain
+
+The domain of content forward matching fields. `path` and `domain` cannot coexist. `path` and `domain` must be filled in one.
 
 _Required_: No
 
@@ -54,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ListenerId
 
+The ID of a listener server.
+
 _Required_: Yes
 
 _Type_: String
@@ -62,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LoadBalancerId
 
+The ID of a load balancer.
+
 _Required_: Yes
 
 _Type_: String
@@ -69,6 +79,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Path
+
+The path of Content forward matching fields. `path` and `domain` cannot coexist. `path` and `domain` must be filled in one.
 
 _Required_: No
 

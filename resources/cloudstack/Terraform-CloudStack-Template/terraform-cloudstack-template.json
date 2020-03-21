@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::CloudStack::Template",
-    "description": "CloudFormation equivalent of cloudstack_template",
+    "description": "Registers an existing template into the CloudStack cloud.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,49 +9,63 @@
             "type": "string"
         },
         "DisplayText": {
-            "type": "string"
+            "type": "string",
+            "description": "The display name of the template."
         },
         "Format": {
-            "type": "string"
+            "type": "string",
+            "description": "The format of the template. Valid values are `QCOW2`,\n`RAW`, and `VHD`."
         },
         "Hypervisor": {
-            "type": "string"
+            "type": "string",
+            "description": "The target hypervisor for the template. Changing\nthis forces a new resource to be created."
         },
         "IsDynamicallyScalable": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to indicate if the template contains\ntools to support dynamic scaling of VM cpu/memory (defaults false)."
         },
         "IsExtractable": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to indicate if the template is extractable\n(defaults false)."
         },
         "IsFeatured": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to indicate if the template is featured\n(defaults false)."
         },
         "IsPublic": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to indicate if the template is available for\nall accounts (defaults true)."
         },
         "IsReady": {
             "type": "boolean"
         },
         "IsReadyTimeout": {
-            "type": "number"
+            "type": "number",
+            "description": "The maximum time in seconds to wait until the\ntemplate is ready for use (defaults 300 seconds)."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the template."
         },
         "OsType": {
-            "type": "string"
+            "type": "string",
+            "description": "The OS Type that best represents the OS of this\ntemplate."
         },
         "PasswordEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to indicate if the template should be\npassword enabled (defaults false)."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or ID of the project to create this template for.\nChanging this forces a new resource to be created."
         },
         "Url": {
-            "type": "string"
+            "type": "string",
+            "description": "The URL of where the template is hosted. Changing this\nforces a new resource to be created."
         },
         "Zone": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or ID of the zone where this template will be created.\nChanging this forces a new resource to be created."
         }
     },
     "additionalProperties": false,

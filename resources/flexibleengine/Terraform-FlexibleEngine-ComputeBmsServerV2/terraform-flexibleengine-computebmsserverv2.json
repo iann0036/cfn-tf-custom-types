@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::FlexibleEngine::ComputeBmsServerV2",
-    "description": "CloudFormation equivalent of flexibleengine_compute_bms_server_v2",
+    "description": "Manages a BMS Server resource within FlexibleEngine.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "BlockDevice": {
@@ -44,22 +44,28 @@
             "additionalProperties": false,
             "properties": {
                 "AccessNetwork": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Specifies if this network should be used for\nprovisioning access. Accepts true or false. Defaults to false."
                 },
                 "FixedIpV4": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies a fixed IPv4 address to be used on this\nnetwork. Changing this creates a new bms server."
                 },
                 "FixedIpV6": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies a fixed IPv6 address to be used on this\nnetwork. Changing this creates a new bms server."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The human-readable\nname of the network. Changing this creates a new bms server."
                 },
                 "Port": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The port UUID of a\nnetwork to attach to the bms server. Changing this creates a new server."
                 },
                 "Uuid": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The network UUID to\nattach to the bms server. Changing this creates a new bms server."
                 }
             },
             "required": []
@@ -93,19 +99,23 @@
             "type": "string"
         },
         "AdminPass": {
-            "type": "string"
+            "type": "string",
+            "description": "The administrative password to assign to the bms server.\nChanging this changes the root password on the existing server."
         },
         "AvailabilityZone": {
-            "type": "string"
+            "type": "string",
+            "description": "The availability zone in which to create\nthe bms server."
         },
         "ConfigDrive": {
             "type": "boolean"
         },
         "FlavorId": {
-            "type": "string"
+            "type": "string",
+            "description": "The flavor ID of\nthe desired flavor for the bms server. Changing this resizes the existing bms server."
         },
         "FlavorName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the\ndesired flavor for the bms server. Changing this resizes the existing bms server."
         },
         "HostId": {
             "type": "string"
@@ -114,16 +124,19 @@
             "type": "string"
         },
         "ImageId": {
-            "type": "string"
+            "type": "string",
+            "description": "Changing this creates a new bms server."
         },
         "ImageName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the\ndesired image for the bms server. Changing this creates a new bms server."
         },
         "KernelId": {
             "type": "string"
         },
         "KeyPair": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of a key pair to put on the bms server. The key\npair must already be created and associated with the tenant's account.\nChanging this creates a new bms server."
         },
         "Metadata": {
             "type": "array",
@@ -143,29 +156,35 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Metadata key/value pairs to make available from\nwithin the instance. Changing this updates the existing bms server metadata."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the BMS."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to create the bms server instance. If\nomitted, the `region` argument of the provider is used. Changing this\ncreates a new bms server."
         },
         "SecurityGroups": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "An array of one or more security group names\nto associate with the bms server. Changing this results in adding/removing\nsecurity groups from the existing bms server."
         },
         "StopBeforeDestroy": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to try stop instance gracefully\nbefore destroying it, thus giving chance for guest OS daemons to stop correctly.\nIf instance doesn't stop within timeout, it will be destroyed anyway."
         },
         "TenantId": {
             "type": "string"
         },
         "UserData": {
-            "type": "string"
+            "type": "string",
+            "description": "The user data to provide when launching the instance.\nChanging this creates a new bms server."
         },
         "UserId": {
             "type": "string"

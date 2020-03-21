@@ -1,6 +1,8 @@
 # Terraform::OCI::CoreAppCatalogSubscription
 
-CloudFormation equivalent of oci_core_app_catalog_subscription
+This resource provides the App Catalog Subscription resource in Oracle Cloud Infrastructure Core service.
+
+Create a subscription for listing resource version for a compartment. It will take some time to propagate to all regions.
 
 ## Syntax
 
@@ -43,6 +45,8 @@ Properties:
 
 #### CompartmentId
 
+The compartmentID for the subscription.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EulaLink
+
+EULA link.
 
 _Required_: Yes
 
@@ -59,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ListingId
 
+The OCID of the listing.
+
 _Required_: Yes
 
 _Type_: String
@@ -66,6 +74,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ListingResourceVersion
+
+Listing resource version.
 
 _Required_: Yes
 
@@ -75,6 +85,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OracleTermsOfUseLink
 
+Oracle TOU link.
+
 _Required_: Yes
 
 _Type_: String
@@ -83,6 +95,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Signature
 
+A generated signature for this listing resource version retrieved the agreements API.
+
 _Required_: Yes
 
 _Type_: String
@@ -90,6 +104,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TimeRetrieved
+
+Date and time the agreements were retrieved, in RFC3339 format. Example: `2018-03-20T12:32:53.532Z`.
 
 _Required_: Yes
 

@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### DeleteAfterDaysSinceCreationGreaterThan
 
+The age in days after create to delete the snaphot. Must be at least 0.
+
 _Required_: No
 
 _Type_: Double

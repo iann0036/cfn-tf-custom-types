@@ -1,6 +1,8 @@
 # Terraform::Cloudflare::OriginCaCertificate
 
-CloudFormation equivalent of cloudflare_origin_ca_certificate
+Provides a Cloudflare Origin CA certificate used to protect traffic to your origin without involving a third party Certificate Authority.
+
+**This resource requires you use your Origin CA Key as the [`api_user_service_key`](../index.html#api_user_service_key).**
 
 ## Syntax
 
@@ -36,6 +38,8 @@ Properties:
 
 #### Csr
 
+The Certificate Signing Request. Must be newline-encoded.
+
 _Required_: Yes
 
 _Type_: String
@@ -43,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Hostnames
+
+An array of hostnames or wildcard names bound to the certificate.
 
 _Required_: Yes
 
@@ -52,6 +58,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RequestType
 
+The signature type desired on the certificate.
+
 _Required_: Yes
 
 _Type_: String
@@ -59,6 +67,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RequestedValidity
+
+The number of days for which the certificate should be valid.
 
 _Required_: No
 

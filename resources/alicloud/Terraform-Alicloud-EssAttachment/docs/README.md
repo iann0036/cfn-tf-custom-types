@@ -1,6 +1,10 @@
 # Terraform::Alicloud::EssAttachment
 
-CloudFormation equivalent of alicloud_ess_attachment
+Attaches several ECS instances to a specified scaling group or remove them from it.
+
+-> **NOTE:** ECS instances can be attached or remove only when the scaling group is active and it has no scaling activity in progress.
+
+-> **NOTE:** There are two types ECS instances in a scaling group: "AutoCreated" and "Attached". The total number of them can not larger than the scaling group "MaxSize".
 
 ## Syntax
 
@@ -34,6 +38,8 @@ Properties:
 
 #### Force
 
+Whether to remove forcibly "AutoCreated" ECS instances in order to release scaling group capacity "MaxSize" for attaching ECS instances. Default to false.
+
 _Required_: No
 
 _Type_: Boolean
@@ -42,6 +48,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceIds
 
+ID of the ECS instance to be attached to the scaling group. You can input up to 20 IDs.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -49,6 +57,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ScalingGroupId
+
+ID of the scaling group of a scaling configuration.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 # Terraform::AzureRM::EventgridEventSubscription
 
-CloudFormation equivalent of azurerm_eventgrid_event_subscription
+Manages an EventGrid Event Subscription
 
 ## Syntax
 
@@ -64,6 +64,8 @@ Properties:
 
 #### EventDeliverySchema
 
+Specifies the event delivery schema for the event subscription. Possible values include: `EventGridSchema`, `CloudEventV01Schema`, `CustomInputSchema`.
+
 _Required_: No
 
 _Type_: String
@@ -71,6 +73,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IncludedEventTypes
+
+A list of applicable event types that need to be part of the event subscription.
 
 _Required_: No
 
@@ -80,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Labels
 
+A list of labels to assign to the event subscription.
+
 _Required_: No
 
 _Type_: List of String
@@ -87,6 +93,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the EventGrid Event Subscription resource. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -96,6 +104,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Scope
 
+Specifies the scope at which the EventGrid Event Subscription should be created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -103,6 +113,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TopicName
+
+Specifies the name of the topic to associate with the event subscription.
 
 _Required_: No
 

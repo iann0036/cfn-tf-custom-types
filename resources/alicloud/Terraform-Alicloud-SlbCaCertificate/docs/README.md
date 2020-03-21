@@ -1,6 +1,10 @@
 # Terraform::Alicloud::SlbCaCertificate
 
-CloudFormation equivalent of alicloud_slb_ca_certificate
+A Load Balancer CA Certificate is used by the listener of the protocol https.
+
+For information about slb and how to use it, see [What is Server Load Balancer](https://www.alibabacloud.com/help/doc-detail/27539.htm).
+
+For information about CA Certificate and how to use it, see [Configure CA Certificate](https://www.alibabacloud.com/help/doc-detail/85968.htm).
 
 ## Syntax
 
@@ -36,6 +40,8 @@ Properties:
 
 #### CaCertificate
 
+the content of the CA certificate.
+
 _Required_: Yes
 
 _Type_: String
@@ -43,6 +49,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of the CA Certificate.
 
 _Required_: No
 
@@ -52,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupId
 
+The Id of resource group which the slb_ca certificate belongs.
+
 _Required_: No
 
 _Type_: String
@@ -59,6 +69,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

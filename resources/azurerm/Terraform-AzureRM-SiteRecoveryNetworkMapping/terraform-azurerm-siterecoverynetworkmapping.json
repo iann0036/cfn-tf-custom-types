@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::SiteRecoveryNetworkMapping",
-    "description": "CloudFormation equivalent of azurerm_site_recovery_network_mapping",
+    "description": "Manages a site recovery network mapping on Azure. A network mapping decides how to translate connected netwroks when a VM is migrated from one region to another.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,25 +29,32 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the network mapping."
         },
         "RecoveryVaultName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the vault that should be updated."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the resource group where the vault that should be updated is located."
         },
         "SourceNetworkId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the primary network."
         },
         "SourceRecoveryFabricName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the ASR fabric where mapping should be created."
         },
         "TargetNetworkId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the recovery network."
         },
         "TargetRecoveryFabricName": {
-            "type": "string"
+            "type": "string",
+            "description": "The Azure Site Recovery fabric object corresponding to the recovery Azure region."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

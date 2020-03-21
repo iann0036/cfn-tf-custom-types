@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Circonus::RuleSet",
-    "description": "CloudFormation equivalent of circonus_rule_set",
+    "description": "The ``circonus_rule_set`` resource creates and manages a\n[Circonus Rule Set](https://login.circonus.com/resources/api/calls/rule_set).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "If": {
@@ -102,28 +102,34 @@
             "type": "string"
         },
         "Check": {
-            "type": "string"
+            "type": "string",
+            "description": "The Circonus ID that this Rule Set will use to search for\na metric stream to alert on."
         },
         "Link": {
-            "type": "string"
+            "type": "string",
+            "description": "A link to external documentation (or anything else you\nfeel is important) when a notification is sent.  This value will show up in\nemail alerts and the Circonus UI."
         },
         "MetricFilter": {
             "type": "string"
         },
         "MetricName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the metric stream within a given check\nthat this rule set is active on."
         },
         "MetricPattern": {
             "type": "string"
         },
         "MetricType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of metric this rule set will operate on.\nValid values are `numeric` (the default) and `text`."
         },
         "Notes": {
-            "type": "string"
+            "type": "string",
+            "description": "Notes about this rule set."
         },
         "Parent": {
-            "type": "string"
+            "type": "string",
+            "description": "A Circonus Metric ID that, if specified and active with\na severity 1 alert, will silence this rule set until all of the severity 1\nalerts on the parent clear.  This value must match the format\n`${check_id}_${metric_name}`."
         },
         "RuleSetId": {
             "type": "string"
@@ -133,7 +139,8 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of tags assigned to this rule set."
         },
         "If": {
             "type": "array",

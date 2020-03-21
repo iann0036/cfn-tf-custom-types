@@ -23,6 +23,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### AllowedOrigins
 
+A list of origins which should be able to make cross-origin calls. `*` can be used to allow all calls.
+
 _Required_: Yes
 
 _Type_: List of String

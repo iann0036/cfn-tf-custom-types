@@ -1,6 +1,6 @@
 # Terraform::AzureRM::ApiManagement
 
-CloudFormation equivalent of azurerm_api_management
+Manages an API Management Service.
 
 ## Syntax
 
@@ -88,6 +88,8 @@ Properties:
 
 #### Location
 
+The Azure location where the API Management Service exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -95,6 +97,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the API Management Service. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -104,6 +108,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NotificationSenderEmail
 
+Email address from which the notification will be sent.
+
 _Required_: No
 
 _Type_: String
@@ -111,6 +117,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Policy
+
+A `policy` block as defined below.
 
 _Required_: No
 
@@ -120,6 +128,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PublisherEmail
 
+The email of publisher/company.
+
 _Required_: Yes
 
 _Type_: String
@@ -127,6 +137,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PublisherName
+
+The name of publisher/company.
 
 _Required_: Yes
 
@@ -136,6 +148,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the Resource Group in which the API Management Service should be exist. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -144,6 +158,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SkuName
 
+`sku_name` is a string consisting of two parts separated by an underscore(\_). The fist part is the `name`, valid values include: `Developer`, `Basic`, `Standard` and `Premium`. The second part is the `capacity` (e.g. the number of deployed units of the `sku`), which must be a positive `integer` (e.g. `Developer_1`).
+
 _Required_: Yes
 
 _Type_: String
@@ -151,6 +167,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags assigned to the resource.
 
 _Required_: No
 

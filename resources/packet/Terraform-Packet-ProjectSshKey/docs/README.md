@@ -1,6 +1,7 @@
 # Terraform::Packet::ProjectSshKey
 
-CloudFormation equivalent of packet_project_ssh_key
+Provides a Packet project SSH key resource to manage project-specific SSH keys.
+Project SSH keys will only be populated onto servers that belong to that project, in contrast to User SSH Keys.
 
 ## Syntax
 
@@ -33,6 +34,8 @@ Properties:
 
 #### Name
 
+The name of the SSH key for identification.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +44,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProjectId
 
+The ID of parent project.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PublicKey
+
+The public key. If this is a file, it can be read using the file interpolation function.
 
 _Required_: Yes
 

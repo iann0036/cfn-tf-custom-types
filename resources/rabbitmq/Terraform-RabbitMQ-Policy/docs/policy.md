@@ -29,6 +29,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### ApplyTo
 
+Can either be "exchanges", "queues", or "all".
+
 _Required_: Yes
 
 _Type_: String
@@ -36,6 +38,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Definition
+
+Key/value pairs of the policy definition. See the
+RabbitMQ documentation for definition references and examples.
 
 _Required_: Yes
 
@@ -45,6 +50,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Pattern
 
+A pattern to match an exchange or queue name.
+
 _Required_: Yes
 
 _Type_: String
@@ -52,6 +59,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Priority
+
+The policy with the greater priority is applied first.
 
 _Required_: Yes
 

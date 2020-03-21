@@ -1,6 +1,6 @@
 # Terraform::Gitlab::PipelineScheduleVariable
 
-CloudFormation equivalent of gitlab_pipeline_schedule_variable
+This resource allows you to create and manage variables for pipeline schedules.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### Key
 
+Name of the variable.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PipelineScheduleId
+
+The id of the pipeline schedule.
 
 _Required_: Yes
 
@@ -51,6 +55,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Project
 
+The id of the project to add the schedule to.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Value
+
+Value of the variable.
 
 _Required_: Yes
 

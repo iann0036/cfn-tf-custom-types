@@ -1,6 +1,11 @@
 # Terraform::Fastly::ServiceDictionaryItemsV1
 
-CloudFormation equivalent of fastly_service_dictionary_items_v1
+Defines a map of Fastly dictionary items that can be used to populate a service dictionary.  This resource will populate a dictionary with the items and will track their state.
+
+
+~> **Warning:** Terraform will take precedence over any changes you make in the UI or API. Such changes are likely to be reversed if you run Terraform again.  
+
+If Terraform is being used to populate the initial content of a dictionary which you intend to manage via API or UI, then the lifecycle `ignore_changes` field can be used with the resource.  An example of this configuration is provided below.
 
 ## Syntax
 
@@ -34,6 +39,8 @@ Properties:
 
 #### DictionaryId
 
+The ID of the dictionary that the items belong to.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +49,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Items
 
+A map representing an entry in the dictionary, (key/value).
+
 _Required_: No
 
 _Type_: List of <a href="items.md">Items</a>
@@ -49,6 +58,8 @@ _Type_: List of <a href="items.md">Items</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServiceId
+
+The ID of the service that the dictionary belongs to.
 
 _Required_: Yes
 

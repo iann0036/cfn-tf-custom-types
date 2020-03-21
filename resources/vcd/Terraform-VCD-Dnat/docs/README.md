@@ -1,6 +1,14 @@
 # Terraform::VCD::Dnat
 
-CloudFormation equivalent of vcd_dnat
+Provides a vCloud Director DNAT resource. This can be used to create, modify,
+and delete destination NATs to map an external IP/port to an internal IP/port.
+
+~> **Note:** This resource may corrupt UI edited NAT rules when used with advanced
+edge gateways. Please use [`vcd_nsxv_dnat`](/docs/providers/vcd/r/nsxv_dnat.html) in that case.
+
+~> **Note:** From v2.4+ `protocol` requires lower case values. This may result in invalid configuration if upper case was used previously.
+
+!> **Warning:** When advanced edge gateway is used and the rule is updated using UI, then ID mapping will be lost and Terraform won't find the rule anymore and remove it from state.
 
 ## Syntax
 
@@ -51,6 +59,8 @@ Properties:
 
 #### Description
 
+- Description of item.
+
 _Required_: No
 
 _Type_: String
@@ -58,6 +68,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EdgeGateway
+
+The name of the edge gateway on which to apply the DNAT.
 
 _Required_: Yes
 
@@ -67,6 +79,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ExternalIp
 
+One of the external IPs available on your Edge Gateway.
+
 _Required_: Yes
 
 _Type_: String
@@ -74,6 +88,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IcmpSubType
+
+The name of ICMP type. Possible values are   address-mask-request, destination-unreachable, echo-request, echo-reply, parameter-problem, redirect, router-advertisement, router-solicitation, source-quench, time-exceeded, timestamp-request, timestamp-reply, any.
 
 _Required_: No
 
@@ -83,6 +99,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InternalIp
 
+The IP of the VM to map to.
+
 _Required_: Yes
 
 _Type_: String
@@ -90,6 +108,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NetworkName
+
+The name of the network on which to apply the SNAT. *`network_name` will be a required field in the next major version.*.
 
 _Required_: No
 
@@ -99,6 +119,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NetworkType
 
+Type of the network on which to apply the NAT rule. Possible values `org` or `ext`. `ext` requires system administrator privileges. *`network_type` will be a required field in the next major version.*.
+
 _Required_: No
 
 _Type_: String
@@ -106,6 +128,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Org
+
+The name of organization to use, optional if defined at provider level. Useful when connected as sysadmin working across different organisations.
 
 _Required_: No
 
@@ -115,6 +139,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Port
 
+The port number to map. -1 translates to "any".
+
 _Required_: No
 
 _Type_: Double
@@ -122,6 +148,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Protocol
+
+The protocol type. Possible values are `tcp`, `udp`, `tcpupd`, `icmp`, `any`. `tcp` is default to be backward compatible with previous version.
 
 _Required_: No
 
@@ -131,6 +159,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TranslatedPort
 
+The port number to map.
+
 _Required_: No
 
 _Type_: Double
@@ -138,6 +168,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vdc
+
+The name of VDC to use, optional if defined at provider level.
 
 _Required_: No
 

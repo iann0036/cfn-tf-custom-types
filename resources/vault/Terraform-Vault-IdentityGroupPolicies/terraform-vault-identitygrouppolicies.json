@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Vault::IdentityGroupPolicies",
-    "description": "CloudFormation equivalent of vault_identity_group_policies",
+    "description": "Manages policies for an Identity Group for Vault. The [Identity secrets engine](https://www.vaultproject.io/docs/secrets/identity/index.html) is the identity management solution for Vault.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "Exclusive": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Defaults to `true`."
         },
         "GroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "Group ID to assign policies to."
         },
         "GroupName": {
             "type": "string"
@@ -22,7 +24,8 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of policies to assign to the group."
         }
     },
     "additionalProperties": false,

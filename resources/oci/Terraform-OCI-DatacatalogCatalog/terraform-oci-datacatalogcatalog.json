@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::DatacatalogCatalog",
-    "description": "CloudFormation equivalent of oci_datacatalog_catalog",
+    "description": "This resource provides the Catalog resource in Oracle Cloud Infrastructure Data Catalog service.\n\nCreates a new data catalog instance that includes a console and an API URL for managing metadata operations.\nFor more information, please see the documentation.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,7 +26,8 @@
             "type": "string"
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) Compartment identifier."
         },
         "DefinedTags": {
             "type": "array",
@@ -46,10 +47,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{\"foo-namespace.bar-key\": \"value\"}`."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) Data catalog identifier."
         },
         "FreeformTags": {
             "type": "array",
@@ -69,7 +72,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{\"bar-key\": \"value\"}`."
         },
         "LifecycleDetails": {
             "type": "string"

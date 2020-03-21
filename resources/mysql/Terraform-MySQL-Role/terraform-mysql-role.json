@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::MySQL::Role",
-    "description": "CloudFormation equivalent of mysql_role",
+    "description": "The ``mysql_role`` resource creates and manages a user on a MySQL\nserver.\n\n~> **Note:** MySQL introduced roles in version 8. They do not work on MySQL 5 and lower.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the role."
         }
     },
     "additionalProperties": false,

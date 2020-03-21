@@ -1,6 +1,8 @@
 # Terraform::Panos::PanoramaHttpServerProfile
 
-CloudFormation equivalent of panos_panorama_http_server_profile
+This resource allows you to add/update/delete Panorama HTTP server profiles.
+
+**Minimum PAN-OS version**:  7.1
 
 ## Syntax
 
@@ -84,6 +86,9 @@ Properties:
 
 #### DeviceGroup
 
+The device group location.  Mutually exclusive with
+`template` and `template_stack`.
+
 _Required_: No
 
 _Type_: String
@@ -91,6 +96,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name.
 
 _Required_: Yes
 
@@ -100,6 +107,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TagRegistration
 
+Perform tag registration.
+
 _Required_: No
 
 _Type_: Boolean
@@ -107,6 +116,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Template
+
+The template location.  Mutually exclusive with
+`template_stack` and `device_group`.
 
 _Required_: No
 
@@ -116,6 +128,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TemplateStack
 
+The template stack location.  Mutually exclusive
+with `template` and `device_group`.
+
 _Required_: No
 
 _Type_: String
@@ -123,6 +138,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vsys
+
+The vsys.  This will likely be `shared`, and it should be
+defined if you specified either `template` or `template_stack`.
 
 _Required_: No
 

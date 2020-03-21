@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::SiteRecoveryFabric",
-    "description": "CloudFormation equivalent of azurerm_site_recovery_fabric",
+    "description": "Manages a Azure Site Recovery Replication Fabric within a Recovery Services vault. Only Azure fabrics are supported at this time. Replication Fabrics serve as a container within an Azure region for other Site Recovery resources such as protection containers, protected items, network mappings.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,16 +29,20 @@
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "In what region should the fabric be located."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the network mapping."
         },
         "RecoveryVaultName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the vault that should be updated."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the resource group where the vault that should be updated is located."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

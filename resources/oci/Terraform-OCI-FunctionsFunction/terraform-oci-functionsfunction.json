@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::FunctionsFunction",
-    "description": "CloudFormation equivalent of oci_functions_function",
+    "description": "This resource provides the Function resource in Oracle Cloud Infrastructure Functions service.\n\nCreates a new function.\n\n**NOTE:** Terraform will take 40 minutes after destroying a function due to a known service issue. Refer [here](https://docs.cloud.oracle.com/iaas/Content/Functions/Tasks/functionsdeleting.htm)",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,7 +26,8 @@
             "type": "string"
         },
         "ApplicationId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the application this function belongs to."
         },
         "CompartmentId": {
             "type": "string"
@@ -49,7 +50,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Function configuration. These values are passed on to the function as environment variables, this overrides application configuration values. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{\"MY_FUNCTION_CONFIG\": \"ConfVal\"}`."
         },
         "DefinedTags": {
             "type": "array",
@@ -69,10 +71,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Operations.CostCenter\": \"42\"}`."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The display name of the function. The display name must be unique within the application containing the function. Avoid entering confidential information."
         },
         "FreeformTags": {
             "type": "array",
@@ -92,19 +96,23 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
         },
         "Image": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`."
         },
         "ImageDigest": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`."
         },
         "InvokeEndpoint": {
             "type": "string"
         },
         "MemoryInMbs": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) Maximum usable memory for the function (MiB)."
         },
         "State": {
             "type": "string"
@@ -116,7 +124,8 @@
             "type": "string"
         },
         "TimeoutInSeconds": {
-            "type": "number"
+            "type": "number",
+            "description": "(Updatable) Timeout for executions of the function. Value in seconds."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

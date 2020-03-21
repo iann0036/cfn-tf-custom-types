@@ -23,6 +23,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Rule
 
+A list of authentication plugins that the user must
+authenticate with.
+
 _Required_: Yes
 
 _Type_: List of String

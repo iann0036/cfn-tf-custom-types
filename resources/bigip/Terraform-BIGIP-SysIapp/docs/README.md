@@ -1,6 +1,6 @@
 # Terraform::BIGIP::SysIapp
 
-CloudFormation equivalent of bigip_sys_iapp
+`bigip_sys_iapp` resource helps you to deploy Application Services template that can be used to automate and orchestrate Layer 4-7 applications service deployments using F5 Network.
 
 ## Syntax
 
@@ -108,6 +108,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Jsonfile
 
+Refer to the Json file which will be deployed on F5 BIG-IP.
+
 _Required_: No
 
 _Type_: String
@@ -115,6 +117,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of the iApp.
 
 _Required_: No
 

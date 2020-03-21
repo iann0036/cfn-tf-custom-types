@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::MonitorAutoscaleSetting",
-    "description": "CloudFormation equivalent of azurerm_monitor_autoscale_setting",
+    "description": "Manages a AutoScale Setting which can be applied to Virtual Machine Scale Sets, App Services and other scalable resources.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Notification": {
@@ -29,7 +29,8 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the name of the profile."
                 },
                 "Capacity": {
                     "type": "array",
@@ -92,13 +93,16 @@
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Specifies a list of custom email addresses to which the email notifications will be sent."
                 },
                 "SendToSubscriptionAdministrator": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Should email notifications be sent to the subscription administrator? Defaults to `false`."
                 },
                 "SendToSubscriptionCoAdministrator": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Should email notifications be sent to the subscription co-administrator? Defaults to `false`."
                 }
             },
             "required": []
@@ -125,10 +129,12 @@
                             "Key",
                             "Value"
                         ]
-                    }
+                    },
+                    "description": "A map of settings."
                 },
                 "ServiceUri": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The HTTPS URI which should receive scale notifications."
                 }
             },
             "required": [
@@ -140,13 +146,16 @@
             "additionalProperties": false,
             "properties": {
                 "Default": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The number of instances that are available for scaling if metrics are not available for evaluation. The default is only used if the current instance count is lower than the default. Valid values are between `0` and `1000`."
                 },
                 "Maximum": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The maximum number of instances for this resource. Valid values are between `0` and `1000`."
                 },
                 "Minimum": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The minimum number of instances for this resource. Valid values are between `0` and `1000`."
                 }
             },
             "required": [
@@ -160,10 +169,12 @@
             "additionalProperties": false,
             "properties": {
                 "End": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the end date for the profile, formatted as an RFC3339 date string."
                 },
                 "Start": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the start date for the profile, formatted as an RFC3339 date string."
                 },
                 "Timezone": {
                     "type": "string"
@@ -183,24 +194,28 @@
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of days that this profile takes effect on. Possible values include `Monday`, `Tuesday`, `Wednesday`, `Thursday`, `Friday`, `Saturday` and `Sunday`."
                 },
                 "Hours": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "number"
-                    }
+                    },
+                    "description": "A list containing a single item, which specifies the Hour interval at which this recurrence should be triggered (in 24-hour time). Possible values are from `0` to `23`."
                 },
                 "Minutes": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "number"
-                    }
+                    },
+                    "description": "A list containing a single item which specifies the Minute interval at which this recurrence should be triggered."
                 },
                 "Timezone": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Time Zone used for the `hours` field. A list of [possible values can be found here](https://msdn.microsoft.com/en-us/library/azure/dn931928.aspx). Defaults to `UTC`."
                 }
             },
             "required": [
@@ -235,28 +250,36 @@
             "additionalProperties": false,
             "properties": {
                 "MetricName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the metric that defines what the rule monitors, such as `Percentage CPU` for `Virtual Machine Scale Sets` and `CpuPercentage` for `App Service Plan`."
                 },
                 "MetricResourceId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of the Resource which the Rule monitors."
                 },
                 "Operator": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the operator used to compare the metric data and threshold. Possible values are: `Equals`, `NotEquals`, `GreaterThan`, `GreaterThanOrEqual`, `LessThan`, `LessThanOrEqual`."
                 },
                 "Statistic": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies how the metrics from multiple instances are combined. Possible values are `Average`, `Min` and `Max`."
                 },
                 "Threshold": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Specifies the threshold of the metric that triggers the scale action."
                 },
                 "TimeAggregation": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies how the data that's collected should be combined over time. Possible values include `Average`, `Count`, `Maximum`, `Minimum`, `Last` and `Total`. Defaults to `Average`."
                 },
                 "TimeGrain": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the granularity of metrics that the rule monitors, which must be one of the pre-defined values returned from the metric definitions for the metric. This value must be between 1 minute and 12 hours an be formatted as an ISO 8601 string."
                 },
                 "TimeWindow": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the time range for which data is collected, which must be greater than the delay in metric collection (which varies from resource to resource). This value must be between 5 minutes and 12 hours and be formatted as an ISO 8601 string."
                 }
             },
             "required": [
@@ -275,16 +298,20 @@
             "additionalProperties": false,
             "properties": {
                 "Cooldown": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The amount of time to wait since the last scaling action before this action occurs. Must be between 1 minute and 1 week and formatted as a ISO 8601 string."
                 },
                 "Direction": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The scale direction. Possible values are `Increase` and `Decrease`."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The type of action that should occur. Possible values are `ChangeCount`, `ExactCount` and `PercentChangeCount`."
                 },
                 "Value": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The number of instances involved in the scaling action. Defaults to `1`."
                 }
             },
             "required": [
@@ -301,16 +328,20 @@
             "type": "string"
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether automatic scaling is enabled for the target resource. Defaults to `true`."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the AutoScale Setting should exist. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the AutoScale Setting. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Resource Group in the AutoScale Setting should be created. Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -330,10 +361,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "TargetResourceId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the resource ID of the resource that the autoscale setting should be added to."
         },
         "Notification": {
             "type": "array",

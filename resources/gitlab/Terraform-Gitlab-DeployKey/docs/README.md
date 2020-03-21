@@ -1,6 +1,6 @@
 # Terraform::Gitlab::DeployKey
 
-CloudFormation equivalent of gitlab_deploy_key
+This resource allows you to create and manage deploy keys for your GitLab projects.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### CanPush
 
+Allow this deploy key to be used to push changes to the project.  Defaults to `false`. **NOTE::** this cannot currently be managed.
+
 _Required_: No
 
 _Type_: Boolean
@@ -42,6 +44,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Key
+
+The public ssh key body.
 
 _Required_: Yes
 
@@ -51,6 +55,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Project
 
+The name or id of the project to add the deploy key to.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Title
+
+A title to describe the deploy key with.
 
 _Required_: Yes
 

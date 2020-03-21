@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::WafPreciseprotectionRuleV1
 
-CloudFormation equivalent of opentelekomcloud_waf_preciseprotection_rule_v1
+Manages a WAF Precise Protection Rule resource within OpenTelekomCloud.
 
 ## Syntax
 
@@ -54,6 +54,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### End
 
+Specifies the time when the precise protection rule expires. If time is set to true,
+either the start time or the end time must be set. Changing this creates a new rule.
+
 _Required_: No
 
 _Type_: String
@@ -61,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of a precise protection rule. Changing this creates a new rule.
 
 _Required_: Yes
 
@@ -70,6 +75,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PolicyId
 
+The WAF policy ID. Changing this creates a new rule.
+
 _Required_: Yes
 
 _Type_: String
@@ -77,6 +84,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Priority
+
+Specifies the priority of a rule being executed. Smaller values correspond to higher priorities.
+If two rules are assigned with the same priority, the rule added earlier has higher priority, the rule added earlier
+has higher priority. The value ranges from 0 to 65535. Changing this creates a new rule.
 
 _Required_: No
 
@@ -86,6 +97,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Start
 
+Specifies the time when the precise protection rule takes effect. If time is set to true,
+either the start time or the end time must be set. Changing this creates a new rule.
+
 _Required_: No
 
 _Type_: String
@@ -93,6 +107,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Time
+
+Specifies the effect time of the precise protection rule. Changing this creates a new rule.
+* `false` - The rule takes effect immediately.
+* `true` - The rule takes effect at the scheduled time.
 
 _Required_: No
 

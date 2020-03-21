@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Datadog::LogsIndexOrder",
-    "description": "CloudFormation equivalent of datadog_logs_index_order",
+    "description": "Provides a Datadog [Logs Index API](https://docs.datadoghq.com/api/?lang=python#logs-indexes) resource. This can be used to manage the order of Datadog logs indexes.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -13,10 +13,12 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The index resource list. Logs are tested against the query filter of each index one by one following the order of the list."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The unique name of the index order resource."
         }
     },
     "additionalProperties": false,

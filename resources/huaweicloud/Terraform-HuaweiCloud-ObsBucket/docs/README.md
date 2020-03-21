@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::ObsBucket
 
-CloudFormation equivalent of huaweicloud_obs_bucket
+Provides an OBS bucket resource.
 
 ## Syntax
 
@@ -66,6 +66,8 @@ Properties:
 
 #### Acl
 
+Specifies the ACL policy for a bucket. The predefined common policies are as follows: "private", "public-read", "public-read-write" and "log-delivery-write". Defaults to `private`.
+
 _Required_: No
 
 _Type_: String
@@ -73,6 +75,14 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Bucket
+
+Specifies the name of the bucket. Changing this parameter will create a new resource.
+A bucket must be named according to the globally applied DNS naming regulations as follows:
+* The name must be globally unique in OBS.
+* The name must contain 3 to 63 characters. Only lowercase letters, digits, hyphens (-), and periods (.) are allowed.
+* The name cannot start or end with a period (.) or hyphen (-), and cannot contain two consecutive periods (.) or contain a period (.) and a hyphen (-) adjacent to each other.
+* The name cannot be an IP address.
+* If the name contains any periods (.), a security certificate verification message may appear when you access the bucket or its objects by entering a domain name.
 
 _Required_: Yes
 
@@ -82,6 +92,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ForceDestroy
 
+A boolean that indicates all objects should be deleted from the bucket so that the bucket can be destroyed without error. Default to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -89,6 +101,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+If specified, the region this bucket should reside in. Otherwise, the region used by the provider.
 
 _Required_: No
 
@@ -98,6 +112,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StorageClass
 
+Specifies the storage class of the bucket. OBS provides three storage classes: "STANDARD", "WARM" (Infrequent Access) and "COLD" (Archive). Defaults to `STANDARD`.
+
 _Required_: No
 
 _Type_: String
@@ -106,6 +122,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the bucket. Each tag is represented by one key-value pair.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -113,6 +131,9 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Versioning
+
+Whether enable versioning. Once you version-enable a bucket, it can never return to an unversioned state.
+You can, however, suspend versioning on that bucket.
 
 _Required_: No
 

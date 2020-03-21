@@ -1,6 +1,6 @@
 # Terraform::AzureRM::ManagementLock
 
-CloudFormation equivalent of azurerm_management_lock
+Manages a Management Lock which is scoped to a Subscription, Resource Group or Resource.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### LockLevel
 
+Specifies the Level to be used for this Lock. Possible values are `CanNotDelete` and `ReadOnly`. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the Management Lock. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -53,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Notes
 
+Specifies some notes about the lock. Maximum of 512 characters. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -60,6 +66,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Scope
+
+Specifies the scope at which the Management Lock should be created. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

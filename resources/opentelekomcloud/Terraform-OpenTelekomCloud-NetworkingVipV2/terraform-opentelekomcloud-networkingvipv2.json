@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenTelekomCloud::NetworkingVipV2",
-    "description": "CloudFormation equivalent of opentelekomcloud_networking_vip_v2",
+    "description": "Manages a V2 vip resource within OpenTelekomCloud.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,19 +12,23 @@
             "type": "string"
         },
         "IpAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "IP address desired in the subnet for this vip.\nIf you don't specify `ip_address`, an available IP address from\nthe specified subnet will be allocated to this vip."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique name for the vip."
         },
         "NetworkId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the network to attach the vip to.\nChanging this creates a new vip."
         },
         "Status": {
             "type": "string"
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "Subnet in which to allocate IP address for this vip.\nChanging this creates a new vip."
         },
         "TenantId": {
             "type": "string"

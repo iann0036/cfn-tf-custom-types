@@ -1,6 +1,8 @@
 # Terraform::AzureRM::LbBackendAddressPool
 
-CloudFormation equivalent of azurerm_lb_backend_address_pool
+Manages a Load Balancer Backend Address Pool.
+
+~> **NOTE:** When using this resource, the Load Balancer needs to have a FrontEnd IP Configuration Attached
 
 ## Syntax
 
@@ -35,6 +37,8 @@ Properties:
 
 #### LoadbalancerId
 
+The ID of the Load Balancer in which to create the Backend Address Pool.
+
 _Required_: Yes
 
 _Type_: String
@@ -43,6 +47,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the Backend Address Pool.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which to create the resource.
 
 _Required_: Yes
 

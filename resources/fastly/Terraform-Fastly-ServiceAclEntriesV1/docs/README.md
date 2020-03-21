@@ -1,6 +1,10 @@
 # Terraform::Fastly::ServiceAclEntriesV1
 
-CloudFormation equivalent of fastly_service_acl_entries_v1
+Defines a set of Fastly ACL entries that can be used to populate a service ACL.  This resource will populate an ACL with the entries and will track their state.
+
+~> **Warning:** Terraform will take precedence over any changes you make in the UI or API. Such changes are likely to be reversed if you run Terraform again.  
+
+If Terraform is being used to populate the initial content of an ACL which you intend to manage via API or UI, then the lifecycle `ignore_changes` field can be used with the resource.  An example of this configuration is provided below.
 
 ## Syntax
 
@@ -34,6 +38,8 @@ Properties:
 
 #### AclId
 
+The ID of the ACL that the items belong to.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServiceId
+
+The ID of the Service that the ACL belongs to.
 
 _Required_: Yes
 

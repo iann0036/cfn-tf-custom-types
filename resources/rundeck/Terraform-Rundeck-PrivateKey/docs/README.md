@@ -1,6 +1,8 @@
 # Terraform::Rundeck::PrivateKey
 
-CloudFormation equivalent of rundeck_private_key
+The private key resource allows SSH private keys to be stored into Rundeck's key store.
+The key store is where Rundeck keeps credentials that are needed to access the nodes on which
+it runs commands.
 
 ## Syntax
 
@@ -31,6 +33,9 @@ Properties:
 
 #### KeyMaterial
 
+The private key material to store, serialized in any way that is
+accepted by OpenSSH.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +43,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Path
+
+The path within the key store where the key will be stored.
 
 _Required_: Yes
 

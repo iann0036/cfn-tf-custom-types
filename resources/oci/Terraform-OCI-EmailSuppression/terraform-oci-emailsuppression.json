@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::EmailSuppression",
-    "description": "CloudFormation equivalent of oci_email_suppression",
+    "description": "This resource provides the Suppression resource in Oracle Cloud Infrastructure Email service.\n\nAdds recipient email addresses to the suppression list for a tenancy.\nAddresses added to the suppression list via the API are denoted as\n\"MANUAL\" in the `reason` field. *Note:* All email addresses added to the\nsuppression list are normalized to include only lowercase letters.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,10 +26,12 @@
             "type": "string"
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the compartment to contain the suppression. Since suppressions are at the customer level, this must be the tenancy OCID."
         },
         "EmailAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "The recipient email address of the suppression."
         },
         "Reason": {
             "type": "string"

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::CloudStack::PortForward",
-    "description": "CloudFormation equivalent of cloudstack_port_forward",
+    "description": "Creates port forwards.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Forward": {
@@ -8,19 +8,24 @@
             "additionalProperties": false,
             "properties": {
                 "PrivatePort": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The private port to forward to."
                 },
                 "Protocol": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the protocol to allow. Valid options are:\n`tcp` and `udp`."
                 },
                 "PublicPort": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The public port to forward from."
                 },
                 "VirtualMachineId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of the virtual machine to forward to."
                 },
                 "VmGuestIp": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The virtual machine IP address for the port\nforwarding rule (useful when the virtual machine has secondairy NICs\nor IP addresses)."
                 }
             },
             "required": [
@@ -37,13 +42,16 @@
             "type": "string"
         },
         "IpAddressId": {
-            "type": "string"
+            "type": "string",
+            "description": "The IP address ID for which to create the port\nforwards. Changing this forces a new resource to be created."
         },
         "Managed": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "USE WITH CAUTION! If enabled all the port forwards for\nthis IP address will be managed by this resource. This means it will delete\nall port forwards that are not in your config! (defaults false)."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or ID of the project to create this port forward\nin. Changing this forces a new resource to be created."
         },
         "Forward": {
             "type": "array",

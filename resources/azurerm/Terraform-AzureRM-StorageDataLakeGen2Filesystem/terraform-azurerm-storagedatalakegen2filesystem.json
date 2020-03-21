@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::StorageDataLakeGen2Filesystem",
-    "description": "CloudFormation equivalent of azurerm_storage_data_lake_gen2_filesystem",
+    "description": "Manages a Data Lake Gen2 File System within an Azure Storage Account.\n\n~> **NOTE:** This Resource requires using Azure Active Directory to connect to Azure Storage, which in turn requires the `Storage` specific roles - which are not granted by default.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,7 +29,8 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Data Lake Gen2 File System which should be created within the Storage Account. Must be unique within the storage account the queue is located. Changing this forces a new resource to be created."
         },
         "Properties": {
             "type": "array",
@@ -49,10 +50,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of Key to Base64-Encoded Values which should be assigned to this Data Lake Gen2 File System."
         },
         "StorageAccountId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the ID of the Storage Account in which the Data Lake Gen2 File System should exist. Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

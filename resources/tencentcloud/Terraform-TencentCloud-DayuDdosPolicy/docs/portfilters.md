@@ -30,6 +30,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Action
 
+Action of port to take, valid values area `drop`, `transmit`.
+
 _Required_: No
 
 _Type_: String
@@ -37,6 +39,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EndPort
+
+End port, valid value is range from 0 to 65535. It must be greater than `start_port`.
 
 _Required_: No
 
@@ -46,6 +50,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Kind
 
+The type of forbidden port, and valid values are 0, 1, 2. 0 for destination ports make effect, 1 for source ports make effect. 2 for both destination and source ports.
+
 _Required_: No
 
 _Type_: Double
@@ -54,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Protocol
 
+Protocol, valid values are `tcp`, `udp`, `icmp`, `all`.
+
 _Required_: No
 
 _Type_: String
@@ -61,6 +69,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StartPort
+
+Start port, valid value is range from 0 to 65535.
 
 _Required_: No
 

@@ -1,6 +1,9 @@
 # Terraform::OCI::IdentityIdpGroupMapping
 
-CloudFormation equivalent of oci_identity_idp_group_mapping
+This resource provides the Idp Group Mapping resource in Oracle Cloud Infrastructure Identity service.
+
+Creates a single mapping between an IdP group and an IAM Service
+[group](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/Group/).
 
 ## Syntax
 
@@ -35,6 +38,8 @@ Properties:
 
 #### GroupId
 
+(Updatable) The OCID of the IAM Service [group](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/Group/) you want to map to the IdP group.
+
 _Required_: Yes
 
 _Type_: String
@@ -43,6 +48,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IdentityProviderId
 
+The OCID of the identity provider.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +57,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IdpGroupName
+
+(Updatable) The name of the IdP group you want to map.
 
 _Required_: Yes
 

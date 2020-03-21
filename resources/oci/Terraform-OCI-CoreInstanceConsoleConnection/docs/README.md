@@ -1,6 +1,12 @@
 # Terraform::OCI::CoreInstanceConsoleConnection
 
-CloudFormation equivalent of oci_core_instance_console_connection
+This resource provides the Instance Console Connection resource in Oracle Cloud Infrastructure Core service.
+
+Creates a new console connection to the specified instance.
+After the console connection has been created and is available,
+you connect to the console using SSH.
+
+For more information about console access, see [Accessing the Console](https://docs.cloud.oracle.com/iaas/Content/Compute/References/serialconsole.htm).
 
 ## Syntax
 
@@ -39,6 +45,8 @@ Properties:
 
 #### DefinedTags
 
+Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`.
+
 _Required_: No
 
 _Type_: List of <a href="definedtags.md">DefinedTags</a>
@@ -46,6 +54,8 @@ _Type_: List of <a href="definedtags.md">DefinedTags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FreeformTags
+
+Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`.
 
 _Required_: No
 
@@ -55,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceId
 
+The OCID of the instance to create the console connection to.
+
 _Required_: Yes
 
 _Type_: String
@@ -62,6 +74,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PublicKey
+
+The SSH public key used to authenticate the console connection.
 
 _Required_: Yes
 

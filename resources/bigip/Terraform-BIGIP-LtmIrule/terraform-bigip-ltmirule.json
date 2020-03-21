@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::BIGIP::LtmIrule",
-    "description": "CloudFormation equivalent of bigip_ltm_irule",
+    "description": "`bigip_ltm_irule` Creates iRule on BIG-IP F5 device\n\nFor resources should be named with their \"full path\". The full path is the combination of the partition + name of the resource. For example /Common/my-pool.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "Irule": {
-            "type": "string"
+            "type": "string",
+            "description": "Body of the iRule."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the iRule."
         }
     },
     "additionalProperties": false,

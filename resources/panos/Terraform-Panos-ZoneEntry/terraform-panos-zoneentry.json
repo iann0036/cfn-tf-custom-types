@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::ZoneEntry",
-    "description": "CloudFormation equivalent of panos_zone_entry",
+    "description": "This resource allows you to add/update/delete a specific interface in a zone.\n\nThis resource has some overlap with the `panos_zone`\nresource.  If you want to use this resource with the other one, then make\nsure that your `panos_zone` spec does not define the\n`interfaces` field.\n\nThis is the appropriate resource to use if you have a pre-existing zone\nand don't want Terraform to delete it on `terraform destroy`.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,20 @@
             "type": "string"
         },
         "Interface": {
-            "type": "string"
+            "type": "string",
+            "description": "The interface's name."
         },
         "Mode": {
-            "type": "string"
+            "type": "string",
+            "description": "The mode.  Can be `layer3` (default), `layer2`,\n`virtual-wire`, `tap`, or `external`."
         },
         "Vsys": {
-            "type": "string"
+            "type": "string",
+            "description": "The vsys (default: `vsys1`)."
         },
         "Zone": {
-            "type": "string"
+            "type": "string",
+            "description": "The zone's name."
         }
     },
     "additionalProperties": false,

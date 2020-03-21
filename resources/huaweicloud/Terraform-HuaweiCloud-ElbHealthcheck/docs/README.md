@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::ElbHealthcheck
 
-CloudFormation equivalent of huaweicloud_elb_healthcheck
+Manages an elastic loadbalancer healthcheck resource within huawei cloud.
 
 ## Syntax
 
@@ -45,6 +45,9 @@ Properties:
 
 #### HealthcheckConnectPort
 
+Specifies the port used for the health
+check. The value ranges from 1 to 65535.
+
 _Required_: No
 
 _Type_: Double
@@ -52,6 +55,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HealthcheckInterval
+
+Specifies the maximum interval (s) for
+health check. The value ranges from 1 to 5.
 
 _Required_: No
 
@@ -61,6 +67,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HealthcheckProtocol
 
+Specifies the protocol used for the health
+check. The value can be HTTP or TCP (case-insensitive).
+
 _Required_: No
 
 _Type_: String
@@ -68,6 +77,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HealthcheckTimeout
+
+Specifies the maximum timeout duration
+(s) for the health check. The value ranges from 1 to 50.
 
 _Required_: No
 
@@ -77,6 +89,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HealthcheckUri
 
+Specifies the URI for health check. This parameter
+is valid when healthcheck_ protocol is HTTP. The value is a string of 1 to 80
+characters that must start with a slash (/) and can only contain letters, digits,
+and special characters, such as -/.%?#&.
+
 _Required_: No
 
 _Type_: String
@@ -84,6 +101,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HealthyThreshold
+
+Specifies the threshold at which the health
+check result is success, that is, the number of consecutive successful health
+checks when the health check result of the backend server changes from fail
+to success. The value ranges from 1 to 10.
 
 _Required_: No
 
@@ -93,6 +115,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ListenerId
 
+Specifies the ID of the listener to which the health
+check task belongs.
+
 _Required_: Yes
 
 _Type_: String
@@ -100,6 +125,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UnhealthyThreshold
+
+Specifies the threshold at which the health
+check result is fail, that is, the number of consecutive failed health checks
+when the health check result of the backend server changes from success to fail.
+The value ranges from 1 to 10.
 
 _Required_: No
 

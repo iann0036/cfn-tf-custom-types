@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::GaapSecurityRule",
-    "description": "CloudFormation equivalent of tencentcloud_gaap_security_rule",
+    "description": "Provides a resource to create a security policy rule.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,22 +9,28 @@
             "type": "string"
         },
         "Action": {
-            "type": "string"
+            "type": "string",
+            "description": "Policy of the rule, the available values include `ACCEPT` and `DROP`."
         },
         "CidrIp": {
-            "type": "string"
+            "type": "string",
+            "description": "A network address block of the request source."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the security policy rule. Maximum length is 30."
         },
         "PolicyId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the security policy."
         },
         "Port": {
-            "type": "string"
+            "type": "string",
+            "description": "Target port. Default value is `ALL`, the available values include `80`, `80,443` and `3306-20000`."
         },
         "Protocol": {
-            "type": "string"
+            "type": "string",
+            "description": "Protocol of the security policy rule. Default value is `ALL`, the available values include `TCP`, `UDP` and `ALL`."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 # Terraform::NSXT::LogicalDhcpPort
 
-CloudFormation equivalent of nsxt_logical_dhcp_port
+This resource provides a resource to configure a logical port on a logical switch, and attach it to a DHCP server.
 
 ## Syntax
 
@@ -40,6 +40,8 @@ Properties:
 
 #### AdminState
 
+Admin state for the logical port. Accepted values - 'UP' or 'DOWN'. The default value is 'UP'.
+
 _Required_: No
 
 _Type_: String
@@ -47,6 +49,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Description of this resource.
 
 _Required_: No
 
@@ -56,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DhcpServerId
 
+Logical DHCP server ID for the logical port.
+
 _Required_: Yes
 
 _Type_: String
@@ -64,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+Display name, defaults to ID if not set.
+
 _Required_: No
 
 _Type_: String
@@ -71,6 +79,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LogicalSwitchId
+
+Logical switch ID for the logical port.
 
 _Required_: Yes
 

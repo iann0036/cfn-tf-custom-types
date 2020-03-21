@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::TcaplusTable
 
-CloudFormation equivalent of tencentcloud_tcaplus_table
+Use this resource to create tcaplus table
 
 ## Syntax
 
@@ -47,6 +47,8 @@ Properties:
 
 #### AppId
 
+Application of this table belongs.
+
 _Required_: Yes
 
 _Type_: String
@@ -54,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Description of this table.
 
 _Required_: No
 
@@ -63,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IdlId
 
+Idl file for this table.
+
 _Required_: Yes
 
 _Type_: String
@@ -70,6 +76,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ReservedReadQps
+
+Table reserved read QPS.
 
 _Required_: Yes
 
@@ -79,6 +87,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ReservedVolume
 
+Table reserved capacity(GB).
+
 _Required_: Yes
 
 _Type_: Double
@@ -86,6 +96,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ReservedWriteQps
+
+Table reserved write QPS.
 
 _Required_: Yes
 
@@ -95,6 +107,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TableIdlType
 
+Type of this table idl, Valid values are PROTO,TDR.
+
 _Required_: Yes
 
 _Type_: String
@@ -102,6 +116,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TableName
+
+Name of this table.
 
 _Required_: Yes
 
@@ -111,6 +127,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TableType
 
+Type of this table, Valid values are GENERIC,LIST.
+
 _Required_: Yes
 
 _Type_: String
@@ -118,6 +136,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneId
+
+Zone of this table belongs.
 
 _Required_: Yes
 

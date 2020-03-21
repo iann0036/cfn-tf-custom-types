@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::LoggingOrganizationSink",
-    "description": "CloudFormation equivalent of google_logging_organization_sink",
+    "description": "Manages a organization-level logging sink. For more information see\n[the official documentation](https://cloud.google.com/logging/docs/) and\n[Exporting Logs in the API](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).\n\nNote that you must have the \"Logs Configuration Writer\" IAM role (`roles/logging.configWriter`)\ngranted to the credentials used with terraform.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "BigqueryOptions": {
@@ -8,7 +8,8 @@
             "additionalProperties": false,
             "properties": {
                 "UsePartitionedTables": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Whether to use [BigQuery's partition tables](https://cloud.google.com/bigquery/docs/partitioned-tables).\nBy default, Logging creates dated tables based on the log entries' timestamps, e.g. syslog_20170523. With partitioned\ntables the date suffix is no longer present and [special query syntax](https://cloud.google.com/bigquery/docs/querying-partitioned-tables)\nhas to be used instead. In both cases, tables are sharded based on UTC timezone."
                 }
             },
             "required": [
@@ -22,19 +23,24 @@
             "type": "string"
         },
         "Destination": {
-            "type": "string"
+            "type": "string",
+            "description": "The destination of the sink (or, in other words, where logs are written to). Can be a\nCloud Storage bucket, a PubSub topic, or a BigQuery dataset. Examples:\n```\n\"storage.googleapis.com/[GCS_BUCKET]\"\n\"bigquery.googleapis.com/projects/[PROJECT_ID]/datasets/[DATASET]\"\n\"pubsub.googleapis.com/projects/[PROJECT_ID]/topics/[TOPIC_ID]\"\n```\nThe writer associated with the sink must have access to write to the above resource."
         },
         "Filter": {
-            "type": "string"
+            "type": "string",
+            "description": "The filter to apply when exporting logs. Only log entries that match the filter are exported.\nSee [Advanced Log Filters](https://cloud.google.com/logging/docs/view/advanced_filters) for information on how to\nwrite a filter."
         },
         "IncludeChildren": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether or not to include children organizations in the sink export. If true, logs\nassociated with child projects are also exported; otherwise only logs relating to the provided organization are included."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the logging sink."
         },
         "OrgId": {
-            "type": "string"
+            "type": "string",
+            "description": "The numeric ID of the organization to be exported to the sink."
         },
         "WriterIdentity": {
             "type": "string"

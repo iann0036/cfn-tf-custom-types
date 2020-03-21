@@ -1,6 +1,18 @@
 # Terraform::Google::KmsKeyRing
 
-CloudFormation equivalent of google_kms_key_ring
+A `KeyRing` is a toplevel logical grouping of `CryptoKeys`.
+
+
+~> **Note:** KeyRings cannot be deleted from Google Cloud Platform.
+Destroying a Terraform-managed KeyRing will remove it from state but
+*will not delete the resource on the server.*
+
+
+To get more information about KeyRing, see:
+
+* [API documentation](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings)
+* How-to Guides
+    * [Creating a key ring](https://cloud.google.com/kms/docs/creating-keys#create_a_key_ring)
 
 ## Syntax
 
@@ -50,6 +62,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
 
 _Required_: No
 

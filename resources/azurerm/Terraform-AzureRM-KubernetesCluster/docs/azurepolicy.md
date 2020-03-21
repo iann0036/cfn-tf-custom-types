@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Enabled
 
+Is the Azure Policy for Kubernetes Add On enabled?.
+
 _Required_: Yes
 
 _Type_: Boolean

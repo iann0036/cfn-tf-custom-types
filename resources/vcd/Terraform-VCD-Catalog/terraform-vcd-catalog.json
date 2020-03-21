@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::VCD::Catalog",
-    "description": "CloudFormation equivalent of vcd_catalog",
+    "description": "Provides a vCloud Director catalog resource. This can be used to create and delete a catalog.\n\nSupported in provider *v2.0+*",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,16 +12,20 @@
             "type": "boolean"
         },
         "DeleteRecursive": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "- When destroying use delete_recursive=True to remove the catalog and any objects it contains that are in a state that normally allows removal."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "- Description of catalog."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Catalog name."
         },
         "Org": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of organization to use, optional if defined at provider level. Useful when connected as sysadmin working across different organisations."
         }
     },
     "additionalProperties": false,

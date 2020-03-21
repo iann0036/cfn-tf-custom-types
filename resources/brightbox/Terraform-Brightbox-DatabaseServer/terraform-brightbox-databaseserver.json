@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Brightbox::DatabaseServer",
-    "description": "CloudFormation equivalent of brightbox_database_server",
+    "description": "Provides a Brightbox Database Server resource. This can be used to create,\nmodify, and delete Database Servers.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -36,34 +36,42 @@
             }
         },
         "DatabaseEngine": {
-            "type": "string"
+            "type": "string",
+            "description": "Database engine to request. Default is mysql."
         },
         "DatabaseType": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the Database Type required."
         },
         "DatabaseVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "Database version to request. Default is 8.0."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A further description of the Database Server."
         },
         "Locked": {
             "type": "boolean"
         },
         "MaintenanceHour": {
-            "type": "number"
+            "type": "number",
+            "description": "Number representing 24hr time start of maintenance window hour for x:00-x:59 (0-23). Default is 6."
         },
         "MaintenanceWeekday": {
-            "type": "number"
+            "type": "number",
+            "description": "Numerical index of weekday (0 is Sunday, 1 is Monday...) to set when automatic updates may be performed. Default is 0 (Sunday)."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A label assigned to the Database Server."
         },
         "Snapshot": {
             "type": "string"
         },
         "SnapshotsSchedule": {
-            "type": "string"
+            "type": "string",
+            "description": "A crontab pattern to determine approximately when scheduled snapshots will run (must be at least hourly)."
         },
         "SnapshotsScheduleNextAt": {
             "type": "string"
@@ -72,7 +80,8 @@
             "type": "string"
         },
         "Zone": {
-            "type": "string"
+            "type": "string",
+            "description": "The handle of the zone required (`gb1-a`, `gb1-b`)."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

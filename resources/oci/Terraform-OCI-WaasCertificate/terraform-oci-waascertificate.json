@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::WaasCertificate",
-    "description": "CloudFormation equivalent of oci_waas_certificate",
+    "description": "This resource provides the Certificate resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.\n\nAllows an SSL certificate to be added to a WAAS policy. The Web Application Firewall terminates SSL connections to inspect requests in runtime, and then re-encrypts requests before sending them to the origin for fulfillment.\n\nFor more information, see [WAF Settings](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/wafsettings.htm).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,10 +26,12 @@
             "type": "string"
         },
         "CertificateData": {
-            "type": "string"
+            "type": "string",
+            "description": "The data of the SSL certificate."
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the SSL certificate."
         },
         "DefinedTags": {
             "type": "array",
@@ -49,10 +51,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Operations.CostCenter\": \"42\"}`."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) A user-friendly name for the SSL certificate. The name can be changed and does not need to be unique."
         },
         "Extensions": {
             "type": "array",
@@ -91,10 +95,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
         },
         "IsTrustVerificationDisabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` if the SSL certificate is self-signed."
         },
         "IssuedBy": {
             "type": "string"
@@ -131,7 +137,8 @@
             }
         },
         "PrivateKeyData": {
-            "type": "string"
+            "type": "string",
+            "description": "The private key of the SSL certificate."
         },
         "PublicKeyInfo": {
             "type": "array",

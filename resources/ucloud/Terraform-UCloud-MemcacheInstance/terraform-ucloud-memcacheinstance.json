@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::UCloud::MemcacheInstance",
-    "description": "CloudFormation equivalent of ucloud_memcache_instance",
+    "description": "The UCloud Memcache instance is a key-value online storage service compatible with the Memcached protocol.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,22 +9,26 @@
             "type": "string"
         },
         "AvailabilityZone": {
-            "type": "string"
+            "type": "string",
+            "description": "Availability zone where Memcache instance is located. Such as: \"cn-bj2-02\". You may refer to [list of availability zone](https://docs.ucloud.cn/api/summary/regionlist)."
         },
         "ChargeType": {
-            "type": "string"
+            "type": "string",
+            "description": "The charge type of Memcache instance, possible values are: `year`, `month` and `dynamic` as pay by hour (specific permission required). (Default: `month`)."
         },
         "CreateTime": {
             "type": "string"
         },
         "Duration": {
-            "type": "number"
+            "type": "number",
+            "description": "The duration that you will buy the Memcache instance (Default: `1`). The value is `0` when pay by month and the instance will be valid till the last day of that month. It is not required when `dynamic` (pay by hour)."
         },
         "ExpireTime": {
             "type": "string"
         },
         "InstanceType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of Memcache instance, please visit the [instance type table](https://www.terraform.io/docs/providers/ucloud/appendix/memcache_instance_type.html) for more details."
         },
         "IpSet": {
             "type": "array",
@@ -43,19 +47,23 @@
             }
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of Memcache instance, which contains 6-63 characters and only support English, numbers, '-', '_'. If not specified, terraform will auto-generate a name beginning with `tf-memcache-instance`."
         },
         "Status": {
             "type": "string"
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of subnet linked to the Memcache instance."
         },
         "Tag": {
-            "type": "string"
+            "type": "string",
+            "description": "A tag assigned to Memcache instance, which contains at most 63 characters and only support Chinese, English, numbers, '-', '_', and '.'. If it is not filled in or a empty string is filled in, then default tag will be assigned. (Default: `Default`)."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of VPC linked to the Memcache instance."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::ProjectUsageExportBucket",
-    "description": "CloudFormation equivalent of google_project_usage_export_bucket",
+    "description": "Sets up a usage export bucket for a particular project.  A usage export bucket\nis a pre-configured GCS bucket which is set up to receive daily and monthly\nreports of the GCE resources used.\n\nFor more information see the [Docs](https://cloud.google.com/compute/docs/usage-export)\nand for further details, the\n[API Documentation](https://cloud.google.com/compute/docs/reference/rest/beta/projects/setUsageExportBucket).\n\n~> **Note:** You should specify only one of these per project.  If there are two or more\nthey will fight over which bucket the reports should be stored in.  It is\nsafe to have multiple resources with the same backing bucket.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {

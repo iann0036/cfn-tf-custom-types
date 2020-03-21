@@ -1,6 +1,6 @@
 # Terraform::AzureRM::RelayHybridConnection
 
-CloudFormation equivalent of azurerm_relay_hybrid_connection
+Manages an Azure Relay Hybrid Connection.
 
 ## Syntax
 
@@ -39,6 +39,8 @@ Properties:
 
 #### Name
 
+Specifies the name of the Azure Relay Hybrid Connection. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -46,6 +48,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RelayNamespaceName
+
+The name of the Azure Relay in which to create the Azure Relay Hybrid Connection. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -55,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RequiresClientAuthorization
 
+Specify if client authorization is needed for this hybrid connection. True by default. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: Boolean
@@ -63,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to create the Azure Relay Hybrid Connection. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -70,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserMetadata
+
+The usermetadata is a placeholder to store user-defined string data for the hybrid connection endpoint. For example, it can be used to store descriptive data, such as a list of teams and their contact information. Also, user-defined configuration settings can be stored.
 
 _Required_: No
 

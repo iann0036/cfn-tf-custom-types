@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::ExpressRouteCircuitPeering",
-    "description": "CloudFormation equivalent of azurerm_express_route_circuit_peering",
+    "description": "Manages an ExpressRoute Circuit Peering.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "MicrosoftPeeringConfig": {
@@ -12,7 +12,8 @@
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of Advertised Public Prefixes."
                 }
             },
             "required": [
@@ -48,34 +49,42 @@
             "type": "number"
         },
         "ExpressRouteCircuitName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the ExpressRoute Circuit in which to create the Peering."
         },
         "PeerAsn": {
-            "type": "number"
+            "type": "number",
+            "description": "The Either a 16-bit or a 32-bit ASN. Can either be public or private.."
         },
         "PeeringType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of the ExpressRoute Circuit Peering. Acceptable values include `AzurePrivatePeering`, `AzurePublicPeering` and `MicrosoftPeering`. Changing this forces a new resource to be created."
         },
         "PrimaryAzurePort": {
             "type": "string"
         },
         "PrimaryPeerAddressPrefix": {
-            "type": "string"
+            "type": "string",
+            "description": "A `/30` subnet for the primary link."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to\ncreate the Express Route Circuit Peering. Changing this forces a new resource to be created."
         },
         "SecondaryAzurePort": {
             "type": "string"
         },
         "SecondaryPeerAddressPrefix": {
-            "type": "string"
+            "type": "string",
+            "description": "A `/30` subnet for the secondary link."
         },
         "SharedKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The shared key. Can be a maximum of 25 characters."
         },
         "VlanId": {
-            "type": "number"
+            "type": "number",
+            "description": "A valid VLAN ID to establish this peering on."
         },
         "MicrosoftPeeringConfig": {
             "type": "array",

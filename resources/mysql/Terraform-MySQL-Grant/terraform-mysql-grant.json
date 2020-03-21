@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::MySQL::Grant",
-    "description": "CloudFormation equivalent of mysql_grant",
+    "description": "The ``mysql_grant`` resource creates and manages privileges given to\na user on a MySQL server.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,39 +9,48 @@
             "type": "string"
         },
         "Database": {
-            "type": "string"
+            "type": "string",
+            "description": "The database to grant privileges on."
         },
         "Grant": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to also give the user privileges to grant the same privileges to other users."
         },
         "Host": {
-            "type": "string"
+            "type": "string",
+            "description": "The source host of the user. Defaults to \"localhost\". Conflicts with `role`."
         },
         "Privileges": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of privileges to grant to the user. Refer to a list of privileges (such as [here](https://dev.mysql.com/doc/refman/5.5/en/grant.html)) for applicable privileges. Conflicts with `roles`."
         },
         "Role": {
-            "type": "string"
+            "type": "string",
+            "description": "The role to grant `privileges` to. Conflicts with `user` and `host`."
         },
         "Roles": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of rols to grant to the user. Conflicts with `privileges`."
         },
         "Table": {
-            "type": "string"
+            "type": "string",
+            "description": "Which table to grant `privileges` on. Defaults to `*`, which is all tables."
         },
         "TlsOption": {
-            "type": "string"
+            "type": "string",
+            "description": "An TLS-Option for the `GRANT` statement. The value is suffixed to `REQUIRE`. A value of 'SSL' will generate a `GRANT ... REQUIRE SSL` statement. See the [MYSQL `GRANT` documentation](https://dev.mysql.com/doc/refman/5.7/en/grant.html) for more. Ignored if MySQL version is under 5.7.0."
         },
         "User": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the user. Conflicts with `role`."
         }
     },
     "additionalProperties": false,

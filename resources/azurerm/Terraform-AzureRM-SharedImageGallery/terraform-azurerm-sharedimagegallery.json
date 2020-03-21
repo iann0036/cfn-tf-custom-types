@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::SharedImageGallery",
-    "description": "CloudFormation equivalent of azurerm_shared_image_gallery",
+    "description": "Manages a Shared Image Gallery.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,16 +29,20 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description for this Shared Image Gallery."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Shared Image Gallery. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the Shared Image Gallery. Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -58,7 +62,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the Shared Image Gallery."
         },
         "UniqueName": {
             "type": "string"

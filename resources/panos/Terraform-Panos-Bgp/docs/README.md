@@ -1,6 +1,14 @@
 # Terraform::Panos::Bgp
 
-CloudFormation equivalent of panos_bgp
+This resource allows you to add/update/delete a virtual router's
+BGP configuration.
+
+**Important Note:**  When it comes to BGP configuration, PAN-OS requires that
+BGP itself first be configured before you can add other BGP sub-config, such
+as dampening profiles or peer groups.  Since every BGP resource must reference a
+virtual router, the key to accomplishing this is by pointing the `virtual_router`
+param for each BGP sub-config to `panos_bgp.foo.virtual_router` instead
+of `panos_virtual_router.bar.name`.
 
 ## Syntax
 
@@ -69,6 +77,9 @@ Properties:
 
 #### AggregateMed
 
+Aggregate route only if they have
+same MED attributes (default: `true`).
+
 _Required_: No
 
 _Type_: Boolean
@@ -76,6 +87,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowRedistributeDefaultRoute
+
+Allow redistribute
+default route to BGP.
 
 _Required_: No
 
@@ -85,6 +99,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AlwaysCompareMed
 
+Always compare MEDs.
+
 _Required_: No
 
 _Type_: Boolean
@@ -92,6 +108,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AsFormat
+
+AS format.  Valid values are `"2-byte"` (default)
+or `"4-byte"`.
 
 _Required_: No
 
@@ -101,6 +120,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AsNumber
 
+Local AS number.
+
 _Required_: No
 
 _Type_: String
@@ -108,6 +129,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BfdProfile
+
+BFD configuration.
 
 _Required_: No
 
@@ -117,6 +140,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ConfederationMemberAs
 
+Confederation requires
+member-AS number.
+
 _Required_: No
 
 _Type_: String
@@ -124,6 +150,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefaultLocalPreference
+
+Default local preference (default:
+`"100"`).
 
 _Required_: No
 
@@ -133,6 +162,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DeterministicMedComparison
 
+Deterministic MED
+comparison (default: `true`).
+
 _Required_: No
 
 _Type_: Boolean
@@ -140,6 +172,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EcmpMultiAs
+
+Support multiple AS in ECMP.
 
 _Required_: No
 
@@ -149,6 +183,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Enable
 
+Enable BGP or not (default: `true`).
+
 _Required_: No
 
 _Type_: Boolean
@@ -156,6 +192,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableGracefulRestart
+
+Enable graceful restart
+(default: `true`).
 
 _Required_: No
 
@@ -165,6 +204,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnforceFirstAs
 
+Enforce First AS for EBGP (default:
+`true`).
+
 _Required_: No
 
 _Type_: Boolean
@@ -172,6 +214,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstallRoute
+
+Populate BGP learned route to global
+route table.
 
 _Required_: No
 
@@ -181,6 +226,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LocalRestartTime
 
+Local restart time to advertise to
+peer, in seconds (default: `120`).
+
 _Required_: No
 
 _Type_: Double
@@ -188,6 +236,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MaxPeerRestartTime
+
+Maximum of peer restart time
+accepted, in seconds (default: `120`).
 
 _Required_: No
 
@@ -197,6 +248,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ReflectorClusterId
 
+Route reflector cluster ID.
+
 _Required_: No
 
 _Type_: String
@@ -204,6 +257,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RejectDefaultRoute
+
+Do not learn default route from
+BGP (default: `true`).
 
 _Required_: No
 
@@ -213,6 +269,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RouterId
 
+Router ID of this BGP instance.
+
 _Required_: No
 
 _Type_: String
@@ -221,6 +279,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StaleRouteTime
 
+Time to remove stale routes after
+peer restart, in seconds (default: `120`).
+
 _Required_: No
 
 _Type_: Double
@@ -228,6 +289,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VirtualRouter
+
+The virtual router to add this BGP
+configuration to.
 
 _Required_: Yes
 

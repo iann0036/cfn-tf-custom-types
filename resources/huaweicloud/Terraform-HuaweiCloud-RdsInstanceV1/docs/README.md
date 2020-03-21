@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::RdsInstanceV1
 
-CloudFormation equivalent of huaweicloud_rds_instance_v1
+Manages rds instance resource within HuaweiCloud
 
 ## Syntax
 
@@ -71,6 +71,8 @@ Properties:
 
 #### Availabilityzone
 
+Specifies the ID of the AZ.
+
 _Required_: Yes
 
 _Type_: String
@@ -87,6 +89,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Dbport
 
+Specifies the database port number.
+
 _Required_: No
 
 _Type_: String
@@ -95,6 +99,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Dbrtpd
 
+Specifies the password for user root of the database.
+
 _Required_: Yes
 
 _Type_: String
@@ -102,6 +108,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Flavorref
+
+Specifies the specification ID (flavors.id in the
+response message in Obtaining All DB Instance Specifications).
 
 _Required_: Yes
 
@@ -119,6 +128,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the DB instance name. The DB instance name of
+the same type is unique in the same tenant.
+
 _Required_: No
 
 _Type_: String
@@ -126,6 +138,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+Specifies the region ID.
 
 _Required_: No
 
@@ -158,6 +172,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vpc
+
+Specifies the VPC ID. For details about how to obtain this
+parameter value, see section "Virtual Private Cloud" in the Virtual Private
+Cloud API Reference.
 
 _Required_: Yes
 

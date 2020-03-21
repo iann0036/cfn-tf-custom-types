@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::FlexibleEngine::SdrsReplicationPairV1",
-    "description": "CloudFormation equivalent of flexibleengine_sdrs_replication_pair_v1",
+    "description": "Manages a SDRS replication pair resource within FlexibleEngine.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,19 +23,23 @@
             "type": "string"
         },
         "DeleteTargetVolume": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether to delete the target disk.\nThe default value is `false`."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of a replication pair. Changing this creates a new pair."
         },
         "FaultLevel": {
             "type": "string"
         },
         "GroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the ID of a protection group. Changing this creates a new pair."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of a replication pair. The name can contain a maximum of 64 bytes.\nThe value can contain only letters (a to z and A to Z), digits (0 to 9), decimal points (.),\nunderscores (_), and hyphens (-)."
         },
         "ReplicationModel": {
             "type": "string"
@@ -47,7 +51,8 @@
             "type": "string"
         },
         "VolumeId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the ID of a source disk. Changing this creates a new pair."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

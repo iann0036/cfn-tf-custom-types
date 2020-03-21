@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::GitHub::UserSshKey",
-    "description": "CloudFormation equivalent of github_user_ssh_key",
+    "description": "Provides a GitHub user's SSH key resource.\n\nThis resource allows you to add/remove SSH keys from your user account.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,10 +12,12 @@
             "type": "string"
         },
         "Key": {
-            "type": "string"
+            "type": "string",
+            "description": "The public SSH key to add to your GitHub account."
         },
         "Title": {
-            "type": "string"
+            "type": "string",
+            "description": "A descriptive name for the new key. e.g. `Personal MacBook Air`."
         },
         "Url": {
             "type": "string"

@@ -1,6 +1,8 @@
 # Terraform::BIGIP::LtmDatagroup
 
-CloudFormation equivalent of bigip_ltm_datagroup
+`bigip_ltm_datagroup` Manages internal (in-line) datagroup configuration
+
+Resource should be named with their "full path". The full path is the combination of the partition + name of the resource, for example /Common/my-datagroup.
 
 ## Syntax
 
@@ -34,6 +36,8 @@ Properties:
 
 #### Name
 
+, sets the value of the record's `name` attribute, must be of type defined in `type` attribute.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +45,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+datagroup type (applies to the `name` field of the record), supports: `string`, `ip` or `integer`.
 
 _Required_: Yes
 

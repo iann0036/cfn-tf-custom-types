@@ -1,6 +1,21 @@
 # Terraform::Panos::NatRule
 
-CloudFormation equivalent of panos_nat_rule
+This resource allows you to add/update/delete NAT rules.
+
+~> **Note:** This resource has been deprecated.  Please use
+`panos_nat_rule_group` instead.
+
+~> **Note:** `panos_nat_policy` is known as `panos_nat_rule`.
+
+The prefix `sat` stands for "Source Address Translation" while the prefix "dat"
+stands for "Destination Address Translation".  The order of the params in
+this resource and their naming matches how the params are presented in
+the GUI.  Thus, having a GUI window open while creating your resource
+definition will simplify the process.
+
+Note that while many of the params for this resource are optional in an
+absolute sense, depending on what type of NAT you wish to configure, certain
+params may become necessary to correctly configure the NAT rule.
 
 ## Syntax
 
@@ -91,6 +106,9 @@ Properties:
 
 #### DatAddress
 
+Destination address translation's address.  Requires
+`dat_type` be set to "static" or "dynamic".
+
 _Required_: No
 
 _Type_: String
@@ -98,6 +116,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DatDynamicDistribution
+
+Distribution algorithm
+for destination address pool.  The PAN-OS 8.1 GUI doesn't seem to set this
+anywhere, but this is added here for completeness' sake.  Requires `dat_type`
+of "dynamic".
 
 _Required_: No
 
@@ -107,6 +130,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DatPort
 
+Destination address translation's port number.  Requires
+`dat_type` be set to "static" or "dynamic".
+
 _Required_: No
 
 _Type_: Double
@@ -114,6 +140,10 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DatType
+
+Destination address translation type.  This should
+be either `static` or `dynamic`.  The `dynamic` option is only available on
+PAN-OS 8.1+.
 
 _Required_: No
 
@@ -123,6 +153,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+The description.
+
 _Required_: No
 
 _Type_: String
@@ -130,6 +162,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DestinationAddresses
+
+List of destination address(es).
 
 _Required_: Yes
 
@@ -139,6 +173,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DestinationZone
 
+The destination zone.
+
 _Required_: Yes
 
 _Type_: String
@@ -146,6 +182,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Disabled
+
+Set to `true` to disable this rule.
 
 _Required_: No
 
@@ -155,6 +193,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The NAT rule's name.
+
 _Required_: Yes
 
 _Type_: String
@@ -162,6 +202,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Rulebase
+
+The rulebase.  For firewalls, there is only the
+`rulebase` value (default), but on Panorama, there is also `pre-rulebase`
+and `post-rulebase`.
 
 _Required_: No
 
@@ -171,6 +215,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SatAddressType
 
+Source address translation address type.
+This can be `interface-address` or `translated-address`.
+
 _Required_: No
 
 _Type_: String
@@ -178,6 +225,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SatFallbackInterface
+
+Source address translation fallback
+interface.
 
 _Required_: No
 
@@ -187,6 +237,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SatFallbackIpAddress
 
+The source address translation
+fallback IP address.
+
 _Required_: No
 
 _Type_: String
@@ -194,6 +247,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SatFallbackIpType
+
+Source address translation fallback
+IP type.  This can be `ip` or `floating`.
 
 _Required_: No
 
@@ -203,6 +259,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SatFallbackTranslatedAddresses
 
+Source address translation
+list of fallback translated addresses.
+
 _Required_: No
 
 _Type_: List of String
@@ -210,6 +269,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SatFallbackType
+
+Source address translation fallback type.
+This can be `none`, `interface-address`, or `translated-address`.
 
 _Required_: No
 
@@ -219,6 +281,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SatInterface
 
+Source address translation interface.
+
 _Required_: No
 
 _Type_: String
@@ -226,6 +290,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SatIpAddress
+
+Source address translation IP address.
 
 _Required_: No
 
@@ -235,6 +301,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SatStaticBiDirectional
 
+Set to `true` to enable
+bi-directional source address translation.
+
 _Required_: No
 
 _Type_: Boolean
@@ -242,6 +311,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SatStaticTranslatedAddress
+
+The statically translated source
+address.
 
 _Required_: No
 
@@ -251,6 +323,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SatTranslatedAddresses
 
+Source address translation list of
+translated addresses.
+
 _Required_: No
 
 _Type_: List of String
@@ -258,6 +333,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SatType
+
+Type of source address translation.  This can be
+`none` (default), `dynamic-ip-and-port`, `dynamic-ip`, or `static-ip`.
 
 _Required_: No
 
@@ -267,6 +345,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Service
 
+Service (default: `any`).
+
 _Required_: No
 
 _Type_: String
@@ -274,6 +354,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SourceAddresses
+
+List of source address(es).
 
 _Required_: Yes
 
@@ -283,6 +365,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SourceZones
 
+The list of source zone(s).
+
 _Required_: Yes
 
 _Type_: List of String
@@ -290,6 +374,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+List of administrative tags.
 
 _Required_: No
 
@@ -299,6 +385,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ToInterface
 
+Egress interface from route lookup (default:
+`any`).
+
 _Required_: No
 
 _Type_: String
@@ -307,6 +396,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Type
 
+. NAT type.  This can be `ipv4` (default), `nat64`, or
+`nptv6`.
+
 _Required_: No
 
 _Type_: String
@@ -314,6 +406,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vsys
+
+The vsys to put the NAT rule into (default:
+`vsys1`).
 
 _Required_: No
 

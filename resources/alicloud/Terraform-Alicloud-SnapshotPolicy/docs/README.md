@@ -1,6 +1,10 @@
 # Terraform::Alicloud::SnapshotPolicy
 
-CloudFormation equivalent of alicloud_snapshot_policy
+Provides an ECS snapshot policy resource.
+
+For information about snapshot policy and how to use it, see [Snapshot](https://www.alibabacloud.com/help/doc-detail/25460.html).
+
+-> **NOTE:** Available in 1.42.0+.
 
 ## Syntax
 
@@ -37,6 +41,8 @@ Properties:
 
 #### Name
 
+The snapshot policy name.
+
 _Required_: No
 
 _Type_: String
@@ -44,6 +50,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RepeatWeekdays
+
+The automatic snapshot repetition dates. The unit of measurement is day and the repeating cycle is a week. Value range: [1, 7], which represents days starting from Monday to Sunday, for example 1  indicates Monday. When you want to schedule multiple automatic snapshot tasks for a disk in a week, you can set the RepeatWeekdays to an array.
+- A maximum of seven time points can be selected.
+- The format is  an JSON array of ["1", "2", … "7"]  and the time points are separated by commas (,).
 
 _Required_: Yes
 
@@ -53,6 +63,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RetentionDays
 
+The snapshot retention time, and the unit of measurement is day. Optional values:
+- -1: The automatic snapshots are retained permanently.
+- [1, 65536]: The number of days retained.
+
 _Required_: Yes
 
 _Type_: Double
@@ -60,6 +74,10 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TimePoints
+
+The automatic snapshot creation schedule, and the unit of measurement is hour. Value range: [0, 23], which represents from 00:00 to 24:00,  for example 1 indicates 01:00. When you want to schedule multiple automatic snapshot tasks for a disk in a day, you can set the TimePoints to an array.
+- A maximum of 24 time points can be selected.
+- The format is  an JSON array of ["0", "1", … "23"] and the time points are separated by commas (,).
 
 _Required_: Yes
 

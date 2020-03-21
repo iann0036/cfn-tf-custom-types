@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::ComputeKeypairV2
 
-CloudFormation equivalent of opentelekomcloud_compute_keypair_v2
+Manages a V2 keypair resource within OpenTelekomCloud.
 
 ## Syntax
 
@@ -36,6 +36,9 @@ Properties:
 
 #### Name
 
+A unique name for the keypair. Changing this creates a new
+keypair.
+
 _Required_: Yes
 
 _Type_: String
@@ -43,6 +46,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PublicKey
+
+A pregenerated OpenSSH-formatted public key.
+Changing this creates a new keypair.
 
 _Required_: No
 
@@ -59,6 +65,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ValueSpecs
+
+Map of additional options.
 
 _Required_: No
 

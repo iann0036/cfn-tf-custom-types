@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Kubernetes::PriorityClass",
-    "description": "CloudFormation equivalent of kubernetes_priority_class",
+    "description": "A PriorityClass is a non-namespaced object that defines a mapping from a priority class name to the integer value of the priority.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Metadata": {
@@ -63,13 +63,16 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "An arbitrary string that usually provides guidelines on when this priority class should be used."
         },
         "GlobalDefault": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean that specifies whether this PriorityClass should be considered as the default priority for pods that do not have any priority class."
         },
         "Value": {
-            "type": "number"
+            "type": "number",
+            "description": "The value of this priority class. This is the actual priority that pods receive when they have the name of this class in their pod spec."
         },
         "Metadata": {
             "type": "array",

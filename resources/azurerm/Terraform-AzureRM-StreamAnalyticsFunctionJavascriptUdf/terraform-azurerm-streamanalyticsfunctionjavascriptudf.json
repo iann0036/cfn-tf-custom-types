@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::StreamAnalyticsFunctionJavascriptUdf",
-    "description": "CloudFormation equivalent of azurerm_stream_analytics_function_javascript_udf",
+    "description": "Manages a JavaScript UDF Function within Stream Analytics Streaming Job.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Input": {
@@ -8,7 +8,8 @@
             "additionalProperties": false,
             "properties": {
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Data Type for the Input Argument of this JavaScript Function. Possible values include `array`, `any`, `bigint`, `datetime`, `float`, `nvarchar(max)` and `record`."
                 }
             },
             "required": [
@@ -20,7 +21,8 @@
             "additionalProperties": false,
             "properties": {
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Data Type output from this JavaScript Function. Possible values include `array`, `any`, `bigint`, `datetime`, `float`, `nvarchar(max)` and `record`."
                 }
             },
             "required": [
@@ -53,16 +55,20 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the JavaScript UDF Function. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Resource Group where the Stream Analytics Job exists. Changing this forces a new resource to be created."
         },
         "Script": {
-            "type": "string"
+            "type": "string",
+            "description": "The JavaScript of this UDF Function."
         },
         "StreamAnalyticsJobName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Stream Analytics Job where this Function should be created. Changing this forces a new resource to be created."
         },
         "Input": {
             "type": "array",

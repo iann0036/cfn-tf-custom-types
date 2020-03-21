@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::DigitalOcean::DatabaseDb",
-    "description": "CloudFormation equivalent of digitalocean_database_db",
+    "description": "Provides a DigitalOcean database resource. When creating a new database cluster, a default database with name `defaultdb` will be created. Then, this resource can be used to provide additional database inside the cluster.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "ClusterId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the original source database cluster."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name for the database."
         }
     },
     "additionalProperties": false,

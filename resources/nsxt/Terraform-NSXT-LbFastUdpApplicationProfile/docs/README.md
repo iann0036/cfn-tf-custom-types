@@ -1,6 +1,8 @@
 # Terraform::NSXT::LbFastUdpApplicationProfile
 
-CloudFormation equivalent of nsxt_lb_fast_udp_application_profile
+Provides a resource to configure LB fast UDP application profile on NSX-T manager
+
+~> **NOTE:** This resource requires NSX version 2.3 or higher.
 
 ## Syntax
 
@@ -38,6 +40,8 @@ Properties:
 
 #### Description
 
+Description of this resource.
+
 _Required_: No
 
 _Type_: String
@@ -45,6 +49,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+The display name of this resource. Defaults to ID if not set.
 
 _Required_: No
 
@@ -54,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HaFlowMirroring
 
+A boolean flag which reflects whether flow mirroring is enabled, and all the flows to the bounded virtual server are mirrored to the standby node. By default this is disabled.
+
 _Required_: No
 
 _Type_: Boolean
@@ -61,6 +69,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IdleTimeout
+
+Timeout in seconds to specify how long an idle UDP connection in ESTABLISHED state should be kept for this application before cleaning up. The default value will be 300 seconds.
 
 _Required_: No
 

@@ -1,6 +1,9 @@
 # Terraform::VCD::ExternalNetwork
 
-CloudFormation equivalent of vcd_external_network
+Provides a vCloud Director external network resource.  This can be used to create and delete external networks.
+Requires system administrator privileges.
+
+Supported in provider *v2.2+*
 
 ## Syntax
 
@@ -42,6 +45,8 @@ Properties:
 
 #### Description
 
+Network friendly description.
+
 _Required_: No
 
 _Type_: String
@@ -50,6 +55,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A unique name for the network.
+
 _Required_: Yes
 
 _Type_: String
@@ -57,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RetainNetInfoAcrossDeployments
+
+Specifies whether the network resources such as IP/MAC of router will be retained across deployments. Default is false.
 
 _Required_: No
 

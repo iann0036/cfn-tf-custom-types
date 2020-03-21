@@ -1,6 +1,8 @@
 # Terraform::Panos::PanoramaGkeCluster
 
-CloudFormation equivalent of panos_panorama_gke_cluster
+This resource allows you to add/update/delete a GKE cluster in a cluster group.
+
+This resource requires that the GCP plugin be installed.
 
 ## Syntax
 
@@ -35,6 +37,8 @@ Properties:
 
 #### ClusterCredential
 
+The GKE account to use.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GcpZone
+
+The GCP zone.
 
 _Required_: Yes
 
@@ -51,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GkeClusterGroup
 
+The cluster group name.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +66,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The cluster group's name.
 
 _Required_: Yes
 

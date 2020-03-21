@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::KustoDatabase",
-    "description": "CloudFormation equivalent of azurerm_kusto_database",
+    "description": "Manages a Kusto (also known as Azure Data Explorer) Database",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,25 +29,31 @@
             "type": "string"
         },
         "ClusterName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Kusto Cluster this database will be added to. Changing this forces a new resource to be created."
         },
         "HotCachePeriod": {
-            "type": "string"
+            "type": "string",
+            "description": "The time the data that should be kept in cache for fast queries as ISO 8601 timespan. Default is unlimited. For more information see: [ISO 8601 Timespan](https://en.wikipedia.org/wiki/ISO_8601#Durations)."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "The location where the Kusto Database should be created. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Kusto Database to create. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the Resource Group where the Kusto Database should exist. Changing this forces a new resource to be created."
         },
         "Size": {
             "type": "number"
         },
         "SoftDeletePeriod": {
-            "type": "string"
+            "type": "string",
+            "description": "The time the data should be kept before it stops being accessible to queries as ISO 8601 timespan. Default is unlimited. For more information see: [ISO 8601 Timespan](https://en.wikipedia.org/wiki/ISO_8601#Durations)."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

@@ -1,6 +1,14 @@
 # Terraform::Google::ComputeProjectMetadata
 
-CloudFormation equivalent of google_compute_project_metadata
+Authoritatively manages metadata common to all instances for a project in GCE. For more information see
+[the official documentation](https://cloud.google.com/compute/docs/storing-retrieving-metadata)
+and
+[API](https://cloud.google.com/compute/docs/reference/latest/projects/setCommonInstanceMetadata).
+
+~> **Note:**  This resource manages all project-level metadata including project-level ssh keys.
+Keys unset in config but set on the server will be removed. If you want to manage only single
+key/value pairs within the project metadata rather than the entire set, then use
+[google_compute_project_metadata_item](compute_project_metadata_item.html).
 
 ## Syntax
 
@@ -32,6 +40,8 @@ Properties:
 
 #### Metadata
 
+A series of key value pairs.
+
 _Required_: Yes
 
 _Type_: List of <a href="metadata.md">Metadata</a>
@@ -39,6 +49,9 @@ _Type_: List of <a href="metadata.md">Metadata</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The ID of the project in which the resource belongs. If it
+is not provided, the provider project is used.
 
 _Required_: No
 

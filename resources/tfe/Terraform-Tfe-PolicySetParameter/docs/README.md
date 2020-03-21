@@ -1,6 +1,6 @@
 # Terraform::Tfe::PolicySetParameter
 
-CloudFormation equivalent of tfe_policy_set_parameter
+Creates, updates and destroys policy set parameters.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### Key
 
+Name of the parameter.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PolicySetId
+
+The ID of the policy set that owns the parameter.
 
 _Required_: Yes
 
@@ -51,6 +55,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Sensitive
 
+Whether the value is sensitive. If true then the
+parameter is written once and not visible thereafter. Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -58,6 +65,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Value
+
+Value of the parameter.
 
 _Required_: No
 

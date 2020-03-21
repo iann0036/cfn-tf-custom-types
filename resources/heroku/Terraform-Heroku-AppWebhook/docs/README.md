@@ -1,6 +1,6 @@
 # Terraform::Heroku::AppWebhook
 
-CloudFormation equivalent of heroku_app_webhook
+Provides a [Heroku App Webhook](https://devcenter.heroku.com/categories/app-webhooks).
 
 ## Syntax
 
@@ -40,6 +40,8 @@ Properties:
 
 #### AppId
 
+The Heroku app to add to.
+
 _Required_: Yes
 
 _Type_: String
@@ -47,6 +49,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Authorization
+
+Values used in `Authorization` header. Once set, this value cannot be fetched from the Heroku API, but it can be updated.
 
 _Required_: No
 
@@ -56,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Include
 
+List of events to deliver to the webhook.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -63,6 +69,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Level
+
+The webhook level (either `notify` or `sync`).
 
 _Required_: Yes
 
@@ -72,6 +80,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Secret
 
+Value used to sign webhook payloads. Once set, this value cannot be fetched from the Heroku API, but it can be updated.
+
 _Required_: No
 
 _Type_: String
@@ -79,6 +89,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Url
+
+Optional plan configuration.
 
 _Required_: Yes
 

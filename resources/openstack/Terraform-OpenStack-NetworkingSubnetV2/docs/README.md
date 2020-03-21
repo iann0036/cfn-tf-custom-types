@@ -1,6 +1,6 @@
 # Terraform::OpenStack::NetworkingSubnetV2
 
-CloudFormation equivalent of openstack_networking_subnet_v2
+Manages a V2 Neutron subnet resource within OpenStack.
 
 ## Syntax
 
@@ -75,6 +75,10 @@ Properties:
 
 #### Cidr
 
+CIDR representing IP range for this subnet, based on IP
+version. You can omit this option if you are creating a subnet from a
+subnet pool.
+
 _Required_: No
 
 _Type_: String
@@ -82,6 +86,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Human-readable description of the subnet. Changing this
+updates the name of the existing subnet.
 
 _Required_: No
 
@@ -91,6 +98,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DnsNameservers
 
+An array of DNS name server names used by hosts
+in this subnet. Changing this updates the DNS name servers for the existing
+subnet.
+
 _Required_: No
 
 _Type_: List of String
@@ -98,6 +109,10 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableDhcp
+
+The administrative state of the network.
+Acceptable values are "true" and "false". Changing this value enables or
+disables the DHCP capabilities of the existing subnet. Defaults to true.
 
 _Required_: No
 
@@ -107,6 +122,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GatewayIp
 
+Default gateway used by devices in this subnet.
+Leaving this blank and not setting `no_gateway` will cause a default
+gateway of `.1` to be used. Changing this updates the gateway IP of the
+existing subnet.
+
 _Required_: No
 
 _Type_: String
@@ -114,6 +134,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IpVersion
+
+IP version, either 4 (default) or 6. Changing this creates a
+new subnet.
 
 _Required_: No
 
@@ -123,6 +146,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ipv6AddressMode
 
+The IPv6 address mode. Valid values are
+`dhcpv6-stateful`, `dhcpv6-stateless`, or `slaac`.
+
 _Required_: No
 
 _Type_: String
@@ -130,6 +156,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ipv6RaMode
+
+The IPv6 Router Advertisement mode. Valid values
+are `dhcpv6-stateful`, `dhcpv6-stateless`, or `slaac`.
 
 _Required_: No
 
@@ -139,6 +168,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the subnet. Changing this updates the name of
+the existing subnet.
+
 _Required_: No
 
 _Type_: String
@@ -146,6 +178,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NetworkId
+
+The UUID of the parent network. Changing this
+creates a new subnet.
 
 _Required_: Yes
 
@@ -155,6 +190,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NoGateway
 
+Do not set a gateway IP on this subnet. Changing
+this removes or adds a default gateway IP of the existing subnet.
+
 _Required_: No
 
 _Type_: Boolean
@@ -162,6 +200,11 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PrefixLength
+
+The prefix length to use when creating a subnet
+from a subnet pool. The default subnet pool prefix length that was defined
+when creating the subnet pool will be used if not provided. Changing this
+creates a new subnet.
 
 _Required_: No
 
@@ -171,6 +214,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region in which to obtain the V2 Networking client.
+A Networking client is needed to create a Neutron subnet. If omitted, the
+`region` argument of the provider is used. Changing this creates a new
+subnet.
+
 _Required_: No
 
 _Type_: String
@@ -178,6 +226,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubnetpoolId
+
+The ID of the subnetpool associated with the subnet.
 
 _Required_: No
 
@@ -187,6 +237,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A set of string tags for the subnet.
+
 _Required_: No
 
 _Type_: List of String
@@ -195,6 +247,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TenantId
 
+The owner of the subnet. Required if admin wants to
+create a subnet for another tenant. Changing this creates a new subnet.
+
 _Required_: No
 
 _Type_: String
@@ -202,6 +257,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ValueSpecs
+
+Map of additional options.
 
 _Required_: No
 

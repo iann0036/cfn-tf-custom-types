@@ -1,6 +1,6 @@
 # Terraform::AzureRM::MonitorDiagnosticSetting
 
-CloudFormation equivalent of azurerm_monitor_diagnostic_setting
+Manages a Diagnostic Setting for an existing Resource.
 
 ## Syntax
 
@@ -52,6 +52,8 @@ Properties:
 
 #### EventhubAuthorizationRuleId
 
+Specifies the ID of an Event Hub Namespace Authorization Rule used to send Diagnostics Data. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -59,6 +61,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EventhubName
+
+Specifies the name of the Event Hub where Diagnostics Data should be sent. Changing this forces a new resource to be created.
 
 _Required_: No
 
@@ -68,6 +72,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LogAnalyticsDestinationType
 
+When set to 'Dedicated' logs sent to a Log Analytics workspace will go into resource specific tables, instead of the legacy AzureDiagnostics table.
+
 _Required_: No
 
 _Type_: String
@@ -75,6 +81,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LogAnalyticsWorkspaceId
+
+Specifies the ID of a Log Analytics Workspace where Diagnostics Data should be sent. Changing this forces a new resource to be created.
 
 _Required_: No
 
@@ -84,6 +92,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the Diagnostic Setting. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -92,6 +102,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StorageAccountId
 
+With this parameter you can specify a storage account which should be used to send the logs to. Parameter must be a valid Azure Resource ID. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -99,6 +111,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TargetResourceId
+
+The ID of an existing Resource on which to configure Diagnostic Settings. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

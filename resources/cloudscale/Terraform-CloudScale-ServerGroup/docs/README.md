@@ -1,6 +1,6 @@
 # Terraform::CloudScale::ServerGroup
 
-CloudFormation equivalent of cloudscale_server_group
+Provides a cloudscale.ch Server Group resource. This can be used to create, and delete server groups.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### Name
 
+Name of the new server group.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Type
 
+The type of the server group can currently only be `"anti-affinity"`.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneSlug
+
+You can specify a zone slug. Options include `lpg1` and `rma1`.
 
 _Required_: No
 

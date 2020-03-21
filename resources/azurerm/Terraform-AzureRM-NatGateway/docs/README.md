@@ -1,6 +1,8 @@
 # Terraform::AzureRM::NatGateway
 
-CloudFormation equivalent of azurerm_nat_gateway
+Manages a Azure NAT Gateway.
+
+-> **NOTE:** The Azure NAT Gateway service is currently in private preview. Your subscription must be on the NAT Gateway private preview whitelist for this resource to be provisioned correctly. If you attempt to provision this resource and receive an `InvalidResourceType` error may mean that your subscription is not part of the NAT Gateway private preview or you are using a region which does not yet support the NAT Gateway private preview service. The NAT Gateway private preview service is currently available in a limited set of regions. Private preview resources may have multiple breaking changes over their lifecycle until they GA. You can opt into the Private Preview by contacting your Microsoft Representative.
 
 ## Syntax
 
@@ -51,6 +53,8 @@ Properties:
 
 #### IdleTimeoutInMinutes
 
+The idle timeout which should be used in minutes. Defaults to `4`.
+
 _Required_: No
 
 _Type_: Double
@@ -58,6 +62,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Location
+
+Specifies the supported Azure location where the NAT Gateway should exist. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -67,6 +73,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the NAT Gateway. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -74,6 +82,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PublicIpAddressIds
+
+A list of Public IP Address ID's which should be associated with the NAT Gateway resource.
 
 _Required_: No
 
@@ -83,6 +93,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PublicIpPrefixIds
 
+A list of Public IP Prefix ID's which should be associated with the NAT Gateway resource.
+
 _Required_: No
 
 _Type_: List of String
@@ -90,6 +102,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+Specifies the name of the Resource Group in which the NAT Gateway should exist. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -99,6 +113,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SkuName
 
+The SKU which should be used. At this time the only supported value is `Standard`. Defaults to `Standard`.
+
 _Required_: No
 
 _Type_: String
@@ -107,6 +123,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -114,6 +132,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Zones
+
+A list of availability zones where the NAT Gateway should be provisioned. Changing this forces a new resource to be created.
 
 _Required_: No
 

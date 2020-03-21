@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::NSXT::LogicalTier0Router",
-    "description": "CloudFormation equivalent of nsxt_logical_tier0_router",
+    "description": "This resource provides a method for the management of a tier 0 logical router.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "FirewallSections": {
@@ -39,19 +39,24 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the resource."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "Display name, defaults to ID if not set."
         },
         "EdgeClusterId": {
-            "type": "string"
+            "type": "string",
+            "description": "Edge Cluster ID for the logical Tier0 router. Changing this setting on existing router will re-create the router."
         },
         "FailoverMode": {
-            "type": "string"
+            "type": "string",
+            "description": "Failover mode which determines whether the preferred service router instance for given logical router will preempt the peer. Accepted values are PREEMPTIVE/NON_PREEMPTIVE. This setting is relevant only for ACTIVE_STANDBY high availability mode."
         },
         "HighAvailabilityMode": {
-            "type": "string"
+            "type": "string",
+            "description": "High availability mode \"ACTIVE_ACTIVE\"/\"ACTIVE_STANDBY\". Changing this setting on existing router will re-create the router."
         },
         "Revision": {
             "type": "number"

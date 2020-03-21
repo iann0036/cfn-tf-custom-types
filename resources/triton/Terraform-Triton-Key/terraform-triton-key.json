@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Triton::Key",
-    "description": "CloudFormation equivalent of triton_key",
+    "description": "The `triton_key` resource represents an SSH key for a Triton account.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,10 +29,12 @@
             "type": "string"
         },
         "Key": {
-            "type": "string"
+            "type": "string",
+            "description": "The SSH key material. In order to read this from a file, use the `file` interpolation."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the key. If this is left empty, the name is inferred from the comment in the SSH key material."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

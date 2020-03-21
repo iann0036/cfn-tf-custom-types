@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::SagClientUser",
-    "description": "CloudFormation equivalent of alicloud_sag_client_user",
+    "description": "Provides a Sag ClientUser resource. This topic describes how to manage accounts as an administrator. After you configure the network, you can create multiple accounts and distribute them to end users so that clients can access Alibaba Cloud.\n\nFor information about Sag ClientUser and how to use it, see [What is Sag ClientUser](https://www.alibabacloud.com/help/doc-detail/108326.htm).\n\n-> **NOTE:** Available in 1.65.0+\n\n-> **NOTE:** Only the following regions support. [`cn-shanghai`, `cn-shanghai-finance-1`, `cn-hongkong`, `ap-southeast-1`, `ap-southeast-2`, `ap-southeast-3`, `ap-southeast-5`, `ap-northeast-1`, `eu-central-1`]",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "Bandwidth": {
-            "type": "number"
+            "type": "number",
+            "description": "The SAG APP bandwidth that the user can use. Unit: Kbit/s. Maximum value: 2000 Kbit/s."
         },
         "ClientIp": {
-            "type": "string"
+            "type": "string",
+            "description": "The IP address of the SAG APP. If you specify this parameter, the current account always uses the specified IP address.Note The IP address must be in the private CIDR block of the SAG client.If you do not specify this parameter, the system automatically allocates an IP address from the private CIDR block of the SAG client. In this case, each re-connection uses a different IP address."
         },
         "KmsEncryptedPassword": {
             "type": "string"
@@ -38,16 +40,20 @@
             }
         },
         "Password": {
-            "type": "string"
+            "type": "string",
+            "description": "The password used to log on to the SAG APP.Both the user name and the password must be specified. If you specify the user name, the password must be specified, too."
         },
         "SagId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the SAG instance created for the SAG APP."
         },
         "UserMail": {
-            "type": "string"
+            "type": "string",
+            "description": "The email address of the user. The administrator uses this address to send the account information for logging on to the APP to the user."
         },
         "UserName": {
-            "type": "string"
+            "type": "string",
+            "description": "The user name. User names in the same SAG APP must be unique.Both the user name and the password must be specified. If you specify the user name, the password must be specified, too."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::Firewall",
-    "description": "CloudFormation equivalent of azurerm_firewall",
+    "description": "Manages an Azure Firewall.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "IpConfiguration": {
@@ -8,13 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the name of the IP Configuration."
                 },
                 "PublicIpAddressId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Resource ID of the Public IP Address associated with the firewall."
                 },
                 "SubnetId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Reference to the subnet associated with the IP Configuration."
                 }
             },
             "required": [
@@ -48,13 +51,16 @@
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Firewall. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the resource. Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -74,14 +80,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Zones": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Specifies the availability zones in which the Azure Firewall should be created."
         },
         "IpConfiguration": {
             "type": "array",

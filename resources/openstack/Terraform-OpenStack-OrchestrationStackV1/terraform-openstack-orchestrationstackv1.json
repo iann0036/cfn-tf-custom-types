@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::OrchestrationStackV1",
-    "description": "CloudFormation equivalent of openstack_orchestration_stack_v1",
+    "description": "Manages a V1 stack resource within OpenStack.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Outputs": {
@@ -58,7 +58,8 @@
             "type": "string"
         },
         "DisableRollback": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enables or disables deletion of all stack\nresources when a stack creation fails. Default is true, meaning all\nresources are not deleted when stack creation fails."
         },
         "EnvironmentOpts": {
             "type": "array",
@@ -78,10 +79,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Environment key/value pairs to associate with\nthe stack which contains details for the environment of the stack.\nAllowed keys: Bin, URL, Files. Changing this updates the existing stack\nEnvironment Opts."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique name for the stack. It must start with an\nalphabetic character. Changing this updates the stack's name."
         },
         "NotificationTopics": {
             "type": "array",
@@ -108,10 +111,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "User-defined key/value pairs as parameters to pass\nto the template. Changing this updates the existing stack parameters."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to create the stack. If\nomitted, the `region` argument of the provider is used. Changing this\ncreates a new stack."
         },
         "Status": {
             "type": "string"
@@ -124,7 +129,8 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of tags to assosciate with the Stack."
         },
         "TemplateDescription": {
             "type": "string"
@@ -147,10 +153,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Template key/value pairs to associate with the\nstack which contains either the template file or url.\nAllowed keys: Bin, URL, Files. Changing this updates the existing stack\nTemplate Opts."
         },
         "Timeout": {
-            "type": "number"
+            "type": "number",
+            "description": "The timeout for stack action in minutes."
         },
         "UpdatedTime": {
             "type": "string"

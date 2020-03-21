@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::DmsGroupV1
 
-CloudFormation equivalent of huaweicloud_dms_group_v1
+Manages a DMS group in the huaweicloud DMS Service.
 
 ## Syntax
 
@@ -31,6 +31,10 @@ Properties:
 
 #### Name
 
+Indicates the unique name of a group. A string of 1 to 64
+characters that contain a-z, A-Z, 0-9, hyphens (-), and underscores (_).
+The name cannot be modified once specified.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +42,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### QueueId
+
+Indicates the ID of a specified queue.
 
 _Required_: Yes
 

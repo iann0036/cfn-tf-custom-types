@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::RdsInstanceV1
 
-CloudFormation equivalent of opentelekomcloud_rds_instance_v1
+Manages rds instance resource within OpenTelekomCloud
 
 ## Syntax
 
@@ -64,6 +64,8 @@ Properties:
 
 #### Availabilityzone
 
+Specifies the ID of the AZ.
+
 _Required_: Yes
 
 _Type_: String
@@ -71,6 +73,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Dbport
+
+Specifies the database port number.
 
 _Required_: No
 
@@ -80,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Dbrtpd
 
+Specifies the password for user root of the database.
+
 _Required_: Yes
 
 _Type_: String
@@ -88,6 +94,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Flavorref
 
+Specifies the specification ID (flavors.id in the
+response message in Obtaining All DB Instance Specifications). If you want
+to enable ha for the rds instance, a flavor with ha speccode is required.
+
 _Required_: Yes
 
 _Type_: String
@@ -95,6 +105,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the DB instance name. The DB instance name of
+the same type is unique in the same tenant. The changes of the instance name
+will be suppressed in HA scenario.
 
 _Required_: No
 
@@ -112,6 +126,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tag
 
+Tags key/value pairs to associate with the instance.
+
 _Required_: No
 
 _Type_: List of <a href="tag.md">Tag</a>
@@ -119,6 +135,10 @@ _Type_: List of <a href="tag.md">Tag</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vpc
+
+Specifies the VPC ID. For details about how to obtain this
+parameter value, see section "Virtual Private Cloud" in the Virtual Private
+Cloud API Reference.
 
 _Required_: Yes
 

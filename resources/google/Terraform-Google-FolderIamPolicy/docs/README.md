@@ -1,6 +1,7 @@
 # Terraform::Google::FolderIamPolicy
 
-CloudFormation equivalent of google_folder_iam_policy
+Allows creation and management of the IAM policy for an existing Google Cloud
+Platform folder.
 
 ## Syntax
 
@@ -31,6 +32,8 @@ Properties:
 
 #### Folder
 
+The resource name of the folder the policy is attached to. Its format is folders/{folder_id}.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +41,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PolicyData
+
+The `google_iam_policy` data source that represents
+the IAM policy that will be applied to the folder. This policy overrides any existing
+policy applied to the folder.
 
 _Required_: Yes
 

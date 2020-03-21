@@ -1,6 +1,6 @@
 # Terraform::AzureRM::MonitorActivityLogAlert
 
-CloudFormation equivalent of azurerm_monitor_activity_log_alert
+Manages an Activity Log Alert within Azure Monitor.
 
 ## Syntax
 
@@ -49,6 +49,8 @@ Properties:
 
 #### Description
 
+The description of this activity log alert.
+
 _Required_: No
 
 _Type_: String
@@ -56,6 +58,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Enabled
+
+Should this Activity Log Alert be enabled? Defaults to `true`.
 
 _Required_: No
 
@@ -65,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the activity log alert. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -72,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which to create the activity log alert instance.
 
 _Required_: Yes
 
@@ -81,6 +89,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Scopes
 
+The Scope at which the Activity Log should be applied, for example a the Resource ID of a Subscription or a Resource (such as a Storage Account).
+
 _Required_: Yes
 
 _Type_: List of String
@@ -88,6 +98,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

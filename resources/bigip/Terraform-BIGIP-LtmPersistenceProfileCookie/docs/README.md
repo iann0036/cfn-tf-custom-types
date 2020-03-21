@@ -1,6 +1,6 @@
 # Terraform::BIGIP::LtmPersistenceProfileCookie
 
-CloudFormation equivalent of bigip_ltm_persistence_profile_cookie
+Configures a cookie persistence profile
 
 ## Syntax
 

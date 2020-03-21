@@ -45,6 +45,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Description
 
+The description.
+
 _Required_: No
 
 _Type_: String
@@ -52,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EmailServerProfiles
+
+List of email server profiles.
 
 _Required_: No
 
@@ -61,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Filter
 
+The filter (default: `All Logs`).
+
 _Required_: No
 
 _Type_: String
@@ -68,6 +74,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HttpServerProfiles
+
+List of http server profiles.
 
 _Required_: No
 
@@ -77,6 +85,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LogType
 
+The log type.  Valid values are `traffic` (default),
+`threat`, `wildfire`, `url`, `data`, `gtp`, `tunnel`, `auth`, or `sctp`.
+
 _Required_: No
 
 _Type_: String
@@ -84,6 +95,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name.
 
 _Required_: Yes
 
@@ -93,6 +106,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SendToPanorama
 
+Set to `true` to send to Panorama.
+
 _Required_: No
 
 _Type_: Boolean
@@ -101,6 +116,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SnmptrapServerProfiles
 
+List of SNMP server profiles.
+
 _Required_: No
 
 _Type_: List of String
@@ -108,6 +125,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SyslogServerProfiles
+
+List of syslog server profiles.
 
 _Required_: No
 

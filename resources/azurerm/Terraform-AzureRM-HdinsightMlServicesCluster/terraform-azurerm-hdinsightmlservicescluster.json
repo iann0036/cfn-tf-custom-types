@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::HdinsightMlServicesCluster",
-    "description": "CloudFormation equivalent of azurerm_hdinsight_ml_services_cluster",
+    "description": "Manages a HDInsight ML Services Cluster.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Gateway": {
@@ -8,13 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "Enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Is the Ambari portal enabled? Changing this forces a new resource to be created."
                 },
                 "Password": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Password associated with the local administrator for the Head Nodes. Changing this forces a new resource to be created."
                 },
                 "Username": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Username of the local administrator for the Head Nodes. Changing this forces a new resource to be created."
                 }
             },
             "required": [
@@ -63,13 +66,16 @@
             "additionalProperties": false,
             "properties": {
                 "IsDefault": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Is this the Default Storage Account for the HDInsight ML Services Cluster? Changing this forces a new resource to be created."
                 },
                 "StorageAccountKey": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Access Key which should be used to connect to the Storage Account. Changing this forces a new resource to be created."
                 },
                 "StorageContainerId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of the Storage Container. Changing this forces a new resource to be created."
                 }
             },
             "required": [
@@ -166,32 +172,40 @@
             "additionalProperties": false,
             "properties": {
                 "MinInstanceCount": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The minimum number of instances which should be run for the Worker Nodes. Changing this forces a new resource to be created."
                 },
                 "Password": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Password associated with the local administrator for the Worker Nodes. Changing this forces a new resource to be created."
                 },
                 "SshKeys": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of SSH Keys which should be used for the local administrator on the Worker Nodes. Changing this forces a new resource to be created."
                 },
                 "SubnetId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of the Subnet within the Virtual Network where the Worker Nodes should be provisioned within. Changing this forces a new resource to be created."
                 },
                 "TargetInstanceCount": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The number of instances which should be run for the Worker Nodes."
                 },
                 "Username": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Username of the local administrator for the Worker Nodes. Changing this forces a new resource to be created."
                 },
                 "VirtualNetworkId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of the Virtual Network where the Worker Nodes should be provisioned within. Changing this forces a new resource to be created."
                 },
                 "VmSize": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Size of the Virtual Machine which should be used as the Worker Nodes. Changing this forces a new resource to be created."
                 }
             },
             "required": [
@@ -205,26 +219,32 @@
             "additionalProperties": false,
             "properties": {
                 "Password": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Password associated with the local administrator for the Zookeeper Nodes. Changing this forces a new resource to be created."
                 },
                 "SshKeys": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of SSH Keys which should be used for the local administrator on the Zookeeper Nodes. Changing this forces a new resource to be created."
                 },
                 "SubnetId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of the Subnet within the Virtual Network where the Zookeeper Nodes should be provisioned within. Changing this forces a new resource to be created."
                 },
                 "Username": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Username of the local administrator for the Zookeeper Nodes. Changing this forces a new resource to be created."
                 },
                 "VirtualNetworkId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of the Virtual Network where the Zookeeper Nodes should be provisioned within. Changing this forces a new resource to be created."
                 },
                 "VmSize": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Size of the Virtual Machine which should be used as the Zookeeper Nodes. Changing this forces a new resource to be created."
                 }
             },
             "required": [
@@ -239,7 +259,8 @@
             "type": "string"
         },
         "ClusterVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the Version of HDInsights which should be used for this Cluster. Changing this forces a new resource to be created."
         },
         "EdgeSshEndpoint": {
             "type": "string"
@@ -248,16 +269,20 @@
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the Azure Region which this HDInsight ML Services Cluster should exist. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name for this HDInsight ML Services Cluster. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Resource Group in which this HDInsight ML Services Cluster should exist. Changing this forces a new resource to be created."
         },
         "Rstudio": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Should R Studio community edition for ML Services be installed? Changing this forces a new resource to be created."
         },
         "SshEndpoint": {
             "type": "string"
@@ -280,10 +305,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A map of Tags which should be assigned to this HDInsight ML Services Cluster."
         },
         "Tier": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the Tier which should be used for this HDInsight ML Services Cluster. Possible values are `Standard` or `Premium`. Changing this forces a new resource to be created."
         },
         "Gateway": {
             "type": "array",

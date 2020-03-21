@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::ObjectstorageObjectLifecyclePolicy",
-    "description": "CloudFormation equivalent of oci_objectstorage_object_lifecycle_policy",
+    "description": "This resource provides the Object Lifecycle Policy resource in Oracle Cloud Infrastructure Object Storage service.\n\nCreates or replaces the object lifecycle policy for the bucket.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Rules": {
@@ -89,10 +89,12 @@
             "type": "string"
         },
         "Bucket": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`."
         },
         "Namespace": {
-            "type": "string"
+            "type": "string",
+            "description": "The Object Storage namespace used for the request."
         },
         "TimeCreated": {
             "type": "string"

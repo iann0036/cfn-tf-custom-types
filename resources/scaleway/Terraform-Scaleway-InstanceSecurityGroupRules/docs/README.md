@@ -1,6 +1,6 @@
 # Terraform::Scaleway::InstanceSecurityGroupRules
 
-CloudFormation equivalent of scaleway_instance_security_group_rules
+Creates and manages Scaleway Compute Instance security group rules. For more information, see [the documentation](https://developers.scaleway.com/en/products/instance/api/#security-groups-8d7f89).
 
 ## Syntax
 

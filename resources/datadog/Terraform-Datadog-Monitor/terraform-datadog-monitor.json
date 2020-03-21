@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Datadog::Monitor",
-    "description": "CloudFormation equivalent of datadog_monitor",
+    "description": "Provides a Datadog monitor resource. This can be used to create and manage Datadog monitors.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,7 +12,8 @@
             "type": "boolean"
         },
         "EscalationMessage": {
-            "type": "string"
+            "type": "string",
+            "description": "A message to include with a re-notification. Supports the '@username'\nnotification allowed elsewhere."
         },
         "EvaluationDelay": {
             "type": "number"
@@ -24,10 +25,12 @@
             "type": "boolean"
         },
         "Message": {
-            "type": "string"
+            "type": "string",
+            "description": "A message to include with notifications for this monitor.\nEmail notifications can be sent to specific users by using the same '@username' notation as events."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of Datadog monitor."
         },
         "NewHostDelay": {
             "type": "number"
@@ -42,7 +45,8 @@
             "type": "boolean"
         },
         "Query": {
-            "type": "string"
+            "type": "string",
+            "description": "The monitor query to notify on. Note this is not the same query you see in the UI and\nthe syntax is different depending on the monitor `type`, please see the [API Reference](https://docs.datadoghq.com/api/?lang=python#create-a-monitor) for details. **Warning:** `terraform plan` won't perform any validation of the query contents."
         },
         "RenotifyInterval": {
             "type": "number"
@@ -115,13 +119,15 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "* Metric alerts:\nA dictionary of thresholds by threshold type. Currently we have four threshold types for metric alerts: critical, critical recovery, warning, and warning recovery. Critical is defined in the query, but can also be specified in this option. Warning and recovery thresholds can only be specified using the thresholds option.\nExample usage:\n```\nthresholds = {\ncritical          = 90\ncritical_recovery = 85\nwarning           = 80\nwarning_recovery  = 75\n}\n```\n**Warning:** the `critical` threshold value must match the one contained in the `query` argument. The `threshold` from the previous example is valid along with a query like `avg(last_1h):avg:system.disk.in_use{role:sqlserver} by {host} > 90` but\nalong with something like `avg(last_1h):avg:system.disk.in_use{role:sqlserver} by {host} > 95` would make the Datadog API return a HTTP error 400, complaining \"The value provided for parameter 'query' is invalid\".\n* Service checks:\nA dictionary of thresholds by status. Because service checks can have multiple thresholds, we don't define them directly in the query.\nDefault values:\n```\nthresholds = {\nok       = 1\ncritical = 1\nwarning  = 1\nunknown  = 1\n}\n```."
         },
         "TimeoutH": {
             "type": "number"
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of the monitor. The mapping from these types to the types found in the Datadog Web UI can be found in the Datadog API [documentation](https://docs.datadoghq.com/api/?lang=python#create-a-monitor) page. The available options are below. **Note**: The monitor type cannot be changed after a monitor is created.\n* `metric alert`\n* `service check`\n* `event alert`\n* `query alert`\n* `composite`\n* `log alert`."
         }
     },
     "additionalProperties": false,

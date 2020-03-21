@@ -42,6 +42,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### CheckInterval
 
+How often to run the Healthcheck in milliseconds. Default `5000`.
+
 _Required_: No
 
 _Type_: Double
@@ -49,6 +51,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ExpectedResponse
+
+The status code expected from the host. Default `200`.
 
 _Required_: No
 
@@ -58,6 +62,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Host
 
+The Host header to send for this Healthcheck.
+
 _Required_: Yes
 
 _Type_: String
@@ -65,6 +71,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HttpVersion
+
+Whether to use version 1.0 or 1.1 HTTP. Default `1.1`.
 
 _Required_: No
 
@@ -74,6 +82,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Initial
 
+When loading a config, the initial number of probes to be seen as OK. Default `2`.
+
 _Required_: No
 
 _Type_: Double
@@ -81,6 +91,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Method
+
+Which HTTP method to use. Default `HEAD`.
 
 _Required_: No
 
@@ -90,6 +102,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A unique name to identify this Healthcheck.
+
 _Required_: Yes
 
 _Type_: String
@@ -97,6 +111,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Path
+
+The path to check.
 
 _Required_: Yes
 
@@ -106,6 +122,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Threshold
 
+How many Healthchecks must succeed to be considered healthy. Default `3`.
+
 _Required_: No
 
 _Type_: Double
@@ -114,6 +132,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Timeout
 
+Timeout in milliseconds. Default `500`.
+
 _Required_: No
 
 _Type_: Double
@@ -121,6 +141,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Window
+
+The number of most recent Healthcheck queries to keep for this Healthcheck. Default `5`.
 
 _Required_: No
 

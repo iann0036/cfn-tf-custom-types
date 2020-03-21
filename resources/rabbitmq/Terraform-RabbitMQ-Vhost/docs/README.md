@@ -1,6 +1,6 @@
 # Terraform::RabbitMQ::Vhost
 
-CloudFormation equivalent of rabbitmq_vhost
+The ``rabbitmq_vhost`` resource creates and manages a vhost.
 
 ## Syntax
 
@@ -28,6 +28,8 @@ Properties:
 ## Properties
 
 #### Name
+
+The name of the vhost.
 
 _Required_: Yes
 

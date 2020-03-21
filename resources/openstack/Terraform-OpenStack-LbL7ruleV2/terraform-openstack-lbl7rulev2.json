@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::LbL7ruleV2",
-    "description": "CloudFormation equivalent of openstack_lb_l7rule_v2",
+    "description": "Manages a V2 L7 Rule resource within OpenStack.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,34 +26,43 @@
             "type": "string"
         },
         "AdminStateUp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "The administrative state of the L7 Rule.\nA valid value is true (UP) or false (DOWN)."
         },
         "CompareType": {
-            "type": "string"
+            "type": "string",
+            "description": "The comparison type for the L7 rule - can either be\nCONTAINS, STARTS\\_WITH, ENDS_WITH, EQUAL_TO or REGEX."
         },
         "Invert": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "When true the logic of the rule is inverted. For example, with invert\ntrue, equal to would become not equal to. Default is false."
         },
         "Key": {
-            "type": "string"
+            "type": "string",
+            "description": "The key to use for the comparison. For example, the name of the cookie to\nevaluate. Valid when `type` is set to COOKIE or HEADER."
         },
         "L7policyId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the L7 Policy to query. Changing this creates a new\nL7 Rule."
         },
         "ListenerId": {
             "type": "string"
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the V2 Networking client.\nA Networking client is needed to create an . If omitted, the\n`region` argument of the provider is used. Changing this creates a new\nL7 Rule."
         },
         "TenantId": {
-            "type": "string"
+            "type": "string",
+            "description": "Required for admins. The UUID of the tenant who owns\nthe L7 Rule.  Only administrative users can specify a tenant UUID\nother than their own. Changing this creates a new L7 Rule."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The L7 Rule type - can either be COOKIE, FILE\\_TYPE, HEADER,\nHOST\\_NAME or PATH."
         },
         "Value": {
-            "type": "string"
+            "type": "string",
+            "description": "The value to use for the comparison. For example, the file type to\ncompare."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

@@ -1,6 +1,9 @@
 # Terraform::Google::ProjectOrganizationPolicy
 
-CloudFormation equivalent of google_project_organization_policy
+Allows management of Organization policies for a Google Project. For more information see
+[the official
+documentation](https://cloud.google.com/resource-manager/docs/organization-policy/overview) and
+[API](https://cloud.google.com/resource-manager/reference/rest/v1/projects/setOrgPolicy).
 
 ## Syntax
 
@@ -50,6 +53,8 @@ Properties:
 
 #### Constraint
 
+The name of the Constraint the Policy is configuring, for example, `serviceuser.services`. Check out the [complete list of available constraints](https://cloud.google.com/resource-manager/docs/organization-policy/understanding-constraints#available_constraints).
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Project
 
+The project id of the project to set the policy for.
+
 _Required_: Yes
 
 _Type_: String
@@ -65,6 +72,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Version
+
+Version of the Policy. Default version is 0.
 
 _Required_: No
 

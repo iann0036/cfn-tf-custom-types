@@ -34,6 +34,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### AdministratorLogin
 
+Specifies the name of the SQL administrator.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AdministratorLoginPassword
+
+Specifies the password of the SQL administrator.
 
 _Required_: Yes
 
@@ -50,6 +54,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AuthenticationType
 
+Specifies the type of authentication used to access the server. Valid values are `SQL` or `ADPassword`.
+
 _Required_: Yes
 
 _Type_: String
@@ -57,6 +63,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OperationMode
+
+Specifies the type of import operation being performed. The only allowable value is `Import`.
 
 _Required_: No
 
@@ -66,6 +74,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StorageKey
 
+Specifies the access key for the storage account.
+
 _Required_: Yes
 
 _Type_: String
@@ -74,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StorageKeyType
 
+Specifies the type of access key for the storage account. Valid values are `StorageAccessKey` or `SharedAccessKey`.
+
 _Required_: Yes
 
 _Type_: String
@@ -81,6 +93,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StorageUri
+
+Specifies the blob URI of the .bacpac file.
 
 _Required_: Yes
 

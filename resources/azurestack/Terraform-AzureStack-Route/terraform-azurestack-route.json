@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureStack::Route",
-    "description": "CloudFormation equivalent of azurestack_route",
+    "description": "Manages a Route within a Route Table.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,22 +9,28 @@
             "type": "string"
         },
         "AddressPrefix": {
-            "type": "string"
+            "type": "string",
+            "description": "The destination CIDR to which the route applies, such as `10.1.0.0/16`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the route. Changing this forces a new resource to be created."
         },
         "NextHopInIpAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "Contains the IP address packets should be forwarded to. Next hop values are only allowed in routes where the next hop type is `VirtualAppliance`."
         },
         "NextHopType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of Azure hop the packet should be sent to. Possible values are `VirtualNetworkGateway`, `VnetLocal`, `Internet`, `VirtualAppliance` and `None`."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the route. Changing this forces a new resource to be created."
         },
         "RouteTableName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the route table within which create the route. Changing this forces a new resource to be created."
         }
     },
     "additionalProperties": false,

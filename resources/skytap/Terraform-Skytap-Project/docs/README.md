@@ -1,6 +1,7 @@
 # Terraform::Skytap::Project
 
-CloudFormation equivalent of skytap_project
+Provides a Skytap Project resource. Projects are an access permissions model used to share environments, 
+templates, and assets with other users.
 
 ## Syntax
 
@@ -35,6 +36,8 @@ Properties:
 
 #### AutoAddRoleName
 
+If this field is set to `viewer`, `participant`, `editor`, or `manager`, new users added to your Skytap account are automatically added to this project with the specified project role. Existing users aren’t affected by this setting. If the field is set to `null`, new users aren’t automatically added to the project. For additional details, see [Automatically adding new users to a project](https://help.skytap.com/csh-project-automatic-role.html).
+
 _Required_: No
 
 _Type_: String
@@ -42,6 +45,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+User-defined project name.
 
 _Required_: Yes
 
@@ -51,6 +56,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ShowProjectMembers
 
+Determines whether projects members can view a list of other project members. False by default.
+
 _Required_: No
 
 _Type_: Boolean
@@ -58,6 +65,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Summary
+
+User-defined description of project.
 
 _Required_: No
 

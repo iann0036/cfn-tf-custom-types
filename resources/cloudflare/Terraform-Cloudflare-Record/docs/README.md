@@ -1,6 +1,6 @@
 # Terraform::Cloudflare::Record
 
-CloudFormation equivalent of cloudflare_record
+Provides a Cloudflare record resource.
 
 ## Syntax
 
@@ -44,6 +44,8 @@ Properties:
 
 #### Data
 
+Map of attributes that constitute the record value. Primarily used for LOC and SRV record types. Either this or `value` must be specified.
+
 _Required_: No
 
 _Type_: List of <a href="data.md">Data</a>
@@ -51,6 +53,8 @@ _Type_: List of <a href="data.md">Data</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the record.
 
 _Required_: Yes
 
@@ -60,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Priority
 
+The priority of the record.
+
 _Required_: No
 
 _Type_: Double
@@ -67,6 +73,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Proxied
+
+Whether the record gets Cloudflare's origin protection; defaults to `false`.
 
 _Required_: No
 
@@ -76,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ttl
 
+The TTL of the record ([automatic: '1'](https://api.cloudflare.com/#dns-records-for-a-zone-create-dns-record)).
+
 _Required_: No
 
 _Type_: Double
@@ -83,6 +93,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The type of the record.
 
 _Required_: Yes
 
@@ -92,6 +104,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Value
 
+The (string) value of the record. Either this or `data` must be specified.
+
 _Required_: No
 
 _Type_: String
@@ -99,6 +113,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneId
+
+The DNS zone ID to add the record to.
 
 _Required_: Yes
 

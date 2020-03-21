@@ -1,6 +1,13 @@
 # Terraform::Google::ComputeRouterNat
 
-CloudFormation equivalent of google_compute_router_nat
+A NAT service created in a router.
+
+
+To get more information about RouterNat, see:
+
+* [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/routers)
+* How-to Guides
+    * [Google Cloud Router](https://cloud.google.com/router/docs/)
 
 ## Syntax
 
@@ -110,6 +117,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
 
 _Required_: No
 

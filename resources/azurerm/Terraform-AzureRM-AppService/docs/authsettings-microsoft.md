@@ -27,6 +27,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### ClientId
 
+The OAuth 2.0 client ID that was created for the app used for authentication.
+
 _Required_: Yes
 
 _Type_: String
@@ -34,6 +36,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClientSecret
+
+The OAuth 2.0 client secret that was created for the app used for authentication.
 
 _Required_: Yes
 

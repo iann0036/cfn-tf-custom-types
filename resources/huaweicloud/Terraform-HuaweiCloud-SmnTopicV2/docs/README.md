@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::SmnTopicV2
 
-CloudFormation equivalent of huaweicloud_smn_topic_v2
+Manages a V2 topic resource within HuaweiCloud.
 
 ## Syntax
 
@@ -39,6 +39,8 @@ Properties:
 
 #### CreateTime
 
+Time when the topic was created.
+
 _Required_: No
 
 _Type_: String
@@ -46,6 +48,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+Topic display name, which is presented as the
+name of the email sender in an email message.
 
 _Required_: No
 
@@ -55,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the topic to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -62,6 +69,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PushPolicy
+
+Message pushing policy. 0 indicates that the message
+sending fails and the message is cached in the queue. 1 indicates that the
+failed message is discarded.
 
 _Required_: No
 
@@ -71,6 +82,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TopicUrn
 
+Resource identifier of a topic, which is unique.
+
 _Required_: No
 
 _Type_: String
@@ -78,6 +91,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UpdateTime
+
+Time when the topic was updated.
 
 _Required_: No
 

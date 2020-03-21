@@ -1,6 +1,6 @@
 # Terraform::Gitlab::PipelineTrigger
 
-CloudFormation equivalent of gitlab_pipeline_trigger
+This resource allows you to create and manage pipeline triggers
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### Description
 
+The description of the pipeline trigger.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The name or id of the project to add the trigger to.
 
 _Required_: Yes
 

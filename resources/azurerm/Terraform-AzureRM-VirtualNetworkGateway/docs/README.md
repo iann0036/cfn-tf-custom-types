@@ -1,6 +1,8 @@
 # Terraform::AzureRM::VirtualNetworkGateway
 
-CloudFormation equivalent of azurerm_virtual_network_gateway
+Manages a Virtual Network Gateway to establish secure, cross-premises connectivity.
+
+-> **Note:** Please be aware that provisioning a Virtual Network Gateway takes a long time (between 30 minutes and 1 hour)
 
 ## Syntax
 
@@ -67,6 +69,11 @@ Properties:
 
 #### ActiveActive
 
+If `true`, an active-active Virtual Network Gateway
+will be created. An active-active gateway requires a `HighPerformance` or an
+`UltraPerformance` sku. If `false`, an active-standby gateway will be created.
+Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -74,6 +81,12 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefaultLocalNetworkGatewayId
+
+The ID of the local network gateway
+through which outbound Internet traffic from the virtual network in which the
+gateway is created will be routed (*forced tunneling*). Refer to the
+[Azure documentation on forced tunneling](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-forced-tunneling-rm).
+If not specified, forced tunneling is disabled.
 
 _Required_: No
 
@@ -83,6 +96,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableBgp
 
+If `true`, BGP (Border Gateway Protocol) will be enabled
+for this Virtual Network Gateway. Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -90,6 +106,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Generation
+
+The Generation of the Virtual Network gateway. Possible values include `Generation1`, `Generation2` or `None`.
 
 _Required_: No
 
@@ -99,6 +117,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Location
 
+The location/region where the Virtual Network Gateway is
+located. Changing the location/region forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -106,6 +127,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the Virtual Network Gateway. Changing the name
+forces a new resource to be created.
 
 _Required_: Yes
 
@@ -115,6 +139,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to
+create the Virtual Network Gateway. Changing the resource group name forces
+a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -122,6 +150,14 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Sku
+
+Configuration of the size and capacity of the virtual network
+gateway. Valid options are `Basic`, `Standard`, `HighPerformance`, `UltraPerformance`,
+`ErGw1AZ`, `ErGw2AZ`, `ErGw3AZ`, `VpnGw1`, `VpnGw2`, `VpnGw3`, `VpnGw4`,`VpnGw5`, `VpnGw1AZ`,
+`VpnGw2AZ`, `VpnGw3AZ`,`VpnGw4AZ` and `VpnGw5AZ` and depend on the `type`, `vpn_type` and
+`generation` arguments.
+A `PolicyBased` gateway only supports the `Basic` sku. Further, the `UltraPerformance`
+sku is only supported by an `ExpressRoute` gateway.
 
 _Required_: Yes
 
@@ -131,6 +167,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -139,6 +177,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Type
 
+The type of the Virtual Network Gateway. Valid options are
+`Vpn` or `ExpressRoute`. Changing the type forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -146,6 +187,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpnType
+
+The routing type of the Virtual Network Gateway. Valid
+options are `RouteBased` or `PolicyBased`. Defaults to `RouteBased`.
 
 _Required_: No
 

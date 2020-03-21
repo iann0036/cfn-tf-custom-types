@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::DbAccount",
-    "description": "CloudFormation equivalent of alicloud_db_account",
+    "description": "Provides an RDS account resource and used to manage databases.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Database description. It cannot begin with https://. It must start with a Chinese character or English letter. It can include Chinese and English characters, underlines (_), hyphens (-), and numbers. The length may be 2-256 characters."
         },
         "InstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Id of instance in which account belongs."
         },
         "KmsEncryptedPassword": {
-            "type": "string"
+            "type": "string",
+            "description": "An KMS encrypts password used to a db account. If the `password` is filled in, this field will be ignored."
         },
         "KmsEncryptionContext": {
             "type": "array",
@@ -35,16 +38,20 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "An KMS encryption context used to decrypt `kms_encrypted_password` before creating or updating a db account with `kms_encrypted_password`. See [Encryption Context](https://www.alibabacloud.com/help/doc-detail/42975.htm). It is valid when `kms_encrypted_password` is set."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Operation account requiring a uniqueness check. It may consist of lower case letters, numbers, and underlines, and must start with a letter and have no more than 16 characters."
         },
         "Password": {
-            "type": "string"
+            "type": "string",
+            "description": "Operation password. It may consist of letters, digits, or underlines, with a length of 6 to 32 characters. You have to specify one of `password` and `kms_encrypted_password` fields."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "Privilege type of account.\n- Normal: Common privilege.\n- Super: High privilege."
         }
     },
     "additionalProperties": false,

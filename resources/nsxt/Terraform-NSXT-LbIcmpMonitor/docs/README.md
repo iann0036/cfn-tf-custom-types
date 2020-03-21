@@ -1,6 +1,8 @@
 # Terraform::NSXT::LbIcmpMonitor
 
-CloudFormation equivalent of nsxt_lb_icmp_monitor
+Provides a resource to configure lb icmp monitor on NSX-T manager
+
+~> **NOTE:** This resource requires NSX version 2.3 or higher.
 
 ## Syntax
 
@@ -46,6 +48,8 @@ Properties:
 
 #### DataLength
 
+The data size (in bytes) of the ICMP healthcheck packet.
+
 _Required_: No
 
 _Type_: Double
@@ -53,6 +57,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Description of this resource.
 
 _Required_: No
 
@@ -62,6 +68,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+The display name of this resource. Defaults to ID if not set.
+
 _Required_: No
 
 _Type_: String
@@ -69,6 +77,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FallCount
+
+Number of consecutive checks must fail before marking it down.
 
 _Required_: No
 
@@ -78,6 +88,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Interval
 
+The frequency at which the system issues the monitor check (in seconds).
+
 _Required_: No
 
 _Type_: Double
@@ -85,6 +97,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MonitorPort
+
+If the monitor port is specified, it would override pool member port setting for healthcheck. Port range is not supported.
 
 _Required_: No
 
@@ -94,6 +108,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RiseCount
 
+Number of consecutive checks must pass before marking it up.
+
 _Required_: No
 
 _Type_: Double
@@ -101,6 +117,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Timeout
+
+Number of seconds the target has in which to respond to the monitor request.
 
 _Required_: No
 

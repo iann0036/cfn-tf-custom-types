@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::TcaplusIdl",
-    "description": "CloudFormation equivalent of tencentcloud_tcaplus_idl",
+    "description": "Use this resource to create tcaplus idl file",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,19 +9,24 @@
             "type": "string"
         },
         "AppId": {
-            "type": "string"
+            "type": "string",
+            "description": "Application id of the idl belongs.."
         },
         "FileContent": {
-            "type": "string"
+            "type": "string",
+            "description": "Idl file content."
         },
         "FileExtType": {
-            "type": "string"
+            "type": "string",
+            "description": "File ext type of this idl file. if `file_type` is PROTO  `file_ext_type` must be 'proto',if `file_type` is TDR  `file_ext_type` must be 'xml',if `file_type` is MIX  `file_ext_type` must be 'xml' or 'proto'."
         },
         "FileName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of this idl file."
         },
         "FileType": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of this idl file, Valid values are PROTO,TDR,MIX."
         },
         "TableInfos": {
             "type": "array",

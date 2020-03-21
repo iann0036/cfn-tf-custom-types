@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::PanoramaBgp",
-    "description": "CloudFormation equivalent of panos_panorama_bgp",
+    "description": "This resource allows you to add/update/delete a Panorama virtual\nrouter BGP configuration.\n\n**Important Note:**  When it comes to BGP configuration, PAN-OS requires that\nBGP itself first be configured before you can add other BGP sub-config, such\nas dampening profiles or peer groups.  Since every BGP resource must reference a\nvirtual router, the key to accomplishing this is by pointing the `virtual_router`\nparam for each BGP sub-config to `panos_panorama_bgp.foo.virtual_router` instead\nof `panos_panorama_virtual_router.bar.name`.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,73 +9,96 @@
             "type": "string"
         },
         "AggregateMed": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Aggregate route only if they have\nsame MED attributes (default: `true`)."
         },
         "AllowRedistributeDefaultRoute": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Allow redistribute\ndefault route to BGP."
         },
         "AlwaysCompareMed": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Always compare MEDs."
         },
         "AsFormat": {
-            "type": "string"
+            "type": "string",
+            "description": "AS format.  Valid values are `\"2-byte\"` (default)\nor `\"4-byte\"`."
         },
         "AsNumber": {
-            "type": "string"
+            "type": "string",
+            "description": "Local AS number."
         },
         "BfdProfile": {
-            "type": "string"
+            "type": "string",
+            "description": "BFD configuration."
         },
         "ConfederationMemberAs": {
-            "type": "string"
+            "type": "string",
+            "description": "Confederation requires\nmember-AS number."
         },
         "DefaultLocalPreference": {
-            "type": "string"
+            "type": "string",
+            "description": "Default local preference (default:\n`\"100\"`)."
         },
         "DeterministicMedComparison": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Deterministic MED\ncomparison (default: `true`)."
         },
         "EcmpMultiAs": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Support multiple AS in ECMP."
         },
         "Enable": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable BGP or not (default: `true`)."
         },
         "EnableGracefulRestart": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable graceful restart\n(default: `true`)."
         },
         "EnforceFirstAs": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enforce First AS for EBGP (default:\n`true`)."
         },
         "InstallRoute": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Populate BGP learned route to global\nroute table."
         },
         "LocalRestartTime": {
-            "type": "number"
+            "type": "number",
+            "description": "Local restart time to advertise to\npeer, in seconds (default: `120`)."
         },
         "MaxPeerRestartTime": {
-            "type": "number"
+            "type": "number",
+            "description": "Maximum of peer restart time\naccepted, in seconds (default: `120`)."
         },
         "ReflectorClusterId": {
-            "type": "string"
+            "type": "string",
+            "description": "Route reflector cluster ID."
         },
         "RejectDefaultRoute": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Do not learn default route from\nBGP (default: `true`)."
         },
         "RouterId": {
-            "type": "string"
+            "type": "string",
+            "description": "Router ID of this BGP instance."
         },
         "StaleRouteTime": {
-            "type": "number"
+            "type": "number",
+            "description": "Time to remove stale routes after\npeer restart, in seconds (default: `120`)."
         },
         "Template": {
-            "type": "string"
+            "type": "string",
+            "description": "The template name."
         },
         "TemplateStack": {
-            "type": "string"
+            "type": "string",
+            "description": "The template stack name."
         },
         "VirtualRouter": {
-            "type": "string"
+            "type": "string",
+            "description": "The virtual router to add this BGP\nconfiguration to."
         }
     },
     "additionalProperties": false,

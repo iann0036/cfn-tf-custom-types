@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::SiteRecoveryReplicationPolicy",
-    "description": "CloudFormation equivalent of azurerm_site_recovery_replication_policy",
+    "description": "Manages a Azure Site Recovery replication policy within a recovery vault. Replication policies define the frequency at which recovery points are created and how long they are stored.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,19 +29,24 @@
             "type": "string"
         },
         "ApplicationConsistentSnapshotFrequencyInMinutes": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the frequency(in minutes) at which to create application consistent recovery points."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the network mapping."
         },
         "RecoveryPointRetentionInMinutes": {
-            "type": "number"
+            "type": "number",
+            "description": "The duration in minutes for which the recovery points need to be stored."
         },
         "RecoveryVaultName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the vault that should be updated."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the resource group where the vault that should be updated is located."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

@@ -28,6 +28,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Enabled
 
+Whether node auto-provisioning is enabled. Resource
+limits for `cpu` and `memory` must be defined to enable node auto-provisioning.
+
 _Required_: Yes
 
 _Type_: Boolean

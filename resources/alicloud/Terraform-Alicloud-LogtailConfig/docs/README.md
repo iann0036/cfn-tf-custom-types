@@ -1,6 +1,9 @@
 # Terraform::Alicloud::LogtailConfig
 
-CloudFormation equivalent of alicloud_logtail_config
+The Logtail access service is a log collection agent provided by Log Service. 
+You can use Logtail to collect logs from servers such as Alibaba Cloud Elastic
+Compute Service (ECS) instances in real time in the Log Service console. [Refer to details](https://www.alibabacloud.com/help/doc-detail/29058.htm
+)
 
 ## Syntax
 
@@ -41,6 +44,8 @@ Properties:
 
 #### InputDetail
 
+The logtail configure the required JSON files. ([Refer to details](https://www.alibabacloud.com/help/doc-detail/29058.htm)).
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InputType
+
+The input type. Currently only two types of files and plugin are supported.
 
 _Required_: Yes
 
@@ -57,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LogSample
 
+（Optional）The log sample of the Logtail configuration. The log size cannot exceed 1,000 bytes.
+
 _Required_: No
 
 _Type_: String
@@ -64,6 +73,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Logstore
+
+The log store name to the query index belongs.
 
 _Required_: Yes
 
@@ -73,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The Logtail configuration name, which is unique in the same project.
+
 _Required_: Yes
 
 _Type_: String
@@ -81,6 +94,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OutputType
 
+The output type. Currently, only LogService is supported.
+
 _Required_: Yes
 
 _Type_: String
@@ -88,6 +103,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The project name to the log store belongs.
 
 _Required_: Yes
 

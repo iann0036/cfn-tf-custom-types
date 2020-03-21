@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::NatSnatRuleV2
 
-CloudFormation equivalent of opentelekomcloud_nat_snat_rule_v2
+Manages a V2 snat rule resource within OpenTelekomCloud Nat
 
 ## Syntax
 
@@ -41,6 +41,12 @@ Properties:
 
 #### Cidr
 
+Specifies CIDR, which can be in the format of a network segment or
+a host IP address. This parameter and network_id are alternative. If the value of
+source_type is 0, the CIDR block must be a subset of the VPC subnet CIDR block. If
+the value of source_type is 1, the CIDR block must be a CIDR block of Direct Connect
+and cannot conflict with the VPC CIDR blocks. Changing this creates a new snat rule.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +54,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FloatingIpId
+
+ID of the floating ip this snat rule connets to.
+Changing this creates a new snat rule.
 
 _Required_: Yes
 
@@ -57,6 +66,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NatGatewayId
 
+ID of the nat gateway this snat rule belongs to.
+Changing this creates a new snat rule.
+
 _Required_: Yes
 
 _Type_: String
@@ -64,6 +76,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NetworkId
+
+ID of the network this snat rule connects to. This parameter
+and cidr are alternative. Changing this creates a new snat rule.
 
 _Required_: No
 
@@ -80,6 +95,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SourceType
+
+0: Either network_id or cidr can be specified in a VPC. 1:
+Only cidr can be specified over a dedicated network. Changing this creates a new snat rule.
 
 _Required_: No
 

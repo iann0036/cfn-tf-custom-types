@@ -1,6 +1,17 @@
 # Terraform::VCD::LbServiceMonitor
 
-CloudFormation equivalent of vcd_lb_service_monitor
+Provides a vCloud Director Edge Gateway Load Balancer Service Monitor resource. A service monitor 
+defines health check parameters for a particular type of network traffic. It can be associated with
+a pool. Pool members are monitored according to the service monitor parameters. 
+
+~> **Note:** To make load balancing work one must ensure that load balancing is enabled on edge gateway (edge gateway must be advanced).
+This depends on NSX version to work properly. Please refer to [VMware Product Interoperability Matrices](https://www.vmware.com/resources/compatibility/sim/interop_matrix.php#interop&29=&93=) 
+to check supported vCloud director and NSX for vSphere configurations.
+
+~> **Note:** The vCloud Director API for NSX supports a subset of the operations and objects defined in the NSX vSphere 
+API Guide. The API supports NSX 6.2, 6.3, and 6.4.
+
+Supported in provider *v2.4+*
 
 ## Syntax
 
@@ -56,6 +67,8 @@ Properties:
 
 #### EdgeGateway
 
+The name of the edge gateway on which the service monitor is to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -63,6 +76,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Expected
+
+For types `http` and `https`. String that the monitor expects to match in the status line of
+the HTTP or HTTPS response (for example, `HTTP/1.1`).
 
 _Required_: No
 
@@ -72,6 +88,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Extension
 
+A map of advanced monitor parameters as key=value pairs (i.e. `max-age=SECONDS`, `invert-regex`)
+**Note**: When you need a value of `key` only format just set value to empty string (i.e. `linespan = ""`).
+
 _Required_: No
 
 _Type_: List of <a href="extension.md">Extension</a>
@@ -79,6 +98,9 @@ _Type_: List of <a href="extension.md">Extension</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Interval
+
+Interval in seconds at which a server is to be monitored using the specified Method.
+Defaults to 10.
 
 _Required_: No
 
@@ -88,6 +110,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxRetries
 
+Number of times the specified monitoring Method must fail sequentially before the server is
+declared down. Defaults to 3.
+
 _Required_: No
 
 _Type_: Double
@@ -95,6 +120,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Method
+
+For types `http` and `https`. Select http method to be used to detect server status. One of
+OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, or CONNECT.
 
 _Required_: No
 
@@ -104,6 +132,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Service Monitor name.
+
 _Required_: Yes
 
 _Type_: String
@@ -111,6 +141,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Org
+
+The name of organization to use, optional if defined at provider level. Useful when connected as sysadmin working across different organisations.
 
 _Required_: No
 
@@ -120,6 +152,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Receive
 
+For types `http`,  `https`, and `udp`. The string to be matched in the response content.
+**Note**: When `expected` is not matched, the monitor does not try to match the Receive content.
+
 _Required_: No
 
 _Type_: String
@@ -127,6 +162,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Send
+
+For types `http`,  `https`, and `udp`. The data to be sent.
 
 _Required_: No
 
@@ -136,6 +173,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Timeout
 
+Maximum time in seconds within which a response from the server must be received. Defaults to 15.
+
 _Required_: No
 
 _Type_: Double
@@ -143,6 +182,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+Select the way in which you want to send the health check request to the server — `http`, `https`,
+`tcp`, `icmp`, or `udp`. Depending on the type selected, the remaining attributes are allowed or not.
 
 _Required_: Yes
 
@@ -152,6 +194,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Url
 
+For types `http` and `https`. URL to be used in the server status request.
+
 _Required_: No
 
 _Type_: String
@@ -159,6 +203,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vdc
+
+The name of VDC to use, optional if defined at provider level.
 
 _Required_: No
 

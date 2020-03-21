@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::FlexibleEngine::LbMonitorV2",
-    "description": "CloudFormation equivalent of flexibleengine_lb_monitor_v2",
+    "description": "Manages a V2 monitor resource within FlexibleEngine.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,43 +26,56 @@
             "type": "string"
         },
         "AdminStateUp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "The administrative state of the monitor.\nA valid value is true (UP) or false (DOWN)."
         },
         "Delay": {
-            "type": "number"
+            "type": "number",
+            "description": "The time, in seconds, between sending probes to members."
         },
         "ExpectedCodes": {
-            "type": "string"
+            "type": "string",
+            "description": "Required for HTTP(S) types. Expected HTTP codes\nfor a passing HTTP(S) monitor. You can either specify a single status like\n\"200\", or a range like \"200-202\"."
         },
         "HttpMethod": {
-            "type": "string"
+            "type": "string",
+            "description": "Required for HTTP(S) types. The HTTP method used\nfor requests by the monitor. If this attribute is not specified, it\ndefaults to \"GET\"."
         },
         "MaxRetries": {
-            "type": "number"
+            "type": "number",
+            "description": "Number of permissible ping failures before\nchanging the member's status to INACTIVE. Must be a number between 1\nand 10.."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The Name of the Monitor."
         },
         "PoolId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the pool that this monitor will be assigned to."
         },
         "Port": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the health check port. The value ranges from 1 to 65536."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the V2 Networking client.\nA Networking client is needed to create an . If omitted, the\n`region` argument of the provider is used. Changing this creates a new\nmonitor."
         },
         "TenantId": {
-            "type": "string"
+            "type": "string",
+            "description": "Required for admins. The UUID of the tenant who owns\nthe monitor.  Only administrative users can specify a tenant UUID\nother than their own. Changing this creates a new monitor."
         },
         "Timeout": {
-            "type": "number"
+            "type": "number",
+            "description": "Maximum number of seconds for a monitor to wait for a\nping reply before it times out. The value must be less than the delay\nvalue."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of probe, which is PING, TCP, HTTP, or HTTPS,\nthat is sent by the load balancer to verify the member state. Changing this\ncreates a new monitor."
         },
         "UrlPath": {
-            "type": "string"
+            "type": "string",
+            "description": "Required for HTTP(S) types. URI path that will be\naccessed if monitor type is HTTP or HTTPS."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

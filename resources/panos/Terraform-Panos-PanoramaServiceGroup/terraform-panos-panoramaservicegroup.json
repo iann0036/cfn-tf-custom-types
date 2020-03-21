@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::PanoramaServiceGroup",
-    "description": "CloudFormation equivalent of panos_panorama_service_group",
+    "description": "This resource allows you to add/update/delete Panorama service groups.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,24 +9,28 @@
             "type": "string"
         },
         "DeviceGroup": {
-            "type": "string"
+            "type": "string",
+            "description": "The device group to put the service group into\n(default: `shared`)."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The service group's name."
         },
         "Services": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of services to put in this service group."
         },
         "Tags": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of administrative tags."
         }
     },
     "additionalProperties": false,

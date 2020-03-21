@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OVH::DomainZoneRecord",
-    "description": "CloudFormation equivalent of ovh_domain_zone_record",
+    "description": "Provides a OVH domain zone record.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,19 +9,24 @@
             "type": "string"
         },
         "Fieldtype": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of the record."
         },
         "Subdomain": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the record."
         },
         "Target": {
-            "type": "string"
+            "type": "string",
+            "description": "The value of the record."
         },
         "Ttl": {
-            "type": "number"
+            "type": "number",
+            "description": "The TTL of the record."
         },
         "Zone": {
-            "type": "string"
+            "type": "string",
+            "description": "The domain to add the record to."
         }
     },
     "additionalProperties": false,

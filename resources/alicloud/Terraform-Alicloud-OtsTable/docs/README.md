@@ -1,6 +1,9 @@
 # Terraform::Alicloud::OtsTable
 
-CloudFormation equivalent of alicloud_ots_table
+Provides an OTS table resource.
+
+-> **NOTE:** From Provider version 1.10.0, the provider field 'ots_instance_name' has been deprecated and
+you should use resource alicloud_ots_table's new field 'instance_name' and 'table_name' to re-import this resource.
 
 ## Syntax
 
@@ -40,6 +43,8 @@ Properties:
 
 #### DeviationCellVersionInSec
 
+The max version offset of the table. The valid value is 1-9223372036854775807. Defaults to 86400.
+
 _Required_: No
 
 _Type_: String
@@ -47,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceName
+
+The name of the OTS instance in which table will located.
 
 _Required_: Yes
 
@@ -56,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxVersion
 
+The maximum number of versions stored in this table. The valid value is 1-2147483647.
+
 _Required_: Yes
 
 _Type_: Double
@@ -64,6 +73,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TableName
 
+The table name of the OTS instance. If changed, a new table would be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -71,6 +82,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TimeToLive
+
+The retention time of data stored in this table (unit: second). The value maximum is 2147483647 and -1 means never expired.
 
 _Required_: Yes
 

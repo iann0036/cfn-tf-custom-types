@@ -25,6 +25,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### X509StoreName
 
+The X509 Store where the Certificate Exists, such as `My`.
+
 _Required_: Yes
 
 _Type_: String

@@ -1,6 +1,8 @@
 # Terraform::Docker::Network
 
-CloudFormation equivalent of docker_network
+Manages a Docker Network. This can be used alongside
+[docker\_container](/docs/providers/docker/r/container.html)
+to create virtual networks within the docker environment.
 
 ## Syntax
 
@@ -52,6 +54,9 @@ Properties:
 
 #### Attachable
 
+Enable manual container attachment to the network.
+Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -59,6 +64,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CheckDuplicate
+
+Requests daemon to check for networks
+with same name.
 
 _Required_: No
 
@@ -68,6 +76,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Driver
 
+Name of the network driver to use. Defaults to
+`bridge` driver.
+
 _Required_: No
 
 _Type_: String
@@ -75,6 +86,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ingress
+
+Create swarm routing-mesh network.
+Defaults to `false`.
 
 _Required_: No
 
@@ -84,6 +98,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Internal
 
+Restrict external access to the network.
+Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -91,6 +108,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IpamDriver
+
+Driver used by the custom IP scheme of the
+network.
 
 _Required_: No
 
@@ -100,6 +120,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ipv6
 
+Enable IPv6 networking.
+Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -108,6 +131,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the Docker network.
+
 _Required_: Yes
 
 _Type_: String
@@ -115,6 +140,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Options
+
+Network specific options to be used by
+the drivers.
 
 _Required_: No
 

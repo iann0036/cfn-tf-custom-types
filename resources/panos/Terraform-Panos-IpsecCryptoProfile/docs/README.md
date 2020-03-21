@@ -1,6 +1,6 @@
 # Terraform::Panos::IpsecCryptoProfile
 
-CloudFormation equivalent of panos_ipsec_crypto_profile
+This resource allows you to add/update/delete IPSec crypto profiles.
 
 ## Syntax
 
@@ -47,6 +47,8 @@ Properties:
 
 #### Authentications
 
+- List of authentication types.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -54,6 +56,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DhGroup
+
+The DH group value.  Valid values should start with
+the string `group`.
 
 _Required_: No
 
@@ -63,6 +68,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Encryptions
 
+- List of encryption types.  Valid values
+are `des`, `3des`, `aes-128-cbc`, `aes-192-cbc`, `aes-256-cbc`, `aes-128-gcm`,
+`aes-256-gcm`, and `null`.  Note that the "gcm" values are only available in
+PAN-OS 7.0+.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -70,6 +80,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LifesizeType
+
+The lifesize type.  Valid values are `kb`, `mb`,
+`gb`, or `tb`.
 
 _Required_: No
 
@@ -79,6 +92,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LifesizeValue
 
+the lifesize value.
+
 _Required_: No
 
 _Type_: Double
@@ -86,6 +101,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LifetimeType
+
+The lifetime type.  Valid values are `seconds`,
+`minutes`, `hours` (the default), or `days`.
 
 _Required_: No
 
@@ -95,6 +113,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LifetimeValue
 
+The lifetime value.
+
 _Required_: No
 
 _Type_: Double
@@ -103,6 +123,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The object's name.
+
 _Required_: Yes
 
 _Type_: String
@@ -110,6 +132,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Protocol
+
+The protocol.  Valid values are `esp` (the default)
+or `ah`.
 
 _Required_: No
 

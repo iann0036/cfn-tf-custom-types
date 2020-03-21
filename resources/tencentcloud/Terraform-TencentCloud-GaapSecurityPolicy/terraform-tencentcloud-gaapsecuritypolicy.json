@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::GaapSecurityPolicy",
-    "description": "CloudFormation equivalent of tencentcloud_gaap_security_policy",
+    "description": "Provides a resource to create a security policy of GAAP proxy.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "Action": {
-            "type": "string"
+            "type": "string",
+            "description": "Default policy, the available values include `ACCEPT` and `DROP`."
         },
         "Enable": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether policy is enable, default value is `true`."
         },
         "ProxyId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the GAAP proxy."
         }
     },
     "additionalProperties": false,

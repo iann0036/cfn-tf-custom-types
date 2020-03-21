@@ -1,6 +1,13 @@
 # Terraform::Alicloud::EipAssociation
 
-CloudFormation equivalent of alicloud_eip_association
+Provides an Alicloud EIP Association resource for associating Elastic IP to ECS Instance, SLB Instance or Nat Gateway.
+
+-> **NOTE:** `alicloud_eip_association` is useful in scenarios where EIPs are either
+ pre-existing or distributed to customers or users and therefore cannot be changed.
+
+-> **NOTE:** From version 1.7.1, the resource support to associate EIP to SLB Instance or Nat Gateway.
+
+-> **NOTE:** One EIP can only be associated with ECS or SLB instance which in the VPC.
 
 ## Syntax
 
@@ -35,6 +42,8 @@ Properties:
 
 #### AllocationId
 
+The allocation EIP ID.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +51,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceId
+
+The ID of the ECS or SLB instance or Nat Gateway.
 
 _Required_: Yes
 
@@ -51,6 +62,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceType
 
+The type of cloud product that the eip instance to bind.
+
 _Required_: No
 
 _Type_: String
@@ -58,6 +71,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PrivateIpAddress
+
+The private IP address in the network segment of the vswitch which has been assigned.
 
 _Required_: No
 

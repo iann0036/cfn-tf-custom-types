@@ -1,6 +1,6 @@
 # Terraform::RabbitMQ::Queue
 
-CloudFormation equivalent of rabbitmq_queue
+The ``rabbitmq_queue`` resource creates and manages a queue.
 
 ## Syntax
 
@@ -34,6 +34,8 @@ Properties:
 
 #### Name
 
+The name of the queue.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vhost
+
+The vhost to create the resource in.
 
 _Required_: No
 

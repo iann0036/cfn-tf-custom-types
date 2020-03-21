@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Storm
 
+The version of Storm which should be used for this HDInsight Storm Cluster. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String

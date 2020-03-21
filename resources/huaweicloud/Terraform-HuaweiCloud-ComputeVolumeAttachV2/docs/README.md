@@ -1,6 +1,7 @@
 # Terraform::HuaweiCloud::ComputeVolumeAttachV2
 
-CloudFormation equivalent of huaweicloud_compute_volume_attach_v2
+Attaches a Block Storage Volume to an Instance using the HuaweiCloud
+Compute (Nova) v2 API.
 
 ## Syntax
 
@@ -37,6 +38,13 @@ Properties:
 
 #### Device
 
+The device of the volume attachment (ex: `/dev/vdc`).
+_NOTE_: Being able to specify a device is dependent upon the hypervisor in
+use. There is a chance that the device specified in Terraform will not be
+the same device the hypervisor chose. If this happens, Terraform will wish
+to update the device upon subsequent applying which will cause the volume
+to be detached and reattached indefinitely. Please use with caution.
+
 _Required_: No
 
 _Type_: String
@@ -44,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceId
+
+The ID of the Instance to attach the Volume to.
 
 _Required_: Yes
 
@@ -53,6 +63,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region in which to obtain the V2 Compute client.
+A Compute client is needed to create a volume attachment. If omitted, the
+`region` argument of the provider is used. Changing this creates a
+new volume attachment.
+
 _Required_: No
 
 _Type_: String
@@ -60,6 +75,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VolumeId
+
+The ID of the Volume to attach to an Instance.
 
 _Required_: Yes
 

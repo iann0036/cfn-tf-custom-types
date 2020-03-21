@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::KubernetesScaleWorker
 
-CloudFormation equivalent of tencentcloud_kubernetes_scale_worker
+Provide a resource to increase instance to cluster
 
 ## Syntax
 
@@ -34,6 +34,8 @@ Properties:
 ## Properties
 
 #### ClusterId
+
+ID of the cluster.
 
 _Required_: Yes
 

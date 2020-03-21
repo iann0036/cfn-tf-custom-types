@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::DNSimple::Record",
-    "description": "CloudFormation equivalent of dnsimple_record",
+    "description": "Provides a DNSimple record resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "Domain": {
-            "type": "string"
+            "type": "string",
+            "description": "The domain to add the record to."
         },
         "DomainId": {
             "type": "string"
@@ -18,19 +19,24 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the record."
         },
         "Priority": {
-            "type": "string"
+            "type": "string",
+            "description": "The priority of the record - only useful for some record types."
         },
         "Ttl": {
-            "type": "string"
+            "type": "string",
+            "description": "The TTL of the record."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of the record."
         },
         "Value": {
-            "type": "string"
+            "type": "string",
+            "description": "The value of the record."
         }
     },
     "additionalProperties": false,

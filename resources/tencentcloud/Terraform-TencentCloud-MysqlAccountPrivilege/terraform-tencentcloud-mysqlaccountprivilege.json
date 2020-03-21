@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::MysqlAccountPrivilege",
-    "description": "CloudFormation equivalent of tencentcloud_mysql_account_privilege",
+    "description": "Provides a mysql account privilege resource to grant different access privilege to different database. A database can be granted by multiple account.\n\n~> **NOTE:** It has been deprecated and replaced by  tencentcloud_mysql_privilege.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,24 +9,28 @@
             "type": "string"
         },
         "AccountName": {
-            "type": "string"
+            "type": "string",
+            "description": "Account name."
         },
         "DatabaseNames": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of specified database name."
         },
         "MysqlId": {
-            "type": "string"
+            "type": "string",
+            "description": "Instance ID."
         },
         "Privileges": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Database permissions. Available values for Privileges: \"SELECT\", \"INSERT\", \"UPDATE\", \"DELETE\", \"CREATE\", \"DROP\", \"REFERENCES\", \"INDEX\", \"ALTER\", \"CREATE TEMPORARY TABLES\", \"LOCK TABLES\",\"EXECUTE\", \"CREATE VIEW\", \"SHOW VIEW\", \"CREATE ROUTINE\", \"ALTER ROUTINE\", \"EVENT\", and \"TRIGGER\"."
         }
     },
     "additionalProperties": false,

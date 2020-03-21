@@ -1,6 +1,6 @@
 # Terraform::PowerDNS::Record
 
-CloudFormation equivalent of powerdns_record
+Provides a PowerDNS record resource.
 
 ## Syntax
 
@@ -40,6 +40,8 @@ Properties:
 
 #### Name
 
+The name of the record.
+
 _Required_: Yes
 
 _Type_: String
@@ -47,6 +49,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Records
+
+A string list of records.
 
 _Required_: Yes
 
@@ -56,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SetPtr
 
+[**_Deprecated in PowerDNS 4.3.0_**] A boolean (true/false), determining whether API server should automatically create PTR record in the matching reverse zone. Existing PTR records are replaced. If no matching reverse zone, an error is thrown.
+
 _Required_: No
 
 _Type_: Boolean
@@ -63,6 +69,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ttl
+
+The TTL of the record.
 
 _Required_: Yes
 
@@ -72,6 +80,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Type
 
+The record type.
+
 _Required_: Yes
 
 _Type_: String
@@ -79,6 +89,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Zone
+
+The name of zone to contain this record.
 
 _Required_: Yes
 

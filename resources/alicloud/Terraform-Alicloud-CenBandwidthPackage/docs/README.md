@@ -1,6 +1,8 @@
 # Terraform::Alicloud::CenBandwidthPackage
 
-CloudFormation equivalent of alicloud_cen_bandwidth_package
+Provides a CEN bandwidth package resource. The CEN bandwidth package is an abstracted object that includes an interconnection bandwidth and interconnection areas. To buy a bandwidth package, you must specify the areas to connect. An area consists of one or more Alibaba Cloud regions. The areas in CEN include Mainland China, Asia Pacific, North America, and Europe.
+
+For information about CEN and how to use it, see [Manage bandwidth packages](https://www.alibabacloud.com/help/doc-detail/65982.htm).
 
 ## Syntax
 
@@ -40,6 +42,8 @@ Properties:
 
 #### Bandwidth
 
+The bandwidth in Mbps of the bandwidth package. Cannot be less than 2Mbps.
+
 _Required_: Yes
 
 _Type_: Double
@@ -47,6 +51,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ChargeType
+
+The billing method. Valid value: PostPaid | PrePaid. Default to PostPaid. If set to PrePaid, the bandwidth package can't be deleted before expired time.
 
 _Required_: No
 
@@ -56,6 +62,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+The description of the bandwidth package. Default to null.
+
 _Required_: No
 
 _Type_: String
@@ -63,6 +71,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GeographicRegionIds
+
+List of the two areas to connect. Valid value: China | North-America | Asia-Pacific | Europe | Middle-East.
 
 _Required_: Yes
 
@@ -72,6 +82,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the bandwidth package. Defaults to null.
+
 _Required_: No
 
 _Type_: String
@@ -79,6 +91,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Period
+
+The purchase period in month. Valid value: 1, 2, 3, 6, 12. Default to 1.
 
 _Required_: No
 

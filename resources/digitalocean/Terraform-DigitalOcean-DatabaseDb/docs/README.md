@@ -1,6 +1,6 @@
 # Terraform::DigitalOcean::DatabaseDb
 
-CloudFormation equivalent of digitalocean_database_db
+Provides a DigitalOcean database resource. When creating a new database cluster, a default database with name `defaultdb` will be created. Then, this resource can be used to provide additional database inside the cluster.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### ClusterId
 
+The ID of the original source database cluster.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name for the database.
 
 _Required_: Yes
 

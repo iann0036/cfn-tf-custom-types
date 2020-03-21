@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::CloudtableClusterV2
 
-CloudFormation equivalent of huaweicloud_cloudtable_cluster_v2
+cloud table cluster management
 
 ## Syntax
 

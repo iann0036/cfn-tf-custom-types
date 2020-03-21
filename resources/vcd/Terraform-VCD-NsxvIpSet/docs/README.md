@@ -1,6 +1,10 @@
 # Terraform::VCD::NsxvIpSet
 
-CloudFormation equivalent of vcd_nsxv_ip_set
+Provides a vCloud Director IP set resource. An IP set is a group of IP addresses that you can add as
+  the source or destination in a firewall rule or in DHCP relay configuration.
+
+
+Supported in provider *v2.6+*
 
 ## Syntax
 
@@ -40,6 +44,8 @@ Properties:
 
 #### Description
 
+An optional description for IP set.
+
 _Required_: No
 
 _Type_: String
@@ -47,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IpAddresses
+
+A set of IP addresses, CIDRs and ranges as strings.
 
 _Required_: Yes
 
@@ -64,6 +72,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Unique IP set name.
+
 _Required_: Yes
 
 _Type_: String
@@ -72,6 +82,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Org
 
+The name of organization to use, optional if defined at provider level. Useful when connected as sysadmin working across different organisations.
+
 _Required_: No
 
 _Type_: String
@@ -79,6 +91,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vdc
+
+The name of VDC to use, optional if defined at provider level.
 
 _Required_: No
 

@@ -1,6 +1,8 @@
 # Terraform::RunScope::Bucket
 
-CloudFormation equivalent of runscope_bucket
+A [bucket](https://www.runscope.com/docs/api/buckets) resource.
+[Buckets](https://www.runscope.com/docs/buckets) are a simple way to
+organize your requests and tests.
 
 ## Syntax
 
@@ -31,6 +33,8 @@ Properties:
 
 #### Name
 
+The name of this bucket.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +42,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TeamUuid
+
+Unique identifier for the team this bucket
+is being created for.
 
 _Required_: Yes
 

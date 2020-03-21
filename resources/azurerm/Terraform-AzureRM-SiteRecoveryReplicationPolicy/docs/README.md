@@ -1,6 +1,6 @@
 # Terraform::AzureRM::SiteRecoveryReplicationPolicy
 
-CloudFormation equivalent of azurerm_site_recovery_replication_policy
+Manages a Azure Site Recovery replication policy within a recovery vault. Replication policies define the frequency at which recovery points are created and how long they are stored.
 
 ## Syntax
 
@@ -39,6 +39,8 @@ Properties:
 
 #### ApplicationConsistentSnapshotFrequencyInMinutes
 
+Specifies the frequency(in minutes) at which to create application consistent recovery points.
+
 _Required_: Yes
 
 _Type_: Double
@@ -46,6 +48,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the network mapping.
 
 _Required_: Yes
 
@@ -55,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RecoveryPointRetentionInMinutes
 
+The duration in minutes for which the recovery points need to be stored.
+
 _Required_: Yes
 
 _Type_: Double
@@ -63,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RecoveryVaultName
 
+The name of the vault that should be updated.
+
 _Required_: Yes
 
 _Type_: String
@@ -70,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+Name of the resource group where the vault that should be updated is located.
 
 _Required_: Yes
 

@@ -1,6 +1,8 @@
 # Terraform::PostgreSQL::Grant
 
-CloudFormation equivalent of postgresql_grant
+The ``postgresql_grant`` resource creates and manages privileges given to a user for a database schema.
+
+~> **Note:** This resource needs Postgresql version 9 or above.
 
 ## Syntax
 
@@ -38,6 +40,8 @@ Properties:
 
 #### Database
 
+The database to grant privileges on for this role.
+
 _Required_: Yes
 
 _Type_: String
@@ -45,6 +49,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ObjectType
+
+The PostgreSQL object type to grant the privileges on (one of: table, sequence).
 
 _Required_: Yes
 
@@ -54,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Privileges
 
+The list of privileges to grant.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -62,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Role
 
+The name of the role to grant privileges on.
+
 _Required_: Yes
 
 _Type_: String
@@ -69,6 +79,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Schema
+
+The database schema to grant privileges on for this role.
 
 _Required_: Yes
 

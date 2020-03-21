@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Gitlab::Label",
-    "description": "CloudFormation equivalent of gitlab_label",
+    "description": "This resource allows you to create and manage labels for your GitLab projects.\nFor further information on labels, consult the [gitlab\ndocumentation](https://docs.gitlab.com/ee/user/project/labels.html#project-labels).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,20 @@
             "type": "string"
         },
         "Color": {
-            "type": "string"
+            "type": "string",
+            "description": "The color of the label given in 6-digit hex notation with leading '#' sign (e.g. #FFAABB) or one of the [CSS color names](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Color_keywords)."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the label."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the label."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or id of the project to add the label to."
         }
     },
     "additionalProperties": false,

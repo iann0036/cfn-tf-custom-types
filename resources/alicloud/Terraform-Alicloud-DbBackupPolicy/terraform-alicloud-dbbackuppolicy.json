@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::DbBackupPolicy",
-    "description": "CloudFormation equivalent of alicloud_db_backup_policy",
+    "description": "Provides an RDS instance backup policy resource and used to configure instance backup policy.\n\n-> **NOTE:** Each DB instance has a backup policy and it will be set default values when destroying the resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,69 +9,88 @@
             "type": "string"
         },
         "ArchiveBackupKeepCount": {
-            "type": "number"
+            "type": "number",
+            "description": "Instance archive backup keep count. Valid when the `enable_backup_log` is `true` and instance is mysql local disk. When `archive_backup_keep_policy` is `ByMonth` Valid values: [1-31]. When `archive_backup_keep_policy` is `ByWeek` Valid values: [1-7]."
         },
         "ArchiveBackupKeepPolicy": {
-            "type": "string"
+            "type": "string",
+            "description": "Instance archive backup keep policy. Valid when the `enable_backup_log` is `true` and instance is mysql local disk. Valid values are `ByMonth`, `Disable`, `KeepAll`."
         },
         "ArchiveBackupRetentionPeriod": {
-            "type": "number"
+            "type": "number",
+            "description": "Instance archive backup retention days. Valid when the `enable_backup_log` is `true` and instance is mysql local disk. Valid values: [30-1095], and `archive_backup_retention_period` must larger than `backup_retention_period` 730."
         },
         "BackupPeriod": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "It has been deprecated from version 1.69.0, and use field 'preferred_backup_period' instead."
         },
         "BackupRetentionPeriod": {
-            "type": "number"
+            "type": "number",
+            "description": "Instance backup retention days. Valid values: [7-730]. Default to 7. But mysql local disk is unlimited."
         },
         "BackupTime": {
-            "type": "string"
+            "type": "string",
+            "description": "It has been deprecated from version 1.69.0, and use field 'preferred_backup_time' instead."
         },
         "CompressType": {
-            "type": "string"
+            "type": "string",
+            "description": "The compress type of instance policy. Valid values are `1`, `4`, `8`."
         },
         "EnableBackupLog": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to backup instance log. Valid values are `true`, `false`, Default to `true`. Note: The 'Basic Edition' category Rds instance does not support setting log backup. [What is Basic Edition](https://www.alibabacloud.com/help/doc-detail/48980.htm)."
         },
         "HighSpaceUsageProtection": {
-            "type": "string"
+            "type": "string",
+            "description": "Instance high space usage protection policy. Valid when the `enable_backup_log` is `true`. Valid values are `Enable`, `Disable`."
         },
         "InstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Id of instance that can run database."
         },
         "LocalLogRetentionHours": {
-            "type": "number"
+            "type": "number",
+            "description": "Instance log backup local retention hours. Valid when the `enable_backup_log` is `true`. Valid values: [0-7*24]."
         },
         "LocalLogRetentionSpace": {
-            "type": "number"
+            "type": "number",
+            "description": "Instance log backup local retention space. Valid when the `enable_backup_log` is `true`. Valid values: [5-50]."
         },
         "LogBackup": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "It has been deprecated from version 1.68.0, and use field 'enable_backup_log' instead."
         },
         "LogBackupFrequency": {
-            "type": "string"
+            "type": "string",
+            "description": "Instance log backup frequency. Valid when the instance engine is `SQLServer`. Valid values are `LogInterval`."
         },
         "LogBackupRetentionPeriod": {
-            "type": "number"
+            "type": "number",
+            "description": "Instance log backup retention days. Valid when the `enable_backup_log` is `1`. Valid values: [7-730]. Default to 7. It cannot be larger than `backup_retention_period`."
         },
         "LogRetentionPeriod": {
-            "type": "number"
+            "type": "number",
+            "description": "It has been deprecated from version 1.69.0, and use field 'log_backup_retention_period' instead."
         },
         "PreferredBackupPeriod": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "DB Instance backup period. Please set at least two days to ensure backing up at least twice a week. Valid values: [Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday]. Default to [\"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\", \"Saturday\", \"Sunday\"]."
         },
         "PreferredBackupTime": {
-            "type": "string"
+            "type": "string",
+            "description": "DB instance backup time, in the format of HH:mmZ- HH:mmZ. Time setting interval is one hour. Default to \"02:00Z-03:00Z\". China time is 8 hours behind it."
         },
         "RetentionPeriod": {
-            "type": "number"
+            "type": "number",
+            "description": "It has been deprecated from version 1.69.0, and use field 'backup_retention_period' instead."
         }
     },
     "additionalProperties": false,

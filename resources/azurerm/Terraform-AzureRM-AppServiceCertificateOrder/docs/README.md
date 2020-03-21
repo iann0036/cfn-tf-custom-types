@@ -1,6 +1,6 @@
 # Terraform::AzureRM::AppServiceCertificateOrder
 
-CloudFormation equivalent of azurerm_app_service_certificate_order
+Manages an App Service Certificate Order.
 
 ## Syntax
 
@@ -50,6 +50,8 @@ Properties:
 
 #### AutoRenew
 
+true if the certificate should be automatically renewed when it expires; otherwise, false. Defaults to true.
+
 _Required_: No
 
 _Type_: Boolean
@@ -57,6 +59,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Csr
+
+Last CSR that was created for this order.
 
 _Required_: No
 
@@ -66,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DistinguishedName
 
+The Distinguished Name for the App Service Certificate Order.
+
 _Required_: No
 
 _Type_: String
@@ -73,6 +79,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeySize
+
+Certificate key size.  Defaults to 2048.
 
 _Required_: No
 
@@ -82,6 +90,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Location
 
+Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created. Currently the only valid value is `global`.
+
 _Required_: Yes
 
 _Type_: String
@@ -89,6 +99,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the certificate. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -98,6 +110,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProductType
 
+Certificate product type, such as `Standard` or `WildCard`.
+
 _Required_: No
 
 _Type_: String
@@ -105,6 +119,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which to create the certificate. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -121,6 +137,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ValidityInYears
+
+Duration in years (must be between `1` and `3`).  Defaults to `1`.
 
 _Required_: No
 

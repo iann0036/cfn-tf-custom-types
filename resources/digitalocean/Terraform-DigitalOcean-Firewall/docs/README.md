@@ -1,6 +1,7 @@
 # Terraform::DigitalOcean::Firewall
 
-CloudFormation equivalent of digitalocean_firewall
+Provides a DigitalOcean Cloud Firewall resource. This can be used to create,
+modify, and delete Firewalls.
 
 ## Syntax
 
@@ -48,6 +49,8 @@ _Type_: List of Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The Firewall name.
 
 _Required_: Yes
 

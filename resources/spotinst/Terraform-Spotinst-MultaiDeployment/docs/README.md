@@ -1,6 +1,6 @@
 # Terraform::Spotinst::MultaiDeployment
 
-CloudFormation equivalent of spotinst_multai_deployment
+Provides a Spotinst Multai Deployment.
 
 ## Syntax
 
@@ -28,6 +28,8 @@ Properties:
 ## Properties
 
 #### Name
+
+The deployment name.
 
 _Required_: Yes
 

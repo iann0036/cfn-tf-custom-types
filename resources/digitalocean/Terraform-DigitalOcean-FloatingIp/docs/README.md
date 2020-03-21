@@ -1,6 +1,8 @@
 # Terraform::DigitalOcean::FloatingIp
 
-CloudFormation equivalent of digitalocean_floating_ip
+Provides a DigitalOcean Floating IP to represent a publicly-accessible static IP addresses that can be mapped to one of your Droplets.
+
+~> **NOTE:** Floating IPs can be assigned to a Droplet either directly on the `digitalocean_floating_ip` resource by setting a `droplet_id` or using the `digitalocean_floating_ip_assignment` resource, but the two cannot be used together.
 
 ## Syntax
 
@@ -33,6 +35,8 @@ Properties:
 
 #### DropletId
 
+The ID of Droplet that the Floating IP will be assigned to.
+
 _Required_: No
 
 _Type_: Double
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region that the Floating IP is reserved to.
 
 _Required_: Yes
 

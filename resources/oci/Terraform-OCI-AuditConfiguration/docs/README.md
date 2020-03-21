@@ -1,6 +1,6 @@
 # Terraform::OCI::AuditConfiguration
 
-CloudFormation equivalent of oci_audit_configuration
+This resource provides the Configuration resource in Oracle Cloud Infrastructure Audit service.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### CompartmentId
 
+ID of the root compartment (tenancy).
+
 _Required_: Yes
 
 _Type_: String
@@ -40,6 +42,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RetentionPeriodDays
+
+(Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90`.
 
 _Required_: Yes
 

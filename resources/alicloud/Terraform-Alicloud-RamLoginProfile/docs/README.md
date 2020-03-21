@@ -1,6 +1,6 @@
 # Terraform::Alicloud::RamLoginProfile
 
-CloudFormation equivalent of alicloud_ram_login_profile
+Provides a RAM User Login Profile resource.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### MfaBindRequired
 
+This parameter indicates whether the MFA needs to be bind when the user first logs in. Default value is `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -42,6 +44,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Password
+
+Password of the RAM user.
 
 _Required_: Yes
 
@@ -51,6 +55,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PasswordResetRequired
 
+This parameter indicates whether the password needs to be reset when the user first logs in. Default value is `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -58,6 +64,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserName
+
+Name of the RAM user. This name can have a string of 1 to 64 characters, must contain only alphanumeric characters or hyphens, such as "-",".","_", and must not begin with a hyphen.
 
 _Required_: Yes
 

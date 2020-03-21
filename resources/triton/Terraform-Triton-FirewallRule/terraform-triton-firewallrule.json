@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Triton::FirewallRule",
-    "description": "CloudFormation equivalent of triton_firewall_rule",
+    "description": "The `triton_firewall_rule` resource represents a rule for the Triton cloud firewall.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,19 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the firewall rule."
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Default: `false`\nWhether the rule should be effective."
         },
         "Global": {
             "type": "boolean"
         },
         "Rule": {
-            "type": "string"
+            "type": "string",
+            "description": "The firewall rule described using the Cloud API rule syntax defined at https://docs.joyent.com/public-cloud/network/firewall/cloud-firewall-rules-reference.\nNote: Cloud API will normalize rules based on case-sensitivity, parentheses,\nordering of IP addresses, etc. This can result in Terraform updating rules\nrepeatedly if the rule definition differs from the normalized value."
         }
     },
     "additionalProperties": false,

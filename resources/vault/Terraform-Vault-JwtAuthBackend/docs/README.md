@@ -1,6 +1,7 @@
 # Terraform::Vault::JwtAuthBackend
 
-CloudFormation equivalent of vault_jwt_auth_backend
+Provides a resource for managing an
+[JWT auth backend within Vault](https://www.vaultproject.io/docs/auth/jwt.html).
 
 ## Syntax
 
@@ -58,6 +59,8 @@ Properties:
 
 #### BoundIssuer
 
+The value against which to match the iss claim in a JWT.
+
 _Required_: No
 
 _Type_: String
@@ -65,6 +68,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefaultRole
+
+The default role to use if none is provided during login.
 
 _Required_: No
 
@@ -74,6 +79,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+The description of the auth backend.
+
 _Required_: No
 
 _Type_: String
@@ -81,6 +88,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### JwksCaPem
+
+The CA certificate or chain of certificates, in PEM format, to use to validate connections to the JWKS URL. If not set, system certificates are used.
 
 _Required_: No
 
@@ -90,6 +99,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### JwksUrl
 
+JWKS URL to use to authenticate signatures. Cannot be used with "oidc_discovery_url" or "jwt_validation_pubkeys".
+
 _Required_: No
 
 _Type_: String
@@ -97,6 +108,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### JwtSupportedAlgs
+
+A list of supported signing algorithms. Vault 1.1.0 defaults to [RS256] but future or past versions of Vault may differ.
 
 _Required_: No
 
@@ -106,6 +119,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### JwtValidationPubkeys
 
+A list of PEM-encoded public keys to use to authenticate signatures locally. Cannot be used in combination with `oidc_discovery_url`.
+
 _Required_: No
 
 _Type_: List of String
@@ -113,6 +128,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OidcClientId
+
+Client ID used for OIDC backends.
 
 _Required_: No
 
@@ -122,6 +139,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OidcClientSecret
 
+Client Secret used for OIDC backends.
+
 _Required_: No
 
 _Type_: String
@@ -129,6 +148,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OidcDiscoveryCaPem
+
+The CA certificate or chain of certificates, in PEM format, to use to validate connections to the OIDC Discovery URL. If not set, system certificates are used.
 
 _Required_: No
 
@@ -138,6 +159,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OidcDiscoveryUrl
 
+The OIDC Discovery URL, without any .well-known component (base path). Cannot be used in combination with `jwt_validation_pubkeys`.
+
 _Required_: No
 
 _Type_: String
@@ -145,6 +168,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Path
+
+Path to mount the JWT/OIDC auth backend.
 
 _Required_: No
 
@@ -161,6 +186,8 @@ _Type_: List of <a href="tune.md">Tune</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+Type of auth backend. Should be one of `jwt` or `oidc`. Default - `jwt`.
 
 _Required_: No
 

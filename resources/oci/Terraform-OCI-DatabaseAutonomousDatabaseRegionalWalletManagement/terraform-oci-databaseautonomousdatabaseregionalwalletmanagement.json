@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::DatabaseAutonomousDatabaseRegionalWalletManagement",
-    "description": "CloudFormation equivalent of oci_database_autonomous_database_regional_wallet_management",
+    "description": "This resource provides the Autonomous Database Regional Wallet Management resource in Oracle Cloud Infrastructure Database service.\n\nUpdates the Autonomous Database regional wallet.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,7 +26,8 @@
             "type": "string"
         },
         "ShouldRotate": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "(Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`."
         },
         "State": {
             "type": "string"

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::DbUserV1",
-    "description": "CloudFormation equivalent of openstack_db_user_v1",
+    "description": "Manages a V1 DB user resource within OpenStack.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -27,7 +27,8 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of database user should have access to."
         },
         "Host": {
             "type": "string"
@@ -36,10 +37,12 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique name for the resource."
         },
         "Password": {
-            "type": "string"
+            "type": "string",
+            "description": "User's password."
         },
         "Region": {
             "type": "string"

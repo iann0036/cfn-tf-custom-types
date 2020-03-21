@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::ObjectstorageObject",
-    "description": "CloudFormation equivalent of oci_objectstorage_object",
+    "description": "This resource provides the Object resource in Oracle Cloud Infrastructure Object Storage service.\n\nCreates a new object or overwrites an existing one. See [Special Instructions for Object Storage\nPUT](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/signingrequests.htm#ObjectStoragePut) for request signature requirements.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "SourceUriDetails": {
@@ -59,22 +59,28 @@
             "type": "string"
         },
         "Bucket": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the bucket for the source object.\n* `object` - (Required) The name of the source object.\n* `source_object_if_match_etag` - (Optional) The entity tag to match the source object.\n* `destination_object_if_match_etag` - (Optional) The entity tag to match the target object.\n* `destination_object_if_none_match_etag` - (Optional) The entity tag to not match the target object."
         },
         "CacheControl": {
-            "type": "string"
+            "type": "string",
+            "description": "The cache-control header value to be returned in GetObjectResponse."
         },
         "Content": {
-            "type": "string"
+            "type": "string",
+            "description": "The object to upload to the object store. Cannot be defined if `source` or `source_uri_details` is defined."
         },
         "ContentDisposition": {
-            "type": "string"
+            "type": "string",
+            "description": "The Content-Disposition header value to be returned in GetObjectResponse."
         },
         "ContentEncoding": {
-            "type": "string"
+            "type": "string",
+            "description": "The content encoding of the object."
         },
         "ContentLanguage": {
-            "type": "string"
+            "type": "string",
+            "description": "The content language of the object."
         },
         "ContentLength": {
             "type": "string"
@@ -83,7 +89,8 @@
             "type": "string"
         },
         "ContentType": {
-            "type": "string"
+            "type": "string",
+            "description": "The content type of the object.  Defaults to 'application/octet-stream' if not overridden during the PutObject call."
         },
         "Metadata": {
             "type": "array",
@@ -103,16 +110,20 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Optional user-defined metadata key and value.\nNote: All specified keys must be in lower case."
         },
         "Namespace": {
-            "type": "string"
+            "type": "string",
+            "description": "The top-level namespace of the source object.\n* `bucket` - (Required) The name of the bucket for the source object.\n* `object` - (Required) The name of the source object.\n* `source_object_if_match_etag` - (Optional) The entity tag to match the source object.\n* `destination_object_if_match_etag` - (Optional) The entity tag to match the target object.\n* `destination_object_if_none_match_etag` - (Optional) The entity tag to not match the target object."
         },
         "Object": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the source object.\n* `source_object_if_match_etag` - (Optional) The entity tag to match the source object.\n* `destination_object_if_match_etag` - (Optional) The entity tag to match the target object.\n* `destination_object_if_none_match_etag` - (Optional) The entity tag to not match the target object."
         },
         "Source": {
-            "type": "string"
+            "type": "string",
+            "description": "An absolute path to a file on the local system. Cannot be defined if `content` or `source_uri_details` is defined."
         },
         "State": {
             "type": "string"

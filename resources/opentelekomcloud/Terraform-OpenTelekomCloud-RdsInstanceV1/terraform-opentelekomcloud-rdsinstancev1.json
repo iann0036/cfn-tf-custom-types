@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenTelekomCloud::RdsInstanceV1",
-    "description": "CloudFormation equivalent of opentelekomcloud_rds_instance_v1",
+    "description": "Manages rds instance resource within OpenTelekomCloud",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Backupstrategy": {
@@ -21,10 +21,12 @@
             "additionalProperties": false,
             "properties": {
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the DB engine. Currently, MySQL, PostgreSQL, and\nMicrosoft SQL Server are supported. The value is MySQL, PostgreSQL, or SQLServer."
                 },
                 "Version": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the DB instance version."
                 }
             },
             "required": [
@@ -37,10 +39,12 @@
             "additionalProperties": false,
             "properties": {
                 "Enable": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Specifies the configured parameters on the HA.\nValid value: The value is true or false. The value true indicates creating\nHA DB instances. The value false indicates creating a single DB instance."
                 },
                 "Replicationmode": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the replication mode for the standby DB instance.\nThe value cannot be empty.\nFor MySQL, the value is async or semisync.\nFor PostgreSQL, the value is async or sync."
                 }
             },
             "required": []
@@ -87,10 +91,12 @@
             "additionalProperties": false,
             "properties": {
                 "Size": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Specifies the volume size.\nIts value must be a multiple of 10 and the value range is 100 GB to 2000 GB."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the volume type. Valid value:\nIt must be COMMON (SATA) or ULTRAHIGH (SSD) and is case-sensitive."
                 }
             },
             "required": [
@@ -105,25 +111,30 @@
             "type": "string"
         },
         "Availabilityzone": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the ID of the AZ."
         },
         "Created": {
             "type": "string"
         },
         "Dbport": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the database port number."
         },
         "Dbrtpd": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the password for user root of the database."
         },
         "Flavorref": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the specification ID (flavors.id in the\nresponse message in Obtaining All DB Instance Specifications). If you want\nto enable ha for the rds instance, a flavor with ha speccode is required."
         },
         "Hostname": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the DB instance name. The DB instance name of\nthe same type is unique in the same tenant. The changes of the instance name\nwill be suppressed in HA scenario."
         },
         "Region": {
             "type": "string"
@@ -149,7 +160,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Tags key/value pairs to associate with the instance."
         },
         "Type": {
             "type": "string"
@@ -158,7 +170,8 @@
             "type": "string"
         },
         "Vpc": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the VPC ID. For details about how to obtain this\nparameter value, see section \"Virtual Private Cloud\" in the Virtual Private\nCloud API Reference."
         },
         "Backupstrategy": {
             "type": "array",

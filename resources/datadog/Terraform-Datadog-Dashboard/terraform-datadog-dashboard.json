@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Datadog::Dashboard",
-    "description": "CloudFormation equivalent of datadog_dashboard",
+    "description": "Provides a Datadog dashboard resource. This can be used to create and manage Datadog dashboards.\n\n~> **Note:** This resource uses the new [Dashboard API](https://docs.datadoghq.com/api/#dashboards) which adds new features like better validation and support for the [Group widget](https://docs.datadoghq.com/graphing/widgets/group/). Additionally, this resource unifies [`datadog_timeboard`](timeboard.html) and [`datadog_screenboard`](screenboard.html) resources to allow you to manage all of your dashboards using a single format.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "TemplateVariable": {
@@ -1566,23 +1566,28 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the dashboard.\n- `is_read_only` - (Optional) Whether this dashboard is read-only. If `true`, only the author and admins can make changes to it.\n- `notify_list` - (Optional) List of handles of users to notify when changes are made to this dashboard.\n- `template_variables` - (Optional) Nested block describing a template variable. The structure of this block is described [below](dashboard.html#nested-template_variable-blocks). Multiple template_variable blocks are allowed within a `datadog_dashboard` resource.\n- `template_variable_presets` - (Optional) Nested block describing saved configurations of existing template variables. The structure of this block is described [below](dashboard.html#nested-template_variable_preset-blocks). Multiple template_variable_preset blocks are allowed within a `datadog_dashboard` resource, and multiple template_variables can be described by each template_variable_preset."
         },
         "IsReadOnly": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether this dashboard is read-only. If `true`, only the author and admins can make changes to it.\n- `notify_list` - (Optional) List of handles of users to notify when changes are made to this dashboard.\n- `template_variables` - (Optional) Nested block describing a template variable. The structure of this block is described [below](dashboard.html#nested-template_variable-blocks). Multiple template_variable blocks are allowed within a `datadog_dashboard` resource.\n- `template_variable_presets` - (Optional) Nested block describing saved configurations of existing template variables. The structure of this block is described [below](dashboard.html#nested-template_variable_preset-blocks). Multiple template_variable_preset blocks are allowed within a `datadog_dashboard` resource, and multiple template_variables can be described by each template_variable_preset."
         },
         "LayoutType": {
-            "type": "string"
+            "type": "string",
+            "description": "Layout type of the dashboard. Available values are: `ordered` (previous timeboard) or `free` (previous screenboard layout).\n<br>**Note: This value cannot be changed. Converting a dashboard from `free` <-> `ordered` requires destroying and re-creating the dashboard.** Instead of using `ForceNew`, this is a manual action as many underlying widget configs need to be updated to work for the updated layout, otherwise the new dashboard won't be created properly.\n- `description` - (Optional) Description of the dashboard.\n- `is_read_only` - (Optional) Whether this dashboard is read-only. If `true`, only the author and admins can make changes to it.\n- `notify_list` - (Optional) List of handles of users to notify when changes are made to this dashboard.\n- `template_variables` - (Optional) Nested block describing a template variable. The structure of this block is described [below](dashboard.html#nested-template_variable-blocks). Multiple template_variable blocks are allowed within a `datadog_dashboard` resource.\n- `template_variable_presets` - (Optional) Nested block describing saved configurations of existing template variables. The structure of this block is described [below](dashboard.html#nested-template_variable_preset-blocks). Multiple template_variable_preset blocks are allowed within a `datadog_dashboard` resource, and multiple template_variables can be described by each template_variable_preset."
         },
         "NotifyList": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of handles of users to notify when changes are made to this dashboard.\n- `template_variables` - (Optional) Nested block describing a template variable. The structure of this block is described [below](dashboard.html#nested-template_variable-blocks). Multiple template_variable blocks are allowed within a `datadog_dashboard` resource.\n- `template_variable_presets` - (Optional) Nested block describing saved configurations of existing template variables. The structure of this block is described [below](dashboard.html#nested-template_variable_preset-blocks). Multiple template_variable_preset blocks are allowed within a `datadog_dashboard` resource, and multiple template_variables can be described by each template_variable_preset."
         },
         "Title": {
-            "type": "string"
+            "type": "string",
+            "description": "Title of the dashboard.\n- `widget` - (Required) Nested block describing a widget. The structure of this block is described [below](dashboard.html#nested-widget-blocks). Multiple `widget` blocks are allowed within a `datadog_dashboard` resource.\n- `layout_type` - (Required) Layout type of the dashboard. Available values are: `ordered` (previous timeboard) or `free` (previous screenboard layout).\n<br>**Note: This value cannot be changed. Converting a dashboard from `free` <-> `ordered` requires destroying and re-creating the dashboard.** Instead of using `ForceNew`, this is a manual action as many underlying widget configs need to be updated to work for the updated layout, otherwise the new dashboard won't be created properly.\n- `description` - (Optional) Description of the dashboard.\n- `is_read_only` - (Optional) Whether this dashboard is read-only. If `true`, only the author and admins can make changes to it.\n- `notify_list` - (Optional) List of handles of users to notify when changes are made to this dashboard.\n- `template_variables` - (Optional) Nested block describing a template variable. The structure of this block is described [below](dashboard.html#nested-template_variable-blocks). Multiple template_variable blocks are allowed within a `datadog_dashboard` resource.\n- `template_variable_presets` - (Optional) Nested block describing saved configurations of existing template variables. The structure of this block is described [below](dashboard.html#nested-template_variable_preset-blocks). Multiple template_variable_preset blocks are allowed within a `datadog_dashboard` resource, and multiple template_variables can be described by each template_variable_preset."
         },
         "TemplateVariable": {
             "type": "array",

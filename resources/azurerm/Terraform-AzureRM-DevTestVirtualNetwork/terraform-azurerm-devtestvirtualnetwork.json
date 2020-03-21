@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::DevTestVirtualNetwork",
-    "description": "CloudFormation equivalent of azurerm_dev_test_virtual_network",
+    "description": "Manages a Virtual Network within a DevTest Lab.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Subnet": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "UseInVirtualMachineCreation": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Can this subnet be used for creating Virtual Machines? Possible values are `Allow`, `Default` and `Deny`."
                 },
                 "UsePublicIpAddress": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Can Virtual Machines in this Subnet use Public IP Addresses? Possible values are `Allow`, `Default` and `Deny`."
                 }
             },
             "required": []
@@ -42,16 +44,20 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description for the Virtual Network."
         },
         "LabName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Dev Test Lab in which the Virtual Network should be created. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Dev Test Virtual Network. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which the Dev Test Lab resource exists. Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -71,7 +77,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "UniqueIdentifier": {
             "type": "string"

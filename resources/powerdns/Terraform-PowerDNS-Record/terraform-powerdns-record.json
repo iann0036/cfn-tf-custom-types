@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::PowerDNS::Record",
-    "description": "CloudFormation equivalent of powerdns_record",
+    "description": "Provides a PowerDNS record resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,26 +9,32 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the record."
         },
         "Records": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A string list of records."
         },
         "SetPtr": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "[**_Deprecated in PowerDNS 4.3.0_**] A boolean (true/false), determining whether API server should automatically create PTR record in the matching reverse zone. Existing PTR records are replaced. If no matching reverse zone, an error is thrown."
         },
         "Ttl": {
-            "type": "number"
+            "type": "number",
+            "description": "The TTL of the record."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The record type."
         },
         "Zone": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of zone to contain this record."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::RedisInstance",
-    "description": "CloudFormation equivalent of tencentcloud_redis_instance",
+    "description": "Provides a resource to create a Redis instance and set its attributes.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "AvailabilityZone": {
-            "type": "string"
+            "type": "string",
+            "description": "The available zone ID of an instance to be created, please refer to tencentcloud_redis_zone_config.list."
         },
         "CreateTime": {
             "type": "string"
@@ -18,32 +19,39 @@
             "type": "string"
         },
         "MemSize": {
-            "type": "number"
+            "type": "number",
+            "description": "The memory volume of an available instance(in MB), please refer to tencentcloud_redis_zone_config.list[zone].mem_sizes."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Instance name."
         },
         "Password": {
-            "type": "string"
+            "type": "string",
+            "description": "Password for a Redis user, which should be 8 to 16 characters."
         },
         "Port": {
-            "type": "number"
+            "type": "number",
+            "description": "The port used to access a redis instance. The default value is 6379. And this value can't be changed after creation, or the Redis instance will be recreated."
         },
         "ProjectId": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies which project the instance should belong to."
         },
         "SecurityGroups": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "ID of security group. If both vpc_id and subnet_id are not set, this argument should not be set either."
         },
         "Status": {
             "type": "string"
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies which subnet the instance should belong to."
         },
         "Tags": {
             "type": "array",
@@ -63,13 +71,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Instance tags."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "Instance type. Available values: master_slave_redis."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the vpc with which the instance is to be associated."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::VpnaasIpsecPolicyV2",
-    "description": "CloudFormation equivalent of openstack_vpnaas_ipsec_policy_v2",
+    "description": "Manages a V2 Neutron IPSec policy resource within OpenStack.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Lifetime": {
@@ -33,31 +33,40 @@
             "type": "string"
         },
         "AuthAlgorithm": {
-            "type": "string"
+            "type": "string",
+            "description": "The authentication hash algorithm. Valid values are sha1, sha256, sha384, sha512.\nDefault is sha1. Changing this updates the algorithm of the existing policy."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The human-readable description for the policy.\nChanging this updates the description of the existing policy."
         },
         "EncapsulationMode": {
-            "type": "string"
+            "type": "string",
+            "description": "The encapsulation mode. Valid values are tunnel and transport. Default is tunnel.\nChanging this updates the existing policy."
         },
         "EncryptionAlgorithm": {
-            "type": "string"
+            "type": "string",
+            "description": "The encryption algorithm. Valid values are 3des, aes-128, aes-192 and so on.\nThe default value is aes-128. Changing this updates the existing policy."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the policy. Changing this updates the name of\nthe existing policy."
         },
         "Pfs": {
-            "type": "string"
+            "type": "string",
+            "description": "The perfect forward secrecy mode. Valid values are Group2, Group5 and Group14. Default is Group5.\nChanging this updates the existing policy."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the V2 Networking client.\nA Networking client is needed to create an IPSec policy. If omitted, the\n`region` argument of the provider is used. Changing this creates a new\npolicy."
         },
         "TenantId": {
-            "type": "string"
+            "type": "string",
+            "description": "The owner of the policy. Required if admin wants to\ncreate a policy for another project. Changing this creates a new policy."
         },
         "TransformProtocol": {
-            "type": "string"
+            "type": "string",
+            "description": "The transform protocol. Valid values are ESP, AH and AH-ESP.\nChanging this updates the existing policy. Default is ESP."
         },
         "ValueSpecs": {
             "type": "array",
@@ -77,7 +86,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Map of additional options."
         },
         "Lifetime": {
             "type": "array",

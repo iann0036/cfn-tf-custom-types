@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Gitlab::PipelineTrigger",
-    "description": "CloudFormation equivalent of gitlab_pipeline_trigger",
+    "description": "This resource allows you to create and manage pipeline triggers",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the pipeline trigger."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or id of the project to add the trigger to."
         },
         "Token": {
             "type": "string"

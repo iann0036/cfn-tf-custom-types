@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::PagerDuty::UserContactMethod",
-    "description": "CloudFormation equivalent of pagerduty_user_contact_method",
+    "description": "A [contact method](https://v2.developer.pagerduty.com/v2/page/api-reference#!/Users/get_users_id_contact_methods) is a contact method for a PagerDuty user (email, phone or SMS).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,28 +9,34 @@
             "type": "string"
         },
         "Address": {
-            "type": "string"
+            "type": "string",
+            "description": "The \"address\" to deliver to: `email`, `phone number`, etc., depending on the type."
         },
         "Blacklisted": {
             "type": "boolean"
         },
         "CountryCode": {
-            "type": "number"
+            "type": "number",
+            "description": "The 1-to-3 digit country calling code. Required when using `phone_contact_method` or `sms_contact_method`.\n* `label` - (Required) The label (e.g., \"Work\", \"Mobile\", etc.).\n* `address` - (Required) The \"address\" to deliver to: `email`, `phone number`, etc., depending on the type."
         },
         "Enabled": {
             "type": "boolean"
         },
         "Label": {
-            "type": "string"
+            "type": "string",
+            "description": "The label (e.g., \"Work\", \"Mobile\", etc.).\n* `address` - (Required) The \"address\" to deliver to: `email`, `phone number`, etc., depending on the type."
         },
         "SendShortEmail": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Send an abbreviated email message instead of the standard email output.\n* `country_code` - (Optional) The 1-to-3 digit country calling code. Required when using `phone_contact_method` or `sms_contact_method`.\n* `label` - (Required) The label (e.g., \"Work\", \"Mobile\", etc.).\n* `address` - (Required) The \"address\" to deliver to: `email`, `phone number`, etc., depending on the type."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The contact method type. May be (`email_contact_method`, `phone_contact_method`, `sms_contact_method`, `push_notification_contact_method`).\n* `send_short_email` - (Optional) Send an abbreviated email message instead of the standard email output.\n* `country_code` - (Optional) The 1-to-3 digit country calling code. Required when using `phone_contact_method` or `sms_contact_method`.\n* `label` - (Required) The label (e.g., \"Work\", \"Mobile\", etc.).\n* `address` - (Required) The \"address\" to deliver to: `email`, `phone number`, etc., depending on the type."
         },
         "UserId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the user.\n* `type` - (Required) The contact method type. May be (`email_contact_method`, `phone_contact_method`, `sms_contact_method`, `push_notification_contact_method`).\n* `send_short_email` - (Optional) Send an abbreviated email message instead of the standard email output.\n* `country_code` - (Optional) The 1-to-3 digit country calling code. Required when using `phone_contact_method` or `sms_contact_method`.\n* `label` - (Required) The label (e.g., \"Work\", \"Mobile\", etc.).\n* `address` - (Required) The \"address\" to deliver to: `email`, `phone number`, etc., depending on the type."
         }
     },
     "additionalProperties": false,

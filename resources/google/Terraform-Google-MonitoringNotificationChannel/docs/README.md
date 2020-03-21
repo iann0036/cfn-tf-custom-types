@@ -1,6 +1,35 @@
 # Terraform::Google::MonitoringNotificationChannel
 
-CloudFormation equivalent of google_monitoring_notification_channel
+A NotificationChannel is a medium through which an alert is delivered
+when a policy violation is detected. Examples of channels include email, SMS,
+and third-party messaging applications. Fields containing sensitive information
+like authentication tokens or contact info are only partially populated on retrieval.
+
+Notification Channels are designed to be flexible and are made up of a supported `type`
+and labels to configure that channel. Each `type` has specific labels that need to be
+present for that channel to be correctly configured. The labels that are required to be
+present for one channel `type` are often different than those required for another.
+Due to these loose constraints it's often best to set up a channel through the UI
+and import to Terraform when setting up a brand new channel type to determine which
+labels are required.
+
+A list of supported channels per project the `list` endpoint can be
+accessed programmatically or through the api explorer at  https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.notificationChannelDescriptors/list .
+This provides the channel type and all of the required labels that must be passed.
+
+
+To get more information about NotificationChannel, see:
+
+* [API documentation](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.notificationChannels)
+* How-to Guides
+    * [Notification Options](https://cloud.google.com/monitoring/support/notification-options)
+    * [Monitoring API Documentation](https://cloud.google.com/monitoring/api/v3/)
+
+<div class = "oics-button" style="float: right; margin: 0 0 -15px">
+  <a href="https://console.cloud.google.com/cloudshell/open?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fterraform-google-modules%2Fdocs-examples.git&cloudshell_working_dir=notification_channel_basic&cloudshell_image=gcr.io%2Fgraphite-cloud-shell-images%2Fterraform%3Alatest&open_in_editor=main.tf&cloudshell_print=.%2Fmotd&cloudshell_tutorial=.%2Ftutorial.md" target="_blank">
+    <img alt="Open in Cloud Shell" src="//gstatic.com/cloudssh/images/open-btn.svg" style="max-height: 44px; margin: 32px auto; max-width: 100%;">
+  </a>
+</div>
 
 ## Syntax
 
@@ -79,6 +108,9 @@ _Type_: List of <a href="labels.md">Labels</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
 
 _Required_: No
 

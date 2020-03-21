@@ -1,6 +1,10 @@
 # Terraform::Alicloud::OnsGroup
 
-CloudFormation equivalent of alicloud_ons_group
+Provides an ONS group resource.
+
+For more information about how to use it, see [RocketMQ Group Management API](https://www.alibabacloud.com/help/doc-detail/29616.html). 
+
+-> **NOTE:** Available in 1.53.0+
 
 ## Syntax
 
@@ -35,6 +39,8 @@ Properties:
 
 #### GroupId
 
+Name of the group. Two groups on a single instance cannot have the same name. A `group_id` starts with "GID_" or "GID-", and contains letters, numbers, hyphens (-), and underscores (_).
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +48,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceId
+
+ID of the ONS Instance that owns the groups.
 
 _Required_: Yes
 
@@ -51,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ReadEnable
 
+This attribute is used to set the message reading enabled or disabled. It can only be set after the group is used by the client.
+
 _Required_: No
 
 _Type_: Boolean
@@ -58,6 +68,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Remark
+
+This attribute is a concise description of group. The length cannot exceed 256.
 
 _Required_: No
 

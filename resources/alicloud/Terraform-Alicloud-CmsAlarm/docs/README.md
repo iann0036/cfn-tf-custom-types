@@ -1,6 +1,7 @@
 # Terraform::Alicloud::CmsAlarm
 
-CloudFormation equivalent of alicloud_cms_alarm
+This resource provides a alarm rule resource and it can be used to monitor several cloud services according different metrics.
+Details for [alarm rule](https://www.alibabacloud.com/help/doc-detail/28608.htm).
 
 ## Syntax
 
@@ -63,6 +64,8 @@ Properties:
 
 #### ContactGroups
 
+List contact groups of the alarm rule, which must have been created on the console.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -70,6 +73,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Dimensions
+
+Map of the resources associated with the alarm rule, such as "instanceId", "device" and "port". Each key's value is a string and it uses comma to split multiple items. For more information, see [Metrics Reference](https://www.alibabacloud.com/help/doc-detail/28619.htm).
 
 _Required_: Yes
 
@@ -79,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EffectiveInterval
 
+The interval of effecting alarm rule. It foramt as "hh:mm-hh:mm", like "0:00-4:00". Default to "00:00-23:59".
+
 _Required_: No
 
 _Type_: String
@@ -86,6 +93,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Enabled
+
+Whether to enable alarm rule. Default to true.
 
 _Required_: No
 
@@ -95,6 +104,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EndTime
 
+It has been deprecated from provider version 1.50.0 and 'effective_interval' instead.
+
 _Required_: No
 
 _Type_: Double
@@ -102,6 +113,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Metric
+
+Name of the monitoring metrics corresponding to a project, such as "CPUUtilization" and "networkin_rate". For more information, see [Metrics Reference](https://www.alibabacloud.com/help/doc-detail/28619.htm).
 
 _Required_: Yes
 
@@ -111,6 +124,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The alarm rule name.
+
 _Required_: Yes
 
 _Type_: String
@@ -118,6 +133,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NotifyType
+
+Notification type. Valid value [0, 1]. The value 0 indicates TradeManager+email, and the value 1 indicates that TradeManager+email+SMS.
 
 _Required_: No
 
@@ -127,6 +144,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Operator
 
+Alarm comparison operator. Valid values: ["<=", "<", ">", ">=", "==", "!="]. Default to "==".
+
 _Required_: No
 
 _Type_: String
@@ -134,6 +153,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Period
+
+Index query cycle, which must be consistent with that defined for metrics. Default to 300, in seconds.
 
 _Required_: No
 
@@ -143,6 +164,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Project
 
+Monitor project name, such as "acs_ecs_dashboard" and "acs_rds_dashboard". For more information, see [Metrics Reference](https://www.alibabacloud.com/help/doc-detail/28619.htm).
+
 _Required_: Yes
 
 _Type_: String
@@ -150,6 +173,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SilenceTime
+
+Notification silence period in the alarm state, in seconds. Valid value range: [300, 86400]. Default to 86400.
 
 _Required_: No
 
@@ -159,6 +184,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StartTime
 
+It has been deprecated from provider version 1.50.0 and 'effective_interval' instead.
+
 _Required_: No
 
 _Type_: Double
@@ -166,6 +193,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Statistics
+
+Statistical method. It must be consistent with that defined for metrics. Valid values: ["Average", "Minimum", "Maximum"]. Default to "Average".
 
 _Required_: No
 
@@ -175,6 +204,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Threshold
 
+Alarm threshold value, which must be a numeric value currently.
+
 _Required_: Yes
 
 _Type_: String
@@ -183,6 +214,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TriggeredCount
 
+Number of consecutive times it has been detected that the values exceed the threshold. Default to 3.
+
 _Required_: No
 
 _Type_: Double
@@ -190,6 +223,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Webhook
+
+The webhook that should be called when the alarm is triggered. Currently, only http protocol is supported. Default is empty string.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::Kubernetes::PersistentVolumeClaim
 
-CloudFormation equivalent of kubernetes_persistent_volume_claim
+This resource allows the user to request for and claim to a persistent volume.
 
 ## Syntax
 
@@ -45,6 +45,8 @@ Properties:
 ## Properties
 
 #### WaitUntilBound
+
+Whether to wait for the claim to reach `Bound` state (to find volume in which to claim the space).
 
 _Required_: No
 

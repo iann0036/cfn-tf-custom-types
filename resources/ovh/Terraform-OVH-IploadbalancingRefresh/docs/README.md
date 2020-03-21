@@ -1,6 +1,6 @@
 # Terraform::OVH::IploadbalancingRefresh
 
-CloudFormation equivalent of ovh_iploadbalancing_refresh
+Applies changes from other ovh_iploadbalancing_* resourcesto the production configuration of loadbalancers.
 
 ## Syntax
 
@@ -32,6 +32,8 @@ Properties:
 
 #### Keepers
 
+List of values traccked to trigger refresh, used also to form implicit dependencies.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -39,6 +41,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServiceName
+
+The internal name of your IP load balancing.
 
 _Required_: Yes
 

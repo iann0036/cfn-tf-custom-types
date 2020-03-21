@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::PanoramaStaticRouteIpv4",
-    "description": "CloudFormation equivalent of panos_panorama_static_route_ipv4",
+    "description": "This resource allows you to add/update/delete Panorama IPv4 static routes on a\nvirtual router for either a template or a template stack.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,40 +9,52 @@
             "type": "string"
         },
         "AdminDistance": {
-            "type": "number"
+            "type": "number",
+            "description": "The admin distance."
         },
         "BfdProfile": {
-            "type": "string"
+            "type": "string",
+            "description": "BFD configuration."
         },
         "Destination": {
-            "type": "string"
+            "type": "string",
+            "description": "Destination IP address / prefix."
         },
         "Interface": {
-            "type": "string"
+            "type": "string",
+            "description": "Interface to use."
         },
         "Metric": {
-            "type": "number"
+            "type": "number",
+            "description": "Metric value / path cost (default: `10`)."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The static route's name."
         },
         "NextHop": {
-            "type": "string"
+            "type": "string",
+            "description": "The value for the `type` setting."
         },
         "RouteTable": {
-            "type": "string"
+            "type": "string",
+            "description": "Target routing table to install the route.  Valid\nvalues are `unicast` (the default), `no install`, `multicast`, or `both`."
         },
         "Template": {
-            "type": "string"
+            "type": "string",
+            "description": "The template name."
         },
         "TemplateStack": {
-            "type": "string"
+            "type": "string",
+            "description": "The template stack name."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The next hop type.  Valid values are `ip-address` (the\ndefault), `discard`, `next-vr`, or an empty string for `None`."
         },
         "VirtualRouter": {
-            "type": "string"
+            "type": "string",
+            "description": "The virtual router to add the static\nroute to."
         }
     },
     "additionalProperties": false,

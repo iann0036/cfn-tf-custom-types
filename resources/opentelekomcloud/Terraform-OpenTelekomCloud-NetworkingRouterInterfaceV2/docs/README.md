@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::NetworkingRouterInterfaceV2
 
-CloudFormation equivalent of opentelekomcloud_networking_router_interface_v2
+Manages a V2 router interface resource within OpenTelekomCloud.
 
 ## Syntax
 
@@ -37,6 +37,9 @@ Properties:
 
 #### PortId
 
+ID of the port this interface connects to. Changing
+this creates a new router interface.
+
 _Required_: No
 
 _Type_: String
@@ -53,6 +56,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RouterId
 
+ID of the router this interface belongs to. Changing
+this creates a new router interface.
+
 _Required_: Yes
 
 _Type_: String
@@ -60,6 +66,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubnetId
+
+ID of the subnet this interface connects to. Changing
+this creates a new router interface.
 
 _Required_: No
 

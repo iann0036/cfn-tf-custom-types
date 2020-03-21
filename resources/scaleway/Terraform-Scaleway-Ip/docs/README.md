@@ -1,6 +1,10 @@
 # Terraform::Scaleway::Ip
 
-CloudFormation equivalent of scaleway_ip
+**DEPRECATED**: This resource is deprecated and will be removed in `v2.0+`.
+Please use `scaleway_instance_ip` instead.
+
+Provides IPs for servers. This allows IPs to be created, updated and deleted.
+For additional details please refer to [API documentation](https://developer.scaleway.com/#ips).
 
 ## Syntax
 
@@ -31,6 +35,8 @@ Properties:
 
 #### Reverse
 
+Please us the scaleway_ip_reverse_dns resource instead.
+
 _Required_: No
 
 _Type_: String
@@ -38,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Server
+
+ID of server to associate IP with.
 
 _Required_: No
 

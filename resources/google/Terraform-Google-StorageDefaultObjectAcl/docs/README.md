@@ -1,6 +1,18 @@
 # Terraform::Google::StorageDefaultObjectAcl
 
-CloudFormation equivalent of google_storage_default_object_acl
+Authoritatively manages the default object ACLs for a Google Cloud Storage bucket
+without managing the bucket itself.
+
+-> Note that for each object, its creator will have the `"OWNER"` role in addition
+to the default ACL that has been defined.
+
+For more information see
+[the official documentation](https://cloud.google.com/storage/docs/access-control/lists) 
+and 
+[API](https://cloud.google.com/storage/docs/json_api/v1/defaultObjectAccessControls).
+
+-> Want fine-grained control over default object ACLs? Use `google_storage_default_object_access_control`
+to control individual role entity pairs.
 
 ## Syntax
 
@@ -32,6 +44,8 @@ Properties:
 
 #### Bucket
 
+The name of the bucket it applies to.
+
 _Required_: Yes
 
 _Type_: String
@@ -39,6 +53,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RoleEntity
+
+List of role/entity pairs in the form `ROLE:entity`.
+See [GCS Object ACL documentation](https://cloud.google.com/storage/docs/json_api/v1/objectAccessControls) for more details.
+Omitting the field is the same as providing an empty list.
 
 _Required_: No
 

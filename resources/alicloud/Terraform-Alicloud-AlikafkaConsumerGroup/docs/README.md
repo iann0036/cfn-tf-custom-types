@@ -1,6 +1,11 @@
 # Terraform::Alicloud::AlikafkaConsumerGroup
 
-CloudFormation equivalent of alicloud_alikafka_consumer_group
+Provides an ALIKAFKA consumer group resource.
+
+-> **NOTE:** Available in 1.56.0+
+
+-> **NOTE:**  Only the following regions support create alikafka consumer group.
+[`cn-hangzhou`,`cn-beijing`,`cn-shenzhen`,`cn-shanghai`,`cn-qingdao`,`cn-hongkong`,`cn-huhehaote`,`cn-zhangjiakou`,`ap-southeast-1`,`ap-south-1`,`ap-southeast-5`]
 
 ## Syntax
 
@@ -34,6 +39,8 @@ Properties:
 
 #### ConsumerId
 
+ID of the consumer group. The length cannot exceed 64 characters.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +49,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceId
 
+ID of the ALIKAFKA Instance that owns the groups.
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +58,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

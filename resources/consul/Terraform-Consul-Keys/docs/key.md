@@ -40,6 +40,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Delete
 
+If true, then the key will be deleted when
+either its configuration block is removed from the configuration or
+the entire resource is destroyed. Otherwise, it will be left in Consul.
+Defaults to false.
+
 _Required_: No
 
 _Type_: Boolean
@@ -47,6 +52,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Flags
+
+An [unsigned integer value](https://www.consul.io/api/kv.html#flags-1)
+to attach to the key (defaults to 0).
 
 _Required_: No
 
@@ -64,6 +72,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Path
 
+This is the path in Consul that should be written to.
+
 _Required_: Yes
 
 _Type_: String
@@ -71,6 +81,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Value
+
+The value to write to the given path.
 
 _Required_: No
 

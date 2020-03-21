@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::BlockstorageQuotasetV3",
-    "description": "CloudFormation equivalent of openstack_blockstorage_quotaset_v3",
+    "description": "Manages a V3 block storage quotaset resource within OpenStack.\n\n~> **Note:** This usually requires admin privileges.\n\n~> **Note:** This resource has a no-op deletion so no actual actions will be done against the OpenStack API \n    in case of delete call.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,31 +26,40 @@
             "type": "string"
         },
         "BackupGigabytes": {
-            "type": "number"
+            "type": "number",
+            "description": "Quota value for backup gigabytes. Changing\nthis updates the existing quotaset."
         },
         "Backups": {
-            "type": "number"
+            "type": "number",
+            "description": "Quota value for backups. Changing this updates the\nexisting quotaset."
         },
         "Gigabytes": {
-            "type": "number"
+            "type": "number",
+            "description": "Quota value for gigabytes. Changing this updates the\nexisting quotaset."
         },
         "Groups": {
-            "type": "number"
+            "type": "number",
+            "description": "Quota value for groups. Changing this updates the\nexisting quotaset."
         },
         "PerVolumeGigabytes": {
-            "type": "number"
+            "type": "number",
+            "description": "Quota value for gigabytes per volume .\nChanging this updates the existing quotaset."
         },
         "ProjectId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the project to manage quotas. Changing this\ncreates a new quotaset."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to create the volume. If\nomitted, the `region` argument of the provider is used. Changing this\ncreates a new quotaset."
         },
         "Snapshots": {
-            "type": "number"
+            "type": "number",
+            "description": "Quota value for snapshots. Changing this updates the\nexisting quotaset."
         },
         "Volumes": {
-            "type": "number"
+            "type": "number",
+            "description": "Quota value for volumes. Changing this updates the\nexisting quotaset."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

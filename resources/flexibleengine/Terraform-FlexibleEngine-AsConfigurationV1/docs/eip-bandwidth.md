@@ -26,6 +26,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### ChargingMode
 
+The bandwidth charging mode. The system only supports `traffic`.
+
 _Required_: Yes
 
 _Type_: String
@@ -34,6 +36,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ShareType
 
+The bandwidth sharing type. The system only supports `PER` (indicates exclusive bandwidth).
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +45,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Size
+
+The bandwidth (Mbit/s). The value range is 1 to 300.
 
 _Required_: Yes
 

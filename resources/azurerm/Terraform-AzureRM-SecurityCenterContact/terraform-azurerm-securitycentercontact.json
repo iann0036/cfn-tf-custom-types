@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::SecurityCenterContact",
-    "description": "CloudFormation equivalent of azurerm_security_center_contact",
+    "description": "Manages the subscription's Security Center Contact.\n\n~> **NOTE:** Owner access permission is required.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,16 +29,20 @@
             "type": "string"
         },
         "AlertNotifications": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to send security alerts notifications to the security contact."
         },
         "AlertsToAdmins": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to send security alerts notifications to subscription admins."
         },
         "Email": {
-            "type": "string"
+            "type": "string",
+            "description": "The email of the Security Center Contact."
         },
         "Phone": {
-            "type": "string"
+            "type": "string",
+            "description": "The phone number of the Security Center Contact."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

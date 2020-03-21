@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::DayuDdosPolicyAttachment
 
-CloudFormation equivalent of tencentcloud_dayu_ddos_policy_attachment
+Provides a resource to create a dayu DDoS policy attachment.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### PolicyId
 
+Id of the policy.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceId
 
+Id of the attached resource.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceType
+
+Type of the resource that the DDoS policy works for, valid values are `bgpip`, `bgp`, `bgp-multip`, `net`.
 
 _Required_: Yes
 

@@ -35,6 +35,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### CustomHttpsProvisioningEnabled
 
+Should the HTTPS protocol be enabled for a custom domain associated with the Front Door?.
+
 _Required_: Yes
 
 _Type_: Boolean
@@ -42,6 +44,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HostName
+
+Specifies the host name of the `frontend_endpoint`. Must be a domain name.
 
 _Required_: Yes
 
@@ -51,6 +55,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the `frontend_endpoint`.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SessionAffinityEnabled
+
+Whether to allow session affinity on this host. Valid options are `true` or `false` Defaults to `false`.
 
 _Required_: No
 
@@ -67,6 +75,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SessionAffinityTtlSeconds
 
+The TTL to use in seconds for session affinity, if applicable. Defaults to `0`.
+
 _Required_: No
 
 _Type_: Double
@@ -74,6 +84,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WebApplicationFirewallPolicyLinkId
+
+Defines the Web Application Firewall policy `ID` for each host.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::Vault::CertAuthBackendRole
 
-CloudFormation equivalent of vault_cert_auth_backend_role
+Provides a resource to create a role in an [Cert auth backend within Vault](https://www.vaultproject.io/docs/auth/cert.html).
 
 ## Syntax
 
@@ -88,6 +88,8 @@ Properties:
 
 #### AllowedCommonNames
 
+Allowed the common names for authenticated client certificates.
+
 _Required_: No
 
 _Type_: List of String
@@ -95,6 +97,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowedDnsSans
+
+Allowed alternative dns names for authenticated client certificates.
 
 _Required_: No
 
@@ -104,6 +108,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AllowedEmailSans
 
+Allowed emails for authenticated client certificates.
+
 _Required_: No
 
 _Type_: List of String
@@ -111,6 +117,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowedNames
+
+Allowed subject names for authenticated client certificates.
 
 _Required_: No
 
@@ -120,6 +128,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AllowedOrganizationUnits
 
+Allowed organization units for authenticated client certificates.
+
 _Required_: No
 
 _Type_: List of String
@@ -128,6 +138,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AllowedUriSans
 
+Allowed URIs for authenticated client certificates.
+
 _Required_: No
 
 _Type_: List of String
@@ -135,6 +147,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Backend
+
+Path to the mounted Cert auth backend.
 
 _Required_: No
 
@@ -152,6 +166,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Certificate
 
+CA certificate used to validate client certificates.
+
 _Required_: Yes
 
 _Type_: String
@@ -159,6 +175,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+The name to display on tokens issued under this role.
 
 _Required_: No
 
@@ -175,6 +193,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of the role.
 
 _Required_: Yes
 
@@ -199,6 +219,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RequiredExtensions
+
+TLS extensions required on client certificates.
 
 _Required_: No
 

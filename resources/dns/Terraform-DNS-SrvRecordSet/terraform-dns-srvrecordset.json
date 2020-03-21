@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::DNS::SrvRecordSet",
-    "description": "CloudFormation equivalent of dns_srv_record_set",
+    "description": "Creates an SRV type DNS record set.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Srv": {
@@ -8,16 +8,20 @@
             "additionalProperties": false,
             "properties": {
                 "Port": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The port for the service on the target."
                 },
                 "Priority": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The priority for the record."
                 },
                 "Target": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The FQDN of the target, include the trailing dot."
                 },
                 "Weight": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The weight for the record."
                 }
             },
             "required": [
@@ -34,13 +38,16 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the record set. The `zone` argument will be appended to this value to create the full record path."
         },
         "Ttl": {
-            "type": "number"
+            "type": "number",
+            "description": "The TTL of the record set. Defaults to `3600`."
         },
         "Zone": {
-            "type": "string"
+            "type": "string",
+            "description": "DNS zone the record set belongs to. It must be an FQDN, that is, include the trailing dot."
         },
         "Srv": {
             "type": "array",

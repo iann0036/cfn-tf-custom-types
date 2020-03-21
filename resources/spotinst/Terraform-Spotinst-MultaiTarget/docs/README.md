@@ -1,6 +1,6 @@
 # Terraform::Spotinst::MultaiTarget
 
-CloudFormation equivalent of spotinst_multai_target
+Provides a Spotinst Multai Target.
 
 ## Syntax
 
@@ -42,6 +42,8 @@ Properties:
 
 #### BalancerId
 
+The ID of the balancer.
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +51,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Host
+
+The address (IP or URL) of the targets to register.
 
 _Required_: Yes
 
@@ -58,6 +62,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the Target . Must contain only alphanumeric characters or hyphens, and must not begin or end with a hyphen.
+
 _Required_: No
 
 _Type_: String
@@ -65,6 +71,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Port
+
+The port the target will register to.
 
 _Required_: No
 
@@ -74,6 +82,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TargetSetId
 
+The ID of the target set.
+
 _Required_: Yes
 
 _Type_: String
@@ -81,6 +91,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Weight
+
+Defines how traffic is distributed between targets.
 
 _Required_: Yes
 

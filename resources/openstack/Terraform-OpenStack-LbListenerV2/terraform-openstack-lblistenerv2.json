@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::LbListenerV2",
-    "description": "CloudFormation equivalent of openstack_lb_listener_v2",
+    "description": "Manages a V2 listener resource within OpenStack.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,19 +26,24 @@
             "type": "string"
         },
         "AdminStateUp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "The administrative state of the Listener.\nA valid value is true (UP) or false (DOWN)."
         },
         "ConnectionLimit": {
-            "type": "number"
+            "type": "number",
+            "description": "The maximum number of connections allowed\nfor the Listener."
         },
         "DefaultPoolId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the default pool with which the\nListener is associated."
         },
         "DefaultTlsContainerRef": {
-            "type": "string"
+            "type": "string",
+            "description": "A reference to a Barbican Secrets\ncontainer which stores TLS information. This is required if the protocol\nis `TERMINATED_HTTPS`. See\n[here](https://wiki.openstack.org/wiki/Network/LBaaS/docs/how-to-create-tls-loadbalancer)\nfor more information."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Human-readable description for the Listener."
         },
         "InsertHeaders": {
             "type": "array",
@@ -58,44 +63,56 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "The list of key value pairs representing headers to insert\ninto the request before it is sent to the backend members. Changing this updates the headers of the\nexisting listener."
         },
         "LoadbalancerId": {
-            "type": "string"
+            "type": "string",
+            "description": "The load balancer on which to provision this\nListener. Changing this creates a new Listener."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Human-readable name for the Listener. Does not have\nto be unique."
         },
         "Protocol": {
-            "type": "string"
+            "type": "string",
+            "description": "The protocol - can either be TCP, HTTP, HTTPS,\nTERMINATED_HTTPS or UDP (supported only in Octavia). Changing this creates a\nnew Listener."
         },
         "ProtocolPort": {
-            "type": "number"
+            "type": "number",
+            "description": "The port on which to listen for client traffic.\nChanging this creates a new Listener."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the V2 Networking client.\nA Networking client is needed to create an . If omitted, the\n`region` argument of the provider is used. Changing this creates a new\nListener."
         },
         "SniContainerRefs": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of references to Barbican Secrets\ncontainers which store SNI information. See\n[here](https://wiki.openstack.org/wiki/Network/LBaaS/docs/how-to-create-tls-loadbalancer)\nfor more information."
         },
         "TenantId": {
-            "type": "string"
+            "type": "string",
+            "description": "Required for admins. The UUID of the tenant who owns\nthe Listener.  Only administrative users can specify a tenant UUID\nother than their own. Changing this creates a new Listener."
         },
         "TimeoutClientData": {
-            "type": "number"
+            "type": "number",
+            "description": "The client inactivity timeout in milliseconds."
         },
         "TimeoutMemberConnect": {
-            "type": "number"
+            "type": "number",
+            "description": "The member connection timeout in milliseconds."
         },
         "TimeoutMemberData": {
-            "type": "number"
+            "type": "number",
+            "description": "The member inactivity timeout in milliseconds."
         },
         "TimeoutTcpInspect": {
-            "type": "number"
+            "type": "number",
+            "description": "The time in milliseconds, to wait for additional\nTCP packets for content inspection."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

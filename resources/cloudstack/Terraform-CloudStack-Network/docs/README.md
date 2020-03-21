@@ -1,6 +1,6 @@
 # Terraform::CloudStack::Network
 
-CloudFormation equivalent of cloudstack_network
+Creates a network.
 
 ## Syntax
 
@@ -55,6 +55,11 @@ Properties:
 
 #### AclId
 
+The ACL ID that should be attached to the network or
+`none` if you do not want to attach an ACL. You can dynamically attach and
+swap ACL's, but if you want to detach an attached ACL and revert to using
+`none`, this will force a new resource to be created. (defaults `none`).
+
 _Required_: No
 
 _Type_: String
@@ -62,6 +67,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Cidr
+
+The CIDR block for the network. Changing this forces a new
+resource to be created.
 
 _Required_: Yes
 
@@ -71,6 +79,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayText
 
+The display text of the network.
+
 _Required_: No
 
 _Type_: String
@@ -78,6 +88,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Endip
+
+End of the IP block that will be available on the
+network. Defaults to the last available IP in the range.
 
 _Required_: No
 
@@ -87,6 +100,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Gateway
 
+Gateway that will be provided to the instances in this
+network. Defaults to the first usable IP in the range.
+
 _Required_: No
 
 _Type_: String
@@ -94,6 +110,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the network.
 
 _Required_: Yes
 
@@ -103,6 +121,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NetworkDomain
 
+DNS domain for the network.
+
 _Required_: No
 
 _Type_: String
@@ -110,6 +130,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NetworkOffering
+
+The name or ID of the network offering to use
+for this network.
 
 _Required_: Yes
 
@@ -119,6 +142,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Project
 
+The name or ID of the project to deploy this
+instance to. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -126,6 +152,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SourceNatIp
+
+If set to `true` a public IP will be associated
+with the network. This is mainly used when the network supports the source
+NAT service which claims the first associated IP address. This prevents the
+ability to manage the IP address as an independent entity.
 
 _Required_: No
 
@@ -135,6 +166,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Startip
 
+Start of the IP block that will be available on the
+network. Defaults to the second available IP in the range.
+
 _Required_: No
 
 _Type_: String
@@ -142,6 +176,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vlan
+
+The VLAN number (1-4095) the network will use. This might be
+required by the Network Offering if specifyVlan=true is set. Only the ROOT
+admin can set this value.
 
 _Required_: No
 
@@ -151,6 +189,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VpcId
 
+The VPC ID in which to create this network. Changing
+this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -158,6 +199,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Zone
+
+The name or ID of the zone where this network will be
+available. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

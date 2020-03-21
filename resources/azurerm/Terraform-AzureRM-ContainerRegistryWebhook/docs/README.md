@@ -1,6 +1,6 @@
 # Terraform::AzureRM::ContainerRegistryWebhook
 
-CloudFormation equivalent of azurerm_container_registry_webhook
+Manages an Azure Container Registry Webhook.
 
 ## Syntax
 
@@ -52,6 +52,8 @@ Properties:
 
 #### Actions
 
+A list of actions that trigger the Webhook to post notifications. At least one action needs to be specified. Valid values are: `push`, `delete`, `quarantine`, `chart_push`, `chart_delete`.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -59,6 +61,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CustomHeaders
+
+Custom headers that will be added to the webhook notifications request.
 
 _Required_: No
 
@@ -68,6 +72,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Location
 
+Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -75,6 +81,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the Container Registry Webhook. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -84,6 +92,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RegistryName
 
+The Name of Container registry this Webhook belongs to. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -91,6 +101,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which to create the Container Registry Webhook. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -100,6 +112,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Scope
 
+Specifies the scope of repositories that can trigger an event. For example, `foo:*` means events for all tags under repository `foo`. `foo:bar` means events for 'foo:bar' only. `foo` is equivalent to `foo:latest`. Empty means all events.
+
 _Required_: No
 
 _Type_: String
@@ -108,6 +122,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServiceUri
 
+Specifies the service URI for the Webhook to post notifications.
+
 _Required_: Yes
 
 _Type_: String
@@ -115,6 +131,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Status
+
+Specifies if this Webhook triggers notifications or not. Valid values: `enabled` and `disabled`. Default is `enabled`.
 
 _Required_: No
 

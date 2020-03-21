@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::GaapLayer7Listener",
-    "description": "CloudFormation equivalent of tencentcloud_gaap_layer7_listener",
+    "description": "Provides a resource to create a layer7 listener of GAAP.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,38 +9,47 @@
             "type": "string"
         },
         "AuthType": {
-            "type": "number"
+            "type": "number",
+            "description": "Authentication type of the layer7 listener. `0` is one-way authentication and `1` is mutual authentication. NOTES: Only supports listeners of `HTTPS` protocol."
         },
         "CertificateId": {
-            "type": "string"
+            "type": "string",
+            "description": "Certificate ID of the layer7 listener. NOTES: Only supports listeners of `HTTPS` protocol."
         },
         "ClientCertificateId": {
-            "type": "string"
+            "type": "string",
+            "description": "It has been deprecated from version 1.26.0. Set `client_certificate_ids` instead. ID of the client certificate. Set only when `auth_type` is specified as mutual authentication. NOTES: Only supports listeners of `HTTPS` protocol."
         },
         "ClientCertificateIds": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "ID list of the client certificate. Set only when `auth_type` is specified as mutual authentication. NOTES: Only supports listeners of `HTTPS` protocol."
         },
         "CreateTime": {
             "type": "string"
         },
         "ForwardProtocol": {
-            "type": "string"
+            "type": "string",
+            "description": "Protocol type of the forwarding, the available values include `HTTP` and `HTTPS`. NOTES: Only supports listeners of `HTTPS` protocol."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the layer7 listener, the maximum length is 30."
         },
         "Port": {
-            "type": "number"
+            "type": "number",
+            "description": "Port of the layer7 listener."
         },
         "Protocol": {
-            "type": "string"
+            "type": "string",
+            "description": "Protocol of the layer7 listener, the available values include `HTTP` and `HTTPS`."
         },
         "ProxyId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the GAAP proxy."
         },
         "Status": {
             "type": "number"

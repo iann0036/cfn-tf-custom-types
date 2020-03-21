@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::NSXT::LbSourceIpPersistenceProfile",
-    "description": "CloudFormation equivalent of nsxt_lb_source_ip_persistence_profile",
+    "description": "Provides a resource to configure lb source ip persistence profile on NSX-T manager\n\n~> **NOTE:** This resource requires NSX version 2.3 or higher.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Tag": {
@@ -26,25 +26,31 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of this resource."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The display name of this resource. Defaults to ID if not set."
         },
         "HaPersistenceMirroring": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "A boolean flag which reflects whether persistence entries will be synchronized to the HA peer."
         },
         "PersistenceShared": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "A boolean flag which reflects whether the cookie persistence is private or shared."
         },
         "PurgeWhenFull": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "A boolean flag which reflects whether entries will be purged when the persistence table is full. Defaults to true."
         },
         "Revision": {
             "type": "number"
         },
         "Timeout": {
-            "type": "number"
+            "type": "number",
+            "description": "Persistence expiration time in seconds, counted from the time all the connections are completed. Defaults to 300 seconds."
         },
         "Tag": {
             "type": "array",

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::DigitalOcean::DatabaseReplica",
-    "description": "CloudFormation equivalent of digitalocean_database_replica",
+    "description": "Provides a DigitalOcean database replica resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "ClusterId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the original source database cluster."
         },
         "Database": {
             "type": "string"
@@ -18,7 +19,8 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name for the database replica."
         },
         "Password": {
             "type": "string"
@@ -33,10 +35,12 @@
             "type": "string"
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "DigitalOcean region where the replica will reside."
         },
         "Size": {
-            "type": "string"
+            "type": "string",
+            "description": "Database Droplet size associated with the replica (ex. `db-s-1vcpu-1gb`)."
         },
         "Tags": {
             "type": "array",

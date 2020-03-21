@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::HaVipEipAttachment
 
-CloudFormation equivalent of tencentcloud_ha_vip_eip_attachment
+Provides a resource to create a HA VIP EIP attachment.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### AddressIp
 
+Public address of the EIP.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HavipId
+
+Id of the attached HA VIP.
 
 _Required_: Yes
 

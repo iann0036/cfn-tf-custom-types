@@ -1,6 +1,15 @@
 # Terraform::Google::FolderIamBinding
 
-CloudFormation equivalent of google_folder_iam_binding
+Allows creation and management of a single binding within IAM policy for
+an existing Google Cloud Platform folder.
+
+~> **Note:** This resource _must not_ be used in conjunction with
+   `google_folder_iam_policy` or they will fight over what your policy
+   should be.
+
+~> **Note:** On create, this resource will overwrite members of any existing roles.
+    Use `terraform import` and inspect the `terraform plan` output to ensure
+    your existing members are preserved.
 
 ## Syntax
 
@@ -34,6 +43,8 @@ Properties:
 
 #### Folder
 
+The resource name of the folder the policy is attached to. Its format is folders/{folder_id}.
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +60,10 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Role
+
+The role that should be applied. Only one
+`google_folder_iam_binding` can be used per role. Note that custom roles must be of the format
+`[projects|organizations]/{parent-name}/roles/{role-name}`.
 
 _Required_: Yes
 

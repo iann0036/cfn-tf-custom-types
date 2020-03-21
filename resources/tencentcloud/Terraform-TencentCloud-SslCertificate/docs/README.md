@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::SslCertificate
 
-CloudFormation equivalent of tencentcloud_ssl_certificate
+Provides a resource to create a SSL certificate.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### Cert
 
+Content of the SSL certificate. Not allowed newline at the start and end.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Key
+
+Key of the SSL certificate and required when certificate type is `SVR`. Not allowed newline at the start and end.
 
 _Required_: No
 
@@ -53,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name of the SSL certificate.
+
 _Required_: No
 
 _Type_: String
@@ -61,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProjectId
 
+Project ID of the SSL certificate. Default is `0`.
+
 _Required_: No
 
 _Type_: Double
@@ -68,6 +76,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+Type of the SSL certificate. Available values includes: `CA` and `SVR`.
 
 _Required_: Yes
 

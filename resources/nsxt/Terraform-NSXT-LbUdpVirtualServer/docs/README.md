@@ -1,6 +1,8 @@
 # Terraform::NSXT::LbUdpVirtualServer
 
-CloudFormation equivalent of nsxt_lb_udp_virtual_server
+Provides a resource to configure lb udp virtual server on NSX-T manager
+
+~> **NOTE:** This resource requires NSX version 2.3 or higher.
 
 ## Syntax
 
@@ -58,6 +60,8 @@ Properties:
 
 #### AccessLogEnabled
 
+Whether access log is enabled. Default is false.
+
 _Required_: No
 
 _Type_: Boolean
@@ -65,6 +69,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ApplicationProfileId
+
+The application profile defines the application protocol characteristics.
 
 _Required_: Yes
 
@@ -74,6 +80,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DefaultPoolMemberPorts
 
+List of default pool member ports.
+
 _Required_: No
 
 _Type_: List of String
@@ -81,6 +89,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Description of this resource.
 
 _Required_: No
 
@@ -90,6 +100,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+The display name of this resource. Defaults to ID if not set.
+
 _Required_: No
 
 _Type_: String
@@ -97,6 +109,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Enabled
+
+Whether the virtual server is enabled. Default is true.
 
 _Required_: No
 
@@ -106,6 +120,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IpAddress
 
+Virtual server IP address.
+
 _Required_: Yes
 
 _Type_: String
@@ -113,6 +129,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MaxConcurrentConnections
+
+To ensure one virtual server does not over consume resources, affecting other applications hosted on the same LBS, connections to a virtual server can be capped. If it is not specified, it means that connections are unlimited.
 
 _Required_: No
 
@@ -122,6 +140,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxNewConnectionRate
 
+To ensure one virtual server does not over consume resources, connections to a member can be rate limited. If it is not specified, it means that connection rate is unlimited.
+
 _Required_: No
 
 _Type_: Double
@@ -129,6 +149,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PersistenceProfileId
+
+Persistence profile is used to allow related client connections to be sent to the same backend server. Only source ip persistence profile is accepted.
 
 _Required_: No
 
@@ -138,6 +160,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PoolId
 
+Pool of backend servers. Server pool consists of one or more servers, also referred to as pool members, that are similarly configured and are running the same application.
+
 _Required_: No
 
 _Type_: String
@@ -146,6 +170,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ports
 
+List of virtual server port.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -153,6 +179,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SorryPoolId
+
+When load balancer can not select a backend server to serve the request in default pool or pool in rules, the request would be served by sorry server pool.
 
 _Required_: No
 

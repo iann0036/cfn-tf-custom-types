@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Heroku::SpaceInboundRuleset",
-    "description": "CloudFormation equivalent of heroku_space_inbound_ruleset",
+    "description": "Provides a resource for managing [inbound rulesets](https://devcenter.heroku.com/articles/platform-api-reference#inbound-ruleset) for Heroku Private Spaces.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Rule": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "Action": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The action to apply this rule to. Must be one of `allow` or `deny`."
                 },
                 "Source": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A CIDR block source for the rule."
                 }
             },
             "required": [
@@ -26,7 +28,8 @@
             "type": "string"
         },
         "Space": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the space."
         },
         "Rule": {
             "type": "array",

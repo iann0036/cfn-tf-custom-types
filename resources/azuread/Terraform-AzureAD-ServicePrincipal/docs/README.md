@@ -1,6 +1,8 @@
 # Terraform::AzureAD::ServicePrincipal
 
-CloudFormation equivalent of azuread_service_principal
+Manages a Service Principal associated with an Application within Azure Active Directory.
+
+-> **NOTE:** If you're authenticating using a Service Principal then it must have permissions to both `Read and write all applications` and `Sign in and read user profile` within the `Windows Azure Active Directory` API. Please see The [Granting a Service Principal permission to manage AAD](../guides/service_principal_configuration.html) for the required steps.
 
 ## Syntax
 
@@ -34,6 +36,8 @@ Properties:
 
 #### AppRoleAssignmentRequired
 
+Does this Service Principal require an AppRoleAssignment to a user or group before Azure AD will issue a user or access token to the application? Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -42,6 +46,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ApplicationId
 
+The ID of the Azure AD Application for which to create a Service Principal.
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A list of tags to apply to the Service Principal.
 
 _Required_: No
 

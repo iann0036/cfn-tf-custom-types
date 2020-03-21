@@ -1,6 +1,8 @@
 # Terraform::AzureStack::LbNatPool
 
-CloudFormation equivalent of azurestack_lb_nat_pool
+Manages a Load Balancer NAT pool.
+
+~> **NOTE** When using this resource, the Load Balancer needs to have a FrontEnd IP Configuration Attached
 
 ## Syntax
 
@@ -43,6 +45,8 @@ Properties:
 
 #### BackendPort
 
+The port used for the internal endpoint. Possible values range between 1 and 65535, inclusive.
+
 _Required_: Yes
 
 _Type_: Double
@@ -50,6 +54,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FrontendIpConfigurationName
+
+The name of the frontend IP configuration exposing this rule.
 
 _Required_: Yes
 
@@ -59,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FrontendPortEnd
 
+The last port number in the range of external ports that will be used to provide Inbound Nat to NICs associated with this Load Balancer. Possible values range between 1 and 65534, inclusive.
+
 _Required_: Yes
 
 _Type_: Double
@@ -66,6 +74,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FrontendPortStart
+
+The first port number in the range of external ports that will be used to provide Inbound Nat to NICs associated with this Load Balancer. Possible values range between 1 and 65534, inclusive.
 
 _Required_: Yes
 
@@ -75,6 +85,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LoadbalancerId
 
+The ID of the Load Balancer in which to create the NAT pool.
+
 _Required_: Yes
 
 _Type_: String
@@ -82,6 +94,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the NAT pool.
 
 _Required_: Yes
 
@@ -91,6 +105,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Protocol
 
+The transport protocol for the external endpoint. Possible values are `Udp` or `Tcp`.
+
 _Required_: Yes
 
 _Type_: String
@@ -98,6 +114,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which to create the resource.
 
 _Required_: Yes
 

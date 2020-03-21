@@ -1,6 +1,8 @@
 # Terraform::Docker::Volume
 
-CloudFormation equivalent of docker_volume
+Creates and destroys a volume in Docker. This can be used alongside
+[docker\_container](/docs/providers/docker/r/container.html)
+to prepare volumes that can be shared across containers.
 
 ## Syntax
 
@@ -37,6 +39,8 @@ Properties:
 
 #### Driver
 
+Driver type for the volume (defaults to local).
+
 _Required_: No
 
 _Type_: String
@@ -45,6 +49,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DriverOpts
 
+Options specific to the driver.
+
 _Required_: No
 
 _Type_: List of <a href="driveropts.md">DriverOpts</a>
@@ -52,6 +58,9 @@ _Type_: List of <a href="driveropts.md">DriverOpts</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the Docker volume (generated if not
+provided).
 
 _Required_: No
 

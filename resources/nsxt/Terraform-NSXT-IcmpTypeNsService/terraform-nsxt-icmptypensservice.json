@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::NSXT::IcmpTypeNsService",
-    "description": "CloudFormation equivalent of nsxt_icmp_type_ns_service",
+    "description": "This resource provides a way to configure a networking and security service which can be used within NSX. This specific service is for the ICMP protocol.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Tag": {
@@ -29,19 +29,24 @@
             "type": "boolean"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "Display name, defaults to ID if not set."
         },
         "IcmpCode": {
-            "type": "number"
+            "type": "number",
+            "description": "ICMP message code."
         },
         "IcmpType": {
-            "type": "number"
+            "type": "number",
+            "description": "ICMP message type."
         },
         "Protocol": {
-            "type": "string"
+            "type": "string",
+            "description": "Version of ICMP protocol ICMPv4 or ICMPv6."
         },
         "Revision": {
             "type": "number"

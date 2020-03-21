@@ -1,6 +1,6 @@
 # Terraform::AzureRM::AutomationVariableDatetime
 
-CloudFormation equivalent of azurerm_automation_variable_datetime
+Manages a DateTime variable in Azure Automation
 
 ## Syntax
 
@@ -41,6 +41,8 @@ Properties:
 
 #### AutomationAccountName
 
+The name of the automation account in which the Variable is created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +50,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+The description of the Automation Variable.
 
 _Required_: No
 
@@ -57,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Encrypted
 
+Specifies if the Automation Variable is encrypted. Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -64,6 +70,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the Automation Variable. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -73,6 +81,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to create the Automation Variable. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -80,6 +90,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Value
+
+The value of the Automation Variable in the [RFC3339 Section 5.6 Internet Date/Time Format](https://tools.ietf.org/html/rfc3339#section-5.6).
 
 _Required_: No
 

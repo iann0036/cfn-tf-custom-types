@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Location
 
+The name of the Azure Region in which the API Management Service should be expanded to.
+
 _Required_: Yes
 
 _Type_: String

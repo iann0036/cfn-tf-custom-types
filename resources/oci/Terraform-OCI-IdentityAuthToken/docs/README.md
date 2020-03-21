@@ -1,6 +1,17 @@
 # Terraform::OCI::IdentityAuthToken
 
-CloudFormation equivalent of oci_identity_auth_token
+This resource provides the Auth Token resource in Oracle Cloud Infrastructure Identity service.
+
+Creates a new auth token for the specified user. For information about what auth tokens are for, see
+[Managing User Credentials](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcredentials.htm).
+
+You must specify a *description* for the auth token (although it can be an empty string). It does not
+have to be unique, and you can change it anytime with
+[UpdateAuthToken](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AuthToken/UpdateAuthToken).
+
+Every user has permission to create an auth token for *their own user ID*. An administrator in your organization
+does not need to write a policy to give users this ability. To compare, administrators who have permission to the
+tenancy can use this operation to create an auth token for any user, including themselves.
 
 ## Syntax
 
@@ -33,6 +44,8 @@ Properties:
 
 #### Description
 
+(Updatable) The description you assign to the auth token during creation. Does not have to be unique, and it's changeable.
+
 _Required_: Yes
 
 _Type_: String
@@ -40,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserId
+
+The OCID of the user.
 
 _Required_: Yes
 

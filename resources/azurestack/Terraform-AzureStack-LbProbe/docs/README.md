@@ -1,6 +1,8 @@
 # Terraform::AzureStack::LbProbe
 
-CloudFormation equivalent of azurestack_lb_probe
+Manages a LoadBalancer Probe Resource.
+
+~> **NOTE** When using this resource, the LoadBalancer needs to have a FrontEnd IP Configuration Attached
 
 ## Syntax
 
@@ -43,6 +45,8 @@ Properties:
 
 #### IntervalInSeconds
 
+The interval, in seconds between probes to the backend endpoint for health status. The default value is 15, the minimum value is 5.
+
 _Required_: No
 
 _Type_: Double
@@ -50,6 +54,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LoadbalancerId
+
+The ID of the LoadBalancer in which to create the NAT Rule.
 
 _Required_: Yes
 
@@ -59,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the Probe.
+
 _Required_: Yes
 
 _Type_: String
@@ -66,6 +74,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NumberOfProbes
+
+The number of failed probe attempts after which the backend endpoint is removed from rotation. The default value is 2. NumberOfProbes multiplied by intervalInSeconds value must be greater or equal to 10.Endpoints are returned to rotation when at least one probe is successful.
 
 _Required_: No
 
@@ -75,6 +85,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Port
 
+Port on which the Probe queries the backend endpoint. Possible values range from 1 to 65535, inclusive.
+
 _Required_: Yes
 
 _Type_: Double
@@ -82,6 +94,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Protocol
+
+Specifies the protocol of the end point. Possible values are `Http` or `Tcp`. If Tcp is specified, a received ACK is required for the probe to be successful. If Http is specified, a 200 OK response from the specified URI is required for the probe to be successful.
 
 _Required_: No
 
@@ -91,6 +105,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RequestPath
 
+The URI used for requesting health status from the backend endpoint. Required if protocol is set to Http. Otherwise, it is not allowed.
+
 _Required_: No
 
 _Type_: String
@@ -98,6 +114,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which to create the resource.
 
 _Required_: Yes
 

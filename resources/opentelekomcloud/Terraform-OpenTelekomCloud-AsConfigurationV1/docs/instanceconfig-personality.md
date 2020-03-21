@@ -32,6 +32,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Path
 
+The absolute path of the destination file.
+
 _Required_: Yes
 
 _Type_: String

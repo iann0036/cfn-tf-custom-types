@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::MysqlInstance",
-    "description": "CloudFormation equivalent of tencentcloud_mysql_instance",
+    "description": "Provides a mysql instance resource to create master database instances.\n\n~> **NOTE:** If this mysql has readonly instance, the terminate operation of the mysql does NOT take effect immediately, maybe takes for several hours. so during that time, VPCs associated with that mysql instance can't be terminated also.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,22 +9,27 @@
             "type": "string"
         },
         "AutoRenewFlag": {
-            "type": "number"
+            "type": "number",
+            "description": "Auto renew flag. NOTES: Only supported prepay instance."
         },
         "AvailabilityZone": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates which availability zone will be used."
         },
         "EngineVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "The version number of the database engine to use. Supported versions include 5.5/5.6/5.7, and default is 5.7."
         },
         "FirstSlaveZone": {
-            "type": "string"
+            "type": "string",
+            "description": "Zone information about first slave instance."
         },
         "Gtid": {
             "type": "number"
         },
         "InstanceName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of a mysql instance."
         },
         "InternetHost": {
             "type": "string"
@@ -33,19 +38,22 @@
             "type": "number"
         },
         "InternetService": {
-            "type": "number"
+            "type": "number",
+            "description": "Indicates whether to enable the access to an instance from public network: 0 - No, 1 - Yes."
         },
         "IntranetIp": {
             "type": "string"
         },
         "IntranetPort": {
-            "type": "number"
+            "type": "number",
+            "description": "Public access port, rang form 1024 to 65535 and default value is 3306."
         },
         "Locked": {
             "type": "number"
         },
         "MemSize": {
-            "type": "number"
+            "type": "number",
+            "description": "Memory size (in MB)."
         },
         "Parameters": {
             "type": "array",
@@ -65,41 +73,51 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "List of parameters to use."
         },
         "PayType": {
-            "type": "number"
+            "type": "number",
+            "description": "Pay type of instance, 0: prepay, 1: postpay. NOTES: Only supported prepay instance."
         },
         "Period": {
-            "type": "number"
+            "type": "number",
+            "description": "Period of instance. NOTES: Only supported prepay instance."
         },
         "ProjectId": {
-            "type": "number"
+            "type": "number",
+            "description": "Project ID, default value is 0."
         },
         "RootPassword": {
-            "type": "string"
+            "type": "string",
+            "description": "Password of root account. This parameter can be specified when you purchase master instances, but it should be ignored when you purchase read-only instances or disaster recovery instances."
         },
         "SecondSlaveZone": {
-            "type": "string"
+            "type": "string",
+            "description": "Zone information about second slave instance."
         },
         "SecurityGroups": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Security groups to use."
         },
         "SlaveDeployMode": {
-            "type": "number"
+            "type": "number",
+            "description": "Availability zone deployment method. Available values: 0 - Single availability zone; 1 - Multiple availability zones."
         },
         "SlaveSyncMode": {
-            "type": "number"
+            "type": "number",
+            "description": "Data replication mode. 0 - Async replication; 1 - Semisync replication; 2 - Strongsync replication."
         },
         "Status": {
             "type": "number"
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "Private network ID. If vpc_id is set, this value is required."
         },
         "Tags": {
             "type": "array",
@@ -119,16 +137,19 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Instance tags."
         },
         "TaskStatus": {
             "type": "number"
         },
         "VolumeSize": {
-            "type": "number"
+            "type": "number",
+            "description": "Disk size (in GB)."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of VPC, which can be modified once every 24 hours and can't be removed."
         }
     },
     "additionalProperties": false,

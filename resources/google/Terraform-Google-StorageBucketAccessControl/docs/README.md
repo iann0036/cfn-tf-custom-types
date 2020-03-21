@@ -1,6 +1,35 @@
 # Terraform::Google::StorageBucketAccessControl
 
-CloudFormation equivalent of google_storage_bucket_access_control
+Bucket ACLs can be managed authoritatively using the
+[`storage_bucket_acl`](https://www.terraform.io/docs/providers/google/r/storage_bucket_acl.html)
+resource. Do not use these two resources in conjunction to manage the same bucket.
+
+The BucketAccessControls resource manages the Access Control List
+(ACLs) for a single entity/role pairing on a bucket. ACLs let you specify who
+has access to your data and to what extent.
+
+There are three roles that can be assigned to an entity:
+
+READERs can get the bucket, though no acl property will be returned, and
+list the bucket's objects.  WRITERs are READERs, and they can insert
+objects into the bucket and delete the bucket's objects.  OWNERs are
+WRITERs, and they can get the acl property of a bucket, update a bucket,
+and call all BucketAccessControls methods on the bucket.  For more
+information, see Access Control, with the caveat that this API uses
+READER, WRITER, and OWNER instead of READ, WRITE, and FULL_CONTROL.
+
+
+To get more information about BucketAccessControl, see:
+
+* [API documentation](https://cloud.google.com/storage/docs/json_api/v1/bucketAccessControls)
+* How-to Guides
+    * [Official Documentation](https://cloud.google.com/storage/docs/access-control/lists)
+
+<div class = "oics-button" style="float: right; margin: 0 0 -15px">
+  <a href="https://console.cloud.google.com/cloudshell/open?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fterraform-google-modules%2Fdocs-examples.git&cloudshell_working_dir=storage_bucket_access_control_public_bucket&cloudshell_image=gcr.io%2Fgraphite-cloud-shell-images%2Fterraform%3Alatest&open_in_editor=main.tf&cloudshell_print=.%2Fmotd&cloudshell_tutorial=.%2Ftutorial.md" target="_blank">
+    <img alt="Open in Cloud Shell" src="//gstatic.com/cloudssh/images/open-btn.svg" style="max-height: 44px; margin: 32px auto; max-width: 100%;">
+  </a>
+</div>
 
 ## Syntax
 

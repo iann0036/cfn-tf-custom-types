@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Kubernetes::PersistentVolumeClaim",
-    "description": "CloudFormation equivalent of kubernetes_persistent_volume_claim",
+    "description": "This resource allows the user to request for and claim to a persistent volume.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Metadata": {
@@ -213,7 +213,8 @@
             "type": "string"
         },
         "WaitUntilBound": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to wait for the claim to reach `Bound` state (to find volume in which to claim the space)."
         },
         "Metadata": {
             "type": "array",

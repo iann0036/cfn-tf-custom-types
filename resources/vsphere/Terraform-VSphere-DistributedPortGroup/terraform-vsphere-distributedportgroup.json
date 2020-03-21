@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::VSphere::DistributedPortGroup",
-    "description": "CloudFormation equivalent of vsphere_distributed_port_group",
+    "description": "The `vsphere_distributed_port_group` resource can be used to manage vSphere\ndistributed virtual port groups. These port groups are connected to distributed\nvirtual switches, which can be managed by the\n[`vsphere_distributed_virtual_switch`][distributed-virtual-switch] resource.\n\nDistributed port groups can be used as networks for virtual machines, allowing\nVMs to use the networking supplied by a distributed virtual switch (DVS), with\na set of policies that apply to that individual newtork, if desired.\n\nFor an overview on vSphere networking concepts, see [this\npage][ref-vsphere-net-concepts]. For more information on vSphere DVS\nportgroups, see [this page][ref-vsphere-dvportgroup].\n\n[distributed-virtual-switch]: /docs/providers/vsphere/r/distributed_virtual_switch.html\n[ref-vsphere-net-concepts]: https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.networking.doc/GUID-2B11DBB8-CB3C-4AFF-8885-EFEA0FC562F4.html\n[ref-vsphere-dvportgroup]: https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.networking.doc/GUID-69933F6E-2442-46CF-AA17-1196CB9A0A09.html\n\n~> **NOTE:** This resource requires vCenter and is not available on direct ESXi\nconnections.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "VlanRange": {
@@ -42,7 +42,8 @@
             "type": "boolean"
         },
         "AutoExpand": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Allows the port group to create additional ports\npast the limit specified in `number_of_ports` if necessary. Default: `true`."
         },
         "BlockAllPorts": {
             "type": "boolean"
@@ -77,13 +78,15 @@
             }
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "An optional description for the port group."
         },
         "DirectpathGen2Allowed": {
             "type": "boolean"
         },
         "DistributedVirtualSwitchUuid": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the DVS to add the\nport group to. Forces a new resource if changed."
         },
         "EgressShapingAverageBandwidth": {
             "type": "number"
@@ -125,7 +128,8 @@
             "type": "boolean"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the port group."
         },
         "NetflowEnabled": {
             "type": "boolean"
@@ -134,7 +138,8 @@
             "type": "boolean"
         },
         "NetworkResourcePoolKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The key of a network resource pool\nto associate with this port group. The default is `-1`, which implies no\nassociation."
         },
         "NetworkResourcePoolOverrideAllowed": {
             "type": "boolean"
@@ -143,13 +148,15 @@
             "type": "boolean"
         },
         "NumberOfPorts": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of ports available on this port\ngroup. Cannot be decreased below the amount of used ports on the port group."
         },
         "PortConfigResetAtDisconnect": {
             "type": "boolean"
         },
         "PortNameFormat": {
-            "type": "string"
+            "type": "string",
+            "description": "An optional formatting policy for naming of\nthe ports in this port group. See the `portNameFormat` attribute listed\n[here][ext-vsphere-portname-format] for details on the format syntax."
         },
         "PortPrivateSecondaryVlanId": {
             "type": "number"
@@ -184,7 +191,8 @@
             "type": "boolean"
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The port group type. Can be one of `earlyBinding` (static\nbinding) or `ephemeral`. Default: `earlyBinding`."
         },
         "UplinkTeamingOverrideAllowed": {
             "type": "boolean"

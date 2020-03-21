@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Tfe::TeamAccess",
-    "description": "CloudFormation equivalent of tfe_team_access",
+    "description": "Associate a team to permissions on a workspace.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "Access": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of access to grant. Valid values are `admin`,\n`read`, `plan`, or `write`."
         },
         "TeamId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the team to add to the workspace."
         },
         "WorkspaceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The workspace to which the team will be added,\nspecified as a human-readable ID (`<ORGANIZATION>/<WORKSPACE>`)."
         }
     },
     "additionalProperties": false,

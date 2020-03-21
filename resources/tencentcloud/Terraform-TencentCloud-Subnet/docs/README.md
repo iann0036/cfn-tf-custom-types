@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::Subnet
 
-CloudFormation equivalent of tencentcloud_subnet
+Provide a resource to create a VPC subnet.
 
 ## Syntax
 
@@ -42,6 +42,8 @@ Properties:
 
 #### AvailabilityZone
 
+The availability zone within which the subnet should be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +51,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CidrBlock
+
+A network address block of the subnet.
 
 _Required_: Yes
 
@@ -58,6 +62,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IsMulticast
 
+Indicates whether multicast is enabled. The default value is 'true'.
+
 _Required_: No
 
 _Type_: Boolean
@@ -65,6 +71,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of subnet to be created.
 
 _Required_: Yes
 
@@ -74,6 +82,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RouteTableId
 
+ID of a routing table to which the subnet should be associated.
+
 _Required_: No
 
 _Type_: String
@@ -82,6 +92,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+Tags of the subnet.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -89,6 +101,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+ID of the VPC to be associated.
 
 _Required_: Yes
 

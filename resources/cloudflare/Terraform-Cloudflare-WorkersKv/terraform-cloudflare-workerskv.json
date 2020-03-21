@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Cloudflare::WorkersKv",
-    "description": "CloudFormation equivalent of cloudflare_workers_kv",
+    "description": "Provides a Workers KV Pair.  *NOTE:*  This resource uses the Cloudflare account APIs.  This requires setting the `CLOUDFLARE_ACCOUNT_ID` environment variable or `account_id` provider argument.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "Key": {
-            "type": "string"
+            "type": "string",
+            "description": "The key name."
         },
         "NamespaceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Workers KV namespace in which you want to create the KV pair."
         },
         "Value": {
-            "type": "string"
+            "type": "string",
+            "description": "The string value to be stored in the key."
         }
     },
     "additionalProperties": false,

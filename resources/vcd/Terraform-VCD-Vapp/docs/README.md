@@ -1,6 +1,6 @@
 # Terraform::VCD::Vapp
 
-CloudFormation equivalent of vcd_vapp
+Provides a vCloud Director vApp resource. This can be used to create, modify, and delete vApps.
 
 ## Syntax
 
@@ -96,6 +96,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GuestProperties
 
+Key value map of vApp guest properties.
+
 _Required_: No
 
 _Type_: List of <a href="guestproperties.md">GuestProperties</a>
@@ -128,6 +130,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Metadata
 
+Key value map of metadata to assign to this vApp. Key and value can be any string. (Since *v2.2+* metadata is added directly to vApp instead of first VM in vApp).
+
 _Required_: No
 
 _Type_: List of <a href="metadata.md">Metadata</a>
@@ -135,6 +139,8 @@ _Type_: List of <a href="metadata.md">Metadata</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+A unique name for the vApp.
 
 _Required_: Yes
 
@@ -152,6 +158,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Org
 
+The name of organization to use, optional if defined at provider level. Useful when connected as sysadmin working across different organisations.
+
 _Required_: No
 
 _Type_: String
@@ -167,6 +175,8 @@ _Type_: List of <a href="ovf.md">Ovf</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PowerOn
+
+A boolean value stating if this vApp should be powered on. Default is `true`.
 
 _Required_: No
 
@@ -192,6 +202,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Vdc
 
+The name of VDC to use, optional if defined at provider level.
+
 _Required_: No
 
 _Type_: String
@@ -216,13 +228,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Href
 
-Returns the <code>Href</code> value.
+The vApp Hyper Reference.
 
 #### Status
 
-Returns the <code>Status</code> value.
+The vApp status as a numeric code.
 
 #### StatusText
 
-Returns the <code>StatusText</code> value.
+The vApp status as text.
 

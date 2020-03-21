@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::IdentityCompartment",
-    "description": "CloudFormation equivalent of oci_identity_compartment",
+    "description": "This resource provides the Compartment resource in Oracle Cloud Infrastructure Identity service.\n\nCreates a new compartment in the specified compartment.\n\n**Important:** Unless `enable_delete` is explicitly set to true:\n* Terraform will not delete compartments on destroy, and\n* For backwards compatibility, an existing compartment with the same name will be automatically imported into the state. Properties of the existing compartment will be updated to what is defined in the new configuration. This can cause a problem if multiple Terraform configurations are using the same compartment, but, for example, specify a different compartment description.\n\nSpecify the parent compartment's OCID as the compartment ID in the request object. Remember that the tenancy\nis simply the root compartment. For information about OCIDs, see\n[Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).\n\nYou must also specify a *name* for the compartment, which must be unique across all compartments in\nyour tenancy. You can use this name or the OCID when writing policies that apply\nto the compartment. For more information about policies, see\n[How Policies Work](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policies.htm).\n\nYou must also specify a *description* for the compartment (although it can be an empty string). It does\nnot have to be unique, and you can change it anytime with\n[UpdateCompartment](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/Compartment/UpdateCompartment).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -20,7 +20,8 @@
             "type": "string"
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The OCID of the parent compartment containing the compartment."
         },
         "DefinedTags": {
             "type": "array",
@@ -40,13 +41,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{\"Operations.CostCenter\": \"42\"}`."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The description you assign to the compartment during creation. Does not have to be unique, and it's changeable."
         },
         "EnableDelete": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Defaults to false. If omitted or set to false the provider will implicitly import the compartment if there is a name collision, and will not actually delete the compartment on destroy or removal of the resource declaration. If set to true, the provider will throw an error on a name collision with another compartment, and will attempt to delete the compartment on destroy or removal of the resource declaration."
         },
         "FreeformTags": {
             "type": "array",
@@ -66,7 +70,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{\"Department\": \"Finance\"}`."
         },
         "InactiveState": {
             "type": "string"
@@ -75,7 +80,8 @@
             "type": "boolean"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The name you assign to the compartment during creation. The name must be unique across all compartments in the parent compartment. Avoid entering confidential information."
         },
         "State": {
             "type": "string"

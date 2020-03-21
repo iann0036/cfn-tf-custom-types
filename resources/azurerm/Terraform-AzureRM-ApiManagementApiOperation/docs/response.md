@@ -30,6 +30,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Description
 
+A description of the HTTP Response, which may include HTML tags.
+
 _Required_: No
 
 _Type_: String
@@ -37,6 +39,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StatusCode
+
+The HTTP Status Code.
 
 _Required_: Yes
 

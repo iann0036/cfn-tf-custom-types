@@ -1,6 +1,6 @@
 # Terraform::OPC::ComputeSecurityIpList
 
-CloudFormation equivalent of opc_compute_security_ip_list
+The ``opc_compute_security_ip_list`` resource creates and manages a security IP list in an Oracle Cloud Infrastructure Compute Classic identity domain.
 
 ## Syntax
 
@@ -34,6 +34,8 @@ Properties:
 
 #### Description
 
+The description of the security ip list.
+
 _Required_: No
 
 _Type_: String
@@ -42,6 +44,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IpEntries
 
+The IP addresses to include in the list.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -49,6 +53,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The unique (within the identity domain) name of the security IP list.
 
 _Required_: Yes
 

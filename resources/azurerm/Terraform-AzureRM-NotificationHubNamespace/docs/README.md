@@ -1,6 +1,6 @@
 # Terraform::AzureRM::NotificationHubNamespace
 
-CloudFormation equivalent of azurerm_notification_hub_namespace
+Manages a Notification Hub Namespace.
 
 ## Syntax
 
@@ -41,6 +41,8 @@ Properties:
 
 #### Enabled
 
+Is this Notification Hub Namespace enabled? Defaults to `true`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -48,6 +50,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Location
+
+The Azure Region in which this Notification Hub Namespace should be created.
 
 _Required_: Yes
 
@@ -57,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name to use for this Notification Hub Namespace. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -64,6 +70,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NamespaceType
+
+The Type of Namespace - possible values are `Messaging` or `NotificationHub`. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -73,6 +81,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the Resource Group in which the Notification Hub Namespace should exist. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -80,6 +90,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SkuName
+
+The name of the SKU to use for this Notification Hub Namespace. Possible values are `Free`, `Basic` or `Standard`. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

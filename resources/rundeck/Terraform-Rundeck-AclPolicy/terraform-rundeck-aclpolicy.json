@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Rundeck::AclPolicy",
-    "description": "CloudFormation equivalent of rundeck_acl_policy",
+    "description": "The acl policy resource allows Rundeck projects to be managed by Terraform.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the policy. Must end with `.aclpolicy`."
         },
         "Policy": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the job, used to describe the job in the Rundeck UI."
         }
     },
     "additionalProperties": false,

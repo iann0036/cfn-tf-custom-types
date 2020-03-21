@@ -1,6 +1,6 @@
 # Terraform::GitHub::UserInvitationAccepter
 
-CloudFormation equivalent of github_user_invitation_accepter
+Provides a resource to manage GitHub repository collaborator invitations.
 
 ## Syntax
 
@@ -28,6 +28,8 @@ Properties:
 ## Properties
 
 #### InvitationId
+
+ID of the invitation to accept.
 
 _Required_: Yes
 

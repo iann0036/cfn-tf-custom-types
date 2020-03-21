@@ -33,6 +33,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### ClientCertificateThumbprint
 
+The client certificate thumbprint for the management endpoint.
+
 _Required_: Yes
 
 _Type_: String
@@ -40,6 +42,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ManagementEndpoints
+
+A list of cluster management endpoints.
 
 _Required_: Yes
 
@@ -49,6 +53,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxPartitionResolutionRetries
 
+The maximum number of retries when attempting resolve the partition.
+
 _Required_: Yes
 
 _Type_: Double
@@ -56,6 +62,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServerCertificateThumbprints
+
+A list of thumbprints of the server certificates of the Service Fabric cluster.
 
 _Required_: No
 

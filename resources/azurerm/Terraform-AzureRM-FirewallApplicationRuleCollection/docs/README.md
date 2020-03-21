@@ -1,6 +1,6 @@
 # Terraform::AzureRM::FirewallApplicationRuleCollection
 
-CloudFormation equivalent of azurerm_firewall_application_rule_collection
+Manages an Application Rule Collection within an Azure Firewall.
 
 ## Syntax
 
@@ -45,6 +45,8 @@ Properties:
 
 #### Action
 
+Specifies the action the rule will apply to matching traffic. Possible values are `Allow` and `Deny`.
+
 _Required_: Yes
 
 _Type_: String
@@ -52,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AzureFirewallName
+
+Specifies the name of the Firewall in which the Application Rule Collection should be created. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -61,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the Application Rule Collection which must be unique within the Firewall. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -69,6 +75,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Priority
 
+Specifies the priority of the rule collection. Possible values are between `100` - `65000`.
+
 _Required_: Yes
 
 _Type_: Double
@@ -76,6 +84,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+Specifies the name of the Resource Group in which the Firewall exists. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

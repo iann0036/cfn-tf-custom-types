@@ -22,6 +22,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### IgnoreResizeConfirmation
 
+Boolean to control whether
+to ignore manual confirmation of the instance resizing. This can be helpful
+to work with some OpenStack clouds which automatically confirm resizing of
+instances after some timeout.
+
 _Required_: No
 
 _Type_: Boolean

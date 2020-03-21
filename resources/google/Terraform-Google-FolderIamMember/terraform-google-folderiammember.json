@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::FolderIamMember",
-    "description": "CloudFormation equivalent of google_folder_iam_member",
+    "description": "Allows creation and management of a single member for a single binding within\nthe IAM policy for an existing Google Cloud Platform folder.\n\n~> **Note:** This resource _must not_ be used in conjunction with\n   `google_folder_iam_policy` or they will fight over what your policy\n   should be. Similarly, roles controlled by `google_folder_iam_binding`\n   should not be assigned to using `google_folder_iam_member`.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,13 +12,16 @@
             "type": "string"
         },
         "Folder": {
-            "type": "string"
+            "type": "string",
+            "description": "The resource name of the folder the policy is attached to. Its format is folders/{folder_id}."
         },
         "Member": {
-            "type": "string"
+            "type": "string",
+            "description": "The identity that will be granted the privilege in the `role`. For more details on format and restrictions see https://cloud.google.com/billing/reference/rest/v1/Policy#Binding\nThis field can have one of the following values:\n* **user:{emailid}**: An email address that represents a specific Google account. For example, alice@gmail.com or joe@example.com.\n* **serviceAccount:{emailid}**: An email address that represents a service account. For example, my-other-app@appspot.gserviceaccount.com.\n* **group:{emailid}**: An email address that represents a Google group. For example, admins@example.com.\n* **domain:{domain}**: A G Suite domain (primary, instead of alias) name that represents all the users of that domain. For example, google.com or example.com."
         },
         "Role": {
-            "type": "string"
+            "type": "string",
+            "description": "The role that should be applied. Note that custom roles must be of the format\n`[projects|organizations]/{parent-name}/roles/{role-name}`."
         }
     },
     "additionalProperties": false,

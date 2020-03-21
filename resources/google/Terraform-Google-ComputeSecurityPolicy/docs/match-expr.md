@@ -22,6 +22,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Expression
 
+Textual representation of an expression in Common Expression Language syntax.
+The application context of the containing message determines which well-known feature set of CEL is supported.
+
 _Required_: Yes
 
 _Type_: String

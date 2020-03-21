@@ -1,6 +1,8 @@
 # Terraform::Alicloud::EssNotification
 
-CloudFormation equivalent of alicloud_ess_notification
+Provides a ESS notification resource. More about Ess notification, see [Autoscaling Notification](https://www.alibabacloud.com/help/doc-detail/71114.htm).
+
+-> **NOTE:** Available in 1.55.0+
 
 ## Syntax
 
@@ -34,6 +36,8 @@ Properties:
 
 #### NotificationArn
 
+The Alibaba Cloud Resource Name (ARN) for the notification object. The format of `notification_arn` is acs:ess:{region}:{account-id}:{resource-relative-id}. Valid values for `resource-relative-id`: 'cloudmonitor', 'queue/', 'topic/'.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +46,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NotificationTypes
 
+The notification types of Auto Scaling events and resource changes. Supported notification types: 'AUTOSCALING:SCALE_OUT_SUCCESS', 'AUTOSCALING:SCALE_IN_SUCCESS', 'AUTOSCALING:SCALE_OUT_ERROR', 'AUTOSCALING:SCALE_IN_ERROR', 'AUTOSCALING:SCALE_REJECT', 'AUTOSCALING:SCALE_OUT_START', 'AUTOSCALING:SCALE_IN_START', 'AUTOSCALING:SCHEDULE_TASK_EXPIRING'.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -49,6 +55,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ScalingGroupId
+
+The ID of the Auto Scaling group.
 
 _Required_: Yes
 

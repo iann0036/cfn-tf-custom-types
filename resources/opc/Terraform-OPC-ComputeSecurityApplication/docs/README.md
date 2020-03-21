@@ -1,6 +1,6 @@
 # Terraform::OPC::ComputeSecurityApplication
 
-CloudFormation equivalent of opc_compute_security_application
+The ``opc_compute_security_application`` resource creates and manages a security application in an Oracle Cloud Infrastructure Compute Classic identity domain.
 
 ## Syntax
 
@@ -47,6 +47,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Dport
 
+The port, or range of ports, to enable for this application, e.g `8080`, `6000-7000`. This must be set if the `protocol` is set to `tcp` or `udp`.
+
 _Required_: No
 
 _Type_: String
@@ -54,6 +56,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Icmpcode
+
+The ICMP code to enable for this application, if the `protocol` is `icmp`. Must be one of
+`admin`, `df`, `host`, `network`, `port` or `protocol`.
 
 _Required_: No
 
@@ -63,6 +68,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Icmptype
 
+The ICMP type to enable for this application, if the `protocol` is `icmp`. Must be one of
+`echo`, `reply`, `ttl`, `traceroute`, `unreachable`.
+
 _Required_: No
 
 _Type_: String
@@ -71,6 +79,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The unique (within the identity domain) name of the application.
+
 _Required_: Yes
 
 _Type_: String
@@ -78,6 +88,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Protocol
+
+The protocol to enable for this application. Must be one of
+`tcp`, `udp`, `ah`, `esp`, `icmp`, `icmpv6`, `igmp`, `ipip`, `gre`, `mplsip`, `ospf`, `pim`, `rdp`, `sctp` or `all`.
 
 _Required_: Yes
 

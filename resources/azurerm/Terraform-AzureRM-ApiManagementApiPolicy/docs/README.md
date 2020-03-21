@@ -1,6 +1,6 @@
 # Terraform::AzureRM::ApiManagementApiPolicy
 
-CloudFormation equivalent of azurerm_api_management_api_policy
+Manages an API Management API Policy
 
 ## Syntax
 
@@ -39,6 +39,8 @@ Properties:
 
 #### ApiManagementName
 
+The name of the API Management Service. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -46,6 +48,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ApiName
+
+The ID of the API Management API within the API Management Service. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -55,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the Resource Group in which the API Management Service exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -63,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### XmlContent
 
+The XML Content for this Policy as a string. An XML file can be used here with Terraform's [file function](https://www.terraform.io/docs/configuration/functions/file.html) that is similar to Microsoft's `PolicyFilePath` option.
+
 _Required_: No
 
 _Type_: String
@@ -70,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### XmlLink
+
+A link to a Policy XML Document, which must be publicly available.
 
 _Required_: No
 

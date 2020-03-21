@@ -1,6 +1,6 @@
 # Terraform::AzureRM::NetworkInterfaceNatRuleAssociation
 
-CloudFormation equivalent of azurerm_network_interface_nat_rule_association
+Manages the association between a Network Interface and a Load Balancer's NAT Rule.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### IpConfigurationName
 
+The Name of the IP Configuration within the Network Interface which should be connected to the NAT Rule. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -43,6 +45,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NatRuleId
 
+The ID of the Load Balancer NAT Rule which this Network Interface which should be connected to. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NetworkInterfaceId
+
+The ID of the Network Interface. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

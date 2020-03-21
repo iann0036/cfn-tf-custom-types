@@ -1,6 +1,8 @@
 # Terraform::BIGIP::LtmIrule
 
-CloudFormation equivalent of bigip_ltm_irule
+`bigip_ltm_irule` Creates iRule on BIG-IP F5 device
+
+For resources should be named with their "full path". The full path is the combination of the partition + name of the resource. For example /Common/my-pool.
 
 ## Syntax
 
@@ -31,6 +33,8 @@ Properties:
 
 #### Irule
 
+Body of the iRule.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +42,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of the iRule.
 
 _Required_: Yes
 

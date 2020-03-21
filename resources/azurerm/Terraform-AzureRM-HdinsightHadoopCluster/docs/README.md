@@ -1,6 +1,6 @@
 # Terraform::AzureRM::HdinsightHadoopCluster
 
-CloudFormation equivalent of azurerm_hdinsight_hadoop_cluster
+Manages a HDInsight Hadoop Cluster.
 
 ## Syntax
 
@@ -72,6 +72,8 @@ Properties:
 
 #### ClusterVersion
 
+Specifies the Version of HDInsights which should be used for this Cluster. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -79,6 +81,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Location
+
+Specifies the Azure Region which this HDInsight Hadoop Cluster should exist. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -88,6 +92,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name for this HDInsight Hadoop Cluster. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -95,6 +101,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+Specifies the name of the Resource Group in which this HDInsight Hadoop Cluster should exist. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -104,6 +112,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A map of Tags which should be assigned to this HDInsight Hadoop Cluster.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -111,6 +121,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tier
+
+Specifies the Tier which should be used for this HDInsight Hadoop Cluster. Possible values are `Standard` or `Premium`. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

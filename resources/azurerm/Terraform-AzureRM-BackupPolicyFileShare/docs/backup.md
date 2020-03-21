@@ -24,6 +24,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Frequency
 
+Sets the backup frequency. Currently, only `Daily` is supported.
+
 _Required_: Yes
 
 _Type_: String

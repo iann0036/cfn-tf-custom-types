@@ -1,6 +1,6 @@
 # Terraform::AzureRM::RedisFirewallRule
 
-CloudFormation equivalent of azurerm_redis_firewall_rule
+Manages a Firewall Rule associated with a Redis Cache.
 
 ## Syntax
 
@@ -39,6 +39,8 @@ Properties:
 
 #### EndIp
 
+The highest IP address included in the range.
+
 _Required_: Yes
 
 _Type_: String
@@ -46,6 +48,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the Firewall Rule. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -55,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RedisCacheName
 
+The name of the Redis Cache. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -63,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which this Redis Cache exists.
+
 _Required_: Yes
 
 _Type_: String
@@ -70,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StartIp
+
+The lowest IP address included in the range.
 
 _Required_: Yes
 

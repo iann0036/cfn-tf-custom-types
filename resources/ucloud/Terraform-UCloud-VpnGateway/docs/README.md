@@ -1,6 +1,6 @@
 # Terraform::UCloud::VpnGateway
 
-CloudFormation equivalent of ucloud_vpn_gateway
+Provides a VPN Gateway resource.
 
 ## Syntax
 
@@ -43,6 +43,8 @@ Properties:
 
 #### ChargeType
 
+The charge type of VPN Gateway, possible values are: `year`, `month` and `dynamic` as pay by hour (specific permission required). (Default: `month`).
+
 _Required_: No
 
 _Type_: String
@@ -50,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Duration
+
+The duration that you will buy the VPN Gateway (Default: `1`). The value is `0` when pay by month and the instance will be valid till the last day of that month. It is not required when `dynamic` (pay by hour).
 
 _Required_: No
 
@@ -59,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EipId
 
+The ID of eip associate to the VPN Gateway.
+
 _Required_: Yes
 
 _Type_: String
@@ -66,6 +72,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Grade
+
+The type of the VPN Gateway. Possible values: `standard`, `enhanced`. `standard` recommended application scenario: Applicable to services with bidirectional peak bandwidth of 1M~50M; `enhanced` recommended application scenario: Suitable for services with bidirectional peak bandwidths of 50M~100M.
 
 _Required_: Yes
 
@@ -75,6 +83,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the VPN Gateway which contains 1-63 characters and only support Chinese, English, numbers, '-', '_' and '.'. If not specified, terraform will auto-generate a name beginning with `tf-vpn-gateway-`.
+
 _Required_: No
 
 _Type_: String
@@ -82,6 +92,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Remark
+
+The remarks of the VPN Gateway. (Default: `""`).
 
 _Required_: No
 
@@ -91,6 +103,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tag
 
+A tag assigned to VPN Gateway, which contains at most 63 characters and only support Chinese, English, numbers, '-', '_', and '.'. If it is not filled in or a empty string is filled in, then default tag will be assigned. (Default: `Default`).
+
 _Required_: No
 
 _Type_: String
@@ -98,6 +112,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+The ID of VPC linked to the VPN Gateway.
 
 _Required_: Yes
 

@@ -40,6 +40,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Enabled
 
+Is the Web Application Firewall be enabled?.
+
 _Required_: Yes
 
 _Type_: Boolean
@@ -47,6 +49,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FileUploadLimitMb
+
+The File Upload Limit in MB. Accepted values are in the range `1`MB to `500`MB. Defaults to `100`MB.
 
 _Required_: No
 
@@ -56,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FirewallMode
 
+The Web Application Firewall Mode. Possible values are `Detection` and `Prevention`.
+
 _Required_: Yes
 
 _Type_: String
@@ -63,6 +69,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MaxRequestBodySizeKb
+
+The Maximum Request Body Size in KB.  Accepted values are in the range `1`KB to `128`KB.  Defaults to `128`KB.
 
 _Required_: No
 
@@ -72,6 +80,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RequestBodyCheck
 
+Is Request Body Inspection enabled?  Defaults to `true`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -80,6 +90,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RuleSetType
 
+The Type of the Rule Set used for this Web Application Firewall.
+
 _Required_: No
 
 _Type_: String
@@ -87,6 +99,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RuleSetVersion
+
+The Version of the Rule Set used for this Web Application Firewall. Possible values are `2.2.9`, `3.0`, and `3.1`.
 
 _Required_: Yes
 

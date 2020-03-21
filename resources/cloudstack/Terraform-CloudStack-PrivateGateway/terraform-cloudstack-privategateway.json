@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::CloudStack::PrivateGateway",
-    "description": "CloudFormation equivalent of cloudstack_private_gateway",
+    "description": "Creates a private gateway for the given VPC.\n\n*NOTE: private gateway can only be created using a ROOT account!*",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,28 +9,36 @@
             "type": "string"
         },
         "AclId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ACL ID that should be attached to the network."
         },
         "Gateway": {
-            "type": "string"
+            "type": "string",
+            "description": "the gateway of the Private gateway. Changing this\nforces a new resource to be created."
         },
         "IpAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "the IP address of the Private gateway. Changing this forces\na new resource to be created."
         },
         "Netmask": {
-            "type": "string"
+            "type": "string",
+            "description": "The netmask of the Private gateway. Changing\nthis forces a new resource to be created."
         },
         "NetworkOffering": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or ID of the network offering to use for\nthe private gateways network connection."
         },
         "PhysicalNetworkId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the physical network this private\ngateway belongs to."
         },
         "Vlan": {
-            "type": "string"
+            "type": "string",
+            "description": "The VLAN number (1-4095) the network will use."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "The VPC ID in which to create this Private gateway. Changing\nthis forces a new resource to be created."
         }
     },
     "additionalProperties": false,

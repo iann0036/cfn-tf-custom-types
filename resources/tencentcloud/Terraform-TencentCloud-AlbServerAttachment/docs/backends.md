@@ -26,6 +26,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### InstanceId
 
+A list backend instance ID (CVM instance ID).
+
 _Required_: Yes
 
 _Type_: String
@@ -34,6 +36,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Port
 
+The port used by the backend server. Valid value range: [1-65535].
+
 _Required_: Yes
 
 _Type_: Double
@@ -41,6 +45,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Weight
+
+Weight of the backend server. Valid value range: [0-100]. Default to 10.
 
 _Required_: No
 

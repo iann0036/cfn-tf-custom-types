@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::DisStreamV2
 
-CloudFormation equivalent of huaweicloud_dis_stream_v2
+DIS Stream management
 
 ## Syntax
 

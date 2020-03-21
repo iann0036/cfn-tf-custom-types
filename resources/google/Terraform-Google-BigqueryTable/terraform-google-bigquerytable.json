@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::BigqueryTable",
-    "description": "CloudFormation equivalent of google_bigquery_table",
+    "description": "Creates a table resource in a dataset for Google BigQuery. For more information see\n[the official documentation](https://cloud.google.com/bigquery/docs/) and\n[API](https://cloud.google.com/bigquery/docs/reference/rest/v2/tables).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "EncryptionConfiguration": {
@@ -8,7 +8,8 @@
             "additionalProperties": false,
             "properties": {
                 "KmsKeyName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The self link or full name of a key which should be used to\nencrypt this table.  Note that the default bigquery service account will need to have\nencrypt/decrypt permissions on this key - you may want to see the\n`google_bigquery_default_service_account` datasource and the\n`google_kms_crypto_key_iam_binding` resource."
                 }
             },
             "required": [
@@ -20,7 +21,8 @@
             "additionalProperties": false,
             "properties": {
                 "Autodetect": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "- Let BigQuery try to autodetect the schema\nand format of the table."
                 },
                 "Compression": {
                     "type": "string"
@@ -39,7 +41,8 @@
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of the fully-qualified URIs that point to\nyour data in Google Cloud."
                 },
                 "CsvOptions": {
                     "type": "array",
@@ -67,16 +70,20 @@
             "additionalProperties": false,
             "properties": {
                 "ExpirationMs": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Number of milliseconds for which to keep the\nstorage for a partition."
                 },
                 "Field": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The field used to determine how to create a time-based\npartition. If time-based partitioning is enabled without this value, the\ntable is partitioned based on the load time."
                 },
                 "RequirePartitionFilter": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "If set to true, queries over this table\nrequire a partition filter that can be used for partition elimination to be\nspecified."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The only type supported is DAY, which will generate\none partition per day based on data loading time."
                 }
             },
             "required": [
@@ -88,10 +95,12 @@
             "additionalProperties": false,
             "properties": {
                 "Query": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A query that BigQuery executes when the view is referenced."
                 },
                 "UseLegacySql": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Specifies whether to use BigQuery's legacy SQL for this view.\nThe default value is true. If set to false, the view will use BigQuery's standard SQL."
                 }
             },
             "required": [
@@ -149,25 +158,30 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Specifies column names to use for data clustering.\nUp to four top-level columns are allowed, and should be specified in\ndescending priority order."
         },
         "CreationTime": {
             "type": "number"
         },
         "DatasetId": {
-            "type": "string"
+            "type": "string",
+            "description": "The dataset ID to create the table in.\nChanging this forces a new resource to be created."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The field description."
         },
         "Etag": {
             "type": "string"
         },
         "ExpirationTime": {
-            "type": "number"
+            "type": "number",
+            "description": "The time when this table expires, in\nmilliseconds since the epoch. If not present, the table will persist\nindefinitely. Expired tables will be deleted and their storage\nreclaimed."
         },
         "FriendlyName": {
-            "type": "string"
+            "type": "string",
+            "description": "A descriptive name for the table."
         },
         "Labels": {
             "type": "array",
@@ -187,7 +201,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of labels to assign to the resource."
         },
         "LastModifiedTime": {
             "type": "number"
@@ -205,16 +220,19 @@
             "type": "number"
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used."
         },
         "Schema": {
-            "type": "string"
+            "type": "string",
+            "description": "A JSON schema for the table. Schema is required\nfor CSV and JSON formats and is disallowed for Google Cloud\nBigtable, Cloud Datastore backups, and Avro formats when using\nexternal tables. For more information see the\n[BigQuery API documentation](https://cloud.google.com/bigquery/docs/reference/rest/v2/tables#resource).\n~>**NOTE**: Because this field expects a JSON string, any changes to the\nstring will create a diff, even if the JSON itself hasn't changed.\nIf the API returns a different value for the same schema, e.g. it\nswitched the order of values or replaced `STRUCT` field type with `RECORD`\nfield type, we currently cannot suppress the recurring diff this causes.\nAs a workaround, we recommend using the schema as returned by the API."
         },
         "SelfLink": {
             "type": "string"
         },
         "TableId": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique ID for the resource.\nChanging this forces a new resource to be created."
         },
         "Type": {
             "type": "string"

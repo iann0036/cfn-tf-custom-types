@@ -26,6 +26,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Charset
 
+Database character set. Changing this creates a
+new instance.
+
 _Required_: No
 
 _Type_: String
@@ -34,6 +37,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Collate
 
+Database collation. Changing this creates a new instance.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +46,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Database to be created on new instance. Changing this creates a
+new instance.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 # Terraform::Panos::PanoramaSyslogServerProfile
 
-CloudFormation equivalent of panos_panorama_syslog_server_profile
+This resource allows you to add/update/delete Panorama syslog server profiles.
 
 ## Syntax
 
@@ -72,6 +72,8 @@ Properties:
 
 #### AuthFormat
 
+Auth format.
+
 _Required_: No
 
 _Type_: String
@@ -79,6 +81,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ConfigFormat
+
+Config format.
 
 _Required_: No
 
@@ -88,6 +92,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DataFormat
 
+Data format.
+
 _Required_: No
 
 _Type_: String
@@ -95,6 +101,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DeviceGroup
+
+The device group location.  Mutually exclusive with
+`template` and `template_stack`.
 
 _Required_: No
 
@@ -104,6 +113,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EscapeCharacter
 
+The escape character.
+
 _Required_: No
 
 _Type_: String
@@ -111,6 +122,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EscapedCharacters
+
+The escaped characters (as a string).
 
 _Required_: No
 
@@ -120,6 +133,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GtpFormat
 
+GTP format.
+
 _Required_: No
 
 _Type_: String
@@ -127,6 +142,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HipMatchFormat
+
+HIP match format.
 
 _Required_: No
 
@@ -136,6 +153,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IptagFormat
 
+IP tag format.
+
 _Required_: No
 
 _Type_: String
@@ -143,6 +162,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The group's name.
 
 _Required_: Yes
 
@@ -152,6 +173,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SctpFormat
 
+SCTP format.
+
 _Required_: No
 
 _Type_: String
@@ -159,6 +182,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SystemFormat
+
+System format.
 
 _Required_: No
 
@@ -168,6 +193,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Template
 
+The template location.  Mutually exclusive with
+`template_stack` and `device_group`.
+
 _Required_: No
 
 _Type_: String
@@ -175,6 +203,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TemplateStack
+
+The template stack location.  Mutually exclusive
+with `template` and `device_group`.
 
 _Required_: No
 
@@ -184,6 +215,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ThreatFormat
 
+Threat format.
+
 _Required_: No
 
 _Type_: String
@@ -191,6 +224,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TrafficFormat
+
+Traffic format.
 
 _Required_: No
 
@@ -200,6 +235,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TunnelFormat
 
+Tunnel format.
+
 _Required_: No
 
 _Type_: String
@@ -207,6 +244,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UrlFormat
+
+URL format.
 
 _Required_: No
 
@@ -216,6 +255,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UserIdFormat
 
+UserID format.
+
 _Required_: No
 
 _Type_: String
@@ -224,6 +265,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Vsys
 
+The vsys.  This will likely be `shared`, and it should be
+defined if you specified either `template` or `template_stack`.
+
 _Required_: No
 
 _Type_: String
@@ -231,6 +275,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WildfireFormat
+
+Wildfire format.
 
 _Required_: No
 

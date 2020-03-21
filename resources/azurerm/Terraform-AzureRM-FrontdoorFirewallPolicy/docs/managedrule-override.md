@@ -28,6 +28,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### RuleGroupName
 
+The managed rule group to override.
+
 _Required_: Yes
 
 _Type_: String

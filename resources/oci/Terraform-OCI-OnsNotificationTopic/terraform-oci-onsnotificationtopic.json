@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::OnsNotificationTopic",
-    "description": "CloudFormation equivalent of oci_ons_notification_topic",
+    "description": "This resource provides the Notification Topic resource in Oracle Cloud Infrastructure Notifications service.\n\nCreates a topic in the specified compartment. For general information about topics, see\n[Managing Topics and Subscriptions](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm).\n\nFor the purposes of access control, you must provide the OCID of the compartment where you want the topic to reside.\nFor information about access control and compartments, see [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).\n\nYou must specify a display name for the topic.\n\nAll Oracle Cloud Infrastructure resources, including topics, get an Oracle-assigned, unique ID called an\nOracle Cloud Identifier (OCID). When you create a resource, you can find its OCID in the response. You can also\nretrieve a resource's OCID by using a List API operation on that resource type, or by viewing the resource in the\nConsole. For more information, see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).\n\nTransactions Per Minute (TPM) per-tenancy limit for this operation: 60.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,7 +29,8 @@
             "type": "string"
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the topic in."
         },
         "DefinedTags": {
             "type": "array",
@@ -49,10 +50,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Operations.CostCenter\": \"42\"}`."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The description of the topic being created. Avoid entering confidential information."
         },
         "Etag": {
             "type": "string"
@@ -75,10 +78,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the topic being created. The topic name must be unique across the tenancy. Avoid entering confidential information."
         },
         "State": {
             "type": "string"

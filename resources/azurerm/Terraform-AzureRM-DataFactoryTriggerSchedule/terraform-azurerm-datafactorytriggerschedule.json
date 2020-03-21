@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::DataFactoryTriggerSchedule",
-    "description": "CloudFormation equivalent of azurerm_data_factory_trigger_schedule",
+    "description": "Manages a Trigger Schedule inside a Azure Data Factory.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -33,25 +33,32 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of tags that can be used for describing the Data Factory Schedule Trigger."
         },
         "DataFactoryName": {
-            "type": "string"
+            "type": "string",
+            "description": "The Data Factory name in which to associate the Schedule Trigger with. Changing this forces a new resource."
         },
         "EndTime": {
-            "type": "string"
+            "type": "string",
+            "description": "The time the Schedule Trigger should end. The time will be represented in UTC."
         },
         "Frequency": {
-            "type": "string"
+            "type": "string",
+            "description": "The trigger freqency. Valid values include `Minute`, `Hour`, `Day`, `Week`, `Month`. Defaults to `Minute`."
         },
         "Interval": {
-            "type": "number"
+            "type": "number",
+            "description": "The interval for how often the trigger occurs. This defaults to 1."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Data Factory Schedule Trigger. Changing this forces a new resource to be created. Must be globally unique. See the [Microsoft documentation](https://docs.microsoft.com/en-us/azure/data-factory/naming-rules) for all restrictions."
         },
         "PipelineName": {
-            "type": "string"
+            "type": "string",
+            "description": "The Data Factory Pipeline name that the trigger will act on."
         },
         "PipelineParameters": {
             "type": "array",
@@ -71,13 +78,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "The pipeline parameters that the trigger will act upon."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the Data Factory Schedule Trigger. Changing this forces a new resource."
         },
         "StartTime": {
-            "type": "string"
+            "type": "string",
+            "description": "The time the Schedule Trigger will start. This defaults to the current time. The time will be represented in UTC."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

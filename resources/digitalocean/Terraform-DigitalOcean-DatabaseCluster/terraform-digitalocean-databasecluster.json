@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::DigitalOcean::DatabaseCluster",
-    "description": "CloudFormation equivalent of digitalocean_database_cluster",
+    "description": "Provides a DigitalOcean database cluster resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "MaintenanceWindow": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "Day": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The day of the week on which to apply maintenance updates."
                 },
                 "Hour": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The hour in UTC at which maintenance updates will be applied in 24 hour format."
                 }
             },
             "required": [
@@ -29,19 +31,23 @@
             "type": "string"
         },
         "Engine": {
-            "type": "string"
+            "type": "string",
+            "description": "Database engine used by the cluster (ex. `pg` for PostreSQL, `mysql` for MySQL, or `redis` for Redis)."
         },
         "EvictionPolicy": {
-            "type": "string"
+            "type": "string",
+            "description": "A string specifying the eviction policy for a Redis cluster. Valid values are: `noeviction`, `allkeys_lru`, `allkeys_random`, `volatile_lru`, `volatile_random`, or `volatile_ttl`."
         },
         "Host": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the database cluster."
         },
         "NodeCount": {
-            "type": "number"
+            "type": "number",
+            "description": "Number of nodes that will be included in the cluster."
         },
         "Password": {
             "type": "string"
@@ -56,20 +62,24 @@
             "type": "string"
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "DigitalOcean region where the cluster will reside."
         },
         "Size": {
-            "type": "string"
+            "type": "string",
+            "description": "Database Droplet size associated with the cluster (ex. `db-s-1vcpu-1gb`)."
         },
         "SqlMode": {
-            "type": "string"
+            "type": "string",
+            "description": "A comma separated string specifying the  SQL modes for a MySQL cluster."
         },
         "Tags": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of tag names to be applied to the database cluster."
         },
         "Uri": {
             "type": "string"
@@ -81,7 +91,8 @@
             "type": "string"
         },
         "Version": {
-            "type": "string"
+            "type": "string",
+            "description": "Engine version used by the cluster (ex. `11` for PostgreSQL 11)."
         },
         "MaintenanceWindow": {
             "type": "array",

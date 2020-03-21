@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::OdaOdaInstance",
-    "description": "CloudFormation equivalent of oci_oda_oda_instance",
+    "description": "This resource provides the Oda Instance resource in Oracle Cloud Infrastructure Digital Assistant service.\n\nStarts an asynchronous job to create a Digital Assistant instance.\n\nTo monitor the status of the job, take the `opc-work-request-id` response\nheader value and use it to call `GET /workRequests/{workRequestID}`.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,7 +26,8 @@
             "type": "string"
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) Identifier of the compartment."
         },
         "ConnectorUrl": {
             "type": "string"
@@ -49,13 +50,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{\"foo-namespace.bar-key\": \"value\"}`."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) Description of the Digital Assistant instance."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime."
         },
         "FreeformTags": {
             "type": "array",
@@ -75,13 +79,15 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{\"bar-key\": \"value\"}`."
         },
         "LifecycleSubState": {
             "type": "string"
         },
         "ShapeName": {
-            "type": "string"
+            "type": "string",
+            "description": "Shape or size of the instance."
         },
         "State": {
             "type": "string"

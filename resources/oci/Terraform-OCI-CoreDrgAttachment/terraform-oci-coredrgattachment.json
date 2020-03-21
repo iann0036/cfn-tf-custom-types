@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::CoreDrgAttachment",
-    "description": "CloudFormation equivalent of oci_core_drg_attachment",
+    "description": "This resource provides the Drg Attachment resource in Oracle Cloud Infrastructure Core service.\n\nAttaches the specified DRG to the specified VCN. A VCN can be attached to only one DRG at a time,\nand vice versa. The response includes a `DrgAttachment` object with its own OCID. For more\ninformation about DRGs, see\n[Dynamic Routing Gateways (DRGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingDRGs.htm).\n\nYou may optionally specify a *display name* for the attachment, otherwise a default is provided.\nIt does not have to be unique, and you can change it. Avoid entering confidential information.\n\nFor the purposes of access control, the DRG attachment is automatically placed into the same compartment\nas the VCN. For more information about compartments and access control, see\n[Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,13 +29,16 @@
             "type": "string"
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) A user-friendly name. Does not have to be unique. Avoid entering confidential information."
         },
         "DrgId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the DRG."
         },
         "RouteTableId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The OCID of the route table the DRG attachment will use."
         },
         "State": {
             "type": "string"
@@ -44,7 +47,8 @@
             "type": "string"
         },
         "VcnId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the VCN."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

@@ -1,6 +1,6 @@
 # Terraform::AzureRM::SearchService
 
-CloudFormation equivalent of azurerm_search_service
+Manages a Search Service.
 
 ## Syntax
 

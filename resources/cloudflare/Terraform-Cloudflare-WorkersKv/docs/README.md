@@ -1,6 +1,6 @@
 # Terraform::Cloudflare::WorkersKv
 
-CloudFormation equivalent of cloudflare_workers_kv
+Provides a Workers KV Pair.  *NOTE:*  This resource uses the Cloudflare account APIs.  This requires setting the `CLOUDFLARE_ACCOUNT_ID` environment variable or `account_id` provider argument.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### Key
 
+The key name.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NamespaceId
 
+The ID of the Workers KV namespace in which you want to create the KV pair.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Value
+
+The string value to be stored in the key.
 
 _Required_: Yes
 

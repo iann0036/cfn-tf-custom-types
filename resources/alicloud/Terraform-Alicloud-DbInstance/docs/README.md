@@ -1,6 +1,8 @@
 # Terraform::Alicloud::DbInstance
 
-CloudFormation equivalent of alicloud_db_instance
+Provides an RDS instance resource. A DB instance is an isolated database
+environment in the cloud. A DB instance can contain multiple user-created
+databases.
 
 ## Syntax
 
@@ -81,6 +83,8 @@ Properties:
 
 #### AutoRenew
 
+Whether to renewal a DB instance automatically or not. It is valid when instance_charge_type is `PrePaid`. Default to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -88,6 +92,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AutoRenewPeriod
+
+Auto-renewal period of an instance, in the unit of the month. It is valid when instance_charge_type is `PrePaid`. Valid value:[1~12], Default to 1.
 
 _Required_: No
 
@@ -97,6 +103,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AutoUpgradeMinorVersion
 
+The upgrade method to use. Valid values:
+- Auto: Instances are automatically upgraded to a higher minor version.
+- Manual: Instances are forcibly upgraded to a higher minor version when the current version is unpublished.
+
 _Required_: No
 
 _Type_: String
@@ -104,6 +114,13 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DbInstanceStorageType
+
+The storage type of the instance. Valid values:
+- local_ssd: specifies to use local SSDs. This value is recommended.
+- cloud_ssd: specifies to use standard SSDs.
+- cloud_essd: specifies to use enhanced SSDs (ESSDs).
+- cloud_essd2: specifies to use enhanced SSDs (ESSDs).
+- cloud_essd3: specifies to use enhanced SSDs (ESSDs).
 
 _Required_: No
 
@@ -113,6 +130,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Engine
 
+Database type. Value options: MySQL, SQLServer, PostgreSQL, and PPAS.
+
 _Required_: Yes
 
 _Type_: String
@@ -120,6 +139,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EngineVersion
+
+Database version. Value options can refer to the latest docs [CreateDBInstance](https://www.alibabacloud.com/help/doc-detail/26228.htm) `EngineVersion`.
 
 _Required_: Yes
 
@@ -129,6 +150,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ForceRestart
 
+Set it to true to make some parameter efficient when modifying them. Default to false.
+
 _Required_: No
 
 _Type_: Boolean
@@ -136,6 +159,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceChargeType
+
+Valid values are `Prepaid`, `Postpaid`, Default to `Postpaid`. Currently, the resource only supports PostPaid to PrePaid.
 
 _Required_: No
 
@@ -145,6 +170,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceName
 
+The name of DB instance. It a string of 2 to 256 characters.
+
 _Required_: No
 
 _Type_: String
@@ -152,6 +179,14 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceStorage
+
+User-defined DB instance storage space. Value range:
+- [5, 2000] for MySQL/PostgreSQL/PPAS HA dual node edition;
+- [20,1000] for MySQL 5.7 basic single node edition;
+- [10, 2000] for SQL Server 2008R2;
+- [20,2000] for SQL Server 2012 basic single node edition
+Increase progressively at a rate of 5 GB. For details, see [Instance type table](https://www.alibabacloud.com/help/doc-detail/26312.htm).
+Note: There is extra 5 GB storage for SQL Server Instance and it is not in specified `instance_storage`.
 
 _Required_: Yes
 
@@ -161,6 +196,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceType
 
+DB Instance type. For details, see [Instance type table](https://www.alibabacloud.com/help/doc-detail/26312.htm).
+
 _Required_: Yes
 
 _Type_: String
@@ -168,6 +205,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MaintainTime
+
+Maintainable time period format of the instance: HH:MMZ-HH:MMZ (UTC time).
 
 _Required_: No
 
@@ -177,6 +216,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MonitoringPeriod
 
+The monitoring frequency in seconds. Valid values are 5, 60, 300. Defaults to 300.
+
 _Required_: No
 
 _Type_: Double
@@ -184,6 +225,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Period
+
+The duration that you will buy DB instance (in month). It is valid when instance_charge_type is `PrePaid`. Valid values: [1~9], 12, 24, 36. Default to 1.
 
 _Required_: No
 
@@ -193,6 +236,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecurityGroupId
 
+It has been deprecated from 1.69.0 and use `security_group_ids` instead.
+
 _Required_: No
 
 _Type_: String
@@ -200,6 +245,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecurityGroupIds
+
+, Available in 1.69.0+) The list IDs to join ECS Security Group. At most supports three security groups.
 
 _Required_: No
 
@@ -209,6 +256,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecurityIpMode
 
+Valid values are `normal`, `safety`, Default to `normal`. support `safety` switch to high security access mode.
+
 _Required_: No
 
 _Type_: String
@@ -216,6 +265,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecurityIps
+
+List of IP addresses allowed to access all databases of an instance. The list contains up to 1,000 IP addresses, separated by commas. Supported formats include 0.0.0.0/0, 10.23.12.24 (IP), and 10.23.12.24/24 (Classless Inter-Domain Routing (CIDR) mode. /24 represents the length of the prefix in an IP address. The range of the prefix length is [1,32]).
 
 _Required_: No
 
@@ -225,6 +276,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SqlCollectorConfigValue
 
+The sql collector keep time of the instance. Valid values are `1`, `30`, `180`, `365`, `1095`, `1825`, `1` is the initial value, and can't change it to `1`.
+
 _Required_: No
 
 _Type_: Double
@@ -232,6 +285,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SqlCollectorStatus
+
+The sql collector status of the instance. Valid values are `Enabled`, `Disabled`, Default to `Disabled`.
 
 _Required_: No
 
@@ -241,6 +296,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+- Key: It can be up to 64 characters in length. It cannot begin with "aliyun", "acs:", "http://", or "https://". It cannot be a null string.
+- Value: It can be up to 128 characters in length. It cannot begin with "aliyun", "acs:", "http://", or "https://". It can be a null string.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -249,6 +308,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VswitchId
 
+The virtual switch ID to launch DB instances in one VPC.
+
 _Required_: No
 
 _Type_: String
@@ -256,6 +317,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneId
+
+The Zone to launch the DB instance. From version 1.8.1, it supports multiple zone.
+If it is a multi-zone and `vswitch_id` is specified, the vswitch must in the one of them.
+The multiple zone ID can be retrieved by setting `multi` to "true" in the data source `alicloud_zones`.
 
 _Required_: No
 

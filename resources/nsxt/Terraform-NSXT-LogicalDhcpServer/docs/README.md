@@ -1,6 +1,6 @@
 # Terraform::NSXT::LogicalDhcpServer
 
-CloudFormation equivalent of nsxt_logical_dhcp_server
+Provides a resource to configure logical DHCP server on NSX-T manager
 
 ## Syntax
 
@@ -51,6 +51,8 @@ Properties:
 
 #### Description
 
+Description of this resource.
+
 _Required_: No
 
 _Type_: String
@@ -58,6 +60,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DhcpProfileId
+
+DHCP profile uuid.
 
 _Required_: Yes
 
@@ -67,6 +71,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DhcpServerIp
 
+DHCP server IP in cidr format.
+
 _Required_: Yes
 
 _Type_: String
@@ -74,6 +80,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+The display name of this resource. Defaults to ID if not set.
 
 _Required_: No
 
@@ -83,6 +91,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DnsNameServers
 
+DNS IPs.
+
 _Required_: No
 
 _Type_: List of String
@@ -91,6 +101,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DomainName
 
+Domain name.
+
 _Required_: No
 
 _Type_: String
@@ -98,6 +110,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GatewayIp
+
+Gateway IP.
 
 _Required_: Yes
 

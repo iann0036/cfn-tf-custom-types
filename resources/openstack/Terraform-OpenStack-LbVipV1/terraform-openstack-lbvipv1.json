@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::LbVipV1",
-    "description": "CloudFormation equivalent of openstack_lb_vip_v1",
+    "description": "Manages a V1 load balancer vip resource within OpenStack.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,22 +23,28 @@
             "type": "string"
         },
         "Address": {
-            "type": "string"
+            "type": "string",
+            "description": "The IP address of the vip. Changing this creates a new\nvip."
         },
         "AdminStateUp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "The administrative state of the vip.\nAcceptable values are \"true\" and \"false\". Changing this value updates the\nstate of the existing vip."
         },
         "ConnLimit": {
-            "type": "number"
+            "type": "number",
+            "description": "The maximum number of connections allowed for the\nvip. Default is -1, meaning no limit. Changing this updates the conn_limit\nof the existing vip."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Human-readable description for the vip. Changing\nthis updates the description of the existing vip."
         },
         "FloatingIp": {
-            "type": "string"
+            "type": "string",
+            "description": "A *Networking* Floating IP that will be associated\nwith the vip. The Floating IP must be provisioned already."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the vip. Changing this updates the name of\nthe existing vip."
         },
         "Persistence": {
             "type": "array",
@@ -58,28 +64,35 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Omit this field to prevent session persistence.\nThe persistence object structure is documented below. Changing this updates\nthe persistence of the existing vip."
         },
         "PoolId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the pool with which the vip is associated.\nChanging this updates the pool_id of the existing vip."
         },
         "Port": {
-            "type": "number"
+            "type": "number",
+            "description": "The port on which to listen for client traffic. Changing\nthis creates a new vip."
         },
         "PortId": {
             "type": "string"
         },
         "Protocol": {
-            "type": "string"
+            "type": "string",
+            "description": "The protocol - can be either 'TCP, 'HTTP', or\nHTTPS'. Changing this creates a new vip."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the V2 Networking client.\nA Networking client is needed to create a VIP. If omitted, the\n`region` argument of the provider is used. Changing this creates a new\nVIP."
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "The network on which to allocate the vip's address. A\ntenant can only create vips on networks authorized by policy (e.g. networks\nthat belong to them or networks that are shared). Changing this creates a\nnew vip."
         },
         "TenantId": {
-            "type": "string"
+            "type": "string",
+            "description": "The owner of the vip. Required if admin wants to\ncreate a vip member for another tenant. Changing this creates a new vip."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

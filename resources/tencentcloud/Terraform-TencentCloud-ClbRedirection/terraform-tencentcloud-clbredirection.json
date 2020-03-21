@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::ClbRedirection",
-    "description": "CloudFormation equivalent of tencentcloud_clb_redirection",
+    "description": "Provides a resource to create a CLB redirection.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,22 +9,28 @@
             "type": "string"
         },
         "ClbId": {
-            "type": "string"
+            "type": "string",
+            "description": "Id of CLB instance."
         },
         "IsAutoRewrite": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether automatic forwarding is enable, default is false. If enabled, the source listener and location should be empty, the target listener must be https protocol and port is 443."
         },
         "SourceListenerId": {
-            "type": "string"
+            "type": "string",
+            "description": "Id of source listener."
         },
         "SourceRuleId": {
-            "type": "string"
+            "type": "string",
+            "description": "Rule id of source listener."
         },
         "TargetListenerId": {
-            "type": "string"
+            "type": "string",
+            "description": "Id of source listener."
         },
         "TargetRuleId": {
-            "type": "string"
+            "type": "string",
+            "description": "Rule id of target listener."
         }
     },
     "additionalProperties": false,

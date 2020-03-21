@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::GaapCertificate",
-    "description": "CloudFormation equivalent of tencentcloud_gaap_certificate",
+    "description": "Provides a resource to create a certificate of GAAP.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,7 +12,8 @@
             "type": "string"
         },
         "Content": {
-            "type": "string"
+            "type": "string",
+            "description": "Content of the certificate, and URL encoding. When the certificate is basic authentication, use the `user:xxx password:xxx` format, where the password is encrypted with `htpasswd` or `openssl`; When the certificate is `CA` or `SSL`, the format is `pem`."
         },
         "CreateTime": {
             "type": "string"
@@ -24,16 +25,19 @@
             "type": "string"
         },
         "Key": {
-            "type": "string"
+            "type": "string",
+            "description": "Key of the `SSL` certificate."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the certificate."
         },
         "SubjectCn": {
             "type": "string"
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of the certificate, the available values include `BASIC`, `CLIENT`, `SERVER`, `REALSERVER` and `PROXY`; `BASIC` means basic certificate; `CLIENT` means client CA certificate; `SERVER` means server SSL certificate; `REALSERVER` means realserver CA certificate; `PROXY` means proxy SSL certificate."
         }
     },
     "additionalProperties": false,

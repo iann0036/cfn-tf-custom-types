@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::DnsRecordSet",
-    "description": "CloudFormation equivalent of google_dns_record_set",
+    "description": "Manages a set of DNS records within Google Cloud DNS. For more information see [the official documentation](https://cloud.google.com/dns/records/) and\n[API](https://cloud.google.com/dns/api/v1/resourceRecordSets).\n\n~> **Note:** The provider treats this resource as an authoritative record set. This means existing records (including the default records) for the given type will be overwritten when you create this resource in Terraform. In addition, the Google Cloud DNS API requires NS records to be present at all times, so Terraform will not actually remove NS records during destroy but will report that it did.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,26 +9,32 @@
             "type": "string"
         },
         "ManagedZone": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the zone in which this record set will\nreside."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The DNS name this record set will apply to."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used."
         },
         "Rrdatas": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The string data for the records in this record set\nwhose meaning depends on the DNS type. For TXT record, if the string data contains spaces, add surrounding `\\\"` if you don't want your string to get split on spaces. To specify a single record value longer than 255 characters such as a TXT record for DKIM, add `\\\"\\\"` inside the Terraform configuration string (e.g. `\"first255characters\\\"\\\"morecharacters\"`)."
         },
         "Ttl": {
-            "type": "number"
+            "type": "number",
+            "description": "The time-to-live of this record set (seconds)."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The DNS record set type."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::FolderIamPolicy",
-    "description": "CloudFormation equivalent of google_folder_iam_policy",
+    "description": "Allows creation and management of the IAM policy for an existing Google Cloud\nPlatform folder.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,10 +12,12 @@
             "type": "string"
         },
         "Folder": {
-            "type": "string"
+            "type": "string",
+            "description": "The resource name of the folder the policy is attached to. Its format is folders/{folder_id}."
         },
         "PolicyData": {
-            "type": "string"
+            "type": "string",
+            "description": "The `google_iam_policy` data source that represents\nthe IAM policy that will be applied to the folder. This policy overrides any existing\npolicy applied to the folder."
         }
     },
     "additionalProperties": false,

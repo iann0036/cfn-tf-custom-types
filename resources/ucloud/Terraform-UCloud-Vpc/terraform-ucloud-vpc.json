@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::UCloud::Vpc",
-    "description": "CloudFormation equivalent of ucloud_vpc",
+    "description": "Provides a VPC resource.\n\n~> **Note**  The network segment can only be created or deleted, can not perform both of them at the same time.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -13,13 +13,15 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The CIDR blocks of VPC."
         },
         "CreateTime": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of VPC. If not specified, terraform will auto-generate a name beginning with `tf-vpc`."
         },
         "NetworkInfo": {
             "type": "array",
@@ -35,10 +37,12 @@
             }
         },
         "Remark": {
-            "type": "string"
+            "type": "string",
+            "description": "The remarks of the VPC. (Default: `\"\"`)."
         },
         "Tag": {
-            "type": "string"
+            "type": "string",
+            "description": "A tag assigned to VPC, which contains at most 63 characters and only support Chinese, English, numbers, '-', '_', and '.'. If it is not filled in or a empty string is filled in, then default tag will be assigned. (Default: `Default`)."
         },
         "UpdateTime": {
             "type": "string"

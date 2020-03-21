@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::HavipAttachment",
-    "description": "CloudFormation equivalent of alicloud_havip_attachment",
+    "description": "Provides an Alicloud HaVip Attachment resource for associating HaVip to ECS Instance.\n\n-> **NOTE:** Terraform will auto build havip attachment while it uses `alicloud_havip_attachment` to build a havip attachment resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "HavipId": {
-            "type": "string"
+            "type": "string",
+            "description": "The havip_id of the havip attachment, the field can't be changed."
         },
         "InstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The instance_id of the havip attachment, the field can't be changed."
         }
     },
     "additionalProperties": false,

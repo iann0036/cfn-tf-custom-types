@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Datadog::Downtime",
-    "description": "CloudFormation equivalent of datadog_downtime",
+    "description": "Provides a Datadog downtime resource. This can be used to create and manage Datadog downtimes.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Recurrence": {
@@ -39,42 +39,52 @@
             "type": "string"
         },
         "Active": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "A flag indicating if the downtime is active now."
         },
         "Disabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "A flag indicating if the downtime was disabled."
         },
         "End": {
-            "type": "number"
+            "type": "number",
+            "description": "POSIX timestamp to end the downtime."
         },
         "EndDate": {
-            "type": "string"
+            "type": "string",
+            "description": "String representing date and time to end the downtime in RFC3339 format."
         },
         "Message": {
-            "type": "string"
+            "type": "string",
+            "description": "A message to include with notifications for this downtime."
         },
         "MonitorId": {
-            "type": "number"
+            "type": "number",
+            "description": "Reference to which monitor this downtime is applied. When scheduling downtime for a given monitor, datadog changes `silenced` property of the monitor to match the `end` POSIX timestamp. **Note:** this will effectively change the `silenced` attribute of the referenced monitor. If that monitor is also tracked by Terraform and you don't want it to be unmuted on the next `terraform apply`, see [details](/docs/providers/datadog/r/monitor.html#silencing-by-hand-and-by-downtimes) in the monitor resource documentation. This option also conflicts with `monitor_tags` use none or one or the other."
         },
         "MonitorTags": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of monitor tags to match. The resulting downtime applies to monitors that match **all** provided monitor tags. This option conflicts with `monitor_id` as it will match all monitors that match these tags."
         },
         "Scope": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The scope(s) to which the downtime applies, e.g. host:app2. Provide multiple scopes as a comma-separated list, e.g. env:dev,env:prod. The resulting downtime applies to sources that matches ALL provided scopes (i.e. env:dev AND env:prod), NOT any of them."
         },
         "Start": {
-            "type": "number"
+            "type": "number",
+            "description": "POSIX timestamp to start the downtime."
         },
         "StartDate": {
-            "type": "string"
+            "type": "string",
+            "description": "String representing date and time to start the downtime in RFC3339 format."
         },
         "Timezone": {
             "type": "string"

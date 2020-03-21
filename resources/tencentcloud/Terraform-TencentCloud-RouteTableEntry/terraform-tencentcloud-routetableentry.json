@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::RouteTableEntry",
-    "description": "CloudFormation equivalent of tencentcloud_route_table_entry",
+    "description": "Provides a resource to create an entry of a routing table.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,19 +9,24 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the routing table entry."
         },
         "DestinationCidrBlock": {
-            "type": "string"
+            "type": "string",
+            "description": "Destination address block."
         },
         "NextHub": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of next-hop gateway. Note: when 'next_type' is EIP, GatewayId should be '0'."
         },
         "NextType": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of next-hop, and available values include CVM, VPN, DIRECTCONNECT, PEERCONNECTION, SSLVPN, NAT, NORMAL_CVM, EIP and CCN."
         },
         "RouteTableId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of routing table to which this entry belongs."
         }
     },
     "additionalProperties": false,

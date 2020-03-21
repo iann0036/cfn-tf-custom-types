@@ -1,6 +1,6 @@
 # Terraform::Cloudflare::Argo
 
-CloudFormation equivalent of cloudflare_argo
+Cloudflare Argo controls the routing to your origin and tiered caching options to speed up your website browsing experience.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### SmartRouting
 
+Whether smart routing is enabled. Valid values: `on` or `off`. Defaults to `off`.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TieredCaching
 
+Whether tiered caching is enabled. Valid values: `on` or `off`. Defaults to `off`.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneId
+
+The DNS zone ID that you wish to manage Argo on.
 
 _Required_: Yes
 

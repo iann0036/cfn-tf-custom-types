@@ -1,6 +1,8 @@
 # Terraform::AzureRM::LbRule
 
-CloudFormation equivalent of azurerm_lb_rule
+Manages a Load Balancer Rule.
+
+~> **NOTE** When using this resource, the Load Balancer needs to have a FrontEnd IP Configuration Attached
 
 ## Syntax
 
@@ -57,6 +59,8 @@ Properties:
 
 #### BackendAddressPoolId
 
+A reference to a Backend Address Pool over which this Load Balancing Rule operates.
+
 _Required_: No
 
 _Type_: String
@@ -64,6 +68,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BackendPort
+
+The port used for internal connections on the endpoint. Possible values range between 0 and 65535, inclusive.
 
 _Required_: Yes
 
@@ -73,6 +79,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisableOutboundSnat
 
+Is snat enabled for this Load Balancer Rule? Default `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -80,6 +88,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableFloatingIp
+
+Are the Floating IPs enabled for this Load Balncer Rule? A "floating” IP is reassigned to a secondary server in case the primary server fails. Required to configure a SQL AlwaysOn Availability Group. Defaults to `false`.
 
 _Required_: No
 
@@ -89,6 +99,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableTcpReset
 
+Is TCP Reset enabled for this Load Balancer Rule? Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -96,6 +108,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FrontendIpConfigurationName
+
+The name of the frontend IP configuration to which the rule is associated.
 
 _Required_: Yes
 
@@ -105,6 +119,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FrontendPort
 
+The port for the external endpoint. Port numbers for each Rule must be unique within the Load Balancer. Possible values range between 0 and 65534, inclusive.
+
 _Required_: Yes
 
 _Type_: Double
@@ -112,6 +128,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IdleTimeoutInMinutes
+
+Specifies the idle timeout in minutes for TCP connections. Valid values are between `4` and `30` minutes. Defaults to `4` minutes.
 
 _Required_: No
 
@@ -121,6 +139,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LoadDistribution
 
+Specifies the load balancing distribution type to be used by the Load Balancer. Possible values are: `Default` – The load balancer is configured to use a 5 tuple hash to map traffic to available servers. `SourceIP` – The load balancer is configured to use a 2 tuple hash to map traffic to available servers. `SourceIPProtocol` – The load balancer is configured to use a 3 tuple hash to map traffic to available servers. Also known as Session Persistence, where  the options are called `None`, `Client IP` and `Client IP and Protocol` respectively.
+
 _Required_: No
 
 _Type_: String
@@ -128,6 +148,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LoadbalancerId
+
+The ID of the Load Balancer in which to create the Rule.
 
 _Required_: Yes
 
@@ -137,6 +159,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the LB Rule.
+
 _Required_: Yes
 
 _Type_: String
@@ -144,6 +168,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProbeId
+
+A reference to a Probe used by this Load Balancing Rule.
 
 _Required_: No
 
@@ -153,6 +179,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Protocol
 
+The transport protocol for the external endpoint. Possible values are `Tcp`, `Udp` or `All`.
+
 _Required_: Yes
 
 _Type_: String
@@ -160,6 +188,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which to create the resource.
 
 _Required_: Yes
 

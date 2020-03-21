@@ -1,6 +1,6 @@
 # Terraform::OpenStack::KeymanagerContainerV1
 
-CloudFormation equivalent of openstack_keymanager_container_v1
+Manages a V1 Barbican container resource within OpenStack.
 
 ## Syntax
 
@@ -44,6 +44,9 @@ Properties:
 
 #### Name
 
+Human-readable name for the Container. Does not have
+to be unique.
+
 _Required_: No
 
 _Type_: String
@@ -52,6 +55,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region in which to obtain the V1 KeyManager client.
+A KeyManager client is needed to create a container. If omitted, the
+`region` argument of the provider is used. Changing this creates a new
+V1 container.
+
 _Required_: No
 
 _Type_: String
@@ -59,6 +67,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+Used to indicate the type of container. Must be one of `generic`, `rsa` or `certificate`.
 
 _Required_: Yes
 

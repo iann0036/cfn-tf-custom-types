@@ -1,6 +1,6 @@
 # Terraform::Skytap::IcnrTunnel
 
-CloudFormation equivalent of skytap_icnr_tunnel
+Provides ICNR Tunnel. Inter-Configuration Network Routing connects networks from different environments to a single, shared server. Without ICNR, environments are on isolated networks.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### Source
 
+Source network from where the connection was initiated. This network does not need to be “tunnelable” (visible to other networks).
+
 _Required_: Yes
 
 _Type_: Double
@@ -38,6 +40,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Target
+
+Target network to which the connection was made. The network needs to be “tunnelable” (visible to other networks).
 
 _Required_: Yes
 

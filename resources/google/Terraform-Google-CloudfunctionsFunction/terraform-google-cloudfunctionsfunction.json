@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::CloudfunctionsFunction",
-    "description": "CloudFormation equivalent of google_cloudfunctions_function",
+    "description": "Creates a new Cloud Function. For more information see\n[the official documentation](https://cloud.google.com/functions/docs/)\nand\n[API](https://cloud.google.com/functions/docs/apis).\n\n~> **Warning:** As of November 1, 2019, newly created Functions are\nprivate-by-default and will require [appropriate IAM permissions](https://cloud.google.com/functions/docs/reference/iam/roles)\nto be invoked. See below examples for how to set up the appropriate permissions,\nor view the [Cloud Functions IAM resources](/docs/providers/google/r/cloudfunctions_cloud_function_iam.html)\nfor Cloud Functions.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "EventTrigger": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "EventType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The type of event to observe. For example: `\"google.storage.object.finalize\"`.\nSee the documentation on [calling Cloud Functions](https://cloud.google.com/functions/docs/calling/) for a\nfull reference of accepted triggers."
                 },
                 "Resource": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Required. The name or partial URI of the resource from\nwhich to observe events. For example, `\"myBucket\"` or `\"projects/my-project/topics/my-topic\"`."
                 },
                 "FailurePolicy": {
                     "type": "array",
@@ -31,7 +33,8 @@
             "additionalProperties": false,
             "properties": {
                 "Url": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The URL pointing to the hosted repository where the function is defined. There are supported Cloud Source Repository URLs in the following formats:."
                 }
             },
             "required": [
@@ -62,7 +65,8 @@
             "additionalProperties": false,
             "properties": {
                 "Retry": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Whether the function should be retried on failure. Defaults to `false`."
                 }
             },
             "required": [
@@ -76,13 +80,16 @@
             "type": "string"
         },
         "AvailableMemoryMb": {
-            "type": "number"
+            "type": "number",
+            "description": "Memory (in MB), available to the function. Default value is 256MB. Allowed values are: 128MB, 256MB, 512MB, 1024MB, and 2048MB."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the function."
         },
         "EntryPoint": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the function that will be executed when the Google Cloud Function is triggered."
         },
         "EnvironmentVariables": {
             "type": "array",
@@ -102,7 +109,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A set of key/value environment variable pairs to assign to the function."
         },
         "HttpsTriggerUrl": {
             "type": "string"
@@ -125,13 +133,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A set of key/value label pairs to assign to the function."
         },
         "MaxInstances": {
-            "type": "number"
+            "type": "number",
+            "description": "The limit on the maximum number of function instances that may coexist at a given time."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A user-defined name of the function. Function names must be unique globally."
         },
         "Project": {
             "type": "string"
@@ -140,25 +151,32 @@
             "type": "string"
         },
         "Runtime": {
-            "type": "string"
+            "type": "string",
+            "description": "The runtime in which the function is going to run.\nEg. `\"nodejs8\"`, `\"nodejs10\"`, `\"python37\"`, `\"go111\"`."
         },
         "ServiceAccountEmail": {
-            "type": "string"
+            "type": "string",
+            "description": "If provided, the self-provided service account to run the function with."
         },
         "SourceArchiveBucket": {
-            "type": "string"
+            "type": "string",
+            "description": "The GCS bucket containing the zip archive which contains the function."
         },
         "SourceArchiveObject": {
-            "type": "string"
+            "type": "string",
+            "description": "The source archive object (file) in archive bucket."
         },
         "Timeout": {
-            "type": "number"
+            "type": "number",
+            "description": "Timeout (in seconds) for the function. Default value is 60 seconds. Cannot be more than 540 seconds."
         },
         "TriggerHttp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean variable. Any HTTP request (of a supported type) to the endpoint will trigger function execution. Supported HTTP request types are: POST, PUT, GET, DELETE, and OPTIONS. Endpoint is returned as `https_trigger_url`. Cannot be used with `trigger_bucket` and `trigger_topic`."
         },
         "VpcConnector": {
-            "type": "string"
+            "type": "string",
+            "description": "The VPC Network Connector that this cloud function can connect to. It can be either the fully-qualified URI, or the short name of the network connector resource. The format of this field is `projects/*/locations/*/connectors/*`."
         },
         "EventTrigger": {
             "type": "array",

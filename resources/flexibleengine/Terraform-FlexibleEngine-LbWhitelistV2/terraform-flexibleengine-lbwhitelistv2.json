@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::FlexibleEngine::LbWhitelistV2",
-    "description": "CloudFormation equivalent of flexibleengine_lb_whitelist_v2",
+    "description": "Manages an Enhanced LB whitelist resource within FlexibleEngine.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,16 +26,20 @@
             "type": "string"
         },
         "EnableWhitelist": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specify whether to enable access control."
         },
         "ListenerId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Listener ID that the whitelist will be associated with. Changing this creates a new whitelist."
         },
         "TenantId": {
-            "type": "string"
+            "type": "string",
+            "description": "Required for admins. The UUID of the tenant who owns\nthe whitelist.  Only administrative users can specify a tenant UUID\nother than their own. Changing this creates a new whitelist."
         },
         "Whitelist": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the IP addresses in the whitelist. Use commas(,) to separate\nthe multiple IP addresses."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

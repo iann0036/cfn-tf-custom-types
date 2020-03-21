@@ -1,6 +1,6 @@
 # Terraform::Tfe::Workspace
 
-CloudFormation equivalent of tfe_workspace
+Provides a workspace resource.
 
 ## Syntax
 
@@ -51,6 +51,9 @@ Properties:
 
 #### AutoApply
 
+Whether to automatically apply changes when a
+Terraform plan is successful. Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -58,6 +61,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FileTriggersEnabled
+
+Whether to filter runs based on the changed files in a VCS push. If enabled, the working directory and trigger prefixes describe a set of paths which must contain changes for a VCS push to trigger a run. If disabled, any push will trigger a run. Defaults to `true`.
 
 _Required_: No
 
@@ -67,6 +72,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name of the workspace.
+
 _Required_: Yes
 
 _Type_: String
@@ -74,6 +81,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Operations
+
+Whether to use remote execution mode. When set
+to `false`, the workspace will be used for state storage only.
+Defaults to `true`.
 
 _Required_: No
 
@@ -83,6 +94,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Organization
 
+Name of the organization.
+
 _Required_: Yes
 
 _Type_: String
@@ -90,6 +103,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### QueueAllRuns
+
+Whether all runs should be queued. When set
+to `false`, runs triggered by a VCS change will not be queued until at least
+one run is manually queued. Defaults to `true`.
 
 _Required_: No
 
@@ -99,6 +116,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SshKeyId
 
+The ID of an SSH key to assign to the workspace.
+
 _Required_: No
 
 _Type_: String
@@ -106,6 +125,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TerraformVersion
+
+The version of Terraform to use for this workspace. Defaults to the latest available version.
 
 _Required_: No
 
@@ -115,6 +136,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TriggerPrefixes
 
+List of repository-root-relative paths which describe all locations to be tracked for changes.
+
 _Required_: No
 
 _Type_: List of String
@@ -122,6 +145,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WorkingDirectory
+
+A relative path that Terraform will execute
+within.  Defaults to the root of your repository.
 
 _Required_: No
 

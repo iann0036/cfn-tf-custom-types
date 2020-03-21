@@ -1,6 +1,6 @@
 # Terraform::AzureRM::AutomationDscNodeconfiguration
 
-CloudFormation equivalent of azurerm_automation_dsc_nodeconfiguration
+Manages a Automation DSC Node Configuration.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### AutomationAccountName
 
+The name of the automation account in which the DSC Node Configuration is created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ContentEmbedded
+
+The PowerShell DSC Node Configuration (mof content).
 
 _Required_: Yes
 
@@ -53,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the DSC Node Configuration. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -60,6 +66,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which the DSC Node Configuration is created. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

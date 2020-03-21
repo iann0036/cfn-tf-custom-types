@@ -1,6 +1,6 @@
 # Terraform::OPC::ComputeStorageVolumeSnapshot
 
-CloudFormation equivalent of opc_compute_storage_volume_snapshot
+The ``opc_compute_storage_volume_snapshot`` resource creates and manages a storage volume snapshot in an Oracle Cloud Infrastructure Compute Classic identity domain.
 
 ## Syntax
 
@@ -73,6 +73,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Comma-separated strings that tag the storage volume.
 
 _Required_: No
 

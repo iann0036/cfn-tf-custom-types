@@ -1,6 +1,6 @@
 # Terraform::CloudStack::Firewall
 
-CloudFormation equivalent of cloudstack_firewall
+Creates firewall rules for a given IP address.
 
 ## Syntax
 
@@ -36,6 +36,9 @@ Properties:
 
 #### IpAddressId
 
+The IP address ID for which to create the
+firewall rules. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -43,6 +46,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Managed
+
+USE WITH CAUTION! If enabled all the firewall rules for
+this IP address will be managed by this resource. This means it will delete
+all firewall rules that are not in your config! (defaults false).
 
 _Required_: No
 

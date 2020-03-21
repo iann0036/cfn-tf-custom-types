@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::EventhubNamespace",
-    "description": "CloudFormation equivalent of azurerm_eventhub_namespace",
+    "description": "Manages an EventHub Namespace.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,10 +29,12 @@
             "type": "string"
         },
         "AutoInflateEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is Auto Inflate enabled for the EventHub Namespace?."
         },
         "Capacity": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the Capacity / Throughput Units for a `Standard` SKU namespace. Valid values range from `1` - `20`."
         },
         "DefaultPrimaryConnectionString": {
             "type": "string"
@@ -47,13 +49,16 @@
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "MaximumThroughputUnits": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the maximum number of throughput units when Auto Inflate is Enabled. Valid values range from `1` - `20`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the EventHub Namespace resource. Changing this forces a new resource to be created."
         },
         "NetworkRulesets": {
             "type": "array",
@@ -98,13 +103,16 @@
                         }
                     }
                 }
-            }
+            },
+            "description": "A `network_rulesets` block as defined below."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the namespace. Changing this forces a new resource to be created."
         },
         "Sku": {
-            "type": "string"
+            "type": "string",
+            "description": "Defines which tier to use. Valid options are `Basic` and `Standard`."
         },
         "Tags": {
             "type": "array",
@@ -124,7 +132,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

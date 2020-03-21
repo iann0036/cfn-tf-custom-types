@@ -1,6 +1,6 @@
 # Terraform::AzureRM::KustoDatabasePrincipal
 
-CloudFormation equivalent of azurerm_kusto_database_principal
+Manages a Kusto (also known as Azure Data Explorer) Database Principal
 
 ## Syntax
 
@@ -43,6 +43,8 @@ Properties:
 
 #### ClientId
 
+The Client ID that owns the specified `object_id`. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClusterName
+
+Specifies the name of the Kusto Cluster this database principal will be added to. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -59,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DatabaseName
 
+Specified the name of the Kusto Database this principal will be added to. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -66,6 +72,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ObjectId
+
+An Object ID of a User, Group, or App. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -75,6 +83,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+Specifies the Resource Group where the Kusto Database Principal should exist. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -83,6 +93,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Role
 
+Specifies the permissions the Principal will have. Valid values include `Admin`, `Ingestor`, `Monitor`, `UnrestrictedViewers`, `User`, `Viewer`. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -90,6 +102,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+Specifies the type of object the principal is. Valid values include `App`, `Group`, `User`. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

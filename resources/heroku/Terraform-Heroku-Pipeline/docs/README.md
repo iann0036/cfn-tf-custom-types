@@ -1,6 +1,12 @@
 # Terraform::Heroku::Pipeline
 
-CloudFormation equivalent of heroku_pipeline
+Provides a [Heroku Pipeline](https://devcenter.heroku.com/articles/pipelines)
+resource.
+
+A pipeline is a group of Heroku apps that share the same codebase. Once a
+pipeline is created, and apps are added to different stages using
+[`heroku_pipeline_coupling`](./pipeline_coupling.html), you can promote app
+slugs to the next stage.
 
 ## Syntax
 
@@ -28,6 +34,8 @@ Properties:
 ## Properties
 
 #### Name
+
+The name of the pipeline.
 
 _Required_: Yes
 

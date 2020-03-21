@@ -1,6 +1,6 @@
 # Terraform::OVH::IploadbalancingHttpRouteRule
 
-CloudFormation equivalent of ovh_iploadbalancing_http_route_rule
+Manage rules for HTTP route.
 
 ## Syntax
 
@@ -43,6 +43,8 @@ Properties:
 
 #### DisplayName
 
+Human readable name for your rule, this field is for you.
+
 _Required_: No
 
 _Type_: String
@@ -50,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Field
+
+Name of the field to match like "protocol" or "host". See "/ipLoadbalancing/{serviceName}/availableRouteRules" for a list of available rules.
 
 _Required_: Yes
 
@@ -59,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Match
 
+Matching operator. Not all operators are available for all fields. See "/ipLoadbalancing/{serviceName}/availableRouteRules".
+
 _Required_: Yes
 
 _Type_: String
@@ -66,6 +72,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Negate
+
+Invert the matching operator effect.
 
 _Required_: No
 
@@ -75,6 +83,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Pattern
 
+Value to match against this match. Interpretation if this field depends on the match and field.
+
 _Required_: No
 
 _Type_: String
@@ -82,6 +92,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RouteId
+
+The route to apply this rule.
 
 _Required_: Yes
 
@@ -91,6 +103,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServiceName
 
+The internal name of your IP load balancing.
+
 _Required_: Yes
 
 _Type_: String
@@ -98,6 +112,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubField
+
+Name of sub-field, if applicable. This may be a Cookie or Header name for instance.
 
 _Required_: No
 

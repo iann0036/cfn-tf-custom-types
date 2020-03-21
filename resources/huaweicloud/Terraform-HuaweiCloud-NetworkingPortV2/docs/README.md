@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::NetworkingPortV2
 
-CloudFormation equivalent of huaweicloud_networking_port_v2
+Manages a V2 port resource within HuaweiCloud.
 
 ## Syntax
 
@@ -62,6 +62,10 @@ Properties:
 
 #### AdminStateUp
 
+Administrative up/down status for the port
+(must be "true" or "false" if provided). Changing this updates the
+`admin_state_up` of an existing port.
+
 _Required_: No
 
 _Type_: Boolean
@@ -69,6 +73,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DeviceId
+
+The ID of the device attached to the port. Changing this
+creates a new port.
 
 _Required_: No
 
@@ -78,6 +85,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DeviceOwner
 
+The device owner of the Port. Changing this creates
+a new port.
+
 _Required_: No
 
 _Type_: String
@@ -85,6 +95,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MacAddress
+
+Specify a specific MAC address for the port. Changing
+this creates a new port.
 
 _Required_: No
 
@@ -94,6 +107,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A unique name for the port. Changing this
+updates the `name` of an existing port.
+
 _Required_: No
 
 _Type_: String
@@ -101,6 +117,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NetworkId
+
+The ID of the network to attach the port to. Changing
+this creates a new port.
 
 _Required_: Yes
 
@@ -110,6 +129,12 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NoSecurityGroups
 
+If set to
+`true`, then no security groups are applied to the port. If set to `false` and
+no `security_group_ids` are specified, then the Port will yield to the default
+behavior of the Networking service, which is to usually apply the "default"
+security group.
+
 _Required_: No
 
 _Type_: Boolean
@@ -117,6 +142,11 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region in which to obtain the V2 networking client.
+A networking client is needed to create a port. If omitted, the
+`region` argument of the provider is used. Changing this creates a new
+port.
 
 _Required_: No
 
@@ -126,6 +156,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecurityGroupIds
 
+A list
+of security group IDs to apply to the port. The security groups must be
+specified by ID and not name (as opposed to how they are configured with
+the Compute Instance).
+
 _Required_: No
 
 _Type_: List of String
@@ -134,6 +169,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TenantId
 
+The owner of the Port. Required if admin wants
+to create a port for another tenant. Changing this creates a new port.
+
 _Required_: No
 
 _Type_: String
@@ -141,6 +179,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ValueSpecs
+
+Map of additional options.
 
 _Required_: No
 

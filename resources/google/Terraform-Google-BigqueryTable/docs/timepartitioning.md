@@ -28,6 +28,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### ExpirationMs
 
+Number of milliseconds for which to keep the
+storage for a partition.
+
 _Required_: No
 
 _Type_: Double
@@ -35,6 +38,10 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Field
+
+The field used to determine how to create a time-based
+partition. If time-based partitioning is enabled without this value, the
+table is partitioned based on the load time.
 
 _Required_: No
 
@@ -44,6 +51,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RequirePartitionFilter
 
+If set to true, queries over this table
+require a partition filter that can be used for partition elimination to be
+specified.
+
 _Required_: No
 
 _Type_: Boolean
@@ -51,6 +62,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The only type supported is DAY, which will generate
+one partition per day based on data loading time.
 
 _Required_: Yes
 

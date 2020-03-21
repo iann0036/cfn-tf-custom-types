@@ -1,6 +1,6 @@
 # Terraform::Gitlab::ProjectMembership
 
-CloudFormation equivalent of gitlab_project_membership
+This resource allows you to add a current user to an existing project with a set access level.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### AccessLevel
 
+One of five levels of access to the project.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProjectId
 
+The id of the project.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserId
+
+The id of the user.
 
 _Required_: Yes
 

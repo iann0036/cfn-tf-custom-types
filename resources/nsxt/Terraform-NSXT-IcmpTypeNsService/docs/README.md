@@ -1,6 +1,6 @@
 # Terraform::NSXT::IcmpTypeNsService
 
-CloudFormation equivalent of nsxt_icmp_type_ns_service
+This resource provides a way to configure a networking and security service which can be used within NSX. This specific service is for the ICMP protocol.
 
 ## Syntax
 
@@ -40,6 +40,8 @@ Properties:
 
 #### Description
 
+Description.
+
 _Required_: No
 
 _Type_: String
@@ -47,6 +49,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+Display name, defaults to ID if not set.
 
 _Required_: No
 
@@ -56,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IcmpCode
 
+ICMP message code.
+
 _Required_: No
 
 _Type_: Double
@@ -64,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IcmpType
 
+ICMP message type.
+
 _Required_: No
 
 _Type_: Double
@@ -71,6 +79,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Protocol
+
+Version of ICMP protocol ICMPv4 or ICMPv6.
 
 _Required_: Yes
 

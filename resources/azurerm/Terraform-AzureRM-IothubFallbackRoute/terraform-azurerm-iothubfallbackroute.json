@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::IothubFallbackRoute",
-    "description": "CloudFormation equivalent of azurerm_iothub_fallback_route",
+    "description": "Manages an IotHub Fallback Route",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,23 +29,28 @@
             "type": "string"
         },
         "Condition": {
-            "type": "string"
+            "type": "string",
+            "description": "The condition that is evaluated to apply the routing rule. If no condition is provided, it evaluates to `true` by default. For grammar, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-query-language."
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Used to specify whether the fallback route is enabled."
         },
         "EndpointNames": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The endpoints to which messages that satisfy the condition are routed. Currently only 1 endpoint is allowed."
         },
         "IothubName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the IoTHub to which this Fallback Route belongs. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group under which the IotHub Storage Container Endpoint resource has to be created. Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

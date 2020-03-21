@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Vault::IdentityOidcKeyAllowedClientId",
-    "description": "CloudFormation equivalent of vault_identity_oidc_key_allowed_client_id",
+    "description": "Allows an Identity OIDC Role to use an OIDC Named key to generate\n[identity tokens](https://www.vaultproject.io/docs/secrets/identity/index.html#identity-tokens).\n\nThe Identity secrets engine is the identity management solution for Vault. It internally\nmaintains the clients who are recognized by Vault.\n\nUse this with [`vault_identity_oidc_key`](identity_oidc_key.html)\nand [`vault_identity_oidc_key_allowed_client_id`](identity_oidc_key_allowed_client_id.html)\nto configure a Role to generate Identity Tokens.\n\n~> **NOTE on `allowed_client_ids`:** Terraform currently\nprovides both a standalone [Allowed Client ID](identity_oidc_key_allowed_client_id.html) (a single\nClient ID), and a [OIDC Named Key](identity_oidc_key.html) with a inline list of Allowed Client IDs.\nAt this time you cannot use an OIDC Named Key inline list of Allowed Client IDs\nin conjunction with any Allowed Client ID resources. Doing so will cause\na conflict of the list of Allowed Client IDs for the named Key.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "AllowedClientId": {
-            "type": "string"
+            "type": "string",
+            "description": "Client ID to allow usage with the OIDC named key."
         },
         "KeyName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the OIDC Key allow the Client ID."
         }
     },
     "additionalProperties": false,

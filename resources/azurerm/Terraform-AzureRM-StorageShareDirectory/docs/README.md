@@ -1,6 +1,6 @@
 # Terraform::AzureRM::StorageShareDirectory
 
-CloudFormation equivalent of azurerm_storage_share_directory
+Manages a Directory within an Azure Storage File Share.
 
 ## Syntax
 
@@ -38,6 +38,8 @@ Properties:
 
 #### Metadata
 
+A mapping of metadata to assign to this Directory.
+
 _Required_: No
 
 _Type_: List of <a href="metadata.md">Metadata</a>
@@ -45,6 +47,8 @@ _Type_: List of <a href="metadata.md">Metadata</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name (or path) of the Directory that should be created within this File Share. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -54,6 +58,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ShareName
 
+The name of the File Share where this Directory should be created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -61,6 +67,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StorageAccountName
+
+The name of the Storage Account within which the File Share is located. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

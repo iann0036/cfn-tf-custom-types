@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::MysqlPrivilege",
-    "description": "CloudFormation equivalent of tencentcloud_mysql_privilege",
+    "description": "Provides a mysql account privilege resource to grant different access privilege to different database. A database can be granted by multiple account.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Column": {
@@ -8,20 +8,24 @@
             "additionalProperties": false,
             "properties": {
                 "ColumnName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Column name."
                 },
                 "DatabaseName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Database name."
                 },
                 "Privileges": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Column privilege.available values for Privileges:SELECT,INSERT,UPDATE,REFERENCES."
                 },
                 "TableName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Table name."
                 }
             },
             "required": [
@@ -36,14 +40,16 @@
             "additionalProperties": false,
             "properties": {
                 "DatabaseName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Database name."
                 },
                 "Privileges": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Database privilege.available values for Privileges:SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,REFERENCES,INDEX,ALTER,CREATE TEMPORARY TABLES,LOCK TABLES,EXECUTE,CREATE VIEW,SHOW VIEW,CREATE ROUTINE,ALTER ROUTINE,EVENT,TRIGGER."
                 }
             },
             "required": [
@@ -56,17 +62,20 @@
             "additionalProperties": false,
             "properties": {
                 "DatabaseName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Database name."
                 },
                 "Privileges": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Table privilege.available values for Privileges:SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,REFERENCES,INDEX,ALTER,CREATE VIEW,SHOW VIEW,TRIGGER."
                 },
                 "TableName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Table name."
                 }
             },
             "required": [
@@ -82,17 +91,20 @@
             "type": "string"
         },
         "AccountName": {
-            "type": "string"
+            "type": "string",
+            "description": "Account name.the forbidden value is:root,mysql.sys,tencentroot."
         },
         "Global": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Global privileges. available values for Privileges:SELECT,INSERT,UPDATE,DELETE,CREATE,PROCESS,DROP,REFERENCES,INDEX,ALTER,SHOW DATABASES,CREATE TEMPORARY TABLES,LOCK TABLES,EXECUTE,CREATE VIEW,SHOW VIEW,CREATE ROUTINE,ALTER ROUTINE,EVENT,TRIGGER."
         },
         "MysqlId": {
-            "type": "string"
+            "type": "string",
+            "description": "Instance ID."
         },
         "Column": {
             "type": "array",

@@ -27,6 +27,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Cidr
 
+CIDR suffix for IP address block to be assigned, i.e. amount of addresses.
+
 _Required_: No
 
 _Type_: Double
@@ -35,6 +37,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ReservationIds
 
+String of UUID of [IP block reservations](https://www.terraform.io/docs/providers/packet/r/reserved_ip_block.html) from which the public IPv4 address should be taken.
+
 _Required_: No
 
 _Type_: List of String
@@ -42,6 +46,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+One of [`private_ipv4`, `public_ipv4`, `public_ipv6`].
 
 _Required_: Yes
 

@@ -1,6 +1,13 @@
 # Terraform::VCD::NetworkDirect
 
-CloudFormation equivalent of vcd_network_direct
+Provides a vCloud Director Org VDC Network directly connected to an external network. This can be used to create,
+modify, and delete internal networks for vApps to connect.
+
+Supported in provider *v2.0+*
+
+~> **Note:** Only `System Administrator` can create an organization virtual datacenter network that connects
+directly to an external network. You must use `System Adminstrator` account in `provider` configuration
+and then provide `org` and `vdc` arguments for direct networks to work.
 
 ## Syntax
 
@@ -41,6 +48,8 @@ Properties:
 
 #### Description
 
+An optional description of the network.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +57,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ExternalNetwork
+
+The name of the external network.
 
 _Required_: Yes
 
@@ -65,6 +76,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A unique name for the network.
+
 _Required_: Yes
 
 _Type_: String
@@ -72,6 +85,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Org
+
+The name of organization to use, optional if defined at provider level. Useful when
+connected as sysadmin working across different organisations.
 
 _Required_: No
 
@@ -81,6 +97,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Shared
 
+Defines if this network is shared between multiple VDCs
+in the Org.  Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -88,6 +107,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vdc
+
+The name of VDC to use, optional if defined at provider level.
 
 _Required_: No
 

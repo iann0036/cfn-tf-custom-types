@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::GitHub::RepositoryCollaborator",
-    "description": "CloudFormation equivalent of github_repository_collaborator",
+    "description": "Provides a GitHub repository collaborator resource.\n\nThis resource allows you to add/remove collaborators from repositories in your\norganization. Collaborators can have explicit (and differing levels of) read,\nwrite, or administrator access to specific repositories in your organization,\nwithout giving the user full organization membership.\n\nWhen applied, an invitation will be sent to the user to become a collaborator\non a repository. When destroyed, either the invitation will be cancelled or the\ncollaborator will be removed from the repository.\n\nFurther documentation on GitHub collaborators:\n\n- [Adding outside collaborators to repositories in your organization](https://help.github.com/articles/adding-outside-collaborators-to-repositories-in-your-organization/)\n- [Converting an organization member to an outside collaborator](https://help.github.com/articles/converting-an-organization-member-to-an-outside-collaborator/)",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,13 +12,16 @@
             "type": "string"
         },
         "Permission": {
-            "type": "string"
+            "type": "string",
+            "description": "The permission of the outside collaborator for the repository.\nMust be one of `pull`, `push`, or `admin`. Defaults to `push`."
         },
         "Repository": {
-            "type": "string"
+            "type": "string",
+            "description": "The GitHub repository."
         },
         "Username": {
-            "type": "string"
+            "type": "string",
+            "description": "The user to add to the repository as a collaborator."
         }
     },
     "additionalProperties": false,

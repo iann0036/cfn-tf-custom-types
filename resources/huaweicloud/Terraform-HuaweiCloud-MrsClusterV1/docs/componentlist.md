@@ -22,6 +22,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### ComponentName
 
+Component name Currently, Hadoop, Spark, HBase,
+Hive, Hue, Loader, Flume, Kafka and Storm are supported.
+
 _Required_: Yes
 
 _Type_: String

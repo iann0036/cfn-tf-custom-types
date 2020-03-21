@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Heroku::SpacePeeringConnectionAccepter",
-    "description": "CloudFormation equivalent of heroku_space_peering_connection_accepter",
+    "description": "Provides a resource for accepting VPC peering requests to Heroku Private Spaces.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "Space": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the space."
         },
         "Status": {
             "type": "string"
@@ -18,7 +19,8 @@
             "type": "string"
         },
         "VpcPeeringConnectionId": {
-            "type": "string"
+            "type": "string",
+            "description": "The peering connection request ID."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::CosBucketObject
 
-CloudFormation equivalent of tencentcloud_cos_bucket_object
+Provides a COS object resource to put an object(content or file) to the bucket.
 
 ## Syntax
 
@@ -49,6 +49,8 @@ Properties:
 
 #### Acl
 
+The canned ACL to apply. Available values include private, public-read, and public-read-write. Defaults to private.
+
 _Required_: No
 
 _Type_: String
@@ -56,6 +58,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Bucket
+
+The name of a bucket to use. Bucket format should be [custom name]-[appid], for example `mycos-1258798060`.
 
 _Required_: Yes
 
@@ -65,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CacheControl
 
+Specifies caching behavior along the request/reply chain. For further details, RFC2616 can be referred.
+
 _Required_: No
 
 _Type_: String
@@ -72,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Content
+
+Literal string value to use as the object content, which will be uploaded as UTF-8-encoded text.
 
 _Required_: No
 
@@ -81,6 +89,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ContentDisposition
 
+Specifies presentational information for the object.
+
 _Required_: No
 
 _Type_: String
@@ -88,6 +98,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ContentEncoding
+
+Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.
 
 _Required_: No
 
@@ -97,6 +109,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ContentType
 
+A standard MIME type describing the format of the object data.
+
 _Required_: No
 
 _Type_: String
@@ -104,6 +118,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Etag
+
+The ETag generated for the object (an MD5 sum of the object content).
 
 _Required_: No
 
@@ -113,6 +129,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Key
 
+The name of the object once it is in the bucket.
+
 _Required_: Yes
 
 _Type_: String
@@ -121,6 +139,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Source
 
+The path to the source file being uploaded to the bucket.
+
 _Required_: No
 
 _Type_: String
@@ -128,6 +148,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StorageClass
+
+Object storage type, Available values include STANDARD, STANDARD_IA and ARCHIVE.
 
 _Required_: No
 

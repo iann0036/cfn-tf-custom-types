@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::DnsRecord",
-    "description": "CloudFormation equivalent of oci_dns_record",
+    "description": "This resource provides the Record resource in Oracle Cloud Infrastructure Dns service.\n\nReplaces records in the specified zone with the records specified in the\nrequest body. If a specified record does not exist, it will be created.\nIf the record exists, then it will be updated to represent the record in\nthe body of the request. If a record in the zone does not exist in the\nrequest body, the record will be removed from the zone.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,16 +26,19 @@
             "type": "string"
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The OCID of the compartment the resource belongs to. If supplied, it must match the Zone's compartment ocid."
         },
         "Domain": {
-            "type": "string"
+            "type": "string",
+            "description": "The fully qualified domain name where the record can be located."
         },
         "IsProtected": {
             "type": "boolean"
         },
         "Rdata": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)."
         },
         "RecordHash": {
             "type": "string"
@@ -44,13 +47,16 @@
             "type": "string"
         },
         "Rtype": {
-            "type": "string"
+            "type": "string",
+            "description": "The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4)."
         },
         "Ttl": {
-            "type": "number"
+            "type": "number",
+            "description": "(Updatable) The Time To Live for the record, in seconds."
         },
         "ZoneNameOrId": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or OCID of the target zone."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

@@ -1,6 +1,6 @@
 # Terraform::AzureRM::BatchCertificate
 
-CloudFormation equivalent of azurerm_batch_certificate
+Manages a certificate in an Azure Batch account.
 
 ## Syntax
 
@@ -43,6 +43,8 @@ Properties:
 
 #### AccountName
 
+Specifies the name of the Batch account. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Certificate
+
+The base64-encoded contents of the certificate.
 
 _Required_: Yes
 
@@ -59,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Format
 
+The format of the certificate. Possible values are `Cer` or `Pfx`.
+
 _Required_: Yes
 
 _Type_: String
@@ -66,6 +72,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Password
+
+The password to access the certificate's private key. This must and can only be specified when `format` is `Pfx`.
 
 _Required_: No
 
@@ -75,6 +83,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to create the Batch account. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -82,6 +92,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Thumbprint
+
+The thumbprint of the certificate. At this time the only supported value is 'SHA1'.
 
 _Required_: Yes
 

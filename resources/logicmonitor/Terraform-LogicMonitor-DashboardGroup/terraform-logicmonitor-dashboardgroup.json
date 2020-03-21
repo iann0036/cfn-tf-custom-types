@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::LogicMonitor::DashboardGroup",
-    "description": "CloudFormation equivalent of logicmonitor_dashboard_group",
+    "description": "Provides a LogicMonitor dashboard group resource. This can be used to create and manage LogicMonitor dashboard groups.\nCurrently only creating a dashboard group based on an existing JSON template is supported",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,19 +9,24 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of dashboard."
         },
         "ForceDelete": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Force delete the dashboard group."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of dashboard."
         },
         "ParentId": {
-            "type": "number"
+            "type": "number",
+            "description": "The id of the parent group for this dashboard group."
         },
         "Template": {
-            "type": "string"
+            "type": "string",
+            "description": "Defines if an existing exported JSON template is used to create dashboard group."
         },
         "WidgetTokens": {
             "type": "array",
@@ -41,7 +46,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Dashboard tokens allow users to apply a single dashboard group template to different device or website groups simply by changing the tokens\u2019 values."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,12 @@
 # Terraform::VSphere::ResourcePool
 
-CloudFormation equivalent of vsphere_resource_pool
+The `vsphere_resource_pool` resource can be used to create and manage
+resource pools in standalone hosts or on compute clusters.
+
+For more information on vSphere resource pools, see [this
+page][ref-vsphere-resource_pools].
+
+[ref-vsphere-resource_pools]: https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.resmgmt.doc/GUID-60077B40-66FF-4625-934A-641703ED7601.html
 
 ## Syntax
 
@@ -57,6 +63,10 @@ Properties:
 
 #### CpuExpandable
 
+Determines if the reservation on a resource
+pool can grow beyond the specified value if the parent resource pool has
+unreserved resources. Default: `true`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -64,6 +74,10 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CpuLimit
+
+The CPU utilization of a resource pool will not exceed
+this limit, even if there are available resources. Set to `-1` for unlimited.
+Default: `-1`.
 
 _Required_: No
 
@@ -73,6 +87,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CpuReservation
 
+Amount of CPU (MHz) that is guaranteed
+available to the resource pool. Default: `0`.
+
 _Required_: No
 
 _Type_: Double
@@ -81,6 +98,12 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CpuShareLevel
 
+The CPU allocation level. The level is a
+simplified view of shares. Levels map to a pre-determined set of numeric
+values for shares. Can be one of `low`, `normal`, `high`, or `custom`. When
+`low`, `normal`, or `high` are specified values in `cpu_shares` will be
+ignored.  Default: `normal`.
+
 _Required_: No
 
 _Type_: String
@@ -88,6 +111,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CpuShares
+
+The number of shares allocated for CPU. Used to
+determine resource allocation in case of resource contention. If this is set,
+`cpu_share_level` must be `custom`.
 
 _Required_: No
 
@@ -105,6 +132,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MemoryExpandable
 
+Determines if the reservation on a resource
+pool can grow beyond the specified value if the parent resource pool has
+unreserved resources. Default: `true`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -112,6 +143,10 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MemoryLimit
+
+The CPU utilization of a resource pool will not exceed
+this limit, even if there are available resources. Set to `-1` for unlimited.
+Default: `-1`.
 
 _Required_: No
 
@@ -121,6 +156,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MemoryReservation
 
+Amount of CPU (MHz) that is guaranteed
+available to the resource pool. Default: `0`.
+
 _Required_: No
 
 _Type_: Double
@@ -128,6 +166,12 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MemoryShareLevel
+
+The CPU allocation level. The level is a
+simplified view of shares. Levels map to a pre-determined set of numeric
+values for shares. Can be one of `low`, `normal`, `high`, or `custom`. When
+`low`, `normal`, or `high` are specified values in `memory_shares` will be
+ignored.  Default: `normal`.
 
 _Required_: No
 
@@ -137,6 +181,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MemoryShares
 
+The number of shares allocated for CPU. Used to
+determine resource allocation in case of resource contention. If this is set,
+`memory_share_level` must be `custom`.
+
 _Required_: No
 
 _Type_: Double
@@ -144,6 +192,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the resource pool.
 
 _Required_: Yes
 
@@ -153,6 +203,12 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ParentResourcePoolId
 
+The [managed object ID][docs-about-morefs]
+of the parent resource pool. This can be the root resource pool for a cluster
+or standalone host, or a resource pool itself. When moving a resource pool
+from one parent resource pool to another, both must share a common root
+resource pool or the move will fail.
+
 _Required_: Yes
 
 _Type_: String
@@ -160,6 +216,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+The IDs of any tags to attach to this resource. See
+[here][docs-applying-tags] for a reference on how to apply tags.
 
 _Required_: No
 

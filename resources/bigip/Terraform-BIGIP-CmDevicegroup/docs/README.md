@@ -1,6 +1,6 @@
 # Terraform::BIGIP::CmDevicegroup
 
-CloudFormation equivalent of bigip_cm_devicegroup
+`bigip_cm_devicegroup` A device group is a collection of BIG-IP devices that are configured to securely synchronize their BIG-IP configuration data, and fail over when needed.
 
 ## Syntax
 
@@ -48,6 +48,8 @@ Properties:
 
 #### AutoSync
 
+Specifies if the device-group will automatically sync configuration data to its members.
+
 _Required_: No
 
 _Type_: String
@@ -80,6 +82,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Is the name of the device Group.
+
 _Required_: No
 
 _Type_: String
@@ -111,6 +115,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+Specifies if the device-group will be used for failover or resource syncing.
 
 _Required_: No
 

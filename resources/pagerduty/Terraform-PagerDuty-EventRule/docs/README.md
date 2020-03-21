@@ -1,6 +1,6 @@
 # Terraform::PagerDuty::EventRule
 
-CloudFormation equivalent of pagerduty_event_rule
+An [event rule](https://v2.developer.pagerduty.com/docs/global-event-rules-api) determines what happens to an event that is sent to PagerDuty by monitoring tools and other integrations.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### ActionJson
 
+A list of one or more actions for each rule. Each action within the list is itself a list.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AdvancedConditionJson
 
+Contains a list of specific conditions including `active-between`,`scheduled-weekly`, and `frequency-over`. The first element in the list is the label for the condition, followed by a list of values for the specific condition. For more details on these conditions see [Advanced Condition](https://v2.developer.pagerduty.com/docs/global-event-rules-api#section-advanced-condition) in the PagerDuty API documentation.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ConditionJson
+
+Contains a list of conditions. The first field in the list is `and` or `or`, followed by a list of operators and values.
 
 _Required_: Yes
 

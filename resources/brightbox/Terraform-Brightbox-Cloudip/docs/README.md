@@ -1,6 +1,6 @@
 # Terraform::Brightbox::Cloudip
 
-CloudFormation equivalent of brightbox_cloudip
+Provides a Brightbox CloudIP resource.
 
 ## Syntax
 
@@ -38,6 +38,8 @@ Properties:
 
 #### Name
 
+a label to assign to the CloudIP.
+
 _Required_: No
 
 _Type_: String
@@ -46,6 +48,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ReverseDns
 
+The reverse DNS entry for the CloudIP.
+
 _Required_: No
 
 _Type_: String
@@ -53,6 +57,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Target
+
+The CloudIP mapping target. This is the interface id from a server, or the id of a load balancer, server group or cloud sql resource.
 
 _Required_: No
 

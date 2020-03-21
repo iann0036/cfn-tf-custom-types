@@ -1,6 +1,6 @@
 # Terraform::AzureRM::AnalysisServicesServer
 
-CloudFormation equivalent of azurerm_analysis_services_server
+Manages an Analysis Services Server.
 
 ## Syntax
 
@@ -52,6 +52,8 @@ Properties:
 
 #### AdminUsers
 
+List of email addresses of admin users.
+
 _Required_: No
 
 _Type_: List of String
@@ -59,6 +61,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BackupBlobContainerUri
+
+URI and SAS token for a blob container to store backups.
 
 _Required_: No
 
@@ -68,6 +72,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnablePowerBiService
 
+Indicates if the Power BI service is allowed to access or not.
+
 _Required_: No
 
 _Type_: Boolean
@@ -75,6 +81,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Location
+
+The Azure location where the Analysis Services Server exists. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -84,6 +92,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the Analysis Services Server. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -91,6 +101,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### QuerypoolConnectionMode
+
+Controls how the read-write server is used in the query pool. If this values is set to `All` then read-write servers are also used for queries. Otherwise with `ReadOnly` these servers do not participate in query operations.
 
 _Required_: No
 
@@ -100,6 +112,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the Resource Group in which the Analysis Services Server should be exist. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -107,6 +121,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Sku
+
+SKU for the Analysis Services Server. Possible values are: `D1`, `B1`, `B2`, `S0`, `S1`, `S2`, `S4`, `S8` and `S9`.
 
 _Required_: Yes
 

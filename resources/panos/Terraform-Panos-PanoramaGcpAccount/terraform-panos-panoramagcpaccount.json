@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::PanoramaGcpAccount",
-    "description": "CloudFormation equivalent of panos_panorama_gcp_account",
+    "description": "This resource allows you to add/update/delete GCP accounts on Panorama.\n\nThis resource requires that the GCP plugin be installed.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,22 +9,27 @@
             "type": "string"
         },
         "CredentialFile": {
-            "type": "string"
+            "type": "string",
+            "description": "The contents of a GCP credentials file; use the\n`file()` function to pass in the credentials file."
         },
         "CredentialFileEnc": {
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Account description."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The account's name."
         },
         "ProjectId": {
-            "type": "string"
+            "type": "string",
+            "description": "The GCP project ID."
         },
         "ServiceAccountCredentialType": {
-            "type": "string"
+            "type": "string",
+            "description": "The service account credential\ntype.  Valid values are `gcp` (default) or `gke`."
         }
     },
     "additionalProperties": false,

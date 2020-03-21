@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::ContainerRegistryWebhook",
-    "description": "CloudFormation equivalent of azurerm_container_registry_webhook",
+    "description": "Manages an Azure Container Registry Webhook.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -33,7 +33,8 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of actions that trigger the Webhook to post notifications. At least one action needs to be specified. Valid values are: `push`, `delete`, `quarantine`, `chart_push`, `chart_delete`."
         },
         "CustomHeaders": {
             "type": "array",
@@ -53,28 +54,36 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Custom headers that will be added to the webhook notifications request."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Container Registry Webhook. Changing this forces a new resource to be created."
         },
         "RegistryName": {
-            "type": "string"
+            "type": "string",
+            "description": "The Name of Container registry this Webhook belongs to. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the Container Registry Webhook. Changing this forces a new resource to be created."
         },
         "Scope": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the scope of repositories that can trigger an event. For example, `foo:*` means events for all tags under repository `foo`. `foo:bar` means events for 'foo:bar' only. `foo` is equivalent to `foo:latest`. Empty means all events."
         },
         "ServiceUri": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the service URI for the Webhook to post notifications."
         },
         "Status": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies if this Webhook triggers notifications or not. Valid values: `enabled` and `disabled`. Default is `enabled`."
         },
         "Tags": {
             "type": "array",

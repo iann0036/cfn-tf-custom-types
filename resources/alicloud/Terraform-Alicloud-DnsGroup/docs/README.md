@@ -1,6 +1,6 @@
 # Terraform::Alicloud::DnsGroup
 
-CloudFormation equivalent of alicloud_dns_group
+Provides a DNS Group resource.
 
 ## Syntax
 
@@ -28,6 +28,8 @@ Properties:
 ## Properties
 
 #### Name
+
+Name of the domain group.
 
 _Required_: Yes
 

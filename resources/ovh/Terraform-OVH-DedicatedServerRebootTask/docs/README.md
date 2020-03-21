@@ -1,6 +1,11 @@
 # Terraform::OVH::DedicatedServerRebootTask
 
-CloudFormation equivalent of ovh_dedicated_server_reboot_task
+Reboot your Dedicated Server.
+
+~> __WARNING__: After some delay, if the task is marked as `done`, the Provider
+may purge it. To avoid raising errors when terraform refreshes its plan, 
+404 errors are ignored on Resource Read, thus some information may be lost
+after a while.
 
 ## Syntax
 
@@ -32,6 +37,8 @@ Properties:
 
 #### Keepers
 
+List of values traccked to trigger reboot, used also to form implicit dependencies.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -39,6 +46,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServiceName
+
+The service_name of your dedicated server.
 
 _Required_: Yes
 

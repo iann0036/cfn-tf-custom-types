@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HuaweiCloud::MaasTaskV1",
-    "description": "CloudFormation equivalent of huaweicloud_maas_task_v1",
+    "description": "Manages resource task within HuaweiCloud MAAS.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "DstNode": {
@@ -8,19 +8,24 @@
             "additionalProperties": false,
             "properties": {
                 "Ak": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the destination bucket Access Key."
                 },
                 "Bucket": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the name of the destination bucket."
                 },
                 "ObjectKey": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the name of the object to be selected in the\ndestination bucket."
                 },
                 "Region": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the region where the destination bucket locates."
                 },
                 "Sk": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the destination bucket Secret Key."
                 }
             },
             "required": [
@@ -36,17 +41,20 @@
             "additionalProperties": false,
             "properties": {
                 "Language": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the management console language used by the\ncurrent users. Users can select en-us."
                 },
                 "TopicUrn": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the SMN message topic URN bound to a migration\ntask."
                 },
                 "TriggerConditions": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Specifies the trigger conditions of sending messages\nusing SMN. The value depending on the state of a migration task. The migration task\nstatus can be SUCCESS or FAIL."
                 }
             },
             "required": [
@@ -59,22 +67,28 @@
             "additionalProperties": false,
             "properties": {
                 "Ak": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the source bucket Access Key."
                 },
                 "Bucket": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the name of the source bucket."
                 },
                 "CloudType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the source cloud vendor. Currently only Aliyun\nand AWS are supported. The default value is Aliyun."
                 },
                 "ObjectKey": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the name of the object to be selected in the\nsource bucket."
                 },
                 "Region": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the region where the source bucket locates."
                 },
                 "Sk": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the source bucket Secret Key."
                 }
             },
             "required": [
@@ -102,10 +116,12 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies tasks description, which cannot exceed 255\ncharacters. The following special characters are not allowed: <>()\"&."
         },
         "EnableKms": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether to use KMS encryption."
         },
         "Name": {
             "type": "string"
@@ -114,7 +130,8 @@
             "type": "number"
         },
         "ThreadNum": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the number of threads used by the migration\ntask. The value cannot exceed 50."
         },
         "DstNode": {
             "type": "array",

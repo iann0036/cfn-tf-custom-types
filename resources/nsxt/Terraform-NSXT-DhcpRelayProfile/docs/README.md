@@ -1,6 +1,11 @@
 # Terraform::NSXT::DhcpRelayProfile
 
-CloudFormation equivalent of nsxt_dhcp_relay_profile
+This resource can be used to configure a NSX DHCP relay profile on the NSX manager.
+A DHCP relay profile is a type of template that can be used to define a remote DHCP server
+where DHCP packets can be relayed for DHCP requests of machines attached to NSX logical topologies.
+The DHCP relay profile can be used in a DHCP relay service and later consumed by a router
+downlink port.
+Currently the DHCP relay is not supported for logical routers link ports on Tier0 or Tier1.
 
 ## Syntax
 
@@ -37,6 +42,8 @@ Properties:
 
 #### Description
 
+Description of this resource.
+
 _Required_: No
 
 _Type_: String
@@ -45,6 +52,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+The display name of this resource. Defaults to ID if not set.
+
 _Required_: No
 
 _Type_: String
@@ -52,6 +61,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServerAddresses
+
+IP addresses of the DHCP relay servers. Maximum allowed amount is 2.
 
 _Required_: Yes
 

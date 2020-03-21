@@ -1,6 +1,7 @@
 # Terraform::Brightbox::DatabaseServer
 
-CloudFormation equivalent of brightbox_database_server
+Provides a Brightbox Database Server resource. This can be used to create,
+modify, and delete Database Servers.
 
 ## Syntax
 
@@ -60,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DatabaseEngine
 
+Database engine to request. Default is mysql.
+
 _Required_: No
 
 _Type_: String
@@ -67,6 +70,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DatabaseType
+
+ID of the Database Type required.
 
 _Required_: No
 
@@ -76,6 +81,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DatabaseVersion
 
+Database version to request. Default is 8.0.
+
 _Required_: No
 
 _Type_: String
@@ -83,6 +90,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+A further description of the Database Server.
 
 _Required_: No
 
@@ -92,6 +101,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaintenanceHour
 
+Number representing 24hr time start of maintenance window hour for x:00-x:59 (0-23). Default is 6.
+
 _Required_: No
 
 _Type_: Double
@@ -100,6 +111,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaintenanceWeekday
 
+Numerical index of weekday (0 is Sunday, 1 is Monday...) to set when automatic updates may be performed. Default is 0 (Sunday).
+
 _Required_: No
 
 _Type_: Double
@@ -107,6 +120,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+A label assigned to the Database Server.
 
 _Required_: No
 
@@ -124,6 +139,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SnapshotsSchedule
 
+A crontab pattern to determine approximately when scheduled snapshots will run (must be at least hourly).
+
 _Required_: No
 
 _Type_: String
@@ -131,6 +148,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Zone
+
+The handle of the zone required (`gb1-a`, `gb1-b`).
 
 _Required_: No
 

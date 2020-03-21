@@ -1,6 +1,14 @@
 # Terraform::Google::BigqueryDataTransferConfig
 
-CloudFormation equivalent of google_bigquery_data_transfer_config
+Represents a data transfer configuration. A transfer configuration
+contains all metadata needed to perform a data transfer.
+
+
+To get more information about Config, see:
+
+* [API documentation](https://cloud.google.com/bigquery/docs/reference/datatransfer/rest/v1/projects.locations.transferConfigs/create)
+* How-to Guides
+    * [Official Documentation](https://cloud.google.com/bigquery/docs/reference/datatransfer/rest/)
 
 ## Syntax
 
@@ -103,6 +111,9 @@ _Type_: List of <a href="params.md">Params</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
 
 _Required_: No
 

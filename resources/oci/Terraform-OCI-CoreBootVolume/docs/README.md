@@ -1,6 +1,11 @@
 # Terraform::OCI::CoreBootVolume
 
-CloudFormation equivalent of oci_core_boot_volume
+This resource provides the Boot Volume resource in Oracle Cloud Infrastructure Core service.
+
+Creates a new boot volume in the specified compartment from an existing boot volume or a boot volume backup.
+For general information about boot volumes, see [Boot Volumes](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/bootvolumes.htm).
+You may optionally specify a *display name* for the volume, which is simply a friendly name or
+description. It does not have to be unique, and you can change it. Avoid entering confidential information.
 
 ## Syntax
 
@@ -52,6 +57,8 @@ Properties:
 
 #### AvailabilityDomain
 
+The availability domain of the boot volume.  Example: `Uocm:PHX-AD-1`.
+
 _Required_: Yes
 
 _Type_: String
@@ -59,6 +66,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BackupPolicyId
+
+If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned.
 
 _Required_: No
 
@@ -68,6 +77,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CompartmentId
 
+(Updatable) The OCID of the compartment that contains the boot volume.
+
 _Required_: Yes
 
 _Type_: String
@@ -75,6 +86,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefinedTags
+
+(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`.
 
 _Required_: No
 
@@ -84,6 +97,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+(Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+
 _Required_: No
 
 _Type_: String
@@ -91,6 +106,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FreeformTags
+
+(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`.
 
 _Required_: No
 
@@ -100,6 +117,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KmsKeyId
 
+(Updatable) The OCID of the Key Management key to assign as the master encryption key for the boot volume.
+
 _Required_: No
 
 _Type_: String
@@ -108,6 +127,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SizeInGbs
 
+(Updatable) The size of the volume in GBs.
+
 _Required_: No
 
 _Type_: String
@@ -115,6 +136,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpusPerGb
+
+(Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Elastic Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeelasticperformance.htm) for more information.
 
 _Required_: No
 

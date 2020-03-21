@@ -1,6 +1,7 @@
 # Terraform::Circonus::RuleSetGroup
 
-CloudFormation equivalent of circonus_rule_set_group
+The ``circonus_rule_set_group`` resource creates and manages a
+[Circonus Rule Set Group](https://login.circonus.com/resources/api/calls/rule_set_group).
 
 ## Syntax
 
@@ -40,6 +41,9 @@ Properties:
 ## Properties
 
 #### Name
+
+The name of the rule set group, must be unique across
+all rule set groups within the account.
 
 _Required_: Yes
 

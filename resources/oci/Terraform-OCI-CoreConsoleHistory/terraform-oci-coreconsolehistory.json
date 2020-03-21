@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::CoreConsoleHistory",
-    "description": "CloudFormation equivalent of oci_core_console_history",
+    "description": "This resource provides the Console History resource in Oracle Cloud Infrastructure Core service.\n\nCaptures the most recent serial console data (up to a megabyte) for the\nspecified instance.\n\nThe `CaptureConsoleHistory` operation works with the other console history operations\nas described below.\n\n1. Use `CaptureConsoleHistory` to request the capture of up to a megabyte of the\nmost recent console history. This call returns a `ConsoleHistory`\nobject. The object will have a state of REQUESTED.\n2. Wait for the capture operation to succeed by polling `GetConsoleHistory` with\nthe identifier of the console history metadata. The state of the\n`ConsoleHistory` object will go from REQUESTED to GETTING-HISTORY and\nthen SUCCEEDED (or FAILED).\n3. Use `GetConsoleHistoryContent` to get the actual console history data (not the\nmetadata).\n4. Optionally, use `DeleteConsoleHistory` to delete the console history metadata\nand the console history data.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -49,10 +49,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Operations.CostCenter\": \"42\"}`."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information."
         },
         "FreeformTags": {
             "type": "array",
@@ -72,10 +74,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
         },
         "InstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the instance to get the console history from."
         },
         "State": {
             "type": "string"

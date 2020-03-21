@@ -25,6 +25,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Enabled
 
+Is Role Based Access Control Enabled? Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: Boolean

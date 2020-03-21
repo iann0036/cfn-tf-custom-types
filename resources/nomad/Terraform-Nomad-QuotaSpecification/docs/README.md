@@ -1,6 +1,6 @@
 # Terraform::Nomad::QuotaSpecification
 
-CloudFormation equivalent of nomad_quota_specification
+Manages a quota specification in a Nomad cluster.
 
 ## Syntax
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::ComputeInstanceFromTemplate",
-    "description": "CloudFormation equivalent of google_compute_instance_from_template",
+    "description": "Manages a VM instance resource within GCE. For more information see\n[the official documentation](https://cloud.google.com/compute/docs/instances)\nand\n[API](https://cloud.google.com/compute/docs/reference/latest/instances).\n\nThis resource is specifically to create a compute instance from a given\n`source_instance_template`. To create an instance without a template, use the\n`google_compute_instance` resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "BootDisk": {
@@ -337,7 +337,8 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique name for the resource, required by GCE.\nChanging this forces a new resource to be created."
         },
         "Project": {
             "type": "string"
@@ -379,7 +380,8 @@
             }
         },
         "SourceInstanceTemplate": {
-            "type": "string"
+            "type": "string",
+            "description": "Name or self link of an instance\ntemplate to create the instance based on."
         },
         "Tags": {
             "type": "array",
@@ -392,7 +394,8 @@
             "type": "string"
         },
         "Zone": {
-            "type": "string"
+            "type": "string",
+            "description": "The zone that the machine should be created in. If not\nset, the provider zone is used."
         },
         "BootDisk": {
             "type": "array",

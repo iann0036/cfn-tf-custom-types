@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### KmsKeySelfLink
 
+The self link of the encryption key that is stored in Google Cloud KMS.
+
 _Required_: Yes
 
 _Type_: String

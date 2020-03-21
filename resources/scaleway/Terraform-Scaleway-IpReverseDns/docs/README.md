@@ -1,6 +1,10 @@
 # Terraform::Scaleway::IpReverseDns
 
-CloudFormation equivalent of scaleway_ip_reverse_dns
+**DEPRECATED**: This resource is deprecated and will be removed in `v2.0+`.
+Please use `scaleway_instance_ip` instead.
+
+Provides reverse DNS settings for IPs.
+For additional details please refer to [API documentation](https://developer.scaleway.com/#ips).
 
 ## Syntax
 
@@ -31,6 +35,8 @@ Properties:
 
 #### Ip
 
+ID or Address of IP.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Reverse
+
+Reverse DNS of the IP.
 
 _Required_: Yes
 

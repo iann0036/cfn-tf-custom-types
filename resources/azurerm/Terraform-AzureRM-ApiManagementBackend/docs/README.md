@@ -1,6 +1,6 @@
 # Terraform::AzureRM::ApiManagementBackend
 
-CloudFormation equivalent of azurerm_api_management_backend
+Manages a backend within an API Management Service.
 
 ## Syntax
 
@@ -63,6 +63,8 @@ Properties:
 
 #### ApiManagementName
 
+The Name of the API Management Service where this backend should be created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -70,6 +72,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+The description of the backend.
 
 _Required_: No
 
@@ -79,6 +83,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the API Management backend. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -86,6 +92,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Protocol
+
+The protocol used by the backend host. Possible values are `http` or `soap`.
 
 _Required_: Yes
 
@@ -95,6 +103,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The Name of the Resource Group where the API Management Service exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -102,6 +112,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceId
+
+The management URI of the backend host in an external system. This URI can be the ARM Resource ID of Logic Apps, Function Apps or API Apps, or the management endpoint of a Service Fabric cluster.
 
 _Required_: No
 
@@ -111,6 +123,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Title
 
+The title of the backend.
+
 _Required_: No
 
 _Type_: String
@@ -118,6 +132,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Url
+
+The URL of the backend host.
 
 _Required_: Yes
 

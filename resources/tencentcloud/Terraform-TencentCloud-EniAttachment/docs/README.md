@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::EniAttachment
 
-CloudFormation equivalent of tencentcloud_eni_attachment
+Provides a resource to detailed information of attached backend server to an ENI.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### EniId
 
+ID of the ENI.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceId
+
+ID of the instance which bind the ENI.
 
 _Required_: Yes
 

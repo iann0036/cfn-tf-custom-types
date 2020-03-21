@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Vault::CertAuthBackendRole",
-    "description": "CloudFormation equivalent of vault_cert_auth_backend_role",
+    "description": "Provides a resource to create a role in an [Cert auth backend within Vault](https://www.vaultproject.io/docs/auth/cert.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -13,45 +13,52 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Allowed the common names for authenticated client certificates."
         },
         "AllowedDnsSans": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Allowed alternative dns names for authenticated client certificates."
         },
         "AllowedEmailSans": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Allowed emails for authenticated client certificates."
         },
         "AllowedNames": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Allowed subject names for authenticated client certificates."
         },
         "AllowedOrganizationUnits": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Allowed organization units for authenticated client certificates."
         },
         "AllowedUriSans": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Allowed URIs for authenticated client certificates."
         },
         "Backend": {
-            "type": "string"
+            "type": "string",
+            "description": "Path to the mounted Cert auth backend."
         },
         "BoundCidrs": {
             "type": "array",
@@ -61,16 +68,19 @@
             }
         },
         "Certificate": {
-            "type": "string"
+            "type": "string",
+            "description": "CA certificate used to validate client certificates."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name to display on tokens issued under this role."
         },
         "MaxTtl": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the role."
         },
         "Period": {
             "type": "string"
@@ -87,7 +97,8 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "TLS extensions required on client certificates."
         },
         "TokenBoundCidrs": {
             "type": "array",

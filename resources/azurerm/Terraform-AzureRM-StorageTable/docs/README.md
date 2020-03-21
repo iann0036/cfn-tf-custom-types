@@ -1,6 +1,6 @@
 # Terraform::AzureRM::StorageTable
 
-CloudFormation equivalent of azurerm_storage_table
+Manages a Table within an Azure Storage Account.
 
 ## Syntax
 
@@ -39,6 +39,8 @@ Properties:
 
 #### Name
 
+The name of the storage table. Must be unique within the storage account the table is located.
+
 _Required_: Yes
 
 _Type_: String
@@ -46,6 +48,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StorageAccountName
+
+Specifies the storage account in which to create the storage table.
+Changing this forces a new resource to be created.
 
 _Required_: Yes
 

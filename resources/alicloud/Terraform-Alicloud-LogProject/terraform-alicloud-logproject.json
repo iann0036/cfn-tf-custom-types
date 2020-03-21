@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::LogProject",
-    "description": "CloudFormation equivalent of alicloud_log_project",
+    "description": "The project is the resource management unit in Log Service and is used to isolate and control resources.\nYou can manage all the logs and the related log sources of an application by using projects. [Refer to details](https://www.alibabacloud.com/help/doc-detail/48873.htm).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the log project."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the log project. It is the only in one Alicloud account."
         }
     },
     "additionalProperties": false,

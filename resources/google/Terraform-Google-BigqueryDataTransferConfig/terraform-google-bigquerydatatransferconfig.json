@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::BigqueryDataTransferConfig",
-    "description": "CloudFormation equivalent of google_bigquery_data_transfer_config",
+    "description": "Represents a data transfer configuration. A transfer configuration\ncontains all metadata needed to perform a data transfer.\n\n\nTo get more information about Config, see:\n\n* [API documentation](https://cloud.google.com/bigquery/docs/reference/datatransfer/rest/v1/projects.locations.transferConfigs/create)\n* How-to Guides\n    * [Official Documentation](https://cloud.google.com/bigquery/docs/reference/datatransfer/rest/)",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -67,7 +67,8 @@
             }
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used."
         },
         "Schedule": {
             "type": "string"

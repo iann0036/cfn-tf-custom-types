@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::IdentityUserV3",
-    "description": "CloudFormation equivalent of openstack_identity_user_v3",
+    "description": "Manages a V3 User resource within OpenStack Keystone.\n\nNote: You _must_ have admin privileges in your OpenStack cloud to use\nthis resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "MultiFactorAuthRule": {
@@ -12,7 +12,8 @@
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of authentication plugins that the user must\nauthenticate with."
                 }
             },
             "required": [
@@ -26,16 +27,20 @@
             "type": "string"
         },
         "DefaultProjectId": {
-            "type": "string"
+            "type": "string",
+            "description": "The default project this user belongs to."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description of the user."
         },
         "DomainId": {
-            "type": "string"
+            "type": "string",
+            "description": "The domain this user belongs to."
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the user is enabled or disabled. Valid\nvalues are `true` and `false`."
         },
         "Extra": {
             "type": "array",
@@ -55,28 +60,36 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Free-form key/value pairs of extra information."
         },
         "IgnoreChangePasswordUponFirstUse": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "User will not have to\nchange their password upon first use. Valid values are `true` and `false`."
         },
         "IgnoreLockoutFailureAttempts": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "User will not have a failure\nlockout placed on their account. Valid values are `true` and `false`."
         },
         "IgnorePasswordExpiry": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "User's password will not expire.\nValid values are `true` and `false`."
         },
         "MultiFactorAuthEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to enable multi-factor\nauthentication. Valid values are `true` and `false`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the user."
         },
         "Password": {
-            "type": "string"
+            "type": "string",
+            "description": "The password for the user."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the V3 Keystone client.\nIf omitted, the `region` argument of the provider is used. Changing this\ncreates a new User."
         },
         "MultiFactorAuthRule": {
             "type": "array",

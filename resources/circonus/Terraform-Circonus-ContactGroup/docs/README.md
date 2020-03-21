@@ -1,6 +1,7 @@
 # Terraform::Circonus::ContactGroup
 
-CloudFormation equivalent of circonus_contact_group
+The ``circonus_contact_group`` resource creates and manages a
+[Circonus Contact Group](https://login.circonus.com/user/docs/Alerting/ContactGroups).
 
 ## Syntax
 
@@ -75,6 +76,9 @@ Properties:
 
 #### AggregationWindow
 
+The aggregation window for batching up alert
+notifications.
+
 _Required_: No
 
 _Type_: String
@@ -99,6 +103,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LongMessage
 
+The bulk of the message used in long form alert
+messages.
+
 _Required_: No
 
 _Type_: String
@@ -106,6 +113,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LongSubject
+
+The subject used in long form alert messages.
 
 _Required_: No
 
@@ -115,6 +124,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LongSummary
 
+The brief summary used in long form alert messages.
+
 _Required_: No
 
 _Type_: String
@@ -122,6 +133,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the contact group.
 
 _Required_: Yes
 
@@ -131,6 +144,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ShortMessage
 
+The subject used in short form alert messages.
+
 _Required_: No
 
 _Type_: String
@@ -139,6 +154,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ShortSummary
 
+The brief summary used in short form alert
+messages.
+
 _Required_: No
 
 _Type_: String
@@ -146,6 +164,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A list of tags attached to the Contact Group.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::ComputeServergroupV2
 
-CloudFormation equivalent of opentelekomcloud_compute_servergroup_v2
+Manages a V2 Server Group resource within OpenTelekomCloud.
 
 ## Syntax
 
@@ -37,6 +37,9 @@ Properties:
 
 #### Name
 
+A unique name for the server group. Changing this creates
+a new server group.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +47,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Policies
+
+The set of policies for the server group. Only two
+two policies are available right now, and both are mutually exclusive. See
+the Policies section for more information. Changing this creates a new
+server group.
 
 _Required_: No
 
@@ -60,6 +68,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ValueSpecs
+
+Map of additional options.
 
 _Required_: No
 

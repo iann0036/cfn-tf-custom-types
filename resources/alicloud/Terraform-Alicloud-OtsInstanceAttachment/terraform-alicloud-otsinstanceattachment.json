@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::OtsInstanceAttachment",
-    "description": "CloudFormation equivalent of alicloud_ots_instance_attachment",
+    "description": "This resource will help you to bind a VPC to an OTS instance.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,19 @@
             "type": "string"
         },
         "InstanceName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the OTS instance."
         },
         "VpcId": {
             "type": "string"
         },
         "VpcName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of attaching VPC to instance."
         },
         "VswitchId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of attaching VSwitch to instance."
         }
     },
     "additionalProperties": false,

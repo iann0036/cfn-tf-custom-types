@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Template::Dir",
-    "description": "CloudFormation equivalent of template_dir",
+    "description": "Renders a directory containing templates into a separate directory of\ncorresponding rendered files.\n\n`template_dir` is similar to [`template_file`](../d/file.html) but it walks\na given source directory and treats every file it encounters as a template,\nrendering it to a corresponding file in the destination directory.\n\n~> **Note** When working with local files, Terraform will detect the resource\nas having been deleted each time a configuration is applied on a new machine\nwhere the destination dir is not present and will generate a diff to create\nit. This may cause \"noise\" in diffs in environments where configurations are\nroutinely applied by many different users or within automation systems.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "DestinationDir": {
-            "type": "string"
+            "type": "string",
+            "description": "Path to the directory where the templated files will be written."
         },
         "SourceDir": {
-            "type": "string"
+            "type": "string",
+            "description": "Path to the directory where the files to template reside."
         },
         "Vars": {
             "type": "array",
@@ -32,7 +34,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Variables for interpolation within the template. Note\nthat variables must all be primitives. Direct references to lists or maps\nwill cause a validation error."
         }
     },
     "additionalProperties": false,

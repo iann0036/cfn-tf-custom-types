@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::NSXT::L4PortSetNsService",
-    "description": "CloudFormation equivalent of nsxt_l4_port_set_ns_service",
+    "description": "This resource provides a way to configure a networking and security service which can be used within NSX. This specific service is for configuration of layer 4 ports.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Tag": {
@@ -29,20 +29,24 @@
             "type": "boolean"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of this resource."
         },
         "DestinationPorts": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Set of destination ports."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "Display name, defaults to ID if not set."
         },
         "Protocol": {
-            "type": "string"
+            "type": "string",
+            "description": "L4 protocol. Accepted values - 'TCP' or 'UDP'."
         },
         "Revision": {
             "type": "number"
@@ -52,7 +56,8 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Set of source ports."
         },
         "Tag": {
             "type": "array",

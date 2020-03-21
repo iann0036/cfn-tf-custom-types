@@ -1,6 +1,6 @@
 # Terraform::OVH::DomainZoneRecord
 
-CloudFormation equivalent of ovh_domain_zone_record
+Provides a OVH domain zone record.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### Fieldtype
 
+The type of the record.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Subdomain
+
+The name of the record.
 
 _Required_: No
 
@@ -53,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Target
 
+The value of the record.
+
 _Required_: Yes
 
 _Type_: String
@@ -61,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ttl
 
+The TTL of the record.
+
 _Required_: No
 
 _Type_: Double
@@ -68,6 +76,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Zone
+
+The domain to add the record to.
 
 _Required_: Yes
 

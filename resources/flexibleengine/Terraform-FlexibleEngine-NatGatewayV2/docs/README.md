@@ -1,6 +1,6 @@
 # Terraform::FlexibleEngine::NatGatewayV2
 
-CloudFormation equivalent of flexibleengine_nat_gateway_v2
+Manages a V2 nat gateway resource within FlexibleEngine Nat
 
 ## Syntax
 
@@ -43,6 +43,8 @@ Properties:
 
 #### Description
 
+The description of the nat gateway.
+
 _Required_: No
 
 _Type_: String
@@ -50,6 +52,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InternalNetworkId
+
+ID of the subnet (!) this nat gateway connects to.
+Changing this creates a new nat gateway.
 
 _Required_: Yes
 
@@ -59,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the nat gateway.
+
 _Required_: Yes
 
 _Type_: String
@@ -66,6 +73,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region in which to obtain the V2 nat client.
+If omitted, the `region` argument of the provider is used. Changing this
+creates a new nat gateway.
 
 _Required_: No
 
@@ -75,6 +86,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RouterId
 
+ID of the router/VPC this nat gateway belongs to. Changing
+this creates a new nat gateway.
+
 _Required_: Yes
 
 _Type_: String
@@ -83,6 +97,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Spec
 
+The specification of the nat gateway, valid values are "1",
+"2", "3", "4" (for Small, Medium, Large, Extra-Large).
+
 _Required_: Yes
 
 _Type_: String
@@ -90,6 +107,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TenantId
+
+The target tenant/project ID in which to allocate the nat
+gateway. Changing this creates a new nat gateway .
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::AzureRM::ApiManagementAuthorizationServer
 
-CloudFormation equivalent of azurerm_api_management_authorization_server
+Manages an Authorization Server within an API Management Service.
 
 ## Syntax
 
@@ -72,6 +72,8 @@ Properties:
 
 #### ApiManagementName
 
+The name of the API Management Service in which this Authorization Server should be created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -79,6 +81,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AuthorizationEndpoint
+
+The OAUTH Authorization Endpoint.
 
 _Required_: Yes
 
@@ -88,6 +92,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AuthorizationMethods
 
+The HTTP Verbs supported by the Authorization Endpoint. Possible values are `DELETE`, `GET`, `HEAD`, `OPTIONS`, `PATCH`, `POST`, `PUT` and `TRACE`.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -95,6 +101,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BearerTokenSendingMethods
+
+The mechanism by which Access Tokens are passed to the API. Possible values are `authorizationHeader` and `query`.
 
 _Required_: No
 
@@ -104,6 +112,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ClientAuthenticationMethod
 
+The Authentication Methods supported by the Token endpoint of this Authorization Server.. Possible values are `Basic` and `Body`.
+
 _Required_: No
 
 _Type_: List of String
@@ -111,6 +121,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClientId
+
+The Client/App ID registered with this Authorization Server.
 
 _Required_: Yes
 
@@ -120,6 +132,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ClientRegistrationEndpoint
 
+The URI of page where Client/App Registration is performed for this Authorization Server.
+
 _Required_: Yes
 
 _Type_: String
@@ -127,6 +141,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClientSecret
+
+The Client/App Secret registered with this Authorization Server.
 
 _Required_: No
 
@@ -136,6 +152,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DefaultScope
 
+The Default Scope used when requesting an Access Token, specified as a string containing space-delimited values.
+
 _Required_: No
 
 _Type_: String
@@ -143,6 +161,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+A description of the Authorization Server, which may contain HTML formatting tags.
 
 _Required_: No
 
@@ -152,6 +172,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+The user-friendly name of this Authorization Server.
+
 _Required_: Yes
 
 _Type_: String
@@ -159,6 +181,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GrantTypes
+
+Form of Authorization Grants required when requesting an Access Token. Possible values are `authorizationCode`, `clientCredentials`, `implicit` and `resourceOwnerPassword`.
 
 _Required_: Yes
 
@@ -168,6 +192,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The Name of the Parameter.
+
 _Required_: Yes
 
 _Type_: String
@@ -175,6 +201,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the Resource Group in which the API Management Service exists. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -184,6 +212,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceOwnerPassword
 
+The password associated with the Resource Owner.
+
 _Required_: No
 
 _Type_: String
@@ -191,6 +221,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceOwnerUsername
+
+The username associated with the Resource Owner.
 
 _Required_: No
 
@@ -200,6 +232,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SupportState
 
+Does this Authorization Server support State? If this is set to `true` the client may use the state parameter to raise protocol security.
+
 _Required_: No
 
 _Type_: Boolean
@@ -207,6 +241,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TokenEndpoint
+
+The OAUTH Token Endpoint.
 
 _Required_: No
 

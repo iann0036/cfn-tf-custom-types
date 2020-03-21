@@ -1,6 +1,6 @@
 # Terraform::GitHub::OrganizationWebhook
 
-CloudFormation equivalent of github_organization_webhook
+This resource allows you to create and manage webhooks for GitHub organization.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### Active
 
+Indicate of the webhook should receive events. Defaults to `true`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -45,6 +47,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Events
 
+A list of events which should trigger the webhook. See a list of [available events](https://developer.github.com/v3/activity/events/types/).
+
 _Required_: Yes
 
 _Type_: List of String
@@ -52,6 +56,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The type of the webhook. `web` is the default and the only option.
 
 _Required_: No
 

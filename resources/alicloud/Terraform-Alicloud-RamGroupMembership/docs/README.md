@@ -1,6 +1,6 @@
 # Terraform::Alicloud::RamGroupMembership
 
-CloudFormation equivalent of alicloud_ram_group_membership
+Provides a RAM Group membership resource.
 
 ## Syntax
 
@@ -32,6 +32,8 @@ Properties:
 
 #### GroupName
 
+Name of the RAM group. This name can have a string of 1 to 64 characters, must contain only alphanumeric characters or hyphen "-", and must not begin with a hyphen.
+
 _Required_: Yes
 
 _Type_: String
@@ -39,6 +41,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserNames
+
+Set of user name which will be added to group. Each name can have a string of 1 to 64 characters, must contain only alphanumeric characters or hyphens, such as "-",".","_", and must not begin with a hyphen.
 
 _Required_: Yes
 

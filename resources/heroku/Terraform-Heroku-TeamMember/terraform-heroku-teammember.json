@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Heroku::TeamMember",
-    "description": "CloudFormation equivalent of heroku_team_member",
+    "description": "A [Heroku Team Member](https://devcenter.heroku.com/articles/platform-api-reference#team-member) receives access to everything owned by the Team.\n\nTo create a Heroku Team, use the [New Team](https://dashboard.heroku.com/teams/new) feature of Heroku Dashboard. For Heroku Enterprise accounts, new Teams may be created within the account by users with the right permissions.\n\nA Heroku \"team\" was originally called an \"organization\", and that is still the identifier used elsewhere in this provider. For [`heroku_app`](app.html) & [`heroku_space`](space.html) resources, set the Heroku Team name as the \"organization\".",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,19 @@
             "type": "string"
         },
         "Email": {
-            "type": "string"
+            "type": "string",
+            "description": "Email address of the member."
         },
         "Federated": {
             "type": "boolean"
         },
         "Role": {
-            "type": "string"
+            "type": "string",
+            "description": "The role to assign the member. See [the API docs](https://devcenter.heroku.com/articles/platform-api-reference#team-member) for available options."
         },
         "Team": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Heroku Team."
         }
     },
     "additionalProperties": false,

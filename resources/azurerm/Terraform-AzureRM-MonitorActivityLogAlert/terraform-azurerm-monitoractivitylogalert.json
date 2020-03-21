@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::MonitorActivityLogAlert",
-    "description": "CloudFormation equivalent of azurerm_monitor_activity_log_alert",
+    "description": "Manages an Activity Log Alert within Azure Monitor.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Action": {
@@ -8,7 +8,8 @@
             "additionalProperties": false,
             "properties": {
                 "ActionGroupId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of the Action Group can be sourced from [the `azurerm_monitor_action_group` resource](./monitor_action_group.html)."
                 },
                 "WebhookProperties": {
                     "type": "array",
@@ -28,7 +29,8 @@
                             "Key",
                             "Value"
                         ]
-                    }
+                    },
+                    "description": "The map of custom string properties to include with the post operation. These data are appended to the webhook payload."
                 }
             },
             "required": [
@@ -40,34 +42,44 @@
             "additionalProperties": false,
             "properties": {
                 "Caller": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The email address or Azure Active Directory identifier of the user who performed the operation."
                 },
                 "Category": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The category of the operation. Possible values are `Administrative`, `Autoscale`, `Policy`, `Recommendation`, `ResourceHealth`, `Security` and `ServiceHealth`."
                 },
                 "Level": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The severity level of the event. Possible values are `Verbose`, `Informational`, `Warning`, `Error`, and `Critical`."
                 },
                 "OperationName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Resource Manager Role-Based Access Control operation name. Supported operation should be of the form: `<resourceProvider>/<resourceType>/<operation>`."
                 },
                 "ResourceGroup": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of resource group monitored by the activity log alert."
                 },
                 "ResourceId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The specific resource monitored by the activity log alert. It should be within one of the `scopes`."
                 },
                 "ResourceProvider": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the resource provider monitored by the activity log alert."
                 },
                 "ResourceType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The resource type monitored by the activity log alert."
                 },
                 "Status": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The status of the event. For example, `Started`, `Failed`, or `Succeeded`."
                 },
                 "SubStatus": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The sub status of the event."
                 }
             },
             "required": [
@@ -100,23 +112,28 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of this activity log alert."
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Should this Activity Log Alert be enabled? Defaults to `true`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the activity log alert. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the activity log alert instance."
         },
         "Scopes": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The Scope at which the Activity Log should be applied, for example a the Resource ID of a Subscription or a Resource (such as a Storage Account)."
         },
         "Tags": {
             "type": "array",
@@ -136,7 +153,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Action": {
             "type": "array",

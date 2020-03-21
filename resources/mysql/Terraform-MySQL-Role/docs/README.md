@@ -1,6 +1,9 @@
 # Terraform::MySQL::Role
 
-CloudFormation equivalent of mysql_role
+The ``mysql_role`` resource creates and manages a user on a MySQL
+server.
+
+~> **Note:** MySQL introduced roles in version 8. They do not work on MySQL 5 and lower.
 
 ## Syntax
 
@@ -28,6 +31,8 @@ Properties:
 ## Properties
 
 #### Name
+
+The name of the role.
 
 _Required_: Yes
 

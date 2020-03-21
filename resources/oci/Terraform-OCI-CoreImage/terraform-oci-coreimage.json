@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::CoreImage",
-    "description": "CloudFormation equivalent of oci_core_image",
+    "description": "This resource provides the Image resource in Oracle Cloud Infrastructure Core service.\n\nCreates a boot disk image for the specified instance or imports an exported image from the Oracle Cloud Infrastructure Object Storage service.\n\nWhen creating a new image, you must provide the OCID of the instance you want to use as the basis for the image, and\nthe OCID of the compartment containing that instance. For more information about images,\nsee [Managing Custom Images](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm).\n\nWhen importing an exported image from Object Storage, you specify the source information\nin [ImageSourceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/ImageSourceDetails).\n\nWhen importing an image based on the namespace, bucket name, and object name,\nuse [ImageSourceViaObjectStorageTupleDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/ImageSourceViaObjectStorageTupleDetails).\n\nWhen importing an image based on the Object Storage URL, use\n[ImageSourceViaObjectStorageUriDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/ImageSourceViaObjectStorageUriDetails).\nSee [Object Storage URLs](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs) and [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)\nfor constructing URLs for image import/export.\n\nFor more information about importing exported images, see\n[Image Import/Export](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm).\n\nYou may optionally specify a *display name* for the image, which is simply a friendly name or description.\nIt does not have to be unique, and you can change it. See [UpdateImage](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Image/UpdateImage).\nAvoid entering confidential information.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ImageSourceDetails": {
@@ -78,7 +78,8 @@
             "type": "string"
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The OCID of the compartment you want the image to be created in."
         },
         "CreateImageAllowed": {
             "type": "boolean"
@@ -101,10 +102,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Operations.CostCenter\": \"42\"}`."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) A user-friendly name for the image. It does not have to be unique, and it's changeable. Avoid entering confidential information."
         },
         "FreeformTags": {
             "type": "array",
@@ -124,13 +127,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
         },
         "InstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the instance you want to use as the basis for the image."
         },
         "LaunchMode": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:\n* `NATIVE` - VM instances launch with paravirtualized boot and VFIO devices. The default value for Oracle-provided images.\n* `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.\n* `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using virtio drivers.\n* `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter."
         },
         "LaunchOptions": {
             "type": "array",
@@ -161,10 +167,12 @@
             }
         },
         "OperatingSystem": {
-            "type": "string"
+            "type": "string",
+            "description": "The image's operating system.  Example: `Oracle Linux`\n* `operating_system_version` - (Optional) The image's operating system version.  Example: `7.2`\n* `source_image_type` - (Optional) The format of the image to be imported.  Only monolithic images are supported. This attribute is not used for exported Oracle images with the Oracle Cloud Infrastructure image format. Allowed values are:\n* `QCOW2`\n* `VMDK`\n* `source_type` - (Required) The source type for the image. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name. Use `objectStorageUri` when specifying the Object Storage URL.\n* `source_uri` - (Required when source_type=objectStorageUri) The Object Storage URL for the image."
         },
         "OperatingSystemVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "The image's operating system version.  Example: `7.2`\n* `source_image_type` - (Optional) The format of the image to be imported.  Only monolithic images are supported. This attribute is not used for exported Oracle images with the Oracle Cloud Infrastructure image format. Allowed values are:\n* `QCOW2`\n* `VMDK`\n* `source_type` - (Required) The source type for the image. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name. Use `objectStorageUri` when specifying the Object Storage URL.\n* `source_uri` - (Required when source_type=objectStorageUri) The Object Storage URL for the image."
         },
         "SizeInMbs": {
             "type": "string"

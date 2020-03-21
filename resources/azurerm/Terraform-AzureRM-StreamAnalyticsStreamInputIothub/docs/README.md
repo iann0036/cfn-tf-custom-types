@@ -1,6 +1,6 @@
 # Terraform::AzureRM::StreamAnalyticsStreamInputIothub
 
-CloudFormation equivalent of azurerm_stream_analytics_stream_input_iothub
+Manages a Stream Analytics Stream Input IoTHub.
 
 ## Syntax
 
@@ -48,6 +48,8 @@ Properties:
 
 #### Endpoint
 
+The IoT Hub endpoint to connect to (ie. messages/events, messages/operationsMonitoringEvents, etc.).
+
 _Required_: Yes
 
 _Type_: String
@@ -55,6 +57,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EventhubConsumerGroupName
+
+The name of an Event Hub Consumer Group that should be used to read events from the Event Hub. Specifying distinct consumer group names for multiple inputs allows each of those inputs to receive the same events from the Event Hub.
 
 _Required_: Yes
 
@@ -64,6 +68,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IothubNamespace
 
+The name or the URI of the IoT Hub.
+
 _Required_: Yes
 
 _Type_: String
@@ -71,6 +77,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the Stream Input IoTHub. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -80,6 +88,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the Resource Group where the Stream Analytics Job exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -87,6 +97,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SharedAccessPolicyKey
+
+The shared access policy key for the specified shared access policy.
 
 _Required_: Yes
 
@@ -96,6 +108,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SharedAccessPolicyName
 
+The shared access policy name for the Event Hub, Service Bus Queue, Service Bus Topic, etc.
+
 _Required_: Yes
 
 _Type_: String
@@ -103,6 +117,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StreamAnalyticsJobName
+
+The name of the Stream Analytics Job. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

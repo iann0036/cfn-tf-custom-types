@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::RunScope::Step",
-    "description": "CloudFormation equivalent of runscope_step",
+    "description": "A [step](https://www.runscope.com/docs/api/steps) resource.\nAPI tests are comprised of a series of steps, most often HTTP requests.\nIn addition to requests, you can also add additional types of steps to\nyour tests like pauses and conditions.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Assertions": {
@@ -97,13 +97,15 @@
             "type": "string"
         },
         "BucketId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the bucket to associate this step with."
         },
         "Method": {
             "type": "string"
         },
         "Note": {
-            "type": "string"
+            "type": "string",
+            "description": "A comment attached to the test step."
         },
         "Scripts": {
             "type": "array",
@@ -113,10 +115,12 @@
             }
         },
         "StepType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of step.\n* [request](#request-steps)\n* pause\n* condition\n* ghost\n* subtest."
         },
         "TestId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the test to associate this step with."
         },
         "Url": {
             "type": "string"

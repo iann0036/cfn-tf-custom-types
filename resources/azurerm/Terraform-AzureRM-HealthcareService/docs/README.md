@@ -1,6 +1,6 @@
 # Terraform::AzureRM::HealthcareService
 
-CloudFormation equivalent of azurerm_healthcare_service
+Manages a Healthcare Service.
 
 ## Syntax
 
@@ -59,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CosmosdbThroughput
 
+The provisioned throughput for the backing database. Range of `400`-`1000`. Defaults to `400`.
+
 _Required_: No
 
 _Type_: Double
@@ -66,6 +68,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Kind
+
+The type of the service. Values at time of publication are: `fhir`, `fhir-Stu3` and `fhir-R4`. Default value is `fhir`.
 
 _Required_: No
 
@@ -75,6 +79,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Location
 
+Specifies the supported Azure Region where the Service should be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -82,6 +88,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the service instance. Used for service endpoint, must be unique within the audience.
 
 _Required_: Yes
 
@@ -91,6 +99,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the Resource Group in which to create the Service.
+
 _Required_: Yes
 
 _Type_: String
@@ -98,6 +108,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

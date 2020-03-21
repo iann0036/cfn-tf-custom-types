@@ -25,6 +25,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### ResourceAppId
 
+The unique identifier for the resource that the application requires access to. This should be equal to the appId declared on the target resource application.
+
 _Required_: Yes
 
 _Type_: String

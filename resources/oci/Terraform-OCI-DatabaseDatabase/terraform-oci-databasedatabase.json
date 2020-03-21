@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::DatabaseDatabase",
-    "description": "CloudFormation equivalent of oci_database_database",
+    "description": "This resource provides the Database resource in Oracle Cloud Infrastructure Database service.\n\nCreates a new database in the specified Database Home. If the database version is provided, it must match the version of the Database Home. Applies only to Exadata DB systems.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Database": {
@@ -142,7 +142,8 @@
             "type": "string"
         },
         "CharacterSet": {
-            "type": "string"
+            "type": "string",
+            "description": "The character set for the database.  The default is AL32UTF8. Allowed values are:."
         },
         "CompartmentId": {
             "type": "string"

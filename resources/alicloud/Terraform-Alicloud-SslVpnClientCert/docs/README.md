@@ -1,6 +1,9 @@
 # Terraform::Alicloud::SslVpnClientCert
 
-CloudFormation equivalent of alicloud_ssl_vpn_client_cert
+Provides a SSL VPN client cert resource.
+
+-> **NOTE:** Terraform will auto build SSL VPN client certs while it uses `alicloud_ssl_vpn_client_cert` to build a ssl vpn client certs resource.
+It depends on VPN instance and SSL VPN Server.
 
 ## Syntax
 
@@ -31,6 +34,9 @@ Properties:
 
 #### Name
 
+The name of the client certificate.
+- `ssl_vpn_server_id` - (Required, ForceNew) The ID of the SSL-VPN server.
+
 _Required_: No
 
 _Type_: String
@@ -38,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SslVpnServerId
+
+The ID of the SSL-VPN server.
 
 _Required_: Yes
 

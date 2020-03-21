@@ -1,6 +1,6 @@
 # Terraform::Kubernetes::HorizontalPodAutoscaler
 
-CloudFormation equivalent of kubernetes_horizontal_pod_autoscaler
+Horizontal Pod Autoscaler automatically scales the number of pods in a replication controller, deployment or replica set based on observed CPU utilization.
 
 ## Syntax
 

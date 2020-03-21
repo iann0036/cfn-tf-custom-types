@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::StorageAccount",
-    "description": "CloudFormation equivalent of azurerm_storage_account",
+    "description": "Manages network rules inside of a Azure Storage Account.\n\n~> **NOTE:** Network Rules can be defined either directly on the `azurerm_storage_account` resource, or using the `azurerm_storage_account_network_rules` resource - but the two cannot be used together. Spurious changes will occur if both are used against the same Storage Account.\n\n~> **NOTE:** Only one `azurerm_storage_account_network_rules` can be tied to an `azurerm_storage_account`. Spurious changes will occur if more than `azurerm_storage_account_network_rules` is tied to the same `azurerm_storage_account`.\n\n~> **NOTE:** Deleting this resource updates the storage account back to the default values it had when the storage account was created.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "BlobProperties": {
@@ -355,7 +355,8 @@
             "type": "string"
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the storage account. Changing this forces a new resource to be created."
         },
         "SecondaryAccessKey": {
             "type": "string"

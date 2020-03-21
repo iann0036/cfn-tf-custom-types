@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::NetworkInterfaceAttachment",
-    "description": "CloudFormation equivalent of alicloud_network_interface_attachment",
+    "description": "Provides an Alicloud ECS Elastic Network Interface Attachment as a resource to attach ENI to or detach ENI from ECS Instances.\n\nFor information about Elastic Network Interface and how to use it, see [Elastic Network Interface](https://www.alibabacloud.com/help/doc-detail/58496.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "InstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The instance ID to attach."
         },
         "NetworkInterfaceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ENI ID to attach."
         }
     },
     "additionalProperties": false,

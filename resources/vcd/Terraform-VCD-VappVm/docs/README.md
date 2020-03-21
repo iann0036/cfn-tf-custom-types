@@ -1,6 +1,7 @@
 # Terraform::VCD::VappVm
 
-CloudFormation equivalent of vcd_vapp_vm
+Provides a vCloud Director VM resource. This can be used to create,
+modify, and delete VMs within a vApp.
 
 ## Syntax
 
@@ -89,6 +90,8 @@ Properties:
 
 #### AcceptAllEulas
 
+Automatically accept EULA if OVA has it. Default is `true`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -96,6 +99,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CatalogName
+
+The catalog name in which to find the given vApp Template.
 
 _Required_: Yes
 
@@ -105,6 +110,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ComputerName
 
+Computer name to assign to this virtual machine.
+
 _Required_: No
 
 _Type_: String
@@ -112,6 +119,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CpuCores
+
+The number of cores per socket. The default is 1.
 
 _Required_: No
 
@@ -121,6 +130,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Cpus
 
+The number of virtual CPUs to allocate to the VM. Socket count is a result of: virtual logical processors/cores per socket. The default is 1.
+
 _Required_: No
 
 _Type_: Double
@@ -129,6 +140,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ExposeHardwareVirtualization
 
+Boolean for exposing full CPU virtualization to the
+guest operating system so that applications that require hardware virtualization can run on virtual machines without binary
+translation or paravirtualization. Useful for hypervisor nesting provided underlying hardware supports it. Default is `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -136,6 +151,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GuestProperties
+
+Key value map of guest properties.
 
 _Required_: No
 
@@ -161,6 +178,12 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ip
 
+The IP to assign to this vApp. Must be an IP address or
+one of `dhcp`, `allocated`, or `none`. If given the address must be within the
+`static_ip_pool` set for the network. If left blank, and the network has
+`dhcp_pool` set with at least one available IP then this will be set with
+DHCP.
+
 _Required_: No
 
 _Type_: String
@@ -177,6 +200,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Memory
 
+The amount of RAM (in MB) to allocate to the VM.
+
 _Required_: No
 
 _Type_: Double
@@ -184,6 +209,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Metadata
+
+Key value map of metadata to assign to this VM.
 
 _Required_: No
 
@@ -193,6 +220,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A name for the VM, unique within the vApp.
+
 _Required_: Yes
 
 _Type_: String
@@ -200,6 +229,16 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NetworkDhcpWaitSeconds
+
+Optional number of seconds to try and wait for DHCP IP (only valid
+for adapters in `network` block with `ip_allocation_mode=DHCP`). It constantly checks if IP is present so the time given
+is a maximum. VM must be powered on and _at least one_ of the following _must be true_:
+* VM has Guest Tools. It waits for IP address to be reported by Guest Tools. This is a slower option, but
+does not require for the VM to use Edge Gateways DHCP service.
+* VM DHCP interface is connected to routed Org network and is using Edge Gateways DHCP service (not
+relayed). It works by querying DHCP leases on Edge Gateway. In general it is quicker than waiting
+until Guest Tools report IP addresses, but is more constrained. However this is the only option if Guest
+Tools are not present on the VM.
 
 _Required_: No
 
@@ -217,6 +256,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NetworkName
 
+Name of the network this VM should connect to.
+
 _Required_: No
 
 _Type_: String
@@ -225,6 +266,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Org
 
+The name of organization to use, optional if defined at provider level. Useful when connected as sysadmin working across different organisations.
+
 _Required_: No
 
 _Type_: String
@@ -232,6 +275,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PowerOn
+
+A boolean value stating if this VM should be powered on. Default is `true`.
 
 _Required_: No
 
@@ -249,6 +294,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TemplateName
 
+The name of the vApp Template to use.
+
 _Required_: Yes
 
 _Type_: String
@@ -256,6 +303,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VappName
+
+The vApp this VM belongs to.
 
 _Required_: Yes
 
@@ -265,6 +314,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VappNetworkName
 
+Name of the vApp network this VM should connect to.
+
 _Required_: No
 
 _Type_: String
@@ -272,6 +323,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vdc
+
+The name of VDC to use, optional if defined at provider level.
 
 _Required_: No
 
@@ -329,7 +382,8 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Description
 
-Returns the <code>Description</code> value.
+The VM description. Note: description is read only. Currently, this field has
+the description of the OVA used to create the VM.
 
 #### InternalDisk
 

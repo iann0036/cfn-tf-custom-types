@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Name
 
+The name of the Authentication Certificate.
+
 _Required_: Yes
 
 _Type_: String

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HuaweiCloud::ApiGatewayGroup",
-    "description": "CloudFormation equivalent of huaweicloud_api_gateway_group",
+    "description": "Provides an API gateway group resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,10 +23,12 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the description of the API group.\nThe description cannot exceed 255 characters."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the API group. An API group name consists of 3\u201364 characters,\nstarting with a letter. Only letters, digits, and underscores (_) are allowed."
         },
         "Status": {
             "type": "number"

@@ -1,6 +1,6 @@
 # Terraform::Datadog::Downtime
 
-CloudFormation equivalent of datadog_downtime
+Provides a Datadog downtime resource. This can be used to create and manage Datadog downtimes.
 
 ## Syntax
 
@@ -54,6 +54,8 @@ Properties:
 
 #### Active
 
+A flag indicating if the downtime is active now.
+
 _Required_: No
 
 _Type_: Boolean
@@ -61,6 +63,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Disabled
+
+A flag indicating if the downtime was disabled.
 
 _Required_: No
 
@@ -70,6 +74,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### End
 
+POSIX timestamp to end the downtime.
+
 _Required_: No
 
 _Type_: Double
@@ -77,6 +83,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EndDate
+
+String representing date and time to end the downtime in RFC3339 format.
 
 _Required_: No
 
@@ -86,6 +94,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Message
 
+A message to include with notifications for this downtime.
+
 _Required_: No
 
 _Type_: String
@@ -93,6 +103,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MonitorId
+
+Reference to which monitor this downtime is applied. When scheduling downtime for a given monitor, datadog changes `silenced` property of the monitor to match the `end` POSIX timestamp. **Note:** this will effectively change the `silenced` attribute of the referenced monitor. If that monitor is also tracked by Terraform and you don't want it to be unmuted on the next `terraform apply`, see [details](/docs/providers/datadog/r/monitor.html#silencing-by-hand-and-by-downtimes) in the monitor resource documentation. This option also conflicts with `monitor_tags` use none or one or the other.
 
 _Required_: No
 
@@ -102,6 +114,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MonitorTags
 
+A list of monitor tags to match. The resulting downtime applies to monitors that match **all** provided monitor tags. This option conflicts with `monitor_id` as it will match all monitors that match these tags.
+
 _Required_: No
 
 _Type_: List of String
@@ -109,6 +123,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Scope
+
+The scope(s) to which the downtime applies, e.g. host:app2. Provide multiple scopes as a comma-separated list, e.g. env:dev,env:prod. The resulting downtime applies to sources that matches ALL provided scopes (i.e. env:dev AND env:prod), NOT any of them.
 
 _Required_: Yes
 
@@ -118,6 +134,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Start
 
+POSIX timestamp to start the downtime.
+
 _Required_: No
 
 _Type_: Double
@@ -125,6 +143,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StartDate
+
+String representing date and time to start the downtime in RFC3339 format.
 
 _Required_: No
 

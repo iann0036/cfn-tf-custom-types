@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::EthernetInterface",
-    "description": "CloudFormation equivalent of panos_ethernet_interface",
+    "description": "This resource allows you to add/update/delete ethernet interfaces.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,86 +9,112 @@
             "type": "string"
         },
         "AdjustTcpMss": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Adjust TCP MSS (default: false)."
         },
         "AggregateGroup": {
-            "type": "string"
+            "type": "string",
+            "description": "The aggregate group (applicable for\nphysical firewalls only)."
         },
         "Comment": {
-            "type": "string"
+            "type": "string",
+            "description": "The interface comment."
         },
         "CreateDhcpDefaultRoute": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` to create a DHCP\ndefault route."
         },
         "DecryptForward": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable decrypt forwarding."
         },
         "DhcpDefaultRouteMetric": {
-            "type": "number"
+            "type": "number",
+            "description": "The metric for the DHCP default\nroute."
         },
         "DhcpSendHostnameEnable": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "For DHCP layer3 interfaces:\nenable sending the firewall or a custom hostname to DHCP server."
         },
         "DhcpSendHostnameValue": {
-            "type": "string"
+            "type": "string",
+            "description": "For DHCP layer3 interfaces:\nthe interface hostname.  Leaving this unspecified with `dhcp_send_hostname_enable`\nset means to send the system hostname."
         },
         "EnableDhcp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` to enable DHCP on this interface."
         },
         "Ipv4MssAdjust": {
-            "type": "number"
+            "type": "number",
+            "description": "The IPv4 MSS adjust value."
         },
         "Ipv6Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` to enable IPv6."
         },
         "Ipv6MssAdjust": {
-            "type": "number"
+            "type": "number",
+            "description": "The IPv6 MSS adjust value."
         },
         "LinkDuplex": {
-            "type": "string"
+            "type": "string",
+            "description": "Link duplex setting.  This can be `full`, `half`,\nor `auto`."
         },
         "LinkSpeed": {
-            "type": "string"
+            "type": "string",
+            "description": "Link speed.  This can be any of the following:\n`10`, `100`, `1000`, or `auto`."
         },
         "LinkState": {
-            "type": "string"
+            "type": "string",
+            "description": "The link state.  This can be `up`, `down`, or\n`auto`."
         },
         "LldpEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable LLDP (default: false)."
         },
         "LldpProfile": {
-            "type": "string"
+            "type": "string",
+            "description": "LLDP profile."
         },
         "ManagementProfile": {
-            "type": "string"
+            "type": "string",
+            "description": "The management profile."
         },
         "Mode": {
-            "type": "string"
+            "type": "string",
+            "description": "The interface mode.  This can be any of the following\nvalues: `layer3`, `layer2`, `virtual-wire`, `tap`, `ha`, `decrypt-mirror`,\nor `aggregate-group`."
         },
         "Mtu": {
-            "type": "number"
+            "type": "number",
+            "description": "The MTU."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The ethernet interface's name.  This should be something\nlike `ethernet1/X`."
         },
         "NetflowProfile": {
-            "type": "string"
+            "type": "string",
+            "description": "The netflow profile."
         },
         "RxPolicingRate": {
-            "type": "number"
+            "type": "number",
+            "description": "Receive policing rate in Mbps."
         },
         "StaticIps": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of static IPv4 addresses to set for this data\ninterface."
         },
         "TxPolicingRate": {
-            "type": "number"
+            "type": "number",
+            "description": "Transmit policing rate in Mbps."
         },
         "Vsys": {
-            "type": "string"
+            "type": "string",
+            "description": "The vsys that will use this interface.  This should be\nsomething like `vsys1` or `vsys3`."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 # Terraform::Spotinst::OceanAws
 
-CloudFormation equivalent of spotinst_ocean_aws
+Provides a Spotinst Ocean AWS resource.
 
 ## Syntax
 
@@ -99,6 +99,8 @@ Properties:
 
 #### AssociatePublicIpAddress
 
+Configure public IP address allocation.
+
 _Required_: No
 
 _Type_: Boolean
@@ -106,6 +108,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Blacklist
+
+Instance types not allowed in the Ocean cluster. Cannot be configured if `whitelist` is configured.
 
 _Required_: No
 
@@ -115,6 +119,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ControllerId
 
+The ocean cluster identifier. Example: `ocean.k8s`.
+
 _Required_: No
 
 _Type_: String
@@ -122,6 +128,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DesiredCapacity
+
+The number of instances to launch and maintain in the cluster.
 
 _Required_: No
 
@@ -131,6 +139,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DrainingTimeout
 
+The time in seconds, the instance is allowed to run while detached from the ELB. This is to allow the instance time to be drained from incoming TCP connections before terminating it, during a scale down operation.
+
 _Required_: No
 
 _Type_: Double
@@ -138,6 +148,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EbsOptimized
+
+Enable EBS optimized for cluster. Flag will enable optimized capacity for high bandwidth connectivity to the EB service for non EBS optimized instance types. For instances that are EBS optimized this flag will be ignored.
 
 _Required_: No
 
@@ -147,6 +159,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FallbackToOndemand
 
+If not Spot instance markets are available, enable Ocean to launch On-Demand instances instead.
+
 _Required_: No
 
 _Type_: Boolean
@@ -154,6 +168,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IamInstanceProfile
+
+The instance profile iam role.
 
 _Required_: No
 
@@ -163,6 +179,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ImageId
 
+ID of the image used to launch the instances.
+
 _Required_: No
 
 _Type_: String
@@ -170,6 +188,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeyName
+
+The key pair to attach the instances.
 
 _Required_: No
 
@@ -179,6 +199,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxSize
 
+The upper limit of instances the cluster can scale up to.
+
 _Required_: No
 
 _Type_: Double
@@ -186,6 +208,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MinSize
+
+The lower limit of instances the cluster can scale down to.
 
 _Required_: No
 
@@ -195,6 +219,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Monitoring
 
+Enable detailed monitoring for cluster. Flag will enable Cloud Watch detailed detailed monitoring (one minute increments). Note: there are additional hourly costs for this service based on the region used.
+
 _Required_: No
 
 _Type_: Boolean
@@ -202,6 +228,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Required if type is set to CLASSIC
+* `type` - (Required) Can be set to CLASSIC or TARGET_GROUP.
 
 _Required_: No
 
@@ -211,6 +240,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region the cluster will run in.
+
 _Required_: No
 
 _Type_: String
@@ -218,6 +249,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RootVolumeSize
+
+The size (in Gb) to allocate for the root volume. Minimum `20`.
 
 _Required_: No
 
@@ -227,6 +260,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecurityGroups
 
+One or more security group ids.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -234,6 +269,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SpotPercentage
+
+The percentage of Spot instances the cluster should maintain. Min 0, max 100.
 
 _Required_: No
 
@@ -243,6 +280,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubnetIds
 
+A comma-separated list of subnet identifiers for the Ocean cluster. Subnet IDs should be configured with auto assign public ip.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -250,6 +289,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserData
+
+Base64-encoded MIME user data to make available to the instances.
 
 _Required_: No
 
@@ -259,6 +300,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UtilizeReservedInstances
 
+If Reserved instances exist, OCean will utilize them before launching Spot instances.
+
 _Required_: No
 
 _Type_: Boolean
@@ -266,6 +309,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Whitelist
+
+Instance types allowed in the Ocean cluster. Cannot be configured if `blacklist` is configured.
 
 _Required_: No
 

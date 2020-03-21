@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::FlexibleEngine::ImagesImageV2",
-    "description": "CloudFormation equivalent of flexibleengine_images_image_v2",
+    "description": "Manages a V2 Image resource within FlexibleEngine Glance.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,25 +23,30 @@
             "type": "string"
         },
         "ContainerFormat": {
-            "type": "string"
+            "type": "string",
+            "description": "The container format. Must be one of\n\"ami\", \"ari\", \"aki\", \"bare\", \"ovf\"."
         },
         "CreatedAt": {
             "type": "string"
         },
         "DiskFormat": {
-            "type": "string"
+            "type": "string",
+            "description": "The disk format. Must be one of\n\"ami\", \"ari\", \"aki\", \"vhd\", \"vmdk\", \"raw\", \"qcow2\", \"vdi\", \"iso\"."
         },
         "File": {
             "type": "string"
         },
         "ImageCachePath": {
-            "type": "string"
+            "type": "string",
+            "description": "This is the directory where the images will\nbe downloaded. Images will be stored with a filename corresponding to\nthe url's md5 hash. Defaults to \"$HOME/.terraform/image_cache\"."
         },
         "ImageSourceUrl": {
-            "type": "string"
+            "type": "string",
+            "description": "This is the url of the raw image that will\nbe downloaded in the `image_cache_path` before being uploaded to Glance.\nGlance is able to download image from internet but the `gophercloud` library\ndoes not yet provide a way to do so.\nConflicts with `local_file_path`."
         },
         "LocalFilePath": {
-            "type": "string"
+            "type": "string",
+            "description": "This is the filepath of the raw image file\nthat will be uploaded to Glance. Conflicts with `image_source_url`."
         },
         "Metadata": {
             "type": "array",
@@ -64,22 +69,27 @@
             }
         },
         "MinDiskGb": {
-            "type": "number"
+            "type": "number",
+            "description": "Amount of disk space (in GB) required to boot image.\nDefaults to 0."
         },
         "MinRamMb": {
-            "type": "number"
+            "type": "number",
+            "description": "Amount of ram (in MB) required to boot image.\nDefauts to 0."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the image."
         },
         "Owner": {
             "type": "string"
         },
         "Protected": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If true, image will not be deletable.\nDefaults to false."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the V2 Glance client.\nA Glance client is needed to create an Image that can be used with\na compute instance. If omitted, the `region` argument of the provider\nis used. Changing this creates a new Image."
         },
         "Schema": {
             "type": "string"
@@ -95,13 +105,15 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The tags of the image. It must be a list of strings.\nAt this time, it is not possible to delete all tags of an image."
         },
         "UpdateAt": {
             "type": "string"
         },
         "Visibility": {
-            "type": "string"
+            "type": "string",
+            "description": "The visibility of the image. Must be one of\n\"public\", \"private\", \"community\", or \"shared\". The ability to set the\nvisibility depends upon the configuration of the FlexibleEngine cloud."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

@@ -1,6 +1,6 @@
 # Terraform::NS1::Record
 
-CloudFormation equivalent of ns1_record
+Provides a NS1 Record resource. This can be used to create, modify, and delete records.
 
 ## Syntax
 
@@ -54,6 +54,9 @@ Properties:
 
 #### Domain
 
+The records' domain.
+Cannot have leading or trailing dots - see the example above.
+
 _Required_: Yes
 
 _Type_: String
@@ -61,6 +64,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Link
+
+The target record to link to. This means this record is a
+'linked' record, and it inherits all properties from its target.
 
 _Required_: No
 
@@ -86,6 +92,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ttl
 
+The records' time to live.
+
 _Required_: No
 
 _Type_: Double
@@ -93,6 +101,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The records' RR type.
 
 _Required_: Yes
 
@@ -102,6 +112,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UseClientSubnet
 
+Whether to use EDNS client subnet data when
+available(in filter chain).
+
 _Required_: No
 
 _Type_: Boolean
@@ -109,6 +122,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Zone
+
+The zone the record belongs to.
+Cannot have leading or trailing dots (".") - see the example above.
 
 _Required_: Yes
 

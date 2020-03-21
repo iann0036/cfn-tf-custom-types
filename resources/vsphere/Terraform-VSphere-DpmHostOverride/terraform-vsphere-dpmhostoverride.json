@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::VSphere::DpmHostOverride",
-    "description": "CloudFormation equivalent of vsphere_dpm_host_override",
+    "description": "The `vsphere_dpm_host_override` resource can be used to add a DPM override to a\ncluster for a particular host. This allows you to control the power management\nsettings for individual hosts in the cluster while leaving any unspecified ones\nat the default power management settings.\n\nFor more information on DPM within vSphere clusters, see [this\npage][ref-vsphere-cluster-dpm].\n\n[ref-vsphere-cluster-dpm]: https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.resmgmt.doc/GUID-5E5E349A-4644-4C9C-B434-1C0243EBDC80.html\n\n~> **NOTE:** This resource requires vCenter and is not available on direct ESXi\nconnections.\n\n~> **NOTE:** vSphere DRS requires a vSphere Enterprise Plus license.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "ComputeClusterId": {
-            "type": "string"
+            "type": "string",
+            "description": "The [managed object reference\nID][docs-about-morefs] of the cluster to put the override in.  Forces a new\nresource if changed."
         },
         "DpmAutomationLevel": {
-            "type": "string"
+            "type": "string",
+            "description": "The automation level for host power\noperations on this host. Can be one of `manual` or `automated`. Default:\n`manual`."
         },
         "DpmEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable DPM support for this host. Default:\n`false`."
         },
         "HostSystemId": {
             "type": "string"

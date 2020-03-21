@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::AsLifecycleHook",
-    "description": "CloudFormation equivalent of tencentcloud_as_lifecycle_hook",
+    "description": "Provides a resource for an AS (Auto scaling) lifecycle hook.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,31 +9,40 @@
             "type": "string"
         },
         "DefaultResult": {
-            "type": "string"
+            "type": "string",
+            "description": "Defines the action the AS group should take when the lifecycle hook timeout elapses or if an unexpected failure occurs. The valid values are CONTINUE and ABANDON. The default value is CONTINUE."
         },
         "HeartbeatTimeout": {
-            "type": "number"
+            "type": "number",
+            "description": "Defines the amount of time, in seconds, that can elapse before the lifecycle hook times out. The range is 30 to 3600, and default value is 300."
         },
         "LifecycleHookName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the lifecycle hook."
         },
         "LifecycleTransition": {
-            "type": "string"
+            "type": "string",
+            "description": "The instance state to which you want to attach the lifecycle hook. The valid values are INSTANCE_LAUNCHING and INSTANCE_TERMINATING."
         },
         "NotificationMetadata": {
-            "type": "string"
+            "type": "string",
+            "description": "Contains additional information that you want to include any time AS sends a message to the notification target."
         },
         "NotificationQueueName": {
-            "type": "string"
+            "type": "string",
+            "description": "For CMQ_QUEUE type, a name of queue must be set."
         },
         "NotificationTargetType": {
-            "type": "string"
+            "type": "string",
+            "description": "Target type, which can be CMQ_QUEUE or CMQ_TOPIC."
         },
         "NotificationTopicName": {
-            "type": "string"
+            "type": "string",
+            "description": "For CMQ_TOPIC type, a name of topic must be set."
         },
         "ScalingGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of a scaling group."
         }
     },
     "additionalProperties": false,

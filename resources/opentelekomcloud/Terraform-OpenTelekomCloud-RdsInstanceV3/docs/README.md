@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::RdsInstanceV3
 
-CloudFormation equivalent of opentelekomcloud_rds_instance_v3
+instance management
 
 ## Syntax
 
@@ -113,6 +113,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tag
+
+Tags key/value pairs to associate with the instance.
 
 _Required_: No
 

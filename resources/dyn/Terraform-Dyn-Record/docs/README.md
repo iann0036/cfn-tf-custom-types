@@ -1,6 +1,6 @@
 # Terraform::Dyn::Record
 
-CloudFormation equivalent of dyn_record
+Provides a Dyn DNS record resource.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### Name
 
+The name of the record.
+
 _Required_: No
 
 _Type_: String
@@ -44,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ttl
+
+The TTL of the record. Default uses the zone default.
 
 _Required_: No
 
@@ -53,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Type
 
+The type of the record.
+
 _Required_: Yes
 
 _Type_: String
@@ -61,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Value
 
+The value of the record.
+
 _Required_: Yes
 
 _Type_: String
@@ -68,6 +76,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Zone
+
+The DNS zone to add the record to.
 
 _Required_: Yes
 

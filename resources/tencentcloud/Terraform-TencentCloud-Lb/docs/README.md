@@ -1,6 +1,8 @@
 # Terraform::TencentCloud::Lb
 
-CloudFormation equivalent of tencentcloud_lb
+Provides a Load Balancer resource.
+
+~> **NOTE:** It has been deprecated and replaced by `tencentcloud_clb_instance`.
 
 ## Syntax
 
@@ -37,6 +39,8 @@ Properties:
 
 #### Forward
 
+The type of the LB, valid choices: 'CLASSIC', 'APPLICATION'.
+
 _Required_: No
 
 _Type_: String
@@ -44,6 +48,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the LB.
 
 _Required_: No
 
@@ -53,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProjectId
 
+The project id of the LB, unspecified or 0 stands for default project.
+
 _Required_: No
 
 _Type_: Double
@@ -61,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Type
 
+The network type of the LB, valid choices: 'OPEN', 'INTERNAL'.
+
 _Required_: Yes
 
 _Type_: String
@@ -68,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+The VPC ID of the LB, unspecified or 0 stands for CVM basic network.
 
 _Required_: No
 

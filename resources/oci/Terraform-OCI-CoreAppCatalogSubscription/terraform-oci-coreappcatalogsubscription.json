@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::CoreAppCatalogSubscription",
-    "description": "CloudFormation equivalent of oci_core_app_catalog_subscription",
+    "description": "This resource provides the App Catalog Subscription resource in Oracle Cloud Infrastructure Core service.\n\nCreate a subscription for listing resource version for a compartment. It will take some time to propagate to all regions.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,31 +26,37 @@
             "type": "string"
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "The compartmentID for the subscription."
         },
         "DisplayName": {
             "type": "string"
         },
         "EulaLink": {
-            "type": "string"
+            "type": "string",
+            "description": "EULA link."
         },
         "ListingId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the listing."
         },
         "ListingResourceId": {
             "type": "string"
         },
         "ListingResourceVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "Listing resource version."
         },
         "OracleTermsOfUseLink": {
-            "type": "string"
+            "type": "string",
+            "description": "Oracle TOU link."
         },
         "PublisherName": {
             "type": "string"
         },
         "Signature": {
-            "type": "string"
+            "type": "string",
+            "description": "A generated signature for this listing resource version retrieved the agreements API."
         },
         "Summary": {
             "type": "string"
@@ -59,7 +65,8 @@
             "type": "string"
         },
         "TimeRetrieved": {
-            "type": "string"
+            "type": "string",
+            "description": "Date and time the agreements were retrieved, in RFC3339 format. Example: `2018-03-20T12:32:53.532Z`."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

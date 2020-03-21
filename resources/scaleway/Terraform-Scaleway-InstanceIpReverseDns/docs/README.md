@@ -1,6 +1,6 @@
 # Terraform::Scaleway::InstanceIpReverseDns
 
-CloudFormation equivalent of scaleway_instance_ip_reverse_dns
+Manages Scaleway Compute Instance IPs Reverse DNS.
 
 ## Syntax
 

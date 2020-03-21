@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::VpnCustomerGateway",
-    "description": "CloudFormation equivalent of alicloud_vpn_customer_gateway",
+    "description": "Provides a VPN customer gateway resource.\n\n-> **NOTE:** Terraform will auto build vpn customer gateway instance  while it uses `alicloud_vpn_customer_gateway` to build a vpn customer gateway resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the VPN customer gateway instance."
         },
         "IpAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "The IP address of the customer gateway."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the VPN customer gateway. Defaults to null."
         }
     },
     "additionalProperties": false,

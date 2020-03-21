@@ -1,6 +1,6 @@
 # Terraform::GitHub::OrganizationBlock
 
-CloudFormation equivalent of github_organization_block
+This resource allows you to create and manage blocks for GitHub organizations.
 
 ## Syntax
 
@@ -28,6 +28,8 @@ Properties:
 ## Properties
 
 #### Username
+
+The name of the user to block.
 
 _Required_: Yes
 

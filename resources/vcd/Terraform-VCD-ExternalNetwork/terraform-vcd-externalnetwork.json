@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::VCD::ExternalNetwork",
-    "description": "CloudFormation equivalent of vcd_external_network",
+    "description": "Provides a vCloud Director external network resource.  This can be used to create and delete external networks.\nRequires system administrator privileges.\n\nSupported in provider *v2.2+*",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "IpScope": {
@@ -78,13 +78,16 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Network friendly description."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique name for the network."
         },
         "RetainNetInfoAcrossDeployments": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether the network resources such as IP/MAC of router will be retained across deployments. Default is false."
         },
         "IpScope": {
             "type": "array",

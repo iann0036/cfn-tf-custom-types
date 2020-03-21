@@ -1,6 +1,8 @@
 # Terraform::OCI::IntegrationIntegrationInstance
 
-CloudFormation equivalent of oci_integration_integration_instance
+This resource provides the Integration Instance resource in Oracle Cloud Infrastructure Integration service.
+
+Creates a new Integration Instance.
 
 ## Syntax
 
@@ -47,6 +49,8 @@ Properties:
 
 #### CompartmentId
 
+(Updatable) Compartment Identifier.
+
 _Required_: Yes
 
 _Type_: String
@@ -54,6 +58,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefinedTags
+
+(Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`.
 
 _Required_: No
 
@@ -63,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+(Updatable) Integration Instance Identifier.
+
 _Required_: Yes
 
 _Type_: String
@@ -70,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FreeformTags
+
+(Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`.
 
 _Required_: No
 
@@ -79,6 +89,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IdcsAt
 
+IDCS Authentication token. This is is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter.
+
 _Required_: No
 
 _Type_: String
@@ -86,6 +98,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IntegrationInstanceType
+
+(Updatable) Standard or Enterprise type.
 
 _Required_: Yes
 
@@ -95,6 +109,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IsByol
 
+(Updatable) Bring your own license.
+
 _Required_: Yes
 
 _Type_: Boolean
@@ -102,6 +118,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MessagePacks
+
+(Updatable) The number of configured message packs.
 
 _Required_: Yes
 

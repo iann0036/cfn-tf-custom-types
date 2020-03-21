@@ -66,6 +66,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### BondingOpts
 
+Options for bonded interfaces.
+
 _Required_: No
 
 _Type_: String
@@ -73,6 +75,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BridgeOpts
+
+Options for bridge interfaces.
 
 _Required_: No
 
@@ -82,6 +86,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Cnames
 
+Canonical name records.
+
 _Required_: No
 
 _Type_: List of String
@@ -89,6 +95,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DhcpTag
+
+DHCP tag.
 
 _Required_: No
 
@@ -98,6 +106,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DnsName
 
+DNS name.
+
 _Required_: No
 
 _Type_: String
@@ -105,6 +115,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Gateway
+
+Per-interface gateway.
 
 _Required_: No
 
@@ -114,6 +126,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InterfaceMaster
 
+The master interface when slave.
+
 _Required_: No
 
 _Type_: String
@@ -121,6 +135,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InterfaceType
+
+The type of interface: na, master,
+slave, bond, bond_slave, bridge, bridge_slave, bonded_bridge_slave.
 
 _Required_: No
 
@@ -130,6 +147,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IpAddress
 
+The IP address of the interface.
+
 _Required_: No
 
 _Type_: String
@@ -137,6 +156,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ipv6Address
+
+The IPv6 address of the interface.
 
 _Required_: No
 
@@ -146,6 +167,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ipv6DefaultGateway
 
+The default gateawy for the
+IPv6 address / interface.
+
 _Required_: No
 
 _Type_: String
@@ -153,6 +177,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ipv6Mtu
+
+The MTU of the IPv6 address.
 
 _Required_: No
 
@@ -170,6 +196,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ipv6StaticRoutes
 
+Static routes for the IPv6
+interface.
+
 _Required_: No
 
 _Type_: List of String
@@ -177,6 +206,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MacAddress
+
+The MAC address of the interface.
 
 _Required_: No
 
@@ -186,6 +217,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Management
 
+Whether this interface is a management
+interface.
+
 _Required_: No
 
 _Type_: Boolean
@@ -193,6 +227,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The device name of the interface. ex: eth0.
 
 _Required_: Yes
 
@@ -202,6 +238,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Netmask
 
+The IPv4 netmask of the interface.
+
 _Required_: No
 
 _Type_: String
@@ -209,6 +247,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Static
+
+Whether the interface should be static or
+DHCP.
 
 _Required_: No
 
@@ -218,6 +259,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StaticRoutes
 
+Static routes for the interface.
+
 _Required_: No
 
 _Type_: List of String
@@ -225,6 +268,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VirtBridge
+
+The virtual bridge to attach to.
 
 _Required_: No
 

@@ -1,6 +1,7 @@
 # Terraform::Brightbox::ServerGroup
 
-CloudFormation equivalent of brightbox_server_group
+Provides a Brightbox Server Group resource. This can be used to create,
+modify, and delete Server Groups.
 
 ## Syntax
 
@@ -31,6 +32,8 @@ Properties:
 
 #### Description
 
+A further description of the Server Group.
+
 _Required_: No
 
 _Type_: String
@@ -38,6 +41,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+A label assigned to the Server Group.
 
 _Required_: No
 

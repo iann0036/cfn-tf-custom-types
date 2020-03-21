@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::SqlFirewallRule",
-    "description": "CloudFormation equivalent of azurerm_sql_firewall_rule",
+    "description": "Allows you to manage an Azure SQL Firewall Rule",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,19 +29,24 @@
             "type": "string"
         },
         "EndIpAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "The ending IP address to allow through the firewall for this rule."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the firewall rule."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to\ncreate the sql server."
         },
         "ServerName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the SQL Server on which to create the Firewall Rule."
         },
         "StartIpAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "The starting IP address to allow through the firewall for this rule."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

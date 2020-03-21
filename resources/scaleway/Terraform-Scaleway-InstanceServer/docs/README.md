@@ -1,6 +1,6 @@
 # Terraform::Scaleway::InstanceServer
 
-CloudFormation equivalent of scaleway_instance_server
+Creates and manages Scaleway Compute Instance servers. For more information, see [the documentation](https://developers.scaleway.com/en/products/instance/api/#servers-8bf7d7).
 
 ## Syntax
 

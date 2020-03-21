@@ -1,6 +1,6 @@
 # Terraform::AzureRM::DataFactoryPipeline
 
-CloudFormation equivalent of azurerm_data_factory_pipeline
+Manages a Pipeline inside a Azure Data Factory.
 
 ## Syntax
 
@@ -46,6 +46,8 @@ Properties:
 
 #### Annotations
 
+List of tags that can be used for describing the Data Factory Pipeline.
+
 _Required_: No
 
 _Type_: List of String
@@ -53,6 +55,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DataFactoryName
+
+The Data Factory name in which to associate the Pipeline with. Changing this forces a new resource.
 
 _Required_: Yes
 
@@ -62,6 +66,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+The description for the Data Factory Pipeline.
+
 _Required_: No
 
 _Type_: String
@@ -69,6 +75,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the Data Factory Pipeline. Changing this forces a new resource to be created. Must be globally unique. See the [Microsoft documentation](https://docs.microsoft.com/en-us/azure/data-factory/naming-rules) for all restrictions.
 
 _Required_: Yes
 
@@ -78,6 +86,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Parameters
 
+A map of parameters to associate with the Data Factory Pipeline.
+
 _Required_: No
 
 _Type_: List of <a href="parameters.md">Parameters</a>
@@ -86,6 +96,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to create the Data Factory Pipeline. Changing this forces a new resource.
+
 _Required_: Yes
 
 _Type_: String
@@ -93,6 +105,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Variables
+
+A map of variables to associate with the Data Factory Pipeline.
 
 _Required_: No
 

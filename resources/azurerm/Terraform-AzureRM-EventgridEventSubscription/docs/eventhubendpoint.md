@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### EventhubId
 
+Specifies the id of the eventhub where the Event Subscription will receive events.
+
 _Required_: Yes
 
 _Type_: String

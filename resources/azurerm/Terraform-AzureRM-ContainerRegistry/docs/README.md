@@ -1,6 +1,9 @@
 # Terraform::AzureRM::ContainerRegistry
 
-CloudFormation equivalent of azurerm_container_registry
+Manages an Azure Container Registry.
+
+~> **Note:** All arguments including the access key will be stored in the raw state as plain-text.
+[Read more about sensitive data in state](/docs/state/sensitive-data.html).
 
 ## Syntax
 
@@ -50,6 +53,8 @@ Properties:
 
 #### AdminEnabled
 
+Specifies whether the admin user is enabled. Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -57,6 +62,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GeoreplicationLocations
+
+A list of Azure locations where the container registry should be geo-replicated.
 
 _Required_: No
 
@@ -66,6 +73,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Location
 
+Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -73,6 +82,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the Container Registry. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -82,6 +93,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NetworkRuleSet
 
+A `network_rule_set` block as documented below.
+
 _Required_: No
 
 _Type_: List of <a href="networkruleset.md">NetworkRuleSet</a>
@@ -89,6 +102,8 @@ _Type_: List of <a href="networkruleset.md">NetworkRuleSet</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which to create the Container Registry. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -98,6 +113,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Sku
 
+The SKU name of the container registry. Possible values are  `Basic`, `Standard` and `Premium`. `Classic` (which was previously `Basic`) is supported only for existing resources.
+
 _Required_: No
 
 _Type_: String
@@ -106,6 +123,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StorageAccountId
 
+The ID of a Storage Account which must be located in the same Azure Region as the Container Registry.
+
 _Required_: No
 
 _Type_: String
@@ -113,6 +132,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

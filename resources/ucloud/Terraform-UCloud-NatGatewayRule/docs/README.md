@@ -1,6 +1,6 @@
 # Terraform::UCloud::NatGatewayRule
 
-CloudFormation equivalent of ucloud_nat_gateway_rule
+Provides a Nat Gateway resource.
 
 ## Syntax
 
@@ -41,6 +41,8 @@ Properties:
 
 #### DstIp
 
+The private ip of instance bound to the jNAT gateway.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +50,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DstPortRange
+
+The range of port numbers of the private ip, range: 1-65535. (eg: `port` or `port1-port2`).
 
 _Required_: Yes
 
@@ -57,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the Nat Gateway Rule which contains 6-63 characters and only support Chinese, English, numbers, '-', '_' and '.'. If not specified, terraform will auto-generate a name beginning with `tf-nat-gateway-rule-`.
+
 _Required_: No
 
 _Type_: String
@@ -64,6 +70,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NatGatewayId
+
+The ID of the Nat Gateway.
 
 _Required_: Yes
 
@@ -73,6 +81,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Protocol
 
+The protocol of the Nat Gateway Rule. Possible values: `tcp`, `udp`.
+
 _Required_: Yes
 
 _Type_: String
@@ -81,6 +91,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SrcEipId
 
+The ID of eip associate to the Nat Gateway.
+
 _Required_: Yes
 
 _Type_: String
@@ -88,6 +100,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SrcPortRange
+
+The range of port numbers of the eip, range: 1-65535. (eg: `port` or `port1-port2`).
 
 _Required_: Yes
 

@@ -1,6 +1,9 @@
 # Terraform::AzureRM::SqlServer
 
-CloudFormation equivalent of azurerm_sql_server
+Manages a SQL Azure Database Server.
+
+~> **Note:** All arguments including the administrator login and password will be stored in the raw state as plain-text.
+[Read more about sensitive data in state](/docs/state/sensitive-data.html).
 
 ## Syntax
 
@@ -50,6 +53,8 @@ Properties:
 
 #### AdministratorLogin
 
+The administrator login name for the new server. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -57,6 +62,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AdministratorLoginPassword
+
+The password associated with the `administrator_login` user. Needs to comply with Azure's [Password Policy](https://msdn.microsoft.com/library/ms161959.aspx).
 
 _Required_: Yes
 
@@ -66,6 +73,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Location
 
+Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -73,6 +82,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the SQL Server. This needs to be globally unique within Azure.
 
 _Required_: Yes
 
@@ -82,6 +93,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to create the SQL Server.
+
 _Required_: Yes
 
 _Type_: String
@@ -90,6 +103,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -97,6 +112,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Version
+
+The version for the new server. Valid values are: 2.0 (for v11 server) and 12.0 (for v12 server).
 
 _Required_: Yes
 

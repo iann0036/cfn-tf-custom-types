@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Linode::NodebalancerConfig",
-    "description": "CloudFormation equivalent of linode_nodebalancer_config",
+    "description": "Provides a Linode NodeBalancer Config resource.  This can be used to create, modify, and delete Linodes NodeBalancer Configs.\nFor more information, see [Getting Started with NodeBalancers](https://www.linode.com/docs/platform/nodebalancer/getting-started-with-nodebalancers/) and the [Linode APIv4 docs](https://developers.linode.com/api/v4#operation/createNodeBalancerConfig).\n\nThe Linode Guide, [Create a NodeBalancer with Terraform](https://www.linode.com/docs/applications/configuration-management/create-a-nodebalancer-with-terraform/), provides step-by-step guidance and additional examples.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,31 +9,39 @@
             "type": "string"
         },
         "Algorithm": {
-            "type": "string"
+            "type": "string",
+            "description": "What algorithm this NodeBalancer should use for routing traffic to backends: roundrobin, leastconn, source."
         },
         "Check": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of check to perform against backends to ensure they are serving requests. This is used to determine if backends are up or down. If none no check is performed. connection requires only a connection to the backend to succeed. http and http_body rely on the backend serving HTTP, and that the response returned matches what is expected."
         },
         "CheckAttempts": {
-            "type": "number"
+            "type": "number",
+            "description": "How many times to attempt a check before considering a backend to be down. (1-30)."
         },
         "CheckBody": {
             "type": "string"
         },
         "CheckInterval": {
-            "type": "number"
+            "type": "number",
+            "description": "How often, in seconds, to check that backends are up and serving requests."
         },
         "CheckPassive": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If true, any response from this backend with a 5xx status code will be enough for it to be considered unhealthy and taken out of rotation."
         },
         "CheckPath": {
-            "type": "string"
+            "type": "string",
+            "description": "The URL path to check on each backend. If the backend does not respond to this request it is considered to be down."
         },
         "CheckTimeout": {
-            "type": "number"
+            "type": "number",
+            "description": "How long, in seconds, to wait for a check attempt before considering it failed. (1-30)."
         },
         "CipherSuite": {
-            "type": "string"
+            "type": "string",
+            "description": "What ciphers to use for SSL connections served by this NodeBalancer. `legacy` is considered insecure and should only be used if necessary."
         },
         "NodeStatus": {
             "type": "array",
@@ -56,16 +64,20 @@
             }
         },
         "NodebalancerId": {
-            "type": "number"
+            "type": "number",
+            "description": "The ID of the NodeBalancer to access."
         },
         "Port": {
-            "type": "number"
+            "type": "number",
+            "description": "The TCP port this Config is for. These values must be unique across configs on a single NodeBalancer (you can't have two configs for port 80, for example). While some ports imply some protocols, no enforcement is done and you may configure your NodeBalancer however is useful to you. For example, while port 443 is generally used for HTTPS, you do not need SSL configured to have a NodeBalancer listening on port 443. (Defaults to 80)."
         },
         "Protocol": {
-            "type": "string"
+            "type": "string",
+            "description": "The protocol this port is configured to serve. If this is set to https you must include an ssl_cert and an ssl_key. (Defaults to \"http\")."
         },
         "SslCert": {
-            "type": "string"
+            "type": "string",
+            "description": "The certificate this port is serving. This is not returned. If set, this field will come back as `<REDACTED>`. Please use the ssl_commonname and ssl_fingerprint to identify the certificate."
         },
         "SslCommonname": {
             "type": "string"
@@ -74,10 +86,12 @@
             "type": "string"
         },
         "SslKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The private key corresponding to this port's certificate. This is not returned. If set, this field will come back as `<REDACTED>`. Please use the ssl_commonname and ssl_fingerprint to identify the certificate."
         },
         "Stickiness": {
-            "type": "string"
+            "type": "string",
+            "description": "Controls how session stickiness is handled on this port: 'none', 'table', 'http_cookie'."
         }
     },
     "additionalProperties": false,

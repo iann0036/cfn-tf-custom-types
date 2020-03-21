@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::NetworkingFloatingipAssociateV2",
-    "description": "CloudFormation equivalent of openstack_networking_floatingip_associate_v2",
+    "description": "Associates a floating IP to a port. This is useful for situations\nwhere you have a pre-allocated floating IP or are unable to use the\n`openstack_networking_floatingip_v2` resource to create a floating IP.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,13 +12,16 @@
             "type": "string"
         },
         "FloatingIp": {
-            "type": "string"
+            "type": "string",
+            "description": "IP Address of an existing floating IP."
         },
         "PortId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of an existing port with at least one IP address to\nassociate with this floating IP."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the V2 Networking client.\nA Networking client is needed to create a floating IP that can be used with\nanother networking resource, such as a load balancer. If omitted, the\n`region` argument of the provider is used. Changing this creates a new\nfloating IP (which may or may not have a different address)."
         }
     },
     "additionalProperties": false,

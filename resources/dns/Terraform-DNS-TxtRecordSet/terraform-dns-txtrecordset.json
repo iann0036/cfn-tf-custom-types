@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::DNS::TxtRecordSet",
-    "description": "CloudFormation equivalent of dns_txt_record_set",
+    "description": "Creates a TXT type DNS record set.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,20 +9,24 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the record set. The `zone` argument will be appended to this value to create the full record path."
         },
         "Ttl": {
-            "type": "number"
+            "type": "number",
+            "description": "The TTL of the record set. Defaults to `3600`."
         },
         "Txt": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The text records this record set will be set to."
         },
         "Zone": {
-            "type": "string"
+            "type": "string",
+            "description": "DNS zone the record set belongs to. It must be an FQDN, that is, include the trailing dot."
         }
     },
     "additionalProperties": false,

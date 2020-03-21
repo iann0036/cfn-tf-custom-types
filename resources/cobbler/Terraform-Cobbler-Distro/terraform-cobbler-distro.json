@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Cobbler::Distro",
-    "description": "CloudFormation equivalent of cobbler_distro",
+    "description": "Manages a distribution within Cobbler.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,60 +9,76 @@
             "type": "string"
         },
         "Arch": {
-            "type": "string"
+            "type": "string",
+            "description": "The architecture of the distro. Valid options\nare: i386, x86_64, ia64, ppc, ppc64, s390, arm."
         },
         "BootFiles": {
-            "type": "string"
+            "type": "string",
+            "description": "Files copied into tftpboot beyond the\nkernel/initrd."
         },
         "Breed": {
-            "type": "string"
+            "type": "string",
+            "description": "The \"breed\" of distribution. Valid options\nare: redhat, fedora, centos, scientific linux, suse, debian, and\nubuntu. These choices may vary depending on the version of Cobbler\nin use."
         },
         "Comment": {
-            "type": "string"
+            "type": "string",
+            "description": "Free form text description."
         },
         "FetchableFiles": {
-            "type": "string"
+            "type": "string",
+            "description": "Templates for tftp or wget."
         },
         "Initrd": {
-            "type": "string"
+            "type": "string",
+            "description": "Absolute path to initrd on filesystem. This\nmust already exist prior to creating the distro."
         },
         "Kernel": {
-            "type": "string"
+            "type": "string",
+            "description": "Absolute path to kernel on filesystem. This\nmust already exist prior to creating the distro."
         },
         "KernelOptions": {
-            "type": "string"
+            "type": "string",
+            "description": "Kernel options to use with the\nkernel."
         },
         "KernelOptionsPost": {
-            "type": "string"
+            "type": "string",
+            "description": "Post install Kernel options to\nuse with the kernel after installation."
         },
         "MgmtClasses": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Management classes for external config\nmanagement."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A name for the distro."
         },
         "OsVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "The version of the distro you are\ncreating. This varies with the version of Cobbler you are using.\nAn updated signature list may need to be obtained in order to\nsupport a newer version. Example: `trusty`."
         },
         "Owners": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Owners list for authz_ownership."
         },
         "RedhatManagementKey": {
-            "type": "string"
+            "type": "string",
+            "description": "Red Hat Management key."
         },
         "RedhatManagementServer": {
-            "type": "string"
+            "type": "string",
+            "description": "Red Hat Management server."
         },
         "TemplateFiles": {
-            "type": "string"
+            "type": "string",
+            "description": "File mappings for built-in config\nmanagement."
         }
     },
     "additionalProperties": false,

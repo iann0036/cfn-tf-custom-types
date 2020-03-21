@@ -1,6 +1,8 @@
 # Terraform::TencentCloud::Dcx
 
-CloudFormation equivalent of tencentcloud_dcx
+Provides a resource to creating dedicated tunnels instances.
+
+~> **NOTE:** 1. ID of the DC is queried, can only apply for this resource offline.
 
 ## Syntax
 
@@ -54,6 +56,8 @@ Properties:
 
 #### Bandwidth
 
+Bandwidth of the DC.
+
 _Required_: No
 
 _Type_: Double
@@ -61,6 +65,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BgpAsn
+
+BGP ASN of the user. A required field within BGP.
 
 _Required_: No
 
@@ -70,6 +76,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### BgpAuthKey
 
+BGP key of the user.
+
 _Required_: No
 
 _Type_: String
@@ -77,6 +85,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CustomerAddress
+
+Interconnect IP of the DC within client.
 
 _Required_: No
 
@@ -86,6 +96,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DcId
 
+ID of the DC to be queried, application deployment offline.
+
 _Required_: Yes
 
 _Type_: String
@@ -93,6 +105,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DcgId
+
+ID of the DC Gateway. Currently only new in the console.
 
 _Required_: Yes
 
@@ -102,6 +116,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name of the dedicated tunnel.
+
 _Required_: Yes
 
 _Type_: String
@@ -109,6 +125,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NetworkType
+
+Type of the network, and available values include VPC, BMVPC and CCN. The default value is VPC.
 
 _Required_: No
 
@@ -118,6 +136,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RouteFilterPrefixes
 
+Static route, the network address of the user IDC. It can be modified after setting but cannot be deleted. AN unable field within BGP.
+
 _Required_: No
 
 _Type_: List of String
@@ -125,6 +145,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RouteType
+
+Type of the route, and available values include BGP and STATIC. The default value is BGP.
 
 _Required_: No
 
@@ -134,6 +156,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TencentAddress
 
+Interconnect IP of the DC within Tencent.
+
 _Required_: No
 
 _Type_: String
@@ -142,6 +166,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Vlan
 
+Vlan of the dedicated tunnels, and the range of values is [0-3000]. '0' means that only one tunnel can be created for the physical connect.
+
 _Required_: No
 
 _Type_: Double
@@ -149,6 +175,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+ID of the VPC or BMVPC.
 
 _Required_: Yes
 

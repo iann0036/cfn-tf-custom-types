@@ -1,6 +1,10 @@
 # Terraform::Docker::Service
 
-CloudFormation equivalent of docker_service
+This resource manages the lifecycle of a Docker service. By default, the creation, update and delete of services are detached.
+
+With the [Converge Config](#convergeconfig) the behavior of the `docker cli` is imitated to guarantee that
+for example, all tasks of a service are running or successfully updated or to inform `terraform` that a service could not
+be updated and was successfully rolled back.
 
 ## Syntax
 
@@ -119,6 +123,8 @@ Properties:
 
 #### Auth
 
+See [Auth](#auth-1) below for details.
+
 _Required_: No
 
 _Type_: List of <a href="auth.md">Auth</a>
@@ -126,6 +132,8 @@ _Type_: List of <a href="auth.md">Auth</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the Docker service.
 
 _Required_: Yes
 

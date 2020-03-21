@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::MapsAccount",
-    "description": "CloudFormation equivalent of azurerm_maps_account",
+    "description": "Manages an Azure Maps Account.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,19 +29,22 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Azure Maps Account. Changing this forces a new resource to be created."
         },
         "PrimaryAccessKey": {
             "type": "string"
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Resource Group in which the Azure Maps Account should exist. Changing this forces a new resource to be created."
         },
         "SecondaryAccessKey": {
             "type": "string"
         },
         "SkuName": {
-            "type": "string"
+            "type": "string",
+            "description": "The sku of the Azure Maps Account. Possible values are `S0` and `S1`."
         },
         "Tags": {
             "type": "array",
@@ -61,7 +64,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the Azure Maps Account."
         },
         "XMsClientId": {
             "type": "string"

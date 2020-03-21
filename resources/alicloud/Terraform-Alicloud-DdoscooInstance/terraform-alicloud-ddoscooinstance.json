@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::DdoscooInstance",
-    "description": "CloudFormation equivalent of alicloud_ddoscoo_instance",
+    "description": "BGP-Line Anti-DDoS instance resource. \"Ddoscoo\" is the short term of this product. See [What is Anti-DDoS Pro](https://www.alibabacloud.com/help/doc-detail/69319.htm).\n\n-> **NOTE:** The product region only support cn-hangzhou.\n\n-> **NOTE:** The endpoint of bssopenapi used only support \"business.aliyuncs.com\" at present.\n\n-> **NOTE:** Available in 1.37.0+ .",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,25 +9,32 @@
             "type": "string"
         },
         "Bandwidth": {
-            "type": "string"
+            "type": "string",
+            "description": "Elastic defend bandwidth of the instance. This value must be larger than the base defend bandwidth. Valid values: 30, 60, 100, 300, 400, 500, 600. The unit is Gbps. Only support upgrade."
         },
         "BaseBandwidth": {
-            "type": "string"
+            "type": "string",
+            "description": "Base defend bandwidth of the instance. Valid values: 30, 60, 100, 300, 400, 500, 600. The unit is Gbps. Only support upgrade."
         },
         "DomainCount": {
-            "type": "string"
+            "type": "string",
+            "description": "Domain retransmission rule count of the instance. At least 50. Increase 5 per step, such as 55, 60, 65. Only support upgrade."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the instance. This name can have a string of 1 to 63 characters."
         },
         "Period": {
-            "type": "number"
+            "type": "number",
+            "description": "The duration that you will buy Ddoscoo instance (in month). Valid values: [1~9], 12, 24, 36. Default to 1. At present, the provider does not support modify \"period\"."
         },
         "PortCount": {
-            "type": "string"
+            "type": "string",
+            "description": "Port retransmission rule count of the instance. At least 50. Increase 5 per step, such as 55, 60, 65. Only support upgrade."
         },
         "ServiceBandwidth": {
-            "type": "string"
+            "type": "string",
+            "description": "Business bandwidth of the instance. At leaset 100. Increased 100 per step, such as 100, 200, 300. The unit is Mbps. Only support upgrade."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::FwPolicyV1",
-    "description": "CloudFormation equivalent of openstack_fw_policy_v1",
+    "description": "Manages a v1 firewall policy resource within OpenStack.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,26 +23,32 @@
             "type": "string"
         },
         "Audited": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Audit status of the firewall policy\n(must be \"true\" or \"false\" if provided - defaults to \"false\").\nThis status is set to \"false\" whenever the firewall policy or any of its\nrules are changed. Changing this updates the `audited` status of an existing\nfirewall policy."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description for the firewall policy. Changing\nthis updates the `description` of an existing firewall policy."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A name for the firewall policy. Changing this\nupdates the `name` of an existing firewall policy."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the v1 networking client.\nA networking client is needed to create a firewall policy. If omitted, the\n`region` argument of the provider is used. Changing this creates a new\nfirewall policy."
         },
         "Rules": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "An array of one or more firewall rules that comprise\nthe policy. Changing this results in adding/removing rules from the\nexisting firewall policy."
         },
         "Shared": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Sharing status of the firewall policy (must be \"true\"\nor \"false\" if provided). If this is \"true\" the policy is visible to, and\ncan be used in, firewalls in other tenants. Changing this updates the\n`shared` status of an existing firewall policy. Only administrative users\ncan specify if the policy should be shared."
         },
         "TenantId": {
             "type": "string"
@@ -65,7 +71,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Map of additional options."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

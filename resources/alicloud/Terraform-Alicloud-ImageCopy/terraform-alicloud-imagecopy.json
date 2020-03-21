@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::ImageCopy",
-    "description": "CloudFormation equivalent of alicloud_image_copy",
+    "description": "Copies a custom image from one region to another. You can use copied images to perform operations in the target region, such as creating instances (RunInstances) and replacing system disks (ReplaceSystemDisk).\n\n-> **NOTE:** You can only copy the custom image when it is in the Available state.\n\n-> **NOTE:** You can only copy the image belonging to your Alibaba Cloud account. Images cannot be copied from one account to another.\n\n-> **NOTE:** If the copying is not completed, you cannot call DeleteImage to delete the image but you can call CancelCopyImage to cancel the copying.\n\n-> **NOTE:** Available in 1.66.0+.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,28 +23,35 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the image. It must be 2 to 256 characters in length and must not start with http:// or https://. Default value: null."
         },
         "Encrypted": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether to encrypt the image."
         },
         "Force": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether to force delete the custom image, Default is `false`.\n- true\uff1aForce deletes the custom image, regardless of whether the image is currently being used by other instances.\n- false\uff1aVerifies that the image is not currently in use by any other instances before deleting the image."
         },
         "ImageName": {
-            "type": "string"
+            "type": "string",
+            "description": "The image name. It must be 2 to 128 characters in length, and must begin with a letter or Chinese character (beginning with http:// or https:// is not allowed). It can contain digits, colons (:), underscores (_), or hyphens (-). Default value: null."
         },
         "KmsKeyId": {
-            "type": "string"
+            "type": "string",
+            "description": "Key ID used to encrypt the image."
         },
         "Name": {
             "type": "string"
         },
         "SourceImageId": {
-            "type": "string"
+            "type": "string",
+            "description": "The source image ID."
         },
         "SourceRegionId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the region to which the source custom image belongs. You can call [DescribeRegions](https://www.alibabacloud.com/help/doc-detail/25609.htm) to view the latest regions of Alibaba Cloud."
         },
         "Tags": {
             "type": "array",
@@ -64,7 +71,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "The tag value of an image. The value of N ranges from 1 to 20."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

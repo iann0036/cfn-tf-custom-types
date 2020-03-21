@@ -1,6 +1,6 @@
 # Terraform::AzureRM::AutomationRunbook
 
-CloudFormation equivalent of azurerm_automation_runbook
+Manages a Automation Runbook.
 
 ## Syntax
 
@@ -56,6 +56,8 @@ Properties:
 
 #### AutomationAccountName
 
+The name of the automation account in which the Runbook is created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -63,6 +65,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Content
+
+The desired content of the runbook.
 
 _Required_: No
 
@@ -72,6 +76,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+A description for this credential.
+
 _Required_: No
 
 _Type_: String
@@ -79,6 +85,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Location
+
+Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -88,6 +96,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LogProgress
 
+Progress log option.
+
 _Required_: Yes
 
 _Type_: Boolean
@@ -95,6 +105,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LogVerbose
+
+Verbose log option.
 
 _Required_: Yes
 
@@ -104,6 +116,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the Runbook. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -111,6 +125,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which the Runbook is created. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -120,6 +136,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RunbookType
 
+The type of the runbook - can be either `Graph`, `GraphPowerShell`, `GraphPowerShellWorkflow`, `PowerShellWorkflow`, `PowerShell` or `Script`.
+
 _Required_: Yes
 
 _Type_: String
@@ -127,6 +145,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

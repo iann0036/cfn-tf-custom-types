@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::LbMemberV2",
-    "description": "CloudFormation equivalent of openstack_lb_member_v2",
+    "description": "Manages a V2 member resource within OpenStack.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,31 +26,40 @@
             "type": "string"
         },
         "Address": {
-            "type": "string"
+            "type": "string",
+            "description": "The IP address of the member to receive traffic from\nthe load balancer. Changing this creates a new member."
         },
         "AdminStateUp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "The administrative state of the member.\nA valid value is true (UP) or false (DOWN)."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Human-readable name for the member."
         },
         "PoolId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the pool that this member will be\nassigned to."
         },
         "ProtocolPort": {
-            "type": "number"
+            "type": "number",
+            "description": "The port on which to listen for client traffic.\nChanging this creates a new member."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the V2 Networking client.\nA Networking client is needed to create an . If omitted, the\n`region` argument of the provider is used. Changing this creates a new\nmember."
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "The subnet in which to access the member."
         },
         "TenantId": {
-            "type": "string"
+            "type": "string",
+            "description": "Required for admins. The UUID of the tenant who owns\nthe member.  Only administrative users can specify a tenant UUID\nother than their own. Changing this creates a new member."
         },
         "Weight": {
-            "type": "number"
+            "type": "number",
+            "description": "A positive integer value that indicates the relative\nportion of traffic that this member should receive from the pool. For\nexample, a member with a weight of 10 receives five times as much traffic\nas a member with a weight of 2."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

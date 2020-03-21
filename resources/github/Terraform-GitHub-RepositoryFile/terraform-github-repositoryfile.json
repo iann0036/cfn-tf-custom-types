@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::GitHub::RepositoryFile",
-    "description": "CloudFormation equivalent of github_repository_file",
+    "description": "This resource allows you to create and manage files within a\nGitHub repository.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,22 +9,28 @@
             "type": "string"
         },
         "Branch": {
-            "type": "string"
+            "type": "string",
+            "description": "Git branch (defaults to `master`).\nThe branch must already exist, it will not be created if it does not already exist."
         },
         "CommitAuthor": {
-            "type": "string"
+            "type": "string",
+            "description": "Committer author name to use."
         },
         "CommitEmail": {
-            "type": "string"
+            "type": "string",
+            "description": "Committer email address to use."
         },
         "CommitMessage": {
-            "type": "string"
+            "type": "string",
+            "description": "Commit message when adding or updating the managed file."
         },
         "Content": {
-            "type": "string"
+            "type": "string",
+            "description": "The file content."
         },
         "File": {
-            "type": "string"
+            "type": "string",
+            "description": "The path of the file to manage."
         },
         "Repository": {
             "type": "string"

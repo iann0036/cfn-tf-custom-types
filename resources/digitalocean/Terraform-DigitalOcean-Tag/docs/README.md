@@ -1,6 +1,9 @@
 # Terraform::DigitalOcean::Tag
 
-CloudFormation equivalent of digitalocean_tag
+Provides a DigitalOcean Tag resource. A Tag is a label that can be applied to a
+Droplet resource in order to better organize or facilitate the lookups and
+actions on it. Tags created with this resource can be referenced in your Droplet
+configuration via their ID or name.
 
 ## Syntax
 
@@ -28,6 +31,8 @@ Properties:
 ## Properties
 
 #### Name
+
+The name of the tag.
 
 _Required_: Yes
 

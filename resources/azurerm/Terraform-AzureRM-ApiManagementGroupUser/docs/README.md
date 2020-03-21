@@ -1,6 +1,6 @@
 # Terraform::AzureRM::ApiManagementGroupUser
 
-CloudFormation equivalent of azurerm_api_management_group_user
+Manages an API Management User Assignment to a Group.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### ApiManagementName
 
+The name of the API Management Service. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GroupName
+
+The Name of the API Management Group within the API Management Service. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -53,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the Resource Group in which the API Management Service exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -60,6 +66,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserId
+
+The ID of the API Management User which should be assigned to this API Management Group. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

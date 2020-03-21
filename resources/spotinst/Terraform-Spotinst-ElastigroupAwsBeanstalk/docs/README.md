@@ -1,6 +1,6 @@
 # Terraform::Spotinst::ElastigroupAwsBeanstalk
 
-CloudFormation equivalent of spotinst_elastigroup_aws_beanstalk
+Provides a Spotinst AWS group resource using Elastic Beanstalk.
 
 ## Syntax
 
@@ -63,6 +63,8 @@ Properties:
 
 #### BeanstalkEnvironmentId
 
+The id of an existing Beanstalk environment.
+
 _Required_: No
 
 _Type_: String
@@ -70,6 +72,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BeanstalkEnvironmentName
+
+The name of an existing Beanstalk environment.
 
 _Required_: No
 
@@ -79,6 +83,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DesiredCapacity
 
+The desired number of instances the group should have at any time.
+
 _Required_: Yes
 
 _Type_: Double
@@ -86,6 +92,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceTypesSpot
+
+One or more instance types. To maximize the availability of Spot instances, select as many instance types as possible.
 
 _Required_: Yes
 
@@ -103,6 +111,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxSize
 
+The maximum number of instances the group should have at any time.
+
 _Required_: Yes
 
 _Type_: Double
@@ -110,6 +120,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MinSize
+
+The minimum number of instances the group should have at any time.
 
 _Required_: Yes
 
@@ -119,6 +131,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The group name.
+
 _Required_: Yes
 
 _Type_: String
@@ -127,6 +141,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Product
 
+Operation system type. Valid values: `"Linux/UNIX"`, `"SUSE Linux"`, `"Windows"`.
+For EC2 Classic instances:  `"Linux/UNIX (Amazon VPC)"`, `"SUSE Linux (Amazon VPC)"`, `"Windows (Amazon VPC)"`.
+
 _Required_: Yes
 
 _Type_: String
@@ -134,6 +151,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The AWS region your group will be created in. Cannot be changed after the group has been created.
 
 _Required_: Yes
 

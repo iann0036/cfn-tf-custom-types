@@ -1,6 +1,6 @@
 # Terraform::Tfe::Variable
 
-CloudFormation equivalent of tfe_variable
+Creates, updates and destroys variables.
 
 ## Syntax
 
@@ -41,6 +41,9 @@ Properties:
 
 #### Category
 
+Whether this is a Terraform or environment variable.
+Valid values are `terraform` or `env`.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +51,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Description of the variable.
 
 _Required_: No
 
@@ -57,6 +62,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Hcl
 
+Whether to evaluate the value of the variable as a string
+of HCL code. Has no effect for environment variables. Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -64,6 +72,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Key
+
+Name of the variable.
 
 _Required_: Yes
 
@@ -73,6 +83,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Sensitive
 
+Whether the value is sensitive. If true then the
+variable is written once and not visible thereafter. Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -81,6 +94,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Value
 
+Value of the variable.
+
 _Required_: No
 
 _Type_: String
@@ -88,6 +103,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WorkspaceId
+
+The workspace that owns the variable, specified as
+a human-readable ID (`<ORGANIZATION>/<WORKSPACE>`).
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::CoreInstanceConsoleConnection",
-    "description": "CloudFormation equivalent of oci_core_instance_console_connection",
+    "description": "This resource provides the Instance Console Connection resource in Oracle Cloud Infrastructure Core service.\n\nCreates a new console connection to the specified instance.\nAfter the console connection has been created and is available,\nyou connect to the console using SSH.\n\nFor more information about console access, see [Accessing the Console](https://docs.cloud.oracle.com/iaas/Content/Compute/References/serialconsole.htm).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -49,7 +49,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Operations.CostCenter\": \"42\"}`."
         },
         "Fingerprint": {
             "type": "string"
@@ -72,13 +73,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
         },
         "InstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the instance to create the console connection to."
         },
         "PublicKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The SSH public key used to authenticate the console connection."
         },
         "State": {
             "type": "string"

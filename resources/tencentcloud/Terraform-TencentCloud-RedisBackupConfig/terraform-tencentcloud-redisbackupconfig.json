@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::RedisBackupConfig",
-    "description": "CloudFormation equivalent of tencentcloud_redis_backup_config",
+    "description": "Use this data source to query which instance types of Redis are available in a specific region.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -13,13 +13,16 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Specifys which day the backup action should take place. Supported values include: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday and Sunday."
         },
         "BackupTime": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifys what time the backup action should take place."
         },
         "RedisId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of a Redis instance to which the policy will be applied."
         }
     },
     "additionalProperties": false,

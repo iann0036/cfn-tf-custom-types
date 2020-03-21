@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::FlexibleEngine::DrsReplicationconsistencygroupV2",
-    "description": "CloudFormation equivalent of flexibleengine_drs_replicationconsistencygroup_v2",
+    "description": "Manages a V2 replicationconsistencygroup resource within FlexibleEngine.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,7 +12,8 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the replication consistency group. The description can contain a maximum of 255 bytes."
         },
         "FailureDetail": {
             "type": "string"
@@ -21,20 +22,24 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the replication consistency group. The name can contain a maximum of 255 bytes."
         },
         "PriorityStation": {
-            "type": "string"
+            "type": "string",
+            "description": "The primary AZ of the replication consistency group. That is the AZ where the production disk belongs."
         },
         "ReplicationIds": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "An array of one or more IDs of the EVS replication pairs used to create the replication consistency group."
         },
         "ReplicationModel": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of the created replication consistency group. Currently only type hypermetro is supported."
         },
         "ReplicationStatus": {
             "type": "string"

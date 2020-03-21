@@ -1,6 +1,6 @@
 # Terraform::AzureRM::ApiManagementIdentityProviderFacebook
 
-CloudFormation equivalent of azurerm_api_management_identity_provider_facebook
+Manages an API Management Facebook Identity Provider.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### ApiManagementName
 
+The Name of the API Management Service where this Facebook Identity Provider should be created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AppId
+
+App ID for Facebook.
 
 _Required_: Yes
 
@@ -53,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AppSecret
 
+App Secret for Facebook.
+
 _Required_: Yes
 
 _Type_: String
@@ -60,6 +66,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The Name of the Resource Group where the API Management Service exists. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

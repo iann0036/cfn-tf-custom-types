@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::NetworkingVipV2
 
-CloudFormation equivalent of opentelekomcloud_networking_vip_v2
+Manages a V2 vip resource within OpenTelekomCloud.
 
 ## Syntax
 
@@ -35,6 +35,10 @@ Properties:
 
 #### IpAddress
 
+IP address desired in the subnet for this vip.
+If you don't specify `ip_address`, an available IP address from
+the specified subnet will be allocated to this vip.
+
 _Required_: No
 
 _Type_: String
@@ -42,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+A unique name for the vip.
 
 _Required_: No
 
@@ -51,6 +57,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NetworkId
 
+The ID of the network to attach the vip to.
+Changing this creates a new vip.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +67,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubnetId
+
+Subnet in which to allocate IP address for this vip.
+Changing this creates a new vip.
 
 _Required_: Yes
 

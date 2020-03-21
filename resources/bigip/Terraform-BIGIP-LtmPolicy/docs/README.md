@@ -1,6 +1,8 @@
 # Terraform::BIGIP::LtmPolicy
 
-CloudFormation equivalent of bigip_ltm_policy
+`bigip_ltm_policy` Configures Virtual Server
+
+For resources should be named with their "full path". The full path is the combination of the partition + name of the resource. For example /Common/my-pool.
 
 ## Syntax
 
@@ -48,6 +50,8 @@ Properties:
 
 #### Controls
 
+Specifies the controls.
+
 _Required_: No
 
 _Type_: List of String
@@ -55,6 +59,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of the Policy.
 
 _Required_: Yes
 
@@ -64,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PublishedCopy
 
+If you want to publish the policy else it will be deployed in Drafts mode.
+
 _Required_: No
 
 _Type_: String
@@ -72,6 +80,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Requires
 
+Specifies the protocol.
+
 _Required_: No
 
 _Type_: List of String
@@ -79,6 +89,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Strategy
+
+Specifies the match strategy.
 
 _Required_: No
 

@@ -29,6 +29,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### DnsNames
 
+A list of alternative DNS names (FQDNs) identified by the Certificate. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: List of String
@@ -37,6 +39,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Emails
 
+A list of email addresses identified by this Certificate. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: List of String
@@ -44,6 +48,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Upns
+
+A list of User Principal Names identified by the Certificate. Changing this forces a new resource to be created.
 
 _Required_: No
 

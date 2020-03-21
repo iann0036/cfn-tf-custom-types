@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::CloudScale::Network",
-    "description": "CloudFormation equivalent of cloudscale_network",
+    "description": "Provides a cloudscale.ch Private Network resource. This can be used to create, modify, and delete networks.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,10 +12,12 @@
             "type": "string"
         },
         "Mtu": {
-            "type": "number"
+            "type": "number",
+            "description": "`You can specify the MTU size for the network, defaults to 9000."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the new network."
         },
         "Subnets": {
             "type": "array",
@@ -37,7 +39,8 @@
             }
         },
         "ZoneSlug": {
-            "type": "string"
+            "type": "string",
+            "description": "You can specify a zone slug. Options include `lpg1` and `rma1`."
         }
     },
     "additionalProperties": false,

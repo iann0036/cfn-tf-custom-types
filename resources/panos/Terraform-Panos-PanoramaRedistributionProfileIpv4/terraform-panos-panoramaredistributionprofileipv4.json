@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::PanoramaRedistributionProfileIpv4",
-    "description": "CloudFormation equivalent of panos_panorama_redistribution_profile_ipv4",
+    "description": "This resource allows you to add/update/delete Panorama IPv4 redistribution\nprofiles on a virtual router.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,72 +9,84 @@
             "type": "string"
         },
         "Action": {
-            "type": "string"
+            "type": "string",
+            "description": "The action.  Valid values are `redist` (default) or\n`no-redist`."
         },
         "BgpCommunities": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "BGP communities."
         },
         "BgpExtendedCommunities": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "BGP extended communities."
         },
         "Destinations": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Specify candidate routes' next-hop addresses\n(subnet match)."
         },
         "Interfaces": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Specify candidate routes."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The redistribution profile's name."
         },
         "NextHops": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Specify candidate routes' next-hop addresses\n(subnet match)."
         },
         "OspfAreas": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "OSPF areas."
         },
         "OspfPathTypes": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "OSPF path types.  Valid values are\n`intra-area`, `inter-area`, `ext-1`, and `ext-2`."
         },
         "OspfTags": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "OSPF tags."
         },
         "Priority": {
-            "type": "number"
+            "type": "number",
+            "description": "The priority, integer from 1 to 255."
         },
         "Template": {
-            "type": "string"
+            "type": "string",
+            "description": "The template name."
         },
         "TemplateStack": {
             "type": "string"
@@ -84,10 +96,12 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The source types.  Valid values are `bgp`, `connect`,\n`ospf`, `rip`, and `static`."
         },
         "VirtualRouter": {
-            "type": "string"
+            "type": "string",
+            "description": "The virtual router to add the\nredistribution profile to."
         }
     },
     "additionalProperties": false,

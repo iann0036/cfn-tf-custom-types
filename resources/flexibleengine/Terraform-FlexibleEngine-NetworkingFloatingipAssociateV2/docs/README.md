@@ -1,6 +1,8 @@
 # Terraform::FlexibleEngine::NetworkingFloatingipAssociateV2
 
-CloudFormation equivalent of flexibleengine_networking_floatingip_associate_v2
+Associates a floating IP to a port. This is useful for situations
+where you have a pre-allocated floating IP or are unable to use the
+`flexibleengine_networking_floatingip_v2` resource to create a floating IP.
 
 ## Syntax
 
@@ -33,6 +35,8 @@ Properties:
 
 #### FloatingIp
 
+IP Address of an existing floating IP.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +45,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PortId
 
+ID of an existing port with at least one IP address to
+associate with this floating IP.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +55,12 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region in which to obtain the V2 Networking client.
+A Networking client is needed to create a floating IP that can be used with
+another networking resource, such as a load balancer. If omitted, the
+`region` argument of the provider is used. Changing this creates a new
+floating IP (which may or may not have a different address).
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Consul::AclRole",
-    "description": "CloudFormation equivalent of consul_acl_role",
+    "description": "Starting with Consul 1.5.0, the consul_acl_role can be used to managed Consul ACL roles.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ServiceIdentities": {
@@ -12,10 +12,12 @@
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "The datacenters the effective policy is valid within."
                 },
                 "ServiceName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the service."
                 }
             },
             "required": [
@@ -29,17 +31,20 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A free form human readable description of the role."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the ACL role."
         },
         "Policies": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The list of policies that should be applied to the role."
         },
         "ServiceIdentities": {
             "type": "array",

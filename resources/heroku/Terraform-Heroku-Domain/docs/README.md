@@ -1,6 +1,7 @@
 # Terraform::Heroku::Domain
 
-CloudFormation equivalent of heroku_domain
+Provides a Heroku Domain resource. This can be used to
+create and manage custom domains on Heroku.
 
 ## Syntax
 
@@ -31,6 +32,8 @@ Properties:
 
 #### App
 
+The Heroku app to link to.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +41,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Hostname
+
+The hostname to serve requests from.
 
 _Required_: Yes
 

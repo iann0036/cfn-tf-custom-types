@@ -1,6 +1,6 @@
 # Terraform::AzureRM::WebApplicationFirewallPolicy
 
-CloudFormation equivalent of azurerm_web_application_firewall_policy
+Manages a Azure Web Application Firewall Policy instance.
 
 ## Syntax
 
@@ -50,6 +50,8 @@ Properties:
 
 #### Location
 
+Resource location. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -57,6 +59,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Gets name of the resource that is unique within a policy. This name can be used to access the resource.
 
 _Required_: Yes
 
@@ -66,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -73,6 +79,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the Web Application Firewall Policy.
 
 _Required_: No
 

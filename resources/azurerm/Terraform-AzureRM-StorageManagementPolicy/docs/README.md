@@ -1,6 +1,6 @@
 # Terraform::AzureRM::StorageManagementPolicy
 
-CloudFormation equivalent of azurerm_storage_management_policy
+Manages an Azure Storage Account Management Policy.
 
 ## Syntax
 
@@ -45,6 +45,8 @@ Properties:
 ## Properties
 
 #### StorageAccountId
+
+Specifies the id of the storage account to apply the management policy to.
 
 _Required_: Yes
 

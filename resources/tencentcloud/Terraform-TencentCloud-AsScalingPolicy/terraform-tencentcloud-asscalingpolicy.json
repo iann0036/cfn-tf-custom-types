@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::AsScalingPolicy",
-    "description": "CloudFormation equivalent of tencentcloud_as_scaling_policy",
+    "description": "Provides a resource for an AS (Auto scaling) policy.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,44 +9,56 @@
             "type": "string"
         },
         "AdjustmentType": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies whether the adjustment is an absolute number or a percentage of the current capacity. Available values include CHANGE_IN_CAPACITY, EXACT_CAPACITY and PERCENT_CHANGE_IN_CAPACITY."
         },
         "AdjustmentValue": {
-            "type": "number"
+            "type": "number",
+            "description": "Define the number of instances by which to scale.For CHANGE_IN_CAPACITY type or PERCENT_CHANGE_IN_CAPACITY, a positive increment adds to the current capacity and a negative value removes from the current capacity. For EXACT_CAPACITY type, it defines an absolute number of the existing Auto Scaling group size."
         },
         "ComparisonOperator": {
-            "type": "string"
+            "type": "string",
+            "description": "Comparison operator, of which valid values can be GREATER_THAN, GREATER_THAN_OR_EQUAL_TO, LESS_THAN, LESS_THAN_OR_EQUAL_TO, EQUAL_TO and NOT_EQUAL_TO."
         },
         "ContinuousTime": {
-            "type": "number"
+            "type": "number",
+            "description": "Retry times (1~10)."
         },
         "Cooldown": {
-            "type": "number"
+            "type": "number",
+            "description": "Cooldwon time in second. Default is 300."
         },
         "MetricName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of an indicator, which can be CPU_UTILIZATION, MEM_UTILIZATION, LAN_TRAFFIC_OUT, LAN_TRAFFIC_IN, WAN_TRAFFIC_OUT and WAN_TRAFFIC_IN."
         },
         "NotificationUserGroupIds": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "An ID group of users to be notified when an alarm is triggered."
         },
         "Period": {
-            "type": "number"
+            "type": "number",
+            "description": "Time period in second, of which valid values can be 60 and 300."
         },
         "PolicyName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of a policy used to define a reaction when an alarm is triggered."
         },
         "ScalingGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of a scaling group."
         },
         "Statistic": {
-            "type": "string"
+            "type": "string",
+            "description": "Statistic types, include AVERAGE, MAXIMUM and MINIMUM. Default is AVERAGE."
         },
         "Threshold": {
-            "type": "number"
+            "type": "number",
+            "description": "Alarm threshold."
         }
     },
     "additionalProperties": false,

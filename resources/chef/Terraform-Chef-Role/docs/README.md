@@ -1,6 +1,7 @@
 # Terraform::Chef::Role
 
-CloudFormation equivalent of chef_role
+A [role](http://docs.chef.io/roles.html) is a set of standard configuration
+that can apply across multiple nodes that perform the same function.
 
 ## Syntax
 
@@ -38,6 +39,9 @@ Properties:
 
 #### DefaultAttributesJson
 
+String containing a JSON-serialized
+object containing the default attributes for the role.
+
 _Required_: No
 
 _Type_: String
@@ -45,6 +49,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+A human-friendly description of the role.
+If not set, a placeholder of "Managed by Terraform" will be set.
 
 _Required_: No
 
@@ -54,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The unique name to assign to the role.
+
 _Required_: Yes
 
 _Type_: String
@@ -62,6 +71,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OverrideAttributesJson
 
+String containing a JSON-serialized
+object containing the override attributes for the role.
+
 _Required_: No
 
 _Type_: String
@@ -69,6 +81,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RunList
+
+List of strings to set as the
+[run list](https://docs.chef.io/run_lists.html) for any nodes that belong
+to this role.
 
 _Required_: No
 

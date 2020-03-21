@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::DigitalOcean::KubernetesCluster",
-    "description": "CloudFormation equivalent of digitalocean_kubernetes_cluster",
+    "description": "Provides a DigitalOcean Kubernetes cluster resource. This can be used to create, delete, and modify clusters. For more information see the [official documentation](https://www.digitalocean.com/docs/kubernetes/).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "NodePool": {
@@ -108,10 +108,12 @@
             }
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A name for the node pool.\n- `size` - (Required) The slug identifier for the type of Droplet to be used as workers in the node pool.\n- `node_count` - (Optional) The number of Droplet instances in the node pool. If auto-scaling is enabled, this should only be set if the desired result is to explicitly reset the number of nodes to this value. If auto-scaling is enabled, and the node count is outside of the given min/max range, it will use the min nodes value.\n- `auto_scale` - (Optional) Enable auto-scaling of the number of nodes in the node pool within the given min/max range.\n- `min_nodes` - (Optional) If auto-scaling is enabled, this represents the minimum number of nodes that the node pool can be scaled down to.\n- `max_nodes` - (Optional) If auto-scaling is enabled, this represents the maximum number of nodes that the node pool can be scaled up to.\n- `tags` - (Optional) A list of tag names to be applied to the Kubernetes cluster.\n- `labels` - (Optional) A map of key/value pairs to apply to nodes in the pool. The labels are exposed in the Kubernetes API as labels in the metadata of the corresponding [Node resources](https://kubernetes.io/docs/concepts/architecture/nodes/)."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The slug identifier for the region where the Kubernetes cluster will be created."
         },
         "ServiceSubnet": {
             "type": "string"
@@ -124,13 +126,15 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of tag names to be applied to the Kubernetes cluster."
         },
         "UpdatedAt": {
             "type": "string"
         },
         "Version": {
-            "type": "string"
+            "type": "string",
+            "description": "The slug identifier for the version of Kubernetes used for the cluster. Use [doctl](https://github.com/digitalocean/doctl) to find the available versions `doctl kubernetes options versions`. (**Note:** A cluster may only be upgraded to newer versions in-place. If the version is decreased, a new resource will be created.)."
         },
         "NodePool": {
             "type": "array",

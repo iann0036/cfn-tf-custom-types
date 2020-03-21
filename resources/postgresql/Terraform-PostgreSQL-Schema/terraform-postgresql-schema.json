@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::PostgreSQL::Schema",
-    "description": "CloudFormation equivalent of postgresql_schema",
+    "description": "The ``postgresql_schema`` resource creates and manages [schema\nobjects](https://www.postgresql.org/docs/current/static/ddl-schemas.html) within\na PostgreSQL database.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Policy": {
@@ -8,19 +8,24 @@
             "additionalProperties": false,
             "properties": {
                 "Create": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Should the specified ROLE have CREATE privileges to the specified SCHEMA."
                 },
                 "CreateWithGrant": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Should the specified ROLE have CREATE privileges to the specified SCHEMA and the ability to GRANT the CREATE privilege to other ROLEs."
                 },
                 "Role": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ROLE who is receiving the policy.  If this value is empty or not specified it implies the policy is referring to the [`PUBLIC` role](https://www.postgresql.org/docs/current/static/sql-grant.html)."
                 },
                 "Usage": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Should the specified ROLE have USAGE privileges to the specified SCHEMA."
                 },
                 "UsageWithGrant": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Should the specified ROLE have USAGE privileges to the specified SCHEMA and the ability to GRANT the USAGE privilege to other ROLEs."
                 }
             },
             "required": []
@@ -32,19 +37,24 @@
             "type": "string"
         },
         "Database": {
-            "type": "string"
+            "type": "string",
+            "description": "The DATABASE in which where this schema will be created. (Default: The database used by your `provider` configuration)."
         },
         "DropCascade": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "When true, will also drop all the objects that are contained in the schema. (Default: false)."
         },
         "IfNotExists": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "When true, use the existing schema if it exists. (Default: true)."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the schema. Must be unique in the PostgreSQL\ndatabase instance where it is configured."
         },
         "Owner": {
-            "type": "string"
+            "type": "string",
+            "description": "The ROLE who owns the schema."
         },
         "Policy": {
             "type": "array",

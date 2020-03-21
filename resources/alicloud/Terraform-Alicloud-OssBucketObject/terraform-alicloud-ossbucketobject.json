@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::OssBucketObject",
-    "description": "CloudFormation equivalent of alicloud_oss_bucket_object",
+    "description": "Provides a resource to put a object(content or file) to a oss bucket.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,49 +9,62 @@
             "type": "string"
         },
         "Acl": {
-            "type": "string"
+            "type": "string",
+            "description": "The [canned ACL](https://www.alibabacloud.com/help/doc-detail/52284.htm) to apply. Defaults to \"private\"."
         },
         "Bucket": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the bucket to put the file in."
         },
         "CacheControl": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies caching behavior along the request/reply chain. Read [RFC2616 Cache-Control](https://www.ietf.org/rfc/rfc2616.txt) for further details."
         },
         "Content": {
-            "type": "string"
+            "type": "string",
+            "description": "The literal content being uploaded to the bucket."
         },
         "ContentDisposition": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies presentational information for the object. Read [RFC2616 Content-Disposition](https://www.ietf.org/rfc/rfc2616.txt) for further details."
         },
         "ContentEncoding": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field. Read [RFC2616 Content-Encoding](https://www.ietf.org/rfc/rfc2616.txt) for further details."
         },
         "ContentLength": {
             "type": "string"
         },
         "ContentMd5": {
-            "type": "string"
+            "type": "string",
+            "description": "The MD5 value of the content. Read [MD5](https://www.alibabacloud.com/help/doc-detail/31978.htm) for computing method."
         },
         "ContentType": {
-            "type": "string"
+            "type": "string",
+            "description": "A standard MIME type describing the format of the object data, e.g. application/octet-stream. All Valid MIME Types are valid for this input."
         },
         "Etag": {
             "type": "string"
         },
         "Expires": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies expire date for the the request/response. Read [RFC2616 Expires](https://www.ietf.org/rfc/rfc2616.txt) for further details."
         },
         "Key": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the object once it is in the bucket."
         },
         "KmsKeyId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the primary key managed by KMS. This parameter is valid when the value of `server_side_encryption` is set to KMS."
         },
         "ServerSideEncryption": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies server-side encryption of the object in OSS. Valid values are `AES256`, `KMS`. Default value is `AES256`."
         },
         "Source": {
-            "type": "string"
+            "type": "string",
+            "description": "The path to the source file being uploaded to the bucket."
         },
         "VersionId": {
             "type": "string"

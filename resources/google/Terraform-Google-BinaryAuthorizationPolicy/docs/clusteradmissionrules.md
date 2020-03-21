@@ -29,6 +29,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Cluster
 
+The identifier for this object. Format specified above.
+
 _Required_: Yes
 
 _Type_: String

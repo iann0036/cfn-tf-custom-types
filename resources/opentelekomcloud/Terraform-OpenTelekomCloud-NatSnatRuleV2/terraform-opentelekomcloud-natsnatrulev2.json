@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenTelekomCloud::NatSnatRuleV2",
-    "description": "CloudFormation equivalent of opentelekomcloud_nat_snat_rule_v2",
+    "description": "Manages a V2 snat rule resource within OpenTelekomCloud Nat",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,22 +23,27 @@
             "type": "string"
         },
         "Cidr": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies CIDR, which can be in the format of a network segment or\na host IP address. This parameter and network_id are alternative. If the value of\nsource_type is 0, the CIDR block must be a subset of the VPC subnet CIDR block. If\nthe value of source_type is 1, the CIDR block must be a CIDR block of Direct Connect\nand cannot conflict with the VPC CIDR blocks. Changing this creates a new snat rule."
         },
         "FloatingIpId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the floating ip this snat rule connets to.\nChanging this creates a new snat rule."
         },
         "NatGatewayId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the nat gateway this snat rule belongs to.\nChanging this creates a new snat rule."
         },
         "NetworkId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the network this snat rule connects to. This parameter\nand cidr are alternative. Changing this creates a new snat rule."
         },
         "Region": {
             "type": "string"
         },
         "SourceType": {
-            "type": "number"
+            "type": "number",
+            "description": "0: Either network_id or cidr can be specified in a VPC. 1:\nOnly cidr can be specified over a dedicated network. Changing this creates a new snat rule."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

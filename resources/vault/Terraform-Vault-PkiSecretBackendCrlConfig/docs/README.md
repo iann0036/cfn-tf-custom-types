@@ -1,6 +1,6 @@
 # Terraform::Vault::PkiSecretBackendCrlConfig
 
-CloudFormation equivalent of vault_pki_secret_backend_crl_config
+Allows setting the duration for which the generated CRL should be marked valid. If the CRL is disabled, it will return a signed but zero-length CRL for any request. If enabled, it will re-build the CRL.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### Backend
 
+The path the PKI secret backend is mounted at, with no leading or trailing `/`s.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Disable
 
+Disables or enables CRL building.
+
 _Required_: No
 
 _Type_: Boolean
@@ -48,6 +52,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Expiry
+
+Specifies the time until expiration.
 
 _Required_: No
 

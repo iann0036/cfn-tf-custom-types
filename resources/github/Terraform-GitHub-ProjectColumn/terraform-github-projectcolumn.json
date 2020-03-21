@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::GitHub::ProjectColumn",
-    "description": "CloudFormation equivalent of github_project_column",
+    "description": "This resource allows you to create and manage columns for GitHub projects.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,10 +12,12 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the column."
         },
         "ProjectId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of an existing project that the column will be created in."
         }
     },
     "additionalProperties": false,

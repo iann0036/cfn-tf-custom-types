@@ -28,6 +28,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Fqdns
 
+A list of FQDN's which should be part of the Backend Address Pool.
+
 _Required_: No
 
 _Type_: List of String
@@ -36,6 +38,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IpAddresses
 
+A list of IP Addresses which should be part of the Backend Address Pool.
+
 _Required_: No
 
 _Type_: List of String
@@ -43,6 +47,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the Backend Address Pool.
 
 _Required_: Yes
 

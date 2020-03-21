@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Heroku::AccountFeature",
-    "description": "CloudFormation equivalent of heroku_account_feature",
+    "description": "This resource is used to create and manage [User Features](https://devcenter.heroku.com/articles/heroku-beta-features) on Heroku.\n\n~> **NOTE:** If this resource's HCL is removed from a `.tf` file, the behavior is to disable account feature\nand remove resource from state.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,10 +12,12 @@
             "type": "string"
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable or disable the account feature."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the account feature."
         },
         "State": {
             "type": "string"

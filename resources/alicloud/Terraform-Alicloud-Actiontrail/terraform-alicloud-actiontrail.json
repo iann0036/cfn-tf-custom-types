@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::Actiontrail",
-    "description": "CloudFormation equivalent of alicloud_actiontrail",
+    "description": "Provides a new resource to manage [Action Trail](https://www.alibabacloud.com/help/doc-detail/28804.htm).\n\n-> **NOTE:** Available in 1.35.0+",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,25 +9,32 @@
             "type": "string"
         },
         "EventRw": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates whether the event is a read or a write event. Valid values: Read, Write, and All. Default value: Write."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the trail to be created, which must be unique for an account."
         },
         "OssBucketName": {
-            "type": "string"
+            "type": "string",
+            "description": "The OSS bucket to which the trail delivers logs. Ensure that this is an existing OSS bucket."
         },
         "OssKeyPrefix": {
-            "type": "string"
+            "type": "string",
+            "description": "The prefix of the specified OSS bucket name. This parameter can be left empty."
         },
         "RoleName": {
-            "type": "string"
+            "type": "string",
+            "description": "The RAM role in ActionTrail permitted by the user."
         },
         "SlsProjectArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The unique ARN of the Log Service project."
         },
         "SlsWriteRoleArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The unique ARN of the Log Service role."
         }
     },
     "additionalProperties": false,

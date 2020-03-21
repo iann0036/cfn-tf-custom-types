@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Bitbucket::DefaultReviewers",
-    "description": "CloudFormation equivalent of bitbucket_default_reviewers",
+    "description": "Provides support for setting up default reviewers for your repository. You must however have the UUID of the user available. Since Bitbucket has removed usernames from its APIs the best case is to use the UUID via the data provider.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,17 +9,20 @@
             "type": "string"
         },
         "Owner": {
-            "type": "string"
+            "type": "string",
+            "description": "The owner of this repository. Can be you or any team you\nhave write access to."
         },
         "Repository": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the repository."
         },
         "Reviewers": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of reviewers to use."
         }
     },
     "additionalProperties": false,

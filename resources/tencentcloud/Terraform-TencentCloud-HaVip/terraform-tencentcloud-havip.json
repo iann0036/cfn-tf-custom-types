@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::HaVip",
-    "description": "CloudFormation equivalent of tencentcloud_ha_vip",
+    "description": "Provides a resource to create a HA VIP.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -18,7 +18,8 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the HA VIP. The length of character is limited to 1-60."
         },
         "NetworkInterfaceId": {
             "type": "string"
@@ -27,13 +28,16 @@
             "type": "string"
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "Subnet id."
         },
         "Vip": {
-            "type": "string"
+            "type": "string",
+            "description": "Virtual IP address, it must not be occupied and in this VPC network segment. If not set, it will be assigned after resource created automatically."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "VPC id."
         }
     },
     "additionalProperties": false,

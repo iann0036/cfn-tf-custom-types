@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::ComputeSecurityPolicy",
-    "description": "CloudFormation equivalent of google_compute_security_policy",
+    "description": "A Security Policy defines an IP blacklist or whitelist that protects load balanced Google Cloud services by denying or permitting traffic from specified IP ranges. For more information\nsee the [official documentation](https://cloud.google.com/armor/docs/configure-security-policies)\nand the [API](https://cloud.google.com/compute/docs/reference/rest/beta/securityPolicies).\n\nSecurity Policy is used by [`google_compute_backend_service`](https://www.terraform.io/docs/providers/google/r/compute_backend_service.html#security_policy).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Rule": {
@@ -8,16 +8,20 @@
             "additionalProperties": false,
             "properties": {
                 "Action": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Action to take when `match` matches the request. Valid values:\n* \"allow\" : allow access to target\n* \"deny(status)\" : deny access to target, returns the  HTTP response code specified (valid values are 403, 404 and 502)."
                 },
                 "Description": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "An optional description of this rule. Max size is 64."
                 },
                 "Preview": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "When set to true, the `action` specified above is not enforced.\nStackdriver logs for requests that trigger a preview action are annotated as such."
                 },
                 "Priority": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "An unique positive integer indicating the priority of evaluation for a rule.\nRules are evaluated from highest priority (lowest numerically) to lowest priority (highest numerically) in order."
                 },
                 "Match": {
                     "type": "array",
@@ -53,7 +57,8 @@
             "additionalProperties": false,
             "properties": {
                 "VersionedExpr": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Predefined rule expression. If this field is specified, `config` must also be specified.\nAvailable options:\n* SRC_IPS_V1: Must specify the corresponding `src_ip_ranges` field in `config`."
                 },
                 "Config": {
                     "type": "array",
@@ -81,7 +86,8 @@
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Set of IP addresses or ranges (IPV4 or IPV6) in CIDR notation\nto match against inbound traffic. There is a limit of 5 IP ranges per rule. A value of '\\*' matches all IPs\n(can be used to override the default behavior)."
                 }
             },
             "required": [
@@ -93,7 +99,8 @@
             "additionalProperties": false,
             "properties": {
                 "Expression": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Textual representation of an expression in Common Expression Language syntax.\nThe application context of the containing message determines which well-known feature set of CEL is supported."
                 }
             },
             "required": [
@@ -107,16 +114,19 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "An optional description of this security policy. Max size is 2048."
         },
         "Fingerprint": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the security policy."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The project in which the resource belongs. If it\nis not provided, the provider project is used."
         },
         "SelfLink": {
             "type": "string"

@@ -1,6 +1,6 @@
 # Terraform::Hedvig::Lun
 
-CloudFormation equivalent of hedvig_lun
+A Hedvig Lun adds a vdisk resource to a particular controller, enabling the addition of ACL access resources to the vdisk.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### Controller
 
+The fully qualified domain name for the controller that the LUN is to attach to.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vdisk
+
+The name of the vdisk the LUN is on.
 
 _Required_: Yes
 

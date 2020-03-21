@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::MonitorActionGroup",
-    "description": "CloudFormation equivalent of azurerm_monitor_action_group",
+    "description": "Manages an Action Group within Azure Monitor.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ArmRoleReceiver": {
@@ -8,13 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the ARM role receiver."
                 },
                 "RoleId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The arm role id."
                 },
                 "UseCommonAlertSchema": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Enables or disables the common alert schema."
                 }
             },
             "required": [
@@ -27,25 +30,32 @@
             "additionalProperties": false,
             "properties": {
                 "AutomationAccountId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The automation account ID which holds this runbook and authenticates to Azure resources."
                 },
                 "IsGlobalRunbook": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates whether this instance is global runbook."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the automation runbook receiver."
                 },
                 "RunbookName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name for this runbook."
                 },
                 "ServiceUri": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The URI where webhooks should be sent."
                 },
                 "UseCommonAlertSchema": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Enables or disables the common alert schema."
                 },
                 "WebhookResourceId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The resource id for webhook linked to this runbook."
                 }
             },
             "required": [
@@ -62,10 +72,12 @@
             "additionalProperties": false,
             "properties": {
                 "EmailAddress": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The email address of the user signed into the mobile app who will receive push notifications from this receiver."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the Azure app push receiver."
                 }
             },
             "required": [
@@ -81,16 +93,20 @@
                     "type": "string"
                 },
                 "FunctionName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The function name in the function app."
                 },
                 "HttpTriggerUrl": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The http trigger url where http request sent to."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the Azure Function receiver."
                 },
                 "UseCommonAlertSchema": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Enables or disables the common alert schema."
                 }
             },
             "required": [
@@ -105,13 +121,16 @@
             "additionalProperties": false,
             "properties": {
                 "EmailAddress": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The email address of this receiver."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the email receiver. Names must be unique (case-insensitive) across all receivers within an action group."
                 },
                 "UseCommonAlertSchema": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Enables or disables the common alert schema."
                 }
             },
             "required": [
@@ -124,19 +143,24 @@
             "additionalProperties": false,
             "properties": {
                 "ConnectionId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The unique connection identifier of the ITSM connection."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the ITSM receiver."
                 },
                 "Region": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The region of the workspace."
                 },
                 "TicketConfiguration": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A JSON blob for the configurations of the ITSM action. CreateMultipleWorkItems option will be part of this blob as well."
                 },
                 "WorkspaceId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Azure Log Analytics workspace ID where this connection is defined."
                 }
             },
             "required": [
@@ -152,16 +176,20 @@
             "additionalProperties": false,
             "properties": {
                 "CallbackUrl": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The callback url where http request sent to."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the logic app receiver."
                 },
                 "ResourceId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Azure resource ID of the logic app."
                 },
                 "UseCommonAlertSchema": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Enables or disables the common alert schema."
                 }
             },
             "required": [
@@ -175,13 +203,16 @@
             "additionalProperties": false,
             "properties": {
                 "CountryCode": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The country code of the SMS receiver."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the SMS receiver. Names must be unique (case-insensitive) across all receivers within an action group."
                 },
                 "PhoneNumber": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The phone number of the SMS receiver."
                 }
             },
             "required": [
@@ -214,13 +245,16 @@
             "additionalProperties": false,
             "properties": {
                 "CountryCode": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The country code of the voice receiver."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the voice receiver."
                 },
                 "PhoneNumber": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The phone number of the voice receiver."
                 }
             },
             "required": [
@@ -234,13 +268,16 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the webhook receiver. Names must be unique (case-insensitive) across all receivers within an action group."
                 },
                 "ServiceUri": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The URI where webhooks should be sent."
                 },
                 "UseCommonAlertSchema": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Enables or disables the common alert schema."
                 }
             },
             "required": [
@@ -255,16 +292,20 @@
             "type": "string"
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether this action group is enabled. If an action group is not enabled, then none of its receivers will receive communications. Defaults to `true`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Action Group. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the Action Group instance."
         },
         "ShortName": {
-            "type": "string"
+            "type": "string",
+            "description": "The short name of the action group. This will be used in SMS messages."
         },
         "Tags": {
             "type": "array",
@@ -284,7 +325,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "ArmRoleReceiver": {
             "type": "array",

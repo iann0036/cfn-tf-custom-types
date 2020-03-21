@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::ComputeFlavorAccessV2",
-    "description": "CloudFormation equivalent of openstack_compute_flavor_access_v2",
+    "description": "Manages a project access for flavor V2 resource within OpenStack.\n\nNote: You _must_ have admin privileges in your OpenStack cloud to use\nthis resource.\n\n---",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "FlavorId": {
-            "type": "string"
+            "type": "string",
+            "description": "The UUID of flavor to use. Changing this creates a new flavor access."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the V2 Compute client.\nIf omitted, the `region` argument of the provider is used.\nChanging this creates a new flavor access."
         },
         "TenantId": {
-            "type": "string"
+            "type": "string",
+            "description": "The UUID of tenant which is allowed to use the flavor.\nChanging this creates a new flavor access."
         }
     },
     "additionalProperties": false,

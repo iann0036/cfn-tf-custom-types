@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::RamLoginProfile",
-    "description": "CloudFormation equivalent of alicloud_ram_login_profile",
+    "description": "Provides a RAM User Login Profile resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,20 @@
             "type": "string"
         },
         "MfaBindRequired": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "This parameter indicates whether the MFA needs to be bind when the user first logs in. Default value is `false`."
         },
         "Password": {
-            "type": "string"
+            "type": "string",
+            "description": "Password of the RAM user."
         },
         "PasswordResetRequired": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "This parameter indicates whether the password needs to be reset when the user first logs in. Default value is `false`."
         },
         "UserName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the RAM user. This name can have a string of 1 to 64 characters, must contain only alphanumeric characters or hyphens, such as \"-\",\".\",\"_\", and must not begin with a hyphen."
         }
     },
     "additionalProperties": false,

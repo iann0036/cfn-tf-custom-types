@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::IdentityAuthToken",
-    "description": "CloudFormation equivalent of oci_identity_auth_token",
+    "description": "This resource provides the Auth Token resource in Oracle Cloud Infrastructure Identity service.\n\nCreates a new auth token for the specified user. For information about what auth tokens are for, see\n[Managing User Credentials](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcredentials.htm).\n\nYou must specify a *description* for the auth token (although it can be an empty string). It does not\nhave to be unique, and you can change it anytime with\n[UpdateAuthToken](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AuthToken/UpdateAuthToken).\n\nEvery user has permission to create an auth token for *their own user ID*. An administrator in your organization\ndoes not need to write a policy to give users this ability. To compare, administrators who have permission to the\ntenancy can use this operation to create an auth token for any user, including themselves.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,7 +26,8 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The description you assign to the auth token during creation. Does not have to be unique, and it's changeable."
         },
         "InactiveState": {
             "type": "string"
@@ -44,7 +45,8 @@
             "type": "string"
         },
         "UserId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the user."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

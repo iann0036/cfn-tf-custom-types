@@ -1,6 +1,8 @@
 # Terraform::OCI::OceOceInstance
 
-CloudFormation equivalent of oci_oce_oce_instance
+This resource provides the Oce Instance resource in Oracle Cloud Infrastructure Content and Experience service.
+
+Creates a new OceInstance.
 
 ## Syntax
 
@@ -53,6 +55,8 @@ Properties:
 
 #### AdminEmail
 
+Admin Email for Notification.
+
 _Required_: Yes
 
 _Type_: String
@@ -60,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CompartmentId
+
+(Updatable) Compartment Identifier.
 
 _Required_: Yes
 
@@ -69,6 +75,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DefinedTags
 
+(Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`.
+
 _Required_: No
 
 _Type_: List of <a href="definedtags.md">DefinedTags</a>
@@ -76,6 +84,8 @@ _Type_: List of <a href="definedtags.md">DefinedTags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+(Updatable) OceInstance description.
 
 _Required_: No
 
@@ -85,6 +95,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FreeformTags
 
+(Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`.
+
 _Required_: No
 
 _Type_: List of <a href="freeformtags.md">FreeformTags</a>
@@ -92,6 +104,9 @@ _Type_: List of <a href="freeformtags.md">FreeformTags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IdcsAccessToken
+
+Identity Cloud Service access token identifying a stripe and service administrator user.
+**Note:** The `idcs_access_token` is stored in the Terraform state file.
 
 _Required_: Yes
 
@@ -101,6 +116,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceUsageType
 
+Instance type based on its usage.
+
 _Required_: No
 
 _Type_: String
@@ -108,6 +125,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+OceInstance Name.
 
 _Required_: Yes
 
@@ -117,6 +136,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ObjectStorageNamespace
 
+Object Storage Namespace of Tenancy.
+
 _Required_: Yes
 
 _Type_: String
@@ -125,6 +146,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TenancyId
 
+Tenancy Identifier.
+
 _Required_: Yes
 
 _Type_: String
@@ -132,6 +155,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TenancyName
+
+Tenancy Name.
 
 _Required_: Yes
 

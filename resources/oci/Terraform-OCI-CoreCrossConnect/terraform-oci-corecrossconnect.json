@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::CoreCrossConnect",
-    "description": "CloudFormation equivalent of oci_core_cross_connect",
+    "description": "This resource provides the Cross Connect resource in Oracle Cloud Infrastructure Core service.\n\nCreates a new cross-connect. Oracle recommends you create each cross-connect in a\n[CrossConnectGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup) so you can use link aggregation\nwith the connection.\n\nAfter creating the `CrossConnect` object, you need to go the FastConnect location\nand request to have the physical cable installed. For more information, see\n[FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).\n\nFor the purposes of access control, you must provide the OCID of the\ncompartment where you want the cross-connect to reside. If you're\nnot sure which compartment to use, put the cross-connect in the\nsame compartment with your VCN. For more information about\ncompartments and access control, see\n[Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).\nFor information about OCIDs, see\n[Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).\n\nYou may optionally specify a *display name* for the cross-connect.\nIt does not have to be unique, and you can change it. Avoid entering confidential information.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,13 +26,16 @@
             "type": "string"
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The OCID of the compartment to contain the cross-connect."
         },
         "CrossConnectGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the cross-connect group to put this cross-connect in."
         },
         "CustomerReferenceName": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) A reference name or identifier for the physical fiber connection that this cross-connect uses."
         },
         "DefinedTags": {
             "type": "array",
@@ -52,13 +55,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Operations.CostCenter\": \"42\"}`."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information."
         },
         "FarCrossConnectOrCrossConnectGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on a different router (for the purposes of redundancy), provide the OCID of that existing cross-connect or cross-connect group."
         },
         "FreeformTags": {
             "type": "array",
@@ -78,22 +84,27 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
         },
         "IsActive": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "(Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready."
         },
         "LocationName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`."
         },
         "NearCrossConnectOrCrossConnectGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the OCID of that existing cross-connect or cross-connect group."
         },
         "PortName": {
             "type": "string"
         },
         "PortSpeedShapeName": {
-            "type": "string"
+            "type": "string",
+            "description": "The port speed for this cross-connect. To get a list of the available port speeds, see [ListCrossConnectPortSpeedShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectPortSpeedShape/ListCrossconnectPortSpeedShapes).  Example: `10 Gbps`."
         },
         "State": {
             "type": "string"

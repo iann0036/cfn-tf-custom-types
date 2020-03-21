@@ -1,6 +1,6 @@
 # Terraform::AzureRM::SubnetRouteTableAssociation
 
-CloudFormation equivalent of azurerm_subnet_route_table_association
+Associates a [Route Table](route_table.html) with a [Subnet](subnet.html) within a [Virtual Network](virtual_network.html).
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### RouteTableId
 
+The ID of the Route Table which should be associated with the Subnet. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -40,6 +42,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubnetId
+
+The ID of the Subnet. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

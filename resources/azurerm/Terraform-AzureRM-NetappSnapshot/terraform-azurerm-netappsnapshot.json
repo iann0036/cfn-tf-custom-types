@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::NetappSnapshot",
-    "description": "CloudFormation equivalent of azurerm_netapp_snapshot",
+    "description": "Manages a NetApp Snapshot.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,19 +29,24 @@
             "type": "string"
         },
         "AccountName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the NetApp account in which the NetApp Pool should be created. Changing this forces a new resource to be created."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the NetApp Snapshot. Changing this forces a new resource to be created."
         },
         "PoolName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the NetApp pool in which the NetApp Volume should be created. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group where the NetApp Snapshot should be created. Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -61,10 +66,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "VolumeName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the NetApp volume in which the NetApp Snapshot should be created. Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

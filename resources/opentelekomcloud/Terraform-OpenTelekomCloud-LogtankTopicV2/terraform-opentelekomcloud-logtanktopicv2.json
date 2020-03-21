@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenTelekomCloud::LogtankTopicV2",
-    "description": "CloudFormation equivalent of opentelekomcloud_logtank_topic_v2",
+    "description": "Manage a log topic resource within OpenTelekomCloud.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,15 @@
             "type": "string"
         },
         "GroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the ID of a created log group.\nChanging this parameter will create a new resource."
         },
         "IndexEnabled": {
             "type": "boolean"
         },
         "TopicName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the log topic name.\nChanging this parameter will create a new resource."
         }
     },
     "additionalProperties": false,

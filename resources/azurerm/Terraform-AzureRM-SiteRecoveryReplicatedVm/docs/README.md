@@ -1,6 +1,6 @@
 # Terraform::AzureRM::SiteRecoveryReplicatedVm
 
-CloudFormation equivalent of azurerm_site_recovery_replicated_vm
+Manages a VM replicated using Azure Site Recovery (Azure to Azure only). A replicated VM keeps a copiously updated image of the VM in another region in order to be able to start the VM in that region in case of a disaster.
 
 ## Syntax
 
@@ -54,6 +54,8 @@ Properties:
 
 #### ManagedDisk
 
+One or more `managed_disk` block.
+
 _Required_: No
 
 _Type_: List of <a href="manageddisk.md">ManagedDisk</a>
@@ -61,6 +63,8 @@ _Type_: List of <a href="manageddisk.md">ManagedDisk</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the network mapping.
 
 _Required_: Yes
 
@@ -78,6 +82,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RecoveryVaultName
 
+The name of the vault that should be updated.
+
 _Required_: Yes
 
 _Type_: String
@@ -85,6 +91,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+Name of the resource group where the vault that should be updated is located.
 
 _Required_: Yes
 
@@ -94,6 +102,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SourceRecoveryFabricName
 
+Name of fabric that should contains this replication.
+
 _Required_: Yes
 
 _Type_: String
@@ -101,6 +111,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SourceRecoveryProtectionContainerName
+
+Name of the protection container to use.
 
 _Required_: Yes
 
@@ -110,6 +122,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SourceVmId
 
+Id of the VM to replicate.
+
 _Required_: Yes
 
 _Type_: String
@@ -117,6 +131,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TargetAvailabilitySetId
+
+Id of availability set that the new VM should belong to when a failover is done.
 
 _Required_: No
 
@@ -126,6 +142,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TargetRecoveryFabricId
 
+Id of fabric where the VM replication should be handled when a failover is done.
+
 _Required_: Yes
 
 _Type_: String
@@ -134,6 +152,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TargetRecoveryProtectionContainerId
 
+Id of protection container where the VM replication should be created when a failover is done.
+
 _Required_: Yes
 
 _Type_: String
@@ -141,6 +161,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TargetResourceGroupId
+
+Id of resource group where the VM should be created when a failover is done.
 
 _Required_: Yes
 

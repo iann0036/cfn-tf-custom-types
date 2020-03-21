@@ -1,6 +1,6 @@
 # Terraform::Spotinst::ElastigroupGcp
 
-CloudFormation equivalent of spotinst_elastigroup_gcp
+Provides a Spotinst elastigroup GCP resource.
 
 ## Syntax
 
@@ -143,6 +143,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AvailabilityZones
 
+List of availability zones for the group.
+
 _Required_: No
 
 _Type_: List of String
@@ -150,6 +152,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+The region your GCP group will be created in.
 
 _Required_: No
 
@@ -159,6 +163,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DesiredCapacity
 
+The desired number of instances the group should have at any time.
+
 _Required_: Yes
 
 _Type_: Double
@@ -167,6 +173,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DrainingTimeout
 
+Time (seconds) the instance is allowed to run after it is detached from the group. This is to allow the instance time to drain all the current TCP connections before terminating it.
+
 _Required_: No
 
 _Type_: Double
@@ -174,6 +182,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FallbackToOndemand
+
+Activate fallback-to-on-demand. When provisioning an instance, if no Preemptible market is available, fallback-to-on-demand will provision an On-Demand instance to maintain the group capacity.
 
 _Required_: No
 
@@ -199,6 +209,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceTypesOndemand
 
+The regular VM instance type to use for mixed-type groups and when falling back to on-demand. Required if instance_types_preemptible is not set.
+
 _Required_: No
 
 _Type_: String
@@ -206,6 +218,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceTypesPreemptible
+
+The preemptible VMs instance type. To maximize cost savings and market availability, select as many types as possible. Required if instance_types_ondemand is not set.
 
 _Required_: No
 
@@ -223,6 +237,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxSize
 
+The maximum number of instances the group should have at any time.
+
 _Required_: No
 
 _Type_: Double
@@ -231,6 +247,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MinSize
 
+The minimum number of instances the group should have at any time.
+
 _Required_: No
 
 _Type_: Double
@@ -238,6 +256,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The group name.
 
 _Required_: Yes
 
@@ -255,6 +275,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PreemptiblePercentage
 
+Percentage of Preemptible VMs to spin up from the "desired_capacity".
+
 _Required_: No
 
 _Type_: Double
@@ -262,6 +284,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServiceAccount
+
+The email of the service account in which the group instances will be launched.
 
 _Required_: No
 
@@ -271,6 +295,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ShutdownScript
 
+The Base64-encoded shutdown script that executes prior to instance termination, for more information please see: [Shutdown Script](https://api.spotinst.com/integration-docs/elastigroup/concepts/compute-concepts/shutdown-scripts/).
+
 _Required_: No
 
 _Type_: String
@@ -279,6 +305,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StartupScript
 
+Create and run your own startup scripts on your virtual machines to perform automated tasks every time your instance boots up.
+
 _Required_: No
 
 _Type_: String
@@ -286,6 +314,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Tags to mark created instances.
 
 _Required_: No
 

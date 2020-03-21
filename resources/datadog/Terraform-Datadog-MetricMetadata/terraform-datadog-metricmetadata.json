@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Datadog::MetricMetadata",
-    "description": "CloudFormation equivalent of datadog_metric_metadata",
+    "description": "Provides a Datadog metric_metadata resource. This can be used to manage a metric's metadata.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,25 +9,31 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description of the metric."
         },
         "Metric": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the metric."
         },
         "PerUnit": {
-            "type": "string"
+            "type": "string",
+            "description": "'Per' unit of the metric such as 'second' in 'bytes per second'."
         },
         "ShortName": {
-            "type": "string"
+            "type": "string",
+            "description": "A short name of the metric."
         },
         "StatsdInterval": {
-            "type": "number"
+            "type": "number",
+            "description": "If applicable, stasd flush interval in seconds for the metric."
         },
         "Type": {
             "type": "string"
         },
         "Unit": {
-            "type": "string"
+            "type": "string",
+            "description": "Primary unit of the metric such as 'byte' or 'operation'."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,9 @@
 # Terraform::VCD::Org
 
-CloudFormation equivalent of vcd_org
+Provides a vCloud Director Org resource. This can be used to create, update, and delete an organization.
+Requires system administrator privileges.
+
+Supported in provider *v2.0+*
 
 ## Syntax
 
@@ -53,6 +56,8 @@ Properties:
 
 #### CanPublishCatalogs
 
+- True if this organization is allowed to share catalogs. Default is `true`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -60,6 +65,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DelayAfterPowerOnSeconds
+
+- Specifies this organization's default for virtual machine boot delay after power on. Default is `0`.
 
 _Required_: No
 
@@ -69,6 +76,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DeleteForce
 
+- pass `delete_force=true` and `delete_recursive=true` to remove an organization or VDC and any objects it contains, regardless of their state.
+
 _Required_: Yes
 
 _Type_: Boolean
@@ -76,6 +85,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DeleteRecursive
+
+- pass `delete_recursive`=true as query parameter to remove an organization or VDC and any objects it contains that are in a state that normally allows removal.
 
 _Required_: Yes
 
@@ -85,6 +96,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DeployedVmQuota
 
+- Maximum number of virtual machines that can be deployed simultaneously by a member of this organization. Default is unlimited (0).
+
 _Required_: No
 
 _Type_: Double
@@ -92,6 +105,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+- Org description. Default is empty.
 
 _Required_: No
 
@@ -101,6 +116,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FullName
 
+Org full name.
+
 _Required_: Yes
 
 _Type_: String
@@ -108,6 +125,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IsEnabled
+
+- True if this organization is enabled (allows login and all other operations). Default is `true`.
 
 _Required_: No
 
@@ -117,6 +136,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Org name.
+
 _Required_: Yes
 
 _Type_: String
@@ -124,6 +145,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StoredVmQuota
+
+- Maximum number of virtual machines in vApps or vApp templates that can be stored in an undeployed state by a member of this organization. Default is unlimited (0).
 
 _Required_: No
 

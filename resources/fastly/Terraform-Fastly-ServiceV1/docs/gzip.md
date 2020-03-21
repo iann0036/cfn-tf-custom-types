@@ -30,6 +30,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### CacheCondition
 
+Name of already defined `condition` to apply. This `condition` must be of type `CACHE`.
+
 _Required_: No
 
 _Type_: String
@@ -37,6 +39,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ContentTypes
+
+The content-type for each type of content you wish to
+have dynamically gzip'ed. Example: `["text/html", "text/css"]`.
 
 _Required_: No
 
@@ -46,6 +51,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Extensions
 
+File extensions for each file type to dynamically
+gzip. Example: `["css", "js"]`.
+
 _Required_: No
 
 _Type_: List of String
@@ -53,6 +61,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Unique name for this header attribute.
 
 _Required_: Yes
 

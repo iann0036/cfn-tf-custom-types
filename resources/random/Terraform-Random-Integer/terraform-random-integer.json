@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Random::Integer",
-    "description": "CloudFormation equivalent of random_integer",
+    "description": "The resource `random_integer` generates random values from a given range, described by the `min` and `max` attributes of a given resource.\n\nThis resource can be used in conjunction with resources that have\nthe `create_before_destroy` lifecycle flag set, to avoid conflicts with\nunique names during the brief period where both the old and new resources\nexist concurrently.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -26,19 +26,23 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Arbitrary map of values that, when changed, will\ntrigger a new id to be generated. See\n[the main provider documentation](../index.html) for more information."
         },
         "Max": {
-            "type": "number"
+            "type": "number",
+            "description": "The maximum inclusive value of the range."
         },
         "Min": {
-            "type": "number"
+            "type": "number",
+            "description": "The minimum inclusive value of the range."
         },
         "Result": {
             "type": "number"
         },
         "Seed": {
-            "type": "string"
+            "type": "string",
+            "description": "A custom seed to always produce the same value."
         }
     },
     "additionalProperties": false,

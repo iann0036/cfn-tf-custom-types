@@ -1,6 +1,17 @@
 # Terraform::Google::AccessContextManagerAccessPolicy
 
-CloudFormation equivalent of google_access_context_manager_access_policy
+AccessPolicy is a container for AccessLevels (which define the necessary
+attributes to use GCP services) and ServicePerimeters (which define
+regions of services able to freely pass data within a perimeter). An
+access policy is globally visible within an organization, and the
+restrictions it specifies apply to all projects within an organization.
+
+
+To get more information about AccessPolicy, see:
+
+* [API documentation](https://cloud.google.com/access-context-manager/docs/reference/rest/v1/accessPolicies)
+* How-to Guides
+    * [Access Policy Quickstart](https://cloud.google.com/access-context-manager/docs/quickstart)
 
 ## Syntax
 

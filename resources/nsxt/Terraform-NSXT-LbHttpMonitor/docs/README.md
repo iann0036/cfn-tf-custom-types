@@ -1,6 +1,8 @@
 # Terraform::NSXT::LbHttpMonitor
 
-CloudFormation equivalent of nsxt_lb_http_monitor
+Provides a resource to configure lb http monitor on NSX-T manager
+
+~> **NOTE:** This resource requires NSX version 2.3 or higher.
 
 ## Syntax
 
@@ -60,6 +62,8 @@ Properties:
 
 #### Description
 
+Description of this resource.
+
 _Required_: No
 
 _Type_: String
@@ -67,6 +71,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+The display name of this resource. Defaults to ID if not set.
 
 _Required_: No
 
@@ -76,6 +82,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FallCount
 
+Number of consecutive checks that must fail before marking it down.
+
 _Required_: No
 
 _Type_: Double
@@ -83,6 +91,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Interval
+
+The frequency at which the system issues the monitor check (in seconds).
 
 _Required_: No
 
@@ -92,6 +102,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MonitorPort
 
+If the monitor port is specified, it would override pool member port setting for healthcheck. A port range is not supported.
+
 _Required_: No
 
 _Type_: String
@@ -99,6 +111,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RequestBody
+
+String to send as HTTP health check request body. Valid only for certain HTTP methods like POST.
 
 _Required_: No
 
@@ -108,6 +122,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RequestMethod
 
+Health check method for HTTP monitor type. Valid values are GET, HEAD, PUT, POST and OPTIONS.
+
 _Required_: No
 
 _Type_: String
@@ -115,6 +131,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RequestUrl
+
+URL used for HTTP monitor.
 
 _Required_: No
 
@@ -124,6 +142,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RequestVersion
 
+HTTP request version. Valid values are HTTP_VERSION_1_0 and HTTP_VERSION_1_1.
+
 _Required_: No
 
 _Type_: String
@@ -131,6 +151,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResponseBody
+
+If response body is specified, healthcheck HTTP response body is matched against the specified string and server is considered healthy only if there is a match (regular expressions not supported). If response body string is not specified, HTTP healthcheck is considered successful if the HTTP response status code is among configured values.
 
 _Required_: No
 
@@ -140,6 +162,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResponseStatusCodes
 
+HTTP response status code should be a valid HTTP status code.
+
 _Required_: No
 
 _Type_: List of Double
@@ -148,6 +172,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RiseCount
 
+Number of consecutive checks that must pass before marking it up.
+
 _Required_: No
 
 _Type_: Double
@@ -155,6 +181,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Timeout
+
+Number of seconds the target has to respond to the monitor request.
 
 _Required_: No
 

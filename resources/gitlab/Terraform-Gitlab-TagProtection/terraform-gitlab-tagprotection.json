@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Gitlab::TagProtection",
-    "description": "CloudFormation equivalent of gitlab_tag_protection",
+    "description": "This resource allows you to protect a specific tag or wildcard by an access level so that the user with less access level cannot Create the tags.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "CreateAccessLevel": {
-            "type": "string"
+            "type": "string",
+            "description": "One of five levels of access to the project."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the project."
         },
         "Tag": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the tag or wildcard."
         }
     },
     "additionalProperties": false,

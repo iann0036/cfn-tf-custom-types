@@ -1,6 +1,9 @@
 # Terraform::FlexibleEngine::ComputeFloatingipV2
 
-CloudFormation equivalent of flexibleengine_compute_floatingip_v2
+Manages a V2 floating IP resource within FlexibleEngine Nova (compute)
+that can be used for compute instances.
+These are similar to Neutron (networking) floating IP resources,
+but only networking floating IPs can be used with load balancers.
 
 ## Syntax
 
@@ -31,6 +34,9 @@ Properties:
 
 #### Pool
 
+The name of the pool from which to obtain the floating
+IP. Default value is admin_external_net. Changing this creates a new floating IP.
+
 _Required_: No
 
 _Type_: String
@@ -38,6 +44,12 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region in which to obtain the V2 Compute client.
+A Compute client is needed to create a floating IP that can be used with
+a compute instance. If omitted, the `region` argument of the provider
+is used. Changing this creates a new floating IP (which may or may not
+have a different address).
 
 _Required_: No
 

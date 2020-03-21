@@ -1,6 +1,6 @@
 # Terraform::Cloudflare::WafPackage
 
-CloudFormation equivalent of cloudflare_waf_package
+Provides a Cloudflare WAF rule package resource for a particular zone. This can be used to configure firewall behaviour for pre-defined firewall packages.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### ActionMode
 
+The action mode of the package, can be one of ["block", "challenge", "simulate"].
+
 _Required_: No
 
 _Type_: String
@@ -42,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PackageId
+
+The WAF Package ID.
 
 _Required_: Yes
 
@@ -51,6 +55,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Sensitivity
 
+The sensitivity of the package, can be one of ["high", "medium", "low", "off"].
+
 _Required_: No
 
 _Type_: String
@@ -58,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneId
+
+The DNS zone ID to apply to.
 
 _Required_: Yes
 

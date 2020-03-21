@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::PanoramaBgpPeerGroup",
-    "description": "CloudFormation equivalent of panos_panorama_bgp_peer_group",
+    "description": "This resource allows you to add/update/delete a Panorama BGP peer group.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,37 +9,48 @@
             "type": "string"
         },
         "AggregatedConfedAsPath": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "The peers understand aggregated confederation AS path (default: `true`)."
         },
         "Enable": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable or not (default: `true`)."
         },
         "ExportNextHop": {
-            "type": "string"
+            "type": "string",
+            "description": "Export next hop.  Valid values are\n`original`, `use-self`, or `resolve`."
         },
         "ImportNextHop": {
-            "type": "string"
+            "type": "string",
+            "description": "Import next hop.  Valid values are\n`original`, `use-peer`, or the empty string."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name."
         },
         "RemovePrivateAs": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Remove private AS when exporting\nroute.  Only available for `type=ebgp`."
         },
         "SoftResetWithStoredInfo": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Soft reset with stored info."
         },
         "Template": {
-            "type": "string"
+            "type": "string",
+            "description": "The template name."
         },
         "TemplateStack": {
-            "type": "string"
+            "type": "string",
+            "description": "The template stack name."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "Peer group type.  Valid options are `ebgp` (default),\n`ebgp-confed`, `ibgp`, or `ibgp-confed`."
         },
         "VirtualRouter": {
-            "type": "string"
+            "type": "string",
+            "description": "The virtual router to add this BGP\npeer group to."
         }
     },
     "additionalProperties": false,

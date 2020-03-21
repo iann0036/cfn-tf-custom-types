@@ -36,6 +36,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Action
 
+The action for the rule. Valid options are: `allow` and
+`deny` (defaults allow).
+
 _Required_: No
 
 _Type_: String
@@ -43,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CidrList
+
+A CIDR list to allow access to the given ports.
 
 _Required_: Yes
 
@@ -52,6 +57,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IcmpCode
 
+The ICMP code to allow, or `-1` to allow `any`. This
+can only be specified if the protocol is ICMP. (defaults 0).
+
 _Required_: No
 
 _Type_: Double
@@ -59,6 +67,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IcmpType
+
+The ICMP type to allow, or `-1` to allow `any`. This
+can only be specified if the protocol is ICMP. (defaults 0).
 
 _Required_: No
 
@@ -68,6 +79,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ports
 
+List of ports and/or port ranges to allow. This can only
+be specified if the protocol is TCP, UDP, ALL or a valid protocol number.
+
 _Required_: No
 
 _Type_: List of String
@@ -76,6 +90,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Protocol
 
+The name of the protocol to allow. Valid options are:
+`tcp`, `udp`, `icmp`, `all` or a valid protocol number.
+
 _Required_: Yes
 
 _Type_: String
@@ -83,6 +100,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TrafficType
+
+The traffic type for the rule. Valid options are:
+`ingress` or `egress` (defaults ingress).
 
 _Required_: No
 

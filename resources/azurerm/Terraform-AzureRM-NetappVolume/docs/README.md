@@ -1,6 +1,6 @@
 # Terraform::AzureRM::NetappVolume
 
-CloudFormation equivalent of azurerm_netapp_volume
+Manages a NetApp Volume.
 
 ## Syntax
 
@@ -56,6 +56,8 @@ Properties:
 
 #### AccountName
 
+The name of the NetApp account in which the NetApp Pool should be created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -63,6 +65,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Location
+
+Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -72,6 +76,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the NetApp Volume. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -79,6 +85,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PoolName
+
+The name of the NetApp pool in which the NetApp Volume should be created. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -88,6 +96,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Protocols
 
+The target volume protocol expressed as a list. Supported single value include `CIFS`, `NFSv3`, or `NFSv4.1`. If argument is not defined it will default to `NFSv3`. Changing this forces a new resource to be created and data will be lost.
+
 _Required_: No
 
 _Type_: List of String
@@ -95,6 +105,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group where the NetApp Volume should be created. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -104,6 +116,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServiceLevel
 
+The target performance of the file system. Valid values include `Premium`, `Standard`, or `Ultra`.
+
 _Required_: Yes
 
 _Type_: String
@@ -111,6 +125,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StorageQuotaInGb
+
+The maximum Storage Quota allowed for a file system in Gigabytes.
 
 _Required_: Yes
 
@@ -120,6 +136,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubnetId
 
+The ID of the Subnet the NetApp Volume resides in, which must have the `Microsoft.NetApp/volumes` delegation. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -128,6 +146,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -135,6 +155,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VolumePath
+
+A unique file path for the volume. Used when creating mount targets. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

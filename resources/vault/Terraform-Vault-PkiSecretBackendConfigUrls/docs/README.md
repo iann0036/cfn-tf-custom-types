@@ -1,6 +1,6 @@
 # Terraform::Vault::PkiSecretBackendConfigUrls
 
-CloudFormation equivalent of vault_pki_secret_backend_config_urls
+Allows setting the issuing certificate endpoints, CRL distribution points, and OCSP server endpoints that will be encoded into issued certificates.
 
 ## Syntax
 
@@ -38,6 +38,8 @@ Properties:
 
 #### Backend
 
+The path the PKI secret backend is mounted at, with no leading or trailing `/`s.
+
 _Required_: Yes
 
 _Type_: String
@@ -45,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CrlDistributionPoints
+
+Specifies the URL values for the CRL Distribution Points field.
 
 _Required_: No
 
@@ -54,6 +58,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IssuingCertificates
 
+Specifies the URL values for the Issuing Certificate field.
+
 _Required_: No
 
 _Type_: List of String
@@ -61,6 +67,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OcspServers
+
+Specifies the URL values for the OCSP Servers field.
 
 _Required_: No
 

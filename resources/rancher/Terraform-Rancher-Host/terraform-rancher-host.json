@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Rancher::Host",
-    "description": "CloudFormation equivalent of rancher_host",
+    "description": "Provides a Rancher Host resource. This can be used to manage and delete hosts on Rancher.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A host description."
         },
         "EnvironmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the environment the host is associated to."
         },
         "Hostname": {
-            "type": "string"
+            "type": "string",
+            "description": "The host name. Used as the primary key to detect the host ID."
         },
         "Labels": {
             "type": "array",
@@ -35,10 +38,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A dictionary of labels to apply to the host. Computed internal labels are excluded from that list."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the host."
         }
     },
     "additionalProperties": false,

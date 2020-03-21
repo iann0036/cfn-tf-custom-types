@@ -1,6 +1,6 @@
 # Terraform::OpenStack::LbMemberV1
 
-CloudFormation equivalent of openstack_lb_member_v1
+Manages a V1 load balancer member resource within OpenStack.
 
 ## Syntax
 
@@ -43,6 +43,9 @@ Properties:
 
 #### Address
 
+The IP address of the member. Changing this creates a
+new member.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +53,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AdminStateUp
+
+The administrative state of the member.
+Acceptable values are 'true' and 'false'. Changing this value updates the
+state of the existing member.
 
 _Required_: No
 
@@ -59,6 +66,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PoolId
 
+The ID of the LB pool. Changing this creates a new
+member.
+
 _Required_: Yes
 
 _Type_: String
@@ -66,6 +76,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Port
+
+An integer representing the port on which the member is
+hosted. Changing this creates a new member.
 
 _Required_: Yes
 
@@ -75,6 +88,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region in which to obtain the V2 Networking client.
+A Networking client is needed to create an LB member. If omitted, the
+`region` argument of the provider is used. Changing this creates a new
+LB member.
+
 _Required_: No
 
 _Type_: String
@@ -82,6 +100,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TenantId
+
+The owner of the member. Required if admin wants to
+create a member for another tenant. Changing this creates a new member.
 
 _Required_: No
 

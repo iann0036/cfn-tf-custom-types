@@ -39,6 +39,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Autodetect
 
+- Let BigQuery try to autodetect the schema
+and format of the table.
+
 _Required_: Yes
 
 _Type_: Boolean
@@ -78,6 +81,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SourceUris
+
+A list of the fully-qualified URIs that point to
+your data in Google Cloud.
 
 _Required_: Yes
 

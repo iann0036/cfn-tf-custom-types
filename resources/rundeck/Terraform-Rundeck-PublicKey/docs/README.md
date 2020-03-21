@@ -1,6 +1,11 @@
 # Terraform::Rundeck::PublicKey
 
-CloudFormation equivalent of rundeck_public_key
+The public key resource allows SSH public keys to be stored into Rundeck's key store.
+The key store is where Rundeck keeps credentials that are needed to access the nodes on which
+it runs commands.
+
+This resource also allows the retrieval of an existing public key from the store, so that it
+may be used in the configuration of other resources such as ``aws_key_pair``.
 
 ## Syntax
 
@@ -31,6 +36,10 @@ Properties:
 
 #### KeyMaterial
 
+The public key string to store, serialized in any way that is accepted
+by OpenSSH. If this is not included, ``key_material`` becomes an attribute that can be used
+to read the already-existing key material in the Rundeck store.
+
 _Required_: No
 
 _Type_: String
@@ -38,6 +47,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Path
+
+The path within the key store where the key will be stored. By convention
+this path name normally ends with ".pub" and otherwise has the same name as the associated
+private key.
 
 _Required_: Yes
 
@@ -63,7 +76,8 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Delete
 
-Returns the <code>Delete</code> value.
+True if the key should be deleted when the resource is deleted.
+Defaults to true if key_material is provided in the configuration.
 
 #### Url
 

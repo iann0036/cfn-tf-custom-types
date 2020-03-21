@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::DatabaseDataGuardAssociation",
-    "description": "CloudFormation equivalent of oci_database_data_guard_association",
+    "description": "This resource provides the Data Guard Association resource in Oracle Cloud Infrastructure Database service.\n\nCreates a new Data Guard association.  A Data Guard association represents the replication relationship between the\nspecified database and a peer database. For more information, see [Using Oracle Data Guard](https://docs.cloud.oracle.com/iaas/Content/Database/Tasks/usingdataguard.htm).\n\nAll Oracle Cloud Infrastructure resources, including Data Guard associations, get an Oracle-assigned, unique ID\ncalled an Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID in the response.\nYou can also retrieve a resource's OCID by using a List API operation on that resource type, or by viewing the\nresource in the Console. For more information, see\n[Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -32,32 +32,40 @@
             "type": "string"
         },
         "AvailabilityDomain": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the availability domain that the standby database DB system will be located in. For example- \"Uocm:PHX-AD-1\"."
         },
         "BackupNetworkNsgIds": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata DB systems."
         },
         "CreationType": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies whether to create the peer database in an existing DB system or in a new DB system."
         },
         "DatabaseAdminPassword": {
-            "type": "string"
+            "type": "string",
+            "description": "A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation."
         },
         "DatabaseId": {
-            "type": "string"
+            "type": "string",
+            "description": "The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)."
         },
         "DeleteStandbyDbHomeOnDelete": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) if set to true the destroy operation will destroy the standby dbHome/dbSystem that is referenced in the Data Guard Association. The Data Guard Association gets destroyed when standby dbHome/dbSystem is terminated. Only `true` is supported at this time. If you change an argument that is used during the delete operation you must run `terraform apply` first so that that the change in the value is registered in the statefile before running `terraform destroy`. `terraform destroy` only looks at what is currently on the statefile and ignores the terraform configuration files."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique."
         },
         "Hostname": {
-            "type": "string"
+            "type": "string",
+            "description": "The hostname for the DB node."
         },
         "LifecycleDetails": {
             "type": "string"
@@ -67,7 +75,8 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**\n* Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty."
         },
         "PeerDataGuardAssociationId": {
             "type": "string"
@@ -79,31 +88,36 @@
             "type": "string"
         },
         "PeerDbSystemId": {
-            "type": "string"
+            "type": "string",
+            "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system in which to create the standby database. You must supply this value if creationType is `ExistingDbSystem`."
         },
         "PeerRole": {
             "type": "string"
         },
         "ProtectionMode": {
-            "type": "string"
+            "type": "string",
+            "description": "The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation."
         },
         "Role": {
             "type": "string"
         },
         "Shape": {
-            "type": "string"
+            "type": "string",
+            "description": "The virtual machine DB system shape to launch for the standby database in the Data Guard association. The shape determines the number of CPU cores and the amount of memory available for the DB system. Only virtual machine shapes are valid options. If you do not supply this parameter, the default shape is the shape of the primary DB system."
         },
         "State": {
             "type": "string"
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the subnet the DB system is associated with. **Subnet Restrictions:**\n* For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28."
         },
         "TimeCreated": {
             "type": "string"
         },
         "TransportType": {
-            "type": "string"
+            "type": "string",
+            "description": "The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:\n* MAXIMUM_AVAILABILITY - SYNC or FASTSYNC\n* MAXIMUM_PERFORMANCE - ASYNC\n* MAXIMUM_PROTECTION - SYNC."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

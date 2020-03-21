@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Heroku::Drain",
-    "description": "CloudFormation equivalent of heroku_drain",
+    "description": "Provides a Heroku Drain resource. This can be used to\ncreate and manage Log Drains on Heroku.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,15 @@
             "type": "string"
         },
         "App": {
-            "type": "string"
+            "type": "string",
+            "description": "The Heroku app to link to."
         },
         "Token": {
             "type": "string"
         },
         "Url": {
-            "type": "string"
+            "type": "string",
+            "description": "The URL for Heroku to drain your logs to."
         }
     },
     "additionalProperties": false,

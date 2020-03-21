@@ -26,6 +26,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### ConflictResolutionPath
 
+The conflict resolution path in the case of LastWriterWins mode.
+
 _Required_: No
 
 _Type_: String
@@ -34,6 +36,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ConflictResolutionProcedure
 
+The procedure to resolve conflicts in the case of custom mode.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +45,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Mode
+
+Indicates the conflict resolution mode. Possible values include: `LastWriterWins`, `Custom`.
 
 _Required_: Yes
 

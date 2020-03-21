@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Gitlab::User",
-    "description": "CloudFormation equivalent of gitlab_user",
+    "description": "This resource allows you to create and manage GitLab users.\nNote your provider will need to be configured with admin-level access for this resource to work.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,34 +9,44 @@
             "type": "string"
         },
         "CanCreateGroup": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean, defaults to false. Whether to allow the user to create groups."
         },
         "Email": {
-            "type": "string"
+            "type": "string",
+            "description": "The e-mail address of the user."
         },
         "IsAdmin": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean, defaults to false.  Whether to enable administrative priviledges\nfor the user."
         },
         "IsExternal": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean, defaults to false. Whether a user has access only to some internal or private projects. External users can only access projects to which they are explicitly granted access."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the user."
         },
         "Password": {
-            "type": "string"
+            "type": "string",
+            "description": "The password of the user."
         },
         "ProjectsLimit": {
-            "type": "number"
+            "type": "number",
+            "description": "Integer, defaults to 0.  Number of projects user can create."
         },
         "ResetPassword": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean, defaults to false. Send user password reset link."
         },
         "SkipConfirmation": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean, defaults to true. Whether to skip confirmation."
         },
         "Username": {
-            "type": "string"
+            "type": "string",
+            "description": "The username of the user."
         }
     },
     "additionalProperties": false,

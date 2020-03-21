@@ -1,6 +1,17 @@
 # Terraform::GitHub::IssueLabel
 
-CloudFormation equivalent of github_issue_label
+Provides a GitHub issue label resource.
+
+This resource allows you to create and manage issue labels within your
+GitHub organization.
+
+Issue labels are keyed off of their "name", so pre-existing issue labels result
+in a 422 HTTP error if they exist outside of Terraform. Normally this would not
+be an issue, except new repositories are created with a "default" set of labels,
+and those labels easily conflict with custom ones.
+
+This resource will first check if the label exists, and then issue an update,
+otherwise it will create.
 
 ## Syntax
 
@@ -35,6 +46,8 @@ Properties:
 
 #### Color
 
+A 6 character hex code, **without the leading #**, identifying the color of the label.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+A short description of the label.
 
 _Required_: No
 
@@ -51,6 +66,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the label.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +75,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Repository
+
+The GitHub repository.
 
 _Required_: Yes
 
@@ -87,5 +106,5 @@ Returns the <code>Etag</code> value.
 
 #### Url
 
-Returns the <code>Url</code> value.
+The URL to the issue label.
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::AppServiceActiveSlot",
-    "description": "CloudFormation equivalent of azurerm_app_service_active_slot",
+    "description": "Promotes an App Service Slot to Production within an App Service.\n\n-> **Note:** When using Slots - the `app_settings`, `connection_string` and `site_config` blocks on the `azurerm_app_service` resource will be overwritten when promoting a Slot using the `azurerm_app_service_active_slot` resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,13 +29,16 @@
             "type": "string"
         },
         "AppServiceName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the App Service within which the Slot exists.  Changing this forces a new resource to be created."
         },
         "AppServiceSlotName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the App Service Slot which should be promoted to the Production Slot within the App Service."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which the App Service exists. Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

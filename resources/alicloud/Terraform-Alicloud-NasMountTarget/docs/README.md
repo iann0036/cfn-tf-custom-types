@@ -1,6 +1,14 @@
 # Terraform::Alicloud::NasMountTarget
 
-CloudFormation equivalent of alicloud_nas_mount_target
+Provides a Nas Mount Target resource.
+
+-> NOTE: Available in v1.34.0+.
+
+-> NOTE: Currently this resource support create a mount point in a classic network only when current region is China mainland regions.
+
+-> NOTE: You must grant NAS with specific RAM permissions when creating a classic mount targets,
+and it only can be achieved by creating a classic mount target mannually.
+See [Add a mount point](https://www.alibabacloud.com/help/doc-detail/60431.htm) and [Why do I need RAM permissions to create a mount point in a classic network](https://www.alibabacloud.com/help/faq-detail/42176.htm).
 
 ## Syntax
 
@@ -35,6 +43,8 @@ Properties:
 
 #### AccessGroupName
 
+Permission group name.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FileSystemId
+
+File system ID.
 
 _Required_: Yes
 
@@ -51,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Status
 
+Whether the MountTarget is active. An inactive MountTarget is inusable. Valid values are Active(default) and Inactive.
+
 _Required_: No
 
 _Type_: String
@@ -58,6 +72,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VswitchId
+
+VSwitch ID.
 
 _Required_: No
 

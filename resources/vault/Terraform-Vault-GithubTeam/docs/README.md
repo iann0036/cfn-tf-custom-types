@@ -1,6 +1,8 @@
 # Terraform::Vault::GithubTeam
 
-CloudFormation equivalent of vault_github_team
+Manages policy mappings for Github Teams authenticated via Github. See the [Vault
+documentation](https://www.vaultproject.io/docs/auth/github.html) for more
+information.
 
 ## Syntax
 
@@ -54,6 +56,9 @@ Properties:
 
 #### Backend
 
+Path where the github auth backend is mounted. Defaults to `github`
+if not specified.
+
 _Required_: No
 
 _Type_: String
@@ -62,6 +67,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Policies
 
+An array of strings specifying the policies to be set on tokens
+issued using this role.
+
 _Required_: No
 
 _Type_: List of String
@@ -69,6 +77,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Team
+
+GitHub team name in "slugified" format, for example: Terraform
+Developers -> `terraform-developers`.
 
 _Required_: Yes
 

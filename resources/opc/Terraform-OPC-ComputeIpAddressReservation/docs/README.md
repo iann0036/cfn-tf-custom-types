@@ -1,6 +1,6 @@
 # Terraform::OPC::ComputeIpAddressReservation
 
-CloudFormation equivalent of opc_compute_ip_address_reservation
+The ``opc_compute_ip_address_reservation`` resource creates and manages an IP address reservation in an Oracle Cloud Infrastructure Compute Classic identity domain, for an IP Network.
 
 ## Syntax
 
@@ -36,6 +36,8 @@ Properties:
 
 #### Description
 
+A description of the ip address reservation.
+
 _Required_: No
 
 _Type_: String
@@ -43,6 +45,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IpAddressPool
+
+The IP address pool from which you want to reserve an IP address. Typically one of either `public-ippool` or `cloud-ippool`.
 
 _Required_: Yes
 
@@ -52,6 +56,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the ip address reservation.
+
 _Required_: Yes
 
 _Type_: String
@@ -59,6 +65,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+List of tags that may be applied to the IP address reservation.
 
 _Required_: No
 
@@ -84,9 +92,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### IpAddress
 
-Returns the <code>IpAddress</code> value.
+Reserved NAT IPv4 address from the IP address pool.
 
 #### Uri
 
-Returns the <code>Uri</code> value.
+The Uniform Resource Identifier of the ip address reservation.
 

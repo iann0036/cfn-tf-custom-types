@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Tfe::PolicySetParameter",
-    "description": "CloudFormation equivalent of tfe_policy_set_parameter",
+    "description": "Creates, updates and destroys policy set parameters.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,20 @@
             "type": "string"
         },
         "Key": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the parameter."
         },
         "PolicySetId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the policy set that owns the parameter."
         },
         "Sensitive": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the value is sensitive. If true then the\nparameter is written once and not visible thereafter. Defaults to `false`."
         },
         "Value": {
-            "type": "string"
+            "type": "string",
+            "description": "Value of the parameter."
         }
     },
     "additionalProperties": false,

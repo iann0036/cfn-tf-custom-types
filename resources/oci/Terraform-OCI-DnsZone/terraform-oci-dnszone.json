@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::DnsZone",
-    "description": "CloudFormation equivalent of oci_dns_zone",
+    "description": "This resource provides the Zone resource in Oracle Cloud Infrastructure Dns service.\n\nCreates a new zone in the specified compartment.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ExternalMasters": {
@@ -71,7 +71,8 @@
             "type": "string"
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The OCID of the compartment the resource belongs to."
         },
         "DefinedTags": {
             "type": "array",
@@ -91,7 +92,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)."
         },
         "FreeformTags": {
             "type": "array",
@@ -111,10 +113,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the zone."
         },
         "Nameservers": {
             "type": "array",
@@ -145,7 +149,8 @@
             "type": "string"
         },
         "ZoneType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of the zone. Must be either `PRIMARY` or `SECONDARY`."
         },
         "ExternalMasters": {
             "type": "array",

@@ -1,6 +1,13 @@
 # Terraform::Chef::Node
 
-CloudFormation equivalent of chef_node
+A [node](http://docs.chef.io/nodes.html) is a computer whose
+configuration is managed by Chef.
+
+Although this resource allows a node to be registered, it does not actually
+configure the computer in question to interact with Chef. In most cases it
+is better to use [the `chef` provisioner](/docs/provisioners/chef.html) to
+configure the Chef client on a computer and have it register itself with the
+Chef server.
 
 ## Syntax
 
@@ -42,6 +49,9 @@ Properties:
 
 #### AutomaticAttributesJson
 
+String containing a JSON-serialized
+object containing the automatic attributes for the node.
+
 _Required_: No
 
 _Type_: String
@@ -49,6 +59,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefaultAttributesJson
+
+String containing a JSON-serialized
+object containing the default attributes for the node.
 
 _Required_: No
 
@@ -58,6 +71,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnvironmentName
 
+the nodes environment name (default: _default).
+
 _Required_: No
 
 _Type_: String
@@ -65,6 +80,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The unique name to assign to the node.
 
 _Required_: Yes
 
@@ -74,6 +91,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NormalAttributesJson
 
+String containing a JSON-serialized
+object containing the normal attributes for the node.
+
 _Required_: No
 
 _Type_: String
@@ -82,6 +102,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OverrideAttributesJson
 
+String containing a JSON-serialized
+object containing the override attributes for the node.
+
 _Required_: No
 
 _Type_: String
@@ -89,6 +112,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RunList
+
+List of strings to set as the
+[run list](https://docs.chef.io/run_lists.html) for the node.
 
 _Required_: No
 

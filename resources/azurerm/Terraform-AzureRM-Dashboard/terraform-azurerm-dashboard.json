@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::Dashboard",
-    "description": "CloudFormation equivalent of azurerm_dashboard",
+    "description": "Manages a shared dashboard in the Azure Portal.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,16 +29,20 @@
             "type": "string"
         },
         "DashboardProperties": {
-            "type": "string"
+            "type": "string",
+            "description": "JSON data representing dashboard body. See above for details on how to obtain this from the Portal."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Shared Dashboard. This should be be 64 chars max, only alphanumeric and hyphens (no spaces). For a more friendly display name, add the `hidden-title` tag."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to\ncreate the dashboard."
         },
         "Tags": {
             "type": "array",
@@ -58,7 +62,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

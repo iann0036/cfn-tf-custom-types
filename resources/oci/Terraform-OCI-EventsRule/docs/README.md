@@ -1,6 +1,8 @@
 # Terraform::OCI::EventsRule
 
-CloudFormation equivalent of oci_events_rule
+This resource provides the Rule resource in Oracle Cloud Infrastructure Events service.
+
+Creates a new rule.
 
 ## Syntax
 
@@ -48,6 +50,8 @@ Properties:
 
 #### CompartmentId
 
+(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
+
 _Required_: Yes
 
 _Type_: String
@@ -55,6 +59,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Condition
+
+(Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
+* Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`.
 
 _Required_: Yes
 
@@ -64,6 +71,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DefinedTags
 
+(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`.
+
 _Required_: No
 
 _Type_: List of <a href="definedtags.md">DefinedTags</a>
@@ -71,6 +80,8 @@ _Type_: List of <a href="definedtags.md">DefinedTags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+(Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
 
 _Required_: No
 
@@ -80,6 +91,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+(Updatable) A string that describes the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
+
 _Required_: Yes
 
 _Type_: String
@@ -88,6 +101,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FreeformTags
 
+(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`.
+
 _Required_: No
 
 _Type_: List of <a href="freeformtags.md">FreeformTags</a>
@@ -95,6 +110,8 @@ _Type_: List of <a href="freeformtags.md">FreeformTags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IsEnabled
+
+(Updatable) Whether or not this rule is currently enabled.  Example: `true`.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Consul::Intention",
-    "description": "CloudFormation equivalent of consul_intention",
+    "description": "[Intentions](https://www.consul.io/docs/connect/intentions.html) are used to define\nrules for which services may connect to one another when using [Consul Connect](https://www.consul.io/docs/connect/index.html).\n\nIt is appropriate to either reference existing services or specify non-existent services\nthat will be created in the future when creating intentions. This resource can be used\nin conjunction with the `consul_service` datasource when referencing services\nregistered on nodes that have a running Consul agent.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "Action": {
-            "type": "string"
+            "type": "string",
+            "description": "The intention action. Must be one of `allow` or `deny`."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Optional description that can be used by Consul\ntooling, but is not used internally."
         },
         "DestinationName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the destination service for the intention. This\nservice does not have to exist."
         },
         "Meta": {
             "type": "array",
@@ -35,10 +38,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Key/value pairs that are opaque to Consul and are associated\nwith the intention."
         },
         "SourceName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the source service for the intention. This\nservice does not have to exist."
         }
     },
     "additionalProperties": false,

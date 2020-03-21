@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::WafFalsealarmmaskingRuleV1
 
-CloudFormation equivalent of opentelekomcloud_waf_falsealarmmasking_rule_v1
+Manages a WAF False Alarm Masking Rule resource within OpenTelekomCloud.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### PolicyId
 
+The WAF policy ID. Changing this creates a new rule.
+
 _Required_: Yes
 
 _Type_: String
@@ -43,6 +45,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Rule
 
+Specifies the rule ID, which consists of six digits and cannot be empty. Changing this creates a new rule.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Url
+
+Specifies a misreported URL excluding a domain name. Changing this creates a new rule.
 
 _Required_: Yes
 

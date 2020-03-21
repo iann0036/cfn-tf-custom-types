@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::VCD::VmInternalDisk",
-    "description": "CloudFormation equivalent of vcd_vm_internal_disk",
+    "description": "This can be used to create, update and delete VM internal disks on already created VMs.\n\n~> **Note:** To adjust disk parameters when creating a new VM, please use [override_template_disk](/docs/providers/vcd/r/vapp_vm.html#override-template-disk).\n\nTo manage disks which already exist inside a VM, please [import](#importing) them first.\n\n~> **Note:** Managing disks in VM is possible only when VDC fast provisioned is disabled.\n\nSupported in provider *v2.7+*",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,40 +9,51 @@
             "type": "string"
         },
         "AllowVmReboot": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Powers off VM when changing any attribute of an IDE disk or unit/bus number of other disk types, after the change is complete VM is powered back on. Without this setting enabled, such changes on a powered-on VM would fail. Defaults to false."
         },
         "BusNumber": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of the SCSI or IDE controller itself."
         },
         "BusType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of disk controller. Possible values: `ide`, `parallel`( LSI Logic Parallel SCSI), `sas`(LSI Logic SAS (SCSI)), `paravirtual`(Paravirtual (SCSI)), `sata`."
         },
         "Iops": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the IOPS for the disk. Default is 0."
         },
         "Org": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of organization to use, optional if defined at provider level. Useful when connected as sysadmin working across different organisations."
         },
         "SizeInMb": {
-            "type": "number"
+            "type": "number",
+            "description": "The size of the disk in MB."
         },
         "StorageProfile": {
-            "type": "string"
+            "type": "string",
+            "description": "Storage profile which overrides the VM default one."
         },
         "ThinProvisioned": {
             "type": "boolean"
         },
         "UnitNumber": {
-            "type": "number"
+            "type": "number",
+            "description": "The device number on the SCSI or IDE controller of the disk."
         },
         "VappName": {
-            "type": "string"
+            "type": "string",
+            "description": "The vAPP this VM internal disk belongs to."
         },
         "Vdc": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of VDC to use, optional if defined at provider level."
         },
         "VmName": {
-            "type": "string"
+            "type": "string",
+            "description": "VM in vAPP in which internal disk is created."
         }
     },
     "additionalProperties": false,

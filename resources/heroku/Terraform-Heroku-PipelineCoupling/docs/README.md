@@ -1,6 +1,12 @@
 # Terraform::Heroku::PipelineCoupling
 
-CloudFormation equivalent of heroku_pipeline_coupling
+Provides a [Heroku Pipeline Coupling](https://devcenter.heroku.com/articles/pipelines)
+resource.
+
+A pipeline is a group of Heroku apps that share the same codebase. Once a
+pipeline is created using [`heroku_pipeline`](./pipeline.html), and apps are added
+to different stages using `heroku_pipeline_coupling`, you can promote app slugs
+to the downstream stages.
 
 ## Syntax
 
@@ -33,6 +39,8 @@ Properties:
 
 #### App
 
+The name of the app for this coupling.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +49,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Pipeline
 
+The ID of the pipeline to add this app to.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +58,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Stage
+
+The stage to couple this app to. Must be one of
+`review`, `development`, `staging`, or `production`.
 
 _Required_: Yes
 

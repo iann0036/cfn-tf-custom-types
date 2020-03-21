@@ -1,6 +1,7 @@
 # Terraform::VSphere::Datacenter
 
-CloudFormation equivalent of vsphere_datacenter
+Provides a VMware vSphere datacenter resource. This can be used as the primary
+container of inventory objects such as hosts and virtual machines.
 
 ## Syntax
 
@@ -37,6 +38,11 @@ Properties:
 
 #### CustomAttributes
 
+Map of custom attribute ids to value
+strings to set for datacenter resource. See
+[here][docs-setting-custom-attributes] for a reference on how to set values
+for custom attributes.
+
 _Required_: No
 
 _Type_: List of <a href="customattributes.md">CustomAttributes</a>
@@ -44,6 +50,9 @@ _Type_: List of <a href="customattributes.md">CustomAttributes</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Folder
+
+The folder where the datacenter should be created.
+Forces a new resource if changed.
 
 _Required_: No
 
@@ -53,6 +62,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the datacenter. This name needs to be unique
+within the folder. Forces a new resource if changed.
+
 _Required_: Yes
 
 _Type_: String
@@ -60,6 +72,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+The IDs of any tags to attach to this resource. See
+[here][docs-applying-tags] for a reference on how to apply tags.
 
 _Required_: No
 

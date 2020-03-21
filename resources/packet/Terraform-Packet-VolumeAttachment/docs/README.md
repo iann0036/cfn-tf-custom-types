@@ -1,6 +1,10 @@
 # Terraform::Packet::VolumeAttachment
 
-CloudFormation equivalent of packet_volume_attachment
+Provides attachment of Packet Block Storage Volume to Devices.
+
+Device and volume must be in the same location (facility).
+
+Once attached by Terraform, they must then be mounted using the `packet-block-storage-attach` and `packet-block-storage-detach` scripts, which are presinstalled on most OS images. They can also be found in [https://github.com/packethost/packet-block-storage](https://github.com/packethost/packet-block-storage).
 
 ## Syntax
 
@@ -31,6 +35,8 @@ Properties:
 
 #### DeviceId
 
+The ID of the device to which the volume should be attached.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VolumeId
+
+The ID of the volume to attach.
 
 _Required_: Yes
 

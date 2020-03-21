@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::ManagementGroup",
-    "description": "CloudFormation equivalent of azurerm_management_group",
+    "description": "Manages a Management Group.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,20 +29,24 @@
             "type": "string"
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "A friendly name for this Management Group. If not specified, this'll be the same as the `group_id`."
         },
         "GroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "The UUID for this Management Group, which needs to be unique across your tenant - which will be generated if not provided. Changing this forces a new resource to be created."
         },
         "ParentManagementGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Parent Management Group. Changing this forces a new resource to be created."
         },
         "SubscriptionIds": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of Subscription GUIDs which should be assigned to the Management Group."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

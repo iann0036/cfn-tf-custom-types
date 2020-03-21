@@ -1,6 +1,14 @@
 # Terraform::Packet::PortVlanAttachment
 
-CloudFormation equivalent of packet_port_vlan_attachment
+Provides a resource to attach device ports to VLANs.
+
+Device and VLAN must be in the same facility.
+
+If you need this resource to add the port back to bond on removal, set `force_bond = true`.
+
+To learn more about Layer 2 networking in Packet, refer to
+* https://www.packet.com/resources/guides/layer-2-configurations/ 
+* https://www.packet.com/developers/docs/network/advanced/layer-2/
 
 ## Syntax
 
@@ -37,6 +45,8 @@ Properties:
 
 #### DeviceId
 
+ID of device to be assigned to the VLAN.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ForceBond
+
+Add port back to the bond when this resource is removed. Default is false.
 
 _Required_: No
 
@@ -53,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Native
 
+Mark this VLAN a native VLAN on the port. This can be used only if this assignment assigns second or further VLAN to the port. To ensure that this attachment is not first on a port, you can use `depends_on` pointing to another packet_port_vlan_attachment, just like in the layer2-individual example above.
+
 _Required_: No
 
 _Type_: Boolean
@@ -61,6 +75,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PortName
 
+Name of network port to be assigned to the VLAN.
+
 _Required_: Yes
 
 _Type_: String
@@ -68,6 +84,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VlanVnid
+
+VXLAN Network Identifier, integer.
 
 _Required_: Yes
 

@@ -1,6 +1,11 @@
 # Terraform::VCD::NsxvFirewallRule
 
-CloudFormation equivalent of vcd_nsxv_firewall_rule
+Provides a vCloud Director firewall rule resource for advanced edge gateways (NSX-V). This can be
+used to create, modify, and delete firewall rules. Replaces
+[`vcd_firewall_rules`](/docs/providers/vcd/r/firewall_rules.html) resource.
+
+~> **Note:** This resource requires advanced edge gateway (NSX-V). For non-advanced edge gateways please
+use the [`vcd_firewall_rules`](/docs/providers/vcd/r/firewall_rules.html) resource.
 
 ## Syntax
 
@@ -56,6 +61,10 @@ Properties:
 
 #### AboveRuleId
 
+This can be used to alter default rule placement order. By default
+every rule is appended to the end of firewall rule list. When a value of another rule is set - this
+rule will be placed above the specified rule.
+
 _Required_: No
 
 _Type_: String
@@ -63,6 +72,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Action
+
+Defines if the rule is set to `accept` or `deny` traffic. Default `accept`.
 
 _Required_: No
 
@@ -72,6 +83,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EdgeGateway
 
+The name of the edge gateway on which to apply the firewall rule.
+
 _Required_: Yes
 
 _Type_: String
@@ -79,6 +92,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Enabled
+
+Defines if the rule is enabaled. Default `true`.
 
 _Required_: No
 
@@ -88,6 +103,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LoggingEnabled
 
+Defines if the logging for this rule is enabaled. Default `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -95,6 +112,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Free text name. Can be duplicate.
 
 _Required_: No
 
@@ -104,6 +123,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Org
 
+The name of organization to use, optional if defined at provider level. Useful
+when connected as sysadmin working across different organisations.
+
 _Required_: No
 
 _Type_: String
@@ -111,6 +133,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RuleTag
+
+This can be used to specify user-controlled rule tag. If not specified,
+it will report rule ID after creation. Must be between 65537-131072.
 
 _Required_: No
 
@@ -127,6 +152,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vdc
+
+The name of VDC to use, optional if defined at provider level.
 
 _Required_: No
 

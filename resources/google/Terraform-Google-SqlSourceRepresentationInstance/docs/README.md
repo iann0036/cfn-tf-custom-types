@@ -1,6 +1,18 @@
 # Terraform::Google::SqlSourceRepresentationInstance
 
-CloudFormation equivalent of google_sql_source_representation_instance
+A source representation instance is a Cloud SQL instance that represents
+the source database server to the Cloud SQL replica. It is visible in the
+Cloud Console and appears the same as a regular Cloud SQL instance, but it
+contains no data, requires no configuration or maintenance, and does not
+affect billing. You cannot update the source representation instance.
+
+
+
+<div class = "oics-button" style="float: right; margin: 0 0 -15px">
+  <a href="https://console.cloud.google.com/cloudshell/open?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fterraform-google-modules%2Fdocs-examples.git&cloudshell_working_dir=sql_source_representation_instance_basic&cloudshell_image=gcr.io%2Fgraphite-cloud-shell-images%2Fterraform%3Alatest&open_in_editor=main.tf&cloudshell_print=.%2Fmotd&cloudshell_tutorial=.%2Ftutorial.md" target="_blank">
+    <img alt="Open in Cloud Shell" src="//gstatic.com/cloudssh/images/open-btn.svg" style="max-height: 44px; margin: 32px auto; max-width: 100%;">
+  </a>
+</div>
 
 ## Syntax
 
@@ -72,6 +84,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
 
 _Required_: No
 

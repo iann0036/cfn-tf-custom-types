@@ -1,6 +1,8 @@
 # Terraform::BIGIP::LtmSnatpool
 
-CloudFormation equivalent of bigip_ltm_snatpool
+`bigip_ltm_snatpool` Collections of SNAT translation addresses
+
+Resource should be named with their "full path". The full path is the combination of the partition + name of the resource, for example /Common/my-snatpool.
 
 ## Syntax
 
@@ -32,6 +34,8 @@ Properties:
 
 #### Members
 
+Specifies a translation address to add to or delete from a SNAT pool (at least one address is required).
+
 _Required_: Yes
 
 _Type_: List of String
@@ -39,6 +43,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of the snatpool.
 
 _Required_: Yes
 

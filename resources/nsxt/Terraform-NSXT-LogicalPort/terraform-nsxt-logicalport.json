@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::NSXT::LogicalPort",
-    "description": "CloudFormation equivalent of nsxt_logical_port",
+    "description": "This resource provides a resource to configure a logical port on a logical switch in the NSX system. Like physical switches a logical switch can have one or more ports which can be connected to virtual machines or logical routers.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "SwitchingProfileId": {
@@ -42,16 +42,20 @@
             "type": "string"
         },
         "AdminState": {
-            "type": "string"
+            "type": "string",
+            "description": "Admin state for the logical port. Accepted values - 'UP' or 'DOWN'. The default value is 'UP'."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of this resource."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "Display name, defaults to ID if not set."
         },
         "LogicalSwitchId": {
-            "type": "string"
+            "type": "string",
+            "description": "Logical switch ID for the logical port."
         },
         "Revision": {
             "type": "number"

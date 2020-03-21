@@ -1,6 +1,8 @@
 # Terraform::AzureRM::HpcCache
 
-CloudFormation equivalent of azurerm_hpc_cache
+Manages a HPC Cache.
+
+~> **Note**: During the first several months of the GA release, a request must be made to the Azure HPC Cache team to add your subscription to the access list before it can be used to create a cache instance. Fill out [this form](https://aka.ms/onboard-hpc-cache) to request access.
 
 ## Syntax
 
@@ -41,6 +43,8 @@ Properties:
 
 #### CacheSizeInGb
 
+The size of the HPC Cache, in GB. Possible values are `3072`, `6144`, `12288`, `24576`, and `49152`. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: Double
@@ -48,6 +52,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Location
+
+Specifies the supported Azure Region where the HPC Cache should be created. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -57,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the HPC Cache. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -64,6 +72,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the Resource Group in which to create the HPC Cache. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -73,6 +83,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SkuName
 
+The SKU of HPC Cache to use. Possible values are `Standard_2G`, `Standard_4G` and `Standard_8G`. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -80,6 +92,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubnetId
+
+The ID of the Subnet for the HPC Cache. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

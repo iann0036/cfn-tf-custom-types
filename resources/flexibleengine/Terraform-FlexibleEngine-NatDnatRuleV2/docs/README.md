@@ -41,6 +41,10 @@ Properties:
 
 #### ExternalServicePort
 
+Specifies port used by ECSs or
+BMSs to provide services for external systems.
+Changing this creates a new dnat rule.
+
 _Required_: Yes
 
 _Type_: Double
@@ -48,6 +52,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FloatingIpId
+
+Specifies the ID of the floating IP address.
+Changing this creates a new resource.
 
 _Required_: Yes
 
@@ -57,6 +64,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InternalServicePort
 
+Specifies port used by ECSs or BMSs
+to provide services for external systems. Changing this creates a new resource.
+
 _Required_: Yes
 
 _Type_: Double
@@ -64,6 +74,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NatGatewayId
+
+ID of the nat gateway this dnat rule belongs to.
+Changing this creates a new dnat rule.
 
 _Required_: Yes
 
@@ -73,6 +86,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PortId
 
+Specifies the port ID of an ECS or a BMS.
+This parameter and private_ip are alternative. Changing this creates a
+new dnat rule.
+
 _Required_: No
 
 _Type_: String
@@ -81,6 +98,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PrivateIp
 
+Specifies the private IP address of a
+user, for example, the IP address of a VPC for dedicated connection.
+This parameter and port_id are alternative.
+Changing this creates a new dnat rule.
+
 _Required_: No
 
 _Type_: String
@@ -88,6 +110,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Protocol
+
+Specifies the protocol type. Currently,
+TCP, UDP, and ANY are supported. The protocol number of TCP, UDP,
+and ANY is 6, 17, and 0, respectively.
+Changing this creates a new dnat rule.
 
 _Required_: Yes
 

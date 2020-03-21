@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OVH::PubliccloudPrivateNetwork",
-    "description": "CloudFormation equivalent of ovh_publiccloud_private_network",
+    "description": "~> __DEPRECATED:__ Use [`ovh_cloud_network_private`](./cloud_network_private.html) instead.\n\nCreates a private network in a public cloud project.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,17 +9,20 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the network."
         },
         "ProjectId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the public cloud project. If omitted,\nthe `OVH_PROJECT_ID` environment variable is used."
         },
         "Regions": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "an array of valid OVH public cloud region ID in which the network\nwill be available. Ex.: \"GRA1\". Defaults to all public cloud regions."
         },
         "RegionsStatus": {
             "type": "array",
@@ -44,7 +47,8 @@
             "type": "string"
         },
         "VlanId": {
-            "type": "number"
+            "type": "number",
+            "description": "a vlan id to associate with the network.\nChanging this value recreates the resource. Defaults to 0."
         }
     },
     "additionalProperties": false,

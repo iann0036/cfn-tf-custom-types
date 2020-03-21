@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::SiteRecoveryReplicatedVm",
-    "description": "CloudFormation equivalent of azurerm_site_recovery_replicated_vm",
+    "description": "Manages a VM replicated using Azure Site Recovery (Azure to Azure only). A replicated VM keeps a copiously updated image of the VM in another region in order to be able to start the VM in that region in case of a disaster.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -51,40 +51,51 @@
                         "type": "string"
                     }
                 }
-            }
+            },
+            "description": "One or more `managed_disk` block."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the network mapping."
         },
         "RecoveryReplicationPolicyId": {
             "type": "string"
         },
         "RecoveryVaultName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the vault that should be updated."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the resource group where the vault that should be updated is located."
         },
         "SourceRecoveryFabricName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of fabric that should contains this replication."
         },
         "SourceRecoveryProtectionContainerName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the protection container to use."
         },
         "SourceVmId": {
-            "type": "string"
+            "type": "string",
+            "description": "Id of the VM to replicate."
         },
         "TargetAvailabilitySetId": {
-            "type": "string"
+            "type": "string",
+            "description": "Id of availability set that the new VM should belong to when a failover is done."
         },
         "TargetRecoveryFabricId": {
-            "type": "string"
+            "type": "string",
+            "description": "Id of fabric where the VM replication should be handled when a failover is done."
         },
         "TargetRecoveryProtectionContainerId": {
-            "type": "string"
+            "type": "string",
+            "description": "Id of protection container where the VM replication should be created when a failover is done."
         },
         "TargetResourceGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "Id of resource group where the VM should be created when a failover is done."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

@@ -1,6 +1,13 @@
 # Terraform::Datadog::LogsIntegrationPipeline
 
-CloudFormation equivalent of datadog_logs_integration_pipeline
+Provides a Datadog [Logs Pipeline API](https://docs.datadoghq.com/api/?lang=python#logs-pipelines) resource to manage
+the [integrations](https://docs.datadoghq.com/logs/log_collection/?tab=tcpussite).
+
+Integration pipelines are the pipelines that are automatically installed for your organization when sending the logs with 
+specific sources. You don't need to maintain or update these types of pipelines. Keeping them as resources, however, 
+allows you to manage the order of your pipelines by referencing them in your 
+[datadog_logs_pipeline_order](logs_pipeline_order.html#datadog_logs_pipeline_order) resource. If you don't need the
+`pipeline_order` feature, this resource declaration can be omitted.
 
 ## Syntax
 
@@ -28,6 +35,8 @@ Properties:
 ## Properties
 
 #### IsEnabled
+
+Boolean value to enable your pipeline.
 
 _Required_: No
 

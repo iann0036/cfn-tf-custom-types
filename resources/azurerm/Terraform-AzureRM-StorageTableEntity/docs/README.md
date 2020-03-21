@@ -1,6 +1,6 @@
 # Terraform::AzureRM::StorageTableEntity
 
-CloudFormation equivalent of azurerm_storage_table_entity
+Manages an Entity within a Table in an Azure Storage Account.
 
 ## Syntax
 
@@ -40,6 +40,8 @@ Properties:
 
 #### Entity
 
+A map of key/value pairs that describe the entity to be inserted/merged in to the storage table.
+
 _Required_: Yes
 
 _Type_: List of <a href="entity.md">Entity</a>
@@ -47,6 +49,8 @@ _Type_: List of <a href="entity.md">Entity</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PartitionKey
+
+The key for the partition where the entity will be inserted/merged. Changing this forces a new resource.
 
 _Required_: Yes
 
@@ -56,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RowKey
 
+The key for the row where the entity will be inserted/merged. Changing this forces a new resource.
+
 _Required_: Yes
 
 _Type_: String
@@ -64,6 +70,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StorageAccountName
 
+Specifies the storage account in which to create the storage table entity.
+Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -71,6 +80,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TableName
+
+The name of the storage table in which to create the storage table entity.
+Changing this forces a new resource to be created.
 
 _Required_: Yes
 

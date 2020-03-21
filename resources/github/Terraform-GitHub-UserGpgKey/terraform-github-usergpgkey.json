@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::GitHub::UserGpgKey",
-    "description": "CloudFormation equivalent of github_user_gpg_key",
+    "description": "Provides a GitHub user's GPG key resource.\n\nThis resource allows you to add/remove GPG keys from your user account.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "ArmoredPublicKey": {
-            "type": "string"
+            "type": "string",
+            "description": "Your public GPG key, generated in ASCII-armored format.\nSee [Generating a new GPG key](https://help.github.com/articles/generating-a-new-gpg-key/) for help on creating a GPG key."
         },
         "Etag": {
             "type": "string"

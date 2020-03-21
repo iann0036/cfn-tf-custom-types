@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::ComputeBackendBucketSignedUrlKey",
-    "description": "CloudFormation equivalent of google_compute_backend_bucket_signed_url_key",
+    "description": "A key for signing Cloud CDN signed URLs for BackendBuckets.\n\n\nTo get more information about BackendBucketSignedUrlKey, see:\n\n* [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/backendBuckets)\n* How-to Guides\n    * [Using Signed URLs](https://cloud.google.com/cdn/docs/using-signed-urls/)\n\n~> **Warning:** All arguments including the key's value will be stored in the raw\nstate as plain-text. [Read more about sensitive data in state](/docs/state/sensitive-data.html).\nBecause the API does not return the sensitive key value,\nwe cannot confirm or reverse changes to a key outside of Terraform.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -32,7 +32,8 @@
             "type": "string"
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

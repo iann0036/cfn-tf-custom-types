@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Circonus::RuleSetGroup",
-    "description": "CloudFormation equivalent of circonus_rule_set_group",
+    "description": "The ``circonus_rule_set_group`` resource creates and manages a\n[Circonus Rule Set Group](https://login.circonus.com/resources/api/calls/rule_set_group).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Condition": {
@@ -96,7 +96,8 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the rule set group, must be unique across\nall rule set groups within the account."
         },
         "Tags": {
             "type": "array",

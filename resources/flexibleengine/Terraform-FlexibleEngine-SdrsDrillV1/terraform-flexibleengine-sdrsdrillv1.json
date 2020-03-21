@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::FlexibleEngine::SdrsDrillV1",
-    "description": "CloudFormation equivalent of flexibleengine_sdrs_drill_v1",
+    "description": "Manages a Disaster Recovery Drill resource within FlexibleEngine.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,13 +23,16 @@
             "type": "string"
         },
         "DrillVpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the ID used for a DR drill. Changing this creates a new drill."
         },
         "GroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the ID of a protection group. Changing this creates a new drill."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of a DR drill. The name can contain a maximum of 64 bytes.\nThe value can contain only letters (a to z and A to Z), digits (0 to 9), decimal points (.),\nunderscores (_), and hyphens (-)."
         },
         "Status": {
             "type": "string"

@@ -1,6 +1,10 @@
 # Terraform::Google::ComputeTargetPool
 
-CloudFormation equivalent of google_compute_target_pool
+Manages a Target Pool within GCE. This is a collection of instances used as
+target of a network load balancer (Forwarding Rule). For more information see
+[the official
+documentation](https://cloud.google.com/compute/docs/load-balancing/network/target-pools)
+and [API](https://cloud.google.com/compute/docs/reference/latest/targetPools).
 
 ## Syntax
 
@@ -47,6 +51,9 @@ Properties:
 
 #### BackupPool
 
+URL to the backup target pool. Must also set
+failover\_ratio.
+
 _Required_: No
 
 _Type_: String
@@ -54,6 +61,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Textual description field.
 
 _Required_: No
 
@@ -63,6 +72,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FailoverRatio
 
+Ratio (0 to 1) of failed nodes before using the
+backup pool (which must also be set).
+
 _Required_: No
 
 _Type_: Double
@@ -70,6 +82,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HealthChecks
+
+List of zero or one health check name or self_link. Only
+legacy `google_compute_http_health_check` is supported.
 
 _Required_: No
 
@@ -79,6 +94,12 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Instances
 
+List of instances in the pool. They can be given as
+URLs, or in the form of "zone/name". Note that the instances need not exist
+at the time of target pool creation, so there is no need to use the
+Terraform interpolators to create a dependency on the instances from the
+target pool.
+
 _Required_: No
 
 _Type_: List of String
@@ -86,6 +107,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+A unique name for the resource, required by GCE. Changing
+this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -95,6 +119,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Project
 
+The ID of the project in which the resource belongs. If it
+is not provided, the provider project is used.
+
 _Required_: No
 
 _Type_: String
@@ -103,6 +130,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+Where the target pool resides. Defaults to project
+region.
+
 _Required_: No
 
 _Type_: String
@@ -110,6 +140,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SessionAffinity
+
+How to distribute load. Options are "NONE" (no
+affinity). "CLIENT\_IP" (hash of the source/dest addresses / ports), and
+"CLIENT\_IP\_PROTO" also includes the protocol (default "NONE").
 
 _Required_: No
 

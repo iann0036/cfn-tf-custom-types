@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::GaapDomainErrorPage",
-    "description": "CloudFormation equivalent of tencentcloud_gaap_domain_error_page",
+    "description": "Provide a resource to custom error page info for a GAAP HTTP domain.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,30 +9,36 @@
             "type": "string"
         },
         "Body": {
-            "type": "string"
+            "type": "string",
+            "description": "New response body."
         },
         "ClearHeaders": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Response headers to be removed."
         },
         "Domain": {
-            "type": "string"
+            "type": "string",
+            "description": "HTTP domain."
         },
         "ErrorCodes": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "number"
-            }
+            },
+            "description": "Original error codes."
         },
         "ListenerId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the layer7 listener."
         },
         "NewErrorCode": {
-            "type": "number"
+            "type": "number",
+            "description": "New error code."
         },
         "SetHeaders": {
             "type": "array",
@@ -52,7 +58,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Response headers to be set."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,8 @@
 # Terraform::OCI::LoadBalancerBackend
 
-CloudFormation equivalent of oci_load_balancer_backend
+This resource provides the Backend resource in Oracle Cloud Infrastructure Load Balancer service.
+
+Adds a backend server to a backend set.
 
 ## Syntax
 
@@ -45,6 +47,8 @@ Properties:
 
 #### BackendsetName
 
+The name of the backend set to add the backend server to.  Example: `example_backend_set`.
+
 _Required_: Yes
 
 _Type_: String
@@ -52,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Backup
+
+(Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
 
 _Required_: No
 
@@ -61,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Drain
 
+(Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -68,6 +76,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IpAddress
+
+The IP address of the backend server.  Example: `10.0.0.3`.
 
 _Required_: Yes
 
@@ -77,6 +87,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LoadBalancerId
 
+The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
+
 _Required_: Yes
 
 _Type_: String
@@ -84,6 +96,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Offline
+
+(Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`.
 
 _Required_: No
 
@@ -93,6 +107,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Port
 
+The communication port for the backend server.  Example: `8080`.
+
 _Required_: Yes
 
 _Type_: Double
@@ -100,6 +116,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Weight
+
+(Updatable) The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureStack::TemplateDeployment",
-    "description": "CloudFormation equivalent of azurestack_template_deployment",
+    "description": "Manages a template deployment of resources\n\n~> **Note on ARM Template Deployments:** Due to the way the underlying Azure API is designed, Terraform can only manage the deployment of the ARM Template - and not any resources which are created by it.\nThis means that when deleting the `azurestack_template_deployment` resource, Terraform will only remove the reference to the deployment, whilst leaving any resources created by that ARM Template Deployment.\nOne workaround for this is to use a unique Resource Group for each ARM Template Deployment, which means deleting the Resource Group would contain any resources created within it - however this isn't ideal. [More information](https://docs.microsoft.com/en-us/rest/api/resources/deployments#Deployments_Delete).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "DeploymentMode": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the mode that is used to deploy resources. This value could be either `Incremental` or `Complete`.\nNote that you will almost *always* want this to be set to `Incremental` otherwise the deployment will destroy all infrastructure not\nspecified within the template, and Terraform will not be aware of this."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the template deployment. Changing this forces a\nnew resource to be created."
         },
         "Outputs": {
             "type": "array",
@@ -52,16 +54,20 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Specifies the name and value pairs that define the deployment parameters for the template."
         },
         "ParametersBody": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies a valid Azure JSON parameters file that define the deployment parameters. It can contain KeyVault references."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to\ncreate the template deployment."
         },
         "TemplateBody": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the JSON definition for the template."
         }
     },
     "additionalProperties": false,

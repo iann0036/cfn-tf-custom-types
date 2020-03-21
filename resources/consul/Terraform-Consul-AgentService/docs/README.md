@@ -1,6 +1,12 @@
 # Terraform::Consul::AgentService
 
-CloudFormation equivalent of consul_agent_service
+!> The `consul_agent_service` resource has been deprecated in version 2.0.0 of the provider
+and will be removed in a future release. Please read the [upgrade guide](/docs/providers/consul/guides/upgrading.html#deprecation-of-consul_agent_service)
+for more information.
+
+Provides access to the agent service data in Consul. This can be used to
+define a service associated with a particular agent. Currently, defining
+health checks for an agent service is not supported.
 
 ## Syntax
 
@@ -36,6 +42,9 @@ Properties:
 
 #### Address
 
+The address of the service. Defaults to the
+address of the agent.
+
 _Required_: No
 
 _Type_: String
@@ -43,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the service.
 
 _Required_: Yes
 
@@ -52,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Port
 
+The port of the service.
+
 _Required_: No
 
 _Type_: Double
@@ -59,6 +72,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A list of values that are opaque to Consul,
+but can be used to distinguish between services or nodes.
 
 _Required_: No
 

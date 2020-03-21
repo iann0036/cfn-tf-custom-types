@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::StreamAnalyticsReferenceInputBlob",
-    "description": "CloudFormation equivalent of azurerm_stream_analytics_reference_input_blob",
+    "description": "Manages a Stream Analytics Reference Input Blob. Reference data (also known as a lookup table) is a finite data set that is static or slowly changing in nature, used to perform a lookup or to correlate with your data stream. Learn more [here](https://docs.microsoft.com/en-us/azure/stream-analytics/stream-analytics-use-reference-data#azure-blob-storage).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Serialization": {
@@ -8,13 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "Encoding": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The encoding of the incoming data in the case of input and the encoding of outgoing data in the case of output. It currently can only be set to `UTF8`."
                 },
                 "FieldDelimiter": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The delimiter that will be used to separate comma-separated value (CSV) records. Possible values are ` ` (space), `,` (comma), `\t` (tab), `|` (pipe) and `;`."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The serialization format used for the reference data. Possible values are `Avro`, `Csv` and `Json`."
                 }
             },
             "required": [
@@ -47,31 +50,40 @@
             "type": "string"
         },
         "DateFormat": {
-            "type": "string"
+            "type": "string",
+            "description": "The date format. Wherever `{date}` appears in `path_pattern`, the value of this property is used as the date format instead."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Reference Input Blob. Changing this forces a new resource to be created."
         },
         "PathPattern": {
-            "type": "string"
+            "type": "string",
+            "description": "The blob path pattern. Not a regular expression. It represents a pattern against which blob names will be matched to determine whether or not they should be included as input or output to the job."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Resource Group where the Stream Analytics Job exists. Changing this forces a new resource to be created."
         },
         "StorageAccountKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The Access Key which should be used to connect to this Storage Account."
         },
         "StorageAccountName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Storage Account that has the blob container with reference data."
         },
         "StorageContainerName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Container within the Storage Account."
         },
         "StreamAnalyticsJobName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Stream Analytics Job. Changing this forces a new resource to be created."
         },
         "TimeFormat": {
-            "type": "string"
+            "type": "string",
+            "description": "The time format. Wherever `{time}` appears in `path_pattern`, the value of this property is used as the time format instead."
         },
         "Serialization": {
             "type": "array",

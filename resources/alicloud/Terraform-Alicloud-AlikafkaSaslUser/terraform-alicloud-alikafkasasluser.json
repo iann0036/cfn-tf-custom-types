@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::AlikafkaSaslUser",
-    "description": "CloudFormation equivalent of alicloud_alikafka_sasl_user",
+    "description": "Provides an ALIKAFKA sasl user resource.\n\n-> **NOTE:** Available in 1.66.0+\n\n-> **NOTE:**  Only the following regions support create alikafka sasl user.\n[`cn-hangzhou`,`cn-beijing`,`cn-shenzhen`,`cn-shanghai`,`cn-qingdao`,`cn-hongkong`,`cn-huhehaote`,`cn-zhangjiakou`,`ap-southeast-1`,`ap-south-1`,`ap-southeast-5`]",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "InstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the ALIKAFKA Instance that owns the groups."
         },
         "KmsEncryptedPassword": {
-            "type": "string"
+            "type": "string",
+            "description": "An KMS encrypts password used to a db account. You have to specify one of `password` and `kms_encrypted_password` fields."
         },
         "KmsEncryptionContext": {
             "type": "array",
@@ -32,13 +34,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "An KMS encryption context used to decrypt `kms_encrypted_password` before creating or updating a user with `kms_encrypted_password`. See [Encryption Context](https://www.alibabacloud.com/help/doc-detail/42975.htm). It is valid when `kms_encrypted_password` is set."
         },
         "Password": {
-            "type": "string"
+            "type": "string",
+            "description": "Operation password. It may consist of letters, digits, or underlines, with a length of 1 to 64 characters. You have to specify one of `password` and `kms_encrypted_password` fields."
         },
         "Username": {
-            "type": "string"
+            "type": "string",
+            "description": "Username for the sasl user. The length should between 1 to 64 characters. The characters can only contain 'a'-'z', 'A'-'Z', '0'-'9', '_' and '-'."
         }
     },
     "additionalProperties": false,

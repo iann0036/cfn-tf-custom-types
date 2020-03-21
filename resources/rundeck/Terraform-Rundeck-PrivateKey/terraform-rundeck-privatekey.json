@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Rundeck::PrivateKey",
-    "description": "CloudFormation equivalent of rundeck_private_key",
+    "description": "The private key resource allows SSH private keys to be stored into Rundeck's key store.\nThe key store is where Rundeck keeps credentials that are needed to access the nodes on which\nit runs commands.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "KeyMaterial": {
-            "type": "string"
+            "type": "string",
+            "description": "The private key material to store, serialized in any way that is\naccepted by OpenSSH."
         },
         "Path": {
-            "type": "string"
+            "type": "string",
+            "description": "The path within the key store where the key will be stored."
         }
     },
     "additionalProperties": false,

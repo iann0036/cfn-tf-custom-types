@@ -1,6 +1,6 @@
 # Terraform::BIGIP::SysSnmp
 
-CloudFormation equivalent of bigip_sys_snmp
+`bigip_sys_snmp` provides details bout how to enable "ilx", "asm" "apm" resource on BIG-IP
 
 ## Syntax
 
@@ -34,6 +34,8 @@ Properties:
 
 #### Allowedaddresses
 
+Configures hosts or networks from which snmpd can accept traffic. Entries go directly into hosts.allow.
+
 _Required_: No
 
 _Type_: List of String
@@ -42,6 +44,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SysContact
 
+Specifies the contact information for the system administrator.
+
 _Required_: No
 
 _Type_: String
@@ -49,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SysLocation
+
+Describes the system's physical location.
 
 _Required_: No
 

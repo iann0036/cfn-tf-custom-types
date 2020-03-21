@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OraclePaaS::JavaAccessRule",
-    "description": "CloudFormation equivalent of oraclepaas_java_access_rule",
+    "description": "The `oraclepaas_java_access_rule` resource creates and manages an Access Rule for an Java Cloud service instance.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,28 +23,36 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the Access Rule."
         },
         "Destination": {
-            "type": "string"
+            "type": "string",
+            "description": "Destination to which traffic is allowed. Valid values include `WLS_ADMIN`, `WLS_ADMIN_SERVER`, `OTD_ADMIN_HOST`, `OTD`."
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Determines whether the access rule is enabled. Default is `true`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Access Rule."
         },
         "Ports": {
-            "type": "string"
+            "type": "string",
+            "description": "The port or range of ports to allow traffic on."
         },
         "Protocol": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the communication protocol. Valid values are `tcp` or `udp`.\nDefault is `tcp`."
         },
         "ServiceInstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the java service instance to attach\nthe access rule to."
         },
         "Source": {
-            "type": "string"
+            "type": "string",
+            "description": "The IP addresses and subnets from which traffic is allowed. Valid values include `WLS_ADMIN`, `WLS_ADMIN_SERVER`,\n`WLS_MANAGED_SERVER`, `OTD_ADMIN_HOST`, `OTD`, or a single IP address or comma-separated list of subnets (in CIDR format) or IPv4 addresses."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

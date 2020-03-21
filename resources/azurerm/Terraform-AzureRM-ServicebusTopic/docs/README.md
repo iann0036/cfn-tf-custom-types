@@ -1,6 +1,8 @@
 # Terraform::AzureRM::ServicebusTopic
 
-CloudFormation equivalent of azurerm_servicebus_topic
+Manages a ServiceBus Topic.
+
+**Note** Topics can only be created in Namespaces with an SKU of `standard` or higher.
 
 ## Syntax
 
@@ -55,6 +57,9 @@ Properties:
 
 #### AutoDeleteOnIdle
 
+The ISO 8601 timespan duration of the idle interval after which the
+Topic is automatically deleted, minimum of 5 minutes.
+
 _Required_: No
 
 _Type_: String
@@ -62,6 +67,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefaultMessageTtl
+
+The ISO 8601 timespan duration of TTL of messages sent to this topic if no
+TTL value is set on the message itself.
 
 _Required_: No
 
@@ -71,6 +79,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DuplicateDetectionHistoryTimeWindow
 
+The ISO 8601 timespan duration during which
+duplicates can be detected. Defaults to 10 minutes. (`PT10M`).
+
 _Required_: No
 
 _Type_: String
@@ -78,6 +89,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableBatchedOperations
+
+Boolean flag which controls if server-side
+batched operations are enabled. Defaults to false.
 
 _Required_: No
 
@@ -87,6 +101,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableExpress
 
+Boolean flag which controls whether Express Entities
+are enabled. An express topic holds a message in memory temporarily before writing
+it to persistent storage. Defaults to false.
+
 _Required_: No
 
 _Type_: Boolean
@@ -94,6 +112,10 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnablePartitioning
+
+Boolean flag which controls whether to enable
+the topic to be partitioned across multiple message brokers. Defaults to false.
+Changing this forces a new resource to be created.
 
 _Required_: No
 
@@ -103,6 +125,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxSizeInMegabytes
 
+Integer value which controls the size of
+memory allocated for the topic. For supported values see the "Queue/topic size"
+section of [this document](https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-quotas).
+
 _Required_: No
 
 _Type_: Double
@@ -110,6 +136,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the ServiceBus Topic resource. Changing this forces a
+new resource to be created.
 
 _Required_: Yes
 
@@ -119,6 +148,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NamespaceName
 
+The name of the ServiceBus Namespace to create
+this topic in. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -126,6 +158,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RequiresDuplicateDetection
+
+Boolean flag which controls whether
+the Topic requires duplicate detection. Defaults to false. Changing this forces
+a new resource to be created.
 
 _Required_: No
 
@@ -135,6 +171,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to
+create the namespace. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -143,6 +182,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Status
 
+The Status of the Service Bus Topic. Acceptable values are `Active` or `Disabled`. Defaults to `Active`.
+
 _Required_: No
 
 _Type_: String
@@ -150,6 +191,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SupportOrdering
+
+Boolean flag which controls whether the Topic
+supports ordering. Defaults to false.
 
 _Required_: No
 

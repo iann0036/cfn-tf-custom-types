@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Random::Uuid",
-    "description": "CloudFormation equivalent of random_uuid",
+    "description": "The resource `random_uuid` generates random uuid string that is intended to be\nused as unique identifiers for other resources.\n\nThis resource uses the `hashicorp/go-uuid` to generate a UUID-formatted string\nfor use with services needed a unique string identifier.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -26,7 +26,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Arbitrary map of values that, when changed, will\ntrigger a new uuid to be generated. See\n[the main provider documentation](../index.html) for more information."
         },
         "Result": {
             "type": "string"

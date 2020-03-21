@@ -1,6 +1,6 @@
 # Terraform::Bitbucket::DefaultReviewers
 
-CloudFormation equivalent of bitbucket_default_reviewers
+Provides support for setting up default reviewers for your repository. You must however have the UUID of the user available. Since Bitbucket has removed usernames from its APIs the best case is to use the UUID via the data provider.
 
 ## Syntax
 
@@ -34,6 +34,9 @@ Properties:
 
 #### Owner
 
+The owner of this repository. Can be you or any team you
+have write access to.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +45,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Repository
 
+The name of the repository.
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Reviewers
+
+A list of reviewers to use.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::DNS::AaaaRecordSet",
-    "description": "CloudFormation equivalent of dns_aaaa_record_set",
+    "description": "Creates a AAAA type DNS record set.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -13,16 +13,20 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The IPv6 addresses this record set will point to."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the record set. The `zone` argument will be appended to this value to create the full record path."
         },
         "Ttl": {
-            "type": "number"
+            "type": "number",
+            "description": "The TTL of the record set. Defaults to `3600`."
         },
         "Zone": {
-            "type": "string"
+            "type": "string",
+            "description": "DNS zone the record set belongs to. It must be an FQDN, that is, include the trailing dot."
         }
     },
     "additionalProperties": false,

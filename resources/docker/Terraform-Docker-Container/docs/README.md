@@ -1,6 +1,6 @@
 # Terraform::Docker::Container
 
-CloudFormation equivalent of docker_container
+Manages the lifecycle of a Docker container.
 
 ## Syntax
 
@@ -162,6 +162,8 @@ Properties:
 
 #### Attach
 
+If true attach to the container after its creation and waits the end of his execution.
+
 _Required_: No
 
 _Type_: Boolean
@@ -169,6 +171,10 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Command
+
+The command to use to start the
+container. For example, to run `/usr/bin/myprogram -f baz.conf` set the
+command to be `["/usr/bin/myprogram", "-f", "baz.conf"]`.
 
 _Required_: No
 
@@ -178,6 +184,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CpuSet
 
+A comma-separated list or hyphen-separated range of CPUs a container can use, e.g. `0-1`.
+
 _Required_: No
 
 _Type_: String
@@ -185,6 +193,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CpuShares
+
+CPU shares (relative weight) for the container.
 
 _Required_: No
 
@@ -194,6 +204,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DestroyGraceSeconds
 
+If defined will attempt to stop the container before destroying. Container will be destroyed after `n` seconds or on successful stop.
+
 _Required_: No
 
 _Type_: Double
@@ -201,6 +213,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Dns
+
+Set of DNS servers.
 
 _Required_: No
 
@@ -210,6 +224,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DnsOpts
 
+Set of DNS options used by the DNS provider(s), see `resolv.conf` documentation for valid list of options.
+
 _Required_: No
 
 _Type_: List of String
@@ -217,6 +233,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DnsSearch
+
+Set of DNS search domains that are used when bare unqualified hostnames are used inside of the container.
 
 _Required_: No
 
@@ -226,6 +244,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Domainname
 
+Domain name of the container.
+
 _Required_: No
 
 _Type_: String
@@ -233,6 +253,12 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Entrypoint
+
+The command to use as the
+Entrypoint for the container. The Entrypoint allows you to configure a
+container to run as an executable. For example, to run `/usr/bin/myprogram`
+when starting a container, set the entrypoint to be
+`["/usr/bin/myprogram"]`.
 
 _Required_: No
 
@@ -242,6 +268,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Env
 
+Environment variables to set.
+
 _Required_: No
 
 _Type_: List of String
@@ -249,6 +277,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GroupAdd
+
+Add additional groups to run as.
 
 _Required_: No
 
@@ -258,6 +288,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Hostname
 
+Hostname of the container.
+
 _Required_: No
 
 _Type_: String
@@ -265,6 +297,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Image
+
+The ID of the image to back this container.
+The easiest way to get this value is to use the `docker_image` resource
+as is shown in the example above.
 
 _Required_: Yes
 
@@ -274,6 +310,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IpcMode
 
+IPC sharing mode for the container. Possible values are: `none`, `private`, `shareable`, `container:<name|id>` or `host`.
+
 _Required_: No
 
 _Type_: String
@@ -281,6 +319,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Links
+
+Set of links for link based
+connectivity between containers that are running on the same host.
 
 _Required_: No
 
@@ -290,6 +331,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LogDriver
 
+The logging driver to use for the container.
+Defaults to "json-file".
+
 _Required_: No
 
 _Type_: String
@@ -297,6 +341,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LogOpts
+
+Key/value pairs to use as options for
+the logging driver.
 
 _Required_: No
 
@@ -306,6 +353,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Logs
 
+Save the container logs (`attach` must be enabled).
+
 _Required_: No
 
 _Type_: Boolean
@@ -313,6 +362,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MaxRetryCount
+
+The maximum amount of times to an attempt
+a restart when `restart` is set to "on-failure".
 
 _Required_: No
 
@@ -322,6 +374,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Memory
 
+The memory limit for the container in MBs.
+
 _Required_: No
 
 _Type_: Double
@@ -329,6 +383,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MemorySwap
+
+The total memory limit (memory + swap) for the
+container in MBs. This setting may compute to `-1` after `terraform apply` if the target host doesn't support memory swap, when that is the case docker will use a soft limitation.
 
 _Required_: No
 
@@ -338,6 +395,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MustRun
 
+If true, then the Docker container will be
+kept running. If false, then as long as the container exists, Terraform
+assumes it is successful.
+
 _Required_: No
 
 _Type_: Boolean
@@ -345,6 +406,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the Docker container.
 
 _Required_: Yes
 
@@ -354,6 +417,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NetworkAlias
 
+Network aliases of the container for user-defined networks only. *Deprecated:* use `networks_advanced` instead.
+
 _Required_: No
 
 _Type_: List of String
@@ -361,6 +426,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NetworkMode
+
+Network mode of the container.
 
 _Required_: No
 
@@ -370,6 +437,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Networks
 
+Id of the networks in which the
+container is. *Deprecated:* use `networks_advanced` instead.
+
 _Required_: No
 
 _Type_: List of String
@@ -377,6 +447,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PidMode
+
+The PID (Process) Namespace mode for the container. Either `container:<name|id>` or `host`.
 
 _Required_: No
 
@@ -386,6 +458,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Privileged
 
+Run container in privileged mode.
+
 _Required_: No
 
 _Type_: Boolean
@@ -393,6 +467,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PublishAllPorts
+
+Publish all ports of the container.
 
 _Required_: No
 
@@ -402,6 +478,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ReadOnly
 
+If true, the container will be started as readonly.
+
 _Required_: No
 
 _Type_: Boolean
@@ -409,6 +487,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Restart
+
+The restart policy for the container. Must be
+one of "no", "on-failure", "always", "unless-stopped".
 
 _Required_: No
 
@@ -418,6 +499,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Rm
 
+If true, then the container will be automatically removed after his execution. Terraform
+won't check this container after creation.
+
 _Required_: No
 
 _Type_: Boolean
@@ -425,6 +509,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ShmSize
+
+Size of `/dev/shm` in MBs.
 
 _Required_: No
 
@@ -434,6 +520,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Start
 
+If true, then the Docker container will be
+started after creation. If false, then the container is only created.
+
 _Required_: No
 
 _Type_: Boolean
@@ -441,6 +530,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Sysctls
+
+A map of kernel parameters (sysctls) to set in the container.
 
 _Required_: No
 
@@ -450,6 +541,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tmpfs
 
+A map of container directories which should be replaced by `tmpfs mounts`, and their corresponding mount options.
+
 _Required_: No
 
 _Type_: List of <a href="tmpfs.md">Tmpfs</a>
@@ -457,6 +550,10 @@ _Type_: List of <a href="tmpfs.md">Tmpfs</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### User
+
+User used for run the first process. Format is
+`user` or `user:group` which user and group can be passed literraly or
+by name.
 
 _Required_: No
 
@@ -466,6 +563,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UsernsMode
 
+Sets the usernamespace mode for the container when usernamespace remapping option is enabled.
+
 _Required_: No
 
 _Type_: String
@@ -473,6 +572,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WorkingDir
+
+The working directory for commands to run in.
 
 _Required_: No
 

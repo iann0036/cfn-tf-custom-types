@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::DbConnection",
-    "description": "CloudFormation equivalent of alicloud_db_connection",
+    "description": "Provides an RDS connection resource to allocate an Internet connection string for RDS instance.\n\n-> **NOTE:** Each RDS instance will allocate a intranet connnection string automatically and its prifix is RDS instance ID.\n To avoid unnecessary conflict, please specified a internet connection prefix before applying the resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,19 +9,22 @@
             "type": "string"
         },
         "ConnectionPrefix": {
-            "type": "string"
+            "type": "string",
+            "description": "Prefix of an Internet connection string. It must be checked for uniqueness. It may consist of lowercase letters, numbers, and underlines, and must start with a letter and have no more than 30 characters. Default to <instance_id> + 'tf'."
         },
         "ConnectionString": {
             "type": "string"
         },
         "InstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Id of instance that can run database."
         },
         "IpAddress": {
             "type": "string"
         },
         "Port": {
-            "type": "string"
+            "type": "string",
+            "description": "Internet connection port. Valid value: [3001-3999]. Default to 3306."
         }
     },
     "additionalProperties": false,

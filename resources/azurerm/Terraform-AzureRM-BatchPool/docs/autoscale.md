@@ -24,6 +24,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### EvaluationInterval
 
+The interval to wait before evaluating if the pool needs to be scaled. Defaults to `PT15M`.
+
 _Required_: No
 
 _Type_: String
@@ -31,6 +33,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Formula
+
+The autoscale formula that needs to be used for scaling the Batch pool.
 
 _Required_: Yes
 

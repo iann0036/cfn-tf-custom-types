@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::IntegrationIntegrationInstance",
-    "description": "CloudFormation equivalent of oci_integration_integration_instance",
+    "description": "This resource provides the Integration Instance resource in Oracle Cloud Infrastructure Integration service.\n\nCreates a new Integration Instance.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,7 +26,8 @@
             "type": "string"
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) Compartment Identifier."
         },
         "DefinedTags": {
             "type": "array",
@@ -46,10 +47,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{\"foo-namespace.bar-key\": \"value\"}`."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) Integration Instance Identifier."
         },
         "FreeformTags": {
             "type": "array",
@@ -69,22 +72,27 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{\"bar-key\": \"value\"}`."
         },
         "IdcsAt": {
-            "type": "string"
+            "type": "string",
+            "description": "IDCS Authentication token. This is is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter."
         },
         "InstanceUrl": {
             "type": "string"
         },
         "IntegrationInstanceType": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) Standard or Enterprise type."
         },
         "IsByol": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "(Updatable) Bring your own license."
         },
         "MessagePacks": {
-            "type": "number"
+            "type": "number",
+            "description": "(Updatable) The number of configured message packs."
         },
         "State": {
             "type": "string"

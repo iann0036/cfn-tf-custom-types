@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HuaweiCloud::CtsTrackerV1",
-    "description": "CloudFormation equivalent of huaweicloud_cts_tracker_v1",
+    "description": "Allows you to collect, store, and query cloud resource operation records.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,30 +23,36 @@
             "type": "string"
         },
         "BucketName": {
-            "type": "string"
+            "type": "string",
+            "description": "The OBS bucket name for a tracker."
         },
         "FilePrefixName": {
-            "type": "string"
+            "type": "string",
+            "description": "The prefix of a log that needs to be stored in an OBS bucket."
         },
         "IsSendAllKeyOperation": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "When the value is **false**, operations cannot be left empty."
         },
         "IsSupportSmn": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether SMN is supported. When the value is false, topic_id and operations can be left empty."
         },
         "NeedNotifyUserList": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The users using the login function. When these users log in, notifications will be sent."
         },
         "Operations": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Trigger conditions for sending a notification."
         },
         "Region": {
             "type": "string"
@@ -55,7 +61,8 @@
             "type": "string"
         },
         "TopicId": {
-            "type": "string"
+            "type": "string",
+            "description": "The theme of the SMN service, Is obtained from SMN and in the format of **urn:smn:([a-z]|[A-Z]|[0-9]|\\-){1,32}:([a-z]|[A-Z]|[0-9]){32}:([a-z]|[A-Z]|[0-9]|\\-|\\_){1,256}**."
         },
         "TrackerName": {
             "type": "string"

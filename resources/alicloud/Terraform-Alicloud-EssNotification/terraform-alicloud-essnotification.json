@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::EssNotification",
-    "description": "CloudFormation equivalent of alicloud_ess_notification",
+    "description": "Provides a ESS notification resource. More about Ess notification, see [Autoscaling Notification](https://www.alibabacloud.com/help/doc-detail/71114.htm).\n\n-> **NOTE:** Available in 1.55.0+",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,17 +9,20 @@
             "type": "string"
         },
         "NotificationArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The Alibaba Cloud Resource Name (ARN) for the notification object. The format of `notification_arn` is acs:ess:{region}:{account-id}:{resource-relative-id}. Valid values for `resource-relative-id`: 'cloudmonitor', 'queue/', 'topic/'."
         },
         "NotificationTypes": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The notification types of Auto Scaling events and resource changes. Supported notification types: 'AUTOSCALING:SCALE_OUT_SUCCESS', 'AUTOSCALING:SCALE_IN_SUCCESS', 'AUTOSCALING:SCALE_OUT_ERROR', 'AUTOSCALING:SCALE_IN_ERROR', 'AUTOSCALING:SCALE_REJECT', 'AUTOSCALING:SCALE_OUT_START', 'AUTOSCALING:SCALE_IN_START', 'AUTOSCALING:SCHEDULE_TASK_EXPIRING'."
         },
         "ScalingGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Auto Scaling group."
         }
     },
     "additionalProperties": false,

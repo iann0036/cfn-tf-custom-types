@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::EssScalingRule",
-    "description": "CloudFormation equivalent of alicloud_ess_scaling_rule",
+    "description": "Provides a ESS scaling rule resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "StepAdjustment": {
@@ -26,37 +26,47 @@
             "type": "string"
         },
         "AdjustmentType": {
-            "type": "string"
+            "type": "string",
+            "description": "Adjustment mode of a scaling rule. Optional values:\n- QuantityChangeInCapacity: It is used to increase or decrease a specified number of ECS instances.\n- PercentChangeInCapacity: It is used to increase or decrease a specified proportion of ECS instances.\n- TotalCapacity: It is used to adjust the quantity of ECS instances in the current scaling group to a specified value."
         },
         "AdjustmentValue": {
-            "type": "number"
+            "type": "number",
+            "description": "Adjusted value of a scaling rule. Value range:\n- QuantityChangeInCapacity\uff1a(0, 500] U (-500, 0]\n- PercentChangeInCapacity\uff1a[0, 10000] U [-100, 0]\n- TotalCapacity\uff1a[0, 1000]."
         },
         "Ari": {
             "type": "string"
         },
         "Cooldown": {
-            "type": "number"
+            "type": "number",
+            "description": "Cool-down time of a scaling rule. Value range: [0, 86,400], in seconds. The default value is empty\uff0cif not set, the return value will be 0, which is the default value of integer."
         },
         "DisableScaleIn": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether scale in by the target tracking policy is disabled. Default to false."
         },
         "EstimatedInstanceWarmup": {
-            "type": "number"
+            "type": "number",
+            "description": "The estimated time, in seconds, until a newly launched instance will contribute CloudMonitor metrics. Default to 300."
         },
         "MetricName": {
-            "type": "string"
+            "type": "string",
+            "description": "A CloudMonitor metric name."
         },
         "ScalingGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the scaling group of a scaling rule."
         },
         "ScalingRuleName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name shown for the scaling rule, which must contain 2-64 characters (English or Chinese), starting with numbers, English letters or Chinese characters, and can contain number, underscores `_`, hypens `-`, and decimal point `.`. If this parameter value is not specified, the default value is scaling rule id."
         },
         "ScalingRuleType": {
-            "type": "string"
+            "type": "string",
+            "description": "The scaling rule type, either \"SimpleScalingRule\", \"TargetTrackingScalingRule\", \"StepScalingRule\". Default to \"SimpleScalingRule\"."
         },
         "TargetValue": {
-            "type": "number"
+            "type": "number",
+            "description": "The target value for the metric."
         },
         "StepAdjustment": {
             "type": "array",

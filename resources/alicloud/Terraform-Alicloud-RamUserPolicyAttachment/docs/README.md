@@ -1,6 +1,6 @@
 # Terraform::Alicloud::RamUserPolicyAttachment
 
-CloudFormation equivalent of alicloud_ram_user_policy_attachment
+Provides a RAM User Policy attachment resource.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### PolicyName
 
+Name of the RAM policy. This name can have a string of 1 to 128 characters, must contain only alphanumeric characters or hyphen "-", and must not begin with a hyphen.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PolicyType
 
+Type of the RAM policy. It must be `Custom` or `System`.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserName
+
+Name of the RAM user. This name can have a string of 1 to 64 characters, must contain only alphanumeric characters or hyphens, such as "-",".","_", and must not begin with a hyphen.
 
 _Required_: Yes
 

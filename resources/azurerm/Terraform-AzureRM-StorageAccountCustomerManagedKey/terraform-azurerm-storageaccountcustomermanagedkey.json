@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::StorageAccountCustomerManagedKey",
-    "description": "CloudFormation equivalent of azurerm_storage_account_customer_managed_key",
+    "description": "Manages a Customer Managed Key for a Storage Account.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,16 +29,20 @@
             "type": "string"
         },
         "KeyName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of Key Vault Key."
         },
         "KeyVaultId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Key Vault. Changing this forces a new resource to be created."
         },
         "KeyVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "The version of Key Vault Key."
         },
         "StorageAccountId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Storage Account. Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

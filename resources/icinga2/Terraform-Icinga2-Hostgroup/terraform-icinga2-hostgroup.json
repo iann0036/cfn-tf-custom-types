@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Icinga2::Hostgroup",
-    "description": "CloudFormation equivalent of icinga2_hostgroup",
+    "description": "Configures an Icinga2 hostgroup resource. This allows hostgroup to be configured, updated,\nand deleted.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the hostgroup to display in the Icinga2 interface."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the hostgroup."
         }
     },
     "additionalProperties": false,

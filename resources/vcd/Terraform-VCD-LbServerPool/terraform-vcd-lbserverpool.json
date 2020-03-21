@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::VCD::LbServerPool",
-    "description": "CloudFormation equivalent of vcd_lb_server_pool",
+    "description": "Provides a vCloud Director Edge Gateway Load Balancer Server Pool resource. A Server Pool can have a group of backend\nservers set (defined as pool members), manages load balancer distribution methods, and may have a service monitor\nattached to it for health check parameters.\n\n~> **Note:** To make load balancing work one must ensure that load balancing is enabled on edge gateway. This depends \non NSX version to work properly. Please refer to [VMware Product Interoperability Matrices](https://www.vmware.com/resources/compatibility/sim/interop_matrix.php#interop&29=&93=) \nto check supported vCloud director and NSX for vSphere configurations.\n\n~> **Note:** The vCloud Director API for NSX supports a subset of the operations and objects defined in the NSX vSphere \nAPI Guide. The API supports NSX 6.2, 6.3, and 6.4.\n\nSupported in provider *v2.4+*",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Member": {
@@ -48,31 +48,40 @@
             "type": "string"
         },
         "Algorithm": {
-            "type": "string"
+            "type": "string",
+            "description": "Server Pool load balancing method. Can be one of `ip-hash`, `round-robin`, `uri`, `leastconn`, `url`, or `httpheader`."
         },
         "AlgorithmParameters": {
-            "type": "string"
+            "type": "string",
+            "description": "Valid only when `algorithm` is `httpheader` or `url`. The `httpheader` algorithm\nparameter has one option `headerName=<name>` while the `url` algorithm parameter has option `urlParam=<url>`."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Server Pool description."
         },
         "EdgeGateway": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the edge gateway on which the server pool is to be created."
         },
         "EnableTransparency": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "When transparency is `false` (default) backend servers see the IP address of the\ntraffic source as the internal IP address of the load balancer. When it is `true` the source IP address is the actual IP\naddress of the client and the edge gateway must be set as the default gateway to ensure that return packets go through\nthe edge gateway."
         },
         "MonitorId": {
-            "type": "string"
+            "type": "string",
+            "description": "`vcd_lb_service_monitor` resource `id` to attach to server pool for health check parameters."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Server Pool name."
         },
         "Org": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of organization to use, optional if defined at provider level. Useful when connected as sysadmin working across different organisations."
         },
         "Vdc": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of VDC to use, optional if defined at provider level."
         },
         "Member": {
             "type": "array",

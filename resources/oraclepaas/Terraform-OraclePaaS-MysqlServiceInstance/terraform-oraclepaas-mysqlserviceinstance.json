@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OraclePaaS::MysqlServiceInstance",
-    "description": "CloudFormation equivalent of oraclepaas_mysql_service_instance",
+    "description": "The `oraclepaas_mysql_service_instance` resource creates and manages an Oracle MySQL Cloud Service instance on the Oracle Cloud Platform.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Backups": {
@@ -8,16 +8,20 @@
             "additionalProperties": false,
             "properties": {
                 "CloudStorageContainer": {
-                    "type": "string"
+                    "type": "string",
+                    "description": ". Name of the Oracle Storage Cloud container used for store the backups."
                 },
                 "CloudStoragePassword": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Password for the Oracle Storage Cloud administrator."
                 },
                 "CloudStorageUsername": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Username for the Oracle Storage Cloud administrator."
                 },
                 "CreateIfMissing": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Specifies whether to create the container if it does not exist. Default value is `false`."
                 }
             },
             "required": [
@@ -29,31 +33,39 @@
             "additionalProperties": false,
             "properties": {
                 "DbName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": ". The name of the database instance. Default value is `mydatabase`."
                 },
                 "DbStorage": {
-                    "type": "number"
+                    "type": "number",
+                    "description": ". The storage volume sice for MySQL data. The value must be between 25 to 1024. Defaults to 25 (GB)."
                 },
                 "MysqlCharset": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "MySQL server character set. See [Supported Character Sets and Collation](http://dev.mysql.com/doc/en/charset-charsets.html). Default value is `utf8mb4`."
                 },
                 "MysqlCollation": {
                     "type": "string"
                 },
                 "MysqlPassword": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The password for the MySQL Administration user."
                 },
                 "MysqlPort": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The port number for the MySQL Server. The value must be between 3200-3399. Default value is `3306`."
                 },
                 "MysqlUsername": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Administration user for connecting to the service via th MySQL protocol. Default value is `root`."
                 },
                 "SnapshotName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the snapshot of the service instance specified by `source_service_name` that is to be used to create a \"snapshot clone\". This parameter is valid only if `source_service_name` is specified."
                 },
                 "SourceServiceName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "When present, indicates that the service instance should be created as a \"snapshot clone\" of another service instance. Provide the name of the existing service instance whose snapshot is to be used. `db_name`, `mysql_charset`, `mysql_collation`, `enterpriseMonitor`, and associated MySQL server component parameters do not apply when cloning a service from a snapshot. For those parameters, the clone operation uses the values defined in the snapshot of the source service instance."
                 },
                 "EnterpriseMonitorConfiguration": {
                     "type": "array",
@@ -83,19 +95,24 @@
             "additionalProperties": false,
             "properties": {
                 "EmAgentPassword": {
-                    "type": "string"
+                    "type": "string",
+                    "description": ". Password for MySQL Enterprise Monitor agent."
                 },
                 "EmAgentUsername": {
-                    "type": "string"
+                    "type": "string",
+                    "description": ". Name for the Enterprise Monitor agent user."
                 },
                 "EmPassword": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Password for MySQL Enterprise Monitor manager."
                 },
                 "EmPort": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The port number for the MySQL Enterprise Monitor instance. The default is 18443."
                 },
                 "EmUsername": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Name for the Enterprise Monitor Manager user."
                 }
             },
             "required": []
@@ -107,34 +124,42 @@
             "type": "string"
         },
         "AvailabilityDomain": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the availability domain within the region where the Oracle Database Cloud Service instance is to be provisioned. This is applicable only if you wish to provision to an OCI instance."
         },
         "BackupDestination": {
-            "type": "string"
+            "type": "string",
+            "description": "The destination where the database backups will be stored."
         },
         "BaseReleaseVersion": {
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": ". A description of the MySQL Instance."
         },
         "EmUrl": {
             "type": "string"
         },
         "IpNetwork": {
-            "type": "string"
+            "type": "string",
+            "description": "This attribute is only applicable to accounts where regions are supported. The three-part name of an IP network to which the service instance is added. For example: /Compute-identity_domain/user/object."
         },
         "MeteringFrequency": {
-            "type": "string"
+            "type": "string",
+            "description": ". The billing frequency of the service instance. Allowed values are `MONTHLY` and `HOURLY`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": ". The name of MySQL Cloud Service instance."
         },
         "NotificationEmail": {
-            "type": "string"
+            "type": "string",
+            "description": "The email address to send notifications around successful or unsuccessful completions of the instance-creation operation."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": ". Specifies the region where the instance will be provisioned."
         },
         "ReleaseVersion": {
             "type": "string"
@@ -143,16 +168,19 @@
             "type": "string"
         },
         "Shape": {
-            "type": "string"
+            "type": "string",
+            "description": "The desired compute shape.  A shape defines the number of Oracle Compute Units (OCPUs) and amount of memory (RAM). See [About Shapes](http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=OCSUG210) in _Using Oracle Compute Cloud Service_ for more information about shapes."
         },
         "SshPublicKey": {
-            "type": "string"
+            "type": "string",
+            "description": ". The public key for the secure shell (SSH). This key wil be used for authentication when the user logs on to the instance over SSH."
         },
         "Subnet": {
             "type": "string"
         },
         "VmUser": {
-            "type": "string"
+            "type": "string",
+            "description": "The user name of account to be created in the VM."
         },
         "Backups": {
             "type": "array",

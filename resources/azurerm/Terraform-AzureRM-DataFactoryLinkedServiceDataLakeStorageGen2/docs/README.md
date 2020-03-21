@@ -1,6 +1,8 @@
 # Terraform::AzureRM::DataFactoryLinkedServiceDataLakeStorageGen2
 
-CloudFormation equivalent of azurerm_data_factory_linked_service_data_lake_storage_gen2
+Manages a Linked Service (connection) between Data Lake Storage Gen2 and Azure Data Factory.
+
+~> **Note:** All arguments including the `service_principal_key` will be stored in the raw state as plain-text. [Read more about sensitive data in state](/docs/state/sensitive-data.html).
 
 ## Syntax
 
@@ -56,6 +58,8 @@ Properties:
 
 #### AdditionalProperties
 
+A map of additional properties to associate with the Data Factory Linked Service MySQL.
+
 _Required_: No
 
 _Type_: List of <a href="additionalproperties.md">AdditionalProperties</a>
@@ -63,6 +67,8 @@ _Type_: List of <a href="additionalproperties.md">AdditionalProperties</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Annotations
+
+List of tags that can be used for describing the Data Factory Linked Service MySQL.
 
 _Required_: No
 
@@ -72,6 +78,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DataFactoryName
 
+The Data Factory name in which to associate the Linked Service with. Changing this forces a new resource.
+
 _Required_: Yes
 
 _Type_: String
@@ -79,6 +87,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+The description for the Data Factory Linked Service MySQL.
 
 _Required_: No
 
@@ -88,6 +98,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IntegrationRuntimeName
 
+The integration runtime reference to associate with the Data Factory Linked Service MySQL.
+
 _Required_: No
 
 _Type_: String
@@ -95,6 +107,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the Data Factory Linked Service MySQL. Changing this forces a new resource to be created. Must be globally unique. See the [Microsoft documentation](https://docs.microsoft.com/en-us/azure/data-factory/naming-rules) for all restrictions.
 
 _Required_: Yes
 
@@ -104,6 +118,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Parameters
 
+A map of parameters to associate with the Data Factory Linked Service MySQL.
+
 _Required_: No
 
 _Type_: List of <a href="parameters.md">Parameters</a>
@@ -111,6 +127,8 @@ _Type_: List of <a href="parameters.md">Parameters</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which to create the Data Factory Linked Service MySQL. Changing this forces a new resource.
 
 _Required_: Yes
 
@@ -120,6 +138,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServicePrincipalId
 
+The service principal id in which to authenticate against the Azure Data Lake Storage Gen2 account.
+
 _Required_: Yes
 
 _Type_: String
@@ -127,6 +147,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServicePrincipalKey
+
+The service principal key in which to authenticate against the Azure Data Lake Storage Gen2 account.
 
 _Required_: Yes
 
@@ -136,6 +158,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tenant
 
+The tenant id or name in which to authenticate against the Azure Data Lake Storage Gen2 account.
+
 _Required_: Yes
 
 _Type_: String
@@ -143,6 +167,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Url
+
+The endpoint for the Azure Data Lake Storage Gen2 service.
 
 _Required_: Yes
 

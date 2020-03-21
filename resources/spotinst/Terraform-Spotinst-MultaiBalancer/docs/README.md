@@ -1,6 +1,6 @@
 # Terraform::Spotinst::MultaiBalancer
 
-CloudFormation equivalent of spotinst_multai_balancer
+Provides a Spotinst Multai Balancer.
 
 ## Syntax
 
@@ -40,6 +40,8 @@ Properties:
 
 #### DnsCnameAliases
 
+(Optional).
+
 _Required_: No
 
 _Type_: List of String
@@ -48,6 +50,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+(Required) The balancer name. May contain only alphanumeric characters or hyphens, and must not begin or end with a hyphen.
+
 _Required_: Yes
 
 _Type_: String
@@ -55,6 +59,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Scheme
+
+(Optional).
 
 _Required_: No
 

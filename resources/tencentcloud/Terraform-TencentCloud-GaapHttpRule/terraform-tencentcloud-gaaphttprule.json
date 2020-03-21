@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::GaapHttpRule",
-    "description": "CloudFormation equivalent of tencentcloud_gaap_http_rule",
+    "description": "Provides a resource to create a forward rule of layer7 listener.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Realservers": {
@@ -8,16 +8,20 @@
             "additionalProperties": false,
             "properties": {
                 "Id": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "ID of the GAAP realserver."
                 },
                 "Ip": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "IP of the GAAP realserver."
                 },
                 "Port": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Port of the GAAP realserver."
                 },
                 "Weight": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Scheduling weight, default value is `1`. The range of values is [1,100]."
                 }
             },
             "required": [
@@ -33,44 +37,56 @@
             "type": "string"
         },
         "ConnectTimeout": {
-            "type": "number"
+            "type": "number",
+            "description": "Timeout of the health check response, default value is 2s."
         },
         "Domain": {
-            "type": "string"
+            "type": "string",
+            "description": "Forward domain of the forward rule."
         },
         "ForwardHost": {
-            "type": "string"
+            "type": "string",
+            "description": "The default value of requested host which is forwarded to the realserver by the listener is `default`."
         },
         "HealthCheck": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether health check is enable."
         },
         "HealthCheckMethod": {
-            "type": "string"
+            "type": "string",
+            "description": "Method of the health check, the available values includes `GET` and `HEAD`."
         },
         "HealthCheckPath": {
-            "type": "string"
+            "type": "string",
+            "description": "Path of health check. Maximum length is 80."
         },
         "HealthCheckStatusCodes": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "number"
-            }
+            },
+            "description": "Return code of confirmed normal, the available values include `100`, `200`, `300`, `400` and `500`."
         },
         "Interval": {
-            "type": "number"
+            "type": "number",
+            "description": "Interval of the health check, default value is 5s."
         },
         "ListenerId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the layer7 listener."
         },
         "Path": {
-            "type": "string"
+            "type": "string",
+            "description": "Path of the forward rule. Maximum length is 80."
         },
         "RealserverType": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of the realserver, the available values include `IP` and `DOMAIN`."
         },
         "Scheduler": {
-            "type": "string"
+            "type": "string",
+            "description": "Scheduling policy of the forward rule, default value is `rr`, the available values include `rr`, `wrr` and `lc`."
         },
         "Realservers": {
             "type": "array",

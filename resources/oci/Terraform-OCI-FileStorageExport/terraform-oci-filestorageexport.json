@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::FileStorageExport",
-    "description": "CloudFormation equivalent of oci_file_storage_export",
+    "description": "This resource provides the Export resource in Oracle Cloud Infrastructure File Storage service.\n\nCreates a new export in the specified export set, path, and\nfile system.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ExportOptions": {
@@ -8,22 +8,28 @@
             "additionalProperties": false,
             "properties": {
                 "Access": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "(Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_ONLY`.\n* `anonymous_gid` - (Optional) (Updatable) GID value to remap to when squashing a client GID (see identitySquash for more details.) If unspecified defaults to `65534`.\n* `anonymous_uid` - (Optional) (Updatable) UID value to remap to when squashing a client UID (see identitySquash for more details.) If unspecified, defaults to `65534`.\n* `identity_squash` - (Optional) (Updatable) Used when clients accessing the file system through this export have their UID and GID remapped to 'anonymousUid' and 'anonymousGid'. If `ALL`, all users and groups are remapped; if `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `ROOT`.\n* `require_privileged_source_port` - (Optional) (Updatable) If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.\n* `source` - (Required) (Updatable) Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block."
                 },
                 "AnonymousGid": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "(Updatable) GID value to remap to when squashing a client GID (see identitySquash for more details.) If unspecified defaults to `65534`.\n* `anonymous_uid` - (Optional) (Updatable) UID value to remap to when squashing a client UID (see identitySquash for more details.) If unspecified, defaults to `65534`.\n* `identity_squash` - (Optional) (Updatable) Used when clients accessing the file system through this export have their UID and GID remapped to 'anonymousUid' and 'anonymousGid'. If `ALL`, all users and groups are remapped; if `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `ROOT`.\n* `require_privileged_source_port` - (Optional) (Updatable) If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.\n* `source` - (Required) (Updatable) Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block."
                 },
                 "AnonymousUid": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "(Updatable) UID value to remap to when squashing a client UID (see identitySquash for more details.) If unspecified, defaults to `65534`.\n* `identity_squash` - (Optional) (Updatable) Used when clients accessing the file system through this export have their UID and GID remapped to 'anonymousUid' and 'anonymousGid'. If `ALL`, all users and groups are remapped; if `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `ROOT`.\n* `require_privileged_source_port` - (Optional) (Updatable) If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.\n* `source` - (Required) (Updatable) Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block."
                 },
                 "IdentitySquash": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "(Updatable) Used when clients accessing the file system through this export have their UID and GID remapped to 'anonymousUid' and 'anonymousGid'. If `ALL`, all users and groups are remapped; if `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `ROOT`.\n* `require_privileged_source_port` - (Optional) (Updatable) If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.\n* `source` - (Required) (Updatable) Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block."
                 },
                 "RequirePrivilegedSourcePort": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "(Updatable) If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.\n* `source` - (Required) (Updatable) Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block."
                 },
                 "Source": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "(Updatable) Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block."
                 }
             },
             "required": [

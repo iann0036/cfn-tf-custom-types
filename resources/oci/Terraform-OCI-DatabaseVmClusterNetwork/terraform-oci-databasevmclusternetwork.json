@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::DatabaseVmClusterNetwork",
-    "description": "CloudFormation equivalent of oci_database_vm_cluster_network",
+    "description": "This resource provides the Vm Cluster Network resource in Oracle Cloud Infrastructure Database service.\n\nCreates the VM cluster network.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Scans": {
@@ -107,7 +107,8 @@
             "type": "string"
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment."
         },
         "DefinedTags": {
             "type": "array",
@@ -127,20 +128,24 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The user-friendly name for the VM cluster network. The name does not need to be unique."
         },
         "Dns": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "(Updatable) The list of DNS server IP addresses. Maximum of 3 allowed."
         },
         "ExadataInfrastructureId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)."
         },
         "FreeformTags": {
             "type": "array",
@@ -160,7 +165,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
         },
         "LifecycleDetails": {
             "type": "string"
@@ -170,7 +176,8 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "(Updatable) The list of NTP server IP addresses. Maximum of 3 allowed."
         },
         "State": {
             "type": "string"
@@ -179,7 +186,8 @@
             "type": "string"
         },
         "ValidateVmClusterNetwork": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "A boolean flag indicating whether or not to validate VM cluster network after creation. Updates are not allowed on validated exadata VM cluster network."
         },
         "VmClusterId": {
             "type": "string"

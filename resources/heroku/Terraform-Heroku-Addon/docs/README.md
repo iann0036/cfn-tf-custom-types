@@ -1,6 +1,7 @@
 # Terraform::Heroku::Addon
 
-CloudFormation equivalent of heroku_addon
+Provides a Heroku Add-On resource. These can be attach
+services to a Heroku app.
 
 ## Syntax
 
@@ -36,6 +37,8 @@ Properties:
 
 #### App
 
+The Heroku app to add to.
+
 _Required_: Yes
 
 _Type_: String
@@ -43,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Config
+
+Optional plan configuration.
 
 _Required_: No
 
@@ -52,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Globally unique name of the add-on.
+
 _Required_: No
 
 _Type_: String
@@ -59,6 +66,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Plan
+
+The addon to add.
 
 _Required_: Yes
 

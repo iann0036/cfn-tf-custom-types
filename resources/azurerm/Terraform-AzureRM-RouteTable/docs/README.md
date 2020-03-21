@@ -1,6 +1,6 @@
 # Terraform::AzureRM::RouteTable
 
-CloudFormation equivalent of azurerm_route_table
+Manages a Route Table
 
 ## Syntax
 
@@ -43,6 +43,8 @@ Properties:
 
 #### DisableBgpRoutePropagation
 
+Boolean flag which controls propagation of routes learned by BGP on that route table. True means disable.
+
 _Required_: No
 
 _Type_: Boolean
@@ -50,6 +52,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Location
+
+Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -59,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the route table. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -66,6 +72,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which to create the route table. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -75,6 +83,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Route
 
+[List of objects](/docs/configuration/attr-as-blocks.html) representing routes. Each object accepts the arguments documented below.
+
 _Required_: No
 
 _Type_: List of <a href="route.md">Route</a>
@@ -82,6 +92,8 @@ _Type_: List of <a href="route.md">Route</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

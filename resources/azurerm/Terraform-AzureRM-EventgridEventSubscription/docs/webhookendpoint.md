@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Url
 
+Specifies the url of the webhook where the Event Subscription will receive events.
+
 _Required_: Yes
 
 _Type_: String

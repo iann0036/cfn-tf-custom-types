@@ -1,6 +1,7 @@
 # Terraform::OpenStack::ComputeFloatingipAssociateV2
 
-CloudFormation equivalent of openstack_compute_floatingip_associate_v2
+Associate a floating IP to an instance. This can be used instead of the
+`floating_ip` options in `openstack_compute_instance_v2`.
 
 ## Syntax
 
@@ -39,6 +40,8 @@ Properties:
 
 #### FixedIp
 
+The specific IP address to direct traffic to.
+
 _Required_: No
 
 _Type_: String
@@ -46,6 +49,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FloatingIp
+
+The floating IP to associate.
 
 _Required_: Yes
 
@@ -55,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceId
 
+The instance to associte the floating IP with.
+
 _Required_: Yes
 
 _Type_: String
@@ -63,6 +70,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region in which to obtain the V2 Compute client.
+Keypairs are associated with accounts, but a Compute client is needed to
+create one. If omitted, the `region` argument of the provider is used.
+Changing this creates a new floatingip_associate.
+
 _Required_: No
 
 _Type_: String
@@ -70,6 +82,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WaitUntilAssociated
+
+In cases where the OpenStack environment
+does not automatically wait until the association has finished, set this
+option to have Terraform poll the instance until the floating IP has been
+associated. Defaults to false.
 
 _Required_: No
 

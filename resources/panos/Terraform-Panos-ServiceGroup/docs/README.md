@@ -1,6 +1,6 @@
 # Terraform::Panos::ServiceGroup
 
-CloudFormation equivalent of panos_service_group
+This resource allows you to add/update/delete service groups.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### Name
 
+The service group's name.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Services
+
+List of services to put in this service group.
 
 _Required_: Yes
 
@@ -53,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+List of administrative tags.
+
 _Required_: No
 
 _Type_: List of String
@@ -60,6 +66,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vsys
+
+The vsys to put the service group into (default:
+`vsys1`).
 
 _Required_: No
 

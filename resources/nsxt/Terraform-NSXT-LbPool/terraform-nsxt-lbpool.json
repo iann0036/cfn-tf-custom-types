@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::NSXT::LbPool",
-    "description": "CloudFormation equivalent of nsxt_lb_pool",
+    "description": "Provides a resource to configure lb pool on NSX-T manager\n\n~> **NOTE:** This resource requires NSX version 2.3 or higher.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Member": {
@@ -108,31 +108,39 @@
             "type": "string"
         },
         "ActiveMonitorId": {
-            "type": "string"
+            "type": "string",
+            "description": "Active health monitor Id. If one is not set, the active healthchecks will be disabled."
         },
         "Algorithm": {
-            "type": "string"
+            "type": "string",
+            "description": "Load balancing algorithm controls how the incoming connections are distributed among the members. Supported algorithms are: ROUND_ROBIN, WEIGHTED_ROUND_ROBIN, LEAST_CONNECTION, WEIGHTED_LEAST_CONNECTION, IP_HASH."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of this resource."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The display name of this resource. pool member name.\n* `ip_address` - (Required) Pool member IP address.\n* `max_concurrent_connections` - (Optional) To ensure members are not overloaded, connections to a member can be capped by the load balancer. When a member reaches this limit, it is skipped during server selection. If it is not specified, it means that connections are unlimited.\n* `port` - (Optional) If port is specified, all connections will be sent to this port. Only single port is supported. If unset, the same port the client connected to will be used, it could be overrode by default_pool_member_port setting in virtual server. The port should not specified for port range case.\n* `weight` - (Optional) Pool member weight is used for WEIGHTED_ROUND_ROBIN balancing algorithm. The weight value would be ignored in other algorithms."
         },
         "MinActiveMembers": {
-            "type": "number"
+            "type": "number",
+            "description": "The minimum number of members for the pool to be considered active. This value is 1 by default."
         },
         "PassiveMonitorId": {
-            "type": "string"
+            "type": "string",
+            "description": "Passive health monitor Id. If one is not set, the passive healthchecks will be disabled."
         },
         "Revision": {
             "type": "number"
         },
         "TcpMultiplexingEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "TCP multiplexing allows the same TCP connection between load balancer and the backend server to be used for sending multiple client requests from different client TCP connections. Disabled by default."
         },
         "TcpMultiplexingNumber": {
-            "type": "number"
+            "type": "number",
+            "description": "The maximum number of TCP connections per pool that are idly kept alive for sending future client requests. The default value for this is 6."
         },
         "Member": {
             "type": "array",

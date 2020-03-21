@@ -1,6 +1,6 @@
 # Terraform::Scaleway::InstanceIp
 
-CloudFormation equivalent of scaleway_instance_ip
+Creates and manages Scaleway Compute Instance IPs. For more information, see [the documentation](https://developers.scaleway.com/en/products/instance/api/#ips-268151).
 
 ## Syntax
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::DataflowJob",
-    "description": "CloudFormation equivalent of google_dataflow_job",
+    "description": "Creates a job on Dataflow, which is an implementation of Apache Beam running on Google Compute Engine. For more information see\nthe official documentation for\n[Beam](https://beam.apache.org) and [Dataflow](https://cloud.google.com/dataflow/).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "IpConfiguration": {
-            "type": "string"
+            "type": "string",
+            "description": "The configuration for VM IPs.  Options are `\"WORKER_IP_PUBLIC\"` or `\"WORKER_IP_PRIVATE\"`."
         },
         "JobId": {
             "type": "string"
@@ -32,22 +33,28 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "User labels to be specified for the job. Keys and values should follow the restrictions\nspecified in the [labeling restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions) page.\n**NOTE**: Google-provided Dataflow templates often provide default labels that begin with `goog-dataflow-provided`.\nUnless explicitly set in config, these labels will be ignored to prevent diffs on re-apply."
         },
         "MachineType": {
-            "type": "string"
+            "type": "string",
+            "description": "The machine type to use for the job."
         },
         "MaxWorkers": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of workers permitted to work on the job.  More workers may improve processing speed at additional cost."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique name for the resource, required by Dataflow."
         },
         "Network": {
-            "type": "string"
+            "type": "string",
+            "description": "The network to which VMs will be assigned. If it is not provided, \"default\" will be used."
         },
         "OnDelete": {
-            "type": "string"
+            "type": "string",
+            "description": "One of \"drain\" or \"cancel\".  Specifies behavior of deletion during `terraform destroy`.  See above note."
         },
         "Parameters": {
             "type": "array",
@@ -67,34 +74,41 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Key/Value pairs to be passed to the Dataflow job (as used in the template)."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The project in which the resource belongs. If it is not provided, the provider project is used."
         },
         "Region": {
             "type": "string"
         },
         "ServiceAccountEmail": {
-            "type": "string"
+            "type": "string",
+            "description": "The Service Account email used to create the job."
         },
         "State": {
             "type": "string"
         },
         "Subnetwork": {
-            "type": "string"
+            "type": "string",
+            "description": "The subnetwork to which VMs will be assigned. Should be of the form \"regions/REGION/subnetworks/SUBNETWORK\"."
         },
         "TempGcsLocation": {
-            "type": "string"
+            "type": "string",
+            "description": "A writeable location on GCS for the Dataflow job to dump its temporary data."
         },
         "TemplateGcsPath": {
-            "type": "string"
+            "type": "string",
+            "description": "The GCS path to the Dataflow job template."
         },
         "Type": {
             "type": "string"
         },
         "Zone": {
-            "type": "string"
+            "type": "string",
+            "description": "The zone in which the created job should run. If it is not provided, the provider zone is used."
         }
     },
     "additionalProperties": false,

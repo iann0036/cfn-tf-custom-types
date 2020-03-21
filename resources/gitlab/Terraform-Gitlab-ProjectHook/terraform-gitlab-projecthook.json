@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Gitlab::ProjectHook",
-    "description": "CloudFormation equivalent of gitlab_project_hook",
+    "description": "This resource allows you to create and manage hooks for your GitLab projects.\nFor further information on hooks, consult the [gitlab\ndocumentation](https://docs.gitlab.com/ce/user/project/integrations/webhooks.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,40 +9,52 @@
             "type": "string"
         },
         "EnableSslVerification": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable ssl verification when invoking\nthe hook."
         },
         "IssuesEvents": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Invoke the hook for issues events."
         },
         "JobEvents": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Invoke the hook for job events."
         },
         "MergeRequestsEvents": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Invoke the hook for merge requests."
         },
         "NoteEvents": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Invoke the hook for notes events."
         },
         "PipelineEvents": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Invoke the hook for pipeline events."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or id of the project to add the hook to."
         },
         "PushEvents": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Invoke the hook for push events."
         },
         "TagPushEvents": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Invoke the hook for tag push events."
         },
         "Token": {
-            "type": "string"
+            "type": "string",
+            "description": "A token to present when invoking the hook."
         },
         "Url": {
-            "type": "string"
+            "type": "string",
+            "description": "The url of the hook to invoke."
         },
         "WikiPageEvents": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Invoke the hook for wiki page events."
         }
     },
     "additionalProperties": false,

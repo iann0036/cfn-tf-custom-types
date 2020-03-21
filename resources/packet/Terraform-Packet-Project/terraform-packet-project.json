@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Packet::Project",
-    "description": "CloudFormation equivalent of packet_project",
+    "description": "Provides a Packet project resource to allow you manage devices\nin your projects.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "BgpConfig": {
@@ -8,13 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "Asn": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Autonomous System Numer for local BGP deployment."
                 },
                 "DeploymentType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "`private` or `public`, the `private` is likely to be usable immediately, the `public` will need to be review by Packet engineers."
                 },
                 "Md5": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Password for BGP session in plaintext (not a checksum)."
                 }
             },
             "required": [
@@ -29,19 +32,23 @@
             "type": "string"
         },
         "BackendTransfer": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable or disable [Backend Transfer](https://www.packet.com/developers/docs/network/basic/backend-transfer/), default is false."
         },
         "Created": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the project."
         },
         "OrganizationId": {
-            "type": "string"
+            "type": "string",
+            "description": "The UUID of organization under which you want to create the project. If you leave it out, the project will be create under your the default organization of your account."
         },
         "PaymentMethodId": {
-            "type": "string"
+            "type": "string",
+            "description": "The UUID of payment method for this project. The payment method and the project need to belong to the same organization (passed with `organization_id`, or default)."
         },
         "Updated": {
             "type": "string"

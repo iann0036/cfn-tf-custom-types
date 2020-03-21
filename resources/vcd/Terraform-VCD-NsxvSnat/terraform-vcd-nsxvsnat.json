@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::VCD::NsxvSnat",
-    "description": "CloudFormation equivalent of vcd_nsxv_snat",
+    "description": "Provides a vCloud Director SNAT resource for advanced edge gateways (NSX-V). This\ncan be used to create, modify, and delete source NATs to allow vApps to send external traffic. Replaces\n[`vcd_snat`](/docs/providers/vcd/r/snat.html) resource.\n\n~> **Note:** This resource requires advanced edge gateway. For non-advanced edge gateways please\nuse the [`vcd_snat`](/docs/providers/vcd/r/snat.html) resource.\n\n!> **Warning:** Do not use older [`vcd_snat`](/docs/providers/vcd/r/snat.html) resource with this one\nbecause it will change IDs and this resource will not be able to lookup rules.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,40 +9,51 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Free text description."
         },
         "EdgeGateway": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the edge gateway on which to apply the SNAT rule."
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Defines if the rule is enabaled. Default `true`."
         },
         "LoggingEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Defines if the logging for this rule is enabaled. Default `false`."
         },
         "NetworkName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the network on which to apply the SNAT rule."
         },
         "NetworkType": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of the network on which to apply the DNAT rule. Possible values\n`org` or `ext`."
         },
         "Org": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of organization to use, optional if defined at provider level. Useful\nwhen connected as sysadmin working across different organisations."
         },
         "OriginalAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "IP address, range or subnet. These addresses are the IP addresses\nof one or more virtual machines for which you are configuring the SNAT rule so that they can send\ntraffic to the external network."
         },
         "RuleTag": {
-            "type": "number"
+            "type": "number",
+            "description": "This can be used to specify user-controlled rule tag. If not specified,\nit will report rule ID after creation. Must be between 65537-131072."
         },
         "RuleType": {
             "type": "string"
         },
         "TranslatedAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "IP address, range or subnet. This address is always the public\nIP address of the gateway for which you are configuring the SNAT rule. Specifies the IP address to\nwhich source addresses (the virtual machines) on outbound packets are translated to when they send\ntraffic to the external network."
         },
         "Vdc": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of VDC to use, optional if defined at provider level."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpsGenie::Heartbeat",
-    "description": "CloudFormation equivalent of opsgenie_heartbeat",
+    "description": "Manages heartbeat within Opsgenie.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,35 +9,44 @@
             "type": "string"
         },
         "AlertMessage": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the alert message for heartbeat expiration alert. If this is not provided, default alert message is \"HeartbeatName is expired\"."
         },
         "AlertPriority": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the alert priority for heartbeat expiration alert. If this is not provided, default priority is P3."
         },
         "AlertTags": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Specifies the alert tags for heartbeat expiration alert."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "An optional description of the heartbeat."
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable/disable heartbeat monitoring."
         },
         "Interval": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies how often a heartbeat message should be expected."
         },
         "IntervalUnit": {
-            "type": "string"
+            "type": "string",
+            "description": "Interval specified as minutes, hours or days."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the heartbeat."
         },
         "OwnerTeamId": {
-            "type": "string"
+            "type": "string",
+            "description": "Owner team of the heartbeat."
         }
     },
     "additionalProperties": false,

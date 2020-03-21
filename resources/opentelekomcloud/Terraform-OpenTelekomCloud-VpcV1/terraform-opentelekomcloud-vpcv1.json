@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenTelekomCloud::VpcV1",
-    "description": "CloudFormation equivalent of opentelekomcloud_vpc_v1",
+    "description": "Manages a VPC resource within OpenTelekomCloud.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,16 +23,19 @@
             "type": "string"
         },
         "Cidr": {
-            "type": "string"
+            "type": "string",
+            "description": "The range of available subnets in the VPC. The value ranges from 10.0.0.0/8 to 10.255.255.0/24, 172.16.0.0/12 to 172.31.255.0/24, or 192.168.0.0/16 to 192.168.255.0/24."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the VPC. The name must be unique for a tenant. The value is a string of no more than 64 characters and can contain digits, letters, underscores (_), and hyphens (-). Changing this updates the name of the existing VPC."
         },
         "Region": {
             "type": "string"
         },
         "Shared": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether the shared SNAT should be used or not. Is also required  for cross-tenant sharing."
         },
         "Status": {
             "type": "string"

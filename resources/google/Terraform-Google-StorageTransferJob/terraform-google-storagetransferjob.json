@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::StorageTransferJob",
-    "description": "CloudFormation equivalent of google_storage_transfer_job",
+    "description": "Creates a new Transfer Job in Google Cloud Storage Transfer.\n\nTo get more information about Google Cloud Storage Transfer, see:\n\n* [Overview](https://cloud.google.com/storage-transfer/docs/overview)\n* [API documentation](https://cloud.google.com/storage-transfer/docs/reference/rest/v1/transferJobs#TransferJob)\n* How-to Guides\n    * [Configuring Access to Data Sources and Sinks](https://cloud.google.com/storage-transfer/docs/configure-access)",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Schedule": {
@@ -85,13 +85,16 @@
             "additionalProperties": false,
             "properties": {
                 "Day": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Day of month. Must be from 1 to 31 and valid for the year and month."
                 },
                 "Month": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Month of year. Must be from 1 to 12."
                 },
                 "Year": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Year of date. Must be from 1 to 9999."
                 }
             },
             "required": [
@@ -125,16 +128,20 @@
             "additionalProperties": false,
             "properties": {
                 "Hours": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Hours of day in 24 hour format. Should be from 0 to 23."
                 },
                 "Minutes": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Minutes of hour of day. Must be from 0 to 59."
                 },
                 "Nanos": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999."
                 },
                 "Seconds": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Seconds of minutes of the time. Must normally be from 0 to 59."
                 }
             },
             "required": [
@@ -149,7 +156,8 @@
             "additionalProperties": false,
             "properties": {
                 "BucketName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "S3 Bucket name."
                 },
                 "AwsAccessKey": {
                     "type": "array",
@@ -168,7 +176,8 @@
             "additionalProperties": false,
             "properties": {
                 "BucketName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Google Cloud Storage bucket name."
                 }
             },
             "required": [
@@ -180,7 +189,8 @@
             "additionalProperties": false,
             "properties": {
                 "BucketName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Google Cloud Storage bucket name."
                 }
             },
             "required": [
@@ -192,7 +202,8 @@
             "additionalProperties": false,
             "properties": {
                 "ListUrl": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The URL that points to the file that stores the object list entries. This file must allow public access. Currently, only URLs with HTTP and HTTPS schemes are supported."
                 }
             },
             "required": [
@@ -208,20 +219,24 @@
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "`exclude_prefixes` must follow the requirements described for `include_prefixes`. See [Requirements](https://cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferSpec#ObjectConditions)."
                 },
                 "IncludePrefixes": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "If `include_refixes` is specified, objects that satisfy the object conditions must have names that start with one of the `include_prefixes` and that do not start with any of the `exclude_prefixes`. If `include_prefixes` is not specified, all objects except those that have names starting with one of the `exclude_prefixes` must satisfy the object conditions. See [Requirements](https://cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferSpec#ObjectConditions)."
                 },
                 "MaxTimeElapsedSinceLastModification": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A duration in seconds with up to nine fractional digits, terminated by 's'. Example: \"3.5s\"."
                 },
                 "MinTimeElapsedSinceLastModification": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A duration in seconds with up to nine fractional digits, terminated by 's'. Example: \"3.5s\"."
                 }
             },
             "required": []
@@ -231,13 +246,16 @@
             "additionalProperties": false,
             "properties": {
                 "DeleteObjectsFromSourceAfterTransfer": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Whether objects should be deleted from the source after they are transferred to the sink. Note that this option and `delete_objects_unique_in_sink` are mutually exclusive."
                 },
                 "DeleteObjectsUniqueInSink": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Whether objects that exist only in the sink should be deleted. Note that this option and\n`delete_objects_from_source_after_transfer` are mutually exclusive."
                 },
                 "OverwriteObjectsAlreadyExistingInSink": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Whether overwriting objects that already exist in the sink is allowed."
                 }
             },
             "required": []
@@ -247,10 +265,12 @@
             "additionalProperties": false,
             "properties": {
                 "AccessKeyId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "AWS Key ID."
                 },
                 "SecretAccessKey": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "AWS Secret Access Key."
                 }
             },
             "required": [
@@ -271,7 +291,8 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Unique description to identify the Transfer Job."
         },
         "LastModificationTime": {
             "type": "string"
@@ -280,10 +301,12 @@
             "type": "string"
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The project in which the resource belongs. If it\nis not provided, the provider project is used."
         },
         "Status": {
-            "type": "string"
+            "type": "string",
+            "description": "Status of the job. Default: `ENABLED`. **NOTE: The effect of the new job status takes place during a subsequent job run. For example, if you change the job status from ENABLED to DISABLED, and an operation spawned by the transfer is running, the status change would not affect the current operation.**."
         },
         "Schedule": {
             "type": "array",

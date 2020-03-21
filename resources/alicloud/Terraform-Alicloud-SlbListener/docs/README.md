@@ -1,6 +1,15 @@
 # Terraform::Alicloud::SlbListener
 
-CloudFormation equivalent of alicloud_slb_listener
+Provides an Application Load Balancer Listener resource.
+
+For information about slb and how to use it, see [What is Server Load Balancer](https://www.alibabacloud.com/help/doc-detail/27539.htm).
+
+For information about listener and how to use it, to see the following:
+
+* [Configure a HTTP Listener](https://www.alibabacloud.com/help/doc-detail/27592.htm).
+* [Configure a HTTPS Listener](https://www.alibabacloud.com/help/doc-detail/27593.htm).
+* [Configure a TCP Listener](https://www.alibabacloud.com/help/doc-detail/27594.htm).
+* [Configure a UDP Listener](https://www.alibabacloud.com/help/doc-detail/27595.htm).
 
 ## Syntax
 
@@ -114,6 +123,8 @@ Properties:
 
 #### AclId
 
+the id of access control list to be apply on the listener, is the id of resource alicloud_slb_acl. If `acl_status` is "on", it is mandatory. Otherwise, it will be ignored.
+
 _Required_: No
 
 _Type_: String
@@ -121,6 +132,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AclStatus
+
+Whether to enable "acl(access control list)", the acl is specified by `acl_id`. Valid values are `on` and `off`. Default to `off`.
 
 _Required_: No
 
@@ -130,6 +143,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AclType
 
+Mode for handling the acl specified by acl_id. If `acl_status` is "on", it is mandatory. Otherwise, it will be ignored. Valid values are `white` and `black`. `white` means the Listener can only be accessed by client ip belongs to the acl; `black` means the Listener can not be accessed by client ip belongs to the acl.
+
 _Required_: No
 
 _Type_: String
@@ -137,6 +152,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BackendPort
+
+Port used by the Server Load Balancer instance backend. Valid value range: [1-65535].
 
 _Required_: No
 
@@ -146,6 +163,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Bandwidth
 
+Bandwidth peak of Listener. For the public network instance charged per traffic consumed, the Bandwidth on Listener can be set to -1, indicating the bandwidth peak is unlimited. Valid values are [-1, 1-1000] in Mbps.
+
 _Required_: No
 
 _Type_: Double
@@ -153,6 +172,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Cookie
+
+The cookie configured on the server. It is mandatory when `sticky_session` is "on" and `sticky_session_type` is "server". Otherwise, it will be ignored. Valid value：String in line with RFC 2965, with length being 1- 200. It only contains characters such as ASCII codes, English letters and digits instead of the comma, semicolon or spacing, and it cannot start with $.
 
 _Required_: No
 
@@ -162,6 +183,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CookieTimeout
 
+Cookie timeout. It is mandatory when `sticky_session` is "on" and `sticky_session_type` is "insert". Otherwise, it will be ignored. Valid value range: [1-86400] in seconds.
+
 _Required_: No
 
 _Type_: Double
@@ -169,6 +192,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DeleteProtectionValidation
+
+Checking DeleteProtection of SLB instance before deleting. If true, this resource will not be deleted when its SLB instance enabled DeleteProtection. Default to false.
 
 _Required_: No
 
@@ -178,6 +203,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+The description of slb listener. This description can have a string of 1 to 80 characters. Default value: null.
+
 _Required_: No
 
 _Type_: String
@@ -185,6 +212,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableHttp2
+
+Whether to enable https listener support http2 or not. Valid values are `on` and `off`. Default to `on`.
 
 _Required_: No
 
@@ -194,6 +223,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EstablishedTimeout
 
+Timeout of tcp listener established connection idle timeout. Valid value range: [10-900] in seconds. Default to 900.
+
 _Required_: No
 
 _Type_: Double
@@ -201,6 +232,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ForwardPort
+
+The port that http redirect to https.
 
 _Required_: No
 
@@ -210,6 +243,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FrontendPort
 
+Port used by the Server Load Balancer instance frontend. Valid value range: [1-65535].
+
 _Required_: Yes
 
 _Type_: Double
@@ -217,6 +252,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Gzip
+
+Whether to enable "Gzip Compression". If enabled, files of specific file types will be compressed, otherwise, no files will be compressed. Default to true. Available in v1.13.0+.
 
 _Required_: No
 
@@ -226,6 +263,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HealthCheck
 
+Whether to enable health check. Valid values are`on` and `off`. TCP and UDP listener's HealthCheck is always on, so it will be ignore when launching TCP or UDP listener.
+
 _Required_: No
 
 _Type_: String
@@ -233,6 +272,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HealthCheckConnectPort
+
+Port used for health check. Valid value range: [1-65535]. Default to "None" means the backend server port is used.
 
 _Required_: No
 
@@ -242,6 +283,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HealthCheckDomain
 
+Domain name used for health check. When it used to launch TCP listener, `health_check_type` must be "http". Its length is limited to 1-80 and only characters such as letters, digits, ‘-‘ and ‘.’ are allowed. When it is not set or empty,  Server Load Balancer uses the private network IP address of each backend server as Domain used for health check.
+
 _Required_: No
 
 _Type_: String
@@ -249,6 +292,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HealthCheckHttpCode
+
+Regular health check HTTP status code. Multiple codes are segmented by “,”. It is required when `health_check` is on. Default to `http_2xx`.  Valid values are: `http_2xx`,  `http_3xx`, `http_4xx` and `http_5xx`.
 
 _Required_: No
 
@@ -258,6 +303,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HealthCheckInterval
 
+Time interval of health checks. It is required when `health_check` is on. Valid value range: [1-50] in seconds. Default to 2.
+
 _Required_: No
 
 _Type_: Double
@@ -265,6 +312,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HealthCheckMethod
+
+The method of health check. Valid values: ["head", "get"].
 
 _Required_: No
 
@@ -274,6 +323,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HealthCheckTimeout
 
+Maximum timeout of each health check response. It is required when `health_check` is on. Valid value range: [1-300] in seconds. Default to 5. Note: If `health_check_timeout` < `health_check_interval`, its will be replaced by `health_check_interval`.
+
 _Required_: No
 
 _Type_: Double
@@ -281,6 +332,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HealthCheckType
+
+Type of health check. Valid values are: `tcp` and `http`. Default to `tcp` . TCP supports TCP and HTTP health check mode, you can select the particular mode depending on your application.
 
 _Required_: No
 
@@ -290,6 +343,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HealthCheckUri
 
+URI used for health check. When it used to launch TCP listener, `health_check_type` must be "http". Its length is limited to 1-80 and it must start with /. Only characters such as letters, digits, ‘-’, ‘/’, ‘.’, ‘%’, ‘?’, #’ and ‘&’ are allowed.
+
 _Required_: No
 
 _Type_: String
@@ -298,6 +353,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HealthyThreshold
 
+Threshold determining the result of the health check is success. It is required when `health_check` is on. Valid value range: [1-10] in seconds. Default to 3.
+
 _Required_: No
 
 _Type_: Double
@@ -305,6 +362,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IdleTimeout
+
+Timeout of http or https listener established connection idle timeout. Valid value range: [1-60] in seconds. Default to 15.
 
 _Required_: No
 
@@ -338,6 +397,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ListenerForward
 
+Whether to enable http redirect to https, Valid values are `on` and `off`. Default to `off`.
+
 _Required_: No
 
 _Type_: String
@@ -345,6 +406,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LoadBalancerId
+
+The Load Balancer ID which is used to launch a new listener.
 
 _Required_: Yes
 
@@ -362,6 +425,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PersistenceTimeout
 
+Timeout of connection persistence. Valid value range: [0-3600] in seconds. Default to 0 and means closing it.
+
 _Required_: No
 
 _Type_: Double
@@ -369,6 +434,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Protocol
+
+The protocol to listen on. Valid values are [`http`, `https`, `tcp`, `udp`].
 
 _Required_: Yes
 
@@ -378,6 +445,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RequestTimeout
 
+Timeout of http or https listener request (which does not get response from backend) timeout. Valid value range: [1-180] in seconds. Default to 60.
+
 _Required_: No
 
 _Type_: Double
@@ -385,6 +454,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Scheduler
+
+Scheduling algorithm, Valid values are `wrr`, `rr` and `wlc`.  Default to "wrr".
 
 _Required_: No
 
@@ -394,6 +465,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServerCertificateId
 
+SLB Server certificate ID. It is required when `protocol` is `https`.
+
 _Required_: No
 
 _Type_: String
@@ -401,6 +474,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServerGroupId
+
+the id of server group to be apply on the listener, is the id of resource `alicloud_slb_server_group`.
 
 _Required_: No
 
@@ -410,6 +485,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SslCertificateId
 
+It has been deprecated from 1.59.0 and using `server_certificate_id` instead.
+
 _Required_: No
 
 _Type_: String
@@ -417,6 +494,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StickySession
+
+Whether to enable session persistence, Valid values are `on` and `off`. Default to `off`.
 
 _Required_: No
 
@@ -426,6 +505,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StickySessionType
 
+Mode for handling the cookie. If `sticky_session` is "on", it is mandatory. Otherwise, it will be ignored. Valid values are `insert` and `server`. `insert` means it is inserted from Server Load Balancer; `server` means the Server Load Balancer learns from the backend server.
+
 _Required_: No
 
 _Type_: String
@@ -434,6 +515,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TlsCipherPolicy
 
+Https listener TLS cipher policy. Valid values are `tls_cipher_policy_1_0`, `tls_cipher_policy_1_1`, `tls_cipher_policy_1_2`, `tls_cipher_policy_1_2_strict`. Default to `tls_cipher_policy_1_0`. Currently the `tls_cipher_policy` can not be updated when load balancer instance is "Shared-Performance".
+
 _Required_: No
 
 _Type_: String
@@ -441,6 +524,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UnhealthyThreshold
+
+Threshold determining the result of the health check is fail. It is required when `health_check` is on. Valid value range: [1-10] in seconds. Default to 3.
 
 _Required_: No
 

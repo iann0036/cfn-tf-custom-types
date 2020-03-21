@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Triton::Vlan",
-    "description": "CloudFormation equivalent of triton_vlan",
+    "description": "The `triton_vlan` resource represents an Triton VLAN. A VLAN provides a low level way to segregate and subdivide the network. Traffic on one VLAN cannot, _on its own_, reach another VLAN.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,13 +29,16 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the VLAN."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Unique name to identify VLAN."
         },
         "VlanId": {
-            "type": "number"
+            "type": "number",
+            "description": "Number between 0-4095 indicating VLAN ID."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

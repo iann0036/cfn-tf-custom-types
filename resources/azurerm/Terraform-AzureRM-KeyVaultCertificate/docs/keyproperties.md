@@ -28,6 +28,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Exportable
 
+Is this Certificate Exportable? Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: Boolean
@@ -35,6 +37,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeySize
+
+The size of the Key used in the Certificate. Possible values include `2048` and `4096`. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -44,6 +48,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KeyType
 
+Specifies the Type of Key, such as `RSA`. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -51,6 +57,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ReuseKey
+
+Is the key reusable? Changing this forces a new resource to be created.
 
 _Required_: Yes
 

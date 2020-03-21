@@ -1,6 +1,6 @@
 # Terraform::BIGIP::LtmPersistenceProfileDstaddr
 
-CloudFormation equivalent of bigip_ltm_persistence_profile_dstaddr
+Configures a cookie persistence profile
 
 ## Syntax
 

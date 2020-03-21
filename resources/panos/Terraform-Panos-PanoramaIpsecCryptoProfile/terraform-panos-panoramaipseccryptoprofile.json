@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::PanoramaIpsecCryptoProfile",
-    "description": "CloudFormation equivalent of panos_panorama_ipsec_crypto_profile",
+    "description": "This resource allows you to add/update/delete Panorama IPSec crypto profiles\nfor both templates and template stacks.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -13,41 +13,52 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "- List of authentication types."
         },
         "DhGroup": {
-            "type": "string"
+            "type": "string",
+            "description": "The DH group value.  Valid values should start with\nthe string `group`."
         },
         "Encryptions": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "- List of encryption types.  Valid values\nare `des`, `3des`, `aes-128-cbc`, `aes-192-cbc`, `aes-256-cbc`, `aes-128-gcm`,\n`aes-256-gcm`, and `null`.  Note that the \"gcm\" values are only available in\nPAN-OS 7.0+."
         },
         "LifesizeType": {
-            "type": "string"
+            "type": "string",
+            "description": "The lifesize type.  Valid values are `kb`, `mb`,\n`gb`, or `tb`."
         },
         "LifesizeValue": {
-            "type": "number"
+            "type": "number",
+            "description": "the lifesize value."
         },
         "LifetimeType": {
-            "type": "string"
+            "type": "string",
+            "description": "The lifetime type.  Valid values are `seconds`,\n`minutes`, `hours` (the default), or `days`."
         },
         "LifetimeValue": {
-            "type": "number"
+            "type": "number",
+            "description": "The lifetime value."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The object's name."
         },
         "Protocol": {
-            "type": "string"
+            "type": "string",
+            "description": "The protocol.  Valid values are `esp` (the default)\nor `ah`."
         },
         "Template": {
-            "type": "string"
+            "type": "string",
+            "description": "The template name."
         },
         "TemplateStack": {
-            "type": "string"
+            "type": "string",
+            "description": "The template stack name."
         }
     },
     "additionalProperties": false,

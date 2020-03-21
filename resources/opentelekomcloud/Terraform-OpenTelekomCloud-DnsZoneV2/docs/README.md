@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::DnsZoneV2
 
-CloudFormation equivalent of opentelekomcloud_dns_zone_v2
+Manages a DNS zone in the OpenTelekomCloud DNS Service.
 
 ## Syntax
 
@@ -47,6 +47,8 @@ Properties:
 
 #### Description
 
+A description of the zone.
+
 _Required_: No
 
 _Type_: String
@@ -55,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Email
 
+The email contact for the zone record.
+
 _Required_: No
 
 _Type_: String
@@ -62,6 +66,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the zone. Note the `.` at the end of the name.
+Changing this creates a new DNS zone.
 
 _Required_: Yes
 
@@ -79,6 +86,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ttl
 
+The time to live (TTL) of the zone.
+
 _Required_: No
 
 _Type_: Double
@@ -87,6 +96,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Type
 
+The type of zone. Can either be `public` or `private`.
+Changing this creates a new zone.
+
 _Required_: No
 
 _Type_: String
@@ -94,6 +106,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ValueSpecs
+
+Map of additional options. Changing this creates a
+new zone.
 
 _Required_: No
 
@@ -135,5 +150,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Masters
 
-Returns the <code>Masters</code> value.
+An array of master DNS servers.
 

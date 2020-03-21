@@ -1,6 +1,6 @@
 # Terraform::CloudStack::StaticNat
 
-CloudFormation equivalent of cloudstack_static_nat
+Enables static NAT for a given IP address
 
 ## Syntax
 
@@ -35,6 +35,9 @@ Properties:
 
 #### IpAddressId
 
+The public IP address ID for which static
+NAT will be enabled. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +45,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The name or ID of the project to deploy this
+instance to. Changing this forces a new resource to be created.
 
 _Required_: No
 
@@ -51,6 +57,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VirtualMachineId
 
+The virtual machine ID to enable the
+static NAT feature for. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +67,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VmGuestIp
+
+The virtual machine IP address to forward the
+static NAT traffic to (useful when the virtual machine has secondary
+NICs or IP addresses). Changing this forces a new resource to be created.
 
 _Required_: No
 

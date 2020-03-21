@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::NSXT::LogicalTier1Router",
-    "description": "CloudFormation equivalent of nsxt_logical_tier1_router",
+    "description": "This resource provides a method for the management of a tier 1 logical router. A tier 1 logical router is often used for tenants, users and applications. There can be many tier 1 logical routers connected to a common tier 0 provider router.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "FirewallSections": {
@@ -42,34 +42,44 @@
             "type": "number"
         },
         "AdvertiseConnectedRoutes": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable the router advertisement for all NSX connected routes."
         },
         "AdvertiseLbSnatIpRoutes": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable the router advertisement for LB SNAT IP routes."
         },
         "AdvertiseLbVipRoutes": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable the router advertisement for LB VIP routes."
         },
         "AdvertiseNatRoutes": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable the router advertisement for NAT routes."
         },
         "AdvertiseStaticRoutes": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable the router advertisement for static routes."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the resource."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "Display name, defaults to ID if not set."
         },
         "EdgeClusterId": {
-            "type": "string"
+            "type": "string",
+            "description": "Edge Cluster ID for the logical Tier1 router."
         },
         "EnableRouterAdvertisement": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable the router advertisement."
         },
         "FailoverMode": {
-            "type": "string"
+            "type": "string",
+            "description": "This failover mode determines, whether the preferred service router instance for given logical router will preempt the peer. Note - It can be specified if and only if logical router is ACTIVE_STANDBY and NON_PREEMPTIVE mode is supported only for a Tier1 logical router. For ACTIVE_ACTIVE logical routers, this field must not be populated."
         },
         "Revision": {
             "type": "number"

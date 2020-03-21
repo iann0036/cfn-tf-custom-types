@@ -1,6 +1,6 @@
 # Terraform::OpenStack::DbConfigurationV1
 
-CloudFormation equivalent of openstack_db_configuration_v1
+Manages a V1 DB configuration resource within OpenStack.
 
 ## Syntax
 
@@ -41,6 +41,8 @@ Properties:
 
 #### Description
 
+Description of the resource.
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +51,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A unique name for the resource.
+
 _Required_: Yes
 
 _Type_: String
@@ -56,6 +60,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region in which to create the db instance. Changing this
+creates a new instance.
 
 _Required_: No
 

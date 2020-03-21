@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OVH::IpReverse",
-    "description": "CloudFormation equivalent of ovh_ip_reverse",
+    "description": "Provides a OVH IP reverse.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "Ip": {
-            "type": "string"
+            "type": "string",
+            "description": "The IP block to which the IP belongs."
         },
         "Ipreverse": {
-            "type": "string"
+            "type": "string",
+            "description": "The IP to set the reverse of, default to `ip` if `ip` is a /32 (IPv4) or a /128 (IPv6)."
         },
         "Reverse": {
-            "type": "string"
+            "type": "string",
+            "description": "The value of the reverse."
         }
     },
     "additionalProperties": false,

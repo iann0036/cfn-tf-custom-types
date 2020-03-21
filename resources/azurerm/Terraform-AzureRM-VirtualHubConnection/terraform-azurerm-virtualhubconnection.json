@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::VirtualHubConnection",
-    "description": "CloudFormation equivalent of azurerm_virtual_hub_connection",
+    "description": "Manages a Connection for a Virtual Hub.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,22 +26,28 @@
             "type": "string"
         },
         "HubToVitualNetworkTrafficAllowed": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is the Virtual Hub traffic allowed to transit via the Remote Virtual Network? Changing this forces a new resource to be created."
         },
         "InternetSecurityEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Should Internet Security be enabled to secure internet traffic? Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The Name which should be used for this Connection, which must be unique within the Virtual Hub. Changing this forces a new resource to be created."
         },
         "RemoteVirtualNetworkId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Virtual Network which the Virtual Hub should be connected to. Changing this forces a new resource to be created."
         },
         "VirtualHubId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Virtual Hub within which this connection should be created. Changing this forces a new resource to be created."
         },
         "VitualNetworkToHubGatewaysTrafficAllowed": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is Remote Virtual Network traffic allowed to transit the Hub's Virtual Network Gateway's? Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

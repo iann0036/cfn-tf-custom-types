@@ -1,6 +1,11 @@
 # Terraform::Panos::Licensing
 
-CloudFormation equivalent of panos_licensing
+This resource manages the licenses installed on the PAN-OS firewall.
+
+Installing the standard auth code for the standard PAN-OS license key for the
+firewall causes the firewall to reboot.  Thus it is recommended that you use
+this resource in a separate step of your overall firewall provisioning, as
+using this resource will cause the firewall to be temporarily inaccessible.
 
 ## Syntax
 
@@ -34,6 +39,8 @@ Properties:
 
 #### AuthCodes
 
+The list of auth codes to install.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -42,6 +49,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Delicense
 
+Leave as `true` if you want to delicense
+the firewall when this resource is removed, otherwise set to `false` to
+prevent firewall delicensing.  Delicensing requires that the licensing
+API key has been installed.
+
 _Required_: No
 
 _Type_: Boolean
@@ -49,6 +61,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Mode
+
+For `delicense` of `true`, the type of delicensing to
+perform.  Right now, only `auto` is supported (no manual delicensing).
 
 _Required_: No
 

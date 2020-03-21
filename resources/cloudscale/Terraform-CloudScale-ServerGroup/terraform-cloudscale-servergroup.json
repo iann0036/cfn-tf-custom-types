@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::CloudScale::ServerGroup",
-    "description": "CloudFormation equivalent of cloudscale_server_group",
+    "description": "Provides a cloudscale.ch Server Group resource. This can be used to create, and delete server groups.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,13 +12,16 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the new server group."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of the server group can currently only be `\"anti-affinity\"`."
         },
         "ZoneSlug": {
-            "type": "string"
+            "type": "string",
+            "description": "You can specify a zone slug. Options include `lpg1` and `rma1`."
         }
     },
     "additionalProperties": false,

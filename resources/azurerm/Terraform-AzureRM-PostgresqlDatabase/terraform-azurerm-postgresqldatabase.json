@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::PostgresqlDatabase",
-    "description": "CloudFormation equivalent of azurerm_postgresql_database",
+    "description": "Manages a PostgreSQL Database within a PostgreSQL Server",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,19 +29,24 @@
             "type": "string"
         },
         "Charset": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the Charset for the PostgreSQL Database, which needs [to be a valid PostgreSQL Charset](https://www.postgresql.org/docs/current/static/multibyte.html). Changing this forces a new resource to be created."
         },
         "Collation": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the Collation for the PostgreSQL Database, which needs [to be a valid PostgreSQL Collation](https://www.postgresql.org/docs/current/static/collation.html). Note that Microsoft uses different [notation](https://msdn.microsoft.com/library/windows/desktop/dd373814.aspx) - en-US instead of en_US. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the PostgreSQL Database, which needs [to be a valid PostgreSQL identifier](https://www.postgresql.org/docs/current/static/sql-syntax-lexical.html#SQL-SYNTAX-IDENTIFIERS). Changing this forces a\nnew resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which the PostgreSQL Server exists. Changing this forces a new resource to be created."
         },
         "ServerName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the PostgreSQL Server. Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

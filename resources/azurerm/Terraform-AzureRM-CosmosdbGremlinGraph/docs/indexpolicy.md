@@ -30,6 +30,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Automatic
 
+Indicates if the indexing policy is automatic. Defaults to `true`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -37,6 +39,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ExcludedPaths
+
+List of paths to exclude from indexing. Required if `indexing_mode` is `Consistent` or `Lazy`.
 
 _Required_: No
 
@@ -46,6 +50,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IncludedPaths
 
+List of paths to include in the indexing. Required if `indexing_mode` is `Consistent` or `Lazy`.
+
 _Required_: No
 
 _Type_: List of String
@@ -53,6 +59,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IndexingMode
+
+Indicates the indexing mode. Possible values include: `Consistent`, `Lazy`, `None`.
 
 _Required_: Yes
 

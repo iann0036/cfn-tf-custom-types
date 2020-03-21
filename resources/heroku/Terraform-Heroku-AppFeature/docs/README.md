@@ -1,6 +1,6 @@
 # Terraform::Heroku::AppFeature
 
-CloudFormation equivalent of heroku_app_feature
+This resource is used to create and manage [App Features](https://devcenter.heroku.com/articles/heroku-beta-features) on Heroku.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### App
 
+The Heroku app to link to.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Enabled
 
+Whether to enable or disable the App Feature. The default value is true.
+
 _Required_: No
 
 _Type_: Boolean
@@ -48,6 +52,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the App Feature to manage.
 
 _Required_: Yes
 

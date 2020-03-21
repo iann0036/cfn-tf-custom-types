@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::KeyPair
 
-CloudFormation equivalent of tencentcloud_key_pair
+Provides a key pair resource.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### KeyName
 
+The key pair's name. It is the only in one TencentCloud account.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProjectId
 
+Specifys to which project the key pair belongs.
+
 _Required_: No
 
 _Type_: Double
@@ -48,6 +52,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PublicKey
+
+You can import an existing public key and using TencentCloud key pair to manage it.
 
 _Required_: Yes
 

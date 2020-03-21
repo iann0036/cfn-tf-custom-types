@@ -1,6 +1,6 @@
 # Terraform::BIGIP::SysSnmpTraps
 
-CloudFormation equivalent of bigip_sys_snmp_traps
+`bigip_sys_snmp_traps` provides details bout how to enable snmp_traps resource on BIG-IP
 
 ## Syntax
 
@@ -71,6 +71,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Community
 
+Specifies the community string used for this trap.
+
 _Required_: No
 
 _Type_: String
@@ -78,6 +80,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+The port that the trap will be sent to.
 
 _Required_: No
 
@@ -95,6 +99,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Host
 
+The host the trap will be sent to.
+
 _Required_: No
 
 _Type_: String
@@ -103,6 +109,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name of the snmp trap.
+
 _Required_: No
 
 _Type_: String
@@ -110,6 +118,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Port
+
+User defined description.
 
 _Required_: No
 

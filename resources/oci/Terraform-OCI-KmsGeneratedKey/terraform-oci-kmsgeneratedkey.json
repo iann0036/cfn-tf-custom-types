@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::KmsGeneratedKey",
-    "description": "CloudFormation equivalent of oci_kms_generated_key",
+    "description": "This resource provides the Generated Key resource in Oracle Cloud Infrastructure Kms service.\n\nGenerates a key that you can use to encrypt or decrypt data.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "KeyShape": {
@@ -59,19 +59,23 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Information that can be used to provide an encryption context for the encrypted data.  The length of the string representation of the associated data must be fewer than 4096  characters."
         },
         "Ciphertext": {
             "type": "string"
         },
         "CryptoEndpoint": {
-            "type": "string"
+            "type": "string",
+            "description": "The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint."
         },
         "IncludePlaintextKey": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If true, the generated key is also returned unencrypted."
         },
         "KeyId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the master encryption key to encrypt the generated data encryption key with."
         },
         "LoggingContext": {
             "type": "array",
@@ -91,7 +95,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Information that provides context for audit logging. You can provide this additional  data by formatting it as key-value pairs to include in audit logs when audit logging is enabled."
         },
         "Plaintext": {
             "type": "string"

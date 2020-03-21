@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::LbPoolV2
 
-CloudFormation equivalent of opentelekomcloud_lb_pool_v2
+Manages an Enhanced LB pool resource within OpenTelekomCloud.
 
 ## Syntax
 
@@ -50,6 +50,9 @@ Properties:
 
 #### AdminStateUp
 
+The administrative state of the pool.
+A valid value is true (UP) or false (DOWN).
+
 _Required_: No
 
 _Type_: Boolean
@@ -57,6 +60,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Human-readable description for the pool.
 
 _Required_: No
 
@@ -66,6 +71,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LbMethod
 
+The load balancing algorithm to
+distribute traffic to the pool's members. Must be one of
+ROUND_ROBIN, LEAST_CONNECTIONS, or SOURCE_IP.
+
 _Required_: Yes
 
 _Type_: String
@@ -73,6 +82,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ListenerId
+
+The Listener on which the members of the pool
+will be associated with. Changing this creates a new pool.
+Note:  One of LoadbalancerID or ListenerID must be provided.
 
 _Required_: No
 
@@ -82,6 +95,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LoadbalancerId
 
+The load balancer on which to provision this
+pool. Changing this creates a new pool.
+Note:  One of LoadbalancerID or ListenerID must be provided.
+
 _Required_: No
 
 _Type_: String
@@ -90,6 +107,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Human-readable name for the pool.
+
 _Required_: No
 
 _Type_: String
@@ -97,6 +116,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Protocol
+
+The protocol - can either be TCP, UDP or HTTP.
+Changing this creates a new pool.
 
 _Required_: Yes
 
@@ -113,6 +135,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TenantId
+
+Required for admins. The UUID of the tenant who owns
+the pool.  Only administrative users can specify a tenant UUID
+other than their own. Changing this creates a new pool.
 
 _Required_: No
 

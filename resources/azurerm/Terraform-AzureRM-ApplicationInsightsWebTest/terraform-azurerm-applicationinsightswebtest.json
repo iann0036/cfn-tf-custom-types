@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::ApplicationInsightsWebTest",
-    "description": "CloudFormation equivalent of azurerm_application_insights_web_test",
+    "description": "Manages an Application Insights WebTest.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,41 +29,51 @@
             "type": "string"
         },
         "ApplicationInsightsId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Application Insights component on which the WebTest operates. Changing this forces a new resource to be created."
         },
         "Configuration": {
-            "type": "string"
+            "type": "string",
+            "description": "An XML configuration specification for a WebTest."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Purpose/user defined descriptive test for this WebTest."
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is the test actively being monitored."
         },
         "Frequency": {
-            "type": "number"
+            "type": "number",
+            "description": "Interval in seconds between test runs for this WebTest. Default is `300`."
         },
         "GeoLocations": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of where to physically run the tests from to give global coverage for accessibility of your application."
         },
         "Kind": {
-            "type": "string"
+            "type": "string",
+            "description": "The kind of web test that this web test watches. Choices are `ping` and `multistep`."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "The location of the resource group."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Application Insights WebTest. Changing this forces a\nnew resource to be created."
         },
         "ResourceGroupName": {
             "type": "string"
         },
         "RetryEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Allow for retries should this WebTest fail."
         },
         "SyntheticMonitorId": {
             "type": "string"
@@ -86,10 +96,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Resource tags."
         },
         "Timeout": {
-            "type": "number"
+            "type": "number",
+            "description": "Seconds until this WebTest will timeout and fail. Default is `30`."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

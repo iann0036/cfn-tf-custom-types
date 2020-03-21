@@ -1,6 +1,7 @@
 # Terraform::Cloudflare::AccessServiceToken
 
-CloudFormation equivalent of cloudflare_access_service_token
+Access Service Tokens are used for service-to-service communication
+when an application is behind Cloudflare Access.
 
 ## Syntax
 
@@ -31,6 +32,9 @@ Properties:
 
 #### AccountId
 
+The ID of the account where the Access
+Service is being created.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +42,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Friendly name of the token's intent.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Scaleway::SecurityGroupRule",
-    "description": "CloudFormation equivalent of scaleway_security_group_rule",
+    "description": "**DEPRECATED**: This resource is deprecated and will be removed in `v2.0+`.\nPlease use `scaleway_instance_security_group_rule` instead.\n\nProvides security group rules. This allows security group rules to be created, updated and deleted.\nFor additional details please refer to [API documentation](https://developer.scaleway.com/#security-groups-manage-rules).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,22 +9,28 @@
             "type": "string"
         },
         "Action": {
-            "type": "string"
+            "type": "string",
+            "description": "action of rule (`accept`, `drop`)."
         },
         "Direction": {
-            "type": "string"
+            "type": "string",
+            "description": "direction of rule (`inbound`, `outbound`)."
         },
         "IpRange": {
-            "type": "string"
+            "type": "string",
+            "description": "ip_range of rule."
         },
         "Port": {
-            "type": "number"
+            "type": "number",
+            "description": "port of the rule."
         },
         "Protocol": {
-            "type": "string"
+            "type": "string",
+            "description": "protocol of rule (`ICMP`, `TCP`, `UDP`)."
         },
         "SecurityGroup": {
-            "type": "string"
+            "type": "string",
+            "description": "the security group which should be associated with this rule."
         }
     },
     "additionalProperties": false,

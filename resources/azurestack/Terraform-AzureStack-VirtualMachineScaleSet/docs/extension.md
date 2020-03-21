@@ -34,6 +34,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### AutoUpgradeMinorVersion
 
+Specifies whether or not to use the latest minor version available.
+
 _Required_: No
 
 _Type_: Boolean
@@ -41,6 +43,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the extension.
 
 _Required_: Yes
 
@@ -50,6 +54,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProtectedSettings
 
+The protected_settings passed to the extension, like settings, these are specified as a JSON object in a string.
+
 _Required_: No
 
 _Type_: String
@@ -57,6 +63,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Publisher
+
+The publisher of the extension, available publishers can be found by using the Azure CLI.
 
 _Required_: Yes
 
@@ -66,6 +74,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Settings
 
+The settings passed to the extension, these are specified as a JSON object in a string.
+
 _Required_: No
 
 _Type_: String
@@ -74,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Type
 
+The type of extension, available types for a publisher can be found using the Azure CLI.
+
 _Required_: Yes
 
 _Type_: String
@@ -81,6 +93,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TypeHandlerVersion
+
+Specifies the version of the extension to use, available versions can be found using the Azure CLI.
 
 _Required_: Yes
 

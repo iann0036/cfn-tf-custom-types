@@ -28,6 +28,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Address
 
+IP address or domain name of the web server that the client accesses. For example, 192.168.1.1 or www.a.com.
+
 _Required_: Yes
 
 _Type_: String
@@ -35,6 +37,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BackProtocol
+
+Protocl used by WAF to forward client requests to the server. The options are HTTP and HTTPS.
 
 _Required_: Yes
 
@@ -44,6 +48,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FrontProtocol
 
+Protocol type of the client. The options are HTTP and HTTPS.
+
 _Required_: Yes
 
 _Type_: String
@@ -51,6 +57,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Port
+
+Port number used by the web server. The value ranges from 0 to 65535, for example, 8080.
 
 _Required_: Yes
 

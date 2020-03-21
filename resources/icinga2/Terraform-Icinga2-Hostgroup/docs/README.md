@@ -1,6 +1,7 @@
 # Terraform::Icinga2::Hostgroup
 
-CloudFormation equivalent of icinga2_hostgroup
+Configures an Icinga2 hostgroup resource. This allows hostgroup to be configured, updated,
+and deleted.
 
 ## Syntax
 
@@ -31,6 +32,8 @@ Properties:
 
 #### DisplayName
 
+The name of the hostgroup to display in the Icinga2 interface.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +41,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the hostgroup.
 
 _Required_: Yes
 

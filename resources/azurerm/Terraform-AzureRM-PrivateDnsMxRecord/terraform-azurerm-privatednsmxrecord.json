@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::PrivateDnsMxRecord",
-    "description": "CloudFormation equivalent of azurerm_private_dns_mx_record",
+    "description": "Enables you to manage DNS MX Records within Azure Private DNS.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Record": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "Exchange": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The FQDN of the exchange to MX record points to."
                 },
                 "Preference": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The preference of the MX record."
                 }
             },
             "required": [
@@ -48,10 +50,12 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the DNS MX Record. Changing this forces a new resource to be created. Default to '@' for root zone entry."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the resource group where the resource exists. Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -71,13 +75,15 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Ttl": {
             "type": "number"
         },
         "ZoneName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the Private DNS Zone where the resource exists. Changing this forces a new resource to be created."
         },
         "Record": {
             "type": "array",

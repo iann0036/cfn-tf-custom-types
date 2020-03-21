@@ -1,6 +1,13 @@
 # Terraform::AzureRM::Frontdoor
 
-CloudFormation equivalent of azurerm_frontdoor
+Manages an Azure Front Door instance.
+
+Azure Front Door Service is Microsoft's highly available and scalable web application acceleration platform and global HTTP(s) load balancer. It provides built-in DDoS protection and application layer security and caching. Front Door enables you to build applications that maximize and automate high-availability and performance for your end-users. Use Front Door with Azure services including Web/Mobile Apps, Cloud Services and Virtual Machines – or combine it with on-premises services for hybrid deployments and smooth cloud migration.
+
+Below are some of the key scenarios that Azure Front Door Service addresses:
+* Use Front Door to improve application scale and availability with instant multi-region failover
+* Use Front Door to improve application performance with SSL offload and routing requests to the fastest available application backend.
+* Use Front Door for application layer security and DDoS protection for your application.
 
 ## Syntax
 
@@ -71,6 +78,8 @@ Properties:
 
 #### EnforceBackendPoolsCertificateNameCheck
 
+Enforce certificate name check on `HTTPS` requests to all backend pools, this setting will have no effect on `HTTP` requests. Permitted values are `true` or `false`.
+
 _Required_: Yes
 
 _Type_: Boolean
@@ -79,6 +88,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FriendlyName
 
+A friendly name for the Front Door service.
+
 _Required_: No
 
 _Type_: String
@@ -86,6 +97,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LoadBalancerEnabled
+
+Should the Front Door Load Balancer be Enabled? Defaults to `true`.
 
 _Required_: No
 
@@ -103,6 +116,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the Front Door service. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -111,6 +126,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+Specifies the name of the Resource Group in which the Front Door service should exist. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -118,6 +135,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

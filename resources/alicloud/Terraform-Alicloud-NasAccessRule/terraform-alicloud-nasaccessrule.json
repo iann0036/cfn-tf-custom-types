@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::NasAccessRule",
-    "description": "CloudFormation equivalent of alicloud_nas_access_rule",
+    "description": "Provides a Nas Access Rule resource.\n\nWhen NAS is activated, the Default VPC Permission Group is automatically generated. It allows all IP addresses in a VPC to access the mount point with full permissions. Full permissions include Read/Write permission with no restriction on root users.\n\n-> **NOTE:** Available in v1.34.0+.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,22 +9,27 @@
             "type": "string"
         },
         "AccessGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "Permission group name."
         },
         "AccessRuleId": {
             "type": "string"
         },
         "Priority": {
-            "type": "number"
+            "type": "number",
+            "description": "Priority level. Range: 1-100. Default value: 1."
         },
         "RwAccessType": {
-            "type": "string"
+            "type": "string",
+            "description": "Read-write permission type: RDWR (default), RDONLY."
         },
         "SourceCidrIp": {
-            "type": "string"
+            "type": "string",
+            "description": "Address or address segment."
         },
         "UserAccessType": {
-            "type": "string"
+            "type": "string",
+            "description": "User permission type: no_squash (default), root_squash, all_squash."
         }
     },
     "additionalProperties": false,

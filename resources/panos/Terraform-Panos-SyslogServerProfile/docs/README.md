@@ -1,6 +1,6 @@
 # Terraform::Panos::SyslogServerProfile
 
-CloudFormation equivalent of panos_syslog_server_profile
+This resource allows you to add/update/delete syslog server profiles.
 
 ## Syntax
 
@@ -66,6 +66,8 @@ Properties:
 
 #### AuthFormat
 
+Auth format.
+
 _Required_: No
 
 _Type_: String
@@ -73,6 +75,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ConfigFormat
+
+Config format.
 
 _Required_: No
 
@@ -82,6 +86,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DataFormat
 
+Data format.
+
 _Required_: No
 
 _Type_: String
@@ -89,6 +95,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EscapeCharacter
+
+The escape character.
 
 _Required_: No
 
@@ -98,6 +106,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EscapedCharacters
 
+The escaped characters (as a string).
+
 _Required_: No
 
 _Type_: String
@@ -105,6 +115,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GtpFormat
+
+GTP format.
 
 _Required_: No
 
@@ -114,6 +126,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HipMatchFormat
 
+HIP match format.
+
 _Required_: No
 
 _Type_: String
@@ -121,6 +135,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IptagFormat
+
+IP tag format.
 
 _Required_: No
 
@@ -130,6 +146,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The group's name.
+
 _Required_: Yes
 
 _Type_: String
@@ -137,6 +155,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SctpFormat
+
+SCTP format.
 
 _Required_: No
 
@@ -146,6 +166,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SystemFormat
 
+System format.
+
 _Required_: No
 
 _Type_: String
@@ -153,6 +175,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ThreatFormat
+
+Threat format.
 
 _Required_: No
 
@@ -162,6 +186,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TrafficFormat
 
+Traffic format.
+
 _Required_: No
 
 _Type_: String
@@ -169,6 +195,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TunnelFormat
+
+Tunnel format.
 
 _Required_: No
 
@@ -178,6 +206,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UrlFormat
 
+URL format.
+
 _Required_: No
 
 _Type_: String
@@ -185,6 +215,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserIdFormat
+
+UserID format.
 
 _Required_: No
 
@@ -194,6 +226,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Vsys
 
+The vsys (default: `shared`).
+
 _Required_: No
 
 _Type_: String
@@ -201,6 +235,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WildfireFormat
+
+Wildfire format.
 
 _Required_: No
 

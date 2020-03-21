@@ -1,6 +1,6 @@
 # Terraform::HCloud::ServerNetwork
 
-CloudFormation equivalent of hcloud_server_network
+Provides a Hetzner Cloud Server Network to represent a private network on a server in the Hetzner Cloud.
 
 ## Syntax
 
@@ -36,6 +36,8 @@ Properties:
 
 #### AliasIps
 
+Additional IPs to be assigned to this server.
+
 _Required_: No
 
 _Type_: List of String
@@ -43,6 +45,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ip
+
+IP to request to be assigned to this server. If you do not provide this then you will be auto assigned an IP address.
+- `alias_ips` - (Required, list[string]) Additional IPs to be assigned to this server.
 
 _Required_: No
 
@@ -52,6 +57,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NetworkId
 
+ID of the network which should be added to the server.
+- `server_id` - (Required, int) ID of the server.
+- `ip` - (Optional, string) IP to request to be assigned to this server. If you do not provide this then you will be auto assigned an IP address.
+- `alias_ips` - (Required, list[string]) Additional IPs to be assigned to this server.
+
 _Required_: Yes
 
 _Type_: Double
@@ -59,6 +69,10 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServerId
+
+ID of the server.
+- `ip` - (Optional, string) IP to request to be assigned to this server. If you do not provide this then you will be auto assigned an IP address.
+- `alias_ips` - (Required, list[string]) Additional IPs to be assigned to this server.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::NetworkingSubnetV2
 
-CloudFormation equivalent of opentelekomcloud_networking_subnet_v2
+Manages a V2 Neutron subnet resource within OpenTelekomCloud.
 
 ## Syntax
 
@@ -59,6 +59,9 @@ Properties:
 
 #### Cidr
 
+CIDR representing IP range for this subnet, based on IP
+version. Changing this creates a new subnet.
+
 _Required_: Yes
 
 _Type_: String
@@ -66,6 +69,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DnsNameservers
+
+An array of DNS name server names used by hosts
+in this subnet. Changing this updates the DNS name servers for the existing
+subnet.
 
 _Required_: No
 
@@ -75,6 +82,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableDhcp
 
+The administrative state of the network.
+Acceptable values are "true" and "false". Changing this value enables or
+disables the DHCP capabilities of the existing subnet. Defaults to true.
+
 _Required_: No
 
 _Type_: Boolean
@@ -82,6 +93,11 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GatewayIp
+
+Default gateway used by devices in this subnet.
+Leaving this blank and not setting `no_gateway` will cause a default
+gateway of `.1` to be used. Changing this updates the gateway IP of the
+existing subnet.
 
 _Required_: No
 
@@ -91,6 +107,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IpVersion
 
+IP version, either 4 (default) or 6. Changing this creates a
+new subnet.
+
 _Required_: No
 
 _Type_: Double
@@ -98,6 +117,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the subnet. Changing this updates the name of
+the existing subnet.
 
 _Required_: No
 
@@ -107,6 +129,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NetworkId
 
+The UUID of the parent network. Changing this
+creates a new subnet.
+
 _Required_: Yes
 
 _Type_: String
@@ -114,6 +139,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NoGateway
+
+Do not set a gateway IP on this subnet. Changing
+this removes or adds a default gateway IP of the existing subnet.
 
 _Required_: No
 
@@ -131,6 +159,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TenantId
 
+The owner of the subnet. Required if admin wants to
+create a subnet for another tenant. Changing this creates a new subnet.
+
 _Required_: No
 
 _Type_: String
@@ -138,6 +169,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ValueSpecs
+
+Map of additional options.
 
 _Required_: No
 

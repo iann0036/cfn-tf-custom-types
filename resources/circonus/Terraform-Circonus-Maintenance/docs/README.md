@@ -1,6 +1,8 @@
 # Terraform::Circonus::Maintenance
 
-CloudFormation equivalent of circonus_maintenance
+The ``circonus_maintenance`` resource creates and manages a
+single [maintenance window resource](https://login.circonus.com/resources/docs/user/Alerting/Maintenance.html)
+which can reference a check, ruleset, target or entire account.
 
 ## Syntax
 
@@ -47,6 +49,9 @@ Properties:
 
 #### Account
 
+A string referencing the account CID to have maintenance on, mutually exclusive
+with `check`, `rule_set`, and `target`.
+
 _Required_: No
 
 _Type_: String
@@ -54,6 +59,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Check
+
+A string referencing the check CID to have maintenance on, mutually exclusive
+with `account`, `rule_set`, and `target`.
 
 _Required_: No
 
@@ -71,6 +79,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RuleSet
 
+A string referencing the rule_set CID to have maintenance on, mutually exclusive
+with `account`, `check`, and `target`.
+
 _Required_: No
 
 _Type_: String
@@ -78,6 +89,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Severities
+
+A list of strings determining which severities to put into maintenance.
+Must be in the range: "1"-"5".
 
 _Required_: Yes
 
@@ -87,6 +101,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Start
 
+An RFC3339 timestamp string which indicates the start of the maintenance window.
+
 _Required_: Yes
 
 _Type_: String
@@ -94,6 +110,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Stop
+
+An RFC3339 timestamp string which indicates the end of the maintenance window.
 
 _Required_: Yes
 
@@ -103,6 +121,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A list of tags assigned to the maintenance window.
+
 _Required_: No
 
 _Type_: List of String
@@ -110,6 +130,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Target
+
+A string referencing the check target (host) to have maintenance on, mutually exclusive
+with `account`, `rule_set`, and `check`.
 
 _Required_: No
 

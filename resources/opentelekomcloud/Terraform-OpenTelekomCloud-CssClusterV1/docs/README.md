@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::CssClusterV1
 
-CloudFormation equivalent of opentelekomcloud_css_cluster_v1
+cluster management
 
 ## Syntax
 

@@ -1,6 +1,6 @@
 # Terraform::VSphere::Vnic
 
-CloudFormation equivalent of vsphere_vnic
+Provides a VMware vSphere vnic resource.
 
 ## Syntax
 
@@ -47,6 +47,8 @@ Properties:
 
 #### DistributedPortGroup
 
+Key of the distributed portgroup the nic will connect to.
+
 _Required_: No
 
 _Type_: String
@@ -54,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DistributedSwitchPort
+
+UUID of the DVSwitch the nic will be attached to. Do not set if you set portgroup.
 
 _Required_: No
 
@@ -71,6 +75,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Mac
 
+MAC address of the interface.
+
 _Required_: No
 
 _Type_: String
@@ -78,6 +84,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Mtu
+
+MTU of the interface.
 
 _Required_: No
 
@@ -87,6 +95,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Netstack
 
+TCP/IP stack setting for this interface. Possible values are 'defaultTcpipStack', 'vmotion', 'vSphereProvisioning'. Changing this will force the creation of a new interface since it's not possible to change the stack once it gets created. (Default: `defaultTcpipStack`).
+
 _Required_: No
 
 _Type_: String
@@ -94,6 +104,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Portgroup
+
+Portgroup to attach the nic to. Do not set if you set distributed_switch_port.
 
 _Required_: No
 

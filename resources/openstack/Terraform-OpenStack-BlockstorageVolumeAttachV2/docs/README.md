@@ -1,6 +1,18 @@
 # Terraform::OpenStack::BlockstorageVolumeAttachV2
 
-CloudFormation equivalent of openstack_blockstorage_volume_attach_v2
+This resource is experimental and may be removed in the future! Feedback
+is requested if you find this resource useful or if you find any problems
+with it.
+
+Creates a general purpose attachment connection to a Block
+Storage volume using the OpenStack Block Storage (Cinder) v2 API.
+Depending on your Block Storage service configuration, this
+resource can assist in attaching a volume to a non-OpenStack resource
+such as a bare-metal server or a remote virtual machine in a
+different cloud provider.
+
+This does not actually attach a volume to an instance. Please use
+the `openstack_compute_volume_attach_v2` resource for that.
 
 ## Syntax
 
@@ -56,6 +68,10 @@ Properties:
 
 #### AttachMode
 
+Specify whether to attach the volume as Read-Only
+(`ro`) or Read-Write (`rw`). Only values of `ro` and `rw` are accepted.
+If left unspecified, the Block Storage API will apply a default of `rw`.
+
 _Required_: No
 
 _Type_: String
@@ -63,6 +79,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Device
+
+The device to tell the Block Storage service this
+volume will be attached as. This is purely for informational purposes.
+You can specify `auto` or a device such as `/dev/vdc`.
 
 _Required_: No
 
@@ -72,6 +92,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HostName
 
+The host to attach the volume to.
+
 _Required_: Yes
 
 _Type_: String
@@ -79,6 +101,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Initiator
+
+The iSCSI initiator string to make the connection.
 
 _Required_: No
 
@@ -96,6 +120,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IpAddress
 
+The IP address of the `host_name` above.
+
 _Required_: No
 
 _Type_: String
@@ -103,6 +129,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Multipath
+
+Whether to connect to this volume via multipath.
 
 _Required_: No
 
@@ -112,6 +140,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OsType
 
+The iSCSI initiator OS type.
+
 _Required_: No
 
 _Type_: String
@@ -119,6 +149,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Platform
+
+The iSCSI initiator platform.
 
 _Required_: No
 
@@ -128,6 +160,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region in which to obtain the V2 Block Storage
+client. A Block Storage client is needed to create a volume attachment.
+If omitted, the `region` argument of the provider is used. Changing this
+creates a new volume attachment.
+
 _Required_: No
 
 _Type_: String
@@ -135,6 +172,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VolumeId
+
+The ID of the Volume to attach to an Instance.
 
 _Required_: Yes
 
@@ -144,6 +183,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Wwnn
 
+A wwnn name. Used for Fibre Channel connections.
+
 _Required_: No
 
 _Type_: String
@@ -151,6 +192,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Wwpn
+
+An array of wwpn strings. Used for Fibre Channel
+connections.
 
 _Required_: No
 

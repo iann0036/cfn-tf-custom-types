@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Hadoop
 
+The version of Hadoop which should be used for this HDInsight Hadoop Cluster. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String

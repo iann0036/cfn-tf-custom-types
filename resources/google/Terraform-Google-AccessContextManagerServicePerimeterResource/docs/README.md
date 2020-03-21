@@ -1,6 +1,20 @@
 # Terraform::Google::AccessContextManagerServicePerimeterResource
 
-CloudFormation equivalent of google_access_context_manager_service_perimeter_resource
+Allows configuring a single GCP resource that should be inside of a service perimeter.
+This resource is intended to be used in cases where it is not possible to compile a full list
+of projects to include in a `google_access_context_manager_service_perimeter` resource,
+to enable them to be added separately.
+
+~> **Note:** If this resource is used alongside a `google_access_context_manager_service_perimeter` resource,
+the service perimeter resource must have a `lifecycle` block with `ignore_changes = [status[0].resources]` so
+they don't fight over which resources should be in the policy.
+
+
+To get more information about ServicePerimeterResource, see:
+
+* [API documentation](https://cloud.google.com/access-context-manager/docs/reference/rest/v1/accessPolicies.servicePerimeters)
+* How-to Guides
+    * [Service Perimeter Quickstart](https://cloud.google.com/vpc-service-controls/docs/quickstart)
 
 ## Syntax
 

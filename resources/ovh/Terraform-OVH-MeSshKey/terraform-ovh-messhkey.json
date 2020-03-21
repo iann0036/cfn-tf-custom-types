@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OVH::MeSshKey",
-    "description": "CloudFormation equivalent of ovh_me_ssh_key",
+    "description": "Creates an SSH Key.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "Default": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "True when this public SSH key is used for rescue mode and reinstallations."
         },
         "Key": {
-            "type": "string"
+            "type": "string",
+            "description": "The content of the public key in the form \"ssh-algo content\", e.g. \"ssh-ed25519 AAAAC3...\"."
         },
         "KeyName": {
-            "type": "string"
+            "type": "string",
+            "description": "The friendly name of this SSH key."
         }
     },
     "additionalProperties": false,

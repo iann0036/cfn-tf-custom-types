@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::OceOceInstance",
-    "description": "CloudFormation equivalent of oci_oce_oce_instance",
+    "description": "This resource provides the Oce Instance resource in Oracle Cloud Infrastructure Content and Experience service.\n\nCreates a new OceInstance.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,10 +26,12 @@
             "type": "string"
         },
         "AdminEmail": {
-            "type": "string"
+            "type": "string",
+            "description": "Admin Email for Notification."
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) Compartment Identifier."
         },
         "DefinedTags": {
             "type": "array",
@@ -49,10 +51,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{\"foo-namespace.bar-key\": \"value\"}`."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) OceInstance description."
         },
         "FreeformTags": {
             "type": "array",
@@ -72,25 +76,30 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{\"bar-key\": \"value\"}`."
         },
         "Guid": {
             "type": "string"
         },
         "IdcsAccessToken": {
-            "type": "string"
+            "type": "string",
+            "description": "Identity Cloud Service access token identifying a stripe and service administrator user.\n**Note:** The `idcs_access_token` is stored in the Terraform state file."
         },
         "IdcsTenancy": {
             "type": "string"
         },
         "InstanceUsageType": {
-            "type": "string"
+            "type": "string",
+            "description": "Instance type based on its usage."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "OceInstance Name."
         },
         "ObjectStorageNamespace": {
-            "type": "string"
+            "type": "string",
+            "description": "Object Storage Namespace of Tenancy."
         },
         "Service": {
             "type": "array",
@@ -119,10 +128,12 @@
             "type": "string"
         },
         "TenancyId": {
-            "type": "string"
+            "type": "string",
+            "description": "Tenancy Identifier."
         },
         "TenancyName": {
-            "type": "string"
+            "type": "string",
+            "description": "Tenancy Name."
         },
         "TimeCreated": {
             "type": "string"

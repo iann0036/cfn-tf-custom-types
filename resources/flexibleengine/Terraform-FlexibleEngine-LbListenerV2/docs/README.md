@@ -1,6 +1,6 @@
 # Terraform::FlexibleEngine::LbListenerV2
 
-CloudFormation equivalent of flexibleengine_lb_listener_v2
+Manages a V2 listener resource within FlexibleEngine.
 
 ## Syntax
 
@@ -54,6 +54,9 @@ Properties:
 
 #### AdminStateUp
 
+The administrative state of the Listener.
+A valid value is true (UP) or false (DOWN).
+
 _Required_: No
 
 _Type_: Boolean
@@ -61,6 +64,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefaultPoolId
+
+The ID of the default pool with which the
+Listener is associated. Changing this creates a new Listener.
 
 _Required_: No
 
@@ -70,6 +76,12 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DefaultTlsContainerRef
 
+A reference to a Barbican Secrets
+container which stores TLS information. This is required if the protocol
+is `TERMINATED_HTTPS`. See
+[here](https://wiki.openstack.org/wiki/Network/LBaaS/docs/how-to-create-tls-loadbalancer)
+for more information.
+
 _Required_: No
 
 _Type_: String
@@ -77,6 +89,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Human-readable description for the Listener.
 
 _Required_: No
 
@@ -86,6 +100,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LoadbalancerId
 
+The load balancer on which to provision this
+Listener. Changing this creates a new Listener.
+
 _Required_: Yes
 
 _Type_: String
@@ -93,6 +110,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Human-readable name for the Listener. Does not have
+to be unique.
 
 _Required_: No
 
@@ -102,6 +122,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Protocol
 
+The protocol - can either be TCP, UDP, HTTP or TERMINATED_HTTPS.
+Changing this creates a new Listener.
+
 _Required_: Yes
 
 _Type_: String
@@ -109,6 +132,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProtocolPort
+
+The port on which to listen for client traffic.
+Changing this creates a new Listener.
 
 _Required_: Yes
 
@@ -118,6 +144,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region in which to obtain the V2 Networking client.
+A Networking client is needed to create an . If omitted, the
+`region` argument of the provider is used. Changing this creates a new
+Listener.
+
 _Required_: No
 
 _Type_: String
@@ -125,6 +156,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SniContainerRefs
+
+A list of references to Barbican Secrets
+containers which store SNI information. See
+[here](https://wiki.openstack.org/wiki/Network/LBaaS/docs/how-to-create-tls-loadbalancer)
+for more information.
 
 _Required_: No
 
@@ -134,6 +170,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TenantId
 
+Required for admins. The UUID of the tenant who owns
+the Listener.  Only administrative users can specify a tenant UUID
+other than their own. Changing this creates a new Listener.
+
 _Required_: No
 
 _Type_: String
@@ -141,6 +181,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TlsCiphersPolicy
+
+Specifies the security policy used by the listener.
+This parameter is valid only when the load balancer protocol is set to TERMINATED_HTTPS.
+The value can be tls-1-0, tls-1-1, tls-1-2, or tls-1-2-strict, and the default value is tls-1-0.
+For details of cipher suites for each security policy, see the table below.
 
 _Required_: No
 

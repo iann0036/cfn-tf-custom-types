@@ -1,6 +1,6 @@
 # Terraform::OpenStack::NetworkingNetworkV2
 
-CloudFormation equivalent of openstack_networking_network_v2
+Manages a V2 Neutron network resource within OpenStack.
 
 ## Syntax
 
@@ -65,6 +65,10 @@ Properties:
 
 #### AdminStateUp
 
+The administrative state of the network.
+Acceptable values are "true" and "false". Changing this value updates the
+state of the existing network.
+
 _Required_: No
 
 _Type_: Boolean
@@ -72,6 +76,11 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AvailabilityZoneHints
+
+An availability zone is used to make
+network resources highly available. Used for resources with high availability
+so that they are scheduled on different availability zones. Changing this
+creates a new network.
 
 _Required_: No
 
@@ -81,6 +90,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+Human-readable description of the network. Changing this
+updates the name of the existing network.
+
 _Required_: No
 
 _Type_: String
@@ -88,6 +100,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DnsDomain
+
+The network DNS domain. Available, when Neutron DNS
+extension is enabled. The `dns_domain` of a network in conjunction with the
+`dns_name` attribute of its ports will be published in an external DNS
+service when Neutron is configured to integrate with such a service.
 
 _Required_: No
 
@@ -97,6 +114,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### External
 
+Specifies whether the network resource has the
+external routing facility. Valid values are true and false. Defaults to
+false. Changing this updates the external attribute of the existing network.
+
 _Required_: No
 
 _Type_: Boolean
@@ -104,6 +125,10 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Mtu
+
+The network MTU. Available for read-only, when Neutron
+`net-mtu` extension is enabled. Available for the modification, when
+Neutron `net-mtu-writable` extension is enabled.
 
 _Required_: No
 
@@ -113,6 +138,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the network. Changing this updates the name of
+the existing network.
+
 _Required_: No
 
 _Type_: String
@@ -120,6 +148,12 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PortSecurityEnabled
+
+Whether to explicitly enable or disable
+port security on the network. Port Security is usually enabled by default, so
+omitting this argument will usually result in a value of "true". Setting this
+explicitly to `false` will disable port security. Valid values are `true` and
+`false`.
 
 _Required_: No
 
@@ -129,6 +163,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### QosPolicyId
 
+Reference to the associated QoS policy.
+
 _Required_: No
 
 _Type_: String
@@ -136,6 +172,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region in which to obtain the V2 Networking client.
+A Networking client is needed to create a Neutron network. If omitted, the
+`region` argument of the provider is used. Changing this creates a new
+network.
 
 _Required_: No
 
@@ -145,6 +186,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Shared
 
+Specifies whether the network resource can be accessed
+by any tenant or not. Changing this updates the sharing capabilities of the
+existing network.
+
 _Required_: No
 
 _Type_: Boolean
@@ -152,6 +197,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A set of string tags for the network.
 
 _Required_: No
 
@@ -161,6 +208,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TenantId
 
+The owner of the network. Required if admin wants to
+create a network for another tenant. Changing this creates a new network.
+
 _Required_: No
 
 _Type_: String
@@ -169,6 +219,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TransparentVlan
 
+Specifies whether the network resource has the
+VLAN transparent attribute set. Valid values are true and false. Defaults to
+false. Changing this updates the `transparent_vlan` attribute of the existing
+network.
+
 _Required_: No
 
 _Type_: Boolean
@@ -176,6 +231,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ValueSpecs
+
+Map of additional options.
 
 _Required_: No
 

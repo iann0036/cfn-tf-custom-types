@@ -1,6 +1,6 @@
 # Terraform::GitHub::OrganizationProject
 
-CloudFormation equivalent of github_organization_project
+This resource allows you to create and manage projects for GitHub organization.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### Body
 
+The body of the project.
+
 _Required_: No
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the project.
 
 _Required_: Yes
 

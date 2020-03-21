@@ -1,6 +1,6 @@
 # Terraform::Spotinst::MultaiRoutingRule
 
-CloudFormation equivalent of spotinst_multai_routing_rule
+Provides a Spotinst Multai Routing Rule.
 
 ## Syntax
 
@@ -46,6 +46,8 @@ Properties:
 
 #### BalancerId
 
+The ID of the balancer.
+
 _Required_: Yes
 
 _Type_: String
@@ -53,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ListenerId
+
+The ID of the listener.
 
 _Required_: Yes
 
@@ -78,6 +82,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Route
 
+Route defines a simple language for matching HTTP requests and route the traffic accordingly. Route provides series of matchers that follow the syntax: Path matcher: — Path("/foo/bar") // trie-based PathRegexp(“/foo/.*”) // regexp-based Method matcher: — Method(“GET”) // trie-based MethodRegexp(“POST|PUT”) // regexp based Header matcher: — Header(“Content-Type”, “application/json”) // trie-based HeaderRegexp(“Content-Type”, “application/.*”) // regexp based Matchers can be combined using && operator: — Method(“POST”) && Path("/v1").
+
 _Required_: Yes
 
 _Type_: String
@@ -85,6 +91,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Strategy
+
+Balancing strategy. Valid values: `ROUNDROBIN`, `RANDOM`, `LEASTCONN`, `IPHASH`.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Docker::Network",
-    "description": "CloudFormation equivalent of docker_network",
+    "description": "Manages a Docker Network. This can be used alongside\n[docker\\_container](/docs/providers/docker/r/container.html)\nto create virtual networks within the docker environment.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "IpamConfig": {
@@ -62,28 +62,36 @@
             "type": "string"
         },
         "Attachable": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable manual container attachment to the network.\nDefaults to `false`."
         },
         "CheckDuplicate": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Requests daemon to check for networks\nwith same name."
         },
         "Driver": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the network driver to use. Defaults to\n`bridge` driver."
         },
         "Ingress": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Create swarm routing-mesh network.\nDefaults to `false`."
         },
         "Internal": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Restrict external access to the network.\nDefaults to `false`."
         },
         "IpamDriver": {
-            "type": "string"
+            "type": "string",
+            "description": "Driver used by the custom IP scheme of the\nnetwork."
         },
         "Ipv6": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable IPv6 networking.\nDefaults to `false`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Docker network."
         },
         "Options": {
             "type": "array",
@@ -103,7 +111,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Network specific options to be used by\nthe drivers."
         },
         "Scope": {
             "type": "string"

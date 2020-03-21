@@ -1,6 +1,6 @@
 # Terraform::Cobbler::Distro
 
-CloudFormation equivalent of cobbler_distro
+Manages a distribution within Cobbler.
 
 ## Syntax
 
@@ -61,6 +61,9 @@ Properties:
 
 #### Arch
 
+The architecture of the distro. Valid options
+are: i386, x86_64, ia64, ppc, ppc64, s390, arm.
+
 _Required_: No
 
 _Type_: String
@@ -68,6 +71,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BootFiles
+
+Files copied into tftpboot beyond the
+kernel/initrd.
 
 _Required_: No
 
@@ -77,6 +83,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Breed
 
+The "breed" of distribution. Valid options
+are: redhat, fedora, centos, scientific linux, suse, debian, and
+ubuntu. These choices may vary depending on the version of Cobbler
+in use.
+
 _Required_: Yes
 
 _Type_: String
@@ -84,6 +95,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Comment
+
+Free form text description.
 
 _Required_: No
 
@@ -93,6 +106,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FetchableFiles
 
+Templates for tftp or wget.
+
 _Required_: No
 
 _Type_: String
@@ -100,6 +115,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Initrd
+
+Absolute path to initrd on filesystem. This
+must already exist prior to creating the distro.
 
 _Required_: Yes
 
@@ -109,6 +127,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Kernel
 
+Absolute path to kernel on filesystem. This
+must already exist prior to creating the distro.
+
 _Required_: Yes
 
 _Type_: String
@@ -116,6 +137,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KernelOptions
+
+Kernel options to use with the
+kernel.
 
 _Required_: No
 
@@ -125,6 +149,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KernelOptionsPost
 
+Post install Kernel options to
+use with the kernel after installation.
+
 _Required_: No
 
 _Type_: String
@@ -132,6 +159,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MgmtClasses
+
+Management classes for external config
+management.
 
 _Required_: No
 
@@ -141,6 +171,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A name for the distro.
+
 _Required_: Yes
 
 _Type_: String
@@ -148,6 +180,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OsVersion
+
+The version of the distro you are
+creating. This varies with the version of Cobbler you are using.
+An updated signature list may need to be obtained in order to
+support a newer version. Example: `trusty`.
 
 _Required_: Yes
 
@@ -157,6 +194,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Owners
 
+Owners list for authz_ownership.
+
 _Required_: No
 
 _Type_: List of String
@@ -164,6 +203,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RedhatManagementKey
+
+Red Hat Management key.
 
 _Required_: No
 
@@ -173,6 +214,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RedhatManagementServer
 
+Red Hat Management server.
+
 _Required_: No
 
 _Type_: String
@@ -180,6 +223,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TemplateFiles
+
+File mappings for built-in config
+management.
 
 _Required_: No
 

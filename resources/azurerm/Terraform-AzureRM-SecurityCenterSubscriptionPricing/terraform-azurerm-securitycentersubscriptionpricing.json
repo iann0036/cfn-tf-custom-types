@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::SecurityCenterSubscriptionPricing",
-    "description": "CloudFormation equivalent of azurerm_security_center_subscription_pricing",
+    "description": "Manages the Pricing Tier for Azure Security Center in the current subscription.\n\n~> **NOTE:** This resource requires the `Owner` permission on the Subscription.\n\n~> **NOTE:** Deletion of this resource does not change or reset the pricing tier to `Free`",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,7 +29,8 @@
             "type": "string"
         },
         "Tier": {
-            "type": "string"
+            "type": "string",
+            "description": "The pricing tier to use. Possible values are `Free` and `Standard`."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::LbMemberV1",
-    "description": "CloudFormation equivalent of openstack_lb_member_v1",
+    "description": "Manages a V1 load balancer member resource within OpenStack.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,22 +23,28 @@
             "type": "string"
         },
         "Address": {
-            "type": "string"
+            "type": "string",
+            "description": "The IP address of the member. Changing this creates a\nnew member."
         },
         "AdminStateUp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "The administrative state of the member.\nAcceptable values are 'true' and 'false'. Changing this value updates the\nstate of the existing member."
         },
         "PoolId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the LB pool. Changing this creates a new\nmember."
         },
         "Port": {
-            "type": "number"
+            "type": "number",
+            "description": "An integer representing the port on which the member is\nhosted. Changing this creates a new member."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the V2 Networking client.\nA Networking client is needed to create an LB member. If omitted, the\n`region` argument of the provider is used. Changing this creates a new\nLB member."
         },
         "TenantId": {
-            "type": "string"
+            "type": "string",
+            "description": "The owner of the member. Required if admin wants to\ncreate a member for another tenant. Changing this creates a new member."
         },
         "Weight": {
             "type": "number"

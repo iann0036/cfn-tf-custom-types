@@ -1,6 +1,6 @@
 # Terraform::AzureRM::ApplicationGateway
 
-CloudFormation equivalent of azurerm_application_gateway
+Manages an Application Gateway.
 
 ## Syntax
 
@@ -130,6 +130,8 @@ Properties:
 
 #### EnableHttp2
 
+Is HTTP2 enabled on the application gateway resource? Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -137,6 +139,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Location
+
+The Azure region where the Application Gateway should exist. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -146,6 +150,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the Application Gateway. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -153,6 +159,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which to the Application Gateway should exist. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -162,6 +170,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -169,6 +179,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Zones
+
+A collection of availability zones to spread the Application Gateway over.
 
 _Required_: No
 

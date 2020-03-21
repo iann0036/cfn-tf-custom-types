@@ -1,6 +1,10 @@
 # Terraform::Alicloud::ApiGatewayApp
 
-CloudFormation equivalent of alicloud_api_gateway_app
+Provides an app resource.It must create an app before calling a third-party API because the app is the identity used to call the third-party API.
+
+For information about Api Gateway App and how to use it, see [Create An APP](https://www.alibabacloud.com/help/doc-detail/43663.html)
+
+-> **NOTE:** Terraform will auto build api app while it uses `alicloud_api_gateway_app` to build api app.
 
 ## Syntax
 
@@ -34,6 +38,8 @@ Properties:
 
 #### Description
 
+The description of the app. Defaults to null.
+
 _Required_: No
 
 _Type_: String
@@ -42,6 +48,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the app.
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +57,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

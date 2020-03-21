@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::ApiManagementGroup",
-    "description": "CloudFormation equivalent of azurerm_api_management_group",
+    "description": "Manages an API Management Group.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,25 +29,32 @@
             "type": "string"
         },
         "ApiManagementName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the [API Management Service](api_management.html) in which the API Management Group should exist. Changing this forces a new resource to be created."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of this API Management Group."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The display name of this API Management Group."
         },
         "ExternalId": {
-            "type": "string"
+            "type": "string",
+            "description": "The identifier of the external Group. For example, an Azure Active Directory group `aad://<tenant>.onmicrosoft.com/groups/<group object id>`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the API Management Group. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Resource Group in which the API Management Group should exist. Changing this forces a new resource to be created."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of this API Management Group. Possible values are `custom` and `external`. Default is `custom`."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

@@ -1,6 +1,22 @@
 # Terraform::OCI::CoreIpsecConnectionTunnelManagement
 
-CloudFormation equivalent of oci_core_ipsec_connection_tunnel_management
+This resource provides the Ip Sec Connection Tunnel Management resource in Oracle Cloud Infrastructure Core service.
+
+Updates the specified tunnel. This operation lets you change tunnel attributes such as the
+routing type (BGP dynamic routing or static routing). Here are some important notes:
+
+	* If you change the tunnel's routing type or BGP session configuration, the tunnel will go
+	down while it's reprovisioned.
+
+	* If you want to switch the tunnel's `routing` from `STATIC` to `BGP`, make sure the tunnel's
+	BGP session configuration attributes have been set ([bgpSessionConfig](#/en/iaas/20160918/datatypes/BgpSessionInfo)).
+
+	* If you want to switch the tunnel's `routing` from `BGP` to `STATIC`, make sure the
+	[IPSecConnection](#/en/iaas/20160918/IPSecConnection/) already has at least one valid CIDR
+	static route.
+
+** IMPORTANT **
+Destroying `the oci_core_ipsec_connection_tunnel_management` leaves the resource in its existing state. It will not destroy the tunnel and it will not return the tunnel to its default values.
 
 ## Syntax
 
@@ -44,6 +60,10 @@ Properties:
 
 #### DisplayName
 
+A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+* `ike_version` - (Optional) Internet Key Exchange protocol version.
+* `shared_secret` - (Optional) The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`.
+
 _Required_: No
 
 _Type_: String
@@ -51,6 +71,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IkeVersion
+
+Internet Key Exchange protocol version.
+* `shared_secret` - (Optional) The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`.
 
 _Required_: No
 
@@ -60,6 +83,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IpsecId
 
+The OCID of the IPSec connection.
+
 _Required_: Yes
 
 _Type_: String
@@ -67,6 +92,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Routing
+
+The type of routing to use for this tunnel (either BGP dynamic routing or static routing).
 
 _Required_: Yes
 
@@ -76,6 +103,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SharedSecret
 
+The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`.
+
 _Required_: No
 
 _Type_: String
@@ -83,6 +112,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TunnelId
+
+The OCID of the IPSec connection's tunnel.
 
 _Required_: Yes
 

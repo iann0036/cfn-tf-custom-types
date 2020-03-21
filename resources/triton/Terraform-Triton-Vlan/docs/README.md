@@ -1,6 +1,6 @@
 # Terraform::Triton::Vlan
 
-CloudFormation equivalent of triton_vlan
+The `triton_vlan` resource represents an Triton VLAN. A VLAN provides a low level way to segregate and subdivide the network. Traffic on one VLAN cannot, _on its own_, reach another VLAN.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### Description
 
+Description of the VLAN.
+
 _Required_: No
 
 _Type_: String
@@ -43,6 +45,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Unique name to identify VLAN.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VlanId
+
+Number between 0-4095 indicating VLAN ID.
 
 _Required_: Yes
 

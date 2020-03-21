@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Cobbler::KickstartFile",
-    "description": "CloudFormation equivalent of cobbler_kickstart_file",
+    "description": "Manages a Kickstart File within Cobbler.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "Body": {
-            "type": "string"
+            "type": "string",
+            "description": "The body of the kickstart file."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the kickstart file. This must be\nthe full path, including `/var/lib/cobbler/kickstarts`."
         }
     },
     "additionalProperties": false,

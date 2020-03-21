@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::SfsFileSystemV2
 
-CloudFormation equivalent of opentelekomcloud_sfs_file_system_v2
+Provides an Shared File System (SFS) resource.
 
 ## Syntax
 
@@ -52,6 +52,8 @@ Properties:
 
 #### AccessLevel
 
+The access level of the shared file system. Changing this will create a new access rule.
+
 _Required_: Yes
 
 _Type_: String
@@ -59,6 +61,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AccessTo
+
+The access that the back end grants or denies. Changing this will create a new access rule.
 
 _Required_: Yes
 
@@ -68,6 +72,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AccessType
 
+The type of the share access rule. Changing this will create a new access rule.
+
 _Required_: No
 
 _Type_: String
@@ -75,6 +81,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AvailabilityZone
+
+The availability zone name.Changing this parameter will create a new resource.
 
 _Required_: No
 
@@ -84,6 +92,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+Describes the shared file system.
+
 _Required_: No
 
 _Type_: String
@@ -91,6 +101,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IsPublic
+
+The level of visibility for the shared file system.
 
 _Required_: No
 
@@ -100,6 +112,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Metadata
 
+Metadata key and value pairs as a dictionary of strings.Changing this will create a new resource.
+
 _Required_: No
 
 _Type_: List of <a href="metadata.md">Metadata</a>
@@ -107,6 +121,8 @@ _Type_: List of <a href="metadata.md">Metadata</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the shared file system.
 
 _Required_: No
 
@@ -124,6 +140,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ShareProto
 
+The protocol for sharing file systems. The default value is NFS.
+
 _Required_: No
 
 _Type_: String
@@ -131,6 +149,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Size
+
+The size (GB) of the shared file system.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 # Terraform::Netlify::Site
 
-CloudFormation equivalent of netlify_site
+Primary settings for a Netlify site - should contain the bulk of your configuration. Allows configuration of most aspects of your Netlify site.
 
 ## Syntax
 
@@ -44,6 +44,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CustomDomain
 
+(Optional) - Custom domain of the site, must be configured using a CNAME in accordance with [Netlify's docs](https://www.netlify.com/docs/custom-domains). (e.g. `www.example.com`).
+
 _Required_: No
 
 _Type_: String
@@ -51,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+(Required) - Name of your site on Netlify (e.g. **mysite**.netlify.com).
 
 _Required_: No
 
@@ -88,5 +92,5 @@ Returns the <code>AccountName</code> value.
 
 #### DeployUrl
 
-Returns the <code>DeployUrl</code> value.
+(Optional).
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Vault::GithubUser",
-    "description": "CloudFormation equivalent of vault_github_user",
+    "description": "Manages policy mappings for Github Users authenticated via Github. See the [Vault\ndocumentation](https://www.vaultproject.io/docs/auth/github.html) for more\ninformation.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,14 +9,16 @@
             "type": "string"
         },
         "Backend": {
-            "type": "string"
+            "type": "string",
+            "description": "Path where the github auth backend is mounted. Defaults to `github`\nif not specified."
         },
         "Policies": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "An array of strings specifying the policies to be set on tokens issued\nusing this role."
         },
         "TokenBoundCidrs": {
             "type": "array",
@@ -54,7 +56,8 @@
             "type": "string"
         },
         "User": {
-            "type": "string"
+            "type": "string",
+            "description": "GitHub user name."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,7 @@
 # Terraform::Brightbox::OrbitContainer
 
-CloudFormation equivalent of brightbox_orbit_container
+Provides a Brightbox Orbit Container resource. This can be used to create,
+modify, and delete Containers in Orbit.
 
 ## Syntax
 
@@ -86,6 +87,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Metadata
 
+A dictionary of metadata key/value items. The key must be in lower case with no underscores or spaces.
+
 _Required_: No
 
 _Type_: List of <a href="metadata.md">Metadata</a>
@@ -93,6 +96,8 @@ _Type_: List of <a href="metadata.md">Metadata</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+A label assigned to the Orbit container.
 
 _Required_: Yes
 

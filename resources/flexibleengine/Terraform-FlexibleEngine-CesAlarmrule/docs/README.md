@@ -1,6 +1,6 @@
 # Terraform::FlexibleEngine::CesAlarmrule
 
-CloudFormation equivalent of flexibleengine_ces_alarmrule
+Manages a V2 topic resource within FlexibleEngine.
 
 ## Syntax
 
@@ -59,6 +59,13 @@ Properties:
 
 #### AlarmActionEnabled
 
+Specifies whether to enable the action
+to be triggered by an alarm. The default value is true.
+Note: If alarm_action_enabled is set to true, at least one of the following
+parameters alarm_actions, insufficientdata_actions, and ok_actions cannot
+be empty. If alarm_actions, insufficientdata_actions, and ok_actions coexist,
+their corresponding notification_list must be of the same value.
+
 _Required_: No
 
 _Type_: Boolean
@@ -66,6 +73,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AlarmDescription
+
+The value can be a string of 0 to 256 characters.
 
 _Required_: No
 
@@ -75,6 +84,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AlarmEnabled
 
+Specifies whether to enable the alarm. The default
+value is true.
+
 _Required_: No
 
 _Type_: Boolean
@@ -82,6 +94,10 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AlarmName
+
+Specifies the name of an alarm rule. The value can
+be a string of 1 to 128 characters that can consist of numbers, lowercase letters,
+uppercase letters, underscores (_), or hyphens (-).
 
 _Required_: Yes
 

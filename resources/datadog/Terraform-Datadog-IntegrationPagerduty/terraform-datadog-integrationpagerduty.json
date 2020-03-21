@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Datadog::IntegrationPagerduty",
-    "description": "CloudFormation equivalent of datadog_integration_pagerduty",
+    "description": "Provides a Datadog - PagerDuty resource. This can be used to create and manage Datadog - PagerDuty integration.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Services": {
@@ -26,20 +26,24 @@
             "type": "string"
         },
         "ApiToken": {
-            "type": "string"
+            "type": "string",
+            "description": "Your PagerDuty API token."
         },
         "IndividualServices": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean to specify whether or not individual service objects specified by [datadog_integration_pagerduty_service_object](/docs/providers/datadog/r/integration_pagerduty_service_object.html) resource are to be used. Mutually exclusive with `services` key."
         },
         "Schedules": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Array of your schedule URLs."
         },
         "Subdomain": {
-            "type": "string"
+            "type": "string",
+            "description": "Your PagerDuty account\u2019s personalized subdomain name."
         },
         "Services": {
             "type": "array",

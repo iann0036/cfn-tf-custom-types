@@ -1,6 +1,8 @@
 # Terraform::AzureRM::BotConnection
 
-CloudFormation equivalent of azurerm_bot_connection
+Manages a MS Teams integration for a Bot Channel
+
+~> **Note** A bot can only have a single MS Teams Channel associated with it.
 
 ## Syntax
 
@@ -51,6 +53,8 @@ Properties:
 
 #### BotName
 
+The name of the Bot Resource this channel will be associated with. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -75,6 +79,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Location
 
+The supported Azure location where the resource exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -98,6 +104,8 @@ _Type_: List of <a href="parameters.md">Parameters</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which to create the Bot Channel. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

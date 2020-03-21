@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::DnsZoneV2",
-    "description": "CloudFormation equivalent of openstack_dns_zone_v2",
+    "description": "Manages a DNS zone in the OpenStack DNS Service.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -43,32 +43,40 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Attributes for the DNS Service scheduler.\nChanging this creates a new zone."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description of the zone."
         },
         "Email": {
-            "type": "string"
+            "type": "string",
+            "description": "The email contact for the zone record."
         },
         "Masters": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "An array of master DNS servers. For when `type` is\n`SECONDARY`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the zone. Note the `.` at the end of the name.\nChanging this creates a new DNS zone."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the V2 Compute client.\nKeypairs are associated with accounts, but a Compute client is needed to\ncreate one. If omitted, the `region` argument of the provider is used.\nChanging this creates a new DNS zone."
         },
         "Ttl": {
-            "type": "number"
+            "type": "number",
+            "description": "The time to live (TTL) of the zone."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of zone. Can either be `PRIMARY` or `SECONDARY`.\nChanging this creates a new zone."
         },
         "ValueSpecs": {
             "type": "array",
@@ -88,7 +96,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Map of additional options. Changing this creates a\nnew zone."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

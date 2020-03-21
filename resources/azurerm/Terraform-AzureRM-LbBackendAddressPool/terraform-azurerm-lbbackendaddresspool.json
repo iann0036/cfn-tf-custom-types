@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::LbBackendAddressPool",
-    "description": "CloudFormation equivalent of azurerm_lb_backend_address_pool",
+    "description": "Manages a Load Balancer Backend Address Pool.\n\n~> **NOTE:** When using this resource, the Load Balancer needs to have a FrontEnd IP Configuration Attached",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -43,13 +43,16 @@
             }
         },
         "LoadbalancerId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Load Balancer in which to create the Backend Address Pool."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Backend Address Pool."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the resource."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

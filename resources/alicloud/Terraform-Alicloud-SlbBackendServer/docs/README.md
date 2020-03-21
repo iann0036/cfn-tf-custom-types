@@ -1,6 +1,8 @@
 # Terraform::Alicloud::SlbBackendServer
 
-CloudFormation equivalent of alicloud_slb_backend_server
+Add a group of backend servers (ECS or ENI instance) to the Server Load Balancer or remove them from it.
+
+-> **NOTE:** Available in 1.53.0+
 
 ## Syntax
 
@@ -34,6 +36,8 @@ Properties:
 
 #### DeleteProtectionValidation
 
+Checking DeleteProtection of SLB instance before deleting. If true, this resource will not be deleted when its SLB instance enabled DeleteProtection. Default to false.
+
 _Required_: No
 
 _Type_: Boolean
@@ -41,6 +45,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LoadBalancerId
+
+ID of the load balancer.
 
 _Required_: Yes
 

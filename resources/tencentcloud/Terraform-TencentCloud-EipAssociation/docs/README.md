@@ -1,6 +1,8 @@
 # Terraform::TencentCloud::EipAssociation
 
-CloudFormation equivalent of tencentcloud_eip_association
+Provides an eip resource associated with other resource like CVM, ENI and CLB.
+
+~> **NOTE:** Please DO NOT define `allocate_public_ip` in `tencentcloud_instance` resource when using `tencentcloud_eip_association`.
 
 ## Syntax
 
@@ -35,6 +37,8 @@ Properties:
 
 #### EipId
 
+The id of eip.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceId
+
+The CVM or CLB instance id going to bind with the eip. This field is conflict with `network_interface_id` and `private_ip fields`.
 
 _Required_: No
 
@@ -51,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NetworkInterfaceId
 
+Indicates the network interface id like `eni-xxxxxx`. This field is conflict with `instance_id`.
+
 _Required_: No
 
 _Type_: String
@@ -58,6 +66,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PrivateIp
+
+Indicates an IP belongs to the `network_interface_id`. This field is conflict with `instance_id`.
 
 _Required_: No
 

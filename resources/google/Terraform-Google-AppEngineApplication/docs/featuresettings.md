@@ -22,6 +22,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### SplitHealthChecks
 
+Set to false to use the legacy health check instead of the readiness
+and liveness checks.
+
 _Required_: Yes
 
 _Type_: Boolean

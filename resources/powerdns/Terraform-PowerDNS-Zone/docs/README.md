@@ -1,6 +1,6 @@
 # Terraform::PowerDNS::Zone
 
-CloudFormation equivalent of powerdns_zone
+Provides a PowerDNS zone.
 
 ## Syntax
 
@@ -36,6 +36,8 @@ Properties:
 
 #### Kind
 
+The kind of the zone.
+
 _Required_: Yes
 
 _Type_: String
@@ -43,6 +45,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of zone.
 
 _Required_: Yes
 
@@ -52,6 +56,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Nameservers
 
+The zone nameservers.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -59,6 +65,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SoaEditApi
+
+This should map to one of the [supported API values](https://doc.powerdns.com/authoritative/dnsupdate.html#soa-edit-dnsupdate-settings) *or* in [case you wish to remove the setting](https://doc.powerdns.com/authoritative/domainmetadata.html#soa-edit-api), set this argument as `\"\"` (that will translate to the API value `""`).
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::OraclePaaS::DatabaseServiceInstance
 
-CloudFormation equivalent of oraclepaas_database_service_instance
+The `oraclepaas_database_service_instance` resource creates and manages a an Oracle Database Cloud Service instance on the Oracle Cloud Platform.
 
 ## Syntax
 
@@ -82,6 +82,8 @@ Properties:
 
 #### AvailabilityDomain
 
+Name of the availability domain within the region where the Oracle Database Cloud Service instance is to be provisioned.
+
 _Required_: No
 
 _Type_: String
@@ -89,6 +91,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BringYourOwnLicense
+
+Specify if you want to use an existing perpetual license to Oracle Database to establish the right to use Oracle Database on the new instance.
+Default value is `false`.
 
 _Required_: No
 
@@ -98,6 +103,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+A description of the Service Instance.
+
 _Required_: No
 
 _Type_: String
@@ -105,6 +112,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DesiredState
+
+Specifies the desired state of the service instance. Allowed values are `start`, `stop`,
+and `restart`.
 
 _Required_: No
 
@@ -114,6 +124,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Edition
 
+Database edition for the service instance. Possible values are `SE`, `EE`, `EE_HP`, or `EE_EP`.
+
 _Required_: Yes
 
 _Type_: String
@@ -121,6 +133,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HighPerformanceStorage
+
+Specifies whether the service instance will be provisioned with high performance storage.
+Default value is `false`.
 
 _Required_: No
 
@@ -130,6 +145,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IpNetwork
 
+This attribute is only applicable to accounts where regions are supported. The three-part name of an IP network to which the service instance is added. For example: /Compute-identity_domain/user/object.
+
 _Required_: No
 
 _Type_: String
@@ -137,6 +154,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IpReservations
+
+Groups one or more IP reservations in use on this service instance. This attribute is only applicable to accounts where regions are supported.
 
 _Required_: No
 
@@ -146,6 +165,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Level
 
+Service level for the service instance. Possible values are `BASIC` or `PAAS`.
+
 _Required_: No
 
 _Type_: String
@@ -153,6 +174,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the Service Instance.
 
 _Required_: Yes
 
@@ -162,6 +185,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NotificationEmail
 
+The email address to send notifications around successful or unsuccessful completions of the instance-creation operation.
+
 _Required_: No
 
 _Type_: String
@@ -170,6 +195,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+Specifies the location where the service instance is provisioned (only for accounts where regions are supported).
+
 _Required_: No
 
 _Type_: String
@@ -177,6 +204,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Shape
+
+Desired compute shape. Possible values are `oc3`, `oc4`, `oc5`, `oc6`, `oc1m`, `oc2m`, `oc3m`, or `oc4m`.
 
 _Required_: Yes
 
@@ -194,6 +223,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Subnet
 
+Name of the subnet within the region where the Oracle Database Cloud Service instance is to be provisioned.
+
 _Required_: No
 
 _Type_: String
@@ -202,6 +233,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubscriptionType
 
+Billing unit. Possible values are `HOURLY` or `MONTHLY`.
+
 _Required_: Yes
 
 _Type_: String
@@ -209,6 +242,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Version
+
+Oracle Database software version; one of: `12.2.0.1`, `12.1.0.2`, or `11.2.0.4`.
 
 _Required_: Yes
 

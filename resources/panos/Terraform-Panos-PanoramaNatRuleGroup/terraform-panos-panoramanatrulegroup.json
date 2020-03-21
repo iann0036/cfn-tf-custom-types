@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::PanoramaNatRuleGroup",
-    "description": "CloudFormation equivalent of panos_panorama_nat_rule_group",
+    "description": "This resource allows you to add/update/delete a group of Panorama NAT rules.\n\nThis resource manages clusters of NAT rules in a single device group,\nenforcing both the contents of individual rules as well as their\nordering.  Rules are defined in a `rule` config block.\n\nAlthough you cannot modify non-group NAT rules with this\nresource, the `position_keyword` and `position_reference` parameters allow you\nto reference some other NAT rule that already exists, using it as\na means to ensure some rough placement within the ruleset as a whole.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Rule": {
@@ -8,26 +8,32 @@
             "additionalProperties": false,
             "properties": {
                 "Description": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The description."
                 },
                 "Disabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Set to `true` to disable this rule."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The NAT rule's name."
                 },
                 "NegateTarget": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Instead of applying the rule for the\ngiven serial numbers, apply it to everything except them."
                 },
                 "Tags": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "List of administrative tags."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": ". NAT type.  This can be `ipv4` (default), `nat64`, or\n`nptv6`."
                 },
                 "OriginalPacket": {
                     "type": "array",
@@ -64,30 +70,36 @@
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "List of destination address(es)."
                 },
                 "DestinationInterface": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Egress interface from route lookup (default:\n`any`)."
                 },
                 "DestinationZone": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The destination zone."
                 },
                 "Service": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Service (default: `any`)."
                 },
                 "SourceAddresses": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "List of source address(es)."
                 },
                 "SourceZones": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "The list of source zone(s)."
                 }
             },
             "required": [
@@ -102,14 +114,16 @@
             "additionalProperties": false,
             "properties": {
                 "Serial": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The serial number of the firewall."
                 },
                 "VsysList": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A subset of all available vsys on the firewall\nthat should be in this device group.  If the firewall is a virtual firewall,\nthen this parameter should just be omitted."
                 }
             },
             "required": [
@@ -385,16 +399,20 @@
             "type": "string"
         },
         "DeviceGroup": {
-            "type": "string"
+            "type": "string",
+            "description": "Device group the NAT rules should be put into\n(default: `shared`)."
         },
         "PositionKeyword": {
-            "type": "string"
+            "type": "string",
+            "description": "A positioning keyword for this group.  This\ncan be `before`, `directly before`, `after`, `directly after`, `top`,\n`bottom`, or left empty (the default) to have no particular placement.  This\nparam works in combination with the `position_reference` param."
         },
         "PositionReference": {
-            "type": "string"
+            "type": "string",
+            "description": "Required if `position_keyword` is one of the\n\"above\" or \"below\" variants, this is the name of a non-group rule to use\nas a reference to place this group."
         },
         "Rulebase": {
-            "type": "string"
+            "type": "string",
+            "description": "The rulebase the NAT rules should be put into.  Valid\nvalues are `pre-rulebase` (default), `rulebase`, or `post-rulebase`."
         },
         "Rule": {
             "type": "array",

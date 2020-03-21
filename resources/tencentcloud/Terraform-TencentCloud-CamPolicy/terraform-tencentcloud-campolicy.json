@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::CamPolicy",
-    "description": "CloudFormation equivalent of tencentcloud_cam_policy",
+    "description": "Provides a resource to create a CAM policy.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,13 +12,16 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the CAM policy."
         },
         "Document": {
-            "type": "string"
+            "type": "string",
+            "description": "Document of the CAM policy. The syntax refers to https://intl.cloud.tencent.com/document/product/598/10604. There are some notes when using this para in terraform: 1. The elements in JSON claimed supporting two types as `string` and `array` only support type `array`; 2. Terraform does not support the `root` syntax, when it appears, it must be replaced with the uin it stands for."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of CAM policy."
         },
         "Type": {
             "type": "number"

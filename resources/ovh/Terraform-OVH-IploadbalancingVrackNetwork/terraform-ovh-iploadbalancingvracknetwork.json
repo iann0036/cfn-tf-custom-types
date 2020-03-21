@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OVH::IploadbalancingVrackNetwork",
-    "description": "CloudFormation equivalent of ovh_iploadbalancing_vrack_network",
+    "description": "Manage a vrack network for your IP Loadbalancing service.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,26 +9,32 @@
             "type": "string"
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "Human readable name for your vrack network."
         },
         "FarmId": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "number"
-            }
+            },
+            "description": "List of existing farm ids your vRack network is attached to."
         },
         "NatIp": {
-            "type": "string"
+            "type": "string",
+            "description": "An IP block used as a pool of IPs by this Load Balancer to connect to the servers in this private network. The blck must be in the private network and reserved for the Load Balancer."
         },
         "ServiceName": {
-            "type": "string"
+            "type": "string",
+            "description": "The internal name of your IP load balancing."
         },
         "Subnet": {
-            "type": "string"
+            "type": "string",
+            "description": "IP block of the private network in the vRack."
         },
         "Vlan": {
-            "type": "number"
+            "type": "number",
+            "description": "VLAN of the private network in the vRack. 0 if the private network is not in a VLAN."
         },
         "VrackNetworkId": {
             "type": "number"

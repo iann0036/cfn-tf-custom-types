@@ -1,6 +1,9 @@
 # Terraform::Google::ComputeRouterInterface
 
-CloudFormation equivalent of google_compute_router_interface
+Manages a Cloud Router interface. For more information see
+[the official documentation](https://cloud.google.com/compute/docs/cloudrouter)
+and
+[API](https://cloud.google.com/compute/docs/reference/latest/routers).
 
 ## Syntax
 
@@ -41,6 +44,11 @@ Properties:
 
 #### InterconnectAttachment
 
+The name or resource link to the
+VLAN interconnect for this interface. Changing this forces a new interface to
+be created. Only one of `vpn_tunnel` and `interconnect_attachment` can be
+specified.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +56,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IpRange
+
+IP address and range of the interface. The IP range must be
+in the RFC3927 link-local IP space. Changing this forces a new interface to be created.
 
 _Required_: No
 
@@ -57,6 +68,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A unique name for the interface, required by GCE. Changing
+this forces a new interface to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -64,6 +78,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The ID of the project in which this interface's router belongs. If it
+is not provided, the provider project is used. Changing this forces a new interface to be created.
 
 _Required_: No
 
@@ -73,6 +90,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region this interface's router sits in. If not specified,
+the project region will be used. Changing this forces a new interface to be
+created.
+
 _Required_: No
 
 _Type_: String
@@ -81,6 +102,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Router
 
+The name of the router this interface will be attached to.
+Changing this forces a new interface to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -88,6 +112,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpnTunnel
+
+The name or resource link to the VPN tunnel this
+interface will be linked to. Changing this forces a new interface to be created. Only
+one of `vpn_tunnel` and `interconnect_attachment` can be specified.
 
 _Required_: No
 

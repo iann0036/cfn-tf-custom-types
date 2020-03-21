@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::UCloud::LbListener",
-    "description": "CloudFormation equivalent of ucloud_lb_listener",
+    "description": "Provides a Load Balancer Listener resource.\n\n~> **Note** This `listen_type` only support when `protocol` is `tcp` in the extranet mode and the default value is `request_proxy`. In addition, in the extranet mode, the `listen_type` is `request_proxy` if `protocol`is `http` or `https`, the `listen_type` is `packets_transmit` if `protocol`is `udp`. In the intranet mode, the `listen_type` is `packets_transmit`.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,40 +9,52 @@
             "type": "string"
         },
         "Domain": {
-            "type": "string"
+            "type": "string",
+            "description": "Health check domain checking."
         },
         "HealthCheckType": {
-            "type": "string"
+            "type": "string",
+            "description": "Health check method. Possible values are `port` as port checking and `path` as http checking."
         },
         "IdleTimeout": {
-            "type": "number"
+            "type": "number",
+            "description": "Keep alive timeout of the connection between the client and LB, measured in second. Range: 0-86400 when `listen_type` is `request_proxy`, range: 60-900 when `listen_type` is `packets_transmit` (Default: `60`). The connection will be closed as soon as no response between the client and LB if it set by `0`."
         },
         "ListenType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of listener. Possible values are `request_proxy` and `packets_transmit`. When `packets_transmit` was specified, you need to config the instances by yourself if the instances attach to the load balancer. You may refer to [configuration instruction](https://docs.ucloud.cn/network/ulb/fast/createulb/vservertype)."
         },
         "LoadBalancerId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of load balancer instance."
         },
         "Method": {
-            "type": "string"
+            "type": "string",
+            "description": "The load balancer method in which the listener is. Possible values are: `roundrobin`, `source`, `consistent_hash`, `source_port` , `consistent_hash_port`, `weight_roundrobin` and `leastconn`. (Default: `roundrobin`).\n- The `consistent_hash`, `source_port` , `consistent_hash_port`, `roundrobin`, `source` and `weight_roundrobin` are valid if `listen_type` is `packets_transmit`.\n- The `roundrobin`, `source` and `weight_roundrobin` and `leastconn` are valid if `listen_type` is `request_proxy`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the listener. If not specified, terraform will auto-generate a name beginning with `tf-lb-listener`."
         },
         "Path": {
-            "type": "string"
+            "type": "string",
+            "description": "Health check path checking."
         },
         "Persistence": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicate whether the persistence session is enabled, it is invalid if `persistence_type` is `none`, an auto-generated string will be exported if `persistence_type` is `server_insert`, a custom string will be exported if `persistence_type` is `user_defined`."
         },
         "PersistenceType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of session persistence of listener. Possible values are: `none` as disabled, `server_insert` as auto-generated key and `user_defined` as customized key. (Default: `none`)."
         },
         "Port": {
-            "type": "number"
+            "type": "number",
+            "description": "Port opened on the listeners to receive requests, range: 1-65535. The default value: `80` as `protocol` is `http`, `443` as `protocol` is `https`, `1024` as `protocol` is `tcp` or `udp`."
         },
         "Protocol": {
-            "type": "string"
+            "type": "string",
+            "description": "Listener protocol. Possible values: `http`, `https`, `tcp` if `listen_type` is `request_proxy`, `tcp` and `udp` if `listen_type` is `packets_transmit`."
         },
         "Status": {
             "type": "string"

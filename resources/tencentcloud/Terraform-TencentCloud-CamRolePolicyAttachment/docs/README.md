@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::CamRolePolicyAttachment
 
-CloudFormation equivalent of tencentcloud_cam_role_policy_attachment
+Provides a resource to create a CAM role policy attachment.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### PolicyId
 
+Id of the policy.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RoleId
+
+Id of the attached CAM role.
 
 _Required_: Yes
 

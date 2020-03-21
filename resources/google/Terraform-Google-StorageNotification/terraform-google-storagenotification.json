@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::StorageNotification",
-    "description": "CloudFormation equivalent of google_storage_notification",
+    "description": "Creates a new notification configuration on a specified bucket, establishing a flow of event notifications from GCS to a Cloud Pub/Sub topic.\n For more information see \n[the official documentation](https://cloud.google.com/storage/docs/pubsub-notifications) \nand \n[API](https://cloud.google.com/storage/docs/json_api/v1/notifications).\n\nIn order to enable notifications, a special Google Cloud Storage service account unique to the project\nmust have the IAM permission \"projects.topics.publish\" for a Cloud Pub/Sub topic in the project. To get the service\naccount's email address, use the `google_storage_project_service_account` datasource's `email_address` value, and see below\nfor an example of enabling notifications by granting the correct IAM permission. See\n[the notifications documentation](https://cloud.google.com/storage/docs/gsutil/commands/notification) for more details.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "Bucket": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the bucket."
         },
         "CustomAttributes": {
             "type": "array",
@@ -29,29 +30,34 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A set of key/value attribute pairs to attach to each Cloud PubSub message published for this notification subscription."
         },
         "EventTypes": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of event type filters for this notification config. If not specified, Cloud Storage will send notifications for all event types. The valid types are: `\"OBJECT_FINALIZE\"`, `\"OBJECT_METADATA_UPDATE\"`, `\"OBJECT_DELETE\"`, `\"OBJECT_ARCHIVE\"`."
         },
         "NotificationId": {
             "type": "string"
         },
         "ObjectNamePrefix": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies a prefix path filter for this notification config. Cloud Storage will only send notifications for objects in this bucket whose names begin with the specified prefix."
         },
         "PayloadFormat": {
-            "type": "string"
+            "type": "string",
+            "description": "The desired content of the Payload. One of `\"JSON_API_V1\"` or `\"NONE\"`."
         },
         "SelfLink": {
             "type": "string"
         },
         "Topic": {
-            "type": "string"
+            "type": "string",
+            "description": "The Cloud PubSub topic to which this subscription publishes. Expects either the\ntopic name, assumed to belong to the default GCP provider project, or the project-level name,\ni.e. `projects/my-gcp-project/topics/my-topic` or `my-topic`. If the project is not set in the provider,\nyou will need to use the project-level name."
         }
     },
     "additionalProperties": false,

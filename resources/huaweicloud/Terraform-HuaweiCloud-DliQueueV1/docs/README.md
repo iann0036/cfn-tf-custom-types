@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::DliQueueV1
 
-CloudFormation equivalent of huaweicloud_dli_queue_v1
+queue management
 
 ## Syntax
 

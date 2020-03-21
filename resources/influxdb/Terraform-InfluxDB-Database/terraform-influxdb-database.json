@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::InfluxDB::Database",
-    "description": "CloudFormation equivalent of influxdb_database",
+    "description": "The database resource allows a database to be created on an InfluxDB server.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "RetentionPolicies": {
@@ -8,19 +8,24 @@
             "additionalProperties": false,
             "properties": {
                 "Default": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Marks current retention policy as default. Default value is false."
                 },
                 "Duration": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The duration for retention policy, format of duration can be found at InfluxDB Documentation."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the retention policy."
                 },
                 "Replication": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Determines how many copies of data points are stored in a cluster. Not applicable for single node / Open Source version of InfluxDB. Default value of 1."
                 },
                 "Shardgroupduration": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Determines how much time each shard group spans. How and why to modify can be found at InfluxDB Documentation."
                 }
             },
             "required": [
@@ -35,7 +40,8 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name for the database. This must be unique on the\nInfluxDB server."
         },
         "RetentionPolicies": {
             "type": "array",

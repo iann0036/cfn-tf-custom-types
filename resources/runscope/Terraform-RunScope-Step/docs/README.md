@@ -1,6 +1,9 @@
 # Terraform::RunScope::Step
 
-CloudFormation equivalent of runscope_step
+A [step](https://www.runscope.com/docs/api/steps) resource.
+API tests are comprised of a series of steps, most often HTTP requests.
+In addition to requests, you can also add additional types of steps to
+your tests like pauses and conditions.
 
 ## Syntax
 
@@ -75,6 +78,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### BucketId
 
+The id of the bucket to associate this step with.
+
 _Required_: Yes
 
 _Type_: String
@@ -90,6 +95,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Note
+
+A comment attached to the test step.
 
 _Required_: No
 
@@ -107,6 +114,13 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StepType
 
+The type of step.
+* [request](#request-steps)
+* pause
+* condition
+* ghost
+* subtest.
+
 _Required_: Yes
 
 _Type_: String
@@ -114,6 +128,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TestId
+
+The id of the test to associate this step with.
 
 _Required_: Yes
 

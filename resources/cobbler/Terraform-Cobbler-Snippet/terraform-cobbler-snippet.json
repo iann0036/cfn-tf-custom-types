@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Cobbler::Snippet",
-    "description": "CloudFormation equivalent of cobbler_snippet",
+    "description": "Manages a Snippet within Cobbler.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "Body": {
-            "type": "string"
+            "type": "string",
+            "description": "The body of the snippet."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the snippet. This must be the full\npath, including `/var/lib/cobbler/snippets`."
         }
     },
     "additionalProperties": false,

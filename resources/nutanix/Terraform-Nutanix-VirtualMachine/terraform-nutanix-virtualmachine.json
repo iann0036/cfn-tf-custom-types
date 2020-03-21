@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Nutanix::VirtualMachine",
-    "description": "CloudFormation equivalent of nutanix_virtual_machine",
+    "description": "Provides a Nutanix Virtual Machine resource to Create a virtual machine.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Categories": {
@@ -301,7 +301,8 @@
             }
         },
         "GuestCustomizationCloudInitMetaData": {
-            "type": "string"
+            "type": "string",
+            "description": "The contents of the meta_data configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded."
         },
         "GuestCustomizationCloudInitUserData": {
             "type": "string"
@@ -429,7 +430,8 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Application names that are enabled."
         },
         "NicListStatus": {
             "type": "array",

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::MnsTopicSubscription",
-    "description": "CloudFormation equivalent of alicloud_mns_topic_subscription",
+    "description": "Provides a MNS topic subscription resource.\n\n-> **NOTE:** Terraform will auto build a mns topic subscription  while it uses `alicloud_mns_topic_subscription` to build a mns topic subscription resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,22 +9,28 @@
             "type": "string"
         },
         "Endpoint": {
-            "type": "string"
+            "type": "string",
+            "description": "The endpoint has three format. Available values format:\n- HTTP Format: http://xxx.com/xxx\n- Queue Format: acs:mns:{REGION}:{AccountID}:queues/{QueueName}\n- Email Format: mail:directmail:{MailAddress}."
         },
         "FilterTag": {
-            "type": "string"
+            "type": "string",
+            "description": "The length should be shorter than 16."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Two topics subscription on a single account in the same topic cannot have the same name. A topic subscription name must start with an English letter or a digit, and can contain English letters, digits, and hyphens, with the length not exceeding 256 characters."
         },
         "NotifyContentFormat": {
-            "type": "string"
+            "type": "string",
+            "description": "The NotifyContentFormat attribute of Subscription. This attribute specifies the content format of the messages pushed to users. The valid values: 'SIMPLIFIED', 'XML' and 'JSON'. Default to 'SIMPLIFIED'."
         },
         "NotifyStrategy": {
-            "type": "string"
+            "type": "string",
+            "description": "The NotifyStrategy attribute of Subscription. This attribute specifies the retry strategy when message sending fails. the attribute has two value EXPONENTIAL_DECAY_RETR or BACKOFF_RETRY. Default value to BACKOFF_RETRY ."
         },
         "TopicName": {
-            "type": "string"
+            "type": "string",
+            "description": "The topic which The subscription belongs to was named with the name.A topic name must start with an English letter or a digit, and can contain English letters, digits, and hyphens, with the length not exceeding 256 characters."
         }
     },
     "additionalProperties": false,

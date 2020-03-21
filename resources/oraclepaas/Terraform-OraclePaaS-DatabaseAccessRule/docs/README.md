@@ -1,6 +1,6 @@
 # Terraform::OraclePaaS::DatabaseAccessRule
 
-CloudFormation equivalent of oraclepaas_database_access_rule
+The `oraclepaas_database_access_rule` resource creates and manages a Database Access Rule for an Oracle Database Cloud service instance.
 
 ## Syntax
 
@@ -43,6 +43,8 @@ Properties:
 
 #### Description
 
+The description of the Access Rule.
+
 _Required_: Yes
 
 _Type_: String
@@ -59,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Enabled
 
+Determines whether the access rule is enabled. Default is `true`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -66,6 +70,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the Access Rule.
 
 _Required_: Yes
 
@@ -75,6 +81,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ports
 
+The port or range of ports to allow traffic on.
+
 _Required_: Yes
 
 _Type_: String
@@ -83,6 +91,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServiceInstanceId
 
+The name of the database service instance to attach
+the access rule to.
+
 _Required_: Yes
 
 _Type_: String
@@ -90,6 +101,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Source
+
+The IP addresses and subnets from which traffic is allowed. Valid values are
+`DB`, `PUBLIC-INTERNET`, or a single IP address or comma-separated list of subnets (in CIDR format) or IPv4 addresses.
 
 _Required_: Yes
 

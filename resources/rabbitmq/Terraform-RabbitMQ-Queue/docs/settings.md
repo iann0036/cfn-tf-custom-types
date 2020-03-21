@@ -29,6 +29,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Arguments
 
+Additional key/value settings for the queue.
+All values will be sent to RabbitMQ as a string. If you require non-string
+values, use `arguments_json`.
+
 _Required_: No
 
 _Type_: List of <a href="settings-arguments.md">Arguments</a>
@@ -36,6 +40,10 @@ _Type_: List of <a href="settings-arguments.md">Arguments</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ArgumentsJson
+
+A nested JSON string which contains additional
+settings for the queue. This is useful for when the arguments contain
+non-string values.
 
 _Required_: No
 
@@ -45,6 +53,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AutoDelete
 
+Whether the queue will self-delete when all
+consumers have unsubscribed.
+
 _Required_: No
 
 _Type_: Boolean
@@ -52,6 +63,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Durable
+
+Whether the queue survives server restarts.
+Defaults to `false`.
 
 _Required_: No
 

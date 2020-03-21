@@ -1,6 +1,7 @@
 # Terraform::Cloudflare::AccessIdentityProvider
 
-CloudFormation equivalent of cloudflare_access_identity_provider
+Provides a Cloudflare Access Identity Provider resource. Identity Providers are
+used as an authentication or authorisation source within Access.
 
 ## Syntax
 
@@ -44,6 +45,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Friendly name of the Access Identity Provider configuration.
+
 _Required_: Yes
 
 _Type_: String
@@ -51,6 +54,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The provider type to use. Must be one of: `"centrify"`,
+`"facebook"`, `"google-apps"`, `"oidc"`, `"github"`, `"google"`, `"saml"`,
+`"linkedin"`, `"azureAD"`, `"okta"`, `"onetimepin"`, `"onelogin"`, `"yandex"`.
 
 _Required_: Yes
 

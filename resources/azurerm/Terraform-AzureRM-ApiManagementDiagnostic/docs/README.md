@@ -1,6 +1,6 @@
 # Terraform::AzureRM::ApiManagementDiagnostic
 
-CloudFormation equivalent of azurerm_api_management_diagnostic
+Manages an API Management Service Diagnostic.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### ApiManagementName
 
+The Name of the API Management Service where this Diagnostic should be created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Enabled
+
+Indicates whether a Diagnostic should receive data or not.
 
 _Required_: Yes
 
@@ -53,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Identifier
 
+The diagnostic identifier for the API Management Service. At this time the only supported value is `applicationinsights`. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -60,6 +66,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The Name of the Resource Group where the API Management Service exists. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

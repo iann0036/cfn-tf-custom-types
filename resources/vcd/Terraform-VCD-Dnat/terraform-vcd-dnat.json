@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::VCD::Dnat",
-    "description": "CloudFormation equivalent of vcd_dnat",
+    "description": "Provides a vCloud Director DNAT resource. This can be used to create, modify,\nand delete destination NATs to map an external IP/port to an internal IP/port.\n\n~> **Note:** This resource may corrupt UI edited NAT rules when used with advanced\nedge gateways. Please use [`vcd_nsxv_dnat`](/docs/providers/vcd/r/nsxv_dnat.html) in that case.\n\n~> **Note:** From v2.4+ `protocol` requires lower case values. This may result in invalid configuration if upper case was used previously.\n\n!> **Warning:** When advanced edge gateway is used and the rule is updated using UI, then ID mapping will be lost and Terraform won't find the rule anymore and remove it from state.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,40 +9,52 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "- Description of item."
         },
         "EdgeGateway": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the edge gateway on which to apply the DNAT."
         },
         "ExternalIp": {
-            "type": "string"
+            "type": "string",
+            "description": "One of the external IPs available on your Edge Gateway."
         },
         "IcmpSubType": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of ICMP type. Possible values are   address-mask-request, destination-unreachable, echo-request, echo-reply, parameter-problem, redirect, router-advertisement, router-solicitation, source-quench, time-exceeded, timestamp-request, timestamp-reply, any."
         },
         "InternalIp": {
-            "type": "string"
+            "type": "string",
+            "description": "The IP of the VM to map to."
         },
         "NetworkName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the network on which to apply the SNAT. *`network_name` will be a required field in the next major version.*."
         },
         "NetworkType": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of the network on which to apply the NAT rule. Possible values `org` or `ext`. `ext` requires system administrator privileges. *`network_type` will be a required field in the next major version.*."
         },
         "Org": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of organization to use, optional if defined at provider level. Useful when connected as sysadmin working across different organisations."
         },
         "Port": {
-            "type": "number"
+            "type": "number",
+            "description": "The port number to map. -1 translates to \"any\"."
         },
         "Protocol": {
-            "type": "string"
+            "type": "string",
+            "description": "The protocol type. Possible values are `tcp`, `udp`, `tcpupd`, `icmp`, `any`. `tcp` is default to be backward compatible with previous version."
         },
         "TranslatedPort": {
-            "type": "number"
+            "type": "number",
+            "description": "The port number to map."
         },
         "Vdc": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of VDC to use, optional if defined at provider level."
         }
     },
     "additionalProperties": false,

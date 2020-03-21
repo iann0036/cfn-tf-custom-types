@@ -1,6 +1,11 @@
 # Terraform::Alicloud::AlikafkaSaslUser
 
-CloudFormation equivalent of alicloud_alikafka_sasl_user
+Provides an ALIKAFKA sasl user resource.
+
+-> **NOTE:** Available in 1.66.0+
+
+-> **NOTE:**  Only the following regions support create alikafka sasl user.
+[`cn-hangzhou`,`cn-beijing`,`cn-shenzhen`,`cn-shanghai`,`cn-qingdao`,`cn-hongkong`,`cn-huhehaote`,`cn-zhangjiakou`,`ap-southeast-1`,`ap-south-1`,`ap-southeast-5`]
 
 ## Syntax
 
@@ -38,6 +43,8 @@ Properties:
 
 #### InstanceId
 
+ID of the ALIKAFKA Instance that owns the groups.
+
 _Required_: Yes
 
 _Type_: String
@@ -45,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KmsEncryptedPassword
+
+An KMS encrypts password used to a db account. You have to specify one of `password` and `kms_encrypted_password` fields.
 
 _Required_: No
 
@@ -54,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KmsEncryptionContext
 
+An KMS encryption context used to decrypt `kms_encrypted_password` before creating or updating a user with `kms_encrypted_password`. See [Encryption Context](https://www.alibabacloud.com/help/doc-detail/42975.htm). It is valid when `kms_encrypted_password` is set.
+
 _Required_: No
 
 _Type_: List of <a href="kmsencryptioncontext.md">KmsEncryptionContext</a>
@@ -62,6 +73,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Password
 
+Operation password. It may consist of letters, digits, or underlines, with a length of 1 to 64 characters. You have to specify one of `password` and `kms_encrypted_password` fields.
+
 _Required_: No
 
 _Type_: String
@@ -69,6 +82,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Username
+
+Username for the sasl user. The length should between 1 to 64 characters. The characters can only contain 'a'-'z', 'A'-'Z', '0'-'9', '_' and '-'.
 
 _Required_: Yes
 

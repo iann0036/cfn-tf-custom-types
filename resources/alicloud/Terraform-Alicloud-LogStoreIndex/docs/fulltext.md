@@ -26,6 +26,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### CaseSensitive
 
+Whether the case sensitive. Default to false.
+* `include_chinese` - (Optional) Whether includes the chinese. Default to false.
+* `token` - (Optional) The string of several split words, like "\r", "#".
+
 _Required_: No
 
 _Type_: Boolean
@@ -34,6 +38,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IncludeChinese
 
+Whether includes the chinese. Default to false.
+* `token` - (Optional) The string of several split words, like "\r", "#".
+
 _Required_: No
 
 _Type_: Boolean
@@ -41,6 +48,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Token
+
+The string of several split words, like "\r", "#".
 
 _Required_: No
 

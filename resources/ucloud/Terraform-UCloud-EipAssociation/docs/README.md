@@ -1,6 +1,6 @@
 # Terraform::UCloud::EipAssociation
 
-CloudFormation equivalent of ucloud_eip_association
+Provides an EIP Association resource for associating Elastic IP to UHost Instance, Load Balancer, etc.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### EipId
 
+The ID of EIP.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceId
 
+The ID of resource with EIP attached.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceType
+
+**Deprecated**, attribute `resource_type` is deprecated for optimizing parameters.
 
 _Required_: No
 

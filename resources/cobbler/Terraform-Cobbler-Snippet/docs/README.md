@@ -1,6 +1,6 @@
 # Terraform::Cobbler::Snippet
 
-CloudFormation equivalent of cobbler_snippet
+Manages a Snippet within Cobbler.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### Body
 
+The body of the snippet.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the snippet. This must be the full
+path, including `/var/lib/cobbler/snippets`.
 
 _Required_: Yes
 

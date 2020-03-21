@@ -42,6 +42,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Flavor
 
+The flavor ID.
+
 _Required_: No
 
 _Type_: String
@@ -49,6 +51,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Image
+
+The image ID.
 
 _Required_: No
 
@@ -58,6 +62,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceId
 
+When using the existing instance specifications as the template to
+create AS configurations, specify this argument. In this case, flavor, image,
+and disk arguments do not take effect. If the instance_id argument is not specified,
+flavor, image, and disk arguments are mandatory.
+
 _Required_: No
 
 _Type_: String
@@ -65,6 +74,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeyName
+
+The name of the SSH key pair used to log in to the instance.
 
 _Required_: Yes
 
@@ -74,6 +85,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Metadata
 
+Metadata key/value pairs to make available from
+within the instance.
+
 _Required_: No
 
 _Type_: List of <a href="instanceconfig-metadata.md">Metadata</a>
@@ -81,6 +95,9 @@ _Type_: List of <a href="instanceconfig-metadata.md">Metadata</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserData
+
+The user data to provide when launching the instance.
+The file content must be encoded with Base64.
 
 _Required_: No
 

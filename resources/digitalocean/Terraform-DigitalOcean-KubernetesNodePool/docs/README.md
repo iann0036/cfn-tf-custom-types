@@ -1,6 +1,6 @@
 # Terraform::DigitalOcean::KubernetesNodePool
 
-CloudFormation equivalent of digitalocean_kubernetes_node_pool
+Provides a DigitalOcean Kubernetes node pool resource. While the default node pool must be defined in the `digitalocean_kubernetes_cluster` resource, this resource can be used to add additional ones to a cluster.
 
 ## Syntax
 
@@ -47,6 +47,8 @@ Properties:
 
 #### AutoScale
 
+Enable auto-scaling of the number of nodes in the node pool within the given min/max range.
+
 _Required_: No
 
 _Type_: Boolean
@@ -54,6 +56,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClusterId
+
+The ID of the Kubernetes cluster to which the node pool is associated.
 
 _Required_: Yes
 
@@ -63,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Labels
 
+A map of key/value pairs to apply to nodes in the pool. The labels are exposed in the Kubernetes API as labels in the metadata of the corresponding [Node resources](https://kubernetes.io/docs/concepts/architecture/nodes/).
+
 _Required_: No
 
 _Type_: List of <a href="labels.md">Labels</a>
@@ -70,6 +76,8 @@ _Type_: List of <a href="labels.md">Labels</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MaxNodes
+
+If auto-scaling is enabled, this represents the maximum number of nodes that the node pool can be scaled up to.
 
 _Required_: No
 
@@ -79,6 +87,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MinNodes
 
+If auto-scaling is enabled, this represents the minimum number of nodes that the node pool can be scaled down to.
+
 _Required_: No
 
 _Type_: Double
@@ -86,6 +96,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+A name for the node pool.
 
 _Required_: Yes
 
@@ -95,6 +107,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NodeCount
 
+The number of Droplet instances in the node pool. If auto-scaling is enabled, this should only be set if the desired result is to explicitly reset the number of nodes to this value. If auto-scaling is enabled, and the node count is outside of the given min/max range, it will use the min nodes value.
+
 _Required_: No
 
 _Type_: Double
@@ -103,6 +117,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Size
 
+The slug identifier for the type of Droplet to be used as workers in the node pool.
+
 _Required_: Yes
 
 _Type_: String
@@ -110,6 +126,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A list of tag names to be applied to the Kubernetes cluster.
 
 _Required_: No
 

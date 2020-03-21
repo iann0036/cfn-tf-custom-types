@@ -1,6 +1,6 @@
 # Terraform::AzureRM::Eventhub
 
-CloudFormation equivalent of azurerm_eventhub
+Manages a Event Hubs as a nested resource within a Event Hubs namespace.
 
 ## Syntax
 
@@ -45,6 +45,8 @@ Properties:
 
 #### MessageRetention
 
+Specifies the number of days to retain the events for this Event Hub. Needs to be between 1 and 7 days; or 1 day when using a Basic SKU for the parent EventHub Namespace.
+
 _Required_: Yes
 
 _Type_: Double
@@ -52,6 +54,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the EventHub Namespace resource. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -61,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NamespaceName
 
+Specifies the name of the EventHub Namespace. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -69,6 +75,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PartitionCount
 
+Specifies the current number of shards on the Event Hub. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: Double
@@ -76,6 +84,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which the EventHub's parent Namespace exists. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

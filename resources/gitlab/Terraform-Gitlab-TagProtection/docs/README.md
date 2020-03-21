@@ -1,6 +1,6 @@
 # Terraform::Gitlab::TagProtection
 
-CloudFormation equivalent of gitlab_tag_protection
+This resource allows you to protect a specific tag or wildcard by an access level so that the user with less access level cannot Create the tags.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### CreateAccessLevel
 
+One of five levels of access to the project.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Project
 
+The id of the project.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tag
+
+Name of the tag or wildcard.
 
 _Required_: Yes
 

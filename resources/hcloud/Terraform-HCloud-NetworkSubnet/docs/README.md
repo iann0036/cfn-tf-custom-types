@@ -1,6 +1,6 @@
 # Terraform::HCloud::NetworkSubnet
 
-CloudFormation equivalent of hcloud_network_subnet
+Provides a Hetzner Cloud Network Subnet to represent a Subnet in the Hetzner Cloud.
 
 ## Syntax
 
@@ -35,6 +35,9 @@ Properties:
 
 #### IpRange
 
+Range to allocate IPs from. Must be a subnet of the ip_range of the Network and must not overlap with any other subnets or with any destinations in routes.
+- `network_zone` - (Required, string) Name of network zone.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +45,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NetworkId
+
+ID of the Network the subnet should be added to.
+- `type` - (Required, string) Type of subnet. `server`
+- `ip_range` - (Required, string) Range to allocate IPs from. Must be a subnet of the ip_range of the Network and must not overlap with any other subnets or with any destinations in routes.
+- `network_zone` - (Required, string) Name of network zone.
 
 _Required_: Yes
 
@@ -51,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NetworkZone
 
+Name of network zone.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +68,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+Type of subnet. `server`
+- `ip_range` - (Required, string) Range to allocate IPs from. Must be a subnet of the ip_range of the Network and must not overlap with any other subnets or with any destinations in routes.
+- `network_zone` - (Required, string) Name of network zone.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::PlacementGroup",
-    "description": "CloudFormation equivalent of tencentcloud_placement_group",
+    "description": "Provide a resource to create a placement group.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -18,10 +18,12 @@
             "type": "number"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the placement group, 1-60 characters in length."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of the placement group, the available values include `HOST`,`SW` and `RACK`."
         }
     },
     "additionalProperties": false,

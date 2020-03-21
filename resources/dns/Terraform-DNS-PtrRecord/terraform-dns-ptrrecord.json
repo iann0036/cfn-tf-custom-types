@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::DNS::PtrRecord",
-    "description": "CloudFormation equivalent of dns_ptr_record",
+    "description": "Creates a PTR type DNS record.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,20 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the record. The `zone` argument will be appended to this value to create the full record path."
         },
         "Ptr": {
-            "type": "string"
+            "type": "string",
+            "description": "The canonical name this record will point to."
         },
         "Ttl": {
-            "type": "number"
+            "type": "number",
+            "description": "The TTL of the record set. Defaults to `3600`."
         },
         "Zone": {
-            "type": "string"
+            "type": "string",
+            "description": "DNS zone the record belongs to. It must be an FQDN, that is, include the trailing dot."
         }
     },
     "additionalProperties": false,

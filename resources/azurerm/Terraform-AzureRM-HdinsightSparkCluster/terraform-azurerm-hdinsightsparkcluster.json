@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::HdinsightSparkCluster",
-    "description": "CloudFormation equivalent of azurerm_hdinsight_spark_cluster",
+    "description": "Manages a HDInsight Spark Cluster.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ComponentVersion": {
@@ -8,7 +8,8 @@
             "additionalProperties": false,
             "properties": {
                 "Spark": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The version of Spark which should be used for this HDInsight Spark Cluster. Changing this forces a new resource to be created."
                 }
             },
             "required": [
@@ -20,13 +21,16 @@
             "additionalProperties": false,
             "properties": {
                 "Enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Is the Ambari portal enabled? Changing this forces a new resource to be created."
                 },
                 "Password": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Password associated with the local administrator for the Head Nodes. Changing this forces a new resource to be created."
                 },
                 "Username": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Username of the local administrator for the Head Nodes. Changing this forces a new resource to be created."
                 }
             },
             "required": [
@@ -68,13 +72,16 @@
             "additionalProperties": false,
             "properties": {
                 "IsDefault": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Is this the Default Storage Account for the HDInsight Hadoop Cluster? Changing this forces a new resource to be created."
                 },
                 "StorageAccountKey": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Access Key which should be used to connect to the Storage Account. Changing this forces a new resource to be created."
                 },
                 "StorageContainerId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of the Storage Container. Changing this forces a new resource to be created."
                 }
             },
             "required": [
@@ -88,16 +95,20 @@
             "additionalProperties": false,
             "properties": {
                 "FilesystemId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of the Gen2 Filesystem. Changing this forces a new resource to be created."
                 },
                 "IsDefault": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Is this the Default Storage Account for the HDInsight Hadoop Cluster? Changing this forces a new resource to be created."
                 },
                 "ManagedIdentityResourceId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of Managed Identity to use for accessing the Gen2 filesystem. Changing this forces a new resource to be created."
                 },
                 "StorageResourceId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of the Storage Account. Changing this forces a new resource to be created."
                 }
             },
             "required": [
@@ -163,32 +174,40 @@
             "additionalProperties": false,
             "properties": {
                 "MinInstanceCount": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The minimum number of instances which should be run for the Worker Nodes. Changing this forces a new resource to be created."
                 },
                 "Password": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Password associated with the local administrator for the Worker Nodes. Changing this forces a new resource to be created."
                 },
                 "SshKeys": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of SSH Keys which should be used for the local administrator on the Worker Nodes. Changing this forces a new resource to be created."
                 },
                 "SubnetId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of the Subnet within the Virtual Network where the Worker Nodes should be provisioned within. Changing this forces a new resource to be created."
                 },
                 "TargetInstanceCount": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The number of instances which should be run for the Worker Nodes."
                 },
                 "Username": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Username of the local administrator for the Worker Nodes. Changing this forces a new resource to be created."
                 },
                 "VirtualNetworkId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of the Virtual Network where the Worker Nodes should be provisioned within. Changing this forces a new resource to be created."
                 },
                 "VmSize": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Size of the Virtual Machine which should be used as the Worker Nodes. Changing this forces a new resource to be created."
                 }
             },
             "required": [
@@ -202,26 +221,32 @@
             "additionalProperties": false,
             "properties": {
                 "Password": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Password associated with the local administrator for the Zookeeper Nodes. Changing this forces a new resource to be created."
                 },
                 "SshKeys": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of SSH Keys which should be used for the local administrator on the Zookeeper Nodes. Changing this forces a new resource to be created."
                 },
                 "SubnetId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of the Subnet within the Virtual Network where the Zookeeper Nodes should be provisioned within. Changing this forces a new resource to be created."
                 },
                 "Username": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Username of the local administrator for the Zookeeper Nodes. Changing this forces a new resource to be created."
                 },
                 "VirtualNetworkId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of the Virtual Network where the Zookeeper Nodes should be provisioned within. Changing this forces a new resource to be created."
                 },
                 "VmSize": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Size of the Virtual Machine which should be used as the Zookeeper Nodes. Changing this forces a new resource to be created."
                 }
             },
             "required": [
@@ -236,19 +261,23 @@
             "type": "string"
         },
         "ClusterVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the Version of HDInsights which should be used for this Cluster. Changing this forces a new resource to be created."
         },
         "HttpsEndpoint": {
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the Azure Region which this HDInsight Spark Cluster should exist. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name for this HDInsight Spark Cluster. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Resource Group in which this HDInsight Spark Cluster should exist. Changing this forces a new resource to be created."
         },
         "SshEndpoint": {
             "type": "string"
@@ -271,10 +300,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A map of Tags which should be assigned to this HDInsight Spark Cluster."
         },
         "Tier": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the Tier which should be used for this HDInsight Spark Cluster. Possible values are `Standard` or `Premium`. Changing this forces a new resource to be created."
         },
         "ComponentVersion": {
             "type": "array",

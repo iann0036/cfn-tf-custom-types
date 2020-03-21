@@ -1,6 +1,6 @@
 # Terraform::AzureRM::TrafficManagerEndpoint
 
-CloudFormation equivalent of azurerm_traffic_manager_endpoint
+Manages a Traffic Manager Endpoint.
 
 ## Syntax
 
@@ -60,6 +60,12 @@ Properties:
 
 #### EndpointLocation
 
+Specifies the Azure location of the Endpoint,
+this must be specified for Profiles using the `Performance` routing method
+if the Endpoint is of either type `nestedEndpoints` or `externalEndpoints`.
+For Endpoints of type `azureEndpoints` the value will be taken from the
+location of the Azure target resource.
+
 _Required_: No
 
 _Type_: String
@@ -67,6 +73,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EndpointStatus
+
+The status of the Endpoint, can be set to
+either `Enabled` or `Disabled`. Defaults to `Enabled`.
 
 _Required_: No
 
@@ -76,6 +85,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GeoMappings
 
+A list of Geographic Regions used to distribute traffic, such as `WORLD`, `UK` or `DE`. The same location can't be specified in two endpoints. [See the Geographic Hierarchies documentation for more information](https://docs.microsoft.com/en-us/rest/api/trafficmanager/geographichierarchies/getdefault).
+
 _Required_: No
 
 _Type_: List of String
@@ -83,6 +94,12 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MinChildEndpoints
+
+This argument specifies the minimum number
+of endpoints that must be ‘online’ in the child profile in order for the
+parent profile to direct traffic to any of the endpoints in that child
+profile. This argument only applies to Endpoints of type `nestedEndpoints`
+and defaults to `1`.
 
 _Required_: No
 
@@ -92,6 +109,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the Traffic Manager endpoint. Changing this forces a
+new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -99,6 +119,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Priority
+
+Specifies the priority of this Endpoint, this must be
+specified for Profiles using the `Priority` traffic routing method. Supports
+values between 1 and 1000, with no Endpoints sharing the same value. If
+omitted the value will be computed in order of creation.
 
 _Required_: No
 
@@ -108,6 +133,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProfileName
 
+The name of the Traffic Manager Profile to attach
+create the Traffic Manager endpoint.
+
 _Required_: Yes
 
 _Type_: String
@@ -115,6 +143,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which to
+create the Traffic Manager endpoint.
 
 _Required_: Yes
 
@@ -124,6 +155,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Target
 
+The FQDN DNS name of the target. This argument must be
+provided for an endpoint of type `externalEndpoints`, for other types it
+will be computed.
+
 _Required_: No
 
 _Type_: String
@@ -131,6 +166,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TargetResourceId
+
+The resource id of an Azure resource to
+target. This argument must be provided for an endpoint of type
+`azureEndpoints` or `nestedEndpoints`.
 
 _Required_: No
 
@@ -140,6 +179,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Type
 
+The Endpoint type, must be one of:
+- `azureEndpoints`
+- `externalEndpoints`
+- `nestedEndpoints`.
+
 _Required_: Yes
 
 _Type_: String
@@ -147,6 +191,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Weight
+
+Specifies how much traffic should be distributed to this
+endpoint, this must be specified for Profiles using the  `Weighted` traffic
+routing method. Supports values between 1 and 1000.
 
 _Required_: No
 

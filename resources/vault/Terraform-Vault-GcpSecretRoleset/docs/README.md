@@ -1,6 +1,8 @@
 # Terraform::Vault::GcpSecretRoleset
 
-CloudFormation equivalent of vault_gcp_secret_roleset
+Creates a Roleset in the [GCP Secrets Engine](https://www.vaultproject.io/docs/secrets/gcp/index.html) for Vault.
+
+Each Roleset is [tied](https://www.vaultproject.io/docs/secrets/gcp/index.html#service-accounts-are-tied-to-rolesets) to a Service Account, and can have one or more [bindings](https://www.vaultproject.io/docs/secrets/gcp/index.html#roleset-bindings) associated with it.
 
 ## Syntax
 
@@ -41,6 +43,8 @@ Properties:
 
 #### Backend
 
+Path where the GCP Secrets Engine is mounted.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+Name of the GCP project that this roleset's service account will belong to.
 
 _Required_: Yes
 
@@ -57,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Roleset
 
+Name of the Roleset to create.
+
 _Required_: Yes
 
 _Type_: String
@@ -65,6 +73,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecretType
 
+Type of secret generated for this role set. Accepted values: `access_token`, `service_account_key`. Defaults to `access_token`.
+
 _Required_: No
 
 _Type_: String
@@ -72,6 +82,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TokenScopes
+
+List of OAuth scopes to assign to `access_token` secrets generated under this role set (`access_token` role sets only).
 
 _Required_: No
 

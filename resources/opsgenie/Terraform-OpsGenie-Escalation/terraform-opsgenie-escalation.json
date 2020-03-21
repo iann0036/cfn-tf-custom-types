@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpsGenie::Escalation",
-    "description": "CloudFormation equivalent of opsgenie_escalation",
+    "description": "Manages an Escalation within Opsgenie.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Repeat": {
@@ -27,13 +27,16 @@
             "additionalProperties": false,
             "properties": {
                 "Condition": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The condition for notifying the recipient of escalation rule that is based on the alert state. Possible values are: if-not-acked and if-not-closed. If not given, if-not-acked is used."
                 },
                 "Delay": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Time delay of the escalation rule. This parameter takes an object that consists timeAmount field that takes time amount in minutes."
                 },
                 "NotifyType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Recipient calculation logic for schedules. Possible values are:\n```\ndefault: on call users\nnext: next users in rotation\nprevious: previous users on rotation\nusers: users of the team\nadmins: admins of the team\nall: all members of the team\n```."
                 },
                 "Recipient": {
                     "type": "array",
@@ -69,13 +72,16 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the escalation."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the escalation."
         },
         "OwnerTeamId": {
-            "type": "string"
+            "type": "string",
+            "description": "Owner team id of the escalation."
         },
         "Repeat": {
             "type": "array",

@@ -24,6 +24,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Type
 
+Database engine type to be used in new instance. Changing this
+creates a new instance.
+
 _Required_: Yes
 
 _Type_: String
@@ -31,6 +34,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Version
+
+Version of database engine type to be used in new instance.
+Changing this creates a new instance.
 
 _Required_: Yes
 

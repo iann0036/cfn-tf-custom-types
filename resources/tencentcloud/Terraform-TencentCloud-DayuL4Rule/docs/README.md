@@ -1,6 +1,8 @@
 # Terraform::TencentCloud::DayuL4Rule
 
-CloudFormation equivalent of tencentcloud_dayu_l4_rule
+Use this resource to create dayu layer 4 rule
+
+~> **NOTE:** This resource only support resource Anti-DDoS of type `bgpip` and `net`
 
 ## Syntax
 
@@ -58,6 +60,8 @@ Properties:
 
 #### DPort
 
+The destination port of the L4 rule.
+
 _Required_: Yes
 
 _Type_: Double
@@ -65,6 +69,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HealthCheckHealthNum
+
+Health threshold of health check, and the default is 3. If a success result is returned for the health check 3 consecutive times, indicates that the forwarding is normal. The value range is 2-10.
 
 _Required_: No
 
@@ -74,6 +80,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HealthCheckInterval
 
+Interval time of health check. The value range is 10-60 sec, and the default is 15 sec.
+
 _Required_: No
 
 _Type_: Double
@@ -81,6 +89,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HealthCheckSwitch
+
+Indicates whether health check is enabled. The default is `false`. Only valid when source list has more than one source item.
 
 _Required_: No
 
@@ -90,6 +100,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HealthCheckTimeout
 
+HTTP Status Code. The default is 26 and value range is 2-60.
+
 _Required_: No
 
 _Type_: Double
@@ -97,6 +109,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HealthCheckUnhealthNum
+
+Unhealthy threshold of health check, and the default is 3. If the unhealthy result is returned 3 consecutive times, indicates that the forwarding is abnormal. The value range is 2-10.
 
 _Required_: No
 
@@ -106,6 +120,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name of the rule. When the `resource_type` is `net`, this field should be set with valid domain.
+
 _Required_: Yes
 
 _Type_: String
@@ -113,6 +129,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Protocol
+
+Protocol of the rule, valid values are `http`, `https`. When `source_type` is 1(host source), the value of this field can only set with `tcp`.
 
 _Required_: Yes
 
@@ -122,6 +140,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceId
 
+ID of the resource that the layer 4 rule works for.
+
 _Required_: Yes
 
 _Type_: String
@@ -129,6 +149,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceType
+
+Type of the resource that the layer 4 rule works for, valid values are `bgpip` and `net`.
 
 _Required_: Yes
 
@@ -138,6 +160,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SPort
 
+The source port of the L4 rule.
+
 _Required_: Yes
 
 _Type_: Double
@@ -145,6 +169,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SessionSwitch
+
+Indicate that the session will keep or not, and default value is `false`.
 
 _Required_: No
 
@@ -154,6 +180,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SessionTime
 
+Session keep time, only valid when `session_switch` is true, the available value ranges from 1 to 300 and unit is second.
+
 _Required_: No
 
 _Type_: Double
@@ -161,6 +189,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SourceType
+
+Source type, 1 for source of host, 2 for source of ip.
 
 _Required_: Yes
 

@@ -1,6 +1,10 @@
 # Terraform::Panos::AddressGroup
 
-CloudFormation equivalent of panos_address_group
+This resource allows you to add/update/delete address groups.
+
+Address groups are either statically defined or dynamically defined, so only
+`static_addresses` or `dynamic_match` should be defined within a given address
+group.
 
 ## Syntax
 
@@ -41,6 +45,8 @@ Properties:
 
 #### Description
 
+The address group's description.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DynamicMatch
+
+The IP tags to include in this DAG.
 
 _Required_: No
 
@@ -57,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The address group's name.
+
 _Required_: Yes
 
 _Type_: String
@@ -64,6 +74,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StaticAddresses
+
+The address objects to include in this
+statically defined address group.
 
 _Required_: No
 
@@ -73,6 +86,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+List of administrative tags.
+
 _Required_: No
 
 _Type_: List of String
@@ -80,6 +95,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vsys
+
+The vsys to put the address group into (default:
+`vsys1`).
 
 _Required_: No
 

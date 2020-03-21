@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::NatSnatRuleV2
 
-CloudFormation equivalent of huaweicloud_nat_snat_rule_v2
+Manages a V2 snat rule resource within HuaweiCloud Nat
 
 ## Syntax
 
@@ -37,6 +37,9 @@ Properties:
 
 #### FloatingIpId
 
+ID of the floating ip this snat rule connets to.
+Changing this creates a new snat rule.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +47,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NatGatewayId
+
+ID of the nat gateway this snat rule belongs to.
+Changing this creates a new snat rule.
 
 _Required_: Yes
 
@@ -53,6 +59,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NetworkId
 
+ID of the network this snat rule connects to.
+Changing this creates a new snat rule.
+
 _Required_: Yes
 
 _Type_: String
@@ -60,6 +69,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region in which to obtain the V2 nat client.
+If omitted, the `region` argument of the provider is used. Changing this
+creates a new snat rule.
 
 _Required_: No
 

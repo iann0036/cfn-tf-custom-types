@@ -1,6 +1,6 @@
 # Terraform::AzureRM::Image
 
-CloudFormation equivalent of azurerm_image
+Manages a custom virtual machine image that can be used to create virtual machines.
 
 ## Syntax
 
@@ -50,6 +50,8 @@ Properties:
 
 #### HyperVGeneration
 
+The HyperVGenerationType of the VirtualMachine created from the image as `V1`, `V2`. The default is `V1`.
+
 _Required_: No
 
 _Type_: String
@@ -57,6 +59,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Location
+
+Specified the supported Azure location where the resource exists.
+Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -66,6 +71,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the image. Changing this forces a
+new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -73,6 +81,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which to create
+the image. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -82,6 +93,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SourceVirtualMachineId
 
+The Virtual Machine ID from which to create the image.
+
 _Required_: No
 
 _Type_: String
@@ -90,6 +103,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -97,6 +112,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneResilient
+
+Is zone resiliency enabled?  Defaults to `false`.  Changing this forces a new resource to be created.
 
 _Required_: No
 

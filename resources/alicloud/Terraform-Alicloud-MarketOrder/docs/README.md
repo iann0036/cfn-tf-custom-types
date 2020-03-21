@@ -1,6 +1,10 @@
 # Terraform::Alicloud::MarketOrder
 
-CloudFormation equivalent of alicloud_market_order
+Provides a market order resource.
+
+-> **NOTE:** Terraform will auto build a market order  while it uses `alicloud_market_order` to build a market order resource.
+
+-> **NOTE:** Available in 1.69.0+
 
 ## Syntax
 
@@ -44,6 +48,8 @@ Properties:
 
 #### Components
 
+Service providers customize additional components.
+
 _Required_: No
 
 _Type_: List of <a href="components.md">Components</a>
@@ -51,6 +57,8 @@ _Type_: List of <a href="components.md">Components</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CouponId
+
+The coupon id of the market product.
 
 _Required_: No
 
@@ -60,6 +68,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Duration
 
+The number of purchase cycles.
+
 _Required_: No
 
 _Type_: Double
@@ -67,6 +77,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PackageVersion
+
+The package version of the market product.
 
 _Required_: Yes
 
@@ -76,6 +88,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PayType
 
+Valid values are `PrePaid`, `PostPaid`,System default to `PostPaid`.
+
 _Required_: No
 
 _Type_: String
@@ -83,6 +97,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PricingCycle
+
+The purchase cycle of the product, valid values are `Day`, `Month` and `Year`.
 
 _Required_: Yes
 
@@ -92,6 +108,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProductCode
 
+The product_code of market place product.
+
 _Required_: Yes
 
 _Type_: String
@@ -99,6 +117,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Quantity
+
+The quantity of the market product will be purchased.
 
 _Required_: No
 

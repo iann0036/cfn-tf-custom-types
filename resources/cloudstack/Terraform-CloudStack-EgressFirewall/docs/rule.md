@@ -32,6 +32,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### CidrList
 
+A CIDR list to allow access to the given ports.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -39,6 +41,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IcmpCode
+
+The ICMP code to allow. This can only be specified if
+the protocol is ICMP.
 
 _Required_: No
 
@@ -48,6 +53,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IcmpType
 
+The ICMP type to allow. This can only be specified if
+the protocol is ICMP.
+
 _Required_: No
 
 _Type_: Double
@@ -56,6 +64,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ports
 
+List of ports and/or port ranges to allow. This can only
+be specified if the protocol is TCP or UDP.
+
 _Required_: No
 
 _Type_: List of String
@@ -63,6 +74,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Protocol
+
+The name of the protocol to allow. Valid options are:
+`tcp`, `udp` and `icmp`.
 
 _Required_: Yes
 

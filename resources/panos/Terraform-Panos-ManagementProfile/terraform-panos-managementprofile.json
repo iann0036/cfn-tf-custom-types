@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::ManagementProfile",
-    "description": "CloudFormation equivalent of panos_management_profile",
+    "description": "This resource allows you to add/update/delete interface management profiles.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,47 +9,60 @@
             "type": "string"
         },
         "Http": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Allow HTTP."
         },
         "HttpOcsp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Allow HTTP OCSP."
         },
         "Https": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Allow HTTPS."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The management profile's name."
         },
         "PermittedIps": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The list of permitted IP addresses or address\nranges for this management profile."
         },
         "Ping": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Allow ping."
         },
         "ResponsePages": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Allow response pages."
         },
         "Snmp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Allow SNMP."
         },
         "Ssh": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Allow SSH."
         },
         "Telnet": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Allow telnet."
         },
         "UseridService": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Allow User ID service."
         },
         "UseridSyslogListenerSsl": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Allow User ID syslog listener\nfor SSL."
         },
         "UseridSyslogListenerUdp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Allow User ID syslog listener\nfor UDP."
         }
     },
     "additionalProperties": false,

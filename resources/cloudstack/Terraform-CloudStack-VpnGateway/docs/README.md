@@ -1,6 +1,6 @@
 # Terraform::CloudStack::VpnGateway
 
-CloudFormation equivalent of cloudstack_vpn_gateway
+Creates a site to site VPN local gateway.
 
 ## Syntax
 
@@ -28,6 +28,9 @@ Properties:
 ## Properties
 
 #### VpcId
+
+The ID of the VPC for which to create the VPN Gateway.
+Changing this forces a new resource to be created.
 
 _Required_: Yes
 

@@ -1,6 +1,8 @@
 # Terraform::AzureRM::KubernetesCluster
 
-CloudFormation equivalent of azurerm_kubernetes_cluster
+Manages a Managed Kubernetes Cluster (also known as AKS / Azure Kubernetes Service)
+
+~> **Note:** All arguments including the client secret will be stored in the raw state as plain-text. [Read more about sensitive data in state](/docs/state/sensitive-data.html).
 
 ## Syntax
 
@@ -99,6 +101,8 @@ Properties:
 
 #### ApiServerAuthorizedIpRanges
 
+The IP ranges to whitelist for incoming traffic to the masters.
+
 _Required_: No
 
 _Type_: List of String
@@ -106,6 +110,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DnsPrefix
+
+DNS prefix specified when creating the managed cluster. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -115,6 +121,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnablePodSecurityPolicy
 
+Whether Pod Security Policies are enabled. Note that this also requires role based access control to be enabled.
+
 _Required_: No
 
 _Type_: Boolean
@@ -122,6 +130,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KubernetesVersion
+
+Version of Kubernetes specified when creating the AKS managed cluster. If not specified, the latest recommended version will be used at provisioning time (but won't auto-upgrade).
 
 _Required_: No
 
@@ -131,6 +141,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Location
 
+The location where the Managed Kubernetes Cluster should be created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -139,6 +151,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the Managed Kubernetes Cluster to create. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -146,6 +160,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NodeResourceGroup
+
+The name of the Resource Group where the Kubernetes Nodes should exist. Changing this forces a new resource to be created.
 
 _Required_: No
 
@@ -163,6 +179,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+Specifies the Resource Group where the Managed Kubernetes Cluster should exist. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -170,6 +188,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

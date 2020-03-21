@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::DnsAaaaRecord",
-    "description": "CloudFormation equivalent of azurerm_dns_aaaa_record",
+    "description": "Enables you to manage DNS AAAA Records within Azure DNS.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -32,17 +32,20 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the DNS AAAA Record."
         },
         "Records": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of IPv4 Addresses. Conflicts with `target_resource_id`."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the resource group where the DNS Zone (parent resource) exists. Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -62,16 +65,19 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "TargetResourceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Azure resource id of the target object. Conflicts with `records`."
         },
         "Ttl": {
             "type": "number"
         },
         "ZoneName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the DNS Zone where the resource exists. Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

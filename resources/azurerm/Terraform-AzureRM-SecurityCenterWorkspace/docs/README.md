@@ -1,6 +1,10 @@
 # Terraform::AzureRM::SecurityCenterWorkspace
 
-CloudFormation equivalent of azurerm_security_center_workspace
+Manages the subscription's Security Center Workspace.
+
+~> **NOTE:** Owner access permission is required.
+
+~> **NOTE:** The subscription's pricing model can not be `Free` for this to have any affect.
 
 ## Syntax
 
@@ -33,6 +37,8 @@ Properties:
 
 #### Scope
 
+The scope of VMs to send their security data to the desired workspace, unless overridden by a setting with more specific scope.
+
 _Required_: Yes
 
 _Type_: String
@@ -40,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WorkspaceId
+
+The ID of the Log Analytics Workspace to save the data in.
 
 _Required_: Yes
 

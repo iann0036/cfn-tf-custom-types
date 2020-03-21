@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureStack::LbNatRule",
-    "description": "CloudFormation equivalent of azurestack_lb_nat_rule",
+    "description": "Manages a LoadBalancer NAT Rule.\n\n~> **NOTE** When using this resource, the LoadBalancer needs to have a FrontEnd IP Configuration Attached",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,31 +12,39 @@
             "type": "string"
         },
         "BackendPort": {
-            "type": "number"
+            "type": "number",
+            "description": "The port used for internal connections on the endpoint. Possible values range between 1 and 65535, inclusive."
         },
         "EnableFloatingIp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enables the Floating IP Capacity, required to configure a SQL AlwaysOn Availability Group."
         },
         "FrontendIpConfigurationId": {
             "type": "string"
         },
         "FrontendIpConfigurationName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the frontend IP configuration exposing this rule."
         },
         "FrontendPort": {
-            "type": "number"
+            "type": "number",
+            "description": "The port for the external endpoint. Port numbers for each Rule must be unique within the Load Balancer. Possible values range between 1 and 65534, inclusive."
         },
         "LoadbalancerId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the LoadBalancer in which to create the NAT Rule."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the NAT Rule."
         },
         "Protocol": {
-            "type": "string"
+            "type": "string",
+            "description": "The transport protocol for the external endpoint. Possible values are `Udp` or `Tcp`."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the resource."
         }
     },
     "additionalProperties": false,

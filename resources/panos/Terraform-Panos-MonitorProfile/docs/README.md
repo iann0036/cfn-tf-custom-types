@@ -1,6 +1,8 @@
 # Terraform::Panos::MonitorProfile
 
-CloudFormation equivalent of panos_monitor_profile
+This resource allows you to add/update/delete monitor profiles.
+
+**Minimum PAN-OS version**: 7.1
 
 ## Syntax
 
@@ -35,6 +37,9 @@ Properties:
 
 #### Action
 
+Action triggered when tunnel's status changes.  Valid values
+are `wait-recover` (default) or `fail-over`.
+
 _Required_: No
 
 _Type_: String
@@ -42,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Interval
+
+The probing interval in seconds.
 
 _Required_: No
 
@@ -51,6 +58,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The monitor profile name.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +67,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Threshold
+
+The number of failed probes to determine that
+the tunnel is down.
 
 _Required_: No
 

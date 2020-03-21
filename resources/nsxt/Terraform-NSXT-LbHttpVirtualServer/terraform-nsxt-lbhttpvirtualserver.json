@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::NSXT::LbHttpVirtualServer",
-    "description": "CloudFormation equivalent of nsxt_lb_http_virtual_server",
+    "description": "Provides a resource to configure lb http or https virtual server on NSX-T manager",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ClientSsl": {
@@ -104,40 +104,52 @@
             "type": "string"
         },
         "AccessLogEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether access log is enabled. Default is false."
         },
         "ApplicationProfileId": {
-            "type": "string"
+            "type": "string",
+            "description": "The application profile defines the application protocol characteristics."
         },
         "DefaultPoolMemberPort": {
-            "type": "string"
+            "type": "string",
+            "description": "Default pool member port."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of this resource."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The display name of this resource. Defaults to ID if not set."
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the virtual server is enabled. Default is true."
         },
         "IpAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "Virtual server IP address."
         },
         "MaxConcurrentConnections": {
-            "type": "number"
+            "type": "number",
+            "description": "To ensure one virtual server does not over consume resources, affecting other applications hosted on the same LBS, connections to a virtual server can be capped. If it is not specified, it means that connections are unlimited."
         },
         "MaxNewConnectionRate": {
-            "type": "number"
+            "type": "number",
+            "description": "To ensure one virtual server does not over consume resources, connections to a member can be rate limited. If it is not specified, it means that connection rate is unlimited."
         },
         "PersistenceProfileId": {
-            "type": "string"
+            "type": "string",
+            "description": "Persistence profile is used to allow related client connections to be sent to the same backend server."
         },
         "PoolId": {
-            "type": "string"
+            "type": "string",
+            "description": "Pool of backend servers. Server pool consists of one or more servers, also referred to as pool members, that are similarly configured and are running the same application."
         },
         "Port": {
-            "type": "string"
+            "type": "string",
+            "description": "Virtual server port."
         },
         "Revision": {
             "type": "number"
@@ -147,10 +159,12 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of load balancer rules that provide customization of load balancing behavior using match/action rules."
         },
         "SorryPoolId": {
-            "type": "string"
+            "type": "string",
+            "description": "When load balancer can not select a backend server to serve the request in default pool or pool in rules, the request would be served by sorry server pool."
         },
         "ClientSsl": {
             "type": "array",

@@ -1,6 +1,6 @@
 # Terraform::Cloudflare::ZoneLockdown
 
-CloudFormation equivalent of cloudflare_zone_lockdown
+Provides a Cloudflare Zone Lockdown resource. Zone Lockdown allows you to define one or more URLs (with wildcard matching on the domain or path) that will only permit access if the request originates from an IP address that matches a safelist of one or more IP addresses and/or IP ranges.
 
 ## Syntax
 
@@ -41,6 +41,8 @@ Properties:
 
 #### Description
 
+A description about the lockdown entry. Typically used as a reminder or explanation for the lockdown.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +50,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Paused
+
+Boolean of whether this zone lockdown is currently paused. Default: false.
 
 _Required_: No
 
@@ -65,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Urls
 
+A list of simple wildcard patterns to match requests against. The order of the urls is unimportant.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -72,6 +78,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneId
+
+The DNS zone ID to which the access rule should be added.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::VCD::NsxvDhcpRelay",
-    "description": "CloudFormation equivalent of vcd_nsxv_dhcp_relay",
+    "description": "Provides a vCloud Director Edge Gateway DHCP relay configuration resource. The DHCP relay capability\nprovided by NSX in vCloud Director environment allows to leverage existing DHCP infrastructure from\nwithin vCloud Director environment without any interruption to the IP address management in existing\nDHCP infrastructure. DHCP messages are relayed from virtual machines to the designated DHCP servers\nin your physical DHCP infrastructure, which allows IP addresses controlled by the NSX software to\ncontinue to be in sync with IP addresses in the rest of your DHCP-controlled environments. \n\n~> **Note:** This resource is a \"singleton\". Because DHCP relay settings are just edge gateway\nproperties - only one resource per Edge Gateway is useful.\n\nSupported in provider *v2.6+*",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "RelayAgent": {
@@ -29,30 +29,36 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A set of domain names."
         },
         "EdgeGateway": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the edge gateway on which DHCP relay is to be configured."
         },
         "IpAddresses": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A set of IP addresses."
         },
         "IpSets": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A set of IP set names."
         },
         "Org": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of organization to use, optional if defined at provider level. Useful\nwhen connected as sysadmin working across different organisations."
         },
         "Vdc": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of VDC to use, optional if defined at provider level."
         },
         "RelayAgent": {
             "type": "array",

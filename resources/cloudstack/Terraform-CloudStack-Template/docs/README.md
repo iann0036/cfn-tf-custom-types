@@ -1,6 +1,6 @@
 # Terraform::CloudStack::Template
 
-CloudFormation equivalent of cloudstack_template
+Registers an existing template into the CloudStack cloud.
 
 ## Syntax
 
@@ -55,6 +55,8 @@ Properties:
 
 #### DisplayText
 
+The display name of the template.
+
 _Required_: No
 
 _Type_: String
@@ -62,6 +64,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Format
+
+The format of the template. Valid values are `QCOW2`,
+`RAW`, and `VHD`.
 
 _Required_: Yes
 
@@ -71,6 +76,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Hypervisor
 
+The target hypervisor for the template. Changing
+this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -78,6 +86,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IsDynamicallyScalable
+
+Set to indicate if the template contains
+tools to support dynamic scaling of VM cpu/memory (defaults false).
 
 _Required_: No
 
@@ -87,6 +98,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IsExtractable
 
+Set to indicate if the template is extractable
+(defaults false).
+
 _Required_: No
 
 _Type_: Boolean
@@ -94,6 +108,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IsFeatured
+
+Set to indicate if the template is featured
+(defaults false).
 
 _Required_: No
 
@@ -103,6 +120,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IsPublic
 
+Set to indicate if the template is available for
+all accounts (defaults true).
+
 _Required_: No
 
 _Type_: Boolean
@@ -110,6 +130,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IsReadyTimeout
+
+The maximum time in seconds to wait until the
+template is ready for use (defaults 300 seconds).
 
 _Required_: No
 
@@ -119,6 +142,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the template.
+
 _Required_: Yes
 
 _Type_: String
@@ -126,6 +151,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OsType
+
+The OS Type that best represents the OS of this
+template.
 
 _Required_: Yes
 
@@ -135,6 +163,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PasswordEnabled
 
+Set to indicate if the template should be
+password enabled (defaults false).
+
 _Required_: No
 
 _Type_: Boolean
@@ -142,6 +173,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The name or ID of the project to create this template for.
+Changing this forces a new resource to be created.
 
 _Required_: No
 
@@ -151,6 +185,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Url
 
+The URL of where the template is hosted. Changing this
+forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -158,6 +195,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Zone
+
+The name or ID of the zone where this template will be created.
+Changing this forces a new resource to be created.
 
 _Required_: No
 

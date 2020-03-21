@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::VCD::FirewallRules",
-    "description": "CloudFormation equivalent of vcd_firewall_rules",
+    "description": "Provides a vCloud Director Firewall resource. This can be used to create,\nmodify, and delete firewall settings and rules.\n\n~> **Note:** Please use the improved [`vcd_nsxv_firewall_rule`](/docs/providers/vcd/r/nsxv_firewall_rule.html)\nresource with advanced edge gateways (NSX-V).\n\n~> **Note:** Using this resource automatically enables default firewall rule logging. This may cause\n[`vcd_edgegateway`](/docs/providers/vcd/r/edgegateway.html) resource to report changes for field\n `fw_default_rule_logging_enabled` during `plan`/`apply` phases.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Rule": {
@@ -49,16 +49,20 @@
             "type": "string"
         },
         "DefaultAction": {
-            "type": "string"
+            "type": "string",
+            "description": "Either \"allow\" or \"drop\". Specifies what to do should none of the rules match."
         },
         "EdgeGateway": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the edge gateway on which to apply the Firewall Rules."
         },
         "Org": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of organization to use, optional if defined at provider level. Useful when connected as sysadmin working across different organisations."
         },
         "Vdc": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of VDC to use, optional if defined at provider level."
         },
         "Rule": {
             "type": "array",

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Brightbox::ApiClient",
-    "description": "CloudFormation equivalent of brightbox_api_client",
+    "description": "Provides a Brightbox API Client resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,13 +12,16 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A further description of the API Client."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A label to assign to the API Client."
         },
         "PermissionsGroup": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of API Client required, either `full` or `storage`. The default is `full`."
         },
         "Secret": {
             "type": "string"

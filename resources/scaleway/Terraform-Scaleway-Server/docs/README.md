@@ -1,6 +1,10 @@
 # Terraform::Scaleway::Server
 
-CloudFormation equivalent of scaleway_server
+**DEPRECATED**: This resource is deprecated and will be removed in `v2.0+`.
+Please use `scaleway_instance_server` instead.
+
+Provides servers. This allows servers to be created, updated and deleted.
+For additional details please refer to [API documentation](https://developer.scaleway.com/#servers).
 
 ## Syntax
 
@@ -55,6 +59,8 @@ Properties:
 
 #### BootType
 
+the boot mechanism for this server. Possible values include `local` and `bootscript`.
+
 _Required_: No
 
 _Type_: String
@@ -62,6 +68,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Bootscript
+
+server bootscript.
 
 _Required_: No
 
@@ -71,6 +79,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Cloudinit
 
+allows you to define cloudinit script for this server.
+
 _Required_: No
 
 _Type_: String
@@ -78,6 +88,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DynamicIpRequired
+
+make server publicly available.
 
 _Required_: No
 
@@ -87,6 +99,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableIpv6
 
+enable ipv6.
+
 _Required_: No
 
 _Type_: Boolean
@@ -94,6 +108,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Image
+
+base image of server.
 
 _Required_: Yes
 
@@ -103,6 +119,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+name of server.
+
 _Required_: Yes
 
 _Type_: String
@@ -110,6 +128,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PublicIp
+
+set a public ip previously created (a real ip is expected here, not its resource id).
 
 _Required_: No
 
@@ -119,6 +139,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecurityGroup
 
+assign security group to server.
+
 _Required_: No
 
 _Type_: String
@@ -126,6 +148,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### State
+
+allows you to define the desired state of your server. Valid values include (`stopped`, `running`).
 
 _Required_: No
 
@@ -135,6 +159,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+list of tags for server.
+
 _Required_: No
 
 _Type_: List of String
@@ -142,6 +168,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+type of server.
 
 _Required_: Yes
 
@@ -179,9 +207,9 @@ Returns the <code>PrivateIp</code> value.
 
 #### PublicIpv6
 
-Returns the <code>PublicIpv6</code> value.
+if `enable_ipv6` is set this contains the ipv6 address of your instance.
 
 #### StateDetail
 
-Returns the <code>StateDetail</code> value.
+contains details from the scaleway API the state of your instance.
 

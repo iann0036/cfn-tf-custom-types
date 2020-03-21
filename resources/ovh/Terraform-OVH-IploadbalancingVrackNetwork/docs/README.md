@@ -1,6 +1,6 @@
 # Terraform::OVH::IploadbalancingVrackNetwork
 
-CloudFormation equivalent of ovh_iploadbalancing_vrack_network
+Manage a vrack network for your IP Loadbalancing service.
 
 ## Syntax
 
@@ -40,6 +40,8 @@ Properties:
 
 #### DisplayName
 
+Human readable name for your vrack network.
+
 _Required_: No
 
 _Type_: String
@@ -47,6 +49,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FarmId
+
+List of existing farm ids your vRack network is attached to.
 
 _Required_: No
 
@@ -56,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NatIp
 
+An IP block used as a pool of IPs by this Load Balancer to connect to the servers in this private network. The blck must be in the private network and reserved for the Load Balancer.
+
 _Required_: Yes
 
 _Type_: String
@@ -63,6 +69,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServiceName
+
+The internal name of your IP load balancing.
 
 _Required_: Yes
 
@@ -72,6 +80,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Subnet
 
+IP block of the private network in the vRack.
+
 _Required_: Yes
 
 _Type_: String
@@ -79,6 +89,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vlan
+
+VLAN of the private network in the vRack. 0 if the private network is not in a VLAN.
 
 _Required_: No
 

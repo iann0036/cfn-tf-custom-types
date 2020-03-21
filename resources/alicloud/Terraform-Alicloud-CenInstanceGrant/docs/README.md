@@ -1,6 +1,8 @@
 # Terraform::Alicloud::CenInstanceGrant
 
-CloudFormation equivalent of alicloud_cen_instance_grant
+Provides a CEN child instance grant resource, which allow you to authorize a VPC or VBR to a CEN of a different account.
+
+For more information about how to use it, see [Attach a network in a different account](https://www.alibabacloud.com/help/doc-detail/73645.htm).
 
 ## Syntax
 
@@ -33,6 +35,8 @@ Properties:
 
 #### CenId
 
+The ID of the CEN.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +45,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CenOwnerId
 
+The owner UID of the  CEN which the child instance granted to.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ChildInstanceId
+
+The ID of the child instance to grant.
 
 _Required_: Yes
 

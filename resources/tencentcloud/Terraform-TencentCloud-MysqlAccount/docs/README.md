@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::MysqlAccount
 
-CloudFormation equivalent of tencentcloud_mysql_account
+Provides a MySQL account resource for database management. A MySQL instance supports multiple database account.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### Description
 
+Database description.
+
 _Required_: No
 
 _Type_: String
@@ -42,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MysqlId
+
+Instance ID to which the account belongs.
 
 _Required_: Yes
 
@@ -51,6 +55,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Account name.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Password
+
+Operation password.
 
 _Required_: Yes
 

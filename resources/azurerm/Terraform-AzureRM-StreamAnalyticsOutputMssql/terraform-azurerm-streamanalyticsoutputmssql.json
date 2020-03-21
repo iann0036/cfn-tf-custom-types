@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::StreamAnalyticsOutputMssql",
-    "description": "CloudFormation equivalent of azurerm_stream_analytics_output_mssql",
+    "description": "Manages a Stream Analytics Output to Microsoft SQL Server Database.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -32,25 +32,32 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Stream Output. Changing this forces a new resource to be created."
         },
         "Password": {
-            "type": "string"
+            "type": "string",
+            "description": "Password used together with username, to login to the Microsoft SQL Server. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Resource Group where the Stream Analytics Job exists. Changing this forces a new resource to be created."
         },
         "Server": {
-            "type": "string"
+            "type": "string",
+            "description": "The SQL server url. Changing this forces a new resource to be created."
         },
         "StreamAnalyticsJobName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Stream Analytics Job. Changing this forces a new resource to be created."
         },
         "Table": {
-            "type": "string"
+            "type": "string",
+            "description": "Table in the database that the output points to. Changing this forces a new resource to be created."
         },
         "User": {
-            "type": "string"
+            "type": "string",
+            "description": "Username used to login to the Microsoft SQL Server. Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::ContainerengineCluster",
-    "description": "CloudFormation equivalent of oci_containerengine_cluster",
+    "description": "This resource provides the Cluster resource in Oracle Cloud Infrastructure Container Engine service.\n\nCreate a new cluster.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Options": {
@@ -87,7 +87,8 @@
             }
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the compartment in which to create the cluster."
         },
         "Endpoints": {
             "type": "array",
@@ -103,10 +104,12 @@
             }
         },
         "KmsKeyId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`."
         },
         "KubernetesVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The version of Kubernetes to install into the cluster masters."
         },
         "LifecycleDetails": {
             "type": "string"
@@ -149,13 +152,15 @@
             }
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The name of the cluster. Avoid entering confidential information."
         },
         "State": {
             "type": "string"
         },
         "VcnId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the virtual cloud network (VCN) in which to create the cluster."
         },
         "Options": {
             "type": "array",

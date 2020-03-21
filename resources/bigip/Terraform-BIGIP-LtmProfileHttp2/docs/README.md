@@ -1,6 +1,8 @@
 # Terraform::BIGIP::LtmProfileHttp2
 
-CloudFormation equivalent of bigip_ltm_profile_http2
+`bigip_ltm_profile_http2` Configures a custom profile_http2 for use by health checks.
+
+For resources should be named with their "full path". The full path is the combination of the partition + name of the resource. For example /Common/my-pool.
 
 ## Syntax
 
@@ -40,6 +42,8 @@ Properties:
 
 #### ActivationModes
 
+Specifies what will cause an incoming connection to be handled as a HTTP/2 connection. The default values npn and alpn specify that the TLS next-protocol-negotiation and application-layer-protocol-negotiation extensions will be used.
+
 _Required_: No
 
 _Type_: List of String
@@ -47,6 +51,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ConcurrentStreamsPerConnection
+
+Specifies how many concurrent requests are allowed to be outstanding on a single HTTP/2 connection.
 
 _Required_: No
 
@@ -56,6 +62,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ConnectionIdleTimeout
 
+Specifies the number of seconds that a connection is idle before the connection is eligible for deletion..
+
 _Required_: No
 
 _Type_: Double
@@ -63,6 +71,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefaultsFrom
+
+Specifies the profile that you want to use as the parent profile. Your new profile inherits all settings and values from the parent profile specified.
 
 _Required_: No
 

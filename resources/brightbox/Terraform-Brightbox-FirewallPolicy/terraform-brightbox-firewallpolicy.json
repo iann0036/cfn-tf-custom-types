@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Brightbox::FirewallPolicy",
-    "description": "CloudFormation equivalent of brightbox_firewall_policy",
+    "description": "Provides a Brightbox Firewall Policy resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A further description of the Firewall Policy."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A label to assign to the Firewall Policy."
         },
         "ServerGroup": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Server Group the policy will be applied to."
         }
     },
     "additionalProperties": false,

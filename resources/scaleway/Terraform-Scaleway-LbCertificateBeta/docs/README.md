@@ -1,6 +1,8 @@
 # Terraform::Scaleway::LbCertificateBeta
 
-CloudFormation equivalent of scaleway_lb_certificate_beta
+-> **Note:** This terraform resource is flagged beta and might include breaking change in future releases.
+
+Creates and manages Scaleway Load-Balancer Certificates. For more information, see [the documentation](https://developers.scaleway.com/en/products/lb/api).
 
 ## Syntax
 

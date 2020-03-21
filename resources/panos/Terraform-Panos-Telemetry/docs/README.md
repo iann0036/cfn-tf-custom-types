@@ -1,6 +1,14 @@
 # Terraform::Panos::Telemetry
 
-CloudFormation equivalent of panos_telemetry
+This resource allows you to add/update/delete telemetry sharing.
+
+Join other Palo Alto Networks customers in a global sharing community, helping
+to raise the bar against the latest attack techniques. Your participation
+allows us to deliver new threat prevention controls across the attack
+lifecycle. Choose the type of data you share across applications, threat
+intelligence, and device health information to improve the fidelity of the
+protections we deliver. This is an opt-in feature controlled with granular
+policy, and we encourage you to join the community.
 
 ## Syntax
 
@@ -43,6 +51,8 @@ Properties:
 
 #### ApplicationReports
 
+Application reports.
+
 _Required_: No
 
 _Type_: Boolean
@@ -50,6 +60,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FileTypeIdentificationReports
+
+File type identification
+reports.
 
 _Required_: No
 
@@ -59,6 +72,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PassiveDnsMonitoring
 
+Passive DNS monitoring.
+
 _Required_: No
 
 _Type_: Boolean
@@ -66,6 +81,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProductUsageStats
+
+Health and performance reports.
 
 _Required_: No
 
@@ -75,6 +92,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ThreatPreventionData
 
+Threat prevention data.
+
 _Required_: No
 
 _Type_: Boolean
@@ -82,6 +101,10 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ThreatPreventionPacketCaptures
+
+Enable sending packet-
+captures with threat prevention information. This requires that
+`threat_prevention_data` also be enabled.
 
 _Required_: No
 
@@ -91,6 +114,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ThreatPreventionReports
 
+Threat reports.
+
 _Required_: No
 
 _Type_: Boolean
@@ -98,6 +123,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UrlReports
+
+URL reports.
 
 _Required_: No
 

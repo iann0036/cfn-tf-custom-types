@@ -25,6 +25,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Name
 
+Specifies the name of the IP Configuration.
+
 _Required_: Yes
 
 _Type_: String

@@ -1,6 +1,8 @@
 # Terraform::OCI::ContainerengineCluster
 
-CloudFormation equivalent of oci_containerengine_cluster
+This resource provides the Cluster resource in Oracle Cloud Infrastructure Container Engine service.
+
+Create a new cluster.
 
 ## Syntax
 
@@ -48,6 +50,8 @@ Properties:
 
 #### CompartmentId
 
+The OCID of the compartment in which to create the cluster.
+
 _Required_: Yes
 
 _Type_: String
@@ -55,6 +59,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KmsKeyId
+
+The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
 
 _Required_: No
 
@@ -64,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KubernetesVersion
 
+(Updatable) The version of Kubernetes to install into the cluster masters.
+
 _Required_: Yes
 
 _Type_: String
@@ -72,6 +80,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+(Updatable) The name of the cluster. Avoid entering confidential information.
+
 _Required_: Yes
 
 _Type_: String
@@ -79,6 +89,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VcnId
+
+The OCID of the virtual cloud network (VCN) in which to create the cluster.
 
 _Required_: Yes
 

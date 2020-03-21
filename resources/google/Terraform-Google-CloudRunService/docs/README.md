@@ -1,6 +1,31 @@
 # Terraform::Google::CloudRunService
 
-CloudFormation equivalent of google_cloud_run_service
+Service acts as a top-level container that manages a set of Routes and
+Configurations which implement a network service. Service exists to provide a
+singular abstraction which can be access controlled, reasoned about, and
+which encapsulates software lifecycle decisions such as rollout policy and
+team resource ownership. Service acts only as an orchestrator of the
+underlying Routes and Configurations (much as a kubernetes Deployment
+orchestrates ReplicaSets).
+
+The Service's controller will track the statuses of its owned Configuration
+and Route, reflecting their statuses and conditions as its own.
+
+See also:
+https://github.com/knative/serving/blob/master/docs/spec/overview.md#service
+
+
+To get more information about Service, see:
+
+* [API documentation](https://cloud.google.com/run/docs/reference/rest/v1/projects.locations.services)
+* How-to Guides
+    * [Official Documentation](https://cloud.google.com/run/docs/)
+
+<div class = "oics-button" style="float: right; margin: 0 0 -15px">
+  <a href="https://console.cloud.google.com/cloudshell/open?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fterraform-google-modules%2Fdocs-examples.git&cloudshell_working_dir=cloud_run_service_basic&cloudshell_image=gcr.io%2Fgraphite-cloud-shell-images%2Fterraform%3Alatest&open_in_editor=main.tf&cloudshell_print=.%2Fmotd&cloudshell_tutorial=.%2Ftutorial.md" target="_blank">
+    <img alt="Open in Cloud Shell" src="//gstatic.com/cloudssh/images/open-btn.svg" style="max-height: 44px; margin: 32px auto; max-width: 100%;">
+  </a>
+</div>
 
 ## Syntax
 

@@ -1,6 +1,8 @@
 # Terraform::OCI::DatabaseMaintenanceRun
 
-CloudFormation equivalent of oci_database_maintenance_run
+This resource provides the Maintenance Run resource in Oracle Cloud Infrastructure Database service.
+
+Updates the properties of a Maintenance Run, such as the state of a Maintenance Run.
 
 ## Syntax
 
@@ -33,6 +35,8 @@ Properties:
 
 #### IsEnabled
 
+(Updatable) If set to false, skips the Maintenance Run.
+
 _Required_: No
 
 _Type_: Boolean
@@ -40,6 +44,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MaintenanceRunId
+
+The Maintenance Run OCID.
 
 _Required_: Yes
 

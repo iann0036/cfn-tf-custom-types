@@ -1,6 +1,6 @@
 # Terraform::Cloudflare::CustomPages
 
-CloudFormation equivalent of cloudflare_custom_pages
+Provides a resource which manages Cloudflare custom error pages.
 
 ## Syntax
 
@@ -37,6 +37,10 @@ Properties:
 
 #### AccountId
 
+The account ID where the custom pages should be
+updated. Either `account_id` or `zone_id` must be provided. If
+`account_id` is present, it will override the zone setting.
+
 _Required_: No
 
 _Type_: String
@@ -44,6 +48,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### State
+
+Managed state of the custom page. Must be one of
+`default`, `customised`. If the value is `default` it will be removed
+from the Terraform state management.
 
 _Required_: No
 
@@ -53,6 +61,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Type
 
+The type of custom page you wish to update. Must
+be one of `basic_challenge`, `waf_challenge`, `waf_block`,
+`ratelimit_block`, `country_challenge`, `ip_block`, `under_attack`,
+`500_errors`, `1000_errors`, `always_online`.
+
 _Required_: Yes
 
 _Type_: String
@@ -61,6 +74,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Url
 
+URL of where the custom page source is located.
+
 _Required_: Yes
 
 _Type_: String
@@ -68,6 +83,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneId
+
+The zone ID where the custom pages should be
+updated. Either `zone_id` or `account_id` must be provided.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpsGenie::Schedule",
-    "description": "CloudFormation equivalent of opsgenie_schedule",
+    "description": "Manages a Schedule within Opsgenie.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,19 +9,24 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of schedule."
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable/disable state of schedule."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the schedule."
         },
         "OwnerTeamId": {
-            "type": "string"
+            "type": "string",
+            "description": "Owner team id of the schedule."
         },
         "Timezone": {
-            "type": "string"
+            "type": "string",
+            "description": "Timezone of schedule. Please look at [Supported Timezone Ids](https://docs.opsgenie.com/docs/supported-timezone-ids) for available timezones - Defaults to \"America/New_York\"."
         }
     },
     "additionalProperties": false,

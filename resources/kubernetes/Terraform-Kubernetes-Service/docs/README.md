@@ -1,6 +1,6 @@
 # Terraform::Kubernetes::Service
 
-CloudFormation equivalent of kubernetes_service
+A Service is an abstraction which defines a logical set of pods and a policy by which to access them - sometimes called a micro-service.
 
 ## Syntax
 

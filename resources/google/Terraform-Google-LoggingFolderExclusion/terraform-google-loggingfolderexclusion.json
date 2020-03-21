@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::LoggingFolderExclusion",
-    "description": "CloudFormation equivalent of google_logging_folder_exclusion",
+    "description": "Manages a folder-level logging exclusion. For more information see\n[the official documentation](https://cloud.google.com/logging/docs/) and\n[Excluding Logs](https://cloud.google.com/logging/docs/exclusions).\n\nNote that you must have the \"Logs Configuration Writer\" IAM role (`roles/logging.configWriter`)\ngranted to the credentials used with Terraform.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,19 +9,24 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A human-readable description."
         },
         "Disabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether this exclusion rule should be disabled or not. This defaults to\nfalse."
         },
         "Filter": {
-            "type": "string"
+            "type": "string",
+            "description": "The filter to apply when excluding logs. Only log entries that match the filter are excluded.\nSee [Advanced Log Filters](https://cloud.google.com/logging/docs/view/advanced-filters) for information on how to\nwrite a filter."
         },
         "Folder": {
-            "type": "string"
+            "type": "string",
+            "description": "The folder to be exported to the sink. Note that either [FOLDER_ID] or \"folders/[FOLDER_ID]\" is\naccepted."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the logging exclusion."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Mailgun::Domain",
-    "description": "CloudFormation equivalent of mailgun_domain",
+    "description": "Provides a Mailgun App resource. This can be used to\ncreate and manage applications on Mailgun.\n\nAfter DNS records are set, domain verification should be triggered manually using [PUT /domains/\\<domain\\>/verify](https://documentation.mailgun.com/en/latest/api-domains.html#domains)",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The domain to add to Mailgun."
         },
         "ReceivingRecords": {
             "type": "array",
@@ -34,7 +35,8 @@
             }
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region where domain will be created. Default value is `us`."
         },
         "SendingRecords": {
             "type": "array",
@@ -65,10 +67,12 @@
             "type": "string"
         },
         "SpamAction": {
-            "type": "string"
+            "type": "string",
+            "description": "`disabled` or `tag` Disable, no spam\nfiltering will occur for inbound messages. Tag, messages\nwill be tagged with a spam header."
         },
         "Wildcard": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean that determines whether\nthe domain will accept email for sub-domains."
         }
     },
     "additionalProperties": false,

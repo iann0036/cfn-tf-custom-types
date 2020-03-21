@@ -24,6 +24,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Days
 
+The number of days for which this Retention Policy should apply.
+
 _Required_: No
 
 _Type_: Double
@@ -31,6 +33,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Enabled
+
+Is this Retention Policy enabled?.
 
 _Required_: Yes
 

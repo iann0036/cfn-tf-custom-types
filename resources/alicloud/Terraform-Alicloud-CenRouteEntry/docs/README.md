@@ -1,6 +1,8 @@
 # Terraform::Alicloud::CenRouteEntry
 
-CloudFormation equivalent of alicloud_cen_route_entry
+Provides a CEN route entry resource. Cloud Enterprise Network (CEN) supports publishing and withdrawing route entries of attached networks. You can publish a route entry of an attached VPC or VBR to a CEN instance, then other attached networks can learn the route if there is no route conflict. You can withdraw a published route entry when CEN does not need it any more.
+
+For information about CEN route entries publishment and how to use it, see [Manage network routes](https://www.alibabacloud.com/help/doc-detail/86980.htm).
 
 ## Syntax
 
@@ -33,6 +35,8 @@ Properties:
 
 #### CidrBlock
 
+The destination CIDR block of the route entry to publish.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +45,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceId
 
+The ID of the CEN.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RouteTableId
+
+The route table of the attached VBR or VPC.
 
 _Required_: Yes
 

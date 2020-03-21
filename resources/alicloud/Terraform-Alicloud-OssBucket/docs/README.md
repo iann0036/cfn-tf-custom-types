@@ -1,6 +1,8 @@
 # Terraform::Alicloud::OssBucket
 
-CloudFormation equivalent of alicloud_oss_bucket
+Provides a resource to create a oss bucket and set its attribution.
+
+-> **NOTE:** The bucket namespace is shared by all users of the OSS system. Please set bucket name as unique as possible.
 
 ## Syntax
 
@@ -69,6 +71,8 @@ Properties:
 
 #### Acl
 
+The [canned ACL](https://www.alibabacloud.com/help/doc-detail/31898.htm) to apply. Defaults to "private".
+
 _Required_: No
 
 _Type_: String
@@ -76,6 +80,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Bucket
+
+The name of the bucket. If omitted, Terraform will assign a random and unique name.
 
 _Required_: No
 
@@ -85,6 +91,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ForceDestroy
 
+A boolean that indicates all objects should be deleted from the bucket so that the bucket can be destroyed without error. These objects are not recoverable. Defaults to "false".
+
 _Required_: No
 
 _Type_: Boolean
@@ -92,6 +100,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LoggingIsenable
+
+The flag of using logging enable container. Defaults true.
 
 _Required_: No
 
@@ -101,6 +111,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Policy
 
+Json format text of bucket policy [bucket policy management](https://www.alibabacloud.com/help/doc-detail/100680.htm) (documented below).
+
 _Required_: No
 
 _Type_: String
@@ -109,6 +121,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StorageClass
 
+The [storage class](https://www.alibabacloud.com/help/doc-detail/51374.htm) to apply. Can be "Standard", "IA" and "Archive". Defaults to "Standard".
+
 _Required_: No
 
 _Type_: String
@@ -116,6 +130,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the bucket. The items are no more than 10 for a bucket.
 
 _Required_: No
 

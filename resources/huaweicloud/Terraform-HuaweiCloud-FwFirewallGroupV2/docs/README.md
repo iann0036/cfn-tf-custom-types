@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::FwFirewallGroupV2
 
-CloudFormation equivalent of huaweicloud_fw_firewall_group_v2
+Manages a v2 firewall group resource within HuaweiCloud.
 
 ## Syntax
 
@@ -49,6 +49,10 @@ Properties:
 
 #### AdminStateUp
 
+Administrative up/down status for the firewall group
+(must be "true" or "false" if provided - defaults to "true").
+Changing this updates the `admin_state_up` of an existing firewall group.
+
 _Required_: No
 
 _Type_: Boolean
@@ -56,6 +60,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+A description for the firewall group. Changing this
+updates the `description` of an existing firewall group.
 
 _Required_: No
 
@@ -65,6 +72,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EgressPolicyId
 
+The egress policy resource id for the firewall group. Changing
+this updates the `egress_policy_id` of an existing firewall group.
+
 _Required_: No
 
 _Type_: String
@@ -72,6 +82,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IngressPolicyId
+
+The ingress policy resource id for the firewall group. Changing
+this updates the `ingress_policy_id` of an existing firewall group.
 
 _Required_: No
 
@@ -81,6 +94,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A name for the firewall group. Changing this
+updates the `name` of an existing firewall group.
+
 _Required_: No
 
 _Type_: String
@@ -88,6 +104,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ports
+
+Port(s) to associate this firewall group instance
+with. Must be a list of strings. Changing this updates the associated routers
+of an existing firewall group.
 
 _Required_: No
 
@@ -97,6 +117,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region in which to obtain the v2 networking client.
+A networking client is needed to create a firewall group. If omitted, the
+`region` argument of the provider is used. Changing this creates a new
+firewall group.
+
 _Required_: No
 
 _Type_: String
@@ -105,6 +130,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TenantId
 
+The owner of the floating IP. Required if admin wants
+to create a firewall group for another tenant. Changing this creates a new
+firewall group.
+
 _Required_: No
 
 _Type_: String
@@ -112,6 +141,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ValueSpecs
+
+Map of additional options.
 
 _Required_: No
 

@@ -1,6 +1,8 @@
 # Terraform::Alicloud::PolardbAccountPrivilege
 
-CloudFormation equivalent of alicloud_polardb_account_privilege
+Provides a PolarDB account privilege resource and used to grant several database some access privilege. A database can be granted by multiple account.
+
+-> **NOTE:** Available in v1.67.0+.
 
 ## Syntax
 
@@ -36,6 +38,8 @@ Properties:
 
 #### AccountName
 
+A specified account name.
+
 _Required_: Yes
 
 _Type_: String
@@ -43,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AccountPrivilege
+
+The privilege of one account access database. Valid values: ["ReadOnly", "ReadWrite"]. Default to "ReadOnly".
 
 _Required_: No
 
@@ -52,6 +58,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DbClusterId
 
+The Id of cluster in which account belongs.
+
 _Required_: Yes
 
 _Type_: String
@@ -59,6 +67,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DbNames
+
+List of specified database name.
 
 _Required_: Yes
 

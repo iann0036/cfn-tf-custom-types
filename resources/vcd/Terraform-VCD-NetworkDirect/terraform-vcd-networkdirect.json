@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::VCD::NetworkDirect",
-    "description": "CloudFormation equivalent of vcd_network_direct",
+    "description": "Provides a vCloud Director Org VDC Network directly connected to an external network. This can be used to create,\nmodify, and delete internal networks for vApps to connect.\n\nSupported in provider *v2.0+*\n\n~> **Note:** Only `System Administrator` can create an organization virtual datacenter network that connects\ndirectly to an external network. You must use `System Adminstrator` account in `provider` configuration\nand then provide `org` and `vdc` arguments for direct networks to work.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "An optional description of the network."
         },
         "ExternalNetwork": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the external network."
         },
         "ExternalNetworkDns1": {
             "type": "string"
@@ -33,16 +35,20 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique name for the network."
         },
         "Org": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of organization to use, optional if defined at provider level. Useful when\nconnected as sysadmin working across different organisations."
         },
         "Shared": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Defines if this network is shared between multiple VDCs\nin the Org.  Defaults to `false`."
         },
         "Vdc": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of VDC to use, optional if defined at provider level."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::CenBandwidthPackage",
-    "description": "CloudFormation equivalent of alicloud_cen_bandwidth_package",
+    "description": "Provides a CEN bandwidth package resource. The CEN bandwidth package is an abstracted object that includes an interconnection bandwidth and interconnection areas. To buy a bandwidth package, you must specify the areas to connect. An area consists of one or more Alibaba Cloud regions. The areas in CEN include Mainland China, Asia Pacific, North America, and Europe.\n\nFor information about CEN and how to use it, see [Manage bandwidth packages](https://www.alibabacloud.com/help/doc-detail/65982.htm).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "Bandwidth": {
-            "type": "number"
+            "type": "number",
+            "description": "The bandwidth in Mbps of the bandwidth package. Cannot be less than 2Mbps."
         },
         "ChargeType": {
-            "type": "string"
+            "type": "string",
+            "description": "The billing method. Valid value: PostPaid | PrePaid. Default to PostPaid. If set to PrePaid, the bandwidth package can't be deleted before expired time."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the bandwidth package. Default to null."
         },
         "ExpiredTime": {
             "type": "string"
@@ -25,13 +28,16 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of the two areas to connect. Valid value: China | North-America | Asia-Pacific | Europe | Middle-East."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the bandwidth package. Defaults to null."
         },
         "Period": {
-            "type": "number"
+            "type": "number",
+            "description": "The purchase period in month. Valid value: 1, 2, 3, 6, 12. Default to 1."
         },
         "Status": {
             "type": "string"

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::ApiManagementProduct",
-    "description": "CloudFormation equivalent of azurerm_api_management_product",
+    "description": "Manages an API Management Product.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,34 +29,44 @@
             "type": "string"
         },
         "ApiManagementName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the API Management Service. Changing this forces a new resource to be created."
         },
         "ApprovalRequired": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Do subscribers need to be approved prior to being able to use the Product?."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description of this Product, which may include HTML formatting tags."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The Display Name for this API Management Product."
         },
         "ProductId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Identifier for this Product, which must be unique within the API Management Service. Changing this forces a new resource to be created."
         },
         "Published": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is this Product Published?."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Resource Group in which the API Management Service should be exist. Changing this forces a new resource to be created."
         },
         "SubscriptionRequired": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is a Subscription required to access API's included in this Product?."
         },
         "SubscriptionsLimit": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of subscriptions a user can have to this Product at the same time."
         },
         "Terms": {
-            "type": "string"
+            "type": "string",
+            "description": "The Terms and Conditions for this Product, which must be accepted by Developers before they can begin the Subscription process."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

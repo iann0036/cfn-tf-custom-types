@@ -1,6 +1,6 @@
 # Terraform::OpsGenie::NotificationPolicy
 
-CloudFormation equivalent of opsgenie_notification_policy
+Manages a Notification Policy within Opsgenie.
 
 ## Syntax
 
@@ -67,6 +67,8 @@ Properties:
 
 #### Enabled
 
+If policy should be enabled. Default: true.
+
 _Required_: No
 
 _Type_: Boolean
@@ -74,6 +76,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of the notification policy.
 
 _Required_: Yes
 
@@ -83,6 +87,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PolicyDescription
 
+Description of the policy. This can be max 512 characters.
+
 _Required_: No
 
 _Type_: String
@@ -91,6 +97,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Suppress
 
+Suppress value of the policy. Values are: true, false. Default: false.
+
 _Required_: No
 
 _Type_: Boolean
@@ -98,6 +106,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TeamId
+
+Id of team that this policy belons to.
 
 _Required_: Yes
 

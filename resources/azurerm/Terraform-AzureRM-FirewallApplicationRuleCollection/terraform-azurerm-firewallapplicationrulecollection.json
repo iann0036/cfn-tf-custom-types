@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::FirewallApplicationRuleCollection",
-    "description": "CloudFormation equivalent of azurerm_firewall_application_rule_collection",
+    "description": "Manages an Application Rule Collection within an Azure Firewall.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Rule": {
@@ -8,31 +8,36 @@
             "additionalProperties": false,
             "properties": {
                 "Description": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies a description for the rule."
                 },
                 "FqdnTags": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of FQDN tags. Possible values are `AppServiceEnvironment`, `AzureBackup`, `MicrosoftActiveProtectionService`, `WindowsDiagnostics` and `WindowsUpdate`."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the name of the rule."
                 },
                 "SourceAddresses": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of source IP addresses and/or IP ranges."
                 },
                 "TargetFqdns": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of FQDNs."
                 },
                 "Protocol": {
                     "type": "array",
@@ -71,10 +76,12 @@
             "additionalProperties": false,
             "properties": {
                 "Port": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Specify a port for the connection."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the type of connection. Possible values are `Http`, `Https` and `Mssql`."
                 }
             },
             "required": [
@@ -88,19 +95,24 @@
             "type": "string"
         },
         "Action": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the action the rule will apply to matching traffic. Possible values are `Allow` and `Deny`."
         },
         "AzureFirewallName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Firewall in which the Application Rule Collection should be created. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Application Rule Collection which must be unique within the Firewall. Changing this forces a new resource to be created."
         },
         "Priority": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the priority of the rule collection. Possible values are between `100` - `65000`."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Resource Group in which the Firewall exists. Changing this forces a new resource to be created."
         },
         "Rule": {
             "type": "array",

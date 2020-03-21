@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::PanoramaApplicationSignature",
-    "description": "CloudFormation equivalent of panos_panorama_application_signature",
+    "description": "This resource allows you to add/update/delete Panorama application signatures.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "AndCondition": {
@@ -189,22 +189,28 @@
             "type": "string"
         },
         "ApplicationObject": {
-            "type": "string"
+            "type": "string",
+            "description": "The applciation object for this signature."
         },
         "Comment": {
-            "type": "string"
+            "type": "string",
+            "description": "The description."
         },
         "DeviceGroup": {
-            "type": "string"
+            "type": "string",
+            "description": "The device group (default: `shared`)."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The signature's name."
         },
         "OrderedMatch": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `false` to disable ordered matching\n(default: `true`)."
         },
         "Scope": {
-            "type": "string"
+            "type": "string",
+            "description": "The signature's scope.  Valid values are\n`transaction` (default) or `session`."
         },
         "AndCondition": {
             "type": "array",

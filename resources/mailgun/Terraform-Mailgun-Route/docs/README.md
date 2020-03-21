@@ -1,6 +1,6 @@
 # Terraform::Mailgun::Route
 
-CloudFormation equivalent of mailgun_route
+Provides a Mailgun Route resource. This can be used to create and manage routes on Mailgun.
 
 ## Syntax
 
@@ -46,6 +46,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+(Required).
+
 _Required_: No
 
 _Type_: String
@@ -53,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Expression
+
+(Required) A filter expression like `match_recipient('.*@gmail.com')`.
 
 _Required_: Yes
 
@@ -62,6 +66,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Priority
 
+(Required) Smaller number indicates higher priority. Higher priority routes are handled first.
+
 _Required_: Yes
 
 _Type_: Double
@@ -69,6 +75,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+(Optional) The region where domain will be created. Default value is `us`.
 
 _Required_: No
 

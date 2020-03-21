@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::CoreDedicatedVmHost",
-    "description": "CloudFormation equivalent of oci_core_dedicated_vm_host",
+    "description": "This resource provides the Dedicated Vm Host resource in Oracle Cloud Infrastructure Core service.\n\nCreates a new dedicated virtual machine host in the specified compartment and the specified availability domain.\nDedicated virtual machine hosts enable you to run your Compute virtual machine (VM) instances on dedicated servers\nthat are a single tenant and not shared with other customers.\nFor more information, see [Dedicated Virtual Machine Hosts](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/dedicatedvmhosts.htm).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,13 +26,16 @@
             "type": "string"
         },
         "AvailabilityDomain": {
-            "type": "string"
+            "type": "string",
+            "description": "The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`."
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The OCID of the compartment."
         },
         "DedicatedVmHostShape": {
-            "type": "string"
+            "type": "string",
+            "description": "The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VM instances launched on the dedicated virtual machine host."
         },
         "DefinedTags": {
             "type": "array",
@@ -52,13 +55,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Operations.CostCenter\": \"42\"}`."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My dedicated VM host`."
         },
         "FaultDomain": {
-            "type": "string"
+            "type": "string",
+            "description": "The fault domain for the dedicated virtual machine host's assigned instances. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the system selects one for you. To change the fault domain for a dedicated virtual machine host, delete it and create a new dedicated virtual machine host in the preferred fault domain."
         },
         "FreeformTags": {
             "type": "array",
@@ -78,7 +84,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
         },
         "RemainingOcpus": {
             "type": "number"

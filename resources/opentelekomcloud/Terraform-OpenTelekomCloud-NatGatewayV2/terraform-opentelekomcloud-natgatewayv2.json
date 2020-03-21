@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenTelekomCloud::NatGatewayV2",
-    "description": "CloudFormation equivalent of opentelekomcloud_nat_gateway_v2",
+    "description": "Manages a V2 nat gateway resource within OpenTelekomCloud Nat",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,25 +23,31 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the nat gateway."
         },
         "InternalNetworkId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the network this nat gateway connects to.\nChanging this creates a new nat gateway."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the nat gateway."
         },
         "Region": {
             "type": "string"
         },
         "RouterId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the router this nat gateway belongs to. Changing\nthis creates a new nat gateway."
         },
         "Spec": {
-            "type": "string"
+            "type": "string",
+            "description": "The specification of the nat gateway, valid values are \"1\",\n\"2\", \"3\", \"4\"."
         },
         "TenantId": {
-            "type": "string"
+            "type": "string",
+            "description": "The target tenant ID in which to allocate the nat\ngateway. Changing this creates a new nat gateway."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

@@ -1,6 +1,6 @@
 # Terraform::Vault::PkiSecretBackendRootSignIntermediate
 
-CloudFormation equivalent of vault_pki_secret_backend_root_sign_intermediate
+Creates an PKI certificate.
 
 ## Syntax
 
@@ -72,6 +72,8 @@ Properties:
 
 #### AltNames
 
+List of alternative names.
+
 _Required_: No
 
 _Type_: List of String
@@ -79,6 +81,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Backend
+
+The PKI secret backend the resource belongs to.
 
 _Required_: Yes
 
@@ -88,6 +92,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CommonName
 
+CN of intermediate to create.
+
 _Required_: Yes
 
 _Type_: String
@@ -95,6 +101,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Country
+
+The country.
 
 _Required_: No
 
@@ -104,6 +112,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Csr
 
+The CSR.
+
 _Required_: Yes
 
 _Type_: String
@@ -111,6 +121,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ExcludeCnFromSans
+
+Flag to exclude CN from SANs.
 
 _Required_: No
 
@@ -120,6 +132,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Format
 
+The format of data.
+
 _Required_: No
 
 _Type_: String
@@ -127,6 +141,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IpSans
+
+List of alternative IPs.
 
 _Required_: No
 
@@ -136,6 +152,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Locality
 
+The locality.
+
 _Required_: No
 
 _Type_: String
@@ -143,6 +161,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MaxPathLength
+
+The maximum path length to encode in the generated certificate.
 
 _Required_: No
 
@@ -152,6 +172,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Organization
 
+The organization.
+
 _Required_: No
 
 _Type_: String
@@ -159,6 +181,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OtherSans
+
+List of other SANs.
 
 _Required_: No
 
@@ -168,6 +192,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ou
 
+The organization unit.
+
 _Required_: No
 
 _Type_: String
@@ -175,6 +201,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PermittedDnsDomains
+
+List of domains for which certificates are allowed to be issued.
 
 _Required_: No
 
@@ -184,6 +212,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PostalCode
 
+The postal code.
+
 _Required_: No
 
 _Type_: String
@@ -191,6 +221,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Province
+
+The province.
 
 _Required_: No
 
@@ -200,6 +232,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StreetAddress
 
+The street address.
+
 _Required_: No
 
 _Type_: String
@@ -207,6 +241,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ttl
+
+Time to live.
 
 _Required_: No
 
@@ -216,6 +252,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UriSans
 
+List of alternative URIs.
+
 _Required_: No
 
 _Type_: List of String
@@ -223,6 +261,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UseCsrValues
+
+Preserve CSR values.
 
 _Required_: No
 

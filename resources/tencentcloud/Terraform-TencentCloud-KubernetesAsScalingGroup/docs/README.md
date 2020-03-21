@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::KubernetesAsScalingGroup
 
-CloudFormation equivalent of tencentcloud_kubernetes_as_scaling_group
+Provide a resource to create an auto scaling group for kubernetes cluster.
 
 ## Syntax
 
@@ -43,6 +43,8 @@ Properties:
 ## Properties
 
 #### ClusterId
+
+ID of the cluster.
 
 _Required_: Yes
 

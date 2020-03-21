@@ -28,6 +28,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### FilterPrefix
 
+Object key prefix identifying one or more objects to which the rule applies.
+
 _Required_: Yes
 
 _Type_: String

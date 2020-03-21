@@ -1,6 +1,8 @@
 # Terraform::Triton::Snapshot
 
-CloudFormation equivalent of triton_snapshot
+The `triton_snapshot` resource represents a snapshot of a Triton machine.
+Snapshots are not usable with other instances; they are a point-in-time snapshot of the current instance.
+Snapshots can also only be taken of instances that are not of brand `kvm`.
 
 ## Syntax
 
@@ -31,6 +33,8 @@ Properties:
 
 #### MachineId
 
+The ID of the machine of which to take a snapshot.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +42,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name for the snapshot.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::PvtzZoneRecord",
-    "description": "CloudFormation equivalent of alicloud_pvtz_zone_record",
+    "description": "Provides a Private Zone Record resource.\n\n-> **NOTE:** Terraform will auto Create a Private Zone Record while it uses `alicloud_pvtz_zone_record` to build a Private Zone Record resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,25 +9,31 @@
             "type": "string"
         },
         "Priority": {
-            "type": "number"
+            "type": "number",
+            "description": "The priority of the Private Zone Record. At present, only can \"MX\" record support it. Valid values: [1-50]. Default to 1."
         },
         "RecordId": {
             "type": "number"
         },
         "ResourceRecord": {
-            "type": "string"
+            "type": "string",
+            "description": "The resource record of the Private Zone Record."
         },
         "Ttl": {
-            "type": "number"
+            "type": "number",
+            "description": "The ttl of the Private Zone Record."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of the Private Zone Record. Valid values: A, CNAME, TXT, MX, PTR."
         },
         "Value": {
-            "type": "string"
+            "type": "string",
+            "description": "The value of the Private Zone Record."
         },
         "ZoneId": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Private Zone Record."
         }
     },
     "additionalProperties": false,

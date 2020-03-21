@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OVH::PubliccloudUser",
-    "description": "CloudFormation equivalent of ovh_publiccloud_user",
+    "description": "~> __DEPRECATED:__ Use [`ovh_cloud_user`](./cloud_user.html) instead.\n\nCreates a user in a public cloud project.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,7 +12,8 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description associated with the user."
         },
         "OpenstackRc": {
             "type": "array",
@@ -38,7 +39,8 @@
             "type": "string"
         },
         "ProjectId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the public cloud project. If omitted,\nthe `OVH_PROJECT_ID` environment variable is used."
         },
         "Status": {
             "type": "string"

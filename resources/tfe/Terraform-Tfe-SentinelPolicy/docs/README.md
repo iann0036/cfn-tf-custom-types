@@ -1,6 +1,11 @@
 # Terraform::Tfe::SentinelPolicy
 
-CloudFormation equivalent of tfe_sentinel_policy
+Sentinel Policy as Code is an embedded policy as code framework integrated
+with Terraform Enterprise.
+
+Policies are configured on a per-organization level and are organized and
+grouped into policy sets, which define the workspaces on which policies are
+enforced during runs.
 
 ## Syntax
 
@@ -37,6 +42,8 @@ Properties:
 
 #### Description
 
+A description of the policy's purpose.
+
 _Required_: No
 
 _Type_: String
@@ -44,6 +51,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnforceMode
+
+The enforcement level of the policy. Valid
+values are `advisory`, `hard-mandatory` and `soft-mandatory`. Defaults
+to `soft-mandatory`.
 
 _Required_: No
 
@@ -53,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name of the policy.
+
 _Required_: Yes
 
 _Type_: String
@@ -61,6 +74,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Organization
 
+Name of the organization.
+
 _Required_: Yes
 
 _Type_: String
@@ -68,6 +83,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Policy
+
+The actual policy itself.
 
 _Required_: Yes
 

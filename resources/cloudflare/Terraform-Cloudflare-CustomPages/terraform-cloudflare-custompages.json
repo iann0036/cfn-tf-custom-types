@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Cloudflare::CustomPages",
-    "description": "CloudFormation equivalent of cloudflare_custom_pages",
+    "description": "Provides a resource which manages Cloudflare custom error pages.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,19 +9,24 @@
             "type": "string"
         },
         "AccountId": {
-            "type": "string"
+            "type": "string",
+            "description": "The account ID where the custom pages should be\nupdated. Either `account_id` or `zone_id` must be provided. If\n`account_id` is present, it will override the zone setting."
         },
         "State": {
-            "type": "string"
+            "type": "string",
+            "description": "Managed state of the custom page. Must be one of\n`default`, `customised`. If the value is `default` it will be removed\nfrom the Terraform state management."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of custom page you wish to update. Must\nbe one of `basic_challenge`, `waf_challenge`, `waf_block`,\n`ratelimit_block`, `country_challenge`, `ip_block`, `under_attack`,\n`500_errors`, `1000_errors`, `always_online`."
         },
         "Url": {
-            "type": "string"
+            "type": "string",
+            "description": "URL of where the custom page source is located."
         },
         "ZoneId": {
-            "type": "string"
+            "type": "string",
+            "description": "The zone ID where the custom pages should be\nupdated. Either `zone_id` or `account_id` must be provided."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 # Terraform::OPC::ComputeSecurityProtocol
 
-CloudFormation equivalent of opc_compute_security_protocol
+The ``opc_compute_security_protocol`` resource creates and manages a security protocol in an Oracle Cloud Infrastructure Compute Classic identity domain.
 
 ## Syntax
 
@@ -42,6 +42,8 @@ Properties:
 
 #### Description
 
+A description of the security protocol.
+
 _Required_: No
 
 _Type_: String
@@ -66,6 +68,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the security protocol.
+
 _Required_: Yes
 
 _Type_: String
@@ -81,6 +85,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+List of tags that may be applied to the security protocol.
 
 _Required_: No
 
@@ -106,5 +112,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Uri
 
-Returns the <code>Uri</code> value.
+The Uniform Resource Identifier for the Security Protocol.
 

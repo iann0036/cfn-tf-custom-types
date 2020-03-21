@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::GitHub::RepositoryWebhook",
-    "description": "CloudFormation equivalent of github_repository_webhook",
+    "description": "This resource allows you to create and manage webhooks for repositories within your\nGitHub organization.\n\nThis resource cannot currently be used to manage webhooks for *personal* repositories,\noutside of organizations.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Configuration": {
@@ -31,7 +31,8 @@
             "type": "string"
         },
         "Active": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicate of the webhook should receive events. Defaults to `true`."
         },
         "Etag": {
             "type": "string"
@@ -41,13 +42,16 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of events which should trigger the webhook. See a list of [available events](https://developer.github.com/v3/activity/events/types/)."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of the webhook. `web` is the default and the only option."
         },
         "Repository": {
-            "type": "string"
+            "type": "string",
+            "description": "The repository of the webhook."
         },
         "Url": {
             "type": "string"

@@ -1,6 +1,6 @@
 # Terraform::AzureRM::StorageAccountCustomerManagedKey
 
-CloudFormation equivalent of azurerm_storage_account_customer_managed_key
+Manages a Customer Managed Key for a Storage Account.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### KeyName
 
+The name of Key Vault Key.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeyVaultId
+
+The ID of the Key Vault. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -53,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KeyVersion
 
+The version of Key Vault Key.
+
 _Required_: Yes
 
 _Type_: String
@@ -60,6 +66,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StorageAccountId
+
+The ID of the Storage Account. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

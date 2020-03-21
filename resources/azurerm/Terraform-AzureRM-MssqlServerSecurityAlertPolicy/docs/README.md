@@ -1,6 +1,8 @@
 # Terraform::AzureRM::MssqlServerSecurityAlertPolicy
 
-CloudFormation equivalent of azurerm_mssql_server_security_alert_policy
+Manages a Security Alert Policy for a MSSQL Server.
+
+-> **NOTE** Security Alert Policy is currently only available for MS SQL databases.
 
 ## Syntax
 
@@ -49,6 +51,8 @@ Properties:
 
 #### DisabledAlerts
 
+Specifies an array of alerts that are disabled. Allowed values are: `Sql_Injection`, `Sql_Injection_Vulnerability`, `Access_Anomaly`, `Data_Exfiltration`, `Unsafe_Action`.
+
 _Required_: No
 
 _Type_: List of String
@@ -56,6 +60,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EmailAccountAdmins
+
+Boolean flag which specifies if the alert is sent to the account administrators or not. Defaults to `false`.
 
 _Required_: No
 
@@ -65,6 +71,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EmailAddresses
 
+Specifies an array of e-mail addresses to which the alert is sent.
+
 _Required_: No
 
 _Type_: List of String
@@ -72,6 +80,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group that contains the MS SQL Server. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -81,6 +91,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RetentionDays
 
+Specifies the number of days to keep in the Threat Detection audit logs. Defaults to `0`.
+
 _Required_: No
 
 _Type_: Double
@@ -88,6 +100,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServerName
+
+Specifies the name of the MS SQL Server. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -97,6 +111,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### State
 
+Specifies the state of the policy, whether it is enabled or disabled or a policy has not been applied yet on the specific database server. Allowed values are: `Disabled`, `Enabled`, `New`.
+
 _Required_: Yes
 
 _Type_: String
@@ -105,6 +121,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StorageAccountAccessKey
 
+Specifies the identifier key of the Threat Detection audit storage account.
+
 _Required_: No
 
 _Type_: String
@@ -112,6 +130,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StorageEndpoint
+
+Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit logs.
 
 _Required_: No
 

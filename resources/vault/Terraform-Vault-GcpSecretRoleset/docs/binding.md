@@ -25,6 +25,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Resource
 
+Resource or resource path for which IAM policy information will be bound. The resource path may be specified in a few different [formats](https://www.vaultproject.io/docs/secrets/gcp/index.html#roleset-bindings).
+
 _Required_: Yes
 
 _Type_: String
@@ -32,6 +34,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Roles
+
+List of [GCP IAM roles](https://cloud.google.com/iam/docs/understanding-roles) for the resource.
 
 _Required_: Yes
 

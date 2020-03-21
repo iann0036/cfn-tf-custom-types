@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::MonitorScheduledQueryRulesLog",
-    "description": "CloudFormation equivalent of azurerm_monitor_scheduled_query_rules_log",
+    "description": "Manages a LogToMetricAction Scheduled Query Rules resource within Azure Monitor.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Criteria": {
@@ -8,7 +8,8 @@
             "additionalProperties": false,
             "properties": {
                 "MetricName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Name of the metric.  Supported metrics are listed in the Azure Monitor [Microsoft.OperationalInsights/workspaces](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/metrics-supported#microsoftoperationalinsightsworkspaces) metrics namespace."
                 },
                 "Dimension": {
                     "type": "array",
@@ -46,17 +47,20 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Name of the dimension."
                 },
                 "Operator": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Operator for dimension values, - 'Include'."
                 },
                 "Values": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "List of dimension values."
                 }
             },
             "required": [
@@ -78,22 +82,27 @@
             }
         },
         "DataSourceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The resource uri over which log search query is to be run."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the scheduled query rule."
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether this scheduled query rule is enabled.  Default is `true`."
         },
         "Location": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the scheduled query rule. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the scheduled query rule instance."
         },
         "Tags": {
             "type": "array",

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::ApiManagement",
-    "description": "CloudFormation equivalent of azurerm_api_management",
+    "description": "Manages an API Management Service.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "AdditionalLocation": {
@@ -8,7 +8,8 @@
             "additionalProperties": false,
             "properties": {
                 "Location": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the Azure Region in which the API Management Service should be expanded to."
                 }
             },
             "required": [
@@ -20,13 +21,16 @@
             "additionalProperties": false,
             "properties": {
                 "CertificatePassword": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The password for the certificate."
                 },
                 "EncodedCertificate": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Base64 Encoded PFX Certificate."
                 },
                 "StoreName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the Certificate Store where this certificate should be stored. Possible values are `CertificateAuthority` and `Root`."
                 }
             },
             "required": [
@@ -75,7 +79,8 @@
             "additionalProperties": false,
             "properties": {
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the type of Managed Service Identity that should be configured on this API Management Service. At this time the only supported value is`SystemAssigned`."
                 }
             },
             "required": [
@@ -87,7 +92,8 @@
             "additionalProperties": false,
             "properties": {
                 "EnableHttp2": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Should HTTP/2 be supported by the API Management Service? Defaults to `false`."
                 }
             },
             "required": []
@@ -97,25 +103,32 @@
             "additionalProperties": false,
             "properties": {
                 "EnableBackendSsl30": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Should SSL 3.0 be enabled on the backend of the gateway? Defaults to `false`."
                 },
                 "EnableBackendTls10": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Should TLS 1.0 be enabled on the backend of the gateway? Defaults to `false`."
                 },
                 "EnableBackendTls11": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Should TLS 1.1 be enabled on the backend of the gateway? Defaults to `false`."
                 },
                 "EnableFrontendSsl30": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Should SSL 3.0 be enabled on the frontend of the gateway? Defaults to `false`."
                 },
                 "EnableFrontendTls10": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Should TLS 1.0 be enabled on the frontend of the gateway? Defaults to `false`."
                 },
                 "EnableFrontendTls11": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Should TLS 1.1 be enabled on the frontend of the gateway? Defaults to `false`."
                 },
                 "EnableTripleDesCiphers": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Should the `TLS_RSA_WITH_3DES_EDE_CBC_SHA` cipher be enabled for alL TLS versions (1.0, 1.1 and 1.2)? Defaults to `false`."
                 }
             },
             "required": []
@@ -125,7 +138,8 @@
             "additionalProperties": false,
             "properties": {
                 "Enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Should anonymous users be redirected to the sign in page?."
                 }
             },
             "required": [
@@ -137,7 +151,8 @@
             "additionalProperties": false,
             "properties": {
                 "Enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Can users sign up on the development portal?."
                 },
                 "TermsOfService": {
                     "type": "array",
@@ -223,22 +238,28 @@
             "additionalProperties": false,
             "properties": {
                 "Certificate": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Base64 Encoded Certificate."
                 },
                 "CertificatePassword": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The password associated with the certificate provided above."
                 },
                 "DefaultSslBinding": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Is the certificate associated with this Hostname the Default SSL Certificate? This is used when an SNI header isn't specified by a client. Defaults to `false`."
                 },
                 "HostName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Hostname to use for the Management API."
                 },
                 "KeyVaultId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of the Key Vault Secret containing the SSL Certificate, which must be should be of the type `application/x-pkcs12`."
                 },
                 "NegotiateClientCertificate": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Should Client Certificate Negotiation be enabled for this Hostname? Defaults to `false`."
                 }
             },
             "required": [
@@ -250,19 +271,24 @@
             "additionalProperties": false,
             "properties": {
                 "Certificate": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Base64 Encoded Certificate."
                 },
                 "CertificatePassword": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The password associated with the certificate provided above."
                 },
                 "HostName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Hostname to use for the Management API."
                 },
                 "KeyVaultId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of the Key Vault Secret containing the SSL Certificate, which must be should be of the type `application/x-pkcs12`."
                 },
                 "NegotiateClientCertificate": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Should Client Certificate Negotiation be enabled for this Hostname? Defaults to `false`."
                 }
             },
             "required": [
@@ -274,13 +300,16 @@
             "additionalProperties": false,
             "properties": {
                 "ConsentRequired": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Should the user be asked for consent during sign up?."
                 },
                 "Enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Should Terms of Service be displayed during sign up?."
                 },
                 "Text": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Terms of Service which users are required to agree to in order to sign up."
                 }
             },
             "required": [
@@ -301,16 +330,19 @@
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "The Azure location where the API Management Service exists. Changing this forces a new resource to be created."
         },
         "ManagementApiUrl": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the API Management Service. Changing this forces a new resource to be created."
         },
         "NotificationSenderEmail": {
-            "type": "string"
+            "type": "string",
+            "description": "Email address from which the notification will be sent."
         },
         "Policy": {
             "type": "array",
@@ -326,7 +358,8 @@
                         "type": "string"
                     }
                 }
-            }
+            },
+            "description": "A `policy` block as defined below."
         },
         "PortalUrl": {
             "type": "string"
@@ -339,19 +372,23 @@
             }
         },
         "PublisherEmail": {
-            "type": "string"
+            "type": "string",
+            "description": "The email of publisher/company."
         },
         "PublisherName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of publisher/company."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Resource Group in which the API Management Service should be exist. Changing this forces a new resource to be created."
         },
         "ScmUrl": {
             "type": "string"
         },
         "SkuName": {
-            "type": "string"
+            "type": "string",
+            "description": "`sku_name` is a string consisting of two parts separated by an underscore(\\_). The fist part is the `name`, valid values include: `Developer`, `Basic`, `Standard` and `Premium`. The second part is the `capacity` (e.g. the number of deployed units of the `sku`), which must be a positive `integer` (e.g. `Developer_1`)."
         },
         "Tags": {
             "type": "array",
@@ -371,7 +408,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags assigned to the resource."
         },
         "AdditionalLocation": {
             "type": "array",

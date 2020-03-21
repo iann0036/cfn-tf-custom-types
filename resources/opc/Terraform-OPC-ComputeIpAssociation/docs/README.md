@@ -1,6 +1,7 @@
 # Terraform::OPC::ComputeIpAssociation
 
-CloudFormation equivalent of opc_compute_ip_association
+The ``opc_compute_ip_association`` resource creates and manages an association between an IP address and an instance in
+an Oracle Cloud Infrastructure Compute Classic identity domain, for the Shared Network.
 
 ## Syntax
 
@@ -41,6 +42,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ParentPool
 
+The pool from which to take an IP address. To associate a specific reserved IP address, use
+the prefix `ipreservation:` followed by the name of the IP reservation. To allocate an IP address from a pool, use the
+prefix `ippool:`, e.g. `ippool:/oracle/public/ippool`.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vcable
+
+The vcable of the instance to associate the IP address with.
 
 _Required_: Yes
 

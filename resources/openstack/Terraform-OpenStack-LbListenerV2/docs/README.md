@@ -1,6 +1,6 @@
 # Terraform::OpenStack::LbListenerV2
 
-CloudFormation equivalent of openstack_lb_listener_v2
+Manages a V2 listener resource within OpenStack.
 
 ## Syntax
 
@@ -65,6 +65,9 @@ Properties:
 
 #### AdminStateUp
 
+The administrative state of the Listener.
+A valid value is true (UP) or false (DOWN).
+
 _Required_: No
 
 _Type_: Boolean
@@ -72,6 +75,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ConnectionLimit
+
+The maximum number of connections allowed
+for the Listener.
 
 _Required_: No
 
@@ -81,6 +87,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DefaultPoolId
 
+The ID of the default pool with which the
+Listener is associated.
+
 _Required_: No
 
 _Type_: String
@@ -88,6 +97,12 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefaultTlsContainerRef
+
+A reference to a Barbican Secrets
+container which stores TLS information. This is required if the protocol
+is `TERMINATED_HTTPS`. See
+[here](https://wiki.openstack.org/wiki/Network/LBaaS/docs/how-to-create-tls-loadbalancer)
+for more information.
 
 _Required_: No
 
@@ -97,6 +112,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+Human-readable description for the Listener.
+
 _Required_: No
 
 _Type_: String
@@ -104,6 +121,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InsertHeaders
+
+The list of key value pairs representing headers to insert
+into the request before it is sent to the backend members. Changing this updates the headers of the
+existing listener.
 
 _Required_: No
 
@@ -113,6 +134,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LoadbalancerId
 
+The load balancer on which to provision this
+Listener. Changing this creates a new Listener.
+
 _Required_: Yes
 
 _Type_: String
@@ -120,6 +144,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Human-readable name for the Listener. Does not have
+to be unique.
 
 _Required_: No
 
@@ -129,6 +156,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Protocol
 
+The protocol - can either be TCP, HTTP, HTTPS,
+TERMINATED_HTTPS or UDP (supported only in Octavia). Changing this creates a
+new Listener.
+
 _Required_: Yes
 
 _Type_: String
@@ -136,6 +167,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProtocolPort
+
+The port on which to listen for client traffic.
+Changing this creates a new Listener.
 
 _Required_: Yes
 
@@ -145,6 +179,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region in which to obtain the V2 Networking client.
+A Networking client is needed to create an . If omitted, the
+`region` argument of the provider is used. Changing this creates a new
+Listener.
+
 _Required_: No
 
 _Type_: String
@@ -152,6 +191,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SniContainerRefs
+
+A list of references to Barbican Secrets
+containers which store SNI information. See
+[here](https://wiki.openstack.org/wiki/Network/LBaaS/docs/how-to-create-tls-loadbalancer)
+for more information.
 
 _Required_: No
 
@@ -161,6 +205,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TenantId
 
+Required for admins. The UUID of the tenant who owns
+the Listener.  Only administrative users can specify a tenant UUID
+other than their own. Changing this creates a new Listener.
+
 _Required_: No
 
 _Type_: String
@@ -168,6 +216,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TimeoutClientData
+
+The client inactivity timeout in milliseconds.
 
 _Required_: No
 
@@ -177,6 +227,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TimeoutMemberConnect
 
+The member connection timeout in milliseconds.
+
 _Required_: No
 
 _Type_: Double
@@ -185,6 +237,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TimeoutMemberData
 
+The member inactivity timeout in milliseconds.
+
 _Required_: No
 
 _Type_: Double
@@ -192,6 +246,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TimeoutTcpInspect
+
+The time in milliseconds, to wait for additional
+TCP packets for content inspection.
 
 _Required_: No
 

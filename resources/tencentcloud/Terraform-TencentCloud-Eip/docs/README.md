@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::Eip
 
-CloudFormation equivalent of tencentcloud_eip
+Provides an EIP resource.
 
 ## Syntax
 
@@ -44,6 +44,8 @@ Properties:
 
 #### AnycastZone
 
+The zone of anycast, and available values include `ANYCAST_ZONE_GLOBAL` and `ANYCAST_ZONE_OVERSEAS`.
+
 _Required_: No
 
 _Type_: String
@@ -51,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ApplicableForClb
+
+It has been deprecated from version 1.27.0. Indicates whether the anycast eip can be associated to a CLB.
 
 _Required_: No
 
@@ -60,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InternetChargeType
 
+The charge type of eip, and available values include `BANDWIDTH_PACKAGE`, `BANDWIDTH_POSTPAID_BY_HOUR` and `TRAFFIC_POSTPAID_BY_HOUR`.
+
 _Required_: No
 
 _Type_: String
@@ -67,6 +73,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InternetMaxBandwidthOut
+
+The bandwidth limit of eip, unit is Mbps, and the range is 1-1000.
 
 _Required_: No
 
@@ -76,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InternetServiceProvider
 
+Internet service provider of eip, and available values include `BGP`, `CMCC`, `CTCC` and `CUCC`.
+
 _Required_: No
 
 _Type_: String
@@ -83,6 +93,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of eip.
 
 _Required_: No
 
@@ -92,6 +104,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+The tags of eip.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -99,6 +113,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The type of eip, and available values include `EIP` and `AnycastEIP`. Default is `EIP`.
 
 _Required_: No
 

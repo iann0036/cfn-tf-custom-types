@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### BucketName
 
+Google Cloud Storage bucket name.
+
 _Required_: Yes
 
 _Type_: String

@@ -1,6 +1,6 @@
 # Terraform::OPC::ComputeSecurityList
 
-CloudFormation equivalent of opc_compute_security_list
+The ``opc_compute_security_list`` resource creates and manages a security list in an Oracle Cloud Infrastructure Compute Classic identity domain.
 
 ## Syntax
 
@@ -43,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The unique (within the identity domain) name of the security list.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +60,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Policy
+
+The policy to apply to instances associated with this list. Must be one of `permit`,
+`reject` (packets are dropped but a reply is sent) and `deny` (packets are dropped and no reply is sent).
 
 _Required_: No
 

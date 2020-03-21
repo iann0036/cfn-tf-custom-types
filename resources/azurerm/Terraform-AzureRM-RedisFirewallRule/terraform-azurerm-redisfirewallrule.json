@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::RedisFirewallRule",
-    "description": "CloudFormation equivalent of azurerm_redis_firewall_rule",
+    "description": "Manages a Firewall Rule associated with a Redis Cache.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,19 +29,24 @@
             "type": "string"
         },
         "EndIp": {
-            "type": "string"
+            "type": "string",
+            "description": "The highest IP address included in the range."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Firewall Rule. Changing this forces a new resource to be created."
         },
         "RedisCacheName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Redis Cache. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which this Redis Cache exists."
         },
         "StartIp": {
-            "type": "string"
+            "type": "string",
+            "description": "The lowest IP address included in the range."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

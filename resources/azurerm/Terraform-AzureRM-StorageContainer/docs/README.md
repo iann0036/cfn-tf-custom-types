@@ -1,6 +1,6 @@
 # Terraform::AzureRM::StorageContainer
 
-CloudFormation equivalent of azurerm_storage_container
+Manages a Container within an Azure Storage Account.
 
 ## Syntax
 
@@ -38,6 +38,8 @@ Properties:
 
 #### ContainerAccessType
 
+The Access Level configured for this Container. Possible values are `blob`, `container` or `private`. Defaults to `private`.
+
 _Required_: No
 
 _Type_: String
@@ -45,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Metadata
+
+A mapping of MetaData for this Container.
 
 _Required_: No
 
@@ -54,6 +58,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the Container which should be created within the Storage Account.
+
 _Required_: Yes
 
 _Type_: String
@@ -61,6 +67,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StorageAccountName
+
+The name of the Storage Account where the Container should be created.
 
 _Required_: Yes
 

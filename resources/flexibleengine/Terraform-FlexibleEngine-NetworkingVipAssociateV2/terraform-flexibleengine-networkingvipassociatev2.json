@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::FlexibleEngine::NetworkingVipAssociateV2",
-    "description": "CloudFormation equivalent of flexibleengine_networking_vip_associate_v2",
+    "description": "Manages a V2 vip associate resource within FlexibleEngine.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -13,10 +13,12 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "An array of one or more IDs of the ports to attach the vip to.\nChanging this creates a new vip associate."
         },
         "VipId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of vip to attach the port to.\nChanging this creates a new vip associate."
         },
         "VipIpAddress": {
             "type": "string"

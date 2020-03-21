@@ -1,6 +1,6 @@
 # Terraform::Grafana::AlertNotification
 
-CloudFormation equivalent of grafana_alert_notification
+The alert notification resource allows an alert notification channel to be created on a Grafana server.
 
 ## Syntax
 
@@ -36,6 +36,8 @@ Properties:
 
 #### IsDefault
 
+Is this the default channel for all your alerts.
+
 _Required_: No
 
 _Type_: Boolean
@@ -43,6 +45,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the alert notification channel.
 
 _Required_: Yes
 
@@ -52,6 +56,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Settings
 
+Additional settings, for full reference lookup [Grafana HTTP API documentation](http://docs.grafana.org/http_api/alerting).
+
 _Required_: No
 
 _Type_: List of <a href="settings.md">Settings</a>
@@ -59,6 +65,8 @@ _Type_: List of <a href="settings.md">Settings</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The type of the alert notification channel.
 
 _Required_: Yes
 

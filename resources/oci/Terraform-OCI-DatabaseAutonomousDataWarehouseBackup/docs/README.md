@@ -1,6 +1,11 @@
 # Terraform::OCI::DatabaseAutonomousDataWarehouseBackup
 
-CloudFormation equivalent of oci_database_autonomous_data_warehouse_backup
+This resource provides the Autonomous Data Warehouse Backup resource in Oracle Cloud Infrastructure Database service.
+
+Creates a new Autonomous Data Warehouse backup for the specified database based on the provided request parameters.
+
+**IMPORTANT:** This resource is being **deprecated**, use `oci_database_autonomous_database_backup` instead.
+Refer to the [Deprecation Guide](#deprecation-guide) below on how to rename and migrate existing resources.
 
 ## Syntax
 
@@ -33,6 +38,8 @@ Properties:
 
 #### AutonomousDataWarehouseId
 
+The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Data Warehouse backup.
+
 _Required_: Yes
 
 _Type_: String
@@ -40,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+The user-friendly name for the backup. The name does not have to be unique.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::Disk",
-    "description": "CloudFormation equivalent of alicloud_disk",
+    "description": "Provides a ECS disk resource.\n\n-> **NOTE:** One of `size` or `snapshot_id` is required when specifying an ECS disk. If all of them be specified, `size` must more than the size of snapshot which `snapshot_id` represents. Currently, `alicloud_disk` doesn't resize disk.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,37 +9,48 @@
             "type": "string"
         },
         "AvailabilityZone": {
-            "type": "string"
+            "type": "string",
+            "description": "The Zone to create the disk in."
         },
         "Category": {
-            "type": "string"
+            "type": "string",
+            "description": "Category of the disk. Valid values are `cloud`, `cloud_efficiency`, `cloud_ssd`, `cloud_essd`. Default is `cloud_efficiency`."
         },
         "DeleteAutoSnapshot": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether the automatic snapshot is deleted when the disk is released. Default value: false."
         },
         "DeleteWithInstance": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether the disk is released together with the instance: Default value: false."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the disk. This description can have a string of 2 to 256 characters, It cannot begin with http:// or https://. Default value is null."
         },
         "EnableAutoSnapshot": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether to apply a created automatic snapshot policy to the disk. Default value: false."
         },
         "Encrypted": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If true, the disk will be encrypted, conflict with `snapshot_id`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the ECS disk. This name can have a string of 2 to 128 characters, must contain only alphanumeric characters or hyphens, such as \"-\",\".\",\"_\", and must not begin or end with a hyphen, and must not begin with http:// or https://. Default value is null."
         },
         "ResourceGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Id of resource group which the disk belongs.\n-> **NOTE:** Disk category `cloud` has been outdated and it only can be used none I/O Optimized ECS instances. Recommend `cloud_efficiency` and `cloud_ssd` disk."
         },
         "Size": {
-            "type": "number"
+            "type": "number",
+            "description": "The size of the disk in GiBs. When resize the disk, the new size must be greater than the former value, or you would get an error `InvalidDiskSize.TooSmall`."
         },
         "SnapshotId": {
-            "type": "string"
+            "type": "string",
+            "description": "A snapshot to base the disk off of. If the disk size required by snapshot is greater than `size`, the `size` will be ignored, conflict with `encrypted`."
         },
         "Status": {
             "type": "string"
@@ -62,7 +73,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         }
     },
     "additionalProperties": false,

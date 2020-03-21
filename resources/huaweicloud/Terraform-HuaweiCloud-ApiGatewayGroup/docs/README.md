@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::ApiGatewayGroup
 
-CloudFormation equivalent of huaweicloud_api_gateway_group
+Provides an API gateway group resource.
 
 ## Syntax
 
@@ -33,6 +33,9 @@ Properties:
 
 #### Description
 
+Specifies the description of the API group.
+The description cannot exceed 255 characters.
+
 _Required_: No
 
 _Type_: String
@@ -40,6 +43,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the API group. An API group name consists of 3–64 characters,
+starting with a letter. Only letters, digits, and underscores (_) are allowed.
 
 _Required_: Yes
 

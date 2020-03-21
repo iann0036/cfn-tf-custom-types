@@ -1,6 +1,6 @@
 # Terraform::OVH::MeInstallationTemplatePartitionSchemeHardwareRaid
 
-CloudFormation equivalent of ovh_me_installation_template_partition_scheme_hardware_raid
+Use this resource to create a hardware raid group in the partition scheme of a custom installation template available for dedicated servers.
 
 ## Syntax
 

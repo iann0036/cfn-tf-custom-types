@@ -1,6 +1,6 @@
 # Terraform::AzureRM::SiteRecoveryProtectionContainerMapping
 
-CloudFormation equivalent of azurerm_site_recovery_protection_container_mapping
+Manages a Azure recovery vault protection container mapping. A protection container mapping decides how to translate the protection container when a VM is migrated from one region to another.
 
 ## Syntax
 
@@ -43,6 +43,8 @@ Properties:
 
 #### Name
 
+The name of the network mapping.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RecoveryFabricName
+
+Name of fabric that should contains the protection container to map.
 
 _Required_: Yes
 
@@ -59,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RecoveryReplicationPolicyId
 
+Id of the policy to use for this mapping.
+
 _Required_: Yes
 
 _Type_: String
@@ -66,6 +72,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RecoverySourceProtectionContainerName
+
+Name of the source protection container to map.
 
 _Required_: Yes
 
@@ -75,6 +83,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RecoveryTargetProtectionContainerId
 
+Id of target protection container to map to.
+
 _Required_: Yes
 
 _Type_: String
@@ -83,6 +93,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RecoveryVaultName
 
+The name of the vault that should be updated.
+
 _Required_: Yes
 
 _Type_: String
@@ -90,6 +102,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+Name of the resource group where the vault that should be updated is located.
 
 _Required_: Yes
 

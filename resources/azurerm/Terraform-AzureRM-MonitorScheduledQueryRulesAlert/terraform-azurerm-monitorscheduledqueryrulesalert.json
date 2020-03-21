@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::MonitorScheduledQueryRulesAlert",
-    "description": "CloudFormation equivalent of azurerm_monitor_scheduled_query_rules_alert",
+    "description": "Manages an AlertingAction Scheduled Query Rules resource within Azure Monitor.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Action": {
@@ -12,13 +12,16 @@
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "List of action group reference resource IDs."
                 },
                 "CustomWebhookPayload": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Custom payload to be sent for all webhook payloads in alerting action."
                 },
                 "EmailSubject": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Custom subject override for all email ids in Azure action group."
                 }
             },
             "required": [
@@ -49,10 +52,12 @@
             "additionalProperties": false,
             "properties": {
                 "Operator": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Evaluation operation for rule - 'Equal', 'GreaterThan' or 'LessThan'."
                 },
                 "Threshold": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Result or count threshold based on which rule should be triggered.  Values must be between 0 and 10000 inclusive."
                 },
                 "MetricTrigger": {
                     "type": "array",
@@ -102,37 +107,46 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of Resource IDs referred into query."
         },
         "DataSourceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The resource URI over which log search query is to be run."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the scheduled query rule."
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether this scheduled query rule is enabled.  Default is `true`."
         },
         "Frequency": {
-            "type": "number"
+            "type": "number",
+            "description": "Frequency (in minutes) at which rule condition should be evaluated.  Values must be between 5 and 1440 (inclusive)."
         },
         "Location": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the scheduled query rule. Changing this forces a new resource to be created."
         },
         "Query": {
-            "type": "string"
+            "type": "string",
+            "description": "Log search query."
         },
         "QueryType": {
             "type": "string"
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the scheduled query rule instance."
         },
         "Severity": {
-            "type": "number"
+            "type": "number",
+            "description": "Severity of the alert. Possible values include: 0, 1, 2, 3, or 4."
         },
         "Tags": {
             "type": "array",
@@ -155,10 +169,12 @@
             }
         },
         "Throttling": {
-            "type": "number"
+            "type": "number",
+            "description": "Time (in minutes) for which Alerts should be throttled or suppressed.  Values must be between 0 and 10000 (inclusive)."
         },
         "TimeWindow": {
-            "type": "number"
+            "type": "number",
+            "description": "Time window for which data needs to be fetched for query (must be greater than or equal to `frequency`).  Values must be between 5 and 2880 (inclusive)."
         },
         "Action": {
             "type": "array",

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Bitbucket::RepositoryVariable",
-    "description": "CloudFormation equivalent of bitbucket_repository_variable",
+    "description": "This resource allows you to setup pipelines variables to manage your builds with. Once you have enabled pipelines on your repository you can then further setup variables here to use.\n\n# Example Usage\n\n```hcl\nresource \"bitbucket_repository\" \"monorepo\" {\n    owner = \"gob\"\n    name = \"illusions\"\n    pipelines_enable = true\n}\n\nresource \"bitbucket_repository_variable\" \"debug\" {\n    key = \"DEBUG\"\n    value = \"true\"\n    repository = \"${bitbucket_repository.monorepo.id}\"\n    secured = false\n}\n```\n\n# Argument Reference\n\n* `key` - (Required) The key of the key value pair\n* `value` - (Required) The value of the key\n* `repository` - (Required) The repository ID you want to put this variable onto.\n* `secuired` - (Optional) If you want to make this viewable in the UI.\n\n* `uuid` - (Computed) The UUID of the variable",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {

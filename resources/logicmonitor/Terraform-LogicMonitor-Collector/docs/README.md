@@ -1,6 +1,9 @@
 # Terraform::LogicMonitor::Collector
 
-CloudFormation equivalent of logicmonitor_collector
+Provides a LogicMonitor collector resource. This can be used to create and manage LogicMonitor collectors.
+
+*Note:* This resource will only create the collector device in your account. See [Downloading a Collector Installer](https://www.logicmonitor.com/support/rest-api-developers-guide/collectors/downloading-a-collector-installer/) for
+information on how to download and install an existing collector.
 
 ## Syntax
 
@@ -46,6 +49,8 @@ Properties:
 
 #### BackupCollectorId
 
+The Id of the failover Collector configured for this Collector.
+
 _Required_: No
 
 _Type_: Double
@@ -53,6 +58,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CollectorGroupId
+
+The Id of the group the Collector is in.
 
 _Required_: No
 
@@ -62,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+The Collector's description.
+
 _Required_: No
 
 _Type_: String
@@ -69,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableCollectorDeviceFailover
+
+Whether or not the device the Collector is installed on is enabled for fail over.
 
 _Required_: No
 
@@ -78,6 +89,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableFailback
 
+Whether or not automatic failback is enabled for the Collector.
+
 _Required_: No
 
 _Type_: Boolean
@@ -85,6 +98,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EscalationChainId
+
+The Id of the escalation chain associated with this Collector.
 
 _Required_: No
 
@@ -102,6 +117,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResendInterval
 
+The interval, in minutes, after which alert notifications for the Collector will be resent.
+
 _Required_: No
 
 _Type_: Double
@@ -109,6 +126,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SuppressAlertClear
+
+Whether alert clear notifications are suppressed for the Collector.
 
 _Required_: No
 

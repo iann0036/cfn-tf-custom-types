@@ -1,6 +1,8 @@
 # Terraform::Alicloud::AdbAccount
 
-CloudFormation equivalent of alicloud_adb_account
+Provides a [ADB](https://www.alibabacloud.com/help/product/92664.htm) account resource and used to manage databases.
+
+-> **NOTE:** Available in v1.71.0+.
 
 ## Syntax
 
@@ -42,6 +44,8 @@ Properties:
 
 #### AccountDescription
 
+Account description. It cannot begin with https://. It must start with a Chinese character or English letter. It can include Chinese and English characters, underlines (_), hyphens (-), and numbers. The length may be 2-256 characters.
+
 _Required_: No
 
 _Type_: String
@@ -50,6 +54,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AccountName
 
+Operation account requiring a uniqueness check. It may consist of lower case letters, numbers, and underlines, and must start with a letter and have no more than 16 characters.
+
 _Required_: Yes
 
 _Type_: String
@@ -57,6 +63,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AccountPassword
+
+Operation password. It may consist of letters, digits, or underlines, with a length of 6 to 32 characters.
 
 _Required_: No
 
@@ -74,6 +82,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DbClusterId
 
+The Id of cluster in which account belongs.
+
 _Required_: Yes
 
 _Type_: String
@@ -82,6 +92,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KmsEncryptedPassword
 
+An KMS encrypts password used to a db account. If the `account_password` is filled in, this field will be ignored.
+
 _Required_: No
 
 _Type_: String
@@ -89,6 +101,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KmsEncryptionContext
+
+An KMS encryption context used to decrypt `kms_encrypted_password` before creating or updating a db account with `kms_encrypted_password`. See [Encryption Context](https://www.alibabacloud.com/help/doc-detail/42975.htm). It is valid when `kms_encrypted_password` is set.
 
 _Required_: No
 

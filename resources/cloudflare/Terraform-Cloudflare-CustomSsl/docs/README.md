@@ -1,6 +1,6 @@
 # Terraform::Cloudflare::CustomSsl
 
-CloudFormation equivalent of cloudflare_custom_ssl
+Provides a Cloudflare custom ssl resource.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### CustomSslOptions
 
+The certificate, private key and associated optional parameters, such as bundle_method, geo_restrictions, and type.
+
 _Required_: No
 
 _Type_: List of <a href="customssloptions.md">CustomSslOptions</a>
@@ -42,6 +44,8 @@ _Type_: List of <a href="customssloptions.md">CustomSslOptions</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneId
+
+The DNS zone id to the custom ssl cert should be added.
 
 _Required_: Yes
 

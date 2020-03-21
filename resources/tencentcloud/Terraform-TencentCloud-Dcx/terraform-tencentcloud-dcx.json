@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::Dcx",
-    "description": "CloudFormation equivalent of tencentcloud_dcx",
+    "description": "Provides a resource to creating dedicated tunnels instances.\n\n~> **NOTE:** 1. ID of the DC is queried, can only apply for this resource offline.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,53 +9,66 @@
             "type": "string"
         },
         "Bandwidth": {
-            "type": "number"
+            "type": "number",
+            "description": "Bandwidth of the DC."
         },
         "BgpAsn": {
-            "type": "number"
+            "type": "number",
+            "description": "BGP ASN of the user. A required field within BGP."
         },
         "BgpAuthKey": {
-            "type": "string"
+            "type": "string",
+            "description": "BGP key of the user."
         },
         "CreateTime": {
             "type": "string"
         },
         "CustomerAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "Interconnect IP of the DC within client."
         },
         "DcId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the DC to be queried, application deployment offline."
         },
         "DcgId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the DC Gateway. Currently only new in the console."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the dedicated tunnel."
         },
         "NetworkType": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of the network, and available values include VPC, BMVPC and CCN. The default value is VPC."
         },
         "RouteFilterPrefixes": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Static route, the network address of the user IDC. It can be modified after setting but cannot be deleted. AN unable field within BGP."
         },
         "RouteType": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of the route, and available values include BGP and STATIC. The default value is BGP."
         },
         "State": {
             "type": "string"
         },
         "TencentAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "Interconnect IP of the DC within Tencent."
         },
         "Vlan": {
-            "type": "number"
+            "type": "number",
+            "description": "Vlan of the dedicated tunnels, and the range of values is [0-3000]. '0' means that only one tunnel can be created for the physical connect."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the VPC or BMVPC."
         }
     },
     "additionalProperties": false,

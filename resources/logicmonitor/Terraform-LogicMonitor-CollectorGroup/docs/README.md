@@ -1,6 +1,6 @@
 # Terraform::LogicMonitor::CollectorGroup
 
-CloudFormation equivalent of logicmonitor_collector_group
+Provides a LogicMonitor collector group resource. This can be used to create and manage LogicMonitor collector groups
 
 ## Syntax
 
@@ -34,6 +34,8 @@ Properties:
 
 #### Description
 
+Set description of collector group.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +43,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of collector group.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OVH::IploadbalancingHttpFarm",
-    "description": "CloudFormation equivalent of ovh_iploadbalancing_http_farm",
+    "description": "Creates a http backend server group (farm) to be used by loadbalancing frontend(s)",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Probe": {
@@ -46,25 +46,32 @@
             "type": "string"
         },
         "Balance": {
-            "type": "string"
+            "type": "string",
+            "description": "Load balancing algorithm. `roundrobin` if null (`first`, `leastconn`, `roundrobin`, `source`)."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "Readable label for loadbalancer farm."
         },
         "Port": {
-            "type": "number"
+            "type": "number",
+            "description": "Port for backends to recieve traffic on.\n* `negate` - Negate probe result\n* `pattern` - Pattern to match against `match`\n* `force_ssl` - Force use of SSL (TLS)\n* `url` - URL for HTTP probe type.\n* `method` - HTTP probe method (`GET`, `HEAD`, `OPTIONS`, `internal`)."
         },
         "ServiceName": {
-            "type": "string"
+            "type": "string",
+            "description": "The internal name of your IP load balancing."
         },
         "Stickiness": {
-            "type": "string"
+            "type": "string",
+            "description": "Stickiness type. No stickiness if null (`sourceIp`, `cookie`)."
         },
         "VrackNetworkId": {
-            "type": "number"
+            "type": "number",
+            "description": "Internal Load Balancer identifier of the vRack private network to attach to your farm, mandatory when your Load Balancer is attached to a vRack."
         },
         "Zone": {
-            "type": "string"
+            "type": "string",
+            "description": "Zone where the farm will be defined (ie. `GRA`, `BHS` also supports `ALL`)."
         },
         "Probe": {
             "type": "array",

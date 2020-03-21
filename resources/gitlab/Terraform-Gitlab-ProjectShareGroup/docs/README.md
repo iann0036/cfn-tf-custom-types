@@ -1,6 +1,6 @@
 # Terraform::Gitlab::ProjectShareGroup
 
-CloudFormation equivalent of gitlab_project_share_group
+This resource allows you to share a project with a group
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### AccessLevel
 
+One of five levels of access to the project.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GroupId
 
+The id of the group.
+
 _Required_: Yes
 
 _Type_: Double
@@ -48,6 +52,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProjectId
+
+The id of the project.
 
 _Required_: Yes
 

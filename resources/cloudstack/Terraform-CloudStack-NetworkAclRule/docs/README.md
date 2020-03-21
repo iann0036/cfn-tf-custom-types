@@ -1,6 +1,6 @@
 # Terraform::CloudStack::NetworkAclRule
 
-CloudFormation equivalent of cloudstack_network_acl_rule
+Creates network ACL rules for a given network ACL.
 
 ## Syntax
 
@@ -38,6 +38,9 @@ Properties:
 
 #### AclId
 
+The network ACL ID for which to create the rules.
+Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -45,6 +48,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Managed
+
+USE WITH CAUTION! If enabled all the firewall rules for
+this network ACL will be managed by this resource. This means it will delete
+all firewall rules that are not in your config! (defaults false).
 
 _Required_: No
 
@@ -61,6 +68,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The name or ID of the project to deploy this
+instance to. Changing this forces a new resource to be created.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::AzureRM::ContainerGroup
 
-CloudFormation equivalent of azurerm_container_group
+Manages as an Azure Container Group instance.
 
 ## Syntax
 
@@ -81,6 +81,8 @@ Properties:
 
 #### DnsNameLabel
 
+The DNS label/name for the container groups IP. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -88,6 +90,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IpAddressType
+
+Specifies the ip address type of the container. `Public` or `Private`. Changing this forces a new resource to be created. If set to `Private`, `network_profile_id` also needs to be set.
 
 _Required_: No
 
@@ -97,6 +101,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Location
 
+Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -104,6 +110,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the Container Group. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -113,6 +121,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NetworkProfileId
 
+Network profile ID for deploying to virtual network.
+
 _Required_: No
 
 _Type_: String
@@ -120,6 +130,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OsType
+
+The OS for the container group. Allowed values are `Linux` and `Windows`. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -129,6 +141,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to create the Container Group. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -137,6 +151,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RestartPolicy
 
+Restart policy for the container group. Allowed values are `Always`, `Never`, `OnFailure`. Defaults to `Always`. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -144,6 +160,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource. Changing this forces a new resource to be created.
 
 _Required_: No
 

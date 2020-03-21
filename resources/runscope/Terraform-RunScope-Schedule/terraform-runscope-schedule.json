@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::RunScope::Schedule",
-    "description": "CloudFormation equivalent of runscope_schedule",
+    "description": "A [schedule](https://www.runscope.com/docs/api/schedules) resource.\nTests can be scheduled to run on frequencies up to every minute.\nOne ore more schedules can be configured per test with each schedule\nusing a unique Test-specific or Shared [Environment](environment.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,19 +9,24 @@
             "type": "string"
         },
         "BucketId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the bucket to associate this schedule with."
         },
         "EnvironmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the environment to use when running the test.\nIf given, creates a test specific schedule, otherwise creates a shared schedule."
         },
         "Interval": {
-            "type": "string"
+            "type": "string",
+            "description": "The schedule's interval, must be one of:\n* 1m \u2014 every minute\n* 5m \u2014 every 5 minutes\n* 15m \u2014 every 15 minutes\n* 30m \u2014 every 30 minutes\n* 1h \u2014 every hour\n* 6h \u2014 every 6 hours\n* 1d \u2014 every day."
         },
         "Note": {
-            "type": "string"
+            "type": "string",
+            "description": "A human-friendly description for the schedule."
         },
         "TestId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the test to associate this schedule with."
         }
     },
     "additionalProperties": false,

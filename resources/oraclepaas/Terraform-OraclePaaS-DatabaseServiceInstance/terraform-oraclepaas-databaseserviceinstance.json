@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OraclePaaS::DatabaseServiceInstance",
-    "description": "CloudFormation equivalent of oraclepaas_database_service_instance",
+    "description": "The `oraclepaas_database_service_instance` resource creates and manages a an Oracle Database Cloud Service instance on the Oracle Cloud Platform.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Backups": {
@@ -216,10 +216,12 @@
             "type": "string"
         },
         "AvailabilityDomain": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the availability domain within the region where the Oracle Database Cloud Service instance is to be provisioned."
         },
         "BringYourOwnLicense": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specify if you want to use an existing perpetual license to Oracle Database to establish the right to use Oracle Database on the new instance.\nDefault value is `false`."
         },
         "CloudStorageContainer": {
             "type": "string"
@@ -231,13 +233,16 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description of the Service Instance."
         },
         "DesiredState": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the desired state of the service instance. Allowed values are `start`, `stop`,\nand `restart`."
         },
         "Edition": {
-            "type": "string"
+            "type": "string",
+            "description": "Database edition for the service instance. Possible values are `SE`, `EE`, `EE_HP`, or `EE_EP`."
         },
         "EmUrl": {
             "type": "string"
@@ -246,35 +251,43 @@
             "type": "string"
         },
         "HighPerformanceStorage": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether the service instance will be provisioned with high performance storage.\nDefault value is `false`."
         },
         "IdentityDomain": {
             "type": "string"
         },
         "IpNetwork": {
-            "type": "string"
+            "type": "string",
+            "description": "This attribute is only applicable to accounts where regions are supported. The three-part name of an IP network to which the service instance is added. For example: /Compute-identity_domain/user/object."
         },
         "IpReservations": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Groups one or more IP reservations in use on this service instance. This attribute is only applicable to accounts where regions are supported."
         },
         "Level": {
-            "type": "string"
+            "type": "string",
+            "description": "Service level for the service instance. Possible values are `BASIC` or `PAAS`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Service Instance."
         },
         "NotificationEmail": {
-            "type": "string"
+            "type": "string",
+            "description": "The email address to send notifications around successful or unsuccessful completions of the instance-creation operation."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the location where the service instance is provisioned (only for accounts where regions are supported)."
         },
         "Shape": {
-            "type": "string"
+            "type": "string",
+            "description": "Desired compute shape. Possible values are `oc3`, `oc4`, `oc5`, `oc6`, `oc1m`, `oc2m`, `oc3m`, or `oc4m`."
         },
         "SshPublicKey": {
             "type": "string"
@@ -283,16 +296,19 @@
             "type": "string"
         },
         "Subnet": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the subnet within the region where the Oracle Database Cloud Service instance is to be provisioned."
         },
         "SubscriptionType": {
-            "type": "string"
+            "type": "string",
+            "description": "Billing unit. Possible values are `HOURLY` or `MONTHLY`."
         },
         "Uri": {
             "type": "string"
         },
         "Version": {
-            "type": "string"
+            "type": "string",
+            "description": "Oracle Database software version; one of: `12.2.0.1`, `12.1.0.2`, or `11.2.0.4`."
         },
         "Backups": {
             "type": "array",

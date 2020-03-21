@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::CamSamlProvider
 
-CloudFormation equivalent of tencentcloud_cam_saml_provider
+Provides a resource to create a CAM SAML provider.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### Description
 
+The description of the CAM SAML provider.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MetaData
 
+The meta data document of the CAM SAML provider.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of CAM SAML provider.
 
 _Required_: Yes
 

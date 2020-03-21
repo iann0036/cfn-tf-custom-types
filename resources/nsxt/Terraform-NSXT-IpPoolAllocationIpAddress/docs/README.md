@@ -1,6 +1,6 @@
 # Terraform::NSXT::IpPoolAllocationIpAddress
 
-CloudFormation equivalent of nsxt_ip_pool_allocation_ip_address
+Provides a resource to allocate an IP address from an IP pool on NSX-T manager
 
 ## Syntax
 
@@ -38,6 +38,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IpPoolId
+
+Ip Pool ID from which the IP address will be allocated.
 
 _Required_: Yes
 

@@ -24,6 +24,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Script
 
+The script to be executed during initialization of the cluster.
+The script must be a GCS file with a gs:// prefix.
+
 _Required_: Yes
 
 _Type_: String
@@ -31,6 +34,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TimeoutSec
+
+The maximum duration (in seconds) which `script` is
+allowed to take to execute its action. GCP will default to a predetermined
+computed value if not set (currently 300).
 
 _Required_: No
 

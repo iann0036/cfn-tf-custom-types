@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::BIGIP::SysSnmp",
-    "description": "CloudFormation equivalent of bigip_sys_snmp",
+    "description": "`bigip_sys_snmp` provides details bout how to enable \"ilx\", \"asm\" \"apm\" resource on BIG-IP",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -13,13 +13,16 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Configures hosts or networks from which snmpd can accept traffic. Entries go directly into hosts.allow."
         },
         "SysContact": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the contact information for the system administrator."
         },
         "SysLocation": {
-            "type": "string"
+            "type": "string",
+            "description": "Describes the system's physical location."
         }
     },
     "additionalProperties": false,

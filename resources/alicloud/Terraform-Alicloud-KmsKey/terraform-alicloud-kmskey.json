@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::KmsKey",
-    "description": "CloudFormation equivalent of alicloud_kms_key",
+    "description": "A kms key can help user to protect data security in the transmission process.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,16 +12,20 @@
             "type": "string"
         },
         "DeletionWindowInDays": {
-            "type": "number"
+            "type": "number",
+            "description": "Duration in days after which the key is deleted\nafter destruction of the resource, must be between 7 and 30 days. Defaults to 30 days."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the key as viewed in Alicloud console. Default to \"From Terraform\"."
         },
         "IsEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether the key is enabled. Defaults to true."
         },
         "KeyUsage": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the usage of CMK. Currently, default to 'ENCRYPT/DECRYPT', indicating that CMK is used for encryption and decryption."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,8 @@
 # Terraform::OCI::KmsGeneratedKey
 
-CloudFormation equivalent of oci_kms_generated_key
+This resource provides the Generated Key resource in Oracle Cloud Infrastructure Kms service.
+
+Generates a key that you can use to encrypt or decrypt data.
 
 ## Syntax
 
@@ -44,6 +46,8 @@ Properties:
 
 #### AssociatedData
 
+Information that can be used to provide an encryption context for the encrypted data.  The length of the string representation of the associated data must be fewer than 4096  characters.
+
 _Required_: No
 
 _Type_: List of <a href="associateddata.md">AssociatedData</a>
@@ -51,6 +55,8 @@ _Type_: List of <a href="associateddata.md">AssociatedData</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CryptoEndpoint
+
+The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
 
 _Required_: Yes
 
@@ -60,6 +66,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IncludePlaintextKey
 
+If true, the generated key is also returned unencrypted.
+
 _Required_: Yes
 
 _Type_: Boolean
@@ -68,6 +76,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KeyId
 
+The OCID of the master encryption key to encrypt the generated data encryption key with.
+
 _Required_: Yes
 
 _Type_: String
@@ -75,6 +85,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LoggingContext
+
+Information that provides context for audit logging. You can provide this additional  data by formatting it as key-value pairs to include in audit logs when audit logging is enabled.
 
 _Required_: No
 

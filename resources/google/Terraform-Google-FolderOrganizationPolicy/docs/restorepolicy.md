@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Default
 
+May only be set to true. If set, then the default Policy is restored.
+
 _Required_: Yes
 
 _Type_: Boolean

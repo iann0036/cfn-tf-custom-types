@@ -1,6 +1,6 @@
 # Terraform::Panos::ApplicationGroup
 
-CloudFormation equivalent of panos_application_group
+This resource allows you to add/update/delete application groups.
 
 ## Syntax
 
@@ -34,6 +34,8 @@ Properties:
 
 #### Applications
 
+List of applications in this group.
+
 _Required_: No
 
 _Type_: List of String
@@ -42,6 +44,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The group's name.
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vsys
+
+The group's vsys (default: `vsys1`).
 
 _Required_: No
 

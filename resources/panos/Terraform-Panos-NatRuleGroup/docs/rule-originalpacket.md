@@ -35,6 +35,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### DestinationAddresses
 
+List of destination address(es).
+
 _Required_: Yes
 
 _Type_: List of String
@@ -42,6 +44,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DestinationInterface
+
+Egress interface from route lookup (default:
+`any`).
 
 _Required_: No
 
@@ -51,6 +56,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DestinationZone
 
+The destination zone.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +65,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Service
+
+Service (default: `any`).
 
 _Required_: No
 
@@ -67,6 +76,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SourceAddresses
 
+List of source address(es).
+
 _Required_: Yes
 
 _Type_: List of String
@@ -74,6 +85,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SourceZones
+
+The list of source zone(s).
 
 _Required_: Yes
 

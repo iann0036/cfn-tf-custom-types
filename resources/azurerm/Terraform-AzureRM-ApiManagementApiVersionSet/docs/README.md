@@ -1,6 +1,6 @@
 # Terraform::AzureRM::ApiManagementApiVersionSet
 
-CloudFormation equivalent of azurerm_api_management_api_version_set
+Manages an API Version Set within an API Management Service.
 
 ## Syntax
 
@@ -45,6 +45,8 @@ Properties:
 
 #### ApiManagementName
 
+The name of the [API Management Service](api_management.html) in which the API Version Set should exist. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -52,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+The description of API Version Set.
 
 _Required_: No
 
@@ -61,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+The display name of this API Version Set.
+
 _Required_: Yes
 
 _Type_: String
@@ -68,6 +74,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the API Version Set. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -77,6 +85,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the Resource Group in which the parent API Management Service exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -84,6 +94,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VersionHeaderName
+
+The name of the Header which should be read from Inbound Requests which defines the API Version.
 
 _Required_: No
 
@@ -93,6 +105,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VersionQueryName
 
+The name of the Query String which should be read from Inbound Requests which defines the API Version.
+
 _Required_: No
 
 _Type_: String
@@ -100,6 +114,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VersioningScheme
+
+Specifies where in an Inbound HTTP Request that the API Version should be read from. Possible values are `Header`, `Query` and `Segment`.
 
 _Required_: Yes
 

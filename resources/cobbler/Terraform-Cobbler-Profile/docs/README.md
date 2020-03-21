@@ -1,6 +1,6 @@
 # Terraform::Cobbler::Profile
 
-CloudFormation equivalent of cobbler_profile
+Manages a Profile within Cobbler.
 
 ## Syntax
 
@@ -96,6 +96,9 @@ Properties:
 
 #### BootFiles
 
+Files copied into tftpboot beyond the
+kernel/initrd.
+
 _Required_: No
 
 _Type_: String
@@ -103,6 +106,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Comment
+
+Free form text description.
 
 _Required_: No
 
@@ -112,6 +117,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Distro
 
+Parent distribution.
+
 _Required_: Yes
 
 _Type_: String
@@ -119,6 +126,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableGpxe
+
+Use gPXE instead of PXELINUX for
+advanced booting options.
 
 _Required_: No
 
@@ -128,6 +138,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableMenu
 
+Enable a boot menu.
+
 _Required_: No
 
 _Type_: Boolean
@@ -135,6 +147,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FetchableFiles
+
+Templates for tftp or wget.
 
 _Required_: No
 
@@ -144,6 +158,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KernelOptions
 
+Kernel options for the profile.
+
 _Required_: No
 
 _Type_: String
@@ -151,6 +167,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KernelOptionsPost
+
+Post install kernel options.
 
 _Required_: No
 
@@ -160,6 +178,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Kickstart
 
+The kickstart file to use.
+
 _Required_: No
 
 _Type_: String
@@ -167,6 +187,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KsMeta
+
+Kickstart metadata.
 
 _Required_: No
 
@@ -176,6 +198,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MgmtClasses
 
+For external configuration management.
+
 _Required_: No
 
 _Type_: List of String
@@ -183,6 +207,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MgmtParameters
+
+Parameters which will be handed to
+your management application (Must be a valid YAML dictionary).
 
 _Required_: No
 
@@ -192,6 +219,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the profile.
+
 _Required_: Yes
 
 _Type_: String
@@ -199,6 +228,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NameServers
+
+Name servers.
 
 _Required_: No
 
@@ -208,6 +239,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NameServersSearch
 
+Name server search settings.
+
 _Required_: No
 
 _Type_: List of String
@@ -215,6 +248,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Owners
+
+Owners list for authz_ownership.
 
 _Required_: No
 
@@ -224,6 +259,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Parent
 
+The parent this profile inherits settings from.
+
 _Required_: No
 
 _Type_: String
@@ -231,6 +268,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Proxy
+
+Proxy URL.
 
 _Required_: No
 
@@ -240,6 +279,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RedhatManagementKey
 
+Red Hat Management Key.
+
 _Required_: No
 
 _Type_: String
@@ -247,6 +288,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RedhatManagementServer
+
+RedHat Management Server.
 
 _Required_: No
 
@@ -256,6 +299,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Repos
 
+Repos to auto-assign to this profile.
+
 _Required_: No
 
 _Type_: List of String
@@ -263,6 +308,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Server
+
+The server-override for the profile.
 
 _Required_: No
 
@@ -272,6 +319,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TemplateFiles
 
+File mappings for built-in config
+management.
+
 _Required_: No
 
 _Type_: String
@@ -279,6 +329,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TemplateRemoteKickstarts
+
+remote kickstart
+templates.
 
 _Required_: No
 
@@ -288,6 +341,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VirtAutoBoot
 
+Auto boot virtual machines.
+
 _Required_: No
 
 _Type_: String
@@ -295,6 +350,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VirtBridge
+
+The bridge for virtual machines.
 
 _Required_: No
 
@@ -304,6 +361,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VirtCpus
 
+The number of virtual CPUs.
+
 _Required_: No
 
 _Type_: String
@@ -311,6 +370,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VirtDiskDriver
+
+The virtual machine disk driver.
 
 _Required_: No
 
@@ -320,6 +381,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VirtFileSize
 
+The virtual machine file size.
+
 _Required_: No
 
 _Type_: String
@@ -327,6 +390,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VirtPath
+
+The virtual machine path.
 
 _Required_: No
 
@@ -336,6 +401,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VirtRam
 
+The amount of RAM for the virtual machine.
+
 _Required_: No
 
 _Type_: String
@@ -343,6 +410,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VirtType
+
+The type of virtual machine. Valid options
+are: xenpv, xenfv, qemu, kvm, vmware, openvz.
 
 _Required_: No
 

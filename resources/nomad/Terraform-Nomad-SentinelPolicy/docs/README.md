@@ -1,6 +1,9 @@
 # Terraform::Nomad::SentinelPolicy
 
-CloudFormation equivalent of nomad_sentinel_policy
+Manages a Sentinel policy registered in Nomad.
+
+~> **Enterprise Only!** This API endpoint and functionality only exists in
+   Nomad Enterprise. This is not present in the open source version of Nomad.
 
 ## Syntax
 

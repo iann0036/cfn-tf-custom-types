@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::EssScalingGroup",
-    "description": "CloudFormation equivalent of alicloud_ess_scaling_group",
+    "description": "Provides a ESS scaling group resource which is a collection of ECS instances with the same application scenarios.\n\nIt defines the maximum and minimum numbers of ECS instances in the group, and their associated Server Load Balancer instances, RDS instances, and other attributes.\n\n-> **NOTE:** You can launch an ESS scaling group for a VPC network via specifying parameter `vswitch_ids`.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -13,58 +13,72 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "If an RDS instance is specified in the scaling group, the scaling group automatically attaches the Intranet IP addresses of its ECS instances to the RDS access whitelist.\n- The specified RDS instance must be in running status.\n- The specified RDS instance\u2019s whitelist must have room for more IP addresses."
         },
         "DefaultCooldown": {
-            "type": "number"
+            "type": "number",
+            "description": "Default cool-down time (in seconds) of the scaling group. Value range: [0, 86400]. The default value is 300s."
         },
         "LoadbalancerIds": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "If a Server Load Balancer instance is specified in the scaling group, the scaling group automatically attaches its ECS instances to the Server Load Balancer instance.\n- The Server Load Balancer instance must be enabled.\n- At least one listener must be configured for each Server Load Balancer and it HealthCheck must be on. Otherwise, creation will fail (it may be useful to add a `depends_on` argument\ntargeting your `alicloud_slb_listener` in order to make sure the listener with its HealthCheck configuration is ready before creating your scaling group).\n- The Server Load Balancer instance attached with VPC-type ECS instances cannot be attached to the scaling group.\n- The default weight of an ECS instance attached to the Server Load Balancer instance is 50."
         },
         "MaxSize": {
-            "type": "number"
+            "type": "number",
+            "description": "Maximum number of ECS instances in the scaling group. Value range: [0, 1000]."
         },
         "MinSize": {
-            "type": "number"
+            "type": "number",
+            "description": "Minimum number of ECS instances in the scaling group. Value range: [0, 1000]."
         },
         "MultiAzPolicy": {
-            "type": "string"
+            "type": "string",
+            "description": "Multi-AZ scaling group ECS instance expansion and contraction strategy. PRIORITY, BALANCE or COST_OPTIMIZED(Available in 1.54.0+)."
         },
         "OnDemandBaseCapacity": {
-            "type": "number"
+            "type": "number",
+            "description": "The minimum amount of the Auto Scaling group's capacity that must be fulfilled by On-Demand Instances. This base portion is provisioned first as your group scales."
         },
         "OnDemandPercentageAboveBaseCapacity": {
-            "type": "number"
+            "type": "number",
+            "description": "Controls the percentages of On-Demand Instances and Spot Instances for your additional capacity beyond OnDemandBaseCapacity."
         },
         "RemovalPolicies": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "RemovalPolicy is used to select the ECS instances you want to remove from the scaling group when multiple candidates for removal exist. Optional values:\n- OldestInstance: removes the first ECS instance attached to the scaling group.\n- NewestInstance: removes the first ECS instance attached to the scaling group.\n- OldestScalingConfiguration: removes the ECS instance with the oldest scaling configuration.\n- Default values: OldestScalingConfiguration and OldestInstance. You can enter up to two removal policies."
         },
         "ScalingGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name shown for the scaling group, which must contain 2-64 characters (English or Chinese), starting with numbers, English letters or Chinese characters, and can contain numbers, underscores `_`, hyphens `-`, and decimal points `.`. If this parameter is not specified, the default value is ScalingGroupId."
         },
         "SpotInstancePools": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of Spot pools to use to allocate your Spot capacity. The Spot pools is composed of instance types of lowest price."
         },
         "SpotInstanceRemedy": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to replace spot instances with newly created spot/onDemand instance when receive a spot recycling message."
         },
         "VswitchId": {
-            "type": "string"
+            "type": "string",
+            "description": "It has been deprecated from version 1.7.1 and new field 'vswitch_ids' replaces it."
         },
         "VswitchIds": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of virtual switch IDs in which the ecs instances to be launched."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::KmsCryptoKey",
-    "description": "CloudFormation equivalent of google_kms_crypto_key",
+    "description": "A `CryptoKey` represents a logical key that can be used for cryptographic operations.\n\n\n~> **Note:** CryptoKeys cannot be deleted from Google Cloud Platform.\nDestroying a Terraform-managed CryptoKey will remove it from state\nand delete all CryptoKeyVersions, rendering the key unusable, but *will\nnot delete the resource on the server.* When Terraform destroys these keys,\nany data previously encrypted with these keys will be irrecoverable.\nFor this reason, it is strongly recommended that you add lifecycle hooks\nto the resource to prevent accidental destruction.\n\n\nTo get more information about CryptoKey, see:\n\n* [API documentation](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys)\n* How-to Guides\n    * [Creating a key](https://cloud.google.com/kms/docs/creating-keys#create_a_key)",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {

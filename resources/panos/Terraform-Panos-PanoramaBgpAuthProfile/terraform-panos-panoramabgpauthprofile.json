@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::PanoramaBgpAuthProfile",
-    "description": "CloudFormation equivalent of panos_panorama_bgp_auth_profile",
+    "description": "This resource allows you to add/update/delete a Panorama BGP auth profile.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name."
         },
         "Secret": {
-            "type": "string"
+            "type": "string",
+            "description": "Shared secret for the TCP MD5 authentication."
         },
         "SecretEnc": {
             "type": "string"
@@ -24,7 +26,8 @@
             "type": "string"
         },
         "VirtualRouter": {
-            "type": "string"
+            "type": "string",
+            "description": "The virtual router to add this BGP\nauth profile to."
         }
     },
     "additionalProperties": false,

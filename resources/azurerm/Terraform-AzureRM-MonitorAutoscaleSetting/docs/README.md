@@ -1,6 +1,6 @@
 # Terraform::AzureRM::MonitorAutoscaleSetting
 
-CloudFormation equivalent of azurerm_monitor_autoscale_setting
+Manages a AutoScale Setting which can be applied to Virtual Machine Scale Sets, App Services and other scalable resources.
 
 ## Syntax
 
@@ -72,6 +72,8 @@ Properties:
 
 #### Enabled
 
+Specifies whether automatic scaling is enabled for the target resource. Defaults to `true`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -79,6 +81,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Location
+
+Specifies the supported Azure location where the AutoScale Setting should exist. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -88,6 +92,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the AutoScale Setting. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -95,6 +101,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the Resource Group in the AutoScale Setting should be created. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -104,6 +112,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -111,6 +121,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TargetResourceId
+
+Specifies the resource ID of the resource that the autoscale setting should be added to.
 
 _Required_: Yes
 

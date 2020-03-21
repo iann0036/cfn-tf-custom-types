@@ -1,6 +1,7 @@
 # Terraform::Panos::RedistributionProfileIpv4
 
-CloudFormation equivalent of panos_redistribution_profile_ipv4
+This resource allows you to add/update/delete IPv4 redistribution profiles
+on a virtual router.
 
 ## Syntax
 
@@ -62,6 +63,9 @@ Properties:
 
 #### Action
 
+The action.  Valid values are `redist` (default) or
+`no-redist`.
+
 _Required_: No
 
 _Type_: String
@@ -69,6 +73,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BgpCommunities
+
+BGP communities.
 
 _Required_: No
 
@@ -78,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### BgpExtendedCommunities
 
+BGP extended communities.
+
 _Required_: No
 
 _Type_: List of String
@@ -85,6 +93,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Destinations
+
+Specify candidate routes' next-hop addresses
+(subnet match).
 
 _Required_: No
 
@@ -94,6 +105,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Interfaces
 
+Specify candidate routes.
+
 _Required_: No
 
 _Type_: List of String
@@ -101,6 +114,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The redistribution profile's name.
 
 _Required_: Yes
 
@@ -110,6 +125,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NextHops
 
+Specify candidate routes' next-hop addresses
+(subnet match).
+
 _Required_: No
 
 _Type_: List of String
@@ -117,6 +135,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OspfAreas
+
+OSPF areas.
 
 _Required_: No
 
@@ -126,6 +146,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OspfPathTypes
 
+OSPF path types.  Valid values are
+`intra-area`, `inter-area`, `ext-1`, and `ext-2`.
+
 _Required_: No
 
 _Type_: List of String
@@ -133,6 +156,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OspfTags
+
+OSPF tags.
 
 _Required_: No
 
@@ -142,6 +167,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Priority
 
+The priority, integer from 1 to 255.
+
 _Required_: Yes
 
 _Type_: Double
@@ -150,6 +177,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Types
 
+The source types.  Valid values are `bgp`, `connect`,
+`ospf`, `rip`, and `static`.
+
 _Required_: No
 
 _Type_: List of String
@@ -157,6 +187,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VirtualRouter
+
+The virtual router to add the
+redistribution profile to.
 
 _Required_: Yes
 

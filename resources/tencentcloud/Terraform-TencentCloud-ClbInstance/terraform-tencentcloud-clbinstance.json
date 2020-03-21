@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::ClbInstance",
-    "description": "CloudFormation equivalent of tencentcloud_clb_instance",
+    "description": "Provides a resource to create a CLB instance.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "ClbName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the CLB. The name can only contain Chinese characters, English letters, numbers, underscore and hyphen '-'."
         },
         "ClbVips": {
             "type": "array",
@@ -19,20 +20,24 @@
             }
         },
         "NetworkType": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of CLB instance, and available values include 'OPEN' and 'INTERNAL'."
         },
         "ProjectId": {
-            "type": "number"
+            "type": "number",
+            "description": "Id of the project within the CLB instance, '0' - Default Project."
         },
         "SecurityGroups": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Security groups of the CLB instance. Only supports 'OPEN' CLBs."
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "Subnet id of the CLB. Effective only for CLB within the VPC. Only supports 'INTERNAL' CLBs."
         },
         "Tags": {
             "type": "array",
@@ -52,16 +57,20 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "The available tags within this CLB."
         },
         "TargetRegionInfoRegion": {
-            "type": "string"
+            "type": "string",
+            "description": "Region information of backend services are attached the CLB instance. Only supports 'OPEN' CLBs."
         },
         "TargetRegionInfoVpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "Vpc information of backend services are attached the CLB instance. Only supports 'OPEN' CLBs."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "VPC id of the CLB."
         }
     },
     "additionalProperties": false,

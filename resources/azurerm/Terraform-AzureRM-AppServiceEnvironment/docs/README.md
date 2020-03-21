@@ -1,6 +1,6 @@
 # Terraform::AzureRM::AppServiceEnvironment
 
-CloudFormation equivalent of azurerm_app_service_environment
+Manages an App Service Environment.
 
 ## Syntax
 
@@ -42,6 +42,8 @@ Properties:
 
 #### FrontEndScaleFactor
 
+Scale factor for front end instances. Possible values are between `5` and `15`. Defaults to `15`.
+
 _Required_: No
 
 _Type_: Double
@@ -58,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the App Service Environment. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -66,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PricingTier
 
+Pricing tier for the front end instances. Possible values are `I1`, `I2` and `I3`. Defaults to `I1`.
+
 _Required_: No
 
 _Type_: String
@@ -73,6 +79,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubnetId
+
+The ID of the Subnet which the App Service Environment should be connected to. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

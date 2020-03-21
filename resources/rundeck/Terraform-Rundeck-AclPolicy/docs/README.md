@@ -1,6 +1,6 @@
 # Terraform::Rundeck::AclPolicy
 
-CloudFormation equivalent of rundeck_acl_policy
+The acl policy resource allows Rundeck projects to be managed by Terraform.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### Name
 
+The name of the policy. Must end with `.aclpolicy`.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Policy
+
+The name of the job, used to describe the job in the Rundeck UI.
 
 _Required_: Yes
 

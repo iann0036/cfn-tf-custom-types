@@ -1,6 +1,6 @@
 # Terraform::StatusCake::Test
 
-CloudFormation equivalent of statuscake_test
+The test resource allows StatusCake tests to be managed by Terraform.
 
 ## Syntax
 
@@ -94,6 +94,8 @@ Properties:
 
 #### BasicPass
 
+If BasicUser is set then this should be the password for the BasicUser.
+
 _Required_: No
 
 _Type_: String
@@ -101,6 +103,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BasicUser
+
+A Basic Auth User account to use to login.
 
 _Required_: No
 
@@ -110,6 +114,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Branding
 
+Set to 0 to use branding (default) or 1 to disable public reporting branding).
+
 _Required_: No
 
 _Type_: Double
@@ -117,6 +123,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CheckRate
+
+Test check rate in seconds. Defaults to 300.
 
 _Required_: No
 
@@ -126,6 +134,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Confirmations
 
+The number of confirmation servers to use in order to detect downtime. Defaults to 0.
+
 _Required_: No
 
 _Type_: Double
@@ -133,6 +143,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ContactGroup
+
+Set test contact groups, must be array of strings.
 
 _Required_: No
 
@@ -142,6 +154,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ContactId
 
+**Deprecated** (Optional) The id of the contact group to be added to the test. Each test can have only one.
+
 _Required_: No
 
 _Type_: Double
@@ -149,6 +163,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CustomHeader
+
+Custom HTTP header, must be supplied as JSON.
 
 _Required_: No
 
@@ -158,6 +174,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DoNotFind
 
+If the above string should be found to trigger a alert. 1 = will trigger if find_string found.
+
 _Required_: No
 
 _Type_: Boolean
@@ -165,6 +183,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableSslAlert
+
+HTTP Tests only. If enabled, tests will send warnings if the SSL certificate is about to expire. Paid users only. Default is false.
 
 _Required_: No
 
@@ -174,6 +194,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FinalEndpoint
 
+Use to specify the expected Final URL in the testing process.
+
 _Required_: No
 
 _Type_: String
@@ -181,6 +203,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FindString
+
+A string that should either be found or not found.
 
 _Required_: No
 
@@ -190,6 +214,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FollowRedirect
 
+Use to specify whether redirects should be followed, set to true to enable. Default is false.
+
 _Required_: No
 
 _Type_: Boolean
@@ -197,6 +223,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LogoImage
+
+A URL to a image to use for public reporting.
 
 _Required_: No
 
@@ -206,6 +234,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NodeLocations
 
+Set test node locations, must be array of strings.
+
 _Required_: No
 
 _Type_: List of String
@@ -213,6 +243,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Paused
+
+Whether or not the test is paused. Defaults to false.
 
 _Required_: No
 
@@ -222,6 +254,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PingUrl
 
+A URL to ping if a site goes down.
+
 _Required_: No
 
 _Type_: String
@@ -229,6 +263,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Port
+
+The port to use when specifying a TCP test.
 
 _Required_: No
 
@@ -238,6 +274,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PostRaw
 
+Use to populate the RAW POST data field on the test.
+
 _Required_: No
 
 _Type_: String
@@ -245,6 +283,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Public
+
+Set 1 to enable public reporting, 0 to disable.
 
 _Required_: No
 
@@ -254,6 +294,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RealBrowser
 
+Use 1 to TURN OFF real browser testing.
+
 _Required_: No
 
 _Type_: Double
@@ -261,6 +303,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StatusCodes
+
+Comma Separated List of StatusCodes to Trigger Error on. Defaults are "204, 205, 206, 303, 400, 401, 403, 404, 405, 406, 408, 410, 413, 444, 429, 494, 495, 496, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 521, 522, 523, 524, 520, 598, 599".
 
 _Required_: No
 
@@ -270,6 +314,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TestTags
 
+Set test tags, must be array of strings.
+
 _Required_: No
 
 _Type_: List of String
@@ -277,6 +323,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TestType
+
+The type of Test. Either HTTP, TCP, PING, or DNS.
 
 _Required_: Yes
 
@@ -286,6 +334,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Timeout
 
+The timeout of the test in seconds.
+
 _Required_: No
 
 _Type_: Double
@@ -293,6 +343,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TriggerRate
+
+The number of minutes to wait before sending an alert. Default is `5`.
 
 _Required_: No
 
@@ -302,6 +354,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UseJar
 
+Set to true to enable the Cookie Jar. Required for some redirects. Default is false.
+
 _Required_: No
 
 _Type_: Double
@@ -309,6 +363,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserAgent
+
+Test with a custom user agent set.
 
 _Required_: No
 
@@ -318,6 +374,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Virus
 
+Enable virus checking or not. 1 to enable.
+
 _Required_: No
 
 _Type_: Double
@@ -325,6 +383,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WebsiteHost
+
+Used internally, when possible please add.
 
 _Required_: No
 
@@ -334,6 +394,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### WebsiteName
 
+This is the name of the test and the website to be monitored.
+
 _Required_: Yes
 
 _Type_: String
@@ -341,6 +403,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WebsiteUrl
+
+The URL of the website to be monitored.
 
 _Required_: Yes
 

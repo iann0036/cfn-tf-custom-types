@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Brightbox::Cloudip",
-    "description": "CloudFormation equivalent of brightbox_cloudip",
+    "description": "Provides a Brightbox CloudIP resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "PortTranslator": {
@@ -49,19 +49,22 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "a label to assign to the CloudIP."
         },
         "PublicIp": {
             "type": "string"
         },
         "ReverseDns": {
-            "type": "string"
+            "type": "string",
+            "description": "The reverse DNS entry for the CloudIP."
         },
         "Status": {
             "type": "string"
         },
         "Target": {
-            "type": "string"
+            "type": "string",
+            "description": "The CloudIP mapping target. This is the interface id from a server, or the id of a load balancer, server group or cloud sql resource."
         },
         "PortTranslator": {
             "type": "array",

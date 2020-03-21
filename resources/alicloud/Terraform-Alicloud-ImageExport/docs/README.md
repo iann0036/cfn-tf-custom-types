@@ -1,6 +1,14 @@
 # Terraform::Alicloud::ImageExport
 
-CloudFormation equivalent of alicloud_image_export
+Export a custom image to the OSS bucket in the same region as the custom image.
+
+-> **NOTE:** If you create an ECS instance using a mirror image and create a system disk snapshot again, exporting a custom image created from the system disk snapshot is not supported.
+
+-> **NOTE:** Support for exporting custom images that include data disk snapshot information in the image. The number of data disks cannot exceed 4 and the maximum capacity of a single data disk cannot exceed 500 GiB.
+
+-> **NOTE:** Before exporting the image, you must authorize the cloud server ECS official service account to write OSS permissions through RAM.
+
+-> **NOTE:** Available in 1.68.0+.
 
 ## Syntax
 
@@ -35,6 +43,8 @@ Properties:
 
 #### ImageId
 
+The source image ID.
+
 _Required_: Yes
 
 _Type_: String
@@ -43,6 +53,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OssBucket
 
+Save the exported OSS bucket.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +62,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OssPrefix
+
+The prefix of your OSS Object. It can be composed of numbers or letters, and the character length is 1 ~ 30.
 
 _Required_: No
 

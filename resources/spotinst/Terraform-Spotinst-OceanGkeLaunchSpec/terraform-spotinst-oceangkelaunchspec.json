@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Spotinst::OceanGkeLaunchSpec",
-    "description": "CloudFormation equivalent of spotinst_ocean_gke_launch_spec",
+    "description": "Provides a custom Spotinst Ocean GKE Launch Spec resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "AutoscaleHeadrooms": {
@@ -83,10 +83,12 @@
             "type": "string"
         },
         "OceanId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Ocean cluster ID required for launchSpec create."
         },
         "SourceImage": {
-            "type": "string"
+            "type": "string",
+            "description": "Image URL."
         },
         "AutoscaleHeadrooms": {
             "type": "array",

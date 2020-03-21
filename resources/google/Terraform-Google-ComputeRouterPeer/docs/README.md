@@ -1,6 +1,16 @@
 # Terraform::Google::ComputeRouterPeer
 
-CloudFormation equivalent of google_compute_router_peer
+BGP information that must be configured into the routing stack to
+establish BGP peering. This information must specify the peer ASN
+and either the interface name, IP address, or peer IP address.
+Please refer to RFC4273.
+
+
+To get more information about RouterBgpPeer, see:
+
+* [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/routers)
+* How-to Guides
+    * [Google Cloud Router](https://cloud.google.com/router/docs/)
 
 ## Syntax
 
@@ -108,6 +118,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
 
 _Required_: No
 

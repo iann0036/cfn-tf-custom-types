@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::ImsDataImageV2
 
-CloudFormation equivalent of opentelekomcloud_ims_data_image_v2
+Manages a V2 Data Image resource within OpenTelekomCloud IMS.
 
 ## Syntax
 
@@ -46,6 +46,9 @@ Properties:
 
 #### CmkId
 
+The master key used for encrypting an image.
+Changing this creates a new image.
+
 _Required_: No
 
 _Type_: String
@@ -53,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+A description of the image. Changing this creates a new image.
 
 _Required_: No
 
@@ -62,6 +67,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ImageUrl
 
+The URL of the external image file in the OBS bucket.
+This parameter is mandatory when you create a private image from an external file
+uploaded to an OBS bucket. The format is *OBS bucket name:Image file name*.
+Changing this creates a new image.
+
 _Required_: No
 
 _Type_: String
@@ -69,6 +79,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MinDisk
+
+The minimum size of the system disk in the unit of GB.
+This parameter is mandatory when you create a private image from an external file
+uploaded to an OBS bucket. The value ranges from 1 GB to 1024 GB.
+Changing this creates a new image.
 
 _Required_: No
 
@@ -78,6 +93,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the image.
+
 _Required_: Yes
 
 _Type_: String
@@ -85,6 +102,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OsType
+
+The OS type. It can only be Windows or Linux.
+This parameter is valid when you create a private image from an external file
+uploaded to an OBS bucket. Changing this creates a new image.
 
 _Required_: No
 
@@ -94,6 +115,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+The tags of the image.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -101,6 +124,10 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VolumeId
+
+The ID of the ECS atatched volume that needs to be converted into an image.
+This parameter is mandatory when you create a privete image from an ECS.
+Changing this creates a new image.
 
 _Required_: No
 

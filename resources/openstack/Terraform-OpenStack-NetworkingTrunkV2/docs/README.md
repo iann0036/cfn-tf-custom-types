@@ -1,6 +1,6 @@
 # Terraform::OpenStack::NetworkingTrunkV2
 
-CloudFormation equivalent of openstack_networking_trunk_v2
+Manages a networking V2 trunk resource within OpenStack.
 
 ## Syntax
 
@@ -47,6 +47,10 @@ Properties:
 
 #### AdminStateUp
 
+Administrative up/down status for the trunk
+(must be "true" or "false" if provided). Changing this updates the
+`admin_state_up` of an existing trunk.
+
 _Required_: No
 
 _Type_: Boolean
@@ -54,6 +58,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Human-readable description of the trunk. Changing this
+updates the name of the existing trunk.
 
 _Required_: No
 
@@ -63,6 +70,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A unique name for the trunk. Changing this
+updates the `name` of an existing trunk.
+
 _Required_: No
 
 _Type_: String
@@ -70,6 +80,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PortId
+
+The ID of the port to be used as the parent port of the
+trunk. This is the port that should be used as the compute instance network
+port. Changing this creates a new trunk.
 
 _Required_: Yes
 
@@ -79,6 +93,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region in which to obtain the V2 networking client.
+A networking client is needed to create a trunk. If omitted, the
+`region` argument of the provider is used. Changing this creates a new
+trunk.
+
 _Required_: No
 
 _Type_: String
@@ -87,6 +106,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A set of string tags for the port.
+
 _Required_: No
 
 _Type_: List of String
@@ -94,6 +115,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TenantId
+
+The owner of the Trunk. Required if admin wants
+to create a trunk on behalf of another tenant. Changing this creates a new trunk.
 
 _Required_: No
 

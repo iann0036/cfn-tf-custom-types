@@ -1,6 +1,6 @@
 # Terraform::Spotinst::ElastigroupGke
 
-CloudFormation equivalent of spotinst_elastigroup_gke
+Provides a Spotinst Elastigroup GKE resource. Please see [Importing a GKE cluster](https://api.spotinst.com/elastigroup-for-google-cloud/tutorials/import-a-gke-cluster-as-an-elastigroup/) for detailed information.
 
 ## Syntax
 
@@ -122,6 +122,8 @@ Properties:
 
 #### ClusterId
 
+The name of the GKE cluster you wish to import.
+
 _Required_: No
 
 _Type_: String
@@ -129,6 +131,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClusterZoneName
+
+The zone where the cluster is hosted.
 
 _Required_: Yes
 
@@ -209,6 +213,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NodeImage
+
+The image that will be used for the node VMs. Possible values: COS, UBUNTU.
 
 _Required_: No
 

@@ -1,6 +1,9 @@
 # Terraform::Panos::PanoramaTemplateVariable
 
-CloudFormation equivalent of panos_panorama_template_variable
+This resource allows you to add/update/delete variables for both Panorama
+templates and template stacks.
+
+Template variables are available in PAN-OS 8.1+.
 
 ## Syntax
 
@@ -37,6 +40,8 @@ Properties:
 
 #### Name
 
+The template's name.  This must start with a dollar sign ($).
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +49,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Template
+
+The template name.
 
 _Required_: No
 
@@ -53,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TemplateStack
 
+The template stack name.
+
 _Required_: No
 
 _Type_: String
@@ -61,6 +70,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Type
 
+The variable type.  Valid values are `ip-netmask`
+(default), `ip-range`, `fqdn`, `group-id`, or `interface`.
+
 _Required_: No
 
 _Type_: String
@@ -68,6 +80,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Value
+
+The variable value.
 
 _Required_: Yes
 

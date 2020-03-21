@@ -1,6 +1,6 @@
 # Terraform::OVH::IploadbalancingHttpFarm
 
-CloudFormation equivalent of ovh_iploadbalancing_http_farm
+Creates a http backend server group (farm) to be used by loadbalancing frontend(s)
 
 ## Syntax
 
@@ -44,6 +44,8 @@ Properties:
 
 #### Balance
 
+Load balancing algorithm. `roundrobin` if null (`first`, `leastconn`, `roundrobin`, `source`).
+
 _Required_: No
 
 _Type_: String
@@ -51,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+Readable label for loadbalancer farm.
 
 _Required_: No
 
@@ -60,6 +64,13 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Port
 
+Port for backends to recieve traffic on.
+* `negate` - Negate probe result
+* `pattern` - Pattern to match against `match`
+* `force_ssl` - Force use of SSL (TLS)
+* `url` - URL for HTTP probe type.
+* `method` - HTTP probe method (`GET`, `HEAD`, `OPTIONS`, `internal`).
+
 _Required_: No
 
 _Type_: Double
@@ -67,6 +78,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServiceName
+
+The internal name of your IP load balancing.
 
 _Required_: Yes
 
@@ -76,6 +89,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Stickiness
 
+Stickiness type. No stickiness if null (`sourceIp`, `cookie`).
+
 _Required_: No
 
 _Type_: String
@@ -84,6 +99,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VrackNetworkId
 
+Internal Load Balancer identifier of the vRack private network to attach to your farm, mandatory when your Load Balancer is attached to a vRack.
+
 _Required_: No
 
 _Type_: Double
@@ -91,6 +108,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Zone
+
+Zone where the farm will be defined (ie. `GRA`, `BHS` also supports `ALL`).
 
 _Required_: Yes
 

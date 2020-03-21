@@ -1,6 +1,10 @@
 # Terraform::TencentCloud::AlbServerAttachment
 
-CloudFormation equivalent of tencentcloud_alb_server_attachment
+Provides an tencentcloud application load balancer servers attachment as a resource, to attach and detach instances from load balancer.
+
+~> **NOTE:** It has been deprecated and replaced by `tencentcloud_clb_attachment`.
+
+~> **NOTE:** Currently only support existing `loadbalancer_id` `listener_id` `location_id` and Application layer 7 load balancer
 
 ## Syntax
 
@@ -36,6 +40,8 @@ Properties:
 
 #### ListenerId
 
+listener ID.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +50,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LoadbalancerId
 
+loadbalancer ID.
+
 _Required_: Yes
 
 _Type_: String
@@ -51,6 +59,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LocationId
+
+location ID, only support for layer 7 loadbalancer.
 
 _Required_: No
 

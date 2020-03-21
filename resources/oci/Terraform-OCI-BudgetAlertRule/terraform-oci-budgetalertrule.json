@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::BudgetAlertRule",
-    "description": "CloudFormation equivalent of oci_budget_alert_rule",
+    "description": "This resource provides the Alert Rule resource in Oracle Cloud Infrastructure Budget service.\n\nCreates a new Alert Rule.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,7 +26,8 @@
             "type": "string"
         },
         "BudgetId": {
-            "type": "string"
+            "type": "string",
+            "description": "The unique Budget OCID."
         },
         "DefinedTags": {
             "type": "array",
@@ -46,13 +47,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Operations.CostCenter\": \"42\"}`."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The description of the alert rule."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The name of the alert rule."
         },
         "FreeformTags": {
             "type": "array",
@@ -72,22 +76,27 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
         },
         "Message": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The message to be sent to the recipients when alert rule is triggered."
         },
         "Recipients": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The audience that will receive the alert when it triggers. An empty string is interpreted as null."
         },
         "State": {
             "type": "string"
         },
         "Threshold": {
-            "type": "number"
+            "type": "number",
+            "description": "(Updatable) The threshold for triggering the alert expressed as a whole number or decimal value. If thresholdType is ABSOLUTE, threshold can have at most 12 digits before the decimal point and up to 2 digits after the decimal point. If thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to 2 digits after the decimal point."
         },
         "ThresholdType": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The type of threshold."
         },
         "TimeCreated": {
             "type": "string"
@@ -96,7 +105,8 @@
             "type": "string"
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) Type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or FORECAST (the alert will trigger based on predicted usage)."
         },
         "Version": {
             "type": "number"

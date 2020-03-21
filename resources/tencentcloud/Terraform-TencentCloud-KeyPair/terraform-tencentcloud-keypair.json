@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::KeyPair",
-    "description": "CloudFormation equivalent of tencentcloud_key_pair",
+    "description": "Provides a key pair resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "KeyName": {
-            "type": "string"
+            "type": "string",
+            "description": "The key pair's name. It is the only in one TencentCloud account."
         },
         "ProjectId": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifys to which project the key pair belongs."
         },
         "PublicKey": {
-            "type": "string"
+            "type": "string",
+            "description": "You can import an existing public key and using TencentCloud key pair to manage it."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::S3BucketPolicy
 
-CloudFormation equivalent of opentelekomcloud_s3_bucket_policy
+Attaches a policy to an S3 bucket resource.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### Bucket
 
+The name of the bucket to which to apply the policy.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Policy
+
+The text of the policy.
 
 _Required_: Yes
 

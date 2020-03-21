@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Docker::Container",
-    "description": "CloudFormation equivalent of docker_container",
+    "description": "Manages the lifecycle of a Docker container.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Capabilities": {
@@ -330,7 +330,8 @@
             "type": "string"
         },
         "Attach": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If true attach to the container after its creation and waits the end of his execution."
         },
         "Bridge": {
             "type": "string"
@@ -340,57 +341,67 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The command to use to start the\ncontainer. For example, to run `/usr/bin/myprogram -f baz.conf` set the\ncommand to be `[\"/usr/bin/myprogram\", \"-f\", \"baz.conf\"]`."
         },
         "ContainerLogs": {
             "type": "string"
         },
         "CpuSet": {
-            "type": "string"
+            "type": "string",
+            "description": "A comma-separated list or hyphen-separated range of CPUs a container can use, e.g. `0-1`."
         },
         "CpuShares": {
-            "type": "number"
+            "type": "number",
+            "description": "CPU shares (relative weight) for the container."
         },
         "DestroyGraceSeconds": {
-            "type": "number"
+            "type": "number",
+            "description": "If defined will attempt to stop the container before destroying. Container will be destroyed after `n` seconds or on successful stop."
         },
         "Dns": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Set of DNS servers."
         },
         "DnsOpts": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Set of DNS options used by the DNS provider(s), see `resolv.conf` documentation for valid list of options."
         },
         "DnsSearch": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Set of DNS search domains that are used when bare unqualified hostnames are used inside of the container."
         },
         "Domainname": {
-            "type": "string"
+            "type": "string",
+            "description": "Domain name of the container."
         },
         "Entrypoint": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The command to use as the\nEntrypoint for the container. The Entrypoint allows you to configure a\ncontainer to run as an executable. For example, to run `/usr/bin/myprogram`\nwhen starting a container, set the entrypoint to be\n`[\"/usr/bin/myprogram\"]`."
         },
         "Env": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Environment variables to set."
         },
         "ExitCode": {
             "type": "number"
@@ -403,13 +414,16 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Add additional groups to run as."
         },
         "Hostname": {
-            "type": "string"
+            "type": "string",
+            "description": "Hostname of the container."
         },
         "Image": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the image to back this container.\nThe easiest way to get this value is to use the `docker_image` resource\nas is shown in the example above."
         },
         "IpAddress": {
             "type": "string"
@@ -418,17 +432,20 @@
             "type": "number"
         },
         "IpcMode": {
-            "type": "string"
+            "type": "string",
+            "description": "IPC sharing mode for the container. Possible values are: `none`, `private`, `shareable`, `container:<name|id>` or `host`."
         },
         "Links": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Set of links for link based\nconnectivity between containers that are running on the same host."
         },
         "LogDriver": {
-            "type": "string"
+            "type": "string",
+            "description": "The logging driver to use for the container.\nDefaults to \"json-file\"."
         },
         "LogOpts": {
             "type": "array",
@@ -448,32 +465,40 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Key/value pairs to use as options for\nthe logging driver."
         },
         "Logs": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Save the container logs (`attach` must be enabled)."
         },
         "MaxRetryCount": {
-            "type": "number"
+            "type": "number",
+            "description": "The maximum amount of times to an attempt\na restart when `restart` is set to \"on-failure\"."
         },
         "Memory": {
-            "type": "number"
+            "type": "number",
+            "description": "The memory limit for the container in MBs."
         },
         "MemorySwap": {
-            "type": "number"
+            "type": "number",
+            "description": "The total memory limit (memory + swap) for the\ncontainer in MBs. This setting may compute to `-1` after `terraform apply` if the target host doesn't support memory swap, when that is the case docker will use a soft limitation."
         },
         "MustRun": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If true, then the Docker container will be\nkept running. If false, then as long as the container exists, Terraform\nassumes it is successful."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Docker container."
         },
         "NetworkAlias": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Network aliases of the container for user-defined networks only. *Deprecated:* use `networks_advanced` instead."
         },
         "NetworkData": {
             "type": "array",
@@ -498,38 +523,48 @@
             }
         },
         "NetworkMode": {
-            "type": "string"
+            "type": "string",
+            "description": "Network mode of the container."
         },
         "Networks": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Id of the networks in which the\ncontainer is. *Deprecated:* use `networks_advanced` instead."
         },
         "PidMode": {
-            "type": "string"
+            "type": "string",
+            "description": "The PID (Process) Namespace mode for the container. Either `container:<name|id>` or `host`."
         },
         "Privileged": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Run container in privileged mode."
         },
         "PublishAllPorts": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Publish all ports of the container."
         },
         "ReadOnly": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If true, the container will be started as readonly."
         },
         "Restart": {
-            "type": "string"
+            "type": "string",
+            "description": "The restart policy for the container. Must be\none of \"no\", \"on-failure\", \"always\", \"unless-stopped\"."
         },
         "Rm": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If true, then the container will be automatically removed after his execution. Terraform\nwon't check this container after creation."
         },
         "ShmSize": {
-            "type": "number"
+            "type": "number",
+            "description": "Size of `/dev/shm` in MBs."
         },
         "Start": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If true, then the Docker container will be\nstarted after creation. If false, then the container is only created."
         },
         "Sysctls": {
             "type": "array",
@@ -549,7 +584,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A map of kernel parameters (sysctls) to set in the container."
         },
         "Tmpfs": {
             "type": "array",
@@ -569,16 +605,20 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A map of container directories which should be replaced by `tmpfs mounts`, and their corresponding mount options."
         },
         "User": {
-            "type": "string"
+            "type": "string",
+            "description": "User used for run the first process. Format is\n`user` or `user:group` which user and group can be passed literraly or\nby name."
         },
         "UsernsMode": {
-            "type": "string"
+            "type": "string",
+            "description": "Sets the usernamespace mode for the container when usernamespace remapping option is enabled."
         },
         "WorkingDir": {
-            "type": "string"
+            "type": "string",
+            "description": "The working directory for commands to run in."
         },
         "Capabilities": {
             "type": "array",

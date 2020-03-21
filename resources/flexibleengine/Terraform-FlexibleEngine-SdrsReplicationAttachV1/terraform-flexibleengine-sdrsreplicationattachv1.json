@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::FlexibleEngine::SdrsReplicationAttachV1",
-    "description": "CloudFormation equivalent of flexibleengine_sdrs_replication_attach_v1",
+    "description": "Manages a SDRS replication attch resource within FlexibleEngine.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,13 +23,16 @@
             "type": "string"
         },
         "Device": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the device name, eg. /dev/vdb. Changing this creates a new replication attach."
         },
         "InstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the ID of a protected instance. Changing this creates a new replication attach."
         },
         "ReplicationId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the ID of a replication pair. Changing this creates a new replication attach."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

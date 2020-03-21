@@ -1,6 +1,6 @@
 # Terraform::PagerDuty::UserContactMethod
 
-CloudFormation equivalent of pagerduty_user_contact_method
+A [contact method](https://v2.developer.pagerduty.com/v2/page/api-reference#!/Users/get_users_id_contact_methods) is a contact method for a PagerDuty user (email, phone or SMS).
 
 ## Syntax
 
@@ -39,6 +39,8 @@ Properties:
 
 #### Address
 
+The "address" to deliver to: `email`, `phone number`, etc., depending on the type.
+
 _Required_: Yes
 
 _Type_: String
@@ -46,6 +48,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CountryCode
+
+The 1-to-3 digit country calling code. Required when using `phone_contact_method` or `sms_contact_method`.
+* `label` - (Required) The label (e.g., "Work", "Mobile", etc.).
+* `address` - (Required) The "address" to deliver to: `email`, `phone number`, etc., depending on the type.
 
 _Required_: No
 
@@ -55,6 +61,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Label
 
+The label (e.g., "Work", "Mobile", etc.).
+* `address` - (Required) The "address" to deliver to: `email`, `phone number`, etc., depending on the type.
+
 _Required_: Yes
 
 _Type_: String
@@ -62,6 +71,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SendShortEmail
+
+Send an abbreviated email message instead of the standard email output.
+* `country_code` - (Optional) The 1-to-3 digit country calling code. Required when using `phone_contact_method` or `sms_contact_method`.
+* `label` - (Required) The label (e.g., "Work", "Mobile", etc.).
+* `address` - (Required) The "address" to deliver to: `email`, `phone number`, etc., depending on the type.
 
 _Required_: No
 
@@ -71,6 +85,12 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Type
 
+The contact method type. May be (`email_contact_method`, `phone_contact_method`, `sms_contact_method`, `push_notification_contact_method`).
+* `send_short_email` - (Optional) Send an abbreviated email message instead of the standard email output.
+* `country_code` - (Optional) The 1-to-3 digit country calling code. Required when using `phone_contact_method` or `sms_contact_method`.
+* `label` - (Required) The label (e.g., "Work", "Mobile", etc.).
+* `address` - (Required) The "address" to deliver to: `email`, `phone number`, etc., depending on the type.
+
 _Required_: Yes
 
 _Type_: String
@@ -78,6 +98,13 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserId
+
+The ID of the user.
+* `type` - (Required) The contact method type. May be (`email_contact_method`, `phone_contact_method`, `sms_contact_method`, `push_notification_contact_method`).
+* `send_short_email` - (Optional) Send an abbreviated email message instead of the standard email output.
+* `country_code` - (Optional) The 1-to-3 digit country calling code. Required when using `phone_contact_method` or `sms_contact_method`.
+* `label` - (Required) The label (e.g., "Work", "Mobile", etc.).
+* `address` - (Required) The "address" to deliver to: `email`, `phone number`, etc., depending on the type.
 
 _Required_: Yes
 

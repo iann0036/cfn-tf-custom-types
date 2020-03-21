@@ -1,6 +1,8 @@
 # Terraform::OCI::DatabaseAutonomousDatabaseRegionalWalletManagement
 
-CloudFormation equivalent of oci_database_autonomous_database_regional_wallet_management
+This resource provides the Autonomous Database Regional Wallet Management resource in Oracle Cloud Infrastructure Database service.
+
+Updates the Autonomous Database regional wallet.
 
 ## Syntax
 
@@ -30,6 +32,8 @@ Properties:
 ## Properties
 
 #### ShouldRotate
+
+(Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::CloudStack::NetworkAcl
 
-CloudFormation equivalent of cloudstack_network_acl
+Creates a Network ACL for the given VPC.
 
 ## Syntax
 
@@ -35,6 +35,9 @@ Properties:
 
 #### Description
 
+The description of the ACL. Changing this forces a
+new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -42,6 +45,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the ACL. Changing this forces a new resource
+to be created.
 
 _Required_: Yes
 
@@ -51,6 +57,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Project
 
+The name or ID of the project to deploy this
+instance to. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -58,6 +67,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+The ID of the VPC to create this ACL for. Changing this
+forces a new resource to be created.
 
 _Required_: Yes
 

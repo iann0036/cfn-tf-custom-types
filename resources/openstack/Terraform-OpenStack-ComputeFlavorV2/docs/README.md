@@ -1,6 +1,6 @@
 # Terraform::OpenStack::ComputeFlavorV2
 
-CloudFormation equivalent of openstack_compute_flavor_v2
+Manages a V2 flavor resource within OpenStack.
 
 ## Syntax
 
@@ -48,6 +48,9 @@ Properties:
 
 #### Disk
 
+The amount of disk space in gigabytes to use for the root
+(/) partition. Changing this creates a new flavor.
+
 _Required_: Yes
 
 _Type_: Double
@@ -64,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ExtraSpecs
 
+Key/Value pairs of metadata for the flavor.
+
 _Required_: No
 
 _Type_: List of <a href="extraspecs.md">ExtraSpecs</a>
@@ -71,6 +76,9 @@ _Type_: List of <a href="extraspecs.md">ExtraSpecs</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IsPublic
+
+Whether the flavor is public. Changing this creates
+a new flavor.
 
 _Required_: No
 
@@ -80,6 +88,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A unique name for the flavor. Changing this creates a new
+flavor.
+
 _Required_: Yes
 
 _Type_: String
@@ -87,6 +98,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ram
+
+The amount of RAM to use, in megabytes. Changing this
+creates a new flavor.
 
 _Required_: Yes
 
@@ -96,6 +110,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region in which to obtain the V2 Compute client.
+Flavors are associated with accounts, but a Compute client is needed to
+create one. If omitted, the `region` argument of the provider is used.
+Changing this creates a new flavor.
+
 _Required_: No
 
 _Type_: String
@@ -103,6 +122,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RxTxFactor
+
+RX/TX bandwith factor. The default is 1. Changing
+this creates a new flavor.
 
 _Required_: No
 
@@ -112,6 +134,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Swap
 
+The amount of disk space in megabytes to use. If
+unspecified, the default is 0. Changing this creates a new flavor.
+
 _Required_: No
 
 _Type_: Double
@@ -119,6 +144,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vcpus
+
+The number of virtual CPUs to use. Changing this creates
+a new flavor.
 
 _Required_: Yes
 

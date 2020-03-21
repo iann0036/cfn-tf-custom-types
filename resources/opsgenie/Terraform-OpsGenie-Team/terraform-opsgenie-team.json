@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpsGenie::Team",
-    "description": "CloudFormation equivalent of opsgenie_team",
+    "description": "Manages a Team within Opsgenie.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Member": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "Id": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The UUID for the member to add to this Team."
                 },
                 "Role": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The role for the user within the Team - can be either 'admin' or 'user', defaults to 'user' if not set."
                 }
             },
             "required": [
@@ -25,10 +27,12 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description for this team."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name associated with this team. Opsgenie defines that this must not be longer than 100 characters."
         },
         "Member": {
             "type": "array",

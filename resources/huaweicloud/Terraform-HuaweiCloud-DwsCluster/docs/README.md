@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::DwsCluster
 
-CloudFormation equivalent of huaweicloud_dws_cluster
+cluster management
 
 ## Syntax
 

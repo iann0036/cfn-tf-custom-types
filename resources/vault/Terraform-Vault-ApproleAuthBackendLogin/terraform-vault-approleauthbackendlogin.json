@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Vault::ApproleAuthBackendLogin",
-    "description": "CloudFormation equivalent of vault_approle_auth_backend_login",
+    "description": "Logs into Vault using the AppRole auth backend. See the [Vault\ndocumentation](https://www.vaultproject.io/docs/auth/approle.html) for more\ninformation.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,7 +12,8 @@
             "type": "string"
         },
         "Backend": {
-            "type": "string"
+            "type": "string",
+            "description": "The unique path of the Vault backend to log in with."
         },
         "ClientToken": {
             "type": "string"
@@ -54,10 +55,12 @@
             "type": "boolean"
         },
         "RoleId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the role to log in with."
         },
         "SecretId": {
-            "type": "string"
+            "type": "string",
+            "description": "The secret ID of the role to log in with. Required\nunless `bind_secret_id` is set to false on the role."
         }
     },
     "additionalProperties": false,

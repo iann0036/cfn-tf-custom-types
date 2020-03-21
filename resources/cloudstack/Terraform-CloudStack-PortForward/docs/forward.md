@@ -30,6 +30,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### PrivatePort
 
+The private port to forward to.
+
 _Required_: Yes
 
 _Type_: Double
@@ -37,6 +39,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Protocol
+
+The name of the protocol to allow. Valid options are:
+`tcp` and `udp`.
 
 _Required_: Yes
 
@@ -46,6 +51,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PublicPort
 
+The public port to forward from.
+
 _Required_: Yes
 
 _Type_: Double
@@ -54,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VirtualMachineId
 
+The ID of the virtual machine to forward to.
+
 _Required_: Yes
 
 _Type_: String
@@ -61,6 +70,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VmGuestIp
+
+The virtual machine IP address for the port
+forwarding rule (useful when the virtual machine has secondairy NICs
+or IP addresses).
 
 _Required_: No
 

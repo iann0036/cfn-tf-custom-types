@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::VirtualMachineDataDiskAttachment",
-    "description": "CloudFormation equivalent of azurerm_virtual_machine_data_disk_attachment",
+    "description": "Manages attaching a Disk to a Virtual Machine.\n\n~> **NOTE:** Data Disks can be attached either directly on the `azurerm_virtual_machine` resource, or using the `azurerm_virtual_machine_data_disk_attachment` resource - but the two cannot be used together. If both are used against the same Virtual Machine, spurious changes will occur.\n\n-> **Please Note:** only Managed Disks are supported via this separate resource, Unmanaged Disks can be attached using the `storage_data_disk` block in the `azurerm_virtual_machine` resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,22 +29,28 @@
             "type": "string"
         },
         "Caching": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the caching requirements for this Data Disk. Possible values include `None`, `ReadOnly` and `ReadWrite`."
         },
         "CreateOption": {
-            "type": "string"
+            "type": "string",
+            "description": "The Create Option of the Data Disk, such as `Empty` or `Attach`. Defaults to `Attach`. Changing this forces a new resource to be created."
         },
         "Lun": {
-            "type": "number"
+            "type": "number",
+            "description": "The Logical Unit Number of the Data Disk, which needs to be unique within the Virtual Machine. Changing this forces a new resource to be created."
         },
         "ManagedDiskId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of an existing Managed Disk which should be attached. Changing this forces a new resource to be created."
         },
         "VirtualMachineId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Virtual Machine to which the Data Disk should be attached. Changing this forces a new resource to be created."
         },
         "WriteAcceleratorEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if Write Accelerator is enabled on the disk. This can only be enabled on `Premium_LRS` managed disks with no caching and [M-Series VMs](https://docs.microsoft.com/en-us/azure/virtual-machines/workloads/sap/how-to-enable-write-accelerator). Defaults to `false`."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

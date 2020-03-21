@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureStack::NetworkInterface",
-    "description": "CloudFormation equivalent of azurestack_network_interface",
+    "description": "Manages a Network Interface located in a Virtual Network, usually attached to a Virtual Machine.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "IpConfiguration": {
@@ -19,39 +19,48 @@
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "List of Application Security Group IDs which should be attached to this NIC."
                 },
                 "LoadBalancerBackendAddressPoolsIds": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "List of Load Balancer Backend Address Pool IDs references to which this NIC belongs."
                 },
                 "LoadBalancerInboundNatRulesIds": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "List of Load Balancer Inbound Nat Rules IDs involving this NIC."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "User-defined name of the IP."
                 },
                 "Primary": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Is this the Primary Network Interface? If set to `true` this should be the first `ip_configuration` in the array."
                 },
                 "PrivateIpAddress": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Static IP Address."
                 },
                 "PrivateIpAddressAllocation": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Defines how a private IP address is assigned. Options are Static or Dynamic."
                 },
                 "PublicIpAddressId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Reference to a Public IP Address to associate with this NIC."
                 },
                 "SubnetId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Reference to a subnet in which this NIC has been created."
                 }
             },
             "required": [
@@ -78,28 +87,34 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of DNS servers IP addresses to use for this NIC, overrides the VNet-level server list."
         },
         "EnableIpForwarding": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enables IP Forwarding on the NIC. Defaults to `false`."
         },
         "InternalDnsNameLabel": {
-            "type": "string"
+            "type": "string",
+            "description": "Relative DNS name for this NIC used for internal communications between VMs in the same VNet."
         },
         "InternalFqdn": {
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "The location/region where the network interface is created. Changing this forces a new resource to be created."
         },
         "MacAddress": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the network interface. Changing this forces a new resource to be created."
         },
         "NetworkSecurityGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Network Security Group to associate with the network interface."
         },
         "PrivateIpAddress": {
             "type": "string"
@@ -112,7 +127,8 @@
             }
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the network interface. Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -132,7 +148,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "VirtualMachineId": {
             "type": "string"

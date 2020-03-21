@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::ApplicationInsights",
-    "description": "CloudFormation equivalent of azurerm_application_insights",
+    "description": "Manages an Application Insights component.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -32,31 +32,39 @@
             "type": "string"
         },
         "ApplicationType": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the type of Application Insights to create. Valid values are `ios` for _iOS_, `java` for _Java web_, `MobileCenter` for _App Center_, `Node.JS` for _Node.js_, `other` for _General_, `phone` for _Windows Phone_, `store` for _Windows Store_ and `web` for _ASP.NET_. Please note these values are case sensitive; unmatched values are treated as _ASP.NET_ by Azure. Changing this forces a new resource to be created."
         },
         "DailyDataCapInGb": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the Application Insights component daily data volume cap in GB."
         },
         "DailyDataCapNotificationsDisabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if a notification email will be send when the daily data volume cap is met."
         },
         "InstrumentationKey": {
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Application Insights component. Changing this forces a\nnew resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to\ncreate the Application Insights component."
         },
         "RetentionInDays": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the retention period in days. Possible values are `30`, `60`, `90`, `120`, `180`, `270`, `365`, `550` or `730`."
         },
         "SamplingPercentage": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the percentage of the data produced by the monitored application that is sampled for Application Insights telemetry."
         },
         "Tags": {
             "type": "array",
@@ -76,7 +84,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

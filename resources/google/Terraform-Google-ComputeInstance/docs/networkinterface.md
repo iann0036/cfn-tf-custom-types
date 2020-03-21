@@ -34,6 +34,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Network
 
+The name or self_link of the network to attach this interface to.
+Either `network` or `subnetwork` must be provided.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +44,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NetworkIp
+
+The private IP address to assign to the instance. If
+empty, the address will be automatically assigned.
 
 _Required_: No
 
@@ -50,6 +56,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Subnetwork
 
+The name or self_link of the subnetwork to attach this
+interface to. The subnetwork must exist in the same region this instance will be
+created in. Either `network` or `subnetwork` must be provided.
+
 _Required_: No
 
 _Type_: String
@@ -57,6 +67,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubnetworkProject
+
+The project in which the subnetwork belongs.
+If the `subnetwork` is a self_link, this field is ignored in favor of the project
+defined in the subnetwork self_link. If the `subnetwork` is a name and this
+field is not provided, the provider project is used.
 
 _Required_: No
 

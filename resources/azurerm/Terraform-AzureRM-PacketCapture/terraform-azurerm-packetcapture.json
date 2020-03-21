@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::PacketCapture",
-    "description": "CloudFormation equivalent of azurerm_packet_capture",
+    "description": "Configures Packet Capturing against a Virtual Machine using a Network Watcher.\n\n~> **NOTE:** This resource has been deprecated in favour of the `azurerm_network_connection_monitor` resource and will be removed in the next major version of the AzureRM Provider. The new resource shares the same fields as this one, and information on migrating across [can be found in this guide](../guides/migrating-between-renamed-resources.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Filter": {
@@ -8,19 +8,24 @@
             "additionalProperties": false,
             "properties": {
                 "LocalIpAddress": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The local IP Address to be filtered on. Notation: \"127.0.0.1\" for single address entry. \"127.0.0.1-127.0.0.255\" for range. \"127.0.0.1;127.0.0.5\" for multiple entries. Multiple ranges not currently supported. Mixing ranges with multiple entries not currently supported. Changing this forces a new resource to be created."
                 },
                 "LocalPort": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The local port to be filtered on. Notation: \"80\" for single port entry.\"80-85\" for range. \"80;443;\" for multiple entries. Multiple ranges not currently supported. Mixing ranges with multiple entries not currently supported. Changing this forces a new resource to be created."
                 },
                 "Protocol": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Protocol to be filtered on. Possible values include `Any`, `TCP` and `UDP`. Changing this forces a new resource to be created."
                 },
                 "RemoteIpAddress": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The remote IP Address to be filtered on. Notation: \"127.0.0.1\" for single address entry. \"127.0.0.1-127.0.0.255\" for range. \"127.0.0.1;127.0.0.5;\" for multiple entries. Multiple ranges not currently supported. Mixing ranges with multiple entries not currently supported.. Changing this forces a new resource to be created."
                 },
                 "RemotePort": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The remote port to be filtered on. Notation: \"80\" for single port entry.\"80-85\" for range. \"80;443;\" for multiple entries. Multiple ranges not currently supported. Mixing ranges with multiple entries not currently supported. Changing this forces a new resource to be created."
                 }
             },
             "required": [
@@ -32,10 +37,12 @@
             "additionalProperties": false,
             "properties": {
                 "FilePath": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A valid local path on the targeting VM. Must include the name of the capture file (*.cap). For linux virtual machine it must start with `/var/captures`."
                 },
                 "StorageAccountId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of the storage account to save the packet capture session."
                 }
             },
             "required": []
@@ -66,25 +73,32 @@
             "type": "string"
         },
         "MaximumBytesPerPacket": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of bytes captured per packet. The remaining bytes are truncated. Defaults to `0` (Entire Packet Captured). Changing this forces a new resource to be created."
         },
         "MaximumBytesPerSession": {
-            "type": "number"
+            "type": "number",
+            "description": "Maximum size of the capture in Bytes. Defaults to `1073741824` (1GB). Changing this forces a new resource to be created."
         },
         "MaximumCaptureDuration": {
-            "type": "number"
+            "type": "number",
+            "description": "The maximum duration of the capture session in seconds. Defaults to `18000` (5 hours). Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name to use for this Packet Capture. Changing this forces a new resource to be created."
         },
         "NetworkWatcherName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Network Watcher. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which the Network Watcher exists. Changing this forces a new resource to be created."
         },
         "TargetResourceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Resource to capture packets from. Changing this forces a new resource to be created."
         },
         "Filter": {
             "type": "array",

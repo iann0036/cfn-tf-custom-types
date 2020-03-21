@@ -1,6 +1,6 @@
 # Terraform::AzureRM::RedisCache
 
-CloudFormation equivalent of azurerm_redis_cache
+Manages a Redis Cache.
 
 ## Syntax
 
@@ -63,6 +63,8 @@ Properties:
 
 #### Capacity
 
+The size of the Redis cache to deploy. Valid values for a SKU `family` of C (Basic/Standard) are `0, 1, 2, 3, 4, 5, 6`, and for P (Premium) `family` are `1, 2, 3, 4`.
+
 _Required_: Yes
 
 _Type_: Double
@@ -70,6 +72,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableNonSslPort
+
+Enable the non-SSL port (6379) - disabled by default.
 
 _Required_: No
 
@@ -79,6 +83,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Family
 
+The SKU family/pricing group to use. Valid values are `C` (for Basic/Standard SKU family) and `P` (for `Premium`).
+
 _Required_: Yes
 
 _Type_: String
@@ -86,6 +92,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Location
+
+The location of the resource group.
 
 _Required_: Yes
 
@@ -95,6 +103,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MinimumTlsVersion
 
+The minimum TLS version.  Defaults to `1.0`.
+
 _Required_: No
 
 _Type_: String
@@ -102,6 +112,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the Redis instance. Changing this forces a
+new resource to be created.
 
 _Required_: Yes
 
@@ -111,6 +124,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PrivateStaticIpAddress
 
+The Static IP Address to assign to the Redis Cache when hosted inside the Virtual Network. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -118,6 +133,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which to
+create the Redis instance.
 
 _Required_: Yes
 
@@ -127,6 +145,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ShardCount
 
+*Only available when using the Premium SKU* The number of Shards to create on the Redis Cluster.
+
 _Required_: No
 
 _Type_: Double
@@ -134,6 +154,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SkuName
+
+The SKU of Redis to use. Possible values are `Basic`, `Standard` and `Premium`.
 
 _Required_: Yes
 
@@ -143,6 +165,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubnetId
 
+*Only available when using the Premium SKU* The ID of the Subnet within which the Redis Cache should be deployed. This Subnet must only contain Azure Cache for Redis instances without any other type of resources. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -151,6 +175,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -158,6 +184,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Zones
+
+A list of a single item of the Availability Zone which the Redis Cache should be allocated in.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::Alicloud::RamAccountAlias
 
-CloudFormation equivalent of alicloud_ram_account_alias
+Provides a RAM cloud account alias.
 
 ## Syntax
 
@@ -28,6 +28,8 @@ Properties:
 ## Properties
 
 #### AccountAlias
+
+Alias of cloud account. This name can have a string of 3 to 32 characters, must contain only alphanumeric characters or hyphens, such as "-", and must not begin with a hyphen.
 
 _Required_: Yes
 

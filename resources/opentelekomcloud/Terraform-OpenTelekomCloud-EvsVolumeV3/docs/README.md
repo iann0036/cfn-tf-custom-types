@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::EvsVolumeV3
 
-CloudFormation equivalent of opentelekomcloud_evs_volume_v3
+Manages a V3 volume resource within OpenTelekomCloud.
 
 ## Syntax
 
@@ -56,6 +56,9 @@ Properties:
 
 #### AvailabilityZone
 
+The availability zone for the volume.
+Changing this creates a new volume.
+
 _Required_: Yes
 
 _Type_: String
@@ -63,6 +66,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BackupId
+
+The backup ID from which to create the volume.
+Changing this creates a new volume.
 
 _Required_: No
 
@@ -72,6 +78,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Cascade
 
+Specifies to delete all snapshots associated with the EVS disk.
+
 _Required_: No
 
 _Type_: Boolean
@@ -79,6 +87,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+A description of the volume. Changing this updates
+the volume's description.
 
 _Required_: No
 
@@ -88,6 +99,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DeviceType
 
+The device type of volume to create. Valid options are VBD and SCSI.
+Defaults to VBD. Changing this creates a new volume.
+
 _Required_: No
 
 _Type_: String
@@ -95,6 +109,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ImageId
+
+The image ID from which to create the volume.
+Changing this creates a new volume.
 
 _Required_: No
 
@@ -104,6 +121,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KmsId
 
+The Encryption KMS ID to create the volume.
+Changing this creates a new volume.
+
 _Required_: No
 
 _Type_: String
@@ -111,6 +131,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Multiattach
+
+Specifies the shared EVS disk information.
+Changing this creates a new volume.
 
 _Required_: No
 
@@ -120,6 +143,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A unique name for the volume. Changing this updates the
+volume's name.
+
 _Required_: No
 
 _Type_: String
@@ -127,6 +153,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Size
+
+The size of the volume to create (in gigabytes). This parameter is mandatory
+when you create an empty EVS disk or use an image or a snapshot to create an EVS disk.
+Changing this creates a new volume.
 
 _Required_: No
 
@@ -136,6 +166,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SnapshotId
 
+The snapshot ID from which to create the volume.
+Changing this creates a new volume.
+
 _Required_: No
 
 _Type_: String
@@ -144,6 +177,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+Tags key/value pairs to associate with the volume.
+Changing this updates the existing volume tags.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -151,6 +187,10 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VolumeType
+
+The type of volume to create.
+Currently, the value can be SSD, SAS, SATA, co-p1, or uh-l1.
+Changing this creates a new volume.
 
 _Required_: Yes
 

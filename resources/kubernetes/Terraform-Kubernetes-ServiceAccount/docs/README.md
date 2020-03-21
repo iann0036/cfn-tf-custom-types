@@ -1,6 +1,8 @@
 # Terraform::Kubernetes::ServiceAccount
 
-CloudFormation equivalent of kubernetes_service_account
+A service account provides an identity for processes that run in a Pod.
+
+Read more at [Kubernetes reference](https://kubernetes.io/docs/admin/service-accounts-admin)/
 
 ## Syntax
 
@@ -39,6 +41,8 @@ Properties:
 ## Properties
 
 #### AutomountServiceAccountToken
+
+Boolean, `true` to enable automatic mounting of the service account token.
 
 _Required_: No
 

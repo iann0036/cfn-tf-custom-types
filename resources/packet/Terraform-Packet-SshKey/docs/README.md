@@ -1,6 +1,8 @@
 # Terraform::Packet::SshKey
 
-CloudFormation equivalent of packet_ssh_key
+Provides a resource to manage User SSH keys on your Packet user account. If you create a new device in a project, all the keys of the project's collaborators will be injected to the device.
+
+The link between User SSH key and device is implicit. If you want to make sure that a key will be copied to a device, you must ensure that the device resource `depends_on` the key resource.
 
 ## Syntax
 
@@ -31,6 +33,8 @@ Properties:
 
 #### Name
 
+The name of the SSH key for identification.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +42,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PublicKey
+
+The public key. If this is a file, it
+can be read using the file interpolation function.
 
 _Required_: Yes
 

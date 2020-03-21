@@ -24,6 +24,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### MaxCapacity
 
+The maximum capacity any one database can consume.
+
 _Required_: Yes
 
 _Type_: Double
@@ -31,6 +33,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MinCapacity
+
+The minimum capacity all databases are guaranteed.
 
 _Required_: Yes
 

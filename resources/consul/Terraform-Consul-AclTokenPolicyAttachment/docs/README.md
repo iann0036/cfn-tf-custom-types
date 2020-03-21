@@ -1,6 +1,13 @@
 # Terraform::Consul::AclTokenPolicyAttachment
 
-CloudFormation equivalent of consul_acl_token_policy_attachment
+The `consul_acl_token_attachment` resource links a Consul Token and an ACL
+policy. The link is implemented through an update to the Consul ACL token.
+
+~> **NOTE:** This resource is only useful to attach policies to an ACL token
+that has been created outside the current Terraform configuration, like the
+anonymous or the master token. If the token you need to attach a policy to has
+been created in the current Terraform configuration and will only be used in it,
+you should use the `policies` attribute of [`consul_acl_token`](/docs/providers/consul/r/acl_token.html).
 
 ## Syntax
 
@@ -31,6 +38,8 @@ Properties:
 
 #### Policy
 
+The name of the policy attached to the token.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TokenId
+
+The id of the token.
 
 _Required_: Yes
 

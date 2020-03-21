@@ -1,6 +1,7 @@
 # Terraform::VCD::EdgegatewayVpn
 
-CloudFormation equivalent of vcd_edgegateway_vpn
+Provides a vCloud Director IPsec VPN. This can be used to create,
+modify, and delete VPN settings and rules.
 
 ## Syntax
 
@@ -57,6 +58,8 @@ Properties:
 
 #### Description
 
+A description for the VPN.
+
 _Required_: No
 
 _Type_: String
@@ -64,6 +67,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EdgeGateway
+
+The name of the edge gateway on which to apply the Firewall Rules.
 
 _Required_: Yes
 
@@ -73,6 +78,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EncryptionProtocol
 
+- E.g. `AES256`.
+
 _Required_: Yes
 
 _Type_: String
@@ -80,6 +87,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LocalId
+
+- Local ID.
 
 _Required_: Yes
 
@@ -89,6 +98,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LocalIpAddress
 
+- Local IP Address.
+
 _Required_: Yes
 
 _Type_: String
@@ -96,6 +107,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Mtu
+
+- The MTU setting.
 
 _Required_: Yes
 
@@ -105,6 +118,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the VPN.
+
 _Required_: Yes
 
 _Type_: String
@@ -112,6 +127,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Org
+
+The name of organization to use, optional if defined at provider level. Useful when connected as sysadmin working across different organisations.
 
 _Required_: No
 
@@ -121,6 +138,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PeerId
 
+- Peer ID.
+
 _Required_: Yes
 
 _Type_: String
@@ -128,6 +147,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PeerIpAddress
+
+- Peer IP Address.
 
 _Required_: Yes
 
@@ -137,6 +158,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SharedSecret
 
+- Shared Secret.
+
 _Required_: Yes
 
 _Type_: String
@@ -144,6 +167,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vdc
+
+The name of VDC to use, optional if defined at provider level.
 
 _Required_: No
 

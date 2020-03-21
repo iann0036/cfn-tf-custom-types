@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::PostgreSQL::Grant",
-    "description": "CloudFormation equivalent of postgresql_grant",
+    "description": "The ``postgresql_grant`` resource creates and manages privileges given to a user for a database schema.\n\n~> **Note:** This resource needs Postgresql version 9 or above.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,23 +9,28 @@
             "type": "string"
         },
         "Database": {
-            "type": "string"
+            "type": "string",
+            "description": "The database to grant privileges on for this role."
         },
         "ObjectType": {
-            "type": "string"
+            "type": "string",
+            "description": "The PostgreSQL object type to grant the privileges on (one of: table, sequence)."
         },
         "Privileges": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The list of privileges to grant."
         },
         "Role": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the role to grant privileges on."
         },
         "Schema": {
-            "type": "string"
+            "type": "string",
+            "description": "The database schema to grant privileges on for this role."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::ComputeNetworkPeering",
-    "description": "CloudFormation equivalent of google_compute_network_peering",
+    "description": "Manages a network peering within GCE. For more information see\n[the official documentation](https://cloud.google.com/compute/docs/vpc/vpc-peering)\nand\n[API](https://cloud.google.com/compute/docs/reference/latest/networks).\n\n-> Both network must create a peering with each other for the peering\nto be functional.\n\n~> Subnets IP ranges across peered VPC networks cannot overlap.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,19 +12,24 @@
             "type": "boolean"
         },
         "ExportCustomRoutes": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to export the custom routes to the peer network. Defaults to `false`."
         },
         "ImportCustomRoutes": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to export the custom routes from the peer network. Defaults to `false`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the peering."
         },
         "Network": {
-            "type": "string"
+            "type": "string",
+            "description": "The primary network of the peering."
         },
         "PeerNetwork": {
-            "type": "string"
+            "type": "string",
+            "description": "The peer network in the peering. The peer network\nmay belong to a different project."
         },
         "State": {
             "type": "string"

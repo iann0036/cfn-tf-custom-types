@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::PanoramaVlan",
-    "description": "CloudFormation equivalent of panos_panorama_vlan",
+    "description": "This resource allows you to add/update/delete Panorama VLANs.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -13,19 +13,24 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of layer2 interfaces.  You can also leave\nthis blank and also use [panos_vlan_entry](./vlan_entry.html) for more control."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The object's name."
         },
         "Template": {
-            "type": "string"
+            "type": "string",
+            "description": "The template name."
         },
         "VlanInterface": {
-            "type": "string"
+            "type": "string",
+            "description": "The VLAN interface."
         },
         "Vsys": {
-            "type": "string"
+            "type": "string",
+            "description": "The vsys to put the object into (default: `vsys1`)."
         }
     },
     "additionalProperties": false,

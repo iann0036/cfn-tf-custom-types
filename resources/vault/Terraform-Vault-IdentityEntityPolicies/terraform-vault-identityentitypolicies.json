@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Vault::IdentityEntityPolicies",
-    "description": "CloudFormation equivalent of vault_identity_entity_policies",
+    "description": "Manages policies for an Identity Entity for Vault. The [Identity secrets engine](https://www.vaultproject.io/docs/secrets/identity/index.html) is the identity management solution for Vault.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,20 +9,23 @@
             "type": "string"
         },
         "EntityId": {
-            "type": "string"
+            "type": "string",
+            "description": "Entity ID to assign policies to."
         },
         "EntityName": {
             "type": "string"
         },
         "Exclusive": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Defaults to `true`."
         },
         "Policies": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of policies to assign to the entity."
         }
     },
     "additionalProperties": false,

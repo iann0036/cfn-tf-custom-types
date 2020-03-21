@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Cloudflare::ZoneLockdown",
-    "description": "CloudFormation equivalent of cloudflare_zone_lockdown",
+    "description": "Provides a Cloudflare Zone Lockdown resource. Zone Lockdown allows you to define one or more URLs (with wildcard matching on the domain or path) that will only permit access if the request originates from an IP address that matches a safelist of one or more IP addresses and/or IP ranges.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Configurations": {
@@ -26,10 +26,12 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description about the lockdown entry. Typically used as a reminder or explanation for the lockdown."
         },
         "Paused": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean of whether this zone lockdown is currently paused. Default: false."
         },
         "Priority": {
             "type": "number"
@@ -39,10 +41,12 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of simple wildcard patterns to match requests against. The order of the urls is unimportant."
         },
         "ZoneId": {
-            "type": "string"
+            "type": "string",
+            "description": "The DNS zone ID to which the access rule should be added."
         },
         "Configurations": {
             "type": "array",

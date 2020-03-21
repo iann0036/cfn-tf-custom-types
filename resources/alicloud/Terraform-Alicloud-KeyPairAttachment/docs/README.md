@@ -1,6 +1,8 @@
 # Terraform::Alicloud::KeyPairAttachment
 
-CloudFormation equivalent of alicloud_key_pair_attachment
+Provides a key pair attachment resource to bind key pair for several ECS instances.
+
+-> **NOTE:** After the key pair is attached with sone instances, there instances must be rebooted to make the key pair affect.
 
 ## Syntax
 
@@ -34,6 +36,8 @@ Properties:
 
 #### Force
 
+Set it to true and it will reboot instances which attached with the key pair to make key pair affect immediately.
+
 _Required_: No
 
 _Type_: Boolean
@@ -42,6 +46,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceIds
 
+The list of ECS instance's IDs.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -49,6 +55,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeyName
+
+The name of key pair used to bind.
 
 _Required_: Yes
 

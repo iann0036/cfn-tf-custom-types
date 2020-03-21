@@ -1,6 +1,12 @@
 # Terraform::Alicloud::SagQos
 
-CloudFormation equivalent of alicloud_sag_qos
+Provides a Sag Qos resource. Smart Access Gateway (SAG) supports quintuple-based QoS functions to differentiate traffic of different services and ensure high-priority traffic bandwidth.
+
+For information about Sag Qos and how to use it, see [What is Qos](https://www.alibabacloud.com/help/doc-detail/131306.htm).
+
+-> **NOTE:** Available in 1.60.0+
+
+-> **NOTE:** Only the following regions support. [`cn-shanghai`, `cn-shanghai-finance-1`, `cn-hongkong`, `ap-southeast-1`, `ap-southeast-2`, `ap-southeast-3`, `ap-southeast-5`, `ap-northeast-1`, `eu-central-1`]
 
 ## Syntax
 
@@ -28,6 +34,8 @@ Properties:
 ## Properties
 
 #### Name
+
+The name of the QoS policy to be created. The name can contain 2 to 128 characters including a-z, A-Z, 0-9, periods, underlines, and hyphens. The name must start with an English letter, but cannot start with http:// or https://.
 
 _Required_: Yes
 

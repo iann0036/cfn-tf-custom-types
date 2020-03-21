@@ -1,6 +1,6 @@
 # Terraform::Panos::BgpDampeningProfile
 
-CloudFormation equivalent of panos_bgp_dampening_profile
+This resource allows you to add/update/delete a BGP dampening profile.
 
 ## Syntax
 
@@ -43,6 +43,8 @@ Properties:
 
 #### Cutoff
 
+Cutoff threshold value (default: `1.25`).
+
 _Required_: No
 
 _Type_: Double
@@ -50,6 +52,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DecayHalfLifeReachable
+
+Decay half-life while
+reachable, in seconds (default: `300`).
 
 _Required_: No
 
@@ -59,6 +64,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DecayHalfLifeUnreachable
 
+Decay half-life while
+unreachable, in seconds (default: `900`).
+
 _Required_: No
 
 _Type_: Double
@@ -66,6 +74,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Enable
+
+Enable or not (default: `true`).
 
 _Required_: No
 
@@ -75,6 +85,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxHoldTime
 
+Maximum hold-down time, in
+seconds (default: `900`).
+
 _Required_: No
 
 _Type_: Double
@@ -82,6 +95,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name.
 
 _Required_: Yes
 
@@ -91,6 +106,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Reuse
 
+Reuse threshold value (default: `0.5`).
+
 _Required_: No
 
 _Type_: Double
@@ -98,6 +115,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VirtualRouter
+
+The virtual router to add this BGP
+dampening profile to.
 
 _Required_: Yes
 

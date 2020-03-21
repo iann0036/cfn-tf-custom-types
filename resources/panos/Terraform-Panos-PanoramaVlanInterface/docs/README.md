@@ -1,6 +1,7 @@
 # Terraform::Panos::PanoramaVlanInterface
 
-CloudFormation equivalent of panos_panorama_vlan_interface
+This resource allows you to add/update/delete Panorama VLAN interfaces
+for templates.
 
 ## Syntax
 
@@ -56,6 +57,8 @@ Properties:
 
 #### AdjustTcpMss
 
+Adjust TCP MSS (default: false).
+
 _Required_: No
 
 _Type_: Boolean
@@ -63,6 +66,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Comment
+
+The interface comment.
 
 _Required_: No
 
@@ -72,6 +77,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CreateDhcpDefaultRoute
 
+Set to `true` to create a DHCP
+default route.
+
 _Required_: No
 
 _Type_: Boolean
@@ -79,6 +87,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DhcpDefaultRouteMetric
+
+The metric for the DHCP default
+route.
 
 _Required_: No
 
@@ -88,6 +99,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableDhcp
 
+Set to `true` to enable DHCP on this interface.
+
 _Required_: No
 
 _Type_: Boolean
@@ -95,6 +108,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ipv4MssAdjust
+
+The IPv4 MSS adjust value.
 
 _Required_: No
 
@@ -104,6 +119,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ipv6MssAdjust
 
+The IPv6 MSS adjust value.
+
 _Required_: No
 
 _Type_: Double
@@ -111,6 +128,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ManagementProfile
+
+The management profile.
 
 _Required_: No
 
@@ -120,6 +139,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Mtu
 
+The MTU.
+
 _Required_: No
 
 _Type_: Double
@@ -127,6 +148,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The interface's name.  Must start with `vlan.`.
 
 _Required_: Yes
 
@@ -136,6 +159,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NetflowProfile
 
+The netflow profile.
+
 _Required_: No
 
 _Type_: String
@@ -143,6 +168,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StaticIps
+
+List of static IPv4 addresses to set for this data
+interface.
 
 _Required_: No
 
@@ -152,6 +180,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Template
 
+The template name.
+
 _Required_: Yes
 
 _Type_: String
@@ -159,6 +189,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vsys
+
+The vsys that will use this interface (default: `vsys1`).
 
 _Required_: No
 

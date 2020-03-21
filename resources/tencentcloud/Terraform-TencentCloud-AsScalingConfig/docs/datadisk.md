@@ -26,6 +26,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### DiskSize
 
+Volume of disk in GB. Default is 0.
+
 _Required_: No
 
 _Type_: Double
@@ -34,6 +36,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DiskType
 
+Types of disk, available values: CLOUD_PREMIUM and CLOUD_SSD.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +45,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SnapshotId
+
+Data disk snapshot ID.
 
 _Required_: No
 

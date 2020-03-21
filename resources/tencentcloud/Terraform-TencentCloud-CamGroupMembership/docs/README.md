@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::CamGroupMembership
 
-CloudFormation equivalent of tencentcloud_cam_group_membership
+Provides a resource to create a CAM group membership.
 
 ## Syntax
 
@@ -32,6 +32,8 @@ Properties:
 
 #### GroupId
 
+Id of CAM group.
+
 _Required_: Yes
 
 _Type_: String
@@ -39,6 +41,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserIds
+
+Id set of the CAM group members.
 
 _Required_: Yes
 

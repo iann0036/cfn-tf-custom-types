@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Brightbox::OrbitContainer",
-    "description": "CloudFormation equivalent of brightbox_orbit_container",
+    "description": "Provides a Brightbox Orbit Container resource. This can be used to create,\nmodify, and delete Containers in Orbit.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -55,10 +55,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A dictionary of metadata key/value items. The key must be in lower case with no underscores or spaces."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A label assigned to the Orbit container."
         },
         "ObjectCount": {
             "type": "number"

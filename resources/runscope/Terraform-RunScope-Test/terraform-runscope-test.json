@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::RunScope::Test",
-    "description": "CloudFormation equivalent of runscope_test",
+    "description": "A [test](https://www.runscope.com/docs/api/tests) resource.\n[Tests](https://www.runscope.com/docs/buckets) are made up of\na collection of [test steps](step.html) and an\n[environment](environment.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -15,10 +15,12 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Human-readable description of the new test.\nis being created for."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of this test."
         }
     },
     "additionalProperties": false,

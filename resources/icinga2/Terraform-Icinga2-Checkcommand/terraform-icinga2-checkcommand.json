@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Icinga2::Checkcommand",
-    "description": "CloudFormation equivalent of icinga2_checkcommand",
+    "description": "Configures an Icinga2 checkcommand resource. This allows checkcommands to be configured, updated,\nand deleted.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -26,20 +26,24 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of arguments to include with the command."
         },
         "Command": {
-            "type": "string"
+            "type": "string",
+            "description": "Path to the command te be executed."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name by which to reference the checkcommand."
         },
         "Templates": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of Icinga2 templates to assign to the host."
         }
     },
     "additionalProperties": false,

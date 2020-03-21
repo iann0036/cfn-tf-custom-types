@@ -1,6 +1,8 @@
 # Terraform::Vault::ApproleAuthBackendRoleSecretId
 
-CloudFormation equivalent of vault_approle_auth_backend_role_secret_id
+Manages an AppRole auth backend SecretID in a Vault server. See the [Vault
+documentation](https://www.vaultproject.io/docs/auth/approle.html) for more
+information.
 
 ## Syntax
 
@@ -48,6 +50,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CidrList
 
+If set, specifies blocks of IP addresses which can
+perform the login operation using this SecretID.
+
 _Required_: No
 
 _Type_: List of String
@@ -55,6 +60,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Metadata
+
+A JSON-encoded string containing metadata in
+key-value pairs to be set on tokens issued with this SecretID.
 
 _Required_: No
 
@@ -64,6 +72,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RoleName
 
+The name of the role to create the SecretID for.
+
 _Required_: Yes
 
 _Type_: String
@@ -72,6 +82,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecretId
 
+The SecretID to be created. If set, uses "Push"
+mode.  Defaults to Vault auto-generating SecretIDs.
+
 _Required_: No
 
 _Type_: String
@@ -79,6 +92,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WrappingTtl
+
+If set, the SecretID response will be
+[response-wrapped](https://www.vaultproject.io/docs/concepts/response-wrapping.html)
+and available for the duration specified. Only a single unwrapping of the
+token is allowed.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::Project",
-    "description": "CloudFormation equivalent of google_project",
+    "description": "Allows creation and management of a Google Cloud Platform project.\n\nProjects created with this resource must be associated with an Organization.\nSee the [Organization documentation](https://cloud.google.com/resource-manager/docs/quickstarts) for more details.\n\nThe service account used to run Terraform when creating a `google_project`\nresource must have `roles/resourcemanager.projectCreator`. See the\n[Access Control for Organizations Using IAM](https://cloud.google.com/resource-manager/docs/access-control-org)\ndoc for more information.\n\nNote that prior to 0.8.5, `google_project` functioned like a data source,\nmeaning any project referenced by it had to be created and managed outside\nTerraform. As of 0.8.5, `google_project` functions like any other Terraform\nresource, with Terraform creating and managing the project. To replicate the old\nbehavior, either:\n\n* Use the project ID directly in whatever is referencing the project, using the\n  [google_project_iam_policy](/docs/providers/google/r/google_project_iam.html)\n  to replace the old `policy_data` property.\n* Use the [import](/docs/import/usage.html) functionality\n  to import your pre-existing project into Terraform, where it can be referenced and\n  used just like always, keeping in mind that Terraform will attempt to undo any changes\n  made outside Terraform.\n\n~> It's important to note that any project resources that were added to your Terraform config\nprior to 0.8.5 will continue to function as they always have, and will not be managed by\nTerraform. Only newly added projects are affected.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,13 +29,16 @@
             "type": "string"
         },
         "AutoCreateNetwork": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Create the 'default' network automatically.  Default `true`.\nIf set to `false`, the default network will be deleted.  Note that, for quota purposes, you\nwill still need to have 1 network slot available to create the project successfully, even if\nyou set `auto_create_network` to `false`, since the network will exist momentarily."
         },
         "BillingAccount": {
-            "type": "string"
+            "type": "string",
+            "description": "The alphanumeric ID of the billing account this project\nbelongs to. The user or service account performing this operation with Terraform\nmust have Billing Account Administrator privileges (`roles/billing.admin`) in\nthe organization. See [Google Cloud Billing API Access Control](https://cloud.google.com/billing/v1/how-tos/access-control)\nfor more details."
         },
         "FolderId": {
-            "type": "string"
+            "type": "string",
+            "description": "The numeric ID of the folder this project should be\ncreated under. Only one of `org_id` or `folder_id` may be\nspecified. If the `folder_id` is specified, then the project is\ncreated under the specified folder. Changing this forces the\nproject to be migrated to the newly specified folder."
         },
         "Labels": {
             "type": "array",
@@ -55,22 +58,27 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A set of key/value label pairs to assign to the project."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The display name of the project."
         },
         "Number": {
             "type": "string"
         },
         "OrgId": {
-            "type": "string"
+            "type": "string",
+            "description": "The numeric ID of the organization this project belongs to.\nChanging this forces a new project to be created.  Only one of\n`org_id` or `folder_id` may be specified. If the `org_id` is\nspecified then the project is created at the top level. Changing\nthis forces the project to be migrated to the newly specified\norganization."
         },
         "ProjectId": {
-            "type": "string"
+            "type": "string",
+            "description": "The project ID. Changing this forces a new project to be created."
         },
         "SkipDelete": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If true, the Terraform resource can be deleted\nwithout deleting the Project via the Google API."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

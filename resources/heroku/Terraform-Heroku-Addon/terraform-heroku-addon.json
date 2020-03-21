@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Heroku::Addon",
-    "description": "CloudFormation equivalent of heroku_addon",
+    "description": "Provides a Heroku Add-On resource. These can be attach\nservices to a Heroku app.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "App": {
-            "type": "string"
+            "type": "string",
+            "description": "The Heroku app to add to."
         },
         "Config": {
             "type": "array",
@@ -29,7 +30,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Optional plan configuration."
         },
         "ConfigVars": {
             "type": "array",
@@ -39,10 +41,12 @@
             }
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Globally unique name of the add-on."
         },
         "Plan": {
-            "type": "string"
+            "type": "string",
+            "description": "The addon to add."
         },
         "ProviderId": {
             "type": "string"

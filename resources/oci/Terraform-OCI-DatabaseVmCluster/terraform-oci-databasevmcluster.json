@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::DatabaseVmCluster",
-    "description": "CloudFormation equivalent of oci_database_vm_cluster",
+    "description": "This resource provides the Vm Cluster resource in Oracle Cloud Infrastructure Database service.\n\nCreates a VM cluster.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,10 +26,12 @@
             "type": "string"
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment."
         },
         "CpuCoreCount": {
-            "type": "number"
+            "type": "number",
+            "description": "(Updatable) The number of CPU cores to enable for the VM cluster."
         },
         "CpusEnabled": {
             "type": "number"
@@ -55,13 +57,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The user-friendly name for the VM cluster. The name does not need to be unique."
         },
         "ExadataInfrastructureId": {
-            "type": "string"
+            "type": "string",
+            "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure."
         },
         "FreeformTags": {
             "type": "array",
@@ -81,19 +86,24 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
         },
         "GiVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "The Oracle Grid Infrastructure software version for the VM cluster."
         },
         "IsLocalBackupEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster."
         },
         "IsSparseDiskgroupEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If true, the sparse disk group is configured for the VM cluster. If false, the sparse disk group is not created."
         },
         "LicenseModel": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The Oracle license model that applies to the VM cluster. The default is BRING_YOUR_OWN_LICENSE."
         },
         "LifecycleDetails": {
             "type": "string"
@@ -106,7 +116,8 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "(Updatable) The public key portion of one or more key pairs used for SSH access to the VM cluster."
         },
         "State": {
             "type": "string"
@@ -115,10 +126,12 @@
             "type": "string"
         },
         "TimeZone": {
-            "type": "string"
+            "type": "string",
+            "description": "The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm)."
         },
         "VmClusterNetworkId": {
-            "type": "string"
+            "type": "string",
+            "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

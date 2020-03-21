@@ -1,6 +1,8 @@
 # Terraform::OCI::CoreVolumeAttachment
 
-CloudFormation equivalent of oci_core_volume_attachment
+This resource provides the Volume Attachment resource in Oracle Cloud Infrastructure Core service.
+
+Attaches the specified storage volume to the specified instance.
 
 ## Syntax
 
@@ -49,6 +51,8 @@ Properties:
 
 #### AttachmentType
 
+The type of volume. The only supported value are "iscsi" and "paravirtualized".
+
 _Required_: Yes
 
 _Type_: String
@@ -65,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Device
 
+The device name.
+
 _Required_: No
 
 _Type_: String
@@ -72,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+A user-friendly name. Does not have to be unique, and it cannot be changed. Avoid entering confidential information.
 
 _Required_: No
 
@@ -81,6 +89,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceId
 
+The OCID of the instance.
+
 _Required_: Yes
 
 _Type_: String
@@ -88,6 +98,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IsPvEncryptionInTransitEnabled
+
+Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
 
 _Required_: No
 
@@ -97,6 +109,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IsReadOnly
 
+Whether the attachment was created in read-only mode.
+
 _Required_: No
 
 _Type_: Boolean
@@ -104,6 +118,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IsShareable
+
+Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
 
 _Required_: No
 
@@ -113,6 +129,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UseChap
 
+Whether to use CHAP authentication for the volume attachment. Defaults to false.
+
 _Required_: No
 
 _Type_: Boolean
@@ -120,6 +138,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VolumeId
+
+The OCID of the volume.
 
 _Required_: Yes
 

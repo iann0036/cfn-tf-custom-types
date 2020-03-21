@@ -1,6 +1,11 @@
 # Terraform::OpenStack::NetworkingQuotaV2
 
-CloudFormation equivalent of openstack_networking_quota_v2
+Manages a V2 networking quota resource within OpenStack.
+
+~> **Note:** This usually requires admin privileges.
+
+~> **Note:** This resource has a no-op deletion so no actual actions will be done against the OpenStack API 
+    in case of delete call.
 
 ## Syntax
 
@@ -51,6 +56,9 @@ Properties:
 
 #### Floatingip
 
+Quota value for floating IPs. Changing this updates the
+existing quota.
+
 _Required_: No
 
 _Type_: Double
@@ -58,6 +66,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Network
+
+Quota value for networks. Changing this updates the
+existing quota.
 
 _Required_: No
 
@@ -67,6 +78,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Port
 
+Quota value for ports. Changing this updates the
+existing quota.
+
 _Required_: No
 
 _Type_: Double
@@ -74,6 +88,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProjectId
+
+ID of the project to manage quota. Changing this
+creates new quota.
 
 _Required_: Yes
 
@@ -83,6 +100,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RbacPolicy
 
+Quota value for RBAC policies.
+Changing this updates the existing quota.
+
 _Required_: No
 
 _Type_: Double
@@ -90,6 +110,10 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region in which to create the quota. If
+omitted, the `region` argument of the provider is used. Changing this
+creates new quota.
 
 _Required_: No
 
@@ -99,6 +123,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Router
 
+Quota value for routers. Changing this updates the
+existing quota.
+
 _Required_: No
 
 _Type_: Double
@@ -106,6 +133,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecurityGroup
+
+Quota value for security groups. Changing
+this updates the existing quota.
 
 _Required_: No
 
@@ -115,6 +145,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecurityGroupRule
 
+Quota value for security group rules.
+Changing this updates the existing quota.
+
 _Required_: No
 
 _Type_: Double
@@ -123,6 +156,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Subnet
 
+Quota value for subnets. Changing
+this updates the existing quota.
+
 _Required_: No
 
 _Type_: Double
@@ -130,6 +166,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Subnetpool
+
+Quota value for subnetpools.
+Changing this updates the existing quota.
 
 _Required_: No
 

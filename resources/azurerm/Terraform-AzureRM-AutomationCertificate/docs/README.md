@@ -1,6 +1,6 @@
 # Terraform::AzureRM::AutomationCertificate
 
-CloudFormation equivalent of azurerm_automation_certificate
+Manages an Automation Certificate.
 
 ## Syntax
 
@@ -39,6 +39,8 @@ Properties:
 
 #### AutomationAccountName
 
+The name of the automation account in which the Certificate is created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -46,6 +48,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Base64
+
+Base64 encoded value of the certificate.
 
 _Required_: Yes
 
@@ -55,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+The description of this Automation Certificate.
+
 _Required_: No
 
 _Type_: String
@@ -63,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the Certificate. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -70,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which the Certificate is created. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

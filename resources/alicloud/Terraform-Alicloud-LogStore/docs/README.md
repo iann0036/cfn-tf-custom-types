@@ -1,6 +1,7 @@
 # Terraform::Alicloud::LogStore
 
-CloudFormation equivalent of alicloud_log_store
+The log store is a unit in Log Service to collect, store, and query the log data. Each log store belongs to a project,
+and each project can create multiple Logstores. [Refer to details](https://www.alibabacloud.com/help/doc-detail/48874.htm)
 
 ## Syntax
 
@@ -43,6 +44,8 @@ Properties:
 
 #### AppendMeta
 
+Determines whether to append log meta automatically. The meta includes log receive time and client IP address. Default to true.
+
 _Required_: No
 
 _Type_: Boolean
@@ -50,6 +53,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AutoSplit
+
+Determines whether to automatically split a shard. Default to true.
 
 _Required_: No
 
@@ -59,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableWebTracking
 
+Determines whether to enable Web Tracking. Default false.
+
 _Required_: No
 
 _Type_: Boolean
@@ -66,6 +73,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MaxSplitShardCount
+
+The maximum number of shards for automatic split, which is in the range of 1 to 64. You must specify this parameter when autoSplit is true.
 
 _Required_: No
 
@@ -75,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The log store, which is unique in the same project.
+
 _Required_: Yes
 
 _Type_: String
@@ -82,6 +93,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The project name to the log store belongs.
 
 _Required_: Yes
 
@@ -91,6 +104,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RetentionPeriod
 
+The data retention time (in days). Valid values: [1-3650]. Default to 30. Log store data will be stored permanently when the value is "3650".
+
 _Required_: No
 
 _Type_: Double
@@ -98,6 +113,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ShardCount
+
+The number of shards in this log store. Default to 2. You can modify it by "Split" or "Merge" operations. [Refer to details](https://www.alibabacloud.com/help/doc-detail/28976.htm).
 
 _Required_: No
 

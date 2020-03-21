@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Heroku::AppConfigAssociation",
-    "description": "CloudFormation equivalent of heroku_app_config_association",
+    "description": "Provides a Heroku App Config Association resource, making it possible to set/update/remove heroku app config vars independently from\nthe `heroku_app` resource. An example usage scenario could be:\n\n* User has separate git repositories for various micro-services. Multiple micro-services use Kafka.\n* User has a separate repository for kafka terraform files with blue/green support.\n* User builds out new clusters.\n* Prior to this resource's introduction, user would need one `terraform apply` to update state and X number of `terraform apply`\nfor each micro-service to pick up the new kafka clusters. However with this resource, user can do one `terraform apply`\nand let Heroku handle the rolling restarts to pick up the new config vars.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "AppId": {
-            "type": "string"
+            "type": "string",
+            "description": "A Heroku app's `UUID`. Can also be the name of the Heroku app but `UUID` is preferred as it is idempotent."
         },
         "SensitiveVars": {
             "type": "array",
@@ -29,7 +30,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "This is the same as `vars`. The main difference between the two\nattributes is `sensitive_vars` outputs are redacted on-screen and replaced by a <sensitive> placeholder, following a terraform\nplan or apply. It is recommended to put private keys, passwords, etc in this argument."
         },
         "Vars": {
             "type": "array",
@@ -49,7 +51,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Map of config vars that are output in plaintext."
         }
     },
     "additionalProperties": false,

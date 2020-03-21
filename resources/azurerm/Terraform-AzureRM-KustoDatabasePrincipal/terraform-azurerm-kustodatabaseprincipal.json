@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::KustoDatabasePrincipal",
-    "description": "CloudFormation equivalent of azurerm_kusto_database_principal",
+    "description": "Manages a Kusto (also known as Azure Data Explorer) Database Principal",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -32,13 +32,16 @@
             "type": "string"
         },
         "ClientId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Client ID that owns the specified `object_id`. Changing this forces a new resource to be created."
         },
         "ClusterName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Kusto Cluster this database principal will be added to. Changing this forces a new resource to be created."
         },
         "DatabaseName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specified the name of the Kusto Database this principal will be added to. Changing this forces a new resource to be created."
         },
         "Email": {
             "type": "string"
@@ -50,16 +53,20 @@
             "type": "string"
         },
         "ObjectId": {
-            "type": "string"
+            "type": "string",
+            "description": "An Object ID of a User, Group, or App. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the Resource Group where the Kusto Database Principal should exist. Changing this forces a new resource to be created."
         },
         "Role": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the permissions the Principal will have. Valid values include `Admin`, `Ingestor`, `Monitor`, `UnrestrictedViewers`, `User`, `Viewer`. Changing this forces a new resource to be created."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the type of object the principal is. Valid values include `App`, `Group`, `User`. Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

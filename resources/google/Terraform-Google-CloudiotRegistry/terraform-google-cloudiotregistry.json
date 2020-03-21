@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::CloudiotRegistry",
-    "description": "CloudFormation equivalent of google_cloudiot_registry",
+    "description": "Creates a device registry in Google's Cloud IoT Core platform. For more information see\n[the official documentation](https://cloud.google.com/iot/docs/) and\n[API](https://cloud.google.com/iot/docs/reference/cloudiot/rest/v1/projects.locations.registries).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Credentials": {
@@ -25,7 +25,8 @@
                             "Key",
                             "Value"
                         ]
-                    }
+                    },
+                    "description": "The certificate format and data."
                 }
             },
             "required": [
@@ -37,10 +38,12 @@
             "additionalProperties": false,
             "properties": {
                 "PubsubTopicName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "PubSub topic name to publish device events."
                 },
                 "SubfolderMatches": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "If the subfolder name matches this string\nexactly, this configuration will be used. The string must not include the\nleading '/' character. If empty, all strings are matched. Empty value can\nonly be used for the last `event_notification_configs` item."
                 }
             },
             "required": [
@@ -91,7 +94,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Activate or deactivate HTTP. Structure is documented below."
         },
         "LogLevel": {
             "type": "string"
@@ -114,16 +118,20 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Activate or deactivate MQTT. Structure is documented below."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique name for the resource, required by device registry.\nChanging this forces a new resource to be created."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The project in which the resource belongs. If it is not provided, the provider project is used."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The Region in which the created address should reside. If it is not provided, the provider region is used."
         },
         "StateNotificationConfig": {
             "type": "array",
@@ -143,7 +151,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A PubSub topic to publish device state updates. Structure is documented below."
         },
         "Credentials": {
             "type": "array",

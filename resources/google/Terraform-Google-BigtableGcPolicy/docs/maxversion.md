@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Number
 
+Number of version before applying the GC policy.
+
 _Required_: Yes
 
 _Type_: Double

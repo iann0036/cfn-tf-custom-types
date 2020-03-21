@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpsGenie::EmailIntegration",
-    "description": "CloudFormation equivalent of opsgenie_email_integration",
+    "description": "Manages an Email Integration within Opsgenie.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Responders": {
@@ -23,22 +23,28 @@
             "type": "string"
         },
         "EmailUsername": {
-            "type": "string"
+            "type": "string",
+            "description": "The username part of the email address. It must be unique for each integration."
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "A Member block as documented below."
         },
         "IgnoreRespondersFromPayload": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If enabled, the integration will ignore recipients sent in request payloads. Defaults to false."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the integration. Name must be unique for each integration."
         },
         "OwnerTeamId": {
-            "type": "string"
+            "type": "string",
+            "description": "Owner team id of the integration."
         },
         "SuppressNotifications": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If enabled, notifications that come from alerts will be suppressed. Defaults to false."
         },
         "Responders": {
             "type": "array",

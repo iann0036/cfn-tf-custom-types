@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Circonus::ContactGroup",
-    "description": "CloudFormation equivalent of circonus_contact_group",
+    "description": "The ``circonus_contact_group`` resource creates and manages a\n[Circonus Contact Group](https://login.circonus.com/user/docs/Alerting/ContactGroups).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "AlertOption": {
@@ -175,7 +175,8 @@
             "type": "string"
         },
         "AggregationWindow": {
-            "type": "string"
+            "type": "string",
+            "description": "The aggregation window for batching up alert\nnotifications."
         },
         "AlwaysSendClear": {
             "type": "boolean"
@@ -190,29 +191,36 @@
             "type": "string"
         },
         "LongMessage": {
-            "type": "string"
+            "type": "string",
+            "description": "The bulk of the message used in long form alert\nmessages."
         },
         "LongSubject": {
-            "type": "string"
+            "type": "string",
+            "description": "The subject used in long form alert messages."
         },
         "LongSummary": {
-            "type": "string"
+            "type": "string",
+            "description": "The brief summary used in long form alert messages."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the contact group."
         },
         "ShortMessage": {
-            "type": "string"
+            "type": "string",
+            "description": "The subject used in short form alert messages."
         },
         "ShortSummary": {
-            "type": "string"
+            "type": "string",
+            "description": "The brief summary used in short form alert\nmessages."
         },
         "Tags": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of tags attached to the Contact Group."
         },
         "AlertOption": {
             "type": "array",

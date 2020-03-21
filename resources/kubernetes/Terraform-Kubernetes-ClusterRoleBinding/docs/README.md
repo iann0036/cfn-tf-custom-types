@@ -1,6 +1,6 @@
 # Terraform::Kubernetes::ClusterRoleBinding
 
-CloudFormation equivalent of kubernetes_cluster_role_binding
+A ClusterRoleBinding may be used to grant permission at the cluster level and in all namespaces
 
 ## Syntax
 

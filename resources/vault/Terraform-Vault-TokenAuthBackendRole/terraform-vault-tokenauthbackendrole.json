@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Vault::TokenAuthBackendRole",
-    "description": "CloudFormation equivalent of vault_token_auth_backend_role",
+    "description": "Manages Token auth backend role in a Vault server. See the [Vault\ndocumentation](https://www.vaultproject.io/docs/auth/token.html) for more\ninformation.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -45,7 +45,8 @@
             "type": "boolean"
         },
         "RoleName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the role."
         },
         "TokenBoundCidrs": {
             "type": "array",

@@ -1,6 +1,6 @@
 # Terraform::OpsGenie::ScheduleRotation
 
-CloudFormation equivalent of opsgenie_schedule_rotation
+Manages a Schedule Rotation within Opsgenie.
 
 ## Syntax
 
@@ -51,6 +51,8 @@ Properties:
 
 #### EndDate
 
+This parameter takes a date format as (yyyy-MM-dd'T'HH:mm:ssZ) (e.g. 2019-06-11T08:00:00+02:00). Minutes may take 0 or 30 as value. Otherwise they will be converted to nearest 0 or 30 automatically.
+
 _Required_: No
 
 _Type_: String
@@ -58,6 +60,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Length
+
+Length of the rotation with default value 1.
 
 _Required_: No
 
@@ -67,6 +71,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name of rotation.
+
 _Required_: No
 
 _Type_: String
@@ -74,6 +80,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ScheduleId
+
+Identifier of the schedule.
 
 _Required_: Yes
 
@@ -83,6 +91,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StartDate
 
+This parameter takes a date format as (yyyy-MM-dd'T'HH:mm:ssZ) (e.g. 2019-06-11T08:00:00+02:00). Minutes may take 0 or 30 as value. Otherwise they will be converted to nearest 0 or 30 automatically.
+
 _Required_: Yes
 
 _Type_: String
@@ -90,6 +100,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+Type of rotation. May be one of daily, weekly and hourly.
 
 _Required_: Yes
 

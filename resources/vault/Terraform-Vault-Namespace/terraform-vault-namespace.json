@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Vault::Namespace",
-    "description": "CloudFormation equivalent of vault_namespace",
+    "description": "Provides a resource to manage [Namespaces](https://www.vaultproject.io/docs/enterprise/namespaces/index.html).\n\n**Note** this feature is available only with Vault Enterprise.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,7 +12,8 @@
             "type": "string"
         },
         "Path": {
-            "type": "string"
+            "type": "string",
+            "description": "The path of the namespace. Must not have a trailing `/`."
         }
     },
     "additionalProperties": false,

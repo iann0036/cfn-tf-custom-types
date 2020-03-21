@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Tfe::TeamMembers",
-    "description": "CloudFormation equivalent of tfe_team_members",
+    "description": "Manages users in a team.\n\n~> **NOTE** on managing team memberships: Terraform currently provides two\nresources for managing team memberships. The [tfe_team_member](team_member.html)\nresource can be used multiple times as it manages the team membership for a\nsingle user.  The [tfe_team_members](team_members.html) resource, on the other\nhand, is used to manage all team memberships for a specific team and can only be\nused once. Both resources cannot be used for the same team simultaneously.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,14 +9,16 @@
             "type": "string"
         },
         "TeamId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the team."
         },
         "Usernames": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Names of the users to add."
         }
     },
     "additionalProperties": false,

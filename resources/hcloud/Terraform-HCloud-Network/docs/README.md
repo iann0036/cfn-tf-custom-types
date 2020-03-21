@@ -1,6 +1,6 @@
 # Terraform::HCloud::Network
 
-CloudFormation equivalent of hcloud_network
+Provides a Hetzner Cloud Network to represent a Network in the Hetzner Cloud.
 
 ## Syntax
 
@@ -34,6 +34,9 @@ Properties:
 
 #### IpRange
 
+IP Range of the whole Network which must span all included subnets and route destinations. Must be one of the private ipv4 ranges of RFC1918.
+- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +45,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Labels
 
+User-defined labels (key-value pairs) should be created with.
+
 _Required_: No
 
 _Type_: List of <a href="labels.md">Labels</a>
@@ -49,6 +54,10 @@ _Type_: List of <a href="labels.md">Labels</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of the Network to create (must be unique per project).
+- `ip_range` - (Required, string) IP Range of the whole Network which must span all included subnets and route destinations. Must be one of the private ipv4 ranges of RFC1918.
+- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with.
 
 _Required_: Yes
 

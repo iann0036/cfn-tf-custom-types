@@ -1,6 +1,8 @@
 # Terraform::Cloudflare::AccessPolicy
 
-CloudFormation equivalent of cloudflare_access_policy
+Provides a Cloudflare Access Policy resource. Access Policies are used
+in conjunction with Access Applications to restrict access to a
+particular resource.
 
 ## Syntax
 
@@ -46,6 +48,9 @@ Properties:
 
 #### ApplicationId
 
+The ID of the application the policy is
+associated with.
+
 _Required_: Yes
 
 _Type_: String
@@ -53,6 +58,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Decision
+
+Defines the action Access will take if the policy matches the user.
+Allowed values: `allow`, `deny`, `non_identity`, `bypass`.
 
 _Required_: Yes
 
@@ -62,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Friendly name of the Access Application.
+
 _Required_: Yes
 
 _Type_: String
@@ -70,6 +80,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Precedence
 
+The unique precedence for policies on a single application. Integer.
+
 _Required_: No
 
 _Type_: Double
@@ -77,6 +89,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneId
+
+The DNS zone to which the access rule should be
+added.
 
 _Required_: Yes
 

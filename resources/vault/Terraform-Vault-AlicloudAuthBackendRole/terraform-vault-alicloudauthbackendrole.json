@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Vault::AlicloudAuthBackendRole",
-    "description": "CloudFormation equivalent of vault_alicloud_auth_backend_role",
+    "description": "Provides a resource to create a role in an [AliCloud auth backend within Vault](https://www.vaultproject.io/docs/auth/alicloud.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "Arn": {
-            "type": "string"
+            "type": "string",
+            "description": "The role's arn."
         },
         "Backend": {
-            "type": "string"
+            "type": "string",
+            "description": "Path to the mounted AliCloud auth backend.\nDefaults to `alicloud`."
         },
         "Role": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the role. Must correspond with the name of\nthe role reflected in the arn."
         },
         "TokenBoundCidrs": {
             "type": "array",

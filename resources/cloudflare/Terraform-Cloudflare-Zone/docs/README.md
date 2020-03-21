@@ -1,6 +1,6 @@
 # Terraform::Cloudflare::Zone
 
-CloudFormation equivalent of cloudflare_zone
+Provides a Cloudflare Zone resource. Zone is the basic resource for working with Cloudflare and is roughly equivalent to a domain name that the user purchases.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### JumpStart
 
+Boolean of whether to scan for DNS records on creation. Ignored after zone is created. Default: false.
+
 _Required_: No
 
 _Type_: Boolean
@@ -44,6 +46,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Paused
+
+Boolean of whether this zone is paused (traffic bypasses Cloudflare). Default: false.
 
 _Required_: No
 
@@ -53,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Plan
 
+The name of the commercial plan to apply to the zone, can be updated once the one is created; one of `free`, `pro`, `business`, `enterprise`.
+
 _Required_: No
 
 _Type_: String
@@ -61,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Type
 
+A full zone implies that DNS is hosted with Cloudflare. A partial zone is typically a partner-hosted zone or a CNAME setup. Valid values: `full`, `partial`. Default is `full`.
+
 _Required_: No
 
 _Type_: String
@@ -68,6 +76,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Zone
+
+The DNS zone name which will be added.
 
 _Required_: Yes
 

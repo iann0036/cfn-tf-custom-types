@@ -1,6 +1,6 @@
 # Terraform::Cloudflare::Filter
 
-CloudFormation equivalent of cloudflare_filter
+Filter expressions that can be referenced across multiple features, e.g. [Firewall Rule](firewall_rule.html). The expression format is similar to [Wireshark Display Filter](https://www.wireshark.org/docs/man-pages/wireshark-filter.html).
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### Description
 
+A note that you can use to describe the purpose of the filter.
+
 _Required_: No
 
 _Type_: String
@@ -44,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Expression
+
+The filter expression to be used.
 
 _Required_: Yes
 
@@ -53,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Paused
 
+Whether this filter is currently paused. Boolean value.
+
 _Required_: No
 
 _Type_: Boolean
@@ -61,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ref
 
+Short reference tag to quickly select related rules.
+
 _Required_: No
 
 _Type_: String
@@ -68,6 +76,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneId
+
+The DNS zone to which the Filter should be added.
 
 _Required_: Yes
 

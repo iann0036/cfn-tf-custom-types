@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::EventgridDomain",
-    "description": "CloudFormation equivalent of azurerm_eventgrid_domain",
+    "description": "Manages an EventGrid Domain",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "InputMappingDefaultValues": {
@@ -8,13 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "DataVersion": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the default data version of the EventGrid Event to associate with the domain. Changing this forces a new resource to be created."
                 },
                 "EventType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the default event type of the EventGrid Event to associate with the domain. Changing this forces a new resource to be created."
                 },
                 "Subject": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the default subject of the EventGrid Event to associate with the domain. Changing this forces a new resource to be created."
                 }
             },
             "required": []
@@ -24,22 +27,28 @@
             "additionalProperties": false,
             "properties": {
                 "DataVersion": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the data version of the EventGrid Event to associate with the domain. Changing this forces a new resource to be created."
                 },
                 "EventTime": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the event time of the EventGrid Event to associate with the domain. Changing this forces a new resource to be created."
                 },
                 "EventType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the event type of the EventGrid Event to associate with the domain. Changing this forces a new resource to be created."
                 },
                 "Id": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the id of the EventGrid Event to associate with the domain. Changing this forces a new resource to be created."
                 },
                 "Subject": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the subject of the EventGrid Event to associate with the domain. Changing this forces a new resource to be created."
                 },
                 "Topic": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the topic of the EventGrid Event to associate with the domain. Changing this forces a new resource to be created."
                 }
             },
             "required": []
@@ -73,19 +82,23 @@
             "type": "string"
         },
         "InputSchema": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the schema in which incoming events will be published to this domain. Allowed values are `cloudeventv01schema`, `customeventschema`, or `eventgridschema`. Defaults to `eventgridschema`. Changing this forces a new resource to be created."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the EventGrid Domain resource. Changing this forces a new resource to be created."
         },
         "PrimaryAccessKey": {
             "type": "string"
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which the EventGrid Domain exists. Changing this forces a new resource to be created."
         },
         "SecondaryAccessKey": {
             "type": "string"
@@ -108,7 +121,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "InputMappingDefaultValues": {
             "type": "array",

@@ -1,6 +1,6 @@
 # Terraform::AzureRM::ApiManagementIdentityProviderAad
 
-CloudFormation equivalent of azurerm_api_management_identity_provider_aad
+Manages an API Management AAD Identity Provider.
 
 ## Syntax
 
@@ -40,6 +40,8 @@ Properties:
 
 #### AllowedTenants
 
+List of allowed AAD Tenants.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -47,6 +49,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ApiManagementName
+
+The Name of the API Management Service where this AAD Identity Provider should be created. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -56,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ClientId
 
+Client Id of the Application in the AAD Identity Provider.
+
 _Required_: Yes
 
 _Type_: String
@@ -64,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ClientSecret
 
+Client secret of the Application in the AAD Identity Provider.
+
 _Required_: Yes
 
 _Type_: String
@@ -71,6 +79,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The Name of the Resource Group where the API Management Service exists. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

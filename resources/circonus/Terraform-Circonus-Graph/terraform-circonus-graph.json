@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Circonus::Graph",
-    "description": "CloudFormation equivalent of circonus_graph",
+    "description": "The ``circonus_graph`` resource creates and manages a\n[Circonus Graph](https://login.circonus.com/user/docs/Visualization/Graph/Create).\n\nhttps://login.circonus.com/resources/api/calls/graph).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Guide": {
@@ -110,10 +110,12 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of what the graph is for."
         },
         "GraphStyle": {
-            "type": "string"
+            "type": "string",
+            "description": "How the graph should be rendered.  Valid options\nare `area` or `line` (default)."
         },
         "Left": {
             "type": "array",
@@ -133,16 +135,20 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A map of graph left axis options.  Valid values in `left`\ninclude: `logarithmic` can be set to `0` (default) or `1`; `min` is the `min`\nY axis value on the left; and `max` is the Y axis max value on the left."
         },
         "LineStyle": {
-            "type": "string"
+            "type": "string",
+            "description": "How the line should change between points.  Can be\neither `stepped` (default) or `interpolated`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The title of the graph."
         },
         "Notes": {
-            "type": "string"
+            "type": "string",
+            "description": "A place for storing notes about this graph."
         },
         "Right": {
             "type": "array",
@@ -162,14 +168,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A map of graph right axis options.  Valid values in\n`right` include: `logarithmic` can be set to `0` (default) or `1`; `min` is\nthe `min` Y axis value on the right; and `max` is the Y axis max value on the\nright."
         },
         "Tags": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of tags assigned to this graph."
         },
         "Guide": {
             "type": "array",

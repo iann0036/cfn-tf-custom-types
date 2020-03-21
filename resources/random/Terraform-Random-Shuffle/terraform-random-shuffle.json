@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Random::Shuffle",
-    "description": "CloudFormation equivalent of random_shuffle",
+    "description": "The resource `random_shuffle` generates a random permutation of a list\nof strings given as an argument.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -13,7 +13,8 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The list of strings to shuffle."
         },
         "Keepers": {
             "type": "array",
@@ -33,7 +34,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Arbitrary map of values that, when changed, will\ntrigger a new id to be generated. See\n[the main provider documentation](../index.html) for more information."
         },
         "Result": {
             "type": "array",
@@ -43,10 +45,12 @@
             }
         },
         "ResultCount": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of results to return. Defaults to\nthe number of items in the `input` list. If fewer items are requested,\nsome elements will be excluded from the result. If more items are requested,\nitems will be repeated in the result but not more frequently than the number\nof items in the input list."
         },
         "Seed": {
-            "type": "string"
+            "type": "string",
+            "description": "Arbitrary string with which to seed the random number\ngenerator, in order to produce less-volatile permutations of the list.\n**Important:** Even with an identical seed, it is not guaranteed that the\nsame permutation will be produced across different versions of Terraform.\nThis argument causes the result to be *less volatile*, but not fixed for\nall time."
         }
     },
     "additionalProperties": false,

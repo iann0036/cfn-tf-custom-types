@@ -1,6 +1,8 @@
 # Terraform::UCloud::Vpc
 
-CloudFormation equivalent of ucloud_vpc
+Provides a VPC resource.
+
+~> **Note**  The network segment can only be created or deleted, can not perform both of them at the same time.
 
 ## Syntax
 
@@ -36,6 +38,8 @@ Properties:
 
 #### CidrBlocks
 
+The CIDR blocks of VPC.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -43,6 +47,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of VPC. If not specified, terraform will auto-generate a name beginning with `tf-vpc`.
 
 _Required_: No
 
@@ -52,6 +58,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Remark
 
+The remarks of the VPC. (Default: `""`).
+
 _Required_: No
 
 _Type_: String
@@ -59,6 +67,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tag
+
+A tag assigned to VPC, which contains at most 63 characters and only support Chinese, English, numbers, '-', '_', and '.'. If it is not filled in or a empty string is filled in, then default tag will be assigned. (Default: `Default`).
 
 _Required_: No
 

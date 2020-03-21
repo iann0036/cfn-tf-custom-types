@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::DigitalOcean::VolumeAttachment",
-    "description": "CloudFormation equivalent of digitalocean_volume_attachment",
+    "description": "Manages attaching a Volume to a Droplet.\n\n~> **NOTE:** Volumes can be attached either directly on the `digitalocean_droplet` resource, or using the `digitalocean_volume_attachment` resource - but the two cannot be used together. If both are used against the same Droplet, the volume attachments will constantly drift.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "DropletId": {
-            "type": "number"
+            "type": "number",
+            "description": "ID of the Droplet to attach the volume to."
         },
         "VolumeId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the Volume to be attached to the Droplet."
         }
     },
     "additionalProperties": false,

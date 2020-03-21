@@ -26,6 +26,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### CaseSensitive
 
+Specifies if `subject_begins_with` and `subject_ends_with` case sensitive. This value defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -34,6 +36,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubjectBeginsWith
 
+A string to filter events for an event subscription based on a resource path prefix.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +45,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubjectEndsWith
+
+A string to filter events for an event subscription based on a resource path suffix.
 
 _Required_: No
 

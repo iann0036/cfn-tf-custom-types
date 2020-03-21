@@ -1,6 +1,7 @@
 # Terraform::Vault::OktaAuthBackend
 
-CloudFormation equivalent of vault_okta_auth_backend
+Provides a resource for managing an
+[Okta auth backend within Vault](https://www.vaultproject.io/docs/auth/okta.html).
 
 ## Syntax
 
@@ -49,6 +50,8 @@ Properties:
 
 #### BaseUrl
 
+The Okta url. Examples: oktapreview.com, okta.com.
+
 _Required_: No
 
 _Type_: String
@@ -56,6 +59,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BypassOktaMfa
+
+When true, requests by Okta for a MFA check will be bypassed. This also disallows certain status checks on the account, such as whether the password is expired.
 
 _Required_: No
 
@@ -65,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+The description of the auth backend.
+
 _Required_: No
 
 _Type_: String
@@ -72,6 +79,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Group
+
+Associate Okta groups with policies within Vault.
+[See below for more details](#okta-group).
 
 _Required_: No
 
@@ -81,6 +91,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxTtl
 
+Maximum duration after which authentication will be expired
+[See the documentation for info on valid duration formats](https://golang.org/pkg/time/#ParseDuration).
+
 _Required_: No
 
 _Type_: String
@@ -88,6 +101,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Organization
+
+The Okta organization. This will be the first part of the url `https://XXX.okta.com`.
 
 _Required_: Yes
 
@@ -97,6 +112,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Path
 
+Path to mount the Okta auth backend.
+
 _Required_: No
 
 _Type_: String
@@ -104,6 +121,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Token
+
+The Okta API token. This is required to query Okta for user group membership.
+If this is not supplied only locally configured groups will be enabled.
 
 _Required_: No
 
@@ -113,6 +133,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ttl
 
+Duration after which authentication will be expired.
+[See the documentation for info on valid duration formats](https://golang.org/pkg/time/#ParseDuration).
+
 _Required_: No
 
 _Type_: String
@@ -120,6 +143,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### User
+
+Associate Okta users with groups or policies within Vault.
+[See below for more details](#okta-user).
 
 _Required_: No
 

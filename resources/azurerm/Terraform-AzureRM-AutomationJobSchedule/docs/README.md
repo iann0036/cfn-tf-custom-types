@@ -1,6 +1,6 @@
 # Terraform::AzureRM::AutomationJobSchedule
 
-CloudFormation equivalent of azurerm_automation_job_schedule
+Links an Automation Runbook and Schedule.
 
 ## Syntax
 
@@ -44,6 +44,8 @@ Properties:
 
 #### AutomationAccountName
 
+The name of the Automation Account in which the Job Schedule is created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -60,6 +62,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Parameters
 
+A map of key/value pairs corresponding to the arguments that can be passed to the Runbook. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: List of <a href="parameters.md">Parameters</a>
@@ -67,6 +71,8 @@ _Type_: List of <a href="parameters.md">Parameters</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which the Job Schedule is created. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -76,6 +82,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RunOn
 
+Name of a Hybrid Worker Group the Runbook will be executed on. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -83,6 +91,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RunbookName
+
+The name of a Runbook to link to a Schedule. It needs to be in the same Automation Account as the Schedule and Job Schedule. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

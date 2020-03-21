@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::AsConfigurationV1
 
-CloudFormation equivalent of opentelekomcloud_as_configuration_v1
+Manages a V1 AS Configuration resource within OpenTelekomCloud.
 
 ## Syntax
 
@@ -56,6 +56,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ScalingConfigurationName
+
+The name of the AS configuration. The name can contain letters,
+digits, underscores(_), and hyphens(-), and cannot exceed 64 characters.
 
 _Required_: Yes
 

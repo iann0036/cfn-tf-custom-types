@@ -1,6 +1,8 @@
 # Terraform::Alicloud::Havip
 
-CloudFormation equivalent of alicloud_havip
+Provides a HaVip resource.
+
+-> **NOTE:** Terraform will auto build havip instance  while it uses `alicloud_havip` to build a havip resource.
 
 ## Syntax
 
@@ -33,6 +35,8 @@ Properties:
 
 #### Description
 
+The description of the HaVip instance.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +45,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IpAddress
 
+The ip address of the HaVip. If not filled, the default will be assigned one from the vswitch.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VswitchId
+
+The vswitch_id of the HaVip, the field can't be changed.
 
 _Required_: Yes
 

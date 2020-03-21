@@ -1,6 +1,6 @@
 # Terraform::AzureRM::ServicebusSubscriptionRule
 
-CloudFormation equivalent of azurerm_servicebus_subscription_rule
+Manages a ServiceBus Subscription Rule.
 
 ## Syntax
 
@@ -48,6 +48,8 @@ Properties:
 
 #### Action
 
+Represents set of actions written in SQL language-based syntax that is performed against a BrokeredMessage.
+
 _Required_: No
 
 _Type_: String
@@ -55,6 +57,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FilterType
+
+Type of filter to be applied to a BrokeredMessage. Possible values are `SqlFilter` and `CorrelationFilter`.
 
 _Required_: Yes
 
@@ -64,6 +68,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the ServiceBus Subscription Rule. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -71,6 +77,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NamespaceName
+
+The name of the ServiceBus Namespace in which the ServiceBus Topic exists. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -80,6 +88,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in the ServiceBus Namespace exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -87,6 +97,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SqlFilter
+
+Represents a filter written in SQL language-based syntax that to be evaluated against a BrokeredMessage. Required when `filter_type` is set to `SqlFilter`.
 
 _Required_: No
 
@@ -96,6 +108,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubscriptionName
 
+The name of the ServiceBus Subscription in which this Rule should be created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -103,6 +117,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TopicName
+
+The name of the ServiceBus Topic in which the ServiceBus Subscription exists. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

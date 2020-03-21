@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Datadog::IntegrationAws",
-    "description": "CloudFormation equivalent of datadog_integration_aws",
+    "description": "Provides a Datadog - Amazon Web Services integration resource. This can be used to create and manage Datadog - Amazon Web Services integration.\n\nUpdate operations are currently not supported with datadog API so any change forces a new resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "AccountId": {
-            "type": "string"
+            "type": "string",
+            "description": "Your AWS Account ID without dashes."
         },
         "AccountSpecificNamespaceRules": {
             "type": "array",
@@ -29,7 +30,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Enables or disables metric collection for specific AWS namespaces for this AWS account only. A list of namespaces can be found at the [available namespace rules API endpoint](https://api.datadoghq.com/api/v1/integration/aws/available_namespace_rules)."
         },
         "ExternalId": {
             "type": "string"
@@ -39,17 +41,20 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Array of EC2 tags (in the form `key:value`) defines a filter that Datadog use when collecting metrics from EC2. Wildcards, such as `?` (for single characters) and `*` (for multiple characters) can also be used."
         },
         "HostTags": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Array of tags (in the form key:value) to add to all hosts and metrics reporting through this integration."
         },
         "RoleName": {
-            "type": "string"
+            "type": "string",
+            "description": "Your Datadog role delegation name."
         }
     },
     "additionalProperties": false,

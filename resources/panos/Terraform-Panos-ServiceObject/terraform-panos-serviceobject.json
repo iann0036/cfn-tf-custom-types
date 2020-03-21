@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::ServiceObject",
-    "description": "CloudFormation equivalent of panos_service_object",
+    "description": "This resource allows you to add/update/delete service objects.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,41 +9,52 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The service object's description."
         },
         "DestinationPort": {
-            "type": "string"
+            "type": "string",
+            "description": "The destination port.  This can be a single\nport number, range (1-65535), or comma separated (80,8080,443)."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The service object's name."
         },
         "OverrideHalfClosedTimeout": {
-            "type": "number"
+            "type": "number",
+            "description": "The overridden\nTCP half closed timeout."
         },
         "OverrideSessionTimeout": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` to\noverride the default application timeouts."
         },
         "OverrideTimeWaitTimeout": {
-            "type": "number"
+            "type": "number",
+            "description": "The overridden\nTCP wait time."
         },
         "OverrideTimeout": {
-            "type": "number"
+            "type": "number",
+            "description": "The overridden TCP timeout."
         },
         "Protocol": {
-            "type": "string"
+            "type": "string",
+            "description": "The service's protocol.  This should be `tcp`,\n`udp`, or `sctp` (PAN-OS 8.1+)."
         },
         "SourcePort": {
-            "type": "string"
+            "type": "string",
+            "description": "The source port.  This can be a single port\nnumber, range (1-65535), or comma separated (80,8080,443)."
         },
         "Tags": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of administrative tags."
         },
         "Vsys": {
-            "type": "string"
+            "type": "string",
+            "description": "The vsys to put the service object into (default:\n`vsys1`)."
         }
     },
     "additionalProperties": false,

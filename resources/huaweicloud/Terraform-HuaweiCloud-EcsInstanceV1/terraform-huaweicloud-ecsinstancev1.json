@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HuaweiCloud::EcsInstanceV1",
-    "description": "CloudFormation equivalent of huaweicloud_ecs_instance_v1",
+    "description": "Manages a V1 ECS instance resource within HuaweiCloud.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "DataDisks": {
@@ -8,13 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "Size": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The size of the data disk in GB. The value range is 10 to 32768.\nChanging this creates a new server."
                 },
                 "SnapshotId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the snapshot ID or ID of the original data disk contained in the full-ECS image.\nChanging this creates a new server."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The data disk type of the server. For HANA, HL1, and HL2 ECSs use co-p1 and uh-l1 disks.\nChanging this creates a new server. Available options are:\n* `SATA`: common I/O disk type.\n* `SAS`: high I/O disk type.\n* `SSD`: ultra-high I/O disk type.\n* `co-p1`: high I/O(performance-optimized) disk type.\n* `uh-l1`: ultra-high I/O(latency-optimized) disk type."
                 }
             },
             "required": [
@@ -27,10 +30,12 @@
             "additionalProperties": false,
             "properties": {
                 "IpAddress": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies a fixed IPv4 address to be used on this\nnetwork. Changing this creates a new server."
                 },
                 "NetworkId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The network UUID to attach to the server. Changing this creates a new server."
                 }
             },
             "required": [
@@ -60,56 +65,72 @@
             "type": "string"
         },
         "AutoRecovery": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether configure automatic recovery of an instance."
         },
         "AvailabilityZone": {
-            "type": "string"
+            "type": "string",
+            "description": "The availability zone in which to create\nthe server. Please refer to https://developer.huaweicloud.com/endpoint\nfor the values. Changing this creates a new server."
         },
         "ChargingMode": {
-            "type": "string"
+            "type": "string",
+            "description": "The charging mode of the instance. Valid options are: prePaid and postPaid, defaults to postPaid. Changing this creates a new server."
         },
         "DeleteDisksOnTermination": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Delete the data disks upon termination of the instance. Defaults to false. Changing this creates a new server."
         },
         "EnterpriseProjectId": {
-            "type": "string"
+            "type": "string",
+            "description": "The enterprise project id. Changing this creates a new server."
         },
         "Flavor": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the desired flavor for the server. Changing this resizes the existing server."
         },
         "ImageId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the desired image for the server. Changing this creates a new server."
         },
         "KeyName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of a key pair to put on the server. The key\npair must already be created and associated with the tenant's account.\nChanging this creates a new server."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique name for the instance."
         },
         "OpSvcUserid": {
-            "type": "string"
+            "type": "string",
+            "description": "User ID, required when using key_name. Changing this creates a new server."
         },
         "Password": {
-            "type": "string"
+            "type": "string",
+            "description": "The administrative password to assign to the server.\nChanging this creates a new server."
         },
         "Period": {
-            "type": "number"
+            "type": "number",
+            "description": "The charging period of the instance. Changing this creates a new server."
         },
         "PeriodUnit": {
-            "type": "string"
+            "type": "string",
+            "description": "The charging period unit of the instance. Valid options are: month and year, defaults to month. Changing this creates a new server."
         },
         "SecurityGroups": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "An array of one or more security group names\nto associate with the server. Changing this results in adding/removing\nsecurity groups from the existing server."
         },
         "SystemDiskSize": {
-            "type": "number"
+            "type": "number",
+            "description": "The system disk size in GB, The value range is 1 to 1024. Changing this creates a new server."
         },
         "SystemDiskType": {
-            "type": "string"
+            "type": "string",
+            "description": "The system disk type of the server. For HANA, HL1, and HL2 ECSs use co-p1 and uh-l1 disks.\nChanging this creates a new server. Available options are:\n* `SATA`: common I/O disk type.\n* `SAS`: high I/O disk type.\n* `SSD`: ultra-high I/O disk type.\n* `co-p1`: high I/O(performance-optimized) disk type.\n* `uh-l1`: ultra-high I/O(latency-optimized) disk type."
         },
         "Tags": {
             "type": "array",
@@ -129,13 +150,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Tags key/value pairs to associate with the instance."
         },
         "UserData": {
-            "type": "string"
+            "type": "string",
+            "description": "The user data to provide when launching the instance.\nChanging this creates a new server."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the desired VPC for the server. Changing this creates a new server."
         },
         "DataDisks": {
             "type": "array",

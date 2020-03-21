@@ -1,6 +1,6 @@
 # Terraform::Alicloud::EssScalingRule
 
-CloudFormation equivalent of alicloud_ess_scaling_rule
+Provides a ESS scaling rule resource.
 
 ## Syntax
 
@@ -50,6 +50,11 @@ Properties:
 
 #### AdjustmentType
 
+Adjustment mode of a scaling rule. Optional values:
+- QuantityChangeInCapacity: It is used to increase or decrease a specified number of ECS instances.
+- PercentChangeInCapacity: It is used to increase or decrease a specified proportion of ECS instances.
+- TotalCapacity: It is used to adjust the quantity of ECS instances in the current scaling group to a specified value.
+
 _Required_: No
 
 _Type_: String
@@ -57,6 +62,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AdjustmentValue
+
+Adjusted value of a scaling rule. Value range:
+- QuantityChangeInCapacity：(0, 500] U (-500, 0]
+- PercentChangeInCapacity：[0, 10000] U [-100, 0]
+- TotalCapacity：[0, 1000].
 
 _Required_: No
 
@@ -66,6 +76,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Cooldown
 
+Cool-down time of a scaling rule. Value range: [0, 86,400], in seconds. The default value is empty，if not set, the return value will be 0, which is the default value of integer.
+
 _Required_: No
 
 _Type_: Double
@@ -73,6 +85,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisableScaleIn
+
+Indicates whether scale in by the target tracking policy is disabled. Default to false.
 
 _Required_: No
 
@@ -82,6 +96,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EstimatedInstanceWarmup
 
+The estimated time, in seconds, until a newly launched instance will contribute CloudMonitor metrics. Default to 300.
+
 _Required_: No
 
 _Type_: Double
@@ -89,6 +105,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MetricName
+
+A CloudMonitor metric name.
 
 _Required_: No
 
@@ -98,6 +116,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ScalingGroupId
 
+ID of the scaling group of a scaling rule.
+
 _Required_: Yes
 
 _Type_: String
@@ -105,6 +125,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ScalingRuleName
+
+Name shown for the scaling rule, which must contain 2-64 characters (English or Chinese), starting with numbers, English letters or Chinese characters, and can contain number, underscores `_`, hypens `-`, and decimal point `.`. If this parameter value is not specified, the default value is scaling rule id.
 
 _Required_: No
 
@@ -114,6 +136,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ScalingRuleType
 
+The scaling rule type, either "SimpleScalingRule", "TargetTrackingScalingRule", "StepScalingRule". Default to "SimpleScalingRule".
+
 _Required_: No
 
 _Type_: String
@@ -121,6 +145,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TargetValue
+
+The target value for the metric.
 
 _Required_: No
 

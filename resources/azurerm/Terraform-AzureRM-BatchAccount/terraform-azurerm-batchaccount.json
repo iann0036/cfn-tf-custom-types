@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::BatchAccount",
-    "description": "CloudFormation equivalent of azurerm_batch_account",
+    "description": "Manages an Azure Batch account.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "KeyVaultReference": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "Id": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Azure identifier of the Azure KeyVault to use."
                 },
                 "Url": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The HTTPS URL of the Azure KeyVault to use."
                 }
             },
             "required": [
@@ -48,25 +50,30 @@
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Batch account. Changing this forces a new resource to be created."
         },
         "PoolAllocationMode": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the mode to use for pool allocation. Possible values are `BatchService` or `UserSubscription`. Defaults to `BatchService`."
         },
         "PrimaryAccessKey": {
             "type": "string"
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the Batch account. Changing this forces a new resource to be created."
         },
         "SecondaryAccessKey": {
             "type": "string"
         },
         "StorageAccountId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the storage account to use for the Batch account. If not specified, Azure Batch will manage the storage."
         },
         "Tags": {
             "type": "array",
@@ -86,7 +93,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "KeyVaultReference": {
             "type": "array",

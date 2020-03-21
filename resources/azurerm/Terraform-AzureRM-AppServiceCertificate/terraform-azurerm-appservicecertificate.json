@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::AppServiceCertificate",
-    "description": "CloudFormation equivalent of azurerm_app_service_certificate",
+    "description": "Manages an App Service certificate.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -48,22 +48,28 @@
             "type": "string"
         },
         "KeyVaultSecretId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Key Vault secret. Changing this forces a new resource to be created."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the certificate. Changing this forces a new resource to be created."
         },
         "Password": {
-            "type": "string"
+            "type": "string",
+            "description": "The password to access the certificate's private key. Changing this forces a new resource to be created."
         },
         "PfxBlob": {
-            "type": "string"
+            "type": "string",
+            "description": "The base64-encoded contents of the certificate. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the certificate. Changing this forces a new resource to be created."
         },
         "SubjectName": {
             "type": "string"

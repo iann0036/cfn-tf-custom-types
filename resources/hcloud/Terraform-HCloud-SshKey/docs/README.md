@@ -1,6 +1,6 @@
 # Terraform::HCloud::SshKey
 
-CloudFormation equivalent of hcloud_ssh_key
+Provides a Hetzner Cloud SSH key resource to manage SSH keys for server access.
 
 ## Syntax
 
@@ -42,6 +42,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name of the SSH key.
+- `public_key` - (Required, string) The public key. If this is a file, it can be read using the file interpolation function.
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PublicKey
+
+The public key. If this is a file, it can be read using the file interpolation function.
 
 _Required_: Yes
 

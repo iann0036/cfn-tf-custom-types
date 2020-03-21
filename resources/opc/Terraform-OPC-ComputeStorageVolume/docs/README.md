@@ -1,6 +1,8 @@
 # Terraform::OPC::ComputeStorageVolume
 
-CloudFormation equivalent of opc_compute_storage_volume
+The ``opc_compute_storage_volume`` resource creates and manages a storage volume in an Oracle Cloud Infrastructure Compute Classic identity domain.
+
+~> **Caution:** The ``opc_compute_storage_volume`` resource can completely delete your storage volume just as easily as it can create it. To avoid costly accidents, consider setting [``prevent_destroy``](/docs/configuration/resources.html#prevent_destroy) on your storage volume resources as an extra safety measure.
 
 ## Syntax
 
@@ -68,6 +70,8 @@ Properties:
 
 #### Bootable
 
+Is the Volume Bootable? Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -92,6 +96,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ImageList
 
+Defines an image list.
+
 _Required_: No
 
 _Type_: String
@@ -99,6 +105,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ImageListEntry
+
+Defines an image list entry.
 
 _Required_: No
 
@@ -156,6 +164,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Snapshot
 
+The name of the parent snapshot from which the storage volume is restored or cloned. See [Snapshots](#snapshots), below for more information.
+
 _Required_: No
 
 _Type_: String
@@ -164,6 +174,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SnapshotAccount
 
+The Account of the parent snapshot from which the storage volume is restored. See [Snapshots](#snapshots), below for more information.
+
 _Required_: No
 
 _Type_: String
@@ -171,6 +183,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SnapshotId
+
+The Id of the parent snapshot from which the storage volume is restored or cloned. See [Snapshots](#snapshots), below for more information.
 
 _Required_: No
 
@@ -196,6 +210,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StorageType
 
+- The Type of Storage to provision. Defaults to `/oracle/public/storage/default`.
+
 _Required_: No
 
 _Type_: String
@@ -203,6 +219,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Comma-separated strings that tag the storage volume.
 
 _Required_: No
 

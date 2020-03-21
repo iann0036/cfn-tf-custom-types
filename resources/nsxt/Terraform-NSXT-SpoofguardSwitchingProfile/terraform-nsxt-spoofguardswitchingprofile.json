@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::NSXT::SpoofguardSwitchingProfile",
-    "description": "CloudFormation equivalent of nsxt_spoofguard_switching_profile",
+    "description": "Provides a resource to configure spoofguard switching profile on NSX-T manager",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Tag": {
@@ -26,13 +26,16 @@
             "type": "string"
         },
         "AddressBindingWhitelistEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "A boolean flag indicating whether this profile overrides the default system wide settings for Spoof Guard when assigned to ports."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of this resource."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The display name of this resource. Defaults to ID if not set."
         },
         "Revision": {
             "type": "number"

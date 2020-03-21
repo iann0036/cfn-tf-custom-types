@@ -1,6 +1,8 @@
 # Terraform::OCI::DatacatalogConnection
 
-CloudFormation equivalent of oci_datacatalog_connection
+This resource provides the Connection resource in Oracle Cloud Infrastructure Data Catalog service.
+
+Creates a new connection.
 
 ## Syntax
 
@@ -47,6 +49,8 @@ Properties:
 
 #### CatalogId
 
+Unique catalog identifier.
+
 _Required_: Yes
 
 _Type_: String
@@ -54,6 +58,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DataAssetKey
+
+Unique data asset key.
 
 _Required_: Yes
 
@@ -63,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+(Updatable) A description of the connection.
+
 _Required_: No
 
 _Type_: String
@@ -70,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+(Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 _Required_: Yes
 
@@ -79,6 +89,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EncProperties
 
+(Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"encProperties": { "default": { "password": "pwd"}}}`.
+
 _Required_: No
 
 _Type_: List of <a href="encproperties.md">EncProperties</a>
@@ -86,6 +98,8 @@ _Type_: List of <a href="encproperties.md">EncProperties</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IsDefault
+
+(Updatable) Indicates whether this connection is the default connection. The first connection of a data asset defaults to being the default, subsequent connections default to not being the default. If a default connection already exists, then trying to create a connection as the default will fail. In this case the default connection would need to be updated not to be the default and then the new connection can then be created as the default.
 
 _Required_: No
 
@@ -95,6 +109,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Properties
 
+(Updatable) A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"properties": { "default": { "username": "user1"}}}` . Terraform treats all map of maps as a flattened map with `.` denoting each level. For more information check out this [example](https://github.com/terraform-providers/terraform-provider-oci/blob/master/examples/datacatalog/main.tf).
+
 _Required_: Yes
 
 _Type_: List of <a href="properties.md">Properties</a>
@@ -102,6 +118,8 @@ _Type_: List of <a href="properties.md">Properties</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TypeKey
+
+The key of the object type. Type key's can be found via the '/types' endpoint.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::NSXT::LbTcpMonitor",
-    "description": "CloudFormation equivalent of nsxt_lb_tcp_monitor",
+    "description": "Provides a resource to configure lb tcp monitor on NSX-T manager\n\n~> **NOTE:** This resource requires NSX version 2.3 or higher.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Tag": {
@@ -26,34 +26,43 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of this resource."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The display name of this resource. Defaults to ID if not set."
         },
         "FallCount": {
-            "type": "number"
+            "type": "number",
+            "description": "Number of consecutive checks must fail before marking it down."
         },
         "Interval": {
-            "type": "number"
+            "type": "number",
+            "description": "The frequency at which the system issues the monitor check (in seconds)."
         },
         "MonitorPort": {
-            "type": "string"
+            "type": "string",
+            "description": "If the monitor port is specified, it would override pool member port setting for healthcheck. Port range is not supported."
         },
         "Receive": {
-            "type": "string"
+            "type": "string",
+            "description": "Expected data, if specified, can be anywhere in the response and it has to be a string, regular expressions are not supported."
         },
         "Revision": {
             "type": "number"
         },
         "RiseCount": {
-            "type": "number"
+            "type": "number",
+            "description": "Number of consecutive checks must pass before marking it up."
         },
         "Send": {
-            "type": "string"
+            "type": "string",
+            "description": "Payload to send out to the monitored server. If both send and receive are not specified, then just a TCP connection is established (3-way handshake) to validate server is healthy, no data is sent."
         },
         "Timeout": {
-            "type": "number"
+            "type": "number",
+            "description": "Number of seconds the target has in which to respond to the monitor request."
         },
         "Tag": {
             "type": "array",

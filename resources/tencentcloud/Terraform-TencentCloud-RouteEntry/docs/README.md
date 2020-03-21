@@ -1,6 +1,8 @@
 # Terraform::TencentCloud::RouteEntry
 
-CloudFormation equivalent of tencentcloud_route_entry
+Provides a resource to create a routing entry in a VPC routing table.
+
+~> **NOTE:** It has been deprecated and replaced by tencentcloud_route_table_entry.
 
 ## Syntax
 
@@ -37,6 +39,8 @@ Properties:
 
 #### CidrBlock
 
+The RouteEntry's target network segment.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +48,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NextHub
+
+The route entry's next hub. CVM instance ID or VPC router interface ID.
 
 _Required_: Yes
 
@@ -53,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NextType
 
+The next hop type. Available value is `public_gateway`,`vpn_gateway`,`sslvpn_gateway`,`dc_gateway`,`peering_connection`,`nat_gateway` and `instance`. `instance` points to CVM Instance.
+
 _Required_: Yes
 
 _Type_: String
@@ -61,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RouteTableId
 
+The ID of the route table.
+
 _Required_: Yes
 
 _Type_: String
@@ -68,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+The VPC ID.
 
 _Required_: Yes
 

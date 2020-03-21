@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::WafCertificateV1
 
-CloudFormation equivalent of opentelekomcloud_waf_certificate_v1
+Manages a WAF certificate resource within OpenTelekomCloud.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### Content
 
+The certificate content. Changing this creates a new certificate.
+
 _Required_: Yes
 
 _Type_: String
@@ -45,6 +47,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Key
 
+The private key. Changing this creates a new certificate.
+
 _Required_: Yes
 
 _Type_: String
@@ -52,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The certificate name. The maximum length is 256 characters. Only digits, letters, underscores(_), and hyphens(-) are allowed.
 
 _Required_: Yes
 

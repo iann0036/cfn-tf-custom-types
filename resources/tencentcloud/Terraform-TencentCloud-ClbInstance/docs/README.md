@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::ClbInstance
 
-CloudFormation equivalent of tencentcloud_clb_instance
+Provides a resource to create a CLB instance.
 
 ## Syntax
 
@@ -47,6 +47,8 @@ Properties:
 
 #### ClbName
 
+Name of the CLB. The name can only contain Chinese characters, English letters, numbers, underscore and hyphen '-'.
+
 _Required_: Yes
 
 _Type_: String
@@ -54,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NetworkType
+
+Type of CLB instance, and available values include 'OPEN' and 'INTERNAL'.
 
 _Required_: Yes
 
@@ -63,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProjectId
 
+Id of the project within the CLB instance, '0' - Default Project.
+
 _Required_: No
 
 _Type_: Double
@@ -70,6 +76,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecurityGroups
+
+Security groups of the CLB instance. Only supports 'OPEN' CLBs.
 
 _Required_: No
 
@@ -79,6 +87,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubnetId
 
+Subnet id of the CLB. Effective only for CLB within the VPC. Only supports 'INTERNAL' CLBs.
+
 _Required_: No
 
 _Type_: String
@@ -86,6 +96,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+The available tags within this CLB.
 
 _Required_: No
 
@@ -95,6 +107,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TargetRegionInfoRegion
 
+Region information of backend services are attached the CLB instance. Only supports 'OPEN' CLBs.
+
 _Required_: No
 
 _Type_: String
@@ -103,6 +117,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TargetRegionInfoVpcId
 
+Vpc information of backend services are attached the CLB instance. Only supports 'OPEN' CLBs.
+
 _Required_: No
 
 _Type_: String
@@ -110,6 +126,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+VPC id of the CLB.
 
 _Required_: No
 

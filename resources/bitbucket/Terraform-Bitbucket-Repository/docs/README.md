@@ -1,6 +1,9 @@
 # Terraform::Bitbucket::Repository
 
-CloudFormation equivalent of bitbucket_repository
+Provides a Bitbucket repository resource.
+
+This resource allows you manage your repositories such as scm type, if it is
+private, how to fork the repository and other options.
 
 ## Syntax
 
@@ -53,6 +56,8 @@ Properties:
 
 #### Description
 
+What the description of the repo is.
+
 _Required_: No
 
 _Type_: String
@@ -60,6 +65,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ForkPolicy
+
+What the fork policy should be. Defaults to
+allow_forks.
 
 _Required_: No
 
@@ -69,6 +77,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HasIssues
 
+If this should have issues turned on or not.
+
 _Required_: No
 
 _Type_: Boolean
@@ -76,6 +86,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HasWiki
+
+If this should have wiki turned on or not.
 
 _Required_: No
 
@@ -85,6 +97,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IsPrivate
 
+If this should be private or not. Defaults to `true`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -92,6 +106,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Language
+
+What the language of this repository should be.
 
 _Required_: No
 
@@ -101,6 +117,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the repository.
+
 _Required_: Yes
 
 _Type_: String
@@ -108,6 +126,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Owner
+
+The owner of this repository. Can be you or any team you
+have write access to.
 
 _Required_: Yes
 
@@ -117,6 +138,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PipelinesEnabled
 
+Turn on to enable pipelines support.
+
 _Required_: No
 
 _Type_: Boolean
@@ -124,6 +147,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProjectKey
+
+If you want to have this repo associated with a
+project.
 
 _Required_: No
 
@@ -133,6 +159,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Scm
 
+What SCM you want to use. Valid options are hg or git.
+Defaults to git.
+
 _Required_: No
 
 _Type_: String
@@ -141,6 +170,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Slug
 
+The slug of the repository.
+
 _Required_: No
 
 _Type_: String
@@ -148,6 +179,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Website
+
+URL of website associated with this repository.
 
 _Required_: No
 

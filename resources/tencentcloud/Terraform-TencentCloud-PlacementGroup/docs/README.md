@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::PlacementGroup
 
-CloudFormation equivalent of tencentcloud_placement_group
+Provide a resource to create a placement group.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### Name
 
+Name of the placement group, 1-60 characters in length.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+Type of the placement group, the available values include `HOST`,`SW` and `RACK`.
 
 _Required_: Yes
 

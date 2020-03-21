@@ -1,6 +1,10 @@
 # Terraform::Heroku::TeamMember
 
-CloudFormation equivalent of heroku_team_member
+A [Heroku Team Member](https://devcenter.heroku.com/articles/platform-api-reference#team-member) receives access to everything owned by the Team.
+
+To create a Heroku Team, use the [New Team](https://dashboard.heroku.com/teams/new) feature of Heroku Dashboard. For Heroku Enterprise accounts, new Teams may be created within the account by users with the right permissions.
+
+A Heroku "team" was originally called an "organization", and that is still the identifier used elsewhere in this provider. For [`heroku_app`](app.html) & [`heroku_space`](space.html) resources, set the Heroku Team name as the "organization".
 
 ## Syntax
 
@@ -35,6 +39,8 @@ Properties:
 
 #### Email
 
+Email address of the member.
+
 _Required_: Yes
 
 _Type_: String
@@ -51,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Role
 
+The role to assign the member. See [the API docs](https://devcenter.heroku.com/articles/platform-api-reference#team-member) for available options.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +66,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Team
+
+The name of the Heroku Team.
 
 _Required_: Yes
 

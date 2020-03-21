@@ -1,6 +1,16 @@
 # Terraform::Google::SccSource
 
-CloudFormation equivalent of google_scc_source
+A Cloud Security Command Center's (Cloud SCC) finding source. A finding
+source is an entity or a mechanism that can produce a finding. A source is
+like a container of findings that come from the same scanner, logger,
+monitor, etc.
+
+
+To get more information about Source, see:
+
+* [API documentation](https://cloud.google.com/security-command-center/docs/reference/rest/v1beta1/organizations.sources)
+* How-to Guides
+    * [Official Documentation](https://cloud.google.com/binary-authorization/)
 
 ## Syntax
 

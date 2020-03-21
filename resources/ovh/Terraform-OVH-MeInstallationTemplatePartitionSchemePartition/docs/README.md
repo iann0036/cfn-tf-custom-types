@@ -1,6 +1,6 @@
 # Terraform::OVH::MeInstallationTemplatePartitionSchemePartition
 
-CloudFormation equivalent of ovh_me_installation_template_partition_scheme_partition
+Use this resource to create a partition in the partition scheme of a custom installation template available for dedicated servers.
 
 ## Syntax
 

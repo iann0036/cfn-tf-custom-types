@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::OsmanagementManagedInstanceGroup",
-    "description": "CloudFormation equivalent of oci_osmanagement_managed_instance_group",
+    "description": "This resource provides the Managed Instance Group resource in Oracle Cloud Infrastructure Osmanagement service.\n\nCreates a new Managed Instance Group on the management system.\nThis will not contain any managed instances after it is first created,\nand they must be added later.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,7 +26,8 @@
             "type": "string"
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) OCID for the Compartment."
         },
         "DefinedTags": {
             "type": "array",
@@ -46,13 +47,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{\"foo-namespace.bar-key\": \"value\"}`."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) Information specified by the user about the managed instance group."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) Managed Instance Group identifier."
         },
         "FreeformTags": {
             "type": "array",
@@ -72,7 +76,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{\"bar-key\": \"value\"}`."
         },
         "ManagedInstanceCount": {
             "type": "number"

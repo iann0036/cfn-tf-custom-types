@@ -1,6 +1,6 @@
 # Terraform::OPC::ComputeVpnEndpointV2
 
-CloudFormation equivalent of opc_compute_vpn_endpoint_v2
+The ``opc_compute_vpn_endpoint_v2`` resource creates and manages an VPN Endpoint V2 in an Oracle Cloud Infrastructure Compute Classic identity domain.
 
 ## Syntax
 
@@ -60,6 +60,8 @@ Properties:
 
 #### CustomerVpnGateway
 
+The ip address of the VPN gateway in your data center through which you want to connect to the Oracle Cloud VPN gateway.
+
 _Required_: Yes
 
 _Type_: String
@@ -67,6 +69,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+A description of the VPN Endpoint V2.
 
 _Required_: No
 
@@ -76,6 +80,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Enabled
 
+Enables or disables the VPN Endpoint V2. Set to true by default.
+
 _Required_: No
 
 _Type_: Boolean
@@ -83,6 +89,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IkeIdentifier
+
+The Internet Key Exchange (IKE) ID. If you don't specify a value, the default value is the public IP address of the cloud gateway.
 
 _Required_: No
 
@@ -92,6 +100,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IpNetwork
 
+The name of the IP network on which the cloud gateway is created by VPNaaS.
+
 _Required_: Yes
 
 _Type_: String
@@ -99,6 +109,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the VPN Endpoint V2.
 
 _Required_: Yes
 
@@ -108,6 +120,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PreSharedKey
 
+The pre-shared VPN key.
+
 _Required_: Yes
 
 _Type_: String
@@ -115,6 +129,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ReachableRoutes
+
+A list of routes (CIDR prefixes) that are reachable through this VPN tunnel.
 
 _Required_: Yes
 
@@ -124,6 +140,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RequirePerfectForwardSecrecy
 
+Boolean specifying whether Perfect Forward Secrecy is enabled. Set to true by default.
+
 _Required_: No
 
 _Type_: Boolean
@@ -132,6 +150,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+List of tags that may be applied to the VPN Endpoint V2.
+
 _Required_: No
 
 _Type_: List of String
@@ -139,6 +159,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VnicSets
+
+A list of vnic sets that traffics is allowed to and from.
 
 _Required_: Yes
 
@@ -188,11 +210,11 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### LocalGatewayIpAddress
 
-Returns the <code>LocalGatewayIpAddress</code> value.
+Public IP Address of the Local Gateway.
 
 #### LocalGatewayPrivateIpAddress
 
-Returns the <code>LocalGatewayPrivateIpAddress</code> value.
+Private IP Address of the Local Gateway.
 
 #### TunnelStatus
 
@@ -200,5 +222,5 @@ Returns the <code>TunnelStatus</code> value.
 
 #### Uri
 
-Returns the <code>Uri</code> value.
+The Uniform Resource Identifier for the VPN Endpoint V2.
 

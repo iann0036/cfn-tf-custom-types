@@ -1,6 +1,7 @@
 # Terraform::OpenStack::ImagesImageAccessV2
 
-CloudFormation equivalent of openstack_images_image_access_v2
+Manages members for the shared OpenStack Glance V2 Image within the source
+project, which owns the Image.
 
 ## Syntax
 
@@ -35,6 +36,8 @@ Properties:
 
 #### ImageId
 
+The image ID.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +45,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MemberId
+
+The member ID, e.g. the target project ID.
 
 _Required_: Yes
 
@@ -51,6 +56,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region in which to obtain the V2 Glance client.
+A Glance client is needed to manage Image members. If omitted, the `region`
+argument of the provider is used. Changing this creates a new resource.
+
 _Required_: No
 
 _Type_: String
@@ -58,6 +67,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Status
+
+The member proposal status. Optional if admin wants to
+force the member proposal acceptance. Can either be `accepted`, `rejected` or
+`pending`. Defaults to `pending`. Foridden for non-admin users.
 
 _Required_: No
 

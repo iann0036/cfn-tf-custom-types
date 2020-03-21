@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Tfe::TeamToken",
-    "description": "CloudFormation equivalent of tfe_team_token",
+    "description": "Generates a new team token and overrides existing token if one exists.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "ForceRegenerate": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If set to `true`, a new token will be\ngenerated even if a token already exists. This will invalidate the existing\ntoken!."
         },
         "TeamId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the team."
         },
         "Token": {
             "type": "string"

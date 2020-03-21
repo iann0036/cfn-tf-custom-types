@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OVH::DedicatedServerUpdate",
-    "description": "CloudFormation equivalent of ovh_dedicated_server_update",
+    "description": "Update various properties of your Dedicated Server.\n\n~> __WARNING__: `rescue_mail` and `root_device` properties aren't\nupdated consistently. This is an issue on the OVH API which \nhas been reported. Meanwhile, these properties aren't not mapped\non this terraform resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,20 @@
             "type": "string"
         },
         "BootId": {
-            "type": "number"
+            "type": "number",
+            "description": "boot id of the server."
         },
         "Monitoring": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Icmp monitoring state."
         },
         "ServiceName": {
-            "type": "string"
+            "type": "string",
+            "description": "The service_name of your dedicated server."
         },
         "State": {
-            "type": "string"
+            "type": "string",
+            "description": "error, hacked, hackedBlocked, ok."
         }
     },
     "additionalProperties": false,

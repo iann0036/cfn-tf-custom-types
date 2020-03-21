@@ -1,6 +1,6 @@
 # Terraform::Cloudflare::LogpushJob
 
-CloudFormation equivalent of cloudflare_logpush_job
+Provides a resource which manages Cloudflare logpush jobs.
 
 ## Syntax
 
@@ -39,6 +39,8 @@ Properties:
 
 #### DestinationConf
 
+Uniquely identifies a resource (such as an s3 bucket) where data will be pushed. Additional configuration parameters supported by the destination may be included. See [Logpush destination documentation](https://developers.cloudflare.com/logs/logpush/logpush-configuration-api/understanding-logpush-api/#destination).
+
 _Required_: Yes
 
 _Type_: String
@@ -55,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LogpullOptions
 
+Configuration string for the Logshare API. It specifies things like requested fields and timestamp formats. See [Logpull options documentation](https://developers.cloudflare.com/logs/logpush/logpush-configuration-api/understanding-logpush-api/#options).
+
 _Required_: No
 
 _Type_: String
@@ -62,6 +66,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the logpush job to create. Must match the regular expression `^[a-zA-Z0-9\-\.]*$`.
 
 _Required_: No
 
@@ -71,6 +77,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OwnershipChallenge
 
+Ownership challenge token to prove destination ownership. See [Developer documentation](https://developers.cloudflare.com/logs/logpush/logpush-configuration-api/understanding-logpush-api/#usage).
+
 _Required_: Yes
 
 _Type_: String
@@ -78,6 +86,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneId
+
+The zone ID where the logpush job should be created.
 
 _Required_: Yes
 

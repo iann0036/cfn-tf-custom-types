@@ -1,6 +1,6 @@
 # Terraform::OpenStack::SharedfilesystemShareV2
 
-CloudFormation equivalent of openstack_sharedfilesystem_share_v2
+Use this resource to configure a share.
 
 ## Syntax
 
@@ -52,6 +52,9 @@ Properties:
 
 #### AvailabilityZone
 
+The share availability zone. Changing this creates a
+new share.
+
 _Required_: No
 
 _Type_: String
@@ -59,6 +62,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+The human-readable description for the share.
+Changing this updates the description of the existing share.
 
 _Required_: No
 
@@ -68,6 +74,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IsPublic
 
+The level of visibility for the share. Set to true to make
+share public. Set to false to make it private. Default value is false. Changing this
+updates the existing share.
+
 _Required_: No
 
 _Type_: Boolean
@@ -75,6 +85,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Metadata
+
+One or more metadata key and value pairs as a dictionary of
+strings.
 
 _Required_: No
 
@@ -84,6 +97,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the share. Changing this updates the name
+of the existing share.
+
 _Required_: Yes
 
 _Type_: String
@@ -91,6 +107,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region in which to obtain the V2 Shared File System client.
+A Shared File System client is needed to create a share. Changing this
+creates a new share.
 
 _Required_: No
 
@@ -100,6 +120,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ShareNetworkId
 
+The UUID of a share network where the share server exists
+or will be created. If `share_network_id` is not set and you provide a `snapshot_id`,
+the share_network_id value from the snapshot is used. Changing this creates a new share.
+
 _Required_: No
 
 _Type_: String
@@ -107,6 +131,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ShareProto
+
+The share protocol - can either be NFS, CIFS,
+CEPHFS, GLUSTERFS, HDFS or MAPRFS. Changing this creates a new share.
 
 _Required_: Yes
 
@@ -116,6 +143,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ShareType
 
+The share type name. If you omit this parameter, the default
+share type is used.
+
 _Required_: No
 
 _Type_: String
@@ -124,6 +154,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Size
 
+The share size, in GBs. The requested share size cannot be greater
+than the allowed GB quota. Changing this resizes the existing share.
+
 _Required_: Yes
 
 _Type_: Double
@@ -131,6 +164,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SnapshotId
+
+The UUID of the share's base snapshot. Changing this creates
+a new share.
 
 _Required_: No
 

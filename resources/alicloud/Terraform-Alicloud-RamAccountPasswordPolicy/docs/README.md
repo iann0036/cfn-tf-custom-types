@@ -1,6 +1,10 @@
 # Terraform::Alicloud::RamAccountPasswordPolicy
 
-CloudFormation equivalent of alicloud_ram_account_password_policy
+Provides a RAM password policy configuration for entire account. Only one resource per account.
+
+-> **NOTE:** This resource overwrites an existing configuration. During action `terraform destroy` it sets values the same as defaults for this resource (it does not preserve any preexisted configuration).
+
+-> **NOTE:** Available in 1.46.0+
 
 ## Syntax
 
@@ -45,6 +49,8 @@ Properties:
 
 #### HardExpiry
 
+Specifies if a password can expire in a hard way. Default to false.
+
 _Required_: No
 
 _Type_: Boolean
@@ -52,6 +58,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MaxLoginAttempts
+
+Maximum logon attempts with an incorrect password within an hour. Valid value range: [0-32]. Default to 5.
 
 _Required_: No
 
@@ -61,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxPasswordAge
 
+The number of days after which password expires. A value of 0 indicates that the password never expires. Valid value range: [0-1095]. Default to 0.
+
 _Required_: No
 
 _Type_: Double
@@ -68,6 +78,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MinimumPasswordLength
+
+Minimal required length of password for a user. Valid value range: [8-32]. Default to 12.
 
 _Required_: No
 
@@ -77,6 +89,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PasswordReusePrevention
 
+User is not allowed to use the latest number of passwords specified in this parameter. A value of 0 indicates the password history check policy is disabled. Valid value range: [0-24]. Default to 0.
+
 _Required_: No
 
 _Type_: Double
@@ -84,6 +98,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RequireLowercaseCharacters
+
+Specifies if the occurrence of a lowercase character in the password is mandatory. Default to true.
 
 _Required_: No
 
@@ -93,6 +109,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RequireNumbers
 
+Specifies if the occurrence of a number in the password is mandatory. Default to true.
+
 _Required_: No
 
 _Type_: Boolean
@@ -101,6 +119,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RequireSymbols
 
+(Optional Specifies if the occurrence of a special character in the password is mandatory. Default to true.
+
 _Required_: No
 
 _Type_: Boolean
@@ -108,6 +128,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RequireUppercaseCharacters
+
+Specifies if the occurrence of an uppercase character in the password is mandatory. Default to true.
 
 _Required_: No
 

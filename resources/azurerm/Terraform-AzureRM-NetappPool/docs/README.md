@@ -1,6 +1,6 @@
 # Terraform::AzureRM::NetappPool
 
-CloudFormation equivalent of azurerm_netapp_pool
+Manages a Pool within a NetApp Account.
 
 ## Syntax
 
@@ -44,6 +44,8 @@ Properties:
 
 #### AccountName
 
+The name of the NetApp account in which the NetApp Pool should be created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -51,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Location
+
+Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -60,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the NetApp Pool. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -67,6 +73,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group where the NetApp Pool should be created. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -76,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServiceLevel
 
+The service level of the file system. Valid values include `Premium`, `Standard`, or `Ultra`.
+
 _Required_: Yes
 
 _Type_: String
@@ -84,6 +94,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SizeInTb
 
+Provisioned size of the pool in TB. Value must be between `4` and `500`.
+
 _Required_: Yes
 
 _Type_: Double
@@ -91,6 +103,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

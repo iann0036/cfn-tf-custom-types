@@ -1,6 +1,6 @@
 # Terraform::HCloud::Volume
 
-CloudFormation equivalent of hcloud_volume
+Provides a Hetzner Cloud volume resource to manage volumes.
 
 ## Syntax
 
@@ -42,6 +42,9 @@ Properties:
 
 #### Automount
 
+Automount the volume upon attaching it (server_id must be provided).
+- `format` - (Optional, string) Format volume after creation. `xfs` or `ext4`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -49,6 +52,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Format
+
+Format volume after creation. `xfs` or `ext4`.
 
 _Required_: No
 
@@ -66,6 +71,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Location
 
+Location of the volume to create, optional if server_id argument is passed.
+- `automount` - (Optional, bool) Automount the volume upon attaching it (server_id must be provided).
+- `format` - (Optional, string) Format volume after creation. `xfs` or `ext4`.
+
 _Required_: No
 
 _Type_: String
@@ -73,6 +82,13 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of the volume to create (must be unique per project).
+- `size` - (Required, int) Size of the volume (in GB).
+- `server` - (Optional, int) Server to attach the Volume to, optional if location argument is passed.
+- `location` - (Optional, string) Location of the volume to create, optional if server_id argument is passed.
+- `automount` - (Optional, bool) Automount the volume upon attaching it (server_id must be provided).
+- `format` - (Optional, string) Format volume after creation. `xfs` or `ext4`.
 
 _Required_: Yes
 
@@ -89,6 +105,12 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Size
+
+Size of the volume (in GB).
+- `server` - (Optional, int) Server to attach the Volume to, optional if location argument is passed.
+- `location` - (Optional, string) Location of the volume to create, optional if server_id argument is passed.
+- `automount` - (Optional, bool) Automount the volume upon attaching it (server_id must be provided).
+- `format` - (Optional, string) Format volume after creation. `xfs` or `ext4`.
 
 _Required_: Yes
 

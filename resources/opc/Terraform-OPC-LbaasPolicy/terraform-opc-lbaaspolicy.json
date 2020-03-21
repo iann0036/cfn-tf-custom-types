@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OPC::LbaasPolicy",
-    "description": "CloudFormation equivalent of opc_lbaas_policy",
+    "description": "The `opc_lbaas_policy` resource creates and manages a Load Balancer Classic Policy for a Load Balancer Classic instance.\n\nThe Policy resource supports the definition of distinct Policy types:\n\n- [Application Cookie Stickiness Policy](#application-cookie-stickiness-policy)\n- [CloudGate Policy](#cloudgate-policy)\n- [Load Balancer Cookie Stickiness Policy](#load-balancer-cookie-stickiness-policy)\n- [Load Balancing Mechanism Policy](#load-balancing-mechanism-policy)\n- [Rate Limiting Request Policy](#rate-limiting-request-policy)\n- [Redirect Policy](#redirect-policy)\n- [Resource Access Control Policy](#resource-access-control-policy)\n- [Set Request Header Policy](#set-request-header-policy)\n- [SSL Negotiation Policy](#set-negotiation-policy)\n- [Trusted Certificate Policy](#trusted-certificate-policy)",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ApplicationCookieStickinessPolicy": {
@@ -219,10 +219,12 @@
             "type": "string"
         },
         "LoadBalancer": {
-            "type": "string"
+            "type": "string",
+            "description": "The parent Load Balancer the Listener."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Listener."
         },
         "State": {
             "type": "boolean"

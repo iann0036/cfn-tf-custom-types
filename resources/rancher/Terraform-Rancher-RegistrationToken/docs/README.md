@@ -1,6 +1,6 @@
 # Terraform::Rancher::RegistrationToken
 
-CloudFormation equivalent of rancher_registration_token
+Provides a Rancher Registration Token resource. This can be used to create registration tokens for rancher environments and retrieve their information.
 
 ## Syntax
 
@@ -38,6 +38,8 @@ Properties:
 
 #### AgentIp
 
+A string containing the CATTLE_AGENT_IP to add to the registration command.
+
 _Required_: No
 
 _Type_: String
@@ -45,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+A registration token description.
 
 _Required_: No
 
@@ -54,6 +58,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnvironmentId
 
+The ID of the environment to create the token for.
+
 _Required_: Yes
 
 _Type_: String
@@ -62,6 +68,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HostLabels
 
+A map of host labels to add to the registration command.
+
 _Required_: No
 
 _Type_: List of <a href="hostlabels.md">HostLabels</a>
@@ -69,6 +77,8 @@ _Type_: List of <a href="hostlabels.md">HostLabels</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the registration token.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::GaapDomainErrorPage
 
-CloudFormation equivalent of tencentcloud_gaap_domain_error_page
+Provide a resource to custom error page info for a GAAP HTTP domain.
 
 ## Syntax
 
@@ -44,6 +44,8 @@ Properties:
 
 #### Body
 
+New response body.
+
 _Required_: Yes
 
 _Type_: String
@@ -51,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClearHeaders
+
+Response headers to be removed.
 
 _Required_: No
 
@@ -60,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Domain
 
+HTTP domain.
+
 _Required_: Yes
 
 _Type_: String
@@ -67,6 +73,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ErrorCodes
+
+Original error codes.
 
 _Required_: Yes
 
@@ -76,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ListenerId
 
+ID of the layer7 listener.
+
 _Required_: Yes
 
 _Type_: String
@@ -84,6 +94,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NewErrorCode
 
+New error code.
+
 _Required_: No
 
 _Type_: Double
@@ -91,6 +103,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SetHeaders
+
+Response headers to be set.
 
 _Required_: No
 

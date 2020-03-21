@@ -1,6 +1,8 @@
 # Terraform::AzureAD::GroupMember
 
-CloudFormation equivalent of azuread_group_member
+Manages a single Group Membership within Azure Active Directory.
+
+-> **NOTE:** Do not use this resource at the same time as `azuread_group.members`.
 
 ## Syntax
 
@@ -31,6 +33,8 @@ Properties:
 
 #### GroupObjectId
 
+The Object ID of the Azure AD Group you want to add the Member to.  Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +42,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MemberObjectId
+
+The Object ID of the Azure AD Object you want to add as a Member to the Group. Supported Object types are Users, Groups or Service Principals. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 # Terraform::OpsGenie::Maintenance
 
-CloudFormation equivalent of opsgenie_maintenance
+Manages a Maintenance within Opsgenie.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 ## Properties
 
 #### Description
+
+Description for the maintenance.
 
 _Required_: Yes
 

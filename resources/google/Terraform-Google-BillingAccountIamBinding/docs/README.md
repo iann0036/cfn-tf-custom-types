@@ -1,6 +1,15 @@
 # Terraform::Google::BillingAccountIamBinding
 
-CloudFormation equivalent of google_billing_account_iam_binding
+Allows creation and management of a single binding within IAM policy for
+an existing Google Cloud Platform Billing Account.
+
+~> **Note:** This resource __must not__ be used in conjunction with
+   `google_billing_account_iam_member` for the __same role__ or they will fight over
+   what your policy should be.
+
+~> **Note:** On create, this resource will overwrite members of any existing roles.
+    Use `terraform import` and inspect the `terraform plan` output to ensure
+    your existing members are preserved.
 
 ## Syntax
 
@@ -34,6 +43,8 @@ Properties:
 
 #### BillingAccountId
 
+The billing account id.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +53,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Members
 
+A list of users that the role should apply to. For more details on format and restrictions see https://cloud.google.com/billing/reference/rest/v1/Policy#Binding.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -49,6 +62,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Role
+
+The role that should be applied.
 
 _Required_: Yes
 

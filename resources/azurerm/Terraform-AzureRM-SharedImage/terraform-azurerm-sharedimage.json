@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::SharedImage",
-    "description": "CloudFormation equivalent of azurerm_shared_image",
+    "description": "Manages a Shared Image within a Shared Image Gallery.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Identifier": {
@@ -8,13 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "Offer": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Offer Name for this Shared Image."
                 },
                 "Publisher": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Publisher Name for this Gallery Image."
                 },
                 "Sku": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Name of the SKU for this Gallery Image."
                 }
             },
             "required": [
@@ -49,31 +52,40 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description of this Shared Image."
         },
         "Eula": {
-            "type": "string"
+            "type": "string",
+            "description": "The End User Licence Agreement for the Shared Image."
         },
         "GalleryName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Shared Image Gallery in which this Shared Image should exist. Changing this forces a new resource to be created."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the Shared Image Gallery exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Shared Image. Changing this forces a new resource to be created."
         },
         "OsType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of Operating System present in this Shared Image. Possible values are `Linux` and `Windows`."
         },
         "PrivacyStatementUri": {
-            "type": "string"
+            "type": "string",
+            "description": "The URI containing the Privacy Statement associated with this Shared Image."
         },
         "ReleaseNoteUri": {
-            "type": "string"
+            "type": "string",
+            "description": "The URI containing the Release Notes associated with this Shared Image."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which the Shared Image Gallery exists. Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -93,7 +105,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the Shared Image."
         },
         "Identifier": {
             "type": "array",

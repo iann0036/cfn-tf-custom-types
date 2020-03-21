@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::BackupPolicyFileShare",
-    "description": "CloudFormation equivalent of azurerm_backup_policy_file_share",
+    "description": "Manages an Azure File Share Backup Policy within a Recovery Services vault.\n\n-> **NOTE:** Azure Backup for Azure File Shares is currently in public preview. During the preview, the service is subject to additional limitations and unsupported backup scenarios. [Read More](https://docs.microsoft.com/en-us/azure/backup/backup-azure-files#limitations-for-azure-file-share-backup-during-preview)",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Backup": {
@@ -8,7 +8,8 @@
             "additionalProperties": false,
             "properties": {
                 "Frequency": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Sets the backup frequency. Currently, only `Daily` is supported."
                 },
                 "Time": {
                     "type": "string"
@@ -24,7 +25,8 @@
             "additionalProperties": false,
             "properties": {
                 "Count": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The number of daily backups to keep. Must be between `1` and `180` (inclusive)."
                 }
             },
             "required": [
@@ -57,16 +59,20 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the policy. Changing this forces a new resource to be created."
         },
         "RecoveryVaultName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Recovery Services Vault to use. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the policy. Changing this forces a new resource to be created."
         },
         "Timezone": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the timezone. Defaults to `UTC`."
         },
         "Backup": {
             "type": "array",

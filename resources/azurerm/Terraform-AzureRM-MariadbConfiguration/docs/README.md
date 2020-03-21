@@ -1,6 +1,6 @@
 # Terraform::AzureRM::MariadbConfiguration
 
-CloudFormation equivalent of azurerm_mariadb_configuration
+Sets a MariaDB Configuration value on a MariaDB Server.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### Name
 
+Specifies the name of the MariaDB Configuration, which needs [to be a valid MariaDB configuration name](https://mariadb.com/kb/en/library/server-system-variables/). Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which the MariaDB Server exists. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -53,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServerName
 
+Specifies the name of the MariaDB Server. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -60,6 +66,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Value
+
+Specifies the value of the MariaDB Configuration. See the MariaDB documentation for valid values.
 
 _Required_: Yes
 

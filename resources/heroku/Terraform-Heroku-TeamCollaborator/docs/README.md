@@ -1,6 +1,12 @@
 # Terraform::Heroku::TeamCollaborator
 
-CloudFormation equivalent of heroku_team_collaborator
+A [Heroku Team Collaborator](https://devcenter.heroku.com/articles/platform-api-reference#team-app-collaborator) receives access to a specific Team-owned app.
+
+To create a Heroku Team, use the [New Team](https://dashboard.heroku.com/teams/new) feature of Heroku Dashboard. For Heroku Enterprise accounts, new Teams may be created within the account by users with the right permissions.
+
+A Heroku "team" was originally called an "organization", and that is still the identifier used elsewhere in this provider. For [`heroku_app`](app.html) & [`heroku_space`](space.html) resources, set the Heroku Team name as the "organization".
+
+~> **NOTE:** This resource only works for Team-owned apps
 
 ## Syntax
 
@@ -34,6 +40,8 @@ Properties:
 
 #### App
 
+The name of the team app that the team collaborator will be added to.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +50,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Email
 
+Email address of the team collaborator.
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +59,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Permissions
+
+List of permissions that will be granted to the team collaborator. The order in which
+individual permissions are set here does not matter. Please [visit this link](https://devcenter.heroku.com/articles/app-permissions)
+for more information on available permissions.
 
 _Required_: Yes
 

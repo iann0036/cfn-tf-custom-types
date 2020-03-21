@@ -1,6 +1,6 @@
 # Terraform::Heroku::Cert
 
-CloudFormation equivalent of heroku_cert
+Provides a Heroku SSL certificate resource. It allows to set a given certificate for a Heroku app.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### App
 
+The Heroku app to add to.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CertificateChain
 
+The certificate chain to add.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PrivateKey
+
+The private key for a given certificate chain.
 
 _Required_: Yes
 

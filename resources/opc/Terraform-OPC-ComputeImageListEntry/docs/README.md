@@ -1,6 +1,6 @@
 # Terraform::OPC::ComputeImageListEntry
 
-CloudFormation equivalent of opc_compute_image_list_entry
+The ``opc_compute_image_list_entry`` resource creates and manages an Image List Entry in an Oracle Cloud Infrastructure Compute Classic identity domain.
 
 ## Syntax
 
@@ -36,6 +36,8 @@ Properties:
 
 #### Attributes
 
+JSON String of optional data that will be passed to an instance of this machine image when it is launched.
+
 _Required_: No
 
 _Type_: String
@@ -43,6 +45,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MachineImages
+
+An array of machine images.
 
 _Required_: Yes
 
@@ -52,6 +56,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the Image List.
+
 _Required_: Yes
 
 _Type_: String
@@ -59,6 +65,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Version
+
+The unique version of the image list entry, as an integer.
 
 _Required_: Yes
 

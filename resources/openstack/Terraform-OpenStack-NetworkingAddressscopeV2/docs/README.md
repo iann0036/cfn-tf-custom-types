@@ -1,6 +1,6 @@
 # Terraform::OpenStack::NetworkingAddressscopeV2
 
-CloudFormation equivalent of openstack_networking_addressscope_v2
+Manages a V2 Neutron addressscope resource within OpenStack.
 
 ## Syntax
 
@@ -39,6 +39,9 @@ Properties:
 
 #### IpVersion
 
+IP version, either 4 (default) or 6. Changing this
+creates a new address-scope.
+
 _Required_: No
 
 _Type_: Double
@@ -46,6 +49,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the address-scope. Changing this updates the
+name of the existing address-scope.
 
 _Required_: Yes
 
@@ -55,6 +61,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProjectId
 
+The owner of the address-scope. Required if admin
+wants to create a address-scope for another project. Changing this creates a
+new address-scope.
+
 _Required_: No
 
 _Type_: String
@@ -63,6 +73,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region in which to obtain the V2 Networking client.
+A Networking client is needed to create a Neutron address-scope. If omitted,
+the `region` argument of the provider is used. Changing this creates a new
+address-scope.
+
 _Required_: No
 
 _Type_: String
@@ -70,6 +85,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Shared
+
+Indicates whether this address-scope is shared across
+all projects. Changing this updates the shared status of the existing
+address-scope.
 
 _Required_: No
 

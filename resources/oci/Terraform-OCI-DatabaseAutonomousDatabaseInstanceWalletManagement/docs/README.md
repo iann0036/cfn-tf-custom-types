@@ -1,6 +1,8 @@
 # Terraform::OCI::DatabaseAutonomousDatabaseInstanceWalletManagement
 
-CloudFormation equivalent of oci_database_autonomous_database_instance_wallet_management
+This resource provides the Autonomous Database Instance Wallet Management resource in Oracle Cloud Infrastructure Database service.
+
+Updates the wallet for the specified Autonomous Database.
 
 ## Syntax
 
@@ -33,6 +35,8 @@ Properties:
 
 #### AutonomousDatabaseId
 
+(Updatable) The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+
 _Required_: Yes
 
 _Type_: String
@@ -40,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ShouldRotate
+
+(Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
 
 _Required_: No
 

@@ -1,6 +1,8 @@
 # Terraform::Datadog::Timeboard
 
-CloudFormation equivalent of datadog_timeboard
+Provides a Datadog timeboard resource. This can be used to create and manage Datadog timeboards.
+
+~> **Note:**This resource is outdated. Use the new [`datadog_dashboard`](dashboard.html) resource instead.
 
 ## Syntax
 
@@ -69,6 +71,11 @@ Properties:
 
 #### Description
 
+A description of the dashboard's content.
+- `read_only` - (Optional) The read-only status of the timeboard. Default is false.
+- `graph` - (Required) Nested block describing a graph definition. The structure of this block is described below. Multiple graph blocks are allowed within a datadog_timeboard resource.
+- `template_variable` - (Optional) Nested block describing a template variable. The structure of this block is described below. Multiple template_variable blocks are allowed within a datadog_timeboard resource.
+
 _Required_: Yes
 
 _Type_: String
@@ -77,6 +84,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ReadOnly
 
+The read-only status of the timeboard. Default is false.
+- `graph` - (Required) Nested block describing a graph definition. The structure of this block is described below. Multiple graph blocks are allowed within a datadog_timeboard resource.
+- `template_variable` - (Optional) Nested block describing a template variable. The structure of this block is described below. Multiple template_variable blocks are allowed within a datadog_timeboard resource.
+
 _Required_: No
 
 _Type_: Boolean
@@ -84,6 +95,12 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Title
+
+The name of the dashboard.
+- `description` - (Required) A description of the dashboard's content.
+- `read_only` - (Optional) The read-only status of the timeboard. Default is false.
+- `graph` - (Required) Nested block describing a graph definition. The structure of this block is described below. Multiple graph blocks are allowed within a datadog_timeboard resource.
+- `template_variable` - (Optional) Nested block describing a template variable. The structure of this block is described below. Multiple template_variable blocks are allowed within a datadog_timeboard resource.
 
 _Required_: Yes
 

@@ -1,6 +1,8 @@
 # Terraform::OpenTelekomCloud::NetworkingSecgroupV2
 
-CloudFormation equivalent of opentelekomcloud_networking_secgroup_v2
+Manages a V2 neutron security group resource within OpenTelekomCloud.
+Unlike Nova security groups, neutron separates the group from the rules
+and also allows an admin to target a specific tenant_id.
 
 ## Syntax
 
@@ -39,6 +41,10 @@ Properties:
 
 #### DeleteDefaultRules
 
+Whether or not to delete the default
+egress security rules. This is `false` by default. See the below note
+for more information.
+
 _Required_: No
 
 _Type_: Boolean
@@ -47,6 +53,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+A unique name for the security group.
+
 _Required_: No
 
 _Type_: String
@@ -54,6 +62,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+A unique name for the security group.
 
 _Required_: Yes
 
@@ -70,6 +80,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TenantId
+
+The owner of the security group. Required if admin
+wants to create a port for another tenant. Changing this creates a new
+security group.
 
 _Required_: No
 

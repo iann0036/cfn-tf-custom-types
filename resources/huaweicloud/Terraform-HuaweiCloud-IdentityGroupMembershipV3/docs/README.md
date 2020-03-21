@@ -1,6 +1,9 @@
 # Terraform::HuaweiCloud::IdentityGroupMembershipV3
 
-CloudFormation equivalent of huaweicloud_identity_group_membership_v3
+Manages a User Group Membership resource within HuaweiCloud IAM service.
+
+Note: You _must_ have admin privileges in your HuaweiCloud cloud to use
+this resource.
 
 ## Syntax
 
@@ -32,6 +35,8 @@ Properties:
 
 #### Group
 
+The group ID of this membership.
+
 _Required_: Yes
 
 _Type_: String
@@ -39,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Users
+
+A List of user IDs to associate to the group.
 
 _Required_: Yes
 

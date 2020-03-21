@@ -1,6 +1,13 @@
 # Terraform::Panos::DagTags
 
-CloudFormation equivalent of panos_dag_tags
+This resource allows you to add and remove dynamic address group tags.
+
+The `ip` field should be unique in the `panos_dag_tags` block, and there
+should only be one `panos_dag_tags` block defined in a given plan.
+
+**Note** - Tags are only removed during `terraform destroy`.  Updating an
+applied terraform plan to have alternative tags will leave behind the
+old tags from the previously published plan(s).
 
 ## Syntax
 
@@ -31,6 +38,8 @@ Properties:
 ## Properties
 
 #### Vsys
+
+The vsys to put the DAG tags in (default: `vsys1`).
 
 _Required_: No
 

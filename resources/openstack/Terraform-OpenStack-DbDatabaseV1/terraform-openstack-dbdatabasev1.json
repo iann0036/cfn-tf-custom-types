@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::DbDatabaseV1",
-    "description": "CloudFormation equivalent of openstack_db_database_v1",
+    "description": "Manages a V1 DB database resource within OpenStack.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,10 +23,12 @@
             "type": "string"
         },
         "InstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID for the database instance."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique name for the resource."
         },
         "Region": {
             "type": "string"

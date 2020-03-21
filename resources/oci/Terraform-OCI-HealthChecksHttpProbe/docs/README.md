@@ -1,6 +1,11 @@
 # Terraform::OCI::HealthChecksHttpProbe
 
-CloudFormation equivalent of oci_health_checks_http_probe
+This resource provides the Http Probe resource in Oracle Cloud Infrastructure Health Checks service.
+
+Creates an on-demand HTTP probe. The location response header contains the URL for
+fetching the probe results.
+
+*Note:* On-demand probe configurations are not saved.
 
 ## Syntax
 
@@ -50,6 +55,8 @@ Properties:
 
 #### CompartmentId
 
+The OCID of the compartment.
+
 _Required_: Yes
 
 _Type_: String
@@ -57,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Headers
+
+A dictionary of HTTP request headers.
 
 _Required_: No
 
@@ -66,6 +75,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Method
 
+The supported HTTP methods available for probes.
+
 _Required_: No
 
 _Type_: String
@@ -73,6 +84,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Path
+
+The optional URL path to probe, including query parameters.
 
 _Required_: No
 
@@ -82,6 +95,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Port
 
+The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
+
 _Required_: No
 
 _Type_: Double
@@ -89,6 +104,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Protocol
+
+The supported protocols available for HTTP probes.
 
 _Required_: Yes
 
@@ -98,6 +115,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Targets
 
+A list of targets (hostnames or IP addresses) of the probe.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -106,6 +125,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TimeoutInSeconds
 
+The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
+
 _Required_: No
 
 _Type_: Double
@@ -113,6 +134,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VantagePointNames
+
+A list of names of vantage points from which to execute the probe.
 
 _Required_: No
 

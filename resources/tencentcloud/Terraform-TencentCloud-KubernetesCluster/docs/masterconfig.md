@@ -63,6 +63,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### AvailabilityZone
 
+Indicates which availability zone will be used.
+
 _Required_: No
 
 _Type_: String
@@ -70,6 +72,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Count
+
+Number of cvm.
 
 _Required_: No
 
@@ -79,6 +83,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnhancedMonitorService
 
+To specify whether to enable cloud monitor service. Default is TRUE.
+
 _Required_: No
 
 _Type_: Boolean
@@ -86,6 +92,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnhancedSecurityService
+
+To specify whether to enable cloud security service. Default is TRUE.
 
 _Required_: No
 
@@ -95,6 +103,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceChargeType
 
+The charge type of instance. Valid values are `PREPAID` and `POSTPAID_BY_HOUR`, The default is `POSTPAID_BY_HOUR`. Note: TencentCloud International only supports `POSTPAID_BY_HOUR`, `PREPAID` instance will not terminated after cluster deleted, and may not allow to delete before expired.
+
 _Required_: No
 
 _Type_: String
@@ -102,6 +112,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceChargeTypePrepaidPeriod
+
+The tenancy (time unit is month) of the prepaid instance, NOTE: it only works when instance_charge_type is set to `PREPAID`. Valid values are 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36.
 
 _Required_: No
 
@@ -111,6 +123,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceChargeTypePrepaidRenewFlag
 
+When enabled, the CVM instance will be renew automatically when it reach the end of the prepaid tenancy. Valid values are `NOTIFY_AND_AUTO_RENEW`, `NOTIFY_AND_MANUAL_RENEW` and `DISABLE_NOTIFY_AND_MANUAL_RENEW`. NOTE: it only works when instance_charge_type is set to `PREPAID`.
+
 _Required_: No
 
 _Type_: String
@@ -118,6 +132,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceName
+
+Name of the CVMs.
 
 _Required_: No
 
@@ -127,6 +143,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceType
 
+Specified types of CVM instance.
+
 _Required_: Yes
 
 _Type_: String
@@ -134,6 +152,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InternetChargeType
+
+Charge types for network traffic. Available values include TRAFFIC_POSTPAID_BY_HOUR.
 
 _Required_: No
 
@@ -143,6 +163,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InternetMaxBandwidthOut
 
+Max bandwidth of Internet access in Mbps. Default is 0.
+
 _Required_: No
 
 _Type_: Double
@@ -150,6 +172,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeyIds
+
+ID list of keys, should be set if `password` not set.
 
 _Required_: No
 
@@ -159,6 +183,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Password
 
+Password to access, should be set if `key_ids` not set.
+
 _Required_: No
 
 _Type_: String
@@ -166,6 +192,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PublicIpAssigned
+
+Specify whether to assign an Internet IP address.
 
 _Required_: No
 
@@ -175,6 +203,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecurityGroupIds
 
+Security groups to which a CVM instance belongs.
+
 _Required_: No
 
 _Type_: List of String
@@ -182,6 +212,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubnetId
+
+Private network ID.
 
 _Required_: Yes
 
@@ -191,6 +223,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SystemDiskSize
 
+Volume of system disk in GB. Default is 50.
+
 _Required_: No
 
 _Type_: Double
@@ -199,6 +233,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SystemDiskType
 
+Type of a CVM disk, and available values include CLOUD_PREMIUM and CLOUD_SSD. Default is CLOUD_PREMIUM.
+
 _Required_: No
 
 _Type_: String
@@ -206,6 +242,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserData
+
+ase64-encoded User Data text, the length limit is 16KB.
 
 _Required_: No
 

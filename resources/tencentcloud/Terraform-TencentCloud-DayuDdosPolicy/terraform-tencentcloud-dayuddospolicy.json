@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::DayuDdosPolicy",
-    "description": "CloudFormation equivalent of tencentcloud_dayu_ddos_policy",
+    "description": "Use this resource to create dayu DDoS policy",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "DropOptions": {
@@ -8,61 +8,80 @@
             "additionalProperties": false,
             "properties": {
                 "BadConnThreshold": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The number of new connections based on destination IP that trigger suppression of connections, and valid value is range from 0 to 4294967295."
                 },
                 "CheckSyncConn": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicate whether to check null connection or not."
                 },
                 "ConnTimeout": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Connection timeout of abnormal connection check, and valid value is range from 0 to 65535."
                 },
                 "DConnLimit": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The limit of concurrent connections based on destination IP, and valid value is range from 0 to 4294967295."
                 },
                 "DNewLimit": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The limit of new connections based on destination IP, and valid value is range from 0 to 4294967295."
                 },
                 "DropAbroad": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicate whether to drop abroad traffic or not."
                 },
                 "DropIcmp": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicate whether to drop ICMP protocol or not."
                 },
                 "DropOther": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicate whether to drop other protocols(exclude TCP/UDP/ICMP) or not."
                 },
                 "DropTcp": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicate whether to drop TCP protocol or not."
                 },
                 "DropUdp": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicate to drop UDP protocol or not."
                 },
                 "IcmpMbpsLimit": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The limit of ICMP traffic rate, and valid value is range from 0 to 4294967295(Mbps)."
                 },
                 "NullConnEnable": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicate to enable null connection or not."
                 },
                 "OtherMbpsLimit": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The limit of other protocols(exclude TCP/UDP/ICMP) traffic rate, and valid value is range from 0 to 4294967295(Mbps)."
                 },
                 "SConnLimit": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The limit of concurrent connections based on source IP, and valid value is range from 0 to 4294967295."
                 },
                 "SNewLimit": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The limit of new connections based on source IP, and valid value is range from 0 to 4294967295."
                 },
                 "SynLimit": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The limit of syn of abnormal connection check, and valid value is range from 0 to 100."
                 },
                 "SynRate": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The percentage of syn in ack of abnormal connection check, and valid value is range from 0 to 100."
                 },
                 "TcpMbpsLimit": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The limit of TCP traffic, and valid value is range from 0 to 4294967295(Mbps)."
                 },
                 "UdpMbpsLimit": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The limit of UDP traffic rate, and valid value is range from 0 to 4294967295(Mbps)."
                 }
             },
             "required": [
@@ -91,46 +110,60 @@
             "additionalProperties": false,
             "properties": {
                 "Action": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Action of port to take, valid values area `drop`(drop the packet), `drop_black`(drop the packet and black the ip),`drop_rst`(drop the packet and disconnect),`drop_black_rst`(drop the packet, black the ip and disconnect),`transmit`(transmit the packet)."
                 },
                 "DEndPort": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "End port of the destination, valid value is range from 0 to 65535. It must be greater than `d_start_port`."
                 },
                 "DStartPort": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Start port of the destination, valid value is range from 0 to 65535."
                 },
                 "Depth": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The depth of match, and valid value is range from 0 to 1500."
                 },
                 "IsInclude": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicate whether to include the key word/regular expression or not."
                 },
                 "MatchBegin": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Indicate whether to check load or not, `begin_l5` means to match and `no_match` means not."
                 },
                 "MatchStr": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The key word or regular expression."
                 },
                 "MatchType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Match type, valid values are `sunday` and `pcre`, `sunday` means key word match while `pcre` means regular match."
                 },
                 "Offset": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The offset of match, and valid value is range from 0 to 1500."
                 },
                 "PktLengthMax": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The max length of the packet, and valid value is range from 0 to 1500(Mbps). It must be greater than `pkt_length_min`."
                 },
                 "PktLengthMin": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The minimum length of the packet, and valid value is range from 0 to 1500(Mbps)."
                 },
                 "Protocol": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Protocol, valid values are `tcp`, `udp`, `icmp`, `all`."
                 },
                 "SEndPort": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "End port of the source, valid value is range from 0 to 65535. It must be greater than `s_start_port`."
                 },
                 "SStartPort": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Start port of the source, valid value is range from 0 to 65535."
                 }
             },
             "required": []
@@ -140,19 +173,24 @@
             "additionalProperties": false,
             "properties": {
                 "Action": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Action of port to take, valid values area `drop`, `transmit`."
                 },
                 "EndPort": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "End port, valid value is range from 0 to 65535. It must be greater than `start_port`."
                 },
                 "Kind": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The type of forbidden port, and valid values are 0, 1, 2. 0 for destination ports make effect, 1 for source ports make effect. 2 for both destination and source ports."
                 },
                 "Protocol": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Protocol, valid values are `tcp`, `udp`, `icmp`, `all`."
                 },
                 "StartPort": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Start port, valid value is range from 0 to 65535."
                 }
             },
             "required": []
@@ -162,27 +200,32 @@
             "additionalProperties": false,
             "properties": {
                 "AutoRemove": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicate whether to auto-remove the watermark or not."
                 },
                 "Offset": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The offset of watermark, and valid value is range from 0 to 100."
                 },
                 "OpenSwitch": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicate whether to open watermark or not. It muse be set `true` when any field of watermark was set."
                 },
                 "TcpPortList": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Port range of TCP, the format is like `2000-3000`."
                 },
                 "UdpPortList": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Port range of TCP, the format is like `2000-3000`."
                 }
             },
             "required": []
@@ -198,19 +241,22 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Black ip list."
         },
         "CreateTime": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the DDoS policy. Length should between 1 and 32."
         },
         "PolicyId": {
             "type": "string"
         },
         "ResourceType": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of the resource that the DDoS policy works for, valid values are `bgpip`, `bgp`, `bgp-multip` and `net`."
         },
         "SceneId": {
             "type": "string"
@@ -242,7 +288,8 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "White ip list."
         },
         "DropOptions": {
             "type": "array",

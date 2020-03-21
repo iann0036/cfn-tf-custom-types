@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Datadog::Timeboard",
-    "description": "CloudFormation equivalent of datadog_timeboard",
+    "description": "Provides a Datadog timeboard resource. This can be used to create and manage Datadog timeboards.\n\n~> **Note:**This resource is outdated. Use the new [`datadog_dashboard`](dashboard.html) resource instead.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Graph": {
@@ -433,13 +433,16 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description of the dashboard's content.\n- `read_only` - (Optional) The read-only status of the timeboard. Default is false.\n- `graph` - (Required) Nested block describing a graph definition. The structure of this block is described below. Multiple graph blocks are allowed within a datadog_timeboard resource.\n- `template_variable` - (Optional) Nested block describing a template variable. The structure of this block is described below. Multiple template_variable blocks are allowed within a datadog_timeboard resource."
         },
         "ReadOnly": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "The read-only status of the timeboard. Default is false.\n- `graph` - (Required) Nested block describing a graph definition. The structure of this block is described below. Multiple graph blocks are allowed within a datadog_timeboard resource.\n- `template_variable` - (Optional) Nested block describing a template variable. The structure of this block is described below. Multiple template_variable blocks are allowed within a datadog_timeboard resource."
         },
         "Title": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the dashboard.\n- `description` - (Required) A description of the dashboard's content.\n- `read_only` - (Optional) The read-only status of the timeboard. Default is false.\n- `graph` - (Required) Nested block describing a graph definition. The structure of this block is described below. Multiple graph blocks are allowed within a datadog_timeboard resource.\n- `template_variable` - (Optional) Nested block describing a template variable. The structure of this block is described below. Multiple template_variable blocks are allowed within a datadog_timeboard resource."
         },
         "Graph": {
             "type": "array",

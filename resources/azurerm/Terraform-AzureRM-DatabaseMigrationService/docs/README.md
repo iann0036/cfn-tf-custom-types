@@ -1,6 +1,8 @@
 # Terraform::AzureRM::DatabaseMigrationService
 
-CloudFormation equivalent of azurerm_database_migration_service
+Manages a Azure Database Migration Service.
+
+~> **NOTE:** Destroying a Database Migration Service will leave any outstanding tasks untouched. This is to avoid unexpectedly deleting any tasks managed outside of terraform.
 
 ## Syntax
 
@@ -42,6 +44,8 @@ Properties:
 
 #### Location
 
+Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specify the name of the database migration service. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -58,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+Name of the resource group in which to create the database migration service. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -65,6 +73,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SkuName
+
+The sku name of the database migration service. Possible values are `Premium_4vCores`, `Standard_1vCores`, `Standard_2vCores` and `Standard_4vCores`. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -74,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubnetId
 
+The ID of the virtual subnet resource to which the database migration service should be joined. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -81,6 +93,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assigned to the resource.
 
 _Required_: No
 

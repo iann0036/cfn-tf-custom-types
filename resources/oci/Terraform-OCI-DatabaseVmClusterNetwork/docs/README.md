@@ -1,6 +1,8 @@
 # Terraform::OCI::DatabaseVmClusterNetwork
 
-CloudFormation equivalent of oci_database_vm_cluster_network
+This resource provides the Vm Cluster Network resource in Oracle Cloud Infrastructure Database service.
+
+Creates the VM cluster network.
 
 ## Syntax
 
@@ -58,6 +60,8 @@ Properties:
 
 #### CompartmentId
 
+The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+
 _Required_: Yes
 
 _Type_: String
@@ -65,6 +69,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefinedTags
+
+(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 
 _Required_: No
 
@@ -74,6 +80,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+The user-friendly name for the VM cluster network. The name does not need to be unique.
+
 _Required_: Yes
 
 _Type_: String
@@ -81,6 +89,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Dns
+
+(Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
 
 _Required_: No
 
@@ -90,6 +100,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ExadataInfrastructureId
 
+The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+
 _Required_: Yes
 
 _Type_: String
@@ -97,6 +109,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FreeformTags
+
+(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`.
 
 _Required_: No
 
@@ -106,6 +120,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ntp
 
+(Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
+
 _Required_: No
 
 _Type_: List of String
@@ -113,6 +129,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ValidateVmClusterNetwork
+
+A boolean flag indicating whether or not to validate VM cluster network after creation. Updates are not allowed on validated exadata VM cluster network.
 
 _Required_: No
 

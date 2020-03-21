@@ -1,6 +1,6 @@
 # Terraform::FlexibleEngine::NetworkingRouterV2
 
-CloudFormation equivalent of flexibleengine_networking_router_v2
+Manages a V2 router resource within FlexibleEngine. The router is the top-level resource for the VPC within FlexibleEngine.
 
 ## Syntax
 
@@ -46,6 +46,10 @@ Properties:
 
 #### AdminStateUp
 
+Administrative up/down status for the router
+(must be "true" or "false" if provided). Changing this updates the
+`admin_state_up` of an existing router.
+
 _Required_: No
 
 _Type_: Boolean
@@ -53,6 +57,10 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Distributed
+
+Indicates whether or not to create a
+distributed router. The default policy setting in Neutron restricts
+usage of this property to administrative users only.
 
 _Required_: No
 
@@ -62,6 +70,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableSnat
 
+Enable Source NAT for the router. Valid values are
+"true" or "false". An `external_gateway` has to be set in order to set this
+property. Changing this updates the `enable_snat` of the router.
+
 _Required_: No
 
 _Type_: Boolean
@@ -69,6 +81,11 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ExternalGateway
+
+The network UUID of an external gateway for
+the router. A router with an external gateway is required if any compute
+instances or load balancers will be using floating IPs. Changing this
+updates the `external_gateway` of an existing router.
 
 _Required_: No
 
@@ -78,6 +95,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A unique name for the router. Changing this
+updates the `name` of an existing router.
+
 _Required_: No
 
 _Type_: String
@@ -85,6 +105,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region in which to obtain the V2 networking client.
+A networking client is needed to create a router. If omitted, the
+`region` argument of the provider is used. Changing this creates a new
+router.
 
 _Required_: No
 
@@ -94,6 +119,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TenantId
 
+The owner of the floating IP. Required if admin wants
+to create a router for another tenant. Changing this creates a new router.
+
 _Required_: No
 
 _Type_: String
@@ -101,6 +129,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ValueSpecs
+
+Map of additional driver-specific options.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::GaapSecurityPolicy
 
-CloudFormation equivalent of tencentcloud_gaap_security_policy
+Provides a resource to create a security policy of GAAP proxy.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### Action
 
+Default policy, the available values include `ACCEPT` and `DROP`.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Enable
 
+Indicates whether policy is enable, default value is `true`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -48,6 +52,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProxyId
+
+ID of the GAAP proxy.
 
 _Required_: Yes
 

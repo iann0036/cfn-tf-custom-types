@@ -31,6 +31,8 @@ Properties:
 
 #### Name
 
+The name of the policy.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Policy
+
+String containing a Vault policy.
 
 _Required_: Yes
 

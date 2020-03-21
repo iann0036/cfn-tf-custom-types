@@ -24,6 +24,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### BindType
 
+Specifies the bind type. Possible values: `auto_assign` and
+`not_use`. Changing this creates a new instance.
+
 _Required_: Yes
 
 _Type_: String

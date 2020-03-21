@@ -1,6 +1,6 @@
 # Terraform::AzureRM::ResourceGroup
 
-CloudFormation equivalent of azurerm_resource_group
+Manages a Resource Group.
 
 ## Syntax
 

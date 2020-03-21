@@ -1,6 +1,10 @@
 # Terraform::Alicloud::VpnGateway
 
-CloudFormation equivalent of alicloud_vpn_gateway
+Provides a VPN gateway resource.
+
+-> **NOTE:** Terraform will auto build vpn instance  while it uses `alicloud_vpn_gateway` to build a vpn resource.
+
+-> Currently International-Site account can open `PostPaid` VPN gateway and China-Site account can open `PrePaid` VPN gateway.
 
 ## Syntax
 
@@ -47,6 +51,9 @@ Properties:
 
 #### Bandwidth
 
+The value should be 10, 100, 200. if the user is postpaid, otherwise it can be 5, 10, 20, 50, 100, 200.
+It can't be changed by terraform.
+
 _Required_: Yes
 
 _Type_: Double
@@ -54,6 +61,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+The description of the VPN instance.
 
 _Required_: No
 
@@ -63,6 +72,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableIpsec
 
+Enable or Disable IPSec VPN. At least one type of VPN should be enabled.
+
 _Required_: No
 
 _Type_: Boolean
@@ -70,6 +81,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableSsl
+
+Enable or Disable SSL VPN.  At least one type of VPN should be enabled.
 
 _Required_: No
 
@@ -79,6 +92,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceChargeType
 
+The charge type for instance. If it is an international site account, the valid value is PostPaid, otherwise PrePaid.
+Default to PostPaid.
+
 _Required_: No
 
 _Type_: String
@@ -86,6 +102,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the VPN. Defaults to null.
 
 _Required_: No
 
@@ -95,6 +113,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Period
 
+The filed is only required while the InstanceChargeType is PrePaid. Valid values: [1-9, 12, 24, 36]. Default to 1.
+
 _Required_: No
 
 _Type_: Double
@@ -102,6 +122,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SslConnections
+
+The max connections of SSL VPN. Default to 5. The number of connections supported by each account is different.
+This field is ignored when enable_ssl is false.
 
 _Required_: No
 
@@ -111,6 +134,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VpcId
 
+The VPN belongs the vpc_id, the field can't be changed.
+
 _Required_: Yes
 
 _Type_: String
@@ -118,6 +143,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VswitchId
+
+The VPN belongs the vswitch_id, the field can't be changed.
 
 _Required_: No
 

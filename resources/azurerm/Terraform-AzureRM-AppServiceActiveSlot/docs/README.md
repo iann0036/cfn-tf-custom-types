@@ -1,6 +1,8 @@
 # Terraform::AzureRM::AppServiceActiveSlot
 
-CloudFormation equivalent of azurerm_app_service_active_slot
+Promotes an App Service Slot to Production within an App Service.
+
+-> **Note:** When using Slots - the `app_settings`, `connection_string` and `site_config` blocks on the `azurerm_app_service` resource will be overwritten when promoting a Slot using the `azurerm_app_service_active_slot` resource.
 
 ## Syntax
 
@@ -35,6 +37,8 @@ Properties:
 
 #### AppServiceName
 
+The name of the App Service within which the Slot exists.  Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -43,6 +47,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AppServiceSlotName
 
+The name of the App Service Slot which should be promoted to the Production Slot within the App Service.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which the App Service exists. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

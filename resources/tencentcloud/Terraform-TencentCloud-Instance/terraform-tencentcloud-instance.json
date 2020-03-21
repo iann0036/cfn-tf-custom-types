@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::Instance",
-    "description": "CloudFormation equivalent of tencentcloud_instance",
+    "description": "Provides a CVM instance resource.\n\n~> **NOTE:** You can launch an CVM instance for a VPC network via specifying parameter `vpc_id`. One instance can only belong to one VPC.\n\n~> **NOTE:** At present, 'PREPAID' instance cannot be deleted and must wait it to be outdated and released automatically.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "DataDisks": {
@@ -8,16 +8,20 @@
             "additionalProperties": false,
             "properties": {
                 "DataDiskId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Data disk snapshot ID used to initialize the data disk. When data disk type is `LOCAL_BASIC` and `LOCAL_SSD`, disk id is not supported."
                 },
                 "DataDiskSize": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Size of the data disk, and unit is GB. If disk type is `CLOUD_SSD`, the size range is [100, 16000], and the others are [10-16000]."
                 },
                 "DataDiskType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Type of the data disk. Valid values are `LOCAL_BASIC`, `LOCAL_SSD`, `CLOUD_BASIC`, `CLOUD_SSD` and `CLOUD_PREMIUM`. NOTE: `LOCAL_BASIC` and `LOCAL_SSD` are deprecated."
                 },
                 "DeleteWithInstance": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Decides whether the disk is deleted with instance(only applied to cloud disk), default to true."
                 }
             },
             "required": [
@@ -32,98 +36,124 @@
             "type": "string"
         },
         "AllocatePublicIp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Associate a public ip address with an instance in a VPC or Classic. Boolean value, Default is false."
         },
         "AvailabilityZone": {
-            "type": "string"
+            "type": "string",
+            "description": "The available zone that the CVM instance locates at."
         },
         "CreateTime": {
             "type": "string"
         },
         "DisableMonitorService": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Disable enhance service for monitor, it is enabled by default. When this options is set, monitor agent won't be installed."
         },
         "DisableSecurityService": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Disable enhance service for security, it is enabled by default. When this options is set, security agent won't be installed."
         },
         "ExpiredTime": {
             "type": "string"
         },
         "Hostname": {
-            "type": "string"
+            "type": "string",
+            "description": "The hostname of CVM. Windows instance: The name should be a combination of 2 to 15 characters comprised of letters (case insensitive), numbers, and hyphens (-). Period (.) is not supported, and the name cannot be a string of pure numbers. Other types (such as Linux) of instances: The name should be a combination of 2 to 60 characters, supporting multiple periods (.). The piece between two periods is composed of letters (case insensitive), numbers, and hyphens (-)."
         },
         "ImageId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Image to use for the instance. Change 'image_id' will case instance destroy and re-created."
         },
         "InstanceChargeType": {
-            "type": "string"
+            "type": "string",
+            "description": "The charge type of instance. Valid values are `PREPAID`, `POSTPAID_BY_HOUR` and `SPOTPAID`, The default is `POSTPAID_BY_HOUR`. Note: TencentCloud International only supports `POSTPAID_BY_HOUR`. `PREPAID` instance may not allow to delete before expired. `SPOTPAID` instance must set `spot_instance_type` and `spot_max_price` at the same time."
         },
         "InstanceChargeTypePrepaidPeriod": {
-            "type": "number"
+            "type": "number",
+            "description": "The tenancy (time unit is month) of the prepaid instance, NOTE: it only works when instance_charge_type is set to `PREPAID`. Valid values are 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36."
         },
         "InstanceChargeTypePrepaidRenewFlag": {
-            "type": "string"
+            "type": "string",
+            "description": "When enabled, the CVM instance will be renew automatically when it reach the end of the prepaid tenancy. Valid values are `NOTIFY_AND_AUTO_RENEW`, `NOTIFY_AND_MANUAL_RENEW` and `DISABLE_NOTIFY_AND_MANUAL_RENEW`. NOTE: it only works when instance_charge_type is set to `PREPAID`."
         },
         "InstanceName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the CVM. The max length of instance_name is 60, and default value is `Terraform-CVM-Instance`."
         },
         "InstanceStatus": {
             "type": "string"
         },
         "InstanceType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of instance to start."
         },
         "InternetChargeType": {
-            "type": "string"
+            "type": "string",
+            "description": "Internet charge type of the instance, Valid values are `BANDWIDTH_PREPAID`, `TRAFFIC_POSTPAID_BY_HOUR`, `BANDWIDTH_POSTPAID_BY_HOUR` and `BANDWIDTH_PACKAGE`. The default is `TRAFFIC_POSTPAID_BY_HOUR`."
         },
         "InternetMaxBandwidthOut": {
-            "type": "number"
+            "type": "number",
+            "description": "Maximum outgoing bandwidth to the public network, measured in Mbps (Mega bit per second). If this value is not specified, then automatically sets it to 0 Mbps."
         },
         "KeyName": {
-            "type": "string"
+            "type": "string",
+            "description": "The key pair to use for the instance, it looks like skey-16jig7tx."
         },
         "Password": {
-            "type": "string"
+            "type": "string",
+            "description": "Password to an instance. In order to take effect new password, the instance will be restarted after modifying the password."
         },
         "PlacementGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of a placement group."
         },
         "PrivateIp": {
-            "type": "string"
+            "type": "string",
+            "description": "The private ip to be assigned to this instance, must be in the provided subnet and available."
         },
         "ProjectId": {
-            "type": "number"
+            "type": "number",
+            "description": "The project CVM belongs to, default to 0."
         },
         "PublicIp": {
             "type": "string"
         },
         "RunningFlag": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set instance to running or stop. Default value is true, the instance will shutdown when flag is false."
         },
         "SecurityGroups": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of security group ids to associate with."
         },
         "SpotInstanceType": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of spot instance, only support `ONE-TIME` now. Note: it only works when instance_charge_type is set to `SPOTPAID`."
         },
         "SpotMaxPrice": {
-            "type": "string"
+            "type": "string",
+            "description": "Max price of spot instance, is the format of decimal string, for example \"0.50\". Note: it only works when instance_charge_type is set to `SPOTPAID`."
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of a VPC subnetwork. If you want to create instances in VPC network, this parameter must be set."
         },
         "SystemDiskId": {
-            "type": "string"
+            "type": "string",
+            "description": "System disk snapshot ID used to initialize the system disk. When system disk type is `LOCAL_BASIC` and `LOCAL_SSD`, disk id is not supported."
         },
         "SystemDiskSize": {
-            "type": "number"
+            "type": "number",
+            "description": "Size of the system disk. Value range: [50, 1000], and unit is GB. Default is 50GB."
         },
         "SystemDiskType": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of the system disk. Valid values are `LOCAL_BASIC`, `LOCAL_SSD`, `CLOUD_BASIC`, `CLOUD_SSD` and `CLOUD_PREMIUM`, default value is `CLOUD_BASIC`. NOTE: `LOCAL_BASIC` and `LOCAL_SSD` are deprecated."
         },
         "Tags": {
             "type": "array",
@@ -143,16 +173,20 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource. For tag limits, please refer to [Use Limits](https://intl.cloud.tencent.com/document/product/651/13354)."
         },
         "UserData": {
-            "type": "string"
+            "type": "string",
+            "description": "The user data to be specified into this instance. Must be encrypted in base64 format and limited in 16 KB."
         },
         "UserDataRaw": {
-            "type": "string"
+            "type": "string",
+            "description": "The user data to be specified into this instance, plain text. Conflicts with `user_data`. Limited in 16 KB after encrypted in base64 format."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of a VPC network. If you want to create instances in VPC network, this parameter must be set."
         },
         "DataDisks": {
             "type": "array",

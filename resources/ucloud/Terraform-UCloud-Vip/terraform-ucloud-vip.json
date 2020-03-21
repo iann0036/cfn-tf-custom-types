@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::UCloud::Vip",
-    "description": "CloudFormation equivalent of ucloud_vip",
+    "description": "Provides a VIP resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -15,19 +15,24 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of VIP. If not specified, terraform will auto-generate a name beginning with `tf-vip-`."
         },
         "Remark": {
-            "type": "string"
+            "type": "string",
+            "description": "The remarks of the VIP. (Default: `\"\"`)."
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of subnet. If defined `vpc_id`, the `subnet_id` is Required."
         },
         "Tag": {
-            "type": "string"
+            "type": "string",
+            "description": "A tag assigned to VIP, which contains at most 63 characters and only support Chinese, English, numbers, '-', '_', and '.'. If it is not filled in or a empty string is filled in, then default tag will be assigned. (Default: `Default`)."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of VPC linked to the VIP."
         }
     },
     "additionalProperties": false,

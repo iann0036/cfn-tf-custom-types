@@ -1,6 +1,6 @@
 # Terraform::AzureRM::ApiManagementProduct
 
-CloudFormation equivalent of azurerm_api_management_product
+Manages an API Management Product.
 
 ## Syntax
 
@@ -49,6 +49,8 @@ Properties:
 
 #### ApiManagementName
 
+The name of the API Management Service. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -56,6 +58,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ApprovalRequired
+
+Do subscribers need to be approved prior to being able to use the Product?.
 
 _Required_: No
 
@@ -65,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+A description of this Product, which may include HTML formatting tags.
+
 _Required_: No
 
 _Type_: String
@@ -72,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+The Display Name for this API Management Product.
 
 _Required_: Yes
 
@@ -81,6 +89,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProductId
 
+The Identifier for this Product, which must be unique within the API Management Service. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -88,6 +98,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Published
+
+Is this Product Published?.
 
 _Required_: Yes
 
@@ -97,6 +109,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the Resource Group in which the API Management Service should be exist. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -104,6 +118,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubscriptionRequired
+
+Is a Subscription required to access API's included in this Product?.
 
 _Required_: Yes
 
@@ -113,6 +129,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubscriptionsLimit
 
+The number of subscriptions a user can have to this Product at the same time.
+
 _Required_: No
 
 _Type_: Double
@@ -120,6 +138,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Terms
+
+The Terms and Conditions for this Product, which must be accepted by Developers before they can begin the Subscription process.
 
 _Required_: No
 

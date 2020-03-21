@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Netlify::Site",
-    "description": "CloudFormation equivalent of netlify_site",
+    "description": "Primary settings for a Netlify site - should contain the bulk of your configuration. Allows configuration of most aspects of your Netlify site.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Repo": {
@@ -45,13 +45,16 @@
             "type": "string"
         },
         "CustomDomain": {
-            "type": "string"
+            "type": "string",
+            "description": "- Custom domain of the site, must be configured using a CNAME in accordance with [Netlify's docs](https://www.netlify.com/docs/custom-domains). (e.g. `www.example.com`)."
         },
         "DeployUrl": {
-            "type": "string"
+            "type": "string",
+            "description": null
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "- Name of your site on Netlify (e.g. **mysite**.netlify.com)."
         },
         "Repo": {
             "type": "array",

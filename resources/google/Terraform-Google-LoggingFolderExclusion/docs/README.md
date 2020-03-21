@@ -1,6 +1,11 @@
 # Terraform::Google::LoggingFolderExclusion
 
-CloudFormation equivalent of google_logging_folder_exclusion
+Manages a folder-level logging exclusion. For more information see
+[the official documentation](https://cloud.google.com/logging/docs/) and
+[Excluding Logs](https://cloud.google.com/logging/docs/exclusions).
+
+Note that you must have the "Logs Configuration Writer" IAM role (`roles/logging.configWriter`)
+granted to the credentials used with Terraform.
 
 ## Syntax
 
@@ -37,6 +42,8 @@ Properties:
 
 #### Description
 
+A human-readable description.
+
 _Required_: No
 
 _Type_: String
@@ -44,6 +51,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Disabled
+
+Whether this exclusion rule should be disabled or not. This defaults to
+false.
 
 _Required_: No
 
@@ -53,6 +63,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Filter
 
+The filter to apply when excluding logs. Only log entries that match the filter are excluded.
+See [Advanced Log Filters](https://cloud.google.com/logging/docs/view/advanced-filters) for information on how to
+write a filter.
+
 _Required_: Yes
 
 _Type_: String
@@ -61,6 +75,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Folder
 
+The folder to be exported to the sink. Note that either [FOLDER_ID] or "folders/[FOLDER_ID]" is
+accepted.
+
 _Required_: Yes
 
 _Type_: String
@@ -68,6 +85,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the logging exclusion.
 
 _Required_: Yes
 

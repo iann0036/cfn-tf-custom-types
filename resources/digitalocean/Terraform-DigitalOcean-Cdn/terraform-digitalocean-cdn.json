@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::DigitalOcean::Cdn",
-    "description": "CloudFormation equivalent of digitalocean_cdn",
+    "description": "Provides a DigitalOcean CDN Endpoint resource for use with Spaces.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,22 +9,26 @@
             "type": "string"
         },
         "CertificateId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of a DigitalOcean managed TLS certificate used for SSL when a custom subdomain is provided."
         },
         "CreatedAt": {
             "type": "string"
         },
         "CustomDomain": {
-            "type": "string"
+            "type": "string",
+            "description": "The fully qualified domain name (FQDN) of the custom subdomain used with the CDN Endpoint."
         },
         "Endpoint": {
             "type": "string"
         },
         "Origin": {
-            "type": "string"
+            "type": "string",
+            "description": "The fully qualified domain name, (FQDN) for a Space."
         },
         "Ttl": {
-            "type": "number"
+            "type": "number",
+            "description": "The time to live for the CDN Endpoint, in seconds. Default is 3600 seconds."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::Telemetry",
-    "description": "CloudFormation equivalent of panos_telemetry",
+    "description": "This resource allows you to add/update/delete telemetry sharing.\n\nJoin other Palo Alto Networks customers in a global sharing community, helping\nto raise the bar against the latest attack techniques. Your participation\nallows us to deliver new threat prevention controls across the attack\nlifecycle. Choose the type of data you share across applications, threat\nintelligence, and device health information to improve the fidelity of the\nprotections we deliver. This is an opt-in feature controlled with granular\npolicy, and we encourage you to join the community.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,28 +9,36 @@
             "type": "string"
         },
         "ApplicationReports": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Application reports."
         },
         "FileTypeIdentificationReports": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "File type identification\nreports."
         },
         "PassiveDnsMonitoring": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Passive DNS monitoring."
         },
         "ProductUsageStats": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Health and performance reports."
         },
         "ThreatPreventionData": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Threat prevention data."
         },
         "ThreatPreventionPacketCaptures": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable sending packet-\ncaptures with threat prevention information. This requires that\n`threat_prevention_data` also be enabled."
         },
         "ThreatPreventionReports": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Threat reports."
         },
         "UrlReports": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "URL reports."
         }
     },
     "additionalProperties": false,

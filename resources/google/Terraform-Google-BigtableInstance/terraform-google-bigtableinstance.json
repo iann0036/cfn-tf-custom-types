@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::BigtableInstance",
-    "description": "CloudFormation equivalent of google_bigtable_instance",
+    "description": "Creates a Google Bigtable instance. For more information see\n[the official documentation](https://cloud.google.com/bigtable/) and\n[API](https://cloud.google.com/bigtable/docs/go/reference).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Cluster": {
@@ -8,16 +8,20 @@
             "additionalProperties": false,
             "properties": {
                 "ClusterId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of the Cloud Bigtable cluster."
                 },
                 "NumNodes": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The number of nodes in your Cloud Bigtable cluster.\nRequired, with a minimum of `3` for a `PRODUCTION` instance. Must be left unset\nfor a `DEVELOPMENT` instance."
                 },
                 "StorageType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The storage type to use. One of `\"SSD\"` or\n`\"HDD\"`. Defaults to `\"SSD\"`."
                 },
                 "Zone": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The zone to create the Cloud Bigtable cluster in. Each\ncluster must have a different zone in the same region. Zones that support\nBigtable instances are noted on the [Cloud Bigtable locations page](https://cloud.google.com/bigtable/docs/locations)."
                 }
             },
             "required": [
@@ -32,16 +36,20 @@
             "type": "string"
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The human-readable display name of the Bigtable instance. Defaults to the instance `name`."
         },
         "InstanceType": {
-            "type": "string"
+            "type": "string",
+            "description": "The instance type to create. One of `\"DEVELOPMENT\"` or `\"PRODUCTION\"`. Defaults to `\"PRODUCTION\"`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name (also called Instance Id in the Cloud Console) of the Cloud Bigtable instance."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used."
         },
         "Cluster": {
             "type": "array",

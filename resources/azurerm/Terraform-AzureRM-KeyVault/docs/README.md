@@ -1,6 +1,6 @@
 # Terraform::AzureRM::KeyVault
 
-CloudFormation equivalent of azurerm_key_vault
+Manages a Key Vault.
 
 ## Syntax
 
@@ -58,6 +58,8 @@ Properties:
 
 #### AccessPolicy
 
+[A list](/docs/configuration/attr-as-blocks.html) of up to 16 objects describing access policies, as described below.
+
 _Required_: No
 
 _Type_: List of <a href="accesspolicy.md">AccessPolicy</a>
@@ -65,6 +67,8 @@ _Type_: List of <a href="accesspolicy.md">AccessPolicy</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnabledForDeployment
+
+Boolean flag to specify whether Azure Virtual Machines are permitted to retrieve certificates stored as secrets from the key vault. Defaults to `false`.
 
 _Required_: No
 
@@ -74,6 +78,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnabledForDiskEncryption
 
+Boolean flag to specify whether Azure Disk Encryption is permitted to retrieve secrets from the vault and unwrap keys. Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -81,6 +87,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnabledForTemplateDeployment
+
+Boolean flag to specify whether Azure Resource Manager is permitted to retrieve secrets from the key vault. Defaults to `false`.
 
 _Required_: No
 
@@ -90,6 +98,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Location
 
+Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -97,6 +107,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the Key Vault. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -106,6 +118,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PurgeProtectionEnabled
 
+Is Purge Protection enabled for this Key Vault? Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -113,6 +127,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which to create the Key Vault. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -122,6 +138,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SkuName
 
+The Name of the SKU used for this Key Vault. Possible values are `standard` and `premium`.
+
 _Required_: Yes
 
 _Type_: String
@@ -129,6 +147,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SoftDeleteEnabled
+
+Should Soft Delete be enabled for this Key Vault? Defaults to `false`.
 
 _Required_: No
 
@@ -138,6 +158,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -145,6 +167,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TenantId
+
+The Azure Active Directory tenant ID that should be used for authenticating requests to the key vault.
 
 _Required_: Yes
 

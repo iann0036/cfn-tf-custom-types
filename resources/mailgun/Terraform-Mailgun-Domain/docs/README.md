@@ -1,6 +1,9 @@
 # Terraform::Mailgun::Domain
 
-CloudFormation equivalent of mailgun_domain
+Provides a Mailgun App resource. This can be used to
+create and manage applications on Mailgun.
+
+After DNS records are set, domain verification should be triggered manually using [PUT /domains/\<domain\>/verify](https://documentation.mailgun.com/en/latest/api-domains.html#domains)
 
 ## Syntax
 
@@ -35,6 +38,8 @@ Properties:
 
 #### Name
 
+The domain to add to Mailgun.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region where domain will be created. Default value is `us`.
 
 _Required_: No
 
@@ -51,6 +58,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SpamAction
 
+`disabled` or `tag` Disable, no spam
+filtering will occur for inbound messages. Tag, messages
+will be tagged with a spam header.
+
 _Required_: No
 
 _Type_: String
@@ -58,6 +69,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Wildcard
+
+Boolean that determines whether
+the domain will accept email for sub-domains.
 
 _Required_: No
 

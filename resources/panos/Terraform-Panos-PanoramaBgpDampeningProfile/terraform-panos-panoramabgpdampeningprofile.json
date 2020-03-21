@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::PanoramaBgpDampeningProfile",
-    "description": "CloudFormation equivalent of panos_panorama_bgp_dampening_profile",
+    "description": "This resource allows you to add/update/delete a Panorama BGP dampening profile.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,34 +9,44 @@
             "type": "string"
         },
         "Cutoff": {
-            "type": "number"
+            "type": "number",
+            "description": "Cutoff threshold value (default: `1.25`)."
         },
         "DecayHalfLifeReachable": {
-            "type": "number"
+            "type": "number",
+            "description": "Decay half-life while\nreachable, in seconds (default: `300`)."
         },
         "DecayHalfLifeUnreachable": {
-            "type": "number"
+            "type": "number",
+            "description": "Decay half-life while\nunreachable, in seconds (default: `900`)."
         },
         "Enable": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable or not (default: `true`)."
         },
         "MaxHoldTime": {
-            "type": "number"
+            "type": "number",
+            "description": "Maximum hold-down time, in\nseconds (default: `900`)."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name."
         },
         "Reuse": {
-            "type": "number"
+            "type": "number",
+            "description": "Reuse threshold value (default: `0.5`)."
         },
         "Template": {
-            "type": "string"
+            "type": "string",
+            "description": "The template name."
         },
         "TemplateStack": {
-            "type": "string"
+            "type": "string",
+            "description": "The template stack name."
         },
         "VirtualRouter": {
-            "type": "string"
+            "type": "string",
+            "description": "The virtual router to add this BGP\ndampening profile to."
         }
     },
     "additionalProperties": false,

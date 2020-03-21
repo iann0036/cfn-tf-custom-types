@@ -48,6 +48,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### AutoDelete
 
+Whether or not the disk should be auto-deleted.
+This defaults to true.
+
 _Required_: No
 
 _Type_: Boolean
@@ -55,6 +58,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Boot
+
+Indicates that this is a boot disk.
 
 _Required_: No
 
@@ -64,6 +69,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DeviceName
 
+A unique device name that is reflected into the
+/dev/  tree of a Linux operating system running within the instance. If not
+specified, the server chooses a default device name to apply to this disk.
+
 _Required_: No
 
 _Type_: String
@@ -71,6 +80,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DiskName
+
+Name of the disk. When not provided, this defaults
+to the name of the instance.
 
 _Required_: No
 
@@ -80,6 +92,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DiskSizeGb
 
+The size of the image in gigabytes. If not
+specified, it will inherit the size of its base image. For SCRATCH disks,
+the size must be exactly 375GB.
+
 _Required_: No
 
 _Type_: Double
@@ -88,6 +104,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DiskType
 
+The GCE disk type. Can be either `"pd-ssd"`,
+`"local-ssd"`, or `"pd-standard"`.
+
 _Required_: No
 
 _Type_: String
@@ -95,6 +114,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Interface
+
+Specifies the disk interface to use for attaching
+this disk.
 
 _Required_: No
 
@@ -112,6 +134,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Mode
 
+The mode in which to attach this disk, either READ_WRITE
+or READ_ONLY. If you are attaching or creating a boot disk, this must
+read-write mode.
+
 _Required_: No
 
 _Type_: String
@@ -119,6 +145,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Source
+
+The name (**not self_link**)
+of the disk (such as those managed by `google_compute_disk`) to attach.
 
 _Required_: No
 
@@ -128,6 +157,13 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SourceImage
 
+The image from which to
+initialize this disk. This can be one of: the image's `self_link`,
+`projects/{project}/global/images/{image}`,
+`projects/{project}/global/images/family/{family}`, `global/images/{image}`,
+`global/images/family/{family}`, `family/{family}`, `{project}/{family}`,
+`{project}/{image}`, `{family}`, or `{image}`.
+
 _Required_: No
 
 _Type_: String
@@ -135,6 +171,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The type of GCE disk, can be either `"SCRATCH"` or
+`"PERSISTENT"`.
 
 _Required_: No
 

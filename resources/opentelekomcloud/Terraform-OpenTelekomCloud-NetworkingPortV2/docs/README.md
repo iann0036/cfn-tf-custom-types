@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::NetworkingPortV2
 
-CloudFormation equivalent of opentelekomcloud_networking_port_v2
+Manages a V2 port resource within OpenTelekomCloud.
 
 ## Syntax
 
@@ -59,6 +59,10 @@ Properties:
 
 #### AdminStateUp
 
+Administrative up/down status for the port
+(must be "true" or "false" if provided). Changing this updates the
+`admin_state_up` of an existing port.
+
 _Required_: No
 
 _Type_: Boolean
@@ -66,6 +70,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DeviceId
+
+The ID of the device attached to the port. Changing this
+creates a new port.
 
 _Required_: No
 
@@ -75,6 +82,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DeviceOwner
 
+The device owner of the Port. Changing this creates
+a new port.
+
 _Required_: No
 
 _Type_: String
@@ -82,6 +92,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MacAddress
+
+Specify a specific MAC address for the port. Changing
+this creates a new port.
 
 _Required_: No
 
@@ -91,6 +104,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A unique name for the port. Changing this
+updates the `name` of an existing port.
+
 _Required_: No
 
 _Type_: String
@@ -98,6 +114,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NetworkId
+
+The ID of the network to attach the port to. Changing
+this creates a new port.
 
 _Required_: Yes
 
@@ -123,6 +142,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecurityGroupIds
 
+A list of security group IDs to apply to the
+port. The security groups must be specified by ID and not name (as opposed
+to how they are configured with the Compute Instance).
+
 _Required_: No
 
 _Type_: List of String
@@ -131,6 +154,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TenantId
 
+The owner of the Port. Required if admin wants
+to create a port for another tenant. Changing this creates a new port.
+
 _Required_: No
 
 _Type_: String
@@ -138,6 +164,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ValueSpecs
+
+Map of additional options.
 
 _Required_: No
 

@@ -1,6 +1,21 @@
 # Terraform::Google::ComputeNodeTemplate
 
-CloudFormation equivalent of google_compute_node_template
+Represents a NodeTemplate resource. Node templates specify properties
+for creating sole-tenant nodes, such as node type, vCPU and memory
+requirements, node affinity labels, and region.
+
+
+To get more information about NodeTemplate, see:
+
+* [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/nodeTemplates)
+* How-to Guides
+    * [Sole-Tenant Nodes](https://cloud.google.com/compute/docs/nodes/)
+
+<div class = "oics-button" style="float: right; margin: 0 0 -15px">
+  <a href="https://console.cloud.google.com/cloudshell/open?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fterraform-google-modules%2Fdocs-examples.git&cloudshell_working_dir=node_template_basic&cloudshell_image=gcr.io%2Fgraphite-cloud-shell-images%2Fterraform%3Alatest&open_in_editor=main.tf&cloudshell_print=.%2Fmotd&cloudshell_tutorial=.%2Ftutorial.md" target="_blank">
+    <img alt="Open in Cloud Shell" src="//gstatic.com/cloudssh/images/open-btn.svg" style="max-height: 44px; margin: 32px auto; max-width: 100%;">
+  </a>
+</div>
 
 ## Syntax
 
@@ -76,6 +91,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
 
 _Required_: No
 

@@ -1,6 +1,11 @@
 # Terraform::Google::ServiceAccount
 
-CloudFormation equivalent of google_service_account
+Allows management of a [Google Cloud Platform service account](https://cloud.google.com/compute/docs/access/service-accounts)
+
+-> Creation of service accounts is eventually consistent, and that can lead to
+errors when you try to apply ACLs to service accounts immediately after
+creation. If using these resources in the same config, you can add a
+[`sleep` using `local-exec`](https://github.com/hashicorp/terraform/issues/17726#issuecomment-377357866).
 
 ## Syntax
 
@@ -35,6 +40,11 @@ Properties:
 
 #### AccountId
 
+The account id that is used to generate the service
+account email address and a stable unique id. It is unique within a project,
+must be 6-30 characters long, and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])`
+to comply with RFC1035. Changing this forces a new service account to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +52,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+A text description of the service account.
+Must be less than or equal to 256 UTF-8 bytes.
 
 _Required_: No
 
@@ -51,6 +64,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+The display name for the service account.
+Can be updated without creating a new resource.
+
 _Required_: No
 
 _Type_: String
@@ -58,6 +74,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The ID of the project that the service account will be created in.
+Defaults to the provider project configuration.
 
 _Required_: No
 

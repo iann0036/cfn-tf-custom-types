@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::FlexibleEngine::CtsTrackerV1",
-    "description": "CloudFormation equivalent of flexibleengine_cts_tracker_v1",
+    "description": "Allows you to collect, store, and query cloud resource operation records.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,16 +23,19 @@
             "type": "string"
         },
         "BucketName": {
-            "type": "string"
+            "type": "string",
+            "description": "The OBS bucket name for a tracker."
         },
         "FilePrefixName": {
-            "type": "string"
+            "type": "string",
+            "description": "The prefix of a log that needs to be stored in an OBS bucket."
         },
         "Region": {
             "type": "string"
         },
         "Status": {
-            "type": "string"
+            "type": "string",
+            "description": "The status of a tracker. The value should be **enabled** when creating a tracker, and when updating the value can be enabled or disabled."
         },
         "TrackerName": {
             "type": "string"

@@ -1,6 +1,8 @@
 # Terraform::Alicloud::SlbAttachment
 
-CloudFormation equivalent of alicloud_slb_attachment
+~> **Warnings:** This resource has been deprecated and please use [alicloud_backend_serverhttps](//www.terraform.io/docs/providers/alicloud/r/slb_backend_server.html).
+
+Add a group of backend servers (ECS instance) to the Server Load Balancer or remove them from it.
 
 ## Syntax
 
@@ -48,6 +50,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DeleteProtectionValidation
 
+Checking DeleteProtection of SLB instance before deleting. If true, this resource will not be deleted when its SLB instance enabled DeleteProtection. Default to false.
+
 _Required_: No
 
 _Type_: Boolean
@@ -55,6 +59,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceIds
+
+A list of instance ids to added backend server in the SLB.
 
 _Required_: Yes
 
@@ -64,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LoadBalancerId
 
+ID of the load balancer.
+
 _Required_: Yes
 
 _Type_: String
@@ -72,6 +80,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServerType
 
+Type of the instances. Valid value ecs, eni. Default to ecs.
+
 _Required_: No
 
 _Type_: String
@@ -79,6 +89,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Weight
+
+Weight of the instances. Valid value range: [0-100]. Default to 100.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::BackupProtectedFileShare",
-    "description": "CloudFormation equivalent of azurerm_backup_protected_file_share",
+    "description": "Manages an Azure Backup Protected File Share to enable backups for file shares within an Azure Storage Account\n\n-> **NOTE:** Azure Backup for Azure File Shares is currently in public preview. During the preview, the service is subject to additional limitations and unsupported backup scenarios. [Read More](https://docs.microsoft.com/en-us/azure/backup/backup-azure-files#limitations-for-azure-file-share-backup-during-preview)\n\n-> **NOTE** Azure Backup for Azure File Shares does not support Soft Delete at this time. Deleting this resource will also delete all associated backup data. Please exercise caution. Consider using [`prevent_destroy`](https://www.terraform.io/docs/configuration/resources.html#prevent_destroy) to guard against accidental deletion.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,19 +29,24 @@
             "type": "string"
         },
         "BackupPolicyId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the ID of the backup policy to use. The policy must be an Azure File Share backup policy. Other types are not supported."
         },
         "RecoveryVaultName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Recovery Services Vault to use. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the Azure Backup Protected File Share. Changing this forces a new resource to be created."
         },
         "SourceFileShareName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the file share to backup. Changing this forces a new resource to be created."
         },
         "SourceStorageAccountId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the ID of the storage account of the file share to backup. Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

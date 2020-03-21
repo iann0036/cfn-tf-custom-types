@@ -1,6 +1,6 @@
 # Terraform::NSXT::EtherTypeNsService
 
-CloudFormation equivalent of nsxt_ether_type_ns_service
+This resource provides a way to configure a networking and security service which can be used within NSX. This specific service is for the layer 2 Ethernet protocol.
 
 ## Syntax
 
@@ -36,6 +36,8 @@ Properties:
 
 #### Description
 
+Description.
+
 _Required_: No
 
 _Type_: String
@@ -44,6 +46,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+Display name, defaults to ID if not set.
+
 _Required_: No
 
 _Type_: String
@@ -51,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EtherType
+
+Type of the encapsulated protocol.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::ApiGatewayApp",
-    "description": "CloudFormation equivalent of alicloud_api_gateway_app",
+    "description": "Provides an app resource.It must create an app before calling a third-party API because the app is the identity used to call the third-party API.\n\nFor information about Api Gateway App and how to use it, see [Create An APP](https://www.alibabacloud.com/help/doc-detail/43663.html)\n\n-> **NOTE:** Terraform will auto build api app while it uses `alicloud_api_gateway_app` to build api app.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the app. Defaults to null."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the app."
         },
         "Tags": {
             "type": "array",
@@ -32,7 +34,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         }
     },
     "additionalProperties": false,

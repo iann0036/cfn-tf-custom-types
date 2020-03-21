@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Vault::KubernetesAuthBackendConfig",
-    "description": "CloudFormation equivalent of vault_kubernetes_auth_backend_config",
+    "description": "Manages an Kubernetes auth backend config in a Vault server. See the [Vault\ndocumentation](https://www.vaultproject.io/docs/auth/kubernetes.html) for more\ninformation.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,23 +12,28 @@
             "type": "string"
         },
         "Issuer": {
-            "type": "string"
+            "type": "string",
+            "description": "Optional JWT issuer. If no issuer is specified, `kubernetes.io/serviceaccount` will be used as the default issuer."
         },
         "KubernetesCaCert": {
-            "type": "string"
+            "type": "string",
+            "description": "PEM encoded CA cert for use by the TLS client used to talk with the Kubernetes API."
         },
         "KubernetesHost": {
-            "type": "string"
+            "type": "string",
+            "description": "Host must be a host string, a host:port pair, or a URL to the base of the Kubernetes API server."
         },
         "PemKeys": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of PEM-formatted public keys or certificates used to verify the signatures of Kubernetes service account JWTs. If a certificate is given, its public key will be extracted. Not every installation of Kubernetes exposes these keys."
         },
         "TokenReviewerJwt": {
-            "type": "string"
+            "type": "string",
+            "description": "A service account JWT used to access the TokenReview API to validate other JWTs during login. If not set the JWT used for login will be used to access the API."
         }
     },
     "additionalProperties": false,

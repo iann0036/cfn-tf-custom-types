@@ -1,6 +1,6 @@
 # Terraform::DNS::TxtRecordSet
 
-CloudFormation equivalent of dns_txt_record_set
+Creates a TXT type DNS record set.
 
 ## Syntax
 
@@ -36,6 +36,8 @@ Properties:
 
 #### Name
 
+The name of the record set. The `zone` argument will be appended to this value to create the full record path.
+
 _Required_: No
 
 _Type_: String
@@ -43,6 +45,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ttl
+
+The TTL of the record set. Defaults to `3600`.
 
 _Required_: No
 
@@ -52,6 +56,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Txt
 
+The text records this record set will be set to.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -59,6 +65,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Zone
+
+DNS zone the record set belongs to. It must be an FQDN, that is, include the trailing dot.
 
 _Required_: Yes
 

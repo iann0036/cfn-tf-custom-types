@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Spotinst::ElastigroupAzure",
-    "description": "CloudFormation equivalent of spotinst_elastigroup_azure",
+    "description": "Provides a Spotinst elastigroup Azure resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "HealthCheck": {
@@ -460,45 +460,56 @@
             "type": "string"
         },
         "DesiredCapacity": {
-            "type": "number"
+            "type": "number",
+            "description": "The desired number of instances the group should have at any time."
         },
         "LowPrioritySizes": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Available Low-Priority sizes."
         },
         "MaxSize": {
-            "type": "number"
+            "type": "number",
+            "description": "The maximum number of instances the group should have at any time."
         },
         "MinSize": {
-            "type": "number"
+            "type": "number",
+            "description": "The minimum number of instances the group should have at any time."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the managed identity."
         },
         "OdSizes": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Available On-Demand sizes."
         },
         "Product": {
-            "type": "string"
+            "type": "string",
+            "description": "Operation system type. Valid values: `\"Linux\"`, `\"Windows\"`."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region your Azure group will be created in."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The Resource Group that the user-assigned managed identity resides in.\n* `name` - (Required) The name of the managed identity."
         },
         "ShutdownScript": {
-            "type": "string"
+            "type": "string",
+            "description": "Shutdown script for the group. Value should be passed as a string encoded at Base64 only."
         },
         "UserData": {
-            "type": "string"
+            "type": "string",
+            "description": "Base64-encoded MIME user data to make available to the instances."
         },
         "HealthCheck": {
             "type": "array",

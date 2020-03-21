@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::UCloud::Eip",
-    "description": "CloudFormation equivalent of ucloud_eip",
+    "description": "Provides an Elastic IP resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,25 +9,29 @@
             "type": "string"
         },
         "Bandwidth": {
-            "type": "number"
+            "type": "number",
+            "description": "Maximum bandwidth to the elastic public network, measured in Mbps (Mega bit per second). The ranges for bandwidth are: 1-200 for pay by traffic, 1-800 for pay by bandwidth. (Default: `1`)."
         },
         "ChargeMode": {
             "type": "string"
         },
         "ChargeType": {
-            "type": "string"
+            "type": "string",
+            "description": "Elastic IP charge type. Possible values are: `year` as pay by year, `month` as pay by month, `dynamic` as pay by hour (specific permission required). (Default: `month`)."
         },
         "CreateTime": {
             "type": "string"
         },
         "Duration": {
-            "type": "number"
+            "type": "number",
+            "description": "The duration that you will buy the resource. (Default: `1`). It is not required when `dynamic` (pay by hour), the value is `0` when `month`(pay by month) and the instance will be valid till the last day of that month."
         },
         "ExpireTime": {
             "type": "string"
         },
         "InternetType": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of Elastic IP routes. Possible values are: `international` as international BGP IP and `bgp` as china mainland BGP IP."
         },
         "IpSet": {
             "type": "array",
@@ -46,13 +50,15 @@
             }
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the EIP, which contains 1-63 characters and only support Chinese, English, numbers, '-', '_', '.'. If not specified, terraform will auto-generate a name beginning with `tf-eip`."
         },
         "PublicIp": {
             "type": "string"
         },
         "Remark": {
-            "type": "string"
+            "type": "string",
+            "description": "The remarks of the EIP. (Default: `\"\"`)."
         },
         "Resource": {
             "type": "array",
@@ -78,7 +84,8 @@
             "type": "string"
         },
         "Tag": {
-            "type": "string"
+            "type": "string",
+            "description": "A tag assigned to Elastic IP, which contains at most 63 characters and only support Chinese, English, numbers, '-', '_', and '.'. If it is not filled in or a empty string is filled in, then default tag will be assigned. (Default: `Default`)."
         }
     },
     "additionalProperties": false,

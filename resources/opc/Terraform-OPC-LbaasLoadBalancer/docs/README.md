@@ -1,6 +1,6 @@
 # Terraform::OPC::LbaasLoadBalancer
 
-CloudFormation equivalent of opc_lbaas_load_balancer
+The `opc_lbaas_load_balancer` resource creates and manages a Load Balancer Classic instance in an Oracle Cloud Infrastructure Classic Compute region. You must define server pools, create at least one listener, and optionally define the policies for the load balancer before it will be operational.
 
 ## Syntax
 
@@ -55,6 +55,8 @@ Properties:
 
 #### Description
 
+A short description for the load balancer. The description must not exceed 1000 characters.
+
 _Required_: No
 
 _Type_: String
@@ -62,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Enabled
+
+Boolean flag to enable or disable the Load Balancer. Default is `true` (enabled).
 
 _Required_: No
 
@@ -71,6 +75,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IpNetwork
 
+Fully qualified three part name of the IP network to be associated with the load balancer.
+
 _Required_: No
 
 _Type_: String
@@ -78,6 +84,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the Load Balancer.
 
 _Required_: Yes
 
@@ -87,6 +95,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ParentLoadBalancer
 
+Select a parent load balancer if you want to create a dependent load balancer.
+
 _Required_: No
 
 _Type_: String
@@ -95,6 +105,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PermittedClients
 
+List of permitted client IP addresses or CIDR ranges which can connect to this load balancer on the configured Listener ports. If not set all connections are permitted.
+
 _Required_: No
 
 _Type_: List of String
@@ -102,6 +114,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PermittedMethods
+
+List of permitted HTTP methods. e.g. `GET`, `POST`, `PUT`, `PATCH`, `DELETE`, `HEAD` or you can also create your own custom methods. Requests with methods not listed in this field will result in a 403 (unauthorized access) response.
 
 _Required_: No
 
@@ -119,6 +133,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region in which to create the Load Balancer, e.g. `uscom-central-1`.
+
 _Required_: Yes
 
 _Type_: String
@@ -126,6 +142,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Scheme
+
+Set to either `INTERNET_FACING` or `INTERNAL`.
 
 _Required_: Yes
 
@@ -142,6 +160,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+List of tags.
 
 _Required_: No
 

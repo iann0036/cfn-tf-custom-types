@@ -1,6 +1,6 @@
 # Terraform::Kubernetes::ApiService
 
-CloudFormation equivalent of kubernetes_api_service
+An API Service is an abstraction which defines for locating and communicating with servers.
 
 ## Syntax
 

@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::ClbAttachment
 
-CloudFormation equivalent of tencentcloud_clb_attachment
+Provides a resource to create a CLB attachment.
 
 ## Syntax
 
@@ -36,6 +36,8 @@ Properties:
 
 #### ClbId
 
+Id of the CLB.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +46,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ListenerId
 
+Id of the CLB listener.
+
 _Required_: Yes
 
 _Type_: String
@@ -51,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RuleId
+
+Id of the CLB listener rule. Only supports listeners of 'HTTPS' and 'HTTP' protocol.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureStack::NetworkSecurityRule",
-    "description": "CloudFormation equivalent of azurestack_network_security_rule",
+    "description": "Manages a Network Security Rule.\n\n~> **NOTE on Network Security Groups and Network Security Rules:** Terraform currently\nprovides both a standalone [Network Security Rule resource](network_security_rule.html), and allows for Network Security Rules to be defined in-line within the [Network Security Group resource](network_security_group.html).\nAt this time you cannot use a Network Security Group with in-line Network Security Rules in conjunction with any Network Security Rule resources. Doing so will cause a conflict of rule settings and will overwrite rules.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,37 +9,48 @@
             "type": "string"
         },
         "Access": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies whether network traffic is allowed or denied. Possible values are `Allow` and `Deny`."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description for this rule. Restricted to 140 characters."
         },
         "DestinationAddressPrefix": {
-            "type": "string"
+            "type": "string",
+            "description": "CIDR or destination IP range or * to match any IP. Tags such as \u2018VirtualNetwork\u2019, \u2018AzureLoadBalancer\u2019 and \u2018Internet\u2019 can also be used."
         },
         "DestinationPortRange": {
-            "type": "string"
+            "type": "string",
+            "description": "Destination Port or Range. Integer or range between `0` and `65535` or `*` to match any."
         },
         "Direction": {
-            "type": "string"
+            "type": "string",
+            "description": "The direction specifies if rule will be evaluated on incoming or outgoing traffic. Possible values are `Inbound` and `Outbound`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the security rule. This needs to be unique across all Rules in the Network Security Group. Changing this forces a new resource to be created."
         },
         "NetworkSecurityGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Network Security Group that we want to attach the rule to. Changing this forces a new resource to be created."
         },
         "Priority": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the priority of the rule. The value can be between 100 and 4096. The priority number must be unique for each rule in the collection. The lower the priority number, the higher the priority of the rule."
         },
         "Protocol": {
-            "type": "string"
+            "type": "string",
+            "description": "Network protocol this rule applies to. Possible values include `Tcp`, `Udp` or `*` (which matches both)."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the Network Security Rule. Changing this forces a new resource to be created."
         },
         "SourceAddressPrefix": {
-            "type": "string"
+            "type": "string",
+            "description": "CIDR or source IP range or * to match any IP. Tags such as \u2018VirtualNetwork\u2019, \u2018AzureLoadBalancer\u2019 and \u2018Internet\u2019 can also be used."
         },
         "SourceApplicationSecurityGroupIds": {
             "type": "array",
@@ -49,7 +60,8 @@
             }
         },
         "SourcePortRange": {
-            "type": "string"
+            "type": "string",
+            "description": "Source Port or Range. Integer or range between `0` and `65535` or `*` to match any."
         }
     },
     "additionalProperties": false,

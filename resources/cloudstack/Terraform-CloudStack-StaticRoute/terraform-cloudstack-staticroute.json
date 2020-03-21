@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::CloudStack::StaticRoute",
-    "description": "CloudFormation equivalent of cloudstack_static_route",
+    "description": "Creates a static route for the given private gateway or VPC.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "Cidr": {
-            "type": "string"
+            "type": "string",
+            "description": "The CIDR for the static route. Changing this forces\na new resource to be created."
         },
         "GatewayId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Private gateway. Changing this forces\na new resource to be created."
         }
     },
     "additionalProperties": false,

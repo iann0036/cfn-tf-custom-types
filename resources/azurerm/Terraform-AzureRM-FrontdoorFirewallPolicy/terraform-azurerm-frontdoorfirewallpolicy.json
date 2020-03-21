@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::FrontdoorFirewallPolicy",
-    "description": "CloudFormation equivalent of azurerm_frontdoor_firewall_policy",
+    "description": "Manages an Azure Front Door Web Application Firewall Policy instance.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "CustomRule": {
@@ -8,25 +8,32 @@
             "additionalProperties": false,
             "properties": {
                 "Action": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The action to perform when the rule is matched. Possible values are `Allow`, `Block`, `Log`, or `Redirect`."
                 },
                 "Enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Is the rule is enabled or disabled? Defaults to `true`."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Gets name of the resource that is unique within a policy. This name can be used to access the resource."
                 },
                 "Priority": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The priority of the rule. Rules with a lower value will be evaluated before rules with a higher value. Defaults to `1`."
                 },
                 "RateLimitDurationInMinutes": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The rate limit duration in minutes. Defaults to `1`."
                 },
                 "RateLimitThreshold": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The rate limit threshold. Defaults to `10`."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The type of rule. Possible values are `MatchRule` or `RateLimitRule`."
                 },
                 "MatchCondition": {
                     "type": "array",
@@ -47,10 +54,12 @@
             "additionalProperties": false,
             "properties": {
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the managed rule to use with this resource."
                 },
                 "Version": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The version on the managed rule to use with this resource."
                 },
                 "Exclusion": {
                     "type": "array",
@@ -100,26 +109,32 @@
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Up to `100` possible values to match."
                 },
                 "MatchVariable": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The request variable to compare with. Possible values are `Cookies`, `PostArgs`, `QueryString`, `RemoteAddr`, `RequestBody`, `RequestHeader`, `RequestMethod`, or `RequestUri`."
                 },
                 "NegationCondition": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Should the result of the condition be negated."
                 },
                 "Operator": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Comparison type to use for matching with the variable value. Possible values are `Any`, `BeginsWith`, `Contains`, `EndsWith`, `Equal`, `GeoMatch`, `GreaterThan`, `GreaterThanOrEqual`, `IPMatch`, `LessThan`, `LessThanOrEqual` or `RegEx`."
                 },
                 "Selector": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Match against a specific key if the `match_variable` is `QueryString`, `PostArgs`, `RequestHeader` or `Cookies`."
                 },
                 "Transforms": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Up to `5` transforms to apply. Possible values are `Lowercase`, `RemoveNulls`, `Trim`, `Uppercase`, `URLDecode` or`URLEncode`."
                 }
             },
             "required": [
@@ -133,13 +148,16 @@
             "additionalProperties": false,
             "properties": {
                 "MatchVariable": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The variable type to be excluded. Possible values are `QueryStringArgNames`, `RequestBodyPostArgNames`, `RequestCookieNames`, `RequestHeaderNames`."
                 },
                 "Operator": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Comparison operator to apply to the selector when specifying which elements in the collection this exclusion applies to. Possible values are: `Equals`, `Contains`, `StartsWith`, `EndsWith`, `EqualsAny`."
                 },
                 "Selector": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Selector for the value in the `match_variable` attribute this exclusion applies to."
                 }
             },
             "required": [
@@ -153,7 +171,8 @@
             "additionalProperties": false,
             "properties": {
                 "RuleGroupName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The managed rule group to override."
                 },
                 "Exclusion": {
                     "type": "array",
@@ -179,13 +198,16 @@
             "additionalProperties": false,
             "properties": {
                 "Action": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The action to be applied when the rule matches. Possible values are `Allow`, `Block`, `Log`, or `Redirect`."
                 },
                 "Enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Is the managed rule override enabled or disabled. Defaults to `false`."
                 },
                 "RuleId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Identifier for the managed rule."
                 },
                 "Exclusion": {
                     "type": "array",
@@ -207,13 +229,16 @@
             "type": "string"
         },
         "CustomBlockResponseBody": {
-            "type": "string"
+            "type": "string",
+            "description": "If a `custom_rule` block's action type is `block`, this is the response body. The body must be specified in base64 encoding."
         },
         "CustomBlockResponseStatusCode": {
-            "type": "number"
+            "type": "number",
+            "description": "If a `custom_rule` block's action type is `block`, this is the response status code. Possible values are `200`, `403`, `405`, `406`, or `429`."
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is the policy a enabled state or disabled state. Defaults to `true`."
         },
         "FrontendEndpointIds": {
             "type": "array",
@@ -226,16 +251,20 @@
             "type": "string"
         },
         "Mode": {
-            "type": "string"
+            "type": "string",
+            "description": "The firewall policy mode. Possible values are `Detection`, `Prevention` and defaults to `Prevention`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the policy. Changing this forces a new resource to be created."
         },
         "RedirectUrl": {
-            "type": "string"
+            "type": "string",
+            "description": "If action type is redirect, this field represents redirect URL for the client."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group. Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -255,7 +284,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the Web Application Firewall Policy."
         },
         "CustomRule": {
             "type": "array",

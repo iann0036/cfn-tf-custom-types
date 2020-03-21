@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::BotChannelsRegistration",
-    "description": "CloudFormation equivalent of azurerm_bot_channels_registration",
+    "description": "Manages a Bot Channels Registration.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,34 +29,44 @@
             "type": "string"
         },
         "DeveloperAppInsightsApiKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The Application Insights API Key to associate with the Bot Channels Registration."
         },
         "DeveloperAppInsightsApplicationId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Application Insights Application ID to associate with the Bot Channels Registration."
         },
         "DeveloperAppInsightsKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The Application Insights Key to associate with the Bot Channels Registration."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Bot Channels Registration will be displayed as. This defaults to `name` if not specified."
         },
         "Endpoint": {
-            "type": "string"
+            "type": "string",
+            "description": "The Bot Channels Registration endpoint."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "The supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "MicrosoftAppId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Microsoft Application ID for the Bot Channels Registration. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Bot Channels Registration. Changing this forces a new resource to be created. Must be globally unique."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the Bot Channels Registration. Changing this forces a new resource to be created."
         },
         "Sku": {
-            "type": "string"
+            "type": "string",
+            "description": "The SKU of the Bot Channels Registration. Valid values include `F0` or `S1`. Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -76,7 +86,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

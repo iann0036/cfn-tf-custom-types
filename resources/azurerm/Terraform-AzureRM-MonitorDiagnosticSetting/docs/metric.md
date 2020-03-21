@@ -27,6 +27,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Category
 
+The name of a Diagnostic Metric Category for this Resource.
+
 _Required_: Yes
 
 _Type_: String
@@ -34,6 +36,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Enabled
+
+Is this Diagnostic Metric enabled? Defaults to `true`.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::FlexibleEngine::DrsReplicationV2",
-    "description": "CloudFormation equivalent of flexibleengine_drs_replication_v2",
+    "description": "Manages a V2 replication resource within FlexibleEngine.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,7 +12,8 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the EVS replication pair. The description can contain a maximum of 255 bytes."
         },
         "FailureDetail": {
             "type": "string"
@@ -21,10 +22,12 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the EVS replication pair. The name can contain a maximum of 255 bytes."
         },
         "PriorityStation": {
-            "type": "string"
+            "type": "string",
+            "description": "The primary AZ of the EVS replication pair. That is the AZ where the production disk belongs."
         },
         "Progress": {
             "type": "string"
@@ -36,7 +39,8 @@
             "type": "string"
         },
         "ReplicationModel": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of the EVS replication pair. Currently only type hypermetro is supported."
         },
         "ReplicationStatus": {
             "type": "string"
@@ -52,7 +56,8 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "An array of one or more IDs of the EVS disks used to create the EVS replication pair."
         }
     },
     "additionalProperties": false,

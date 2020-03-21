@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::MysqlPrivilege
 
-CloudFormation equivalent of tencentcloud_mysql_privilege
+Provides a mysql account privilege resource to grant different access privilege to different database. A database can be granted by multiple account.
 
 ## Syntax
 
@@ -43,6 +43,8 @@ Properties:
 
 #### AccountName
 
+Account name.the forbidden value is:root,mysql.sys,tencentroot.
+
 _Required_: Yes
 
 _Type_: String
@@ -51,6 +53,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Global
 
+Global privileges. available values for Privileges:SELECT,INSERT,UPDATE,DELETE,CREATE,PROCESS,DROP,REFERENCES,INDEX,ALTER,SHOW DATABASES,CREATE TEMPORARY TABLES,LOCK TABLES,EXECUTE,CREATE VIEW,SHOW VIEW,CREATE ROUTINE,ALTER ROUTINE,EVENT,TRIGGER.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -58,6 +62,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MysqlId
+
+Instance ID.
 
 _Required_: Yes
 

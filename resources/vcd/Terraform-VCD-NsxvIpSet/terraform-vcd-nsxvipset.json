@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::VCD::NsxvIpSet",
-    "description": "CloudFormation equivalent of vcd_nsxv_ip_set",
+    "description": "Provides a vCloud Director IP set resource. An IP set is a group of IP addresses that you can add as\n  the source or destination in a firewall rule or in DHCP relay configuration.\n\n\nSupported in provider *v2.6+*",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,26 +9,31 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "An optional description for IP set."
         },
         "IpAddresses": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A set of IP addresses, CIDRs and ranges as strings."
         },
         "IsInheritanceAllowed": {
             "type": "boolean"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Unique IP set name."
         },
         "Org": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of organization to use, optional if defined at provider level. Useful when connected as sysadmin working across different organisations."
         },
         "Vdc": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of VDC to use, optional if defined at provider level."
         }
     },
     "additionalProperties": false,

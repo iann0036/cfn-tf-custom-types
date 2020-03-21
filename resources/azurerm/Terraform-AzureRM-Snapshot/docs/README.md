@@ -1,6 +1,6 @@
 # Terraform::AzureRM::Snapshot
 
-CloudFormation equivalent of azurerm_snapshot
+Manages a Disk Snapshot.
 
 ## Syntax
 
@@ -57,6 +57,8 @@ Properties:
 
 #### CreateOption
 
+Indicates how the snapshot is to be created. Possible values are `Copy` or `Import`. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -64,6 +66,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DiskSizeGb
+
+The size of the Snapshotted Disk in GB.
 
 _Required_: No
 
@@ -73,6 +77,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Location
 
+Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -80,6 +86,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the Snapshot resource. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -89,6 +97,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to create the Snapshot. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -96,6 +106,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SourceResourceId
+
+Specifies a reference to an existing snapshot, when `create_option` is `Copy`. Changing this forces a new resource to be created.
 
 _Required_: No
 
@@ -105,6 +117,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SourceUri
 
+Specifies the URI to a Managed or Unmanaged Disk. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -113,6 +127,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StorageAccountId
 
+Specifies the ID of an storage account. Used with `source_uri` to allow authorization during import of unmanaged blobs from a different subscription. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -120,6 +136,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

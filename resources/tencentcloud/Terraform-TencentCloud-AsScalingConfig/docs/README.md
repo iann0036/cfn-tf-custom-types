@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::AsScalingConfig
 
-CloudFormation equivalent of tencentcloud_as_scaling_config
+Provides a resource to create a configuration for an AS (Auto scaling) instance.
 
 ## Syntax
 
@@ -68,6 +68,8 @@ Properties:
 
 #### ConfigurationName
 
+Name of a launch configuration.
+
 _Required_: Yes
 
 _Type_: String
@@ -75,6 +77,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnhancedMonitorService
+
+To specify whether to enable cloud monitor service. Default is TRUE.
 
 _Required_: No
 
@@ -84,6 +88,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnhancedSecurityService
 
+To specify whether to enable cloud security service. Default is TRUE.
+
 _Required_: No
 
 _Type_: Boolean
@@ -91,6 +97,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ImageId
+
+An available image ID for a cvm instance.
 
 _Required_: Yes
 
@@ -100,6 +108,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceTags
 
+A list of tags used to associate different resources.
+
 _Required_: No
 
 _Type_: List of <a href="instancetags.md">InstanceTags</a>
@@ -107,6 +117,8 @@ _Type_: List of <a href="instancetags.md">InstanceTags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceTypes
+
+Specified types of CVM instances.
 
 _Required_: Yes
 
@@ -116,6 +128,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InternetChargeType
 
+Charge types for network traffic. Available values include `BANDWIDTH_PREPAID`, `TRAFFIC_POSTPAID_BY_HOUR`, `TRAFFIC_POSTPAID_BY_HOUR` and `BANDWIDTH_PACKAGE`.
+
 _Required_: No
 
 _Type_: String
@@ -123,6 +137,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InternetMaxBandwidthOut
+
+Max bandwidth of Internet access in Mbps. Default is 0.
 
 _Required_: No
 
@@ -132,6 +148,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KeepImageLogin
 
+Specify whether to keep original settings of a CVM image. And it can't be used with password or key_ids together.
+
 _Required_: No
 
 _Type_: Boolean
@@ -139,6 +157,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeyIds
+
+ID list of keys.
 
 _Required_: No
 
@@ -148,6 +168,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Password
 
+Password to access.
+
 _Required_: No
 
 _Type_: String
@@ -155,6 +177,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProjectId
+
+Specifys to which project the configuration belongs.
 
 _Required_: No
 
@@ -164,6 +188,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PublicIpAssigned
 
+Specify whether to assign an Internet IP address.
+
 _Required_: No
 
 _Type_: Boolean
@@ -171,6 +197,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecurityGroupIds
+
+Security groups to which a CVM instance belongs.
 
 _Required_: No
 
@@ -180,6 +208,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SystemDiskSize
 
+Volume of system disk in GB. Default is 50.
+
 _Required_: No
 
 _Type_: Double
@@ -188,6 +218,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SystemDiskType
 
+Type of a CVM disk, and available values include CLOUD_PREMIUM and CLOUD_SSD. Default is CLOUD_PREMIUM.
+
 _Required_: No
 
 _Type_: String
@@ -195,6 +227,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserData
+
+ase64-encoded User Data text, the length limit is 16KB.
 
 _Required_: No
 

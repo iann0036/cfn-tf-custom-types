@@ -1,6 +1,7 @@
 # Terraform::Panos::PanoramaLoopbackInterface
 
-CloudFormation equivalent of panos_panorama_loopback_interface
+This resource allows you to add/update/delete Panorama loopback interfaces
+for templates.
 
 ## Syntax
 
@@ -50,6 +51,8 @@ Properties:
 
 #### AdjustTcpMss
 
+Adjust TCP MSS (default: false).
+
 _Required_: No
 
 _Type_: Boolean
@@ -57,6 +60,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Comment
+
+The interface comment.
 
 _Required_: No
 
@@ -66,6 +71,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ipv4MssAdjust
 
+The IPv4 MSS adjust value.
+
 _Required_: No
 
 _Type_: Double
@@ -73,6 +80,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ipv6MssAdjust
+
+The IPv6 MSS adjust value.
 
 _Required_: No
 
@@ -82,6 +91,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ManagementProfile
 
+The management profile.
+
 _Required_: No
 
 _Type_: String
@@ -89,6 +100,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Mtu
+
+The MTU.
 
 _Required_: No
 
@@ -98,6 +111,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The interface's name.  This must start with `loopback.`.
+
 _Required_: Yes
 
 _Type_: String
@@ -105,6 +120,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NetflowProfile
+
+The netflow profile.
 
 _Required_: No
 
@@ -114,6 +131,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StaticIps
 
+List of static IPv4 addresses to set for this data
+interface.
+
 _Required_: No
 
 _Type_: List of String
@@ -122,6 +142,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Template
 
+The template name.
+
 _Required_: Yes
 
 _Type_: String
@@ -129,6 +151,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vsys
+
+The vsys that will use this interface (default: `vsys1`).
 
 _Required_: No
 

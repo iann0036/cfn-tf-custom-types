@@ -1,6 +1,6 @@
 # Terraform::Heroku::SpaceInboundRuleset
 
-CloudFormation equivalent of heroku_space_inbound_ruleset
+Provides a resource for managing [inbound rulesets](https://devcenter.heroku.com/articles/platform-api-reference#inbound-ruleset) for Heroku Private Spaces.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 ## Properties
 
 #### Space
+
+The name of the space.
 
 _Required_: Yes
 

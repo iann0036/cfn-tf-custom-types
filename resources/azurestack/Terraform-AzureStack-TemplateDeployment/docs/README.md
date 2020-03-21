@@ -1,6 +1,10 @@
 # Terraform::AzureStack::TemplateDeployment
 
-CloudFormation equivalent of azurestack_template_deployment
+Manages a template deployment of resources
+
+~> **Note on ARM Template Deployments:** Due to the way the underlying Azure API is designed, Terraform can only manage the deployment of the ARM Template - and not any resources which are created by it.
+This means that when deleting the `azurestack_template_deployment` resource, Terraform will only remove the reference to the deployment, whilst leaving any resources created by that ARM Template Deployment.
+One workaround for this is to use a unique Resource Group for each ARM Template Deployment, which means deleting the Resource Group would contain any resources created within it - however this isn't ideal. [More information](https://docs.microsoft.com/en-us/rest/api/resources/deployments#Deployments_Delete).
 
 ## Syntax
 
@@ -40,6 +44,10 @@ Properties:
 
 #### DeploymentMode
 
+Specifies the mode that is used to deploy resources. This value could be either `Incremental` or `Complete`.
+Note that you will almost *always* want this to be set to `Incremental` otherwise the deployment will destroy all infrastructure not
+specified within the template, and Terraform will not be aware of this.
+
 _Required_: Yes
 
 _Type_: String
@@ -47,6 +55,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the template deployment. Changing this forces a
+new resource to be created.
 
 _Required_: Yes
 
@@ -56,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Parameters
 
+Specifies the name and value pairs that define the deployment parameters for the template.
+
 _Required_: No
 
 _Type_: List of <a href="parameters.md">Parameters</a>
@@ -63,6 +76,8 @@ _Type_: List of <a href="parameters.md">Parameters</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ParametersBody
+
+Specifies a valid Azure JSON parameters file that define the deployment parameters. It can contain KeyVault references.
 
 _Required_: No
 
@@ -72,6 +87,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to
+create the template deployment.
+
 _Required_: Yes
 
 _Type_: String
@@ -79,6 +97,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TemplateBody
+
+Specifies the JSON definition for the template.
 
 _Required_: No
 

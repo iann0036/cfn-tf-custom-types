@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OVH::VrackCloudproject",
-    "description": "CloudFormation equivalent of ovh_vrack_cloudproject",
+    "description": "Attach a Public Cloud Project to a VRack.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "ProjectId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the public cloud project. If omitted,\nthe `OVH_PROJECT_ID` environment variable is used.\nNote: The use of environment variable is deprecated."
         },
         "VrackId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the vrack. If omitted, the `OVH_VRACK_ID`\nenvironment variable is used.\nNote: The use of environment variable is deprecated."
         }
     },
     "additionalProperties": false,

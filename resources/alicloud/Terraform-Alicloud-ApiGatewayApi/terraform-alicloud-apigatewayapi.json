@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::ApiGatewayApi",
-    "description": "CloudFormation equivalent of alicloud_api_gateway_api",
+    "description": "Provides an api resource.When you create an API, you must enter the basic information about the API, and define the API request information, the API backend service and response information.\n\nFor information about Api Gateway Api and how to use it, see [Create an API](https://www.alibabacloud.com/help/doc-detail/29478.htm)\n\n-> **NOTE:** Terraform will auto build api while it uses `alicloud_api_gateway_api` to build api.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ConstantParameters": {
@@ -217,26 +217,32 @@
             "type": "string"
         },
         "AuthType": {
-            "type": "string"
+            "type": "string",
+            "description": "The authorization Type including APP and ANONYMOUS. Defaults to null."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the api. Defaults to null."
         },
         "GroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "The api gateway that the api belongs to. Defaults to null."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the api gateway api. Defaults to null."
         },
         "ServiceType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of backend service. Type including HTTP,VPC and MOCK. Defaults to null."
         },
         "StageNames": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Stages that the api need to be deployed. Valid value: RELEASE | PRE | TEST."
         },
         "ConstantParameters": {
             "type": "array",

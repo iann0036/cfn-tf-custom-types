@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::CcnAttachment",
-    "description": "CloudFormation equivalent of tencentcloud_ccn_attachment",
+    "description": "Provides a CCN attaching resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,7 +12,8 @@
             "type": "string"
         },
         "CcnId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the CCN."
         },
         "CidrBlock": {
             "type": "array",
@@ -22,13 +23,16 @@
             }
         },
         "InstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of instance is attached."
         },
         "InstanceRegion": {
-            "type": "string"
+            "type": "string",
+            "description": "The region that the instance locates at."
         },
         "InstanceType": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of attached instance network, and available values include VPC, DIRECTCONNECT and BMVPC."
         },
         "State": {
             "type": "string"

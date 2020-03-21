@@ -1,6 +1,10 @@
 # Terraform::Alicloud::SlbServerCertificate
 
-CloudFormation equivalent of alicloud_slb_server_certificate
+A Load Balancer Server Certificate is an ssl Certificate used by the listener of the protocol https.
+
+For information about slb and how to use it, see [What is Server Load Balancer](https://www.alibabacloud.com/help/doc-detail/27539.htm).
+
+For information about Server Certificate and how to use it, see [Configure Server Certificate](https://www.alibabacloud.com/help/doc-detail/85968.htm).
 
 ## Syntax
 
@@ -64,6 +68,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AlicloudCertificateId
 
+an id of server certificate ssued/proxied by alibaba cloud. but it is not supported on the international site of alibaba cloud now.
+
 _Required_: No
 
 _Type_: String
@@ -71,6 +77,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AlicloudCertificateName
+
+the name of the certificate specified by `alicloud_certificate_id`.but it is not supported on the international site of alibaba cloud now.
 
 _Required_: No
 
@@ -80,6 +88,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AlicloudCertificateRegionId
 
+the region of the certificate specified by `alicloud_certificate_id`. but it is not supported on the international site of alibaba cloud now.
+
 _Required_: No
 
 _Type_: String
@@ -87,6 +97,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of the Server Certificate.
 
 _Required_: No
 
@@ -96,6 +108,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PrivateKey
 
+the content of privat key of the ssl certificate specified by `server_certificate`. where `alicloud_certificate_id` is null, it is required, otherwise it is ignored.
+
 _Required_: No
 
 _Type_: String
@@ -103,6 +117,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupId
+
+The Id of resource group which the slb server certificate belongs.
 
 _Required_: No
 
@@ -112,6 +128,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServerCertificate
 
+the content of the ssl certificate. where `alicloud_certificate_id` is null, it is required, otherwise it is ignored.
+
 _Required_: No
 
 _Type_: String
@@ -119,6 +137,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

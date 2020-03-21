@@ -25,6 +25,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### ContainerRegistries
 
+Additional container registries from which container images can be pulled by the pool's VMs.
+
 _Required_: No
 
 _Type_: List of <a href="containerconfiguration-containerregistries.md">ContainerRegistries</a>
@@ -32,6 +34,8 @@ _Type_: List of <a href="containerconfiguration-containerregistries.md">Containe
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The type of container configuration. Possible value is `DockerCompatible`.
 
 _Required_: No
 

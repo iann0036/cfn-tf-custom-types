@@ -1,6 +1,6 @@
 # Terraform::Google::ResourceManagerLien
 
-CloudFormation equivalent of google_resource_manager_lien
+A Lien represents an encumbrance on the actions that can be performed on a resource.
 
 ## Syntax
 

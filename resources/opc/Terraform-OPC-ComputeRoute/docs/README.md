@@ -1,6 +1,6 @@
 # Terraform::OPC::ComputeRoute
 
-CloudFormation equivalent of opc_compute_route
+The `opc_compute_route` resource creates and manages a route for an IP Network in an Oracle Cloud Infrastructure Compute Classic identity domain.
 
 ## Syntax
 
@@ -40,6 +40,8 @@ Properties:
 
 #### AdminDistance
 
+The route's administrative distance. Defaults to `0`.
+
 _Required_: No
 
 _Type_: Double
@@ -47,6 +49,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+The description of the route.
 
 _Required_: No
 
@@ -56,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IpAddressPrefix
 
+The IPv4 address prefix, in CIDR format, of the external network from which to route traffic.
+
 _Required_: Yes
 
 _Type_: String
@@ -64,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the route.
+
 _Required_: Yes
 
 _Type_: String
@@ -71,6 +79,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NextHopVnicSet
+
+Name of the virtual NIC set to route matching packets to. Routed flows are load-balanced among all the virtual NICs in the virtual NIC set.
 
 _Required_: Yes
 

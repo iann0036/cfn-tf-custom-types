@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::LicenseApiKey",
-    "description": "CloudFormation equivalent of panos_license_api_key",
+    "description": "This resource manages the licensing API key, which is necessary to delicense\nthe PAN-OS firewall.\n\nThis resource's `retain_key` param is a Terraform side configuration only.  In\norder for the firewall to delicense itself, the licensing API key must be\npresent.  This means that either the `panos_licensing` resource must use\n`depends_on` and depend on this resource, or you must set the `retain_key`\nparam to `true`.  As there is no harm in leaving the licensing API key on the\nPAN-OS firewall, it is recommended that `retain_key` be set to `true`.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "Key": {
-            "type": "string"
+            "type": "string",
+            "description": "The licensing API key."
         },
         "RetainKey": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` to retain the licensing API key\neven after the deletion of this resource (recommended)."
         }
     },
     "additionalProperties": false,

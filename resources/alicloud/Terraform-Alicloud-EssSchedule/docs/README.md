@@ -1,6 +1,6 @@
 # Terraform::Alicloud::EssSchedule
 
-CloudFormation equivalent of alicloud_ess_schedule
+-> **NOTE:** This resource has been deprecated from [v1.45.0](https://releases.hashicorp.com/terraform-provider-alicloud/1.45.0/). New resource `alicloud_ess_scheduled_task` will replace.
 
 ## Syntax
 

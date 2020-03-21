@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Brightbox::FirewallRule",
-    "description": "CloudFormation equivalent of brightbox_firewall_rule",
+    "description": "Provides a Brightbox Firewall Rule resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,28 +9,36 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A further description of the Firewall Rule."
         },
         "Destination": {
-            "type": "string"
+            "type": "string",
+            "description": "Subnet, ServerGroup or ServerID. `any`,`10.1.1.23/32` or `srv-4ktk4`."
         },
         "DestinationPort": {
-            "type": "string"
+            "type": "string",
+            "description": "single port, multiple ports or range separated by `-` or `:`; upto 255 characters. Example - `80`, `80,443,21` or `3000-3999`."
         },
         "FirewallPolicy": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the firewall policy this rule belongs to."
         },
         "IcmpTypeName": {
-            "type": "string"
+            "type": "string",
+            "description": "ICMP type name. `echo-request`, `echo-reply`. Only allowed if protocol is `icmp`."
         },
         "Protocol": {
-            "type": "string"
+            "type": "string",
+            "description": "Protocol Number or one of `tcp`, `udp`, `icmp`."
         },
         "Source": {
-            "type": "string"
+            "type": "string",
+            "description": "Subnet, ServerGroup or ServerID. `any`,`10.1.1.23/32` or `srv-4ktk4`."
         },
         "SourcePort": {
-            "type": "string"
+            "type": "string",
+            "description": "single port, multiple ports or range separated by `-` or `:`; upto 255 characters. Example - `80`, `80,443,21` or `3000-3999`."
         }
     },
     "additionalProperties": false,

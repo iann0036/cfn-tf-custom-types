@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::ApiManagementApiVersionSet",
-    "description": "CloudFormation equivalent of azurerm_api_management_api_version_set",
+    "description": "Manages an API Version Set within an API Management Service.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,28 +29,36 @@
             "type": "string"
         },
         "ApiManagementName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the [API Management Service](api_management.html) in which the API Version Set should exist. Changing this forces a new resource to be created."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of API Version Set."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The display name of this API Version Set."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the API Version Set. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Resource Group in which the parent API Management Service exists. Changing this forces a new resource to be created."
         },
         "VersionHeaderName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Header which should be read from Inbound Requests which defines the API Version."
         },
         "VersionQueryName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Query String which should be read from Inbound Requests which defines the API Version."
         },
         "VersioningScheme": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies where in an Inbound HTTP Request that the API Version should be read from. Possible values are `Header`, `Query` and `Segment`."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

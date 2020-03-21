@@ -1,6 +1,8 @@
 # Terraform::Alicloud::KmsCiphertext
 
-CloudFormation equivalent of alicloud_kms_ciphertext
+Encrypt a given plaintext with KMS. The produced ciphertext stays stable across applies. If the plaintext should be re-encrypted on each apply use the [`alicloud_kms_ciphertext`](/docs/providers/alicloud/d/kms_ciphertext.html) data source.
+
+~> **NOTE**: Using this data provider will allow you to conceal secret data within your resource definitions but does not take care of protecting that data in all Terraform logging and state output. Please take care to secure your secret data beyond just the Terraform configuration.
 
 ## Syntax
 
@@ -42,6 +44,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KeyId
 
+The globally unique ID of the CMK.
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Plaintext
+
+The plaintext to be encrypted which must be encoded in Base64.
 
 _Required_: Yes
 

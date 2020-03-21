@@ -1,6 +1,6 @@
 # Terraform::AzureRM::DataFactoryTriggerSchedule
 
-CloudFormation equivalent of azurerm_data_factory_trigger_schedule
+Manages a Trigger Schedule inside a Azure Data Factory.
 
 ## Syntax
 
@@ -51,6 +51,8 @@ Properties:
 
 #### Annotations
 
+List of tags that can be used for describing the Data Factory Schedule Trigger.
+
 _Required_: No
 
 _Type_: List of String
@@ -58,6 +60,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DataFactoryName
+
+The Data Factory name in which to associate the Schedule Trigger with. Changing this forces a new resource.
 
 _Required_: Yes
 
@@ -67,6 +71,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EndTime
 
+The time the Schedule Trigger should end. The time will be represented in UTC.
+
 _Required_: No
 
 _Type_: String
@@ -74,6 +80,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Frequency
+
+The trigger freqency. Valid values include `Minute`, `Hour`, `Day`, `Week`, `Month`. Defaults to `Minute`.
 
 _Required_: No
 
@@ -83,6 +91,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Interval
 
+The interval for how often the trigger occurs. This defaults to 1.
+
 _Required_: No
 
 _Type_: Double
@@ -90,6 +100,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the Data Factory Schedule Trigger. Changing this forces a new resource to be created. Must be globally unique. See the [Microsoft documentation](https://docs.microsoft.com/en-us/azure/data-factory/naming-rules) for all restrictions.
 
 _Required_: Yes
 
@@ -99,6 +111,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PipelineName
 
+The Data Factory Pipeline name that the trigger will act on.
+
 _Required_: Yes
 
 _Type_: String
@@ -106,6 +120,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PipelineParameters
+
+The pipeline parameters that the trigger will act upon.
 
 _Required_: No
 
@@ -115,6 +131,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to create the Data Factory Schedule Trigger. Changing this forces a new resource.
+
 _Required_: Yes
 
 _Type_: String
@@ -122,6 +140,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StartTime
+
+The time the Schedule Trigger will start. This defaults to the current time. The time will be represented in UTC.
 
 _Required_: No
 

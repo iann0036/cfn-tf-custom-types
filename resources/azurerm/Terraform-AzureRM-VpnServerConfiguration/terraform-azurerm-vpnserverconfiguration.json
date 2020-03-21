@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::VpnServerConfiguration",
-    "description": "CloudFormation equivalent of azurerm_vpn_server_configuration",
+    "description": "Manages a VPN Server Configuration.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "AzureActiveDirectoryAuthentication": {
@@ -8,13 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "Audience": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Audience which should be used for authentication."
                 },
                 "Issuer": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Issuer which should be used for authentication."
                 },
                 "Tenant": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Tenant which should be used for authentication."
                 }
             },
             "required": [
@@ -28,10 +31,12 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A name used to uniquely identify this certificate."
                 },
                 "Thumbprint": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Thumbprint of the Certificate."
                 }
             },
             "required": [
@@ -44,7 +49,8 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A name used to uniquely identify this certificate."
                 },
                 "Thumbprint": {
                     "type": "string"
@@ -60,28 +66,36 @@
             "additionalProperties": false,
             "properties": {
                 "DhGroup": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The DH Group, used in IKE Phase 1. Possible values include `DHGroup1`, `DHGroup2`, `DHGroup14`, `DHGroup24`, `DHGroup2048`, `ECP256`, `ECP384` and `None`."
                 },
                 "IkeEncryption": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The IKE encryption algorithm, used for IKE Phase 2. Possible values include `AES128`, `AES192`, `AES256`, `DES`, `DES3`, `GCMAES128` and `GCMAES256`."
                 },
                 "IkeIntegrity": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The IKE encryption integrity algorithm, used for IKE Phase 2. Possible values include `GCMAES128`, `GCMAES256`, `MD5`, `SHA1`, `SHA256` and `SHA384`."
                 },
                 "IpsecEncryption": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The IPSec encryption algorithm, used for IKE phase 1. Possible values include `AES128`, `AES192`, `AES256`, `DES`, `DES3`, `GCMAES128`, `GCMAES192`, `GCMAES256` and `None`."
                 },
                 "IpsecIntegrity": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The IPSec integrity algorithm, used for IKE phase 1. Possible values include `GCMAES128`, `GCMAES192`, `GCMAES256`, `MD5`, `SHA1` and `SHA256`."
                 },
                 "PfsGroup": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Pfs Group, used in IKE Phase 2. Possible values include `ECP256`, `ECP384`, `PFS1`, `PFS2`, `PFS14`, `PFS24`, `PFS2048`, `PFSMM` and `None`."
                 },
                 "SaDataSizeKilobytes": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The IPSec Security Association payload size in KB for a Site-to-Site VPN tunnel."
                 },
                 "SaLifetimeSeconds": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The IPSec Security Association lifetime in seconds for a Site-to-Site VPN tunnel."
                 }
             },
             "required": [
@@ -100,10 +114,12 @@
             "additionalProperties": false,
             "properties": {
                 "Address": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Address of the Radius Server."
                 },
                 "Secret": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Secret used to communicate with the Radius Server."
                 },
                 "ClientRootCertificate": {
                     "type": "array",
@@ -149,10 +165,12 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A name used to uniquely identify this certificate."
                 },
                 "PublicCertData": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Public Key Data associated with the Certificate."
                 }
             },
             "required": [
@@ -167,13 +185,16 @@
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "The Azure location where this VPN Server Configuration should be created. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The Name which should be used for this VPN Server Configuration. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The Name of the Resource Group in which this VPN Server Configuration should be created. Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -193,21 +214,24 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "VpnAuthenticationTypes": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of one of more Authentication Types applicable for this VPN Server Configuration. Possible values are `AAD` (Azure Active Directory), `Certificate` and `Radius`."
         },
         "VpnProtocols": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of VPN Protocols to use for this Server Configuration. Possible values are `IkeV2` and `OpenVPN`."
         },
         "AzureActiveDirectoryAuthentication": {
             "type": "array",

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::FlexibleEngine::AsGroupV1",
-    "description": "CloudFormation equivalent of flexibleengine_as_group_v1",
+    "description": "Manages a V1 Autoscaling Group resource within flexibleengine.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "LbaasListeners": {
@@ -8,13 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "PoolId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the backend ECS group ID."
                 },
                 "ProtocolPort": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Specifies the backend protocol, which is the port on which\na backend ECS listens for traffic. The number of the port ranges from 1 to 65535."
                 },
                 "Weight": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Specifies the weight, which determines the portion of requests a\nbackend ECS processes compared to other backend ECSs added to the same listener. The value\nof this parameter ranges from 0 to 100. The default value is 1."
                 }
             },
             "required": [
@@ -27,7 +30,8 @@
             "additionalProperties": false,
             "properties": {
                 "Id": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The network UUID."
                 }
             },
             "required": [
@@ -39,7 +43,8 @@
             "additionalProperties": false,
             "properties": {
                 "Id": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The UUID of the security group."
                 }
             },
             "required": [
@@ -70,28 +75,36 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The availability zones in which to create\nthe instances in the autoscaling group."
         },
         "CoolDownTime": {
-            "type": "number"
+            "type": "number",
+            "description": "The cooling duration (in seconds). The value ranges\nfrom 0 to 86400, and is 900 by default."
         },
         "DeleteInstances": {
-            "type": "string"
+            "type": "string",
+            "description": "Whether to delete the instances in the AS group\nwhen deleting the AS group. The options are `yes` and `no`."
         },
         "DeletePublicip": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to delete the elastic IP address bound to the\ninstances of AS group when deleting the instances. The options are `true` and `false`."
         },
         "DesireInstanceNumber": {
-            "type": "number"
+            "type": "number",
+            "description": "The expected number of instances. The default\nvalue is the minimum number of instances. The value ranges from the minimum number of\ninstances to the maximum number of instances."
         },
         "HealthPeriodicAuditMethod": {
-            "type": "string"
+            "type": "string",
+            "description": "The health check method for instances\nin the AS group. The health check methods include `ELB_AUDIT` and `NOVA_AUDIT`.\nIf load balancing is configured, the default value of this parameter is `ELB_AUDIT`.\nOtherwise, the default value is `NOVA_AUDIT`."
         },
         "HealthPeriodicAuditTime": {
-            "type": "number"
+            "type": "number",
+            "description": "The health check period for instances.\nThe period has four options: 5 minutes (default), 15 minutes, 60 minutes, and 180 minutes."
         },
         "InstanceTerminatePolicy": {
-            "type": "string"
+            "type": "string",
+            "description": "The instance removal policy. The policy has\nfour options: `OLD_CONFIG_OLD_INSTANCE` (default), `OLD_CONFIG_NEW_INSTANCE`,\n`OLD_INSTANCE`, and `NEW_INSTANCE`."
         },
         "Instances": {
             "type": "array",
@@ -101,32 +114,40 @@
             }
         },
         "LbListenerId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ELB listener IDs. The system supports up to\nthree ELB listeners, the IDs of which are separated using a comma (,)."
         },
         "MaxInstanceNumber": {
-            "type": "number"
+            "type": "number",
+            "description": "The maximum number of instances.\nThe default value is 0."
         },
         "MinInstanceNumber": {
-            "type": "number"
+            "type": "number",
+            "description": "The minimum number of instances.\nThe default value is 0."
         },
         "Notifications": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The notification mode. The system only supports `EMAIL`\nmode which refers to notification by email."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to create the AS group. If\nomitted, the `region` argument of the provider is used. Changing this\ncreates a new AS group."
         },
         "ScalingConfigurationId": {
-            "type": "string"
+            "type": "string",
+            "description": "The configuration ID which defines\nconfigurations of instances in the AS group."
         },
         "ScalingGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the scaling group. The name can contain letters,\ndigits, underscores(_), and hyphens(-),and cannot exceed 64 characters."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "The VPC ID. Changing this creates a new group."
         },
         "LbaasListeners": {
             "type": "array",

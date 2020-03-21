@@ -1,6 +1,7 @@
 # Terraform::Heroku::App
 
-CloudFormation equivalent of heroku_app
+Provides a Heroku App resource. This can be used to
+create and manage applications on Heroku.
 
 ## Syntax
 
@@ -53,6 +54,8 @@ Properties:
 
 #### Acm
 
+The flag representing Automated Certificate Management for the app.
+
 _Required_: No
 
 _Type_: Boolean
@@ -60,6 +63,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Buildpacks
+
+Buildpack names or URLs for the application.
+Buildpacks configured externally won't be altered if this is not present.
 
 _Required_: No
 
@@ -77,6 +83,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InternalRouting
 
+If true, the application will be routable
+only internally in a private space. This option is only available for apps
+that also specify `space`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -85,6 +95,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the application. In Heroku, this is also the
+unique ID, so it must be unique and have a minimum of 3 characters.
+
 _Required_: Yes
 
 _Type_: String
@@ -92,6 +105,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region that the app should be deployed in.
 
 _Required_: Yes
 
@@ -109,6 +124,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Space
 
+The name of a private space to create the app in.
+
 _Required_: No
 
 _Type_: String
@@ -116,6 +133,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Stack
+
+The application stack is what platform to run the application
+in.
 
 _Required_: No
 

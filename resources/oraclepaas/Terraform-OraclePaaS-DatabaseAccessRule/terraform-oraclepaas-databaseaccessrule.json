@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OraclePaaS::DatabaseAccessRule",
-    "description": "CloudFormation equivalent of oraclepaas_database_access_rule",
+    "description": "The `oraclepaas_database_access_rule` resource creates and manages a Database Access Rule for an Oracle Database Cloud service instance.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,25 +23,31 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the Access Rule."
         },
         "Destination": {
             "type": "string"
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Determines whether the access rule is enabled. Default is `true`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Access Rule."
         },
         "Ports": {
-            "type": "string"
+            "type": "string",
+            "description": "The port or range of ports to allow traffic on."
         },
         "ServiceInstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the database service instance to attach\nthe access rule to."
         },
         "Source": {
-            "type": "string"
+            "type": "string",
+            "description": "The IP addresses and subnets from which traffic is allowed. Valid values are\n`DB`, `PUBLIC-INTERNET`, or a single IP address or comma-separated list of subnets (in CIDR format) or IPv4 addresses."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

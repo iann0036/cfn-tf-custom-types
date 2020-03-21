@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::CenBandwidthPackageAttachment",
-    "description": "CloudFormation equivalent of alicloud_cen_bandwidth_package_attachment",
+    "description": "Provides a CEN bandwidth package attachment resource. The resource can be used to bind a bandwidth package to a specified CEN instance.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "BandwidthPackageId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the bandwidth package."
         },
         "InstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the CEN."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,8 @@
 # Terraform::BIGIP::LtmProfileHttp
 
-CloudFormation equivalent of bigip_ltm_profile_http
+`bigip_ltm_profile_http` Configures a custom profile_http for use by health checks.
+
+For resources should be named with their "full path". The full path is the combination of the partition + name of the resource. For example /Common/my-pool.
 
 ## Syntax
 
@@ -99,6 +101,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### BasicAuthRealm
 
+Specifies a quoted string for the basic authentication realm. The system sends this string to a client whenever authorization fails. The default value is none.
+
 _Required_: No
 
 _Type_: String
@@ -106,6 +110,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefaultsFrom
+
+Specifies the profile that you want to use as the parent profile. Your new profile inherits all settings and values from the parent profile specified.
 
 _Required_: Yes
 
@@ -139,6 +145,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FallbackHost
 
+Specifies an HTTP fallback host. HTTP redirection allows you to redirect HTTP traffic to another protocol identifier, host name, port number.
+
 _Required_: No
 
 _Type_: String
@@ -146,6 +154,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FallbackStatusCodes
+
+Specifies one or more three-digit status codes that can be returned by an HTTP server.
 
 _Required_: No
 
@@ -163,6 +173,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HeadInsert
 
+Specifies a quoted header string that you want to insert into an HTTP request.
+
 _Required_: No
 
 _Type_: String
@@ -170,6 +182,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InsertXforwardedFor
+
+When using connection pooling, which allows clients to make use of other client requests' server-side connections, you can insert the X-Forwarded-For header and specify a client IP address.
 
 _Required_: No
 
@@ -194,6 +208,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OneconnectTransformations
+
+Enables the system to perform HTTP header transformations for the purpose of  keeping server-side connections open. This feature requires configuration of a OneConnect profile.
 
 _Required_: No
 

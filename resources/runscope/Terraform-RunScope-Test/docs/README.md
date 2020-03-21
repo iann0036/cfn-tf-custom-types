@@ -1,6 +1,9 @@
 # Terraform::RunScope::Test
 
-CloudFormation equivalent of runscope_test
+A [test](https://www.runscope.com/docs/api/tests) resource.
+[Tests](https://www.runscope.com/docs/buckets) are made up of
+a collection of [test steps](step.html) and an
+[environment](environment.html).
 
 ## Syntax
 
@@ -41,6 +44,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+Human-readable description of the new test.
+is being created for.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of this test.
 
 _Required_: Yes
 

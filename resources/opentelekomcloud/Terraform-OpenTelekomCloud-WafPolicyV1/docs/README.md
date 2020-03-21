@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::WafPolicyV1
 
-CloudFormation equivalent of opentelekomcloud_waf_policy_v1
+Manages a WAF policy resource within OpenTelekomCloud.
 
 ## Syntax
 
@@ -44,6 +44,8 @@ Properties:
 
 #### FullDetection
 
+Specifies the detection mode in Precise Protection.
+
 _Required_: No
 
 _Type_: Boolean
@@ -51,6 +53,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Hosts
+
+An array of the domain IDs.
 
 _Required_: No
 
@@ -60,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Level
 
+Specifies the protection level.
+
 _Required_: No
 
 _Type_: Double
@@ -67,6 +73,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The policy name. The maximum length is 256 characters. Only digits, letters, underscores(_), and hyphens(-) are allowed.
 
 _Required_: Yes
 

@@ -1,6 +1,8 @@
 # Terraform::VCD::IndependentDisk
 
-CloudFormation equivalent of vcd_independent_disk
+Provides a vCloud Director independent disk resource. This can be used to create and delete independent disks.
+
+Supported in provider *v2.1+*
 
 ## Syntax
 
@@ -43,6 +45,8 @@ Properties:
 
 #### BusSubType
 
+Disk bus subtype. Values can be: `buslogic`, `lsilogic`, `lsilogicsas`, `VirtualSCSI` for `SCSI` and `ahci` for `SATA`.
+
 _Required_: No
 
 _Type_: String
@@ -50,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BusType
+
+Disk bus type. Values can be: `IDE`, `SCSI`, `SATA`.
 
 _Required_: No
 
@@ -67,6 +73,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Disk name.
+
 _Required_: Yes
 
 _Type_: String
@@ -74,6 +82,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Org
+
+The name of organization to use, optional if defined at provider level. Useful when connected as sysadmin working across different organisations.
 
 _Required_: No
 
@@ -83,6 +93,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Size
 
+Size of disk in MB. On read this values isn't refreshed.
+
 _Required_: Yes
 
 _Type_: Double
@@ -91,6 +103,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StorageProfile
 
+The name of storage profile where disk will be created.
+
 _Required_: No
 
 _Type_: String
@@ -98,6 +112,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vdc
+
+The name of VDC to use, optional if defined at provider level.
 
 _Required_: No
 

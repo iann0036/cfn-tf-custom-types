@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::LbRule",
-    "description": "CloudFormation equivalent of azurerm_lb_rule",
+    "description": "Manages a Load Balancer Rule.\n\n~> **NOTE** When using this resource, the Load Balancer needs to have a FrontEnd IP Configuration Attached",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,49 +29,63 @@
             "type": "string"
         },
         "BackendAddressPoolId": {
-            "type": "string"
+            "type": "string",
+            "description": "A reference to a Backend Address Pool over which this Load Balancing Rule operates."
         },
         "BackendPort": {
-            "type": "number"
+            "type": "number",
+            "description": "The port used for internal connections on the endpoint. Possible values range between 0 and 65535, inclusive."
         },
         "DisableOutboundSnat": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is snat enabled for this Load Balancer Rule? Default `false`."
         },
         "EnableFloatingIp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Are the Floating IPs enabled for this Load Balncer Rule? A \"floating\u201d IP is reassigned to a secondary server in case the primary server fails. Required to configure a SQL AlwaysOn Availability Group. Defaults to `false`."
         },
         "EnableTcpReset": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is TCP Reset enabled for this Load Balancer Rule? Defaults to `false`."
         },
         "FrontendIpConfigurationId": {
             "type": "string"
         },
         "FrontendIpConfigurationName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the frontend IP configuration to which the rule is associated."
         },
         "FrontendPort": {
-            "type": "number"
+            "type": "number",
+            "description": "The port for the external endpoint. Port numbers for each Rule must be unique within the Load Balancer. Possible values range between 0 and 65534, inclusive."
         },
         "IdleTimeoutInMinutes": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the idle timeout in minutes for TCP connections. Valid values are between `4` and `30` minutes. Defaults to `4` minutes."
         },
         "LoadDistribution": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the load balancing distribution type to be used by the Load Balancer. Possible values are: `Default` \u2013 The load balancer is configured to use a 5 tuple hash to map traffic to available servers. `SourceIP` \u2013 The load balancer is configured to use a 2 tuple hash to map traffic to available servers. `SourceIPProtocol` \u2013 The load balancer is configured to use a 3 tuple hash to map traffic to available servers. Also known as Session Persistence, where  the options are called `None`, `Client IP` and `Client IP and Protocol` respectively."
         },
         "LoadbalancerId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Load Balancer in which to create the Rule."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the LB Rule."
         },
         "ProbeId": {
-            "type": "string"
+            "type": "string",
+            "description": "A reference to a Probe used by this Load Balancing Rule."
         },
         "Protocol": {
-            "type": "string"
+            "type": "string",
+            "description": "The transport protocol for the external endpoint. Possible values are `Tcp`, `Udp` or `All`."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the resource."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

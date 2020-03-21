@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::KubernetesScaleWorker",
-    "description": "CloudFormation equivalent of tencentcloud_kubernetes_scale_worker",
+    "description": "Provide a resource to increase instance to cluster",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "WorkerConfig": {
@@ -8,69 +8,88 @@
             "additionalProperties": false,
             "properties": {
                 "AvailabilityZone": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Indicates which availability zone will be used."
                 },
                 "Count": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Number of cvm."
                 },
                 "EnhancedMonitorService": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "To specify whether to enable cloud monitor service. Default is TRUE."
                 },
                 "EnhancedSecurityService": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "To specify whether to enable cloud security service. Default is TRUE."
                 },
                 "InstanceChargeType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The charge type of instance. Valid values are `PREPAID` and `POSTPAID_BY_HOUR`, The default is `POSTPAID_BY_HOUR`. Note: TencentCloud International only supports `POSTPAID_BY_HOUR`, `PREPAID` instance will not terminated after cluster deleted, and may not allow to delete before expired."
                 },
                 "InstanceChargeTypePrepaidPeriod": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The tenancy (time unit is month) of the prepaid instance, NOTE: it only works when instance_charge_type is set to `PREPAID`. Valid values are 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36."
                 },
                 "InstanceChargeTypePrepaidRenewFlag": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "When enabled, the CVM instance will be renew automatically when it reach the end of the prepaid tenancy. Valid values are `NOTIFY_AND_AUTO_RENEW`, `NOTIFY_AND_MANUAL_RENEW` and `DISABLE_NOTIFY_AND_MANUAL_RENEW`. NOTE: it only works when instance_charge_type is set to `PREPAID`."
                 },
                 "InstanceName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Name of the CVMs."
                 },
                 "InstanceType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specified types of CVM instance."
                 },
                 "InternetChargeType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Charge types for network traffic. Available values include TRAFFIC_POSTPAID_BY_HOUR."
                 },
                 "InternetMaxBandwidthOut": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Max bandwidth of Internet access in Mbps. Default is 0."
                 },
                 "KeyIds": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "ID list of keys, should be set if `password` not set."
                 },
                 "Password": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Password to access, should be set if `key_ids` not set."
                 },
                 "PublicIpAssigned": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Specify whether to assign an Internet IP address."
                 },
                 "SecurityGroupIds": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Security groups to which a CVM instance belongs."
                 },
                 "SubnetId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Private network ID."
                 },
                 "SystemDiskSize": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Volume of system disk in GB. Default is 50."
                 },
                 "SystemDiskType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Type of a CVM disk, and available values include CLOUD_PREMIUM and CLOUD_SSD. Default is CLOUD_PREMIUM."
                 },
                 "UserData": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "ase64-encoded User Data text, the length limit is 16KB."
                 },
                 "DataDisk": {
                     "type": "array",
@@ -108,7 +127,8 @@
             "type": "string"
         },
         "ClusterId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the cluster."
         },
         "WorkerInstancesList": {
             "type": "array",

@@ -1,6 +1,9 @@
 # Terraform::GitHub::Team
 
-CloudFormation equivalent of github_team
+Provides a GitHub team resource.
+
+This resource allows you to add/remove teams from your organization. When applied,
+a new team will be created. When destroyed, that team will be removed.
 
 ## Syntax
 
@@ -37,6 +40,8 @@ Properties:
 
 #### Description
 
+A description of the team.
+
 _Required_: No
 
 _Type_: String
@@ -44,6 +49,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LdapDn
+
+The LDAP Distinguished Name of the group where membership will be synchronized. Only available in GitHub Enterprise.
 
 _Required_: No
 
@@ -53,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the team.
+
 _Required_: Yes
 
 _Type_: String
@@ -61,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ParentTeamId
 
+The ID of the parent team, if this is a nested team.
+
 _Required_: No
 
 _Type_: Double
@@ -68,6 +79,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Privacy
+
+The level of privacy for the team. Must be one of `secret` or `closed`.
+Defaults to `secret`.
 
 _Required_: No
 

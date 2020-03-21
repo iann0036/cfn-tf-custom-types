@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HuaweiCloud::DnsPtrrecordV2",
-    "description": "CloudFormation equivalent of huaweicloud_dns_ptrrecord_v2",
+    "description": "Manages a DNS PTR record in the HuaweiCloud DNS Service.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,13 +29,16 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the PTR record."
         },
         "FloatingipId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the FloatingIP/EIP."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Domain name of the PTR record. A domain name is case insensitive.\nUppercase letters will also be converted into lowercase letters."
         },
         "Tags": {
             "type": "array",
@@ -55,10 +58,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Tags key/value pairs to associate with the PTR record."
         },
         "Ttl": {
-            "type": "number"
+            "type": "number",
+            "description": "The time to live (TTL) of the record set (in seconds). The value\nrange is 300\u20132147483647. The default value is 300."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

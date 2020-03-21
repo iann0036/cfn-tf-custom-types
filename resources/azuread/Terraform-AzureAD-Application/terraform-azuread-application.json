@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureAD::Application",
-    "description": "CloudFormation equivalent of azuread_application",
+    "description": "Manages an Application within Azure Active Directory.\n\n-> **NOTE:** If you're authenticating using a Service Principal then it must have permissions to both `Read and write owned by applications` and `Sign in and read user profile` within the `Windows Azure Active Directory` API.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "AppRole": {
@@ -12,19 +12,24 @@
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Specifies whether this app role definition can be assigned to users and groups by setting to `User`, or to other applications (that are accessing this application in daemon service scenarios) by setting to `Application`, or to both."
                 },
                 "Description": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Permission help text that appears in the admin app assignment and consent experiences."
                 },
                 "DisplayName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Display name for the permission that appears in the admin consent and app assignment experiences."
                 },
                 "IsEnabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Determines if the app role is enabled: Defaults to `true`."
                 },
                 "Value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the value of the roles claim that the application should expect in the authentication and access tokens."
                 }
             },
             "required": [
@@ -38,7 +43,8 @@
             "additionalProperties": false,
             "properties": {
                 "ResourceAppId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The unique identifier for the resource that the application requires access to. This should be equal to the appId declared on the target resource application."
                 },
                 "ResourceAccess": {
                     "type": "array",
@@ -57,10 +63,12 @@
             "additionalProperties": false,
             "properties": {
                 "Id": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The unique identifier for one of the `OAuth2Permission` or `AppRole` instances that the resource application exposes."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies whether the id property references an `OAuth2Permission` or an `AppRole`. Possible values are `Scope` or `Role`."
                 }
             },
             "required": [
@@ -78,29 +86,36 @@
             "type": "string"
         },
         "AvailableToOtherTenants": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is this Azure AD Application available to other tenants? Defaults to `false`."
         },
         "GroupMembershipClaims": {
-            "type": "string"
+            "type": "string",
+            "description": "Configures the `groups` claim issued in a user or OAuth 2.0 access token that the app expects. Defaults to `SecurityGroup`. Possible values are `None`, `SecurityGroup` or `All`."
         },
         "Homepage": {
-            "type": "string"
+            "type": "string",
+            "description": "The URL to the application's home page. If no homepage is specified this defaults to `https://{name}`."
         },
         "IdentifierUris": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of user-defined URI(s) that uniquely identify a Web application within it's Azure AD tenant, or within a verified custom domain if the application is multi-tenant."
         },
         "LogoutUrl": {
-            "type": "string"
+            "type": "string",
+            "description": "The URL of the logout page."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The display name for the application."
         },
         "Oauth2AllowImplicitFlow": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Does this Azure AD Application allow OAuth2.0 implicit flow tokens? Defaults to `false`."
         },
         "ObjectId": {
             "type": "string"
@@ -110,20 +125,24 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of Azure AD Object IDs that will be granted ownership of the application. Defaults to the Object ID of the caller creating the application. If a list is specified the caller Object ID will no longer be included unless explicitly added to the list."
         },
         "PublicClient": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is this Azure AD Application a public client? Defaults to `false`."
         },
         "ReplyUrls": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of URLs that user tokens are sent to for sign in, or the redirect URIs that OAuth 2.0 authorization codes and access tokens are sent to."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of an application: `webapp/api` or `native`. Defaults to `webapp/api`. For `native` apps type `identifier_uris` property can not not be set."
         },
         "AppRole": {
             "type": "array",

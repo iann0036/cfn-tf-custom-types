@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Enforced
 
+If true, then the Policy is enforced. If false, then any configuration is acceptable.
+
 _Required_: Yes
 
 _Type_: Boolean

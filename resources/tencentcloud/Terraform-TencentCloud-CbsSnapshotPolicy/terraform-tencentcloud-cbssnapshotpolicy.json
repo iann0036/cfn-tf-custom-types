@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::CbsSnapshotPolicy",
-    "description": "CloudFormation equivalent of tencentcloud_cbs_snapshot_policy",
+    "description": "Provides a snapshot policy resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -13,20 +13,24 @@
             "insertionOrder": false,
             "items": {
                 "type": "number"
-            }
+            },
+            "description": "Trigger times of periodic snapshot, the available values are 0 to 23. The 0 means 00:00, and so on."
         },
         "RepeatWeekdays": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "number"
-            }
+            },
+            "description": "Periodic snapshot is enabled, the available values are [0, 1, 2, 3, 4, 5, 6]. 0 means Sunday, 1-6 means Monday to Saturday."
         },
         "RetentionDays": {
-            "type": "number"
+            "type": "number",
+            "description": "Retention days of the snapshot, and the default value is 7."
         },
         "SnapshotPolicyName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of snapshot policy. The maximum length can not exceed 60 bytes."
         }
     },
     "additionalProperties": false,

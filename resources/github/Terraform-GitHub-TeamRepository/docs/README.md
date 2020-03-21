@@ -1,6 +1,14 @@
 # Terraform::GitHub::TeamRepository
 
-CloudFormation equivalent of github_team_repository
+This resource manages relationships between teams and repositories
+in your GitHub organization.
+
+Creating this resource grants a particular team permissions on a
+particular repository.
+
+The repository and the team must both belong to the same organization
+on GitHub. This resource does not actually *create* any repositories;
+to do that, see [`github_repository`](repository.html).
 
 ## Syntax
 
@@ -33,6 +41,9 @@ Properties:
 
 #### Permission
 
+The permissions of team members regarding the repository.
+Must be one of `pull`, `triage`, `push`, `maintain`, or `admin`. Defaults to `pull`.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +52,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Repository
 
+The repository to add to the team.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +61,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TeamId
+
+The GitHub team id.
 
 _Required_: Yes
 

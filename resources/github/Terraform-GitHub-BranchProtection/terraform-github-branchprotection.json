@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::GitHub::BranchProtection",
-    "description": "CloudFormation equivalent of github_branch_protection",
+    "description": "Protects a GitHub branch.\n\nThis resource allows you to configure branch protection for repositories in your organization. When applied, the branch will be protected from forced pushes and deletion. Additional constraints, such as required status checks or restrictions on users, teams, and apps, can also be configured.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "RequiredPullRequestReviews": {
@@ -84,19 +84,23 @@
             "type": "string"
         },
         "Branch": {
-            "type": "string"
+            "type": "string",
+            "description": "The Git branch to protect."
         },
         "EnforceAdmins": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean, setting this to `true` enforces status checks for repository administrators."
         },
         "Etag": {
             "type": "string"
         },
         "Repository": {
-            "type": "string"
+            "type": "string",
+            "description": "The GitHub repository name."
         },
         "RequireSignedCommits": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean, setting this to `true` requires all commits to be signed with GPG."
         },
         "RequiredPullRequestReviews": {
             "type": "array",

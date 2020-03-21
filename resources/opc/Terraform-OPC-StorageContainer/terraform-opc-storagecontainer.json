@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OPC::StorageContainer",
-    "description": "CloudFormation equivalent of opc_storage_container",
+    "description": "Creates and manages a Container in the Oracle Cloud Infrastructure Storage Classic service. `storage_endpoint` must be set in the\nprovider or environment to manage these resources.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -13,17 +13,20 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of origins that are allowed to make cross-origin requests."
         },
         "ExposedHeaders": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of headers exposed to the user agent (e.g. browser) in the actual request response."
         },
         "MaxAge": {
-            "type": "number"
+            "type": "number",
+            "description": "Maximum age in seconds for the origin to hold the preflight results."
         },
         "Metadata": {
             "type": "array",
@@ -43,36 +46,44 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Additional object metadata headers. See [Container Metadata ](#container-metadata) below for more information."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Storage Container."
         },
         "PrimaryKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The primary secret key value for temporary URLs."
         },
         "QuotaBytes": {
-            "type": "number"
+            "type": "number",
+            "description": "Maximum size of the container, in bytes."
         },
         "QuotaCount": {
-            "type": "number"
+            "type": "number",
+            "description": "Maximum object count of the container."
         },
         "ReadAcls": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The list of ACLs that grant read access. See [Setting Container ACLs](#setting-container-acls)."
         },
         "SecondaryKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The secondary secret key value for temporary URLs."
         },
         "WriteAcls": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The list of ACLs that grant write access. See [Setting Container ACLs](#setting-container-acls)."
         }
     },
     "additionalProperties": false,

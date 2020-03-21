@@ -25,6 +25,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### MaxRepeatCount
 
+How many times to repeat. This is a integer attribute.
+
 _Required_: Yes
 
 _Type_: Double

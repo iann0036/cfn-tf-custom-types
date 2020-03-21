@@ -31,6 +31,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Address
 
+The address of the service. Defaults to the
+node address.
+
 _Required_: No
 
 _Type_: String
@@ -38,6 +41,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Id
+
+The ID of the service. Defaults to the `name`.
 
 _Required_: No
 
@@ -47,6 +52,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the service.
+
 _Required_: Yes
 
 _Type_: String
@@ -55,6 +62,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Port
 
+The port of the service.
+
 _Required_: No
 
 _Type_: Double
@@ -62,6 +71,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A list of values that are opaque to Consul,
+but can be used to distinguish between services or nodes.
 
 _Required_: No
 

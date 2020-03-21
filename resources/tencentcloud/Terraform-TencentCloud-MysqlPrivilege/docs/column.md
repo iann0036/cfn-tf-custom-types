@@ -29,6 +29,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### ColumnName
 
+Column name.
+
 _Required_: Yes
 
 _Type_: String
@@ -36,6 +38,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DatabaseName
+
+Database name.
 
 _Required_: Yes
 
@@ -45,6 +49,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Privileges
 
+Column privilege.available values for Privileges:SELECT,INSERT,UPDATE,REFERENCES.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -52,6 +58,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TableName
+
+Table name.
 
 _Required_: Yes
 

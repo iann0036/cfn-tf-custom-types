@@ -1,6 +1,8 @@
 # Terraform::NSXT::LbTcpMonitor
 
-CloudFormation equivalent of nsxt_lb_tcp_monitor
+Provides a resource to configure lb tcp monitor on NSX-T manager
+
+~> **NOTE:** This resource requires NSX version 2.3 or higher.
 
 ## Syntax
 
@@ -48,6 +50,8 @@ Properties:
 
 #### Description
 
+Description of this resource.
+
 _Required_: No
 
 _Type_: String
@@ -55,6 +59,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+The display name of this resource. Defaults to ID if not set.
 
 _Required_: No
 
@@ -64,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FallCount
 
+Number of consecutive checks must fail before marking it down.
+
 _Required_: No
 
 _Type_: Double
@@ -71,6 +79,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Interval
+
+The frequency at which the system issues the monitor check (in seconds).
 
 _Required_: No
 
@@ -80,6 +90,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MonitorPort
 
+If the monitor port is specified, it would override pool member port setting for healthcheck. Port range is not supported.
+
 _Required_: No
 
 _Type_: String
@@ -87,6 +99,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Receive
+
+Expected data, if specified, can be anywhere in the response and it has to be a string, regular expressions are not supported.
 
 _Required_: No
 
@@ -96,6 +110,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RiseCount
 
+Number of consecutive checks must pass before marking it up.
+
 _Required_: No
 
 _Type_: Double
@@ -104,6 +120,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Send
 
+Payload to send out to the monitored server. If both send and receive are not specified, then just a TCP connection is established (3-way handshake) to validate server is healthy, no data is sent.
+
 _Required_: No
 
 _Type_: String
@@ -111,6 +129,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Timeout
+
+Number of seconds the target has in which to respond to the monitor request.
 
 _Required_: No
 

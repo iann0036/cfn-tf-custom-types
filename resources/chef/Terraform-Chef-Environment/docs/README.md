@@ -1,6 +1,8 @@
 # Terraform::Chef::Environment
 
-CloudFormation equivalent of chef_environment
+An [environment](http://docs.chef.io/environments.html) is a container for
+Chef nodes that share a set of attribute values and may have a set of version
+constraints for which cookbook versions may be used on its nodes.
 
 ## Syntax
 
@@ -38,6 +40,9 @@ Properties:
 
 #### CookbookConstraints
 
+Mapping of cookbook names to cookbook
+version constraints that should apply for this environment.
+
 _Required_: No
 
 _Type_: List of <a href="cookbookconstraints.md">CookbookConstraints</a>
@@ -45,6 +50,9 @@ _Type_: List of <a href="cookbookconstraints.md">CookbookConstraints</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefaultAttributesJson
+
+String containing a JSON-serialized
+object containing the default attributes for the environment.
 
 _Required_: No
 
@@ -54,6 +62,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+A human-friendly description of the environment.
+If not set, a placeholder of "Managed by Terraform" will be set.
+
 _Required_: No
 
 _Type_: String
@@ -62,6 +73,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The unique name to assign to the environment. This name
+will be used when nodes are created within the environment.
+
 _Required_: Yes
 
 _Type_: String
@@ -69,6 +83,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OverrideAttributesJson
+
+String containing a JSON-serialized
+object containing the override attributes for the environment.
 
 _Required_: No
 

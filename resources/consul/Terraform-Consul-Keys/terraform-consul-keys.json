@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Consul::Keys",
-    "description": "CloudFormation equivalent of consul_keys",
+    "description": "The `consul_keys` resource writes sets of individual values into Consul.\nThis is a powerful way to expose infrastructure details to clients.\n\nThis resource manages individual keys, and thus it can create, update\nand delete the keys explicitly given. However, it is not able to detect\nand remove additional keys that have been added by non-Terraform means.\nTo manage *all* keys sharing a common prefix, and thus have Terraform\nremove errant keys not present in the configuration, consider using the\n`consul_key_prefix` resource instead.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Key": {
@@ -11,19 +11,23 @@
                     "type": "string"
                 },
                 "Delete": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "If true, then the key will be deleted when\neither its configuration block is removed from the configuration or\nthe entire resource is destroyed. Otherwise, it will be left in Consul.\nDefaults to false."
                 },
                 "Flags": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "An [unsigned integer value](https://www.consul.io/api/kv.html#flags-1)\nto attach to the key (defaults to 0)."
                 },
                 "Name": {
                     "type": "string"
                 },
                 "Path": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "This is the path in Consul that should be written to."
                 },
                 "Value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The value to write to the given path."
                 }
             },
             "required": [
@@ -37,10 +41,12 @@
             "type": "string"
         },
         "Datacenter": {
-            "type": "string"
+            "type": "string",
+            "description": "The datacenter to use. This overrides the\nagent's default datacenter and the datacenter in the provider setup."
         },
         "Token": {
-            "type": "string"
+            "type": "string",
+            "description": "The ACL token to use. This overrides the\ntoken that the agent provides by default."
         },
         "Var": {
             "type": "array",

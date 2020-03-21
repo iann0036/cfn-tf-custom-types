@@ -1,6 +1,21 @@
 # Terraform::OCI::OnsNotificationTopic
 
-CloudFormation equivalent of oci_ons_notification_topic
+This resource provides the Notification Topic resource in Oracle Cloud Infrastructure Notifications service.
+
+Creates a topic in the specified compartment. For general information about topics, see
+[Managing Topics and Subscriptions](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm).
+
+For the purposes of access control, you must provide the OCID of the compartment where you want the topic to reside.
+For information about access control and compartments, see [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+
+You must specify a display name for the topic.
+
+All Oracle Cloud Infrastructure resources, including topics, get an Oracle-assigned, unique ID called an
+Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID in the response. You can also
+retrieve a resource's OCID by using a List API operation on that resource type, or by viewing the resource in the
+Console. For more information, see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+
+Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
 
 ## Syntax
 
@@ -41,6 +56,8 @@ Properties:
 
 #### CompartmentId
 
+(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the topic in.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +65,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefinedTags
+
+(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`.
 
 _Required_: No
 
@@ -57,6 +76,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+(Updatable) The description of the topic being created. Avoid entering confidential information.
+
 _Required_: No
 
 _Type_: String
@@ -65,6 +86,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FreeformTags
 
+(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`.
+
 _Required_: No
 
 _Type_: List of <a href="freeformtags.md">FreeformTags</a>
@@ -72,6 +95,8 @@ _Type_: List of <a href="freeformtags.md">FreeformTags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the topic being created. The topic name must be unique across the tenancy. Avoid entering confidential information.
 
 _Required_: Yes
 

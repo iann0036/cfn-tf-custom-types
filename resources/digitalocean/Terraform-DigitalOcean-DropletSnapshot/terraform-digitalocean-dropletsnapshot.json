@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::DigitalOcean::DropletSnapshot",
-    "description": "CloudFormation equivalent of digitalocean_droplet_snapshot",
+    "description": "Provides a resource which can be used to create a snapshot from an existing DigitalOcean Droplet.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,13 +12,15 @@
             "type": "string"
         },
         "DropletId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Droplet from which the snapshot will be taken."
         },
         "MinDiskSize": {
             "type": "number"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A name for the Droplet snapshot."
         },
         "Regions": {
             "type": "array",

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::LogicMonitor::Device",
-    "description": "CloudFormation equivalent of logicmonitor_device",
+    "description": "Provides a LogicMonitor device resource. This can be used to create and manage LogicMonitor devices",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,22 +9,27 @@
             "type": "string"
         },
         "Collector": {
-            "type": "number"
+            "type": "number",
+            "description": "The id of the collector that will monitoring the device."
         },
         "Description": {
             "type": "string"
         },
         "DisableAlerting": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "The host is created with alerting disabled (default is true)."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "Display name of device, (default is ip_addr)."
         },
         "HostgroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "The host group id that specifies which group the device belongs to (multiple host group ids can be added, represented by a comma separated string)."
         },
         "IpAddr": {
-            "type": "string"
+            "type": "string",
+            "description": "Ip Address/Hostname of device."
         },
         "Properties": {
             "type": "array",
@@ -44,7 +49,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "The properties associated with this device group. Any string value pair will work (see example)."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::VSphere::DrsVmOverride",
-    "description": "CloudFormation equivalent of vsphere_drs_vm_override",
+    "description": "The `vsphere_drs_vm_override` resource can be used to add a DRS override to a\ncluster for a specific virtual machine. With this resource, one can enable or\ndisable DRS and control the automation level for a single virtual machine\nwithout affecting the rest of the cluster.\n\nFor more information on vSphere clusters and DRS, see [this\npage][ref-vsphere-drs-clusters].\n\n[ref-vsphere-drs-clusters]: https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.resmgmt.doc/GUID-8ACF3502-5314-469F-8CC9-4A9BD5925BC2.html\n\n~> **NOTE:** This resource requires vCenter and is not available on direct ESXi\nconnections.\n\n~> **NOTE:** vSphere DRS requires a vSphere Enterprise Plus license.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,20 @@
             "type": "string"
         },
         "ComputeClusterId": {
-            "type": "string"
+            "type": "string",
+            "description": "The [managed object reference\nID][docs-about-morefs] of the cluster to put the override in.  Forces a new\nresource if changed."
         },
         "DrsAutomationLevel": {
-            "type": "string"
+            "type": "string",
+            "description": "Overrides the automation level for this virtual\nmachine in the cluster. Can be one of `manual`, `partiallyAutomated`, or\n`fullyAutomated`. Default: `manual`."
         },
         "DrsEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Overrides the default DRS setting for this virtual\nmachine. Can be either `true` or `false`. Default: `false`."
         },
         "VirtualMachineId": {
-            "type": "string"
+            "type": "string",
+            "description": "The UUID of the virtual machine to create\nthe override for.  Forces a new resource if changed."
         }
     },
     "additionalProperties": false,

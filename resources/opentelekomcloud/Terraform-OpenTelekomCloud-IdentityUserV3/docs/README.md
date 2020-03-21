@@ -1,6 +1,9 @@
 # Terraform::OpenTelekomCloud::IdentityUserV3
 
-CloudFormation equivalent of opentelekomcloud_identity_user_v3
+Manages a User resource within OpentelekomCloud IAM service.
+
+Note: You _must_ have admin privileges in your OpentelekomCloud cloud to use
+this resource.
 
 ## Syntax
 
@@ -39,6 +42,8 @@ Properties:
 
 #### DefaultProjectId
 
+The default project this user belongs to.
+
 _Required_: No
 
 _Type_: String
@@ -46,6 +51,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DomainId
+
+The domain this user belongs to.
 
 _Required_: No
 
@@ -55,6 +62,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Enabled
 
+Whether the user is enabled or disabled. Valid
+values are `true` and `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -63,6 +73,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the user. The user name consists of 5 to 32
+characters. It can contain only uppercase letters, lowercase letters,
+digits, spaces, and special characters (-_) and cannot start with a digit.
+
 _Required_: No
 
 _Type_: String
@@ -70,6 +84,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Password
+
+The password for the user. It must contain at least
+two of the following character types: uppercase letters, lowercase letters,
+digits, and special characters.
 
 _Required_: No
 

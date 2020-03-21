@@ -1,6 +1,11 @@
 # Terraform::Alicloud::AlikafkaTopic
 
-CloudFormation equivalent of alicloud_alikafka_topic
+Provides an ALIKAFKA topic resource.
+
+-> **NOTE:** Available in 1.56.0+
+
+-> **NOTE:**  Only the following regions support create alikafka topic.
+[`cn-hangzhou`,`cn-beijing`,`cn-shenzhen`,`cn-shanghai`,`cn-qingdao`,`cn-hongkong`,`cn-huhehaote`,`cn-zhangjiakou`,`ap-southeast-1`,`ap-south-1`,`ap-southeast-5`]
 
 ## Syntax
 
@@ -42,6 +47,8 @@ Properties:
 
 #### CompactTopic
 
+Whether the topic is compactTopic or not. Compact topic must be a localTopic.
+
 _Required_: No
 
 _Type_: Boolean
@@ -49,6 +56,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceId
+
+InstanceId of your Kafka resource, the topic will create in this instance.
 
 _Required_: Yes
 
@@ -58,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LocalTopic
 
+Whether the topic is localTopic or not.
+
 _Required_: No
 
 _Type_: Boolean
@@ -65,6 +76,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PartitionNum
+
+The number of partitions of the topic. The number should between 1 and 48.
 
 _Required_: No
 
@@ -74,6 +87,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Remark
 
+This attribute is a concise description of topic. The length cannot exceed 64.
+
 _Required_: Yes
 
 _Type_: String
@@ -82,6 +97,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -89,6 +106,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Topic
+
+Name of the topic. Two topics on a single instance cannot have the same name. The length cannot exceed 64 characters.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::FlexibleEngine::DwsClusterV1",
-    "description": "CloudFormation equivalent of flexibleengine_dws_cluster_v1",
+    "description": "Manages a DWS cluster resource within FlexibleEngine",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,7 +23,8 @@
             "type": "string"
         },
         "AvailabilityZone": {
-            "type": "string"
+            "type": "string",
+            "description": "AZ in a cluster."
         },
         "Created": {
             "type": "string"
@@ -45,16 +46,20 @@
             }
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Cluster name, which must be unique and contains 4 to 64\ncharacters, which consist of letters, digits, hyphens (-), or underscores\n(_) only and must start with a letter."
         },
         "NodeType": {
-            "type": "string"
+            "type": "string",
+            "description": "Node type."
         },
         "NumberOfNode": {
-            "type": "number"
+            "type": "number",
+            "description": "Number of nodes in a cluster. The value ranges\nfrom 3 to 32."
         },
         "Port": {
-            "type": "number"
+            "type": "number",
+            "description": "Service port of a cluster (8000 to 10000). The default\nvalue is 8000."
         },
         "PublicEndpoints": {
             "type": "array",
@@ -76,7 +81,8 @@
             "type": "string"
         },
         "SecurityGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of a security group. The ID is used for\nconfiguring cluster network."
         },
         "Status": {
             "type": "string"
@@ -85,7 +91,8 @@
             "type": "string"
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "Subnet ID, which is used for configuring cluster\nnetwork."
         },
         "TaskStatus": {
             "type": "string"
@@ -94,16 +101,19 @@
             "type": "string"
         },
         "UserName": {
-            "type": "string"
+            "type": "string",
+            "description": "Administrator username for logging in to a data\nwarehouse cluster The administrator username must:."
         },
         "UserPwd": {
-            "type": "string"
+            "type": "string",
+            "description": "Administrator password for logging in to a data\nwarehouse cluster."
         },
         "Version": {
             "type": "string"
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "VPC ID, which is used for configuring cluster network."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

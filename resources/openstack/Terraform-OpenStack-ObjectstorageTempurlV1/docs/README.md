@@ -1,6 +1,12 @@
 # Terraform::OpenStack::ObjectstorageTempurlV1
 
-CloudFormation equivalent of openstack_objectstorage_tempurl_v1
+Use this resource to generate an OpenStack Object Storage temporary URL.
+
+The temporary URL will be valid for as long as TTL is set to (in seconds).
+Once the URL has expired, it will no longer be valid, but the resource
+will remain in place. If you wish to automatically regenerate a URL, set
+the `regenerate` argument to `true`. This will create a new resource with
+a new ID and URL.
 
 ## Syntax
 
@@ -41,6 +47,8 @@ Properties:
 
 #### Container
 
+The container name the object belongs to.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +56,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Method
+
+The method allowed when accessing this URL.
+Valid values are `GET`, and `POST`. Default is `GET`.
 
 _Required_: No
 
@@ -57,6 +68,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Object
 
+The object name the tempurl is for.
+
 _Required_: Yes
 
 _Type_: String
@@ -65,6 +78,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Regenerate
 
+Whether to automatically regenerate the URL when
+it has expired. If set to true, this will create a new resource with a new
+ID and new URL. Defaults to false.
+
 _Required_: No
 
 _Type_: Boolean
@@ -72,6 +89,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region the tempurl is located in.
 
 _Required_: No
 
@@ -88,6 +107,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ttl
+
+The TTL, in seconds, for the URL. For how long it should
+be valid.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::CloudStack::SshKeypair",
-    "description": "CloudFormation equivalent of cloudstack_ssh_keypair",
+    "description": "Creates or registers an SSH key pair.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,16 +12,19 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the SSH key pair. This is a unique value\nwithin a CloudStack account. Changing this forces a new resource to be\ncreated."
         },
         "PrivateKey": {
             "type": "string"
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or ID of the project to register this\nkey to. Changing this forces a new resource to be created."
         },
         "PublicKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The public key to register with CloudStack. If\nthis is omitted, CloudStack will generate a new key pair. The key can\nbe loaded from a file on disk using the\n[`file()` function](https://www.terraform.io/docs/configuration/functions/file.html).\nChanging this forces a new resource to be created."
         }
     },
     "additionalProperties": false,

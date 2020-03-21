@@ -1,6 +1,6 @@
 # Terraform::Spotinst::ElastigroupAws
 
-CloudFormation equivalent of spotinst_elastigroup_aws
+Provides a Spotinst AWS group resource.
 
 ## Syntax
 
@@ -248,6 +248,10 @@ Properties:
 
 #### AvailabilityZones
 
+List of Strings of availability zones. When this parameter is set, `subnet_ids` should be left unused.
+Note: `availability_zones` naming syntax follows the convention `availability-zone:subnet:placement-group-name`. For example, to set an AZ in `us-east-1` with subnet `subnet-123456` and placement group `ClusterI03`, you would set:
+`availability_zones = ["us-east-1a:subnet-123456:ClusterI03"]`.
+
 _Required_: No
 
 _Type_: List of String
@@ -264,6 +268,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CapacityUnit
 
+The capacity unit to launch instances by. If not specified, when choosing the weight unit, each instance will weight as the number of its vCPUs.
+
 _Required_: No
 
 _Type_: String
@@ -271,6 +277,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CpuCredits
+
+Controls how T3 instances are launched. Valid values: `standard`, `unlimited`.
 
 _Required_: No
 
@@ -280,6 +288,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+The group description.
+
 _Required_: No
 
 _Type_: String
@@ -287,6 +297,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DesiredCapacity
+
+The desired number of instances the group should have at any time.
 
 _Required_: No
 
@@ -296,6 +308,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DrainingTimeout
 
+The time in seconds, the instance is allowed to run while detached from the ELB. This is to allow the instance time to be drained from incoming TCP connections before terminating it, during a scale down operation.
+
 _Required_: No
 
 _Type_: Double
@@ -304,6 +318,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EbsOptimized
 
+Enable high bandwidth connectivity between instances and AWS’s Elastic Block Store (EBS). For instance types that are EBS-optimized by default this parameter will be ignored.
+
 _Required_: No
 
 _Type_: Boolean
@@ -311,6 +327,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ElasticIps
+
+A list of [AWS Elastic IP](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html) allocation IDs to associate to the group instances.
 
 _Required_: No
 
@@ -328,6 +346,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableMonitoring
 
+Indicates whether monitoring is enabled for the instance.
+
 _Required_: No
 
 _Type_: Boolean
@@ -335,6 +355,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FallbackToOndemand
+
+In a case of no Spot instances available, Elastigroup will launch on-demand instances instead.
 
 _Required_: Yes
 
@@ -344,6 +366,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HealthCheckGracePeriod
 
+The amount of time, in seconds, after the instance has launched to starts and check its health.
+
 _Required_: No
 
 _Type_: Double
@@ -351,6 +375,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HealthCheckType
+
+The service that will perform health checks for the instance. Valid values: `"ELB"`, `"HCS"`, `"TARGET_GROUP"`, `"MLB"`, `"EC2"`, `"MULTAI_TARGET_SET"`, `"MLB_RUNTIME"`, `"K8S_NODE"`, `"NOMAD_NODE"`, `"ECS_CLUSTER_INSTANCE"`.
 
 _Required_: No
 
@@ -360,6 +386,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HealthCheckUnhealthyDurationBeforeReplacement
 
+The amount of time, in seconds, that we will wait before replacing an instance that is running and became unhealthy (this is only applicable for instances that were once healthy).
+
 _Required_: No
 
 _Type_: Double
@@ -367,6 +395,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IamInstanceProfile
+
+The ARN or name of an IAM instance profile to associate with launched instances.
 
 _Required_: No
 
@@ -376,6 +406,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ImageId
 
+The ID of the AMI used to launch the instance.
+
 _Required_: No
 
 _Type_: String
@@ -383,6 +415,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceTypesOndemand
+
+The type of instance determines your instance's CPU capacity, memory and storage (e.g., m1.small, c1.xlarge).
 
 _Required_: Yes
 
@@ -392,6 +426,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceTypesPreferredSpot
 
+Prioritize a subset of spot instance types. Must be a subset of the selected spot instance types.
+
 _Required_: No
 
 _Type_: List of String
@@ -400,6 +436,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceTypesSpot
 
+One or more instance types.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -407,6 +445,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeyName
+
+The key name that should be used for the instance.
 
 _Required_: No
 
@@ -424,6 +464,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxSize
 
+The maximum number of instances the group should have at any time.
+
 _Required_: No
 
 _Type_: Double
@@ -431,6 +473,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MinSize
+
+The minimum number of instances the group should have at any time.
 
 _Required_: No
 
@@ -440,6 +484,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The group name.
+
 _Required_: Yes
 
 _Type_: String
@@ -448,6 +494,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OndemandCount
 
+Number of on demand instances to launch in the group. All other instances will be spot instances. When this parameter is set the `spot_percentage` parameter is being ignored.
+
 _Required_: No
 
 _Type_: Double
@@ -455,6 +503,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Orientation
+
+Select a prediction strategy. Valid values: `"balanced"`, `"costOriented"`, `"equalAzDistribution"`, `"availabilityOriented"`.
 
 _Required_: Yes
 
@@ -488,6 +538,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PlacementTenancy
 
+Enable dedicated tenancy. Note: There is a flat hourly fee for each region in which dedicated tenancy is used.
+
 _Required_: No
 
 _Type_: String
@@ -495,6 +547,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PreferredAvailabilityZones
+
+The AZs to prioritize when launching Spot instances. If no markets are available in the Preferred AZs, Spot instances are launched in the non-preferred AZs.
+Note: Must be a sublist of `availability_zones` and `orientation` value must not be `"equalAzDistribution"`.
 
 _Required_: No
 
@@ -512,6 +567,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Product
 
+Operation system type. Valid values: `"Linux/UNIX"`, `"SUSE Linux"`, `"Windows"`.
+For EC2 Classic instances:  `"Linux/UNIX (Amazon VPC)"`, `"SUSE Linux (Amazon VPC)"`, `"Windows (Amazon VPC)"`.
+
 _Required_: Yes
 
 _Type_: String
@@ -519,6 +577,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The AWS region your group will be created in.
+Note: This parameter is required if you specify subnets (through subnet_ids). This parameter is optional if you specify Availability Zones (through availability_zones).
 
 _Required_: No
 
@@ -528,6 +589,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecurityGroups
 
+A list of associated security group IDS.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -535,6 +598,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ShutdownScript
+
+The Base64-encoded shutdown script that executes prior to instance termination, for more information please see: [Shutdown Script](https://api.spotinst.com/integration-docs/elastigroup/concepts/compute-concepts/shutdown-scripts/).
 
 _Required_: No
 
@@ -544,6 +609,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SpotPercentage
 
+The percentage of Spot instances that would spin up from the `desired_capacity` number.
+
 _Required_: No
 
 _Type_: Double
@@ -551,6 +618,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubnetIds
+
+List of Strings of subnet identifiers.
+Note: When this parameter is set, `availability_zones` should be left unused.
 
 _Required_: No
 
@@ -568,6 +638,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UserData
 
+The user data to provide when launching the instance.
+
 _Required_: No
 
 _Type_: String
@@ -575,6 +647,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UtilizeReservedInstances
+
+In a case of any available reserved instances, Elastigroup will utilize them first before purchasing Spot instances.
 
 _Required_: No
 
@@ -584,6 +658,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### WaitForCapacity
 
+Minimum number of instances in a 'HEALTHY' status that is required before continuing. This is ignored when updating with blue/green deployment. Cannot exceed `desired_capacity`.
+
 _Required_: No
 
 _Type_: Double
@@ -591,6 +667,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WaitForCapacityTimeout
+
+Time (seconds) to wait for instances to report a 'HEALTHY' status. Useful for plans with multiple dependencies that take some time to initialize. Leave undefined or set to `0` to indicate no wait. This is ignored when updating with blue/green deployment.
 
 _Required_: No
 

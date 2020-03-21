@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::CsSwarm",
-    "description": "CloudFormation equivalent of alicloud_cs_swarm",
+    "description": "-> **DEPRECATED:** This resource manages swarm cluster, which is being deprecated and will be replaced by Kubernetes cluster.\n\nThis resource will help you to manager a Swarm Cluster.\n\n-> **NOTE:** Swarm cluster only supports VPC network and you can specify a VPC network by filed `vswitch_id`.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,34 +12,44 @@
             "type": "string"
         },
         "CidrBlock": {
-            "type": "string"
+            "type": "string",
+            "description": "The CIDR block for the Container. It can not be same as the CIDR used by the VPC.\nValid value:\n- 192.168.0.0/16\n- 172.19-30.0.0/16\n- 10.0.0.0/16."
         },
         "DiskCategory": {
-            "type": "string"
+            "type": "string",
+            "description": "The data disk category of ECS instance node. Its valid value are `cloud`, `cloud_ssd`, `cloud_essd`, `ephemeral_essd` and `cloud_efficiency`. Default to `cloud_efficiency`."
         },
         "DiskSize": {
-            "type": "number"
+            "type": "number",
+            "description": "The data disk size of ECS instance node. Its valid value is 20~32768 GB. Default to 20."
         },
         "ImageId": {
-            "type": "string"
+            "type": "string",
+            "description": "The image ID of ECS instance node used. Default to System automate allocated."
         },
         "InstanceType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of ECS instance node."
         },
         "IsOutdated": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to use outdated instance type. Default to false."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The container cluster's name. It is the only in one Alicloud account."
         },
         "NamePrefix": {
-            "type": "string"
+            "type": "string",
+            "description": "The container cluster name's prefix. It is conflict with `name`. If it is specified, terraform will using it to build the only cluster name. Default to 'Terraform-Creation'."
         },
         "NeedSlb": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to create the default simple routing Server Load Balancer instance for the cluster. The default value is true."
         },
         "NodeNumber": {
-            "type": "number"
+            "type": "number",
+            "description": "The ECS node number of the container cluster. Its value choices are 1~50, and default to 1."
         },
         "Nodes": {
             "type": "array",
@@ -67,16 +77,19 @@
             }
         },
         "Password": {
-            "type": "string"
+            "type": "string",
+            "description": "The password of ECS instance node."
         },
         "ReleaseEip": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to release EIP after creating swarm cluster successfully. Default to false."
         },
         "SecurityGroupId": {
             "type": "string"
         },
         "Size": {
-            "type": "number"
+            "type": "number",
+            "description": "Field 'size' has been deprecated from provider version 1.9.1. New field 'node_number' replaces it."
         },
         "SlbId": {
             "type": "string"
@@ -85,7 +98,8 @@
             "type": "string"
         },
         "VswitchId": {
-            "type": "string"
+            "type": "string",
+            "description": "The password of ECS instance node. If it is not specified, the container cluster's network mode will be `Classic`."
         }
     },
     "additionalProperties": false,

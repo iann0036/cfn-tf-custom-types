@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Cobbler::System",
-    "description": "CloudFormation equivalent of cobbler_system",
+    "description": "Manages a System within Cobbler.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Interface": {
@@ -8,44 +8,56 @@
             "additionalProperties": false,
             "properties": {
                 "BondingOpts": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Options for bonded interfaces."
                 },
                 "BridgeOpts": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Options for bridge interfaces."
                 },
                 "Cnames": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Canonical name records."
                 },
                 "DhcpTag": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "DHCP tag."
                 },
                 "DnsName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "DNS name."
                 },
                 "Gateway": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Per-interface gateway."
                 },
                 "InterfaceMaster": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The master interface when slave."
                 },
                 "InterfaceType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The type of interface: na, master,\nslave, bond, bond_slave, bridge, bridge_slave, bonded_bridge_slave."
                 },
                 "IpAddress": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The IP address of the interface."
                 },
                 "Ipv6Address": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The IPv6 address of the interface."
                 },
                 "Ipv6DefaultGateway": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The default gateawy for the\nIPv6 address / interface."
                 },
                 "Ipv6Mtu": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The MTU of the IPv6 address."
                 },
                 "Ipv6Secondaries": {
                     "type": "array",
@@ -59,32 +71,40 @@
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Static routes for the IPv6\ninterface."
                 },
                 "MacAddress": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The MAC address of the interface."
                 },
                 "Management": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Whether this interface is a management\ninterface."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The device name of the interface. ex: eth0."
                 },
                 "Netmask": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The IPv4 netmask of the interface."
                 },
                 "Static": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Whether the interface should be static or\nDHCP."
                 },
                 "StaticRoutes": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Static routes for the interface."
                 },
                 "VirtBridge": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The virtual bridge to attach to."
                 }
             },
             "required": [
@@ -98,146 +118,188 @@
             "type": "string"
         },
         "BootFiles": {
-            "type": "string"
+            "type": "string",
+            "description": "TFTP boot files copied into tftpboot."
         },
         "Comment": {
-            "type": "string"
+            "type": "string",
+            "description": "Free form text description."
         },
         "EnableGpxe": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Use gPXE instead of PXELINUX."
         },
         "FetchableFiles": {
-            "type": "string"
+            "type": "string",
+            "description": "Templates for tftp or wget."
         },
         "Gateway": {
-            "type": "string"
+            "type": "string",
+            "description": "Network gateway."
         },
         "Hostname": {
-            "type": "string"
+            "type": "string",
+            "description": "Hostname of the system."
         },
         "Image": {
-            "type": "string"
+            "type": "string",
+            "description": "Parent image (if no profile is used)."
         },
         "Ipv6DefaultDevice": {
-            "type": "string"
+            "type": "string",
+            "description": "IPv6 default device."
         },
         "KernelOptions": {
-            "type": "string"
+            "type": "string",
+            "description": "Kernel options.\nex: selinux=permissive."
         },
         "KernelOptionsPost": {
-            "type": "string"
+            "type": "string",
+            "description": "Kernel options (post install)."
         },
         "Kickstart": {
-            "type": "string"
+            "type": "string",
+            "description": "Path to kickstart template."
         },
         "KsMeta": {
-            "type": "string"
+            "type": "string",
+            "description": "Kickstart metadata."
         },
         "LdapEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Configure LDAP at next config update."
         },
         "LdapType": {
-            "type": "string"
+            "type": "string",
+            "description": "LDAP management type."
         },
         "MgmtClasses": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Management classes for external config\nmanagement."
         },
         "MgmtParameters": {
-            "type": "string"
+            "type": "string",
+            "description": "Parameters which will be handed to\nyour management application. Must be a valid YAML dictionary."
         },
         "MonitEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Configure monit on this machine at\nnext config update."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the system."
         },
         "NameServers": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Name servers."
         },
         "NameServersSearch": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Name servers search path."
         },
         "NetbootEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "(re)Install this machine at next\nboot."
         },
         "Owners": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Owners list for authz_ownership."
         },
         "PowerAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "Power management address."
         },
         "PowerId": {
-            "type": "string"
+            "type": "string",
+            "description": "Usually a plug number or blade name if\npower type requires it."
         },
         "PowerPass": {
-            "type": "string"
+            "type": "string",
+            "description": "Power management password."
         },
         "PowerType": {
-            "type": "string"
+            "type": "string",
+            "description": "Power management type."
         },
         "PowerUser": {
-            "type": "string"
+            "type": "string",
+            "description": "Power management user."
         },
         "Profile": {
-            "type": "string"
+            "type": "string",
+            "description": "Parent profile."
         },
         "Proxy": {
-            "type": "string"
+            "type": "string",
+            "description": "Proxy URL."
         },
         "RedhatManagementKey": {
-            "type": "string"
+            "type": "string",
+            "description": "Red Hat management key."
         },
         "RedhatManagementServer": {
-            "type": "string"
+            "type": "string",
+            "description": "Red Hat management server."
         },
         "Status": {
-            "type": "string"
+            "type": "string",
+            "description": "System status (development, testing,\nacceptance, production)."
         },
         "TemplateFiles": {
-            "type": "string"
+            "type": "string",
+            "description": "File mappings for built-in\nconfiguration management."
         },
         "TemplateRemoteKickstarts": {
-            "type": "number"
+            "type": "number",
+            "description": "template remote\nkickstarts."
         },
         "VirtAutoBoot": {
-            "type": "string"
+            "type": "string",
+            "description": "Auto boot the VM."
         },
         "VirtCpus": {
-            "type": "string"
+            "type": "string",
+            "description": "Number of virtual CPUs in the VM."
         },
         "VirtDiskDriver": {
-            "type": "string"
+            "type": "string",
+            "description": "The on-disk format for the\nvirtualization disk."
         },
         "VirtFileSize": {
-            "type": "string"
+            "type": "string",
+            "description": "Virt file size."
         },
         "VirtPath": {
-            "type": "string"
+            "type": "string",
+            "description": "Path to the VM."
         },
         "VirtPxeBoot": {
-            "type": "number"
+            "type": "number",
+            "description": "Use PXE to build this VM?."
         },
         "VirtRam": {
-            "type": "string"
+            "type": "string",
+            "description": "The amount of RAM for the VM."
         },
         "VirtType": {
-            "type": "string"
+            "type": "string",
+            "description": "Virtualization technology to use: xenpv,\nxenfv, qemu, kvm, vmware, openvz."
         },
         "Interface": {
             "type": "array",

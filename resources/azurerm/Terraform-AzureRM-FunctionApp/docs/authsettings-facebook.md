@@ -27,6 +27,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### AppId
 
+The App ID of the Facebook app used for login.
+
 _Required_: Yes
 
 _Type_: String
@@ -34,6 +36,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AppSecret
+
+The App Secret of the Facebook app used for Facebook Login.
 
 _Required_: Yes
 

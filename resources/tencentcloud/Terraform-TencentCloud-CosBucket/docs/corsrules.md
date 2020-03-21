@@ -34,6 +34,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### AllowedHeaders
 
+Specifies which headers are allowed.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -41,6 +43,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowedMethods
+
+Specifies which methods are allowed. Can be GET, PUT, POST, DELETE or HEAD.
 
 _Required_: Yes
 
@@ -50,6 +54,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AllowedOrigins
 
+Specifies which origins are allowed.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -58,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ExposeHeaders
 
+Specifies expose header in the response.
+
 _Required_: No
 
 _Type_: List of String
@@ -65,6 +73,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MaxAgeSeconds
+
+Specifies time in seconds that browser can cache the response for a preflight request.
 
 _Required_: No
 

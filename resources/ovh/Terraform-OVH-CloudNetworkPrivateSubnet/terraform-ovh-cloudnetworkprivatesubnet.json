@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OVH::CloudNetworkPrivateSubnet",
-    "description": "CloudFormation equivalent of ovh_cloud_network_private_subnet",
+    "description": "Creates a subnet in a private network of a public cloud project.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,10 +12,12 @@
             "type": "string"
         },
         "Dhcp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable DHCP.\nChanging this forces a new resource to be created. Defaults to false.\n_."
         },
         "End": {
-            "type": "string"
+            "type": "string",
+            "description": "Last ip for this region.\nChanging this value recreates the subnet."
         },
         "GatewayIp": {
             "type": "string"
@@ -46,22 +48,28 @@
             }
         },
         "Network": {
-            "type": "string"
+            "type": "string",
+            "description": "Global network in CIDR format.\nChanging this value recreates the subnet."
         },
         "NetworkId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the network.\nChanging this forces a new resource to be created."
         },
         "NoGateway": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to true if you don't want to set a default gateway IP.\nChanging this value recreates the resource. Defaults to false."
         },
         "ProjectId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the public cloud project. If omitted,\nthe `OVH_PROJECT_ID` environment variable is used.\nChanging this forces a new resource to be created."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which the network subnet will be created.\nEx.: \"GRA1\". Changing this value recreates the resource."
         },
         "Start": {
-            "type": "string"
+            "type": "string",
+            "description": "First ip for this region.\nChanging this value recreates the subnet."
         }
     },
     "additionalProperties": false,

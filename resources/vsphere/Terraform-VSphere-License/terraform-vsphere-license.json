@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::VSphere::License",
-    "description": "CloudFormation equivalent of vsphere_license",
+    "description": "Provides a VMware vSphere license resource. This can be used to add and remove license keys.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -29,10 +29,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A map of key/value pairs to be attached as labels (tags) to the license key."
         },
         "LicenseKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The license key to add."
         },
         "Name": {
             "type": "string"

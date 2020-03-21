@@ -27,6 +27,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Uri
 
+The uri of the runbook content.
+
 _Required_: Yes
 
 _Type_: String

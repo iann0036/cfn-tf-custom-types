@@ -1,6 +1,7 @@
 # Terraform::Panos::PanoramaBgpAggregate
 
-CloudFormation equivalent of panos_panorama_bgp_aggregate
+This resource allows you to add/update/delete Panorama BGP address aggregation
+rules.
 
 ## Syntax
 
@@ -67,6 +68,9 @@ Properties:
 
 #### AsPathLimit
 
+Add AS path limit attribute if it does
+not exist.
+
 _Required_: No
 
 _Type_: Double
@@ -74,6 +78,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AsPathType
+
+AS path update options.  Valid values are
+`none` (default) or `prepend`.
 
 _Required_: No
 
@@ -83,6 +90,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AsPathValue
 
+For `as_path_type` of `prepend`, the value to
+prepend.
+
 _Required_: No
 
 _Type_: String
@@ -90,6 +100,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AsSet
+
+Generate AS-set attribute.
 
 _Required_: No
 
@@ -99,6 +111,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CommunityType
 
+Community update options.  Valid values are
+`none` (default), `remove-all`, `remove-regex`, `append`, or `overwrite`.
+
 _Required_: No
 
 _Type_: String
@@ -106,6 +121,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CommunityValue
+
+If `community_type` is `remove-regex`,
+`append`, or `overwrite`, the value associated with that setting.  For the
+`append` and `overwrite` types specifically, valid values are
+`no-export`, `no-advertise`, `local-as`, or `nopeer`.
 
 _Required_: No
 
@@ -115,6 +135,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Enable
 
+Enable this rule (default: `true`).
+
 _Required_: No
 
 _Type_: Boolean
@@ -122,6 +144,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ExtendedCommunityType
+
+Extended community update options.  Valid
+values are `none` (default), `remove-all`, `remove-regex`, `append`, or `overwrite`.
 
 _Required_: No
 
@@ -139,6 +164,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LocalPreference
 
+New local preference value.
+
 _Required_: No
 
 _Type_: String
@@ -146,6 +173,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Med
+
+New MED value.
 
 _Required_: No
 
@@ -155,6 +184,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The rule name.
+
 _Required_: Yes
 
 _Type_: String
@@ -162,6 +193,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NextHop
+
+Next hop address.
 
 _Required_: No
 
@@ -171,6 +204,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Origin
 
+New route origin.  Valid values are `incomplete`
+(default), `igp`, or `egp`.
+
 _Required_: No
 
 _Type_: String
@@ -178,6 +214,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Prefix
+
+Aggregating address prefix.
 
 _Required_: Yes
 
@@ -187,6 +225,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Summary
 
+Summarize route.
+
 _Required_: No
 
 _Type_: Boolean
@@ -194,6 +234,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Template
+
+The template name.
 
 _Required_: No
 
@@ -203,6 +245,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TemplateStack
 
+The template stack name.
+
 _Required_: No
 
 _Type_: String
@@ -211,6 +255,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VirtualRouter
 
+The virtual router to put the rule into.
+
 _Required_: Yes
 
 _Type_: String
@@ -218,6 +264,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Weight
+
+New weight value.
 
 _Required_: No
 

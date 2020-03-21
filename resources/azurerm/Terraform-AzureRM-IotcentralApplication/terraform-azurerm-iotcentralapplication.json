@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::IotcentralApplication",
-    "description": "CloudFormation equivalent of azurerm_iotcentral_application",
+    "description": "Manages an IotCentral Application",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,22 +29,28 @@
             "type": "string"
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "A `display_name` name. Custom display name for the IoT Central application. Default is resource name."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource has to be create. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the IotHub resource. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group under which the IotHub resource has to be created. Changing this forces a new resource to be created."
         },
         "Sku": {
-            "type": "string"
+            "type": "string",
+            "description": "A `sku` name. Possible values is `ST1`, `ST2`, Default value is `ST1`."
         },
         "SubDomain": {
-            "type": "string"
+            "type": "string",
+            "description": "A `sub_domain` name. Subdomain for the IoT Central URL. Each application must have a unique subdomain."
         },
         "Tags": {
             "type": "array",
@@ -64,10 +70,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Template": {
-            "type": "string"
+            "type": "string",
+            "description": "A `template` name. IoT Central application template name. Default is a custom application."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

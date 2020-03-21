@@ -1,6 +1,7 @@
 # Terraform::Circonus::Worksheet
 
-CloudFormation equivalent of circonus_worksheet
+The ``circonus_worksheet`` resource creates and manages a
+[Circonus Worksheet](https://login.circonus.com/resources/api/calls/worksheet).
 
 ## Syntax
 
@@ -44,6 +45,8 @@ Properties:
 
 #### Description
 
+Description of what the worksheet is for.
+
 _Required_: No
 
 _Type_: String
@@ -51,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Favourite
+
+Mark (star) this worksheet as a favorite. Default is `false`.
 
 _Required_: No
 
@@ -60,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Graphs
 
+A list of graphs that compose this worksheet.
+
 _Required_: No
 
 _Type_: List of String
@@ -67,6 +74,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Notes
+
+A place to store notes about this worksheet.
 
 _Required_: No
 
@@ -76,6 +85,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A list of tags assigned to this worksheet.
+
 _Required_: No
 
 _Type_: List of String
@@ -83,6 +94,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Title
+
+The title of the worksheet.
 
 _Required_: Yes
 

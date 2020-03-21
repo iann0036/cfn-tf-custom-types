@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::NSXT::MacManagementSwitchingProfile",
-    "description": "CloudFormation equivalent of nsxt_mac_management_switching_profile",
+    "description": "Provides a resource to configure MAC management switching profile on NSX-T manager",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "MacLearning": {
@@ -45,13 +45,16 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of this resource."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The display name of this resource. Defaults to ID if not set."
         },
         "MacChangeAllowed": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "A boolean flag indicating allowing source MAC address change."
         },
         "Revision": {
             "type": "number"

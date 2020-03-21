@@ -1,6 +1,7 @@
 # Terraform::Alicloud::LogStoreIndex
 
-CloudFormation equivalent of alicloud_log_store_index
+Log Service provides the LogSearch/Analytics function to query and analyze large amounts of logs in real time.
+You can use this function by enabling the index and field statistics. [Refer to details](https://www.alibabacloud.com/help/doc-detail/43772.htm)
 
 ## Syntax
 
@@ -40,6 +41,8 @@ Properties:
 
 #### Logstore
 
+The log store name to the query index belongs.
+
 _Required_: Yes
 
 _Type_: String
@@ -47,6 +50,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The project name to the log store belongs.
 
 _Required_: Yes
 

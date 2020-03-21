@@ -1,6 +1,8 @@
 # Terraform::Brightbox::Server
 
-CloudFormation equivalent of brightbox_server
+Provides a Brightbox Server resource. This can be used to create,
+modify, and delete Servers. Servers also support
+[provisioning](/docs/provisioners/index.html).
 
 ## Syntax
 
@@ -44,6 +46,8 @@ Properties:
 
 #### Image
 
+The Server image ID.
+
 _Required_: Yes
 
 _Type_: String
@@ -51,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The Server name.
 
 _Required_: No
 
@@ -67,6 +73,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The handle of the server type required (`1gb.ssd`, etc).
 
 _Required_: No
 
@@ -91,6 +99,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Zone
+
+The handle of the zone required (`gb1-a`, `gb1-b`).
 
 _Required_: No
 

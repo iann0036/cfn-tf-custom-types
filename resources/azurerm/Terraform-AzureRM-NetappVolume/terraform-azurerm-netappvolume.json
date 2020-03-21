@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::NetappVolume",
-    "description": "CloudFormation equivalent of azurerm_netapp_volume",
+    "description": "Manages a NetApp Volume.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ExportPolicyRule": {
@@ -12,32 +12,40 @@
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of allowed clients IPv4 addresses."
                 },
                 "CifsEnabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Is the CIFS protocol allowed?."
                 },
                 "Nfsv3Enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Is the NFSv3 protocol allowed?."
                 },
                 "Nfsv4Enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Is the NFSv4 protocol allowed?."
                 },
                 "ProtocolsEnabled": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of allowed protocols. Valid values include `CIFS`, `NFSv3`, or `NFSv4.1`. Only one value is supported at this time. This replaces the previous arguments: `cifs_enabled`, `nfsv3_enabled` and `nfsv4_enabled`."
                 },
                 "RuleIndex": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The index number of the rule."
                 },
                 "UnixReadOnly": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Is the file system on unix read only?."
                 },
                 "UnixReadWrite": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Is the file system on unix read and write?."
                 }
             },
             "required": [
@@ -71,35 +79,44 @@
             "type": "string"
         },
         "AccountName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the NetApp account in which the NetApp Pool should be created. Changing this forces a new resource to be created."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the NetApp Volume. Changing this forces a new resource to be created."
         },
         "PoolName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the NetApp pool in which the NetApp Volume should be created. Changing this forces a new resource to be created."
         },
         "Protocols": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The target volume protocol expressed as a list. Supported single value include `CIFS`, `NFSv3`, or `NFSv4.1`. If argument is not defined it will default to `NFSv3`. Changing this forces a new resource to be created and data will be lost."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group where the NetApp Volume should be created. Changing this forces a new resource to be created."
         },
         "ServiceLevel": {
-            "type": "string"
+            "type": "string",
+            "description": "The target performance of the file system. Valid values include `Premium`, `Standard`, or `Ultra`."
         },
         "StorageQuotaInGb": {
-            "type": "number"
+            "type": "number",
+            "description": "The maximum Storage Quota allowed for a file system in Gigabytes."
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Subnet the NetApp Volume resides in, which must have the `Microsoft.NetApp/volumes` delegation. Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -119,10 +136,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "VolumePath": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique file path for the volume. Used when creating mount targets. Changing this forces a new resource to be created."
         },
         "ExportPolicyRule": {
             "type": "array",

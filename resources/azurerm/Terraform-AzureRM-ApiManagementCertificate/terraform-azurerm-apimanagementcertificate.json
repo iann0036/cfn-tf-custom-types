@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::ApiManagementCertificate",
-    "description": "CloudFormation equivalent of azurerm_api_management_certificate",
+    "description": "Manages an Certificate within an API Management Service.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,22 +29,27 @@
             "type": "string"
         },
         "ApiManagementName": {
-            "type": "string"
+            "type": "string",
+            "description": "The Name of the API Management Service where this Service should be created. Changing this forces a new resource to be created."
         },
         "Data": {
-            "type": "string"
+            "type": "string",
+            "description": "The base-64 encoded certificate data, which must be a PFX file. Changing this forces a new resource to be created."
         },
         "Expiration": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the API Management Certificate. Changing this forces a new resource to be created."
         },
         "Password": {
-            "type": "string"
+            "type": "string",
+            "description": "The password used for this certificate. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The Name of the Resource Group where the API Management Service exists. Changing this forces a new resource to be created."
         },
         "Subject": {
             "type": "string"

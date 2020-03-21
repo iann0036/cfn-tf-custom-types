@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Circonus::Worksheet",
-    "description": "CloudFormation equivalent of circonus_worksheet",
+    "description": "The ``circonus_worksheet`` resource creates and manages a\n[Circonus Worksheet](https://login.circonus.com/resources/api/calls/worksheet).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "SmartQueries": {
@@ -33,30 +33,36 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of what the worksheet is for."
         },
         "Favourite": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Mark (star) this worksheet as a favorite. Default is `false`."
         },
         "Graphs": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of graphs that compose this worksheet."
         },
         "Notes": {
-            "type": "string"
+            "type": "string",
+            "description": "A place to store notes about this worksheet."
         },
         "Tags": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of tags assigned to this worksheet."
         },
         "Title": {
-            "type": "string"
+            "type": "string",
+            "description": "The title of the worksheet."
         },
         "SmartQueries": {
             "type": "array",

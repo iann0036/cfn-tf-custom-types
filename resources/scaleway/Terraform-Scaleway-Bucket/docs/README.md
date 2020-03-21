@@ -1,6 +1,9 @@
 # Terraform::Scaleway::Bucket
 
-CloudFormation equivalent of scaleway_bucket
+**DEPRECATED**: This resource is deprecated and will be removed in `v2.0+`.
+Please use `scaleway_object_bucket` instead.
+
+Creates Scaleway object storage buckets.
 
 ## Syntax
 
@@ -28,6 +31,8 @@ Properties:
 ## Properties
 
 #### Name
+
+Name of the Scaleway objectstorage bucket.
 
 _Required_: Yes
 

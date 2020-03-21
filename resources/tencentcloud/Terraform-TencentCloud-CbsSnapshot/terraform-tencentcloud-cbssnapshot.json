@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::CbsSnapshot",
-    "description": "CloudFormation equivalent of tencentcloud_cbs_snapshot",
+    "description": "Provides a resource to create a CBS snapshot.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -18,13 +18,15 @@
             "type": "number"
         },
         "SnapshotName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the snapshot."
         },
         "SnapshotStatus": {
             "type": "string"
         },
         "StorageId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the the CBS which this snapshot created from."
         },
         "StorageSize": {
             "type": "number"

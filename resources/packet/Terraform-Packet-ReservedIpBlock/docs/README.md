@@ -1,6 +1,17 @@
 # Terraform::Packet::ReservedIpBlock
 
-CloudFormation equivalent of packet_reserved_ip_block
+Provides a resource to create and manage blocks of reserved IP addresses in a project.
+
+When a user provisions first device in a facility, Packet API automatically allocates IPv6/56 and private IPv4/25 blocks.
+The new device then gets IPv6 and private IPv4 addresses from those block. It also gets a public IPv4/31 address.
+Every new device in the project and facility will automatically get IPv6 and private IPv4 addresses from these pre-allocated blocks.
+The IPv6 and private IPv4 blocks can't be created, only imported. With this resource, it's possible to create either public IPv4 blocks or global IPv4 blocks.
+
+Public blocks are allocated in a facility. Addresses from public blocks can only be assigned to devices in the facility. Public blocks can have mask from /24 (256 addresses) to /32 (1 address). If you create public block with this resource, you must fill the facility argmument.
+
+Addresses from global blocks can be assigned in any facility. Global blocks can have mask from /30 (4 addresses), to /32 (1 address). If you create global block with this resource, you must specify type = "global_ipv4" and you must omit the facility argument.
+
+Once IP block is allocated or imported, an address from it can be assigned to device with the `packet_ip_attachment` resource.
 
 ## Syntax
 
@@ -37,6 +48,8 @@ Properties:
 
 #### Description
 
+Arbitrary description.
+
 _Required_: No
 
 _Type_: String
@@ -44,6 +57,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Facility
+
+Facility where to allocate the public IP address block, makes sense only for type==public_ipv4, must be empty for type==global_ipv4.
 
 _Required_: No
 
@@ -53,6 +68,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProjectId
 
+The packet project ID where to allocate the address block.
+
 _Required_: Yes
 
 _Type_: String
@@ -61,6 +78,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Quantity
 
+The number of allocated /32 addresses, a power of 2.
+
 _Required_: Yes
 
 _Type_: Double
@@ -68,6 +87,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+Either "global_ipv4" or "public_ipv4", defaults to "public_ipv4" for backward compatibility.
 
 _Required_: No
 

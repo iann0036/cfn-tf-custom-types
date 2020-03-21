@@ -37,6 +37,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### FrontendIpConfigurationName
 
+The Name of the Frontend IP Configuration used for this HTTP Listener.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FrontendPortName
+
+The Name of the Frontend Port use for this HTTP Listener.
 
 _Required_: Yes
 
@@ -53,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HostName
 
+The Hostname which should be used for this HTTP Listener.
+
 _Required_: No
 
 _Type_: String
@@ -60,6 +66,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The Name of the HTTP Listener.
 
 _Required_: Yes
 
@@ -69,6 +77,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Protocol
 
+The Protocol to use for this HTTP Listener. Possible values are `Http` and `Https`.
+
 _Required_: Yes
 
 _Type_: String
@@ -77,6 +87,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RequireSni
 
+Should Server Name Indication be Required? Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -84,6 +96,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SslCertificateName
+
+The name of the associated SSL Certificate which should be used for this HTTP Listener.
 
 _Required_: No
 

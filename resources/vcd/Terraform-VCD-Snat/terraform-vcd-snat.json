@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::VCD::Snat",
-    "description": "CloudFormation equivalent of vcd_snat",
+    "description": "Provides a vCloud Director SNAT resource. This can be used to create, modify,\nand delete source NATs to allow vApps to send external traffic.\n\n~> **Note:** This resource may corrupt UI edited NAT rules when used with advanced\nedge gateways. Please use [`vcd_nsxv_snat`](/docs/providers/vcd/r/nsxv_snat.html) in that case.\n\n!> **Warning:** When advanced edge gateway is used and the rule is updated using UI, then ID mapping will be lost and Terraform won't find the rule anymore and remove it from state.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,28 +9,36 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "- Description of item."
         },
         "EdgeGateway": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the edge gateway on which to apply the SNAT."
         },
         "ExternalIp": {
-            "type": "string"
+            "type": "string",
+            "description": "One of the external IPs available on your Edge Gateway."
         },
         "InternalIp": {
-            "type": "string"
+            "type": "string",
+            "description": "The IP or IP Range of the VM(s) to map from."
         },
         "NetworkName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the network on which to apply the SNAT. *`network_name` will be a required field in the next major version.*."
         },
         "NetworkType": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of the network on which to apply the NAT rule. Possible values `org` or `ext`. *`network_type` will be a required field in the next major version.*."
         },
         "Org": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of organization to use, optional if defined at provider level. Useful when connected as sysadmin working across different organisations."
         },
         "Vdc": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of VDC to use, optional if defined at provider level."
         }
     },
     "additionalProperties": false,

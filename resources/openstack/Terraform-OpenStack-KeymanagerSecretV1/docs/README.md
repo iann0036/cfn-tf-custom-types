@@ -1,6 +1,10 @@
 # Terraform::OpenStack::KeymanagerSecretV1
 
-CloudFormation equivalent of openstack_keymanager_secret_v1
+Manages a V1 Barbican secret resource within OpenStack.
+
+~> **Important Security Notice** The payload of this resource will be stored
+*unencrypted* in your Terraform state file. **Use of this resource for production
+deployments is *not* recommended**.
 
 ## Syntax
 
@@ -58,6 +62,8 @@ Properties:
 
 #### Algorithm
 
+Metadata provided by a user or system for informational purposes.
+
 _Required_: No
 
 _Type_: String
@@ -65,6 +71,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BitLength
+
+Metadata provided by a user or system for informational purposes.
 
 _Required_: No
 
@@ -74,6 +82,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Expiration
 
+The expiration time of the secret in the RFC3339 timestamp format (e.g. `2019-03-09T12:58:49Z`). If omitted, a secret will never expire. Changing this creates a new secret.
+
 _Required_: No
 
 _Type_: String
@@ -81,6 +91,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Metadata
+
+Additional Metadata for the secret.
 
 _Required_: No
 
@@ -90,6 +102,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Mode
 
+Metadata provided by a user or system for informational purposes.
+
 _Required_: No
 
 _Type_: String
@@ -97,6 +111,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Human-readable name for the Secret. Does not have
+to be unique.
 
 _Required_: No
 
@@ -106,6 +123,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Payload
 
+The secret's data to be stored. **payload\_content\_type** must also be supplied if **payload** is included.
+
 _Required_: No
 
 _Type_: String
@@ -113,6 +132,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PayloadContentEncoding
+
+(required if **payload** is encoded) The encoding used for the payload to be able to include it in the JSON request. Must be either `base64` or `binary`.
 
 _Required_: No
 
@@ -122,6 +143,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PayloadContentType
 
+(required if **payload** is included) The media type for the content of the payload. Must be one of `text/plain`, `text/plain;charset=utf-8`, `text/plain; charset=utf-8`, `application/octet-stream`, `application/pkcs8`.
+
 _Required_: No
 
 _Type_: String
@@ -130,6 +153,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region in which to obtain the V1 KeyManager client.
+A KeyManager client is needed to create a secret. If omitted, the
+`region` argument of the provider is used. Changing this creates a new
+V1 secret.
+
 _Required_: No
 
 _Type_: String
@@ -137,6 +165,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecretType
+
+Used to indicate the type of secret being stored. For more information see [Secret types](https://docs.openstack.org/barbican/latest/api/reference/secret_types.html).
 
 _Required_: No
 

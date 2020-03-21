@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::DigitalOcean::Record",
-    "description": "CloudFormation equivalent of digitalocean_record",
+    "description": "Provides a DigitalOcean DNS record resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,37 +9,47 @@
             "type": "string"
         },
         "Domain": {
-            "type": "string"
+            "type": "string",
+            "description": "The domain to add the record to."
         },
         "Flags": {
-            "type": "number"
+            "type": "number",
+            "description": "The flags of the record. Only valid when type is `CAA`. Must be between 0 and 255."
         },
         "Fqdn": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the record. Use `@` for records on domain's name itself."
         },
         "Port": {
-            "type": "number"
+            "type": "number",
+            "description": "The port of the record. Only valid when type is `SRV`.  Must be between 1 and 65535."
         },
         "Priority": {
-            "type": "number"
+            "type": "number",
+            "description": "The priority of the record. Only valid when type is `MX` or `SRV`. Must be between 0 and 65535."
         },
         "Tag": {
-            "type": "string"
+            "type": "string",
+            "description": "The tag of the record. Only valid when type is `CAA`. Must be one of `issue`, `issuewild`, or `iodef`."
         },
         "Ttl": {
-            "type": "number"
+            "type": "number",
+            "description": "The time to live for the record, in seconds. Must be at least 0."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of record. Must be one of `A`, `AAAA`, `CAA`, `CNAME`, `MX`, `NS`, `TXT`, or `SRV`."
         },
         "Value": {
-            "type": "string"
+            "type": "string",
+            "description": "The value of the record."
         },
         "Weight": {
-            "type": "number"
+            "type": "number",
+            "description": "The weight of the record. Only valid when type is `SRV`.  Must be between 0 and 65535."
         }
     },
     "additionalProperties": false,

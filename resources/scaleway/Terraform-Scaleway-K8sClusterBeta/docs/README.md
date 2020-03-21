@@ -1,6 +1,6 @@
 # Terraform::Scaleway::K8sClusterBeta
 
-CloudFormation equivalent of scaleway_k8s_cluster_beta
+Creates and manages Scaleway Kubernetes clusters. For more information, see [the documentation](https://developers.scaleway.com/en/products/k8s/api/).
 
 ## Syntax
 

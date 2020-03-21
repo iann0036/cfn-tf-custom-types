@@ -1,6 +1,6 @@
 # Terraform::OpenStack::OrchestrationStackV1
 
-CloudFormation equivalent of openstack_orchestration_stack_v1
+Manages a V1 stack resource within OpenStack.
 
 ## Syntax
 
@@ -94,6 +94,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisableRollback
 
+Enables or disables deletion of all stack
+resources when a stack creation fails. Default is true, meaning all
+resources are not deleted when stack creation fails.
+
 _Required_: No
 
 _Type_: Boolean
@@ -102,6 +106,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnvironmentOpts
 
+Environment key/value pairs to associate with
+the stack which contains details for the environment of the stack.
+Allowed keys: Bin, URL, Files. Changing this updates the existing stack
+Environment Opts.
+
 _Required_: No
 
 _Type_: List of <a href="environmentopts.md">EnvironmentOpts</a>
@@ -109,6 +118,9 @@ _Type_: List of <a href="environmentopts.md">EnvironmentOpts</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+A unique name for the stack. It must start with an
+alphabetic character. Changing this updates the stack's name.
 
 _Required_: Yes
 
@@ -126,6 +138,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Parameters
 
+User-defined key/value pairs as parameters to pass
+to the template. Changing this updates the existing stack parameters.
+
 _Required_: No
 
 _Type_: List of <a href="parameters.md">Parameters</a>
@@ -133,6 +148,10 @@ _Type_: List of <a href="parameters.md">Parameters</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region in which to create the stack. If
+omitted, the `region` argument of the provider is used. Changing this
+creates a new stack.
 
 _Required_: No
 
@@ -158,6 +177,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A list of tags to assosciate with the Stack.
+
 _Required_: No
 
 _Type_: List of String
@@ -174,6 +195,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TemplateOpts
 
+Template key/value pairs to associate with the
+stack which contains either the template file or url.
+Allowed keys: Bin, URL, Files. Changing this updates the existing stack
+Template Opts.
+
 _Required_: Yes
 
 _Type_: List of <a href="templateopts.md">TemplateOpts</a>
@@ -181,6 +207,8 @@ _Type_: List of <a href="templateopts.md">TemplateOpts</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Timeout
+
+The timeout for stack action in minutes.
 
 _Required_: No
 

@@ -1,6 +1,7 @@
 # Terraform::RabbitMQ::TopicPermissions
 
-CloudFormation equivalent of rabbitmq_topic_permissions
+The ``rabbitmq_topic_permissions`` resource creates and manages a user's set of
+topic permissions.
 
 ## Syntax
 
@@ -34,6 +35,8 @@ Properties:
 
 #### User
 
+The user to apply the permissions to.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vhost
+
+The vhost to create the resource in.
 
 _Required_: No
 

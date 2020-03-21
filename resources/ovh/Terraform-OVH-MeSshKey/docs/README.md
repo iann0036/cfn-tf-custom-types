@@ -1,6 +1,6 @@
 # Terraform::OVH::MeSshKey
 
-CloudFormation equivalent of ovh_me_ssh_key
+Creates an SSH Key.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### Default
 
+True when this public SSH key is used for rescue mode and reinstallations.
+
 _Required_: No
 
 _Type_: Boolean
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Key
 
+The content of the public key in the form "ssh-algo content", e.g. "ssh-ed25519 AAAAC3...".
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeyName
+
+The friendly name of this SSH key.
 
 _Required_: Yes
 

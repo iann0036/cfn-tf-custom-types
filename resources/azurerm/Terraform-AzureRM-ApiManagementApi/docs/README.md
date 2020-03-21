@@ -1,6 +1,6 @@
 # Terraform::AzureRM::ApiManagementApi
 
-CloudFormation equivalent of azurerm_api_management_api
+Manages an API within an API Management Service.
 
 ## Syntax
 
@@ -63,6 +63,8 @@ Properties:
 
 #### ApiManagementName
 
+The Name of the API Management Service where this API should be created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -70,6 +72,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+A description of the API Management API, which may include HTML formatting tags.
 
 _Required_: No
 
@@ -79,6 +83,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+The display name of the API.
+
 _Required_: Yes
 
 _Type_: String
@@ -86,6 +92,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the API Management API. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -95,6 +103,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Path
 
+The Path for this API Management API, which is a relative URL which uniquely identifies this API and all of it's resource paths within the API Management Service.
+
 _Required_: Yes
 
 _Type_: String
@@ -102,6 +112,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Protocols
+
+A list of protocols the operations in this API can be invoked. Possible values are `http` and `https`.
 
 _Required_: Yes
 
@@ -111,6 +123,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The Name of the Resource Group where the API Management API exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -118,6 +132,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Revision
+
+The Revision which used for this API.
 
 _Required_: Yes
 
@@ -127,6 +143,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServiceUrl
 
+Absolute URL of the backend service implementing this API.
+
 _Required_: No
 
 _Type_: String
@@ -134,6 +152,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SoapPassThrough
+
+Should this API expose a SOAP frontend, rather than a HTTP frontend? Defaults to `false`.
 
 _Required_: No
 
@@ -143,6 +163,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Version
 
+The Version number of this API, if this API is versioned.
+
 _Required_: No
 
 _Type_: String
@@ -150,6 +172,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VersionSetId
+
+The ID of the Version Set which this API is associated with.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::MaasTaskV1
 
-CloudFormation equivalent of huaweicloud_maas_task_v1
+Manages resource task within HuaweiCloud MAAS.
 
 ## Syntax
 
@@ -44,6 +44,9 @@ Properties:
 
 #### Description
 
+Specifies tasks description, which cannot exceed 255
+characters. The following special characters are not allowed: <>()"&.
+
 _Required_: No
 
 _Type_: String
@@ -52,6 +55,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableKms
 
+Specifies whether to use KMS encryption.
+
 _Required_: Yes
 
 _Type_: Boolean
@@ -59,6 +64,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ThreadNum
+
+Specifies the number of threads used by the migration
+task. The value cannot exceed 50.
 
 _Required_: Yes
 

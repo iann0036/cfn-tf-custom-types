@@ -1,6 +1,7 @@
 # Terraform::Panos::PanoramaIkeCryptoProfile
 
-CloudFormation equivalent of panos_panorama_ike_crypto_profile
+This resource allows you to add/update/delete Panorama IKE crypto profiles
+to a template or template stack.
 
 ## Syntax
 
@@ -48,6 +49,10 @@ Properties:
 
 #### AuthenticationMultiple
 
+IKEv2 SA
+reauthentication interval equals authetication-multiple * rekey-lifetime; 0
+means reauthentication is disabled.
+
 _Required_: No
 
 _Type_: Double
@@ -55,6 +60,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Authentications
+
+List of authentication types.  This c.
 
 _Required_: Yes
 
@@ -64,6 +71,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DhGroups
 
+List of DH Group entries.  Values should
+have a prefix if `group`.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -71,6 +81,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Encryptions
+
+List of encryption types.  Valid values
+are `des`, `3des`, `aes-128-cbc`, `aes-192-cbc`, and `aes-256-cbc`.
 
 _Required_: Yes
 
@@ -80,6 +93,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LifetimeType
 
+The lifetime type.  Valid values are `seconds`,
+`minutes`, `hours` (the default), and `days`.
+
 _Required_: No
 
 _Type_: String
@@ -87,6 +103,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LifetimeValue
+
+The lifetime value.
 
 _Required_: No
 
@@ -96,6 +114,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The object's name.
+
 _Required_: Yes
 
 _Type_: String
@@ -104,6 +124,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Template
 
+The template name.
+
 _Required_: No
 
 _Type_: String
@@ -111,6 +133,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TemplateStack
+
+The template stack name.
 
 _Required_: No
 

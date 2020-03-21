@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::VpnConnection
 
-CloudFormation equivalent of tencentcloud_vpn_connection
+Provides a resource to create a VPN connection.
 
 ## Syntax
 
@@ -77,6 +77,8 @@ Properties:
 
 #### CustomerGatewayId
 
+ID of the customer gateway.
+
 _Required_: Yes
 
 _Type_: String
@@ -84,6 +86,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IkeDhGroupName
+
+DH group name of the IKE operation specification, valid values are `GROUP1`, `GROUP2`, `GROUP5`, `GROUP14`, `GROUP24`. Default value is `GROUP1`.
 
 _Required_: No
 
@@ -93,6 +97,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IkeExchangeMode
 
+Exchange mode of the IKE operation specification, valid values are `AGGRESSIVE`, `MAIN`. Default value is `MAIN`.
+
 _Required_: No
 
 _Type_: String
@@ -100,6 +106,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IkeLocalAddress
+
+Local address of IKE operation specification, valid when ike_local_identity is `ADDRESS`, generally the value is public_ip_address of the related VPN gateway.
 
 _Required_: No
 
@@ -109,6 +117,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IkeLocalFqdnName
 
+Local FQDN name of the IKE operation specification.
+
 _Required_: No
 
 _Type_: String
@@ -116,6 +126,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IkeLocalIdentity
+
+Local identity way of IKE operation specification, valid values are `ADDRESS`, `FQDN`. Default value is `ADDRESS`.
 
 _Required_: No
 
@@ -125,6 +137,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IkeProtoAuthenAlgorithm
 
+Proto authenticate algorithm of the IKE operation specification, valid values are `MD5`, `SHA`. Default Value is `MD5`.
+
 _Required_: No
 
 _Type_: String
@@ -132,6 +146,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IkeProtoEncryAlgorithm
+
+Proto encrypt algorithm of the IKE operation specification, valid values are `3DES-CBC`, `AES-CBC-128`, `AES-CBC-128`, `AES-CBC-256`, `DES-CBC`. Default value is `3DES-CBC`.
 
 _Required_: No
 
@@ -141,6 +157,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IkeRemoteAddress
 
+Remote address of IKE operation specification, valid when ike_remote_identity is `ADDRESS`, generally the value is public_ip_address of the related customer gateway.
+
 _Required_: No
 
 _Type_: String
@@ -148,6 +166,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IkeRemoteFqdnName
+
+Remote FQDN name of the IKE operation specification.
 
 _Required_: No
 
@@ -157,6 +177,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IkeRemoteIdentity
 
+Remote identity way of IKE operation specification, valid values are `ADDRESS`, `FQDN`. Default value is `ADDRESS`.
+
 _Required_: No
 
 _Type_: String
@@ -164,6 +186,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IkeSaLifetimeSeconds
+
+SA lifetime of the IKE operation specification, unit is `second`. The value ranges from 60 to 604800. Default value is 86400 seconds.
 
 _Required_: No
 
@@ -173,6 +197,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IkeVersion
 
+Version of the IKE operation specification. Default value is `IKEV1`.
+
 _Required_: No
 
 _Type_: String
@@ -180,6 +206,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IpsecEncryptAlgorithm
+
+Encrypt algorithm of the IPSEC operation specification, valid values are `3DES-CBC`, `AES-CBC-128`, `AES-CBC-128`, `AES-CBC-256`, `DES-CBC`. Default value is `3DES-CBC`.
 
 _Required_: No
 
@@ -189,6 +217,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IpsecIntegrityAlgorithm
 
+Integrity algorithm of the IPSEC operation specification, valid values are `SHA1`, `MD5`. Default value is `MD5`.
+
 _Required_: No
 
 _Type_: String
@@ -196,6 +226,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IpsecPfsDhGroup
+
+PFS DH group, valid values are `GROUP1`, `GROUP2`, `GROUP5`, `GROUP14`, `GROUP24`, `NULL`. Default value is `NULL`.
 
 _Required_: No
 
@@ -205,6 +237,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IpsecSaLifetimeSeconds
 
+SA lifetime of the IPSEC operation specification, unit is `second`. The value ranges from 180 to 604800. Default value is 3600 seconds.
+
 _Required_: No
 
 _Type_: Double
@@ -212,6 +246,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IpsecSaLifetimeTraffic
+
+SA lifetime of the IPSEC operation specification, unit is `KB`. The value should not be less then 2560. Default value is 1843200.
 
 _Required_: No
 
@@ -221,6 +257,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name of the VPN connection. The length of character is limited to 1-60.
+
 _Required_: Yes
 
 _Type_: String
@@ -228,6 +266,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PreShareKey
+
+Pre-shared key of the VPN connection.
 
 _Required_: Yes
 
@@ -237,6 +277,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A list of tags used to associate different resources.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -245,6 +287,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VpcId
 
+ID of the VPC.
+
 _Required_: Yes
 
 _Type_: String
@@ -252,6 +296,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpnGatewayId
+
+ID of the VPN gateway.
 
 _Required_: Yes
 

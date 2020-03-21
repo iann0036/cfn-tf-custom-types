@@ -1,6 +1,6 @@
 # Terraform::AzureRM::ApiManagementOpenidConnectProvider
 
-CloudFormation equivalent of azurerm_api_management_openid_connect_provider
+Manages an OpenID Connect Provider within a API Management Service.
 
 ## Syntax
 
@@ -45,6 +45,8 @@ Properties:
 
 #### ApiManagementName
 
+The name of the API Management Service in which this OpenID Connect Provider should be created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -52,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClientId
+
+The Client ID used for the Client Application.
 
 _Required_: Yes
 
@@ -61,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ClientSecret
 
+The Client Secret used for the Client Application.
+
 _Required_: Yes
 
 _Type_: String
@@ -68,6 +74,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+A description of this OpenID Connect Provider.
 
 _Required_: No
 
@@ -77,6 +85,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+A user-friendly name for this OpenID Connect Provider.
+
 _Required_: Yes
 
 _Type_: String
@@ -84,6 +94,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MetadataEndpoint
+
+The URI of the Metadata endpoint.
 
 _Required_: Yes
 
@@ -93,6 +105,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+the Name of the OpenID Connect Provider which should be created within the API Management Service. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -100,6 +114,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the Resource Group where the API Management Service exists. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

@@ -1,6 +1,10 @@
 # Terraform::Alicloud::VpnRouteEntry
 
-CloudFormation equivalent of alicloud_vpn_route_entry
+Provides a VPN Route Entry resource.
+
+-> **NOTE:** Terraform will build vpn route entry instance while it uses `alicloud_vpn_route_entry` to build a VPN Route Entry resource.
+
+-> **NOTE:** Available in 1.57.0+.
 
 ## Syntax
 
@@ -37,6 +41,8 @@ Properties:
 
 #### NextHop
 
+The next hop of the destination route.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +50,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PublishVpc
+
+Whether to issue the destination route to the VPC.
 
 _Required_: Yes
 
@@ -53,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RouteDest
 
+The destination network segment of the destination route.
+
 _Required_: Yes
 
 _Type_: String
@@ -61,6 +71,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VpnGatewayId
 
+The id of the vpn gateway.
+
 _Required_: Yes
 
 _Type_: String
@@ -68,6 +80,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Weight
+
+The value should be 0 or 100.
 
 _Required_: Yes
 

@@ -1,6 +1,8 @@
 # Terraform::Kubernetes::StorageClass
 
-CloudFormation equivalent of kubernetes_storage_class
+Storage class is the foundation of dynamic provisioning, allowing cluster administrators to define abstractions for the underlying storage platform.
+
+Read more at https://kubernetes.io/blog/2017/03/dynamic-provisioning-and-storage-classes-kubernetes/
 
 ## Syntax
 
@@ -44,6 +46,8 @@ Properties:
 
 #### AllowVolumeExpansion
 
+Indicates whether the storage class allow volume expand, default true.
+
 _Required_: No
 
 _Type_: Boolean
@@ -51,6 +55,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MountOptions
+
+Persistent Volumes that are dynamically created by a storage class will have the mount options specified.
 
 _Required_: No
 
@@ -60,6 +66,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Parameters
 
+The parameters for the provisioner that should create volumes of this storage class.
+Read more about [available parameters](https://kubernetes.io/docs/concepts/storage/storage-classes/#parameters).
+
 _Required_: No
 
 _Type_: List of <a href="parameters.md">Parameters</a>
@@ -68,6 +77,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ReclaimPolicy
 
+Indicates the reclaim policy to use.  If no reclaimPolicy is specified when a StorageClass object is created, it will default to Delete.
+
 _Required_: No
 
 _Type_: String
@@ -75,6 +86,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StorageProvisioner
+
+Indicates the type of the provisioner.
 
 _Required_: Yes
 

@@ -28,6 +28,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Name
 
+Unique name to refer to this Request Setting.
+
 _Required_: Yes
 
 _Type_: String

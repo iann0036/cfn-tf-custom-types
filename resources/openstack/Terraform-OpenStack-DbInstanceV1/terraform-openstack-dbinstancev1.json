@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::DbInstanceV1",
-    "description": "CloudFormation equivalent of openstack_db_instance_v1",
+    "description": "Manages a V1 DB instance resource within OpenStack.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Database": {
@@ -8,13 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "Charset": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Database character set. Changing this creates a\nnew instance."
                 },
                 "Collate": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Database collation. Changing this creates a new instance."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Database to be created on new instance. Changing this creates a\nnew instance."
                 }
             },
             "required": [
@@ -26,10 +29,12 @@
             "additionalProperties": false,
             "properties": {
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Database engine type to be used in new instance. Changing this\ncreates a new instance."
                 },
                 "Version": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Version of database engine type to be used in new instance.\nChanging this creates a new instance."
                 }
             },
             "required": [
@@ -42,16 +47,20 @@
             "additionalProperties": false,
             "properties": {
                 "FixedIpV4": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies a fixed IPv4 address to be used on this\nnetwork. Changing this creates a new instance."
                 },
                 "FixedIpV6": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies a fixed IPv6 address to be used on this\nnetwork. Changing this creates a new instance."
                 },
                 "Port": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The port UUID of a\nnetwork to attach to the instance. Changing this creates a new instance."
                 },
                 "Uuid": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The network UUID to\nattach to the instance. Changing this creates a new instance."
                 }
             },
             "required": []
@@ -78,16 +87,20 @@
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of databases that user will have access to. If not specified,\nuser has access to all databases on th einstance. Changing this creates a new instance."
                 },
                 "Host": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "An ip address or % sign indicating what ip addresses can connect with\nthis user credentials. Changing this creates a new instance."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Username to be created on new instance. Changing this creates a\nnew instance."
                 },
                 "Password": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "User's password. Changing this creates a\nnew instance."
                 }
             },
             "required": [
@@ -101,19 +114,24 @@
             "type": "string"
         },
         "ConfigurationId": {
-            "type": "string"
+            "type": "string",
+            "description": "Configuration ID to be attached to the instance. Database instance\nwill be rebooted when configuration is detached."
         },
         "FlavorId": {
-            "type": "string"
+            "type": "string",
+            "description": "The flavor ID of the desired flavor for the instance.\nChanging this creates new instance."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique name for the resource."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to create the db instance. Changing this\ncreates a new instance."
         },
         "Size": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the volume size in GB. Changing this creates new instance."
         },
         "Database": {
             "type": "array",

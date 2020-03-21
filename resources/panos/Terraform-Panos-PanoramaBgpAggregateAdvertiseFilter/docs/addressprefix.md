@@ -24,6 +24,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Exact
 
+Match exact prefix length.
+
 _Required_: No
 
 _Type_: Boolean
@@ -31,6 +33,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Prefix
+
+Address prefix.
 
 _Required_: Yes
 

@@ -1,6 +1,8 @@
 # Terraform::BIGIP::LtmVirtualAddress
 
-CloudFormation equivalent of bigip_ltm_virtual_address
+`bigip_ltm_virtual_address` Configures Virtual Server
+
+For resources should be named with their "full path". The full path is the combination of the partition + name of the resource. For example /Common/my-pool.
 
 ## Syntax
 
@@ -43,6 +45,8 @@ Properties:
 
 #### AdvertizeRoute
 
+Enabled dynamic routing of the address.
+
 _Required_: No
 
 _Type_: Boolean
@@ -50,6 +54,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Arp
+
+Enable or disable ARP for the virtual address.
 
 _Required_: No
 
@@ -59,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AutoDelete
 
+Automatically delete the virtual address with the virtual server.
+
 _Required_: No
 
 _Type_: Boolean
@@ -66,6 +74,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ConnLimit
+
+Max number of connections for virtual address.
 
 _Required_: No
 
@@ -75,6 +85,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Enabled
 
+Enable or disable the virtual address.
+
 _Required_: No
 
 _Type_: Boolean
@@ -82,6 +94,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IcmpEcho
+
+Enable/Disable ICMP response to the virtual address.
 
 _Required_: No
 
@@ -91,6 +105,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name of the virtual address.
+
 _Required_: Yes
 
 _Type_: String
@@ -98,6 +114,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TrafficGroup
+
+Specify the partition and traffic group.
 
 _Required_: No
 

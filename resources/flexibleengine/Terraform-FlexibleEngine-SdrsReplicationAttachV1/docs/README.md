@@ -1,6 +1,6 @@
 # Terraform::FlexibleEngine::SdrsReplicationAttachV1
 
-CloudFormation equivalent of flexibleengine_sdrs_replication_attach_v1
+Manages a SDRS replication attch resource within FlexibleEngine.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### Device
 
+Specifies the device name, eg. /dev/vdb. Changing this creates a new replication attach.
+
 _Required_: Yes
 
 _Type_: String
@@ -43,6 +45,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceId
 
+Specifies the ID of a protected instance. Changing this creates a new replication attach.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ReplicationId
+
+Specifies the ID of a replication pair. Changing this creates a new replication attach.
 
 _Required_: Yes
 

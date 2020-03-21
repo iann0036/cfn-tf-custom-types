@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenTelekomCloud::NetworkingRouterInterfaceV2",
-    "description": "CloudFormation equivalent of opentelekomcloud_networking_router_interface_v2",
+    "description": "Manages a V2 router interface resource within OpenTelekomCloud.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,16 +23,19 @@
             "type": "string"
         },
         "PortId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the port this interface connects to. Changing\nthis creates a new router interface."
         },
         "Region": {
             "type": "string"
         },
         "RouterId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the router this interface belongs to. Changing\nthis creates a new router interface."
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the subnet this interface connects to. Changing\nthis creates a new router interface."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

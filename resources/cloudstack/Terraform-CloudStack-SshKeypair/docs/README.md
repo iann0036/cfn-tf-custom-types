@@ -1,6 +1,6 @@
 # Terraform::CloudStack::SshKeypair
 
-CloudFormation equivalent of cloudstack_ssh_keypair
+Creates or registers an SSH key pair.
 
 ## Syntax
 
@@ -33,6 +33,10 @@ Properties:
 
 #### Name
 
+The name of the SSH key pair. This is a unique value
+within a CloudStack account. Changing this forces a new resource to be
+created.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +45,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Project
 
+The name or ID of the project to register this
+key to. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +55,12 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PublicKey
+
+The public key to register with CloudStack. If
+this is omitted, CloudStack will generate a new key pair. The key can
+be loaded from a file on disk using the
+[`file()` function](https://www.terraform.io/docs/configuration/functions/file.html).
+Changing this forces a new resource to be created.
 
 _Required_: No
 

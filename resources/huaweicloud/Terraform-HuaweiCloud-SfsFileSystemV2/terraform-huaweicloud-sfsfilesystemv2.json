@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HuaweiCloud::SfsFileSystemV2",
-    "description": "CloudFormation equivalent of huaweicloud_sfs_file_system_v2",
+    "description": "Provides an Shared File System (SFS) resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,22 +23,27 @@
             "type": "string"
         },
         "AccessLevel": {
-            "type": "string"
+            "type": "string",
+            "description": "The access level of the shared file system. Changing this will create a new access rule."
         },
         "AccessState": {
             "type": "string"
         },
         "AccessTo": {
-            "type": "string"
+            "type": "string",
+            "description": "The access that the back end grants or denies. Changing this will create a new access rule."
         },
         "AccessType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of the share access rule. Changing this will create a new access rule."
         },
         "AvailabilityZone": {
-            "type": "string"
+            "type": "string",
+            "description": "The availability zone name.Changing this parameter will create a new resource."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Describes the shared file system."
         },
         "ExportLocation": {
             "type": "string"
@@ -54,7 +59,8 @@
             "type": "string"
         },
         "IsPublic": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "The level of visibility for the shared file system."
         },
         "Metadata": {
             "type": "array",
@@ -74,10 +80,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Metadata key and value pairs as a dictionary of strings.Changing this will create a new resource."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the shared file system."
         },
         "Region": {
             "type": "string"
@@ -86,10 +94,12 @@
             "type": "string"
         },
         "ShareProto": {
-            "type": "string"
+            "type": "string",
+            "description": "The protocol for sharing file systems. The default value is NFS."
         },
         "Size": {
-            "type": "number"
+            "type": "number",
+            "description": "The size (GB) of the shared file system."
         },
         "Status": {
             "type": "string"

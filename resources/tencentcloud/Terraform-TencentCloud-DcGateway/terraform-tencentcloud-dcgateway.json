@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::DcGateway",
-    "description": "CloudFormation equivalent of tencentcloud_dc_gateway",
+    "description": "Provides a resource to creating direct connect gateway instance.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -18,16 +18,20 @@
             "type": "boolean"
         },
         "GatewayType": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of the gateway, the available value include 'NORMAL' and 'NAT'. Default is 'NORMAL'. NOTES: CCN only supports 'NORMAL' and a vpc can create two DCGs, the one is NAT type and the other is non-NAT type."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the DCG."
         },
         "NetworkInstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "If the 'network_type' value is 'VPC', the available value is VPC ID. But when the 'network_type' value is 'CCN', the available value is CCN instance ID."
         },
         "NetworkType": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of associated network, the available value include 'VPC' and 'CCN'."
         }
     },
     "additionalProperties": false,

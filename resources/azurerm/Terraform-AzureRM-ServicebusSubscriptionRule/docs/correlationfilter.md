@@ -36,6 +36,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### ContentType
 
+Content type of the message.
+
 _Required_: No
 
 _Type_: String
@@ -43,6 +45,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CorrelationId
+
+Identifier of the correlation.
 
 _Required_: No
 
@@ -52,6 +56,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Label
 
+Application specific label.
+
 _Required_: No
 
 _Type_: String
@@ -59,6 +65,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MessageId
+
+Identifier of the message.
 
 _Required_: No
 
@@ -68,6 +76,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ReplyTo
 
+Address of the queue to reply to.
+
 _Required_: No
 
 _Type_: String
@@ -75,6 +85,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ReplyToSessionId
+
+Session identifier to reply to.
 
 _Required_: No
 
@@ -84,6 +96,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SessionId
 
+Session identifier.
+
 _Required_: No
 
 _Type_: String
@@ -91,6 +105,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### To
+
+Address to send to.
 
 _Required_: No
 

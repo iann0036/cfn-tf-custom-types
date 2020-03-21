@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::AlikafkaTopic",
-    "description": "CloudFormation equivalent of alicloud_alikafka_topic",
+    "description": "Provides an ALIKAFKA topic resource.\n\n-> **NOTE:** Available in 1.56.0+\n\n-> **NOTE:**  Only the following regions support create alikafka topic.\n[`cn-hangzhou`,`cn-beijing`,`cn-shenzhen`,`cn-shanghai`,`cn-qingdao`,`cn-hongkong`,`cn-huhehaote`,`cn-zhangjiakou`,`ap-southeast-1`,`ap-south-1`,`ap-southeast-5`]",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,19 +9,24 @@
             "type": "string"
         },
         "CompactTopic": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the topic is compactTopic or not. Compact topic must be a localTopic."
         },
         "InstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "InstanceId of your Kafka resource, the topic will create in this instance."
         },
         "LocalTopic": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the topic is localTopic or not."
         },
         "PartitionNum": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of partitions of the topic. The number should between 1 and 48."
         },
         "Remark": {
-            "type": "string"
+            "type": "string",
+            "description": "This attribute is a concise description of topic. The length cannot exceed 64."
         },
         "Tags": {
             "type": "array",
@@ -41,10 +46,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Topic": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the topic. Two topics on a single instance cannot have the same name. The length cannot exceed 64 characters."
         }
     },
     "additionalProperties": false,

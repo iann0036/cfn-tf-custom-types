@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::AlikafkaConsumerGroup",
-    "description": "CloudFormation equivalent of alicloud_alikafka_consumer_group",
+    "description": "Provides an ALIKAFKA consumer group resource.\n\n-> **NOTE:** Available in 1.56.0+\n\n-> **NOTE:**  Only the following regions support create alikafka consumer group.\n[`cn-hangzhou`,`cn-beijing`,`cn-shenzhen`,`cn-shanghai`,`cn-qingdao`,`cn-hongkong`,`cn-huhehaote`,`cn-zhangjiakou`,`ap-southeast-1`,`ap-south-1`,`ap-southeast-5`]",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "ConsumerId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the consumer group. The length cannot exceed 64 characters."
         },
         "InstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the ALIKAFKA Instance that owns the groups."
         },
         "Tags": {
             "type": "array",
@@ -32,7 +34,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         }
     },
     "additionalProperties": false,

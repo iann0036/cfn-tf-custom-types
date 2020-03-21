@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::FlexibleEngine::FwFirewallGroupV2",
-    "description": "CloudFormation equivalent of flexibleengine_fw_firewall_group_v2",
+    "description": "Manages a v2 firewall group resource within FlexibleEngine.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,32 +26,40 @@
             "type": "string"
         },
         "AdminStateUp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Administrative up/down status for the firewall group\n(must be \"true\" or \"false\" if provided - defaults to \"true\").\nChanging this updates the `admin_state_up` of an existing firewall group."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description for the firewall group. Changing this\nupdates the `description` of an existing firewall group."
         },
         "EgressPolicyId": {
-            "type": "string"
+            "type": "string",
+            "description": "The egress policy resource id for the firewall group. Changing\nthis updates the `egress_policy_id` of an existing firewall group."
         },
         "IngressPolicyId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ingress policy resource id for the firewall group. Changing\nthis updates the `ingress_policy_id` of an existing firewall group."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A name for the firewall group. Changing this\nupdates the `name` of an existing firewall group."
         },
         "Ports": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Port(s) to associate this firewall group instance\nwith. Must be a list of strings. Changing this updates the associated routers\nof an existing firewall group."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the v2 networking client.\nA networking client is needed to create a firewall group. If omitted, the\n`region` argument of the provider is used. Changing this creates a new\nfirewall group."
         },
         "TenantId": {
-            "type": "string"
+            "type": "string",
+            "description": "The owner of the floating IP. Required if admin wants\nto create a firewall group for another tenant. Changing this creates a new\nfirewall group."
         },
         "ValueSpecs": {
             "type": "array",
@@ -71,7 +79,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Map of additional options."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

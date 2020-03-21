@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::BillingAccountIamPolicy",
-    "description": "CloudFormation equivalent of google_billing_account_iam_policy",
+    "description": "Allows management of the entire IAM policy for an existing Google Cloud Platform Billing Account.\n\n~> **Warning:** Billing accounts have a default user that can be **overwritten**\nby use of this resource. The safest alternative is to use multiple `google_billing_account_iam_binding`\n   resources. If you do use this resource, the best way to be sure that you are\n   not making dangerous changes is to start by importing your existing policy,\n   and examining the diff very closely.\n\n~> **Note:** This resource __must not__ be used in conjunction with\n   `google_billing_account_iam_member` or `google_billing_account_iam_binding`\n   or they will fight over what your policy should be.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,15 @@
             "type": "string"
         },
         "BillingAccountId": {
-            "type": "string"
+            "type": "string",
+            "description": "The billing account id."
         },
         "Etag": {
             "type": "string"
         },
         "PolicyData": {
-            "type": "string"
+            "type": "string",
+            "description": "The `google_iam_policy` data source that represents\nthe IAM policy that will be applied to the billing account. This policy overrides any existing\npolicy applied to the billing account."
         }
     },
     "additionalProperties": false,

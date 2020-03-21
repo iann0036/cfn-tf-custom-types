@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Consul::Node",
-    "description": "CloudFormation equivalent of consul_node",
+    "description": "Provides access to Node data in Consul. This can be used to define a\nnode. Currently, defining health checks is not supported.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "Address": {
-            "type": "string"
+            "type": "string",
+            "description": "The address of the node being added to,\nor referenced in the catalog."
         },
         "Datacenter": {
-            "type": "string"
+            "type": "string",
+            "description": "The datacenter to use. This overrides the agent's\ndefault datacenter and the datacenter in the provider setup."
         },
         "Meta": {
             "type": "array",
@@ -32,10 +34,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Key/value pairs that are associated with the node."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the node being added to, or\nreferenced in the catalog."
         },
         "Token": {
             "type": "string"

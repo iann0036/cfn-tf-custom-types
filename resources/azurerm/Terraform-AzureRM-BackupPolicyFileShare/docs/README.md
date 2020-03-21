@@ -1,6 +1,8 @@
 # Terraform::AzureRM::BackupPolicyFileShare
 
-CloudFormation equivalent of azurerm_backup_policy_file_share
+Manages an Azure File Share Backup Policy within a Recovery Services vault.
+
+-> **NOTE:** Azure Backup for Azure File Shares is currently in public preview. During the preview, the service is subject to additional limitations and unsupported backup scenarios. [Read More](https://docs.microsoft.com/en-us/azure/backup/backup-azure-files#limitations-for-azure-file-share-backup-during-preview)
 
 ## Syntax
 
@@ -43,6 +45,8 @@ Properties:
 
 #### Name
 
+Specifies the name of the policy. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RecoveryVaultName
+
+Specifies the name of the Recovery Services Vault to use. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -59,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to create the policy. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -66,6 +74,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Timezone
+
+Specifies the timezone. Defaults to `UTC`.
 
 _Required_: No
 

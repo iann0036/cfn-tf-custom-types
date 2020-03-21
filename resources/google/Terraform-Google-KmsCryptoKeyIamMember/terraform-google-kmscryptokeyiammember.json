@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::KmsCryptoKeyIamMember",
-    "description": "CloudFormation equivalent of google_kms_crypto_key_iam_member",
+    "description": "```hcl\nresource \"google_kms_key_ring\" \"keyring\" {\n  name     = \"keyring-example\"\n  location = \"global\"\n}\nresource \"google_kms_crypto_key\" \"key\" {\n  name            = \"crypto-key-example\"\n  key_ring        = google_kms_key_ring.keyring.id\n  rotation_period = \"100000s\"\n  lifecycle {\n    prevent_destroy = true\n  }\n}\n\ndata \"google_iam_policy\" \"admin\" {\n  binding {\n    role = \"roles/cloudkms.cryptoKeyEncrypter\"\n\n    members = [\n      \"user:jane@example.com\",\n    ]\n  }\n}\n\nresource \"google_kms_crypto_key_iam_policy\" \"crypto_key\" {\n  crypto_key_id = google_kms_crypto_key.key.id\n  policy_data = data.google_iam_policy.admin.policy_data\n}\n```\n\nWith IAM Conditions ([beta](https://terraform.io/docs/providers/google/provider_versions.html)):\n\n```hcl\ndata \"google_iam_policy\" \"admin\" {\n  binding {\n    role = \"roles/cloudkms.cryptoKeyEncrypter\"\n\n    members = [\n      \"user:jane@example.com\",\n    ]\n\n    condition {\n      title       = \"expires_after_2019_12_31\"\n      description = \"Expiring at midnight of 2019-12-31\"\n      expression  = \"request.time < timestamp(\\\"2020-01-01T00:00:00Z\\\")\"\n    }\n  }\n}\n```\n\n\n```hcl\nresource \"google_kms_crypto_key_iam_binding\" \"crypto_key\" {\n  crypto_key_id = google_kms_crypto_key.key.id\n  role          = \"roles/cloudkms.cryptoKeyEncrypter\"\n\n  members = [\n    \"user:jane@example.com\",\n  ]\n}\n```\n\nWith IAM Conditions ([beta](https://terraform.io/docs/providers/google/provider_versions.html)):\n\n```hcl\nresource \"google_kms_crypto_key_iam_binding\" \"crypto_key\" {\n  crypto_key_id = google_kms_crypto_key.key.id\n  role          = \"roles/cloudkms.cryptoKeyEncrypter\"\n\n  members = [\n    \"user:jane@example.com\",\n  ]\n\n  condition {\n    title       = \"expires_after_2019_12_31\"\n    description = \"Expiring at midnight of 2019-12-31\"\n    expression  = \"request.time < timestamp(\\\"2020-01-01T00:00:00Z\\\")\"\n  }\n}\n```\n\n\n```hcl\nresource \"google_kms_crypto_key_iam_member\" \"crypto_key\" {\n  crypto_key_id = google_kms_crypto_key.key.id\n  role          = \"roles/cloudkms.cryptoKeyEncrypter\"\n  member        = \"user:jane@example.com\"\n}\n```\n\nWith IAM Conditions ([beta](https://terraform.io/docs/providers/google/provider_versions.html)):\n\n```hcl\nresource \"google_kms_crypto_key_iam_member\" \"crypto_key\" {\n  crypto_key_id = google_kms_crypto_key.key.id\n  role          = \"roles/cloudkms.cryptoKeyEncrypter\"\n  member        = \"user:jane@example.com\"\n\n  condition {\n    title       = \"expires_after_2019_12_31\"\n    description = \"Expiring at midnight of 2019-12-31\"\n    expression  = \"request.time < timestamp(\\\"2020-01-01T00:00:00Z\\\")\"\n  }\n}\n```",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "CryptoKeyId": {
-            "type": "string"
+            "type": "string",
+            "description": "The crypto key ID, in the form\n`{project_id}/{location_name}/{key_ring_name}/{crypto_key_name}` or\n`{location_name}/{key_ring_name}/{crypto_key_name}`. In the second form,\nthe provider's project setting will be used as a fallback."
         },
         "Etag": {
             "type": "string"
@@ -18,7 +19,8 @@
             "type": "string"
         },
         "Role": {
-            "type": "string"
+            "type": "string",
+            "description": "The role that should be applied. Note that custom roles must be of the format\n`[projects|organizations]/{parent-name}/roles/{role-name}`."
         }
     },
     "additionalProperties": false,

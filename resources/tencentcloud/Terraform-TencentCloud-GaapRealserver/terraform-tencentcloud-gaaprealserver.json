@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::GaapRealserver",
-    "description": "CloudFormation equivalent of tencentcloud_gaap_realserver",
+    "description": "Provides a resource to create a GAAP realserver.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,20 @@
             "type": "string"
         },
         "Domain": {
-            "type": "string"
+            "type": "string",
+            "description": "Domain of the GAAP realserver, conflict with `ip`."
         },
         "Ip": {
-            "type": "string"
+            "type": "string",
+            "description": "IP of the GAAP realserver, conflict with `domain`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the GAAP realserver, the maximum length is 30."
         },
         "ProjectId": {
-            "type": "number"
+            "type": "number",
+            "description": "ID of the project within the GAAP realserver, '0' means is default project."
         },
         "Tags": {
             "type": "array",
@@ -38,7 +42,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Tags of the GAAP realserver."
         }
     },
     "additionalProperties": false,

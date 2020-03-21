@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::ApiManagementProductPolicy",
-    "description": "CloudFormation equivalent of azurerm_api_management_product_policy",
+    "description": "Manages an API Management Product Policy",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,19 +29,24 @@
             "type": "string"
         },
         "ApiManagementName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the API Management Service. Changing this forces a new resource to be created."
         },
         "ProductId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the API Management Product within the API Management Service. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Resource Group in which the API Management Service exists. Changing this forces a new resource to be created."
         },
         "XmlContent": {
-            "type": "string"
+            "type": "string",
+            "description": "The XML Content for this Policy."
         },
         "XmlLink": {
-            "type": "string"
+            "type": "string",
+            "description": "A link to a Policy XML Document, which must be publicly available."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

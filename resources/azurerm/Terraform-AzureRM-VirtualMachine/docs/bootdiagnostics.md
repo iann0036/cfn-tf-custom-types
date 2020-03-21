@@ -24,6 +24,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Enabled
 
+Should Boot Diagnostics be enabled for this Virtual Machine?.
+
 _Required_: Yes
 
 _Type_: Boolean
@@ -31,6 +33,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StorageUri
+
+The Storage Account's Blob Endpoint which should hold the virtual machine's diagnostic files.
 
 _Required_: Yes
 

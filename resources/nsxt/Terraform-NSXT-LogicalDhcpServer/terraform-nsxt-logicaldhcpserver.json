@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::NSXT::LogicalDhcpServer",
-    "description": "CloudFormation equivalent of nsxt_logical_dhcp_server",
+    "description": "Provides a resource to configure logical DHCP server on NSX-T manager",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "DhcpGenericOption": {
@@ -65,29 +65,36 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of this resource."
         },
         "DhcpProfileId": {
-            "type": "string"
+            "type": "string",
+            "description": "DHCP profile uuid."
         },
         "DhcpServerIp": {
-            "type": "string"
+            "type": "string",
+            "description": "DHCP server IP in cidr format."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The display name of this resource. Defaults to ID if not set."
         },
         "DnsNameServers": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "DNS IPs."
         },
         "DomainName": {
-            "type": "string"
+            "type": "string",
+            "description": "Domain name."
         },
         "GatewayIp": {
-            "type": "string"
+            "type": "string",
+            "description": "Gateway IP."
         },
         "Revision": {
             "type": "number"

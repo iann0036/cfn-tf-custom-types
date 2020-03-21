@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::Subnet",
-    "description": "CloudFormation equivalent of tencentcloud_subnet",
+    "description": "Provide a resource to create a VPC subnet.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,15 @@
             "type": "string"
         },
         "AvailabilityZone": {
-            "type": "string"
+            "type": "string",
+            "description": "The availability zone within which the subnet should be created."
         },
         "AvailableIpCount": {
             "type": "number"
         },
         "CidrBlock": {
-            "type": "string"
+            "type": "string",
+            "description": "A network address block of the subnet."
         },
         "CreateTime": {
             "type": "string"
@@ -24,13 +26,16 @@
             "type": "boolean"
         },
         "IsMulticast": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether multicast is enabled. The default value is 'true'."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of subnet to be created."
         },
         "RouteTableId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of a routing table to which the subnet should be associated."
         },
         "Tags": {
             "type": "array",
@@ -50,10 +55,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Tags of the subnet."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the VPC to be associated."
         }
     },
     "additionalProperties": false,

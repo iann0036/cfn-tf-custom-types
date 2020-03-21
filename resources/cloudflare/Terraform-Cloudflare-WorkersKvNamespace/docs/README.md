@@ -1,6 +1,6 @@
 # Terraform::Cloudflare::WorkersKvNamespace
 
-CloudFormation equivalent of cloudflare_workers_kv_namespace
+Provides a Workers KV Namespace
 
 ## Syntax
 
@@ -28,6 +28,8 @@ Properties:
 ## Properties
 
 #### Title
+
+The name of the namespace you wish to create.
 
 _Required_: Yes
 

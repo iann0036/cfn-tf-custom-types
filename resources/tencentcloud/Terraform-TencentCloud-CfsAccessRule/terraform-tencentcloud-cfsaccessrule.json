@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::CfsAccessRule",
-    "description": "CloudFormation equivalent of tencentcloud_cfs_access_rule",
+    "description": "Provides a resource to create a CFS access rule.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,19 +9,24 @@
             "type": "string"
         },
         "AccessGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of a access group."
         },
         "AuthClientIp": {
-            "type": "string"
+            "type": "string",
+            "description": "A single IP or a single IP address range such as 10.1.10.11 or 10.10.1.0/24 indicates that all IPs are allowed. Please note that the IP entered should be CVM's private IP."
         },
         "Priority": {
-            "type": "number"
+            "type": "number",
+            "description": "The priority level of rule. The range is 1-100, and 1 indicates the highest priority."
         },
         "RwPermission": {
-            "type": "string"
+            "type": "string",
+            "description": "Read and write permissions. Valid values are `RO` and `RW`, and default is `RO`."
         },
         "UserPermission": {
-            "type": "string"
+            "type": "string",
+            "description": "The permissions of accessing users. Valid values are `all_squash`, `no_all_squash`, `root_squash` and `no_root_squash`, and default is `root_squash`. `all_squash` indicates that all access users are mapped as anonymous users or user groups; `no_all_squash` indicates that access users will match local users first and be mapped to anonymous users or user groups after matching failed; `root_squash` indicates that map access root users to anonymous users or user groups; `no_root_squash` indicates that access root users keep root account permission."
         }
     },
     "additionalProperties": false,

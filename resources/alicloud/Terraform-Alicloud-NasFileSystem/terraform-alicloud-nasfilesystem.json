@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::NasFileSystem",
-    "description": "CloudFormation equivalent of alicloud_nas_file_system",
+    "description": "Provides a Nas File System resource.\n\nAfter activating NAS, you can create a file system and purchase a storage package for it in the NAS console. The NAS console also enables you to view the file system details and remove unnecessary file systems.\n\nFor information about NAS file system and how to use it, see [Manage file systems](https://www.alibabacloud.com/help/doc-detail/27530.htm)\n\n-> **NOTE:** Available in v1.33.0+.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The File System description."
         },
         "ProtocolType": {
-            "type": "string"
+            "type": "string",
+            "description": "The Protocol Type of a File System. Valid values: `NFS` and `SMB`."
         },
         "StorageType": {
-            "type": "string"
+            "type": "string",
+            "description": "The Storage Type of a File System. Valid values: `Capacity` and `Performance`."
         }
     },
     "additionalProperties": false,

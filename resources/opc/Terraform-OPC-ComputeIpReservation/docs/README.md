@@ -1,6 +1,6 @@
 # Terraform::OPC::ComputeIpReservation
 
-CloudFormation equivalent of opc_compute_ip_reservation
+The ``opc_compute_ip_reservation`` resource creates and manages an IP reservation in an Oracle Cloud Infrastructure Compute Classic identity domain for the Shared Network.
 
 ## Syntax
 
@@ -36,6 +36,8 @@ Properties:
 
 #### Name
 
+Name of the IP Reservation. Will be generated if unspecified.
+
 _Required_: No
 
 _Type_: String
@@ -43,6 +45,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ParentPool
+
+The pool from which to allocate the IP address. Defaults to `/oracle/public/ippool`, and is currently the only acceptable input.
 
 _Required_: No
 
@@ -52,6 +56,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Permanent
 
+Whether the IP address remains reserved even when it is no longer associated with an instance
+(if true), or may be returned to the pool and replaced with a different IP address when an instance is restarted, or
+deleted and recreated (if false).
+
 _Required_: Yes
 
 _Type_: Boolean
@@ -59,6 +67,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+List of tags that may be applied to the IP reservation.
 
 _Required_: No
 

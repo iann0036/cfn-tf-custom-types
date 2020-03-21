@@ -1,6 +1,6 @@
 # Terraform::OraclePaaS::MysqlServiceInstance
 
-CloudFormation equivalent of oraclepaas_mysql_service_instance
+The `oraclepaas_mysql_service_instance` resource creates and manages an Oracle MySQL Cloud Service instance on the Oracle Cloud Platform.
 
 ## Syntax
 
@@ -62,6 +62,8 @@ Properties:
 
 #### AvailabilityDomain
 
+Name of the availability domain within the region where the Oracle Database Cloud Service instance is to be provisioned. This is applicable only if you wish to provision to an OCI instance.
+
 _Required_: No
 
 _Type_: String
@@ -69,6 +71,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BackupDestination
+
+The destination where the database backups will be stored.
 
 _Required_: No
 
@@ -78,6 +82,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+. A description of the MySQL Instance.
+
 _Required_: No
 
 _Type_: String
@@ -85,6 +91,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IpNetwork
+
+This attribute is only applicable to accounts where regions are supported. The three-part name of an IP network to which the service instance is added. For example: /Compute-identity_domain/user/object.
 
 _Required_: No
 
@@ -94,6 +102,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MeteringFrequency
 
+. The billing frequency of the service instance. Allowed values are `MONTHLY` and `HOURLY`.
+
 _Required_: No
 
 _Type_: String
@@ -101,6 +111,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+. The name of MySQL Cloud Service instance.
 
 _Required_: Yes
 
@@ -110,6 +122,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NotificationEmail
 
+The email address to send notifications around successful or unsuccessful completions of the instance-creation operation.
+
 _Required_: No
 
 _Type_: String
@@ -117,6 +131,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+. Specifies the region where the instance will be provisioned.
 
 _Required_: No
 
@@ -126,6 +142,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Shape
 
+The desired compute shape.  A shape defines the number of Oracle Compute Units (OCPUs) and amount of memory (RAM). See [About Shapes](http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=OCSUG210) in _Using Oracle Compute Cloud Service_ for more information about shapes.
+
 _Required_: Yes
 
 _Type_: String
@@ -133,6 +151,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SshPublicKey
+
+. The public key for the secure shell (SSH). This key wil be used for authentication when the user logs on to the instance over SSH.
 
 _Required_: Yes
 
@@ -149,6 +169,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VmUser
+
+The user name of account to be created in the VM.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Cloudflare::WafGroup",
-    "description": "CloudFormation equivalent of cloudflare_waf_group",
+    "description": "Provides a Cloudflare WAF rule group resource for a particular zone. This can be used to configure firewall behaviour for pre-defined firewall groups.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,20 @@
             "type": "string"
         },
         "GroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "The WAF Rule Group ID."
         },
         "Mode": {
-            "type": "string"
+            "type": "string",
+            "description": "The mode of the group, can be one of [\"on\", \"off\"]."
         },
         "PackageId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the WAF Rule Package that contains the group."
         },
         "ZoneId": {
-            "type": "string"
+            "type": "string",
+            "description": "The DNS zone ID to apply to."
         }
     },
     "additionalProperties": false,

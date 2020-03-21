@@ -1,6 +1,6 @@
 # Terraform::DigitalOcean::DatabaseCluster
 
-CloudFormation equivalent of digitalocean_database_cluster
+Provides a DigitalOcean database cluster resource.
 
 ## Syntax
 
@@ -49,6 +49,8 @@ Properties:
 
 #### Engine
 
+Database engine used by the cluster (ex. `pg` for PostreSQL, `mysql` for MySQL, or `redis` for Redis).
+
 _Required_: Yes
 
 _Type_: String
@@ -56,6 +58,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EvictionPolicy
+
+A string specifying the eviction policy for a Redis cluster. Valid values are: `noeviction`, `allkeys_lru`, `allkeys_random`, `volatile_lru`, `volatile_random`, or `volatile_ttl`.
 
 _Required_: No
 
@@ -65,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the database cluster.
+
 _Required_: Yes
 
 _Type_: String
@@ -72,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NodeCount
+
+Number of nodes that will be included in the cluster.
 
 _Required_: Yes
 
@@ -81,6 +89,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+DigitalOcean region where the cluster will reside.
+
 _Required_: Yes
 
 _Type_: String
@@ -88,6 +98,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Size
+
+Database Droplet size associated with the cluster (ex. `db-s-1vcpu-1gb`).
 
 _Required_: Yes
 
@@ -97,6 +109,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SqlMode
 
+A comma separated string specifying the  SQL modes for a MySQL cluster.
+
 _Required_: No
 
 _Type_: String
@@ -105,6 +119,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A list of tag names to be applied to the database cluster.
+
 _Required_: No
 
 _Type_: List of String
@@ -112,6 +128,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Version
+
+Engine version used by the cluster (ex. `11` for PostgreSQL 11).
 
 _Required_: No
 

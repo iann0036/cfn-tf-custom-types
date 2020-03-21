@@ -1,6 +1,12 @@
 # Terraform::Google::DataprocCluster
 
-CloudFormation equivalent of google_dataproc_cluster
+Manages a Cloud Dataproc cluster resource within GCP. For more information see
+[the official dataproc documentation](https://cloud.google.com/dataproc/).
+
+
+!> **Warning:** Due to limitations of the API, all arguments except
+`labels`,`cluster_config.worker_config.num_instances` and `cluster_config.preemptible_worker_config.num_instances` are non-updatable. Changing others will cause recreation of the
+whole cluster!
 
 ## Syntax
 
@@ -77,6 +83,10 @@ Properties:
 
 #### Labels
 
+The list of labels (key/value pairs) to be applied to
+instances in the cluster. GCP generates some itself including `goog-dataproc-cluster-name`
+which is the name of the cluster.
+
 _Required_: No
 
 _Type_: List of <a href="labels.md">Labels</a>
@@ -84,6 +94,9 @@ _Type_: List of <a href="labels.md">Labels</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the cluster, unique within the project and
+zone.
 
 _Required_: Yes
 
@@ -93,6 +106,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Project
 
+The ID of the project in which the `cluster` will exist. If it
+is not provided, the provider project is used.
+
 _Required_: No
 
 _Type_: String
@@ -100,6 +116,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region in which the cluster and associated nodes will be created in.
+Defaults to `global`.
 
 _Required_: No
 

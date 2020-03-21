@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::Image",
-    "description": "CloudFormation equivalent of alicloud_image",
+    "description": "Creates a custom image. You can then use a custom image to create ECS instances (RunInstances) or change the system disk for an existing instance (ReplaceSystemDisk).\n\n-> **NOTE:**  If you want to create a template from an ECS instance, you can specify the instance ID (InstanceId) to create a custom image. You must make sure that the status of the specified instance is Running or Stopped. After a successful invocation, each disk of the specified instance has a new snapshot created.\n\n-> **NOTE:**  If you want to create a custom image based on the system disk of your ECS instance, you can specify one of the system disk snapshots (SnapshotId) to create a custom image. However, the specified snapshot cannot be created on or before July 15, 2013.\n\n-> **NOTE:**  If you want to combine snapshots of multiple disks into an image template, you can specify DiskDeviceMapping to create a custom image.\n\n-> **NOTE:**  Available in 1.64.0+",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "DiskDeviceMapping": {
@@ -42,31 +42,39 @@
             "type": "string"
         },
         "Architecture": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the architecture of the system disk after you specify a data disk snapshot as the data source of the system disk for creating an image. Valid values: `i386` , Default is `x86_64`."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the image. It must be 2 to 256 characters in length and must not start with http:// or https://. Default value: null."
         },
         "Force": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether to force delete the custom image, Default is `false`.\n- true\uff1aForce deletes the custom image, regardless of whether the image is currently being used by other instances.\n- false\uff1aVerifies that the image is not currently in use by any other instances before deleting the image."
         },
         "ImageName": {
-            "type": "string"
+            "type": "string",
+            "description": "The image name. It must be 2 to 128 characters in length, and must begin with a letter or Chinese character (beginning with http:// or https:// is not allowed). It can contain digits, colons (:), underscores (_), or hyphens (-). Default value: null."
         },
         "InstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The instance ID."
         },
         "Name": {
             "type": "string"
         },
         "Platform": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the operating system platform of the system disk after you specify a data disk snapshot as the data source of the system disk for creating an image. Valid values: `CentOS`, `Ubuntu`, `SUSE`, `OpenSUSE`, `RedHat`, `Debian`, `CoreOS`, `Aliyun Linux`, `Windows Server 2003`, `Windows Server 2008`, `Windows Server 2012`, `Windows 7`, Default is `Others Linux`, `Customized Linux`."
         },
         "ResourceGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the enterprise resource group to which a custom image belongs."
         },
         "SnapshotId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies a snapshot that is used to create a combined custom image.\n* `device` - (Optional, ForceNew)Specifies the name of a disk in the combined custom image. Value range: /dev/xvda to /dev/xvdz."
         },
         "Tags": {
             "type": "array",
@@ -86,7 +94,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "The tag value of an image. The value of N ranges from 1 to 20."
         },
         "DiskDeviceMapping": {
             "type": "array",

@@ -1,6 +1,6 @@
 # Terraform::Cloudflare::WorkerScript
 
-CloudFormation equivalent of cloudflare_worker_script
+Provides a Cloudflare worker script resource. In order for a script to be active, you'll also need to setup a `cloudflare_worker_route`.
 
 ## Syntax
 
@@ -34,6 +34,8 @@ Properties:
 
 #### Content
 
+The script content.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name for the binding.
 
 _Required_: Yes
 

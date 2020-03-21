@@ -26,6 +26,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### ConsentRequired
 
+Should the user be asked for consent during sign up?.
+
 _Required_: Yes
 
 _Type_: Boolean
@@ -34,6 +36,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Enabled
 
+Should Terms of Service be displayed during sign up?.
+
 _Required_: Yes
 
 _Type_: Boolean
@@ -41,6 +45,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Text
+
+The Terms of Service which users are required to agree to in order to sign up.
 
 _Required_: No
 

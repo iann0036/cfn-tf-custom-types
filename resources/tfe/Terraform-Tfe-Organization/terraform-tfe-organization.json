@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Tfe::Organization",
-    "description": "CloudFormation equivalent of tfe_organization",
+    "description": "Manages organizations.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,22 +9,28 @@
             "type": "string"
         },
         "CollaboratorAuthPolicy": {
-            "type": "string"
+            "type": "string",
+            "description": "Authentication policy (`password`\nor `two_factor_mandatory`). Defaults to `password`."
         },
         "Email": {
-            "type": "string"
+            "type": "string",
+            "description": "Admin email address."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the organization."
         },
         "OwnersTeamSamlRoleId": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the \"owners\" team."
         },
         "SessionRememberMinutes": {
-            "type": "number"
+            "type": "number",
+            "description": "Session expiration. Defaults to\n`20160`."
         },
         "SessionTimeoutMinutes": {
-            "type": "number"
+            "type": "number",
+            "description": "Session timeout after inactivity.\nDefaults to `20160`."
         }
     },
     "additionalProperties": false,

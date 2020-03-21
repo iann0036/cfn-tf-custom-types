@@ -1,6 +1,8 @@
 # Terraform::Alicloud::PvtzZone
 
-CloudFormation equivalent of alicloud_pvtz_zone
+Provides a Private Zone resource.
+
+-> **NOTE:** Terraform will auto Create a Private Zone while it uses `alicloud_pvtz_zone` to build a Private Zone resource.
 
 ## Syntax
 
@@ -37,6 +39,8 @@ Properties:
 
 #### Lang
 
+The language. Valid values: "zh", "en", "jp".
+
 _Required_: No
 
 _Type_: String
@@ -44,6 +48,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the Private Zone.
 
 _Required_: No
 
@@ -53,6 +59,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProxyPattern
 
+The recursive DNS proxy. Valid values:
+- ZONE: indicates that the recursive DNS proxy is disabled.
+- RECORD: indicates that the recursive DNS proxy is enabled.
+
 _Required_: No
 
 _Type_: String
@@ -61,6 +71,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Remark
 
+The remark of the Private Zone.
+
 _Required_: No
 
 _Type_: String
@@ -68,6 +80,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserClientIp
+
+The IP address of the client.
 
 _Required_: No
 

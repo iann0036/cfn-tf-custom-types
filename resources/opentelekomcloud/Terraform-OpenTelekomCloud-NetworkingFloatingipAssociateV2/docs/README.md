@@ -1,6 +1,8 @@
 # Terraform::OpenTelekomCloud::NetworkingFloatingipAssociateV2
 
-CloudFormation equivalent of opentelekomcloud_networking_floatingip_associate_v2
+Associates a floating IP to a port. This is useful for situations
+where you have a pre-allocated floating IP or are unable to use the
+`opentelekomcloud_networking_floatingip_v2` resource to create a floating IP.
 
 ## Syntax
 
@@ -33,6 +35,8 @@ Properties:
 
 #### FloatingIp
 
+IP Address of an existing floating IP.
+
 _Required_: Yes
 
 _Type_: String
@@ -40,6 +44,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PortId
+
+ID of an existing port with at least one IP address to
+associate with this floating IP.
 
 _Required_: Yes
 

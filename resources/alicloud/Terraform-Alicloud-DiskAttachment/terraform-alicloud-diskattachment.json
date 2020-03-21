@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::DiskAttachment",
-    "description": "CloudFormation equivalent of alicloud_disk_attachment",
+    "description": "Provides an Alicloud ECS Disk Attachment as a resource, to attach and detach disks from ECS Instances.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "DeviceName": {
-            "type": "string"
+            "type": "string",
+            "description": "The device name has been deprecated, and when attaching disk, it will be allocated automatically by system according to default order from /dev/xvdb to /dev/xvdz."
         },
         "DiskId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the Disk to be attached."
         },
         "InstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the Instance to attach to."
         }
     },
     "additionalProperties": false,

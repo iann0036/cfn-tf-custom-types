@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Scaleway::Server",
-    "description": "CloudFormation equivalent of scaleway_server",
+    "description": "**DEPRECATED**: This resource is deprecated and will be removed in `v2.0+`.\nPlease use `scaleway_instance_server` instead.\n\nProvides servers. This allows servers to be created, updated and deleted.\nFor additional details please refer to [API documentation](https://developer.scaleway.com/#servers).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Volume": {
@@ -26,53 +26,67 @@
             "type": "string"
         },
         "BootType": {
-            "type": "string"
+            "type": "string",
+            "description": "the boot mechanism for this server. Possible values include `local` and `bootscript`."
         },
         "Bootscript": {
-            "type": "string"
+            "type": "string",
+            "description": "server bootscript."
         },
         "Cloudinit": {
-            "type": "string"
+            "type": "string",
+            "description": "allows you to define cloudinit script for this server."
         },
         "DynamicIpRequired": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "make server publicly available."
         },
         "EnableIpv6": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "enable ipv6."
         },
         "Image": {
-            "type": "string"
+            "type": "string",
+            "description": "base image of server."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "name of server."
         },
         "PrivateIp": {
             "type": "string"
         },
         "PublicIp": {
-            "type": "string"
+            "type": "string",
+            "description": "set a public ip previously created (a real ip is expected here, not its resource id)."
         },
         "PublicIpv6": {
-            "type": "string"
+            "type": "string",
+            "description": "if `enable_ipv6` is set this contains the ipv6 address of your instance."
         },
         "SecurityGroup": {
-            "type": "string"
+            "type": "string",
+            "description": "assign security group to server."
         },
         "State": {
-            "type": "string"
+            "type": "string",
+            "description": "allows you to define the desired state of your server. Valid values include (`stopped`, `running`)."
         },
         "StateDetail": {
-            "type": "string"
+            "type": "string",
+            "description": "contains details from the scaleway API the state of your instance."
         },
         "Tags": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "list of tags for server."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "type of server."
         },
         "Volume": {
             "type": "array",

@@ -1,6 +1,6 @@
 # Terraform::Brightbox::FirewallPolicy
 
-CloudFormation equivalent of brightbox_firewall_policy
+Provides a Brightbox Firewall Policy resource.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### Description
 
+A further description of the Firewall Policy.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A label to assign to the Firewall Policy.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServerGroup
+
+The ID of the Server Group the policy will be applied to.
 
 _Required_: No
 

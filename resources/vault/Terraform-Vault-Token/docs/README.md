@@ -1,6 +1,21 @@
 # Terraform::Vault::Token
 
-CloudFormation equivalent of vault_token
+Provides a resource to generate a vault token with its options. The token renewing is supported through optional
+arguments.
+
+The token used by Terraform will require update access to the `auth/token/lookup-accessor`
+path to create tokens and the `auth/token/revoke-accessor` path in Vault to
+destroy a token.
+
+```hcl
+path "auth/token/lookup-accessor" {
+  capabilities = ["update"]
+}
+
+path "auth/token/revoke-accessor" {
+  capabilities = ["update"]
+}
+```
 
 ## Syntax
 
@@ -54,6 +69,8 @@ Properties:
 
 #### DisplayName
 
+String containing the token display name.
+
 _Required_: No
 
 _Type_: String
@@ -61,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ExplicitMaxTtl
+
+The explicit max TTL of this token.
 
 _Required_: No
 
@@ -70,6 +89,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NoDefaultPolicy
 
+Flag to not attach the default policy to this token.
+
 _Required_: No
 
 _Type_: Boolean
@@ -77,6 +98,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NoParent
+
+Flag to create a token without parent.
 
 _Required_: No
 
@@ -86,6 +109,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NumUses
 
+The number of allowed uses of this token.
+
 _Required_: No
 
 _Type_: Double
@@ -93,6 +118,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Period
+
+The period of this token.
 
 _Required_: No
 
@@ -102,6 +129,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Policies
 
+List of policies to attach to this token.
+
 _Required_: No
 
 _Type_: List of String
@@ -109,6 +138,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RenewIncrement
+
+The renew increment.
 
 _Required_: No
 
@@ -118,6 +149,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RenewMinLease
 
+The minimal lease to renew this token.
+
 _Required_: No
 
 _Type_: Double
@@ -125,6 +158,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Renewable
+
+Flag to allow to renew this token.
 
 _Required_: No
 
@@ -134,6 +169,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RoleName
 
+The token role name.
+
 _Required_: No
 
 _Type_: String
@@ -141,6 +178,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ttl
+
+The TTL period of this token.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::BIGIP::SysProvision
 
-CloudFormation equivalent of bigip_sys_provision
+`bigip_sys_provision` provides details bout how to enable "ilx", "asm" "apm" resource on BIG-IP
 
 ## Syntax
 

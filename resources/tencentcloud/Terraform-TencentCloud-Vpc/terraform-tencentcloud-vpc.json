@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::Vpc",
-    "description": "CloudFormation equivalent of tencentcloud_vpc",
+    "description": "Provide a resource to create a VPC.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "CidrBlock": {
-            "type": "string"
+            "type": "string",
+            "description": "A network address block which should be a subnet of the three internal network segments (10.0.0.0/16, 172.16.0.0/12 and 192.168.0.0/16)."
         },
         "CreateTime": {
             "type": "string"
@@ -19,16 +20,19 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The DNS server list of the VPC. And you can specify 0 to 5 servers to this list."
         },
         "IsDefault": {
             "type": "boolean"
         },
         "IsMulticast": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether VPC multicast is enabled. The default value is 'true'."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the VPC."
         },
         "Tags": {
             "type": "array",
@@ -48,7 +52,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Tags of the VPC."
         }
     },
     "additionalProperties": false,

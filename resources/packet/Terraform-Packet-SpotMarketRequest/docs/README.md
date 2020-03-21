@@ -1,6 +1,7 @@
 # Terraform::Packet::SpotMarketRequest
 
-CloudFormation equivalent of packet_spot_market_request
+Provides a Packet Spot Market Request resource to allow you to
+manage spot market requests on your account. For more detail on Spot Market, see [this article in Packing documentaion](https://www.packet.com/developers/docs/getting-started/deployment-options/spot-market/).
 
 ## Syntax
 
@@ -45,6 +46,8 @@ Properties:
 
 #### DevicesMax
 
+Maximum number devices to be created.
+
 _Required_: Yes
 
 _Type_: Double
@@ -52,6 +55,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DevicesMin
+
+Miniumum number devices to be created.
 
 _Required_: Yes
 
@@ -61,6 +66,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Facilities
 
+Facility IDs where devices should be created.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -68,6 +75,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MaxBidPrice
+
+Maximum price user is willing to pay per hour per device.
 
 _Required_: Yes
 
@@ -77,6 +86,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProjectId
 
+Project ID.
+
 _Required_: Yes
 
 _Type_: String
@@ -84,6 +95,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WaitForDevices
+
+On resource creation - wait until all desired devices are active, on resource destruction - wait until devices are removed.
 
 _Required_: No
 

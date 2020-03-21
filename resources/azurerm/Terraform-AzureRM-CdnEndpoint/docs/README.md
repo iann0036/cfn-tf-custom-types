@@ -1,6 +1,6 @@
 # Terraform::AzureRM::CdnEndpoint
 
-CloudFormation equivalent of azurerm_cdn_endpoint
+A CDN Endpoint is the entity within a CDN Profile containing configuration information regarding caching behaviors and origins. The CDN Endpoint is exposed using the URL format <endpointname>.azureedge.net.
 
 ## Syntax
 
@@ -65,6 +65,8 @@ Properties:
 
 #### ContentTypesToCompress
 
+An array of strings that indicates a content types on which compression will be applied. The value for the elements should be MIME types.
+
 _Required_: No
 
 _Type_: List of String
@@ -72,6 +74,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IsCompressionEnabled
+
+Indicates whether compression is to be enabled. Defaults to false.
 
 _Required_: No
 
@@ -81,6 +85,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IsHttpAllowed
 
+Defaults to `true`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -88,6 +94,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IsHttpsAllowed
+
+Defaults to `true`.
 
 _Required_: No
 
@@ -97,6 +105,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Location
 
+Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -104,6 +114,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the CDN Endpoint. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -113,6 +125,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OptimizationType
 
+What types of optimization should this CDN Endpoint optimize for? Possible values include `DynamicSiteAcceleration`, `GeneralMediaStreaming`, `GeneralWebDelivery`, `LargeFileDownload` and `VideoOnDemandMediaStreaming`.
+
 _Required_: No
 
 _Type_: String
@@ -120,6 +134,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OriginHostHeader
+
+The host header CDN provider will send along with content requests to origins. Defaults to the host name of the origin.
 
 _Required_: No
 
@@ -129,6 +145,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OriginPath
 
+The path used at for origin requests.
+
 _Required_: No
 
 _Type_: String
@@ -136,6 +154,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProbePath
+
+the path to a file hosted on the origin which helps accelerate delivery of the dynamic content and calculate the most optimal routes for the CDN. This is relative to the `origin_path`.
 
 _Required_: No
 
@@ -145,6 +165,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProfileName
 
+The CDN Profile to which to attach the CDN Endpoint.
+
 _Required_: Yes
 
 _Type_: String
@@ -152,6 +174,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### QuerystringCachingBehaviour
+
+Sets query string caching behavior. Allowed values are `IgnoreQueryString`, `BypassCaching` and `UseQueryString`. Defaults to `IgnoreQueryString`.
 
 _Required_: No
 
@@ -161,6 +185,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to create the CDN Endpoint.
+
 _Required_: Yes
 
 _Type_: String
@@ -168,6 +194,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

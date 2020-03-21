@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::ForwardEntry",
-    "description": "CloudFormation equivalent of alicloud_forward_entry",
+    "description": "Provides a forward resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,28 +9,35 @@
             "type": "string"
         },
         "ExternalIp": {
-            "type": "string"
+            "type": "string",
+            "description": "The external ip address, the ip must along bandwidth package public ip which `alicloud_nat_gateway` argument `bandwidth_packages`."
         },
         "ExternalPort": {
-            "type": "string"
+            "type": "string",
+            "description": "The external port, valid value is 1~65535|any."
         },
         "ForwardEntryId": {
             "type": "string"
         },
         "ForwardTableId": {
-            "type": "string"
+            "type": "string",
+            "description": "The value can get from `alicloud_nat_gateway` Attributes \"forward_table_ids\"."
         },
         "InternalIp": {
-            "type": "string"
+            "type": "string",
+            "description": "The internal ip, must a private ip."
         },
         "InternalPort": {
-            "type": "string"
+            "type": "string",
+            "description": "The internal port, valid value is 1~65535|any."
         },
         "IpProtocol": {
-            "type": "string"
+            "type": "string",
+            "description": "The ip protocal, valid value is tcp|udp|any."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of forward entry."
         }
     },
     "additionalProperties": false,

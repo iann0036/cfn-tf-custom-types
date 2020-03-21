@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Scaleway::Volume",
-    "description": "CloudFormation equivalent of scaleway_volume",
+    "description": "**DEPRECATED**: This resource is deprecated and will be removed in `v2.0+`.\nPlease use `scaleway_instance_volume` instead.\n\nProvides volumes. This allows volumes to be created, updated and deleted.\nFor additional details please refer to [API documentation](https://developer.scaleway.com/#volumes).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,19 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "name of volume."
         },
         "Server": {
             "type": "string"
         },
         "SizeInGb": {
-            "type": "number"
+            "type": "number",
+            "description": "size of the volume in GB."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "type of volume."
         }
     },
     "additionalProperties": false,

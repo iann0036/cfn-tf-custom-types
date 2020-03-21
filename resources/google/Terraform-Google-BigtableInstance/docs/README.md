@@ -1,6 +1,8 @@
 # Terraform::Google::BigtableInstance
 
-CloudFormation equivalent of google_bigtable_instance
+Creates a Google Bigtable instance. For more information see
+[the official documentation](https://cloud.google.com/bigtable/) and
+[API](https://cloud.google.com/bigtable/docs/go/reference).
 
 ## Syntax
 
@@ -38,6 +40,8 @@ Properties:
 
 #### DisplayName
 
+The human-readable display name of the Bigtable instance. Defaults to the instance `name`.
+
 _Required_: No
 
 _Type_: String
@@ -45,6 +49,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceType
+
+The instance type to create. One of `"DEVELOPMENT"` or `"PRODUCTION"`. Defaults to `"PRODUCTION"`.
 
 _Required_: No
 
@@ -54,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name (also called Instance Id in the Cloud Console) of the Cloud Bigtable instance.
+
 _Required_: Yes
 
 _Type_: String
@@ -61,6 +69,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The ID of the project in which the resource belongs. If it
+is not provided, the provider project is used.
 
 _Required_: No
 

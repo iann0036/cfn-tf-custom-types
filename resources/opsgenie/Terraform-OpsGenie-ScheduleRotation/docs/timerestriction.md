@@ -28,6 +28,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Type
 
+This parameter should be set time-of-day.
+
 _Required_: Yes
 
 _Type_: String

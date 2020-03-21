@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::ApiManagementApiOperation",
-    "description": "CloudFormation equivalent of azurerm_api_management_api_operation",
+    "description": "Manages an API Operation within an API Management Service.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Request": {
@@ -8,7 +8,8 @@
             "additionalProperties": false,
             "properties": {
                 "Description": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A description of the HTTP Request, which may include HTML tags."
                 },
                 "Header": {
                     "type": "array",
@@ -39,10 +40,12 @@
             "additionalProperties": false,
             "properties": {
                 "Description": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A description of the HTTP Response, which may include HTML tags."
                 },
                 "StatusCode": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The HTTP Status Code."
                 },
                 "Header": {
                     "type": "array",
@@ -68,26 +71,32 @@
             "additionalProperties": false,
             "properties": {
                 "DefaultValue": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The default value for this Template Parameter."
                 },
                 "Description": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A description of this Template Parameter."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Name of this Template Parameter."
                 },
                 "Required": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Is this Template Parameter Required?."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Type of this Template Parameter, such as a `string`."
                 },
                 "Values": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "One or more acceptable values for this Template Parameter."
                 }
             },
             "required": [
@@ -186,16 +195,20 @@
             "additionalProperties": false,
             "properties": {
                 "ContentType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Content Type of this representation, such as `application/json`."
                 },
                 "Sample": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "An example of this representation."
                 },
                 "SchemaId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of an API Management Schema which represents this Response."
                 },
                 "TypeName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Type Name defined by the Schema."
                 },
                 "FormParameter": {
                     "type": "array",
@@ -249,28 +262,36 @@
             "type": "string"
         },
         "ApiManagementName": {
-            "type": "string"
+            "type": "string",
+            "description": "The Name of the API Management Service where the API exists. Changing this forces a new resource to be created."
         },
         "ApiName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the API within the API Management Service where this API Operation should be created. Changing this forces a new resource to be created."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description of this Query Parameter."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The Display Name for this API Management Operation."
         },
         "Method": {
-            "type": "string"
+            "type": "string",
+            "description": "The HTTP Method used for this API Management Operation, like `GET`, `DELETE`, `PUT` or `POST` - but not limited to these values."
         },
         "OperationId": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique identifier for this API Operation. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The Name of the Resource Group in which the API Management Service exists. Changing this forces a new resource to be created."
         },
         "UrlTemplate": {
-            "type": "string"
+            "type": "string",
+            "description": "The relative URL Template identifying the target resource for this operation, which may include parameters."
         },
         "Request": {
             "type": "array",

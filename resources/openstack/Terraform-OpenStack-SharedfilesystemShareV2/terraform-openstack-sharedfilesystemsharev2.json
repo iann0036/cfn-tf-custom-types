@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::SharedfilesystemShareV2",
-    "description": "CloudFormation equivalent of openstack_sharedfilesystem_share_v2",
+    "description": "Use this resource to configure a share.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -46,10 +46,12 @@
             }
         },
         "AvailabilityZone": {
-            "type": "string"
+            "type": "string",
+            "description": "The share availability zone. Changing this creates a\nnew share."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The human-readable description for the share.\nChanging this updates the description of the existing share."
         },
         "ExportLocations": {
             "type": "array",
@@ -74,7 +76,8 @@
             "type": "string"
         },
         "IsPublic": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "The level of visibility for the share. Set to true to make\nshare public. Set to false to make it private. Default value is false. Changing this\nupdates the existing share."
         },
         "Metadata": {
             "type": "array",
@@ -94,37 +97,45 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "One or more metadata key and value pairs as a dictionary of\nstrings."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the share. Changing this updates the name\nof the existing share."
         },
         "ProjectId": {
             "type": "string"
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the V2 Shared File System client.\nA Shared File System client is needed to create a share. Changing this\ncreates a new share."
         },
         "ReplicationType": {
             "type": "string"
         },
         "ShareNetworkId": {
-            "type": "string"
+            "type": "string",
+            "description": "The UUID of a share network where the share server exists\nor will be created. If `share_network_id` is not set and you provide a `snapshot_id`,\nthe share_network_id value from the snapshot is used. Changing this creates a new share."
         },
         "ShareProto": {
-            "type": "string"
+            "type": "string",
+            "description": "The share protocol - can either be NFS, CIFS,\nCEPHFS, GLUSTERFS, HDFS or MAPRFS. Changing this creates a new share."
         },
         "ShareServerId": {
             "type": "string"
         },
         "ShareType": {
-            "type": "string"
+            "type": "string",
+            "description": "The share type name. If you omit this parameter, the default\nshare type is used."
         },
         "Size": {
-            "type": "number"
+            "type": "number",
+            "description": "The share size, in GBs. The requested share size cannot be greater\nthan the allowed GB quota. Changing this resizes the existing share."
         },
         "SnapshotId": {
-            "type": "string"
+            "type": "string",
+            "description": "The UUID of the share's base snapshot. Changing this creates\na new share."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

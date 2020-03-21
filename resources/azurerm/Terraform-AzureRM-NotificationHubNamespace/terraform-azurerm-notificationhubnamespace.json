@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::NotificationHubNamespace",
-    "description": "CloudFormation equivalent of azurerm_notification_hub_namespace",
+    "description": "Manages a Notification Hub Namespace.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,25 +29,31 @@
             "type": "string"
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is this Notification Hub Namespace enabled? Defaults to `true`."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "The Azure Region in which this Notification Hub Namespace should be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name to use for this Notification Hub Namespace. Changing this forces a new resource to be created."
         },
         "NamespaceType": {
-            "type": "string"
+            "type": "string",
+            "description": "The Type of Namespace - possible values are `Messaging` or `NotificationHub`. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Resource Group in which the Notification Hub Namespace should exist. Changing this forces a new resource to be created."
         },
         "ServicebusEndpoint": {
             "type": "string"
         },
         "SkuName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the SKU to use for this Notification Hub Namespace. Possible values are `Free`, `Basic` or `Standard`. Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

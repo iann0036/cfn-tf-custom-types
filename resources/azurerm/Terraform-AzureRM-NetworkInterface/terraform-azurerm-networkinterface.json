@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::NetworkInterface",
-    "description": "CloudFormation equivalent of azurerm_network_interface",
+    "description": "Manages a Network Interface.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "IpConfiguration": {
@@ -8,25 +8,31 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A name used for this IP Configuration."
                 },
                 "Primary": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Is this the Primary IP Configuration? Must be `true` for the first `ip_configuration` when multiple are specified. Defaults to `false`."
                 },
                 "PrivateIpAddress": {
                     "type": "string"
                 },
                 "PrivateIpAddressAllocation": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The allocation method used for the Private IP Address. Possible values are `Dynamic` and `Static`."
                 },
                 "PrivateIpAddressVersion": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The IP Version to use. Possible values are `IPv4` or `IPv6`. Defaults to `IPv4`."
                 },
                 "PublicIpAddressId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Reference to a Public IP Address to associate with this NIC."
                 },
                 "SubnetId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of the Subnet where this Network Interface should be located in."
                 }
             },
             "required": [
@@ -71,25 +77,31 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of IP Addresses defining the DNS Servers which should be used for this Network Interface."
         },
         "EnableAcceleratedNetworking": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Should Accelerated Networking be enabled? Defaults to `false`."
         },
         "EnableIpForwarding": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Should IP Forwarding be enabled? Defaults to `false`."
         },
         "InternalDnsNameLabel": {
-            "type": "string"
+            "type": "string",
+            "description": "The (relative) DNS Name used for internal communications between Virtual Machines in the same Virtual Network."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "The location where the Network Interface should exist. Changing this forces a new resource to be created."
         },
         "MacAddress": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Network Interface. Changing this forces a new resource to be created."
         },
         "PrivateIpAddress": {
             "type": "string"
@@ -102,7 +114,8 @@
             }
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Resource Group in which to create the Network Interface. Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -122,7 +135,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "VirtualMachineId": {
             "type": "string"

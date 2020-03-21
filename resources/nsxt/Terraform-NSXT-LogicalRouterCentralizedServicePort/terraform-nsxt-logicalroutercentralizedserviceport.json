@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::NSXT::LogicalRouterCentralizedServicePort",
-    "description": "CloudFormation equivalent of nsxt_logical_router_centralized_service_port",
+    "description": "This resource provides a means to define a centralized service port on a logical router to connect a logical tier0 or tier1 router to a logical switch. This allows the router to be used for E-W load balancing\n\n~> **NOTE:** This resource requires NSX version 2.3 or higher.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Tag": {
@@ -26,25 +26,31 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the resource."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "Display name, defaults to ID if not set."
         },
         "IpAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "Logical router port subnet (ip_address / prefix length)."
         },
         "LinkedLogicalSwitchPortId": {
-            "type": "string"
+            "type": "string",
+            "description": "Identifier for port on logical switch to connect to."
         },
         "LogicalRouterId": {
-            "type": "string"
+            "type": "string",
+            "description": "Identifier for logical Tier-0 or Tier-1 router on which this port is created."
         },
         "Revision": {
             "type": "number"
         },
         "UrpfMode": {
-            "type": "string"
+            "type": "string",
+            "description": "Unicast Reverse Path Forwarding mode. Accepted values are \"NONE\" and \"STRICT\" which is the default value."
         },
         "Tag": {
             "type": "array",

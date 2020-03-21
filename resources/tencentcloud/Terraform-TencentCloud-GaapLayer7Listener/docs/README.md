@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::GaapLayer7Listener
 
-CloudFormation equivalent of tencentcloud_gaap_layer7_listener
+Provides a resource to create a layer7 listener of GAAP.
 
 ## Syntax
 
@@ -46,6 +46,8 @@ Properties:
 
 #### AuthType
 
+Authentication type of the layer7 listener. `0` is one-way authentication and `1` is mutual authentication. NOTES: Only supports listeners of `HTTPS` protocol.
+
 _Required_: No
 
 _Type_: Double
@@ -53,6 +55,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CertificateId
+
+Certificate ID of the layer7 listener. NOTES: Only supports listeners of `HTTPS` protocol.
 
 _Required_: No
 
@@ -62,6 +66,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ClientCertificateId
 
+It has been deprecated from version 1.26.0. Set `client_certificate_ids` instead. ID of the client certificate. Set only when `auth_type` is specified as mutual authentication. NOTES: Only supports listeners of `HTTPS` protocol.
+
 _Required_: No
 
 _Type_: String
@@ -69,6 +75,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClientCertificateIds
+
+ID list of the client certificate. Set only when `auth_type` is specified as mutual authentication. NOTES: Only supports listeners of `HTTPS` protocol.
 
 _Required_: No
 
@@ -78,6 +86,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ForwardProtocol
 
+Protocol type of the forwarding, the available values include `HTTP` and `HTTPS`. NOTES: Only supports listeners of `HTTPS` protocol.
+
 _Required_: No
 
 _Type_: String
@@ -85,6 +95,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of the layer7 listener, the maximum length is 30.
 
 _Required_: Yes
 
@@ -94,6 +106,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Port
 
+Port of the layer7 listener.
+
 _Required_: Yes
 
 _Type_: Double
@@ -102,6 +116,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Protocol
 
+Protocol of the layer7 listener, the available values include `HTTP` and `HTTPS`.
+
 _Required_: Yes
 
 _Type_: String
@@ -109,6 +125,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProxyId
+
+ID of the GAAP proxy.
 
 _Required_: Yes
 

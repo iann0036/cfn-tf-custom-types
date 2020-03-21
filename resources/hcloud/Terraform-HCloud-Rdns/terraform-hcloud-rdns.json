@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HCloud::Rdns",
-    "description": "CloudFormation equivalent of hcloud_rdns",
+    "description": "Provides a Hetzner Cloud Reverse DNS Entry to create, modify and reset reverse dns entries for Hetzner Cloud Floating IPs or servers.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,20 @@
             "type": "string"
         },
         "DnsPtr": {
-            "type": "string"
+            "type": "string",
+            "description": "The DNS address the `ip_address` should resolve to.\n- `ip_address` - (Required, string) The IP address that should point to `dns_ptr`.\n- `server_id` - (Required, int) The server the `ip_address` belongs to.\n- `floating_ip_id` - (Required, int) The Floating IP the `ip_address` belongs to."
         },
         "FloatingIpId": {
-            "type": "number"
+            "type": "number",
+            "description": "The Floating IP the `ip_address` belongs to."
         },
         "IpAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "The IP address that should point to `dns_ptr`.\n- `server_id` - (Required, int) The server the `ip_address` belongs to.\n- `floating_ip_id` - (Required, int) The Floating IP the `ip_address` belongs to."
         },
         "ServerId": {
-            "type": "number"
+            "type": "number",
+            "description": "The server the `ip_address` belongs to.\n- `floating_ip_id` - (Required, int) The Floating IP the `ip_address` belongs to."
         }
     },
     "additionalProperties": false,

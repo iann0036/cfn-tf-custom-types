@@ -1,6 +1,6 @@
 # Terraform::Alicloud::RamRoleAttachment
 
-CloudFormation equivalent of alicloud_ram_role_attachment
+Provides a RAM role attachment resource to bind role for several ECS instances.
 
 ## Syntax
 
@@ -32,6 +32,8 @@ Properties:
 
 #### InstanceIds
 
+The list of ECS instance's IDs.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -39,6 +41,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RoleName
+
+The name of role used to bind. This name can have a string of 1 to 64 characters, must contain only alphanumeric characters or hyphens, such as "-", "_", and must not begin with a hyphen.
 
 _Required_: Yes
 

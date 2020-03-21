@@ -1,6 +1,10 @@
 # Terraform::Alicloud::CommonBandwidthPackageAttachment
 
-CloudFormation equivalent of alicloud_common_bandwidth_package_attachment
+Provides an Alicloud Common Bandwidth Package Attachment resource for associating Common Bandwidth Package to EIP Instance.
+
+-> **NOTE:** Terraform will auto build common bandwidth package attachment while it uses `alicloud_common_bandwidth_package_attachment` to build a common bandwidth package attachment resource.
+
+For information about common bandwidth package and how to use it, see [What is Common Bandwidth Package](https://www.alibabacloud.com/help/product/55092.htm).
 
 ## Syntax
 
@@ -31,6 +35,8 @@ Properties:
 
 #### BandwidthPackageId
 
+The bandwidth_package_id of the common bandwidth package attachment, the field can't be changed.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceId
+
+The instance_id of the common bandwidth package attachment, the field can't be changed.
 
 _Required_: Yes
 

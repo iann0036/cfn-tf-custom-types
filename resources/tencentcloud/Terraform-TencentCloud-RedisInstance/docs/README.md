@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::RedisInstance
 
-CloudFormation equivalent of tencentcloud_redis_instance
+Provides a resource to create a Redis instance and set its attributes.
 
 ## Syntax
 
@@ -51,6 +51,8 @@ Properties:
 
 #### AvailabilityZone
 
+The available zone ID of an instance to be created, please refer to tencentcloud_redis_zone_config.list.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +60,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MemSize
+
+The memory volume of an available instance(in MB), please refer to tencentcloud_redis_zone_config.list[zone].mem_sizes.
 
 _Required_: Yes
 
@@ -67,6 +71,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Instance name.
+
 _Required_: No
 
 _Type_: String
@@ -74,6 +80,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Password
+
+Password for a Redis user, which should be 8 to 16 characters.
 
 _Required_: Yes
 
@@ -83,6 +91,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Port
 
+The port used to access a redis instance. The default value is 6379. And this value can't be changed after creation, or the Redis instance will be recreated.
+
 _Required_: No
 
 _Type_: Double
@@ -90,6 +100,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProjectId
+
+Specifies which project the instance should belong to.
 
 _Required_: No
 
@@ -99,6 +111,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecurityGroups
 
+ID of security group. If both vpc_id and subnet_id are not set, this argument should not be set either.
+
 _Required_: No
 
 _Type_: List of String
@@ -106,6 +120,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubnetId
+
+Specifies which subnet the instance should belong to.
 
 _Required_: No
 
@@ -115,6 +131,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+Instance tags.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -123,6 +141,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Type
 
+Instance type. Available values: master_slave_redis.
+
 _Required_: No
 
 _Type_: String
@@ -130,6 +150,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+ID of the vpc with which the instance is to be associated.
 
 _Required_: No
 

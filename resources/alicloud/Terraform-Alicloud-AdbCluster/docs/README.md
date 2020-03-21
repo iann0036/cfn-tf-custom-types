@@ -1,6 +1,10 @@
 # Terraform::Alicloud::AdbCluster
 
-CloudFormation equivalent of alicloud_adb_cluster
+Provides a ADB cluster resource. A ADB cluster is an isolated database
+environment in the cloud. A ADB cluster can contain multiple user-created
+databases.
+
+-> **NOTE:** Available in v1.71.0+.
 
 ## Syntax
 
@@ -61,6 +65,8 @@ Properties:
 
 #### AutoRenewPeriod
 
+Auto-renewal period of an cluster, in the unit of the month. It is valid when pay_type is `PrePaid`. Valid value:1, 2, 3, 6, 12, 24, 36, Default to 1.
+
 _Required_: No
 
 _Type_: Double
@@ -68,6 +74,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DbClusterCategory
+
+Cluster category. Value options: `Basic`, `Cluster`.
 
 _Required_: Yes
 
@@ -77,6 +85,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DbClusterVersion
 
+Cluster version. Value options: `3.0`, Default to `3.0`.
+
 _Required_: No
 
 _Type_: String
@@ -84,6 +94,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DbNodeClass
+
+The db_node_class of cluster node.
 
 _Required_: Yes
 
@@ -93,6 +105,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DbNodeCount
 
+The db_node_count of cluster node.
+
 _Required_: Yes
 
 _Type_: Double
@@ -100,6 +114,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DbNodeStorage
+
+The db_node_storage of cluster node.
 
 _Required_: Yes
 
@@ -109,6 +125,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+The description of cluster.
+
 _Required_: No
 
 _Type_: String
@@ -116,6 +134,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MaintainTime
+
+Maintainable time period format of the instance: HH:MMZ-HH:MMZ (UTC time).
 
 _Required_: No
 
@@ -125,6 +145,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PayType
 
+Valid values are `PrePaid`, `PostPaid`, Default to `PostPaid`. Currently, the resource can not supports change pay type.
+
 _Required_: No
 
 _Type_: String
@@ -132,6 +154,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Period
+
+The duration that you will buy DB cluster (in month). It is valid when pay_type is `PrePaid`. Valid values: [1~9], 12, 24, 36. Default to 1.
 
 _Required_: No
 
@@ -141,6 +165,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RenewalStatus
 
+Valid values are `AutoRenewal`, `Normal`, `NotRenewal`, Default to `NotRenewal`.
+
 _Required_: No
 
 _Type_: String
@@ -148,6 +174,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecurityIps
+
+List of IP addresses allowed to access all databases of an cluster. The list contains up to 1,000 IP addresses, separated by commas. Supported formats include 0.0.0.0/0, 10.23.12.24 (IP), and 10.23.12.24/24 (Classless Inter-Domain Routing (CIDR) mode. /24 represents the length of the prefix in an IP address. The range of the prefix length is [1,32]).
 
 _Required_: No
 
@@ -157,6 +185,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+- Key: It can be up to 64 characters in length. It cannot begin with "aliyun", "acs:", "http://", or "https://". It cannot be a null string.
+- Value: It can be up to 128 characters in length. It cannot begin with "aliyun", "acs:", "http://", or "https://". It can be a null string.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -165,6 +197,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VswitchId
 
+The virtual switch ID to launch DB instances in one VPC.
+
 _Required_: No
 
 _Type_: String
@@ -172,6 +206,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneId
+
+The Zone to launch the DB cluster.
 
 _Required_: No
 

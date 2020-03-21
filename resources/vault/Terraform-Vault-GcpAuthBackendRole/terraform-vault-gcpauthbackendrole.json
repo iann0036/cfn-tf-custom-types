@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Vault::GcpAuthBackendRole",
-    "description": "CloudFormation equivalent of vault_gcp_auth_backend_role",
+    "description": "Provides a resource to create a role in an [GCP auth backend within Vault](https://www.vaultproject.io/docs/auth/gcp.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -15,7 +15,8 @@
             "type": "boolean"
         },
         "Backend": {
-            "type": "string"
+            "type": "string",
+            "description": "Path to the mounted GCP auth backend."
         },
         "BoundInstanceGroups": {
             "type": "array",
@@ -36,7 +37,8 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "An array of GCP project IDs. Only entities belonging to this project can authenticate under the role."
         },
         "BoundRegions": {
             "type": "array",
@@ -50,7 +52,8 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "GCP Service Accounts allowed to issue tokens under this role. (Note: **Required** if role is `iam`)."
         },
         "BoundZones": {
             "type": "array",
@@ -76,10 +79,12 @@
             }
         },
         "ProjectId": {
-            "type": "string"
+            "type": "string",
+            "description": "GCP Project that the role exists within."
         },
         "Role": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the GCP role."
         },
         "TokenBoundCidrs": {
             "type": "array",
@@ -120,7 +125,8 @@
             "type": "string"
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of GCP authentication role (either `gce` or `iam`)."
         }
     },
     "additionalProperties": false,

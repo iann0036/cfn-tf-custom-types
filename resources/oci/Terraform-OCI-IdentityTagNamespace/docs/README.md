@@ -1,6 +1,21 @@
 # Terraform::OCI::IdentityTagNamespace
 
-CloudFormation equivalent of oci_identity_tag_namespace
+This resource provides the Tag Namespace resource in Oracle Cloud Infrastructure Identity service.
+
+Creates a new tag namespace in the specified compartment.
+
+You must specify the compartment ID in the request object (remember that the tenancy is simply the root
+compartment).
+
+You must also specify a *name* for the namespace, which must be unique across all namespaces in your tenancy
+and cannot be changed. The name can contain any ASCII character except the space (_) or period (.).
+Names are case insensitive. That means, for example, "myNamespace" and "mynamespace" are not allowed
+in the same tenancy. Once you created a namespace, you cannot change the name.
+If you specify a name that's already in use in the tenancy, a 409 error is returned.
+
+You must also specify a *description* for the namespace.
+It does not have to be unique, and you can change it with
+[UpdateTagNamespace](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/TagNamespace/UpdateTagNamespace).
 
 ## Syntax
 
@@ -43,6 +58,8 @@ Properties:
 
 #### CompartmentId
 
+(Updatable) The OCID of the tenancy containing the tag namespace.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +67,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefinedTags
+
+(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`.
 
 _Required_: No
 
@@ -59,6 +78,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+(Updatable) The description you assign to the tag namespace during creation.
+
 _Required_: Yes
 
 _Type_: String
@@ -66,6 +87,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FreeformTags
+
+(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`.
 
 _Required_: No
 
@@ -75,6 +98,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IsRetired
 
+(Updatable) Whether the tag namespace is retired. For more information, see [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
+
 _Required_: No
 
 _Type_: Boolean
@@ -82,6 +107,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name you assign to the tag namespace during creation. It must be unique across all tag namespaces in the tenancy and cannot be changed.
 
 _Required_: Yes
 

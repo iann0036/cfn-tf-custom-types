@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::GaapLayer4Listener",
-    "description": "CloudFormation equivalent of tencentcloud_gaap_layer4_listener",
+    "description": "Provides a resource to create a layer4 listener of GAAP.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "RealserverBindSet": {
@@ -8,16 +8,20 @@
             "additionalProperties": false,
             "properties": {
                 "Id": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "ID of the GAAP realserver."
                 },
                 "Ip": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "IP of the GAAP realserver."
                 },
                 "Port": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Port of the GAAP realserver."
                 },
                 "Weight": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Scheduling weight, default value is `1`. The range of values is [1,100]."
                 }
             },
             "required": [
@@ -33,34 +37,43 @@
             "type": "string"
         },
         "ConnectTimeout": {
-            "type": "number"
+            "type": "number",
+            "description": "Timeout of the health check response, should less than interval, default value is 2s. NOTES: Only supports listeners of `TCP` protocol and require less than `interval`."
         },
         "CreateTime": {
             "type": "string"
         },
         "HealthCheck": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether health check is enable, default value is `false`. NOTES: Only supports listeners of `TCP` protocol."
         },
         "Interval": {
-            "type": "number"
+            "type": "number",
+            "description": "Interval of the health check, default value is 5s. NOTES: Only supports listeners of `TCP` protocol."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the layer4 listener, the maximum length is 30."
         },
         "Port": {
-            "type": "number"
+            "type": "number",
+            "description": "Port of the layer4 listener."
         },
         "Protocol": {
-            "type": "string"
+            "type": "string",
+            "description": "Protocol of the layer4 listener, the available values include `TCP` and `UDP`."
         },
         "ProxyId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the GAAP proxy."
         },
         "RealserverType": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of the realserver, the available values include `IP` and `DOMAIN`. NOTES: when the `protocol` is specified as `TCP` and the `scheduler` is specified as `wrr`, the item can only be set to `IP`."
         },
         "Scheduler": {
-            "type": "string"
+            "type": "string",
+            "description": "Scheduling policy of the layer4 listener, default value is `rr`, the available values include `rr`, `wrr` and `lc`."
         },
         "Status": {
             "type": "number"

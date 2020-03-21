@@ -1,6 +1,6 @@
 # Terraform::NSXT::LogicalSwitch
 
-CloudFormation equivalent of nsxt_logical_switch
+This resource provides a method to create overlay logical switch in NSX. Virtual machines can then be connected to the appropriate logical switch for the desired topology and network connectivity.
 
 ## Syntax
 
@@ -54,6 +54,8 @@ Properties:
 
 #### AdminState
 
+Admin state for the logical switch. Accepted values - 'UP' or 'DOWN'. The default value is 'UP'.
+
 _Required_: No
 
 _Type_: String
@@ -61,6 +63,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Description of the resource.
 
 _Required_: No
 
@@ -70,6 +74,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+Display name, defaults to ID if not set.
+
 _Required_: No
 
 _Type_: String
@@ -77,6 +83,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IpPoolId
+
+Ip Pool ID to be associated with the logical switch.
 
 _Required_: No
 
@@ -86,6 +94,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MacPoolId
 
+Mac Pool ID to be associated with the logical switch.
+
 _Required_: No
 
 _Type_: String
@@ -93,6 +103,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ReplicationMode
+
+Replication mode of the Logical Switch. Accepted values - 'MTEP' (Hierarchical Two-Tier replication) and 'SOURCE' (Head Replication), with 'MTEP' being the default value. Applies to overlay logical switches.
 
 _Required_: No
 
@@ -102,6 +114,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TransportZoneId
 
+Transport Zone ID for the logical switch.
+
 _Required_: Yes
 
 _Type_: String
@@ -110,6 +124,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Vlan
 
+Vlan for vlan logical switch. This attribute is deprecated, please use nsxt_vlan_logical_switch resource to manage vlan logical switches.
+
 _Required_: No
 
 _Type_: Double
@@ -117,6 +133,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vni
+
+Vni for the logical switch.
 
 _Required_: No
 

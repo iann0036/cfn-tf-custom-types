@@ -1,6 +1,14 @@
 # Terraform::Panos::PanoramaTemplateStack
 
-CloudFormation equivalent of panos_panorama_template_stack
+This resource allows you to add/update/delete Panorama template stacks.
+
+This resource has some overlap with the `panos_panorama_template_stack_entry`
+resource.  If you want to use this resource with the other one, then make
+sure that your `panos_panorama_template_stack` spec does not define any
+`device` blocks, and just stays as "computed".
+
+This is the appropriate resource to use if `terraform destroy` should delete
+the template stack.
 
 ## Syntax
 
@@ -39,6 +47,10 @@ Properties:
 
 #### DefaultVsys
 
+The default virtual system template configuration
+pushed to firewalls with a single virtual system.  **Note** - you can only
+set this if there is at least one template in this stack.
+
 _Required_: No
 
 _Type_: String
@@ -46,6 +58,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+The stack's description.
 
 _Required_: No
 
@@ -55,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Devices
 
+List of serial numbers to include in this stack.
+
 _Required_: No
 
 _Type_: List of String
@@ -63,6 +79,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The stack's name.
+
 _Required_: Yes
 
 _Type_: String
@@ -70,6 +88,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Templates
+
+List of templates in this stack.
 
 _Required_: No
 

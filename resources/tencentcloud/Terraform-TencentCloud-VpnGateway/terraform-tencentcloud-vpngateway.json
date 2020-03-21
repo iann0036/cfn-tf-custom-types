@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::VpnGateway",
-    "description": "CloudFormation equivalent of tencentcloud_vpn_gateway",
+    "description": "Provides a resource to create a VPN gateway.\n\n-> **NOTE:** The prepaid VPN gateway do not support renew operation or delete operation with terraform.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "Bandwidth": {
-            "type": "number"
+            "type": "number",
+            "description": "The maximum public network output bandwidth of VPN gateway (unit: Mbps), the available values include: 5,10,20,50,100. Default is 5. When charge type is `PREPAID`, bandwidth degradation operation is unsupported."
         },
         "ChargeType": {
-            "type": "string"
+            "type": "string",
+            "description": "Charge Type of the VPN gateway, valid values are `PREPAID`, `POSTPAID_BY_HOUR` and default is `POSTPAID_BY_HOUR`."
         },
         "CreateTime": {
             "type": "string"
@@ -24,16 +26,19 @@
             "type": "boolean"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the VPN gateway. The length of character is limited to 1-60."
         },
         "NewPurchasePlan": {
             "type": "string"
         },
         "PrepaidPeriod": {
-            "type": "number"
+            "type": "number",
+            "description": "Period of instance to be prepaid. Valid values are 1, 2, 3, 4, 6, 7, 8, 9, 12, 24, 36 and unit is month. Caution: when this para and renew_flag para are valid, the request means to renew several months more pre-paid period. This para can only be set to take effect in create operation."
         },
         "PrepaidRenewFlag": {
-            "type": "string"
+            "type": "string",
+            "description": "Flag indicates whether to renew or not, valid values are `NOTIFY_AND_RENEW`, `NOTIFY_AND_AUTO_RENEW`, `NOT_NOTIFY_AND_NOT_RENEW`. This para can only be set to take effect in create operation."
         },
         "PublicIpAddress": {
             "type": "string"
@@ -62,16 +67,19 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A list of tags used to associate different resources."
         },
         "Type": {
             "type": "string"
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the VPC."
         },
         "Zone": {
-            "type": "string"
+            "type": "string",
+            "description": "Zone of the VPN gateway."
         }
     },
     "additionalProperties": false,

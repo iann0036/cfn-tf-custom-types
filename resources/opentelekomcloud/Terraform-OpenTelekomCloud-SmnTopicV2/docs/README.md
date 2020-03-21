@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::SmnTopicV2
 
-CloudFormation equivalent of opentelekomcloud_smn_topic_v2
+Manages a V2 topic resource within OpenTelekomCloud.
 
 ## Syntax
 
@@ -31,6 +31,9 @@ Properties:
 
 #### DisplayName
 
+Topic display name, which is presented as the
+name of the email sender in an email message.
+
 _Required_: No
 
 _Type_: String
@@ -38,6 +41,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the topic to be created.
 
 _Required_: Yes
 

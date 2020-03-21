@@ -1,6 +1,8 @@
 # Terraform::TencentCloud::DayuDdosPolicyCase
 
-CloudFormation equivalent of tencentcloud_dayu_ddos_policy_case
+Use this resource to create dayu DDoS policy case
+
+~> **NOTE:** when a dayu DDoS policy case is created, there will be a dayu DDoS policy created with the same prefix name in the same time. This resource only supports Anti-DDoS of type `bgp`, `bgp-multip` and `bgpip`. One Anti-DDoS resource can only has one DDoS policy case resource. When there is only one Anti-DDoS resource and one policy case, those two resource will be bind automatically.
 
 ## Syntax
 
@@ -74,6 +76,8 @@ Properties:
 
 #### AppProtocols
 
+App protocol set of the DDoS policy case.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -81,6 +85,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AppType
+
+App type of the DDoS policy case, and valid values are `WEB`, `GAME`, `APP` and `OTHER`.
 
 _Required_: Yes
 
@@ -90,6 +96,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HasAbroad
 
+Indicate whether the service involves overseas or not, valid values are `no` and `yes`.
+
 _Required_: Yes
 
 _Type_: String
@@ -97,6 +105,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HasInitiateTcp
+
+Indicate whether the service actively initiates TCP requests or not, valid values are `no` and `yes`.
 
 _Required_: Yes
 
@@ -106,6 +116,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HasInitiateUdp
 
+Indicate whether the actively initiate UDP requests or not, valid values are `no` and `yes`.
+
 _Required_: No
 
 _Type_: String
@@ -113,6 +125,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HasVpn
+
+Indicate whether the service involves VPN service or not, valid values are `no` and `yes`.
 
 _Required_: No
 
@@ -122,6 +136,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxTcpPackageLen
 
+The max length of TCP message package, valid value length should be greater than 0 and less than 1500. It should be greater than `min_tcp_package_len`.
+
 _Required_: No
 
 _Type_: String
@@ -129,6 +145,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MaxUdpPackageLen
+
+The max length of UDP message package, valid value length should be greater than 0 and less than 1500. It should be greater than `min_udp_package_len`.
 
 _Required_: No
 
@@ -138,6 +156,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MinTcpPackageLen
 
+The minimum length of TCP message package, valid value length should be greater than 0 and less than 1500.
+
 _Required_: No
 
 _Type_: String
@@ -145,6 +165,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MinUdpPackageLen
+
+The minimum length of UDP message package, valid value length should be greater than 0 and less than 1500.
 
 _Required_: No
 
@@ -154,6 +176,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name of the DDoS policy case. Length should between 1 and 64.
+
 _Required_: Yes
 
 _Type_: String
@@ -161,6 +185,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PeerTcpPort
+
+The port that actively initiates TCP requests, valid value is range from 1 to 65535.
 
 _Required_: No
 
@@ -170,6 +196,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PeerUdpPort
 
+The port that actively initiates UDP requests, valid value is range from 1 to 65535.
+
 _Required_: No
 
 _Type_: String
@@ -177,6 +205,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PlatformTypes
+
+Platform set of the DDoS policy case.
 
 _Required_: Yes
 
@@ -186,6 +216,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceType
 
+Type of the resource that the DDoS policy case works for, valid values are `bgpip`, `bgp` and `bgp-multip`.
+
 _Required_: Yes
 
 _Type_: String
@@ -193,6 +225,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TcpEndPort
+
+End port of the TCP service, valid value is range from 0 to 65535. It must be greater than `tcp_start_port`.
 
 _Required_: Yes
 
@@ -202,6 +236,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TcpFootprint
 
+The fixed signature of TCP protocol load, valid value length is range from 1 to 512.
+
 _Required_: No
 
 _Type_: String
@@ -209,6 +245,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TcpStartPort
+
+Start port of the TCP service, valid value is range from 0 to 65535.
 
 _Required_: Yes
 
@@ -218,6 +256,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UdpEndPort
 
+End port of the UDP service, valid value is range from 0 to 65535. It must be greater than `udp_start_port`.
+
 _Required_: Yes
 
 _Type_: String
@@ -225,6 +265,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UdpFootprint
+
+The fixed signature of TCP protocol load, valid value length is range from 1 to 512.
 
 _Required_: No
 
@@ -234,6 +276,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UdpStartPort
 
+Start port of the UDP service, valid value is range from 0 to 65535.
+
 _Required_: Yes
 
 _Type_: String
@@ -241,6 +285,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WebApiUrls
+
+Web API url set.
 
 _Required_: Yes
 

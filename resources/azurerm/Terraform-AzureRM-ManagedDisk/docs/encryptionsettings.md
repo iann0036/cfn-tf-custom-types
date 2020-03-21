@@ -28,6 +28,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Enabled
 
+Is Encryption enabled on this Managed Disk? Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: Boolean

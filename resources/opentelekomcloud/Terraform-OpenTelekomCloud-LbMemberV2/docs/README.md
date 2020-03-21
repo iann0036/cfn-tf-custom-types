@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::LbMemberV2
 
-CloudFormation equivalent of opentelekomcloud_lb_member_v2
+Manages an Enhanced LB member resource within OpenTelekomCloud.
 
 ## Syntax
 
@@ -47,6 +47,9 @@ Properties:
 
 #### Address
 
+The IP address of the member to receive traffic from
+the load balancer. Changing this creates a new member.
+
 _Required_: Yes
 
 _Type_: String
@@ -54,6 +57,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AdminStateUp
+
+The administrative state of the member.
+A valid value is true (UP) or false (DOWN).
 
 _Required_: No
 
@@ -63,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Human-readable name for the member.
+
 _Required_: No
 
 _Type_: String
@@ -71,6 +79,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PoolId
 
+The id of the pool that this member will be
+assigned to.
+
 _Required_: Yes
 
 _Type_: String
@@ -78,6 +89,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProtocolPort
+
+The port on which to listen for client traffic.
+Changing this creates a new member.
 
 _Required_: Yes
 
@@ -95,6 +109,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubnetId
 
+The subnet in which to access the member.
+
 _Required_: Yes
 
 _Type_: String
@@ -103,6 +119,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TenantId
 
+Required for admins. The UUID of the tenant who owns
+the member.  Only administrative users can specify a tenant UUID
+other than their own. Changing this creates a new member.
+
 _Required_: No
 
 _Type_: String
@@ -110,6 +130,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Weight
+
+A positive integer value that indicates the relative
+portion of traffic that this member should receive from the pool. For
+example, a member with a weight of 10 receives five times as much traffic
+as a member with a weight of 2.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::Vpc
 
-CloudFormation equivalent of tencentcloud_vpc
+Provide a resource to create a VPC.
 
 ## Syntax
 
@@ -39,6 +39,8 @@ Properties:
 
 #### CidrBlock
 
+A network address block which should be a subnet of the three internal network segments (10.0.0.0/16, 172.16.0.0/12 and 192.168.0.0/16).
+
 _Required_: Yes
 
 _Type_: String
@@ -46,6 +48,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DnsServers
+
+The DNS server list of the VPC. And you can specify 0 to 5 servers to this list.
 
 _Required_: No
 
@@ -55,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IsMulticast
 
+Indicates whether VPC multicast is enabled. The default value is 'true'.
+
 _Required_: No
 
 _Type_: Boolean
@@ -63,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the VPC.
+
 _Required_: Yes
 
 _Type_: String
@@ -70,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Tags of the VPC.
 
 _Required_: No
 

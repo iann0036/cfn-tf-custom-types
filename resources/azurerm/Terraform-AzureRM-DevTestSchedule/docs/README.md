@@ -1,6 +1,6 @@
 # Terraform::AzureRM::DevTestSchedule
 
-CloudFormation equivalent of azurerm_dev_test_schedule
+Manages automated startup and shutdown schedules for Azure Dev Test Lab.
 
 ## Syntax
 
@@ -58,6 +58,8 @@ Properties:
 
 #### LabName
 
+The name of the dev test lab. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -65,6 +67,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Location
+
+The location where the schedule is created. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -74,6 +78,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the dev test lab schedule. Valid value for name depends on the `task_type`. For instance for task_type `LabVmsStartupTask` the name needs to be `LabVmAutoStart`.
+
 _Required_: Yes
 
 _Type_: String
@@ -81,6 +87,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which to create the dev test lab schedule. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -90,6 +98,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Status
 
+The status of the notification. Possible values are `Enabled` and `Disabled`. Defaults to `Disabled`.
+
 _Required_: No
 
 _Type_: String
@@ -97,6 +107,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 
@@ -106,6 +118,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TaskType
 
+The task type of the schedule. Possible values include `LabVmsShutdownTask` and `LabVmAutoStart`.
+
 _Required_: Yes
 
 _Type_: String
@@ -113,6 +127,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TimeZoneId
+
+The time zone ID (e.g. Pacific Standard time).
 
 _Required_: Yes
 

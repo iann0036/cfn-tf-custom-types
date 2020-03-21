@@ -1,6 +1,6 @@
 # Terraform::NSXT::QosSwitchingProfile
 
-CloudFormation equivalent of nsxt_qos_switching_profile
+Provides a resource to configure Qos switching profile on NSX-T manager
 
 ## Syntax
 
@@ -49,6 +49,8 @@ Properties:
 
 #### ClassOfService
 
+Class of service.
+
 _Required_: No
 
 _Type_: Double
@@ -56,6 +58,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Description of this resource.
 
 _Required_: No
 
@@ -65,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+The display name of this resource. Defaults to ID if not set.
+
 _Required_: No
 
 _Type_: String
@@ -73,6 +79,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DscpPriority
 
+DSCP Priority (0-63).
+
 _Required_: No
 
 _Type_: Double
@@ -80,6 +88,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DscpTrusted
+
+Trust mode for DSCP (False by default).
 
 _Required_: No
 

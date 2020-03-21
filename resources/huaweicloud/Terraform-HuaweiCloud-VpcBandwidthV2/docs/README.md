@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::VpcBandwidthV2
 
-CloudFormation equivalent of huaweicloud_vpc_bandwidth_v2
+Manages a Shared Bandwidth resource within HuaweiCloud.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### EnterpriseProjectId
 
+The enterprise project id of the Shared Bandwidth. Changing this creates a new bandwidth.
+
 _Required_: No
 
 _Type_: String
@@ -43,6 +45,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the Shared Bandwidth.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Size
+
+The size of the Shared Bandwidth. The value ranges from 5 to 2000 G.
 
 _Required_: Yes
 

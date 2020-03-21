@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::NetworkProfile",
-    "description": "CloudFormation equivalent of azurerm_network_profile",
+    "description": "Manages a Network Profile.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ContainerNetworkInterface": {
@@ -8,7 +8,8 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the name of the IP Configuration."
                 },
                 "IpConfiguration": {
                     "type": "array",
@@ -46,10 +47,12 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the name of the IP Configuration."
                 },
                 "SubnetId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Reference to the subnet associated with the IP Configuration."
                 }
             },
             "required": [
@@ -71,13 +74,16 @@
             }
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Network Profile. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the resource. Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -97,7 +103,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "ContainerNetworkInterface": {
             "type": "array",

@@ -1,6 +1,6 @@
 # Terraform::FlexibleEngine::DdsInstanceV3
 
-CloudFormation equivalent of flexibleengine_dds_instance_v3
+Manages dds instance resource within FlexibleEngine
 
 ## Syntax
 
@@ -56,6 +56,9 @@ Properties:
 
 #### AvailabilityZone
 
+Specifies the ID of the availability zone. Changing
+this creates a new instance.
+
 _Required_: Yes
 
 _Type_: String
@@ -63,6 +66,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DiskEncryptionId
+
+Specifies the disk encryption ID of the instance.
+Changing this creates a new instance.
 
 _Required_: No
 
@@ -72,6 +78,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Mode
 
+Specifies the mode of the database instance. Changing this creates
+a new instance.
+
 _Required_: Yes
 
 _Type_: String
@@ -79,6 +88,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the DB instance name. The DB instance name of the same
+type is unique in the same tenant. Changing this creates a new instance.
 
 _Required_: Yes
 
@@ -88,6 +100,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Password
 
+Specifies the Administrator password of the database instance.
+Changing this creates a new instance.
+
 _Required_: Yes
 
 _Type_: String
@@ -95,6 +110,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+Specifies the region of the DDS instance. Changing this creates
+a new instance.
 
 _Required_: No
 
@@ -104,6 +122,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecurityGroupId
 
+Specifies the security group ID of the DDS instance.
+Changing this creates a new instance.
+
 _Required_: Yes
 
 _Type_: String
@@ -112,6 +133,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubnetId
 
+Specifies the subnet Network ID. Changing this creates a new instance.
+
 _Required_: Yes
 
 _Type_: String
@@ -119,6 +142,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+Specifies the VPC ID. For details about how to obtain this
+parameter value, see section "Virtual Private Cloud" in the Virtual Private
+Cloud API Reference. Changing this creates a new instance.
 
 _Required_: Yes
 

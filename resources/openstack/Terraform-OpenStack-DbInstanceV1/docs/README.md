@@ -1,6 +1,6 @@
 # Terraform::OpenStack::DbInstanceV1
 
-CloudFormation equivalent of openstack_db_instance_v1
+Manages a V1 DB instance resource within OpenStack.
 
 ## Syntax
 
@@ -51,6 +51,9 @@ Properties:
 
 #### ConfigurationId
 
+Configuration ID to be attached to the instance. Database instance
+will be rebooted when configuration is detached.
+
 _Required_: No
 
 _Type_: String
@@ -58,6 +61,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FlavorId
+
+The flavor ID of the desired flavor for the instance.
+Changing this creates new instance.
 
 _Required_: No
 
@@ -67,6 +73,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A unique name for the resource.
+
 _Required_: Yes
 
 _Type_: String
@@ -75,6 +83,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region in which to create the db instance. Changing this
+creates a new instance.
+
 _Required_: No
 
 _Type_: String
@@ -82,6 +93,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Size
+
+Specifies the volume size in GB. Changing this creates new instance.
 
 _Required_: Yes
 

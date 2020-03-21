@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::CoreInternetGateway",
-    "description": "CloudFormation equivalent of oci_core_internet_gateway",
+    "description": "This resource provides the Internet Gateway resource in Oracle Cloud Infrastructure Core service.\n\nCreates a new internet gateway for the specified VCN. For more information, see\n[Access to the Internet](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIGs.htm).\n\nFor the purposes of access control, you must provide the OCID of the compartment where you want the Internet\nGateway to reside. Notice that the internet gateway doesn't have to be in the same compartment as the VCN or\nother Networking Service components. If you're not sure which compartment to use, put the Internet\nGateway in the same compartment with the VCN. For more information about compartments and access control, see\n[Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For information about OCIDs, see\n[Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).\n\nYou may optionally specify a *display name* for the internet gateway, otherwise a default is provided. It\ndoes not have to be unique, and you can change it. Avoid entering confidential information.\n\nFor traffic to flow between a subnet and an internet gateway, you must create a route rule accordingly in\nthe subnet's route table (for example, 0.0.0.0/0 > internet gateway). See\n[UpdateRouteTable](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/UpdateRouteTable).\n\nYou must specify whether the internet gateway is enabled when you create it. If it's disabled, that means no\ntraffic will flow to/from the internet even if there's a route rule that enables that traffic. You can later\nuse [UpdateInternetGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/UpdateInternetGateway) to easily disable/enable\nthe gateway without changing the route rule.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,7 +26,8 @@
             "type": "string"
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The OCID of the compartment to contain the internet gateway."
         },
         "DefinedTags": {
             "type": "array",
@@ -46,13 +47,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Operations.CostCenter\": \"42\"}`."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information."
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "(Updatable) Whether the gateway is enabled upon creation."
         },
         "FreeformTags": {
             "type": "array",
@@ -72,7 +76,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
         },
         "State": {
             "type": "string"
@@ -81,7 +86,8 @@
             "type": "string"
         },
         "VcnId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the VCN the internet gateway is attached to."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

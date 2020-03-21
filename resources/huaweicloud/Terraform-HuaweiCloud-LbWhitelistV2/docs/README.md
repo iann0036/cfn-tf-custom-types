@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::LbWhitelistV2
 
-CloudFormation equivalent of huaweicloud_lb_whitelist_v2
+Manages a Load Balancer whitelist resource within HuaweiCloud.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### EnableWhitelist
 
+Specify whether to enable access control.
+
 _Required_: No
 
 _Type_: Boolean
@@ -44,6 +46,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ListenerId
+
+The Listener ID that the whitelist will be associated with. Changing this creates a new whitelist.
 
 _Required_: Yes
 
@@ -53,6 +57,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TenantId
 
+Required for admins. The UUID of the tenant who owns
+the whitelist. Only administrative users can specify a tenant UUID
+other than their own. Changing this creates a new whitelist.
+
 _Required_: No
 
 _Type_: String
@@ -60,6 +68,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Whitelist
+
+Specifies the IP addresses in the whitelist. Use commas(,) to separate
+the multiple IP addresses.
 
 _Required_: No
 

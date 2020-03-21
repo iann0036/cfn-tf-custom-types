@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::CosBucket",
-    "description": "CloudFormation equivalent of tencentcloud_cos_bucket",
+    "description": "Provides a COS resource to create a COS bucket and set its attributes.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "CorsRules": {
@@ -12,31 +12,36 @@
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Specifies which headers are allowed."
                 },
                 "AllowedMethods": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Specifies which methods are allowed. Can be GET, PUT, POST, DELETE or HEAD."
                 },
                 "AllowedOrigins": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Specifies which origins are allowed."
                 },
                 "ExposeHeaders": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Specifies expose header in the response."
                 },
                 "MaxAgeSeconds": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Specifies time in seconds that browser can cache the response for a preflight request."
                 }
             },
             "required": [
@@ -50,7 +55,8 @@
             "additionalProperties": false,
             "properties": {
                 "FilterPrefix": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Object key prefix identifying one or more objects to which the rule applies."
                 },
                 "Expiration": {
                     "type": "array",
@@ -76,10 +82,12 @@
             "additionalProperties": false,
             "properties": {
                 "ErrorDocument": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "An absolute path to the document to return in case of a 4XX error."
                 },
                 "IndexDocument": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "COS returns this index document when requests are made to the root domain or any of the subfolders."
                 }
             },
             "required": []
@@ -102,13 +110,16 @@
             "additionalProperties": false,
             "properties": {
                 "Date": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the date after which you want the corresponding action to take effect."
                 },
                 "Days": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Specifies the number of days after object creation when the specific rule action takes effect."
                 },
                 "StorageClass": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the storage class to which you want the object to transition. Available values include STANDARD, STANDARD_IA and ARCHIVE."
                 }
             },
             "required": [
@@ -122,10 +133,12 @@
             "type": "string"
         },
         "Acl": {
-            "type": "string"
+            "type": "string",
+            "description": "The canned ACL to apply. Available values include private, public-read, and public-read-write. Defaults to private."
         },
         "Bucket": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of a bucket to be created. Bucket format should be [custom name]-[appid], for example `mycos-1258798060`."
         },
         "Tags": {
             "type": "array",
@@ -145,7 +158,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "The tags of a bucket."
         },
         "CorsRules": {
             "type": "array",

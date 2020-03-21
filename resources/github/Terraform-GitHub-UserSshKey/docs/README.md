@@ -1,6 +1,8 @@
 # Terraform::GitHub::UserSshKey
 
-CloudFormation equivalent of github_user_ssh_key
+Provides a GitHub user's SSH key resource.
+
+This resource allows you to add/remove SSH keys from your user account.
 
 ## Syntax
 
@@ -31,6 +33,8 @@ Properties:
 
 #### Key
 
+The public SSH key to add to your GitHub account.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +42,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Title
+
+A descriptive name for the new key. e.g. `Personal MacBook Air`.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 # Terraform::BIGIP::LtmPersistenceProfileSrcaddr
 
-CloudFormation equivalent of bigip_ltm_persistence_profile_srcaddr
+Configures a source address persistence profile
 
 ## Syntax
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::TcaplusTable",
-    "description": "CloudFormation equivalent of tencentcloud_tcaplus_table",
+    "description": "Use this resource to create tcaplus table",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,46 +9,56 @@
             "type": "string"
         },
         "AppId": {
-            "type": "string"
+            "type": "string",
+            "description": "Application of this table belongs."
         },
         "CreateTime": {
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of this table."
         },
         "Error": {
             "type": "string"
         },
         "IdlId": {
-            "type": "string"
+            "type": "string",
+            "description": "Idl file for this table."
         },
         "ReservedReadQps": {
-            "type": "number"
+            "type": "number",
+            "description": "Table reserved read QPS."
         },
         "ReservedVolume": {
-            "type": "number"
+            "type": "number",
+            "description": "Table reserved capacity(GB)."
         },
         "ReservedWriteQps": {
-            "type": "number"
+            "type": "number",
+            "description": "Table reserved write QPS."
         },
         "Status": {
             "type": "string"
         },
         "TableIdlType": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of this table idl, Valid values are PROTO,TDR."
         },
         "TableName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of this table."
         },
         "TableSize": {
             "type": "number"
         },
         "TableType": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of this table, Valid values are GENERIC,LIST."
         },
         "ZoneId": {
-            "type": "string"
+            "type": "string",
+            "description": "Zone of this table belongs."
         }
     },
     "additionalProperties": false,

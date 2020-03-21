@@ -1,6 +1,6 @@
 # Terraform::OpenStack::BlockstorageVolumeV3
 
-CloudFormation equivalent of openstack_blockstorage_volume_v3
+Manages a V3 volume resource within OpenStack.
 
 ## Syntax
 
@@ -58,6 +58,9 @@ Properties:
 
 #### AvailabilityZone
 
+The availability zone for the volume.
+Changing this creates a new volume.
+
 _Required_: No
 
 _Type_: String
@@ -65,6 +68,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ConsistencyGroupId
+
+The consistency group to place the volume
+in.
 
 _Required_: No
 
@@ -74,6 +80,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+A description of the volume. Changing this updates
+the volume's description.
+
 _Required_: No
 
 _Type_: String
@@ -81,6 +90,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableOnlineResize
+
+When this option is set it allows extending
+attached volumes. Note: updating size of an attached volume requires Cinder
+support for version 3.42 and a compatible storage driver.
 
 _Required_: No
 
@@ -90,6 +103,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ImageId
 
+The image ID from which to create the volume.
+Changing this creates a new volume.
+
 _Required_: No
 
 _Type_: String
@@ -97,6 +113,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Metadata
+
+Metadata key/value pairs to associate with the volume.
+Changing this updates the existing volume metadata.
 
 _Required_: No
 
@@ -106,6 +125,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Multiattach
 
+Allow the volume to be attached to more than one Compute instance.
+
 _Required_: No
 
 _Type_: Boolean
@@ -113,6 +134,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+A unique name for the volume. Changing this updates the
+volume's name.
 
 _Required_: No
 
@@ -122,6 +146,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region in which to create the volume. If
+omitted, the `region` argument of the provider is used. Changing this
+creates a new volume.
+
 _Required_: No
 
 _Type_: String
@@ -129,6 +157,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Size
+
+The size of the volume to create (in gigabytes).
 
 _Required_: Yes
 
@@ -138,6 +168,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SnapshotId
 
+The snapshot ID from which to create the volume.
+Changing this creates a new volume.
+
 _Required_: No
 
 _Type_: String
@@ -145,6 +178,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SourceReplica
+
+The volume ID to replicate with.
 
 _Required_: No
 
@@ -154,6 +189,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SourceVolId
 
+The volume ID from which to create the volume.
+Changing this creates a new volume.
+
 _Required_: No
 
 _Type_: String
@@ -161,6 +199,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VolumeType
+
+The type of volume to create.
+Changing this creates a new volume.
 
 _Required_: No
 

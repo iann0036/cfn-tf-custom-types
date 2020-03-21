@@ -1,6 +1,15 @@
 # Terraform::Random::Password
 
-CloudFormation equivalent of random_password
+~> **Note:** Requires random provider version >= 2.2.0
+
+Identical to [random_string](string.html) with the exception that the
+result is treated as sensitive and, thus, _not_ displayed in console output.
+
+~> **Note:** All attributes including the generated password will be stored in
+the raw state as plain-text. [Read more about sensitive data in
+state](/docs/state/sensitive-data.html).
+
+This resource *does* use a cryptographic random number generator.
 
 ## Syntax
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::MarketplaceAgreement",
-    "description": "CloudFormation equivalent of azurerm_marketplace_agreement",
+    "description": "Allows accepting the Legal Terms for a Marketplace Image.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -32,16 +32,19 @@
             "type": "string"
         },
         "Offer": {
-            "type": "string"
+            "type": "string",
+            "description": "The Offer of the Marketplace Image. Changing this forces a new resource to be created."
         },
         "Plan": {
-            "type": "string"
+            "type": "string",
+            "description": "The Plan of the Marketplace Image. Changing this forces a new resource to be created."
         },
         "PrivacyPolicyLink": {
             "type": "string"
         },
         "Publisher": {
-            "type": "string"
+            "type": "string",
+            "description": "The Publisher of the Marketplace Image. Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

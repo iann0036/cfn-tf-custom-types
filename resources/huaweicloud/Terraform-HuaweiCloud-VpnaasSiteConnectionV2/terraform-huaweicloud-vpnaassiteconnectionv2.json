@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HuaweiCloud::VpnaasSiteConnectionV2",
-    "description": "CloudFormation equivalent of huaweicloud_vpnaas_site_connection_v2",
+    "description": "Manages a V2 IPSec site connection resource within HuaweiCloud.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Dpd": {
@@ -42,56 +42,72 @@
             "type": "string"
         },
         "AdminStateUp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "The administrative state of the resource. Can either be up(true) or down(false).\nChanging this updates the administrative state of the existing connection."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The human-readable description for the connection.\nChanging this updates the description of the existing connection."
         },
         "IkepolicyId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the IKE policy. Changing this creates a new connection."
         },
         "Initiator": {
-            "type": "string"
+            "type": "string",
+            "description": "A valid value is response-only or bi-directional. Default is bi-directional."
         },
         "IpsecpolicyId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the IPsec policy. Changing this creates a new connection."
         },
         "LocalEpGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID for the endpoint group that contains private subnets for the local side of the connection.\nYou must specify this parameter with the peer_ep_group_id parameter unless\nin backward- compatible mode where peer_cidrs is provided with a subnet_id for the VPN service.\nChanging this updates the existing connection."
         },
         "LocalId": {
-            "type": "string"
+            "type": "string",
+            "description": "An ID to be used instead of the external IP address for a virtual router used in traffic between instances on different networks in east-west traffic.\nMost often, local ID would be domain name, email address, etc.\nIf this is not configured then the external IP address will be used as the ID."
         },
         "Mtu": {
-            "type": "number"
+            "type": "number",
+            "description": "The maximum transmission unit (MTU) value to address fragmentation.\nMinimum value is 68 for IPv4, and 1280 for IPv6."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the connection. Changing this updates the name of\nthe existing connection."
         },
         "PeerAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "The peer gateway public IPv4 or IPv6 address or FQDN."
         },
         "PeerCidrs": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Unique list of valid peer private CIDRs in the form < net_address > / < prefix > ."
         },
         "PeerEpGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID for the endpoint group that contains private CIDRs in the form < net_address > / < prefix > for the peer side of the connection.\nYou must specify this parameter with the local_ep_group_id parameter unless in backward-compatible mode\nwhere peer_cidrs is provided with a subnet_id for the VPN service."
         },
         "PeerId": {
-            "type": "string"
+            "type": "string",
+            "description": "The peer router identity for authentication. A valid value is an IPv4 address, IPv6 address, e-mail address, key ID, or FQDN.\nTypically, this value matches the peer_address value.\nChanging this updates the existing policy."
         },
         "Psk": {
-            "type": "string"
+            "type": "string",
+            "description": "The pre-shared key. A valid value is any string."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the V2 Networking client.\nA Networking client is needed to create an IPSec site connection. If omitted, the\n`region` argument of the provider is used. Changing this creates a new\nsite connection."
         },
         "TenantId": {
-            "type": "string"
+            "type": "string",
+            "description": "The owner of the connection. Required if admin wants to\ncreate a connection for another project. Changing this creates a new connection."
         },
         "ValueSpecs": {
             "type": "array",
@@ -111,10 +127,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Map of additional options."
         },
         "VpnserviceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the VPN service. Changing this creates a new connection."
         },
         "Dpd": {
             "type": "array",

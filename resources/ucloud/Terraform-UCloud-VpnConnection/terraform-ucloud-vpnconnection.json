@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::UCloud::VpnConnection",
-    "description": "CloudFormation equivalent of ucloud_vpn_connection",
+    "description": "Provides a IPSec VPN Gateway Connection resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "IkeConfig": {
@@ -91,22 +91,28 @@
             "type": "string"
         },
         "CustomerGatewayId": {
-            "type": "string"
+            "type": "string",
+            "description": "The grade of the VPN Gateway."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the VPN Gateway Connection which contains 1-63 characters and only support Chinese, English, numbers and special characters: `-_.`. If not specified, terraform will auto-generate a name beginning with `tf-vpn-connection-`."
         },
         "Remark": {
-            "type": "string"
+            "type": "string",
+            "description": "The remarks of the VPN Gateway Connection. (Default: `\"\"`)."
         },
         "Tag": {
-            "type": "string"
+            "type": "string",
+            "description": "A tag assigned to VPN Gateway Connection, which contains at most 63 characters and only support Chinese, English, numbers, '-', '_', and '.'. If it is not filled in or a empty string is filled in, then default tag will be assigned. (Default: `Default`)."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of VPC linked to the VPN Gateway Connection."
         },
         "VpnGatewayId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of  the VPN Customer Gateway."
         },
         "IkeConfig": {
             "type": "array",

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::RouteTable",
-    "description": "CloudFormation equivalent of azurerm_route_table",
+    "description": "Manages a Route Table",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,16 +29,20 @@
             "type": "string"
         },
         "DisableBgpRoutePropagation": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean flag which controls propagation of routes learned by BGP on that route table. True means disable."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the route table. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the route table. Changing this forces a new resource to be created."
         },
         "Route": {
             "type": "array",
@@ -60,7 +64,8 @@
                         "type": "string"
                     }
                 }
-            }
+            },
+            "description": "[List of objects](/docs/configuration/attr-as-blocks.html) representing routes. Each object accepts the arguments documented below."
         },
         "Subnets": {
             "type": "array",
@@ -87,7 +92,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

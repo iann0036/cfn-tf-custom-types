@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Vault::LdapAuthBackendUser",
-    "description": "CloudFormation equivalent of vault_ldap_auth_backend_user",
+    "description": "Provides a resource to create a user in an [LDAP auth backend within Vault](https://www.vaultproject.io/docs/auth/ldap.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,24 +9,28 @@
             "type": "string"
         },
         "Backend": {
-            "type": "string"
+            "type": "string",
+            "description": "Path to the authentication backend."
         },
         "Groups": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Override LDAP groups which should be granted to user."
         },
         "Policies": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Policies which should be granted to user."
         },
         "Username": {
-            "type": "string"
+            "type": "string",
+            "description": "The LDAP username."
         }
     },
     "additionalProperties": false,

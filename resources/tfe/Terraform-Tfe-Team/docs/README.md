@@ -1,6 +1,6 @@
 # Terraform::Tfe::Team
 
-CloudFormation equivalent of tfe_team
+Manages teams.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### Name
 
+Name of the team.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Organization
+
+Name of the organization.
 
 _Required_: Yes
 

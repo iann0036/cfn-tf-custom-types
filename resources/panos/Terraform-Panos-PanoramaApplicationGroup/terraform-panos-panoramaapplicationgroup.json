@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::PanoramaApplicationGroup",
-    "description": "CloudFormation equivalent of panos_panorama_application_group",
+    "description": "This resource allows you to add/update/delete Panorama application groups.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -13,13 +13,16 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of applications in this group."
         },
         "DeviceGroup": {
-            "type": "string"
+            "type": "string",
+            "description": "The group's device group (default: `shared`)."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The group's name."
         }
     },
     "additionalProperties": false,

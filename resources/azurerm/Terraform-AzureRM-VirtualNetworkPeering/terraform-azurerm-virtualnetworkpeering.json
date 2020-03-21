@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::VirtualNetworkPeering",
-    "description": "CloudFormation equivalent of azurerm_virtual_network_peering",
+    "description": "Manages a virtual network peering which allows resources to access other\nresources in the linked virtual network.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,28 +29,36 @@
             "type": "string"
         },
         "AllowForwardedTraffic": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Controls if forwarded traffic from  VMs\nin the remote virtual network is allowed. Defaults to false."
         },
         "AllowGatewayTransit": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Controls gatewayLinks can be used in the\nremote virtual network\u2019s link to the local virtual network."
         },
         "AllowVirtualNetworkAccess": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Controls if the VMs in the remote\nvirtual network can access VMs in the local virtual network. Defaults to\ntrue."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the virtual network peering. Changing this\nforces a new resource to be created."
         },
         "RemoteVirtualNetworkId": {
-            "type": "string"
+            "type": "string",
+            "description": "The full Azure resource ID of the\nremote virtual network.  Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to\ncreate the virtual network. Changing this forces a new resource to be\ncreated."
         },
         "UseRemoteGateways": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Controls if remote gateways can be used on\nthe local virtual network. If the flag is set to `true`, and\n`allow_gateway_transit` on the remote peering is also `true`, virtual network will\nuse gateways of remote virtual network for transit. Only one peering can\nhave this flag set to `true`. This flag cannot be set if virtual network\nalready has a gateway. Defaults to `false`."
         },
         "VirtualNetworkName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the virtual network. Changing\nthis forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

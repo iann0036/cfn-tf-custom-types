@@ -1,6 +1,8 @@
 # Terraform::Alicloud::EmrCluster
 
-CloudFormation equivalent of alicloud_emr_cluster
+Provides a EMR Cluster resource. With this you can create, read, and release  EMR Cluster. 
+
+-> **NOTE:** Available in 1.57.0+.
 
 ## Syntax
 
@@ -75,6 +77,8 @@ Properties:
 
 #### ChargeType
 
+Charge Type for this cluster. Supported value: PostPaid or PrePaid. Default value: PostPaid.
+
 _Required_: No
 
 _Type_: String
@@ -82,6 +86,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClusterType
+
+EMR Cluster Type, e.g. HADOOP, KAFKA, DRUID, GATEWAY etc. You can find all valid EMR cluster type in emr web console. Supported 'GATEWAY' available in 1.61.0+.
 
 _Required_: Yes
 
@@ -106,6 +112,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EmrVer
+
+EMR Version, e.g. EMR-3.22.0. You can find the all valid EMR Version in emr web console.
 
 _Required_: Yes
 
@@ -147,6 +155,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of emr cluster. The name length must be less than 64. Supported characters: chinese character, english character, number, "-", "_".
+
 _Required_: Yes
 
 _Type_: String
@@ -187,6 +197,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -218,6 +230,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneId
+
+Zone ID, e.g. cn-huhehaote-a.
 
 _Required_: Yes
 

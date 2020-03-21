@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::HpcCache",
-    "description": "CloudFormation equivalent of azurerm_hpc_cache",
+    "description": "Manages a HPC Cache.\n\n~> **Note**: During the first several months of the GA release, a request must be made to the Azure HPC Cache team to add your subscription to the access list before it can be used to create a cache instance. Fill out [this form](https://aka.ms/onboard-hpc-cache) to request access.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,22 +26,28 @@
             "type": "string"
         },
         "CacheSizeInGb": {
-            "type": "number"
+            "type": "number",
+            "description": "The size of the HPC Cache, in GB. Possible values are `3072`, `6144`, `12288`, `24576`, and `49152`. Changing this forces a new resource to be created."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure Region where the HPC Cache should be created. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the HPC Cache. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Resource Group in which to create the HPC Cache. Changing this forces a new resource to be created."
         },
         "SkuName": {
-            "type": "string"
+            "type": "string",
+            "description": "The SKU of HPC Cache to use. Possible values are `Standard_2G`, `Standard_4G` and `Standard_8G`. Changing this forces a new resource to be created."
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Subnet for the HPC Cache. Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

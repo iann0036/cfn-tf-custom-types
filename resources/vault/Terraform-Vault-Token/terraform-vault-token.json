@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Vault::Token",
-    "description": "CloudFormation equivalent of vault_token",
+    "description": "Provides a resource to generate a vault token with its options. The token renewing is supported through optional\narguments.\n\nThe token used by Terraform will require update access to the `auth/token/lookup-accessor`\npath to create tokens and the `auth/token/revoke-accessor` path in Vault to\ndestroy a token.\n\n```hcl\npath \"auth/token/lookup-accessor\" {\n  capabilities = [\"update\"]\n}\n\npath \"auth/token/revoke-accessor\" {\n  capabilities = [\"update\"]\n}\n```",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,10 +12,12 @@
             "type": "string"
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "String containing the token display name."
         },
         "ExplicitMaxTtl": {
-            "type": "string"
+            "type": "string",
+            "description": "The explicit max TTL of this token."
         },
         "LeaseDuration": {
             "type": "number"
@@ -24,38 +26,48 @@
             "type": "string"
         },
         "NoDefaultPolicy": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Flag to not attach the default policy to this token."
         },
         "NoParent": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Flag to create a token without parent."
         },
         "NumUses": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of allowed uses of this token."
         },
         "Period": {
-            "type": "string"
+            "type": "string",
+            "description": "The period of this token."
         },
         "Policies": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of policies to attach to this token."
         },
         "RenewIncrement": {
-            "type": "number"
+            "type": "number",
+            "description": "The renew increment."
         },
         "RenewMinLease": {
-            "type": "number"
+            "type": "number",
+            "description": "The minimal lease to renew this token."
         },
         "Renewable": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Flag to allow to renew this token."
         },
         "RoleName": {
-            "type": "string"
+            "type": "string",
+            "description": "The token role name."
         },
         "Ttl": {
-            "type": "string"
+            "type": "string",
+            "description": "The TTL period of this token."
         },
         "WrappedToken": {
             "type": "string"

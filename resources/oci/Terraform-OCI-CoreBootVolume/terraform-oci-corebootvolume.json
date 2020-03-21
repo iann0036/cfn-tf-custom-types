@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::CoreBootVolume",
-    "description": "CloudFormation equivalent of oci_core_boot_volume",
+    "description": "This resource provides the Boot Volume resource in Oracle Cloud Infrastructure Core service.\n\nCreates a new boot volume in the specified compartment from an existing boot volume or a boot volume backup.\nFor general information about boot volumes, see [Boot Volumes](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/bootvolumes.htm).\nYou may optionally specify a *display name* for the volume, which is simply a friendly name or\ndescription. It does not have to be unique, and you can change it. Avoid entering confidential information.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "SourceDetails": {
@@ -42,13 +42,16 @@
             "type": "string"
         },
         "AvailabilityDomain": {
-            "type": "string"
+            "type": "string",
+            "description": "The availability domain of the boot volume.  Example: `Uocm:PHX-AD-1`."
         },
         "BackupPolicyId": {
-            "type": "string"
+            "type": "string",
+            "description": "If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned."
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The OCID of the compartment that contains the boot volume."
         },
         "DefinedTags": {
             "type": "array",
@@ -68,10 +71,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Operations.CostCenter\": \"42\"}`."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information."
         },
         "FreeformTags": {
             "type": "array",
@@ -91,7 +96,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
         },
         "ImageId": {
             "type": "string"
@@ -100,10 +106,12 @@
             "type": "boolean"
         },
         "KmsKeyId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The OCID of the Key Management key to assign as the master encryption key for the boot volume."
         },
         "SizeInGbs": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The size of the volume in GBs."
         },
         "SizeInMbs": {
             "type": "string"
@@ -138,7 +146,8 @@
             "type": "string"
         },
         "VpusPerGb": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Elastic Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeelasticperformance.htm) for more information."
         },
         "SourceDetails": {
             "type": "array",

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::CoreIpsecConnectionTunnelManagement",
-    "description": "CloudFormation equivalent of oci_core_ipsec_connection_tunnel_management",
+    "description": "This resource provides the Ip Sec Connection Tunnel Management resource in Oracle Cloud Infrastructure Core service.\n\nUpdates the specified tunnel. This operation lets you change tunnel attributes such as the\nrouting type (BGP dynamic routing or static routing). Here are some important notes:\n\n\t* If you change the tunnel's routing type or BGP session configuration, the tunnel will go\n\tdown while it's reprovisioned.\n\n\t* If you want to switch the tunnel's `routing` from `STATIC` to `BGP`, make sure the tunnel's\n\tBGP session configuration attributes have been set ([bgpSessionConfig](#/en/iaas/20160918/datatypes/BgpSessionInfo)).\n\n\t* If you want to switch the tunnel's `routing` from `BGP` to `STATIC`, make sure the\n\t[IPSecConnection](#/en/iaas/20160918/IPSecConnection/) already has at least one valid CIDR\n\tstatic route.\n\n** IMPORTANT **\nDestroying `the oci_core_ipsec_connection_tunnel_management` leaves the resource in its existing state. It will not destroy the tunnel and it will not return the tunnel to its default values.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "BgpSessionInfo": {
@@ -48,19 +48,24 @@
             "type": "string"
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.\n* `ike_version` - (Optional) Internet Key Exchange protocol version.\n* `shared_secret` - (Optional) The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`."
         },
         "IkeVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "Internet Key Exchange protocol version.\n* `shared_secret` - (Optional) The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`."
         },
         "IpsecId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the IPSec connection."
         },
         "Routing": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of routing to use for this tunnel (either BGP dynamic routing or static routing)."
         },
         "SharedSecret": {
-            "type": "string"
+            "type": "string",
+            "description": "The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`."
         },
         "State": {
             "type": "string"
@@ -75,7 +80,8 @@
             "type": "string"
         },
         "TunnelId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the IPSec connection's tunnel."
         },
         "VpnIp": {
             "type": "string"

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::RabbitMQ::User",
-    "description": "CloudFormation equivalent of rabbitmq_user",
+    "description": "The ``rabbitmq_user`` resource creates and manages a user.\n\n~> **Note:** All arguments including username and password will be stored in the raw state as plain-text.\n[Read more about sensitive data in state](/docs/state/sensitive-data.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,17 +9,20 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the user."
         },
         "Password": {
-            "type": "string"
+            "type": "string",
+            "description": "The password of the user. The value of this argument\nis plain-text so make sure to secure where this is defined."
         },
         "Tags": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Which permission model to apply to the user. Valid\noptions are: management, policymaker, monitoring, and administrator."
         }
     },
     "additionalProperties": false,

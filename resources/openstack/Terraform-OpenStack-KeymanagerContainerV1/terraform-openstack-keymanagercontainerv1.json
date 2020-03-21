@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::KeymanagerContainerV1",
-    "description": "CloudFormation equivalent of openstack_keymanager_container_v1",
+    "description": "Manages a V1 Barbican container resource within OpenStack.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Acl": {
@@ -22,10 +22,12 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the secret reference. The reference names must correspond the container type, more details are available [here](https://docs.openstack.org/barbican/stein/api/reference/containers.html)."
                 },
                 "SecretRef": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The secret reference / where to find the secret, URL."
                 }
             },
             "required": [
@@ -97,16 +99,19 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Human-readable name for the Container. Does not have\nto be unique."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the V1 KeyManager client.\nA KeyManager client is needed to create a container. If omitted, the\n`region` argument of the provider is used. Changing this creates a new\nV1 container."
         },
         "Status": {
             "type": "string"
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "Used to indicate the type of container. Must be one of `generic`, `rsa` or `certificate`."
         },
         "UpdatedAt": {
             "type": "string"

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::Iothub",
-    "description": "CloudFormation equivalent of azurerm_iothub",
+    "description": "Manages an IotHub\n\n~> **NOTE:** Endpoints can be defined either directly on the `azurerm_iothub` resource, or using the `azurerm_iothub_endpoint_*` resources - but the two ways of defining the endpoints cannot be used together. If both are used against the same IoTHub, spurious changes will occur. Also, defining a `azurerm_iothub_endpoint_*` resource and another endpoint of a different type directly on the `azurerm_iothub` resource is not supported.\n\n~> **NOTE:** Routes can be defined either directly on the `azurerm_iothub` resource, or using the `azurerm_iothub_route` resource - but the two cannot be used together. If both are used against the same IoTHub, spurious changes will occur.\n\n~> **NOTE:** Fallback route can be defined either directly on the `azurerm_iothub` resource, or using the `azurerm_iothub_fallback_route` resource - but the two cannot be used together. If both are used against the same IoTHub, spurious changes will occur.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Endpoint": {
@@ -8,28 +8,36 @@
             "additionalProperties": false,
             "properties": {
                 "BatchFrequencyInSeconds": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Time interval at which blobs are written to storage. Value should be between 60 and 720 seconds. Default value is 300 seconds. This attribute is mandatory for endpoint type `AzureIotHub.StorageContainer`."
                 },
                 "ConnectionString": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The connection string for the endpoint."
                 },
                 "ContainerName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of storage container in the storage account. This attribute is mandatory for endpoint type `AzureIotHub.StorageContainer`."
                 },
                 "Encoding": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Encoding that is used to serialize messages to blobs. Supported values are 'avro' and 'avrodeflate'. Default value is 'avro'. This attribute is mandatory for endpoint type `AzureIotHub.StorageContainer`."
                 },
                 "FileNameFormat": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "File name format for the blob. Default format is ``{iothub}/{partition}/{YYYY}/{MM}/{DD}/{HH}/{mm}``. All parameters are mandatory but can be reordered. This attribute is mandatory for endpoint type `AzureIotHub.StorageContainer`."
                 },
                 "MaxChunkSizeInBytes": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Maximum number of bytes for each blob written to storage. Value should be between 10485760(10MB) and 524288000(500MB). Default value is 314572800(300MB). This attribute is mandatory for endpoint type `AzureIotHub.StorageContainer`."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the endpoint. The name must be unique across endpoint types. The following names are reserved:  `events`, `operationsMonitoringEvents`, `fileNotifications` and `$default`."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The type of the endpoint. Possible values are `AzureIotHub.StorageContainer`, `AzureIotHub.ServiceBusQueue`, `AzureIotHub.ServiceBusTopic` or `AzureIotHub.EventHub`."
                 }
             },
             "required": [
@@ -43,20 +51,24 @@
             "additionalProperties": false,
             "properties": {
                 "Condition": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The condition that is evaluated to apply the routing rule. If no condition is provided, it evaluates to true by default. For grammar, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-query-language."
                 },
                 "Enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Used to specify whether the fallback route is enabled."
                 },
                 "EndpointNames": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "The endpoints to which messages that satisfy the condition are routed. Currently only 1 endpoint is allowed."
                 },
                 "Source": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The source that the routing rule is to be applied to, such as `DeviceMessages`. Possible values include: `RoutingSourceInvalid`, `RoutingSourceDeviceMessages`, `RoutingSourceTwinChangeEvents`, `RoutingSourceDeviceLifecycleEvents`, `RoutingSourceDeviceJobLifecycleEvents`."
                 }
             },
             "required": []
@@ -66,25 +78,32 @@
             "additionalProperties": false,
             "properties": {
                 "ConnectionString": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The connection string for the Azure Storage account to which files are uploaded."
                 },
                 "ContainerName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the root container where you upload files. The container need not exist but should be creatable using the connection_string specified."
                 },
                 "DefaultTtl": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The period of time for which a file upload notification message is available to consume before it is expired by the IoT hub, specified as an [ISO 8601 timespan duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). This value must be between 1 minute and 48 hours, and evaluates to 'PT1H' by default."
                 },
                 "LockDuration": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The lock duration for the file upload notifications queue, specified as an [ISO 8601 timespan duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). This value must be between 5 and 300 seconds, and evaluates to 'PT1M' by default."
                 },
                 "MaxDeliveryCount": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The number of times the IoT hub attempts to deliver a file upload notification message. It evaluates to 10 by default."
                 },
                 "Notifications": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Used to specify whether file notifications are sent to IoT Hub on upload. It evaluates to false by default."
                 },
                 "SasTtl": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The period of time for which the SAS URI generated by IoT Hub for file upload is valid, specified as an [ISO 8601 timespan duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). This value must be between 1 minute and 24 hours, and evaluates to 'PT1H' by default."
                 }
             },
             "required": [
@@ -97,13 +116,16 @@
             "additionalProperties": false,
             "properties": {
                 "Action": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The desired action for requests captured by this rule. Possible values are  `Accept`, `Reject`."
                 },
                 "IpMask": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The IP address range in CIDR notation for the rule."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the filter."
                 }
             },
             "required": [
@@ -117,23 +139,28 @@
             "additionalProperties": false,
             "properties": {
                 "Condition": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The condition that is evaluated to apply the routing rule. If no condition is provided, it evaluates to true by default. For grammar, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-query-language."
                 },
                 "Enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Used to specify whether a route is enabled."
                 },
                 "EndpointNames": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "The list of endpoints to which messages that satisfy the condition are routed."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the route."
                 },
                 "Source": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The source that the routing rule is to be applied to, such as `DeviceMessages`. Possible values include: `RoutingSourceInvalid`, `RoutingSourceDeviceMessages`, `RoutingSourceTwinChangeEvents`, `RoutingSourceDeviceLifecycleEvents`, `RoutingSourceDeviceJobLifecycleEvents`."
                 }
             },
             "required": [
@@ -148,10 +175,12 @@
             "additionalProperties": false,
             "properties": {
                 "Capacity": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The number of provisioned IoT Hub units."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the sku. Possible values are `B1`, `B2`, `B3`, `F1`, `S1`, `S2`, and `S3`."
                 }
             },
             "required": [
@@ -197,22 +226,27 @@
             "type": "string"
         },
         "EventHubPartitionCount": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of device-to-cloud partitions used by backing event hubs. Must be between `2` and `128`."
         },
         "EventHubRetentionInDays": {
-            "type": "number"
+            "type": "number",
+            "description": "The event hub retention to use in days. Must be between `1` and `7`."
         },
         "Hostname": {
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource has to be createc. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the IotHub resource. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group under which the IotHub resource has to be created. Changing this forces a new resource to be created."
         },
         "SharedAccessPolicy": {
             "type": "array",
@@ -254,7 +288,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Type": {
             "type": "string"

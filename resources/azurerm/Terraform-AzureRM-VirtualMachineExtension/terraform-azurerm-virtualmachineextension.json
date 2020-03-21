@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::VirtualMachineExtension",
-    "description": "CloudFormation equivalent of azurerm_virtual_machine_extension",
+    "description": "Manages a Virtual Machine Extension to provide post deployment configuration\nand run automated tasks.\n\n~> **NOTE:** Custom Script Extensions for Linux & Windows require that the `commandToExecute` returns a `0` exit code to be classified as successfully deployed. You can achieve this by appending `exit 0` to the end of your `commandToExecute`.\n\n-> **NOTE:** Custom Script Extensions require that the Azure Virtual Machine Guest Agent is running on the Virtual Machine.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,19 +29,24 @@
             "type": "string"
         },
         "AutoUpgradeMinorVersion": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if the platform deploys\nthe latest minor version update to the `type_handler_version` specified."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the virtual machine extension peering. Changing\nthis forces a new resource to be created."
         },
         "ProtectedSettings": {
-            "type": "string"
+            "type": "string",
+            "description": "The protected_settings passed to the\nextension, like settings, these are specified as a JSON object in a string."
         },
         "Publisher": {
-            "type": "string"
+            "type": "string",
+            "description": "The publisher of the extension, available publishers\ncan be found by using the Azure CLI."
         },
         "Settings": {
-            "type": "string"
+            "type": "string",
+            "description": "The settings passed to the extension, these are\nspecified as a JSON object in a string."
         },
         "Tags": {
             "type": "array",
@@ -61,16 +66,20 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of extension, available types for a publisher can\nbe found using the Azure CLI."
         },
         "TypeHandlerVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the version of the extension to\nuse, available versions can be found using the Azure CLI."
         },
         "VirtualMachineId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Virtual Machine. Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

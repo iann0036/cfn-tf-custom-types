@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HCloud::VolumeAttachment",
-    "description": "CloudFormation equivalent of hcloud_volume_attachment",
+    "description": "Provides a Hetzner Cloud Volume attachment to attach a Volume to a Hetzner Cloud Server. Deleting a Volume Attachment will detach the Volume from the Server.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "Automount": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Automount the volume upon attaching it."
         },
         "ServerId": {
-            "type": "number"
+            "type": "number",
+            "description": "Server to attach the Volume to.\n- `automount` - (Optional, bool) Automount the volume upon attaching it."
         },
         "VolumeId": {
-            "type": "number"
+            "type": "number",
+            "description": "ID of the Volume.\n- `server_id` - (Required, int) Server to attach the Volume to.\n- `automount` - (Optional, bool) Automount the volume upon attaching it."
         }
     },
     "additionalProperties": false,

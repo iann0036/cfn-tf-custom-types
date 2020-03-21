@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::VCD::CatalogItem",
-    "description": "CloudFormation equivalent of vcd_catalog_item",
+    "description": "Provides a vCloud Director catalog item resource. This can be used to upload OVA to catalog and delete it.\n\nSupported in provider *v2.0+*",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "Catalog": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the catalog where to upload OVA file."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "- Description of item."
         },
         "Metadata": {
             "type": "array",
@@ -32,22 +34,28 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Key value map of metadata to assign."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Item name in catalog."
         },
         "Org": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of organization to use, optional if defined at provider level. Useful when connected as sysadmin working across different organisations."
         },
         "OvaPath": {
-            "type": "string"
+            "type": "string",
+            "description": "- Absolute or relative path to file to upload."
         },
         "ShowUploadProgress": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "- Default false. Allows to see upload progress."
         },
         "UploadPieceSize": {
-            "type": "number"
+            "type": "number",
+            "description": "- Size in MB for splitting upload size. It can possibly impact upload performance. Default 1MB."
         }
     },
     "additionalProperties": false,

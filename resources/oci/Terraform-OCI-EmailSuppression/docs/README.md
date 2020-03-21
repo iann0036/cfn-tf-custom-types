@@ -1,6 +1,11 @@
 # Terraform::OCI::EmailSuppression
 
-CloudFormation equivalent of oci_email_suppression
+This resource provides the Suppression resource in Oracle Cloud Infrastructure Email service.
+
+Adds recipient email addresses to the suppression list for a tenancy.
+Addresses added to the suppression list via the API are denoted as
+"MANUAL" in the `reason` field. *Note:* All email addresses added to the
+suppression list are normalized to include only lowercase letters.
 
 ## Syntax
 
@@ -33,6 +38,8 @@ Properties:
 
 #### CompartmentId
 
+The OCID of the compartment to contain the suppression. Since suppressions are at the customer level, this must be the tenancy OCID.
+
 _Required_: Yes
 
 _Type_: String
@@ -40,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EmailAddress
+
+The recipient email address of the suppression.
 
 _Required_: Yes
 

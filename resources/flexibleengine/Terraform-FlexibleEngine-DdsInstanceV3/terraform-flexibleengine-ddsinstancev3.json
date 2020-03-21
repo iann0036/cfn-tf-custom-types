@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::FlexibleEngine::DdsInstanceV3",
-    "description": "CloudFormation equivalent of flexibleengine_dds_instance_v3",
+    "description": "Manages dds instance resource within FlexibleEngine",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "BackupStrategy": {
@@ -24,13 +24,16 @@
             "additionalProperties": false,
             "properties": {
                 "StorageEngine": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the storage engine of the DB instance. Only wiredTiger is supported now."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the DB engine. Only DDS-Community is supported now."
                 },
                 "Version": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the DB instance version. Only 3.4 is supported now."
                 }
             },
             "required": [
@@ -43,19 +46,24 @@
             "additionalProperties": false,
             "properties": {
                 "Num": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Specifies the node quantity. Valid value:\n* the number of mongos ranges from 2 to 12.\n* the number of shard ranges from 2 to 12.\n* config: the value is 1.\n* replica: the value is 1."
                 },
                 "Size": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Specifies the disk size. The value must be a multiple of 10. The unit is GB. This parameter\nis mandatory for nodes except mongos and invalid for mongos."
                 },
                 "SpecCode": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the resource specification code. Valid values:."
                 },
                 "Storage": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the disk type. Valid value: ULTRAHIGH which indicates the type SSD."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the node type. Valid value: mongos, shard, config, replica."
                 }
             },
             "required": [
@@ -84,34 +92,43 @@
             "type": "string"
         },
         "AvailabilityZone": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the ID of the availability zone. Changing\nthis creates a new instance."
         },
         "DbUsername": {
             "type": "string"
         },
         "DiskEncryptionId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the disk encryption ID of the instance.\nChanging this creates a new instance."
         },
         "Mode": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the mode of the database instance. Changing this creates\na new instance."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the DB instance name. The DB instance name of the same\ntype is unique in the same tenant. Changing this creates a new instance."
         },
         "Password": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the Administrator password of the database instance.\nChanging this creates a new instance."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the region of the DDS instance. Changing this creates\na new instance."
         },
         "SecurityGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the security group ID of the DDS instance.\nChanging this creates a new instance."
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the subnet Network ID. Changing this creates a new instance."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the VPC ID. For details about how to obtain this\nparameter value, see section \"Virtual Private Cloud\" in the Virtual Private\nCloud API Reference. Changing this creates a new instance."
         },
         "BackupStrategy": {
             "type": "array",

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::DbConfigurationV1",
-    "description": "CloudFormation equivalent of openstack_db_configuration_v1",
+    "description": "Manages a V1 DB configuration resource within OpenStack.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Configuration": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Configuration parameter name. Changing this creates a new resource."
                 },
                 "Value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Configuration parameter value. Changing this creates a new resource."
                 }
             },
             "required": [
@@ -24,10 +26,12 @@
             "additionalProperties": false,
             "properties": {
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Database engine type to be used with this configuration. Changing this creates a new resource."
                 },
                 "Version": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Version of database engine type to be used with this configuration. Changing this creates a new resource."
                 }
             },
             "required": [
@@ -55,13 +59,16 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the resource."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique name for the resource."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to create the db instance. Changing this\ncreates a new instance."
         },
         "Configuration": {
             "type": "array",

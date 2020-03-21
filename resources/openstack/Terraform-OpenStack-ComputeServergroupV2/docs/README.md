@@ -1,6 +1,6 @@
 # Terraform::OpenStack::ComputeServergroupV2
 
-CloudFormation equivalent of openstack_compute_servergroup_v2
+Manages a V2 Server Group resource within OpenStack.
 
 ## Syntax
 
@@ -37,6 +37,9 @@ Properties:
 
 #### Name
 
+A unique name for the server group. Changing this creates
+a new server group.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +47,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Policies
+
+The set of policies for the server group. All policies
+are mutually exclusive. See the Policies section for more information.
+Changing this creates a new server group.
 
 _Required_: No
 
@@ -53,6 +60,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region in which to obtain the V2 Compute client.
+If omitted, the `region` argument of the provider is used. Changing
+this creates a new server group.
+
 _Required_: No
 
 _Type_: String
@@ -60,6 +71,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ValueSpecs
+
+Map of additional options.
 
 _Required_: No
 

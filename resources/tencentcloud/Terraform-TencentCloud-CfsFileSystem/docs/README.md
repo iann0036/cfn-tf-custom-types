@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::CfsFileSystem
 
-CloudFormation equivalent of tencentcloud_cfs_file_system
+Provides a resource to create a cloud file system(CFS).
 
 ## Syntax
 
@@ -41,6 +41,8 @@ Properties:
 
 #### AccessGroupId
 
+ID of a access group.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +50,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AvailabilityZone
+
+The available zone that the file system locates at.
 
 _Required_: Yes
 
@@ -57,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MountIp
 
+IP of mount point.
+
 _Required_: No
 
 _Type_: String
@@ -64,6 +70,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of a file system.
 
 _Required_: No
 
@@ -73,6 +81,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Protocol
 
+File service protocol. Valid values are `NFS` and `CIFS`, and the default is `NFS`.
+
 _Required_: No
 
 _Type_: String
@@ -81,6 +91,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubnetId
 
+ID of a subnet.
+
 _Required_: Yes
 
 _Type_: String
@@ -88,6 +100,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+ID of a VPC network.
 
 _Required_: Yes
 

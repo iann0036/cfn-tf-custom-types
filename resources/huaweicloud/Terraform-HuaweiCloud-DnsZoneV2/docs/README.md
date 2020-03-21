@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::DnsZoneV2
 
-CloudFormation equivalent of huaweicloud_dns_zone_v2
+Manages a DNS zone in the HuaweiCloud DNS Service.
 
 ## Syntax
 
@@ -47,6 +47,8 @@ Properties:
 
 #### Description
 
+A description of the zone.
+
 _Required_: No
 
 _Type_: String
@@ -54,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Email
+
+The email contact for the zone record.
 
 _Required_: No
 
@@ -63,6 +67,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the zone. Note the `.` at the end of the name.
+Changing this creates a new DNS zone.
+
 _Required_: Yes
 
 _Type_: String
@@ -70,6 +77,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region in which to obtain the V2 Compute client.
+Keypairs are associated with accounts, but a Compute client is needed to
+create one. If omitted, the `region` argument of the provider is used.
+Changing this creates a new DNS zone. Changing this creates a new DNS zone.
 
 _Required_: No
 
@@ -79,6 +91,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ttl
 
+The time to live (TTL) of the zone.
+
 _Required_: No
 
 _Type_: Double
@@ -87,6 +101,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ValueSpecs
 
+Map of additional options. Changing this creates a
+new DNS zone.
+
 _Required_: No
 
 _Type_: List of <a href="valuespecs.md">ValueSpecs</a>
@@ -94,6 +111,9 @@ _Type_: List of <a href="valuespecs.md">ValueSpecs</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneType
+
+The type of zone. Can either be `public` or `private`.
+Changing this creates a new DNS zone.
 
 _Required_: No
 

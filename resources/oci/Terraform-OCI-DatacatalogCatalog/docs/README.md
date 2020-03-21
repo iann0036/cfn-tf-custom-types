@@ -1,6 +1,9 @@
 # Terraform::OCI::DatacatalogCatalog
 
-CloudFormation equivalent of oci_datacatalog_catalog
+This resource provides the Catalog resource in Oracle Cloud Infrastructure Data Catalog service.
+
+Creates a new data catalog instance that includes a console and an API URL for managing metadata operations.
+For more information, please see the documentation.
 
 ## Syntax
 
@@ -39,6 +42,8 @@ Properties:
 
 #### CompartmentId
 
+(Updatable) Compartment identifier.
+
 _Required_: Yes
 
 _Type_: String
@@ -46,6 +51,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefinedTags
+
+(Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`.
 
 _Required_: No
 
@@ -55,6 +62,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+(Updatable) Data catalog identifier.
+
 _Required_: No
 
 _Type_: String
@@ -62,6 +71,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FreeformTags
+
+(Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`.
 
 _Required_: No
 

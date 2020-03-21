@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::EniAttachment",
-    "description": "CloudFormation equivalent of tencentcloud_eni_attachment",
+    "description": "Provides a resource to detailed information of attached backend server to an ENI.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "EniId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the ENI."
         },
         "InstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the instance which bind the ENI."
         }
     },
     "additionalProperties": false,

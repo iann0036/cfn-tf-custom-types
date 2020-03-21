@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::DnsSteeringPolicyAttachment",
-    "description": "CloudFormation equivalent of oci_dns_steering_policy_attachment",
+    "description": "This resource provides the Steering Policy Attachment resource in Oracle Cloud Infrastructure Dns service.\n\nCreates a new attachment between a steering policy and a domain, giving the\npolicy permission to answer queries for the specified domain. A steering policy must\nbe attached to a domain for the policy to answer DNS queries for that domain.\n\nFor the purposes of access control, the attachment is automatically placed\ninto the same compartment as the domain's zone.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,10 +29,12 @@
             "type": "string"
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) A user-friendly name for the steering policy attachment. Does not have to be unique and can be changed. Avoid entering confidential information."
         },
         "DomainName": {
-            "type": "string"
+            "type": "string",
+            "description": "The attached domain within the attached zone."
         },
         "Rtypes": {
             "type": "array",
@@ -48,13 +50,15 @@
             "type": "string"
         },
         "SteeringPolicyId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the attached steering policy."
         },
         "TimeCreated": {
             "type": "string"
         },
         "ZoneId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the attached zone."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

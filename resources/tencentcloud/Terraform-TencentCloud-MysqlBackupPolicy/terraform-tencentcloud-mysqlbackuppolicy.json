@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::MysqlBackupPolicy",
-    "description": "CloudFormation equivalent of tencentcloud_mysql_backup_policy",
+    "description": "Provides a mysql policy resource to create a backup policy.\n\n~> **NOTE:** This attribute `backup_model` only support 'physical' in Terraform TencentCloud provider version 1.16.2",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,19 +9,23 @@
             "type": "string"
         },
         "BackupModel": {
-            "type": "string"
+            "type": "string",
+            "description": "Backup method. Supported values include: 'physical' - physical backup."
         },
         "BackupTime": {
-            "type": "string"
+            "type": "string",
+            "description": "Instance backup time, in the format of \"HH:mm-HH:mm\". Time setting interval is four hours. Default to \"02:00-06:00\". The following value can be supported: 02:00-06:00, 06:00-10:00, 10:00-14:00, 14:00-18:00, 18:00-22:00, and 22:00-02:00."
         },
         "BinlogPeriod": {
             "type": "number"
         },
         "MysqlId": {
-            "type": "string"
+            "type": "string",
+            "description": "Instance ID to which policies will be applied."
         },
         "RetentionPeriod": {
-            "type": "number"
+            "type": "number",
+            "description": "Instance backup retention days. Valid values: [7-730]. And default value is 7."
         }
     },
     "additionalProperties": false,

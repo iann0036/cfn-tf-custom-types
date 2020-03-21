@@ -1,6 +1,8 @@
 # Terraform::Vault::TokenAuthBackendRole
 
-CloudFormation equivalent of vault_token_auth_backend_role
+Manages Token auth backend role in a Vault server. See the [Vault
+documentation](https://www.vaultproject.io/docs/auth/token.html) for more
+information.
 
 ## Syntax
 
@@ -131,6 +133,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RoleName
+
+The name of the role.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::NSXT::LogicalSwitch",
-    "description": "CloudFormation equivalent of nsxt_logical_switch",
+    "description": "This resource provides a method to create overlay logical switch in NSX. Virtual machines can then be connected to the appropriate logical switch for the desired topology and network connectivity.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "AddressBinding": {
@@ -58,34 +58,43 @@
             "type": "string"
         },
         "AdminState": {
-            "type": "string"
+            "type": "string",
+            "description": "Admin state for the logical switch. Accepted values - 'UP' or 'DOWN'. The default value is 'UP'."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the resource."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "Display name, defaults to ID if not set."
         },
         "IpPoolId": {
-            "type": "string"
+            "type": "string",
+            "description": "Ip Pool ID to be associated with the logical switch."
         },
         "MacPoolId": {
-            "type": "string"
+            "type": "string",
+            "description": "Mac Pool ID to be associated with the logical switch."
         },
         "ReplicationMode": {
-            "type": "string"
+            "type": "string",
+            "description": "Replication mode of the Logical Switch. Accepted values - 'MTEP' (Hierarchical Two-Tier replication) and 'SOURCE' (Head Replication), with 'MTEP' being the default value. Applies to overlay logical switches."
         },
         "Revision": {
             "type": "number"
         },
         "TransportZoneId": {
-            "type": "string"
+            "type": "string",
+            "description": "Transport Zone ID for the logical switch."
         },
         "Vlan": {
-            "type": "number"
+            "type": "number",
+            "description": "Vlan for vlan logical switch. This attribute is deprecated, please use nsxt_vlan_logical_switch resource to manage vlan logical switches."
         },
         "Vni": {
-            "type": "number"
+            "type": "number",
+            "description": "Vni for the logical switch."
         },
         "AddressBinding": {
             "type": "array",

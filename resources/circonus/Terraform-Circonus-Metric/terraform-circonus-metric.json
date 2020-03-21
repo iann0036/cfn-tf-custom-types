@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Circonus::Metric",
-    "description": "CloudFormation equivalent of circonus_metric",
+    "description": "The ``circonus_metric`` resource creates and manages a\nsingle [metric resource](https://login.circonus.com/resources/api/calls/metric)\nthat will be instantiated only once a referencing `circonus_check` has been\ncreated.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,23 +9,28 @@
             "type": "string"
         },
         "Active": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "A boolean indicating if the metric is being filtered out\nat the `circonus_check`'s collector(s) or not."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the metric.  A `name` must be unique within a\n`circonus_check` and its meaning is `circonus_check.type` specific."
         },
         "Tags": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of tags assigned to the metric."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of metric.  This value must be present and can be\none of the following values: `numeric`, `text`, `histogram`, `composite`, or\n`caql`."
         },
         "Unit": {
-            "type": "string"
+            "type": "string",
+            "description": "The unit of measurement for this `circonus_metric`."
         }
     },
     "additionalProperties": false,

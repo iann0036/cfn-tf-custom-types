@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::ServiceGroup",
-    "description": "CloudFormation equivalent of panos_service_group",
+    "description": "This resource allows you to add/update/delete service groups.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,24 +9,28 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The service group's name."
         },
         "Services": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of services to put in this service group."
         },
         "Tags": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of administrative tags."
         },
         "Vsys": {
-            "type": "string"
+            "type": "string",
+            "description": "The vsys to put the service group into (default:\n`vsys1`)."
         }
     },
     "additionalProperties": false,

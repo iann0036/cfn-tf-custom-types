@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::BIGIP::As3",
-    "description": "CloudFormation equivalent of bigip_as3",
+    "description": "`bigip_as3` provides details about bigip as3 resource\n\nThis resource is helpful to configure as3 declarative JSON on BIG-IP.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "As3Json": {
-            "type": "string"
+            "type": "string",
+            "description": "Path/Filename of Declarative AS3 JSON which can be a template/json file used with builtin ```templatefile``` function (or) ```file``` function."
         },
         "TenantName": {
-            "type": "string"
+            "type": "string",
+            "description": "Tenant name used to set the terraform state changes for as3 resource."
         }
     },
     "additionalProperties": false,

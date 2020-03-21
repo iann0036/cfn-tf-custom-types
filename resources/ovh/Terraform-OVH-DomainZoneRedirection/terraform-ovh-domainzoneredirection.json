@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OVH::DomainZoneRedirection",
-    "description": "CloudFormation equivalent of ovh_domain_zone_redirection",
+    "description": "Provides a OVH domain zone redirection.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,25 +9,32 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description of this redirection."
         },
         "Keywords": {
-            "type": "string"
+            "type": "string",
+            "description": "Keywords to describe this redirection."
         },
         "Subdomain": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the redirection."
         },
         "Target": {
-            "type": "string"
+            "type": "string",
+            "description": "The value of the redirection."
         },
         "Title": {
-            "type": "string"
+            "type": "string",
+            "description": "Title of this redirection."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of the redirection, with values:\n* `visible` -> Redirection by http code 302\n* `visiblePermanent` -> Redirection by http code 301\n* `invisible` -> Redirection by html frame."
         },
         "Zone": {
-            "type": "string"
+            "type": "string",
+            "description": "The domain to add the redirection to."
         }
     },
     "additionalProperties": false,

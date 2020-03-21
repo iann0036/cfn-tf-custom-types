@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::PvtzZone",
-    "description": "CloudFormation equivalent of alicloud_pvtz_zone",
+    "description": "Provides a Private Zone resource.\n\n-> **NOTE:** Terraform will auto Create a Private Zone while it uses `alicloud_pvtz_zone` to build a Private Zone resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -15,25 +15,30 @@
             "type": "boolean"
         },
         "Lang": {
-            "type": "string"
+            "type": "string",
+            "description": "The language. Valid values: \"zh\", \"en\", \"jp\"."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Private Zone."
         },
         "ProxyPattern": {
-            "type": "string"
+            "type": "string",
+            "description": "The recursive DNS proxy. Valid values:\n- ZONE: indicates that the recursive DNS proxy is disabled.\n- RECORD: indicates that the recursive DNS proxy is enabled."
         },
         "RecordCount": {
             "type": "number"
         },
         "Remark": {
-            "type": "string"
+            "type": "string",
+            "description": "The remark of the Private Zone."
         },
         "UpdateTime": {
             "type": "string"
         },
         "UserClientIp": {
-            "type": "string"
+            "type": "string",
+            "description": "The IP address of the client."
         }
     },
     "additionalProperties": false,

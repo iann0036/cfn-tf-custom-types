@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::ImagesImageAccessAcceptV2",
-    "description": "CloudFormation equivalent of openstack_images_image_access_accept_v2",
+    "description": "Manages memberships status for the shared OpenStack Glance V2 Image within the\ndestination project, which has a member proposal.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,19 +12,23 @@
             "type": "string"
         },
         "ImageId": {
-            "type": "string"
+            "type": "string",
+            "description": "The proposed image ID."
         },
         "MemberId": {
-            "type": "string"
+            "type": "string",
+            "description": "The member ID, e.g. the target project ID. Optional\nfor admin accounts. Defaults to the current scope project ID."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the V2 Glance client.\nA Glance client is needed to manage Image memberships. If omitted, the\n`region` argument of the provider is used. Changing this creates a new\nmembership."
         },
         "Schema": {
             "type": "string"
         },
         "Status": {
-            "type": "string"
+            "type": "string",
+            "description": "The membership proposal status. Can either be\n`accepted`, `rejected` or `pending`."
         },
         "UpdatedAt": {
             "type": "string"

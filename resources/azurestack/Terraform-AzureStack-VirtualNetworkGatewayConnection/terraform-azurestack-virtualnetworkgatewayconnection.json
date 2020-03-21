@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureStack::VirtualNetworkGatewayConnection",
-    "description": "CloudFormation equivalent of azurestack_virtual_network_gateway_connection",
+    "description": "Manages a connection in an existing Virtual Network Gateway.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,34 +9,44 @@
             "type": "string"
         },
         "AuthorizationKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The authorization key associated with the\nExpress Route Circuit. This field is required only if the type is an\nExpressRoute connection."
         },
         "EnableBgp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If `true`, BGP (Border Gateway Protocol) is enabled\nfor this connection. Defaults to `false`."
         },
         "ExpressRouteCircuitId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Express Route Circuit\nwhen creating an ExpressRoute connection (i.e. when `type` is `ExpressRoute`).\nThe Express Route Circuit can be in the same or in a different subscription."
         },
         "LocalNetworkGatewayId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the local network gateway\nwhen creating Site-to-Site connection (i.e. when `type` is `IPsec`)."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "The location/region where the connection is\nlocated. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the connection. Changing the name forces a\nnew resource to be created."
         },
         "PeerVirtualNetworkGatewayId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the peer virtual\nnetwork gateway when creating a VNet-to-VNet connection (i.e. when `type`\nis `Vnet2Vnet`). The peer Virtual Network Gateway can be in the same or\nin a different subscription."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to\ncreate the connection Changing the name forces a new resource to be created."
         },
         "RoutingWeight": {
-            "type": "number"
+            "type": "number",
+            "description": "The routing weight. Defaults to `10`."
         },
         "SharedKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The shared IPSec key. A key must be provided if a\nSite-to-Site or VNet-to-VNet connection is created whereas ExpressRoute\nconnections do not need a shared key."
         },
         "Tags": {
             "type": "array",
@@ -56,13 +66,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of connection. Valid options are `IPsec`\n(Site-to-Site), `ExpressRoute` (ExpressRoute), and `Vnet2Vnet` (VNet-to-VNet).\nEach connection type requires different mandatory arguments (refer to the\nexamples above). Changing the connection type will force a new connection\nto be created."
         },
         "VirtualNetworkGatewayId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Virtual Network Gateway\nin which the connection will be created. Changing the gateway forces a new\nresource to be created."
         }
     },
     "additionalProperties": false,

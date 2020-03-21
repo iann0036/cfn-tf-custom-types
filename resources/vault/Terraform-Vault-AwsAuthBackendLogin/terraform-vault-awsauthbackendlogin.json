@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Vault::AwsAuthBackendLogin",
-    "description": "CloudFormation equivalent of vault_aws_auth_backend_login",
+    "description": "Logs into a Vault server using an AWS auth backend. Login can be\naccomplished using a signed identity request from IAM or using ec2\ninstance metadata. For more information, see the [Vault\ndocumentation](https://www.vaultproject.io/docs/auth/aws.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -15,25 +15,31 @@
             "type": "string"
         },
         "Backend": {
-            "type": "string"
+            "type": "string",
+            "description": "The unique name of the AWS auth backend. Defaults to\n'aws'."
         },
         "ClientToken": {
             "type": "string"
         },
         "IamHttpRequestMethod": {
-            "type": "string"
+            "type": "string",
+            "description": "The HTTP method used in the signed IAM\nrequest."
         },
         "IamRequestBody": {
-            "type": "string"
+            "type": "string",
+            "description": "The base64-encoded body of the signed\nrequest."
         },
         "IamRequestHeaders": {
-            "type": "string"
+            "type": "string",
+            "description": "The base64-encoded, JSON serialized\nrepresentation of the GetCallerIdentity HTTP request headers."
         },
         "IamRequestUrl": {
-            "type": "string"
+            "type": "string",
+            "description": "The base64-encoded HTTP URL used in the signed\nrequest."
         },
         "Identity": {
-            "type": "string"
+            "type": "string",
+            "description": "The base64-encoded EC2 instance identity document to\nauthenticate with. Can be retrieved from the EC2 metadata server."
         },
         "LeaseDuration": {
             "type": "number"
@@ -62,10 +68,12 @@
             }
         },
         "Nonce": {
-            "type": "string"
+            "type": "string",
+            "description": "The unique nonce to be used for login requests. Can be\nset to a user-specified value, or will contain the server-generated value\nonce a token is issued. EC2 instances can only acquire a single token until\nthe whitelist is tidied again unless they keep track of this nonce."
         },
         "Pkcs7": {
-            "type": "string"
+            "type": "string",
+            "description": "The PKCS#7 signature of the identity document to\nauthenticate with, with all newline characters removed. Can be retrieved from\nthe EC2 metadata server."
         },
         "Policies": {
             "type": "array",
@@ -78,10 +86,12 @@
             "type": "boolean"
         },
         "Role": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the AWS auth backend role to create tokens\nagainst."
         },
         "Signature": {
-            "type": "string"
+            "type": "string",
+            "description": "The base64-encoded SHA256 RSA signature of the\ninstance identity document to authenticate with, with all newline characters\nremoved. Can be retrieved from the EC2 metadata server."
         }
     },
     "additionalProperties": false,

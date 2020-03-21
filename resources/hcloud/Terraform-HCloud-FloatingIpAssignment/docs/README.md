@@ -1,6 +1,6 @@
 # Terraform::HCloud::FloatingIpAssignment
 
-CloudFormation equivalent of hcloud_floating_ip_assignment
+Provides a Hetzner Cloud Floating IP Assignment to assign a Floating IP to a Hetzner Cloud Server. Deleting a Floating IP Assignment will unassign the Floating IP from the Server.
 
 ## Syntax
 
@@ -31,6 +31,9 @@ Properties:
 
 #### FloatingIpId
 
+ID of the Floating IP.
+- `server_id` - (Required, int) Server to assign the Floating IP to.
+
 _Required_: Yes
 
 _Type_: Double
@@ -38,6 +41,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServerId
+
+Server to assign the Floating IP to.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::Licensing",
-    "description": "CloudFormation equivalent of panos_licensing",
+    "description": "This resource manages the licenses installed on the PAN-OS firewall.\n\nInstalling the standard auth code for the standard PAN-OS license key for the\nfirewall causes the firewall to reboot.  Thus it is recommended that you use\nthis resource in a separate step of your overall firewall provisioning, as\nusing this resource will cause the firewall to be temporarily inaccessible.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -13,10 +13,12 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The list of auth codes to install."
         },
         "Delicense": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Leave as `true` if you want to delicense\nthe firewall when this resource is removed, otherwise set to `false` to\nprevent firewall delicensing.  Delicensing requires that the licensing\nAPI key has been installed."
         },
         "Licenses": {
             "type": "array",
@@ -50,7 +52,8 @@
             }
         },
         "Mode": {
-            "type": "string"
+            "type": "string",
+            "description": "For `delicense` of `true`, the type of delicensing to\nperform.  Right now, only `auto` is supported (no manual delicensing)."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,13 @@
 # Terraform::OCI::DnsSteeringPolicyAttachment
 
-CloudFormation equivalent of oci_dns_steering_policy_attachment
+This resource provides the Steering Policy Attachment resource in Oracle Cloud Infrastructure Dns service.
+
+Creates a new attachment between a steering policy and a domain, giving the
+policy permission to answer queries for the specified domain. A steering policy must
+be attached to a domain for the policy to answer DNS queries for that domain.
+
+For the purposes of access control, the attachment is automatically placed
+into the same compartment as the domain's zone.
 
 ## Syntax
 
@@ -37,6 +44,8 @@ Properties:
 
 #### DisplayName
 
+(Updatable) A user-friendly name for the steering policy attachment. Does not have to be unique and can be changed. Avoid entering confidential information.
+
 _Required_: No
 
 _Type_: String
@@ -44,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DomainName
+
+The attached domain within the attached zone.
 
 _Required_: Yes
 
@@ -53,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SteeringPolicyId
 
+The OCID of the attached steering policy.
+
 _Required_: Yes
 
 _Type_: String
@@ -60,6 +73,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneId
+
+The OCID of the attached zone.
 
 _Required_: Yes
 

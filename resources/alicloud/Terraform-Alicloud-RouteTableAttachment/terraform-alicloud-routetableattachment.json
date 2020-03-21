@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::RouteTableAttachment",
-    "description": "CloudFormation equivalent of alicloud_route_table_attachment",
+    "description": "Provides an Alicloud Route Table Attachment resource for associating Route Table to VSwitch Instance.\n\n-> **NOTE:** Terraform will auto build route table attachment while it uses `alicloud_route_table_attachment` to build a route table attachment resource.\n\nFor information about route table and how to use it, see [What is Route Table](https://www.alibabacloud.com/help/doc-detail/87057.htm).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "RouteTableId": {
-            "type": "string"
+            "type": "string",
+            "description": "The route_table_id of the route table attachment, the field can't be changed."
         },
         "VswitchId": {
-            "type": "string"
+            "type": "string",
+            "description": "The vswitch_id of the route table attachment, the field can't be changed."
         }
     },
     "additionalProperties": false,

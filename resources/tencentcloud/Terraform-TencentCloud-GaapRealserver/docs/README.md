@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::GaapRealserver
 
-CloudFormation equivalent of tencentcloud_gaap_realserver
+Provides a resource to create a GAAP realserver.
 
 ## Syntax
 
@@ -38,6 +38,8 @@ Properties:
 
 #### Domain
 
+Domain of the GAAP realserver, conflict with `ip`.
+
 _Required_: No
 
 _Type_: String
@@ -45,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ip
+
+IP of the GAAP realserver, conflict with `domain`.
 
 _Required_: No
 
@@ -54,6 +58,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name of the GAAP realserver, the maximum length is 30.
+
 _Required_: Yes
 
 _Type_: String
@@ -62,6 +68,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProjectId
 
+ID of the project within the GAAP realserver, '0' means is default project.
+
 _Required_: No
 
 _Type_: Double
@@ -69,6 +77,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Tags of the GAAP realserver.
 
 _Required_: No
 

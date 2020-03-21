@@ -1,6 +1,6 @@
 # Terraform::Cloudflare::LoadBalancer
 
-CloudFormation equivalent of cloudflare_load_balancer
+Provides a Cloudflare Load Balancer resource. This sits in front of a number of defined pools of origins and provides various options for geographically-aware load balancing. Note that the load balancing feature must be enabled in your Clouflare account before you can use this resource.
 
 ## Syntax
 
@@ -54,6 +54,8 @@ Properties:
 
 #### DefaultPoolIds
 
+A list of pool IDs ordered by their failover priority. Used whenever region/pop pools are not defined.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -61,6 +63,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Free text description.
 
 _Required_: No
 
@@ -70,6 +74,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Enabled
 
+Enable or disable the load balancer. Defaults to `true` (enabled).
+
 _Required_: No
 
 _Type_: Boolean
@@ -77,6 +83,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FallbackPoolId
+
+The pool ID to use when all other pools are detected as unhealthy.
 
 _Required_: Yes
 
@@ -86,6 +94,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The DNS name (FQDN, including the zone) to associate with the load balancer.
+
 _Required_: Yes
 
 _Type_: String
@@ -93,6 +103,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Proxied
+
+Whether the hostname gets Cloudflare's origin protection. Defaults to `false`.
 
 _Required_: No
 
@@ -102,6 +114,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SessionAffinity
 
+Associates all requests coming from an end-user with a single origin. Cloudflare will set a cookie on the initial response to the client, such that consequent requests with the cookie in the request will go to the same origin, so long as it is available.  Valid values are: `""`, `"none"`, `"cookie"`, and `"ip_cookie"`.  Default is `""`.
+
 _Required_: No
 
 _Type_: String
@@ -109,6 +123,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SteeringPolicy
+
+Determine which method the load balancer uses to determine the fastest route to your origin. Valid values are: `"off"`, `"geo"`, `"dynamic_latency"`, `"random"` or `""`. Default is `""`.
 
 _Required_: No
 
@@ -118,6 +134,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ttl
 
+Time to live (TTL) of this load balancer's DNS `name`. Conflicts with `proxied` - this cannot be set for proxied load balancers. Default is `30`.
+
 _Required_: No
 
 _Type_: Double
@@ -125,6 +143,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneId
+
+The zone ID to add the load balancer to.
 
 _Required_: Yes
 

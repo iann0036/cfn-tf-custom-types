@@ -1,6 +1,6 @@
 # Terraform::CloudStack::AffinityGroup
 
-CloudFormation equivalent of cloudstack_affinity_group
+Creates an affinity group.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### Description
 
+The description of the affinity group.
+
 _Required_: No
 
 _Type_: String
@@ -42,6 +44,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the affinity group. Changing this
+forces a new resource to be created.
 
 _Required_: Yes
 
@@ -51,6 +56,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Project
 
+The name or ID of the project to register this
+affinity group to. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -58,6 +66,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The affinity group type. Changing this
+forces a new resource to be created.
 
 _Required_: Yes
 

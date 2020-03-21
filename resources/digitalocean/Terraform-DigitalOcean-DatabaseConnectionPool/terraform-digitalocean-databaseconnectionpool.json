@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::DigitalOcean::DatabaseConnectionPool",
-    "description": "CloudFormation equivalent of digitalocean_database_connection_pool",
+    "description": "Provides a DigitalOcean database connection pool resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,19 +9,23 @@
             "type": "string"
         },
         "ClusterId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the source database cluster. Note: This must be a PostgreSQL cluster."
         },
         "DbName": {
-            "type": "string"
+            "type": "string",
+            "description": "The database for use with the connection pool."
         },
         "Host": {
             "type": "string"
         },
         "Mode": {
-            "type": "string"
+            "type": "string",
+            "description": "The PGBouncer transaction mode for the connection pool. The allowed values are session, transaction, and statement."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name for the database connection pool."
         },
         "Password": {
             "type": "string"
@@ -36,13 +40,15 @@
             "type": "string"
         },
         "Size": {
-            "type": "number"
+            "type": "number",
+            "description": "The desired size of the PGBouncer connection pool."
         },
         "Uri": {
             "type": "string"
         },
         "User": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the database user for use with the connection pool."
         }
     },
     "additionalProperties": false,

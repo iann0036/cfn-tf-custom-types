@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::IothubDpsCertificate",
-    "description": "CloudFormation equivalent of azurerm_iothub_dps_certificate",
+    "description": "Manages an IotHub Device Provisioning Service Certificate.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,16 +29,20 @@
             "type": "string"
         },
         "CertificateContent": {
-            "type": "string"
+            "type": "string",
+            "description": "The Base-64 representation of the X509 leaf certificate .cer file or just a .pem file content."
         },
         "IotDpsName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the IoT Device Provisioning Service that this certificate will be attached to. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Iot Device Provisioning Service Certificate resource. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group under which the Iot Device Provisioning Service Certificate resource has to be created. Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

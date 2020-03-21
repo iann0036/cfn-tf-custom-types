@@ -1,6 +1,12 @@
 # Terraform::Alicloud::YundunBastionhostInstance
 
-CloudFormation equivalent of alicloud_yundun_bastionhost_instance
+Cloud Bastionhost instance resource ("Yundun_bastionhost" is the short term of this product).
+
+-> **NOTE:** The endpoint of bssopenapi used only support "business.aliyuncs.com" at present.
+
+-> **NOTE:** Available in 1.63.0+ .
+
+-> **NOTE:** In order to destroy Cloud Bastionhost instance , users are required to apply for white list first
 
 ## Syntax
 
@@ -43,6 +49,8 @@ Properties:
 
 #### Description
 
+Description of the instance. This name can have a string of 1 to 63 characters.
+
 _Required_: Yes
 
 _Type_: String
@@ -59,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Period
 
+Duration for initially producing the instance. Valid values: [1~9], 12, 24, 36. Default to 1. At present, the provider does not support modify "period".
+
 _Required_: No
 
 _Type_: Double
@@ -66,6 +76,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecurityGroupIds
+
+security group IDs configured to bastionhost.
 
 _Required_: Yes
 
@@ -75,6 +87,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -82,6 +96,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VswitchId
+
+vSwtich ID configured to bastionhost.
 
 _Required_: Yes
 

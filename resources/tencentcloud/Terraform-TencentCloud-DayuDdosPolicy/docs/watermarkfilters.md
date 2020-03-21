@@ -32,6 +32,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### AutoRemove
 
+Indicate whether to auto-remove the watermark or not.
+
 _Required_: No
 
 _Type_: Boolean
@@ -39,6 +41,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Offset
+
+The offset of watermark, and valid value is range from 0 to 100.
 
 _Required_: No
 
@@ -48,6 +52,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OpenSwitch
 
+Indicate whether to open watermark or not. It muse be set `true` when any field of watermark was set.
+
 _Required_: No
 
 _Type_: Boolean
@@ -56,6 +62,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TcpPortList
 
+Port range of TCP, the format is like `2000-3000`.
+
 _Required_: No
 
 _Type_: List of String
@@ -63,6 +71,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UdpPortList
+
+Port range of TCP, the format is like `2000-3000`.
 
 _Required_: No
 

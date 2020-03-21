@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::IdentityServiceV3",
-    "description": "CloudFormation equivalent of openstack_identity_service_v3",
+    "description": "Manages a V3 Service resource within OpenStack Keystone.\n\n~> **Note:** This usually requires admin privileges.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,19 +9,24 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The service description."
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "The service status. Defaults to `true`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The service name."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the V3 Keystone client.\nIf omitted, the `region` argument of the provider is used."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The service type."
         }
     },
     "additionalProperties": false,

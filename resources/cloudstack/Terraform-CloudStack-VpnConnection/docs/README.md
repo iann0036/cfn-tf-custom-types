@@ -1,6 +1,6 @@
 # Terraform::CloudStack::VpnConnection
 
-CloudFormation equivalent of cloudstack_vpn_connection
+Creates a site to site VPN connection.
 
 ## Syntax
 
@@ -31,6 +31,9 @@ Properties:
 
 #### CustomerGatewayId
 
+The Customer Gateway ID to connect.
+Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +41,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpnGatewayId
+
+The VPN Gateway ID to connect. Changing
+this forces a new resource to be created.
 
 _Required_: Yes
 

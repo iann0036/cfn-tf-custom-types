@@ -1,6 +1,7 @@
 # Terraform::Linode::Sshkey
 
-CloudFormation equivalent of linode_sshkey
+Provides a Linode SSH Key resource.  This can be used to create, modify, and delete Linodes SSH Keys.  Managed SSH Keys allow instances to be created with a list of Linode usernames, whose SSH keys will be automatically applied to the root account's `~/.ssh/authorized_keys` file.
+For more information, see the [Linode APIv4 docs](https://developers.linode.com/api/v4#operation/getSSHKeys).
 
 ## Syntax
 
@@ -31,6 +32,8 @@ Properties:
 
 #### Label
 
+A label for the SSH Key.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +41,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SshKey
+
+The public SSH Key, which is used to authenticate to the root user of the Linodes you deploy.
 
 _Required_: Yes
 

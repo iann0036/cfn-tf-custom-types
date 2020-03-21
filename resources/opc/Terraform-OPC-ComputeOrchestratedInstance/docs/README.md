@@ -1,6 +1,7 @@
 # Terraform::OPC::ComputeOrchestratedInstance
 
-CloudFormation equivalent of opc_compute_orchestrated_instance
+The `opc_compute_orchestrated_instance` resource creates and manages an orchestration containing a number of
+instances in an Oracle Cloud Infrastructure Compute Classic identity domain.
 
 ## Syntax
 
@@ -55,6 +56,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DesiredState
 
+The desired state of the orchestration. Permitted values are:.
+
 _Required_: Yes
 
 _Type_: String
@@ -62,6 +65,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the orchestration.
 
 _Required_: Yes
 

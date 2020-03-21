@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::DayuL7Rule",
-    "description": "CloudFormation equivalent of tencentcloud_dayu_l7_rule",
+    "description": "Use this resource to create dayu layer 7 rule\n\n~> **NOTE:** This resource only support resource Anti-DDoS of type `bgpip`",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,40 +9,52 @@
             "type": "string"
         },
         "Domain": {
-            "type": "string"
+            "type": "string",
+            "description": "Domain that the layer 7 rule works for. Valid string length ranges from 0 to 80."
         },
         "HealthCheckCode": {
-            "type": "number"
+            "type": "number",
+            "description": "HTTP Status Code. The default is 26 and value range is 1-31. 1 means the return value '1xx' is health. 2 means the return value '2xx' is health. 4 means the return value '3xx' is health. 8 means the return value '4xx' is health. 16 means the return value '5xx' is health. If you want multiple return codes to indicate health, need to add the corresponding values."
         },
         "HealthCheckHealthNum": {
-            "type": "number"
+            "type": "number",
+            "description": "Health threshold of health check, and the default is 3. If a success result is returned for the health check 3 consecutive times, indicates that the forwarding is normal. The value range is 2-10."
         },
         "HealthCheckInterval": {
-            "type": "number"
+            "type": "number",
+            "description": "Interval time of health check. The value range is 10-60 sec, and the default is 15 sec."
         },
         "HealthCheckMethod": {
-            "type": "string"
+            "type": "string",
+            "description": "Methods of health check. The default is 'HEAD', the available value are 'HEAD' and 'GET'."
         },
         "HealthCheckPath": {
-            "type": "string"
+            "type": "string",
+            "description": "Path of health check. The default is `/`."
         },
         "HealthCheckSwitch": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether health check is enabled. The default is `false`."
         },
         "HealthCheckUnhealthNum": {
-            "type": "number"
+            "type": "number",
+            "description": "Unhealthy threshold of health check, and the default is 3. If the unhealth result is returned 3 consecutive times, indicates that the forwarding is abnormal. The value range is 2-10."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the rule."
         },
         "Protocol": {
-            "type": "string"
+            "type": "string",
+            "description": "Protocol of the rule, valid values are `http`, `https`."
         },
         "ResourceId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the resource that the layer 7 rule works for."
         },
         "ResourceType": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of the resource that the layer 7 rule works for, valid value is `bgpip`."
         },
         "RuleId": {
             "type": "string"
@@ -52,19 +64,23 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Source list of the rule, it can be a set of ip sources or a set of domain sources. The number of items ranges from 1 to 16."
         },
         "SourceType": {
-            "type": "number"
+            "type": "number",
+            "description": "Source type, 1 for source of host, 2 for source of ip."
         },
         "SslId": {
-            "type": "string"
+            "type": "string",
+            "description": "SSL id, when the `protocol` is `https`, the field should be set with valid SSL id."
         },
         "Status": {
             "type": "number"
         },
         "Switch": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicate the rule will take effect or not."
         }
     },
     "additionalProperties": false,

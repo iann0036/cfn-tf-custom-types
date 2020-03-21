@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::PolicyAssignment",
-    "description": "CloudFormation equivalent of azurerm_policy_assignment",
+    "description": "Configures the specified Policy Definition at the specified Scope. Also, Policy Set Definitions are supported.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Identity": {
@@ -8,7 +8,8 @@
             "additionalProperties": false,
             "properties": {
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Managed Service Identity Type of this Policy Assignment. Possible values are `SystemAssigned` (where Azure will generate a Service Principal for you), or `None` (no use of a Managed Service Identity)."
                 }
             },
             "required": []
@@ -39,32 +40,40 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description to use for this Policy Assignment. Changing this forces a new resource to be created."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "A friendly display name to use for this Policy Assignment. Changing this forces a new resource to be created."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "The Azure location where this policy assignment should exist. This is required when an Identity is assigned. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Policy Assignment. Changing this forces a new resource to be created."
         },
         "NotScopes": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of the Policy Assignment's excluded scopes. The list must contain Resource IDs (such as Subscriptions e.g. `/subscriptions/00000000-0000-0000-000000000000` or Resource Groups e.g.`/subscriptions/00000000-0000-0000-000000000000/resourceGroups/myResourceGroup`)."
         },
         "Parameters": {
-            "type": "string"
+            "type": "string",
+            "description": "Parameters for the policy definition. This field is a JSON object that maps to the Parameters field from the Policy Definition. Changing this forces a new resource to be created."
         },
         "PolicyDefinitionId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Policy Definition to be applied at the specified Scope."
         },
         "Scope": {
-            "type": "string"
+            "type": "string",
+            "description": "The Scope at which the Policy Assignment should be applied, which must be a Resource ID (such as Subscription e.g. `/subscriptions/00000000-0000-0000-000000000000` or a Resource Group e.g.`/subscriptions/00000000-0000-0000-000000000000/resourceGroups/myResourceGroup`). Changing this forces a new resource to be created."
         },
         "Identity": {
             "type": "array",

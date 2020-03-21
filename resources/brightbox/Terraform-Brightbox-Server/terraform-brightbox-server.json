@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Brightbox::Server",
-    "description": "CloudFormation equivalent of brightbox_server",
+    "description": "Provides a Brightbox Server resource. This can be used to create,\nmodify, and delete Servers. Servers also support\n[provisioning](/docs/provisioners/index.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,7 +29,8 @@
             "type": "string"
         },
         "Image": {
-            "type": "string"
+            "type": "string",
+            "description": "The Server image ID."
         },
         "Interface": {
             "type": "string"
@@ -50,7 +51,8 @@
             "type": "boolean"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The Server name."
         },
         "PublicHostname": {
             "type": "string"
@@ -66,7 +68,8 @@
             "type": "string"
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The handle of the server type required (`1gb.ssd`, etc)."
         },
         "UserData": {
             "type": "string"
@@ -78,7 +81,8 @@
             "type": "string"
         },
         "Zone": {
-            "type": "string"
+            "type": "string",
+            "description": "The handle of the zone required (`gb1-a`, `gb1-b`)."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

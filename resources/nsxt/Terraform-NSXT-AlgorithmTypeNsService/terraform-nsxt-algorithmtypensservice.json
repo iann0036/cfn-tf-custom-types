@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::NSXT::AlgorithmTypeNsService",
-    "description": "CloudFormation equivalent of nsxt_algorithm_type_ns_service",
+    "description": "This resource provides a way to configure a networking and security service which can be used with the NSX firewall. A networking and security service is an object that contains the TCP/UDP algorithm, source ports and destination ports in a single entity.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Tag": {
@@ -26,19 +26,23 @@
             "type": "string"
         },
         "Algorithm": {
-            "type": "string"
+            "type": "string",
+            "description": "Algorithm one of \"ORACLE_TNS\", \"FTP\", \"SUN_RPC_TCP\", \"SUN_RPC_UDP\", \"MS_RPC_TCP\", \"MS_RPC_UDP\", \"NBNS_BROADCAST\", \"NBDG_BROADCAST\", \"TFTP\"."
         },
         "DefaultService": {
             "type": "boolean"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description."
         },
         "DestinationPort": {
-            "type": "string"
+            "type": "string",
+            "description": "a single destination port."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "Display name, defaults to ID if not set."
         },
         "Revision": {
             "type": "number"
@@ -48,7 +52,8 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Set of source ports/ranges."
         },
         "Tag": {
             "type": "array",

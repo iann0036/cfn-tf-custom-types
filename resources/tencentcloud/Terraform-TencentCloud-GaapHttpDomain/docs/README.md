@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::GaapHttpDomain
 
-CloudFormation equivalent of tencentcloud_gaap_http_domain
+Provides a resource to create a forward domain of layer7 listener.
 
 ## Syntax
 
@@ -55,6 +55,8 @@ Properties:
 
 #### BasicAuth
 
+Indicates whether basic authentication is enable, default value is `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -62,6 +64,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BasicAuthId
+
+ID of the basic authentication.
 
 _Required_: No
 
@@ -71,6 +75,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CertificateId
 
+ID of the server certificate, default value is `default`.
+
 _Required_: No
 
 _Type_: String
@@ -78,6 +84,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClientCertificateId
+
+It has been deprecated from version 1.26.0. Set `client_certificate_ids` instead. ID of the client certificate, default value is `default`.
 
 _Required_: No
 
@@ -87,6 +95,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ClientCertificateIds
 
+ID list of the poly client certificate.
+
 _Required_: No
 
 _Type_: List of String
@@ -94,6 +104,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Domain
+
+Forward domain of the layer7 listener.
 
 _Required_: Yes
 
@@ -103,6 +115,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GaapAuth
 
+Indicates whether SSL certificate authentication is enable, default value is `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -110,6 +124,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GaapAuthId
+
+ID of the SSL certificate.
 
 _Required_: No
 
@@ -119,6 +135,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ListenerId
 
+ID of the layer7 listener.
+
 _Required_: Yes
 
 _Type_: String
@@ -126,6 +144,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RealserverAuth
+
+Indicates whether realserver authentication is enable, default value is `false`.
 
 _Required_: No
 
@@ -135,6 +155,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RealserverCertificateDomain
 
+CA certificate domain of the realserver.
+
 _Required_: No
 
 _Type_: String
@@ -143,6 +165,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RealserverCertificateId
 
+It has been deprecated from version 1.28.0. Set `realserver_certificate_ids` instead. CA certificate ID of the realserver.
+
 _Required_: No
 
 _Type_: String
@@ -150,6 +174,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RealserverCertificateIds
+
+CA certificate ID list of the realserver.
 
 _Required_: No
 

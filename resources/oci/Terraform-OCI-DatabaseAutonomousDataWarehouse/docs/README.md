@@ -1,6 +1,11 @@
 # Terraform::OCI::DatabaseAutonomousDataWarehouse
 
-CloudFormation equivalent of oci_database_autonomous_data_warehouse
+This resource provides the Autonomous Data Warehouse resource in Oracle Cloud Infrastructure Database service.
+
+Creates a new Autonomous Data Warehouse.
+
+**IMPORTANT:** This resource is being **deprecated**, use `oci_database_autonomous_database` with `db_workload=DW` to provision Autonomous Data Warehouse.
+Refer to the [Deprecation Guide](#deprecation-guide) below on how to rename and migrate existing resources.
 
 ## Syntax
 
@@ -49,6 +54,8 @@ Properties:
 
 #### AdminPassword
 
+(Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing.
+
 _Required_: Yes
 
 _Type_: String
@@ -56,6 +63,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CompartmentId
+
+The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Data Warehouse.
 
 _Required_: Yes
 
@@ -65,6 +74,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CpuCoreCount
 
+(Updatable) The number of CPU Cores to be made available to the database.
+
 _Required_: Yes
 
 _Type_: Double
@@ -72,6 +83,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DataStorageSizeInTbs
+
+(Updatable) Size, in terabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed.
 
 _Required_: Yes
 
@@ -81,6 +94,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DbName
 
+The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
+
 _Required_: Yes
 
 _Type_: String
@@ -88,6 +103,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefinedTags
+
+(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 
 _Required_: No
 
@@ -97,6 +114,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+(Updatable) The user-friendly name for the Autonomous Data Warehouse. The name does not have to be unique.
+
 _Required_: No
 
 _Type_: String
@@ -105,6 +124,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FreeformTags
 
+(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`.
+
 _Required_: No
 
 _Type_: List of <a href="freeformtags.md">FreeformTags</a>
@@ -112,6 +133,8 @@ _Type_: List of <a href="freeformtags.md">FreeformTags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LicenseModel
+
+The Oracle license model that applies to the Oracle Autonomous Data Warehouse. The default is BRING_YOUR_OWN_LICENSE.
 
 _Required_: No
 

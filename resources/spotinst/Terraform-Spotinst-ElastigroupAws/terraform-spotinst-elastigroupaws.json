@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Spotinst::ElastigroupAws",
-    "description": "CloudFormation equivalent of spotinst_elastigroup_aws",
+    "description": "Provides a Spotinst AWS group resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "EbsBlockDevice": {
@@ -1040,35 +1040,43 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of Strings of availability zones. When this parameter is set, `subnet_ids` should be left unused.\nNote: `availability_zones` naming syntax follows the convention `availability-zone:subnet:placement-group-name`. For example, to set an AZ in `us-east-1` with subnet `subnet-123456` and placement group `ClusterI03`, you would set:\n`availability_zones = [\"us-east-1a:subnet-123456:ClusterI03\"]`."
         },
         "BlockDevicesMode": {
             "type": "string"
         },
         "CapacityUnit": {
-            "type": "string"
+            "type": "string",
+            "description": "The capacity unit to launch instances by. If not specified, when choosing the weight unit, each instance will weight as the number of its vCPUs."
         },
         "CpuCredits": {
-            "type": "string"
+            "type": "string",
+            "description": "Controls how T3 instances are launched. Valid values: `standard`, `unlimited`."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The group description."
         },
         "DesiredCapacity": {
-            "type": "number"
+            "type": "number",
+            "description": "The desired number of instances the group should have at any time."
         },
         "DrainingTimeout": {
-            "type": "number"
+            "type": "number",
+            "description": "The time in seconds, the instance is allowed to run while detached from the ELB. This is to allow the instance time to be drained from incoming TCP connections before terminating it, during a scale down operation."
         },
         "EbsOptimized": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable high bandwidth connectivity between instances and AWS\u2019s Elastic Block Store (EBS). For instance types that are EBS-optimized by default this parameter will be ignored."
         },
         "ElasticIps": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of [AWS Elastic IP](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html) allocation IDs to associate to the group instances."
         },
         "ElasticLoadBalancers": {
             "type": "array",
@@ -1078,63 +1086,79 @@
             }
         },
         "EnableMonitoring": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether monitoring is enabled for the instance."
         },
         "FallbackToOndemand": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "In a case of no Spot instances available, Elastigroup will launch on-demand instances instead."
         },
         "HealthCheckGracePeriod": {
-            "type": "number"
+            "type": "number",
+            "description": "The amount of time, in seconds, after the instance has launched to starts and check its health."
         },
         "HealthCheckType": {
-            "type": "string"
+            "type": "string",
+            "description": "The service that will perform health checks for the instance. Valid values: `\"ELB\"`, `\"HCS\"`, `\"TARGET_GROUP\"`, `\"MLB\"`, `\"EC2\"`, `\"MULTAI_TARGET_SET\"`, `\"MLB_RUNTIME\"`, `\"K8S_NODE\"`, `\"NOMAD_NODE\"`, `\"ECS_CLUSTER_INSTANCE\"`."
         },
         "HealthCheckUnhealthyDurationBeforeReplacement": {
-            "type": "number"
+            "type": "number",
+            "description": "The amount of time, in seconds, that we will wait before replacing an instance that is running and became unhealthy (this is only applicable for instances that were once healthy)."
         },
         "IamInstanceProfile": {
-            "type": "string"
+            "type": "string",
+            "description": "The ARN or name of an IAM instance profile to associate with launched instances."
         },
         "ImageId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the AMI used to launch the instance."
         },
         "InstanceTypesOndemand": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of instance determines your instance's CPU capacity, memory and storage (e.g., m1.small, c1.xlarge)."
         },
         "InstanceTypesPreferredSpot": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Prioritize a subset of spot instance types. Must be a subset of the selected spot instance types."
         },
         "InstanceTypesSpot": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "One or more instance types."
         },
         "KeyName": {
-            "type": "string"
+            "type": "string",
+            "description": "The key name that should be used for the instance."
         },
         "LifetimePeriod": {
             "type": "string"
         },
         "MaxSize": {
-            "type": "number"
+            "type": "number",
+            "description": "The maximum number of instances the group should have at any time."
         },
         "MinSize": {
-            "type": "number"
+            "type": "number",
+            "description": "The minimum number of instances the group should have at any time."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The group name."
         },
         "OndemandCount": {
-            "type": "number"
+            "type": "number",
+            "description": "Number of on demand instances to launch in the group. All other instances will be spot instances. When this parameter is set the `spot_percentage` parameter is being ignored."
         },
         "Orientation": {
-            "type": "string"
+            "type": "string",
+            "description": "Select a prediction strategy. Valid values: `\"balanced\"`, `\"costOriented\"`, `\"equalAzDistribution\"`, `\"availabilityOriented\"`."
         },
         "PersistBlockDevices": {
             "type": "boolean"
@@ -1146,14 +1170,16 @@
             "type": "boolean"
         },
         "PlacementTenancy": {
-            "type": "string"
+            "type": "string",
+            "description": "Enable dedicated tenancy. Note: There is a flat hourly fee for each region in which dedicated tenancy is used."
         },
         "PreferredAvailabilityZones": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The AZs to prioritize when launching Spot instances. If no markets are available in the Preferred AZs, Spot instances are launched in the non-preferred AZs.\nNote: Must be a sublist of `availability_zones` and `orientation` value must not be `\"equalAzDistribution\"`."
         },
         "PrivateIps": {
             "type": "array",
@@ -1163,30 +1189,36 @@
             }
         },
         "Product": {
-            "type": "string"
+            "type": "string",
+            "description": "Operation system type. Valid values: `\"Linux/UNIX\"`, `\"SUSE Linux\"`, `\"Windows\"`.\nFor EC2 Classic instances:  `\"Linux/UNIX (Amazon VPC)\"`, `\"SUSE Linux (Amazon VPC)\"`, `\"Windows (Amazon VPC)\"`."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The AWS region your group will be created in.\nNote: This parameter is required if you specify subnets (through subnet_ids). This parameter is optional if you specify Availability Zones (through availability_zones)."
         },
         "SecurityGroups": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of associated security group IDS."
         },
         "ShutdownScript": {
-            "type": "string"
+            "type": "string",
+            "description": "The Base64-encoded shutdown script that executes prior to instance termination, for more information please see: [Shutdown Script](https://api.spotinst.com/integration-docs/elastigroup/concepts/compute-concepts/shutdown-scripts/)."
         },
         "SpotPercentage": {
-            "type": "number"
+            "type": "number",
+            "description": "The percentage of Spot instances that would spin up from the `desired_capacity` number."
         },
         "SubnetIds": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of Strings of subnet identifiers.\nNote: When this parameter is set, `availability_zones` should be left unused."
         },
         "TargetGroupArns": {
             "type": "array",
@@ -1196,16 +1228,20 @@
             }
         },
         "UserData": {
-            "type": "string"
+            "type": "string",
+            "description": "The user data to provide when launching the instance."
         },
         "UtilizeReservedInstances": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "In a case of any available reserved instances, Elastigroup will utilize them first before purchasing Spot instances."
         },
         "WaitForCapacity": {
-            "type": "number"
+            "type": "number",
+            "description": "Minimum number of instances in a 'HEALTHY' status that is required before continuing. This is ignored when updating with blue/green deployment. Cannot exceed `desired_capacity`."
         },
         "WaitForCapacityTimeout": {
-            "type": "number"
+            "type": "number",
+            "description": "Time (seconds) to wait for instances to report a 'HEALTHY' status. Useful for plans with multiple dependencies that take some time to initialize. Leave undefined or set to `0` to indicate no wait. This is ignored when updating with blue/green deployment."
         },
         "EbsBlockDevice": {
             "type": "array",

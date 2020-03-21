@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Gitlab::ProjectPushRules",
-    "description": "CloudFormation equivalent of gitlab_project_push_rules",
+    "description": "This resource allows you to create and manage push rules for your GitLab projects.\nFor further information on push rules, consult the [gitlab\ndocumentation](https://docs.gitlab.com/ce/push_rules/push_rules.html#push-rules).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,31 +9,40 @@
             "type": "string"
         },
         "AuthorEmailRegex": {
-            "type": "string"
+            "type": "string",
+            "description": "All commit author emails must match this regex, e.g. \"@my-company.com$\"."
         },
         "BranchNameRegex": {
-            "type": "string"
+            "type": "string",
+            "description": "All branch names must match this regex, e.g. \"(feature|hotfix)\\/*\"."
         },
         "CommitMessageRegex": {
-            "type": "string"
+            "type": "string",
+            "description": "All commit messages must match this regex, e.g. \"Fixed \\d+\\..*\"."
         },
         "DenyDeleteTag": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Deny deleting a tag."
         },
         "FileNameRegex": {
-            "type": "string"
+            "type": "string",
+            "description": "All commited filenames must not match this regex, e.g. \"(jar|exe)$\"."
         },
         "MaxFileSize": {
-            "type": "number"
+            "type": "number",
+            "description": "Maximum file size (MB)."
         },
         "MemberCheck": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Restrict commits by author (email) to existing GitLab users."
         },
         "PreventSecrets": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "GitLab will reject any files that are likely to contain secrets."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or id of the project to add the push rules to."
         }
     },
     "additionalProperties": false,

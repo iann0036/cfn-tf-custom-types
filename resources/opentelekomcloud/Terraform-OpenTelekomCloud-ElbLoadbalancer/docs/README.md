@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::ElbLoadbalancer
 
-CloudFormation equivalent of opentelekomcloud_elb_loadbalancer
+Manages a classic loadbalancer resource within OpentelekomCloud.
 
 ## Syntax
 
@@ -51,6 +51,11 @@ Properties:
 
 #### AdminStateUp
 
+Specifies the status of the load balancer.
+Value range: false: indicates that the load balancer is stopped or
+frozen; true: indicates that the load balancer is running properly.
+Only tenants are allowed to enter these two values.
+
 _Required_: No
 
 _Type_: Boolean
@@ -58,6 +63,11 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Az
+
+Specifies the ID of the availability zone (AZ). This
+parameter is mandatory when type is set to Internal, and it is invalid
+when type is set to External. Changing this creates a new elb
+loadbalancer.
 
 _Required_: No
 
@@ -67,6 +77,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Bandwidth
 
+Specifies the bandwidth (Mbit/s). This parameter
+is mandatory when type is set to External, and it is invalid when type
+is set to Internal. The value ranges from 1 to 1000.
+
 _Required_: No
 
 _Type_: Double
@@ -75,6 +89,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+Provides supplementary information about the
+listener. The value is a string of 0 to 128 characters and cannot be <>.
+
 _Required_: No
 
 _Type_: String
@@ -82,6 +99,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the load balancer name. The name is a string
+of 1 to 64 characters that consist of letters, digits, underscores (_),
+and hyphens (-).
 
 _Required_: No
 
@@ -99,6 +120,12 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecurityGroupId
 
+Specifies the security group ID. The
+value is a string of 1 to 200 characters that consists of uppercase and
+lowercase letters, digits, and hyphens (-). This parameter is mandatory
+only when type is set to Internal. Changing this creates a new elb
+loadbalancer.
+
 _Required_: No
 
 _Type_: String
@@ -106,6 +133,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+Specifies the load balancer type. The value can be
+Internal or External. Changing this creates a new elb loadbalancer.
 
 _Required_: Yes
 
@@ -115,6 +145,13 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VipAddress
 
+Specifies the IP address provided by ELB.
+When type is set to External, the value of this parameter is the elastic
+IP address. When type is set to Internal, the value of this parameter is
+the private network IP address. You can select an existing elastic IP address
+and create a public network load balancer. When this parameter is configured,
+parameter bandwidth is invalid. Changing this creates a new elb loadbalancer.
+
 _Required_: No
 
 _Type_: String
@@ -123,6 +160,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VipSubnetId
 
+Specifies the ID of the private network
+to be added. This parameter is mandatory when type is set to Internal,
+and it is invalid when type is set to External. Changing this creates a
+new elb loadbalancer.
+
 _Required_: No
 
 _Type_: String
@@ -130,6 +172,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+Specifies the VPC ID. Changing this creates a new
+elb loadbalancer.
 
 _Required_: Yes
 

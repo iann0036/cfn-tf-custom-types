@@ -1,6 +1,6 @@
 # Terraform::OpenStack::ImagesImageV2
 
-CloudFormation equivalent of openstack_images_image_v2
+Manages a V2 Image resource within OpenStack Glance.
 
 ## Syntax
 
@@ -59,6 +59,9 @@ Properties:
 
 #### ContainerFormat
 
+The container format. Must be one of
+"ami", "ari", "aki", "bare", "ovf".
+
 _Required_: Yes
 
 _Type_: String
@@ -66,6 +69,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DiskFormat
+
+The disk format. Must be one of
+"ami", "ari", "aki", "vhd", "vmdk", "raw", "qcow2", "vdi", "iso".
 
 _Required_: Yes
 
@@ -75,6 +81,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ImageCachePath
 
+This is the directory where the images will
+be downloaded. Images will be stored with a filename corresponding to
+the url's md5 hash. Defaults to "$HOME/.terraform/image_cache".
+
 _Required_: No
 
 _Type_: String
@@ -82,6 +92,12 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ImageSourceUrl
+
+This is the url of the raw image that will
+be downloaded in the `image_cache_path` before being uploaded to Glance.
+Glance is able to download image from internet but the `gophercloud` library
+does not yet provide a way to do so.
+Conflicts with `local_file_path`.
 
 _Required_: No
 
@@ -91,6 +107,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LocalFilePath
 
+This is the filepath of the raw image file
+that will be uploaded to Glance. Conflicts with `image_source_url`.
+
 _Required_: No
 
 _Type_: String
@@ -98,6 +117,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MinDiskGb
+
+Amount of disk space (in GB) required to boot image.
+Defaults to 0.
 
 _Required_: No
 
@@ -107,6 +129,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MinRamMb
 
+Amount of ram (in MB) required to boot image.
+Defauts to 0.
+
 _Required_: No
 
 _Type_: Double
@@ -114,6 +139,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the image.
 
 _Required_: Yes
 
@@ -123,6 +150,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Properties
 
+A map of key/value pairs to set freeform
+information about an image. See the "Notes" section for further
+information about properties.
+
 _Required_: No
 
 _Type_: List of <a href="properties.md">Properties</a>
@@ -130,6 +161,9 @@ _Type_: List of <a href="properties.md">Properties</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Protected
+
+If true, image will not be deletable.
+Defaults to false.
 
 _Required_: No
 
@@ -139,6 +173,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region in which to obtain the V2 Glance client.
+A Glance client is needed to create an Image that can be used with
+a compute instance. If omitted, the `region` argument of the provider
+is used. Changing this creates a new Image.
+
 _Required_: No
 
 _Type_: String
@@ -146,6 +185,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+The tags of the image. It must be a list of strings.
+At this time, it is not possible to delete all tags of an image.
 
 _Required_: No
 
@@ -155,6 +197,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VerifyChecksum
 
+If false, the checksum will not be verified
+once the image is finished uploading. Defaults to true.
+
 _Required_: No
 
 _Type_: Boolean
@@ -162,6 +207,10 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Visibility
+
+The visibility of the image. Must be one of
+"public", "private", "community", or "shared". The ability to set the
+visibility depends upon the configuration of the OpenStack cloud.
 
 _Required_: No
 

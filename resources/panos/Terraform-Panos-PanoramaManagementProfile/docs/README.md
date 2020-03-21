@@ -1,6 +1,7 @@
 # Terraform::Panos::PanoramaManagementProfile
 
-CloudFormation equivalent of panos_panorama_management_profile
+This resource allows you to add/update/delete Panorama interface management profiles
+for both templates and template stacks.
 
 ## Syntax
 
@@ -58,6 +59,8 @@ Properties:
 
 #### Http
 
+Allow HTTP.
+
 _Required_: No
 
 _Type_: Boolean
@@ -65,6 +68,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HttpOcsp
+
+Allow HTTP OCSP.
 
 _Required_: No
 
@@ -74,6 +79,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Https
 
+Allow HTTPS.
+
 _Required_: No
 
 _Type_: Boolean
@@ -81,6 +88,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The management profile's name.
 
 _Required_: Yes
 
@@ -90,6 +99,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PermittedIps
 
+The list of permitted IP addresses or address
+ranges for this management profile.
+
 _Required_: No
 
 _Type_: List of String
@@ -97,6 +109,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ping
+
+Allow ping.
 
 _Required_: No
 
@@ -106,6 +120,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResponsePages
 
+Allow response pages.
+
 _Required_: No
 
 _Type_: Boolean
@@ -113,6 +129,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Snmp
+
+Allow SNMP.
 
 _Required_: No
 
@@ -122,6 +140,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ssh
 
+Allow SSH.
+
 _Required_: No
 
 _Type_: Boolean
@@ -129,6 +149,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Telnet
+
+Allow telnet.
 
 _Required_: No
 
@@ -138,6 +160,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Template
 
+The template name.
+
 _Required_: No
 
 _Type_: String
@@ -145,6 +169,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TemplateStack
+
+The template stack name.
 
 _Required_: No
 
@@ -154,6 +180,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UseridService
 
+Allow User ID service.
+
 _Required_: No
 
 _Type_: Boolean
@@ -162,6 +190,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UseridSyslogListenerSsl
 
+Allow User ID syslog listener
+for SSL.
+
 _Required_: No
 
 _Type_: Boolean
@@ -169,6 +200,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UseridSyslogListenerUdp
+
+Allow User ID syslog listener
+for UDP.
 
 _Required_: No
 

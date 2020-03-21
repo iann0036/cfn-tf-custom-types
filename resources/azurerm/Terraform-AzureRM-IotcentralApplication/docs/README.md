@@ -1,6 +1,6 @@
 # Terraform::AzureRM::IotcentralApplication
 
-CloudFormation equivalent of azurerm_iotcentral_application
+Manages an IotCentral Application
 
 ## Syntax
 
@@ -46,6 +46,8 @@ Properties:
 
 #### DisplayName
 
+A `display_name` name. Custom display name for the IoT Central application. Default is resource name.
+
 _Required_: No
 
 _Type_: String
@@ -53,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Location
+
+Specifies the supported Azure location where the resource has to be create. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -62,6 +66,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the IotHub resource. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -69,6 +75,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group under which the IotHub resource has to be created. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -78,6 +86,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Sku
 
+A `sku` name. Possible values is `ST1`, `ST2`, Default value is `ST1`.
+
 _Required_: No
 
 _Type_: String
@@ -85,6 +95,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubDomain
+
+A `sub_domain` name. Subdomain for the IoT Central URL. Each application must have a unique subdomain.
 
 _Required_: Yes
 
@@ -94,6 +106,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -101,6 +115,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Template
+
+A `template` name. IoT Central application template name. Default is a custom application.
 
 _Required_: No
 

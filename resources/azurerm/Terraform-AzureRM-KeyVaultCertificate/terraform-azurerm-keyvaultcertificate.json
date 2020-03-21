@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::KeyVaultCertificate",
-    "description": "CloudFormation equivalent of azurerm_key_vault_certificate",
+    "description": "Manages a Key Vault Certificate.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Certificate": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "Contents": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The base64-encoded certificate contents. Changing this forces a new resource to be created."
                 },
                 "Password": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The password associated with the certificate. Changing this forces a new resource to be created."
                 }
             },
             "required": [
@@ -81,7 +83,8 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the Certificate Issuer. Possible values include `Self` (for self-signed certificate), or `Unknown` (for a certificate issuing authority like `Let's Encrypt` and Azure direct supported ones). Changing this forces a new resource to be created."
                 }
             },
             "required": [
@@ -93,16 +96,20 @@
             "additionalProperties": false,
             "properties": {
                 "Exportable": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Is this Certificate Exportable? Changing this forces a new resource to be created."
                 },
                 "KeySize": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The size of the Key used in the Certificate. Possible values include `2048` and `4096`. Changing this forces a new resource to be created."
                 },
                 "KeyType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the Type of Key, such as `RSA`. Changing this forces a new resource to be created."
                 },
                 "ReuseKey": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Is the key reusable? Changing this forces a new resource to be created."
                 }
             },
             "required": [
@@ -138,7 +145,8 @@
             "additionalProperties": false,
             "properties": {
                 "ContentType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Content-Type of the Certificate, such as `application/x-pkcs12` for a PFX or `application/x-pem-file` for a PEM. Changing this forces a new resource to be created."
                 }
             },
             "required": [
@@ -154,20 +162,24 @@
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of Extended/Enhanced Key Usages. Changing this forces a new resource to be created."
                 },
                 "KeyUsage": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of uses associated with this Key. Possible values include `cRLSign`, `dataEncipherment`, `decipherOnly`, `digitalSignature`, `encipherOnly`, `keyAgreement`, `keyCertSign`, `keyEncipherment` and `nonRepudiation` and are case-sensitive. Changing this forces a new resource to be created."
                 },
                 "Subject": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Certificate's Subject. Changing this forces a new resource to be created."
                 },
                 "ValidityInMonths": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The Certificates Validity Period in Months. Changing this forces a new resource to be created."
                 },
                 "SubjectAlternativeNames": {
                     "type": "array",
@@ -188,7 +200,8 @@
             "additionalProperties": false,
             "properties": {
                 "ActionType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Type of action to be performed when the lifetime trigger is triggerec. Possible values include `AutoRenew` and `EmailContacts`. Changing this forces a new resource to be created."
                 }
             },
             "required": [
@@ -200,10 +213,12 @@
             "additionalProperties": false,
             "properties": {
                 "DaysBeforeExpiry": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The number of days before the Certificate expires that the action associated with this Trigger should run. Changing this forces a new resource to be created. Conflicts with `lifetime_percentage`."
                 },
                 "LifetimePercentage": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The percentage at which during the Certificates Lifetime the action associated with this Trigger should run. Changing this forces a new resource to be created. Conflicts with `days_before_expiry`."
                 }
             },
             "required": []
@@ -217,21 +232,24 @@
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of alternative DNS names (FQDNs) identified by the Certificate. Changing this forces a new resource to be created."
                 },
                 "Emails": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of email addresses identified by this Certificate. Changing this forces a new resource to be created."
                 },
                 "Upns": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of User Principal Names identified by the Certificate. Changing this forces a new resource to be created."
                 }
             },
             "required": []
@@ -246,10 +264,12 @@
             "type": "string"
         },
         "KeyVaultId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Key Vault where the Certificate should be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Key Vault Certificate. Changing this forces a new resource to be created."
         },
         "SecretId": {
             "type": "string"
@@ -272,7 +292,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Thumbprint": {
             "type": "string"

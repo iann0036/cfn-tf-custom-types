@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Tfe::OrganizationToken",
-    "description": "CloudFormation equivalent of tfe_organization_token",
+    "description": "Generates a new organization token, replacing any existing token. This token\ncan be used to act as the organization service account.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "ForceRegenerate": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If set to `true`, a new token will be\ngenerated even if a token already exists. This will invalidate the existing\ntoken!."
         },
         "Organization": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the organization."
         },
         "Token": {
             "type": "string"

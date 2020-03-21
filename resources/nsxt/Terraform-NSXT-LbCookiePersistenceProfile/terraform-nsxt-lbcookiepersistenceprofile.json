@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::NSXT::LbCookiePersistenceProfile",
-    "description": "CloudFormation equivalent of nsxt_lb_cookie_persistence_profile",
+    "description": "Provides a resource to configure lb cookie persistence profile on NSX-T manager\n\n~> **NOTE:** This resource requires NSX version 2.3 or higher.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "InsertModeParams": {
@@ -48,25 +48,32 @@
             "type": "string"
         },
         "CookieFallback": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "A boolean flag which reflects whether once the server points by this cookie is down, a new server is selected, or the requests will be rejected."
         },
         "CookieGarble": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "A boolean flag which reflects whether the cookie value (server IP and port) would be encrypted or in plain text."
         },
         "CookieMode": {
-            "type": "string"
+            "type": "string",
+            "description": "The cookie persistence mode. Accepted values: PREFIX, REWRITE and INSERT which is the default."
         },
         "CookieName": {
-            "type": "string"
+            "type": "string",
+            "description": "cookie name."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of this resource."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The display name of this resource. Defaults to ID if not set."
         },
         "PersistenceShared": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "A boolean flag which reflects whether the cookie persistence is private or shared. When false (which is the default value), the cookie persistence is private to each virtual server and is qualified by the pool. If set to true, in cookie insert mode, cookie persistence could be shared across multiple virtual servers that are bound to the same pools."
         },
         "Revision": {
             "type": "number"

@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::CosBucket
 
-CloudFormation equivalent of tencentcloud_cos_bucket
+Provides a COS resource to create a COS bucket and set its attributes.
 
 ## Syntax
 
@@ -49,6 +49,8 @@ Properties:
 
 #### Acl
 
+The canned ACL to apply. Available values include private, public-read, and public-read-write. Defaults to private.
+
 _Required_: No
 
 _Type_: String
@@ -57,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Bucket
 
+The name of a bucket to be created. Bucket format should be [custom name]-[appid], for example `mycos-1258798060`.
+
 _Required_: Yes
 
 _Type_: String
@@ -64,6 +68,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+The tags of a bucket.
 
 _Required_: No
 

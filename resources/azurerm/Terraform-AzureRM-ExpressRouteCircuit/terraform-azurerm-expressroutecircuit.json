@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::ExpressRouteCircuit",
-    "description": "CloudFormation equivalent of azurerm_express_route_circuit",
+    "description": "Manages an ExpressRoute circuit.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Sku": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "Family": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The billing mode for bandwidth. Possible values are `MeteredData` or `UnlimitedData`."
                 },
                 "Tier": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The service tier. Possible values are `Basic`, `Local`, `Standard` or `Premium`."
                 }
             },
             "required": [
@@ -45,28 +47,35 @@
             "type": "string"
         },
         "AllowClassicOperations": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Allow the circuit to interact with classic (RDFE) resources. The default value is `false`."
         },
         "BandwidthInMbps": {
-            "type": "number"
+            "type": "number",
+            "description": "The bandwidth in Mbps of the circuit being created."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the ExpressRoute circuit. Changing this forces a new resource to be created."
         },
         "PeeringLocation": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the peering location and **not** the Azure resource location."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the ExpressRoute circuit. Changing this forces a new resource to be created."
         },
         "ServiceKey": {
             "type": "string"
         },
         "ServiceProviderName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the ExpressRoute Service Provider."
         },
         "ServiceProviderProvisioningState": {
             "type": "string"
@@ -89,7 +98,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Sku": {
             "type": "array",

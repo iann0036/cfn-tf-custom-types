@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Gitlab::Group",
-    "description": "CloudFormation equivalent of gitlab_group",
+    "description": "This resource allows you to create and manage GitLab groups.\nNote your provider will need to be configured with admin-level access for this resource to work.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the group."
         },
         "FullName": {
             "type": "string"
@@ -18,25 +19,31 @@
             "type": "string"
         },
         "LfsEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean, defaults to true.  Whether to enable LFS\nsupport for projects in this group."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of this group."
         },
         "ParentId": {
-            "type": "number"
+            "type": "number",
+            "description": "Integer, id of the parent group (creates a nested group)."
         },
         "Path": {
-            "type": "string"
+            "type": "string",
+            "description": "The path of the group."
         },
         "RequestAccessEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean, defaults to false.  Whether to\nenable users to request access to the group."
         },
         "RunnersToken": {
             "type": "string"
         },
         "VisibilityLevel": {
-            "type": "string"
+            "type": "string",
+            "description": "Set to `public` to create a public group.\nValid values are `private`, `internal`, `public`.\nGroups are created as private by default."
         },
         "WebUrl": {
             "type": "string"

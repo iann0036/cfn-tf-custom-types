@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::DbInstance",
-    "description": "CloudFormation equivalent of alicloud_db_instance",
+    "description": "Provides an RDS instance resource. A DB instance is an isolated database\nenvironment in the cloud. A DB instance can contain multiple user-created\ndatabases.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Parameters": {
@@ -42,78 +42,98 @@
             "type": "string"
         },
         "AutoRenew": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to renewal a DB instance automatically or not. It is valid when instance_charge_type is `PrePaid`. Default to `false`."
         },
         "AutoRenewPeriod": {
-            "type": "number"
+            "type": "number",
+            "description": "Auto-renewal period of an instance, in the unit of the month. It is valid when instance_charge_type is `PrePaid`. Valid value:[1~12], Default to 1."
         },
         "AutoUpgradeMinorVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "The upgrade method to use. Valid values:\n- Auto: Instances are automatically upgraded to a higher minor version.\n- Manual: Instances are forcibly upgraded to a higher minor version when the current version is unpublished."
         },
         "ConnectionString": {
             "type": "string"
         },
         "DbInstanceStorageType": {
-            "type": "string"
+            "type": "string",
+            "description": "The storage type of the instance. Valid values:\n- local_ssd: specifies to use local SSDs. This value is recommended.\n- cloud_ssd: specifies to use standard SSDs.\n- cloud_essd: specifies to use enhanced SSDs (ESSDs).\n- cloud_essd2: specifies to use enhanced SSDs (ESSDs).\n- cloud_essd3: specifies to use enhanced SSDs (ESSDs)."
         },
         "Engine": {
-            "type": "string"
+            "type": "string",
+            "description": "Database type. Value options: MySQL, SQLServer, PostgreSQL, and PPAS."
         },
         "EngineVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "Database version. Value options can refer to the latest docs [CreateDBInstance](https://www.alibabacloud.com/help/doc-detail/26228.htm) `EngineVersion`."
         },
         "ForceRestart": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set it to true to make some parameter efficient when modifying them. Default to false."
         },
         "InstanceChargeType": {
-            "type": "string"
+            "type": "string",
+            "description": "Valid values are `Prepaid`, `Postpaid`, Default to `Postpaid`. Currently, the resource only supports PostPaid to PrePaid."
         },
         "InstanceName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of DB instance. It a string of 2 to 256 characters."
         },
         "InstanceStorage": {
-            "type": "number"
+            "type": "number",
+            "description": "User-defined DB instance storage space. Value range:\n- [5, 2000] for MySQL/PostgreSQL/PPAS HA dual node edition;\n- [20,1000] for MySQL 5.7 basic single node edition;\n- [10, 2000] for SQL Server 2008R2;\n- [20,2000] for SQL Server 2012 basic single node edition\nIncrease progressively at a rate of 5 GB. For details, see [Instance type table](https://www.alibabacloud.com/help/doc-detail/26312.htm).\nNote: There is extra 5 GB storage for SQL Server Instance and it is not in specified `instance_storage`."
         },
         "InstanceType": {
-            "type": "string"
+            "type": "string",
+            "description": "DB Instance type. For details, see [Instance type table](https://www.alibabacloud.com/help/doc-detail/26312.htm)."
         },
         "MaintainTime": {
-            "type": "string"
+            "type": "string",
+            "description": "Maintainable time period format of the instance: HH:MMZ-HH:MMZ (UTC time)."
         },
         "MonitoringPeriod": {
-            "type": "number"
+            "type": "number",
+            "description": "The monitoring frequency in seconds. Valid values are 5, 60, 300. Defaults to 300."
         },
         "Period": {
-            "type": "number"
+            "type": "number",
+            "description": "The duration that you will buy DB instance (in month). It is valid when instance_charge_type is `PrePaid`. Valid values: [1~9], 12, 24, 36. Default to 1."
         },
         "Port": {
             "type": "string"
         },
         "SecurityGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "It has been deprecated from 1.69.0 and use `security_group_ids` instead."
         },
         "SecurityGroupIds": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": ", Available in 1.69.0+) The list IDs to join ECS Security Group. At most supports three security groups."
         },
         "SecurityIpMode": {
-            "type": "string"
+            "type": "string",
+            "description": "Valid values are `normal`, `safety`, Default to `normal`. support `safety` switch to high security access mode."
         },
         "SecurityIps": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of IP addresses allowed to access all databases of an instance. The list contains up to 1,000 IP addresses, separated by commas. Supported formats include 0.0.0.0/0, 10.23.12.24 (IP), and 10.23.12.24/24 (Classless Inter-Domain Routing (CIDR) mode. /24 represents the length of the prefix in an IP address. The range of the prefix length is [1,32])."
         },
         "SqlCollectorConfigValue": {
-            "type": "number"
+            "type": "number",
+            "description": "The sql collector keep time of the instance. Valid values are `1`, `30`, `180`, `365`, `1095`, `1825`, `1` is the initial value, and can't change it to `1`."
         },
         "SqlCollectorStatus": {
-            "type": "string"
+            "type": "string",
+            "description": "The sql collector status of the instance. Valid values are `Enabled`, `Disabled`, Default to `Disabled`."
         },
         "Tags": {
             "type": "array",
@@ -133,13 +153,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource.\n- Key: It can be up to 64 characters in length. It cannot begin with \"aliyun\", \"acs:\", \"http://\", or \"https://\". It cannot be a null string.\n- Value: It can be up to 128 characters in length. It cannot begin with \"aliyun\", \"acs:\", \"http://\", or \"https://\". It can be a null string."
         },
         "VswitchId": {
-            "type": "string"
+            "type": "string",
+            "description": "The virtual switch ID to launch DB instances in one VPC."
         },
         "ZoneId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Zone to launch the DB instance. From version 1.8.1, it supports multiple zone.\nIf it is a multi-zone and `vswitch_id` is specified, the vswitch must in the one of them.\nThe multiple zone ID can be retrieved by setting `multi` to \"true\" in the data source `alicloud_zones`."
         },
         "Parameters": {
             "type": "array",

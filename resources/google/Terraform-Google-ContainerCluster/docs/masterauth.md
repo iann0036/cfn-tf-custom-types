@@ -27,6 +27,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Password
 
+The password to use for HTTP basic authentication when accessing
+the Kubernetes master endpoint.
+
 _Required_: No
 
 _Type_: String
@@ -34,6 +37,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Username
+
+The username to use for HTTP basic authentication when accessing
+the Kubernetes master endpoint. If not present basic auth will be disabled.
 
 _Required_: No
 

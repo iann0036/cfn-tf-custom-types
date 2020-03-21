@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HuaweiCloud::VpcEipV1",
-    "description": "CloudFormation equivalent of huaweicloud_vpc_eip_v1",
+    "description": "Manages a V1 EIP resource within Huawei Cloud VPC.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Bandwidth": {
@@ -8,19 +8,24 @@
             "additionalProperties": false,
             "properties": {
                 "ChargeMode": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "This is a reserved field. If the system supports charging\nby traffic and this field is specified, then you are charged by traffic for elastic\nIP addresses. Changing this creates a new eip."
                 },
                 "Id": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The share bandwidth id. Changing this creates a new eip."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The bandwidth name, which is a string of 1 to 64 characters\nthat contain letters, digits, underscores (_), and hyphens (-)."
                 },
                 "ShareType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Whether the bandwidth is shared or exclusive. Changing\nthis creates a new eip."
                 },
                 "Size": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The bandwidth size. The value ranges from 1 to 300 Mbit/s."
                 }
             },
             "required": [
@@ -32,13 +37,16 @@
             "additionalProperties": false,
             "properties": {
                 "IpAddress": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The value must be a valid IP address in the available\nIP address segment. Changing this creates a new eip."
                 },
                 "PortId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The port id which this eip will associate with. If the value\nis \"\" or this not specified, the eip will be in unbind state."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The value must be a type supported by the system. Only\n`5_bgp` supported now. Changing this creates a new eip."
                 }
             },
             "required": [
@@ -65,7 +73,8 @@
             "type": "string"
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to create the eip. If omitted,\nthe `region` argument of the provider is used. Changing this creates a new eip."
         },
         "ValueSpecs": {
             "type": "array",

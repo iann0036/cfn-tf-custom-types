@@ -28,6 +28,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### FunctionUrn
 
+Specifies the function URN.
+
 _Required_: Yes
 
 _Type_: String
@@ -35,6 +37,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InvocationType
+
+Specifies the invocation mode, which can be 'async' or 'sync'.
 
 _Required_: Yes
 
@@ -44,6 +48,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Timeout
 
+Timeout duration (in ms) for API Gateway to request for FunctionGraph. Defaults to 50000.
+
 _Required_: No
 
 _Type_: Double
@@ -51,6 +57,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Version
+
+Specifies the function version.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 # Terraform::AzureRM::IothubSharedAccessPolicy
 
-CloudFormation equivalent of azurerm_iothub_shared_access_policy
+Manages an IotHub Shared Access Policy
 
 ## Syntax
 
@@ -43,6 +43,8 @@ Properties:
 
 #### DeviceConnect
 
+Adds `DeviceConnect` permission to this Shared Access Account. It allows sending and receiving on the device-side endpoints.
+
 _Required_: No
 
 _Type_: Boolean
@@ -50,6 +52,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IothubName
+
+The name of the IoTHub to which this Shared Access Policy belongs. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -59,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the IotHub Shared Access Policy resource. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -66,6 +72,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RegistryRead
+
+Adds `RegistryRead` permission to this Shared Access Account. It allows read access to the identity registry.
 
 _Required_: No
 
@@ -75,6 +83,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RegistryWrite
 
+Adds `RegistryWrite` permission to this Shared Access Account. It allows write access to the identity registry.
+
 _Required_: No
 
 _Type_: Boolean
@@ -83,6 +93,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group under which the IotHub Shared Access Policy resource has to be created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -90,6 +102,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServiceConnect
+
+Adds `ServiceConnect` permission to this Shared Access Account. It allows sending and receiving on the cloud-side endpoints.
 
 _Required_: No
 

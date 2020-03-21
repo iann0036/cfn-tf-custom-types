@@ -1,6 +1,12 @@
 # Terraform::Panos::GeneralSettings
 
-CloudFormation equivalent of panos_general_settings
+This resource allows you to update the general device settings, such as DNS
+or the hostname.
+
+All params are optional for this resource.  If any options are not specified,
+then whatever is already configured on the firewall is left as-is.  The
+general device settings will always exist on the firewall, so `terraform
+destroy` does not remove config from the firewall.
 
 ## Syntax
 
@@ -69,6 +75,8 @@ Properties:
 
 #### DnsPrimary
 
+Primary DNS server.
+
 _Required_: No
 
 _Type_: String
@@ -76,6 +84,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DnsSecondary
+
+Secondary DNS server.
 
 _Required_: No
 
@@ -85,6 +95,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Domain
 
+The domain.
+
 _Required_: No
 
 _Type_: String
@@ -92,6 +104,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Hostname
+
+Firewall hostname.
 
 _Required_: No
 
@@ -101,6 +115,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NtpPrimaryAddress
 
+Primary NTP server.
+
 _Required_: No
 
 _Type_: String
@@ -108,6 +124,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NtpPrimaryAlgorithm
+
+Primary NTP `symmetric-key` algorithm.  This can be
+`sha1` or `md5`.
 
 _Required_: No
 
@@ -117,6 +136,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NtpPrimaryAuthKey
 
+Primary NTP `symmetric-key` auth key.  This is the
+SHA1 hash if the algorithm is `sha1`, or the md5sum if the algorithm is
+`md5`.
+
 _Required_: No
 
 _Type_: String
@@ -124,6 +147,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NtpPrimaryAuthType
+
+Primary NTP auth type.  This can be `none`,
+`autokey`, or `symmetric-key`.
 
 _Required_: No
 
@@ -133,6 +159,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NtpPrimaryKeyId
 
+Primary NTP `symmetric-key` key ID.
+
 _Required_: No
 
 _Type_: Double
@@ -140,6 +168,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NtpSecondaryAddress
+
+Secondary NTP server.
 
 _Required_: No
 
@@ -149,6 +179,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NtpSecondaryAlgorithm
 
+Secondary NTP `symmetric-key` algorithm.  This
+can be `sha1` or `md5`.
+
 _Required_: No
 
 _Type_: String
@@ -156,6 +189,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NtpSecondaryAuthKey
+
+Secondary NTP `symmetric-key` auth key.  This is
+the SHA1 hash if the algorithm is `sha1`, or the md5sum if the algorithm is
+`md5`.
 
 _Required_: No
 
@@ -165,6 +202,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NtpSecondaryAuthType
 
+Secondary NTP auth type.  This can be `none`,
+`autokey`, or `symmetric-key`.
+
 _Required_: No
 
 _Type_: String
@@ -172,6 +212,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NtpSecondaryKeyId
+
+Secondary NTP `symmetric-key` key ID.
 
 _Required_: No
 
@@ -181,6 +223,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProxyPassword
 
+Proxy's password.
+
 _Required_: No
 
 _Type_: String
@@ -189,6 +233,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProxyPort
 
+Proxy's port number.
+
 _Required_: No
 
 _Type_: Double
@@ -196,6 +242,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProxyServer
+
+Specify a proxy server.
 
 _Required_: No
 
@@ -213,6 +261,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Timezone
 
+The timezone (e.g. - `US/Pacific`).
+
 _Required_: No
 
 _Type_: String
@@ -221,6 +271,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UpdateServer
 
+The update server (Default: `updates.paloaltonetworks.com`).
+
 _Required_: No
 
 _Type_: String
@@ -228,6 +280,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VerifyUpdateServer
+
+Verify update server identity (Default: `true`).
 
 _Required_: No
 

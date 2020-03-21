@@ -1,6 +1,13 @@
 # Terraform::Google::StorageTransferJob
 
-CloudFormation equivalent of google_storage_transfer_job
+Creates a new Transfer Job in Google Cloud Storage Transfer.
+
+To get more information about Google Cloud Storage Transfer, see:
+
+* [Overview](https://cloud.google.com/storage-transfer/docs/overview)
+* [API documentation](https://cloud.google.com/storage-transfer/docs/reference/rest/v1/transferJobs#TransferJob)
+* How-to Guides
+    * [Configuring Access to Data Sources and Sinks](https://cloud.google.com/storage-transfer/docs/configure-access)
 
 ## Syntax
 
@@ -69,6 +76,8 @@ Properties:
 
 #### Description
 
+Unique description to identify the Transfer Job.
+
 _Required_: Yes
 
 _Type_: String
@@ -77,6 +86,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Project
 
+The project in which the resource belongs. If it
+is not provided, the provider project is used.
+
 _Required_: No
 
 _Type_: String
@@ -84,6 +96,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Status
+
+Status of the job. Default: `ENABLED`. **NOTE: The effect of the new job status takes place during a subsequent job run. For example, if you change the job status from ENABLED to DISABLED, and an operation spawned by the transfer is running, the status change would not affect the current operation.**.
 
 _Required_: No
 

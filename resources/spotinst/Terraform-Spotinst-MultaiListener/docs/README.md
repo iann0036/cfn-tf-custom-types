@@ -1,6 +1,6 @@
 # Terraform::Spotinst::MultaiListener
 
-CloudFormation equivalent of spotinst_multai_listener
+Provides a Spotinst Multai Listener.
 
 ## Syntax
 
@@ -39,6 +39,8 @@ Properties:
 
 #### BalancerId
 
+The ID of the balancer.
+
 _Required_: Yes
 
 _Type_: String
@@ -47,6 +49,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Port
 
+The port on which the load balancer is listening.
+
 _Required_: Yes
 
 _Type_: Double
@@ -54,6 +58,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Protocol
+
+The protocol to allow connections to the load balancer.
 
 _Required_: Yes
 

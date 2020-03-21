@@ -1,6 +1,6 @@
 # Terraform::FlexibleEngine::VpcRouteV2
 
-CloudFormation equivalent of flexibleengine_vpc_route_v2
+Provides a resource to create a route.
 
 ## Syntax
 

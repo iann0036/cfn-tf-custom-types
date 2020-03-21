@@ -1,6 +1,10 @@
 # Terraform::OCI::HealthChecksPingMonitor
 
-CloudFormation equivalent of oci_health_checks_ping_monitor
+This resource provides the Ping Monitor resource in Oracle Cloud Infrastructure Health Checks service.
+
+Creates a ping monitor. Vantage points will be automatically selected if not specified,
+and probes will be initiated from each vantage point to each of the targets at the frequency
+specified by `intervalInSeconds`.
 
 ## Syntax
 
@@ -55,6 +59,8 @@ Properties:
 
 #### CompartmentId
 
+(Updatable) The OCID of the compartment.
+
 _Required_: Yes
 
 _Type_: String
@@ -62,6 +68,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefinedTags
+
+(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`.
 
 _Required_: No
 
@@ -71,6 +79,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+(Updatable) A user-friendly and mutable name suitable for display in a user interface.
+
 _Required_: Yes
 
 _Type_: String
@@ -78,6 +88,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FreeformTags
+
+(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`.
 
 _Required_: No
 
@@ -87,6 +99,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IntervalInSeconds
 
+(Updatable) The monitor interval in seconds. Valid values: 10, 30, and 60.
+
 _Required_: Yes
 
 _Type_: Double
@@ -94,6 +108,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IsEnabled
+
+(Updatable) Enables or disables the monitor. Set to 'true' to launch monitoring.
 
 _Required_: No
 
@@ -103,6 +119,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Port
 
+(Updatable) The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
+
 _Required_: No
 
 _Type_: Double
@@ -110,6 +128,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Protocol
+
+(Updatable) The protocols for ping probes.
 
 _Required_: Yes
 
@@ -119,6 +139,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Targets
 
+(Updatable) A list of targets (hostnames or IP addresses) of the probe.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -127,6 +149,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TimeoutInSeconds
 
+(Updatable) The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
+
 _Required_: No
 
 _Type_: Double
@@ -134,6 +158,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VantagePointNames
+
+(Updatable) A list of names of vantage points from which to execute the probe.
 
 _Required_: No
 

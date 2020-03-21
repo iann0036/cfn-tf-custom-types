@@ -1,6 +1,6 @@
 # Terraform::Cloudflare::RateLimit
 
-CloudFormation equivalent of cloudflare_rate_limit
+Provides a Cloudflare rate limit resource for a given zone. This can be used to limit the traffic you receive zone-wide, or matching more specific types of requests/responses.
 
 ## Syntax
 
@@ -55,6 +55,8 @@ Properties:
 
 #### BypassUrlPatterns
 
+URLs matching the patterns specified here will be excluded from rate limiting.
+
 _Required_: No
 
 _Type_: List of String
@@ -62,6 +64,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+A note that you can use to describe the reason for a rate limit. This value is sanitized and all tags are removed.
 
 _Required_: No
 
@@ -71,6 +75,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Disabled
 
+Whether this ratelimit is currently disabled. Default: `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -78,6 +84,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Period
+
+The time in seconds to count matching traffic. If the count exceeds threshold within this period the action will be performed (min: 1, max: 86,400).
 
 _Required_: Yes
 
@@ -87,6 +95,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Threshold
 
+The threshold that triggers the rate limit mitigations, combine with period. i.e. threshold per period (min: 2, max: 1,000,000).
+
 _Required_: Yes
 
 _Type_: Double
@@ -94,6 +104,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneId
+
+The DNS zone ID to apply rate limiting to.
 
 _Required_: Yes
 

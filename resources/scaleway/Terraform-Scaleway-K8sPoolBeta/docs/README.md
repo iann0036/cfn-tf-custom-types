@@ -1,6 +1,6 @@
 # Terraform::Scaleway::K8sPoolBeta
 
-CloudFormation equivalent of scaleway_k8s_pool_beta
+Creates and manages Scaleway Kubernetes cluster pools. For more information, see [the documentation](https://developers.scaleway.com/en/products/k8s/api/).
 
 ## Syntax
 

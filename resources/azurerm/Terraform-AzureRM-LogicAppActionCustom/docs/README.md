@@ -1,6 +1,6 @@
 # Terraform::AzureRM::LogicAppActionCustom
 
-CloudFormation equivalent of azurerm_logic_app_action_custom
+Manages a Custom Action within a Logic App Workflow
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### Body
 
+Specifies the JSON Blob defining the Body of this Custom Action.
+
 _Required_: Yes
 
 _Type_: String
@@ -43,6 +45,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LogicAppId
 
+Specifies the ID of the Logic App Workflow. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the HTTP Action to be created within the Logic App Workflow. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

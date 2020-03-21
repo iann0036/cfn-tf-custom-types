@@ -1,6 +1,6 @@
 # Terraform::OPC::ComputeImageList
 
-CloudFormation equivalent of opc_compute_image_list
+The ``opc_compute_image_list`` resource creates and manages an Image List in an Oracle Cloud Infrastructure Compute Classic identity domain.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### Default
 
+The image list entry to be used, by default, when launching instances using this image list. Defaults to `1`.
+
 _Required_: No
 
 _Type_: Double
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+A description of the Image List.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the Image List.
 
 _Required_: Yes
 

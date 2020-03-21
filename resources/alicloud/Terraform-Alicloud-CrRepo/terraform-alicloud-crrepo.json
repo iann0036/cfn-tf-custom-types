@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::CrRepo",
-    "description": "CloudFormation equivalent of alicloud_cr_repo",
+    "description": "This resource will help you to manager Container Registry repositories.\n\n-> **NOTE:** Available in v1.35.0+.\n\n-> **NOTE:** You need to set your registry password in Container Registry console before use this resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "Detail": {
-            "type": "string"
+            "type": "string",
+            "description": "The repository specific information. MarkDown format is supported, and the length limit is 2000."
         },
         "DomainList": {
             "type": "array",
@@ -32,16 +33,20 @@
             }
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of container registry repository."
         },
         "Namespace": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of container registry namespace where repository is located."
         },
         "RepoType": {
-            "type": "string"
+            "type": "string",
+            "description": "`PUBLIC` or `PRIVATE`, repo's visibility."
         },
         "Summary": {
-            "type": "string"
+            "type": "string",
+            "description": "The repository general information. It can contain 1 to 80 characters."
         }
     },
     "additionalProperties": false,

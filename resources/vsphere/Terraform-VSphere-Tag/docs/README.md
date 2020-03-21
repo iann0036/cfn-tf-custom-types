@@ -1,6 +1,15 @@
 # Terraform::VSphere::Tag
 
-CloudFormation equivalent of vsphere_tag
+The `vsphere_tag` resource can be used to create and manage tags, which allow
+you to attach metadata to objects in the vSphere inventory to make these
+objects more sortable and searchable.
+
+For more information about tags, click [here][ext-tags-general].
+
+[ext-tags-general]: https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.vcenterhost.doc/GUID-E8E854DD-AA97-4E0C-8419-CE84F93C4058.html
+
+~> **NOTE:** Tagging support is unsupported on direct ESXi connections and
+requires vCenter 6.0 or higher.
 
 ## Syntax
 
@@ -33,6 +42,9 @@ Properties:
 
 #### CategoryId
 
+The unique identifier of the parent category in
+which this tag will be created. Forces a new resource if changed.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +53,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+A description for the tag.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +62,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The display name of the tag. The name must be unique
+within its category.
 
 _Required_: Yes
 

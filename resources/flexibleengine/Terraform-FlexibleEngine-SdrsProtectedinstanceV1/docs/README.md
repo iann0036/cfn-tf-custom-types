@@ -1,6 +1,6 @@
 # Terraform::FlexibleEngine::SdrsProtectedinstanceV1
 
-CloudFormation equivalent of flexibleengine_sdrs_protectedinstance_v1
+Manages a SDRS protected instance resource within FlexibleEngine.
 
 ## Syntax
 
@@ -47,6 +47,8 @@ Properties:
 
 #### ClusterId
 
+Specifies the ID of a storage pool. Changing this creates a new instance.
+
 _Required_: No
 
 _Type_: String
@@ -54,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DeleteTargetEip
+
+Specifies whether to delete the EIP of the target server. The default value is false. Changing this creates a new instance.
 
 _Required_: No
 
@@ -63,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DeleteTargetServer
 
+Specifies whether to delete the target server. The default value is false.. Changing this creates a new instance.
+
 _Required_: No
 
 _Type_: Boolean
@@ -70,6 +76,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+The description of a protected instance. Changing this creates a new instance.
 
 _Required_: No
 
@@ -79,6 +87,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GroupId
 
+Specifies the ID of the protection group where a protected instance is added. Changing this creates a new instance.
+
 _Required_: Yes
 
 _Type_: String
@@ -86,6 +96,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of a protected instance.
 
 _Required_: Yes
 
@@ -95,6 +107,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PrimaryIpAddress
 
+Specifies the IP address of the primary NIC on the target server. Changing this creates a new instance.
+
 _Required_: No
 
 _Type_: String
@@ -103,6 +117,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PrimarySubnetId
 
+Specifies the subnet ID of the primary NIC on the target server. Changing this creates a new instance.
+
 _Required_: No
 
 _Type_: String
@@ -110,6 +126,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServerId
+
+Specifies the ID of the source server. Changing this creates a new instance.
 
 _Required_: Yes
 

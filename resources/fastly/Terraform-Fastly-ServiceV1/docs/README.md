@@ -1,6 +1,12 @@
 # Terraform::Fastly::ServiceV1
 
-CloudFormation equivalent of fastly_service_v1
+Provides a Fastly Service, representing the configuration for a website, app,
+API, or anything else to be served through Fastly. A Service encompasses Domains
+and Backends.
+
+The Service resource requires a domain name that is correctly set up to direct
+traffic to the Fastly service. See Fastly's guide on [Adding CNAME Records][fastly-cname]
+on their documentation site for guidance.
 
 ## Syntax
 
@@ -113,6 +119,8 @@ Properties:
 
 #### Activate
 
+Conditionally prevents the Service from being activated. The apply step will continue to create a new draft version but will not activate it if this is set to false. Default true.
+
 _Required_: No
 
 _Type_: Boolean
@@ -120,6 +128,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Comment
+
+Description field for the service. Default `Managed by Terraform`.
 
 _Required_: No
 
@@ -129,6 +139,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DefaultHost
 
+The default hostname.
+
 _Required_: No
 
 _Type_: String
@@ -136,6 +148,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefaultTtl
+
+The default Time-to-live (TTL) for
+requests.
 
 _Required_: No
 
@@ -145,6 +160,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ForceDestroy
 
+Services that are active cannot be destroyed. In
+order to destroy the Service, set `force_destroy` to `true`. Default `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -153,6 +171,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The unique name for the Service to create.
+
 _Required_: Yes
 
 _Type_: String
@@ -160,6 +180,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VersionComment
+
+Description field for the version.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::DigitalOcean::Volume
 
-CloudFormation equivalent of digitalocean_volume
+Provides a DigitalOcean Block Storage volume which can be attached to a Droplet in order to provide expanded storage.
 
 ## Syntax
 
@@ -46,6 +46,8 @@ Properties:
 
 #### Description
 
+A free-form text field up to a limit of 1024 bytes to describe a block storage volume.
+
 _Required_: No
 
 _Type_: String
@@ -62,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InitialFilesystemLabel
 
+Initial filesystem label for the block storage volume.
+
 _Required_: No
 
 _Type_: String
@@ -69,6 +73,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InitialFilesystemType
+
+Initial filesystem type (`xfs` or `ext4`) for the block storage volume.
 
 _Required_: No
 
@@ -78,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A name for the block storage volume. Must be lowercase and be composed only of numbers, letters and "-", up to a limit of 64 characters.
+
 _Required_: Yes
 
 _Type_: String
@@ -85,6 +93,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region that the block storage volume will be created in.
 
 _Required_: Yes
 
@@ -94,6 +104,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Size
 
+The size of the block storage volume in GiB. If updated, can only be expanded.
+
 _Required_: Yes
 
 _Type_: Double
@@ -102,6 +114,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SnapshotId
 
+The ID of an existing volume snapshot from which the new volume will be created. If supplied, the region and size will be limitied on creation to that of the referenced snapshot.
+
 _Required_: No
 
 _Type_: String
@@ -109,6 +123,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A list of the tags to be applied to this Volume.
 
 _Required_: No
 

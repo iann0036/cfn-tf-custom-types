@@ -1,6 +1,10 @@
 # Terraform::OCI::OsmanagementManagedInstanceGroup
 
-CloudFormation equivalent of oci_osmanagement_managed_instance_group
+This resource provides the Managed Instance Group resource in Oracle Cloud Infrastructure Osmanagement service.
+
+Creates a new Managed Instance Group on the management system.
+This will not contain any managed instances after it is first created,
+and they must be added later.
 
 ## Syntax
 
@@ -41,6 +45,8 @@ Properties:
 
 #### CompartmentId
 
+(Updatable) OCID for the Compartment.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefinedTags
+
+(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
 
 _Required_: No
 
@@ -57,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+(Updatable) Information specified by the user about the managed instance group.
+
 _Required_: No
 
 _Type_: String
@@ -65,6 +75,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+(Updatable) Managed Instance Group identifier.
+
 _Required_: Yes
 
 _Type_: String
@@ -72,6 +84,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FreeformTags
+
+(Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`.
 
 _Required_: No
 

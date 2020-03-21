@@ -25,6 +25,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### EscalationDelayInMinutes
 
+The number of minutes before an unacknowledged incident escalates away from this rule.
+* `targets` - (Required) A target block. Target blocks documented below.
+
 _Required_: Yes
 
 _Type_: Double

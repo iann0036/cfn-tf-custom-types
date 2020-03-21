@@ -1,6 +1,19 @@
 # Terraform::OCI::IdentitySwiftPassword
 
-CloudFormation equivalent of oci_identity_swift_password
+This resource provides the Swift Password resource in Oracle Cloud Infrastructure Identity service.
+
+**Deprecated. Use [CreateAuthToken](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AuthToken/CreateAuthToken) instead.**
+
+Creates a new Swift password for the specified user. For information about what Swift passwords are for, see
+[Managing User Credentials](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcredentials.htm).
+
+You must specify a *description* for the Swift password (although it can be an empty string). It does not
+have to be unique, and you can change it anytime with
+[UpdateSwiftPassword](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/SwiftPassword/UpdateSwiftPassword).
+
+Every user has permission to create a Swift password for *their own user ID*. An administrator in your organization
+does not need to write a policy to give users this ability. To compare, administrators who have permission to the
+tenancy can use this operation to create a Swift password for any user, including themselves.
 
 ## Syntax
 
@@ -33,6 +46,8 @@ Properties:
 
 #### Description
 
+(Updatable) The description you assign to the Swift password during creation. Does not have to be unique, and it's changeable.
+
 _Required_: Yes
 
 _Type_: String
@@ -40,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserId
+
+The OCID of the user.
 
 _Required_: Yes
 

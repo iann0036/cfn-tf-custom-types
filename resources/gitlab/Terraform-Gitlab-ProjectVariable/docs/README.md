@@ -1,6 +1,8 @@
 # Terraform::Gitlab::ProjectVariable
 
-CloudFormation equivalent of gitlab_project_variable
+This resource allows you to create and manage CI/CD variables for your GitLab projects.
+For further information on variables, consult the [gitlab
+documentation](https://docs.gitlab.com/ce/ci/variables/README.html#variables).
 
 ## Syntax
 
@@ -41,6 +43,8 @@ Properties:
 
 #### EnvironmentScope
 
+The environment_scope of the variable.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Key
+
+The name of the variable.
 
 _Required_: Yes
 
@@ -57,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Masked
 
+If set to `true`, the variable will be masked if it would have been written to the logs. Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -64,6 +72,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The name or id of the project to add the hook to.
 
 _Required_: Yes
 
@@ -73,6 +83,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Protected
 
+If set to `true`, the variable will be passed only to pipelines running on protected branches and tags. Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -81,6 +93,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Value
 
+The value of the variable.
+
 _Required_: Yes
 
 _Type_: String
@@ -88,6 +102,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VariableType
+
+The type of a variable. Available types are: env_var (default) and file.
 
 _Required_: No
 

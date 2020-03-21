@@ -1,6 +1,6 @@
 # Terraform::Cloudflare::ZoneSettingsOverride
 
-CloudFormation equivalent of cloudflare_zone_settings_override
+Provides a resource which customizes Cloudflare zone settings. Note that after destroying this resource Zone Settings will be reset to their initial values.
 
 ## Syntax
 
@@ -40,6 +40,8 @@ Properties:
 ## Properties
 
 #### ZoneId
+
+The DNS zone ID to which apply settings.
 
 _Required_: Yes
 

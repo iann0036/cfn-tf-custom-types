@@ -1,6 +1,8 @@
 # Terraform::Panos::PanoramaLogForwardingProfile
 
-CloudFormation equivalent of panos_panorama_log_forwarding_profile
+This resource allows you to add/update/delete log forwarding profiles.
+
+**Minimum PAN-OS version**:  8.0
 
 ## Syntax
 
@@ -56,6 +58,8 @@ Properties:
 
 #### Description
 
+The description.
+
 _Required_: No
 
 _Type_: String
@@ -63,6 +67,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DeviceGroup
+
+The device group (default: `shared`).
 
 _Required_: No
 
@@ -72,6 +78,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnhancedLogging
 
+Set to `true` to enable enhanced logging.
+
 _Required_: No
 
 _Type_: Boolean
@@ -79,6 +87,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The group's name.
 
 _Required_: Yes
 

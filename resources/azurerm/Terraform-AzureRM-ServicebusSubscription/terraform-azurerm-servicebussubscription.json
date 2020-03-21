@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::ServicebusSubscription",
-    "description": "CloudFormation equivalent of azurerm_servicebus_subscription",
+    "description": "Manages a ServiceBus Subscription.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,43 +29,56 @@
             "type": "string"
         },
         "AutoDeleteOnIdle": {
-            "type": "string"
+            "type": "string",
+            "description": "The idle interval after which the topic is automatically deleted as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). The minimum duration is `5` minutes or `P5M`."
         },
         "DeadLetteringOnMessageExpiration": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean flag which controls whether the Subscription has dead letter support when a message expires. Defaults to `false`."
         },
         "DefaultMessageTtl": {
-            "type": "string"
+            "type": "string",
+            "description": "The Default message timespan to live as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). This is the duration after which the message expires, starting from when the message is sent to Service Bus. This is the default value used when TimeToLive is not set on a message itself."
         },
         "EnableBatchedOperations": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean flag which controls whether the Subscription supports batched operations. Defaults to `false`."
         },
         "ForwardDeadLetteredMessagesTo": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of a Queue or Topic to automatically forward Dead Letter messages to."
         },
         "ForwardTo": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of a Queue or Topic to automatically forward messages to."
         },
         "LockDuration": {
-            "type": "string"
+            "type": "string",
+            "description": "The lock duration for the subscription as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). The default value is `1` minute or `P1M`."
         },
         "MaxDeliveryCount": {
-            "type": "number"
+            "type": "number",
+            "description": "The maximum number of deliveries."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the ServiceBus Subscription resource. Changing this forces a new resource to be created."
         },
         "NamespaceName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the ServiceBus Namespace to create this Subscription in. Changing this forces a new resource to be created."
         },
         "RequiresSession": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean flag which controls whether this Subscription supports the concept of a session. Defaults to `false`. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the namespace. Changing this forces a new resource to be created."
         },
         "TopicName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the ServiceBus Topic to create this Subscription in. Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

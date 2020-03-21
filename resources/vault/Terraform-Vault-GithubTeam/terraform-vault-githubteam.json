@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Vault::GithubTeam",
-    "description": "CloudFormation equivalent of vault_github_team",
+    "description": "Manages policy mappings for Github Teams authenticated via Github. See the [Vault\ndocumentation](https://www.vaultproject.io/docs/auth/github.html) for more\ninformation.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,17 +9,20 @@
             "type": "string"
         },
         "Backend": {
-            "type": "string"
+            "type": "string",
+            "description": "Path where the github auth backend is mounted. Defaults to `github`\nif not specified."
         },
         "Policies": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "An array of strings specifying the policies to be set on tokens\nissued using this role."
         },
         "Team": {
-            "type": "string"
+            "type": "string",
+            "description": "GitHub team name in \"slugified\" format, for example: Terraform\nDevelopers -> `terraform-developers`."
         },
         "TokenBoundCidrs": {
             "type": "array",

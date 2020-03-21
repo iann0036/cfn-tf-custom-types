@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HuaweiCloud::NetworkingFloatingipV2",
-    "description": "CloudFormation equivalent of huaweicloud_networking_floatingip_v2",
+    "description": "Manages a V2 floating IP resource within HuaweiCloud Neutron (networking)\nthat can be used for load balancers.\nThese are similar to Nova (compute) floating IP resources,\nbut only compute floating IPs can be used with compute instances.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,19 +26,24 @@
             "type": "string"
         },
         "FixedIp": {
-            "type": "string"
+            "type": "string",
+            "description": "Fixed IP of the port to associate with this floating IP. Required if\nthe port has multiple fixed IPs."
         },
         "Pool": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the pool from which to obtain the floating\nIP. Only admin_external_net is valid. Changing this creates a new floating IP."
         },
         "PortId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of an existing port with at least one IP address to\nassociate with this floating IP."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the V2 Networking client.\nA Networking client is needed to create a floating IP that can be used with\nanother networking resource, such as a load balancer. If omitted, the\n`region` argument of the provider is used. Changing this creates a new\nfloating IP (which may or may not have a different address)."
         },
         "TenantId": {
-            "type": "string"
+            "type": "string",
+            "description": "The target tenant ID in which to allocate the floating\nIP, if you specify this together with a port_id, make sure the target port\nbelongs to the same tenant. Changing this creates a new floating IP (which\nmay or may not have a different address)."
         },
         "ValueSpecs": {
             "type": "array",
@@ -58,7 +63,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Map of additional options."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

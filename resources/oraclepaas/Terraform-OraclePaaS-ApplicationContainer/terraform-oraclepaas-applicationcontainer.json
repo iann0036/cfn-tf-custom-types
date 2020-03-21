@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OraclePaaS::ApplicationContainer",
-    "description": "CloudFormation equivalent of oraclepaas_application_container",
+    "description": "The `oraclepaas_application_container` resource creates and manages an Application Container.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Deployment": {
@@ -197,54 +197,68 @@
             "type": "string"
         },
         "AppUrl": {
-            "type": "string"
+            "type": "string",
+            "description": "URL of the created application."
         },
         "ArchiveUrl": {
-            "type": "string"
+            "type": "string",
+            "description": "Location of the application archive file in Oracle Storage Cloud Service, in the format app-name/file-name."
         },
         "AuthType": {
-            "type": "string"
+            "type": "string",
+            "description": "Uses Oracle Identity Cloud Service to control who can access your Java SE 7 or 8, Node.js, or PHP application. Allowed values are `basic` and `oauth`."
         },
         "AvailabilityDomain": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of one or more datacenter locations in the OCI region. Required on OCI."
         },
         "DeploymentFile": {
-            "type": "string"
+            "type": "string",
+            "description": "The json deployment file containing the attributes related to deploying an application. Use either `deployment_file` or `deployment_attributes` when specifying\ndeployment information."
         },
         "GitPassword": {
-            "type": "string"
+            "type": "string",
+            "description": "The password for the user with access to the git repository if the repository is private."
         },
         "GitRepository": {
-            "type": "string"
+            "type": "string",
+            "description": "The URL of the git repository to use the application container."
         },
         "GitUsername": {
-            "type": "string"
+            "type": "string",
+            "description": "The username of a user with access to the git respository if the repository is private."
         },
         "LoadBalancerSubnets": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Two load balancer subnets. Required on OCI."
         },
         "ManifestFile": {
-            "type": "string"
+            "type": "string",
+            "description": "The json manifest file containing the attributes related to launching an application. Use either `manifest_file` or `manifest_attributes` when specifying\nlaunch information."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the existing service."
         },
         "Notes": {
-            "type": "string"
+            "type": "string",
+            "description": "Comments about the deployment."
         },
         "NotificationEmail": {
-            "type": "string"
+            "type": "string",
+            "description": "Email address to which application deployment status updates are sent."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the region where the application container will be deployed. Required on OCI."
         },
         "Runtime": {
             "type": "array",
@@ -255,7 +269,8 @@
             "maxItems": 1
         },
         "SubscriptionType": {
-            "type": "string"
+            "type": "string",
+            "description": "Whether the subscription type is `hourly` or `monthly`. The default is `hourly`."
         },
         "Tags": {
             "type": "array",
@@ -275,10 +290,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A map of tags for the application container."
         },
         "WebUrl": {
-            "type": "string"
+            "type": "string",
+            "description": "Web URL of the application."
         },
         "Deployment": {
             "type": "array",

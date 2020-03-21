@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::KmsEncryptedData",
-    "description": "CloudFormation equivalent of oci_kms_encrypted_data",
+    "description": "This resource provides the Encrypted Data resource in Oracle Cloud Infrastructure Kms service.\n\nEncrypts data using the given [EncryptDataDetails](https://docs.cloud.oracle.com/iaas/api/#/en/key/release/datatypes/EncryptDataDetails) resource.\nPlaintext included in the example request is a base64-encoded value of a UTF-8 string.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -43,16 +43,19 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters."
         },
         "Ciphertext": {
             "type": "string"
         },
         "CryptoEndpoint": {
-            "type": "string"
+            "type": "string",
+            "description": "The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint."
         },
         "KeyId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the key to encrypt with."
         },
         "LoggingContext": {
             "type": "array",
@@ -72,10 +75,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled."
         },
         "Plaintext": {
-            "type": "string"
+            "type": "string",
+            "description": "The plaintext data to encrypt."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

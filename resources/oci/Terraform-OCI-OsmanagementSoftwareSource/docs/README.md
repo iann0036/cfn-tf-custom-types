@@ -1,6 +1,10 @@
 # Terraform::OCI::OsmanagementSoftwareSource
 
-CloudFormation equivalent of oci_osmanagement_software_source
+This resource provides the Software Source resource in Oracle Cloud Infrastructure Osmanagement service.
+
+Creates a new custom Software Source on the management system.
+This will not contain any packages after it is first created,
+and they must be added later.
 
 ## Syntax
 
@@ -53,6 +57,8 @@ Properties:
 
 #### ArchType
 
+The architecture type supported by the Software Source.
+
 _Required_: Yes
 
 _Type_: String
@@ -60,6 +66,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ChecksumType
+
+(Updatable) The yum repository checksum type used by this software source.
 
 _Required_: No
 
@@ -69,6 +77,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CompartmentId
 
+(Updatable) OCID for the Compartment.
+
 _Required_: Yes
 
 _Type_: String
@@ -76,6 +86,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefinedTags
+
+(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
 
 _Required_: No
 
@@ -85,6 +97,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+(Updatable) Information specified by the user about the software source.
+
 _Required_: No
 
 _Type_: String
@@ -92,6 +106,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+(Updatable) User friendly name for the software source.
 
 _Required_: Yes
 
@@ -101,6 +117,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FreeformTags
 
+(Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`.
+
 _Required_: No
 
 _Type_: List of <a href="freeformtags.md">FreeformTags</a>
@@ -108,6 +126,8 @@ _Type_: List of <a href="freeformtags.md">FreeformTags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MaintainerEmail
+
+(Updatable) Email address of the person maintaining this software source.
 
 _Required_: No
 
@@ -117,6 +137,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaintainerName
 
+(Updatable) Name of the person maintaining this software source.
+
 _Required_: No
 
 _Type_: String
@@ -125,6 +147,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaintainerPhone
 
+(Updatable) Phone number of the person maintaining this software source.
+
 _Required_: No
 
 _Type_: String
@@ -132,6 +156,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ParentId
+
+OCID for the parent software source, if there is one.
 
 _Required_: No
 

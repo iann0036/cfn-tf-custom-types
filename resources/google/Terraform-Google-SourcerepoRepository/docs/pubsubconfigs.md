@@ -42,6 +42,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Topic
 
+The identifier for this object. Format specified above.
+
 _Required_: Yes
 
 _Type_: String

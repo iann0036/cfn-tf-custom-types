@@ -59,6 +59,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### ActivationPolicy
 
+This specifies when the instance should be
+active. Can be either `ALWAYS`, `NEVER` or `ON_DEMAND`.
+
 _Required_: No
 
 _Type_: String
@@ -66,6 +69,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AuthorizedGaeApplications
+
+This property is only applicable to First Generation instances.
+First Generation instances are now deprecated, see [here](https://cloud.google.com/sql/docs/mysql/upgrade-2nd-gen)
+for information on how to upgrade to Second Generation instances.
+A list of Google App Engine (GAE) project names that are allowed to access this instance.
 
 _Required_: No
 
@@ -75,6 +83,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AvailabilityType
 
+This specifies whether a PostgreSQL instance
+should be set up for high availability (`REGIONAL`) or single zone (`ZONAL`).
+
 _Required_: No
 
 _Type_: String
@@ -82,6 +93,12 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CrashSafeReplication
+
+This property is only applicable to First Generation instances.
+First Generation instances are now deprecated, see [here](https://cloud.google.com/sql/docs/mysql/upgrade-2nd-gen)
+for information on how to upgrade to Second Generation instances.
+Specific to read instances, indicates
+when crash-safe replication flags are enabled.
 
 _Required_: No
 
@@ -91,6 +108,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DiskAutoresize
 
+Configuration to increase storage size automatically.  Note that future `terraform apply` calls will attempt to resize the disk to the value specified in `disk_size` - if this is set, do not set `disk_size`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -98,6 +117,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DiskSize
+
+The size of data disk, in GB. Size of a running instance cannot be reduced but can be increased.
 
 _Required_: No
 
@@ -107,6 +128,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DiskType
 
+The type of data disk: PD_SSD or PD_HDD.
+
 _Required_: No
 
 _Type_: String
@@ -114,6 +137,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PricingPlan
+
+Pricing plan for this instance, can only be `PER_USE`.
 
 _Required_: No
 
@@ -123,6 +148,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ReplicationType
 
+This property is only applicable to First Generation instances.
+First Generation instances are now deprecated, see [here](https://cloud.google.com/sql/docs/mysql/upgrade-2nd-gen)
+for information on how to upgrade to Second Generation instances.
+Replication type for this instance, can be one of `ASYNCHRONOUS` or `SYNCHRONOUS`.
+
 _Required_: No
 
 _Type_: String
@@ -131,6 +161,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tier
 
+The machine type to use. See [tiers](https://cloud.google.com/sql/docs/admin-api/v1beta4/tiers)
+for more details and supported versions. Postgres supports only shared-core machine types such as `db-f1-micro`,
+and custom machine types such as `db-custom-2-13312`. See the [Custom Machine Type Documentation](https://cloud.google.com/compute/docs/instances/creating-instance-with-custom-machine-type#create) to learn about specifying custom machine types.
+
 _Required_: Yes
 
 _Type_: String
@@ -138,6 +172,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserLabels
+
+A set of key/value user label pairs to assign to the instance.
 
 _Required_: No
 

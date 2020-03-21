@@ -1,6 +1,6 @@
 # Terraform::FlexibleEngine::MlsInstanceV1
 
-CloudFormation equivalent of flexibleengine_mls_instance_v1
+Manages mls instance resource within FlexibleEngine
 
 ## Syntax
 
@@ -58,6 +58,12 @@ Properties:
 
 #### Agency
 
+Specifies the agency name. This parameter is mandatory only
+when you bind an instance to an elastic IP address (EIP). An instance must be
+bound to an EIP to grant MLS rights to abtain a tenant's token. NOTE: The tenant
+must create an agency on the Identity and Access Management (IAM) interface in
+advance. Changing this creates a new instance.
+
 _Required_: No
 
 _Type_: String
@@ -73,6 +79,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Flavor
+
+Specifies the instance flavor, only `mls.c2.2xlarge.common`
+is supported now. Changing this creates a new instance.
 
 _Required_: Yes
 
@@ -90,6 +99,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the MLS instance name. The DB instance name of
+the same type is unique in the same tenant. Changing this creates a new instance.
+
 _Required_: Yes
 
 _Type_: String
@@ -105,6 +117,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region in which to create the MLS instance. If
+omitted, the `region` argument of the provider is used. Changing this
+creates a new instance.
 
 _Required_: No
 
@@ -129,6 +145,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Version
+
+Specifies MLS Software version, only `1.2.0` is supported
+now. Changing this creates a new instance.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Consul::AclPolicy",
-    "description": "CloudFormation equivalent of consul_acl_policy",
+    "description": "Starting with Consul 1.4.0, the consul_acl_policy can be used to managed Consul ACL policies.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -13,16 +13,20 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The datacenters of the policy."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the policy."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the policy."
         },
         "Rules": {
-            "type": "string"
+            "type": "string",
+            "description": "The rules of the policy."
         }
     },
     "additionalProperties": false,

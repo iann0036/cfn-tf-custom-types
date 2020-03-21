@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::DigitalOcean::Volume",
-    "description": "CloudFormation equivalent of digitalocean_volume",
+    "description": "Provides a DigitalOcean Block Storage volume which can be attached to a Droplet in order to provide expanded storage.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A free-form text field up to a limit of 1024 bytes to describe a block storage volume."
         },
         "DropletIds": {
             "type": "array",
@@ -25,29 +26,36 @@
             "type": "string"
         },
         "InitialFilesystemLabel": {
-            "type": "string"
+            "type": "string",
+            "description": "Initial filesystem label for the block storage volume."
         },
         "InitialFilesystemType": {
-            "type": "string"
+            "type": "string",
+            "description": "Initial filesystem type (`xfs` or `ext4`) for the block storage volume."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A name for the block storage volume. Must be lowercase and be composed only of numbers, letters and \"-\", up to a limit of 64 characters."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region that the block storage volume will be created in."
         },
         "Size": {
-            "type": "number"
+            "type": "number",
+            "description": "The size of the block storage volume in GiB. If updated, can only be expanded."
         },
         "SnapshotId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of an existing volume snapshot from which the new volume will be created. If supplied, the region and size will be limitied on creation to that of the referenced snapshot."
         },
         "Tags": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of the tags to be applied to this Volume."
         },
         "Urn": {
             "type": "string"

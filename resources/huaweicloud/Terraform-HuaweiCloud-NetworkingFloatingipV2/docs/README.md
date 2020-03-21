@@ -1,6 +1,9 @@
 # Terraform::HuaweiCloud::NetworkingFloatingipV2
 
-CloudFormation equivalent of huaweicloud_networking_floatingip_v2
+Manages a V2 floating IP resource within HuaweiCloud Neutron (networking)
+that can be used for load balancers.
+These are similar to Nova (compute) floating IP resources,
+but only compute floating IPs can be used with compute instances.
 
 ## Syntax
 
@@ -42,6 +45,9 @@ Properties:
 
 #### FixedIp
 
+Fixed IP of the port to associate with this floating IP. Required if
+the port has multiple fixed IPs.
+
 _Required_: No
 
 _Type_: String
@@ -49,6 +55,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Pool
+
+The name of the pool from which to obtain the floating
+IP. Only admin_external_net is valid. Changing this creates a new floating IP.
 
 _Required_: No
 
@@ -58,6 +67,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PortId
 
+ID of an existing port with at least one IP address to
+associate with this floating IP.
+
 _Required_: No
 
 _Type_: String
@@ -65,6 +77,12 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region in which to obtain the V2 Networking client.
+A Networking client is needed to create a floating IP that can be used with
+another networking resource, such as a load balancer. If omitted, the
+`region` argument of the provider is used. Changing this creates a new
+floating IP (which may or may not have a different address).
 
 _Required_: No
 
@@ -74,6 +92,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TenantId
 
+The target tenant ID in which to allocate the floating
+IP, if you specify this together with a port_id, make sure the target port
+belongs to the same tenant. Changing this creates a new floating IP (which
+may or may not have a different address).
+
 _Required_: No
 
 _Type_: String
@@ -81,6 +104,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ValueSpecs
+
+Map of additional options.
 
 _Required_: No
 

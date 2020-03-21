@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::VpnCustomerGateway
 
-CloudFormation equivalent of tencentcloud_vpn_customer_gateway
+Provides a resource to create a VPN customer gateway.
 
 ## Syntax
 
@@ -34,6 +34,8 @@ Properties:
 
 #### Name
 
+Name of the customer gateway. The length of character is limited to 1-60.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +44,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PublicIpAddress
 
+Public ip of the customer gateway.
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A list of tags used to associate different resources.
 
 _Required_: No
 

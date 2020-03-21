@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OVH::IploadbalancingHttpRouteRule",
-    "description": "CloudFormation equivalent of ovh_iploadbalancing_http_route_rule",
+    "description": "Manage rules for HTTP route.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,28 +9,36 @@
             "type": "string"
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "Human readable name for your rule, this field is for you."
         },
         "Field": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the field to match like \"protocol\" or \"host\". See \"/ipLoadbalancing/{serviceName}/availableRouteRules\" for a list of available rules."
         },
         "Match": {
-            "type": "string"
+            "type": "string",
+            "description": "Matching operator. Not all operators are available for all fields. See \"/ipLoadbalancing/{serviceName}/availableRouteRules\"."
         },
         "Negate": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Invert the matching operator effect."
         },
         "Pattern": {
-            "type": "string"
+            "type": "string",
+            "description": "Value to match against this match. Interpretation if this field depends on the match and field."
         },
         "RouteId": {
-            "type": "string"
+            "type": "string",
+            "description": "The route to apply this rule."
         },
         "ServiceName": {
-            "type": "string"
+            "type": "string",
+            "description": "The internal name of your IP load balancing."
         },
         "SubField": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of sub-field, if applicable. This may be a Cookie or Header name for instance."
         }
     },
     "additionalProperties": false,

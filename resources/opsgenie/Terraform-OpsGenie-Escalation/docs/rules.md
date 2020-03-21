@@ -29,6 +29,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Condition
 
+The condition for notifying the recipient of escalation rule that is based on the alert state. Possible values are: if-not-acked and if-not-closed. If not given, if-not-acked is used.
+
 _Required_: Yes
 
 _Type_: String
@@ -37,6 +39,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Delay
 
+Time delay of the escalation rule. This parameter takes an object that consists timeAmount field that takes time amount in minutes.
+
 _Required_: Yes
 
 _Type_: Double
@@ -44,6 +48,16 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NotifyType
+
+Recipient calculation logic for schedules. Possible values are:
+```
+default: on call users
+next: next users in rotation
+previous: previous users on rotation
+users: users of the team
+admins: admins of the team
+all: all members of the team
+```.
 
 _Required_: Yes
 

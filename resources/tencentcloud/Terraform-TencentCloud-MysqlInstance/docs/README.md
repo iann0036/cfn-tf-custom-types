@@ -1,6 +1,8 @@
 # Terraform::TencentCloud::MysqlInstance
 
-CloudFormation equivalent of tencentcloud_mysql_instance
+Provides a mysql instance resource to create master database instances.
+
+~> **NOTE:** If this mysql has readonly instance, the terminate operation of the mysql does NOT take effect immediately, maybe takes for several hours. so during that time, VPCs associated with that mysql instance can't be terminated also.
 
 ## Syntax
 
@@ -72,6 +74,8 @@ Properties:
 
 #### AutoRenewFlag
 
+Auto renew flag. NOTES: Only supported prepay instance.
+
 _Required_: No
 
 _Type_: Double
@@ -79,6 +83,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AvailabilityZone
+
+Indicates which availability zone will be used.
 
 _Required_: No
 
@@ -88,6 +94,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EngineVersion
 
+The version number of the database engine to use. Supported versions include 5.5/5.6/5.7, and default is 5.7.
+
 _Required_: No
 
 _Type_: String
@@ -95,6 +103,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FirstSlaveZone
+
+Zone information about first slave instance.
 
 _Required_: No
 
@@ -104,6 +114,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceName
 
+The name of a mysql instance.
+
 _Required_: Yes
 
 _Type_: String
@@ -111,6 +123,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InternetService
+
+Indicates whether to enable the access to an instance from public network: 0 - No, 1 - Yes.
 
 _Required_: No
 
@@ -120,6 +134,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IntranetPort
 
+Public access port, rang form 1024 to 65535 and default value is 3306.
+
 _Required_: No
 
 _Type_: Double
@@ -127,6 +143,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MemSize
+
+Memory size (in MB).
 
 _Required_: Yes
 
@@ -136,6 +154,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Parameters
 
+List of parameters to use.
+
 _Required_: No
 
 _Type_: List of <a href="parameters.md">Parameters</a>
@@ -143,6 +163,8 @@ _Type_: List of <a href="parameters.md">Parameters</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PayType
+
+Pay type of instance, 0: prepay, 1: postpay. NOTES: Only supported prepay instance.
 
 _Required_: No
 
@@ -152,6 +174,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Period
 
+Period of instance. NOTES: Only supported prepay instance.
+
 _Required_: No
 
 _Type_: Double
@@ -159,6 +183,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProjectId
+
+Project ID, default value is 0.
 
 _Required_: No
 
@@ -168,6 +194,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RootPassword
 
+Password of root account. This parameter can be specified when you purchase master instances, but it should be ignored when you purchase read-only instances or disaster recovery instances.
+
 _Required_: Yes
 
 _Type_: String
@@ -175,6 +203,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecondSlaveZone
+
+Zone information about second slave instance.
 
 _Required_: No
 
@@ -184,6 +214,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecurityGroups
 
+Security groups to use.
+
 _Required_: No
 
 _Type_: List of String
@@ -191,6 +223,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SlaveDeployMode
+
+Availability zone deployment method. Available values: 0 - Single availability zone; 1 - Multiple availability zones.
 
 _Required_: No
 
@@ -200,6 +234,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SlaveSyncMode
 
+Data replication mode. 0 - Async replication; 1 - Semisync replication; 2 - Strongsync replication.
+
 _Required_: No
 
 _Type_: Double
@@ -207,6 +243,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubnetId
+
+Private network ID. If vpc_id is set, this value is required.
 
 _Required_: No
 
@@ -216,6 +254,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+Instance tags.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -224,6 +264,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VolumeSize
 
+Disk size (in GB).
+
 _Required_: Yes
 
 _Type_: Double
@@ -231,6 +273,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+ID of VPC, which can be modified once every 24 hours and can't be removed.
 
 _Required_: No
 

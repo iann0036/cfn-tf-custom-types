@@ -1,6 +1,6 @@
 # Terraform::BIGIP::LtmPersistenceProfileSsl
 
-CloudFormation equivalent of bigip_ltm_persistence_profile_ssl
+Configures an SSL persistence profile
 
 ## Syntax
 

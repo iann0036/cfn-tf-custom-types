@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::CcnBandwidthLimit
 
-CloudFormation equivalent of tencentcloud_ccn_bandwidth_limit
+Provides a resource to limit CCN bandwidth.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### BandwidthLimit
 
+Limitation of bandwidth.
+
 _Required_: No
 
 _Type_: Double
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CcnId
 
+ID of the CCN.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+Limitation of region.
 
 _Required_: Yes
 

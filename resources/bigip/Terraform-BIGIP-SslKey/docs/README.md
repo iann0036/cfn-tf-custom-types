@@ -1,6 +1,7 @@
 # Terraform::BIGIP::SslKey
 
-CloudFormation equivalent of bigip_ssl_key
+`bigip_ssl_key` This resource will import SSL certificate key on BIG-IP LTM. 
+Certificate key can be imported from certificate key files on the local disk, in PEM format
 
 ## Syntax
 
@@ -33,6 +34,8 @@ Properties:
 
 #### Content
 
+Content of certificate key on Local Disk,path of SSL certificate key will be provided to terraform `file` function.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +44,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name of the SSL Certificate key to be Imported on to BIGIP.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Partition
+
+Partition on to SSL Certificate key to be imported.
 
 _Required_: No
 

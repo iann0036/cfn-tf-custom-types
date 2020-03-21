@@ -1,6 +1,14 @@
 # Terraform::Consul::Keys
 
-CloudFormation equivalent of consul_keys
+The `consul_keys` resource writes sets of individual values into Consul.
+This is a powerful way to expose infrastructure details to clients.
+
+This resource manages individual keys, and thus it can create, update
+and delete the keys explicitly given. However, it is not able to detect
+and remove additional keys that have been added by non-Terraform means.
+To manage *all* keys sharing a common prefix, and thus have Terraform
+remove errant keys not present in the configuration, consider using the
+`consul_key_prefix` resource instead.
 
 ## Syntax
 
@@ -34,6 +42,9 @@ Properties:
 
 #### Datacenter
 
+The datacenter to use. This overrides the
+agent's default datacenter and the datacenter in the provider setup.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +52,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Token
+
+The ACL token to use. This overrides the
+token that the agent provides by default.
 
 _Required_: No
 

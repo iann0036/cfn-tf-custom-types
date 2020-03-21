@@ -1,6 +1,8 @@
 # Terraform::AzureRM::StorageDataLakeGen2Filesystem
 
-CloudFormation equivalent of azurerm_storage_data_lake_gen2_filesystem
+Manages a Data Lake Gen2 File System within an Azure Storage Account.
+
+~> **NOTE:** This Resource requires using Azure Active Directory to connect to Azure Storage, which in turn requires the `Storage` specific roles - which are not granted by default.
 
 ## Syntax
 
@@ -36,6 +38,8 @@ Properties:
 
 #### Name
 
+The name of the Data Lake Gen2 File System which should be created within the Storage Account. Must be unique within the storage account the queue is located. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +48,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Properties
 
+A mapping of Key to Base64-Encoded Values which should be assigned to this Data Lake Gen2 File System.
+
 _Required_: No
 
 _Type_: List of <a href="properties.md">Properties</a>
@@ -51,6 +57,8 @@ _Type_: List of <a href="properties.md">Properties</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StorageAccountId
+
+Specifies the ID of the Storage Account in which the Data Lake Gen2 File System should exist. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

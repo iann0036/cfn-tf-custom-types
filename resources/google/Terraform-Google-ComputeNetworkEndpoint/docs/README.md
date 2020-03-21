@@ -1,6 +1,17 @@
 # Terraform::Google::ComputeNetworkEndpoint
 
-CloudFormation equivalent of google_compute_network_endpoint
+A Network endpoint represents a IP address and port combination that is
+part of a specific network endpoint group (NEG). NEGs are zonals
+collection of these endpoints for GCP resources within a
+single subnet. **NOTE**: Network endpoints cannot be created outside of a
+network endpoint group.
+
+
+To get more information about NetworkEndpoint, see:
+
+* [API documentation](https://cloud.google.com/compute/docs/reference/rest/beta/networkEndpointGroups)
+* How-to Guides
+    * [Official Documentation](https://cloud.google.com/load-balancing/docs/negs/)
 
 ## Syntax
 
@@ -72,6 +83,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
 
 _Required_: No
 

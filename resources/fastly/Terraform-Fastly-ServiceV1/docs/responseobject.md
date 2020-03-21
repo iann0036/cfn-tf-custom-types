@@ -34,6 +34,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### CacheCondition
 
+Name of already defined `condition` to check after we have retrieved an object. If the condition passes then deliver this Request Object instead. This `condition` must be of type `CACHE`. For detailed information about Conditionals,
+see [Fastly's Documentation on Conditionals][fastly-conditionals].
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Content
+
+The content to deliver for the response object.
 
 _Required_: No
 
@@ -50,6 +55,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ContentType
 
+The MIME type of the content.
+
 _Required_: No
 
 _Type_: String
@@ -57,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+A unique name to identify this Response Object.
 
 _Required_: Yes
 
@@ -66,6 +75,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RequestCondition
 
+Name of already defined `condition` to be checked during the request phase. If the condition passes then this object will be delivered. This `condition` must be of type `REQUEST`.
+
 _Required_: No
 
 _Type_: String
@@ -74,6 +85,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Response
 
+The HTTP Response. Default `Ok`.
+
 _Required_: No
 
 _Type_: String
@@ -81,6 +94,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Status
+
+The HTTP Status Code. Default `200`.
 
 _Required_: No
 

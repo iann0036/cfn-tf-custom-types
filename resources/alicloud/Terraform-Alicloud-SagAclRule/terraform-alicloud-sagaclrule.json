@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::SagAclRule",
-    "description": "CloudFormation equivalent of alicloud_sag_acl_rule",
+    "description": "Provides a Sag Acl Rule resource. This topic describes how to configure an access control list (ACL) rule for a target Smart Access Gateway instance to permit or deny access to or from specified IP addresses in the ACL rule.\n\nFor information about Sag Acl Rule and how to use it, see [What is access control list (ACL) rule](https://www.alibabacloud.com/help/doc-detail/111483.htm).\n\n-> **NOTE:** Available in 1.60.0+\n\n-> **NOTE:** Only the following regions support create Cloud Connect Network. [`cn-shanghai`, `cn-shanghai-finance-1`, `cn-hongkong`, `ap-southeast-1`, `ap-southeast-2`, `ap-southeast-3`, `ap-southeast-5`, `ap-northeast-1`, `eu-central-1`]",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,34 +9,44 @@
             "type": "string"
         },
         "AclId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the ACL."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the ACL rule. It must be 1 to 512 characters in length."
         },
         "DestCidr": {
-            "type": "string"
+            "type": "string",
+            "description": "The destination address. It is an IPv4 address range in CIDR format. Default value: 0.0.0.0/0."
         },
         "DestPortRange": {
-            "type": "string"
+            "type": "string",
+            "description": "The range of the destination port. Valid value: 80/80."
         },
         "Direction": {
-            "type": "string"
+            "type": "string",
+            "description": "The direction of the ACL rule. Valid values: in|out."
         },
         "IpProtocol": {
-            "type": "string"
+            "type": "string",
+            "description": "The protocol used by the ACL rule. The value is not case sensitive."
         },
         "Policy": {
-            "type": "string"
+            "type": "string",
+            "description": "The policy used by the ACL rule. Valid values: accept|drop."
         },
         "Priority": {
-            "type": "number"
+            "type": "number",
+            "description": "The priority of the ACL rule. Value range: 1 to 100."
         },
         "SourceCidr": {
-            "type": "string"
+            "type": "string",
+            "description": "The source address. It is an IPv4 address range in the CIDR format. Default value: 0.0.0.0/0."
         },
         "SourcePortRange": {
-            "type": "string"
+            "type": "string",
+            "description": "The range of the source port. Valid value: 80/80."
         }
     },
     "additionalProperties": false,

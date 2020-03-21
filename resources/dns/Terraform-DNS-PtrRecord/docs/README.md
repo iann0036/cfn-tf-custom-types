@@ -1,6 +1,6 @@
 # Terraform::DNS::PtrRecord
 
-CloudFormation equivalent of dns_ptr_record
+Creates a PTR type DNS record.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### Name
 
+The name of the record. The `zone` argument will be appended to this value to create the full record path.
+
 _Required_: No
 
 _Type_: String
@@ -42,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ptr
+
+The canonical name this record will point to.
 
 _Required_: Yes
 
@@ -51,6 +55,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ttl
 
+The TTL of the record set. Defaults to `3600`.
+
 _Required_: No
 
 _Type_: Double
@@ -58,6 +64,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Zone
+
+DNS zone the record belongs to. It must be an FQDN, that is, include the trailing dot.
 
 _Required_: Yes
 

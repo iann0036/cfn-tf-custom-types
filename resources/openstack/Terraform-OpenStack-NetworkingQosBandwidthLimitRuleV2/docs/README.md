@@ -1,6 +1,6 @@
 # Terraform::OpenStack::NetworkingQosBandwidthLimitRuleV2
 
-CloudFormation equivalent of openstack_networking_qos_bandwidth_limit_rule_v2
+Manages a V2 Neutron QoS bandwidth limit rule resource within OpenStack.
 
 ## Syntax
 
@@ -39,6 +39,9 @@ Properties:
 
 #### Direction
 
+The direction of traffic. Defaults to "egress". Changing this updates the direction of the
+existing QoS bandwidth limit rule.
+
 _Required_: No
 
 _Type_: String
@@ -46,6 +49,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MaxBurstKbps
+
+The maximum burst size in kilobits of a QoS bandwidth limit rule. Changing this updates the
+maximum burst size in kilobits of the existing QoS bandwidth limit rule.
 
 _Required_: No
 
@@ -55,6 +61,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxKbps
 
+The maximum kilobits per second of a QoS bandwidth limit rule. Changing this updates the
+maximum kilobits per second of the existing QoS bandwidth limit rule.
+
 _Required_: Yes
 
 _Type_: Double
@@ -63,6 +72,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### QosPolicyId
 
+The QoS policy reference. Changing this creates a new QoS bandwidth limit rule.
+
 _Required_: Yes
 
 _Type_: String
@@ -70,6 +81,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region in which to obtain the V2 Networking client.
+A Networking client is needed to create a Neutron QoS bandwidth limit rule. If omitted, the
+`region` argument of the provider is used. Changing this creates a new QoS bandwidth limit rule.
 
 _Required_: No
 

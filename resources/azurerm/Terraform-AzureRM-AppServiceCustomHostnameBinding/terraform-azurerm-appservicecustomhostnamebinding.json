@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::AppServiceCustomHostnameBinding",
-    "description": "CloudFormation equivalent of azurerm_app_service_custom_hostname_binding",
+    "description": "Manages a Hostname Binding within an App Service.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,19 +29,24 @@
             "type": "string"
         },
         "AppServiceName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the App Service in which to add the Custom Hostname Binding. Changing this forces a new resource to be created."
         },
         "Hostname": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the Custom Hostname to use for the App Service, example `www.example.com`. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which the App Service exists. Changing this forces a new resource to be created."
         },
         "SslState": {
-            "type": "string"
+            "type": "string",
+            "description": "The SSL type. Possible values are `IpBasedEnabled` and `SniEnabled`. Changing this forces a new resource to be created."
         },
         "Thumbprint": {
-            "type": "string"
+            "type": "string",
+            "description": "The SSL certificate thumbprint. Changing this forces a new resource to be created."
         },
         "VirtualIp": {
             "type": "string"

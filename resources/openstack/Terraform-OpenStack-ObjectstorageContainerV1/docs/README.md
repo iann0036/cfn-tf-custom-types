@@ -1,6 +1,6 @@
 # Terraform::OpenStack::ObjectstorageContainerV1
 
-CloudFormation equivalent of openstack_objectstorage_container_v1
+Manages a V1 container resource within OpenStack.
 
 ## Syntax
 
@@ -49,6 +49,11 @@ Properties:
 
 #### ContainerRead
 
+Sets an access control list (ACL) that grants
+read access. This header can contain a comma-delimited list of users that
+can read the container (allows the GET method for all objects in the
+container). Changing this updates the access control list read access.
+
 _Required_: No
 
 _Type_: String
@@ -56,6 +61,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ContainerSyncKey
+
+The secret key for container synchronization.
+Changing this updates container synchronization.
 
 _Required_: No
 
@@ -65,6 +73,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ContainerSyncTo
 
+The destination for container synchronization.
+Changing this updates container synchronization.
+
 _Required_: No
 
 _Type_: String
@@ -72,6 +83,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ContainerWrite
+
+Sets an ACL that grants write access.
+Changing this updates the access control list write access.
 
 _Required_: No
 
@@ -81,6 +95,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ContentType
 
+The MIME type for the container. Changing this
+updates the MIME type.
+
 _Required_: No
 
 _Type_: String
@@ -88,6 +105,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ForceDestroy
+
+A boolean that indicates all objects should be deleted from the container so that the container can be destroyed without error. These objects are not recoverable.
 
 _Required_: No
 
@@ -97,6 +116,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Metadata
 
+Custom key/value pairs to associate with the container.
+Changing this updates the existing container metadata.
+
 _Required_: No
 
 _Type_: List of <a href="metadata.md">Metadata</a>
@@ -105,6 +127,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A unique name for the container. Changing this creates a
+new container.
+
 _Required_: Yes
 
 _Type_: String
@@ -112,6 +137,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region in which to create the container. If
+omitted, the `region` argument of the provider is used. Changing this
+creates a new container.
 
 _Required_: No
 

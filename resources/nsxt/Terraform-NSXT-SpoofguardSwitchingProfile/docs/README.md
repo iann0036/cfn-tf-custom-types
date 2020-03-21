@@ -1,6 +1,6 @@
 # Terraform::NSXT::SpoofguardSwitchingProfile
 
-CloudFormation equivalent of nsxt_spoofguard_switching_profile
+Provides a resource to configure spoofguard switching profile on NSX-T manager
 
 ## Syntax
 
@@ -36,6 +36,8 @@ Properties:
 
 #### AddressBindingWhitelistEnabled
 
+A boolean flag indicating whether this profile overrides the default system wide settings for Spoof Guard when assigned to ports.
+
 _Required_: No
 
 _Type_: Boolean
@@ -44,6 +46,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+Description of this resource.
+
 _Required_: No
 
 _Type_: String
@@ -51,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+The display name of this resource. Defaults to ID if not set.
 
 _Required_: No
 

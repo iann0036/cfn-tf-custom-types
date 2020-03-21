@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::BIGIP::LtmMonitor",
-    "description": "CloudFormation equivalent of bigip_ltm_monitor",
+    "description": "`bigip_ltm_monitor` Configures a custom monitor for use by health checks.\n\nFor resources should be named with their \"full path\". The full path is the combination of the partition + name of the resource. For example /Common/my-pool.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -15,64 +15,82 @@
             "type": "number"
         },
         "Compatibility": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies, when enabled, that the SSL options setting (in OpenSSL) is set to ALL. Accepts 'enabled' or 'disabled' values, the default value is 'enabled'."
         },
         "Database": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the database in which the user is created."
         },
         "DefaultsFrom": {
             "type": "string"
         },
         "Destination": {
-            "type": "string"
+            "type": "string",
+            "description": "Specify an alias address for monitoring."
         },
         "Filename": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the full path and file name of the file that the system attempts to download. The health check is successful if the system can download the file."
         },
         "Interval": {
-            "type": "number"
+            "type": "number",
+            "description": "Check interval in seconds."
         },
         "IpDscp": {
-            "type": "number"
+            "type": "number",
+            "description": null
         },
         "ManualResume": {
-            "type": "string"
+            "type": "string",
+            "description": null
         },
         "Mode": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the data transfer process (DTP) mode. The default value is passive. The options are passive (Specifies that the monitor sends a data transfer request to the FTP server. When the FTP server receives the request, the FTP server then initiates and establishes the data connection.) and active (Specifies that the monitor initiates and establishes the data connection with the FTP server.)."
         },
         "Name": {
             "type": "string"
         },
         "Parent": {
-            "type": "string"
+            "type": "string",
+            "description": "Existing LTM monitor to inherit from."
         },
         "Password": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the password if the monitored target requires authentication."
         },
         "Receive": {
-            "type": "string"
+            "type": "string",
+            "description": "Expected response string."
         },
         "ReceiveDisable": {
-            "type": "string"
+            "type": "string",
+            "description": null
         },
         "Reverse": {
-            "type": "string"
+            "type": "string",
+            "description": null
         },
         "Send": {
-            "type": "string"
+            "type": "string",
+            "description": "Request string to send."
         },
         "TimeUntilUp": {
-            "type": "number"
+            "type": "number",
+            "description": null
         },
         "Timeout": {
-            "type": "number"
+            "type": "number",
+            "description": "Timeout in seconds."
         },
         "Transparent": {
-            "type": "string"
+            "type": "string",
+            "description": null
         },
         "Username": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the user name if the monitored target requires authentication."
         }
     },
     "additionalProperties": false,

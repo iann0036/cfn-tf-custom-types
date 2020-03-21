@@ -1,6 +1,6 @@
 # Terraform::Tfe::Organization
 
-CloudFormation equivalent of tfe_organization
+Manages organizations.
 
 ## Syntax
 
@@ -39,6 +39,9 @@ Properties:
 
 #### CollaboratorAuthPolicy
 
+Authentication policy (`password`
+or `two_factor_mandatory`). Defaults to `password`.
+
 _Required_: No
 
 _Type_: String
@@ -46,6 +49,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Email
+
+Admin email address.
 
 _Required_: Yes
 
@@ -55,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name of the organization.
+
 _Required_: Yes
 
 _Type_: String
@@ -62,6 +69,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OwnersTeamSamlRoleId
+
+The name of the "owners" team.
 
 _Required_: No
 
@@ -71,6 +80,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SessionRememberMinutes
 
+Session expiration. Defaults to
+`20160`.
+
 _Required_: No
 
 _Type_: Double
@@ -78,6 +90,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SessionTimeoutMinutes
+
+Session timeout after inactivity.
+Defaults to `20160`.
 
 _Required_: No
 

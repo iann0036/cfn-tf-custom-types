@@ -1,6 +1,8 @@
 # Terraform::OCI::ObjectstorageObjectLifecyclePolicy
 
-CloudFormation equivalent of oci_objectstorage_object_lifecycle_policy
+This resource provides the Object Lifecycle Policy resource in Oracle Cloud Infrastructure Object Storage service.
+
+Creates or replaces the object lifecycle policy for the bucket.
 
 ## Syntax
 
@@ -39,6 +41,8 @@ Properties:
 
 #### Bucket
 
+The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`.
+
 _Required_: Yes
 
 _Type_: String
@@ -46,6 +50,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Namespace
+
+The Object Storage namespace used for the request.
 
 _Required_: Yes
 

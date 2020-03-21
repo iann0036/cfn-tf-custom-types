@@ -1,6 +1,7 @@
 # Terraform::Consul::AclBindingRule
 
-CloudFormation equivalent of consul_acl_binding_rule
+Starting with Consul 1.5.0, the consul_acl_binding_rule resource can be used to
+managed Consul ACL binding rules.
 
 ## Syntax
 
@@ -37,6 +38,8 @@ Properties:
 
 #### AuthMethod
 
+The name of the ACL auth method this rule apply.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BindName
+
+The name to bind to a token at login-time.
 
 _Required_: Yes
 
@@ -53,6 +58,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### BindType
 
+Specifies the way the binding rule affects a token
+created at login.
+
 _Required_: Yes
 
 _Type_: String
@@ -61,6 +69,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+A free form human readable description of the
+binding rule.
+
 _Required_: No
 
 _Type_: String
@@ -68,6 +79,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Selector
+
+The expression used to math this rule against valid
+identities returned from an auth method validation.
 
 _Required_: No
 

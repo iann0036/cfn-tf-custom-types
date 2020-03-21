@@ -1,6 +1,6 @@
 # Terraform::AzureRM::SqlVirtualNetworkRule
 
-CloudFormation equivalent of azurerm_sql_virtual_network_rule
+Allows you to add, update, or remove an Azure SQL server to a subnet of a virtual network.
 
 ## Syntax
 
@@ -39,6 +39,8 @@ Properties:
 
 #### IgnoreMissingVnetServiceEndpoint
 
+Create the virtual network rule before the subnet has the virtual network service endpoint enabled. The default value is false.
+
 _Required_: No
 
 _Type_: Boolean
@@ -46,6 +48,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the SQL virtual network rule. Changing this forces a new resource to be created. Cannot be empty and must only contain alphanumeric characters and hyphens. Cannot start with a number, and cannot start or end with a hyphen.
 
 _Required_: Yes
 
@@ -55,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group where the SQL server resides. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -63,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServerName
 
+The name of the SQL Server to which this SQL virtual network rule will be applied to. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -70,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubnetId
+
+The ID of the subnet that the SQL server will be connected to.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::DataLakeAnalyticsFirewallRule",
-    "description": "CloudFormation equivalent of azurerm_data_lake_analytics_firewall_rule",
+    "description": "Manages a Azure Data Lake Analytics Firewall Rule.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,19 +29,24 @@
             "type": "string"
         },
         "AccountName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Data Lake Analytics for which the Firewall Rule should take effect."
         },
         "EndIpAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "The End IP Address for the firewall rule."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Data Lake Analytics. Changing this forces a new resource to be created. Has to be between 3 to 24 characters."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the Data Lake Analytics."
         },
         "StartIpAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "The Start IP address for the firewall rule."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

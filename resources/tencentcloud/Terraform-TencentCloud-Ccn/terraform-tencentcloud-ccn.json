@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::Ccn",
-    "description": "CloudFormation equivalent of tencentcloud_ccn",
+    "description": "Provides a resource to create a CCN instance.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,16 +12,19 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of CCN, and maximum length does not exceed 100 bytes."
         },
         "InstanceCount": {
             "type": "number"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the CCN to be queried, and maximum length does not exceed 60 bytes."
         },
         "Qos": {
-            "type": "string"
+            "type": "string",
+            "description": "Service quality of CCN, and the available value include 'PT', 'AU', 'AG'. The default is 'AU'."
         },
         "State": {
             "type": "string"

@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::FwPolicyV2
 
-CloudFormation equivalent of opentelekomcloud_fw_policy_v2
+Manages a v1 firewall policy resource within OpenTelekomCloud.
 
 ## Syntax
 
@@ -47,6 +47,12 @@ Properties:
 
 #### Audited
 
+Audit status of the firewall policy
+(must be "true" or "false" if provided - defaults to "false").
+This status is set to "false" whenever the firewall policy or any of its
+rules are changed. Changing this updates the `audited` status of an existing
+firewall policy.
+
 _Required_: No
 
 _Type_: Boolean
@@ -55,6 +61,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+A description for the firewall policy. Changing
+this updates the `description` of an existing firewall policy.
+
 _Required_: No
 
 _Type_: String
@@ -62,6 +71,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+A name for the firewall policy. Changing this
+updates the `name` of an existing firewall policy.
 
 _Required_: No
 
@@ -79,6 +91,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Rules
 
+An array of one or more firewall rules that comprise
+the policy. Changing this results in adding/removing rules from the
+existing firewall policy.
+
 _Required_: No
 
 _Type_: List of String
@@ -86,6 +102,12 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Shared
+
+Sharing status of the firewall policy (must be "true"
+or "false" if provided). If this is "true" the policy is visible to, and
+can be used in, firewalls in other tenants. Changing this updates the
+`shared` status of an existing firewall policy. Only administrative users
+can specify if the policy should be shared.
 
 _Required_: No
 
@@ -102,6 +124,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ValueSpecs
+
+Map of additional options.
 
 _Required_: No
 

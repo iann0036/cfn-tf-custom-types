@@ -29,6 +29,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Arguments
 
+Additional key/value settings for the exchange.
+
 _Required_: No
 
 _Type_: List of <a href="settings-arguments.md">Arguments</a>
@@ -36,6 +38,9 @@ _Type_: List of <a href="settings-arguments.md">Arguments</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AutoDelete
+
+Whether the exchange will self-delete when all
+queues have finished using it.
 
 _Required_: No
 
@@ -45,6 +50,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Durable
 
+Whether the exchange survives server restarts.
+Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -52,6 +60,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The type of exchange.
 
 _Required_: Yes
 

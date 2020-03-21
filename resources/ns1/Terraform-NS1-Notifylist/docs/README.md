@@ -1,6 +1,6 @@
 # Terraform::NS1::Notifylist
 
-CloudFormation equivalent of ns1_notifylist
+Provides a NS1 Notify List resource. This can be used to create, modify, and delete notify lists.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 ## Properties
 
 #### Name
+
+The free-form display name for the notify list.
 
 _Required_: Yes
 

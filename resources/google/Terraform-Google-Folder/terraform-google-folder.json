@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::Folder",
-    "description": "CloudFormation equivalent of google_folder",
+    "description": "Allows management of a Google Cloud Platform folder. For more information see \n[the official documentation](https://cloud.google.com/resource-manager/docs/creating-managing-folders)\nand \n[API](https://cloud.google.com/resource-manager/reference/rest/v2/folders).\n\nA folder can contain projects, other folders, or a combination of both. You can use folders to group projects under an organization in a hierarchy. For example, your organization might contain multiple departments, each with its own set of Cloud Platform resources. Folders allows you to group these resources on a per-department basis. Folders are used to group resources that share common IAM policies.\n\nFolders created live inside an Organization. See the [Organization documentation](https://cloud.google.com/resource-manager/docs/quickstarts) for more details.\n\nThe service account used to run Terraform when creating a `google_folder`\nresource must have `roles/resourcemanager.folderCreator`. See the\n[Access Control for Folders Using IAM](https://cloud.google.com/resource-manager/docs/access-control-folders)\ndoc for more information.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -32,7 +32,8 @@
             "type": "string"
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The folder\u2019s display name.\nA folder\u2019s display name must be unique amongst its siblings, e.g. no two folders with the same parent can share the same display name. The display name must start and end with a letter or digit, may contain letters, digits, spaces, hyphens and underscores and can be no longer than 30 characters."
         },
         "LifecycleState": {
             "type": "string"
@@ -41,7 +42,8 @@
             "type": "string"
         },
         "Parent": {
-            "type": "string"
+            "type": "string",
+            "description": "The resource name of the parent Folder or Organization.\nMust be of the form `folders/{folder_id}` or `organizations/{org_id}`."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

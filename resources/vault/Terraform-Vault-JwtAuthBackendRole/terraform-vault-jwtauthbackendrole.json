@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Vault::JwtAuthBackendRole",
-    "description": "CloudFormation equivalent of vault_jwt_auth_backend_role",
+    "description": "Manages an JWT/OIDC auth backend role in a Vault server. See the [Vault\ndocumentation](https://www.vaultproject.io/docs/auth/jwt.html) for more\ninformation.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -13,17 +13,20 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The list of allowed values for redirect_uri during OIDC logins.\nRequired for OIDC roles."
         },
         "Backend": {
-            "type": "string"
+            "type": "string",
+            "description": "The unique name of the auth backend to configure.\nDefaults to `jwt`."
         },
         "BoundAudiences": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of `aud` claims to match\nagainst. Any match is sufficient."
         },
         "BoundCidrs": {
             "type": "array",
@@ -50,10 +53,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "If set, a map of claims/values to match against.\nThe expected value may be a single string or a list of strings."
         },
         "BoundSubject": {
-            "type": "string"
+            "type": "string",
+            "description": "If set, requires that the `sub` claim matches\nthis value."
         },
         "ClaimMappings": {
             "type": "array",
@@ -73,25 +78,31 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "If set, a map of claims (keys) to be copied\nto specified metadata fields (values)."
         },
         "ClockSkewLeeway": {
-            "type": "number"
+            "type": "number",
+            "description": "The amount of leeway to add to all claims to account for clock skew, in\nseconds. Defaults to `60` seconds if set to `0` and can be disabled if set to `-1`.\nOnly applicable with \"jwt\" roles."
         },
         "ExpirationLeeway": {
-            "type": "number"
+            "type": "number",
+            "description": "The amount of leeway to add to expiration (`exp`) claims to account for\nclock skew, in seconds. Defaults to `60` seconds if set to `0` and can be disabled if set to `-1`.\nOnly applicable with \"jwt\" roles."
         },
         "GroupsClaim": {
-            "type": "string"
+            "type": "string",
+            "description": "The claim to use to uniquely identify\nthe set of groups to which the user belongs; this will be used as the names\nfor the Identity group aliases created due to a successful login. The claim\nvalue must be a list of strings."
         },
         "GroupsClaimDelimiterPattern": {
-            "type": "string"
+            "type": "string",
+            "description": ".)\nA pattern of delimiters\nused to allow the groups_claim to live outside of the top-level JWT structure.\nFor instance, a groups_claim of meta/user.name/groups with this field\nset to // will expect nested structures named meta, user.name, and groups.\nIf this field was set to /./ the groups information would expect to be\nvia nested structures of meta, user, name, and groups."
         },
         "MaxTtl": {
             "type": "number"
         },
         "NotBeforeLeeway": {
-            "type": "number"
+            "type": "number",
+            "description": "The amount of leeway to add to not before (`nbf`) claims to account for\nclock skew, in seconds. Defaults to `60` seconds if set to `0` and can be disabled if set to `-1`.\nOnly applicable with \"jwt\" roles."
         },
         "NumUses": {
             "type": "number"
@@ -101,7 +112,8 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "If set, a list of OIDC scopes to be used with an OIDC role.\nThe standard scope \"openid\" is automatically included and need not be specified."
         },
         "Period": {
             "type": "number"
@@ -114,10 +126,12 @@
             }
         },
         "RoleName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the role."
         },
         "RoleType": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of role, either \"oidc\" (default) or \"jwt\"."
         },
         "TokenBoundCidrs": {
             "type": "array",
@@ -158,10 +172,12 @@
             "type": "number"
         },
         "UserClaim": {
-            "type": "string"
+            "type": "string",
+            "description": "The claim to use to uniquely identify\nthe user; this will be used as the name for the Identity entity alias created\ndue to a successful login."
         },
         "VerboseOidcLogging": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Log received OIDC tokens and claims when debug-level\nlogging is active. Not recommended in production since sensitive information may be present\nin OIDC responses."
         }
     },
     "additionalProperties": false,

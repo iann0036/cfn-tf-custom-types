@@ -31,6 +31,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Description
 
+A description of the HTTP Request, which may include HTML tags.
+
 _Required_: No
 
 _Type_: String

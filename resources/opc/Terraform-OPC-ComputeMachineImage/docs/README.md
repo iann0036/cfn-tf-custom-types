@@ -1,6 +1,8 @@
 # Terraform::OPC::ComputeMachineImage
 
-CloudFormation equivalent of opc_compute_machine_image
+The ``opc_compute_machine_image`` resource creates and manages a machine image template of a virtual hard disk of a specific size with an installed operating system.
+
+Before performing this creating the Machine Image, you must upload your machine image file to Oracle Cloud Infrastructure Object Storage Classic `compute_images` container
 
 ## Syntax
 
@@ -37,6 +39,8 @@ Properties:
 
 #### Account
 
+The two part name of the compute object storage account in the format `/Compute-{identity_domain}/cloud_storage`.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +48,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Attributes
+
+An optional JSON object of arbitrary attributes to be made available to the instance. These are user-defined tags. After defining attributes, you can view them from within an instance at http://192.0.0.192/.
 
 _Required_: No
 
@@ -53,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+A description of the Machine Image.
+
 _Required_: No
 
 _Type_: String
@@ -61,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### File
 
+The name of the Machine Image .tar.gz file in the `compute_images` storage container.
+
 _Required_: Yes
 
 _Type_: String
@@ -68,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the Machine Image.
 
 _Required_: Yes
 
@@ -93,15 +105,15 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ErrorReason
 
-Returns the <code>ErrorReason</code> value.
+Description of the state of the machine image if there is an error.
 
 #### Hypervisor
 
-Returns the <code>Hypervisor</code> value.
+Dictionary of hypervisor-specific attributes.
 
 #### ImageFormat
 
-Returns the <code>ImageFormat</code> value.
+The format of the image.
 
 #### NoUpload
 
@@ -109,13 +121,13 @@ Returns the <code>NoUpload</code> value.
 
 #### Platform
 
-Returns the <code>Platform</code> value.
+The OS platform of the image.
 
 #### State
 
-Returns the <code>State</code> value.
+The state of the uploaded machine image.
 
 #### Uri
 
-Returns the <code>Uri</code> value.
+The Uniform Resource Identifier for the Machine Image.
 

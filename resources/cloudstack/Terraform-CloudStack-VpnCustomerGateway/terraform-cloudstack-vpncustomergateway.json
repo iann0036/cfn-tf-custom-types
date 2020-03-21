@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::CloudStack::VpnCustomerGateway",
-    "description": "CloudFormation equivalent of cloudstack_vpn_customer_gateway",
+    "description": "Creates a site to site VPN local customer gateway.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,34 +9,44 @@
             "type": "string"
         },
         "Cidr": {
-            "type": "string"
+            "type": "string",
+            "description": "The CIDR block that needs to be routed through this gateway."
         },
         "Dpd": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If DPD is enabled for the related VPN connection (defaults false)."
         },
         "EspLifetime": {
-            "type": "number"
+            "type": "number",
+            "description": "The ESP lifetime of phase 2 VPN connection to this\nVPN Customer Gateway in seconds (defaults 86400)."
         },
         "EspPolicy": {
-            "type": "string"
+            "type": "string",
+            "description": "The ESP policy to use for this VPN Customer Gateway."
         },
         "Gateway": {
-            "type": "string"
+            "type": "string",
+            "description": "The public IP address of the related VPN Gateway."
         },
         "IkeLifetime": {
-            "type": "number"
+            "type": "number",
+            "description": "The IKE lifetime of phase 2 VPN connection to this\nVPN Customer Gateway in seconds (defaults 86400)."
         },
         "IkePolicy": {
-            "type": "string"
+            "type": "string",
+            "description": "The IKE policy to use for this VPN Customer Gateway."
         },
         "IpsecPsk": {
-            "type": "string"
+            "type": "string",
+            "description": "The IPSEC pre-shared key used for this gateway."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the VPN Customer Gateway."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or ID of the project to create this VPN Customer\nGateway in. Changing this forces a new resource to be created."
         }
     },
     "additionalProperties": false,

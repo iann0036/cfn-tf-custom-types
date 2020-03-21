@@ -1,6 +1,10 @@
 # Terraform::Vault::AzureAuthBackendRole
 
-CloudFormation equivalent of vault_azure_auth_backend_role
+Manages an Azure auth backend role in a Vault server. Roles constrain the
+instances or principals that can perform the login operation against the
+backend. See the [Vault
+documentation](https://www.vaultproject.io/docs/auth/azure.html) for more
+information.
 
 ## Syntax
 
@@ -86,6 +90,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### BoundGroupIds
 
+If set, defines a constraint on the groups
+that can perform the login operation that they should be using the group
+ID specified by this field.
+
 _Required_: No
 
 _Type_: List of String
@@ -93,6 +101,10 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BoundLocations
+
+If set, defines a constraint on the virtual machines
+that can perform the login operation that the location in their identity
+document must match the one specified by this field.
 
 _Required_: No
 
@@ -102,6 +114,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### BoundResourceGroups
 
+If set, defines a constraint on the virtual
+machiness that can perform the login operation that they be associated with
+the resource group that matches the value specified by this field.
+
 _Required_: No
 
 _Type_: List of String
@@ -109,6 +125,10 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BoundScaleSets
+
+If set, defines a constraint on the virtual
+machines that can perform the login operation that they must match the scale set
+specified by this field.
 
 _Required_: No
 
@@ -118,6 +138,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### BoundServicePrincipalIds
 
+If set, defines a constraint on the
+service principals that can perform the login operation that they should be possess
+the ids specified by this field.
+
 _Required_: No
 
 _Type_: List of String
@@ -125,6 +149,10 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BoundSubscriptionIds
+
+If set, defines a constraint on the subscriptions
+that can perform the login operation to ones which  matches the value specified by this
+field.
 
 _Required_: No
 
@@ -157,6 +185,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Role
+
+The name of the role.
 
 _Required_: Yes
 

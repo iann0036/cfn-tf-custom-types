@@ -1,6 +1,6 @@
 # Terraform::Vault::AlicloudAuthBackendRole
 
-CloudFormation equivalent of vault_alicloud_auth_backend_role
+Provides a resource to create a role in an [AliCloud auth backend within Vault](https://www.vaultproject.io/docs/auth/alicloud.html).
 
 ## Syntax
 
@@ -53,6 +53,8 @@ Properties:
 
 #### Arn
 
+The role's arn.
+
 _Required_: Yes
 
 _Type_: String
@@ -61,6 +63,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Backend
 
+Path to the mounted AliCloud auth backend.
+Defaults to `alicloud`.
+
 _Required_: No
 
 _Type_: String
@@ -68,6 +73,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Role
+
+Name of the role. Must correspond with the name of
+the role reflected in the arn.
 
 _Required_: Yes
 

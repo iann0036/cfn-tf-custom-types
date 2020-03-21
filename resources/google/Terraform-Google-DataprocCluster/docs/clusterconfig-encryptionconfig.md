@@ -22,6 +22,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### KmsKeyName
 
+The Cloud KMS key name to use for PD disk encryption for
+all instances in the cluster.
+
 _Required_: Yes
 
 _Type_: String

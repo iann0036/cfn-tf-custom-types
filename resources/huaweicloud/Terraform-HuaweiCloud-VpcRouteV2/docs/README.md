@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::VpcRouteV2
 
-CloudFormation equivalent of huaweicloud_vpc_route_v2
+Provides a resource to create a route.
 
 ## Syntax
 

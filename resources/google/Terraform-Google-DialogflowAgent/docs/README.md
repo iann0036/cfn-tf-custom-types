@@ -1,6 +1,22 @@
 # Terraform::Google::DialogflowAgent
 
-CloudFormation equivalent of google_dialogflow_agent
+A Dialogflow agent is a virtual agent that handles conversations with your end-users. It is a natural language
+understanding module that understands the nuances of human language. Dialogflow translates end-user text or audio
+during a conversation to structured data that your apps and services can understand. You design and build a Dialogflow
+agent to handle the types of conversations required for your system.
+
+
+To get more information about Agent, see:
+
+* [API documentation](https://cloud.google.com/dialogflow/docs/reference/rest/v2/projects/agent)
+* How-to Guides
+    * [Official Documentation](https://cloud.google.com/dialogflow/docs/)
+
+<div class = "oics-button" style="float: right; margin: 0 0 -15px">
+  <a href="https://console.cloud.google.com/cloudshell/open?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fterraform-google-modules%2Fdocs-examples.git&cloudshell_working_dir=dialogflow_agent_full&cloudshell_image=gcr.io%2Fgraphite-cloud-shell-images%2Fterraform%3Alatest&open_in_editor=main.tf&cloudshell_print=.%2Fmotd&cloudshell_tutorial=.%2Ftutorial.md" target="_blank">
+    <img alt="Open in Cloud Shell" src="//gstatic.com/cloudssh/images/open-btn.svg" style="max-height: 44px; margin: 32px auto; max-width: 100%;">
+  </a>
+</div>
 
 ## Syntax
 
@@ -117,6 +133,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
 
 _Required_: No
 

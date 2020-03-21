@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Cloudflare::AccessServiceToken",
-    "description": "CloudFormation equivalent of cloudflare_access_service_token",
+    "description": "Access Service Tokens are used for service-to-service communication\nwhen an application is behind Cloudflare Access.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "AccountId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the account where the Access\nService is being created."
         },
         "ClientId": {
             "type": "string"
@@ -18,7 +19,8 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Friendly name of the token's intent."
         }
     },
     "additionalProperties": false,

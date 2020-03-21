@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Scaleway::Bucket",
-    "description": "CloudFormation equivalent of scaleway_bucket",
+    "description": "**DEPRECATED**: This resource is deprecated and will be removed in `v2.0+`.\nPlease use `scaleway_object_bucket` instead.\n\nCreates Scaleway object storage buckets.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the Scaleway objectstorage bucket."
         }
     },
     "additionalProperties": false,

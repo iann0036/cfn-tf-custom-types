@@ -1,6 +1,19 @@
 # Terraform::VSphere::DatastoreCluster
 
-CloudFormation equivalent of vsphere_datastore_cluster
+The `vsphere_datastore_cluster` resource can be used to create and manage
+datastore clusters. This can be used to create groups of datastores with a
+shared management interface, allowing for resource control and load balancing
+through Storage DRS.
+
+For more information on vSphere datastore clusters and Storage DRS, see [this
+page][ref-vsphere-datastore-clusters].
+
+[ref-vsphere-datastore-clusters]: https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.resmgmt.doc/GUID-598DF695-107E-406B-9C95-0AF961FC227A.html
+
+~> **NOTE:** This resource requires vCenter and is not available on direct ESXi
+connections.
+
+~> **NOTE:** Storage DRS requires a vSphere Enterprise Plus license.
 
 ## Syntax
 
@@ -80,6 +93,11 @@ Properties:
 
 #### CustomAttributes
 
+A map of custom attribute ids to attribute
+value strings to set for the datastore cluster. See
+[here][docs-setting-custom-attributes] for a reference on how to set values
+for custom attributes.
+
 _Required_: No
 
 _Type_: List of <a href="customattributes.md">CustomAttributes</a>
@@ -87,6 +105,10 @@ _Type_: List of <a href="customattributes.md">CustomAttributes</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DatacenterId
+
+The [managed object ID][docs-about-morefs] of
+the datacenter to create the datastore cluster in. Forces a new resource if
+changed.
 
 _Required_: Yes
 
@@ -96,6 +118,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Folder
 
+The relative path to a folder to put this datastore
+cluster in.  This is a path relative to the datacenter you are deploying the
+datastore to.  Example: for the `dc1` datacenter, and a provided `folder` of
+`foo/bar`, Terraform will place a datastore cluster named
+`terraform-datastore-cluster-test` in a datastore folder located at
+`/dc1/datastore/foo/bar`, with the final inventory path being
+`/dc1/datastore/foo/bar/terraform-datastore-cluster-test`.
+
 _Required_: No
 
 _Type_: String
@@ -103,6 +133,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the datastore cluster.
 
 _Required_: Yes
 
@@ -135,6 +167,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SdrsEnabled
+
+Enable Storage DRS for this datastore cluster.
+Default: `false`.
 
 _Required_: No
 
@@ -271,6 +306,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+The IDs of any tags to attach to this resource. See
+[here][docs-applying-tags] for a reference on how to apply tags.
 
 _Required_: No
 

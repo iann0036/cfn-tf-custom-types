@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Skytap::Network",
-    "description": "CloudFormation equivalent of skytap_network",
+    "description": "Provides a Skytap Network resource. Networks are not top-level elements of the Skytap API.\nRather, they are elements properly contained within an environment.\nOperations on them are implicitly on the containing environment.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,22 +9,28 @@
             "type": "string"
         },
         "Domain": {
-            "type": "string"
+            "type": "string",
+            "description": "Domain name for the Skytap network. Limited to 64 characters."
         },
         "EnvironmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the environment you want to attach the network to. If updating with a new one then the network will be recreated."
         },
         "Gateway": {
-            "type": "string"
+            "type": "string",
+            "description": "Gateway IP address."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "User-defined name of the network. Limited to 255 characters. UTF-8 character type."
         },
         "Subnet": {
-            "type": "string"
+            "type": "string",
+            "description": "Defines the subnet address and subnet mask size in CIDR format (for example, 10.0.0.0/24). IP addresses for the VMs are assigned from this subnet and standard network services (DNS resolution, CIFS share, routes to Internet) are defined appropriately for it."
         },
         "Tunnelable": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If true, this network can be connected to other networks."
         }
     },
     "additionalProperties": false,

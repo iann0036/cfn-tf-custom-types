@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Spotinst::ElastigroupAwsBeanstalk",
-    "description": "CloudFormation equivalent of spotinst_elastigroup_aws_beanstalk",
+    "description": "Provides a Spotinst AWS group resource using Elastic Beanstalk.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "DeploymentPreferences": {
@@ -130,38 +130,47 @@
             "type": "string"
         },
         "BeanstalkEnvironmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of an existing Beanstalk environment."
         },
         "BeanstalkEnvironmentName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of an existing Beanstalk environment."
         },
         "DesiredCapacity": {
-            "type": "number"
+            "type": "number",
+            "description": "The desired number of instances the group should have at any time."
         },
         "InstanceTypesSpot": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "One or more instance types. To maximize the availability of Spot instances, select as many instance types as possible."
         },
         "Maintenance": {
             "type": "string"
         },
         "MaxSize": {
-            "type": "number"
+            "type": "number",
+            "description": "The maximum number of instances the group should have at any time."
         },
         "MinSize": {
-            "type": "number"
+            "type": "number",
+            "description": "The minimum number of instances the group should have at any time."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The group name."
         },
         "Product": {
-            "type": "string"
+            "type": "string",
+            "description": "Operation system type. Valid values: `\"Linux/UNIX\"`, `\"SUSE Linux\"`, `\"Windows\"`.\nFor EC2 Classic instances:  `\"Linux/UNIX (Amazon VPC)\"`, `\"SUSE Linux (Amazon VPC)\"`, `\"Windows (Amazon VPC)\"`."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The AWS region your group will be created in. Cannot be changed after the group has been created."
         },
         "DeploymentPreferences": {
             "type": "array",

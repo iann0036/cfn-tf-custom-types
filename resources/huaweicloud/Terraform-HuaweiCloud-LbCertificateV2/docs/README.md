@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::LbCertificateV2
 
-CloudFormation equivalent of huaweicloud_lb_certificate_v2
+Manages a V2 certificate resource within HuaweiCloud.
 
 ## Syntax
 
@@ -41,6 +41,8 @@ Properties:
 
 #### Certificate
 
+The public encrypted key of the Certificate, PEM format.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +50,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Human-readable description for the Certificate.
 
 _Required_: No
 
@@ -57,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Domain
 
+The domain of the Certificate.
+
 _Required_: No
 
 _Type_: String
@@ -64,6 +70,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Human-readable name for the Certificate. Does not have
+to be unique.
 
 _Required_: No
 
@@ -73,6 +82,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PrivateKey
 
+The private encrypted key of the Certificate, PEM format.
+
 _Required_: Yes
 
 _Type_: String
@@ -80,6 +91,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region in which to obtain the V2 Networking client.
+A Networking client is needed to create an LB certificate. If omitted, the
+`region` argument of the provider is used. Changing this creates a new
+LB certificate.
 
 _Required_: No
 

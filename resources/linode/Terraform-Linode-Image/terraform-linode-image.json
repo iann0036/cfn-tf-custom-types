@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Linode::Image",
-    "description": "CloudFormation equivalent of linode_image",
+    "description": "Provides a Linode Image resource.  This can be used to create, modify, and delete Linodes Images.  Linode Images are snapshots of a Linode Instance Disk which can then be used to provision more Linode Instances.  Images can be used across regions.\n\nFor more information, see [Linode's documentation on Images](https://www.linode.com/docs/platform/disk-images/linode-images/) and the [Linode APIv4 docs](https://developers.linode.com/api/v4#operation/createImage).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,10 +29,12 @@
             "type": "boolean"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A detailed description of this Image."
         },
         "DiskId": {
-            "type": "number"
+            "type": "number",
+            "description": "The ID of the Linode Disk that this Image will be created from."
         },
         "Expiry": {
             "type": "string"
@@ -41,10 +43,12 @@
             "type": "boolean"
         },
         "Label": {
-            "type": "string"
+            "type": "string",
+            "description": "A short description of the Image. Labels cannot contain special characters."
         },
         "LinodeId": {
-            "type": "number"
+            "type": "number",
+            "description": "The ID of the Linode that this Image will be created from."
         },
         "Size": {
             "type": "number"

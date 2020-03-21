@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::SubnetNetworkSecurityGroupAssociation",
-    "description": "CloudFormation equivalent of azurerm_subnet_network_security_group_association",
+    "description": "Associates a [Network Security Group](network_security_group.html) with a [Subnet](subnet.html) within a [Virtual Network](virtual_network.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,10 +29,12 @@
             "type": "string"
         },
         "NetworkSecurityGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Network Security Group which should be associated with the Subnet. Changing this forces a new resource to be created."
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Subnet. Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

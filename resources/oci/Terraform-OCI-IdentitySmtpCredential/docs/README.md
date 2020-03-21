@@ -1,6 +1,11 @@
 # Terraform::OCI::IdentitySmtpCredential
 
-CloudFormation equivalent of oci_identity_smtp_credential
+This resource provides the Smtp Credential resource in Oracle Cloud Infrastructure Identity service.
+
+Creates a new SMTP credential for the specified user. An SMTP credential has an SMTP user name and an SMTP password.
+You must specify a *description* for the SMTP credential (although it can be an empty string). It does not
+have to be unique, and you can change it anytime with
+[UpdateSmtpCredential](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/SmtpCredentialSummary/UpdateSmtpCredential).
 
 ## Syntax
 
@@ -33,6 +38,8 @@ Properties:
 
 #### Description
 
+(Updatable) The description you assign to the SMTP credentials during creation. Does not have to be unique, and it's changeable.
+
 _Required_: Yes
 
 _Type_: String
@@ -40,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserId
+
+The OCID of the user.
 
 _Required_: Yes
 

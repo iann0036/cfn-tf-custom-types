@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::LbL7policyV2
 
-CloudFormation equivalent of opentelekomcloud_lb_l7policy_v2
+Manages a Load Balancer L7 Policy resource within OpentelekomCloud.
 
 ## Syntax
 
@@ -49,6 +49,9 @@ Properties:
 
 #### Action
 
+The L7 Policy action - can either be REDIRECT\_TO\_POOL,
+or REDIRECT\_TO\_LISTENER. Changing this creates a new L7 Policy.
+
 _Required_: Yes
 
 _Type_: String
@@ -56,6 +59,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AdminStateUp
+
+The administrative state of the L7 Policy.
+This value can only be true (UP).
 
 _Required_: No
 
@@ -65,6 +71,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+Human-readable description for the L7 Policy.
+
 _Required_: No
 
 _Type_: String
@@ -72,6 +80,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ListenerId
+
+The Listener on which the L7 Policy will be associated with.
+Changing this creates a new L7 Policy.
 
 _Required_: Yes
 
@@ -81,6 +92,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Human-readable name for the L7 Policy. Does not have
+to be unique.
+
 _Required_: No
 
 _Type_: String
@@ -88,6 +102,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Position
+
+The position of this policy on the listener. Positions start at 1. Changing this creates a new L7 Policy.
 
 _Required_: No
 
@@ -97,6 +113,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RedirectListenerId
 
+Requests matching this policy will be redirected to the listener with this ID.
+Only valid if action is REDIRECT\_TO\_LISTENER.
+
 _Required_: No
 
 _Type_: String
@@ -104,6 +123,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RedirectPoolId
+
+Requests matching this policy will be redirected to the pool with this ID.
+Only valid if action is REDIRECT\_TO\_POOL.
 
 _Required_: No
 
@@ -113,6 +135,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region in which to obtain the V2 Networking client.
+If omitted, the `region` argument of the provider is used.
+Changing this creates a new L7 Policy.
+
 _Required_: No
 
 _Type_: String
@@ -120,6 +146,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TenantId
+
+Required for admins. The UUID of the tenant who owns
+the L7 Policy. Only administrative users can specify a tenant UUID
+other than their own. Changing this creates a new L7 Policy.
 
 _Required_: No
 

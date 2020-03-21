@@ -29,6 +29,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### AutomaticRestart
 
+Specifies if the instance should be
+restarted if it was terminated by Compute Engine (not a user).
+Defaults to true.
+
 _Required_: No
 
 _Type_: Boolean
@@ -37,6 +41,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OnHostMaintenance
 
+Describes maintenance behavior for the
+instance. Can be MIGRATE or TERMINATE, for more info, read
+[here](https://cloud.google.com/compute/docs/instances/setting-instance-scheduling-options).
+
 _Required_: No
 
 _Type_: String
@@ -44,6 +52,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Preemptible
+
+Specifies if the instance is preemptible.
+If this field is set to true, then `automatic_restart` must be
+set to false.  Defaults to false.
 
 _Required_: No
 

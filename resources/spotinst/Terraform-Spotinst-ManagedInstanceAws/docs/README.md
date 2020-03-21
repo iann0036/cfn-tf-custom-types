@@ -1,6 +1,6 @@
 # Terraform::Spotinst::ManagedInstanceAws
 
-CloudFormation equivalent of spotinst_managed_instance_aws
+Provides a Spotinst AWS ManagedInstance resource.
 
 ## Syntax
 
@@ -123,6 +123,8 @@ Properties:
 
 #### AutoHealing
 
+Enable the auto healing which auto replaces the instance in case the health check fails, default: `“true”`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -130,6 +132,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BlockDevicesMode
+
+Determine the way we attach the data volumes to the data devices. Valid values: `"reattach"`, `"onLaunch"`.
+Default: `"onLaunch"`.
 
 _Required_: No
 
@@ -139,6 +144,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CpuCredits
 
+cpuCredits can have one of two values: “unlimited”, “standard”.
+Default: unlimited.
+
 _Required_: No
 
 _Type_: String
@@ -146,6 +154,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+The ManagedInstance description.
 
 _Required_: No
 
@@ -155,6 +165,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DrainingTimeout
 
+The time in seconds to allow the instance be drained from incoming TCP connections and detached from ELB before terminating it, during a scale down operation.
+
 _Required_: No
 
 _Type_: Double
@@ -162,6 +174,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EbsOptimized
+
+Enable EBS optimization for supported instance which is not enabled by default. Note - additional charges will be applied.
+Default: false.
 
 _Required_: No
 
@@ -171,6 +186,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ElasticIp
 
+Elastic IP Allocation Id to associate to the instance.
+
 _Required_: No
 
 _Type_: String
@@ -178,6 +195,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableMonitoring
+
+Describes whether instance Enhanced Monitoring is enabled.
+Default: false.
 
 _Required_: No
 
@@ -195,6 +215,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GracePeriod
 
+The amount of time, in seconds, after the instance has launched to starts and check its health, default `“120"`.
+
 _Required_: No
 
 _Type_: Double
@@ -202,6 +224,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HealthCheckType
+
+The service to use for the health check. Valid values: `“EC2”`, `“ELB”`, `“TARGET_GROUP”`, `“MULTAI_TARGET_SET”`.
+Default: `“EC2”`.
 
 _Required_: No
 
@@ -211,6 +236,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IamInstanceProfile
 
+Set IAM profile to instance. Set only one of ARN or Name.
+
 _Required_: No
 
 _Type_: String
@@ -218,6 +245,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ImageId
+
+The ID of the image used to launch the instance.
 
 _Required_: Yes
 
@@ -227,6 +256,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceTypes
 
+Comma separated list of available instance types for instance.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -234,6 +265,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeyPair
+
+Specify a Key Pair to attach to the instances.
 
 _Required_: No
 
@@ -243,6 +276,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LifeCycle
 
+Set lifecycle, valid values: `“spot”`, `“on_demand”`.
+Default `"spot"`.
+
 _Required_: No
 
 _Type_: String
@@ -250,6 +286,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The ManagedInstance name.
 
 _Required_: Yes
 
@@ -259,6 +297,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OptimizationWindows
 
+When performAt is 'timeWindow': must specify a list of 'timeWindows' with at least one time window Each string is in the format of - ddd:hh:mm-ddd:hh:mm ddd = day of week = Sun | Mon | Tue | Wed | Thu | Fri | Sat hh = hour 24 = 0 -23 mm = minute = 0 - 59.
+
 _Required_: No
 
 _Type_: List of String
@@ -266,6 +306,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Orientation
+
+Select a prediction strategy. Valid values: `"balanced"`, `"costOriented"`, `"availabilityOriented"`, `"cheapest"`.
+Default: `"availabilityOriented"`.
 
 _Required_: No
 
@@ -275,6 +318,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PersistBlockDevices
 
+Should the instance maintain its Data volumes.
+
 _Required_: Yes
 
 _Type_: Boolean
@@ -282,6 +327,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PersistPrivateIp
+
+Should the instance maintain its private IP.
 
 _Required_: No
 
@@ -291,6 +338,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PersistRootDevice
 
+Should the instance maintain its root device volumes.
+
 _Required_: No
 
 _Type_: Boolean
@@ -298,6 +347,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PlacementTenancy
+
+Valid values: "default", "dedicated"
+Default: default.
 
 _Required_: No
 
@@ -307,6 +359,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PreferredType
 
+Preferred instance types for the instance. We will automatically select optional similar instance types to ensure optimized cost efficiency.
+
 _Required_: No
 
 _Type_: String
@@ -314,6 +368,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PrivateIp
+
+Private IP Allocation Id to associate to the instance.
 
 _Required_: No
 
@@ -323,6 +379,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Product
 
+Operation system type. Valid values: `"Linux/UNIX"`, `"SUSE Linux"`, `"Windows"`, `"Red Hat Enterprise Linux"`, `"Linux/UNIX (Amazon VPC)"`, `"SUSE Linux (Amazon VPC)"`, `"Windows (Amazon VPC)"`,  `"Red Hat Enterprise Linux (Amazon VPC)"`.
+
 _Required_: Yes
 
 _Type_: String
@@ -330,6 +388,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The AWS region your group will be created in.
 
 _Required_: No
 
@@ -339,6 +399,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecurityGroupIds
 
+One or more security group IDs.
+
 _Required_: No
 
 _Type_: List of String
@@ -346,6 +408,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ShutdownScript
+
+The Base64-encoded shutdown script to execute prior to instance termination.
 
 _Required_: No
 
@@ -355,6 +419,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubnetIds
 
+A comma-separated list of subnet identifiers for your instance.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -362,6 +428,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UnhealthyDuration
+
+The amount of time, in seconds, an existing instance should remain active after becoming unhealthy. After the set time out the instance will be replaced, default `“120"`.
 
 _Required_: No
 
@@ -371,6 +439,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UserData
 
+The Base64-encoded MIME user data to make available to the instances.
+
 _Required_: No
 
 _Type_: String
@@ -378,6 +448,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UtilizeReservedInstances
+
+In case of any available Reserved Instances, Managed Instance will utilize them before purchasing Spot instances.
+Default: `"false"`.
 
 _Required_: No
 

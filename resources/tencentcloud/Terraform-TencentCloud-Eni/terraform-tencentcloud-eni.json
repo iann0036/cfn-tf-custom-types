@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::Eni",
-    "description": "CloudFormation equivalent of tencentcloud_eni",
+    "description": "Provides a resource to create an ENI.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Ipv4s": {
@@ -8,13 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "Description": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Description of the IP, maximum length 25."
                 },
                 "Ip": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Intranet IP."
                 },
                 "Primary": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates whether the IP is primary."
                 }
             },
             "required": [
@@ -32,10 +35,12 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the ENI, maximum length 60."
         },
         "Ipv4Count": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of intranet IPv4s. When it is greater than 1, there is only one primary intranet IP. The others are auxiliary intranet IPs, which conflict with `ipv4s`."
         },
         "Ipv4Info": {
             "type": "array",
@@ -60,7 +65,8 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the ENI, maximum length 60."
         },
         "Primary": {
             "type": "boolean"
@@ -70,13 +76,15 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A set of security group IDs."
         },
         "State": {
             "type": "string"
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the subnet within this vpc."
         },
         "Tags": {
             "type": "array",
@@ -96,10 +104,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Tags of the ENI."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the vpc."
         },
         "Ipv4s": {
             "type": "array",

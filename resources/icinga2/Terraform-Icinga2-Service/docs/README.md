@@ -1,6 +1,7 @@
 # Terraform::Icinga2::Service
 
-CloudFormation equivalent of icinga2_service
+Configures an Icinga2 service resource. This allows service to be configured, updated,
+and deleted.
 
 ## Syntax
 
@@ -36,6 +37,8 @@ Properties:
 
 #### CheckCommand
 
+The name of an existing Icinga2 CheckCommand object that is used to determine if the service is available on the host.
+
 _Required_: Yes
 
 _Type_: String
@@ -43,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Hostname
+
+The host to check the service's status on.
 
 _Required_: Yes
 
@@ -52,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the Service object.
+
 _Required_: Yes
 
 _Type_: String
@@ -59,6 +66,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vars
+
+A mapping of variables to assign to the service.
 
 _Required_: No
 

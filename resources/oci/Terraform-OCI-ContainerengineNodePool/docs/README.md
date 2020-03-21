@@ -1,6 +1,8 @@
 # Terraform::OCI::ContainerengineNodePool
 
-CloudFormation equivalent of oci_containerengine_node_pool
+This resource provides the Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
+
+Create a new node pool.
 
 ## Syntax
 
@@ -65,6 +67,8 @@ Properties:
 
 #### ClusterId
 
+The OCID of the cluster to which this node pool is attached.
+
 _Required_: Yes
 
 _Type_: String
@@ -72,6 +76,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CompartmentId
+
+The OCID of the compartment in which the node pool exists.
 
 _Required_: Yes
 
@@ -81,6 +87,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KubernetesVersion
 
+(Updatable) The version of Kubernetes to install on the nodes in the node pool.
+
 _Required_: Yes
 
 _Type_: String
@@ -88,6 +96,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+(Updatable) The name of the node pool. Avoid entering confidential information.
 
 _Required_: Yes
 
@@ -97,6 +107,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NodeImageId
 
+Deprecated. Use `node_source_details` instead. The OCID of the image running on the nodes in the node pool. Cannot be used when `node_image_name` is specified.
+
 _Required_: No
 
 _Type_: String
@@ -104,6 +116,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NodeImageName
+
+Deprecated. Use `node_source_details` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `node_image_id` is specified.
 
 _Required_: No
 
@@ -113,6 +127,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NodeMetadata
 
+A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool.
+
 _Required_: No
 
 _Type_: List of <a href="nodemetadata.md">NodeMetadata</a>
@@ -120,6 +136,8 @@ _Type_: List of <a href="nodemetadata.md">NodeMetadata</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NodeShape
+
+The name of the node shape of the nodes in the node pool.
 
 _Required_: Yes
 
@@ -129,6 +147,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### QuantityPerSubnet
 
+(Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property.  When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
+
 _Required_: No
 
 _Type_: Double
@@ -137,6 +157,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SshPublicKey
 
+The SSH public key to add to each node in the node pool.
+
 _Required_: No
 
 _Type_: String
@@ -144,6 +166,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubnetIds
+
+(Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
 
 _Required_: No
 

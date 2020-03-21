@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenTelekomCloud::FwRuleV2",
-    "description": "CloudFormation equivalent of opentelekomcloud_fw_rule_v2",
+    "description": "Manages a v2 firewall rule resource within OpenTelekomCloud.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,40 +9,51 @@
             "type": "string"
         },
         "Action": {
-            "type": "string"
+            "type": "string",
+            "description": "Action to be taken ( must be \"allow\" or \"deny\") when the\nfirewall rule matches. Changing this updates the `action` of an existing\nfirewall rule."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description for the firewall rule. Changing this\nupdates the `description` of an existing firewall rule."
         },
         "DestinationIpAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "The destination IP address on which the\nfirewall rule operates. Changing this updates the `destination_ip_address`\nof an existing firewall rule."
         },
         "DestinationPort": {
-            "type": "string"
+            "type": "string",
+            "description": "The destination port on which the firewall\nrule operates. Changing this updates the `destination_port` of an existing\nfirewall rule."
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enabled status for the firewall rule (must be \"true\"\nor \"false\" if provided - defaults to \"true\"). Changing this updates the\n`enabled` status of an existing firewall rule."
         },
         "IpVersion": {
-            "type": "number"
+            "type": "number",
+            "description": "IP version, either 4 (default) or 6. Changing this\nupdates the `ip_version` of an existing firewall rule."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique name for the firewall rule. Changing this\nupdates the `name` of an existing firewall rule."
         },
         "Protocol": {
-            "type": "string"
+            "type": "string",
+            "description": "The protocol type on which the firewall rule operates.\nValid values are: `tcp`, `udp`, `icmp`, and `any`. Changing this updates the\n`protocol` of an existing firewall rule."
         },
         "Region": {
             "type": "string"
         },
         "SourceIpAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "The source IP address on which the firewall\nrule operates. Changing this updates the `source_ip_address` of an existing\nfirewall rule."
         },
         "SourcePort": {
-            "type": "string"
+            "type": "string",
+            "description": "The source port on which the firewall\nrule operates. Changing this updates the `source_port` of an existing\nfirewall rule."
         },
         "TenantId": {
-            "type": "string"
+            "type": "string",
+            "description": "The owner of the firewall rule. Required if admin\nwants to create a firewall rule for another tenant. Changing this creates a\nnew firewall rule."
         },
         "ValueSpecs": {
             "type": "array",
@@ -62,7 +73,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Map of additional options."
         }
     },
     "additionalProperties": false,

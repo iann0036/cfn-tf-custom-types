@@ -1,6 +1,8 @@
 # Terraform::Vault::GithubUser
 
-CloudFormation equivalent of vault_github_user
+Manages policy mappings for Github Users authenticated via Github. See the [Vault
+documentation](https://www.vaultproject.io/docs/auth/github.html) for more
+information.
 
 ## Syntax
 
@@ -54,6 +56,9 @@ Properties:
 
 #### Backend
 
+Path where the github auth backend is mounted. Defaults to `github`
+if not specified.
+
 _Required_: No
 
 _Type_: String
@@ -61,6 +66,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Policies
+
+An array of strings specifying the policies to be set on tokens issued
+using this role.
 
 _Required_: No
 
@@ -141,6 +149,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### User
+
+GitHub user name.
 
 _Required_: Yes
 

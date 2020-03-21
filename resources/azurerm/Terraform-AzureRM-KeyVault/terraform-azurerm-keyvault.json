@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::KeyVault",
-    "description": "CloudFormation equivalent of azurerm_key_vault",
+    "description": "Manages a Key Vault.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "NetworkAcls": {
@@ -8,24 +8,28 @@
             "additionalProperties": false,
             "properties": {
                 "Bypass": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies which traffic can bypass the network rules. Possible values are `AzureServices` and `None`."
                 },
                 "DefaultAction": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Default Action to use when no rules match from `ip_rules` / `virtual_network_subnet_ids`. Possible values are `Allow` and `Deny`."
                 },
                 "IpRules": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "One or more IP Addresses, or CIDR Blocks which should be able to access the Key Vault."
                 },
                 "VirtualNetworkSubnetIds": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "One or more Subnet ID's which should be able to access this Key Vault."
                 }
             },
             "required": [
@@ -103,34 +107,44 @@
                         "type": "string"
                     }
                 }
-            }
+            },
+            "description": "[A list](/docs/configuration/attr-as-blocks.html) of up to 16 objects describing access policies, as described below."
         },
         "EnabledForDeployment": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean flag to specify whether Azure Virtual Machines are permitted to retrieve certificates stored as secrets from the key vault. Defaults to `false`."
         },
         "EnabledForDiskEncryption": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean flag to specify whether Azure Disk Encryption is permitted to retrieve secrets from the vault and unwrap keys. Defaults to `false`."
         },
         "EnabledForTemplateDeployment": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean flag to specify whether Azure Resource Manager is permitted to retrieve secrets from the key vault. Defaults to `false`."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Key Vault. Changing this forces a new resource to be created."
         },
         "PurgeProtectionEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is Purge Protection enabled for this Key Vault? Defaults to `false`."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the Key Vault. Changing this forces a new resource to be created."
         },
         "SkuName": {
-            "type": "string"
+            "type": "string",
+            "description": "The Name of the SKU used for this Key Vault. Possible values are `standard` and `premium`."
         },
         "SoftDeleteEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Should Soft Delete be enabled for this Key Vault? Defaults to `false`."
         },
         "Tags": {
             "type": "array",
@@ -150,10 +164,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "TenantId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Azure Active Directory tenant ID that should be used for authenticating requests to the key vault."
         },
         "VaultUri": {
             "type": "string"

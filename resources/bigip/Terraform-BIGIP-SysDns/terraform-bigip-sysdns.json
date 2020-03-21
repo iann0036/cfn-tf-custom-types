@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::BIGIP::SysDns",
-    "description": "CloudFormation equivalent of bigip_sys_dns",
+    "description": "`bigip_sys_dns` Configures DNS server on F5 BIG-IP",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,24 +9,28 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Provide description for your DNS server."
         },
         "NameServers": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Name or IP address of the DNS server."
         },
         "NumberOfDots": {
-            "type": "number"
+            "type": "number",
+            "description": "Configures the number of dots needed in a name before an initial absolute query will be made."
         },
         "Search": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Specify what domains you want to search."
         }
     },
     "additionalProperties": false,

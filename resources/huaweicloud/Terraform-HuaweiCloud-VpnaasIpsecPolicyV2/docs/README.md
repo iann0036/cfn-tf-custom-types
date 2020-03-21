@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::VpnaasIpsecPolicyV2
 
-CloudFormation equivalent of huaweicloud_vpnaas_ipsec_policy_v2
+Manages a V2 IPSec policy resource within HuaweiCloud.
 
 ## Syntax
 
@@ -53,6 +53,9 @@ Properties:
 
 #### AuthAlgorithm
 
+The authentication hash algorithm. Valid values are md5, sha1, sha2-256, sha2-384, sha2-512.
+Default is sha1. Changing this updates the algorithm of the existing policy.
+
 _Required_: No
 
 _Type_: String
@@ -60,6 +63,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+The human-readable description for the policy.
+Changing this updates the description of the existing policy.
 
 _Required_: No
 
@@ -69,6 +75,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EncapsulationMode
 
+The encapsulation mode. Valid values are tunnel and transport. Default is tunnel.
+Changing this updates the existing policy.
+
 _Required_: No
 
 _Type_: String
@@ -76,6 +85,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EncryptionAlgorithm
+
+The encryption algorithm. Valid values are 3des, aes-128, aes-192 and so on.
+The default value is aes-128. Changing this updates the existing policy.
 
 _Required_: No
 
@@ -85,6 +97,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the policy. Changing this updates the name of
+the existing policy.
+
 _Required_: No
 
 _Type_: String
@@ -92,6 +107,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Pfs
+
+The perfect forward secrecy mode. Valid values are Group2, Group5 and Group14. Default is Group5.
+Changing this updates the existing policy.
 
 _Required_: No
 
@@ -101,6 +119,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region in which to obtain the V2 Networking client.
+A Networking client is needed to create an IPSec policy. If omitted, the
+`region` argument of the provider is used. Changing this creates a new
+policy.
+
 _Required_: No
 
 _Type_: String
@@ -108,6 +131,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TenantId
+
+The owner of the policy. Required if admin wants to
+create a policy for another project. Changing this creates a new policy.
 
 _Required_: No
 
@@ -117,6 +143,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TransformProtocol
 
+The transform protocol. Valid values are ESP, AH and AH-ESP.
+Changing this updates the existing policy. Default is ESP.
+
 _Required_: No
 
 _Type_: String
@@ -124,6 +153,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ValueSpecs
+
+Map of additional options.
 
 _Required_: No
 

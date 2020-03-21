@@ -1,6 +1,6 @@
 # Terraform::CloudStack::Nic
 
-CloudFormation equivalent of cloudstack_nic
+Creates an additional NIC to add a VM to the specified network.
 
 ## Syntax
 
@@ -33,6 +33,9 @@ Properties:
 
 #### IpAddress
 
+The IP address to assign to the NIC. Changing this
+forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +44,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NetworkId
 
+The ID of the network to plug the NIC into. Changing
+this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +54,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VirtualMachineId
+
+The ID of the virtual machine to which to
+attach the NIC. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

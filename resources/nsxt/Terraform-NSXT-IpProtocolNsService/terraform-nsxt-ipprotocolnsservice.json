@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::NSXT::IpProtocolNsService",
-    "description": "CloudFormation equivalent of nsxt_ip_protocol_ns_service",
+    "description": "This resource provides a way to configure a networking and security service which can be used within NSX. This specific service is for the IP protocol.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Tag": {
@@ -29,13 +29,16 @@
             "type": "boolean"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "Display name, defaults to ID if not set."
         },
         "Protocol": {
-            "type": "number"
+            "type": "number",
+            "description": "IP protocol number (0-255)."
         },
         "Revision": {
             "type": "number"

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::BIGIP::LtmPool",
-    "description": "CloudFormation equivalent of bigip_ltm_pool",
+    "description": "`bigip_ltm_pool` Manages a pool configuration.\n\nResources should be named with their \"full path\". The full path is the combination of the partition + name of the resource. For example /Common/my-pool.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,26 +9,32 @@
             "type": "string"
         },
         "AllowNat": {
-            "type": "string"
+            "type": "string",
+            "description": null
         },
         "AllowSnat": {
-            "type": "string"
+            "type": "string",
+            "description": null
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Userdefined value to describe the pool."
         },
         "LoadBalancingMode": {
-            "type": "string"
+            "type": "string",
+            "description": null
         },
         "Monitors": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of monitor names to associate with the pool."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the pool."
         },
         "ReselectTries": {
             "type": "number"

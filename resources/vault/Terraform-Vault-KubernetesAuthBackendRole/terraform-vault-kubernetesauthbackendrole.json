@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Vault::KubernetesAuthBackendRole",
-    "description": "CloudFormation equivalent of vault_kubernetes_auth_backend_role",
+    "description": "Manages an Kubernetes auth backend role in a Vault server. See the [Vault\ndocumentation](https://www.vaultproject.io/docs/auth/kubernetes.html) for more\ninformation.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "Audience": {
-            "type": "string"
+            "type": "string",
+            "description": "Audience claim to verify in the JWT."
         },
         "Backend": {
-            "type": "string"
+            "type": "string",
+            "description": "Unique name of the kubernetes backend to configure."
         },
         "BoundCidrs": {
             "type": "array",
@@ -26,14 +28,16 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of service account names able to access this role. If set to `[\"*\"]` all names are allowed, both this and bound_service_account_namespaces can not be \"*\"."
         },
         "BoundServiceAccountNamespaces": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of namespaces allowed to access this role. If set to `[\"*\"]` all namespaces are allowed, both this and bound_service_account_names can not be set to \"*\"."
         },
         "MaxTtl": {
             "type": "number"
@@ -52,7 +56,8 @@
             }
         },
         "RoleName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the role."
         },
         "TokenBoundCidrs": {
             "type": "array",

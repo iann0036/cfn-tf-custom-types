@@ -1,6 +1,9 @@
 # Terraform::OCI::LoadBalancerRuleSet
 
-CloudFormation equivalent of oci_load_balancer_rule_set
+This resource provides the Rule Set resource in Oracle Cloud Infrastructure Load Balancer service.
+
+Creates a new rule set associated with the specified load balancer. For more information, see
+[Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm).
 
 ## Syntax
 
@@ -42,6 +45,8 @@ Properties:
 
 #### LoadBalancerId
 
+The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set`.
 
 _Required_: Yes
 

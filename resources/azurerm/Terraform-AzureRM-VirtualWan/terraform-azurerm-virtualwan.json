@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::VirtualWan",
-    "description": "CloudFormation equivalent of azurerm_virtual_wan",
+    "description": "Manages a Virtual WAN.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,25 +29,32 @@
             "type": "string"
         },
         "AllowBranchToBranchTraffic": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean flag to specify whether branch to branch traffic is allowed. Defaults to `true`."
         },
         "AllowVnetToVnetTraffic": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean flag to specify whether VNet to VNet traffic is allowed. Defaults to `false`."
         },
         "DisableVpnEncryption": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean flag to specify whether VPN encryption is disabled. Defaults to `false`."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Virtual WAN. Changing this forces a new resource to be created."
         },
         "Office365LocalBreakoutCategory": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the Office365 local breakout category. Possible values include: `Optimize`, `OptimizeAndAllow`, `All`, `None`. Defaults to `None`."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the Virtual WAN. Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -67,10 +74,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the Virtual WAN."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the Virtual WAN type. Possible Values include: `Basic` and `Standard`. Defaults to `Standard`."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

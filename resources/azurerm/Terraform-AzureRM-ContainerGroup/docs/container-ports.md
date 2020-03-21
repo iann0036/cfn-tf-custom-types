@@ -24,6 +24,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Port
 
+The port number the container will expose. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: Double
@@ -31,6 +33,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Protocol
+
+The network protocol associated with port. Possible values are `TCP` & `UDP`. Changing this forces a new resource to be created.
 
 _Required_: No
 

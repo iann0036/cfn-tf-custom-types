@@ -1,6 +1,6 @@
 # Terraform::AzureRM::ServicebusSubscription
 
-CloudFormation equivalent of azurerm_servicebus_subscription
+Manages a ServiceBus Subscription.
 
 ## Syntax
 
@@ -55,6 +55,8 @@ Properties:
 
 #### AutoDeleteOnIdle
 
+The idle interval after which the topic is automatically deleted as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). The minimum duration is `5` minutes or `P5M`.
+
 _Required_: No
 
 _Type_: String
@@ -62,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DeadLetteringOnMessageExpiration
+
+Boolean flag which controls whether the Subscription has dead letter support when a message expires. Defaults to `false`.
 
 _Required_: No
 
@@ -71,6 +75,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DefaultMessageTtl
 
+The Default message timespan to live as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). This is the duration after which the message expires, starting from when the message is sent to Service Bus. This is the default value used when TimeToLive is not set on a message itself.
+
 _Required_: No
 
 _Type_: String
@@ -78,6 +84,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableBatchedOperations
+
+Boolean flag which controls whether the Subscription supports batched operations. Defaults to `false`.
 
 _Required_: No
 
@@ -87,6 +95,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ForwardDeadLetteredMessagesTo
 
+The name of a Queue or Topic to automatically forward Dead Letter messages to.
+
 _Required_: No
 
 _Type_: String
@@ -94,6 +104,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ForwardTo
+
+The name of a Queue or Topic to automatically forward messages to.
 
 _Required_: No
 
@@ -103,6 +115,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LockDuration
 
+The lock duration for the subscription as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). The default value is `1` minute or `P1M`.
+
 _Required_: No
 
 _Type_: String
@@ -110,6 +124,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MaxDeliveryCount
+
+The maximum number of deliveries.
 
 _Required_: Yes
 
@@ -119,6 +135,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the ServiceBus Subscription resource. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -126,6 +144,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NamespaceName
+
+The name of the ServiceBus Namespace to create this Subscription in. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -135,6 +155,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RequiresSession
 
+Boolean flag which controls whether this Subscription supports the concept of a session. Defaults to `false`. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: Boolean
@@ -143,6 +165,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to create the namespace. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -150,6 +174,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TopicName
+
+The name of the ServiceBus Topic to create this Subscription in. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

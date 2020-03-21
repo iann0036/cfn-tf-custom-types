@@ -1,6 +1,12 @@
 # Terraform::Google::ComputeInstanceGroup
 
-CloudFormation equivalent of google_compute_instance_group
+Creates a group of dissimilar Compute Engine virtual machine instances.
+For more information, see [the official documentation](https://cloud.google.com/compute/docs/instance-groups/#unmanaged_instance_groups)
+and [API](https://cloud.google.com/compute/docs/reference/latest/instanceGroups)
+
+-> Recreating an instance group that's in use by another resource will give a
+`resourceInUseByAnotherResource` error. You can avoid this error with a
+Terraform `lifecycle` block as outlined in the example below.
 
 ## Syntax
 
@@ -43,6 +49,9 @@ Properties:
 
 #### Description
 
+An optional textual description of the instance
+group.
+
 _Required_: No
 
 _Type_: String
@@ -50,6 +59,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Instances
+
+List of instances in the group. They should be given
+as self_link URLs. When adding instances they must all be in the same
+network and zone as the instance group.
 
 _Required_: No
 
@@ -59,6 +72,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the instance group. Must be 1-63
+characters long and comply with
+[RFC1035](https://www.ietf.org/rfc/rfc1035.txt). Supported characters
+include lowercase letters, numbers, and hyphens.
+
 _Required_: Yes
 
 _Type_: String
@@ -66,6 +84,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Network
+
+The URL of the network the instance group is in. If
+this is different from the network where the instances are in, the creation
+fails. Defaults to the network where the instances are in (if neither
+`network` nor `instances` is specified, this field will be blank).
 
 _Required_: No
 
@@ -75,6 +98,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Project
 
+The ID of the project in which the resource belongs. If it
+is not provided, the provider project is used.
+
 _Required_: No
 
 _Type_: String
@@ -82,6 +108,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Zone
+
+The zone that this instance group should be created in.
 
 _Required_: No
 

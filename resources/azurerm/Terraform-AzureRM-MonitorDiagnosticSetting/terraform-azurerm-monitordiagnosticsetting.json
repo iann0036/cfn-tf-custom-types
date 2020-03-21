@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::MonitorDiagnosticSetting",
-    "description": "CloudFormation equivalent of azurerm_monitor_diagnostic_setting",
+    "description": "Manages a Diagnostic Setting for an existing Resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Log": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "Category": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of a Diagnostic Log Category for this Resource."
                 },
                 "Enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Is this Diagnostic Log enabled? Defaults to `true`."
                 },
                 "RetentionPolicy": {
                     "type": "array",
@@ -30,10 +32,12 @@
             "additionalProperties": false,
             "properties": {
                 "Category": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of a Diagnostic Metric Category for this Resource."
                 },
                 "Enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Is this Diagnostic Metric enabled? Defaults to `true`."
                 },
                 "RetentionPolicy": {
                     "type": "array",
@@ -71,10 +75,12 @@
             "additionalProperties": false,
             "properties": {
                 "Days": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The number of days for which this Retention Policy should apply."
                 },
                 "Enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Is this Retention Policy enabled?."
                 }
             },
             "required": [
@@ -88,25 +94,32 @@
             "type": "string"
         },
         "EventhubAuthorizationRuleId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the ID of an Event Hub Namespace Authorization Rule used to send Diagnostics Data. Changing this forces a new resource to be created."
         },
         "EventhubName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Event Hub where Diagnostics Data should be sent. Changing this forces a new resource to be created."
         },
         "LogAnalyticsDestinationType": {
-            "type": "string"
+            "type": "string",
+            "description": "When set to 'Dedicated' logs sent to a Log Analytics workspace will go into resource specific tables, instead of the legacy AzureDiagnostics table."
         },
         "LogAnalyticsWorkspaceId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the ID of a Log Analytics Workspace where Diagnostics Data should be sent. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Diagnostic Setting. Changing this forces a new resource to be created."
         },
         "StorageAccountId": {
-            "type": "string"
+            "type": "string",
+            "description": "With this parameter you can specify a storage account which should be used to send the logs to. Parameter must be a valid Azure Resource ID. Changing this forces a new resource to be created."
         },
         "TargetResourceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of an existing Resource on which to configure Diagnostic Settings. Changing this forces a new resource to be created."
         },
         "Log": {
             "type": "array",

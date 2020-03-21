@@ -1,6 +1,6 @@
 # Terraform::Grafana::DataSource
 
-CloudFormation equivalent of grafana_data_source
+The data source resource allows a data source to be created on a Grafana server.
 
 ## Syntax
 
@@ -55,6 +55,11 @@ Properties:
 
 #### AccessMode
 
+The method by which the browser-based Grafana
+application will access the data source. The default is "proxy", which means
+that the application will make requests via a proxy endpoint on the Grafana
+server.
+
 _Required_: No
 
 _Type_: String
@@ -62,6 +67,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BasicAuthEnabled
+
+- If true, HTTP basic authentication will
+be used to make requests.
 
 _Required_: No
 
@@ -71,6 +79,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### BasicAuthPassword
 
+The
+password to use for basic auth.
+
 _Required_: No
 
 _Type_: String
@@ -78,6 +89,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BasicAuthUsername
+
+The
+username to use for basic auth.
 
 _Required_: No
 
@@ -87,6 +101,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DatabaseName
 
+The name of the
+database to use on the selected data source server.
+
 _Required_: No
 
 _Type_: String
@@ -94,6 +111,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IsDefault
+
+If true, the data source will be the default
+source used by the Grafana server. Only one data source on a server can be
+the default.
 
 _Required_: No
 
@@ -103,6 +124,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A unique name for the data source within the Grafana
+server.
+
 _Required_: Yes
 
 _Type_: String
@@ -110,6 +134,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Password
+
+The password to use to
+authenticate to the data source.
 
 _Required_: No
 
@@ -119,6 +146,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Type
 
+The data source type. Must be one of the data source
+keywords supported by the Grafana server.
+
 _Required_: Yes
 
 _Type_: String
@@ -127,6 +157,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Url
 
+The URL for the data source. The type of URL required
+varies depending on the chosen data source type.
+
 _Required_: No
 
 _Type_: String
@@ -134,6 +167,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Username
+
+The username to use to
+authenticate to the data source.
 
 _Required_: No
 

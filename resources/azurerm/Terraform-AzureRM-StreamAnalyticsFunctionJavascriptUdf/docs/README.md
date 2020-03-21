@@ -1,6 +1,6 @@
 # Terraform::AzureRM::StreamAnalyticsFunctionJavascriptUdf
 
-CloudFormation equivalent of azurerm_stream_analytics_function_javascript_udf
+Manages a JavaScript UDF Function within Stream Analytics Streaming Job.
 
 ## Syntax
 
@@ -43,6 +43,8 @@ Properties:
 
 #### Name
 
+The name of the JavaScript UDF Function. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the Resource Group where the Stream Analytics Job exists. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -59,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Script
 
+The JavaScript of this UDF Function.
+
 _Required_: Yes
 
 _Type_: String
@@ -66,6 +72,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StreamAnalyticsJobName
+
+The name of the Stream Analytics Job where this Function should be created. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

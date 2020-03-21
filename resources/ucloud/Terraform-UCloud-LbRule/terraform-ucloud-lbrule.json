@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::UCloud::LbRule",
-    "description": "CloudFormation equivalent of ucloud_lb_rule",
+    "description": "Provides a Load Balancer Rule resource to add content forwarding policies for Load Balancer backend resource.\n \n~> **Note** The Load Balancer Rule can only be define while the `protocol` of lb listener is one of HTTP and HTTPS. In addition, should set one of `domain` and `path` if defined.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -13,19 +13,24 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The IDs of the backend servers where rule applies, this argument is populated base on the `backend_id` responded from `lb_attachment` create."
         },
         "Domain": {
-            "type": "string"
+            "type": "string",
+            "description": "The domain of content forward matching fields. `path` and `domain` cannot coexist. `path` and `domain` must be filled in one."
         },
         "ListenerId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of a listener server."
         },
         "LoadBalancerId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of a load balancer."
         },
         "Path": {
-            "type": "string"
+            "type": "string",
+            "description": "The path of Content forward matching fields. `path` and `domain` cannot coexist. `path` and `domain` must be filled in one."
         }
     },
     "additionalProperties": false,

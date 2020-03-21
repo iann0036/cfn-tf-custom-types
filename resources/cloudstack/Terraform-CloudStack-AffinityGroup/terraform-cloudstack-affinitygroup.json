@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::CloudStack::AffinityGroup",
-    "description": "CloudFormation equivalent of cloudstack_affinity_group",
+    "description": "Creates an affinity group.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,20 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the affinity group."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the affinity group. Changing this\nforces a new resource to be created."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or ID of the project to register this\naffinity group to. Changing this forces a new resource to be created."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The affinity group type. Changing this\nforces a new resource to be created."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,8 @@
 # Terraform::Vault::JwtAuthBackendRole
 
-CloudFormation equivalent of vault_jwt_auth_backend_role
+Manages an JWT/OIDC auth backend role in a Vault server. See the [Vault
+documentation](https://www.vaultproject.io/docs/auth/jwt.html) for more
+information.
 
 ## Syntax
 
@@ -98,6 +100,9 @@ Properties:
 
 #### AllowedRedirectUris
 
+The list of allowed values for redirect_uri during OIDC logins.
+Required for OIDC roles.
+
 _Required_: No
 
 _Type_: List of String
@@ -106,6 +111,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Backend
 
+The unique name of the auth backend to configure.
+Defaults to `jwt`.
+
 _Required_: No
 
 _Type_: String
@@ -113,6 +121,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BoundAudiences
+
+List of `aud` claims to match
+against. Any match is sufficient.
 
 _Required_: No
 
@@ -130,6 +141,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### BoundClaims
 
+If set, a map of claims/values to match against.
+The expected value may be a single string or a list of strings.
+
 _Required_: No
 
 _Type_: List of <a href="boundclaims.md">BoundClaims</a>
@@ -137,6 +151,9 @@ _Type_: List of <a href="boundclaims.md">BoundClaims</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BoundSubject
+
+If set, requires that the `sub` claim matches
+this value.
 
 _Required_: No
 
@@ -146,6 +163,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ClaimMappings
 
+If set, a map of claims (keys) to be copied
+to specified metadata fields (values).
+
 _Required_: No
 
 _Type_: List of <a href="claimmappings.md">ClaimMappings</a>
@@ -153,6 +173,10 @@ _Type_: List of <a href="claimmappings.md">ClaimMappings</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClockSkewLeeway
+
+The amount of leeway to add to all claims to account for clock skew, in
+seconds. Defaults to `60` seconds if set to `0` and can be disabled if set to `-1`.
+Only applicable with "jwt" roles.
 
 _Required_: No
 
@@ -162,6 +186,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ExpirationLeeway
 
+The amount of leeway to add to expiration (`exp`) claims to account for
+clock skew, in seconds. Defaults to `60` seconds if set to `0` and can be disabled if set to `-1`.
+Only applicable with "jwt" roles.
+
 _Required_: No
 
 _Type_: Double
@@ -170,6 +198,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GroupsClaim
 
+The claim to use to uniquely identify
+the set of groups to which the user belongs; this will be used as the names
+for the Identity group aliases created due to a successful login. The claim
+value must be a list of strings.
+
 _Required_: No
 
 _Type_: String
@@ -177,6 +210,14 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GroupsClaimDelimiterPattern
+
+.)
+A pattern of delimiters
+used to allow the groups_claim to live outside of the top-level JWT structure.
+For instance, a groups_claim of meta/user.name/groups with this field
+set to // will expect nested structures named meta, user.name, and groups.
+If this field was set to /./ the groups information would expect to be
+via nested structures of meta, user, name, and groups.
 
 _Required_: No
 
@@ -194,6 +235,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NotBeforeLeeway
 
+The amount of leeway to add to not before (`nbf`) claims to account for
+clock skew, in seconds. Defaults to `60` seconds if set to `0` and can be disabled if set to `-1`.
+Only applicable with "jwt" roles.
+
 _Required_: No
 
 _Type_: Double
@@ -209,6 +254,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OidcScopes
+
+If set, a list of OIDC scopes to be used with an OIDC role.
+The standard scope "openid" is automatically included and need not be specified.
 
 _Required_: No
 
@@ -234,6 +282,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RoleName
 
+The name of the role.
+
 _Required_: Yes
 
 _Type_: String
@@ -241,6 +291,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RoleType
+
+Type of role, either "oidc" (default) or "jwt".
 
 _Required_: No
 
@@ -330,6 +382,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UserClaim
 
+The claim to use to uniquely identify
+the user; this will be used as the name for the Identity entity alias created
+due to a successful login.
+
 _Required_: Yes
 
 _Type_: String
@@ -337,6 +393,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VerboseOidcLogging
+
+Log received OIDC tokens and claims when debug-level
+logging is active. Not recommended in production since sensitive information may be present
+in OIDC responses.
 
 _Required_: No
 

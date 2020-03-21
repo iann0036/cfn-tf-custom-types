@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::ScfFunction
 
-CloudFormation equivalent of tencentcloud_scf_function
+Provide a resource to create a SCF function.
 
 ## Syntax
 
@@ -70,6 +70,8 @@ Properties:
 
 #### ClsLogsetId
 
+cls logset id of the SCF function.
+
 _Required_: No
 
 _Type_: String
@@ -77,6 +79,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClsTopicId
+
+cls topic id of the SCF function.
 
 _Required_: No
 
@@ -86,6 +90,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CosBucketName
 
+Cos bucket name of the SCF function, such as `cos-1234567890`, conflict with `zip_file`.
+
 _Required_: No
 
 _Type_: String
@@ -93,6 +99,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CosBucketRegion
+
+Cos bucket region of the SCF function, conflict with `zip_file`.
 
 _Required_: No
 
@@ -102,6 +110,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CosObjectName
 
+Cos object name of the SCF function, should have suffix `.zip` or `.jar`, conflict with `zip_file`.
+
 _Required_: No
 
 _Type_: String
@@ -109,6 +119,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Description of the SCF function. Description supports English letters, numbers, spaces, commas, newlines, periods and Chinese, the maximum length is 1000.
 
 _Required_: No
 
@@ -118,6 +130,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Environment
 
+Environment of the SCF function.
+
 _Required_: No
 
 _Type_: List of <a href="environment.md">Environment</a>
@@ -125,6 +139,8 @@ _Type_: List of <a href="environment.md">Environment</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Handler
+
+Handler of the SCF function. The format of name is `<filename>.<method_name>`, and it supports 26 English letters, numbers, connectors, and underscores, it should start with a letter. The last character cannot be `-` or `_`. Available length is 2-60.
 
 _Required_: Yes
 
@@ -134,6 +150,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### L5Enable
 
+Enable L5 for SCF function, default is `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -141,6 +159,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MemSize
+
+Memory size of the SCF function, unit is MB. The default is `128`MB. The range is 128M-1536M, and the ladder is 128M.
 
 _Required_: No
 
@@ -150,6 +170,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name of the SCF function. Name supports 26 English letters, numbers, connectors, and underscores, it should start with a letter. The last character cannot be `-` or `_`. Available length is 2-60.
+
 _Required_: Yes
 
 _Type_: String
@@ -157,6 +179,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Namespace
+
+Namespace of the SCF function, default is `default`.
 
 _Required_: No
 
@@ -166,6 +190,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Role
 
+Role of the SCF function.
+
 _Required_: No
 
 _Type_: String
@@ -173,6 +199,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Runtime
+
+Runtime of the SCF function, only supports `Python2.7`, `Python3.6`, `Nodejs6.10`, `Nodejs8.9`, `Nodejs10.15`, `PHP5`, `PHP7`, `Golang1`, and `Java8`.
 
 _Required_: Yes
 
@@ -182,6 +210,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubnetId
 
+Subnet id of the SCF function.
+
 _Required_: No
 
 _Type_: String
@@ -189,6 +219,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Tags of the SCF function.
 
 _Required_: No
 
@@ -198,6 +230,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Timeout
 
+Timeout of the SCF function, unit is second. Default `3`. Available value is 1-300.
+
 _Required_: No
 
 _Type_: Double
@@ -206,6 +240,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VpcId
 
+VPC id of the SCF function.
+
 _Required_: No
 
 _Type_: String
@@ -213,6 +249,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZipFile
+
+Zip file of the SCF function, content is encoded by base64, conflict with `cos_bucket_name`, `cos_object_name`, `cos_bucket_region`.
 
 _Required_: No
 

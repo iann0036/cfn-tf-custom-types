@@ -25,6 +25,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### DisablePasswordAuthentication
 
+Specifies whether password authentication should be disabled. If set to `false`, an `admin_password` must be specified.
+
 _Required_: Yes
 
 _Type_: Boolean

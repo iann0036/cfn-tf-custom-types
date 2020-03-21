@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::NetworkingSubnetV2",
-    "description": "CloudFormation equivalent of openstack_networking_subnet_v2",
+    "description": "Manages a V2 Neutron subnet resource within OpenStack.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "AllocationPool": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "End": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ending address."
                 },
                 "Start": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The starting address."
                 }
             },
             "required": [
@@ -24,10 +26,12 @@
             "additionalProperties": false,
             "properties": {
                 "End": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ending address."
                 },
                 "Start": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The starting address."
                 }
             },
             "required": [
@@ -40,10 +44,12 @@
             "additionalProperties": false,
             "properties": {
                 "DestinationCidr": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The destination CIDR."
                 },
                 "NextHop": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The next hop in the route."
                 }
             },
             "required": [
@@ -78,60 +84,76 @@
             }
         },
         "Cidr": {
-            "type": "string"
+            "type": "string",
+            "description": "CIDR representing IP range for this subnet, based on IP\nversion. You can omit this option if you are creating a subnet from a\nsubnet pool."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Human-readable description of the subnet. Changing this\nupdates the name of the existing subnet."
         },
         "DnsNameservers": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "An array of DNS name server names used by hosts\nin this subnet. Changing this updates the DNS name servers for the existing\nsubnet."
         },
         "EnableDhcp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "The administrative state of the network.\nAcceptable values are \"true\" and \"false\". Changing this value enables or\ndisables the DHCP capabilities of the existing subnet. Defaults to true."
         },
         "GatewayIp": {
-            "type": "string"
+            "type": "string",
+            "description": "Default gateway used by devices in this subnet.\nLeaving this blank and not setting `no_gateway` will cause a default\ngateway of `.1` to be used. Changing this updates the gateway IP of the\nexisting subnet."
         },
         "IpVersion": {
-            "type": "number"
+            "type": "number",
+            "description": "IP version, either 4 (default) or 6. Changing this creates a\nnew subnet."
         },
         "Ipv6AddressMode": {
-            "type": "string"
+            "type": "string",
+            "description": "The IPv6 address mode. Valid values are\n`dhcpv6-stateful`, `dhcpv6-stateless`, or `slaac`."
         },
         "Ipv6RaMode": {
-            "type": "string"
+            "type": "string",
+            "description": "The IPv6 Router Advertisement mode. Valid values\nare `dhcpv6-stateful`, `dhcpv6-stateless`, or `slaac`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the subnet. Changing this updates the name of\nthe existing subnet."
         },
         "NetworkId": {
-            "type": "string"
+            "type": "string",
+            "description": "The UUID of the parent network. Changing this\ncreates a new subnet."
         },
         "NoGateway": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Do not set a gateway IP on this subnet. Changing\nthis removes or adds a default gateway IP of the existing subnet."
         },
         "PrefixLength": {
-            "type": "number"
+            "type": "number",
+            "description": "The prefix length to use when creating a subnet\nfrom a subnet pool. The default subnet pool prefix length that was defined\nwhen creating the subnet pool will be used if not provided. Changing this\ncreates a new subnet."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the V2 Networking client.\nA Networking client is needed to create a Neutron subnet. If omitted, the\n`region` argument of the provider is used. Changing this creates a new\nsubnet."
         },
         "SubnetpoolId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the subnetpool associated with the subnet."
         },
         "Tags": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A set of string tags for the subnet."
         },
         "TenantId": {
-            "type": "string"
+            "type": "string",
+            "description": "The owner of the subnet. Required if admin wants to\ncreate a subnet for another tenant. Changing this creates a new subnet."
         },
         "ValueSpecs": {
             "type": "array",
@@ -151,7 +173,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Map of additional options."
         },
         "AllocationPool": {
             "type": "array",

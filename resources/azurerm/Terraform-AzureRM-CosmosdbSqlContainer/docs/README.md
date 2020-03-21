@@ -1,6 +1,6 @@
 # Terraform::AzureRM::CosmosdbSqlContainer
 
-CloudFormation equivalent of azurerm_cosmosdb_sql_container
+Manages a SQL Container within a Cosmos DB Account.
 
 ## Syntax
 
@@ -46,6 +46,8 @@ Properties:
 
 #### AccountName
 
+The name of the Cosmos DB Account to create the container within. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -53,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DatabaseName
+
+The name of the Cosmos DB SQL Database to create the container within. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -62,6 +66,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DefaultTtl
 
+The default time to live of SQL container. If missing, items are not expired automatically. If present and the value is set to `-1`, it is equal to infinity, and items don’t expire by default. If present and the value is set to some number `n` – items will expire `n` seconds after their last modified time.
+
 _Required_: No
 
 _Type_: Double
@@ -69,6 +75,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the Cosmos DB SQL Database. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -78,6 +86,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PartitionKeyPath
 
+Define a partition key. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -86,6 +96,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which the Cosmos DB SQL Database is created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -93,6 +105,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Throughput
+
+The throughput of SQL container (RU/s). Must be set in increments of `100`. The minimum value is `400`. This must be set upon container creation otherwise it cannot be updated without a manual terraform destroy-apply.
 
 _Required_: No
 

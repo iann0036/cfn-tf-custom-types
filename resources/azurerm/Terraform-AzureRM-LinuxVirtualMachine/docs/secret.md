@@ -25,6 +25,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### KeyVaultId
 
+The ID of the Key Vault from which all Secrets should be sourced.
+
 _Required_: Yes
 
 _Type_: String

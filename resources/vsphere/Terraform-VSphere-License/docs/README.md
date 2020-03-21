@@ -1,6 +1,6 @@
 # Terraform::VSphere::License
 
-CloudFormation equivalent of vsphere_license
+Provides a VMware vSphere license resource. This can be used to add and remove license keys.
 
 ## Syntax
 
@@ -32,6 +32,8 @@ Properties:
 
 #### Labels
 
+A map of key/value pairs to be attached as labels (tags) to the license key.
+
 _Required_: No
 
 _Type_: List of <a href="labels.md">Labels</a>
@@ -39,6 +41,8 @@ _Type_: List of <a href="labels.md">Labels</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LicenseKey
+
+The license key to add.
 
 _Required_: Yes
 

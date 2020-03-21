@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HuaweiCloud::SmnTopicV2",
-    "description": "CloudFormation equivalent of huaweicloud_smn_topic_v2",
+    "description": "Manages a V2 topic resource within HuaweiCloud.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,22 +9,28 @@
             "type": "string"
         },
         "CreateTime": {
-            "type": "string"
+            "type": "string",
+            "description": "Time when the topic was created."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "Topic display name, which is presented as the\nname of the email sender in an email message."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the topic to be created."
         },
         "PushPolicy": {
-            "type": "number"
+            "type": "number",
+            "description": "Message pushing policy. 0 indicates that the message\nsending fails and the message is cached in the queue. 1 indicates that the\nfailed message is discarded."
         },
         "TopicUrn": {
-            "type": "string"
+            "type": "string",
+            "description": "Resource identifier of a topic, which is unique."
         },
         "UpdateTime": {
-            "type": "string"
+            "type": "string",
+            "description": "Time when the topic was updated."
         }
     },
     "additionalProperties": false,

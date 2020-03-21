@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::BIGIP::SysSnmpTraps",
-    "description": "CloudFormation equivalent of bigip_sys_snmp_traps",
+    "description": "`bigip_sys_snmp_traps` provides details bout how to enable snmp_traps resource on BIG-IP",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -15,22 +15,27 @@
             "type": "string"
         },
         "Community": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the community string used for this trap."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The port that the trap will be sent to."
         },
         "EngineId": {
             "type": "string"
         },
         "Host": {
-            "type": "string"
+            "type": "string",
+            "description": "The host the trap will be sent to."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the snmp trap."
         },
         "Port": {
-            "type": "number"
+            "type": "number",
+            "description": "User defined description."
         },
         "PrivacyPassword": {
             "type": "string"

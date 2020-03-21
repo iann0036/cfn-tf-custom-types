@@ -1,6 +1,6 @@
 # Terraform::AzureRM::StreamAnalyticsOutputEventhub
 
-CloudFormation equivalent of azurerm_stream_analytics_output_eventhub
+Manages a Stream Analytics Output to an EventHub.
 
 ## Syntax
 
@@ -46,6 +46,8 @@ Properties:
 
 #### EventhubName
 
+The name of the Event Hub.
+
 _Required_: Yes
 
 _Type_: String
@@ -53,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the Stream Output. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -62,6 +66,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the Resource Group where the Stream Analytics Job exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -69,6 +75,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServicebusNamespace
+
+The namespace that is associated with the desired Event Hub, Service Bus Queue, Service Bus Topic, etc.
 
 _Required_: Yes
 
@@ -78,6 +86,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SharedAccessPolicyKey
 
+The shared access policy key for the specified shared access policy.
+
 _Required_: Yes
 
 _Type_: String
@@ -86,6 +96,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SharedAccessPolicyName
 
+The shared access policy name for the Event Hub, Service Bus Queue, Service Bus Topic, etc.
+
 _Required_: Yes
 
 _Type_: String
@@ -93,6 +105,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StreamAnalyticsJobName
+
+The name of the Stream Analytics Job. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

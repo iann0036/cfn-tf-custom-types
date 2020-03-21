@@ -1,6 +1,8 @@
 # Terraform::Alicloud::PolardbBackupPolicy
 
-CloudFormation equivalent of alicloud_polardb_backup_policy
+Provides a PolarDB cluster backup policy resource and used to configure cluster backup policy.
+
+-> **NOTE:** Available in v1.66.0+. Each DB cluster has a backup policy and it will be set default values when destroying the resource.
 
 ## Syntax
 
@@ -34,6 +36,8 @@ Properties:
 
 #### DbClusterId
 
+The Id of cluster that can run database.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +46,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PreferredBackupPeriod
 
+PolarDB Cluster backup period. Valid values: [Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday]. Default to ["Tuesday", "Thursday", "Saturday"].
+
 _Required_: No
 
 _Type_: List of String
@@ -49,6 +55,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PreferredBackupTime
+
+PolarDB Cluster backup time, in the format of HH:mmZ- HH:mmZ. Time setting interval is one hour. Default to "02:00Z-03:00Z". China time is 8 hours behind it.
 
 _Required_: No
 

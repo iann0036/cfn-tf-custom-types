@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Rundeck::Job",
-    "description": "CloudFormation equivalent of rundeck_job",
+    "description": "The job resource allows Rundeck jobs to be managed by Terraform. In Rundeck a job is a particular\nnamed set of steps that can be executed against one or more of the nodes configured for its\nassociated project.\n\nEach job belongs to a project. A project can be created with the `rundeck_project` resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Command": {
@@ -277,10 +277,12 @@
                             "Key",
                             "Value"
                         ]
-                    }
+                    },
+                    "description": "Map of arbitrary configuration properties for the selected plugin."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the plugin to use."
                 }
             },
             "required": [
@@ -294,58 +296,73 @@
             "type": "string"
         },
         "AllowConcurrentExecutions": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean defining whether two or more executions of\nthis job can run concurrently. The default is `false`, meaning that jobs will only run\nsequentially."
         },
         "CommandOrderingStrategy": {
             "type": "string"
         },
         "ContinueOnError": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean defining whether Rundeck will continue to run\nsubsequent steps if any intermediate step fails. Defaults to `false`, meaning that execution\nwill stop and the execution will be considered to have failed."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A longer description of the job, describing the job in the Rundeck UI."
         },
         "ExecutionEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If you want job execution to be enabled or disabled. Defaults to `true`."
         },
         "GroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of a group within the project in which to place the job.\nSetting this creates collapsable subcategories within the Rundeck UI's project job index."
         },
         "LogLevel": {
-            "type": "string"
+            "type": "string",
+            "description": "The log level that Rundeck should use for this job. Defaults to \"INFO\"."
         },
         "MaxThreadCount": {
-            "type": "number"
+            "type": "number",
+            "description": "The maximum number of threads to use to execute this job, which\ncontrols on how many nodes the commands can be run simulateneously. Defaults to 1, meaning that\nthe nodes will be visited sequentially."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the job, used to describe the job in the Rundeck UI."
         },
         "NodeFilterExcludePrecedence": {
             "type": "boolean"
         },
         "NodeFilterQuery": {
-            "type": "string"
+            "type": "string",
+            "description": "A query string using\n[Rundeck's node filter language](http://rundeck.org/docs/manual/node-filters.html#node-filter-syntax)\nthat defines which subset of the project's nodes will be used to execute this job."
         },
         "PreserveOptionsOrder": {
             "type": "boolean"
         },
         "ProjectName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the project that this job should belong to."
         },
         "RankAttribute": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the attribute that will be used to decide in which\norder the nodes will be visited while executing the job across multiple nodes."
         },
         "RankOrder": {
-            "type": "string"
+            "type": "string",
+            "description": "Keyword deciding which direction the nodes are sorted in terms of\nthe chosen `rank_attribute`. May be either \"ascending\" (the default) or \"descending\"."
         },
         "Schedule": {
-            "type": "string"
+            "type": "string",
+            "description": "The jobs schedule in Unix crontab format."
         },
         "ScheduleEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Sets the job schedule to be enabled or disabled. Defaults to `true`."
         },
         "SuccessOnEmptyNodeFilter": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean determining if an empty node filter yields\na successful result."
         },
         "Command": {
             "type": "array",

@@ -1,6 +1,8 @@
 # Terraform::Vault::EgpPolicy
 
-CloudFormation equivalent of vault_egp_policy
+Provides a resource to manage Endpoint Governing Policy (EGP) via [Sentinel](https://www.vaultproject.io/docs/enterprise/sentinel/index.html).
+
+**Note** this feature is available only with Vault Enterprise.
 
 ## Syntax
 
@@ -36,6 +38,8 @@ Properties:
 
 #### EnforcementLevel
 
+Enforcement level of Sentinel policy. Can be either `advisory` or `soft-mandatory` or `hard-mandatory`.
+
 _Required_: Yes
 
 _Type_: String
@@ -43,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the policy.
 
 _Required_: Yes
 
@@ -52,6 +58,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Paths
 
+List of paths to which the policy will be applied to.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -59,6 +67,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Policy
+
+String containing a Sentinel policy.
 
 _Required_: Yes
 

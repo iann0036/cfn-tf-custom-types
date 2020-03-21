@@ -26,6 +26,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### AddressPrefix
 
+The address prefix to use for the subnet.
+
 _Required_: Yes
 
 _Type_: String
@@ -34,6 +36,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the subnet.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +45,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecurityGroup
+
+The Network Security Group to associate with
+the subnet. (Referenced by `id`, ie. `azurestack_network_security_group.test.id`).
 
 _Required_: No
 

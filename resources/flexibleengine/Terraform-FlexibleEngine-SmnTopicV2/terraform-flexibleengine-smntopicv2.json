@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::FlexibleEngine::SmnTopicV2",
-    "description": "CloudFormation equivalent of flexibleengine_smn_topic_v2",
+    "description": "Manages a V2 topic resource within FlexibleEngine.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,10 +12,12 @@
             "type": "string"
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "Topic display name, which is presented as the\nname of the email sender in an email message."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the topic to be created."
         },
         "PushPolicy": {
             "type": "number"

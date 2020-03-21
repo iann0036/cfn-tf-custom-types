@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::NSXT::DhcpServerIpPool",
-    "description": "CloudFormation equivalent of nsxt_dhcp_server_ip_pool",
+    "description": "Provides a resource to configure IP Pool for logical DHCP server on NSX-T manager",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "DhcpGenericOption": {
@@ -78,28 +78,35 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of this resource."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The display name of this resource. Defaults to ID if not set."
         },
         "ErrorThreshold": {
-            "type": "number"
+            "type": "number",
+            "description": "Error threshold in percent. Valid values are from 80 to 100, default is 100."
         },
         "GatewayIp": {
-            "type": "string"
+            "type": "string",
+            "description": "Gateway IP."
         },
         "LeaseTime": {
-            "type": "number"
+            "type": "number",
+            "description": "Lease time in seconds. Default is 86400."
         },
         "LogicalDhcpServerId": {
-            "type": "string"
+            "type": "string",
+            "description": "DHCP server uuid. Changing this would force new pool to be created."
         },
         "Revision": {
             "type": "number"
         },
         "WarningThreshold": {
-            "type": "number"
+            "type": "number",
+            "description": "Warning threshold in percent. Valid values are from 50 to 80, default is 80."
         },
         "DhcpGenericOption": {
             "type": "array",

@@ -33,6 +33,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### ExtendedKeyUsage
 
+A list of Extended/Enhanced Key Usages. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: List of String
@@ -40,6 +42,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeyUsage
+
+A list of uses associated with this Key. Possible values include `cRLSign`, `dataEncipherment`, `decipherOnly`, `digitalSignature`, `encipherOnly`, `keyAgreement`, `keyCertSign`, `keyEncipherment` and `nonRepudiation` and are case-sensitive. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -49,6 +53,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Subject
 
+The Certificate's Subject. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -56,6 +62,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ValidityInMonths
+
+The Certificates Validity Period in Months. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

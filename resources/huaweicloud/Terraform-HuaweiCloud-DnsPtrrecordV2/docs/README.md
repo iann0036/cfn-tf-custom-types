@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::DnsPtrrecordV2
 
-CloudFormation equivalent of huaweicloud_dns_ptrrecord_v2
+Manages a DNS PTR record in the HuaweiCloud DNS Service.
 
 ## Syntax
 
@@ -40,6 +40,8 @@ Properties:
 
 #### Description
 
+Description of the PTR record.
+
 _Required_: No
 
 _Type_: String
@@ -47,6 +49,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FloatingipId
+
+The ID of the FloatingIP/EIP.
 
 _Required_: Yes
 
@@ -56,6 +60,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Domain name of the PTR record. A domain name is case insensitive.
+Uppercase letters will also be converted into lowercase letters.
+
 _Required_: Yes
 
 _Type_: String
@@ -64,6 +71,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+Tags key/value pairs to associate with the PTR record.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -71,6 +80,9 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ttl
+
+The time to live (TTL) of the record set (in seconds). The value
+range is 300–2147483647. The default value is 300.
 
 _Required_: No
 

@@ -1,6 +1,12 @@
 # Terraform::Consul::Intention
 
-CloudFormation equivalent of consul_intention
+[Intentions](https://www.consul.io/docs/connect/intentions.html) are used to define
+rules for which services may connect to one another when using [Consul Connect](https://www.consul.io/docs/connect/index.html).
+
+It is appropriate to either reference existing services or specify non-existent services
+that will be created in the future when creating intentions. This resource can be used
+in conjunction with the `consul_service` datasource when referencing services
+registered on nodes that have a running Consul agent.
 
 ## Syntax
 
@@ -38,6 +44,8 @@ Properties:
 
 #### Action
 
+The intention action. Must be one of `allow` or `deny`.
+
 _Required_: Yes
 
 _Type_: String
@@ -45,6 +53,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Optional description that can be used by Consul
+tooling, but is not used internally.
 
 _Required_: No
 
@@ -54,6 +65,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DestinationName
 
+The name of the destination service for the intention. This
+service does not have to exist.
+
 _Required_: Yes
 
 _Type_: String
@@ -62,6 +76,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Meta
 
+Key/value pairs that are opaque to Consul and are associated
+with the intention.
+
 _Required_: No
 
 _Type_: List of <a href="meta.md">Meta</a>
@@ -69,6 +86,9 @@ _Type_: List of <a href="meta.md">Meta</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SourceName
+
+The name of the source service for the intention. This
+service does not have to exist.
 
 _Required_: Yes
 

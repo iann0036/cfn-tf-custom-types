@@ -1,6 +1,6 @@
 # Terraform::AzureRM::BatchPool
 
-CloudFormation equivalent of azurerm_batch_pool
+Manages an Azure Batch pool.
 
 ## Syntax
 
@@ -84,6 +84,8 @@ Properties:
 
 #### AccountName
 
+Specifies the name of the Batch account in which the pool will be created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -91,6 +93,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+Specifies the display name of the Batch pool.
 
 _Required_: No
 
@@ -100,6 +104,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxTasksPerNode
 
+Specifies the maximum number of tasks that can run concurrently on a single compute node in the pool. Defaults to `1`. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: Double
@@ -107,6 +113,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Metadata
+
+A map of custom batch pool metadata.
 
 _Required_: No
 
@@ -116,6 +124,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the Batch pool. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -124,6 +134,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NodeAgentSkuId
 
+Specifies the Sku of the node agents that will be created in the Batch pool.
+
 _Required_: Yes
 
 _Type_: String
@@ -131,6 +143,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which to create the Batch pool. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -147,6 +161,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VmSize
+
+Specifies the size of the VM created in the Batch pool.
 
 _Required_: Yes
 

@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Type
 
+The type of identity used for the managed cluster. At this time the only supported value is `SystemAssigned`.
+
 _Required_: Yes
 
 _Type_: String

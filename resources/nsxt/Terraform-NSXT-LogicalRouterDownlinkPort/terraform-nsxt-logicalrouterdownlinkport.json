@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::NSXT::LogicalRouterDownlinkPort",
-    "description": "CloudFormation equivalent of nsxt_logical_router_downlink_port",
+    "description": "This resource provides a means to define a downlink port on a logical router to connect a logical tier1 router to a logical switch. The result of this is to provide a default gateway to virtual machines running on the logical switch.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ServiceBinding": {
@@ -39,19 +39,24 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the resource."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "Display name, defaults to ID if not set."
         },
         "IpAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "Logical router port subnet (ip_address / prefix length)."
         },
         "LinkedLogicalSwitchPortId": {
-            "type": "string"
+            "type": "string",
+            "description": "Identifier for port on logical switch to connect to."
         },
         "LogicalRouterId": {
-            "type": "string"
+            "type": "string",
+            "description": "Identifier for logical Tier-1 router on which this port is created."
         },
         "MacAddress": {
             "type": "string"
@@ -60,7 +65,8 @@
             "type": "number"
         },
         "UrpfMode": {
-            "type": "string"
+            "type": "string",
+            "description": "Unicast Reverse Path Forwarding mode. Accepted values are \"NONE\" and \"STRICT\" which is the default value."
         },
         "ServiceBinding": {
             "type": "array",

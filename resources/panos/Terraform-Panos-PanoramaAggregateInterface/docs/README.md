@@ -1,6 +1,6 @@
 # Terraform::Panos::PanoramaAggregateInterface
 
-CloudFormation equivalent of panos_panorama_aggregate_interface
+This resource allows you to add/update/delete Panorama aggregate ethernet interfaces.
 
 ## Syntax
 
@@ -70,6 +70,8 @@ Properties:
 
 #### AdjustTcpMss
 
+Adjust TCP MSS (default: false).
+
 _Required_: No
 
 _Type_: Boolean
@@ -77,6 +79,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Comment
+
+The interface comment.
 
 _Required_: No
 
@@ -86,6 +90,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CreateDhcpDefaultRoute
 
+Set to `true` to create a DHCP
+default route.
+
 _Required_: No
 
 _Type_: Boolean
@@ -93,6 +100,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DecryptForward
+
+Set to `true` to enable decrypt forward.
 
 _Required_: No
 
@@ -102,6 +111,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DhcpDefaultRouteMetric
 
+The metric for the DHCP default
+route.
+
 _Required_: No
 
 _Type_: Double
@@ -109,6 +121,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DhcpSendHostnameEnable
+
+For DHCP layer3 interfaces:
+enable sending the firewall or a custom hostname to DHCP server.
 
 _Required_: No
 
@@ -118,6 +133,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DhcpSendHostnameValue
 
+For DHCP layer3 interfaces:
+the interface hostname.  Leaving this unspecified with `dhcp_send_hostname_enable`
+set means to send the system hostname.
+
 _Required_: No
 
 _Type_: String
@@ -125,6 +144,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableDhcp
+
+Set to `true` to enable DHCP.
 
 _Required_: No
 
@@ -134,6 +155,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableUntaggedSubinterface
 
+Set to `true` to enable
+untagged subinterfaces.
+
 _Required_: No
 
 _Type_: Boolean
@@ -141,6 +165,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ipv4MssAdjust
+
+The IPv4 MSS adjust value.
 
 _Required_: No
 
@@ -150,6 +176,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ipv6Enabled
 
+Set to `true` to enable IPv6.
+
 _Required_: No
 
 _Type_: Boolean
@@ -157,6 +185,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ipv6InterfaceId
+
+The IPv6 interface ID.
 
 _Required_: No
 
@@ -166,6 +196,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ipv6MssAdjust
 
+The IPv6 MSS adjust value.
+
 _Required_: No
 
 _Type_: Double
@@ -173,6 +205,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ManagementProfile
+
+The management profile.
 
 _Required_: No
 
@@ -182,6 +216,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Mode
 
+The interface mode.  Valid values are `layer3` (default),
+`layer2`, `virtual-wire`, `ha`, or `decrypt-mirror`.
+
 _Required_: No
 
 _Type_: String
@@ -189,6 +226,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Mtu
+
+The MTU.
 
 _Required_: No
 
@@ -198,6 +237,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The interface's name.
+
 _Required_: Yes
 
 _Type_: String
@@ -206,6 +247,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NetflowProfile
 
+The netflow profile.
+
 _Required_: No
 
 _Type_: String
@@ -213,6 +256,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StaticIps
+
+List of static IPv4 addresses.
 
 _Required_: No
 
@@ -229,6 +274,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vsys
+
+The vsys that will use this interface.  This should be
+something like `vsys1` or `vsys3`.
 
 _Required_: No
 

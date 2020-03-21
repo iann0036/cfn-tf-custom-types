@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::CrNamespace",
-    "description": "CloudFormation equivalent of alicloud_cr_namespace",
+    "description": "This resource will help you to manager Container Registry namespaces.\n\n-> **NOTE:** Available in v1.34.0+.\n\n-> **NOTE:** You need to set your registry password in Container Registry console before use this resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "AutoCreate": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean, when it set to true, repositories are automatically created when pushing new images. If it set to false, you create repository for images before pushing."
         },
         "DefaultVisibility": {
-            "type": "string"
+            "type": "string",
+            "description": "`PUBLIC` or `PRIVATE`, default repository visibility in this namespace."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of Container Registry namespace."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::VSphere::ComputeClusterVmAffinityRule",
-    "description": "CloudFormation equivalent of vsphere_compute_cluster_vm_affinity_rule",
+    "description": "The `vsphere_compute_cluster_vm_affinity_rule` resource can be used to manage\nVM affinity rules in a cluster, either created by the\n[`vsphere_compute_cluster`][tf-vsphere-cluster-resource] resource or looked up\nby the [`vsphere_compute_cluster`][tf-vsphere-cluster-data-source] data source.\n\n[tf-vsphere-cluster-resource]: /docs/providers/vsphere/r/compute_cluster.html\n[tf-vsphere-cluster-data-source]: /docs/providers/vsphere/d/compute_cluster.html\n\nThis rule can be used to tell a set to virtual machines to run together on a\nsingle host within a cluster. When configured, DRS will make a best effort to\nensure that the virtual machines run on the same host, or prevent any operation\nthat would keep that from happening, depending on the value of the\n[`mandatory`](#mandatory) flag.\n\n-> Keep in mind that this rule can only be used to tell VMs to run together on\na _non-specific_ host - it can't be used to pin VMs to a host. For that, see\nthe\n[`vsphere_compute_cluster_vm_host_rule`][tf-vsphere-cluster-vm-host-rule-resource]\nresource.\n\n[tf-vsphere-cluster-vm-host-rule-resource]: /docs/providers/vsphere/r/compute_cluster_vm_host_rule.html\n\n~> **NOTE:** This resource requires vCenter and is not available on direct ESXi\nconnections.\n\n~> **NOTE:** vSphere DRS requires a vSphere Enterprise Plus license.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,23 +9,28 @@
             "type": "string"
         },
         "ComputeClusterId": {
-            "type": "string"
+            "type": "string",
+            "description": "The [managed object reference\nID][docs-about-morefs] of the cluster to put the group in.  Forces a new\nresource if changed."
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable this rule in the cluster. Default: `true`."
         },
         "Mandatory": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "When this value is `true`, prevents any virtual\nmachine operations that may violate this rule. Default: `false`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the rule. This must be unique in the cluster."
         },
         "VirtualMachineIds": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The UUIDs of the virtual machines to run\non the same host together."
         }
     },
     "additionalProperties": false,

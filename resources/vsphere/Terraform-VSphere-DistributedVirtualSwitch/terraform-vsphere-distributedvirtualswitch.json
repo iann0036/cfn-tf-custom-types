@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::VSphere::DistributedVirtualSwitch",
-    "description": "CloudFormation equivalent of vsphere_distributed_virtual_switch",
+    "description": "The `vsphere_distributed_virtual_switch` resource can be used to manage VMware\nDistributed Virtual Switches.\n\nAn essential component of a distributed, scalable VMware datacenter, the\nvSphere Distributed Virtual Switch (DVS) provides centralized management and\nmonitoring of the networking configuration of all the hosts that are associated\nwith the switch. In addition to adding port groups (see the\n[`vsphere_distributed_port_group`][distributed-port-group] resource) that can\nbe used as networks for virtual machines, a DVS can be configured to perform\nadvanced high availability, traffic shaping, network monitoring, and more.\n\nFor an overview on vSphere networking concepts, see [this\npage][ref-vsphere-net-concepts]. For more information on vSphere DVS, see [this\npage][ref-vsphere-dvs].\n\n[distributed-port-group]: /docs/providers/vsphere/r/distributed_port_group.html\n[ref-vsphere-net-concepts]: https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.networking.doc/GUID-2B11DBB8-CB3C-4AFF-8885-EFEA0FC562F4.html\n[ref-vsphere-dvs]: https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.networking.doc/GUID-375B45C7-684C-4C51-BA3C-70E48DFABF04.html\n\n~> **NOTE:** This resource requires vCenter and is not available on direct ESXi\nconnections.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Host": {
@@ -71,10 +71,12 @@
             "type": "string"
         },
         "ContactDetail": {
-            "type": "string"
+            "type": "string",
+            "description": "The detailed contact information for the person\nwho is responsible for the DVS."
         },
         "ContactName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the person who is responsible for the\nDVS."
         },
         "CustomAttributes": {
             "type": "array",
@@ -94,13 +96,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Map of custom attribute ids to attribute\nvalue strings to set for virtual switch. See\n[here][docs-setting-custom-attributes] for a reference on how to set values\nfor custom attributes."
         },
         "DatacenterId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the datacenter where the distributed\nvirtual switch will be created. Forces a new resource if changed."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A detailed description for the DVS."
         },
         "DirectpathGen2Allowed": {
             "type": "boolean"
@@ -133,7 +138,8 @@
             "type": "string"
         },
         "Folder": {
-            "type": "string"
+            "type": "string",
+            "description": "The folder to create the DVS in. Forces a new resource\nif changed."
         },
         "HbrMaximumMbit": {
             "type": "number"
@@ -160,7 +166,8 @@
             "type": "number"
         },
         "Ipv4Address": {
-            "type": "string"
+            "type": "string",
+            "description": "An IPv4 address to identify the switch. This is\nmostly useful when used with the [Netflow arguments](#netflow-arguments) found\nbelow."
         },
         "IscsiMaximumMbit": {
             "type": "number"
@@ -175,7 +182,8 @@
             "type": "string"
         },
         "LacpApiVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "The Link Aggregation Control Protocol group\nversion to use with the switch. Possible values are `singleLag` and\n`multipleLag`."
         },
         "LacpEnabled": {
             "type": "boolean"
@@ -184,10 +192,12 @@
             "type": "string"
         },
         "LinkDiscoveryOperation": {
-            "type": "string"
+            "type": "string",
+            "description": "Whether to `advertise` or `listen`\nfor link discovery traffic."
         },
         "LinkDiscoveryProtocol": {
-            "type": "string"
+            "type": "string",
+            "description": "The discovery protocol type. Valid\ntypes are `cdp` and `lldp`."
         },
         "ManagementMaximumMbit": {
             "type": "number"
@@ -202,13 +212,16 @@
             "type": "string"
         },
         "MaxMtu": {
-            "type": "number"
+            "type": "number",
+            "description": "The maximum transmission unit (MTU) for the virtual\nswitch."
         },
         "MulticastFilteringMode": {
-            "type": "string"
+            "type": "string",
+            "description": "The multicast filtering mode to use\nwith the switch. Can be one of `legacyFiltering` or `snooping`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the distributed virtual switch."
         },
         "NetflowActiveFlowTimeout": {
             "type": "number"
@@ -270,7 +283,8 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The IDs of any tags to attach to this resource. See\n[here][docs-applying-tags] for a reference on how to apply tags."
         },
         "TeamingPolicy": {
             "type": "string"
@@ -298,7 +312,8 @@
             "type": "string"
         },
         "Version": {
-            "type": "string"
+            "type": "string",
+            "description": "- The version of the DVS to create. The default is to\ncreate the DVS at the latest version supported by the version of vSphere\nbeing used. A DVS can be upgraded to another version, but cannot be\ndowngraded."
         },
         "VirtualmachineMaximumMbit": {
             "type": "number"

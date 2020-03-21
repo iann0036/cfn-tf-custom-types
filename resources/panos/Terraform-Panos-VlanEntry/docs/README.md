@@ -1,6 +1,6 @@
 # Terraform::Panos::VlanEntry
 
-CloudFormation equivalent of panos_vlan_entry
+This resource allows you to add/update/delete an interface in a VLAN.
 
 ## Syntax
 
@@ -34,6 +34,8 @@ Properties:
 
 #### Interface
 
+The interface's name.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +44,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MacAddresses
 
+List of MAC addresses that should go with this entry.
+
 _Required_: No
 
 _Type_: List of String
@@ -49,6 +53,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vlan
+
+The VLAN's name.
 
 _Required_: Yes
 

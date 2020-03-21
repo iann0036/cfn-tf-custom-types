@@ -1,6 +1,6 @@
 # Terraform::AzureRM::ApplicationInsights
 
-CloudFormation equivalent of azurerm_application_insights
+Manages an Application Insights component.
 
 ## Syntax
 
@@ -48,6 +48,8 @@ Properties:
 
 #### ApplicationType
 
+Specifies the type of Application Insights to create. Valid values are `ios` for _iOS_, `java` for _Java web_, `MobileCenter` for _App Center_, `Node.JS` for _Node.js_, `other` for _General_, `phone` for _Windows Phone_, `store` for _Windows Store_ and `web` for _ASP.NET_. Please note these values are case sensitive; unmatched values are treated as _ASP.NET_ by Azure. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -55,6 +57,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DailyDataCapInGb
+
+Specifies the Application Insights component daily data volume cap in GB.
 
 _Required_: No
 
@@ -64,6 +68,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DailyDataCapNotificationsDisabled
 
+Specifies if a notification email will be send when the daily data volume cap is met.
+
 _Required_: No
 
 _Type_: Boolean
@@ -71,6 +77,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Location
+
+Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -80,6 +88,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the Application Insights component. Changing this forces a
+new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -87,6 +98,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which to
+create the Application Insights component.
 
 _Required_: Yes
 
@@ -96,6 +110,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RetentionInDays
 
+Specifies the retention period in days. Possible values are `30`, `60`, `90`, `120`, `180`, `270`, `365`, `550` or `730`.
+
 _Required_: No
 
 _Type_: Double
@@ -104,6 +120,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SamplingPercentage
 
+Specifies the percentage of the data produced by the monitored application that is sampled for Application Insights telemetry.
+
 _Required_: No
 
 _Type_: Double
@@ -111,6 +129,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::HCloud::FloatingIp
 
-CloudFormation equivalent of hcloud_floating_ip
+Provides a Hetzner Cloud Floating IP to represent a publicly-accessible static IP address that can be mapped to one of your servers.
 
 ## Syntax
 
@@ -40,6 +40,9 @@ Properties:
 
 #### Description
 
+Description of the Floating IP.
+- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with.
+
 _Required_: No
 
 _Type_: String
@@ -47,6 +50,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HomeLocation
+
+Home location (routing is optimized for that location). Optional if server_id argument is passed.
+- `description` - (Optional, string) Description of the Floating IP.
+- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with.
 
 _Required_: No
 
@@ -56,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Labels
 
+User-defined labels (key-value pairs) should be created with.
+
 _Required_: No
 
 _Type_: List of <a href="labels.md">Labels</a>
@@ -63,6 +72,12 @@ _Type_: List of <a href="labels.md">Labels</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of the Floating IP.
+- `server_id` - (Optional, int) Server to assign the Floating IP to.
+- `home_location` - (Optional, string) Home location (routing is optimized for that location). Optional if server_id argument is passed.
+- `description` - (Optional, string) Description of the Floating IP.
+- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with.
 
 _Required_: No
 
@@ -72,6 +87,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServerId
 
+Server to assign the Floating IP to.
+- `home_location` - (Optional, string) Home location (routing is optimized for that location). Optional if server_id argument is passed.
+- `description` - (Optional, string) Description of the Floating IP.
+- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with.
+
 _Required_: No
 
 _Type_: Double
@@ -79,6 +99,13 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+Type of the Floating IP. `ipv4` `ipv6`
+- `name` - (Optional, string) Name of the Floating IP.
+- `server_id` - (Optional, int) Server to assign the Floating IP to.
+- `home_location` - (Optional, string) Home location (routing is optimized for that location). Optional if server_id argument is passed.
+- `description` - (Optional, string) Description of the Floating IP.
+- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with.
 
 _Required_: Yes
 

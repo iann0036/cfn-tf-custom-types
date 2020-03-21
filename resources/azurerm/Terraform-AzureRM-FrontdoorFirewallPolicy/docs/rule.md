@@ -29,6 +29,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Action
 
+The action to be applied when the rule matches. Possible values are `Allow`, `Block`, `Log`, or `Redirect`.
+
 _Required_: Yes
 
 _Type_: String
@@ -37,6 +39,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Enabled
 
+Is the managed rule override enabled or disabled. Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -44,6 +48,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RuleId
+
+Identifier for the managed rule.
 
 _Required_: Yes
 

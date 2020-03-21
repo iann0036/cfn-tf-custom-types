@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Type
 
+Specifies the identity type of the SQL Server. At this time the only allowed value is `SystemAssigned`.
+
 _Required_: Yes
 
 _Type_: String

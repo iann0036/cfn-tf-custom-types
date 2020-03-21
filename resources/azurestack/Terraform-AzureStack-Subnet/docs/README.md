@@ -1,6 +1,10 @@
 # Terraform::AzureStack::Subnet
 
-CloudFormation equivalent of azurestack_subnet
+Manages a subnet. Subnets represent network segments within the IP space defined by the virtual network.
+
+~> **NOTE on Virtual Networks and Subnet's:** Terraform currently
+provides both a standalone [Subnet resource](subnet.html), and allows for Subnets to be defined in-line within the [Virtual Network resource](virtual_network.html).
+At this time you cannot use a Virtual Network with in-line Subnets in conjunction with any Subnet resources. Doing so will cause a conflict of Subnet configurations and will overwrite Subnet's.
 
 ## Syntax
 
@@ -42,6 +46,8 @@ Properties:
 
 #### AddressPrefix
 
+The address prefix to use for the subnet.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the subnet. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -65,6 +73,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NetworkSecurityGroupId
+
+The ID of the Network Security Group to associate with the subnet.
 
 _Required_: No
 
@@ -74,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to create the subnet. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -82,6 +94,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RouteTableId
 
+The ID of the Route Table to associate with the subnet.
+
 _Required_: No
 
 _Type_: String
@@ -89,6 +103,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VirtualNetworkName
+
+The name of the virtual network to which to attach the subnet. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

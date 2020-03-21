@@ -33,6 +33,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### DnsServers
 
+A list of DNS server IP addresses for the Active Directory domain. Only allows `IPv4` address.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -40,6 +42,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Domain
+
+The name of the Active Directory domain.
 
 _Required_: Yes
 
@@ -49,6 +53,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OrganizationalUnit
 
+The Organizational Unit (OU) within the Active Directory Domain.
+
 _Required_: No
 
 _Type_: String
@@ -56,6 +62,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Password
+
+The password associated with the `username`.
 
 _Required_: Yes
 
@@ -65,6 +73,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SmbServerName
 
+The NetBIOS name which should be used for the NetApp SMB Server, which will be registered as a computer account in the AD and used to mount volumes.
+
 _Required_: Yes
 
 _Type_: String
@@ -72,6 +82,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Username
+
+The Username of Active Directory Domain Administrator.
 
 _Required_: Yes
 

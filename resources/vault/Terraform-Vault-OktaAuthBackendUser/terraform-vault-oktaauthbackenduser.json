@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Vault::OktaAuthBackendUser",
-    "description": "CloudFormation equivalent of vault_okta_auth_backend_user",
+    "description": "Provides a resource to create a user in an\n[Okta auth backend within Vault](https://www.vaultproject.io/docs/auth/okta.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -13,20 +13,24 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of Okta groups to associate with this user."
         },
         "Path": {
-            "type": "string"
+            "type": "string",
+            "description": "The path where the Okta auth backend is mounted."
         },
         "Policies": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of Vault policies to associate with this user."
         },
         "Username": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the user within Okta."
         }
     },
     "additionalProperties": false,

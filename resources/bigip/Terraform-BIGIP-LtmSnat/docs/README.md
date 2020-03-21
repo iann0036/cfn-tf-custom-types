@@ -1,6 +1,8 @@
 # Terraform::BIGIP::LtmSnat
 
-CloudFormation equivalent of bigip_ltm_snat
+`bigip_ltm_snat` Manages a snat configuration
+
+For resources should be named with their "full path". The full path is the combination of the partition + name of the resource. For example /Common/my-pool.
 
 ## Syntax
 
@@ -67,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Mirror
 
+Enables or disables mirroring of SNAT connections.
+
 _Required_: No
 
 _Type_: String
@@ -74,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of the snat.
 
 _Required_: Yes
 
@@ -83,6 +89,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Partition
 
+Displays the administrative partition within which this profile resides.
+
 _Required_: No
 
 _Type_: String
@@ -90,6 +98,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Snatpool
+
+Specifies the name of a SNAT pool. You can only use this option when automap and translation are not used.
 
 _Required_: No
 
@@ -99,6 +109,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Sourceport
 
+Specifies whether the system preserves the source port of the connection. The default is preserve. Use of the preserve-strict setting should be restricted to UDP only under very special circumstances such as nPath or transparent (that is, no translation of any other L3/L4 field), where there is a 1:1 relationship between virtual IP addresses and node addresses, or when clustered multi-processing (CMP) is disabled. The change setting is useful for obfuscating internal network addresses.
+
 _Required_: No
 
 _Type_: String
@@ -106,6 +118,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Translation
+
+Specifies the name of a translated IP address. Note that translated addresses are outside the traffic management system. You can only use this option when automap and snatpool are not used.
 
 _Required_: No
 
@@ -115,6 +129,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Vlans
 
+Specifies the name of the VLAN to which you want to assign the SNAT. The default is vlans-enabled.
+
 _Required_: No
 
 _Type_: List of String
@@ -122,6 +138,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vlansdisabled
+
+Disables the SNAT on all VLANs.
 
 _Required_: No
 

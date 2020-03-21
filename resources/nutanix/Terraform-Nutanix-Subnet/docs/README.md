@@ -1,6 +1,6 @@
 # Terraform::Nutanix::Subnet
 
-CloudFormation equivalent of nutanix_subnet
+Provides a resource to create a subnet based on the input parameters. A subnet is a block of IP addresses.
 
 ## Syntax
 

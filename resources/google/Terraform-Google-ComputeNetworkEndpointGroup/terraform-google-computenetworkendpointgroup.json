@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::ComputeNetworkEndpointGroup",
-    "description": "CloudFormation equivalent of google_compute_network_endpoint_group",
+    "description": "Network endpoint groups (NEGs) are zonal resources that represent\ncollections of IP address and port combinations for GCP resources within a\nsingle subnet. Each IP address and port combination is called a network\nendpoint.\n\nNetwork endpoint groups can be used as backends in backend services for\nHTTP(S), TCP proxy, and SSL proxy load balancers. You cannot use NEGs as a\nbackend with internal load balancers. Because NEG backends allow you to\nspecify IP addresses and ports, you can distribute traffic in a granular\nfashion among applications or containers running within VM instances.\n\n\nTo get more information about NetworkEndpointGroup, see:\n\n* [API documentation](https://cloud.google.com/compute/docs/reference/rest/beta/networkEndpointGroups)\n* How-to Guides\n    * [Official Documentation](https://cloud.google.com/load-balancing/docs/negs/)\n\n<div class = \"oics-button\" style=\"float: right; margin: 0 0 -15px\">\n  <a href=\"https://console.cloud.google.com/cloudshell/open?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fterraform-google-modules%2Fdocs-examples.git&cloudshell_working_dir=network_endpoint_group&cloudshell_image=gcr.io%2Fgraphite-cloud-shell-images%2Fterraform%3Alatest&open_in_editor=main.tf&cloudshell_print=.%2Fmotd&cloudshell_tutorial=.%2Ftutorial.md\" target=\"_blank\">\n    <img alt=\"Open in Cloud Shell\" src=\"//gstatic.com/cloudssh/images/open-btn.svg\" style=\"max-height: 44px; margin: 32px auto; max-width: 100%;\">\n  </a>\n</div>",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -38,7 +38,8 @@
             "type": "string"
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used."
         },
         "SelfLink": {
             "type": "string"

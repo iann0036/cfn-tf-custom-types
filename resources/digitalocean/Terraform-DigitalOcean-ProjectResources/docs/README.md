@@ -1,6 +1,17 @@
 # Terraform::DigitalOcean::ProjectResources
 
-CloudFormation equivalent of digitalocean_project_resources
+Assign resources to a DigitalOcean Project. This is useful if you need to assign resources
+managed in Terraform to a DigitalOcean Project managed outside of Terraform.
+
+The following resource types can be associated with a project:
+
+* Database Clusters
+* Domains
+* Droplets
+* Floating IP
+* Load Balancers
+* Spaces Bucket
+* Volume
 
 ## Syntax
 
@@ -32,6 +43,8 @@ Properties:
 
 #### Project
 
+the ID of the project.
+
 _Required_: Yes
 
 _Type_: String
@@ -39,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Resources
+
+a list of uniform resource names (URNs) for the resources associated with the project.
 
 _Required_: Yes
 

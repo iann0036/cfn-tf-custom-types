@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::VSphere::ComputeCluster",
-    "description": "CloudFormation equivalent of vsphere_compute_cluster",
+    "description": "-> **A note on the naming of this resource:** VMware refers to clusters of\nhosts in the UI and documentation as _clusters_, _HA clusters_, or _DRS\nclusters_. All of these refer to the same kind of resource (with the latter two\nreferring to specific features of clustering). In Terraform, we use\n`vsphere_compute_cluster` to differentiate host clusters from _datastore\nclusters_, which are clusters of datastores that can be used to distribute load\nand ensure fault tolerance via distribution of virtual machines. Datastore\nclusters can also be managed through Terraform, via the\n[`vsphere_datastore_cluster` resource][docs-r-vsphere-datastore-cluster].\n\n[docs-r-vsphere-datastore-cluster]: /docs/providers/vsphere/r/datastore_cluster.html\n\nThe `vsphere_compute_cluster` resource can be used to create and manage\nclusters of hosts allowing for resource control of compute resources, load\nbalancing through DRS, and high availability through vSphere HA.\n\nFor more information on vSphere clusters and DRS, see [this\npage][ref-vsphere-drs-clusters]. For more information on vSphere HA, see [this\npage][ref-vsphere-ha-clusters].\n\n[ref-vsphere-drs-clusters]: https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.resmgmt.doc/GUID-8ACF3502-5314-469F-8CC9-4A9BD5925BC2.html\n[ref-vsphere-ha-clusters]: https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.avail.doc/GUID-5432CA24-14F1-44E3-87FB-61D937831CF6.html\n\n~> **NOTE:** This resource requires vCenter and is not available on direct ESXi\nconnections.\n\n~> **NOTE:** vSphere DRS requires a vSphere Enterprise Plus license.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -26,10 +26,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A map of custom attribute ids to attribute\nvalue strings to set for the datastore cluster. See\n[here][docs-setting-custom-attributes] for a reference on how to set values\nfor custom attributes."
         },
         "DatacenterId": {
-            "type": "string"
+            "type": "string",
+            "description": "The [managed object ID][docs-about-morefs] of\nthe datacenter to create the cluster in. Forces a new resource if changed."
         },
         "DpmAutomationLevel": {
             "type": "string"
@@ -76,7 +78,8 @@
             "type": "number"
         },
         "Folder": {
-            "type": "string"
+            "type": "string",
+            "description": "The relative path to a folder to put this cluster in.\nThis is a path relative to the datacenter you are deploying the cluster to.\nExample: for the `dc1` datacenter, and a provided `folder` of `foo/bar`,\nTerraform will place a cluster named `terraform-compute-cluster-test` in a\nhost folder located at `/dc1/host/foo/bar`, with the final inventory path\nbeing `/dc1/host/foo/bar/terraform-datastore-cluster-test`."
         },
         "ForceEvacuateOnDestroy": {
             "type": "boolean"
@@ -207,7 +210,8 @@
             }
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the cluster."
         },
         "ProactiveHaAutomationLevel": {
             "type": "string"
@@ -236,7 +240,8 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The IDs of any tags to attach to this resource. See\n[here][docs-applying-tags] for a reference on how to apply tags."
         }
     },
     "additionalProperties": false,

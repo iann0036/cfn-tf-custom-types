@@ -1,6 +1,7 @@
 # Terraform::NSXT::FirewallSection
 
-CloudFormation equivalent of nsxt_firewall_section
+This resource provides a way to configure a firewall section on the NSX manager. A firewall section is a collection of firewall rules that are grouped together.
+Order of firewall sections can be controlled with 'insert_before' attribute.
 
 ## Syntax
 
@@ -55,6 +56,21 @@ Properties:
 
 #### Description
 
+Description of this rule.
+* `action` - (Required) Action enforced on the packets which matches the firewall rule. [Allowed values: "ALLOW", "DROP", "REJECT"]
+* `applied_to` - (Optional) List of objects where rule will be enforced. The section level field overrides this one. Null will be treated as any. [Supported target types: "LogicalPort", "LogicalSwitch", "NSGroup", "LogicalRouterPort"]
+* `destination` - (Optional) List of the destinations. Null will be treated as any. [Allowed target types: "IPSet", "LogicalPort", "LogicalSwitch", "NSGroup", "MACSet" (depending on the section type)]
+* `destinations_excluded` - (Optional) When this boolean flag is set to true, the rule destinations will be negated.
+* `direction` - (Optional) Rule direction in case of stateless firewall rules. This will only considered if section level parameter is set to stateless. Default to IN_OUT if not specified. [Allowed values: "IN", "OUT", "IN_OUT"]
+* `disabled` - (Optional) Flag to disable rule. Disabled will only be persisted but never provisioned/realized.
+* `ip_protocol` - (Optional) Type of IP packet that should be matched while enforcing the rule. [allowed values: "IPV4", "IPV6", "IPV4_IPV6"]
+* `logged` - (Optional) Flag to enable packet logging. Default is disabled.
+* `notes` - (Optional) User notes specific to the rule.
+* `rule_tag` - (Optional) User level field which will be printed in CLI and packet logs.
+* `service` - (Optional) List of the services. Null will be treated as any. [Allowed target types: "NSService", "NSServiceGroup"]
+* `source` - (Optional) List of sources. Null will be treated as any. [Allowed target types: "IPSet", "LogicalPort", "LogicalSwitch", "NSGroup", "MACSet" (depending on the section type)]
+* `sources_excluded` - (Optional) When this boolean flag is set to true, the rule sources will be negated.
+
 _Required_: No
 
 _Type_: String
@@ -62,6 +78,22 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+The display name of this rule. Defaults to ID if not set.
+* `description` - (Optional) Description of this rule.
+* `action` - (Required) Action enforced on the packets which matches the firewall rule. [Allowed values: "ALLOW", "DROP", "REJECT"]
+* `applied_to` - (Optional) List of objects where rule will be enforced. The section level field overrides this one. Null will be treated as any. [Supported target types: "LogicalPort", "LogicalSwitch", "NSGroup", "LogicalRouterPort"]
+* `destination` - (Optional) List of the destinations. Null will be treated as any. [Allowed target types: "IPSet", "LogicalPort", "LogicalSwitch", "NSGroup", "MACSet" (depending on the section type)]
+* `destinations_excluded` - (Optional) When this boolean flag is set to true, the rule destinations will be negated.
+* `direction` - (Optional) Rule direction in case of stateless firewall rules. This will only considered if section level parameter is set to stateless. Default to IN_OUT if not specified. [Allowed values: "IN", "OUT", "IN_OUT"]
+* `disabled` - (Optional) Flag to disable rule. Disabled will only be persisted but never provisioned/realized.
+* `ip_protocol` - (Optional) Type of IP packet that should be matched while enforcing the rule. [allowed values: "IPV4", "IPV6", "IPV4_IPV6"]
+* `logged` - (Optional) Flag to enable packet logging. Default is disabled.
+* `notes` - (Optional) User notes specific to the rule.
+* `rule_tag` - (Optional) User level field which will be printed in CLI and packet logs.
+* `service` - (Optional) List of the services. Null will be treated as any. [Allowed target types: "NSService", "NSServiceGroup"]
+* `source` - (Optional) List of sources. Null will be treated as any. [Allowed target types: "IPSet", "LogicalPort", "LogicalSwitch", "NSGroup", "MACSet" (depending on the section type)]
+* `sources_excluded` - (Optional) When this boolean flag is set to true, the rule sources will be negated.
 
 _Required_: No
 
@@ -71,6 +103,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InsertBefore
 
+Firewall section id that should come immediately after this one. It is user responsibility to use this attribute in consistent manner (for example, if same value would be set in two separate sections, the outcome would depend on order of creation). Changing this attribute would force recreation of the firewall section.
+
 _Required_: No
 
 _Type_: String
@@ -79,6 +113,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SectionType
 
+Type of the rules which a section can contain. Either LAYER2 or LAYER3. Only homogeneous sections are supported.
+
 _Required_: Yes
 
 _Type_: String
@@ -86,6 +122,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Stateful
+
+Stateful or Stateless nature of firewall section is enforced on all rules inside the section. Layer3 sections can be stateful or stateless. Layer2 sections can only be stateless.
 
 _Required_: Yes
 

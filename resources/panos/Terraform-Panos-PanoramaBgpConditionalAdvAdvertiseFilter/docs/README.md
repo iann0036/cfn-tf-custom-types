@@ -1,6 +1,11 @@
 # Terraform::Panos::PanoramaBgpConditionalAdvAdvertiseFilter
 
-CloudFormation equivalent of panos_panorama_bgp_conditional_adv_advertise_filter
+This resource allows you to add/update/delete a Panorama advertise filter for a
+BGP conditional advertisement.
+
+~> **Note:** A BGP conditional advertisement is valid only if there is at least
+one non-exist filter and one advertise filter attached.  This filter must be paired
+with the other in order for the configuration to be valid.
 
 ## Syntax
 
@@ -58,6 +63,8 @@ Properties:
 
 #### AddressPrefixes
 
+List of matching address prefixes.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -65,6 +72,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AsPathRegex
+
+AS path to match.
 
 _Required_: No
 
@@ -74,6 +83,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### BgpConditionalAdv
 
+The BGP conditional advertisement to add
+this filter to.
+
 _Required_: Yes
 
 _Type_: String
@@ -81,6 +93,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CommunityRegex
+
+Community to match.
 
 _Required_: No
 
@@ -90,6 +104,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Enable
 
+Enable or not (default: `true`).
+
 _Required_: No
 
 _Type_: Boolean
@@ -97,6 +113,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ExtendedCommunityRegex
+
+Extended community to match.
 
 _Required_: No
 
@@ -106,6 +124,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FromPeers
 
+List of peers that advertised the route entry.
+
 _Required_: No
 
 _Type_: List of String
@@ -113,6 +133,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Med
+
+Match MED.
 
 _Required_: No
 
@@ -122,6 +144,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name.
+
 _Required_: Yes
 
 _Type_: String
@@ -129,6 +153,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NextHops
+
+List of next hop attributes.
 
 _Required_: No
 
@@ -138,6 +164,12 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RouteTable
 
+Route table to match rule.  Valid
+values are `unicast`, `multicast`, or `both`.  As of PAN-OS 8.1, there doesn't
+seem to be a way to configure this in the GUI, it is always set to `unicast`.
+Thus, if you're running this resource against PAN-OS 8.0+, the appropriate
+thing to do is set this value to `unicast` as well to match the GUI functionality.
+
 _Required_: No
 
 _Type_: String
@@ -145,6 +177,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Template
+
+The template name.
 
 _Required_: No
 
@@ -154,6 +188,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TemplateStack
 
+The template stack name.
+
 _Required_: No
 
 _Type_: String
@@ -161,6 +197,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VirtualRouter
+
+The virtual router to add this filter to.
 
 _Required_: Yes
 

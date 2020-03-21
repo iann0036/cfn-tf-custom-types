@@ -1,6 +1,10 @@
 # Terraform::AzureRM::SecurityCenterSubscriptionPricing
 
-CloudFormation equivalent of azurerm_security_center_subscription_pricing
+Manages the Pricing Tier for Azure Security Center in the current subscription.
+
+~> **NOTE:** This resource requires the `Owner` permission on the Subscription.
+
+~> **NOTE:** Deletion of this resource does not change or reset the pricing tier to `Free`
 
 ## Syntax
 
@@ -30,6 +34,8 @@ Properties:
 ## Properties
 
 #### Tier
+
+The pricing tier to use. Possible values are `Free` and `Standard`.
 
 _Required_: Yes
 

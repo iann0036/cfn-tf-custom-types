@@ -1,6 +1,8 @@
 # Terraform::Alicloud::NetworkAcl
 
-CloudFormation equivalent of alicloud_network_acl
+Provides a network acl resource to add network acls.
+
+-> **NOTE:** Available in 1.43.0+. Currently, the resource are only available in Hongkong(cn-hongkong), India(ap-south-1), and Indonesia(ap-southeast-1) regions.
 
 ## Syntax
 
@@ -33,6 +35,8 @@ Properties:
 
 #### Description
 
+The description of the network acl instance.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +45,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the network acl.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+The vpc_id of the network acl, the field can't be changed.
 
 _Required_: Yes
 

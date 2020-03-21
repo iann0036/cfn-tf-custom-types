@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::StorageTable",
-    "description": "CloudFormation equivalent of azurerm_storage_table",
+    "description": "Manages a Table within an Azure Storage Account.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Acl": {
@@ -8,7 +8,8 @@
             "additionalProperties": false,
             "properties": {
                 "Id": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID which should be used for this Shared Identifier."
                 },
                 "AccessPolicy": {
                     "type": "array",
@@ -46,13 +47,16 @@
             "additionalProperties": false,
             "properties": {
                 "Expiry": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ISO8061 UTC time at which this Access Policy should be valid until."
                 },
                 "Permissions": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The permissions which should associated with this Shared Identifier."
                 },
                 "Start": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ISO8061 UTC time at which this Access Policy should be valid from."
                 }
             },
             "required": [
@@ -68,10 +72,12 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the storage table. Must be unique within the storage account the table is located."
         },
         "StorageAccountName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the storage account in which to create the storage table.\nChanging this forces a new resource to be created."
         },
         "Acl": {
             "type": "array",

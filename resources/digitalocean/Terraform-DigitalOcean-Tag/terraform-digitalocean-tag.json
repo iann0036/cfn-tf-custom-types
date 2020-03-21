@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::DigitalOcean::Tag",
-    "description": "CloudFormation equivalent of digitalocean_tag",
+    "description": "Provides a DigitalOcean Tag resource. A Tag is a label that can be applied to a\nDroplet resource in order to better organize or facilitate the lookups and\nactions on it. Tags created with this resource can be referenced in your Droplet\nconfiguration via their ID or name.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the tag."
         }
     },
     "additionalProperties": false,

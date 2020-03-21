@@ -1,6 +1,6 @@
 # Terraform::AzureRM::NotificationHubAuthorizationRule
 
-CloudFormation equivalent of azurerm_notification_hub_authorization_rule
+Manages an Authorization Rule associated with a Notification Hub within a Notification Hub Namespace.
 
 ## Syntax
 
@@ -43,6 +43,8 @@ Properties:
 
 #### Listen
 
+Does this Authorization Rule have Listen access to the Notification Hub? Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -50,6 +52,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Manage
+
+Does this Authorization Rule have Manage access to the Notification Hub? Defaults to `false`.
 
 _Required_: No
 
@@ -59,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name to use for this Authorization Rule. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -66,6 +72,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NamespaceName
+
+The name of the Notification Hub Namespace in which the Notification Hub exists. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -75,6 +83,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NotificationHubName
 
+The name of the Notification Hub for which the Authorization Rule should be created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -83,6 +93,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the Resource Group in which the Notification Hub Namespace exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -90,6 +102,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Send
+
+Does this Authorization Rule have Send access to the Notification Hub? Defaults to `false`.
 
 _Required_: No
 

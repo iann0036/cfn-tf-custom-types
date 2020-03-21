@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::FlexibleEngine::CceClusterV3",
-    "description": "CloudFormation equivalent of flexibleengine_cce_cluster_v3",
+    "description": "Provides a cluster resource (CCE).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -40,13 +40,15 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Cluster annotation, key/value pair format. Changing this parameter will create a new cluster resource."
         },
         "AuthenticationMode": {
             "type": "string"
         },
         "BillingMode": {
-            "type": "number"
+            "type": "number",
+            "description": "Charging mode of the cluster, which is 0 (on demand). Changing this parameter will create a new cluster resource."
         },
         "CertificateClusters": {
             "type": "array",
@@ -87,19 +89,23 @@
             }
         },
         "ClusterType": {
-            "type": "string"
+            "type": "string",
+            "description": "Cluster Type, possible values are VirtualMachine and BareMetal. Changing this parameter will create a new cluster resource."
         },
         "ClusterVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "For the cluster version, possible value is 'v1.11.7-r2' and 'v1.13.10-r0'. If this parameter is not set, the latest version will be used."
         },
         "ContainerNetworkCidr": {
             "type": "string"
         },
         "ContainerNetworkType": {
-            "type": "string"
+            "type": "string",
+            "description": "Container network parameters. Possible values:."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Cluster description."
         },
         "Eip": {
             "type": "string"
@@ -122,7 +128,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Extended parameter. Changing this parameter will create a new cluster resource."
         },
         "ExternalApigEndpoint": {
             "type": "string"
@@ -131,10 +138,12 @@
             "type": "string"
         },
         "FlavorId": {
-            "type": "string"
+            "type": "string",
+            "description": "Cluster specifications. Changing this parameter will create a new cluster resource."
         },
         "HighwaySubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the high speed network used to create bare metal nodes. Changing this parameter will create a new cluster resource."
         },
         "InternalEndpoint": {
             "type": "string"
@@ -157,10 +166,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Cluster tag, key/value pair format. Changing this parameter will create a new cluster resource."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Cluster name. Changing this parameter will create a new cluster resource."
         },
         "Region": {
             "type": "string"
@@ -172,10 +183,12 @@
             "type": "string"
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "The NETWORK ID of the subnet used to create the node. Changing this parameter will create a new cluster resource."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the VPC used to create the node. Changing this parameter will create a new cluster resource."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

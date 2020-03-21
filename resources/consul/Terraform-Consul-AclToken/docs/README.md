@@ -1,6 +1,6 @@
 # Terraform::Consul::AclToken
 
-CloudFormation equivalent of consul_acl_token
+The `consul_acl_token` resource writes an ACL token into Consul.
 
 ## Syntax
 
@@ -36,6 +36,9 @@ Properties:
 
 #### AccessorId
 
+The uuid of the token. If omitted, Consul will
+generate a random uuid.
+
 _Required_: No
 
 _Type_: String
@@ -43,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+The description of the token.
 
 _Required_: No
 
@@ -52,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Local
 
+The flag to set the token local to the current datacenter.
+
 _Required_: No
 
 _Type_: Boolean
@@ -59,6 +66,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Policies
+
+The list of policies attached to the token.
 
 _Required_: No
 

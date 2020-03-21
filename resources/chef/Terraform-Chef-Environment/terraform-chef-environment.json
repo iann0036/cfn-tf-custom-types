@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Chef::Environment",
-    "description": "CloudFormation equivalent of chef_environment",
+    "description": "An [environment](http://docs.chef.io/environments.html) is a container for\nChef nodes that share a set of attribute values and may have a set of version\nconstraints for which cookbook versions may be used on its nodes.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -26,19 +26,24 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Mapping of cookbook names to cookbook\nversion constraints that should apply for this environment."
         },
         "DefaultAttributesJson": {
-            "type": "string"
+            "type": "string",
+            "description": "String containing a JSON-serialized\nobject containing the default attributes for the environment."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A human-friendly description of the environment.\nIf not set, a placeholder of \"Managed by Terraform\" will be set."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The unique name to assign to the environment. This name\nwill be used when nodes are created within the environment."
         },
         "OverrideAttributesJson": {
-            "type": "string"
+            "type": "string",
+            "description": "String containing a JSON-serialized\nobject containing the override attributes for the environment."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::DatascienceNotebookSession",
-    "description": "CloudFormation equivalent of oci_datascience_notebook_session",
+    "description": "This resource provides the Notebook Session resource in Oracle Cloud Infrastructure Datascience service.\n\nCreates a new notebook session.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "NotebookSessionConfigurationDetails": {
@@ -45,7 +45,8 @@
             "type": "string"
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the compartment where you want to create the notebook session."
         },
         "CreatedBy": {
             "type": "string"
@@ -68,10 +69,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{\"Operations.CostCenter\": \"42\"}`."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information. Example: `My NotebookSession`."
         },
         "FreeformTags": {
             "type": "array",
@@ -91,7 +94,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{\"Department\": \"Finance\"}`."
         },
         "LifecycleDetails": {
             "type": "string"
@@ -100,7 +104,8 @@
             "type": "string"
         },
         "ProjectId": {
-            "type": "string"
+            "type": "string",
+            "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the project to associate with the notebook session."
         },
         "State": {
             "type": "string"

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Gitlab::PipelineSchedule",
-    "description": "CloudFormation equivalent of gitlab_pipeline_schedule",
+    "description": "This resource allows you to create and manage pipeline schedules.\nFor further information on clusters, consult the [gitlab\ndocumentation](https://docs.gitlab.com/ce/user/project/pipelines/schedules.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,22 +9,28 @@
             "type": "string"
         },
         "Active": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "The activation of pipeline schedule. If false is set, the pipeline schedule will deactivated initially."
         },
         "Cron": {
-            "type": "string"
+            "type": "string",
+            "description": "The cron (e.g. `0 1 * * *`)."
         },
         "CronTimezone": {
-            "type": "string"
+            "type": "string",
+            "description": "The timezone."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the pipeline schedule."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or id of the project to add the schedule to."
         },
         "Ref": {
-            "type": "string"
+            "type": "string",
+            "description": "The branch/tag name to be triggered."
         }
     },
     "additionalProperties": false,

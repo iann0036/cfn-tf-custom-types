@@ -1,6 +1,6 @@
 # Terraform::OpenStack::FwRuleV1
 
-CloudFormation equivalent of openstack_fw_rule_v1
+Manages a v1 firewall rule resource within OpenStack.
 
 ## Syntax
 
@@ -54,6 +54,10 @@ Properties:
 
 #### Action
 
+Action to be taken ( must be "allow" or "deny") when the
+firewall rule matches. Changing this updates the `action` of an existing
+firewall rule.
+
 _Required_: Yes
 
 _Type_: String
@@ -61,6 +65,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+A description for the firewall rule. Changing this
+updates the `description` of an existing firewall rule.
 
 _Required_: No
 
@@ -70,6 +77,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DestinationIpAddress
 
+The destination IP address on which the
+firewall rule operates. Changing this updates the `destination_ip_address`
+of an existing firewall rule.
+
 _Required_: No
 
 _Type_: String
@@ -77,6 +88,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DestinationPort
+
+The destination port on which the firewall
+rule operates. Changing this updates the `destination_port` of an existing
+firewall rule.
 
 _Required_: No
 
@@ -86,6 +101,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Enabled
 
+Enabled status for the firewall rule (must be "true"
+or "false" if provided - defaults to "true"). Changing this updates the
+`enabled` status of an existing firewall rule.
+
 _Required_: No
 
 _Type_: Boolean
@@ -93,6 +112,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IpVersion
+
+IP version, either 4 (default) or 6. Changing this
+updates the `ip_version` of an existing firewall rule.
 
 _Required_: No
 
@@ -102,6 +124,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A unique name for the firewall rule. Changing this
+updates the `name` of an existing firewall rule.
+
 _Required_: No
 
 _Type_: String
@@ -109,6 +134,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Protocol
+
+The protocol type on which the firewall rule operates.
+Valid values are: `tcp`, `udp`, `icmp`, and `any`. Changing this updates the
+`protocol` of an existing firewall rule.
 
 _Required_: Yes
 
@@ -118,6 +147,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region in which to obtain the v1 Compute client.
+A Compute client is needed to create a firewall rule. If omitted, the
+`region` argument of the provider is used. Changing this creates a new
+firewall rule.
+
 _Required_: No
 
 _Type_: String
@@ -125,6 +159,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SourceIpAddress
+
+The source IP address on which the firewall
+rule operates. Changing this updates the `source_ip_address` of an existing
+firewall rule.
 
 _Required_: No
 
@@ -134,6 +172,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SourcePort
 
+The source port on which the firewall
+rule operates. Changing this updates the `source_port` of an existing
+firewall rule.
+
 _Required_: No
 
 _Type_: String
@@ -142,6 +184,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TenantId
 
+The owner of the firewall rule. Required if admin
+wants to create a firewall rule for another tenant. Changing this creates a
+new firewall rule.
+
 _Required_: No
 
 _Type_: String
@@ -149,6 +195,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ValueSpecs
+
+Map of additional options.
 
 _Required_: No
 

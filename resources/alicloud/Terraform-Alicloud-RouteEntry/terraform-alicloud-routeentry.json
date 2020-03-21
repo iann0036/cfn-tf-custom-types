@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::RouteEntry",
-    "description": "CloudFormation equivalent of alicloud_route_entry",
+    "description": "Provides a route entry resource. A route entry represents a route item of one VPC route table.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,22 +9,28 @@
             "type": "string"
         },
         "DestinationCidrblock": {
-            "type": "string"
+            "type": "string",
+            "description": "The RouteEntry's target network segment."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the route entry. This name can have a string of 2 to 128 characters, must contain only alphanumeric characters or hyphens, such as \"-\",\".\",\"_\", and must not begin or end with a hyphen, and must not begin with http:// or https://."
         },
         "NexthopId": {
-            "type": "string"
+            "type": "string",
+            "description": "The route entry's next hop. ECS instance ID or VPC router interface ID."
         },
         "NexthopType": {
-            "type": "string"
+            "type": "string",
+            "description": "The next hop type. Available values:\n- `Instance` (Default): Route the traffic destined for the destination CIDR block to an ECS instance in the VPC.\n- `RouterInterface`: Route the traffic destined for the destination CIDR block to a router interface.\n- `VpnGateway`: Route the traffic destined for the destination CIDR block to a VPN Gateway.\n- `HaVip`: Route the traffic destined for the destination CIDR block to an HAVIP.\n- `NetworkInterface`: Route the traffic destined for the destination CIDR block to an NetworkInterface.\n- `NatGateway`: Route the traffic destined for the destination CIDR block to an Nat Gateway."
         },
         "RouteTableId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the route table."
         },
         "RouterId": {
-            "type": "string"
+            "type": "string",
+            "description": "This argument has beeb deprecated. Please use other arguments to launch a custom route entry."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 # Terraform::AzureRM::LocalNetworkGateway
 
-CloudFormation equivalent of azurerm_local_network_gateway
+Manages a local network gateway connection over which specific connections can be configured.
 
 ## Syntax
 
@@ -46,6 +46,9 @@ Properties:
 
 #### AddressSpace
 
+The list of string CIDRs representing the
+address spaces the gateway exposes.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -53,6 +56,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GatewayAddress
+
+The IP address of the gateway to which to
+connect.
 
 _Required_: Yes
 
@@ -62,6 +68,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Location
 
+The location/region where the local network gateway is
+created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -69,6 +78,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the local network gateway. Changing this
+forces a new resource to be created.
 
 _Required_: Yes
 
@@ -78,6 +90,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to
+create the local network gateway.
+
 _Required_: Yes
 
 _Type_: String
@@ -85,6 +100,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

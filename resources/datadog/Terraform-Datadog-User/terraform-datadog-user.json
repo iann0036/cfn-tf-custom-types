@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Datadog::User",
-    "description": "CloudFormation equivalent of datadog_user",
+    "description": "Provides a Datadog user resource. This can be used to create and manage Datadog users.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,25 +9,32 @@
             "type": "string"
         },
         "AccessRole": {
-            "type": "string"
+            "type": "string",
+            "description": "Role description for user. Can be `st` (standard user), `adm` (admin user) or `ro` (read-only user).  Default is `st`."
         },
         "Disabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the user is disabled."
         },
         "Email": {
-            "type": "string"
+            "type": "string",
+            "description": "Email address for user."
         },
         "Handle": {
-            "type": "string"
+            "type": "string",
+            "description": "The user handle, must be a valid email."
         },
         "IsAdmin": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "(Optional) Whether the user is an administrator. **Warning**: the corresponding query parameter is ignored by the Datadog API, thus the argument would always trigger an execution plan."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name for user."
         },
         "Role": {
-            "type": "string"
+            "type": "string",
+            "description": "Role description for user. **Warning**: the corresponding query parameter is ignored by the Datadog API, thus the argument would always trigger an execution plan."
         },
         "Verified": {
             "type": "boolean"

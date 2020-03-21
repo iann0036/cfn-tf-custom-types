@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Spotinst::MultaiRoutingRule",
-    "description": "CloudFormation equivalent of spotinst_multai_routing_rule",
+    "description": "Provides a Spotinst Multai Routing Rule.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Tags": {
@@ -26,10 +26,12 @@
             "type": "string"
         },
         "BalancerId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the balancer."
         },
         "ListenerId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the listener."
         },
         "MiddlewareIds": {
             "type": "array",
@@ -42,10 +44,12 @@
             "type": "number"
         },
         "Route": {
-            "type": "string"
+            "type": "string",
+            "description": "Route defines a simple language for matching HTTP requests and route the traffic accordingly. Route provides series of matchers that follow the syntax: Path matcher: \u2014 Path(\"/foo/bar\") // trie-based PathRegexp(\u201c/foo/.*\u201d) // regexp-based Method matcher: \u2014 Method(\u201cGET\u201d) // trie-based MethodRegexp(\u201cPOST|PUT\u201d) // regexp based Header matcher: \u2014 Header(\u201cContent-Type\u201d, \u201capplication/json\u201d) // trie-based HeaderRegexp(\u201cContent-Type\u201d, \u201capplication/.*\u201d) // regexp based Matchers can be combined using && operator: \u2014 Method(\u201cPOST\u201d) && Path(\"/v1\")."
         },
         "Strategy": {
-            "type": "string"
+            "type": "string",
+            "description": "Balancing strategy. Valid values: `ROUNDROBIN`, `RANDOM`, `LEASTCONN`, `IPHASH`."
         },
         "TargetSetIds": {
             "type": "array",

@@ -1,6 +1,9 @@
 # Terraform::Linode::Nodebalancer
 
-CloudFormation equivalent of linode_nodebalancer
+Provides a Linode NodeBalancer resource.  This can be used to create, modify, and delete Linodes NodeBalancers in Linode's managed load balancer service.
+For more information, see [Getting Started with NodeBalancers](https://www.linode.com/docs/platform/nodebalancer/getting-started-with-nodebalancers/) and the [Linode APIv4 docs](https://developers.linode.com/api/v4#operation/createNodeBalancer).
+
+The Linode Guide, [Create a NodeBalancer with Terraform](https://www.linode.com/docs/applications/configuration-management/create-a-nodebalancer-with-terraform/), provides step-by-step guidance and additional examples.
 
 ## Syntax
 
@@ -36,6 +39,8 @@ Properties:
 
 #### ClientConnThrottle
 
+Throttle connections per second (0-20). Set to 0 (default) to disable throttling.
+
 _Required_: No
 
 _Type_: Double
@@ -43,6 +48,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Label
+
+The label of the Linode NodeBalancer.
 
 _Required_: No
 
@@ -52,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region where this NodeBalancer will be deployed.  Examples are `"us-east"`, `"us-west"`, `"ap-south"`, etc.  *Changing `region` forces the creation of a new Linode NodeBalancer.*.
+
 _Required_: Yes
 
 _Type_: String
@@ -59,6 +68,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A list of tags applied to this object. Tags are for organizational purposes only.
 
 _Required_: No
 

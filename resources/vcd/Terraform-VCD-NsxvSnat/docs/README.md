@@ -1,6 +1,14 @@
 # Terraform::VCD::NsxvSnat
 
-CloudFormation equivalent of vcd_nsxv_snat
+Provides a vCloud Director SNAT resource for advanced edge gateways (NSX-V). This
+can be used to create, modify, and delete source NATs to allow vApps to send external traffic. Replaces
+[`vcd_snat`](/docs/providers/vcd/r/snat.html) resource.
+
+~> **Note:** This resource requires advanced edge gateway. For non-advanced edge gateways please
+use the [`vcd_snat`](/docs/providers/vcd/r/snat.html) resource.
+
+!> **Warning:** Do not use older [`vcd_snat`](/docs/providers/vcd/r/snat.html) resource with this one
+because it will change IDs and this resource will not be able to lookup rules.
 
 ## Syntax
 
@@ -51,6 +59,8 @@ Properties:
 
 #### Description
 
+Free text description.
+
 _Required_: No
 
 _Type_: String
@@ -58,6 +68,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EdgeGateway
+
+The name of the edge gateway on which to apply the SNAT rule.
 
 _Required_: Yes
 
@@ -67,6 +79,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Enabled
 
+Defines if the rule is enabaled. Default `true`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -74,6 +88,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LoggingEnabled
+
+Defines if the logging for this rule is enabaled. Default `false`.
 
 _Required_: No
 
@@ -83,6 +99,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NetworkName
 
+The name of the network on which to apply the SNAT rule.
+
 _Required_: Yes
 
 _Type_: String
@@ -90,6 +108,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NetworkType
+
+Type of the network on which to apply the DNAT rule. Possible values
+`org` or `ext`.
 
 _Required_: Yes
 
@@ -99,6 +120,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Org
 
+The name of organization to use, optional if defined at provider level. Useful
+when connected as sysadmin working across different organisations.
+
 _Required_: No
 
 _Type_: String
@@ -107,6 +131,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OriginalAddress
 
+IP address, range or subnet. These addresses are the IP addresses
+of one or more virtual machines for which you are configuring the SNAT rule so that they can send
+traffic to the external network.
+
 _Required_: Yes
 
 _Type_: String
@@ -114,6 +142,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RuleTag
+
+This can be used to specify user-controlled rule tag. If not specified,
+it will report rule ID after creation. Must be between 65537-131072.
 
 _Required_: No
 
@@ -131,6 +162,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TranslatedAddress
 
+IP address, range or subnet. This address is always the public
+IP address of the gateway for which you are configuring the SNAT rule. Specifies the IP address to
+which source addresses (the virtual machines) on outbound packets are translated to when they send
+traffic to the external network.
+
 _Required_: No
 
 _Type_: String
@@ -138,6 +174,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vdc
+
+The name of VDC to use, optional if defined at provider level.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HuaweiCloud::BlockstorageVolumeV2",
-    "description": "CloudFormation equivalent of huaweicloud_blockstorage_volume_v2",
+    "description": "Manages a V2 volume resource within HuaweiCloud.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -42,19 +42,24 @@
             }
         },
         "AvailabilityZone": {
-            "type": "string"
+            "type": "string",
+            "description": "The availability zone for the volume.\nChanging this creates a new volume."
         },
         "Cascade": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies to delete all snapshots associated with the EVS disk."
         },
         "ConsistencyGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "The consistency group to place the volume\nin."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description of the volume. Changing this updates\nthe volume's description."
         },
         "ImageId": {
-            "type": "string"
+            "type": "string",
+            "description": "The image ID from which to create the volume.\nChanging this creates a new volume."
         },
         "Metadata": {
             "type": "array",
@@ -74,28 +79,36 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Metadata key/value pairs to associate with the volume.\nChanging this updates the existing volume metadata."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique name for the volume. Changing this updates the\nvolume's name."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to create the volume. If\nomitted, the `region` argument of the provider is used. Changing this\ncreates a new volume."
         },
         "Size": {
-            "type": "number"
+            "type": "number",
+            "description": "The size of the volume to create (in gigabytes)."
         },
         "SnapshotId": {
-            "type": "string"
+            "type": "string",
+            "description": "The snapshot ID from which to create the volume.\nChanging this creates a new volume."
         },
         "SourceReplica": {
-            "type": "string"
+            "type": "string",
+            "description": "The volume ID to replicate with."
         },
         "SourceVolId": {
-            "type": "string"
+            "type": "string",
+            "description": "The volume ID from which to create the volume.\nChanging this creates a new volume."
         },
         "VolumeType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of volume to create. Available types are\n`SSD`, `SAS` and `SATA`. Changing this creates a new volume."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

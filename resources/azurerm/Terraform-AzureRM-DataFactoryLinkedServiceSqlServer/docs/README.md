@@ -1,6 +1,8 @@
 # Terraform::AzureRM::DataFactoryLinkedServiceSqlServer
 
-CloudFormation equivalent of azurerm_data_factory_linked_service_sql_server
+Manages a Linked Service (connection) between a SQL Server and Azure Data Factory.
+
+~> **Note:** All arguments including the client secret will be stored in the raw state as plain-text. [Read more about sensitive data in state](/docs/state/sensitive-data.html).
 
 ## Syntax
 
@@ -50,6 +52,8 @@ Properties:
 
 #### AdditionalProperties
 
+A map of additional properties to associate with the Data Factory Linked Service SQL Server.
+
 _Required_: No
 
 _Type_: List of <a href="additionalproperties.md">AdditionalProperties</a>
@@ -57,6 +61,8 @@ _Type_: List of <a href="additionalproperties.md">AdditionalProperties</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Annotations
+
+List of tags that can be used for describing the Data Factory Linked Service SQL Server.
 
 _Required_: No
 
@@ -66,6 +72,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ConnectionString
 
+The connection string in which to authenticate with the SQL Server.
+
 _Required_: Yes
 
 _Type_: String
@@ -73,6 +81,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DataFactoryName
+
+The Data Factory name in which to associate the Linked Service with. Changing this forces a new resource.
 
 _Required_: Yes
 
@@ -82,6 +92,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+The description for the Data Factory Linked Service SQL Server.
+
 _Required_: No
 
 _Type_: String
@@ -89,6 +101,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IntegrationRuntimeName
+
+The integration runtime reference to associate with the Data Factory Linked Service SQL Server.
 
 _Required_: No
 
@@ -98,6 +112,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the Data Factory Linked Service SQL Server. Changing this forces a new resource to be created. Must be globally unique. See the [Microsoft documentation](https://docs.microsoft.com/en-us/azure/data-factory/naming-rules) for all restrictions.
+
 _Required_: Yes
 
 _Type_: String
@@ -106,6 +122,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Parameters
 
+A map of parameters to associate with the Data Factory Linked Service SQL Server.
+
 _Required_: No
 
 _Type_: List of <a href="parameters.md">Parameters</a>
@@ -113,6 +131,8 @@ _Type_: List of <a href="parameters.md">Parameters</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which to create the Data Factory Linked Service SQL Server. Changing this forces a new resource.
 
 _Required_: Yes
 

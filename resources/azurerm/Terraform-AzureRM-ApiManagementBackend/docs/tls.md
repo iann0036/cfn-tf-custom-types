@@ -24,6 +24,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### ValidateCertificateChain
 
+Flag indicating whether SSL certificate chain validation should be done when using self-signed certificates for the backend host.
+
 _Required_: No
 
 _Type_: Boolean
@@ -31,6 +33,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ValidateCertificateName
+
+Flag indicating whether SSL certificate name validation should be done when using self-signed certificates for the backend host.
 
 _Required_: No
 

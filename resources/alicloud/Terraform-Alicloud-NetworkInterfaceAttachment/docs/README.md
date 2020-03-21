@@ -1,6 +1,8 @@
 # Terraform::Alicloud::NetworkInterfaceAttachment
 
-CloudFormation equivalent of alicloud_network_interface_attachment
+Provides an Alicloud ECS Elastic Network Interface Attachment as a resource to attach ENI to or detach ENI from ECS Instances.
+
+For information about Elastic Network Interface and how to use it, see [Elastic Network Interface](https://www.alibabacloud.com/help/doc-detail/58496.html).
 
 ## Syntax
 
@@ -31,6 +33,8 @@ Properties:
 
 #### InstanceId
 
+The instance ID to attach.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +42,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NetworkInterfaceId
+
+The ENI ID to attach.
 
 _Required_: Yes
 

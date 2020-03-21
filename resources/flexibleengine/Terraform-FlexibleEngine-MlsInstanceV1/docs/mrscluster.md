@@ -26,6 +26,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Id
 
+Specifies the ID of the MRS cluster. Changing this creates a new instance.
+
 _Required_: Yes
 
 _Type_: String
@@ -34,6 +36,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UserName
 
+Specifies the MRS cluster username. This parameter is mandatory
+only when the MRS cluster is in the security mode. Changing this creates a new instance.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +46,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserPassword
+
+Specifies the password of the MRS cluster user. The password
+and username work in a pair. Changing this creates a new instance.
 
 _Required_: No
 

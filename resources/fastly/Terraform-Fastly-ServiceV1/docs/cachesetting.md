@@ -30,6 +30,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Action
 
+One of `cache`, `pass`, or `restart`, as defined
+on Fastly's documentation under ["Caching action descriptions"](https://docs.fastly.com/guides/performance-tuning/controlling-caching#caching-action-descriptions).
+
 _Required_: No
 
 _Type_: String
@@ -37,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CacheCondition
+
+Name of already defined `condition` used to test whether this settings object should be used. This `condition` must be of type `CACHE`.
 
 _Required_: No
 
@@ -46,6 +51,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Unique name for this Cache Setting.
+
 _Required_: Yes
 
 _Type_: String
@@ -54,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StaleTtl
 
+Max "Time To Live" for stale (unreachable) objects.
+
 _Required_: No
 
 _Type_: Double
@@ -61,6 +70,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ttl
+
+The Time-To-Live (TTL) for the object.
 
 _Required_: No
 

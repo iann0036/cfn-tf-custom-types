@@ -1,6 +1,14 @@
 # Terraform::Random::String
 
-CloudFormation equivalent of random_string
+The resource `random_string` generates a random permutation of alphanumeric
+characters and optionally special characters.
+
+This resource *does* use a cryptographic random number generator.
+
+Historically this resource's intended usage has been ambiguous as the original example
+used it in a password. For backwards compatibility it will
+continue to exist. For unique ids please use [random_id](id.html), for sensitive
+random values please use [random_password](password.html).
 
 ## Syntax
 
@@ -50,6 +58,10 @@ Properties:
 
 #### Keepers
 
+Arbitrary map of values that, when changed, will
+trigger a new id to be generated. See
+[the main provider documentation](../index.html) for more information.
+
 _Required_: No
 
 _Type_: List of <a href="keepers.md">Keepers</a>
@@ -57,6 +69,8 @@ _Type_: List of <a href="keepers.md">Keepers</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Length
+
+The length of the string desired.
 
 _Required_: Yes
 
@@ -66,6 +80,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Lower
 
+(default true) Include lowercase alphabet characters
+in random string.
+
 _Required_: No
 
 _Type_: Boolean
@@ -73,6 +90,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MinLower
+
+(default 0) Minimum number of lowercase alphabet
+characters in random string.
 
 _Required_: No
 
@@ -82,6 +102,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MinNumeric
 
+(default 0) Minimum number of numeric characters
+in random string.
+
 _Required_: No
 
 _Type_: Double
@@ -89,6 +112,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MinSpecial
+
+(default 0) Minimum number of special characters
+in random string.
 
 _Required_: No
 
@@ -98,6 +124,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MinUpper
 
+(default 0) Minimum number of uppercase alphabet
+characters in random string.
+
 _Required_: No
 
 _Type_: Double
@@ -105,6 +134,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Number
+
+(default true) Include numeric characters in random
+string.
 
 _Required_: No
 
@@ -114,6 +146,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OverrideSpecial
 
+Supply your own list of special characters to
+use for string generation.  This overrides the default character list in the special
+argument.  The special argument must still be set to true for any overwritten
+characters to be used in generation.
+
 _Required_: No
 
 _Type_: String
@@ -122,6 +159,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Special
 
+(default true) Include special characters in random
+string. These are `!@#$%&*()-_=+[]{}<>:?`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -129,6 +169,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Upper
+
+(default true) Include uppercase alphabet characters
+in random string.
 
 _Required_: No
 

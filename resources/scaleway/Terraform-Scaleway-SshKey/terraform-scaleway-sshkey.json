@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Scaleway::SshKey",
-    "description": "CloudFormation equivalent of scaleway_ssh_key",
+    "description": "**DEPRECATED**: This resource is deprecated and will be removed in `v2.0+`.\nPlease use `account_ssh_key` instead.\n\nManages user SSH Keys to access servers provisioned on scaleway.\nFor additional details please refer to [API documentation](https://developer.scaleway.com/#users-user-get).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "Key": {
-            "type": "string"
+            "type": "string",
+            "description": "public key of the SSH key to be added."
         }
     },
     "additionalProperties": false,

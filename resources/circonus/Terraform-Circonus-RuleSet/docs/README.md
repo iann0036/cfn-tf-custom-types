@@ -1,6 +1,7 @@
 # Terraform::Circonus::RuleSet
 
-CloudFormation equivalent of circonus_rule_set
+The ``circonus_rule_set`` resource creates and manages a
+[Circonus Rule Set](https://login.circonus.com/resources/api/calls/rule_set).
 
 ## Syntax
 
@@ -58,6 +59,9 @@ Properties:
 
 #### Check
 
+The Circonus ID that this Rule Set will use to search for
+a metric stream to alert on.
+
 _Required_: Yes
 
 _Type_: String
@@ -65,6 +69,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Link
+
+A link to external documentation (or anything else you
+feel is important) when a notification is sent.  This value will show up in
+email alerts and the Circonus UI.
 
 _Required_: No
 
@@ -82,6 +90,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MetricName
 
+The name of the metric stream within a given check
+that this rule set is active on.
+
 _Required_: No
 
 _Type_: String
@@ -98,6 +109,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MetricType
 
+The type of metric this rule set will operate on.
+Valid values are `numeric` (the default) and `text`.
+
 _Required_: No
 
 _Type_: String
@@ -105,6 +119,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Notes
+
+Notes about this rule set.
 
 _Required_: No
 
@@ -114,6 +130,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Parent
 
+A Circonus Metric ID that, if specified and active with
+a severity 1 alert, will silence this rule set until all of the severity 1
+alerts on the parent clear.  This value must match the format
+`${check_id}_${metric_name}`.
+
 _Required_: No
 
 _Type_: String
@@ -121,6 +142,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A list of tags assigned to this rule set.
 
 _Required_: No
 

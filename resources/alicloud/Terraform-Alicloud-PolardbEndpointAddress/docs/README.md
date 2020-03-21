@@ -1,6 +1,9 @@
 # Terraform::Alicloud::PolardbEndpointAddress
 
-CloudFormation equivalent of alicloud_polardb_endpoint_address
+Provides a PolarDB endpoint address resource to allocate an Internet endpoint address string for PolarDB instance.
+
+-> **NOTE:** Available in v1.68.0+. Each PolarDB instance will allocate a intranet connection string automatically and its prefix is Cluster ID.
+ To avoid unnecessary conflict, please specified a internet connection prefix before applying the resource.
 
 ## Syntax
 
@@ -35,6 +38,8 @@ Properties:
 
 #### ConnectionPrefix
 
+Prefix of an Internet connection string. It must be checked for uniqueness. It may consist of lowercase letters, numbers, and underlines, and must start with a letter and have no more than 30 characters. Default to <db_endpoint_id> + 'tf'.
+
 _Required_: No
 
 _Type_: String
@@ -42,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DbClusterId
+
+The Id of cluster that can run database.
 
 _Required_: Yes
 
@@ -51,6 +58,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DbEndpointId
 
+The Id of endpoint that can run database.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +67,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NetType
+
+Internet connection net type. Valid value: `Public`. Default to `Public`. Currently supported only `Public`.
 
 _Required_: No
 

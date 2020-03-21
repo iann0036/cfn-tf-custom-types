@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Spotinst::MultaiBalancer",
-    "description": "CloudFormation equivalent of spotinst_multai_balancer",
+    "description": "Provides a Spotinst Multai Balancer.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ConnectionTimeouts": {
@@ -43,13 +43,16 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": null
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The balancer name. May contain only alphanumeric characters or hyphens, and must not begin or end with a hyphen."
         },
         "Scheme": {
-            "type": "string"
+            "type": "string",
+            "description": null
         },
         "ConnectionTimeouts": {
             "type": "array",

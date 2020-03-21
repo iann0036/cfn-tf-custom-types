@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::IdentityNetworkSource",
-    "description": "CloudFormation equivalent of oci_identity_network_source",
+    "description": "This resource provides the Network Source resource in Oracle Cloud Infrastructure Identity service.\n\nCreates a new network source in your tenancy.\n\nYou must specify your tenancy's OCID as the compartment ID in the request object (remember that the tenancy\nis simply the root compartment). Notice that IAM resources (users, groups, compartments, and some policies)\nreside within the tenancy itself, unlike cloud resources such as compute instances, which typically\nreside within compartments inside the tenancy. For information about OCIDs, see\n[Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).\n\nYou must also specify a *name* for the network source, which must be unique across all network sources in your\ntenancy, and cannot be changed.\nYou can use this name or the OCID when writing policies that apply to the network source. For more information\nabout policies, see [How Policies Work](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policies.htm).\n\nYou must also specify a *description* for the network source (although it can be an empty string). It does not\nhave to be unique, and you can change it anytime with [UpdateNetworkSource](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/NetworkSource/UpdateNetworkSource).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -46,7 +46,8 @@
             "type": "string"
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the tenancy containing the network source object."
         },
         "DefinedTags": {
             "type": "array",
@@ -66,10 +67,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{\"Operations.CostCenter\": \"42\"}`."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The description you assign to the network source during creation. Does not have to be unique, and it's changeable."
         },
         "FreeformTags": {
             "type": "array",
@@ -89,27 +92,31 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{\"Department\": \"Finance\"}`."
         },
         "InactiveState": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name you assign to the network source during creation. The name must be unique across all groups in the tenancy and cannot be changed."
         },
         "PublicSourceList": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "(Updatable) A list of allowed public IPs and CIDR ranges."
         },
         "Services": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "(Updatable) A list of OCIservices allowed to make on behalf of requests which may have different source ips. At this time only the values of all or none are supported."
         },
         "State": {
             "type": "string"

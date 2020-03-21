@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::SqlServer",
-    "description": "CloudFormation equivalent of azurerm_sql_server",
+    "description": "Manages a SQL Azure Database Server.\n\n~> **Note:** All arguments including the administrator login and password will be stored in the raw state as plain-text.\n[Read more about sensitive data in state](/docs/state/sensitive-data.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ExtendedAuditingPolicy": {
@@ -30,7 +30,8 @@
             "additionalProperties": false,
             "properties": {
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the identity type of the SQL Server. At this time the only allowed value is `SystemAssigned`."
                 }
             },
             "required": [
@@ -63,22 +64,27 @@
             "type": "string"
         },
         "AdministratorLogin": {
-            "type": "string"
+            "type": "string",
+            "description": "The administrator login name for the new server. Changing this forces a new resource to be created."
         },
         "AdministratorLoginPassword": {
-            "type": "string"
+            "type": "string",
+            "description": "The password associated with the `administrator_login` user. Needs to comply with Azure's [Password Policy](https://msdn.microsoft.com/library/ms161959.aspx)."
         },
         "FullyQualifiedDomainName": {
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the SQL Server. This needs to be globally unique within Azure."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the SQL Server."
         },
         "Tags": {
             "type": "array",
@@ -98,10 +104,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Version": {
-            "type": "string"
+            "type": "string",
+            "description": "The version for the new server. Valid values are: 2.0 (for v11 server) and 12.0 (for v12 server)."
         },
         "ExtendedAuditingPolicy": {
             "type": "array",

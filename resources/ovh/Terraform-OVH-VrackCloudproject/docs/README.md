@@ -1,6 +1,6 @@
 # Terraform::OVH::VrackCloudproject
 
-CloudFormation equivalent of ovh_vrack_cloudproject
+Attach a Public Cloud Project to a VRack.
 
 ## Syntax
 
@@ -31,6 +31,10 @@ Properties:
 
 #### ProjectId
 
+The id of the public cloud project. If omitted,
+the `OVH_PROJECT_ID` environment variable is used.
+Note: The use of environment variable is deprecated.
+
 _Required_: No
 
 _Type_: String
@@ -38,6 +42,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VrackId
+
+The id of the vrack. If omitted, the `OVH_VRACK_ID`
+environment variable is used.
+Note: The use of environment variable is deprecated.
 
 _Required_: No
 

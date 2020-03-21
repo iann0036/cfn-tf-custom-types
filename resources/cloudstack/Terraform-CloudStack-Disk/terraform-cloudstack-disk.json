@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::CloudStack::Disk",
-    "description": "CloudFormation equivalent of cloudstack_disk",
+    "description": "Creates a disk volume from a disk offering. This disk volume will be attached to\na virtual machine if the optional parameters are configured.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,31 +9,40 @@
             "type": "string"
         },
         "Attach": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Determines whether or not to attach the disk volume to a\nvirtual machine (defaults false)."
         },
         "DeviceId": {
-            "type": "number"
+            "type": "number",
+            "description": "The device ID to map the disk volume to within the guest OS."
         },
         "DiskOffering": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or ID of the disk offering to use for\nthis disk volume."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the disk volume. Changing this forces a new\nresource to be created."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or ID of the project to deploy this\ninstance to. Changing this forces a new resource to be created."
         },
         "ShrinkOk": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Verifies if the disk volume is allowed to shrink when\nresizing (defaults false)."
         },
         "Size": {
-            "type": "number"
+            "type": "number",
+            "description": "The size of the disk volume in gigabytes."
         },
         "VirtualMachineId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the virtual machine to which you want\nto attach the disk volume."
         },
         "Zone": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or ID of the zone where this disk volume will be available.\nChanging this forces a new resource to be created."
         }
     },
     "additionalProperties": false,

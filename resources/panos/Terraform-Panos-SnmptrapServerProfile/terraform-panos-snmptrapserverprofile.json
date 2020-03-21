@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::SnmptrapServerProfile",
-    "description": "CloudFormation equivalent of panos_snmptrap_server_profile",
+    "description": "This resource allows you to add/update/delete snmptrap server profiles.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "V2cServer": {
@@ -8,13 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "Community": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The SNMP community."
                 },
                 "Manager": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The hostname."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The server name."
                 }
             },
             "required": [
@@ -28,22 +31,28 @@
             "additionalProperties": false,
             "properties": {
                 "AuthPassword": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "SNMP auth password."
                 },
                 "EngineId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The engine ID."
                 },
                 "Manager": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The hostname."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The server name."
                 },
                 "PrivPassword": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "SNMP priv password."
                 },
                 "User": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Username."
                 }
             },
             "required": [
@@ -101,7 +110,8 @@
             }
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The group's name."
         },
         "PrivPasswordEnc": {
             "type": "array",
@@ -144,7 +154,8 @@
             }
         },
         "Vsys": {
-            "type": "string"
+            "type": "string",
+            "description": "The vsys (default: `shared`)."
         },
         "V2cServer": {
             "type": "array",

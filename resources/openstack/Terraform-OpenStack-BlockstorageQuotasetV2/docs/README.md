@@ -1,6 +1,11 @@
 # Terraform::OpenStack::BlockstorageQuotasetV2
 
-CloudFormation equivalent of openstack_blockstorage_quotaset_v2
+Manages a V2 block storage quotaset resource within OpenStack.
+
+~> **Note:** This usually requires admin privileges.
+
+~> **Note:** This resource has a no-op deletion so no actual actions will be done against the OpenStack API 
+    in case of delete call.
 
 ## Syntax
 
@@ -47,6 +52,9 @@ Properties:
 
 #### BackupGigabytes
 
+Quota value for backup gigabytes. Changing
+this updates the existing quotaset.
+
 _Required_: No
 
 _Type_: Double
@@ -54,6 +62,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Backups
+
+Quota value for backups. Changing this updates the
+existing quotaset.
 
 _Required_: No
 
@@ -63,6 +74,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Gigabytes
 
+Quota value for gigabytes. Changing this updates the
+existing quotaset.
+
 _Required_: No
 
 _Type_: Double
@@ -70,6 +84,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Groups
+
+Quota value for groups. Changing this updates the
+existing quotaset.
 
 _Required_: No
 
@@ -79,6 +96,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PerVolumeGigabytes
 
+Quota value for gigabytes per volume .
+Changing this updates the existing quotaset.
+
 _Required_: No
 
 _Type_: Double
@@ -86,6 +106,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProjectId
+
+ID of the project to manage quotas. Changing this
+creates a new quotaset.
 
 _Required_: Yes
 
@@ -95,6 +118,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region in which to create the volume. If
+omitted, the `region` argument of the provider is used. Changing this
+creates a new quotaset.
+
 _Required_: No
 
 _Type_: String
@@ -103,6 +130,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Snapshots
 
+Quota value for snapshots. Changing this updates the
+existing quotaset.
+
 _Required_: No
 
 _Type_: Double
@@ -110,6 +140,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Volumes
+
+Quota value for volumes. Changing this updates the
+existing quotaset.
 
 _Required_: No
 

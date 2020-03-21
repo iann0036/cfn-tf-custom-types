@@ -1,6 +1,6 @@
 # Terraform::LogicMonitor::DeviceGroup
 
-CloudFormation equivalent of logicmonitor_device_group
+Provides a LogicMonitor device group resource. This can be used to create and manage LogicMonitor device groups
 
 ## Syntax
 
@@ -40,6 +40,8 @@ Properties:
 
 #### AppliesTo
 
+The Applies to custom query for this group. Setting this field will make this a dynamic group.
+
 _Required_: No
 
 _Type_: String
@@ -47,6 +49,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Description of device group.
 
 _Required_: No
 
@@ -56,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisableAlerting
 
+Indicates whether alerting is disabled (true) or enabled (false) for this device group.
+
 _Required_: No
 
 _Type_: Boolean
@@ -63,6 +69,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of device group.
 
 _Required_: Yes
 
@@ -72,6 +80,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ParentId
 
+The id of the parent group for this device group (the root device group has an Id of 1).
+
 _Required_: No
 
 _Type_: Double
@@ -79,6 +89,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Properties
+
+The properties associated with this device group. Any string value pair will work (see example).
 
 _Required_: No
 

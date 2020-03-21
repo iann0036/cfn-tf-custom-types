@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::Eventhub",
-    "description": "CloudFormation equivalent of azurerm_eventhub",
+    "description": "Manages a Event Hubs as a nested resource within a Event Hubs namespace.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "CaptureDescription": {
@@ -8,19 +8,24 @@
             "additionalProperties": false,
             "properties": {
                 "Enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Specifies if the Capture Description is Enabled."
                 },
                 "Encoding": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the Encoding used for the Capture Description. Possible values are `Avro` and `AvroDeflate`."
                 },
                 "IntervalInSeconds": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Specifies the time interval in seconds at which the capture will happen. Values can be between `60` and `900` seconds. Defaults to `300` seconds."
                 },
                 "SizeLimitInBytes": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Specifies the amount of data built up in your EventHub before a Capture Operation occurs. Value should be between `10485760` and `524288000`  bytes. Defaults to `314572800` bytes."
                 },
                 "SkipEmptyArchives": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Specifies if empty files should not be emitted if no events occur during the Capture time window.  Defaults to `false`."
                 },
                 "Destination": {
                     "type": "array",
@@ -59,16 +64,20 @@
             "additionalProperties": false,
             "properties": {
                 "ArchiveNameFormat": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Blob naming convention for archiving. e.g. `{Namespace}/{EventHub}/{PartitionId}/{Year}/{Month}/{Day}/{Hour}/{Minute}/{Second}`. Here all the parameters (Namespace,EventHub .. etc) are mandatory irrespective of order."
                 },
                 "BlobContainerName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the Container within the Blob Storage Account where messages should be archived."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Name of the Destination where the capture should take place. At this time the only supported value is `EventHubArchive.AzureBlockBlob`."
                 },
                 "StorageAccountId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of the Blob Storage Account where messages should be archived."
                 }
             },
             "required": [
@@ -85,16 +94,20 @@
             "type": "string"
         },
         "MessageRetention": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the number of days to retain the events for this Event Hub. Needs to be between 1 and 7 days; or 1 day when using a Basic SKU for the parent EventHub Namespace."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the EventHub Namespace resource. Changing this forces a new resource to be created."
         },
         "NamespaceName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the EventHub Namespace. Changing this forces a new resource to be created."
         },
         "PartitionCount": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the current number of shards on the Event Hub. Changing this forces a new resource to be created."
         },
         "PartitionIds": {
             "type": "array",
@@ -104,7 +117,8 @@
             }
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which the EventHub's parent Namespace exists. Changing this forces a new resource to be created."
         },
         "CaptureDescription": {
             "type": "array",

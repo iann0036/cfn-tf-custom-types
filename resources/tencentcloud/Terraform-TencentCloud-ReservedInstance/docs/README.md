@@ -1,6 +1,8 @@
 # Terraform::TencentCloud::ReservedInstance
 
-CloudFormation equivalent of tencentcloud_reserved_instance
+Provides a reserved instance resource.
+
+~> **NOTE:** Reserved instance cannot be deleted and updated. The reserved instance still exist which can be extracted by reserved_instances data source when reserved instance is destroied.
 
 ## Syntax
 
@@ -31,6 +33,8 @@ Properties:
 
 #### ConfigId
 
+Configuration id of the reserved instance.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +42,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceCount
+
+Number of reserved instances to be purchased.
 
 _Required_: Yes
 

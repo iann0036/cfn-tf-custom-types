@@ -1,6 +1,6 @@
 # Terraform::AzureRM::TrafficManagerProfile
 
-CloudFormation equivalent of azurerm_traffic_manager_profile
+Manages a Traffic Manager Profile to which multiple endpoints can be attached.
 
 ## Syntax
 
@@ -46,6 +46,8 @@ Properties:
 
 #### Name
 
+The name of the Traffic Manager profile. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -53,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProfileStatus
+
+The status of the profile, can be set to either `Enabled` or `Disabled`. Defaults to `Enabled`.
 
 _Required_: No
 
@@ -62,6 +66,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to create the Traffic Manager profile.
+
 _Required_: Yes
 
 _Type_: String
@@ -70,6 +76,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -77,6 +85,14 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TrafficRoutingMethod
+
+Specifies the algorithm used to route traffic, possible values are:
+* `Geographic` - Traffic is routed based on Geographic regions specified in the Endpoint.
+* `MultiValue` - All healthy Endpoints are returned.  MultiValue routing method works only if all the endpoints of type ‘External’ and are specified as IPv4 or IPv6 addresses.
+* `Performance` - Traffic is routed via the User's closest Endpoint
+* `Priority` - Traffic is routed to the Endpoint with the lowest `priority` value.
+* `Subnet` - Traffic is routed based on a mapping of sets of end-user IP address ranges to a specific Endpoint within a Traffic Manager profile.
+* `Weighted` - Traffic is spread across Endpoints proportional to their `weight` value.
 
 _Required_: Yes
 

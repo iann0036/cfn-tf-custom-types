@@ -1,6 +1,9 @@
 # Terraform::DigitalOcean::SshKey
 
-CloudFormation equivalent of digitalocean_ssh_key
+Provides a DigitalOcean SSH key resource to allow you to manage SSH
+keys for Droplet access. Keys created with this resource
+can be referenced in your Droplet configuration via their ID or
+fingerprint.
 
 ## Syntax
 
@@ -31,6 +34,8 @@ Properties:
 
 #### Name
 
+The name of the SSH key for identification.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +43,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PublicKey
+
+The public key. If this is a file, it
+can be read using the file interpolation function.
 
 _Required_: Yes
 

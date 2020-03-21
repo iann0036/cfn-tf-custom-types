@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Circonus::MetricCluster",
-    "description": "CloudFormation equivalent of circonus_metric_cluster",
+    "description": "The ``circonus_metric_cluster`` resource creates and manages a\n[Circonus Metric Cluster](https://login.circonus.com/user/docs/Data/View/MetricClusters).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Query": {
@@ -26,17 +26,20 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A long-form description of the metric cluster."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the metric cluster.  This name must be unique\nacross all metric clusters in a given Circonus Account."
         },
         "Tags": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of tags attached to the metric cluster."
         },
         "Query": {
             "type": "array",

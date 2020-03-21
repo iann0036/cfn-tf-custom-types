@@ -1,6 +1,6 @@
 # Terraform::FlexibleEngine::NetworkingVipAssociateV2
 
-CloudFormation equivalent of flexibleengine_networking_vip_associate_v2
+Manages a V2 vip associate resource within FlexibleEngine.
 
 ## Syntax
 
@@ -32,6 +32,9 @@ Properties:
 
 #### PortIds
 
+An array of one or more IDs of the ports to attach the vip to.
+Changing this creates a new vip associate.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -39,6 +42,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VipId
+
+The ID of vip to attach the port to.
+Changing this creates a new vip associate.
 
 _Required_: Yes
 

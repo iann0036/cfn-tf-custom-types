@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::EventgridTopic",
-    "description": "CloudFormation equivalent of azurerm_eventgrid_topic",
+    "description": "Manages an EventGrid Topic\n\n~> **Note:** at this time EventGrid Topic's are only available in a limited number of regions.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -32,16 +32,19 @@
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the EventGrid Topic resource. Changing this forces a new resource to be created."
         },
         "PrimaryAccessKey": {
             "type": "string"
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which the EventGrid Topic exists. Changing this forces a new resource to be created."
         },
         "SecondaryAccessKey": {
             "type": "string"
@@ -64,7 +67,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

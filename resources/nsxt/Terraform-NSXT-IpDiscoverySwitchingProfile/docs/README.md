@@ -1,6 +1,6 @@
 # Terraform::NSXT::IpDiscoverySwitchingProfile
 
-CloudFormation equivalent of nsxt_ip_discovery_switching_profile
+Provides a resource to configure IP discovery switching profile on NSX-T manager
 
 ## Syntax
 
@@ -42,6 +42,8 @@ Properties:
 
 #### ArpBindingsLimit
 
+Limit for the amount of ARP bindings.
+
 _Required_: No
 
 _Type_: Double
@@ -49,6 +51,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ArpSnoopingEnabled
+
+A boolean flag iIndicates whether ARP snooping is enabled.
 
 _Required_: No
 
@@ -58,6 +62,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+Description of this resource.
+
 _Required_: No
 
 _Type_: String
@@ -65,6 +71,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DhcpSnoopingEnabled
+
+A boolean flag iIndicates whether DHCP snooping is enabled.
 
 _Required_: No
 
@@ -74,6 +82,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+The display name of this resource. Defaults to ID if not set.
+
 _Required_: No
 
 _Type_: String
@@ -81,6 +91,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VmToolsEnabled
+
+A boolean flag iIndicates whether VM tools will be enabled. This option is only supported on ESX where vm-tools is installed.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Cloudflare::ZoneSettingsOverride",
-    "description": "CloudFormation equivalent of cloudflare_zone_settings_override",
+    "description": "Provides a resource which customizes Cloudflare zone settings. Note that after destroying this resource Zone Settings will be reset to their initial values.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Settings": {
@@ -441,7 +441,8 @@
             }
         },
         "ZoneId": {
-            "type": "string"
+            "type": "string",
+            "description": "The DNS zone ID to which apply settings."
         },
         "ZoneStatus": {
             "type": "string"

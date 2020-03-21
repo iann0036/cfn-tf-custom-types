@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::LoadBalancerPathRouteSet",
-    "description": "CloudFormation equivalent of oci_load_balancer_path_route_set",
+    "description": "This resource provides the Path Route Set resource in Oracle Cloud Infrastructure Load Balancer service.\n\nAdds a path route set to a load balancer. For more information, see\n[Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "PathRoutes": {
@@ -61,10 +61,12 @@
             "type": "string"
         },
         "LoadBalancerId": {
-            "type": "string"
+            "type": "string",
+            "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the path route set to."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_path_route_set`."
         },
         "State": {
             "type": "string"

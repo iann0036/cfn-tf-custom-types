@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::AsAttachment
 
-CloudFormation equivalent of tencentcloud_as_attachment
+Provides a resource to attach or detach CVM instances to a specified scaling group.
 
 ## Syntax
 
@@ -32,6 +32,8 @@ Properties:
 
 #### InstanceIds
 
+ID list of CVM instances to be attached to the scaling group.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -39,6 +41,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ScalingGroupId
+
+ID of a scaling group.
 
 _Required_: Yes
 

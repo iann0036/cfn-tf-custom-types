@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::NetworkAcl",
-    "description": "CloudFormation equivalent of alicloud_network_acl",
+    "description": "Provides a network acl resource to add network acls.\n\n-> **NOTE:** Available in 1.43.0+. Currently, the resource are only available in Hongkong(cn-hongkong), India(ap-south-1), and Indonesia(ap-southeast-1) regions.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the network acl instance."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the network acl."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "The vpc_id of the network acl, the field can't be changed."
         }
     },
     "additionalProperties": false,

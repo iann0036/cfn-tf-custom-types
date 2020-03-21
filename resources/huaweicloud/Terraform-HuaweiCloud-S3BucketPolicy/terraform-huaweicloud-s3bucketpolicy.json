@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HuaweiCloud::S3BucketPolicy",
-    "description": "CloudFormation equivalent of huaweicloud_s3_bucket_policy",
+    "description": "Attaches a policy to an S3 bucket resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "Bucket": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the bucket to which to apply the policy."
         },
         "Policy": {
-            "type": "string"
+            "type": "string",
+            "description": "The text of the policy."
         }
     },
     "additionalProperties": false,

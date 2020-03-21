@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::Ccn
 
-CloudFormation equivalent of tencentcloud_ccn
+Provides a resource to create a CCN instance.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### Description
 
+Description of CCN, and maximum length does not exceed 100 bytes.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name of the CCN to be queried, and maximum length does not exceed 60 bytes.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Qos
+
+Service quality of CCN, and the available value include 'PT', 'AU', 'AG'. The default is 'AU'.
 
 _Required_: No
 

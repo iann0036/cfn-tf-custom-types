@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::UCloud::DiskAttachment",
-    "description": "CloudFormation equivalent of ucloud_disk_attachment",
+    "description": "Provides a Cloud Disk Attachment resource for attaching Cloud Disk to UHost Instance.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "AvailabilityZone": {
-            "type": "string"
+            "type": "string",
+            "description": "The Zone to attach the disk in."
         },
         "DiskId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of disk that needs to be attached."
         },
         "InstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of host instance."
         }
     },
     "additionalProperties": false,

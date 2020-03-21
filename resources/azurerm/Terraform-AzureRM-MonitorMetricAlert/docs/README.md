@@ -1,6 +1,6 @@
 # Terraform::AzureRM::MonitorMetricAlert
 
-CloudFormation equivalent of azurerm_monitor_metric_alert
+Manages a Metric Alert within Azure Monitor.
 
 ## Syntax
 
@@ -60,6 +60,8 @@ Properties:
 
 #### AutoMitigate
 
+Should the alerts in this Metric Alert be auto resolved? Defaults to `true`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -67,6 +69,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+The description of this Metric Alert.
 
 _Required_: No
 
@@ -76,6 +80,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Enabled
 
+Should this Metric Alert be enabled? Defaults to `true`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -83,6 +89,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Frequency
+
+The evaluation frequency of this Metric Alert, represented in ISO 8601 duration format. Possible values are `PT1M`, `PT5M`, `PT15M`, `PT30M` and `PT1H`. Defaults to `PT1M`.
 
 _Required_: No
 
@@ -92,6 +100,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the Metric Alert. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -99,6 +109,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which to create the Metric Alert instance.
 
 _Required_: Yes
 
@@ -108,6 +120,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Scopes
 
+A set of strings of resource IDs at which the metric criteria should be applied.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -115,6 +129,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Severity
+
+The severity of this Metric Alert. Possible values are `0`, `1`, `2`, `3` and `4`. Defaults to `3`.
 
 _Required_: No
 
@@ -124,6 +140,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -131,6 +149,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WindowSize
+
+The period of time that is used to monitor alert activity, represented in ISO 8601 duration format. This value must be greater than `frequency`. Possible values are `PT1M`, `PT5M`, `PT15M`, `PT30M`, `PT1H`, `PT6H`, `PT12H` and `P1D`. Defaults to `PT5M`.
 
 _Required_: No
 

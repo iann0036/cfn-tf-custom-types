@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::ServicebusQueue",
-    "description": "CloudFormation equivalent of azurerm_servicebus_queue",
+    "description": "Manages a ServiceBus Queue.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,46 +29,60 @@
             "type": "string"
         },
         "AutoDeleteOnIdle": {
-            "type": "string"
+            "type": "string",
+            "description": "The ISO 8601 timespan duration of the idle interval after which the\nQueue is automatically deleted, minimum of 5 minutes."
         },
         "DeadLetteringOnMessageExpiration": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean flag which controls whether the Queue has dead letter support when a message expires. Defaults to `false`."
         },
         "DefaultMessageTtl": {
-            "type": "string"
+            "type": "string",
+            "description": "The ISO 8601 timespan duration of the TTL of messages sent to this\nqueue. This is the default value used when TTL is not set on message itself."
         },
         "DuplicateDetectionHistoryTimeWindow": {
-            "type": "string"
+            "type": "string",
+            "description": "The ISO 8601 timespan duration during which\nduplicates can be detected. Default value is 10 minutes. (`PT10M`)."
         },
         "EnableExpress": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean flag which controls whether Express Entities\nare enabled. An express queue holds a message in memory temporarily before writing\nit to persistent storage. Defaults to `false` for Basic and Standard. For Premium, it MUST\nbe set to `false`."
         },
         "EnablePartitioning": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean flag which controls whether to enable\nthe queue to be partitioned across multiple message brokers. Changing this forces\na new resource to be created. Defaults to `false` for Basic and Standard. For Premium, it MUST\nbe set to `true`."
         },
         "LockDuration": {
-            "type": "string"
+            "type": "string",
+            "description": "The ISO 8601 timespan duration of a peek-lock; that is, the amount of time that the message is locked for other receivers. Maximum value is 5 minutes. Defaults to 1 minute. (`PT1M`)."
         },
         "MaxDeliveryCount": {
-            "type": "number"
+            "type": "number",
+            "description": "Integer value which controls when a message is automatically deadlettered. Defaults to `10`."
         },
         "MaxSizeInMegabytes": {
-            "type": "number"
+            "type": "number",
+            "description": "Integer value which controls the size of\nmemory allocated for the queue. For supported values see the \"Queue/topic size\"\nsection of [this document](https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-quotas)."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the ServiceBus Queue resource. Changing this forces a\nnew resource to be created."
         },
         "NamespaceName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the ServiceBus Namespace to create\nthis queue in. Changing this forces a new resource to be created."
         },
         "RequiresDuplicateDetection": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean flag which controls whether\nthe Queue requires duplicate detection. Changing this forces\na new resource to be created. Defaults to `false`."
         },
         "RequiresSession": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean flag which controls whether the Queue requires sessions.\nThis will allow ordered handling of unbounded sequences of related messages. With sessions enabled\na queue can guarantee first-in-first-out delivery of messages.\nChanging this forces a new resource to be created. Defaults to `false`."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to\ncreate the namespace. Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

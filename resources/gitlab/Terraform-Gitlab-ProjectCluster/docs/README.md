@@ -1,6 +1,8 @@
 # Terraform::Gitlab::ProjectCluster
 
-CloudFormation equivalent of gitlab_project_cluster
+This resource allows you to create and manage project clusters for your GitLab projects.
+For further information on clusters, consult the [gitlab
+documentation](https://docs.gitlab.com/ce/user/project/clusters/index.html).
 
 ## Syntax
 
@@ -49,6 +51,8 @@ Properties:
 
 #### Domain
 
+The base domain of the cluster.
+
 _Required_: No
 
 _Type_: String
@@ -56,6 +60,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Enabled
+
+Determines if cluster is active or not. Defaults to `true`. This attribute cannot be read.
 
 _Required_: No
 
@@ -65,6 +71,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnvironmentScope
 
+The associated environment to the cluster. Defaults to `*`.
+
 _Required_: No
 
 _Type_: String
@@ -72,6 +80,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KubernetesApiUrl
+
+The URL to access the Kubernetes API.
 
 _Required_: Yes
 
@@ -81,6 +91,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KubernetesAuthorizationType
 
+The cluster authorization type. Valid values are `rbac`, `abac`, `unknown_authorization`. Defaults to `rbac`.
+
 _Required_: No
 
 _Type_: String
@@ -88,6 +100,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KubernetesCaCert
+
+TLS certificate (needed if API is using a self-signed TLS certificate).
 
 _Required_: No
 
@@ -97,6 +111,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KubernetesNamespace
 
+The unique namespace related to the project.
+
 _Required_: No
 
 _Type_: String
@@ -104,6 +120,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KubernetesToken
+
+The token to authenticate against Kubernetes.
 
 _Required_: Yes
 
@@ -113,6 +131,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Managed
 
+Determines if cluster is managed by gitlab or not. Defaults to `true`. This attribute cannot be read.
+
 _Required_: No
 
 _Type_: Boolean
@@ -121,6 +141,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of cluster.
+
 _Required_: Yes
 
 _Type_: String
@@ -128,6 +150,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The id of the project to add the cluster to.
 
 _Required_: Yes
 

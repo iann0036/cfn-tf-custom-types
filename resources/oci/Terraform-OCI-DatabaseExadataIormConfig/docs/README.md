@@ -1,6 +1,6 @@
 # Terraform::OCI::DatabaseExadataIormConfig
 
-CloudFormation equivalent of oci_database_exadata_iorm_config
+This resource provides the Exadata Iorm Config resource in Oracle Cloud Infrastructure Database service.
 
 ## Syntax
 
@@ -36,6 +36,8 @@ Properties:
 
 #### DbSystemId
 
+The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+
 _Required_: Yes
 
 _Type_: String
@@ -43,6 +45,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Objective
+
+Value for the IORM objective Default is "Auto".
 
 _Required_: No
 

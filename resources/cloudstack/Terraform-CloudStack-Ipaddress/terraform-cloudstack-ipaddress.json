@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::CloudStack::Ipaddress",
-    "description": "CloudFormation equivalent of cloudstack_ipaddress",
+    "description": "Acquires and associates a public IP.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,19 +12,24 @@
             "type": "string"
         },
         "IsPortable": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "This determines if the IP address should be transferable\nacross zones (defaults false)."
         },
         "NetworkId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the network for which an IP address should\nbe acquired and associated. Changing this forces a new resource to be created."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or ID of the project to deploy this\ninstance to. Changing this forces a new resource to be created."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the VPC for which an IP address should be\nacquired and associated. Changing this forces a new resource to be created."
         },
         "Zone": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or ID of the zone for which an IP address should be\nacquired and associated. Changing this forces a new resource to be created."
         }
     },
     "additionalProperties": false,

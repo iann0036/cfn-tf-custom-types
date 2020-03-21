@@ -1,6 +1,14 @@
 # Terraform::Heroku::AppConfigAssociation
 
-CloudFormation equivalent of heroku_app_config_association
+Provides a Heroku App Config Association resource, making it possible to set/update/remove heroku app config vars independently from
+the `heroku_app` resource. An example usage scenario could be:
+
+* User has separate git repositories for various micro-services. Multiple micro-services use Kafka.
+* User has a separate repository for kafka terraform files with blue/green support.
+* User builds out new clusters.
+* Prior to this resource's introduction, user would need one `terraform apply` to update state and X number of `terraform apply`
+for each micro-service to pick up the new kafka clusters. However with this resource, user can do one `terraform apply`
+and let Heroku handle the rolling restarts to pick up the new config vars.
 
 ## Syntax
 
@@ -35,6 +43,8 @@ Properties:
 
 #### AppId
 
+A Heroku app's `UUID`. Can also be the name of the Heroku app but `UUID` is preferred as it is idempotent.
+
 _Required_: Yes
 
 _Type_: String
@@ -43,6 +53,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SensitiveVars
 
+This is the same as `vars`. The main difference between the two
+attributes is `sensitive_vars` outputs are redacted on-screen and replaced by a <sensitive> placeholder, following a terraform
+plan or apply. It is recommended to put private keys, passwords, etc in this argument.
+
 _Required_: No
 
 _Type_: List of <a href="sensitivevars.md">SensitiveVars</a>
@@ -50,6 +64,8 @@ _Type_: List of <a href="sensitivevars.md">SensitiveVars</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vars
+
+Map of config vars that are output in plaintext.
 
 _Required_: No
 

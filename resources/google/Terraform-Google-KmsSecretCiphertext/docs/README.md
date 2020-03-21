@@ -1,6 +1,19 @@
 # Terraform::Google::KmsSecretCiphertext
 
-CloudFormation equivalent of google_kms_secret_ciphertext
+Encrypts secret data with Google Cloud KMS and provides access to the ciphertext.
+
+
+~> **NOTE**: Using this resource will allow you to conceal secret data within your
+resource definitions, but it does not take care of protecting that data in the
+logging output, plan output, or state output.  Please take care to secure your secret
+data outside of resource definitions.
+
+
+To get more information about SecretCiphertext, see:
+
+* [API documentation](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys/encrypt)
+* How-to Guides
+    * [Encrypting and decrypting data with a symmetric key](https://cloud.google.com/kms/docs/encrypt-decrypt)
 
 ## Syntax
 

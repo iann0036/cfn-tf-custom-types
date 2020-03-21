@@ -1,6 +1,14 @@
 # Terraform::OCI::KmsKeyVersion
 
-CloudFormation equivalent of oci_kms_key_version
+This resource provides the Key Version resource in Oracle Cloud Infrastructure Kms service.
+
+Generates a new [KeyVersion](https://docs.cloud.oracle.com/iaas/api/#/en/key/release/KeyVersion/) resource that provides new cryptographic
+material for a master encryption key. The key must be in an ENABLED state to be rotated.
+
+As a management operation, this call is subject to a Key Management limit that applies to the total number 
+of requests across all  management write operations. Key Management might throttle this call to reject an 
+otherwise valid request when the total rate of management write operations exceeds 10 requests per second 
+for a given tenancy.
 
 ## Syntax
 
@@ -35,6 +43,8 @@ Properties:
 
 #### KeyId
 
+The OCID of the key.
+
 _Required_: Yes
 
 _Type_: String
@@ -43,6 +53,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ManagementEndpoint
 
+The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +62,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TimeOfDeletion
+
+(Updatable) An optional property for the deletion time of the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`.
 
 _Required_: No
 

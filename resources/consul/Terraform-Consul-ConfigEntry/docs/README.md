@@ -1,6 +1,8 @@
 # Terraform::Consul::ConfigEntry
 
-CloudFormation equivalent of consul_config_entry
+The [Configuration Entry](https://www.consul.io/docs/agent/config_entries.html)
+resource can be used to provide cluster-wide defaults for various aspects of
+Consul.
 
 ## Syntax
 
@@ -33,6 +35,8 @@ Properties:
 
 #### ConfigJson
 
+An arbitrary map of configuration values.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +45,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Kind
 
+The kind of configuration entry to register.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the configuration entry being registred.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureStack::StorageContainer",
-    "description": "CloudFormation equivalent of azurestack_storage_container",
+    "description": "Manages an Azure Storage Container.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "ContainerAccessType": {
-            "type": "string"
+            "type": "string",
+            "description": "The 'interface' for access the container provides. Can be either `blob`, `container` or `private`. Defaults to `private`. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the storage container. Must be unique within the storage service the container is located."
         },
         "Properties": {
             "type": "array",
@@ -35,10 +37,12 @@
             }
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to\ncreate the storage container. Changing this forces a new resource to be created."
         },
         "StorageAccountName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the storage account in which to create the storage container.\nChanging this forces a new resource to be created."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,15 @@
 # Terraform::Alicloud::MongodbShardingInstance
 
-CloudFormation equivalent of alicloud_mongodb_sharding_instance
+Provides a MongoDB sharding instance resource supports replica set instances only. the MongoDB provides stable, reliable, and automatic scalable database services. 
+It offers a full range of database solutions, such as disaster recovery, backup, recovery, monitoring, and alarms.
+You can see detail product introduction [here](https://www.alibabacloud.com/help/doc-detail/26558.htm)
+
+-> **NOTE:**  Available in 1.40.0+
+
+-> **NOTE:**  The following regions don't support create Classic network MongoDB sharding instance.
+[`cn-zhangjiakou`,`cn-huhehaote`,`ap-southeast-2`,`ap-southeast-3`,`ap-southeast-5`,`ap-south-1`,`me-east-1`,`ap-northeast-1`,`eu-west-1`] 
+
+-> **NOTE:**  Create MongoDB Sharding instance or change instance type and storage would cost 10~20 minutes. Please make full preparation
 
 ## Syntax
 
@@ -62,6 +71,8 @@ Properties:
 
 #### AccountPassword
 
+Password of the root account. It is a string of 6 to 32 characters and is composed of letters, numbers, and underlines.
+
 _Required_: No
 
 _Type_: String
@@ -69,6 +80,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BackupPeriod
+
+MongoDB Instance backup period. It is required when `backup_time` was existed. Valid values: [Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday]. Default to [Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday].
 
 _Required_: No
 
@@ -78,6 +91,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### BackupTime
 
+MongoDB instance backup time. It is required when `backup_period` was existed. In the format of HH:mmZ- HH:mmZ. Time setting interval is one hour. If not set, the system will return a default, like "23:00Z-24:00Z".
+
 _Required_: No
 
 _Type_: String
@@ -85,6 +100,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EngineVersion
+
+Database version. Value options can refer to the latest docs [CreateDBInstance](https://www.alibabacloud.com/help/zh/doc-detail/61884.htm) `EngineVersion`.
 
 _Required_: Yes
 
@@ -94,6 +111,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceChargeType
 
+Valid values are `PrePaid`, `PostPaid`,System default to `PostPaid`.
+
 _Required_: No
 
 _Type_: String
@@ -101,6 +120,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KmsEncryptedPassword
+
+An KMS encrypts password used to a instance. If the `account_password` is filled in, this field will be ignored.
 
 _Required_: No
 
@@ -110,6 +131,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KmsEncryptionContext
 
+An KMS encryption context used to decrypt `kms_encrypted_password` before creating or updating instance with `kms_encrypted_password`. See [Encryption Context](https://www.alibabacloud.com/help/doc-detail/42975.htm). It is valid when `kms_encrypted_password` is set.
+
 _Required_: No
 
 _Type_: List of <a href="kmsencryptioncontext.md">KmsEncryptionContext</a>
@@ -117,6 +140,8 @@ _Type_: List of <a href="kmsencryptioncontext.md">KmsEncryptionContext</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of DB instance. It a string of 2 to 256 characters.
 
 _Required_: No
 
@@ -126,6 +151,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Period
 
+The duration that you will buy DB instance (in month). It is valid when instance_charge_type is `PrePaid`. Valid values: [1~9], 12, 24, 36. System default to 1.
+
 _Required_: No
 
 _Type_: Double
@@ -133,6 +160,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecurityIpList
+
+List of IP addresses allowed to access all databases of an instance. The list contains up to 1,000 IP addresses, separated by commas. Supported formats include 0.0.0.0/0, 10.23.12.24 (IP), and 10.23.12.24/24 (Classless Inter-Domain Routing (CIDR) mode. /24 represents the length of the prefix in an IP address. The range of the prefix length is [1,32]). System default to `["127.0.0.1"]`.
 
 _Required_: No
 
@@ -150,6 +179,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VswitchId
 
+The virtual switch ID to launch DB instances in one VPC.
+
 _Required_: No
 
 _Type_: String
@@ -157,6 +188,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneId
+
+The Zone to launch the DB instance. MongoDB sharding instance does not support multiple-zone.
+If it is a multi-zone and `vswitch_id` is specified, the vswitch must in one of them.
 
 _Required_: No
 

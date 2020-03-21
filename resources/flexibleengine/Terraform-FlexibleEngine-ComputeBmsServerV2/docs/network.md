@@ -32,6 +32,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### AccessNetwork
 
+Specifies if this network should be used for
+provisioning access. Accepts true or false. Defaults to false.
+
 _Required_: No
 
 _Type_: Boolean
@@ -39,6 +42,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FixedIpV4
+
+Specifies a fixed IPv4 address to be used on this
+network. Changing this creates a new bms server.
 
 _Required_: No
 
@@ -48,6 +54,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FixedIpV6
 
+Specifies a fixed IPv6 address to be used on this
+network. Changing this creates a new bms server.
+
 _Required_: No
 
 _Type_: String
@@ -55,6 +64,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The human-readable
+name of the network. Changing this creates a new bms server.
 
 _Required_: No
 
@@ -64,6 +76,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Port
 
+The port UUID of a
+network to attach to the bms server. Changing this creates a new server.
+
 _Required_: No
 
 _Type_: String
@@ -71,6 +86,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Uuid
+
+The network UUID to
+attach to the bms server. Changing this creates a new bms server.
 
 _Required_: No
 

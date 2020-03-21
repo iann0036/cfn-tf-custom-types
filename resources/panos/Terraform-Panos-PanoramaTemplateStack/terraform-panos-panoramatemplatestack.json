@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::PanoramaTemplateStack",
-    "description": "CloudFormation equivalent of panos_panorama_template_stack",
+    "description": "This resource allows you to add/update/delete Panorama template stacks.\n\nThis resource has some overlap with the `panos_panorama_template_stack_entry`\nresource.  If you want to use this resource with the other one, then make\nsure that your `panos_panorama_template_stack` spec does not define any\n`device` blocks, and just stays as \"computed\".\n\nThis is the appropriate resource to use if `terraform destroy` should delete\nthe template stack.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,27 +9,32 @@
             "type": "string"
         },
         "DefaultVsys": {
-            "type": "string"
+            "type": "string",
+            "description": "The default virtual system template configuration\npushed to firewalls with a single virtual system.  **Note** - you can only\nset this if there is at least one template in this stack."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The stack's description."
         },
         "Devices": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of serial numbers to include in this stack."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The stack's name."
         },
         "Templates": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of templates in this stack."
         }
     },
     "additionalProperties": false,

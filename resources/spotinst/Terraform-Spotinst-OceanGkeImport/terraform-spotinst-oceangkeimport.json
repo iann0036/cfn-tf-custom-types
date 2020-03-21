@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Spotinst::OceanGkeImport",
-    "description": "CloudFormation equivalent of spotinst_ocean_gke_import",
+    "description": "Provides a Spotinst Ocean GKE import resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "BackendServices": {
@@ -58,19 +58,24 @@
             "type": "string"
         },
         "ClusterName": {
-            "type": "string"
+            "type": "string",
+            "description": "The GKE cluster name."
         },
         "DesiredCapacity": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of instances to launch and maintain in the cluster."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "The zone the master cluster is located in."
         },
         "MaxSize": {
-            "type": "number"
+            "type": "number",
+            "description": "The upper limit of instances the cluster can scale up to."
         },
         "MinSize": {
-            "type": "number"
+            "type": "number",
+            "description": "The lower limit of instances the cluster can scale down to."
         },
         "Whitelist": {
             "type": "array",

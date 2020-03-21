@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Icinga2::Notification",
-    "description": "CloudFormation equivalent of icinga2_notification",
+    "description": "Configures an Icinga2 notification resource. This allows notifications to be configured, updated,\nand deleted.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,19 @@
             "type": "string"
         },
         "Command": {
-            "type": "string"
+            "type": "string",
+            "description": "Notification command to use."
         },
         "Hostname": {
-            "type": "string"
+            "type": "string",
+            "description": "The hostname the notification applies to."
         },
         "Interval": {
             "type": "number"
         },
         "Servicename": {
-            "type": "string"
+            "type": "string",
+            "description": "Service to send notification for."
         },
         "Templates": {
             "type": "array",
@@ -32,7 +35,8 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of users to notification."
         },
         "Vars": {
             "type": "array",

@@ -28,6 +28,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### NoPublicIp
 
+Are public IP Addresses not allowed?.
+
 _Required_: No
 
 _Type_: Boolean
@@ -35,6 +37,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PrivateSubnetName
+
+The name of the Private Subnet within the Virtual Network. Required if `virtual_network_id` is set.
 
 _Required_: No
 
@@ -44,6 +48,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PublicSubnetName
 
+The name of the Public Subnet within the Virtual Network. Required if `virtual_network_id` is set.
+
 _Required_: No
 
 _Type_: String
@@ -51,6 +57,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VirtualNetworkId
+
+The ID of a Virtual Network where this Databricks Cluster should be created.
 
 _Required_: No
 

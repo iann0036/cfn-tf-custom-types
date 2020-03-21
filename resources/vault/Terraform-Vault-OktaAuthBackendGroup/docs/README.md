@@ -1,6 +1,7 @@
 # Terraform::Vault::OktaAuthBackendGroup
 
-CloudFormation equivalent of vault_okta_auth_backend_group
+Provides a resource to create a group in an
+[Okta auth backend within Vault](https://www.vaultproject.io/docs/auth/okta.html).
 
 ## Syntax
 
@@ -34,6 +35,8 @@ Properties:
 
 #### GroupName
 
+Name of the group within the Okta.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +45,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Path
 
+The path where the Okta auth backend is mounted.
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Policies
+
+Vault policies to associate with this group.
 
 _Required_: No
 

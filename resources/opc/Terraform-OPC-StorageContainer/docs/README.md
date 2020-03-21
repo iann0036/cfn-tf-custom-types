@@ -1,6 +1,7 @@
 # Terraform::OPC::StorageContainer
 
-CloudFormation equivalent of opc_storage_container
+Creates and manages a Container in the Oracle Cloud Infrastructure Storage Classic service. `storage_endpoint` must be set in the
+provider or environment to manage these resources.
 
 ## Syntax
 
@@ -54,6 +55,8 @@ Properties:
 
 #### AllowedOrigins
 
+List of origins that are allowed to make cross-origin requests.
+
 _Required_: No
 
 _Type_: List of String
@@ -61,6 +64,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ExposedHeaders
+
+List of headers exposed to the user agent (e.g. browser) in the actual request response.
 
 _Required_: No
 
@@ -70,6 +75,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxAge
 
+Maximum age in seconds for the origin to hold the preflight results.
+
 _Required_: No
 
 _Type_: Double
@@ -77,6 +84,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Metadata
+
+Additional object metadata headers. See [Container Metadata ](#container-metadata) below for more information.
 
 _Required_: No
 
@@ -86,6 +95,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the Storage Container.
+
 _Required_: Yes
 
 _Type_: String
@@ -93,6 +104,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PrimaryKey
+
+The primary secret key value for temporary URLs.
 
 _Required_: No
 
@@ -102,6 +115,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### QuotaBytes
 
+Maximum size of the container, in bytes.
+
 _Required_: No
 
 _Type_: Double
@@ -109,6 +124,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### QuotaCount
+
+Maximum object count of the container.
 
 _Required_: No
 
@@ -118,6 +135,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ReadAcls
 
+The list of ACLs that grant read access. See [Setting Container ACLs](#setting-container-acls).
+
 _Required_: No
 
 _Type_: List of String
@@ -126,6 +145,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecondaryKey
 
+The secondary secret key value for temporary URLs.
+
 _Required_: No
 
 _Type_: String
@@ -133,6 +154,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WriteAcls
+
+The list of ACLs that grant write access. See [Setting Container ACLs](#setting-container-acls).
 
 _Required_: No
 

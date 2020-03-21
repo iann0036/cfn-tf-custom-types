@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Datadog::LogsCustomPipeline",
-    "description": "CloudFormation equivalent of datadog_logs_custom_pipeline",
+    "description": "Provides a Datadog [Logs Pipeline API](https://docs.datadoghq.com/api/?lang=python#logs-pipelines) resource, which is used to create and manage Datadog logs custom pipelines.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Filter": {
@@ -525,10 +525,12 @@
             "type": "string"
         },
         "IsEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean value to enable your pipeline."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Your pipeline name."
         },
         "Filter": {
             "type": "array",

@@ -1,6 +1,8 @@
 # Terraform::VCD::InsertedMedia
 
-CloudFormation equivalent of vcd_inserted_media
+Provides a vCloud Director resource for inserting or ejecting media (ISO) file for the VM. Create this resource for inserting the media, and destroy it for ejecting.
+
+Supported in provider *v2.0+*
 
 ## Syntax
 
@@ -41,6 +43,8 @@ Properties:
 
 #### Catalog
 
+The name of the catalog where to find media file.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +52,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EjectForce
+
+Allows to pass answer to question in vCD
+"The guest operating system has locked the CD-ROM door and is probably using the CD-ROM.
+Disconnect anyway (and override the lock)?"
+when ejecting from a VM which is powered on. True means "Yes" as answer to question. Default is `true`.
 
 _Required_: No
 
@@ -57,6 +66,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Media file name in catalog which will be inserted to VM.
+
 _Required_: Yes
 
 _Type_: String
@@ -64,6 +75,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Org
+
+The name of organization to use, optional if defined at provider level. Useful when connected as sysadmin working across different organisations.
 
 _Required_: No
 
@@ -73,6 +86,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VappName
 
+- The name of vApp to find.
+
 _Required_: Yes
 
 _Type_: String
@@ -81,6 +96,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Vdc
 
+The name of VDC to use, optional if defined at provider level.
+
 _Required_: No
 
 _Type_: String
@@ -88,6 +105,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VmName
+
+- The name of VM to be used to insert media file.
 
 _Required_: Yes
 

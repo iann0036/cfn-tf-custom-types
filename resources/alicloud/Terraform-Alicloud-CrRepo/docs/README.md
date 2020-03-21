@@ -1,6 +1,10 @@
 # Terraform::Alicloud::CrRepo
 
-CloudFormation equivalent of alicloud_cr_repo
+This resource will help you to manager Container Registry repositories.
+
+-> **NOTE:** Available in v1.35.0+.
+
+-> **NOTE:** You need to set your registry password in Container Registry console before use this resource.
 
 ## Syntax
 
@@ -37,6 +41,8 @@ Properties:
 
 #### Detail
 
+The repository specific information. MarkDown format is supported, and the length limit is 2000.
+
 _Required_: No
 
 _Type_: String
@@ -44,6 +50,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of container registry repository.
 
 _Required_: Yes
 
@@ -53,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Namespace
 
+Name of container registry namespace where repository is located.
+
 _Required_: Yes
 
 _Type_: String
@@ -61,6 +71,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RepoType
 
+`PUBLIC` or `PRIVATE`, repo's visibility.
+
 _Required_: Yes
 
 _Type_: String
@@ -68,6 +80,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Summary
+
+The repository general information. It can contain 1 to 80 characters.
 
 _Required_: Yes
 

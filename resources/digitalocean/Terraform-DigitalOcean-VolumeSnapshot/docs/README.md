@@ -1,6 +1,6 @@
 # Terraform::DigitalOcean::VolumeSnapshot
 
-CloudFormation equivalent of digitalocean_volume_snapshot
+Provides a DigitalOcean Volume Snapshot which can be used to create a snapshot from an existing volume.
 
 ## Syntax
 
@@ -34,6 +34,8 @@ Properties:
 
 #### Name
 
+A name for the volume snapshot.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +44,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A list of the tags to be applied to this volume snapshot.
+
 _Required_: No
 
 _Type_: List of String
@@ -49,6 +53,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VolumeId
+
+The ID of the volume from which the volume snapshot originated.
 
 _Required_: Yes
 

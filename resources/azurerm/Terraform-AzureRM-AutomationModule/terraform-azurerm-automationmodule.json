@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::AutomationModule",
-    "description": "CloudFormation equivalent of azurerm_automation_module",
+    "description": "Manages a Automation Module.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ModuleLink": {
@@ -8,7 +8,8 @@
             "additionalProperties": false,
             "properties": {
                 "Uri": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The uri of the module content (zip or nupkg)."
                 },
                 "Hash": {
                     "type": "array",
@@ -64,13 +65,16 @@
             "type": "string"
         },
         "AutomationAccountName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the automation account in which the Module is created. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Module. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which the Module is created. Changing this forces a new resource to be created."
         },
         "ModuleLink": {
             "type": "array",

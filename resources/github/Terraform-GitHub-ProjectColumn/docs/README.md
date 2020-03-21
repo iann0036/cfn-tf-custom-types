@@ -1,6 +1,6 @@
 # Terraform::GitHub::ProjectColumn
 
-CloudFormation equivalent of github_project_column
+This resource allows you to create and manage columns for GitHub projects.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### Name
 
+The name of the column.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProjectId
+
+The ID of an existing project that the column will be created in.
 
 _Required_: Yes
 

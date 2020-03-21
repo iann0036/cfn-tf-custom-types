@@ -1,6 +1,6 @@
 # Terraform::AzureRM::ApiManagementApiOperationPolicy
 
-CloudFormation equivalent of azurerm_api_management_api_operation_policy
+Manages an API Management API Operation Policy
 
 ## Syntax
 
@@ -41,6 +41,8 @@ Properties:
 
 #### ApiManagementName
 
+The name of the API Management Service. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +50,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ApiName
+
+The ID of the API Management API Operation within the API Management Service. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -65,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the Resource Group in which the API Management Service exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -73,6 +79,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### XmlContent
 
+The XML Content for this Policy.
+
 _Required_: No
 
 _Type_: String
@@ -80,6 +88,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### XmlLink
+
+A link to a Policy XML Document, which must be publicly available.
 
 _Required_: No
 

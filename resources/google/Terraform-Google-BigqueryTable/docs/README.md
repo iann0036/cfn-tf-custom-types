@@ -1,6 +1,8 @@
 # Terraform::Google::BigqueryTable
 
-CloudFormation equivalent of google_bigquery_table
+Creates a table resource in a dataset for Google BigQuery. For more information see
+[the official documentation](https://cloud.google.com/bigquery/docs/) and
+[API](https://cloud.google.com/bigquery/docs/reference/rest/v2/tables).
 
 ## Syntax
 
@@ -65,6 +67,10 @@ Properties:
 
 #### Clustering
 
+Specifies column names to use for data clustering.
+Up to four top-level columns are allowed, and should be specified in
+descending priority order.
+
 _Required_: No
 
 _Type_: List of String
@@ -72,6 +78,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DatasetId
+
+The dataset ID to create the table in.
+Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -81,6 +90,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+The field description.
+
 _Required_: No
 
 _Type_: String
@@ -88,6 +99,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ExpirationTime
+
+The time when this table expires, in
+milliseconds since the epoch. If not present, the table will persist
+indefinitely. Expired tables will be deleted and their storage
+reclaimed.
 
 _Required_: No
 
@@ -97,6 +113,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FriendlyName
 
+A descriptive name for the table.
+
 _Required_: No
 
 _Type_: String
@@ -104,6 +122,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Labels
+
+A mapping of labels to assign to the resource.
 
 _Required_: No
 
@@ -113,6 +133,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Project
 
+The ID of the project in which the resource belongs. If it
+is not provided, the provider project is used.
+
 _Required_: No
 
 _Type_: String
@@ -121,6 +144,18 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Schema
 
+A JSON schema for the table. Schema is required
+for CSV and JSON formats and is disallowed for Google Cloud
+Bigtable, Cloud Datastore backups, and Avro formats when using
+external tables. For more information see the
+[BigQuery API documentation](https://cloud.google.com/bigquery/docs/reference/rest/v2/tables#resource).
+~>**NOTE**: Because this field expects a JSON string, any changes to the
+string will create a diff, even if the JSON itself hasn't changed.
+If the API returns a different value for the same schema, e.g. it
+switched the order of values or replaced `STRUCT` field type with `RECORD`
+field type, we currently cannot suppress the recurring diff this causes.
+As a workaround, we recommend using the schema as returned by the API.
+
 _Required_: No
 
 _Type_: String
@@ -128,6 +163,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TableId
+
+A unique ID for the resource.
+Changing this forces a new resource to be created.
 
 _Required_: Yes
 

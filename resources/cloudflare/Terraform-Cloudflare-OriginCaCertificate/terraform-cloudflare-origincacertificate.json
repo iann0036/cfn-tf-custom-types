@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Cloudflare::OriginCaCertificate",
-    "description": "CloudFormation equivalent of cloudflare_origin_ca_certificate",
+    "description": "Provides a Cloudflare Origin CA certificate used to protect traffic to your origin without involving a third party Certificate Authority.\n\n**This resource requires you use your Origin CA Key as the [`api_user_service_key`](../index.html#api_user_service_key).**",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,7 +12,8 @@
             "type": "string"
         },
         "Csr": {
-            "type": "string"
+            "type": "string",
+            "description": "The Certificate Signing Request. Must be newline-encoded."
         },
         "ExpiresOn": {
             "type": "string"
@@ -22,13 +23,16 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "An array of hostnames or wildcard names bound to the certificate."
         },
         "RequestType": {
-            "type": "string"
+            "type": "string",
+            "description": "The signature type desired on the certificate."
         },
         "RequestedValidity": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of days for which the certificate should be valid."
         }
     },
     "additionalProperties": false,

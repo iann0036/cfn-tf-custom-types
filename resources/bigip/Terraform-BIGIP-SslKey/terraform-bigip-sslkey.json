@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::BIGIP::SslKey",
-    "description": "CloudFormation equivalent of bigip_ssl_key",
+    "description": "`bigip_ssl_key` This resource will import SSL certificate key on BIG-IP LTM. \nCertificate key can be imported from certificate key files on the local disk, in PEM format",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "Content": {
-            "type": "string"
+            "type": "string",
+            "description": "Content of certificate key on Local Disk,path of SSL certificate key will be provided to terraform `file` function."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the SSL Certificate key to be Imported on to BIGIP."
         },
         "Partition": {
-            "type": "string"
+            "type": "string",
+            "description": "Partition on to SSL Certificate key to be imported."
         }
     },
     "additionalProperties": false,

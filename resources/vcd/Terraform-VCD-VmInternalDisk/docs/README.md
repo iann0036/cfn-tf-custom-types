@@ -1,6 +1,14 @@
 # Terraform::VCD::VmInternalDisk
 
-CloudFormation equivalent of vcd_vm_internal_disk
+This can be used to create, update and delete VM internal disks on already created VMs.
+
+~> **Note:** To adjust disk parameters when creating a new VM, please use [override_template_disk](/docs/providers/vcd/r/vapp_vm.html#override-template-disk).
+
+To manage disks which already exist inside a VM, please [import](#importing) them first.
+
+~> **Note:** Managing disks in VM is possible only when VDC fast provisioned is disabled.
+
+Supported in provider *v2.7+*
 
 ## Syntax
 
@@ -49,6 +57,8 @@ Properties:
 
 #### AllowVmReboot
 
+Powers off VM when changing any attribute of an IDE disk or unit/bus number of other disk types, after the change is complete VM is powered back on. Without this setting enabled, such changes on a powered-on VM would fail. Defaults to false.
+
 _Required_: No
 
 _Type_: Boolean
@@ -56,6 +66,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BusNumber
+
+The number of the SCSI or IDE controller itself.
 
 _Required_: Yes
 
@@ -65,6 +77,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### BusType
 
+The type of disk controller. Possible values: `ide`, `parallel`( LSI Logic Parallel SCSI), `sas`(LSI Logic SAS (SCSI)), `paravirtual`(Paravirtual (SCSI)), `sata`.
+
 _Required_: Yes
 
 _Type_: String
@@ -72,6 +86,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Iops
+
+Specifies the IOPS for the disk. Default is 0.
 
 _Required_: No
 
@@ -81,6 +97,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Org
 
+The name of organization to use, optional if defined at provider level. Useful when connected as sysadmin working across different organisations.
+
 _Required_: No
 
 _Type_: String
@@ -88,6 +106,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SizeInMb
+
+The size of the disk in MB.
 
 _Required_: Yes
 
@@ -97,6 +117,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StorageProfile
 
+Storage profile which overrides the VM default one.
+
 _Required_: No
 
 _Type_: String
@@ -104,6 +126,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UnitNumber
+
+The device number on the SCSI or IDE controller of the disk.
 
 _Required_: Yes
 
@@ -113,6 +137,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VappName
 
+The vAPP this VM internal disk belongs to.
+
 _Required_: Yes
 
 _Type_: String
@@ -121,6 +147,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Vdc
 
+The name of VDC to use, optional if defined at provider level.
+
 _Required_: No
 
 _Type_: String
@@ -128,6 +156,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VmName
+
+VM in vAPP in which internal disk is created.
 
 _Required_: Yes
 

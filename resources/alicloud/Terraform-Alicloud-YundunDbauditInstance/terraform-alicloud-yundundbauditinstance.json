@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::YundunDbauditInstance",
-    "description": "CloudFormation equivalent of alicloud_yundun_dbaudit_instance",
+    "description": "Cloud DBaudit instance resource (\"Yundun_dbaudit\" is the short term of this product).\n\n-> **NOTE:** The endpoint of bssopenapi used only support \"business.aliyuncs.com\" at present.\n\n-> **NOTE:** Available in 1.62.0+ .\n\n-> **NOTE:** In order to destroy Cloud DBaudit instance , users are required to apply for white list first",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,13 +23,16 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the instance. This name can have a string of 1 to 63 characters."
         },
         "Period": {
-            "type": "number"
+            "type": "number",
+            "description": "Duration for initially producing the instance. Valid values: [1~9], 12, 24, 36. Default to 12. At present, the provider does not support modify \"period\"."
         },
         "PlanCode": {
-            "type": "string"
+            "type": "string",
+            "description": "Plan code of the Cloud DBAudit to produce. (alpha.professional, alpha.basic, alpha.premium)."
         },
         "Tags": {
             "type": "array",
@@ -49,10 +52,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "VswitchId": {
-            "type": "string"
+            "type": "string",
+            "description": "vSwtich ID configured to audit."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

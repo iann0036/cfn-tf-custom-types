@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::CoreVolumeGroupBackup",
-    "description": "CloudFormation equivalent of oci_core_volume_group_backup",
+    "description": "This resource provides the Volume Group Backup resource in Oracle Cloud Infrastructure Core service.\n\nCreates a new backup volume group of the specified volume group.\nFor more information, see [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,7 +26,8 @@
             "type": "string"
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The OCID of the compartment that will contain the volume group backup. This parameter is optional, by default backup will be created in the same compartment and source volume group."
         },
         "DefinedTags": {
             "type": "array",
@@ -46,10 +47,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Operations.CostCenter\": \"42\"}`."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) A user-friendly name for the volume group backup. Does not have to be unique and it's changeable. Avoid entering confidential information."
         },
         "FreeformTags": {
             "type": "array",
@@ -69,7 +72,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
         },
         "SizeInGbs": {
             "type": "string"
@@ -87,7 +91,8 @@
             "type": "string"
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of backup to create. If omitted, defaults to incremental.\n* Allowed values are :\n* FULL\n* INCREMENTAL."
         },
         "UniqueSizeInGbs": {
             "type": "string"
@@ -103,7 +108,8 @@
             }
         },
         "VolumeGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the volume group that needs to be backed up."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

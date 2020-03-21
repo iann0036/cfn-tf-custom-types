@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::ComputeHealthCheck",
-    "description": "CloudFormation equivalent of google_compute_health_check",
+    "description": "Health Checks determine whether instances are responsive and able to do work.\nThey are an important part of a comprehensive load balancing configuration,\nas they enable monitoring instances behind load balancers.\n\nHealth Checks poll instances at a specified interval. Instances that\ndo not respond successfully to some number of probes in a row are marked\nas unhealthy. No new connections are sent to unhealthy instances,\nthough existing connections will continue. The health check will\ncontinue to poll unhealthy instances. If an instance later responds\nsuccessfully to some number of consecutive probes, it is marked\nhealthy again and can receive new connections.\n\n\nTo get more information about HealthCheck, see:\n\n* [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/healthChecks)\n* How-to Guides\n    * [Official Documentation](https://cloud.google.com/load-balancing/docs/health-checks)\n\n<div class = \"oics-button\" style=\"float: right; margin: 0 0 -15px\">\n  <a href=\"https://console.cloud.google.com/cloudshell/open?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fterraform-google-modules%2Fdocs-examples.git&cloudshell_working_dir=health_check_tcp&cloudshell_image=gcr.io%2Fgraphite-cloud-shell-images%2Fterraform%3Alatest&open_in_editor=main.tf&cloudshell_print=.%2Fmotd&cloudshell_tutorial=.%2Ftutorial.md\" target=\"_blank\">\n    <img alt=\"Open in Cloud Shell\" src=\"//gstatic.com/cloudssh/images/open-btn.svg\" style=\"max-height: 44px; margin: 32px auto; max-width: 100%;\">\n  </a>\n</div>",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Http2HealthCheck": {
@@ -175,7 +175,8 @@
             "type": "string"
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used."
         },
         "SelfLink": {
             "type": "string"

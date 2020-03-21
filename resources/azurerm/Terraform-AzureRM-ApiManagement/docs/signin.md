@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Enabled
 
+Should anonymous users be redirected to the sign in page?.
+
 _Required_: Yes
 
 _Type_: Boolean

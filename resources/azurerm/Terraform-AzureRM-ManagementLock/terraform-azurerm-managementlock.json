@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::ManagementLock",
-    "description": "CloudFormation equivalent of azurerm_management_lock",
+    "description": "Manages a Management Lock which is scoped to a Subscription, Resource Group or Resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,16 +29,20 @@
             "type": "string"
         },
         "LockLevel": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the Level to be used for this Lock. Possible values are `CanNotDelete` and `ReadOnly`. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Management Lock. Changing this forces a new resource to be created."
         },
         "Notes": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies some notes about the lock. Maximum of 512 characters. Changing this forces a new resource to be created."
         },
         "Scope": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the scope at which the Management Lock should be created. Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

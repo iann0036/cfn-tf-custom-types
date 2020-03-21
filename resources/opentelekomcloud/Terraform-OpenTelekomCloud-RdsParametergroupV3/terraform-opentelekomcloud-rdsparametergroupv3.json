@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenTelekomCloud::RdsParametergroupV3",
-    "description": "CloudFormation equivalent of opentelekomcloud_rds_parametergroup_v3",
+    "description": "Manages a V3 RDS parametergroup resource within OpenTelekomCloud.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Datastore": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The DB engine. Currently, MySQL, PostgreSQL, and Microsoft SQL Server are supported. The value is case-insensitive and can be mysql, postgresql, or sqlserver."
                 },
                 "Version": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the database version."
                 }
             },
             "required": [
@@ -70,10 +72,12 @@
             }
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The parameter group description. It contains a maximum of 256 characters and cannot contain the following special characters:>!<\"&'= the value is left blank by default."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The parameter group name. It contains a maximum of 64 characters."
         },
         "Values": {
             "type": "array",
@@ -93,7 +97,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Parameter group values key/value pairs defined by users based on the default parameter groups."
         },
         "Datastore": {
             "type": "array",

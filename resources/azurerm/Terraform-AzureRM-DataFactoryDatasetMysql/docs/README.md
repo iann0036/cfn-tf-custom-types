@@ -1,6 +1,6 @@
 # Terraform::AzureRM::DataFactoryDatasetMysql
 
-CloudFormation equivalent of azurerm_data_factory_dataset_mysql
+Manages a MySQL Dataset inside a Azure Data Factory.
 
 ## Syntax
 
@@ -55,6 +55,8 @@ Properties:
 
 #### AdditionalProperties
 
+A map of additional properties to associate with the Data Factory Dataset MySQL.
+
 _Required_: No
 
 _Type_: List of <a href="additionalproperties.md">AdditionalProperties</a>
@@ -62,6 +64,8 @@ _Type_: List of <a href="additionalproperties.md">AdditionalProperties</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Annotations
+
+List of tags that can be used for describing the Data Factory Dataset MySQL.
 
 _Required_: No
 
@@ -71,6 +75,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DataFactoryName
 
+The Data Factory name in which to associate the Dataset with. Changing this forces a new resource.
+
 _Required_: Yes
 
 _Type_: String
@@ -78,6 +84,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+The description for the Data Factory Dataset MySQL.
 
 _Required_: No
 
@@ -87,6 +95,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Folder
 
+The folder that this Dataset is in. If not specified, the Dataset will appear at the root level.
+
 _Required_: No
 
 _Type_: String
@@ -94,6 +104,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LinkedServiceName
+
+The Data Factory Linked Service name in which to associate the Dataset with.
 
 _Required_: Yes
 
@@ -103,6 +115,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the Data Factory Dataset MySQL. Changing this forces a new resource to be created. Must be globally unique. See the [Microsoft documentation](https://docs.microsoft.com/en-us/azure/data-factory/naming-rules) for all restrictions.
+
 _Required_: Yes
 
 _Type_: String
@@ -110,6 +124,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Parameters
+
+A map of parameters to associate with the Data Factory Dataset MySQL.
 
 _Required_: No
 
@@ -119,6 +135,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to create the Data Factory Dataset MySQL. Changing this forces a new resource.
+
 _Required_: Yes
 
 _Type_: String
@@ -126,6 +144,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TableName
+
+The table name of the Data Factory Dataset MySQL.
 
 _Required_: No
 

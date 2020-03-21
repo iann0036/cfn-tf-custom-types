@@ -1,6 +1,6 @@
 # Terraform::Panos::PanoramaApplicationSignature
 
-CloudFormation equivalent of panos_panorama_application_signature
+This resource allows you to add/update/delete Panorama application signatures.
 
 ## Syntax
 
@@ -57,6 +57,8 @@ Properties:
 
 #### ApplicationObject
 
+The applciation object for this signature.
+
 _Required_: Yes
 
 _Type_: String
@@ -64,6 +66,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Comment
+
+The description.
 
 _Required_: No
 
@@ -73,6 +77,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DeviceGroup
 
+The device group (default: `shared`).
+
 _Required_: No
 
 _Type_: String
@@ -80,6 +86,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The signature's name.
 
 _Required_: Yes
 
@@ -89,6 +97,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OrderedMatch
 
+Set to `false` to disable ordered matching
+(default: `true`).
+
 _Required_: No
 
 _Type_: Boolean
@@ -96,6 +107,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Scope
+
+The signature's scope.  Valid values are
+`transaction` (default) or `session`.
 
 _Required_: No
 

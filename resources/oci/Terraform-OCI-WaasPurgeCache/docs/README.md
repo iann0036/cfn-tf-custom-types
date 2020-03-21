@@ -1,6 +1,9 @@
 # Terraform::OCI::WaasPurgeCache
 
-CloudFormation equivalent of oci_waas_purge_cache
+This resource provides the Purge Cache resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
+
+Performs a purge of the cache for each specified resource. If no resources are passed, the cache for the entire Web Application Firewall will be purged.
+For more information, see [Caching Rules](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/cachingrules.htm#purge).
 
 ## Syntax
 
@@ -34,6 +37,8 @@ Properties:
 
 #### Resources
 
+A resource to purge, specified by either a hostless absolute path starting with a single slash (Example: `/path/to/resource`) or by a relative path in which the first component will be interpreted as a domain protected by the WAAS policy (Example: `example.com/path/to/resource`).
+
 _Required_: No
 
 _Type_: List of String
@@ -41,6 +46,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WaasPolicyId
+
+The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
 
 _Required_: Yes
 

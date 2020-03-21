@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::NetworkSecurityGroup",
-    "description": "CloudFormation equivalent of azurerm_network_security_group",
+    "description": "Manages a network security group that contains a list of network security rules.  Network security groups enable inbound or outbound traffic to be enabled or denied.\n\n~> **NOTE on Network Security Groups and Network Security Rules:** Terraform currently\nprovides both a standalone [Network Security Rule resource](network_security_rule.html), and allows for Network Security Rules to be defined in-line within the [Network Security Group resource](network_security_group.html).\nAt this time you cannot use a Network Security Group with in-line Network Security Rules in conjunction with any Network Security Rule resources. Doing so will cause a conflict of rule settings and will overwrite rules.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,13 +29,16 @@
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the network security group. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the network security group. Changing this forces a new resource to be created."
         },
         "SecurityRule": {
             "type": "array",
@@ -117,7 +120,8 @@
                         }
                     }
                 }
-            }
+            },
+            "description": "[List of objects](/docs/configuration/attr-as-blocks.html) representing security rules, as defined below."
         },
         "Tags": {
             "type": "array",
@@ -137,7 +141,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

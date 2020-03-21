@@ -1,6 +1,8 @@
 # Terraform::PostgreSQL::Schema
 
-CloudFormation equivalent of postgresql_schema
+The ``postgresql_schema`` resource creates and manages [schema
+objects](https://www.postgresql.org/docs/current/static/ddl-schemas.html) within
+a PostgreSQL database.
 
 ## Syntax
 
@@ -40,6 +42,8 @@ Properties:
 
 #### Database
 
+The DATABASE in which where this schema will be created. (Default: The database used by your `provider` configuration).
+
 _Required_: No
 
 _Type_: String
@@ -47,6 +51,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DropCascade
+
+When true, will also drop all the objects that are contained in the schema. (Default: false).
 
 _Required_: No
 
@@ -56,6 +62,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IfNotExists
 
+When true, use the existing schema if it exists. (Default: true).
+
 _Required_: No
 
 _Type_: Boolean
@@ -64,6 +72,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the schema. Must be unique in the PostgreSQL
+database instance where it is configured.
+
 _Required_: Yes
 
 _Type_: String
@@ -71,6 +82,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Owner
+
+The ROLE who owns the schema.
 
 _Required_: No
 

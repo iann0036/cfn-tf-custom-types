@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Netlify::Hook",
-    "description": "CloudFormation equivalent of netlify_hook",
+    "description": "An [outgoing webhook](https://www.netlify.com/docs/webhooks/#outgoing-webhooks-and-notifications), typically used to notify a third party service about deploys.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -26,16 +26,20 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "object/hash of data to be sent along with the webhook. this varies depending on the `type`."
         },
         "Event": {
-            "type": "string"
+            "type": "string",
+            "description": "- when to send the data, for example on deploy create, succeed, fail, etc."
         },
         "SiteId": {
-            "type": "string"
+            "type": "string",
+            "description": "- id of the site on netlify."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "- type of outgoing webhook, for example slack, email, github commit status, etc."
         }
     },
     "additionalProperties": false,

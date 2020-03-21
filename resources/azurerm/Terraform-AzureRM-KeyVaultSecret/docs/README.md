@@ -1,6 +1,9 @@
 # Terraform::AzureRM::KeyVaultSecret
 
-CloudFormation equivalent of azurerm_key_vault_secret
+Manages a Key Vault Secret.
+
+~> **Note:** All arguments including the secret value will be stored in the raw state as plain-text.
+[Read more about sensitive data in state](/docs/state/sensitive-data.html).
 
 ## Syntax
 
@@ -44,6 +47,8 @@ Properties:
 
 #### ContentType
 
+Specifies the content type for the Key Vault Secret.
+
 _Required_: No
 
 _Type_: String
@@ -51,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ExpirationDate
+
+Expiration UTC datetime (Y-m-d'T'H:M:S'Z').
 
 _Required_: No
 
@@ -60,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KeyVaultId
 
+The ID of the Key Vault where the Secret should be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -67,6 +76,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the Key Vault Secret. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -76,6 +87,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NotBeforeDate
 
+Key not usable before the provided UTC datetime (Y-m-d'T'H:M:S'Z').
+
 _Required_: No
 
 _Type_: String
@@ -84,6 +97,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -91,6 +106,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Value
+
+Specifies the value of the Key Vault Secret.
 
 _Required_: Yes
 

@@ -1,6 +1,8 @@
 # Terraform::OCI::CoreRouteTableAttachment
 
-CloudFormation equivalent of oci_core_route_table_attachment
+This resource provides the ability to associate a route table for a subnet in Oracle Cloud Infrastructure Core service.
+
+Attaches the specified `route table` to the specified `subnet`.
 
 ## Syntax
 
@@ -33,6 +35,8 @@ Properties:
 
 #### RouteTableId
 
+The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table.
+
 _Required_: Yes
 
 _Type_: String
@@ -40,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubnetId
+
+The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
 
 _Required_: Yes
 

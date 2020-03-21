@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::CloudStack::Nic",
-    "description": "CloudFormation equivalent of cloudstack_nic",
+    "description": "Creates an additional NIC to add a VM to the specified network.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "IpAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "The IP address to assign to the NIC. Changing this\nforces a new resource to be created."
         },
         "NetworkId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the network to plug the NIC into. Changing\nthis forces a new resource to be created."
         },
         "VirtualMachineId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the virtual machine to which to\nattach the NIC. Changing this forces a new resource to be created."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 # Terraform::FlexibleEngine::SdrsDrillV1
 
-CloudFormation equivalent of flexibleengine_sdrs_drill_v1
+Manages a Disaster Recovery Drill resource within FlexibleEngine.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### DrillVpcId
 
+Specifies the ID used for a DR drill. Changing this creates a new drill.
+
 _Required_: Yes
 
 _Type_: String
@@ -45,6 +47,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GroupId
 
+Specifies the ID of a protection group. Changing this creates a new drill.
+
 _Required_: Yes
 
 _Type_: String
@@ -52,6 +56,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of a DR drill. The name can contain a maximum of 64 bytes.
+The value can contain only letters (a to z and A to Z), digits (0 to 9), decimal points (.),
+underscores (_), and hyphens (-).
 
 _Required_: Yes
 

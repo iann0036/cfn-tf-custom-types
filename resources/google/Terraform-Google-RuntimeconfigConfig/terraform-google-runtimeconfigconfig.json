@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::RuntimeconfigConfig",
-    "description": "CloudFormation equivalent of google_runtimeconfig_config",
+    "description": "Manages a RuntimeConfig resource in Google Cloud. For more information, see the\n[official documentation](https://cloud.google.com/deployment-manager/runtime-configurator/),\nor the\n[JSON API](https://cloud.google.com/deployment-manager/runtime-configurator/reference/rest/).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description to associate with the runtime\nconfig."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the runtime config."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used."
         }
     },
     "additionalProperties": false,

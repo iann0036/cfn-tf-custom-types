@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Vault::RgpPolicy",
-    "description": "CloudFormation equivalent of vault_rgp_policy",
+    "description": "Provides a resource to manage Role Governing Policy (RGP) via [Sentinel](https://www.vaultproject.io/docs/enterprise/sentinel/index.html).\n\n**Note** this feature is available only with Vault Enterprise.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "EnforcementLevel": {
-            "type": "string"
+            "type": "string",
+            "description": "Enforcement level of Sentinel policy. Can be either `advisory` or `soft-mandatory` or `hard-mandatory`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the policy."
         },
         "Policy": {
-            "type": "string"
+            "type": "string",
+            "description": "String containing a Sentinel policy."
         }
     },
     "additionalProperties": false,

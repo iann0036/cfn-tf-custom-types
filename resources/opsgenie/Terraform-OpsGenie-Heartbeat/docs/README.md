@@ -1,6 +1,6 @@
 # Terraform::OpsGenie::Heartbeat
 
-CloudFormation equivalent of opsgenie_heartbeat
+Manages heartbeat within Opsgenie.
 
 ## Syntax
 
@@ -46,6 +46,8 @@ Properties:
 
 #### AlertMessage
 
+Specifies the alert message for heartbeat expiration alert. If this is not provided, default alert message is "HeartbeatName is expired".
+
 _Required_: No
 
 _Type_: String
@@ -53,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AlertPriority
+
+Specifies the alert priority for heartbeat expiration alert. If this is not provided, default priority is P3.
 
 _Required_: No
 
@@ -62,6 +66,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AlertTags
 
+Specifies the alert tags for heartbeat expiration alert.
+
 _Required_: No
 
 _Type_: List of String
@@ -69,6 +75,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+An optional description of the heartbeat.
 
 _Required_: No
 
@@ -78,6 +86,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Enabled
 
+Enable/disable heartbeat monitoring.
+
 _Required_: Yes
 
 _Type_: Boolean
@@ -85,6 +95,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Interval
+
+Specifies how often a heartbeat message should be expected.
 
 _Required_: Yes
 
@@ -94,6 +106,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IntervalUnit
 
+Interval specified as minutes, hours or days.
+
 _Required_: Yes
 
 _Type_: String
@@ -102,6 +116,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name of the heartbeat.
+
 _Required_: Yes
 
 _Type_: String
@@ -109,6 +125,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OwnerTeamId
+
+Owner team of the heartbeat.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Cobbler::Profile",
-    "description": "CloudFormation equivalent of cobbler_profile",
+    "description": "Manages a Profile within Cobbler.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,120 +9,152 @@
             "type": "string"
         },
         "BootFiles": {
-            "type": "string"
+            "type": "string",
+            "description": "Files copied into tftpboot beyond the\nkernel/initrd."
         },
         "Comment": {
-            "type": "string"
+            "type": "string",
+            "description": "Free form text description."
         },
         "Distro": {
-            "type": "string"
+            "type": "string",
+            "description": "Parent distribution."
         },
         "EnableGpxe": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Use gPXE instead of PXELINUX for\nadvanced booting options."
         },
         "EnableMenu": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable a boot menu."
         },
         "FetchableFiles": {
-            "type": "string"
+            "type": "string",
+            "description": "Templates for tftp or wget."
         },
         "KernelOptions": {
-            "type": "string"
+            "type": "string",
+            "description": "Kernel options for the profile."
         },
         "KernelOptionsPost": {
-            "type": "string"
+            "type": "string",
+            "description": "Post install kernel options."
         },
         "Kickstart": {
-            "type": "string"
+            "type": "string",
+            "description": "The kickstart file to use."
         },
         "KsMeta": {
-            "type": "string"
+            "type": "string",
+            "description": "Kickstart metadata."
         },
         "MgmtClasses": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "For external configuration management."
         },
         "MgmtParameters": {
-            "type": "string"
+            "type": "string",
+            "description": "Parameters which will be handed to\nyour management application (Must be a valid YAML dictionary)."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the profile."
         },
         "NameServers": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Name servers."
         },
         "NameServersSearch": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Name server search settings."
         },
         "Owners": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Owners list for authz_ownership."
         },
         "Parent": {
-            "type": "string"
+            "type": "string",
+            "description": "The parent this profile inherits settings from."
         },
         "Proxy": {
-            "type": "string"
+            "type": "string",
+            "description": "Proxy URL."
         },
         "RedhatManagementKey": {
-            "type": "string"
+            "type": "string",
+            "description": "Red Hat Management Key."
         },
         "RedhatManagementServer": {
-            "type": "string"
+            "type": "string",
+            "description": "RedHat Management Server."
         },
         "Repos": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Repos to auto-assign to this profile."
         },
         "Server": {
-            "type": "string"
+            "type": "string",
+            "description": "The server-override for the profile."
         },
         "TemplateFiles": {
-            "type": "string"
+            "type": "string",
+            "description": "File mappings for built-in config\nmanagement."
         },
         "TemplateRemoteKickstarts": {
-            "type": "number"
+            "type": "number",
+            "description": "remote kickstart\ntemplates."
         },
         "VirtAutoBoot": {
-            "type": "string"
+            "type": "string",
+            "description": "Auto boot virtual machines."
         },
         "VirtBridge": {
-            "type": "string"
+            "type": "string",
+            "description": "The bridge for virtual machines."
         },
         "VirtCpus": {
-            "type": "string"
+            "type": "string",
+            "description": "The number of virtual CPUs."
         },
         "VirtDiskDriver": {
-            "type": "string"
+            "type": "string",
+            "description": "The virtual machine disk driver."
         },
         "VirtFileSize": {
-            "type": "string"
+            "type": "string",
+            "description": "The virtual machine file size."
         },
         "VirtPath": {
-            "type": "string"
+            "type": "string",
+            "description": "The virtual machine path."
         },
         "VirtRam": {
-            "type": "string"
+            "type": "string",
+            "description": "The amount of RAM for the virtual machine."
         },
         "VirtType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of virtual machine. Valid options\nare: xenpv, xenfv, qemu, kvm, vmware, openvz."
         }
     },
     "additionalProperties": false,

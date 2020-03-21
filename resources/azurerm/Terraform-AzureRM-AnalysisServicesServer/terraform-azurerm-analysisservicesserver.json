@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::AnalysisServicesServer",
-    "description": "CloudFormation equivalent of azurerm_analysis_services_server",
+    "description": "Manages an Analysis Services Server.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Ipv4FirewallRule": {
@@ -8,13 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the name of the firewall rule."
                 },
                 "RangeEnd": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "End of the firewall rule range as IPv4 address."
                 },
                 "RangeStart": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Start of the firewall rule range as IPv4 address."
                 }
             },
             "required": [
@@ -53,31 +56,39 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of email addresses of admin users."
         },
         "BackupBlobContainerUri": {
-            "type": "string"
+            "type": "string",
+            "description": "URI and SAS token for a blob container to store backups."
         },
         "EnablePowerBiService": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates if the Power BI service is allowed to access or not."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "The Azure location where the Analysis Services Server exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Analysis Services Server. Changing this forces a new resource to be created."
         },
         "QuerypoolConnectionMode": {
-            "type": "string"
+            "type": "string",
+            "description": "Controls how the read-write server is used in the query pool. If this values is set to `All` then read-write servers are also used for queries. Otherwise with `ReadOnly` these servers do not participate in query operations."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Resource Group in which the Analysis Services Server should be exist. Changing this forces a new resource to be created."
         },
         "ServerFullName": {
             "type": "string"
         },
         "Sku": {
-            "type": "string"
+            "type": "string",
+            "description": "SKU for the Analysis Services Server. Possible values are: `D1`, `B1`, `B2`, `S0`, `S1`, `S2`, `S4`, `S8` and `S9`."
         },
         "Tags": {
             "type": "array",

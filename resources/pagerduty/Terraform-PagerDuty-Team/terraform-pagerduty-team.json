@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::PagerDuty::Team",
-    "description": "CloudFormation equivalent of pagerduty_team",
+    "description": "A [team](https://v2.developer.pagerduty.com/v2/page/api-reference#!/Teams/get_teams) is a collection of users and escalation policies that represent a group of people within an organization.\n\nThe account must have the `teams` ability to use the following resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,15 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A human-friendly description of the team.\nIf not set, a placeholder of \"Managed by Terraform\" will be set."
         },
         "HtmlUrl": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the group.\n* `description` - (Optional) A human-friendly description of the team.\nIf not set, a placeholder of \"Managed by Terraform\" will be set."
         }
     },
     "additionalProperties": false,

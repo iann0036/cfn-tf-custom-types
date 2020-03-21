@@ -1,6 +1,7 @@
 # Terraform::Circonus::MetricCluster
 
-CloudFormation equivalent of circonus_metric_cluster
+The ``circonus_metric_cluster`` resource creates and manages a
+[Circonus Metric Cluster](https://login.circonus.com/user/docs/Data/View/MetricClusters).
 
 ## Syntax
 
@@ -37,6 +38,8 @@ Properties:
 
 #### Description
 
+A long-form description of the metric cluster.
+
 _Required_: No
 
 _Type_: String
@@ -45,6 +48,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the metric cluster.  This name must be unique
+across all metric clusters in a given Circonus Account.
+
 _Required_: Yes
 
 _Type_: String
@@ -52,6 +58,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A list of tags attached to the metric cluster.
 
 _Required_: No
 

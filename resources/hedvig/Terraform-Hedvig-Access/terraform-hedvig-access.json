@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Hedvig::Access",
-    "description": "CloudFormation equivalent of hedvig_access",
+    "description": "A Hedvig Access adds an address to an ACL of a controller of a vdisk. This allows for management of access resources.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,20 @@
             "type": "string"
         },
         "Address": {
-            "type": "string"
+            "type": "string",
+            "description": "The actual address that this Access is providing access to."
         },
         "Host": {
-            "type": "string"
+            "type": "string",
+            "description": "The fully qualified domain name of the controller this Access is associated with."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of address provided in `address`. Can be `host`, `ip` or `iqn`."
         },
         "Vdisk": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Vdisk that this Access is associated with."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpsGenie::TeamRoutingRule",
-    "description": "CloudFormation equivalent of opsgenie_team_routing_rule",
+    "description": "Manages a Team Routing Rule within Opsgenie.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Criteria": {
@@ -8,7 +8,8 @@
             "additionalProperties": false,
             "properties": {
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Type of the operation will be applied on conditions. Should be one of match-all, match-any-condition or match-all-conditions."
                 },
                 "Conditions": {
                     "type": "array",
@@ -27,13 +28,16 @@
             "additionalProperties": false,
             "properties": {
                 "Id": {
-                    "type": "string"
+                    "type": "string",
+                    "description": null
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": null
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": null
                 }
             },
             "required": [
@@ -74,19 +78,24 @@
                     "type": "string"
                 },
                 "Field": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies which alert field will be used in condition. Possible values are message, alias, description, source, entity, tags, actions, extra-properties, recipients, teams or priority."
                 },
                 "Key": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "If field is set as extra-properties, key could be used for key-value pair."
                 },
                 "Not": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates behaviour of the given operation. Default value is false."
                 },
                 "Operation": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "It is the operation that will be executed for the given field and key. Possible operations are matches, contains, starts-with, ends-with, equals, contains-key, contains-value, greater-than, less-than, is-empty and equals-ignore-whitespace."
                 },
                 "Order": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Order of the condition in conditions list."
                 }
             },
             "required": [
@@ -157,16 +166,19 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the team routing rule."
         },
         "Order": {
-            "type": "number"
+            "type": "number",
+            "description": "The order of the team routing rule within the rules. order value is actually the index of the team routing rule whose minimum value is 0 and whose maximum value is n-1 (number of team routing rules is n)."
         },
         "TeamId": {
             "type": "string"
         },
         "Timezone": {
-            "type": "string"
+            "type": "string",
+            "description": "Timezone of team routing rule. If timezone field is not given, account timezone is used as default.You can refer to Supported Locale IDs for available timezones."
         },
         "Criteria": {
             "type": "array",

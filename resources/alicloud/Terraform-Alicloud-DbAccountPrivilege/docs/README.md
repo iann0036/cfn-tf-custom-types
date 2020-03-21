@@ -1,6 +1,6 @@
 # Terraform::Alicloud::DbAccountPrivilege
 
-CloudFormation equivalent of alicloud_db_account_privilege
+Provides an RDS account privilege resource and used to grant several database some access privilege. A database can be granted by multiple account.
 
 ## Syntax
 
@@ -36,6 +36,8 @@ Properties:
 
 #### AccountName
 
+A specified account name.
+
 _Required_: Yes
 
 _Type_: String
@@ -43,6 +45,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DbNames
+
+List of specified database name.
 
 _Required_: Yes
 
@@ -52,6 +56,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceId
 
+The Id of instance in which account belongs.
+
 _Required_: Yes
 
 _Type_: String
@@ -59,6 +65,13 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Privilege
+
+The privilege of one account access database. Valid values:
+- ReadOnly: This value is only for MySQL, MariaDB and SQL Server
+- ReadWrite: This value is only for MySQL, MariaDB and SQL Server
+- DDLOnly: (Available in 1.64.0+) This value is only for MySQL and MariaDB
+- DMLOnly: (Available in 1.64.0+) This value is only for MySQL and MariaDB
+- DBOwner: (Available in 1.64.0+) This value is only for SQL Server and PostgreSQL.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::OpsGenie::UserContact
 
-CloudFormation equivalent of opsgenie_user_contact
+Manages a User Contact.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### Enabled
 
+Enable contact of the user in OpsGenie. Default value is true.
+
 _Required_: No
 
 _Type_: Boolean
@@ -42,6 +44,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Method
+
+This parameter is the contact method of user and should be one of email, sms or voice. Please note that adding mobile is not supported from API.
 
 _Required_: Yes
 
@@ -51,6 +55,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### To
 
+to field is the address of given method.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Username
+
+The username for contact.(reference).
 
 _Required_: Yes
 

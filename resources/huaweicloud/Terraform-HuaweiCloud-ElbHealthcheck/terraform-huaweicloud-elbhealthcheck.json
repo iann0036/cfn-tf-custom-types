@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HuaweiCloud::ElbHealthcheck",
-    "description": "CloudFormation equivalent of huaweicloud_elb_healthcheck",
+    "description": "Manages an elastic loadbalancer healthcheck resource within huawei cloud.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,28 +29,36 @@
             "type": "string"
         },
         "HealthcheckConnectPort": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the port used for the health\ncheck. The value ranges from 1 to 65535."
         },
         "HealthcheckInterval": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the maximum interval (s) for\nhealth check. The value ranges from 1 to 5."
         },
         "HealthcheckProtocol": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the protocol used for the health\ncheck. The value can be HTTP or TCP (case-insensitive)."
         },
         "HealthcheckTimeout": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the maximum timeout duration\n(s) for the health check. The value ranges from 1 to 50."
         },
         "HealthcheckUri": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the URI for health check. This parameter\nis valid when healthcheck_ protocol is HTTP. The value is a string of 1 to 80\ncharacters that must start with a slash (/) and can only contain letters, digits,\nand special characters, such as -/.%?#&."
         },
         "HealthyThreshold": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the threshold at which the health\ncheck result is success, that is, the number of consecutive successful health\nchecks when the health check result of the backend server changes from fail\nto success. The value ranges from 1 to 10."
         },
         "ListenerId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the ID of the listener to which the health\ncheck task belongs."
         },
         "UnhealthyThreshold": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the threshold at which the health\ncheck result is fail, that is, the number of consecutive failed health checks\nwhen the health check result of the backend server changes from success to fail.\nThe value ranges from 1 to 10."
         },
         "UpdateTime": {
             "type": "string"

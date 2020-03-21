@@ -1,6 +1,7 @@
 # Terraform::Gitlab::User
 
-CloudFormation equivalent of gitlab_user
+This resource allows you to create and manage GitLab users.
+Note your provider will need to be configured with admin-level access for this resource to work.
 
 ## Syntax
 
@@ -47,6 +48,8 @@ Properties:
 
 #### CanCreateGroup
 
+Boolean, defaults to false. Whether to allow the user to create groups.
+
 _Required_: No
 
 _Type_: Boolean
@@ -54,6 +57,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Email
+
+The e-mail address of the user.
 
 _Required_: Yes
 
@@ -63,6 +68,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IsAdmin
 
+Boolean, defaults to false.  Whether to enable administrative priviledges
+for the user.
+
 _Required_: No
 
 _Type_: Boolean
@@ -70,6 +78,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IsExternal
+
+Boolean, defaults to false. Whether a user has access only to some internal or private projects. External users can only access projects to which they are explicitly granted access.
 
 _Required_: No
 
@@ -79,6 +89,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the user.
+
 _Required_: Yes
 
 _Type_: String
@@ -86,6 +98,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Password
+
+The password of the user.
 
 _Required_: Yes
 
@@ -95,6 +109,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProjectsLimit
 
+Integer, defaults to 0.  Number of projects user can create.
+
 _Required_: No
 
 _Type_: Double
@@ -102,6 +118,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResetPassword
+
+Boolean, defaults to false. Send user password reset link.
 
 _Required_: No
 
@@ -111,6 +129,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SkipConfirmation
 
+Boolean, defaults to true. Whether to skip confirmation.
+
 _Required_: No
 
 _Type_: Boolean
@@ -118,6 +138,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Username
+
+The username of the user.
 
 _Required_: Yes
 

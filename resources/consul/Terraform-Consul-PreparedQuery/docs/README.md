@@ -1,6 +1,10 @@
 # Terraform::Consul::PreparedQuery
 
-CloudFormation equivalent of consul_prepared_query
+Allows Terraform to manage a Consul prepared query.
+
+Managing prepared queries is done using Consul's REST API. This resource is
+useful to provide a consistent and declarative way of managing prepared
+queries in your Consul cluster using Terraform.
 
 ## Syntax
 
@@ -57,6 +61,10 @@ Properties:
 
 #### Connect
 
+When `true` the prepared query will return connect
+proxy services for a queried service.  Conditions such as `tags` in the
+prepared query will be matched against the proxy service. Defaults to false.
+
 _Required_: No
 
 _Type_: Boolean
@@ -64,6 +72,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Datacenter
+
+The datacenter to use. This overrides the
+agent's default datacenter and the datacenter in the provider setup.
 
 _Required_: No
 
@@ -73,6 +84,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the prepared query. Used to identify
+the prepared query during requests. Can be specified as an empty string
+to configure the query as a catch-all.
+
 _Required_: Yes
 
 _Type_: String
@@ -80,6 +95,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Near
+
+Allows specifying the name of a node to sort results
+near using Consul's distance sorting and network coordinates. The magic
+`_agent` value can be used to always sort nearest the node servicing the
+request.
 
 _Required_: No
 
@@ -89,6 +109,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OnlyPassing
 
+When `true`, the prepared query will only
+return nodes with passing health checks in the result.
+
 _Required_: No
 
 _Type_: Boolean
@@ -96,6 +119,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Service
+
+The name of the service to query.
 
 _Required_: Yes
 
@@ -105,6 +130,12 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Session
 
+The name of the Consul session to tie this query's
+lifetime to.  This is an advanced parameter that should not be used without a
+complete understanding of Consul sessions and the implications of their use
+(it is recommended to leave this blank in nearly all cases).  If this
+parameter is omitted the query will not expire.
+
 _Required_: No
 
 _Type_: String
@@ -112,6 +143,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StoredToken
+
+The ACL token to store with the prepared
+query. This token will be used by default whenever the query is executed.
 
 _Required_: No
 
@@ -121,6 +155,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+The list of required and/or disallowed tags.  If a tag is
+in this list it must be present.  If the tag is preceded with a "!" then it is
+disallowed.
+
 _Required_: No
 
 _Type_: List of String
@@ -128,6 +166,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Token
+
+The ACL token to use when saving the prepared query.
+This overrides the token that the agent provides by default.
 
 _Required_: No
 

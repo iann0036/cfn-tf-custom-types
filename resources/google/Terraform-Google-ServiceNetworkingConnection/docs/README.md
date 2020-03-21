@@ -1,6 +1,9 @@
 # Terraform::Google::ServiceNetworkingConnection
 
-CloudFormation equivalent of google_service_networking_connection
+Manages a private VPC connection with a GCP service provider. For more information see
+[the official documentation](https://cloud.google.com/vpc/docs/configure-private-services-access#creating-connection)
+and
+[API](https://cloud.google.com/service-infrastructure/docs/service-networking/reference/rest/v1/services.connections).
 
 ## Syntax
 
@@ -34,6 +37,8 @@ Properties:
 
 #### Network
 
+Name of VPC network connected with service producers using VPC peering.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +47,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ReservedPeeringRanges
 
+Named IP address range(s) of PEERING type reserved for
+this service provider. Note that invoking this method with a different range when connection
+is already established will not reallocate already provisioned service producer subnetworks.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -49,6 +58,10 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Service
+
+Provider peering service that is managing peering connectivity for a
+service provider organization. For Google services that support this functionality it is
+'servicenetworking.googleapis.com'.
 
 _Required_: Yes
 

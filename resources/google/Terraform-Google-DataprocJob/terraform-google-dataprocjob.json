@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::DataprocJob",
-    "description": "CloudFormation equivalent of google_dataproc_job",
+    "description": "Manages a job resource within a Dataproc cluster within GCE. For more information see\n[the official dataproc documentation](https://cloud.google.com/dataproc/).\n\n!> **Note:** This resource does not support 'update' and changing any attributes will cause the resource to be recreated.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "HadoopConfig": {
@@ -514,7 +514,8 @@
             "type": "string"
         },
         "ForceDelete": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "By default, you can only delete inactive jobs within\nDataproc. Setting this to true, and calling destroy, will ensure that the\njob is first cancelled before issuing the delete."
         },
         "Labels": {
             "type": "array",
@@ -534,13 +535,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "The list of labels (key/value pairs) to add to the job."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The project in which the `cluster` can be found and jobs\nsubsequently run against. If it is not provided, the provider project is used."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The Cloud Dataproc region. This essentially determines which clusters are available\nfor this job to be submitted to. If not specified, defaults to `global`."
         },
         "Status": {
             "type": "array",

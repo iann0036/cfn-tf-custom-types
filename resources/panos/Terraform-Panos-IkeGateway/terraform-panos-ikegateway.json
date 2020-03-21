@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::IkeGateway",
-    "description": "CloudFormation equivalent of panos_ike_gateway",
+    "description": "This resource allows you to add/update/delete IKE gateways.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,118 +9,155 @@
             "type": "string"
         },
         "AuthType": {
-            "type": "string"
+            "type": "string",
+            "description": "The auth type.  Valid values are `pre-shared-key`\n(the default), or `certificate`."
         },
         "CertBaseUrl": {
-            "type": "string"
+            "type": "string",
+            "description": "The host and directory part of URL for local\ncertificates."
         },
         "CertEnableHashAndUrl": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` to use\nhash-and-url for local certificate."
         },
         "CertEnableStrictValidation": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` to enable\nstrict validation of peer's extended key use."
         },
         "CertPermitPayloadMismatch": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` to permit\npeer identification and certificate payload identification mismatch."
         },
         "CertProfile": {
-            "type": "string"
+            "type": "string",
+            "description": "Profile for certificate valdiation during IKE\nnegotiation."
         },
         "CertUseManagementAsSource": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` to\nuse management interface IP as source to retrieve http certificates."
         },
         "DeadPeerDetectionInterval": {
-            "type": "number"
+            "type": "number",
+            "description": "The dead peer detection interval."
         },
         "DeadPeerDetectionRetry": {
-            "type": "number"
+            "type": "number",
+            "description": "Number of retries before disconnection."
         },
         "Disabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` to disable."
         },
         "EnableDeadPeerDetection": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` to enable dead\npeer detection."
         },
         "EnableFragmentation": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` to enable fragmentation."
         },
         "EnableIpv6": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable IPv6 or not."
         },
         "EnableLivenessCheck": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` to\nenable sending empty information liveness check message."
         },
         "EnableNatTraversal": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` to enable NAT\ntraversal."
         },
         "EnablePassiveMode": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` to enable passive\nmode (responder only)."
         },
         "Ikev1CryptoProfile": {
-            "type": "string"
+            "type": "string",
+            "description": "IKEv1 crypto profile."
         },
         "Ikev1ExchangeMode": {
-            "type": "string"
+            "type": "string",
+            "description": "The IKEv1 exchange mode."
         },
         "Ikev2CookieValidation": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` to require cookie."
         },
         "Ikev2CryptoProfile": {
-            "type": "string"
+            "type": "string",
+            "description": "IKEv2 crypto profile."
         },
         "Interface": {
-            "type": "string"
+            "type": "string",
+            "description": "The interface."
         },
         "LivenessCheckInterval": {
-            "type": "number"
+            "type": "number",
+            "description": "Delay interval before\nsending probing packets (in seconds)."
         },
         "LocalCert": {
-            "type": "string"
+            "type": "string",
+            "description": "The local certificate name."
         },
         "LocalIdType": {
-            "type": "string"
+            "type": "string",
+            "description": "The local ID type.  Valid values are `ipaddr`,\n`fqdn`, `ufqdn`, `keyid`, or `dn`."
         },
         "LocalIdValue": {
-            "type": "string"
+            "type": "string",
+            "description": "The local ID value."
         },
         "LocalIpAddressType": {
-            "type": "string"
+            "type": "string",
+            "description": "The local IP address type.  Valid\nvalues for this are `ip`, `floating-ip`, or an empty string (the default)\nwhich is `None`."
         },
         "LocalIpAddressValue": {
-            "type": "string"
+            "type": "string",
+            "description": "The IP address if `local_ip_address_type`\nis set to `ip`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The object's name."
         },
         "NatTraversalEnableUdpChecksum": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` to enable\nNAT traversal UDP checksum."
         },
         "NatTraversalKeepAlive": {
-            "type": "number"
+            "type": "number",
+            "description": "Sending interval for NAT\nkeep-alive packets (in seconds).  For versions 6.1 - 8.1, this param, if specified,\nshould be a multiple of 10 between 10 and 3600 to be valid."
         },
         "PeerIdCheck": {
-            "type": "string"
+            "type": "string",
+            "description": "Enable peer ID wildcard match for certificate\nauthentication.  Valid values are `exact` or `wildcard`."
         },
         "PeerIdType": {
-            "type": "string"
+            "type": "string",
+            "description": "The peer ID type.  Valid values are `ipaddr`,\n`fqdn`, `ufqdn`, `keyid`, or `dn`."
         },
         "PeerIdValue": {
-            "type": "string"
+            "type": "string",
+            "description": "The peer ID value."
         },
         "PeerIpType": {
-            "type": "string"
+            "type": "string",
+            "description": "The peer IP type.  Valid values are `ip`,\n`dynamic`, and `fqdn` (PANOS 8.1+)."
         },
         "PeerIpValue": {
-            "type": "string"
+            "type": "string",
+            "description": "The peer IP value."
         },
         "PreSharedKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The pre-shared key value."
         },
         "PreSharedKeyEnc": {
             "type": "string"
         },
         "Version": {
-            "type": "string"
+            "type": "string",
+            "description": "The IKE gateway version.  Valid values are\n`ikev1`, (the default), `ikev2`, or `ikev2-preferred`.  For PAN-OS 6.1, only\n`ikev1` is acceptable."
         }
     },
     "additionalProperties": false,

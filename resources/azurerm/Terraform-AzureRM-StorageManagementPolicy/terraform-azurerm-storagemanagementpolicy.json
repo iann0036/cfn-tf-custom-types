@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::StorageManagementPolicy",
-    "description": "CloudFormation equivalent of azurerm_storage_management_policy",
+    "description": "Manages an Azure Storage Account Management Policy.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Rule": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "Enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Boolean to specify whether the rule is enabled."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A rule name can contain any combination of alpha numeric characters. Rule name is case-sensitive. It must be unique within a policy."
                 },
                 "Actions": {
                     "type": "array",
@@ -82,14 +84,16 @@
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "An array of predefined values. Only `blockBlob` is supported."
                 },
                 "PrefixMatch": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "An array of strings for prefixes to be matched."
                 }
             },
             "required": []
@@ -99,13 +103,16 @@
             "additionalProperties": false,
             "properties": {
                 "DeleteAfterDaysSinceModificationGreaterThan": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The age in days after last modification to delete the blob. Must be at least 0."
                 },
                 "TierToArchiveAfterDaysSinceModificationGreaterThan": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The age in days after last modification to tier blobs to archive storage. Supports blob currently at Hot or Cool tier. Must be at least 0."
                 },
                 "TierToCoolAfterDaysSinceModificationGreaterThan": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The age in days after last modification to tier blobs to cool storage. Supports blob currently at Hot tier. Must be at least 0."
                 }
             },
             "required": []
@@ -115,7 +122,8 @@
             "additionalProperties": false,
             "properties": {
                 "DeleteAfterDaysSinceCreationGreaterThan": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The age in days after create to delete the snaphot. Must be at least 0."
                 }
             },
             "required": []
@@ -127,7 +135,8 @@
             "type": "string"
         },
         "StorageAccountId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the id of the storage account to apply the management policy to."
         },
         "Rule": {
             "type": "array",

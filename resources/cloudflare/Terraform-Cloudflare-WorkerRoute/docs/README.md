@@ -1,6 +1,6 @@
 # Terraform::Cloudflare::WorkerRoute
 
-CloudFormation equivalent of cloudflare_worker_route
+Provides a Cloudflare worker route resource. A route will also require a `cloudflare_worker_script`.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### Pattern
 
+The [route pattern](https://developers.cloudflare.com/workers/about/routes/).
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +50,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneId
+
+The zone ID to add the route to.
 
 _Required_: Yes
 

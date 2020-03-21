@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::VCD::NetworkIsolated",
-    "description": "CloudFormation equivalent of vcd_network_isolated",
+    "description": "Provides a vCloud Director Org VDC isolated Network. This can be used to create,\nmodify, and delete internal networks for vApps to connect. This network is not attached to external networks or routers.\n\nSupported in provider *v2.0+*",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "DhcpPool": {
@@ -48,16 +48,20 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "An optional description of the network."
         },
         "Dns1": {
-            "type": "string"
+            "type": "string",
+            "description": "First DNS server to use."
         },
         "Dns2": {
-            "type": "string"
+            "type": "string",
+            "description": "Second DNS server to use."
         },
         "DnsSuffix": {
-            "type": "string"
+            "type": "string",
+            "description": "A FQDN for the virtual machines on this network."
         },
         "Gateway": {
             "type": "string"
@@ -66,19 +70,24 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique name for the network."
         },
         "Netmask": {
-            "type": "string"
+            "type": "string",
+            "description": "The netmask for the new network. Defaults to `255.255.255.0`."
         },
         "Org": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of organization to use, optional if defined at provider level. Useful when\nconnected as sysadmin working across different organisations."
         },
         "Shared": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Defines if this network is shared between multiple VDCs\nin the Org.  Defaults to `false`."
         },
         "Vdc": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of VDC to use, optional if defined at provider level."
         },
         "DhcpPool": {
             "type": "array",

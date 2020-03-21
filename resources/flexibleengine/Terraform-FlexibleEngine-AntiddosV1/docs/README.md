@@ -1,6 +1,6 @@
 # Terraform::FlexibleEngine::AntiddosV1
 
-CloudFormation equivalent of flexibleengine_antiddos_v1
+Anti-DDoS monitors the service traffic from the Internet to ECSs, ELB instances, and BMSs to detect attack traffic in real time. It then cleans attack traffic according to user-configured defense policies so that services run as normal.
 
 ## Syntax
 
@@ -43,6 +43,8 @@ Properties:
 
 #### AppTypeId
 
+The application type ID.
+
 _Required_: Yes
 
 _Type_: Double
@@ -50,6 +52,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CleaningAccessPosId
+
+The position ID of access limit during cleaning. The value ranges from 1 to 8.
 
 _Required_: Yes
 
@@ -59,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableL7
 
+Specifies whether to enable L7 defense.
+
 _Required_: Yes
 
 _Type_: Boolean
@@ -67,6 +73,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FloatingIpId
 
+The ID corresponding to the Elastic IP Address (EIP) of a user.
+
 _Required_: Yes
 
 _Type_: String
@@ -74,6 +82,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HttpRequestPosId
+
+The position ID of number of HTTP requests. The value ranges from 1 to 15.
 
 _Required_: Yes
 
@@ -90,6 +100,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TrafficPosId
+
+The position ID of traffic. The value ranges from 1 to 9.
 
 _Required_: Yes
 

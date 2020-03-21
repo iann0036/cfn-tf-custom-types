@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::EmailServerProfile",
-    "description": "CloudFormation equivalent of panos_email_server_profile",
+    "description": "This resource allows you to add/update/delete email server profiles.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "EmailServer": {
@@ -8,22 +8,28 @@
             "additionalProperties": false,
             "properties": {
                 "AlsoToEmail": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Secondary to email address."
                 },
                 "DisplayName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The display name."
                 },
                 "EmailGateway": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The email server."
                 },
                 "FromEmail": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "From email address."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Server name."
                 },
                 "ToEmail": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "To email address."
                 }
             },
             "required": [
@@ -40,58 +46,76 @@
             "type": "string"
         },
         "AuthFormat": {
-            "type": "string"
+            "type": "string",
+            "description": "Auth format."
         },
         "ConfigFormat": {
-            "type": "string"
+            "type": "string",
+            "description": "Config format."
         },
         "DataFormat": {
-            "type": "string"
+            "type": "string",
+            "description": "Data format."
         },
         "EscapeCharacter": {
-            "type": "string"
+            "type": "string",
+            "description": "The escape character."
         },
         "EscapedCharacters": {
-            "type": "string"
+            "type": "string",
+            "description": "The escaped characters (as a string)."
         },
         "GtpFormat": {
-            "type": "string"
+            "type": "string",
+            "description": "GTP format."
         },
         "HipMatchFormat": {
-            "type": "string"
+            "type": "string",
+            "description": "HIP match format."
         },
         "IptagFormat": {
-            "type": "string"
+            "type": "string",
+            "description": "IP tag format."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The group's name."
         },
         "SctpFormat": {
-            "type": "string"
+            "type": "string",
+            "description": "SCTP format."
         },
         "SystemFormat": {
-            "type": "string"
+            "type": "string",
+            "description": "System format."
         },
         "ThreatFormat": {
-            "type": "string"
+            "type": "string",
+            "description": "Threat format."
         },
         "TrafficFormat": {
-            "type": "string"
+            "type": "string",
+            "description": "Traffic format."
         },
         "TunnelFormat": {
-            "type": "string"
+            "type": "string",
+            "description": "Tunnel format."
         },
         "UrlFormat": {
-            "type": "string"
+            "type": "string",
+            "description": "URL format."
         },
         "UserIdFormat": {
-            "type": "string"
+            "type": "string",
+            "description": "UserID format."
         },
         "Vsys": {
-            "type": "string"
+            "type": "string",
+            "description": "The vsys (default: `shared`)."
         },
         "WildfireFormat": {
-            "type": "string"
+            "type": "string",
+            "description": "Wildfire format."
         },
         "EmailServer": {
             "type": "array",

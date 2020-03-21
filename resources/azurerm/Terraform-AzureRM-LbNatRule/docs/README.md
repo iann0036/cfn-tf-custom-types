@@ -1,6 +1,10 @@
 # Terraform::AzureRM::LbNatRule
 
-CloudFormation equivalent of azurerm_lb_nat_rule
+Manages a Load Balancer NAT Rule.
+
+-> **NOTE:** This resource cannot be used with with virtual machine scale sets, instead use the `azurerm_lb_nat_pool` resource.
+
+~> **NOTE** When using this resource, the Load Balancer needs to have a FrontEnd IP Configuration Attached
 
 ## Syntax
 
@@ -49,6 +53,8 @@ Properties:
 
 #### BackendPort
 
+The port used for internal connections on the endpoint. Possible values range between 1 and 65535, inclusive.
+
 _Required_: Yes
 
 _Type_: Double
@@ -56,6 +62,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableFloatingIp
+
+Are the Floating IPs enabled for this Load Balncer Rule? A "floating” IP is reassigned to a secondary server in case the primary server fails. Required to configure a SQL AlwaysOn Availability Group. Defaults to `false`.
 
 _Required_: No
 
@@ -65,6 +73,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableTcpReset
 
+Is TCP Reset enabled for this Load Balancer Rule? Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -72,6 +82,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FrontendIpConfigurationName
+
+The name of the frontend IP configuration exposing this rule.
 
 _Required_: Yes
 
@@ -81,6 +93,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FrontendPort
 
+The port for the external endpoint. Port numbers for each Rule must be unique within the Load Balancer. Possible values range between 1 and 65534, inclusive.
+
 _Required_: Yes
 
 _Type_: Double
@@ -88,6 +102,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IdleTimeoutInMinutes
+
+Specifies the idle timeout in minutes for TCP connections. Valid values are between `4` and `30` minutes. Defaults to `4` minutes.
 
 _Required_: No
 
@@ -97,6 +113,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LoadbalancerId
 
+The ID of the Load Balancer in which to create the NAT Rule.
+
 _Required_: Yes
 
 _Type_: String
@@ -104,6 +122,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the NAT Rule.
 
 _Required_: Yes
 
@@ -113,6 +133,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Protocol
 
+The transport protocol for the external endpoint. Possible values are `Udp`, `Tcp` or `All`.
+
 _Required_: Yes
 
 _Type_: String
@@ -120,6 +142,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which to create the resource.
 
 _Required_: Yes
 

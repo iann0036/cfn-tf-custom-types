@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Vault::IdentityOidc",
-    "description": "CloudFormation equivalent of vault_identity_oidc",
+    "description": "Configure the [Identity Tokens Backend](https://www.vaultproject.io/docs/secrets/identity/index.html#identity-tokens).\n\nThe Identity secrets engine is the identity management solution for Vault. It internally maintains\nthe clients who are recognized by Vault.\n\n~> **NOTE:** Each Vault server may only have one Identity Tokens Backend configuration. Multiple configurations of the resource against the same Vault server will cause a perpetual difference.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "Issuer": {
-            "type": "string"
+            "type": "string",
+            "description": "Issuer URL to be used in the iss claim of the token. If not set, Vault's\n`api_addr` will be used. The issuer is a case sensitive URL using the https scheme that contains\nscheme, host, and optionally, port number and path components, but no query or fragment\ncomponents."
         }
     },
     "additionalProperties": false,

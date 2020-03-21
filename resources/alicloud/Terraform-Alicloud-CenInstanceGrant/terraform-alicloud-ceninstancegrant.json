@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::CenInstanceGrant",
-    "description": "CloudFormation equivalent of alicloud_cen_instance_grant",
+    "description": "Provides a CEN child instance grant resource, which allow you to authorize a VPC or VBR to a CEN of a different account.\n\nFor more information about how to use it, see [Attach a network in a different account](https://www.alibabacloud.com/help/doc-detail/73645.htm).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "CenId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the CEN."
         },
         "CenOwnerId": {
-            "type": "string"
+            "type": "string",
+            "description": "The owner UID of the  CEN which the child instance granted to."
         },
         "ChildInstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the child instance to grant."
         }
     },
     "additionalProperties": false,

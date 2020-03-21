@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Consul::AgentService",
-    "description": "CloudFormation equivalent of consul_agent_service",
+    "description": "!> The `consul_agent_service` resource has been deprecated in version 2.0.0 of the provider\nand will be removed in a future release. Please read the [upgrade guide](/docs/providers/consul/guides/upgrading.html#deprecation-of-consul_agent_service)\nfor more information.\n\nProvides access to the agent service data in Consul. This can be used to\ndefine a service associated with a particular agent. Currently, defining\nhealth checks for an agent service is not supported.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,20 +9,24 @@
             "type": "string"
         },
         "Address": {
-            "type": "string"
+            "type": "string",
+            "description": "The address of the service. Defaults to the\naddress of the agent."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the service."
         },
         "Port": {
-            "type": "number"
+            "type": "number",
+            "description": "The port of the service."
         },
         "Tags": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of values that are opaque to Consul,\nbut can be used to distinguish between services or nodes."
         }
     },
     "additionalProperties": false,

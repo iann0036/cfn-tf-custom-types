@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::StorageShare",
-    "description": "CloudFormation equivalent of azurerm_storage_share",
+    "description": "Manages a File Share within Azure Storage.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Acl": {
@@ -8,7 +8,8 @@
             "additionalProperties": false,
             "properties": {
                 "Id": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID which should be used for this Shared Identifier."
                 },
                 "AccessPolicy": {
                     "type": "array",
@@ -46,13 +47,16 @@
             "additionalProperties": false,
             "properties": {
                 "Expiry": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ISO8061 UTC time at which this Access Policy should be valid until."
                 },
                 "Permissions": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The permissions which should associated with this Shared Identifier."
                 },
                 "Start": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ISO8061 UTC time at which this Access Policy should be valid from."
                 }
             },
             "required": [
@@ -85,16 +89,20 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of MetaData for this File Share."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the share. Must be unique within the storage account where the share is located."
         },
         "Quota": {
-            "type": "number"
+            "type": "number",
+            "description": "The maximum size of the share, in gigabytes. For Standard storage accounts, this must be greater than 0 and less than 5120 GB (5 TB). For Premium FileStorage storage accounts, this must be greater than 100 GB and less than 102400 GB (100 TB). Default is 5120."
         },
         "StorageAccountName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the storage account in which to create the share.\nChanging this forces a new resource to be created."
         },
         "Url": {
             "type": "string"

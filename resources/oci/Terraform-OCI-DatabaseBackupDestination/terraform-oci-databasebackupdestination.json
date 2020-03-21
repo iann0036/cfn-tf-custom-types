@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::DatabaseBackupDestination",
-    "description": "CloudFormation equivalent of oci_database_backup_destination",
+    "description": "This resource provides the Backup Destination resource in Oracle Cloud Infrastructure Database service.\n\nCreates a backup destination.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -42,10 +42,12 @@
             }
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment."
         },
         "ConnectionString": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The connection string for connecting to the Recovery Appliance."
         },
         "DefinedTags": {
             "type": "array",
@@ -65,10 +67,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The user-provided name of the backup destination."
         },
         "FreeformTags": {
             "type": "array",
@@ -88,13 +92,15 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
         },
         "LifecycleDetails": {
             "type": "string"
         },
         "LocalMountPointPath": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes."
         },
         "State": {
             "type": "string"
@@ -103,14 +109,16 @@
             "type": "string"
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of the backup destination."
         },
         "VpcUsers": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "(Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

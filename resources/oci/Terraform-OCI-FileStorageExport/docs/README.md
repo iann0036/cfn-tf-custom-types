@@ -1,6 +1,9 @@
 # Terraform::OCI::FileStorageExport
 
-CloudFormation equivalent of oci_file_storage_export
+This resource provides the Export resource in Oracle Cloud Infrastructure File Storage service.
+
+Creates a new export in the specified export set, path, and
+file system.
 
 ## Syntax
 

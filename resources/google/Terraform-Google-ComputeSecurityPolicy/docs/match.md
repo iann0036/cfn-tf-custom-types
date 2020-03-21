@@ -28,6 +28,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### VersionedExpr
 
+Predefined rule expression. If this field is specified, `config` must also be specified.
+Available options:
+* SRC_IPS_V1: Must specify the corresponding `src_ip_ranges` field in `config`.
+
 _Required_: No
 
 _Type_: String

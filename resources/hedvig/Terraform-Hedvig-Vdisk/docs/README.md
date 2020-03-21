@@ -1,6 +1,6 @@
 # Terraform::Hedvig::Vdisk
 
-CloudFormation equivalent of hedvig_vdisk
+Manages a Vdisk resource on a Hedvig cluster. For more information, visit [Hedvig's webpage](http://hedvig.io).
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### Name
 
+The name to be used by the Vdisk for identification.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Residence
+
+Disk residence; can be either `HDD` or `Flash`.
 
 _Required_: No
 
@@ -51,6 +55,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Size
 
+The size of the disk in GB.
+
 _Required_: Yes
 
 _Type_: Double
@@ -58,6 +64,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The type of the disk; can be either `BLOCK` or `NFS`.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::UCloud::Instance",
-    "description": "CloudFormation equivalent of ucloud_instance",
+    "description": "Provides an UHost Instance resource.\n\n~> **Note** If you try to update some properties which requires stopping the instance, you must set `allow_stopping_for_update` to `true` in your config to allows Terraform to stop the instance to update its properties like `instance_type`, `root_password`, `boot_disk_size`, `data_disk_size`. In addition, once the instance complete creation, it takes around 10 minutes for boot disk initialization for the running instance, and the updates will only be made to some specific attributes (`root_password`, `boot_disk_size`) if required once the instance initialization completed.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,22 +26,27 @@
             "type": "string"
         },
         "AllowStoppingForUpdate": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If you try to update some properties which requires stopping the instance, you must set `allow_stopping_for_update` to `true` in your config to allows Terraform to stop the instance to update its properties like `instance_type`, `root_password`, `boot_disk_size`, `data_disk_size`."
         },
         "AutoRenew": {
             "type": "boolean"
         },
         "AvailabilityZone": {
-            "type": "string"
+            "type": "string",
+            "description": "Availability zone where instance is located. such as: `cn-bj2-02`. You may refer to [list of availability zone](https://docs.ucloud.cn/api/summary/regionlist)."
         },
         "BootDiskSize": {
-            "type": "number"
+            "type": "number",
+            "description": "The size of the boot disk, measured in GB (GigaByte). Range: 20-100. The value set of disk size must be larger or equal to `20`(default: `20`) for Linux and `40` (default: `40`) for Windows. The responsive time is a bit longer if the value set is larger than default for local boot disk, and further settings may be required on host instance if the value set is larger than default for cloud boot disk. The disk volume adjustment must be a multiple of 10 GB. In addition, any reduction of boot disk size is not supported."
         },
         "BootDiskType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of boot disk. Possible values are: `local_normal` and `local_ssd` for local boot disk, `cloud_ssd` for cloud SSD boot disk. (Default: `local_normal`). The `local_ssd` and `cloud_ssd` are not fully support by all regions as boot disk type, please proceed to UCloud console for more details."
         },
         "ChargeType": {
-            "type": "string"
+            "type": "string",
+            "description": "The charge type of instance, possible values are: `year`, `month` and `dynamic` as pay by hour (specific permission required). (Default: `month`)."
         },
         "Cpu": {
             "type": "number"
@@ -50,10 +55,12 @@
             "type": "string"
         },
         "DataDiskSize": {
-            "type": "number"
+            "type": "number",
+            "description": "The size of local data disk, measured in GB (GigaByte), range: 0-8000 (Default: `20`), 0-8000 for cloud disk, 0-2000 for local sata disk and 100-1000 for local ssd disk (all the GPU type instances are included). The volume adjustment must be a multiple of 10 GB. In addition, any reduction of data disk size is not supported."
         },
         "DataDiskType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of local data disk. Possible values are: `local_normal` and `local_ssd` for local data disk. (Default: `local_normal`). The `local_ssd` is not fully support by all regions as data disk type, please proceed to UCloud console for more details. In addition, the `data_disk_type` must be same as `boot_disk_type` if specified."
         },
         "DiskSet": {
             "type": "array",
@@ -78,16 +85,19 @@
             }
         },
         "Duration": {
-            "type": "number"
+            "type": "number",
+            "description": "The duration that you will buy the instance (Default: `1`). The value is `0` when pay by month and the instance will be valid till the last day of that month. It is not required when `dynamic` (pay by hour)."
         },
         "ExpireTime": {
             "type": "string"
         },
         "ImageId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID for the image to use for the instance."
         },
         "InstanceType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of instance, please visit the [instance type table](https://www.terraform.io/docs/providers/ucloud/appendix/instance_type.html)."
         },
         "IpSet": {
             "type": "array",
@@ -106,37 +116,46 @@
             }
         },
         "IsolationGroup": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the associated isolation group."
         },
         "Memory": {
             "type": "number"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of instance, which contains 1-63 characters and only support Chinese, English, numbers, '-', '_', '.'. If not specified, terraform will auto-generate a name beginning with `tf-instance`."
         },
         "PrivateIp": {
-            "type": "string"
+            "type": "string",
+            "description": "The private IP address assigned to the instance."
         },
         "Remark": {
-            "type": "string"
+            "type": "string",
+            "description": "The remarks of instance. (Default: `\"\"`)."
         },
         "RootPassword": {
-            "type": "string"
+            "type": "string",
+            "description": "The password for the instance, which contains 8-30 characters, and at least 2 items of capital letters, lower case letters, numbers and special characters. The special characters include <code>`()~!@#$%^&*-+=_|{}\\[]:;'<>,.?/</code>. If not specified, terraform will auto-generate a password."
         },
         "SecurityGroup": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the associated security group."
         },
         "Status": {
             "type": "string"
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of subnet. If defined `vpc_id`, the `subnet_id` is Required. If not defined `vpc_id` and `subnet_id`, the instance will use the default subnet in the current region."
         },
         "Tag": {
-            "type": "string"
+            "type": "string",
+            "description": "A tag assigned to instance, which contains at most 63 characters and only support Chinese, English, numbers, '-', '_', and '.'. If it is not filled in or a empty string is filled in, then default tag will be assigned. (Default: `Default`)."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of VPC linked to the instance. If not defined `vpc_id`, the instance will use the default VPC in the current region."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

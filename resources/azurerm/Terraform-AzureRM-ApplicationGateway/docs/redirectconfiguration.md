@@ -32,6 +32,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### IncludePath
 
+Whether or not to include the path in the redirected Url. Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -39,6 +41,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IncludeQueryString
+
+Whether or not to include the query string in the redirected Url. Default to `false`.
 
 _Required_: No
 
@@ -48,6 +52,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Unique name of the redirect configuration block.
+
 _Required_: Yes
 
 _Type_: String
@@ -55,6 +61,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RedirectType
+
+The type of redirect. Possible values are `Permanent`, `Temporary`, `Found` and `SeeOther`.
 
 _Required_: Yes
 
@@ -64,6 +72,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TargetListenerName
 
+The name of the listener to redirect to. Cannot be set if `target_url` is set.
+
 _Required_: No
 
 _Type_: String
@@ -71,6 +81,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TargetUrl
+
+The Url to redirect the request to. Cannot be set if `target_listener_name` is set.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Datadog::LogsPipelineOrder",
-    "description": "CloudFormation equivalent of datadog_logs_pipeline_order",
+    "description": "Provides a Datadog [Logs Pipeline API](https://docs.datadoghq.com/api/?lang=python#logs-pipelines) resource, which is used to manage Datadog log pipelines order.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,14 +9,16 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name attribute in the resource `datadog_logs_pipeline_order` needs to be unique. It's recommended to use the same value as the resource `NAME`.\nNo related field is available in  [Logs Pipeline API](https://docs.datadoghq.com/api/?lang=python#get-pipeline-order)."
         },
         "Pipelines": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The pipeline IDs list. The order of pipeline IDs in this attribute defines the overall pipeline order for logs."
         }
     },
     "additionalProperties": false,

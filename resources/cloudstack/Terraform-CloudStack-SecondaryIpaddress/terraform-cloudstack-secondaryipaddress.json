@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::CloudStack::SecondaryIpaddress",
-    "description": "CloudFormation equivalent of cloudstack_secondary_ipaddress",
+    "description": "Assigns a secondary IP to a NIC.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "IpAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "The IP address to bind the to NIC. If not supplied\nan IP address will be selected randomly. Changing this forces a new resource\nto be\tcreated."
         },
         "NicId": {
-            "type": "string"
+            "type": "string",
+            "description": "The NIC ID to which you want to attach the secondary IP\naddress. Changing this forces a new resource to be created (defaults to the\nID of the primary NIC)."
         },
         "VirtualMachineId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the virtual machine to which you\nwant to attach the secondary IP address. Changing this forces a new resource\nto be created."
         }
     },
     "additionalProperties": false,

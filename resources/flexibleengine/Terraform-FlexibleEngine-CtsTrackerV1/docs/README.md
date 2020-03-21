@@ -1,6 +1,6 @@
 # Terraform::FlexibleEngine::CtsTrackerV1
 
-CloudFormation equivalent of flexibleengine_cts_tracker_v1
+Allows you to collect, store, and query cloud resource operation records.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### BucketName
 
+The OBS bucket name for a tracker.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FilePrefixName
+
+The prefix of a log that needs to be stored in an OBS bucket.
 
 _Required_: No
 
@@ -60,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Status
+
+The status of a tracker. The value should be **enabled** when creating a tracker, and when updating the value can be enabled or disabled.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::ExpressRouteGateway",
-    "description": "CloudFormation equivalent of azurerm_express_route_gateway",
+    "description": "Manages an ExpressRoute gateway.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,16 +29,20 @@
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the ExpressRoute gateway. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the ExpressRoute gateway. Changing this forces a new resource to be created."
         },
         "ScaleUnits": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of scale units with which to provision the ExpressRoute gateway. Each scale unit is equal to 2Gbps, with support for up to 10 scale units (20Gbps)."
         },
         "Tags": {
             "type": "array",
@@ -58,10 +62,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "VirtualHubId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of a Virtual HUB within which the ExpressRoute gateway should be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

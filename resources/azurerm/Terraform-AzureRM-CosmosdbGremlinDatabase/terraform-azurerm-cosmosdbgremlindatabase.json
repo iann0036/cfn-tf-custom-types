@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::CosmosdbGremlinDatabase",
-    "description": "CloudFormation equivalent of azurerm_cosmosdb_gremlin_database",
+    "description": "Manages a Gremlin Database within a Cosmos DB Account.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,16 +29,20 @@
             "type": "string"
         },
         "AccountName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the CosmosDB Account to create the Gremlin Database within. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Cosmos DB Gremlin Database. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which the Cosmos DB Gremlin Database is created. Changing this forces a new resource to be created."
         },
         "Throughput": {
-            "type": "number"
+            "type": "number",
+            "description": "The throughput of the Gremlin database (RU/s). Must be set in increments of `100`. The minimum value is `400`. This must be set upon database creation otherwise it cannot be updated without a manual terraform destroy-apply."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

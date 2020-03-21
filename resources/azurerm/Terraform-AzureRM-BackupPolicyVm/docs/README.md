@@ -1,6 +1,6 @@
 # Terraform::AzureRM::BackupPolicyVm
 
-CloudFormation equivalent of azurerm_backup_policy_vm
+Manages an Azure Backup VM Backup Policy.
 
 ## Syntax
 
@@ -55,6 +55,8 @@ Properties:
 
 #### Name
 
+Specifies the name of the Backup Policy. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -62,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RecoveryVaultName
+
+Specifies the name of the Recovery Services Vault to use. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -71,6 +75,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to create the policy. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -79,6 +85,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -86,6 +94,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Timezone
+
+Specifies the timezone. Defaults to `UTC`.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::AutomationRunbook",
-    "description": "CloudFormation equivalent of azurerm_automation_runbook",
+    "description": "Manages a Automation Runbook.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "PublishContentLink": {
@@ -8,7 +8,8 @@
             "additionalProperties": false,
             "properties": {
                 "Uri": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The uri of the runbook content."
                 },
                 "Version": {
                     "type": "string"
@@ -67,31 +68,40 @@
             "type": "string"
         },
         "AutomationAccountName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the automation account in which the Runbook is created. Changing this forces a new resource to be created."
         },
         "Content": {
-            "type": "string"
+            "type": "string",
+            "description": "The desired content of the runbook."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description for this credential."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "LogProgress": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Progress log option."
         },
         "LogVerbose": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Verbose log option."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Runbook. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which the Runbook is created. Changing this forces a new resource to be created."
         },
         "RunbookType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of the runbook - can be either `Graph`, `GraphPowerShell`, `GraphPowerShellWorkflow`, `PowerShellWorkflow`, `PowerShell` or `Script`."
         },
         "Tags": {
             "type": "array",
@@ -111,7 +121,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "PublishContentLink": {
             "type": "array",

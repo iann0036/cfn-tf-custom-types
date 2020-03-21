@@ -1,6 +1,10 @@
 # Terraform::GitHub::RepositoryWebhook
 
-CloudFormation equivalent of github_repository_webhook
+This resource allows you to create and manage webhooks for repositories within your
+GitHub organization.
+
+This resource cannot currently be used to manage webhooks for *personal* repositories,
+outside of organizations.
 
 ## Syntax
 
@@ -39,6 +43,8 @@ Properties:
 
 #### Active
 
+Indicate of the webhook should receive events. Defaults to `true`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -46,6 +52,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Events
+
+A list of events which should trigger the webhook. See a list of [available events](https://developer.github.com/v3/activity/events/types/).
 
 _Required_: Yes
 
@@ -55,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The type of the webhook. `web` is the default and the only option.
+
 _Required_: No
 
 _Type_: String
@@ -62,6 +72,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Repository
+
+The repository of the webhook.
 
 _Required_: Yes
 

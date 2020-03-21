@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::PrivateLinkService",
-    "description": "CloudFormation equivalent of azurerm_private_link_service",
+    "description": "Manages a Private Link Service.\n\n-> **NOTE** Private Link is now in [GA](https://docs.microsoft.com/en-gb/azure/private-link/).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "NatIpConfiguration": {
@@ -8,19 +8,24 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the name which should be used for the NAT IP Configuration. Changing this forces a new resource to be created."
                 },
                 "Primary": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Is this is the Primary IP Configuration? Changing this forces a new resource to be created."
                 },
                 "PrivateIpAddress": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies a Private Static IP Address for this IP Configuration."
                 },
                 "PrivateIpAddressVersion": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The version of the IP Protocol which should be used. At this time the only supported value is `IPv4`. Defaults to `IPv4`."
                 },
                 "SubnetId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the ID of the Subnet which should be used for the Private Link Service."
                 }
             },
             "required": [
@@ -62,26 +67,32 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of Subscription UUID/GUID's that will be automatically be able to use this Private Link Service."
         },
         "EnableProxyProtocol": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Should the Private Link Service support the Proxy Protocol? Defaults to `false`."
         },
         "LoadBalancerFrontendIpConfigurationIds": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of Frontend IP Configuration ID's from a Standard Load Balancer, where traffic from the Private Link Service should be routed. You can use Load Balancer Rules to direct this traffic to appropriate backend pools where your applications are running."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of this Private Link Service. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Resource Group where the Private Link Service should exist. Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -101,14 +112,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource. Changing this forces a new resource to be created."
         },
         "VisibilitySubscriptionIds": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of Subscription UUID/GUID's that will be able to see this Private Link Service."
         },
         "NatIpConfiguration": {
             "type": "array",

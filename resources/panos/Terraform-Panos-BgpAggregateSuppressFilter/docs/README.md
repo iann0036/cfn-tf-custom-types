@@ -1,6 +1,7 @@
 # Terraform::Panos::BgpAggregateSuppressFilter
 
-CloudFormation equivalent of panos_bgp_aggregate_suppress_filter
+This resource allows you to add/update/delete a route suppression filter for a
+BGP address aggregation rule.
 
 ## Syntax
 
@@ -54,6 +55,8 @@ Properties:
 
 #### AsPathRegex
 
+AS path to match.
+
 _Required_: No
 
 _Type_: String
@@ -61,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BgpAggregate
+
+The BGP address aggregation rule.
 
 _Required_: Yes
 
@@ -70,6 +75,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CommunityRegex
 
+Community to match.
+
 _Required_: No
 
 _Type_: String
@@ -77,6 +84,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Enable
+
+Enable or not (default: `true`).
 
 _Required_: No
 
@@ -86,6 +95,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ExtendedCommunityRegex
 
+Extended community to match.
+
 _Required_: No
 
 _Type_: String
@@ -93,6 +104,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FromPeers
+
+List of peers that advertised the route entry.
 
 _Required_: No
 
@@ -102,6 +115,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Med
 
+Match MED.
+
 _Required_: No
 
 _Type_: String
@@ -109,6 +124,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name.
 
 _Required_: Yes
 
@@ -118,6 +135,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NextHops
 
+List of next hop attributes.
+
 _Required_: No
 
 _Type_: List of String
@@ -126,6 +145,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RouteTable
 
+Route table to match rule.  Valid
+values are `unicast`, `multicast`, or `both`.
+
 _Required_: No
 
 _Type_: String
@@ -133,6 +155,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VirtualRouter
+
+The virtual router to add this filter to.
 
 _Required_: Yes
 

@@ -1,6 +1,8 @@
 # Terraform::OCI::LoadBalancerListener
 
-CloudFormation equivalent of oci_load_balancer_listener
+This resource provides the Listener resource in Oracle Cloud Infrastructure Load Balancer service.
+
+Adds a listener to a load balancer.
 
 ## Syntax
 
@@ -53,6 +55,8 @@ Properties:
 
 #### DefaultBackendSetName
 
+(Updatable) The name of the associated backend set.  Example: `example_backend_set`.
+
 _Required_: Yes
 
 _Type_: String
@@ -60,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HostnameNames
+
+(Updatable) An array of hostname resource names.
 
 _Required_: No
 
@@ -69,6 +75,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LoadBalancerId
 
+The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a listener.
+
 _Required_: Yes
 
 _Type_: String
@@ -76,6 +84,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_listener`.
 
 _Required_: Yes
 
@@ -85,6 +95,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PathRouteSetName
 
+(Updatable) The name of the set of path-based routing rules, [PathRouteSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/), applied to this listener's traffic.  Example: `example_path_route_set`.
+
 _Required_: No
 
 _Type_: String
@@ -92,6 +104,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Port
+
+(Updatable) The communication port for the listener.  Example: `80`.
 
 _Required_: Yes
 
@@ -101,6 +115,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Protocol
 
+(Updatable) The protocol on which the listener accepts connection requests. To get a list of valid protocols, use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation.  Example: `HTTP`.
+
 _Required_: Yes
 
 _Type_: String
@@ -108,6 +124,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RuleSetNames
+
+(Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: ["example_rule_set"].
 
 _Required_: No
 

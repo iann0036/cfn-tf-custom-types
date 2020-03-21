@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::CosmosdbAccount",
-    "description": "CloudFormation equivalent of azurerm_cosmosdb_account",
+    "description": "Manages a CosmosDB (formally DocumentDB) Account.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Capabilities": {
@@ -8,7 +8,8 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The capability to enable - Possible values are `EnableAggregationPipeline`, `EnableCassandra`, `EnableGremlin`,`EnableMongo`, `EnableTable`, `MongoDBv3.4`, and `mongoEnableDocLevelTTL`."
                 }
             },
             "required": [
@@ -20,13 +21,16 @@
             "additionalProperties": false,
             "properties": {
                 "ConsistencyLevel": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Consistency Level to use for this CosmosDB Account - can be either `BoundedStaleness`, `Eventual`, `Session`, `Strong` or `ConsistentPrefix`."
                 },
                 "MaxIntervalInSeconds": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "When used with the Bounded Staleness consistency level, this value represents the time amount of staleness (in seconds) tolerated. Accepted range for this value is `5` - `86400` (1 day). Defaults to `5`. Required when `consistency_level` is set to `BoundedStaleness`."
                 },
                 "MaxStalenessPrefix": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "When used with the Bounded Staleness consistency level, this value represents the number of stale requests tolerated. Accepted range for this value is `10` \u2013 `2147483647`. Defaults to `100`. Required when `consistency_level` is set to `BoundedStaleness`."
                 }
             },
             "required": [
@@ -38,13 +42,16 @@
             "additionalProperties": false,
             "properties": {
                 "FailoverPriority": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The failover priority of the region. A failover priority of `0` indicates a write region. The maximum value for a failover priority = (total number of regions - 1). Failover priority values must be unique for each of the regions in which the database account exists. Changing this causes the location to be re-provisioned and cannot be changed for the location with failover priority `0`."
                 },
                 "Location": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the Azure region to host replicated data."
                 },
                 "Prefix": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The string used to generate the document endpoints for this region. If not specified it defaults to `${cosmosdb_account.name}-${location}`. Changing this causes the location to be deleted and re-provisioned and cannot be changed for the location with failover priority `0`."
                 }
             },
             "required": [
@@ -76,7 +83,8 @@
             "additionalProperties": false,
             "properties": {
                 "Id": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of the virtual network subnet."
                 }
             },
             "required": [
@@ -97,31 +105,39 @@
             }
         },
         "EnableAutomaticFailover": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable automatic fail over for this Cosmos DB account."
         },
         "EnableMultipleWriteLocations": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable multi-master support for this Cosmos DB account."
         },
         "Endpoint": {
             "type": "string"
         },
         "IpRangeFilter": {
-            "type": "string"
+            "type": "string",
+            "description": "CosmosDB Firewall Support: This value specifies the set of IP addresses or IP address ranges in CIDR form to be included as the allowed list of client IP's for a given database account. IP addresses/ranges must be comma separated and must not contain any spaces."
         },
         "IsVirtualNetworkFilterEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enables virtual network filtering for this Cosmos DB account."
         },
         "Kind": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the Kind of CosmosDB to create - possible values are `GlobalDocumentDB` and `MongoDB`. Defaults to `GlobalDocumentDB`. Changing this forces a new resource to be created."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the CosmosDB Account. Changing this forces a new resource to be created."
         },
         "OfferType": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the Offer Type to use for this CosmosDB Account - currently this can only be set to `Standard`."
         },
         "PrimaryMasterKey": {
             "type": "string"
@@ -137,7 +153,8 @@
             }
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which the CosmosDB Account is created. Changing this forces a new resource to be created."
         },
         "SecondaryMasterKey": {
             "type": "string"
@@ -163,7 +180,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "WriteEndpoints": {
             "type": "array",

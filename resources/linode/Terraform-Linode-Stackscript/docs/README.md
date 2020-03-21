@@ -1,6 +1,10 @@
 # Terraform::Linode::Stackscript
 
-CloudFormation equivalent of linode_stackscript
+Provides a Linode StackScript resource.  This can be used to create, modify, and delete Linode StackScripts.  StackScripts are private or public managed scripts which run within an instance during startup.  StackScripts can include variables whose values are specified when the Instance is created.  
+
+For more information, see [Automate Deployment with StackScripts](https://www.linode.com/docs/platform/stackscripts/) and the [Linode APIv4 docs](https://developers.linode.com/api/v4#tag/StackScripts).
+
+The Linode Guide, [Deploy a WordPress Site Using Terraform and Linode StackScripts](https://www.linode.com/docs/applications/configuration-management/deploy-a-wordpress-site-using-terraform-and-linode-stackscripts/), shows how a public StackScript can be used to provision a Linode Instance.   The guide, [Create a Terraform Module](https://www.linode.com/docs/applications/configuration-management/create-terraform-module/), demonstrates StackScript use through a wrapping module.
 
 ## Syntax
 
@@ -43,6 +47,8 @@ Properties:
 
 #### Description
 
+A description for the StackScript.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Images
+
+An array of Image IDs representing the Images that this StackScript is compatible for deploying with.
 
 _Required_: Yes
 
@@ -59,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IsPublic
 
+This determines whether other users can use your StackScript. Once a StackScript is made public, it cannot be made private. *Changing `is_public` forces the creation of a new StackScript*.
+
 _Required_: No
 
 _Type_: Boolean
@@ -66,6 +76,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Label
+
+The StackScript's label is for display purposes only.
 
 _Required_: Yes
 
@@ -75,6 +87,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RevNote
 
+This field allows you to add notes for the set of revisions made to this StackScript.
+
 _Required_: No
 
 _Type_: String
@@ -82,6 +96,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Script
+
+The script to execute when provisioning a new Linode with this StackScript.
 
 _Required_: Yes
 

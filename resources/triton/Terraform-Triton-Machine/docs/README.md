@@ -1,6 +1,9 @@
 # Terraform::Triton::Machine
 
-CloudFormation equivalent of triton_machine
+The `triton_machine` resource represents a virtual machine or infrastructure container running in Triton.
+
+~> **Note:** Starting with Triton 0.2.0, Please note that when you want to specify the networks that you want the machine to be attached to, use the `networks` parameter
+and not the `nic` parameter.
 
 ## Syntax
 
@@ -70,6 +73,8 @@ Properties:
 
 #### AdministratorPw
 
+The initial password for the Administrator user. Only used for Windows virtual machines.
+
 _Required_: No
 
 _Type_: String
@@ -77,6 +82,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Affinity
+
+A list of valid [Affinity Rules](https://apidocs.joyent.com/cloudapi/#affinity-rules) to apply to the machine which assist in data center placement. Using this attribute will force resource creation to be serial. NOTE: Affinity rules are best guess and assist in placing instances across a data center. They're used at creation and not referenced after.
 
 _Required_: No
 
@@ -86,6 +93,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CloudConfig
 
+Cloud-init configuration for Linux brand machines, used instead of `user_data`.
+
 _Required_: No
 
 _Type_: String
@@ -93,6 +102,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DeletionProtectionEnabled
+
+Whether an instance is destroyable. Default is `false`.
 
 _Required_: No
 
@@ -102,6 +113,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FirewallEnabled
 
+Default: `false`
+Whether the cloud firewall should be enabled for this machine.
+
 _Required_: No
 
 _Type_: Boolean
@@ -109,6 +123,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Image
+
+The UUID of the image to provision.
 
 _Required_: Yes
 
@@ -118,6 +134,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Metadata
 
+A mapping of metadata to apply to the machine.
+
 _Required_: No
 
 _Type_: List of <a href="metadata.md">Metadata</a>
@@ -125,6 +143,8 @@ _Type_: List of <a href="metadata.md">Metadata</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The friendly name for the machine. Triton will generate a name if one is not specified.
 
 _Required_: No
 
@@ -134,6 +154,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Networks
 
+The list of networks to associate with the machine. The network ID will be in hex form, e.g `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`.
+
 _Required_: No
 
 _Type_: List of String
@@ -141,6 +163,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Package
+
+The name of the package to use for provisioning.
 
 _Required_: Yes
 
@@ -150,6 +174,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RootAuthorizedKeys
 
+The public keys authorized for root access via SSH to the machine.
+
 _Required_: No
 
 _Type_: String
@@ -157,6 +183,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to apply to the machine.
 
 _Required_: No
 
@@ -166,6 +194,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UserData
 
+Data to be copied to the machine on boot. **NOTE:** The content of `user_data`
+will _not be executed_ on boot. The data will only be written to the file on each
+boot before the content of the script from `user_script` is to be run.
+
 _Required_: No
 
 _Type_: String
@@ -173,6 +205,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserScript
+
+The user script to run on boot (every boot on SmartMachines). To learn more about
+both the user script and user data see the [metadata API][2] documentation and the
+[Joyent Metadata Data Dictionary][1] specification.
 
 _Required_: No
 

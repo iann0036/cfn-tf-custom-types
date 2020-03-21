@@ -1,6 +1,12 @@
 # Terraform::Alicloud::CenFlowlog
 
-CloudFormation equivalent of alicloud_cen_flowlog
+This resource used to create a flow log function in Cloud Enterprise Network (CEN). 
+By using the flow log function, you can capture the traffic data of the network instances in different regions of a CEN. 
+You can also use the data aggregated in flow logs to analyze cross-region traffic flows, minimize traffic costs, and troubleshoot network faults.
+
+For information about CEN flow log and how to use it, see [Manage CEN flowlog](https://www.alibabacloud.com/help/doc-detail/123006.htm).
+
+-> **NOTE:** Available in 1.73.0+
 
 ## Syntax
 
@@ -39,6 +45,8 @@ Properties:
 
 #### CenId
 
+The ID of the CEN Instance.
+
 _Required_: Yes
 
 _Type_: String
@@ -46,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+The description of flowlog.
 
 _Required_: No
 
@@ -55,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FlowLogName
 
+The name of flowlog.
+
 _Required_: No
 
 _Type_: String
@@ -62,6 +74,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LogStoreName
+
+The name of the log store which is in the  `project_name` SLS project.
 
 _Required_: Yes
 
@@ -71,6 +85,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProjectName
 
+The name of the SLS project.
+
 _Required_: Yes
 
 _Type_: String
@@ -78,6 +94,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Status
+
+The status of flowlog. Valid values: ["Active", "Inactive"]. Default to "Active".
 
 _Required_: No
 

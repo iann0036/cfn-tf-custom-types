@@ -1,6 +1,6 @@
 # Terraform::Vault::GcpAuthBackend
 
-CloudFormation equivalent of vault_gcp_auth_backend
+Provides a resource to configure the [GCP auth backend within Vault](https://www.vaultproject.io/docs/auth/gcp.html).
 
 ## Syntax
 
@@ -56,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Credentials
+
+A JSON string containing the contents of a GCP credentials file. If this value is empty, Vault will try to use Application Default Credentials from the machine on which the Vault server is running.
 
 _Required_: No
 

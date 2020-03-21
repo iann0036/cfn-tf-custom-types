@@ -1,6 +1,6 @@
 # Terraform::OPC::ComputeVnicSet
 
-CloudFormation equivalent of opc_compute_vnic_set
+The ``opc_compute_vnic_set`` resource creates and manages a virtual NIC set in an Oracle Cloud Infrastructure Compute Classic identity domain.
 
 ## Syntax
 
@@ -40,6 +40,8 @@ Properties:
 
 #### AppliedAcls
 
+A list of the ACLs to apply to the virtual nics in the set.
+
 _Required_: No
 
 _Type_: List of String
@@ -47,6 +49,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+A description of the virtual nic set.
 
 _Required_: No
 
@@ -56,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The unique (within this identity domain) name of the virtual nic set.
+
 _Required_: Yes
 
 _Type_: String
@@ -64,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A list of tags to apply to the storage volume.
+
 _Required_: No
 
 _Type_: List of String
@@ -71,6 +79,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VirtualNics
+
+List of virtual NICs associated with this virtual NIC set.
 
 _Required_: No
 

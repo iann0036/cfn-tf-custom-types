@@ -1,6 +1,8 @@
 # Terraform::Datadog::IntegrationAws
 
-CloudFormation equivalent of datadog_integration_aws
+Provides a Datadog - Amazon Web Services integration resource. This can be used to create and manage Datadog - Amazon Web Services integration.
+
+Update operations are currently not supported with datadog API so any change forces a new resource.
 
 ## Syntax
 
@@ -40,6 +42,8 @@ Properties:
 
 #### AccountId
 
+Your AWS Account ID without dashes.
+
 _Required_: Yes
 
 _Type_: String
@@ -47,6 +51,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AccountSpecificNamespaceRules
+
+Enables or disables metric collection for specific AWS namespaces for this AWS account only. A list of namespaces can be found at the [available namespace rules API endpoint](https://api.datadoghq.com/api/v1/integration/aws/available_namespace_rules).
 
 _Required_: No
 
@@ -56,6 +62,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FilterTags
 
+Array of EC2 tags (in the form `key:value`) defines a filter that Datadog use when collecting metrics from EC2. Wildcards, such as `?` (for single characters) and `*` (for multiple characters) can also be used.
+
 _Required_: No
 
 _Type_: List of String
@@ -64,6 +72,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HostTags
 
+Array of tags (in the form key:value) to add to all hosts and metrics reporting through this integration.
+
 _Required_: No
 
 _Type_: List of String
@@ -71,6 +81,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RoleName
+
+Your Datadog role delegation name.
 
 _Required_: Yes
 

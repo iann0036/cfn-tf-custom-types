@@ -1,6 +1,6 @@
 # Terraform::Vault::LdapAuthBackendUser
 
-CloudFormation equivalent of vault_ldap_auth_backend_user
+Provides a resource to create a user in an [LDAP auth backend within Vault](https://www.vaultproject.io/docs/auth/ldap.html).
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### Backend
 
+Path to the authentication backend.
+
 _Required_: No
 
 _Type_: String
@@ -44,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Groups
+
+Override LDAP groups which should be granted to user.
 
 _Required_: No
 
@@ -53,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Policies
 
+Policies which should be granted to user.
+
 _Required_: No
 
 _Type_: List of String
@@ -60,6 +66,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Username
+
+The LDAP username.
 
 _Required_: Yes
 

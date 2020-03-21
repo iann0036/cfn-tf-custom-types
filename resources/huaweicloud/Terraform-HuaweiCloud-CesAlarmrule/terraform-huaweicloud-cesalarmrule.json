@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HuaweiCloud::CesAlarmrule",
-    "description": "CloudFormation equivalent of huaweicloud_ces_alarmrule",
+    "description": "Manages a V2 topic resource within HuaweiCloud.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "AlarmActions": {
@@ -12,10 +12,12 @@
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "specifies the topic urn list of the target\nnotification objects. the maximum length is 5. the topic urn list can be\nobtained from simple message notification (smn) and in the following format:\nurn: smn:([a-z]|[a-z]|[0-9]|\\-){1,32}:([a-z]|[a-z]|[0-9]){32}:([a-z]|[a-z]|[0-9]|\\-|\\_){1,256}.\nif type is set to notification, the value of notification_list cannot be\nempty. if type is set to autoscaling, the value of notification_list must\nbe [] and the value of namespace must be sys.as.\nNote: to enable the as alarm rules take effect, you must bind scaling\npolicies. for details, see the auto scaling api reference."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "specifies the type of action triggered by an alarm. the\nvalue can be notification or autoscaling.\nnotification: indicates that a notification will be sent to the user.\nautoscaling: indicates that a scaling action will be triggered."
                 }
             },
             "required": [
@@ -28,22 +30,28 @@
             "additionalProperties": false,
             "properties": {
                 "ComparisonOperator": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the comparison condition of alarm\nthresholds. The value can be >, =, <, >=, or <=."
                 },
                 "Count": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Specifies the number of consecutive occurrence times.\nThe value ranges from 1 to 5."
                 },
                 "Filter": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the data rollup methods. The value can be\nmax, min, average, sum, and vaiance."
                 },
                 "Period": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Specifies the alarm checking period in seconds. The\nvalue can be 1, 300, 1200, 3600, 14400, and 86400.\nNote: If period is set to 1, the raw metric data is used to determine\nwhether to generate an alarm."
                 },
                 "Unit": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the data unit."
                 },
                 "Value": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Specifies the alarm threshold. The value ranges from\n0 to Number of 1.7976931348623157e+308."
                 }
             },
             "required": [
@@ -63,10 +71,12 @@
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "indicates the list of objects to be notified\nif the alarm status changes. the maximum length is 5."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "specifies the type of action triggered by an alarm. the\nvalue is notification.\nnotification: indicates that a notification will be sent to the user."
                 }
             },
             "required": [
@@ -79,10 +89,12 @@
             "additionalProperties": false,
             "properties": {
                 "MetricName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the metric name. The value can be a string\nof 1 to 64 characters that must start with a letter and can consists of uppercase\nletters, lowercase letters, numbers, or underscores (_)."
                 },
                 "Namespace": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the namespace in service.item format. service.item\ncan be a string of 3 to 32 characters that must start with a letter and can\nconsists of uppercase letters, lowercase letters, numbers, or underscores (_)."
                 },
                 "Dimensions": {
                     "type": "array",
@@ -106,10 +118,12 @@
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "indicates the list of objects to be notified\nif the alarm status changes. the maximum length is 5."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "specifies the type of action triggered by an alarm. the\nvalue is notification.\nnotification: indicates that a notification will be sent to the user."
                 }
             },
             "required": [
@@ -138,10 +152,12 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the dimension name. The value can be a string\nof 1 to 32 characters that must start with a letter and can consists of uppercase\nletters, lowercase letters, numbers, underscores (_), or hyphens (-)."
                 },
                 "Value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the dimension value. The value can be a string\nof 1 to 64 characters that must start with a letter or a number and can consists\nof uppercase letters, lowercase letters, numbers, underscores (_), or hyphens\n(-)."
                 }
             },
             "required": [
@@ -156,16 +172,20 @@
             "type": "string"
         },
         "AlarmActionEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether to enable the action\nto be triggered by an alarm. The default value is true.\nNote: If alarm_action_enabled is set to true, at least one of the following\nparameters alarm_actions, insufficientdata_actions, and ok_actions cannot\nbe empty. If alarm_actions, insufficientdata_actions, and ok_actions coexist,\ntheir corresponding notification_list must be of the same value."
         },
         "AlarmDescription": {
-            "type": "string"
+            "type": "string",
+            "description": "The value can be a string of 0 to 256 characters."
         },
         "AlarmEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether to enable the alarm. The default\nvalue is true."
         },
         "AlarmName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of an alarm rule. The value can\nbe a string of 1 to 128 characters that can consist of numbers, lowercase letters,\nuppercase letters, underscores (_), or hyphens (-)."
         },
         "AlarmState": {
             "type": "string"

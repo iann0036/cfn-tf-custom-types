@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureAD::User",
-    "description": "CloudFormation equivalent of azuread_user",
+    "description": "Manages a User within Azure Active Directory.\n\n-> **NOTE:** If you're authenticating using a Service Principal then it must have permissions to `Directory.ReadWrite.All` within the `Windows Azure Active Directory` API.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,22 +9,27 @@
             "type": "string"
         },
         "AccountEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "`true` if the account should be enabled, otherwise `false`. Defaults to `true`."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name to display in the address book for the user."
         },
         "ForcePasswordChange": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "`true` if the User is forced to change the password during the next sign-in. Defaults to `false`."
         },
         "ImmutableId": {
-            "type": "string"
+            "type": "string",
+            "description": "The value used to associate an on-premises Active Directory user account with their Azure AD user object. This must be specified if you are using a federated domain for the user's userPrincipalName (UPN) property when creating a new user account."
         },
         "Mail": {
             "type": "string"
         },
         "MailNickname": {
-            "type": "string"
+            "type": "string",
+            "description": "The mail alias for the user. Defaults to the user name part of the User Principal Name."
         },
         "ObjectId": {
             "type": "string"
@@ -36,13 +41,16 @@
             "type": "string"
         },
         "Password": {
-            "type": "string"
+            "type": "string",
+            "description": "The password for the User. The password must satisfy minimum requirements as specified by the password policy. The maximum length is 256 characters."
         },
         "UsageLocation": {
-            "type": "string"
+            "type": "string",
+            "description": "The usage location of the User. Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries. The usage location is a two letter country code (ISO standard 3166). Examples include: `NO`, `JP`, and `GB`. Cannot be reset to null once set."
         },
         "UserPrincipalName": {
-            "type": "string"
+            "type": "string",
+            "description": "The User Principal Name of the Azure AD User."
         }
     },
     "additionalProperties": false,

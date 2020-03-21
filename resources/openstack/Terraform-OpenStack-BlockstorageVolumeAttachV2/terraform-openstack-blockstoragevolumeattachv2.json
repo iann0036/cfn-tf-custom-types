@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::BlockstorageVolumeAttachV2",
-    "description": "CloudFormation equivalent of openstack_blockstorage_volume_attach_v2",
+    "description": "This resource is experimental and may be removed in the future! Feedback\nis requested if you find this resource useful or if you find any problems\nwith it.\n\nCreates a general purpose attachment connection to a Block\nStorage volume using the OpenStack Block Storage (Cinder) v2 API.\nDepending on your Block Storage service configuration, this\nresource can assist in attaching a volume to a non-OpenStack resource\nsuch as a bare-metal server or a remote virtual machine in a\ndifferent cloud provider.\n\nThis does not actually attach a volume to an instance. Please use\nthe `openstack_compute_volume_attach_v2` resource for that.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,7 +23,8 @@
             "type": "string"
         },
         "AttachMode": {
-            "type": "string"
+            "type": "string",
+            "description": "Specify whether to attach the volume as Read-Only\n(`ro`) or Read-Write (`rw`). Only values of `ro` and `rw` are accepted.\nIf left unspecified, the Block Storage API will apply a default of `rw`."
         },
         "Data": {
             "type": "array",
@@ -46,50 +47,61 @@
             }
         },
         "Device": {
-            "type": "string"
+            "type": "string",
+            "description": "The device to tell the Block Storage service this\nvolume will be attached as. This is purely for informational purposes.\nYou can specify `auto` or a device such as `/dev/vdc`."
         },
         "DriverVolumeType": {
             "type": "string"
         },
         "HostName": {
-            "type": "string"
+            "type": "string",
+            "description": "The host to attach the volume to."
         },
         "Initiator": {
-            "type": "string"
+            "type": "string",
+            "description": "The iSCSI initiator string to make the connection."
         },
         "InstanceId": {
             "type": "string"
         },
         "IpAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "The IP address of the `host_name` above."
         },
         "MountPointBase": {
             "type": "string"
         },
         "Multipath": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to connect to this volume via multipath."
         },
         "OsType": {
-            "type": "string"
+            "type": "string",
+            "description": "The iSCSI initiator OS type."
         },
         "Platform": {
-            "type": "string"
+            "type": "string",
+            "description": "The iSCSI initiator platform."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the V2 Block Storage\nclient. A Block Storage client is needed to create a volume attachment.\nIf omitted, the `region` argument of the provider is used. Changing this\ncreates a new volume attachment."
         },
         "VolumeId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Volume to attach to an Instance."
         },
         "Wwnn": {
-            "type": "string"
+            "type": "string",
+            "description": "A wwnn name. Used for Fibre Channel connections."
         },
         "Wwpn": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "An array of wwpn strings. Used for Fibre Channel\nconnections."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

@@ -1,6 +1,6 @@
 # Terraform::OPC::LbaasListener
 
-CloudFormation equivalent of opc_lbaas_listener
+The `opc_lbaas_listener` resource creates and manages a Load Balancer Classic Listener for a Load Balancer Classic instance.
 
 ## Syntax
 
@@ -56,6 +56,8 @@ Properties:
 
 #### BalancerProtocol
 
+transport protocol that will be accepted for all incoming requests to the selected load balancer listener. `HTTP` or `HTTPS`. If set to HTTPS then you must also set the server `certificates`.
+
 _Required_: Yes
 
 _Type_: String
@@ -63,6 +65,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Certificates
+
+The URI of the server security certificate.
 
 _Required_: No
 
@@ -72,6 +76,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Enabled
 
+Boolean flag to enable or disable the Listener. Default is `true` (enabled).
+
 _Required_: No
 
 _Type_: Boolean
@@ -79,6 +85,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LoadBalancer
+
+The parent Load Balancer the Listener.
 
 _Required_: Yes
 
@@ -88,6 +96,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the Listener.
+
 _Required_: Yes
 
 _Type_: String
@@ -95,6 +105,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PathPrefixes
+
+List of paths to configure the listener to accept only requests that are targeted to a specific path within the URI of the request.
 
 _Required_: No
 
@@ -112,6 +124,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Port
 
+The port on which the Load Balancer is listening.
+
 _Required_: Yes
 
 _Type_: Double
@@ -119,6 +133,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServerPool
+
+URI of the Server Pool resource to which the load balancer distributes requests.
 
 _Required_: No
 
@@ -128,6 +144,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServerProtocol
 
+The protocol to be used for routing traffic to the origin servers in the server pool. `HTTP` or `HTTPS`. If set to `HTTPS` then you must include a Trusted Certificate Policy in the `policies`.
+
 _Required_: Yes
 
 _Type_: String
@@ -136,6 +154,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+List of tags.
+
 _Required_: No
 
 _Type_: List of String
@@ -143,6 +163,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VirtualHosts
+
+Configure the listener to only accept URI requests that include the host names listed in this field.
 
 _Required_: No
 

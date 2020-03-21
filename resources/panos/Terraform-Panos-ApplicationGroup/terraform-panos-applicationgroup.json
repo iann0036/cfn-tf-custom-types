@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::ApplicationGroup",
-    "description": "CloudFormation equivalent of panos_application_group",
+    "description": "This resource allows you to add/update/delete application groups.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -13,13 +13,16 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of applications in this group."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The group's name."
         },
         "Vsys": {
-            "type": "string"
+            "type": "string",
+            "description": "The group's vsys (default: `vsys1`)."
         }
     },
     "additionalProperties": false,

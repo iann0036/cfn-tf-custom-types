@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::ComputeVolumeAttachV2",
-    "description": "CloudFormation equivalent of openstack_compute_volume_attach_v2",
+    "description": "Attaches a Block Storage Volume to an Instance using the OpenStack\nCompute (Nova) v2 API.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,19 +23,24 @@
             "type": "string"
         },
         "Device": {
-            "type": "string"
+            "type": "string",
+            "description": "The device of the volume attachment (ex: `/dev/vdc`).\n_NOTE_: Being able to specify a device is dependent upon the hypervisor in\nuse. There is a chance that the device specified in Terraform will not be\nthe same device the hypervisor chose. If this happens, Terraform will wish\nto update the device upon subsequent applying which will cause the volume\nto be detached and reattached indefinitely. Please use with caution."
         },
         "InstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Instance to attach the Volume to."
         },
         "Multiattach": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable attachment of multiattach-capable volumes."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the V2 Compute client.\nA Compute client is needed to create a volume attachment. If omitted, the\n`region` argument of the provider is used. Changing this creates a\nnew volume attachment."
         },
         "VolumeId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Volume to attach to an Instance."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

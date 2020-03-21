@@ -1,6 +1,6 @@
 # Terraform::Panos::BgpRedistRule
 
-CloudFormation equivalent of panos_bgp_redist_rule
+This resource allows you to add/update/delete a BGP redistribution rule.
 
 ## Syntax
 
@@ -53,6 +53,9 @@ Properties:
 
 #### AddressFamily
 
+The address family.  Valid values are
+`ipv4` (default) or `ipv6`.
+
 _Required_: No
 
 _Type_: String
@@ -60,6 +63,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Enable
+
+Enable this rule or not (default: `true`).
 
 _Required_: No
 
@@ -69,6 +74,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Metric
 
+Metric value.
+
 _Required_: No
 
 _Type_: Double
@@ -76,6 +83,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+A subnet or a redistribution profile.
 
 _Required_: Yes
 
@@ -85,6 +94,12 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RouteTable
 
+Route table to match rule.  Valid
+values are `unicast`, `multicast`, or `both`.  As of PAN-OS 8.1, there doesn't
+seem to be a way to configure this in the GUI, it is always set to `unicast`.
+Thus, if you're running this resource against PAN-OS 8.0+, the appropriate
+thing to do is set this value to `unicast` as well to match the GUI functionality.
+
 _Required_: No
 
 _Type_: String
@@ -92,6 +107,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SetAsPathLimit
+
+Add the AS_PATHLIMIT path attribute.
 
 _Required_: No
 
@@ -101,6 +118,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SetCommunities
 
+List of COMMUNITY path attributes to add.
+
 _Required_: No
 
 _Type_: List of String
@@ -108,6 +127,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SetExtendedCommunities
+
+List of EXTENDED COMMUNITY path attributes to add.
 
 _Required_: No
 
@@ -117,6 +138,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SetLocalPreference
 
+Add the LOCAL_PREF path attribute.
+
 _Required_: No
 
 _Type_: String
@@ -124,6 +147,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SetMed
+
+Add the MULTI_EXIT_DISC path attribute.
 
 _Required_: No
 
@@ -133,6 +158,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SetOrigin
 
+Add the origin path attribute.  Valid values are
+`incomplete` (default), `igp`, or `egp`.
+
 _Required_: No
 
 _Type_: String
@@ -140,6 +168,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VirtualRouter
+
+The virtual router to add this BGP
+redist rule to.
 
 _Required_: Yes
 

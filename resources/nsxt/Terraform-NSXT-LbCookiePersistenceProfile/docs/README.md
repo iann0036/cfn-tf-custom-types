@@ -1,6 +1,8 @@
 # Terraform::NSXT::LbCookiePersistenceProfile
 
-CloudFormation equivalent of nsxt_lb_cookie_persistence_profile
+Provides a resource to configure lb cookie persistence profile on NSX-T manager
+
+~> **NOTE:** This resource requires NSX version 2.3 or higher.
 
 ## Syntax
 
@@ -47,6 +49,8 @@ Properties:
 
 #### CookieFallback
 
+A boolean flag which reflects whether once the server points by this cookie is down, a new server is selected, or the requests will be rejected.
+
 _Required_: No
 
 _Type_: Boolean
@@ -54,6 +58,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CookieGarble
+
+A boolean flag which reflects whether the cookie value (server IP and port) would be encrypted or in plain text.
 
 _Required_: No
 
@@ -63,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CookieMode
 
+The cookie persistence mode. Accepted values: PREFIX, REWRITE and INSERT which is the default.
+
 _Required_: No
 
 _Type_: String
@@ -70,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CookieName
+
+cookie name.
 
 _Required_: Yes
 
@@ -79,6 +89,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+Description of this resource.
+
 _Required_: No
 
 _Type_: String
@@ -87,6 +99,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+The display name of this resource. Defaults to ID if not set.
+
 _Required_: No
 
 _Type_: String
@@ -94,6 +108,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PersistenceShared
+
+A boolean flag which reflects whether the cookie persistence is private or shared. When false (which is the default value), the cookie persistence is private to each virtual server and is qualified by the pool. If set to true, in cookie insert mode, cookie persistence could be shared across multiple virtual servers that are bound to the same pools.
 
 _Required_: No
 

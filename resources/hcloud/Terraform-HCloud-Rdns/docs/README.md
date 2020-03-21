@@ -1,6 +1,6 @@
 # Terraform::HCloud::Rdns
 
-CloudFormation equivalent of hcloud_rdns
+Provides a Hetzner Cloud Reverse DNS Entry to create, modify and reset reverse dns entries for Hetzner Cloud Floating IPs or servers.
 
 ## Syntax
 
@@ -35,6 +35,11 @@ Properties:
 
 #### DnsPtr
 
+The DNS address the `ip_address` should resolve to.
+- `ip_address` - (Required, string) The IP address that should point to `dns_ptr`.
+- `server_id` - (Required, int) The server the `ip_address` belongs to.
+- `floating_ip_id` - (Required, int) The Floating IP the `ip_address` belongs to.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FloatingIpId
+
+The Floating IP the `ip_address` belongs to.
 
 _Required_: No
 
@@ -51,6 +58,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IpAddress
 
+The IP address that should point to `dns_ptr`.
+- `server_id` - (Required, int) The server the `ip_address` belongs to.
+- `floating_ip_id` - (Required, int) The Floating IP the `ip_address` belongs to.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +69,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServerId
+
+The server the `ip_address` belongs to.
+- `floating_ip_id` - (Required, int) The Floating IP the `ip_address` belongs to.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::LocalNetworkGateway",
-    "description": "CloudFormation equivalent of azurerm_local_network_gateway",
+    "description": "Manages a local network gateway connection over which specific connections can be configured.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "BgpSettings": {
@@ -8,13 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "Asn": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The BGP speaker's ASN."
                 },
                 "BgpPeeringAddress": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The BGP peering address and BGP identifier\nof this BGP speaker."
                 },
                 "PeerWeight": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The weight added to routes learned from this\nBGP speaker."
                 }
             },
             "required": [
@@ -52,19 +55,24 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The list of string CIDRs representing the\naddress spaces the gateway exposes."
         },
         "GatewayAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "The IP address of the gateway to which to\nconnect."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "The location/region where the local network gateway is\ncreated. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the local network gateway. Changing this\nforces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to\ncreate the local network gateway."
         },
         "Tags": {
             "type": "array",
@@ -84,7 +92,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "BgpSettings": {
             "type": "array",

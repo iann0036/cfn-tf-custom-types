@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::CmsAlarm",
-    "description": "CloudFormation equivalent of alicloud_cms_alarm",
+    "description": "This resource provides a alarm rule resource and it can be used to monitor several cloud services according different metrics.\nDetails for [alarm rule](https://www.alibabacloud.com/help/doc-detail/28608.htm).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -13,7 +13,8 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List contact groups of the alarm rule, which must have been created on the console."
         },
         "Dimensions": {
             "type": "array",
@@ -33,55 +34,71 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Map of the resources associated with the alarm rule, such as \"instanceId\", \"device\" and \"port\". Each key's value is a string and it uses comma to split multiple items. For more information, see [Metrics Reference](https://www.alibabacloud.com/help/doc-detail/28619.htm)."
         },
         "EffectiveInterval": {
-            "type": "string"
+            "type": "string",
+            "description": "The interval of effecting alarm rule. It foramt as \"hh:mm-hh:mm\", like \"0:00-4:00\". Default to \"00:00-23:59\"."
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to enable alarm rule. Default to true."
         },
         "EndTime": {
-            "type": "number"
+            "type": "number",
+            "description": "It has been deprecated from provider version 1.50.0 and 'effective_interval' instead."
         },
         "Metric": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the monitoring metrics corresponding to a project, such as \"CPUUtilization\" and \"networkin_rate\". For more information, see [Metrics Reference](https://www.alibabacloud.com/help/doc-detail/28619.htm)."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The alarm rule name."
         },
         "NotifyType": {
-            "type": "number"
+            "type": "number",
+            "description": "Notification type. Valid value [0, 1]. The value 0 indicates TradeManager+email, and the value 1 indicates that TradeManager+email+SMS."
         },
         "Operator": {
-            "type": "string"
+            "type": "string",
+            "description": "Alarm comparison operator. Valid values: [\"<=\", \"<\", \">\", \">=\", \"==\", \"!=\"]. Default to \"==\"."
         },
         "Period": {
-            "type": "number"
+            "type": "number",
+            "description": "Index query cycle, which must be consistent with that defined for metrics. Default to 300, in seconds."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "Monitor project name, such as \"acs_ecs_dashboard\" and \"acs_rds_dashboard\". For more information, see [Metrics Reference](https://www.alibabacloud.com/help/doc-detail/28619.htm)."
         },
         "SilenceTime": {
-            "type": "number"
+            "type": "number",
+            "description": "Notification silence period in the alarm state, in seconds. Valid value range: [300, 86400]. Default to 86400."
         },
         "StartTime": {
-            "type": "number"
+            "type": "number",
+            "description": "It has been deprecated from provider version 1.50.0 and 'effective_interval' instead."
         },
         "Statistics": {
-            "type": "string"
+            "type": "string",
+            "description": "Statistical method. It must be consistent with that defined for metrics. Valid values: [\"Average\", \"Minimum\", \"Maximum\"]. Default to \"Average\"."
         },
         "Status": {
             "type": "string"
         },
         "Threshold": {
-            "type": "string"
+            "type": "string",
+            "description": "Alarm threshold value, which must be a numeric value currently."
         },
         "TriggeredCount": {
-            "type": "number"
+            "type": "number",
+            "description": "Number of consecutive times it has been detected that the values exceed the threshold. Default to 3."
         },
         "Webhook": {
-            "type": "string"
+            "type": "string",
+            "description": "The webhook that should be called when the alarm is triggered. Currently, only http protocol is supported. Default is empty string."
         }
     },
     "additionalProperties": false,

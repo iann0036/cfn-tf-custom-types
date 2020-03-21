@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::HaVipEipAttachment",
-    "description": "CloudFormation equivalent of tencentcloud_ha_vip_eip_attachment",
+    "description": "Provides a resource to create a HA VIP EIP attachment.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "AddressIp": {
-            "type": "string"
+            "type": "string",
+            "description": "Public address of the EIP."
         },
         "HavipId": {
-            "type": "string"
+            "type": "string",
+            "description": "Id of the attached HA VIP."
         }
     },
     "additionalProperties": false,

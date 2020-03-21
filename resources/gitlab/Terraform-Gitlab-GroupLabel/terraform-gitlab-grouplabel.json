@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Gitlab::GroupLabel",
-    "description": "CloudFormation equivalent of gitlab_group_label",
+    "description": "This resource allows you to create and manage labels for your GitLab groups.\nFor further information on labels, consult the [gitlab\ndocumentation](https://docs.gitlab.com/ee/user/project/labels.html#group-labels).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,20 @@
             "type": "string"
         },
         "Color": {
-            "type": "string"
+            "type": "string",
+            "description": "The color of the label given in 6-digit hex notation with leading '#' sign (e.g. #FFAABB) or one of the [CSS color names](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Color_keywords)."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the label."
         },
         "Group": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or id of the group to add the label to."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the label."
         }
     },
     "additionalProperties": false,

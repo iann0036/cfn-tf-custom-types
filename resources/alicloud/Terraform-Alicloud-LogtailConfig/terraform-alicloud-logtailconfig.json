@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::LogtailConfig",
-    "description": "CloudFormation equivalent of alicloud_logtail_config",
+    "description": "The Logtail access service is a log collection agent provided by Log Service. \nYou can use Logtail to collect logs from servers such as Alibaba Cloud Elastic\nCompute Service (ECS) instances in real time in the Log Service console. [Refer to details](https://www.alibabacloud.com/help/doc-detail/29058.htm\n)",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,25 +9,32 @@
             "type": "string"
         },
         "InputDetail": {
-            "type": "string"
+            "type": "string",
+            "description": "The logtail configure the required JSON files. ([Refer to details](https://www.alibabacloud.com/help/doc-detail/29058.htm))."
         },
         "InputType": {
-            "type": "string"
+            "type": "string",
+            "description": "The input type. Currently only two types of files and plugin are supported."
         },
         "LogSample": {
-            "type": "string"
+            "type": "string",
+            "description": "\uff08Optional\uff09The log sample of the Logtail configuration. The log size cannot exceed 1,000 bytes."
         },
         "Logstore": {
-            "type": "string"
+            "type": "string",
+            "description": "The log store name to the query index belongs."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The Logtail configuration name, which is unique in the same project."
         },
         "OutputType": {
-            "type": "string"
+            "type": "string",
+            "description": "The output type. Currently, only LogService is supported."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The project name to the log store belongs."
         }
     },
     "additionalProperties": false,

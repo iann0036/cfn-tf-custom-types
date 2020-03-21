@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::PanoramaDeviceGroupEntry",
-    "description": "CloudFormation equivalent of panos_panorama_device_group_entry",
+    "description": "This resource allows you to add/update/delete a specific device in a Panorama\ndevice group.\n\nThis resource has some overlap with the `panos_panorama_device_group`\nresource.  If you want to use this resource with the other one, then make\nsure that your `panos_panorama_device_group` spec does not define any\n`device` blocks, and just stays as \"computed\".\n\nThis is the appropriate resource to use if you have a pre-existing device group\nin Panorama and don't want Terraform to delete it on `terraform destroy`.\n\nAn interesting side effect of the underlying XML API - if the device group does\nnot already exist, then this resource can actually create it.  However, since\nonly the single entry for the specific serial number is deleted, then a\n`terraform destroy` would not remove the device group itself in this situation.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,17 +9,20 @@
             "type": "string"
         },
         "DeviceGroup": {
-            "type": "string"
+            "type": "string",
+            "description": "The device group's name."
         },
         "Serial": {
-            "type": "string"
+            "type": "string",
+            "description": "The serial number of the firewall."
         },
         "VsysList": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A subset of all available vsys on the firewall\nthat should be in this device group.  If the firewall is a virtual firewall,\nthen this parameter should just be omitted."
         }
     },
     "additionalProperties": false,

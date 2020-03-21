@@ -1,6 +1,6 @@
 # Terraform::AzureRM::AutomationSchedule
 
-CloudFormation equivalent of azurerm_automation_schedule
+Manages a Automation Schedule.
 
 ## Syntax
 
@@ -56,6 +56,8 @@ Properties:
 
 #### AutomationAccountName
 
+The name of the automation account in which the Schedule is created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -63,6 +65,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+A description for this Schedule.
 
 _Required_: No
 
@@ -72,6 +76,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ExpiryTime
 
+The end time of the schedule.
+
 _Required_: No
 
 _Type_: String
@@ -79,6 +85,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Frequency
+
+The frequency of the schedule. - can be either `OneTime`, `Day`, `Hour`, `Week`, or `Month`.
 
 _Required_: Yes
 
@@ -88,6 +96,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Interval
 
+The number of `frequency`s between runs. Only valid when frequency is `Day`, `Hour`, `Week`, or `Month` and defaults to `1`.
+
 _Required_: No
 
 _Type_: Double
@@ -95,6 +105,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MonthDays
+
+List of days of the month that the job should execute on. Must be between `1` and `31`. `-1` for last day of the month. Only valid when frequency is `Month`.
 
 _Required_: No
 
@@ -104,6 +116,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the Schedule. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -111,6 +125,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which the Schedule is created. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -120,6 +136,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StartTime
 
+Start time of the schedule. Must be at least five minutes in the future. Defaults to seven minutes in the future from the time the resource is created.
+
 _Required_: No
 
 _Type_: String
@@ -128,6 +146,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Timezone
 
+The timezone of the start time. Defaults to `UTC`. For possible values see: https://msdn.microsoft.com/en-us/library/ms912391(v=winembedded.11).aspx.
+
 _Required_: No
 
 _Type_: String
@@ -135,6 +155,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WeekDays
+
+List of days of the week that the job should execute on. Only valid when frequency is `Week`.
 
 _Required_: No
 

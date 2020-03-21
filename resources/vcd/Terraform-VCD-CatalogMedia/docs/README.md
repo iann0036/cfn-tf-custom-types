@@ -1,6 +1,8 @@
 # Terraform::VCD::CatalogMedia
 
-CloudFormation equivalent of vcd_catalog_media
+Provides a vCloud Director media resource. This can be used to upload media to catalog and delete it.
+
+Supported in provider *v2.0+*
 
 ## Syntax
 
@@ -44,6 +46,8 @@ Properties:
 
 #### Catalog
 
+The name of the catalog where to upload media file.
+
 _Required_: Yes
 
 _Type_: String
@@ -51,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+- Description of media file.
 
 _Required_: No
 
@@ -60,6 +66,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MediaPath
 
+- Absolute or relative path to file to upload.
+
 _Required_: Yes
 
 _Type_: String
@@ -67,6 +75,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Metadata
+
+Key value map of metadata to assign.
 
 _Required_: No
 
@@ -76,6 +86,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Media file name in catalog.
+
 _Required_: Yes
 
 _Type_: String
@@ -83,6 +95,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Org
+
+The name of organization to use, optional if defined at provider level. Useful when connected as sysadmin working across different organisations.
 
 _Required_: No
 
@@ -92,6 +106,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ShowUploadProgress
 
+- Default false. Allows to see upload progress.
+
 _Required_: No
 
 _Type_: Boolean
@@ -99,6 +115,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UploadPieceSize
+
+- size in MB for splitting upload size. It can possibly impact upload performance. Default 1MB.
 
 _Required_: No
 

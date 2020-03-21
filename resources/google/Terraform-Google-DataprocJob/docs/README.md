@@ -1,6 +1,9 @@
 # Terraform::Google::DataprocJob
 
-CloudFormation equivalent of google_dataproc_job
+Manages a job resource within a Dataproc cluster within GCE. For more information see
+[the official dataproc documentation](https://cloud.google.com/dataproc/).
+
+!> **Note:** This resource does not support 'update' and changing any attributes will cause the resource to be recreated.
 
 ## Syntax
 
@@ -68,6 +71,10 @@ Properties:
 
 #### ForceDelete
 
+By default, you can only delete inactive jobs within
+Dataproc. Setting this to true, and calling destroy, will ensure that the
+job is first cancelled before issuing the delete.
+
 _Required_: No
 
 _Type_: Boolean
@@ -75,6 +82,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Labels
+
+The list of labels (key/value pairs) to add to the job.
 
 _Required_: No
 
@@ -84,6 +93,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Project
 
+The project in which the `cluster` can be found and jobs
+subsequently run against. If it is not provided, the provider project is used.
+
 _Required_: No
 
 _Type_: String
@@ -91,6 +103,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The Cloud Dataproc region. This essentially determines which clusters are available
+for this job to be submitted to. If not specified, defaults to `global`.
 
 _Required_: No
 

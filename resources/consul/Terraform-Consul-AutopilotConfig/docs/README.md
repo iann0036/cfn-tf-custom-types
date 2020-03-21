@@ -1,6 +1,10 @@
 # Terraform::Consul::AutopilotConfig
 
-CloudFormation equivalent of consul_autopilot_config
+Provides access to the [Autopilot Configuration](https://www.consul.io/docs/guides/autopilot.html)
+of Consul to automatically manage Consul servers.
+
+It includes to automatically cleanup dead servers, monitor the status of the Raft
+cluster and stable server introduction.
 
 ## Syntax
 
@@ -43,6 +47,9 @@ Properties:
 
 #### CleanupDeadServers
 
+Whether to remove failing servers when a
+replacement comes online. Defaults to true.
+
 _Required_: No
 
 _Type_: Boolean
@@ -50,6 +57,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Datacenter
+
+The datacenter to use. This overrides the agent's
+default datacenter and the datacenter in the provider setup.
 
 _Required_: No
 
@@ -59,6 +69,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisableUpgradeMigration
 
+Whether to disable [upgrade migrations](https://www.consul.io/docs/guides/autopilot.html#redundancy-zones).
+Defaults to false.
+
 _Required_: No
 
 _Type_: Boolean
@@ -66,6 +79,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LastContactThreshold
+
+The time after which a server is
+considered as unhealthy and will be removed. Defaults to `"200ms"`.
 
 _Required_: No
 
@@ -75,6 +91,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxTrailingLogs
 
+The maximum number of Raft log entries a
+server can trail the leader. Defaults to 250.
+
 _Required_: No
 
 _Type_: Double
@@ -82,6 +101,10 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RedundancyZoneTag
+
+The [redundancy zone](https://www.consul.io/docs/guides/autopilot.html#redundancy-zones)
+tag to use. Consul will try to keep one voting server by zone to take advantage
+of isolated failure domains. Defaults to an empty string.
 
 _Required_: No
 
@@ -91,6 +114,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServerStabilizationTime
 
+The period to wait for a server to be
+healthy and stable before being promoted to a full, voting member. Defaults to
+`"10s"`.
+
 _Required_: No
 
 _Type_: String
@@ -98,6 +125,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UpgradeVersionTag
+
+The tag to override the version information
+used during a migration. Defaults to an empty string.
 
 _Required_: No
 

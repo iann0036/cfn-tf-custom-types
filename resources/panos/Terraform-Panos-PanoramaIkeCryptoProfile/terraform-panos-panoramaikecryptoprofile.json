@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::PanoramaIkeCryptoProfile",
-    "description": "CloudFormation equivalent of panos_panorama_ike_crypto_profile",
+    "description": "This resource allows you to add/update/delete Panorama IKE crypto profiles\nto a template or template stack.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,43 +9,52 @@
             "type": "string"
         },
         "AuthenticationMultiple": {
-            "type": "number"
+            "type": "number",
+            "description": "IKEv2 SA\nreauthentication interval equals authetication-multiple * rekey-lifetime; 0\nmeans reauthentication is disabled."
         },
         "Authentications": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of authentication types.  This c."
         },
         "DhGroups": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of DH Group entries.  Values should\nhave a prefix if `group`."
         },
         "Encryptions": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of encryption types.  Valid values\nare `des`, `3des`, `aes-128-cbc`, `aes-192-cbc`, and `aes-256-cbc`."
         },
         "LifetimeType": {
-            "type": "string"
+            "type": "string",
+            "description": "The lifetime type.  Valid values are `seconds`,\n`minutes`, `hours` (the default), and `days`."
         },
         "LifetimeValue": {
-            "type": "number"
+            "type": "number",
+            "description": "The lifetime value."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The object's name."
         },
         "Template": {
-            "type": "string"
+            "type": "string",
+            "description": "The template name."
         },
         "TemplateStack": {
-            "type": "string"
+            "type": "string",
+            "description": "The template stack name."
         }
     },
     "additionalProperties": false,

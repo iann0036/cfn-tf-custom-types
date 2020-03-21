@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::DigitalOcean::FloatingIp",
-    "description": "CloudFormation equivalent of digitalocean_floating_ip",
+    "description": "Provides a DigitalOcean Floating IP to represent a publicly-accessible static IP addresses that can be mapped to one of your Droplets.\n\n~> **NOTE:** Floating IPs can be assigned to a Droplet either directly on the `digitalocean_floating_ip` resource by setting a `droplet_id` or using the `digitalocean_floating_ip_assignment` resource, but the two cannot be used together.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,15 @@
             "type": "string"
         },
         "DropletId": {
-            "type": "number"
+            "type": "number",
+            "description": "The ID of Droplet that the Floating IP will be assigned to."
         },
         "IpAddress": {
             "type": "string"
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region that the Floating IP is reserved to."
         },
         "Urn": {
             "type": "string"

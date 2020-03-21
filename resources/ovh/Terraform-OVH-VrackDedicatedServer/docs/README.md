@@ -1,6 +1,6 @@
 # Terraform::OVH::VrackDedicatedServer
 
-CloudFormation equivalent of ovh_vrack_dedicated_server
+Attach a dedicated server to a VRack.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### ServerId
 
+The id of the dedicated server.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VrackId
+
+The id of the vrack.
 
 _Required_: Yes
 

@@ -1,6 +1,8 @@
 # Terraform::Gitlab::ProjectPushRules
 
-CloudFormation equivalent of gitlab_project_push_rules
+This resource allows you to create and manage push rules for your GitLab projects.
+For further information on push rules, consult the [gitlab
+documentation](https://docs.gitlab.com/ce/push_rules/push_rules.html#push-rules).
 
 ## Syntax
 
@@ -45,6 +47,8 @@ Properties:
 
 #### AuthorEmailRegex
 
+All commit author emails must match this regex, e.g. "@my-company.com$".
+
 _Required_: No
 
 _Type_: String
@@ -52,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BranchNameRegex
+
+All branch names must match this regex, e.g. "(feature|hotfix)\/*".
 
 _Required_: No
 
@@ -61,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CommitMessageRegex
 
+All commit messages must match this regex, e.g. "Fixed \d+\..*".
+
 _Required_: No
 
 _Type_: String
@@ -68,6 +76,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DenyDeleteTag
+
+Deny deleting a tag.
 
 _Required_: No
 
@@ -77,6 +87,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FileNameRegex
 
+All commited filenames must not match this regex, e.g. "(jar|exe)$".
+
 _Required_: No
 
 _Type_: String
@@ -84,6 +96,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MaxFileSize
+
+Maximum file size (MB).
 
 _Required_: No
 
@@ -93,6 +107,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MemberCheck
 
+Restrict commits by author (email) to existing GitLab users.
+
 _Required_: No
 
 _Type_: Boolean
@@ -101,6 +117,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PreventSecrets
 
+GitLab will reject any files that are likely to contain secrets.
+
 _Required_: No
 
 _Type_: Boolean
@@ -108,6 +126,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The name or id of the project to add the push rules to.
 
 _Required_: Yes
 

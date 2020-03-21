@@ -1,6 +1,6 @@
 # Terraform::AzureRM::ServiceFabricCluster
 
-CloudFormation equivalent of azurerm_service_fabric_cluster
+Manages a Service Fabric Cluster.
 
 ## Syntax
 
@@ -84,6 +84,8 @@ Properties:
 
 #### AddOnFeatures
 
+A List of one or more features which should be enabled, such as `DnsService`.
+
 _Required_: No
 
 _Type_: List of String
@@ -91,6 +93,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClusterCodeVersion
+
+Required if Upgrade Mode set to `Manual`, Specifies the Version of the Cluster Code of the cluster.
 
 _Required_: No
 
@@ -100,6 +104,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Location
 
+Specifies the Azure Region where the Service Fabric Cluster should exist. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -107,6 +113,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ManagementEndpoint
+
+Specifies the Management Endpoint of the cluster such as `http://example.com`. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -116,6 +124,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the Service Fabric Cluster. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -123,6 +133,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ReliabilityLevel
+
+Specifies the Reliability Level of the Cluster. Possible values include `None`, `Bronze`, `Silver`, `Gold` and `Platinum`.
 
 _Required_: Yes
 
@@ -132,6 +144,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the Resource Group in which the Service Fabric Cluster exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -139,6 +153,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 
@@ -148,6 +164,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UpgradeMode
 
+Specifies the Upgrade Mode of the cluster. Possible values are `Automatic` or `Manual`.
+
 _Required_: Yes
 
 _Type_: String
@@ -155,6 +173,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VmImage
+
+Specifies the Image expected for the Service Fabric Cluster, such as `Windows`. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 # Terraform::NSXT::IpBlock
 
-CloudFormation equivalent of nsxt_ip_block
+Provides a resource to configure IP block on NSX-T manager
 
 ## Syntax
 
@@ -36,6 +36,8 @@ Properties:
 
 #### Cidr
 
+Represents network address and the prefix length which will be associated with a layer-2 broadcast domain.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +46,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+Description of this resource.
+
 _Required_: No
 
 _Type_: String
@@ -51,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+The display name of this resource. Defaults to ID if not set.
 
 _Required_: No
 

@@ -1,6 +1,8 @@
 # Terraform::OVH::PubliccloudUser
 
-CloudFormation equivalent of ovh_publiccloud_user
+~> __DEPRECATED:__ Use [`ovh_cloud_user`](./cloud_user.html) instead.
+
+Creates a user in a public cloud project.
 
 ## Syntax
 
@@ -34,6 +36,8 @@ Properties:
 
 #### Description
 
+A description associated with the user.
+
 _Required_: No
 
 _Type_: String
@@ -49,6 +53,9 @@ _Type_: List of <a href="openstackrc.md">OpenstackRc</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProjectId
+
+The id of the public cloud project. If omitted,
+the `OVH_PROJECT_ID` environment variable is used.
 
 _Required_: Yes
 

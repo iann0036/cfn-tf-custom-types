@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::CloudStack::Instance",
-    "description": "CloudFormation equivalent of cloudstack_instance",
+    "description": "Creates and automatically starts a virtual machine based on a service offering,\ndisk offering, and template.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -13,70 +13,88 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of affinity group IDs to apply to this\ninstance."
         },
         "AffinityGroupNames": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of affinity group names to apply to\nthis instance."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The display name of the instance."
         },
         "Expunge": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "This determines if the instance is expunged when it is\ndestroyed (defaults false)."
         },
         "Group": {
-            "type": "string"
+            "type": "string",
+            "description": "The group name of the instance."
         },
         "IpAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "The IP address to assign to this instance. Changing\nthis forces a new resource to be created."
         },
         "Keypair": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the SSH key pair that will be used to\naccess this instance."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the instance."
         },
         "NetworkId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the network to connect this instance\nto. Changing this forces a new resource to be created."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or ID of the project to deploy this\ninstance to. Changing this forces a new resource to be created."
         },
         "RootDiskSize": {
-            "type": "number"
+            "type": "number",
+            "description": "The size of the root disk in gigabytes. The\nroot disk is resized on deploy. Only applies to template-based deployments.\nChanging this forces a new resource to be created."
         },
         "SecurityGroupIds": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of security group IDs to apply to this\ninstance. Changing this forces a new resource to be created."
         },
         "SecurityGroupNames": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of security group names to apply to\nthis instance. Changing this forces a new resource to be created."
         },
         "ServiceOffering": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or ID of the service offering used\nfor this instance."
         },
         "StartVm": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "This determines if the instances is started after it\nis created (defaults true)."
         },
         "Template": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or ID of the template used for this\ninstance. Changing this forces a new resource to be created."
         },
         "UserData": {
-            "type": "string"
+            "type": "string",
+            "description": "The user data to provide when launching the\ninstance. This can be either plain text or base64 encoded text."
         },
         "Zone": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or ID of the zone where this instance will be\ncreated. Changing this forces a new resource to be created."
         }
     },
     "additionalProperties": false,

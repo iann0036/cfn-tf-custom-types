@@ -1,6 +1,8 @@
 # Terraform::Alicloud::Vpc
 
-CloudFormation equivalent of alicloud_vpc
+Provides a VPC resource.
+
+-> **NOTE:** Terraform will auto build a router and a route table while it uses `alicloud_vpc` to build a vpc resource.
 
 ## Syntax
 
@@ -38,6 +40,8 @@ Properties:
 
 #### CidrBlock
 
+The CIDR block for the VPC.
+
 _Required_: Yes
 
 _Type_: String
@@ -45,6 +49,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+The VPC description. Defaults to null.
 
 _Required_: No
 
@@ -54,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the VPC. Defaults to null.
+
 _Required_: No
 
 _Type_: String
@@ -62,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupId
 
+The Id of resource group which the VPC belongs.
+
 _Required_: No
 
 _Type_: String
@@ -69,6 +79,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

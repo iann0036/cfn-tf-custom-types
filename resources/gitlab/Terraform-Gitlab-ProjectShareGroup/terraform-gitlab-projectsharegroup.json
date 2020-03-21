@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Gitlab::ProjectShareGroup",
-    "description": "CloudFormation equivalent of gitlab_project_share_group",
+    "description": "This resource allows you to share a project with a group",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "AccessLevel": {
-            "type": "string"
+            "type": "string",
+            "description": "One of five levels of access to the project."
         },
         "GroupId": {
-            "type": "number"
+            "type": "number",
+            "description": "The id of the group."
         },
         "ProjectId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the project."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::ApiManagementIdentityProviderFacebook",
-    "description": "CloudFormation equivalent of azurerm_api_management_identity_provider_facebook",
+    "description": "Manages an API Management Facebook Identity Provider.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,16 +29,20 @@
             "type": "string"
         },
         "ApiManagementName": {
-            "type": "string"
+            "type": "string",
+            "description": "The Name of the API Management Service where this Facebook Identity Provider should be created. Changing this forces a new resource to be created."
         },
         "AppId": {
-            "type": "string"
+            "type": "string",
+            "description": "App ID for Facebook."
         },
         "AppSecret": {
-            "type": "string"
+            "type": "string",
+            "description": "App Secret for Facebook."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The Name of the Resource Group where the API Management Service exists. Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

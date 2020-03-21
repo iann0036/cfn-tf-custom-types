@@ -25,6 +25,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Datacenters
 
+The datacenters the effective policy is valid within.
+
 _Required_: No
 
 _Type_: List of String
@@ -32,6 +34,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServiceName
+
+The name of the service.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::TcaplusApplication",
-    "description": "CloudFormation equivalent of tencentcloud_tcaplus_application",
+    "description": "Use this resource to create tcaplus application\n\n~> **NOTE:** tcaplus now only supports the following regions:ap-shanghai,ap-hongkong,na-siliconvalley,ap-singapore,ap-seoul,ap-tokyo,eu-frankfurt",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -18,34 +18,40 @@
             "type": "number"
         },
         "AppName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the tcapplus application. length should between 1 and 30."
         },
         "CreateTime": {
             "type": "string"
         },
         "IdlType": {
-            "type": "string"
+            "type": "string",
+            "description": "Idl type of the tcapplus application.Valid values are PROTO,TDR,MIX."
         },
         "NetworkType": {
             "type": "string"
         },
         "OldPasswordExpireLast": {
-            "type": "number"
+            "type": "number",
+            "description": "Old password expected expiration seconds after change password,must >= 300."
         },
         "OldPasswordExpireTime": {
             "type": "string"
         },
         "Password": {
-            "type": "string"
+            "type": "string",
+            "description": "Password of the tcapplus application. length should between 12 and 16,a-z and 0-9 and A-Z must contain."
         },
         "PasswordStatus": {
             "type": "string"
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "Subnet id of the tcapplus application."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "VPC id of the tcapplus application."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::PointToSiteVpnGateway",
-    "description": "CloudFormation equivalent of azurerm_point_to_site_vpn_gateway",
+    "description": "Manages a Point-to-Site VPN Gateway.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ConnectionConfiguration": {
@@ -8,7 +8,8 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Name which should be used for this Connection Configuration."
                 },
                 "VpnClientAddressPool": {
                     "type": "array",
@@ -50,7 +51,8 @@
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of CIDR Ranges which should be used as Address Prefixes."
                 }
             },
             "required": [
@@ -64,16 +66,20 @@
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Point-to-Site VPN Gateway. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the Point-to-Site VPN Gateway. Changing this forces a new resource to be created."
         },
         "ScaleUnit": {
-            "type": "number"
+            "type": "number",
+            "description": "The Scale Unit for this Point-to-Site VPN Gateway."
         },
         "Tags": {
             "type": "array",
@@ -93,13 +99,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the Point-to-Site VPN Gateway."
         },
         "VirtualHubId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Virtual Hub where this Point-to-Site VPN Gateway should exist. Changing this forces a new resource to be created."
         },
         "VpnServerConfigurationId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the VPN Server Configuration which this Point-to-Site VPN Gateway should use. Changing this forces a new resource to be created."
         },
         "ConnectionConfiguration": {
             "type": "array",

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OVH::DedicatedServerInstallTask",
-    "description": "CloudFormation equivalent of ovh_dedicated_server_install_task",
+    "description": "Install your Dedicated Server.\n\n> NOTE: After some delay, if the task is marked as `done`, the Provider\nmay purge it. To avoid raising errors when terraform refreshes its plan, \n404 errors are ignored on Resource Read, thus some information may be lost\nafter a while.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Details": {
@@ -8,46 +8,60 @@
             "additionalProperties": false,
             "properties": {
                 "ChangeLog": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Template change log details."
                 },
                 "CustomHostname": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Set up the server using the provided hostname instead of the default hostname."
                 },
                 "DiskGroupId": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Disk group id."
                 },
                 "InstallRtm": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "set to true to install RTM."
                 },
                 "InstallSqlServer": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "set to true to install sql server (Windows template only)."
                 },
                 "Language": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "language."
                 },
                 "NoRaid": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "set to true to disable RAID."
                 },
                 "PostInstallationScriptLink": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Indicate the URL where your postinstall customisation script is located."
                 },
                 "PostInstallationScriptReturn": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Indicate the string returned by your postinstall customisation script on successful execution. Advice: your script should return a unique validation string in case of succes. A good example is 'loh1Xee7eo OK OK OK UGh8Ang1Gu'."
                 },
                 "ResetHwRaid": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "set to true to make a hardware raid reset."
                 },
                 "SoftRaidDevices": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "soft raid devices."
                 },
                 "SshKeyName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Name of the ssh key that should be installed. Password login will be disabled."
                 },
                 "UseDistribKernel": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Use the distribution's native kernel instead of the recommended OVH Kernel."
                 },
                 "UseSpla": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "set to true to use SPLA."
                 }
             },
             "required": []
@@ -69,7 +83,8 @@
             "type": "string"
         },
         "BootidOnDestroy": {
-            "type": "number"
+            "type": "number",
+            "description": "If set, reboot the server on the specified boot id during destroy phase."
         },
         "Comment": {
             "type": "string"
@@ -84,10 +99,12 @@
             "type": "string"
         },
         "PartitionSchemeName": {
-            "type": "string"
+            "type": "string",
+            "description": "Partition scheme name."
         },
         "ServiceName": {
-            "type": "string"
+            "type": "string",
+            "description": "The service_name of your dedicated server."
         },
         "StartDate": {
             "type": "string"
@@ -96,7 +113,8 @@
             "type": "string"
         },
         "TemplateName": {
-            "type": "string"
+            "type": "string",
+            "description": "Template name."
         },
         "Details": {
             "type": "array",

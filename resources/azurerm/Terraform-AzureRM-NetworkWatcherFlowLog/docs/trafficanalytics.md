@@ -30,6 +30,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Enabled
 
+Boolean flag to enable/disable traffic analytics.
+
 _Required_: Yes
 
 _Type_: Boolean
@@ -37,6 +39,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IntervalInMinutes
+
+How frequently service should do flow analytics in minutes.
 
 _Required_: No
 
@@ -46,6 +50,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### WorkspaceId
 
+The resource guid of the attached workspace.
+
 _Required_: Yes
 
 _Type_: String
@@ -54,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### WorkspaceRegion
 
+The location of the attached workspace.
+
 _Required_: Yes
 
 _Type_: String
@@ -61,6 +69,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WorkspaceResourceId
+
+The resource ID of the attached workspace.
 
 _Required_: Yes
 

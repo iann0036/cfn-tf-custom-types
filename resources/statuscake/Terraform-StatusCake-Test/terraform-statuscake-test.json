@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::StatusCake::Test",
-    "description": "CloudFormation equivalent of statuscake_test",
+    "description": "The test resource allows StatusCake tests to be managed by Terraform.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,81 +9,103 @@
             "type": "string"
         },
         "BasicPass": {
-            "type": "string"
+            "type": "string",
+            "description": "If BasicUser is set then this should be the password for the BasicUser."
         },
         "BasicUser": {
-            "type": "string"
+            "type": "string",
+            "description": "A Basic Auth User account to use to login."
         },
         "Branding": {
-            "type": "number"
+            "type": "number",
+            "description": "Set to 0 to use branding (default) or 1 to disable public reporting branding)."
         },
         "CheckRate": {
-            "type": "number"
+            "type": "number",
+            "description": "Test check rate in seconds. Defaults to 300."
         },
         "Confirmations": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of confirmation servers to use in order to detect downtime. Defaults to 0."
         },
         "ContactGroup": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Set test contact groups, must be array of strings."
         },
         "ContactId": {
-            "type": "number"
+            "type": "number",
+            "description": "**Deprecated** (Optional) The id of the contact group to be added to the test. Each test can have only one."
         },
         "CustomHeader": {
-            "type": "string"
+            "type": "string",
+            "description": "Custom HTTP header, must be supplied as JSON."
         },
         "DoNotFind": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If the above string should be found to trigger a alert. 1 = will trigger if find_string found."
         },
         "EnableSslAlert": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "HTTP Tests only. If enabled, tests will send warnings if the SSL certificate is about to expire. Paid users only. Default is false."
         },
         "FinalEndpoint": {
-            "type": "string"
+            "type": "string",
+            "description": "Use to specify the expected Final URL in the testing process."
         },
         "FindString": {
-            "type": "string"
+            "type": "string",
+            "description": "A string that should either be found or not found."
         },
         "FollowRedirect": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Use to specify whether redirects should be followed, set to true to enable. Default is false."
         },
         "LogoImage": {
-            "type": "string"
+            "type": "string",
+            "description": "A URL to a image to use for public reporting."
         },
         "NodeLocations": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Set test node locations, must be array of strings."
         },
         "Paused": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether or not the test is paused. Defaults to false."
         },
         "PingUrl": {
-            "type": "string"
+            "type": "string",
+            "description": "A URL to ping if a site goes down."
         },
         "Port": {
-            "type": "number"
+            "type": "number",
+            "description": "The port to use when specifying a TCP test."
         },
         "PostRaw": {
-            "type": "string"
+            "type": "string",
+            "description": "Use to populate the RAW POST data field on the test."
         },
         "Public": {
-            "type": "number"
+            "type": "number",
+            "description": "Set 1 to enable public reporting, 0 to disable."
         },
         "RealBrowser": {
-            "type": "number"
+            "type": "number",
+            "description": "Use 1 to TURN OFF real browser testing."
         },
         "Status": {
             "type": "string"
         },
         "StatusCodes": {
-            "type": "string"
+            "type": "string",
+            "description": "Comma Separated List of StatusCodes to Trigger Error on. Defaults are \"204, 205, 206, 303, 400, 401, 403, 404, 405, 406, 408, 410, 413, 444, 429, 494, 495, 496, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 521, 522, 523, 524, 520, 598, 599\"."
         },
         "TestId": {
             "type": "string"
@@ -93,37 +115,47 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Set test tags, must be array of strings."
         },
         "TestType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of Test. Either HTTP, TCP, PING, or DNS."
         },
         "Timeout": {
-            "type": "number"
+            "type": "number",
+            "description": "The timeout of the test in seconds."
         },
         "TriggerRate": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of minutes to wait before sending an alert. Default is `5`."
         },
         "Uptime": {
             "type": "number"
         },
         "UseJar": {
-            "type": "number"
+            "type": "number",
+            "description": "Set to true to enable the Cookie Jar. Required for some redirects. Default is false."
         },
         "UserAgent": {
-            "type": "string"
+            "type": "string",
+            "description": "Test with a custom user agent set."
         },
         "Virus": {
-            "type": "number"
+            "type": "number",
+            "description": "Enable virus checking or not. 1 to enable."
         },
         "WebsiteHost": {
-            "type": "string"
+            "type": "string",
+            "description": "Used internally, when possible please add."
         },
         "WebsiteName": {
-            "type": "string"
+            "type": "string",
+            "description": "This is the name of the test and the website to be monitored."
         },
         "WebsiteUrl": {
-            "type": "string"
+            "type": "string",
+            "description": "The URL of the website to be monitored."
         }
     },
     "additionalProperties": false,

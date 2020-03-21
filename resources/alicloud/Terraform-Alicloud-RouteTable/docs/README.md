@@ -1,6 +1,11 @@
 # Terraform::Alicloud::RouteTable
 
-CloudFormation equivalent of alicloud_route_table
+Provides a route table resource to add customized route tables.
+
+-> **NOTE:** Terraform will auto build route table instance while it uses `alicloud_route_table` to build a route table resource.
+
+Currently, customized route tables are available in most regions apart from China (Beijing), China (Hangzhou), and China (Shenzhen) regions.
+For information about route table and how to use it, see [What is Route Table](https://www.alibabacloud.com/help/doc-detail/87057.htm).
 
 ## Syntax
 
@@ -36,6 +41,8 @@ Properties:
 
 #### Description
 
+The description of the route table instance.
+
 _Required_: No
 
 _Type_: String
@@ -43,6 +50,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the route table.
 
 _Required_: No
 
@@ -52,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -59,6 +70,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+The vpc_id of the route table, the field can't be changed.
 
 _Required_: Yes
 

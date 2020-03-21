@@ -1,6 +1,6 @@
 # Terraform::AzureRM::RelayNamespace
 
-CloudFormation equivalent of azurerm_relay_namespace
+Manages an Azure Relay Namespace.
 
 ## Syntax
 
@@ -40,6 +40,8 @@ Properties:
 
 #### Location
 
+Specifies the supported Azure location where the Azure Relay Namespace exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -47,6 +49,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the Azure Relay Namespace. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -56,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to create the Azure Relay Namespace.
+
 _Required_: Yes
 
 _Type_: String
@@ -64,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SkuName
 
+The name of the SKU to use. At this time the only supported value is `Standard`.
+
 _Required_: Yes
 
 _Type_: String
@@ -71,6 +79,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

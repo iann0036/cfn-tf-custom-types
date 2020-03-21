@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::ComputeInstanceV2
 
-CloudFormation equivalent of opentelekomcloud_compute_instance_v2
+Manages a V2 VM instance resource within OpenTelekomCloud.
 
 ## Syntax
 
@@ -104,6 +104,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AdminPass
 
+The administrative password to assign to the server.
+Changing this changes the root password on the existing server.
+
 _Required_: No
 
 _Type_: String
@@ -111,6 +114,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AutoRecovery
+
+Configures or deletes automatic recovery of an instance.
 
 _Required_: No
 
@@ -120,6 +125,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AvailabilityZone
 
+The availability zone in which to create
+the server. Changing this creates a new server.
+
 _Required_: No
 
 _Type_: String
@@ -127,6 +135,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ConfigDrive
+
+Whether to use the config_drive feature to
+configure the instance. Changing this creates a new server.
 
 _Required_: No
 
@@ -136,6 +147,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FlavorId
 
+The flavor ID of
+the desired flavor for the server. Changing this resizes the existing server.
+
 _Required_: No
 
 _Type_: String
@@ -143,6 +157,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FlavorName
+
+The name of the
+desired flavor for the server. Changing this resizes the existing server.
 
 _Required_: No
 
@@ -160,6 +177,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ImageId
 
+The image ID of
+the desired image for the server. Changing this creates a new server.
+
 _Required_: No
 
 _Type_: String
@@ -167,6 +187,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ImageName
+
+The name of the
+desired image for the server. Changing this creates a new server.
 
 _Required_: No
 
@@ -176,6 +199,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KeyPair
 
+The name of a key pair to put on the server. The key
+pair must already be created and associated with the tenant's account.
+Changing this creates a new server.
+
 _Required_: No
 
 _Type_: String
@@ -184,6 +211,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Metadata
 
+Metadata key/value pairs to make available from
+within the instance. Changing this updates the existing server metadata.
+
 _Required_: No
 
 _Type_: List of <a href="metadata.md">Metadata</a>
@@ -191,6 +221,8 @@ _Type_: List of <a href="metadata.md">Metadata</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+A unique name for the resource.
 
 _Required_: Yes
 
@@ -208,6 +240,12 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecurityGroups
 
+An array of one or more security group names
+to associate with the server. Changing this results in adding/removing
+security groups from the existing server. *Note*: When attaching the
+instance to networks using Ports, place the security groups on the Port
+and not the instance.
+
 _Required_: No
 
 _Type_: List of String
@@ -215,6 +253,10 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StopBeforeDestroy
+
+Whether to try stop instance gracefully
+before destroying it, thus giving chance for guest OS daemons to stop correctly.
+If instance doesn't stop within timeout, it will be destroyed anyway.
 
 _Required_: No
 
@@ -224,6 +266,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tag
 
+Tags key/value pairs to associate with the instance.
+
 _Required_: No
 
 _Type_: List of <a href="tag.md">Tag</a>
@@ -232,6 +276,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+**DEPRECATED** (Optional) The tags of the image. It must be a list of strings.
+
 _Required_: No
 
 _Type_: List of String
@@ -239,6 +285,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserData
+
+The user data to provide when launching the instance.
+Changing this creates a new server.
 
 _Required_: No
 

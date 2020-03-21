@@ -1,6 +1,6 @@
 # Terraform::AzureRM::ServicebusNamespace
 
-CloudFormation equivalent of azurerm_servicebus_namespace
+Manages a ServiceBus Namespace.
 
 ## Syntax
 
@@ -44,6 +44,8 @@ Properties:
 
 #### Capacity
 
+Specifies the capacity. When `sku` is `Premium`, capacity can be `1`, `2`, `4` or `8`. When `sku` is `Basic` or `Standard`, capacity can be `0` only.
+
 _Required_: No
 
 _Type_: Double
@@ -51,6 +53,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Location
+
+Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -60,6 +64,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the ServiceBus Namespace resource . Changing this forces a
+new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -67,6 +74,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which to
+create the namespace.
 
 _Required_: Yes
 
@@ -76,6 +86,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Sku
 
+Defines which tier to use. Options are basic, standard or premium.
+
 _Required_: Yes
 
 _Type_: String
@@ -84,6 +96,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -91,6 +105,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneRedundant
+
+Whether or not this resource is zone redundant. `sku` needs to be `Premium`. Defaults to `false`.
 
 _Required_: No
 

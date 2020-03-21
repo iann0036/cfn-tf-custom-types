@@ -70,6 +70,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Address
 
+An IPv4, hostname, or IPv6 address for the Backend.
+
 _Required_: Yes
 
 _Type_: String
@@ -77,6 +79,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AutoLoadbalance
+
+Denotes if this Backend should be
+included in the pool of backends that requests are load balanced against.
+Default `true`.
 
 _Required_: No
 
@@ -86,6 +92,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### BetweenBytesTimeout
 
+How long to wait between bytes in milliseconds. Default `10000`.
+
 _Required_: No
 
 _Type_: Double
@@ -93,6 +101,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ConnectTimeout
+
+How long to wait for a timeout in milliseconds.
+Default `1000`.
 
 _Required_: No
 
@@ -102,6 +113,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ErrorThreshold
 
+Number of errors to allow before the Backend is marked as down. Default `0`.
+
 _Required_: No
 
 _Type_: Double
@@ -109,6 +122,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FirstByteTimeout
+
+How long to wait for the first bytes in milliseconds. Default `15000`.
 
 _Required_: No
 
@@ -118,6 +133,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Healthcheck
 
+Name of a defined `healthcheck` to assign to this backend.
+
 _Required_: No
 
 _Type_: String
@@ -125,6 +142,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MaxConn
+
+Maximum number of connections for this Backend.
+Default `200`.
 
 _Required_: No
 
@@ -134,6 +154,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxTlsVersion
 
+Maximum allowed TLS version on SSL connections to this backend.
+
 _Required_: No
 
 _Type_: String
@@ -141,6 +163,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MinTlsVersion
+
+Minimum allowed TLS version on SSL connections to this backend.
 
 _Required_: No
 
@@ -150,6 +174,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The unique name for the condition.
+
 _Required_: Yes
 
 _Type_: String
@@ -157,6 +183,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OverrideHost
+
+The hostname to override the Host header.
 
 _Required_: No
 
@@ -166,6 +194,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Port
 
+The port number on which the Backend responds. Default `80`.
+
 _Required_: No
 
 _Type_: Double
@@ -173,6 +203,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RequestCondition
+
+Name of already defined `condition`, which if met, will select this backend during a request.
 
 _Required_: No
 
@@ -182,6 +214,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Shield
 
+The POP of the shield designated to reduce inbound load.
+
 _Required_: No
 
 _Type_: String
@@ -189,6 +223,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SslCaCert
+
+CA certificate attached to origin.
 
 _Required_: No
 
@@ -198,6 +234,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SslCertHostname
 
+Overrides ssl_hostname, but only for cert verification. Does not affect SNI at all.
+
 _Required_: No
 
 _Type_: String
@@ -205,6 +243,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SslCheckCert
+
+Be strict about checking SSL certs. Default `true`.
 
 _Required_: No
 
@@ -214,6 +254,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SslCiphers
 
+Comma separated list of OpenSSL Ciphers to try when negotiating to the backend.
+
 _Required_: No
 
 _Type_: String
@@ -221,6 +263,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SslClientCert
+
+Client certificate attached to origin. Used when connecting to the backend.
 
 _Required_: No
 
@@ -230,6 +274,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SslClientKey
 
+Client key attached to origin. Used when connecting to the backend.
+
 _Required_: No
 
 _Type_: String
@@ -237,6 +283,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SslHostname
+
+Used for both SNI during the TLS handshake and to validate the cert.
 
 _Required_: No
 
@@ -246,6 +294,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SslSniHostname
 
+Overrides ssl_hostname, but only for SNI in the handshake. Does not affect cert validation at all.
+
 _Required_: No
 
 _Type_: String
@@ -254,6 +304,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UseSsl
 
+Whether or not to use SSL to reach the backend. Default `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -261,6 +313,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Weight
+
+The [portion of traffic](https://docs.fastly.com/guides/performance-tuning/load-balancing-configuration.html#how-weight-affects-load-balancing) to send to this Backend. Each Backend receives `weight / total` of the traffic. Default `100`.
 
 _Required_: No
 

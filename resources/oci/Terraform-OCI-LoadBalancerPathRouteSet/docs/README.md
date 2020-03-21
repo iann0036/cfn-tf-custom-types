@@ -1,6 +1,9 @@
 # Terraform::OCI::LoadBalancerPathRouteSet
 
-CloudFormation equivalent of oci_load_balancer_path_route_set
+This resource provides the Path Route Set resource in Oracle Cloud Infrastructure Load Balancer service.
+
+Adds a path route set to a load balancer. For more information, see
+[Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
 
 ## Syntax
 
@@ -39,6 +42,8 @@ Properties:
 
 #### LoadBalancerId
 
+The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the path route set to.
+
 _Required_: Yes
 
 _Type_: String
@@ -46,6 +51,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_path_route_set`.
 
 _Required_: Yes
 

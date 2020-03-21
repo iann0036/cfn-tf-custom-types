@@ -1,6 +1,8 @@
 # Terraform::OCI::IdentityAuthenticationPolicy
 
-CloudFormation equivalent of oci_identity_authentication_policy
+This resource provides the Authentication Policy resource in Oracle Cloud Infrastructure Identity service.
+
+Updates authentication policy for the specified tenancy
 
 ## Syntax
 
@@ -33,6 +35,8 @@ Properties:
 ## Properties
 
 #### CompartmentId
+
+The OCID of the compartment.
 
 _Required_: Yes
 

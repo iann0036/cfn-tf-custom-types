@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Cloudflare::Filter",
-    "description": "CloudFormation equivalent of cloudflare_filter",
+    "description": "Filter expressions that can be referenced across multiple features, e.g. [Firewall Rule](firewall_rule.html). The expression format is similar to [Wireshark Display Filter](https://www.wireshark.org/docs/man-pages/wireshark-filter.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,19 +9,24 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A note that you can use to describe the purpose of the filter."
         },
         "Expression": {
-            "type": "string"
+            "type": "string",
+            "description": "The filter expression to be used."
         },
         "Paused": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether this filter is currently paused. Boolean value."
         },
         "Ref": {
-            "type": "string"
+            "type": "string",
+            "description": "Short reference tag to quickly select related rules."
         },
         "ZoneId": {
-            "type": "string"
+            "type": "string",
+            "description": "The DNS zone to which the Filter should be added."
         }
     },
     "additionalProperties": false,

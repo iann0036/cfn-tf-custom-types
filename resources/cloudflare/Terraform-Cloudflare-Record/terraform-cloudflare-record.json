@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Cloudflare::Record",
-    "description": "CloudFormation equivalent of cloudflare_record",
+    "description": "Provides a Cloudflare record resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -29,7 +29,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Map of attributes that constitute the record value. Primarily used for LOC and SRV record types. Either this or `value` must be specified."
         },
         "Hostname": {
             "type": "string"
@@ -58,28 +59,35 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the record."
         },
         "Priority": {
-            "type": "number"
+            "type": "number",
+            "description": "The priority of the record."
         },
         "Proxiable": {
             "type": "boolean"
         },
         "Proxied": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the record gets Cloudflare's origin protection; defaults to `false`."
         },
         "Ttl": {
-            "type": "number"
+            "type": "number",
+            "description": "The TTL of the record ([automatic: '1'](https://api.cloudflare.com/#dns-records-for-a-zone-create-dns-record))."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of the record."
         },
         "Value": {
-            "type": "string"
+            "type": "string",
+            "description": "The (string) value of the record. Either this or `data` must be specified."
         },
         "ZoneId": {
-            "type": "string"
+            "type": "string",
+            "description": "The DNS zone ID to add the record to."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 # Terraform::Consul::AclPolicy
 
-CloudFormation equivalent of consul_acl_policy
+Starting with Consul 1.4.0, the consul_acl_policy can be used to managed Consul ACL policies.
 
 ## Syntax
 
@@ -36,6 +36,8 @@ Properties:
 
 #### Datacenters
 
+The datacenters of the policy.
+
 _Required_: No
 
 _Type_: List of String
@@ -43,6 +45,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+The description of the policy.
 
 _Required_: No
 
@@ -52,6 +56,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the policy.
+
 _Required_: Yes
 
 _Type_: String
@@ -59,6 +65,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Rules
+
+The rules of the policy.
 
 _Required_: Yes
 

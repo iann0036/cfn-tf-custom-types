@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::KeyPair",
-    "description": "CloudFormation equivalent of alicloud_key_pair",
+    "description": "Provides a key pair resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,19 +12,24 @@
             "type": "string"
         },
         "KeyFile": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of file to save your new key pair's private key. Strongly suggest you to specified it when you creating key pair, otherwise, you wouldn't get its private key ever."
         },
         "KeyName": {
-            "type": "string"
+            "type": "string",
+            "description": "The key pair's name. It is the only in one Alicloud account."
         },
         "KeyNamePrefix": {
-            "type": "string"
+            "type": "string",
+            "description": "The key pair name's prefix. It is conflict with `key_name`. If it is specified, terraform will using it to build the only key name."
         },
         "PublicKey": {
-            "type": "string"
+            "type": "string",
+            "description": "You can import an existing public key and using Alicloud key pair to manage it."
         },
         "ResourceGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Id of resource group which the key pair belongs."
         },
         "Tags": {
             "type": "array",
@@ -44,7 +49,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource.\n-> **NOTE:** If `key_name` and `key_name_prefix` are not set, terraform will produce a specified ID to replace."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::DayuDdosPolicy
 
-CloudFormation equivalent of tencentcloud_dayu_ddos_policy
+Use this resource to create dayu DDoS policy
 
 ## Syntax
 
@@ -49,6 +49,8 @@ Properties:
 
 #### BlackIps
 
+Black ip list.
+
 _Required_: No
 
 _Type_: List of String
@@ -56,6 +58,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of the DDoS policy. Length should between 1 and 32.
 
 _Required_: Yes
 
@@ -65,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceType
 
+Type of the resource that the DDoS policy works for, valid values are `bgpip`, `bgp`, `bgp-multip` and `net`.
+
 _Required_: Yes
 
 _Type_: String
@@ -72,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WhiteIps
+
+White ip list.
 
 _Required_: No
 

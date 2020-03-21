@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::ComputeInstanceGroup",
-    "description": "CloudFormation equivalent of google_compute_instance_group",
+    "description": "Creates a group of dissimilar Compute Engine virtual machine instances.\nFor more information, see [the official documentation](https://cloud.google.com/compute/docs/instance-groups/#unmanaged_instance_groups)\nand [API](https://cloud.google.com/compute/docs/reference/latest/instanceGroups)\n\n-> Recreating an instance group that's in use by another resource will give a\n`resourceInUseByAnotherResource` error. You can avoid this error with a\nTerraform `lifecycle` block as outlined in the example below.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "NamedPort": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name which the port will be mapped to."
                 },
                 "Port": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The port number to map the name to."
                 }
             },
             "required": [
@@ -26,23 +28,28 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "An optional textual description of the instance\ngroup."
         },
         "Instances": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of instances in the group. They should be given\nas self_link URLs. When adding instances they must all be in the same\nnetwork and zone as the instance group."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the instance group. Must be 1-63\ncharacters long and comply with\n[RFC1035](https://www.ietf.org/rfc/rfc1035.txt). Supported characters\ninclude lowercase letters, numbers, and hyphens."
         },
         "Network": {
-            "type": "string"
+            "type": "string",
+            "description": "The URL of the network the instance group is in. If\nthis is different from the network where the instances are in, the creation\nfails. Defaults to the network where the instances are in (if neither\n`network` nor `instances` is specified, this field will be blank)."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used."
         },
         "SelfLink": {
             "type": "string"
@@ -51,7 +58,8 @@
             "type": "number"
         },
         "Zone": {
-            "type": "string"
+            "type": "string",
+            "description": "The zone that this instance group should be created in."
         },
         "NamedPort": {
             "type": "array",

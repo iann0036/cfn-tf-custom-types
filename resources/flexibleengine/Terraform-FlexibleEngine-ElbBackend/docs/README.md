@@ -1,6 +1,6 @@
 # Terraform::FlexibleEngine::ElbBackend
 
-CloudFormation equivalent of flexibleengine_elb_backend
+Manages an elastic loadbalancer backend resource within FlexibleEngine.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### Address
 
+Specifies the private IP address of the backend member.
+
 _Required_: Yes
 
 _Type_: String
@@ -43,6 +45,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ListenerId
 
+Specifies the listener ID.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServerId
+
+Specifies the backend member ID.
 
 _Required_: Yes
 

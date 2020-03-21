@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::ApiManagementGroupUser",
-    "description": "CloudFormation equivalent of azurerm_api_management_group_user",
+    "description": "Manages an API Management User Assignment to a Group.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,16 +29,20 @@
             "type": "string"
         },
         "ApiManagementName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the API Management Service. Changing this forces a new resource to be created."
         },
         "GroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The Name of the API Management Group within the API Management Service. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Resource Group in which the API Management Service exists. Changing this forces a new resource to be created."
         },
         "UserId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the API Management User which should be assigned to this API Management Group. Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

@@ -1,6 +1,10 @@
 # Terraform::GitHub::Repository
 
-CloudFormation equivalent of github_repository
+This resource allows you to create and manage repositories within your
+GitHub organization.
+
+This resource cannot currently be used to manage *personal* repositories,
+outside of organizations.
 
 ## Syntax
 
@@ -65,6 +69,8 @@ Properties:
 
 #### AllowMergeCommit
 
+Set to `false` to disable merge commits on the repository.
+
 _Required_: No
 
 _Type_: Boolean
@@ -72,6 +78,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowRebaseMerge
+
+Set to `false` to disable rebase merges on the repository.
 
 _Required_: No
 
@@ -81,6 +89,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AllowSquashMerge
 
+Set to `false` to disable squash merges on the repository.
+
 _Required_: No
 
 _Type_: Boolean
@@ -88,6 +98,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Archived
+
+Specifies if the repository should be archived. Defaults to `false`. **NOTE** Currently, the API does not support unarchiving.
 
 _Required_: No
 
@@ -97,6 +109,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AutoInit
 
+Set to `true` to produce an initial commit in the repository.
+
 _Required_: No
 
 _Type_: Boolean
@@ -104,6 +118,10 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefaultBranch
+
+The name of the default branch of the repository. **NOTE:** This can only be set after a repository has already been created,
+and after a correct reference has been created for the target branch inside the repository. This means a user will have to omit this parameter from the
+initial repository creation and create the target branch inside of the repository prior to setting this attribute.
 
 _Required_: No
 
@@ -113,6 +131,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+A description of the repository.
+
 _Required_: No
 
 _Type_: String
@@ -120,6 +140,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GitignoreTemplate
+
+Use the [name of the template](https://github.com/github/gitignore) without the extension. For example, "Haskell".
 
 _Required_: No
 
@@ -129,6 +151,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HasDownloads
 
+Set to `true` to enable the (deprecated) downloads features on the repository.
+
 _Required_: No
 
 _Type_: Boolean
@@ -136,6 +160,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HasIssues
+
+Set to `true` to enable the GitHub Issues features
+on the repository.
 
 _Required_: No
 
@@ -145,6 +172,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HasProjects
 
+Set to `true` to enable the GitHub Projects features on the repository. Per the GitHub [documentation](https://developer.github.com/v3/repos/#create) when in an organization that has disabled repository projects it will default to `false` and will otherwise default to `true`. If you specify `true` when it has been disabled it will return an error.
+
 _Required_: No
 
 _Type_: Boolean
@@ -152,6 +181,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HasWiki
+
+Set to `true` to enable the GitHub Wiki features on
+the repository.
 
 _Required_: No
 
@@ -161,6 +193,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HomepageUrl
 
+URL of a page describing the project.
+
 _Required_: No
 
 _Type_: String
@@ -168,6 +202,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LicenseTemplate
+
+Use the [name of the template](https://github.com/github/choosealicense.com/tree/gh-pages/_licenses) without the extension. For example, "mit" or "mpl-2.0".
 
 _Required_: No
 
@@ -177,6 +213,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the repository.
+
 _Required_: Yes
 
 _Type_: String
@@ -185,6 +223,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Private
 
+Set to `true` to create a private repository.
+Repositories are created as public (e.g. open source) by default.
+
 _Required_: No
 
 _Type_: Boolean
@@ -192,6 +233,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Topics
+
+The list of topics of the repository.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::OpenStack::LbVipV1
 
-CloudFormation equivalent of openstack_lb_vip_v1
+Manages a V1 load balancer vip resource within OpenStack.
 
 ## Syntax
 
@@ -56,6 +56,9 @@ Properties:
 
 #### Address
 
+The IP address of the vip. Changing this creates a new
+vip.
+
 _Required_: No
 
 _Type_: String
@@ -63,6 +66,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AdminStateUp
+
+The administrative state of the vip.
+Acceptable values are "true" and "false". Changing this value updates the
+state of the existing vip.
 
 _Required_: No
 
@@ -72,6 +79,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ConnLimit
 
+The maximum number of connections allowed for the
+vip. Default is -1, meaning no limit. Changing this updates the conn_limit
+of the existing vip.
+
 _Required_: No
 
 _Type_: Double
@@ -79,6 +90,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Human-readable description for the vip. Changing
+this updates the description of the existing vip.
 
 _Required_: No
 
@@ -88,6 +102,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FloatingIp
 
+A *Networking* Floating IP that will be associated
+with the vip. The Floating IP must be provisioned already.
+
 _Required_: No
 
 _Type_: String
@@ -95,6 +112,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the vip. Changing this updates the name of
+the existing vip.
 
 _Required_: Yes
 
@@ -104,6 +124,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Persistence
 
+Omit this field to prevent session persistence.
+The persistence object structure is documented below. Changing this updates
+the persistence of the existing vip.
+
 _Required_: No
 
 _Type_: List of <a href="persistence.md">Persistence</a>
@@ -111,6 +135,9 @@ _Type_: List of <a href="persistence.md">Persistence</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PoolId
+
+The ID of the pool with which the vip is associated.
+Changing this updates the pool_id of the existing vip.
 
 _Required_: Yes
 
@@ -120,6 +147,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Port
 
+The port on which to listen for client traffic. Changing
+this creates a new vip.
+
 _Required_: Yes
 
 _Type_: Double
@@ -127,6 +157,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Protocol
+
+The protocol - can be either 'TCP, 'HTTP', or
+HTTPS'. Changing this creates a new vip.
 
 _Required_: Yes
 
@@ -136,6 +169,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region in which to obtain the V2 Networking client.
+A Networking client is needed to create a VIP. If omitted, the
+`region` argument of the provider is used. Changing this creates a new
+VIP.
+
 _Required_: No
 
 _Type_: String
@@ -144,6 +182,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubnetId
 
+The network on which to allocate the vip's address. A
+tenant can only create vips on networks authorized by policy (e.g. networks
+that belong to them or networks that are shared). Changing this creates a
+new vip.
+
 _Required_: Yes
 
 _Type_: String
@@ -151,6 +194,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TenantId
+
+The owner of the vip. Required if admin wants to
+create a vip member for another tenant. Changing this creates a new vip.
 
 _Required_: No
 

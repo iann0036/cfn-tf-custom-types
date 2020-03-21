@@ -1,6 +1,8 @@
 # Terraform::Alicloud::HavipAttachment
 
-CloudFormation equivalent of alicloud_havip_attachment
+Provides an Alicloud HaVip Attachment resource for associating HaVip to ECS Instance.
+
+-> **NOTE:** Terraform will auto build havip attachment while it uses `alicloud_havip_attachment` to build a havip attachment resource.
 
 ## Syntax
 
@@ -31,6 +33,8 @@ Properties:
 
 #### HavipId
 
+The havip_id of the havip attachment, the field can't be changed.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +42,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceId
+
+The instance_id of the havip attachment, the field can't be changed.
 
 _Required_: Yes
 

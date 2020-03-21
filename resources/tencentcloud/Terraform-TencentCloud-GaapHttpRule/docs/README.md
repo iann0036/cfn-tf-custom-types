@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::GaapHttpRule
 
-CloudFormation equivalent of tencentcloud_gaap_http_rule
+Provides a resource to create a forward rule of layer7 listener.
 
 ## Syntax
 
@@ -55,6 +55,8 @@ Properties:
 
 #### ConnectTimeout
 
+Timeout of the health check response, default value is 2s.
+
 _Required_: No
 
 _Type_: Double
@@ -62,6 +64,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Domain
+
+Forward domain of the forward rule.
 
 _Required_: Yes
 
@@ -71,6 +75,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ForwardHost
 
+The default value of requested host which is forwarded to the realserver by the listener is `default`.
+
 _Required_: No
 
 _Type_: String
@@ -78,6 +84,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HealthCheck
+
+Indicates whether health check is enable.
 
 _Required_: Yes
 
@@ -87,6 +95,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HealthCheckMethod
 
+Method of the health check, the available values includes `GET` and `HEAD`.
+
 _Required_: No
 
 _Type_: String
@@ -94,6 +104,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HealthCheckPath
+
+Path of health check. Maximum length is 80.
 
 _Required_: No
 
@@ -103,6 +115,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HealthCheckStatusCodes
 
+Return code of confirmed normal, the available values include `100`, `200`, `300`, `400` and `500`.
+
 _Required_: No
 
 _Type_: List of Double
@@ -110,6 +124,8 @@ _Type_: List of Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Interval
+
+Interval of the health check, default value is 5s.
 
 _Required_: No
 
@@ -119,6 +135,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ListenerId
 
+ID of the layer7 listener.
+
 _Required_: Yes
 
 _Type_: String
@@ -126,6 +144,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Path
+
+Path of the forward rule. Maximum length is 80.
 
 _Required_: Yes
 
@@ -135,6 +155,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RealserverType
 
+Type of the realserver, the available values include `IP` and `DOMAIN`.
+
 _Required_: Yes
 
 _Type_: String
@@ -142,6 +164,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Scheduler
+
+Scheduling policy of the forward rule, default value is `rr`, the available values include `rr`, `wrr` and `lc`.
 
 _Required_: No
 

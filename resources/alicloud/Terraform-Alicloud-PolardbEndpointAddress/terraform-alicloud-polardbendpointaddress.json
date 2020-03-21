@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::PolardbEndpointAddress",
-    "description": "CloudFormation equivalent of alicloud_polardb_endpoint_address",
+    "description": "Provides a PolarDB endpoint address resource to allocate an Internet endpoint address string for PolarDB instance.\n\n-> **NOTE:** Available in v1.68.0+. Each PolarDB instance will allocate a intranet connection string automatically and its prefix is Cluster ID.\n To avoid unnecessary conflict, please specified a internet connection prefix before applying the resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,22 +9,26 @@
             "type": "string"
         },
         "ConnectionPrefix": {
-            "type": "string"
+            "type": "string",
+            "description": "Prefix of an Internet connection string. It must be checked for uniqueness. It may consist of lowercase letters, numbers, and underlines, and must start with a letter and have no more than 30 characters. Default to <db_endpoint_id> + 'tf'."
         },
         "ConnectionString": {
             "type": "string"
         },
         "DbClusterId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Id of cluster that can run database."
         },
         "DbEndpointId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Id of endpoint that can run database."
         },
         "IpAddress": {
             "type": "string"
         },
         "NetType": {
-            "type": "string"
+            "type": "string",
+            "description": "Internet connection net type. Valid value: `Public`. Default to `Public`. Currently supported only `Public`."
         },
         "Port": {
             "type": "string"

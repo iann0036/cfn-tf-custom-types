@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::ApiGatewayApi
 
-CloudFormation equivalent of huaweicloud_api_gateway_api
+Provides an API gateway API resource.
 
 ## Syntax
 
@@ -73,6 +73,9 @@ Properties:
 
 #### AuthType
 
+Specifies the security authentication mode.
+The value can be 'App', 'IAM', and 'NONE'.
+
 _Required_: Yes
 
 _Type_: String
@@ -80,6 +83,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BackendType
+
+Specifies the service backend type. The value can be:
+- 'HTTP': the web service backend
+- 'FUNCTION': the FunctionGraph service backend
+- 'MOCK': the Mock service backend.
 
 _Required_: Yes
 
@@ -89,6 +97,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Cors
 
+Specifies whether CORS is supported or not.
+
 _Required_: No
 
 _Type_: Boolean
@@ -96,6 +106,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Specifies the description of the API.
+The description cannot exceed 255 characters.
 
 _Required_: No
 
@@ -105,6 +118,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ExampleFailureResponse
 
+Specifies the example response for a failed request
+The length cannot exceed 20,480 characters.
+
 _Required_: No
 
 _Type_: String
@@ -112,6 +128,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ExampleSuccessResponse
+
+Specifies the example response for a successful request.
+The length cannot exceed 20,480 characters.
 
 _Required_: Yes
 
@@ -121,6 +140,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GroupId
 
+Specifies the ID of the API group.
+Changing this creates a new resource.
+
 _Required_: Yes
 
 _Type_: String
@@ -128,6 +150,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the API. An API name consists of 3–64 characters,
+starting with a letter. Only letters, digits, and underscores (_) are allowed.
 
 _Required_: Yes
 
@@ -137,6 +162,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RequestMethod
 
+Specifies the request method, including 'GET','POST','PUT' and etc..
+
 _Required_: Yes
 
 _Type_: String
@@ -144,6 +171,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RequestProtocol
+
+Specifies the request protocol. The value can be 'HTTP', 'HTTPS', and 'BOTH'
+which means the API can be accessed through both 'HTTP' and 'HTTPS'. Defaults to 'HTTPS'.
 
 _Required_: No
 
@@ -153,6 +183,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RequestUri
 
+Specifies the request path of the API. The value must comply with URI specifications.
+
 _Required_: Yes
 
 _Type_: String
@@ -160,6 +192,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+the tags of API in format of string list.
 
 _Required_: No
 
@@ -169,6 +203,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Version
 
+Specifies the version of the API. A maximum of 16 characters are allowed.
+
 _Required_: No
 
 _Type_: String
@@ -176,6 +212,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Visibility
+
+Specifies whether the API is available to the public.
+The value can be 1 (public) and 2 (private). Defaults to 2.
 
 _Required_: No
 

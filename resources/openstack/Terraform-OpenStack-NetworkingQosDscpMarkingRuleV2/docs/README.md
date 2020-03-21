@@ -1,6 +1,6 @@
 # Terraform::OpenStack::NetworkingQosDscpMarkingRuleV2
 
-CloudFormation equivalent of openstack_networking_qos_dscp_marking_rule_v2
+Manages a V2 Neutron QoS DSCP marking rule resource within OpenStack.
 
 ## Syntax
 
@@ -35,6 +35,9 @@ Properties:
 
 #### DscpMark
 
+The value of DSCP mark. Changing this updates the DSCP mark value existing
+QoS DSCP marking rule.
+
 _Required_: Yes
 
 _Type_: Double
@@ -43,6 +46,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### QosPolicyId
 
+The QoS policy reference. Changing this creates a new QoS DSCP marking rule.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +55,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region in which to obtain the V2 Networking client.
+A Networking client is needed to create a Neutron QoS DSCP marking rule. If omitted, the
+`region` argument of the provider is used. Changing this creates a new QoS DSCP marking rule.
 
 _Required_: No
 

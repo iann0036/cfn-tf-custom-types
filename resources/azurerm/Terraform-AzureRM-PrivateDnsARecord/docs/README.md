@@ -1,6 +1,6 @@
 # Terraform::AzureRM::PrivateDnsARecord
 
-CloudFormation equivalent of azurerm_private_dns_a_record
+Enables you to manage DNS AAAA Records within Azure Private DNS.
 
 ## Syntax
 
@@ -43,6 +43,8 @@ Properties:
 
 #### Name
 
+The name of the DNS A Record.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Records
+
+A list of IPv6 Addresses.
 
 _Required_: Yes
 
@@ -59,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+Specifies the resource group where the resource exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -66,6 +72,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 
@@ -82,6 +90,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneName
+
+Specifies the Private DNS Zone where the resource exists. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

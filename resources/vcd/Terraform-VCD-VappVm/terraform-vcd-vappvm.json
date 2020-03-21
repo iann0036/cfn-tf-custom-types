@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::VCD::VappVm",
-    "description": "CloudFormation equivalent of vcd_vapp_vm",
+    "description": "Provides a vCloud Director VM resource. This can be used to create,\nmodify, and delete VMs within a vApp.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Customization": {
@@ -142,25 +142,32 @@
             "type": "string"
         },
         "AcceptAllEulas": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Automatically accept EULA if OVA has it. Default is `true`."
         },
         "CatalogName": {
-            "type": "string"
+            "type": "string",
+            "description": "The catalog name in which to find the given vApp Template."
         },
         "ComputerName": {
-            "type": "string"
+            "type": "string",
+            "description": "Computer name to assign to this virtual machine."
         },
         "CpuCores": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of cores per socket. The default is 1."
         },
         "Cpus": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of virtual CPUs to allocate to the VM. Socket count is a result of: virtual logical processors/cores per socket. The default is 1."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The VM description. Note: description is read only. Currently, this field has\nthe description of the OVA used to create the VM."
         },
         "ExposeHardwareVirtualization": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean for exposing full CPU virtualization to the\nguest operating system so that applications that require hardware virtualization can run on virtual machines without binary\ntranslation or paravirtualization. Useful for hypervisor nesting provided underlying hardware supports it. Default is `false`."
         },
         "GuestProperties": {
             "type": "array",
@@ -180,7 +187,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Key value map of guest properties."
         },
         "Href": {
             "type": "string"
@@ -223,13 +231,15 @@
             }
         },
         "Ip": {
-            "type": "string"
+            "type": "string",
+            "description": "The IP to assign to this vApp. Must be an IP address or\none of `dhcp`, `allocated`, or `none`. If given the address must be within the\n`static_ip_pool` set for the network. If left blank, and the network has\n`dhcp_pool` set with at least one available IP then this will be set with\nDHCP."
         },
         "Mac": {
             "type": "string"
         },
         "Memory": {
-            "type": "number"
+            "type": "number",
+            "description": "The amount of RAM (in MB) to allocate to the VM."
         },
         "Metadata": {
             "type": "array",
@@ -249,40 +259,50 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Key value map of metadata to assign to this VM."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A name for the VM, unique within the vApp."
         },
         "NetworkDhcpWaitSeconds": {
-            "type": "number"
+            "type": "number",
+            "description": "Optional number of seconds to try and wait for DHCP IP (only valid\nfor adapters in `network` block with `ip_allocation_mode=DHCP`). It constantly checks if IP is present so the time given\nis a maximum. VM must be powered on and _at least one_ of the following _must be true_:\n* VM has Guest Tools. It waits for IP address to be reported by Guest Tools. This is a slower option, but\ndoes not require for the VM to use Edge Gateways DHCP service.\n* VM DHCP interface is connected to routed Org network and is using Edge Gateways DHCP service (not\nrelayed). It works by querying DHCP leases on Edge Gateway. In general it is quicker than waiting\nuntil Guest Tools report IP addresses, but is more constrained. However this is the only option if Guest\nTools are not present on the VM."
         },
         "NetworkHref": {
             "type": "string"
         },
         "NetworkName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the network this VM should connect to."
         },
         "Org": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of organization to use, optional if defined at provider level. Useful when connected as sysadmin working across different organisations."
         },
         "PowerOn": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "A boolean value stating if this VM should be powered on. Default is `true`."
         },
         "StorageProfile": {
             "type": "string"
         },
         "TemplateName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the vApp Template to use."
         },
         "VappName": {
-            "type": "string"
+            "type": "string",
+            "description": "The vApp this VM belongs to."
         },
         "VappNetworkName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the vApp network this VM should connect to."
         },
         "Vdc": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of VDC to use, optional if defined at provider level."
         },
         "Customization": {
             "type": "array",

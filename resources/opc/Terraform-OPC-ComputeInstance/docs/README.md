@@ -1,6 +1,12 @@
 # Terraform::OPC::ComputeInstance
 
-CloudFormation equivalent of opc_compute_instance
+The ``opc_compute_instance`` resource creates and manages an instance in an Oracle Cloud Infrastructure Compute Classic identity domain.
+
+~> **Caution:** The ``opc_compute_instance`` resource can completely delete your
+instance just as easily as it can create it. To avoid costly accidents,
+consider setting
+[``prevent_destroy``](/docs/configuration/resources.html#prevent_destroy)
+on your instance resources as an extra safety measure.
 
 ## Syntax
 
@@ -60,6 +66,8 @@ Properties:
 
 #### BootOrder
 
+The index number of the bootable storage volume, presented as a list, that should be used to boot the instance. The only valid value is `[1]`. If you set this attribute, you must also specify a bootable storage volume with index number 1 in the volume sub-parameter of storage_attachments. When you specify boot_order, you don't need to specify the imagelist attribute, because the instance is booted using the image on the specified bootable storage volume. If you specify both boot_order and imagelist, the imagelist attribute is ignored.
+
 _Required_: No
 
 _Type_: List of Double
@@ -67,6 +75,8 @@ _Type_: List of Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DesiredState
+
+Set the desire state of the instance to `running` (default) or `shutdown`. You can use this request to shut down and restart individual instances which use a persistent bootable storage volume.
 
 _Required_: No
 
@@ -76,6 +86,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Hostname
 
+The host name assigned to the instance. On an Oracle Linux instance, this host name is displayed in response to the hostname command. Only relative DNS is supported. The domain name is suffixed to the host name that you specify. The host name must not end with a period. If you don't specify a host name, then a name is generated automatically.
+
 _Required_: No
 
 _Type_: String
@@ -83,6 +95,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ImageList
+
+The imageList of the instance, e.g. `/oracle/public/oel_6.4_2GB_v1`.
 
 _Required_: No
 
@@ -92,6 +106,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceAttributes
 
+A JSON string of custom attributes. See [Attributes](#attributes) below for more information.
+
 _Required_: No
 
 _Type_: String
@@ -99,6 +115,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Label
+
+The label to apply to the instance.
 
 _Required_: No
 
@@ -108,6 +126,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the instance.
+
 _Required_: Yes
 
 _Type_: String
@@ -115,6 +135,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ReverseDns
+
+If set to `true` (default), then reverse DNS records are created. If set to `false`, no reverse DNS records are created.
 
 _Required_: No
 
@@ -124,6 +146,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Shape
 
+The shape of the instance, e.g. `oc4`.
+
 _Required_: Yes
 
 _Type_: String
@@ -132,6 +156,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SshKeys
 
+A list of the names of the SSH Keys that can be used to log into the instance.
+
 _Required_: No
 
 _Type_: List of String
@@ -139,6 +165,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A list of strings that should be supplied to the instance as tags.
 
 _Required_: No
 

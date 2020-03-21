@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::VCD::Edgegateway",
-    "description": "CloudFormation equivalent of vcd_edgegateway",
+    "description": "Provides a vCloud Director edge gateway directly connected to one or more external networks. This can be used to create\nand delete edge gateways for Org VDC networks to connect.\n\nSupported in provider *v2.4+*\n\n~> **Note:** Only `System Administrator` can create an edge gateway.\nYou must use `System Adminstrator` account in `provider` configuration\nand then provide `org` and `vdc` arguments for edge gateway to work.\n\n~> **Note:** Load balancing capabilities will work only when edge gateway is `advanced`. Load\nbalancing settings will be **ignored** when it is not. Refer to [official vCloud Director documentation]\n(https://docs.vmware.com/en/vCloud-Director/9.7/com.vmware.vcloud.tenantportal.doc/GUID-7E082E77-B459-4CE7-806D-2769F7CB5624.html) \nfor more information.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ExternalNetwork": {
@@ -83,22 +83,26 @@
             "type": "string"
         },
         "Advanced": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "True if the gateway uses advanced networking. Default is `true`."
         },
         "Configuration": {
-            "type": "string"
+            "type": "string",
+            "description": "Configuration of the vShield edge VM for this gateway. One of: `compact`, `full` (\"Large\"), `x-large`, `full4` (\"Quad Large\")."
         },
         "DefaultExternalNetworkIp": {
             "type": "string"
         },
         "DefaultGatewayNetwork": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the external network to be used as\ndefault gateway. It must be included in the list of `external_networks`. Providing an empty string\nor omitting the argument will create the edge gateway without a default gateway. **Please use**\nthe  [external network](#external-network) block structure and `use_for_default_route` to specify\na subnet which should be used as a default route."
         },
         "Description": {
             "type": "string"
         },
         "DistributedRouting": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If advanced networking enabled, also enable distributed\nrouting. Default is `false`."
         },
         "ExternalNetworkIps": {
             "type": "array",
@@ -112,10 +116,12 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "An array of external network names. This supports\nsimple external networks with one subnet only. **Please use** the [external\nnetwork](#external-network) block structure to define external networks."
         },
         "FipsModeEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "When FIPS mode is enabled, any secure communication to or from\nthe NSX Edge uses cryptographic algorithms or protocols that are allowed by United States Federal\nInformation Processing Standards (FIPS). FIPS mode turns on the cipher suites that comply with\nFIPS. Default is `false`. **Note:** to use FIPS mode it must be enabled in vCD system settings and\nis only supported starting with vCD version 9.1. This field __must not__ be set for vCD 9.0."
         },
         "FwDefaultRuleAction": {
             "type": "string"
@@ -127,31 +133,40 @@
             "type": "boolean"
         },
         "HaEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable high availability on this edge gateway. Default is `false`."
         },
         "LbAccelerationEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable to configure the load balancer to use the faster L4\nengine rather than L7 engine. The L4 TCP VIP is processed before the edge gateway firewall so no\n`allow` firewall rule is required. Default is `false`. **Note:** L7 VIPs for HTTP and HTTPS are\nprocessed after the firewall, so when Acceleration Enabled is not selected, an edge gateway firewall\nrule must exist to allow access to the L7 VIP for those protocols. When Acceleration Enabled is\nselected and the server pool is in non-transparent mode, an SNAT rule is added, so you must ensure\nthat the firewall is enabled on the edge gateway."
         },
         "LbEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable load balancing. Default is `false`."
         },
         "LbLoggingEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enables the edge gateway load balancer to collect traffic logs.\nDefault is `false`."
         },
         "LbLoglevel": {
-            "type": "string"
+            "type": "string",
+            "description": "Choose the severity of events to be logged. One of `emergency`,\n`alert`, `critical`, `error`, `warning`, `notice`, `info`, `debug`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique name for the edge gateway."
         },
         "Org": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of organization to which the VDC belongs. Optional if defined at provider level."
         },
         "UseDefaultRouteForDnsRelay": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "When default route is set, it will be used for\ngateways' default routing and DNS forwarding. Default is `false`."
         },
         "Vdc": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of VDC that owns the edge gateway. Optional if defined at provider level."
         },
         "ExternalNetwork": {
             "type": "array",

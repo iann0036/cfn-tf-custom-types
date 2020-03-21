@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::BillingAccountIamBinding",
-    "description": "CloudFormation equivalent of google_billing_account_iam_binding",
+    "description": "Allows creation and management of a single binding within IAM policy for\nan existing Google Cloud Platform Billing Account.\n\n~> **Note:** This resource __must not__ be used in conjunction with\n   `google_billing_account_iam_member` for the __same role__ or they will fight over\n   what your policy should be.\n\n~> **Note:** On create, this resource will overwrite members of any existing roles.\n    Use `terraform import` and inspect the `terraform plan` output to ensure\n    your existing members are preserved.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "BillingAccountId": {
-            "type": "string"
+            "type": "string",
+            "description": "The billing account id."
         },
         "Etag": {
             "type": "string"
@@ -19,10 +20,12 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of users that the role should apply to. For more details on format and restrictions see https://cloud.google.com/billing/reference/rest/v1/Policy#Binding."
         },
         "Role": {
-            "type": "string"
+            "type": "string",
+            "description": "The role that should be applied."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Datadog::LogsIndex",
-    "description": "CloudFormation equivalent of datadog_logs_index",
+    "description": "Provides a Datadog [Logs Index API](https://docs.datadoghq.com/api/?lang=python#logs-indexes) resource. This can be used to create and manage Datadog logs indexes.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ExclusionFilter": {
@@ -43,7 +43,8 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the exclusion filter.\n* `is_enabled` - (Optional, default = false) A boolean stating if the exclusion is active or not."
         },
         "ExclusionFilter": {
             "type": "array",

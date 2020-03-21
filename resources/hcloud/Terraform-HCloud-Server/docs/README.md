@@ -1,6 +1,6 @@
 # Terraform::HCloud::Server
 
-CloudFormation equivalent of hcloud_server
+Provides an Hetzner Cloud server resource. This can be used to create, modify, and delete servers. Servers also support [provisioning](https://www.terraform.io/docs/provisioners/index.html).
 
 ## Syntax
 
@@ -53,6 +53,8 @@ Properties:
 
 #### Backups
 
+Enable or disable backups.
+
 _Required_: No
 
 _Type_: Boolean
@@ -60,6 +62,15 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Datacenter
+
+The datacenter name to create the server in.
+- `user_data` - (Optional, string) Cloud-Init user data to use during server creation
+- `ssh_keys` - (Optional, list) SSH key IDs or names which should be injected into the server at creation time
+- `keep_disk` - (Optional, bool) If true, do not upgrade the disk. This allows downgrading the server type later.
+- `iso` - (Optional, string) ID or Name of an ISO image to mount.
+- `rescue` - (Optional, string) Enable and boot in to the specified rescue system. This enables simple installation of custom operating systems. `linux64` `linux32` or `freebsd64`
+- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with.
+- `backups` - (Optional, boolean) Enable or disable backups.
 
 _Required_: No
 
@@ -69,6 +80,17 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Image
 
+Name or ID of the image the server is created from.
+- `location` - (Optional, string) The location name to create the server in. `nbg1`, `fsn1` or `hel1`
+- `datacenter` - (Optional, string) The datacenter name to create the server in.
+- `user_data` - (Optional, string) Cloud-Init user data to use during server creation
+- `ssh_keys` - (Optional, list) SSH key IDs or names which should be injected into the server at creation time
+- `keep_disk` - (Optional, bool) If true, do not upgrade the disk. This allows downgrading the server type later.
+- `iso` - (Optional, string) ID or Name of an ISO image to mount.
+- `rescue` - (Optional, string) Enable and boot in to the specified rescue system. This enables simple installation of custom operating systems. `linux64` `linux32` or `freebsd64`
+- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with.
+- `backups` - (Optional, boolean) Enable or disable backups.
+
 _Required_: Yes
 
 _Type_: String
@@ -76,6 +98,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Iso
+
+ID or Name of an ISO image to mount.
+- `rescue` - (Optional, string) Enable and boot in to the specified rescue system. This enables simple installation of custom operating systems. `linux64` `linux32` or `freebsd64`
+- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with.
+- `backups` - (Optional, boolean) Enable or disable backups.
 
 _Required_: No
 
@@ -85,6 +112,12 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KeepDisk
 
+If true, do not upgrade the disk. This allows downgrading the server type later.
+- `iso` - (Optional, string) ID or Name of an ISO image to mount.
+- `rescue` - (Optional, string) Enable and boot in to the specified rescue system. This enables simple installation of custom operating systems. `linux64` `linux32` or `freebsd64`
+- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with.
+- `backups` - (Optional, boolean) Enable or disable backups.
+
 _Required_: No
 
 _Type_: Boolean
@@ -92,6 +125,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Labels
+
+User-defined labels (key-value pairs) should be created with.
+- `backups` - (Optional, boolean) Enable or disable backups.
 
 _Required_: No
 
@@ -101,6 +137,16 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Location
 
+The location name to create the server in. `nbg1`, `fsn1` or `hel1`
+- `datacenter` - (Optional, string) The datacenter name to create the server in.
+- `user_data` - (Optional, string) Cloud-Init user data to use during server creation
+- `ssh_keys` - (Optional, list) SSH key IDs or names which should be injected into the server at creation time
+- `keep_disk` - (Optional, bool) If true, do not upgrade the disk. This allows downgrading the server type later.
+- `iso` - (Optional, string) ID or Name of an ISO image to mount.
+- `rescue` - (Optional, string) Enable and boot in to the specified rescue system. This enables simple installation of custom operating systems. `linux64` `linux32` or `freebsd64`
+- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with.
+- `backups` - (Optional, boolean) Enable or disable backups.
+
 _Required_: No
 
 _Type_: String
@@ -108,6 +154,19 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of the server to create (must be unique per project and a valid hostname as per RFC 1123).
+- `server_type` - (Required, string) Name of the server type this server should be created with.
+- `image` - (Required, string) Name or ID of the image the server is created from.
+- `location` - (Optional, string) The location name to create the server in. `nbg1`, `fsn1` or `hel1`
+- `datacenter` - (Optional, string) The datacenter name to create the server in.
+- `user_data` - (Optional, string) Cloud-Init user data to use during server creation
+- `ssh_keys` - (Optional, list) SSH key IDs or names which should be injected into the server at creation time
+- `keep_disk` - (Optional, bool) If true, do not upgrade the disk. This allows downgrading the server type later.
+- `iso` - (Optional, string) ID or Name of an ISO image to mount.
+- `rescue` - (Optional, string) Enable and boot in to the specified rescue system. This enables simple installation of custom operating systems. `linux64` `linux32` or `freebsd64`
+- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with.
+- `backups` - (Optional, boolean) Enable or disable backups.
 
 _Required_: Yes
 
@@ -117,6 +176,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Rescue
 
+Enable and boot in to the specified rescue system. This enables simple installation of custom operating systems. `linux64` `linux32` or `freebsd64`
+- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with.
+- `backups` - (Optional, boolean) Enable or disable backups.
+
 _Required_: No
 
 _Type_: String
@@ -124,6 +187,18 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServerType
+
+Name of the server type this server should be created with.
+- `image` - (Required, string) Name or ID of the image the server is created from.
+- `location` - (Optional, string) The location name to create the server in. `nbg1`, `fsn1` or `hel1`
+- `datacenter` - (Optional, string) The datacenter name to create the server in.
+- `user_data` - (Optional, string) Cloud-Init user data to use during server creation
+- `ssh_keys` - (Optional, list) SSH key IDs or names which should be injected into the server at creation time
+- `keep_disk` - (Optional, bool) If true, do not upgrade the disk. This allows downgrading the server type later.
+- `iso` - (Optional, string) ID or Name of an ISO image to mount.
+- `rescue` - (Optional, string) Enable and boot in to the specified rescue system. This enables simple installation of custom operating systems. `linux64` `linux32` or `freebsd64`
+- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with.
+- `backups` - (Optional, boolean) Enable or disable backups.
 
 _Required_: Yes
 
@@ -133,6 +208,13 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SshKeys
 
+SSH key IDs or names which should be injected into the server at creation time
+- `keep_disk` - (Optional, bool) If true, do not upgrade the disk. This allows downgrading the server type later.
+- `iso` - (Optional, string) ID or Name of an ISO image to mount.
+- `rescue` - (Optional, string) Enable and boot in to the specified rescue system. This enables simple installation of custom operating systems. `linux64` `linux32` or `freebsd64`
+- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with.
+- `backups` - (Optional, boolean) Enable or disable backups.
+
 _Required_: No
 
 _Type_: List of String
@@ -140,6 +222,14 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserData
+
+Cloud-Init user data to use during server creation
+- `ssh_keys` - (Optional, list) SSH key IDs or names which should be injected into the server at creation time
+- `keep_disk` - (Optional, bool) If true, do not upgrade the disk. This allows downgrading the server type later.
+- `iso` - (Optional, string) ID or Name of an ISO image to mount.
+- `rescue` - (Optional, string) Enable and boot in to the specified rescue system. This enables simple installation of custom operating systems. `linux64` `linux32` or `freebsd64`
+- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with.
+- `backups` - (Optional, boolean) Enable or disable backups.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::KubernetesCluster",
-    "description": "CloudFormation equivalent of azurerm_kubernetes_cluster",
+    "description": "Manages a Managed Kubernetes Cluster (also known as AKS / Azure Kubernetes Service)\n\n~> **Note:** All arguments including the client secret will be stored in the raw state as plain-text. [Read more about sensitive data in state](/docs/state/sensitive-data.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "AddonProfile": {
@@ -54,25 +54,30 @@
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of Availability Zones across which the Node Pool should be spread."
                 },
                 "EnableAutoScaling": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Should [the Kubernetes Auto Scaler](https://docs.microsoft.com/en-us/azure/aks/cluster-autoscaler) be enabled for this Node Pool? Defaults to `false`."
                 },
                 "EnableNodePublicIp": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Should nodes in this Node Pool have a Public IP Address? Defaults to `false`."
                 },
                 "MaxCount": {
                     "type": "number"
                 },
                 "MaxPods": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The maximum number of pods that can run on each agent. Changing this forces a new resource to be created."
                 },
                 "MinCount": {
                     "type": "number"
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name which should be used for the default Kubernetes Node Pool. Changing this forces a new resource to be created."
                 },
                 "NodeCount": {
                     "type": "number"
@@ -95,17 +100,20 @@
                             "Key",
                             "Value"
                         ]
-                    }
+                    },
+                    "description": "A map of Kubernetes labels which should be applied to nodes in the Default Node Pool."
                 },
                 "NodeTaints": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of Kubernetes taints which should be applied to nodes in the agent pool (e.g `key=value:NoSchedule`)."
                 },
                 "OsDiskSizeGb": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The size of the OS Disk which should be used for each agent in the Node Pool. Changing this forces a new resource to be created."
                 },
                 "Tags": {
                     "type": "array",
@@ -125,16 +133,20 @@
                             "Key",
                             "Value"
                         ]
-                    }
+                    },
+                    "description": "A mapping of tags to assign to the resource."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The type of Node Pool which should be created. Possible values are `AvailabilitySet` and `VirtualMachineScaleSets`. Defaults to `VirtualMachineScaleSets`."
                 },
                 "VmSize": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The size of the Virtual Machine, such as `Standard_DS2_v2`."
                 },
                 "VnetSubnetId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of a Subnet where the Kubernetes Node Pool should exist. Changing this forces a new resource to be created."
                 }
             },
             "required": [
@@ -147,7 +159,8 @@
             "additionalProperties": false,
             "properties": {
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The type of identity used for the managed cluster. At this time the only supported value is `SystemAssigned`."
                 }
             },
             "required": [
@@ -159,7 +172,8 @@
             "additionalProperties": false,
             "properties": {
                 "AdminUsername": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Admin Username for the Cluster. Changing this forces a new resource to be created."
                 },
                 "SshKey": {
                     "type": "array",
@@ -178,25 +192,32 @@
             "additionalProperties": false,
             "properties": {
                 "DnsServiceIp": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "IP address within the Kubernetes service address range that will be used by cluster service discovery (kube-dns). This is required when `network_plugin` is set to `azure`. Changing this forces a new resource to be created."
                 },
                 "DockerBridgeCidr": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "IP address (in CIDR notation) used as the Docker bridge IP address on nodes. This is required when `network_plugin` is set to `azure`. Changing this forces a new resource to be created."
                 },
                 "LoadBalancerSku": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the SKU of the Load Balancer used for this Kubernetes Cluster. Possible values are `Basic` and `Standard`. Defaults to `Standard`."
                 },
                 "NetworkPlugin": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Network plugin to use for networking. Currently supported values are `azure` and `kubenet`. Changing this forces a new resource to be created."
                 },
                 "NetworkPolicy": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Sets up network policy to be used with Azure CNI. [Network policy allows us to control the traffic flow between pods](https://docs.microsoft.com/en-us/azure/aks/use-network-policies). Currently supported values are `calico` and `azure`. Changing this forces a new resource to be created."
                 },
                 "PodCidr": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The CIDR to use for pod IP addresses. This field can only be set when `network_plugin` is set to `kubenet`. Changing this forces a new resource to be created."
                 },
                 "ServiceCidr": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Network Range used by the Kubernetes service. This is required when `network_plugin` is set to `azure`. Changing this forces a new resource to be created."
                 },
                 "LoadBalancerProfile": {
                     "type": "array",
@@ -215,7 +236,8 @@
             "additionalProperties": false,
             "properties": {
                 "Enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Is Role Based Access Control Enabled? Changing this forces a new resource to be created."
                 },
                 "AzureActiveDirectory": {
                     "type": "array",
@@ -234,10 +256,12 @@
             "additionalProperties": false,
             "properties": {
                 "ClientId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Client ID for the Service Principal."
                 },
                 "ClientSecret": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Client Secret for the Service Principal."
                 }
             },
             "required": [
@@ -269,10 +293,12 @@
             "additionalProperties": false,
             "properties": {
                 "AdminPassword": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Admin Password for Windows VMs."
                 },
                 "AdminUsername": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Admin Username for Windows VMs."
                 }
             },
             "required": [
@@ -299,7 +325,8 @@
             "additionalProperties": false,
             "properties": {
                 "Enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Is the Azure Policy for Kubernetes Add On enabled?."
                 }
             },
             "required": [
@@ -323,7 +350,8 @@
             "additionalProperties": false,
             "properties": {
                 "Enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Is the Kubernetes Dashboard enabled?."
                 }
             },
             "required": [
@@ -335,10 +363,12 @@
             "additionalProperties": false,
             "properties": {
                 "Enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Is the OMS Agent Enabled?."
                 },
                 "LogAnalyticsWorkspaceId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of the Log Analytics Workspace which the OMS Agent should send data to. Must be present if `enabled` is `true`."
                 }
             },
             "required": [
@@ -350,7 +380,8 @@
             "additionalProperties": false,
             "properties": {
                 "KeyData": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Public SSH Key used to access the cluster. Changing this forces a new resource to be created."
                 }
             },
             "required": [
@@ -362,21 +393,24 @@
             "additionalProperties": false,
             "properties": {
                 "ManagedOutboundIpCount": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Count of desired managed outbound IPs for the cluster load balancer. Must be in the range of [1, 100]."
                 },
                 "OutboundIpAddressIds": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "The ID of the Public IP Addresses which should be used for outbound communication for the cluster load balancer."
                 },
                 "OutboundIpPrefixIds": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "The ID of the outbound Public IP Address Prefixes which should be used for the cluster load balancer."
                 }
             },
             "required": []
@@ -415,13 +449,16 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The IP ranges to whitelist for incoming traffic to the masters."
         },
         "DnsPrefix": {
-            "type": "string"
+            "type": "string",
+            "description": "DNS prefix specified when creating the managed cluster. Changing this forces a new resource to be created."
         },
         "EnablePodSecurityPolicy": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether Pod Security Policies are enabled. Note that this also requires role based access control to be enabled."
         },
         "Fqdn": {
             "type": "string"
@@ -489,16 +526,20 @@
             "type": "string"
         },
         "KubernetesVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "Version of Kubernetes specified when creating the AKS managed cluster. If not specified, the latest recommended version will be used at provisioning time (but won't auto-upgrade)."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "The location where the Managed Kubernetes Cluster should be created. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Managed Kubernetes Cluster to create. Changing this forces a new resource to be created."
         },
         "NodeResourceGroup": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Resource Group where the Kubernetes Nodes should exist. Changing this forces a new resource to be created."
         },
         "PrivateFqdn": {
             "type": "string"
@@ -507,7 +548,8 @@
             "type": "boolean"
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the Resource Group where the Managed Kubernetes Cluster should exist. Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -527,7 +569,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "AddonProfile": {
             "type": "array",

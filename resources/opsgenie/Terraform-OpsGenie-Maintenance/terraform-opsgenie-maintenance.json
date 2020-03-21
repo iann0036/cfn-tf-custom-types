@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpsGenie::Maintenance",
-    "description": "CloudFormation equivalent of opsgenie_maintenance",
+    "description": "Manages a Maintenance within Opsgenie.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Rules": {
@@ -8,7 +8,8 @@
             "additionalProperties": false,
             "properties": {
                 "State": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "State of rule that will be defined in maintenance and can take either enabled or disabled for policy type rules. This field has to be disabled for integration type entity rules."
                 },
                 "Entity": {
                     "type": "array",
@@ -58,7 +59,8 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description for the maintenance."
         },
         "Rules": {
             "type": "array",

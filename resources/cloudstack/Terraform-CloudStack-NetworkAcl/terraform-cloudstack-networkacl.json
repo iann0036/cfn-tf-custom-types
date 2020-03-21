@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::CloudStack::NetworkAcl",
-    "description": "CloudFormation equivalent of cloudstack_network_acl",
+    "description": "Creates a Network ACL for the given VPC.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,20 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the ACL. Changing this forces a\nnew resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the ACL. Changing this forces a new resource\nto be created."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or ID of the project to deploy this\ninstance to. Changing this forces a new resource to be created."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the VPC to create this ACL for. Changing this\nforces a new resource to be created."
         }
     },
     "additionalProperties": false,

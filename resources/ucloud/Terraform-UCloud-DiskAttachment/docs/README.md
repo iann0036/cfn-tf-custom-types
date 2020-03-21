@@ -1,6 +1,6 @@
 # Terraform::UCloud::DiskAttachment
 
-CloudFormation equivalent of ucloud_disk_attachment
+Provides a Cloud Disk Attachment resource for attaching Cloud Disk to UHost Instance.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### AvailabilityZone
 
+The Zone to attach the disk in.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DiskId
 
+The ID of disk that needs to be attached.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceId
+
+The ID of host instance.
 
 _Required_: Yes
 

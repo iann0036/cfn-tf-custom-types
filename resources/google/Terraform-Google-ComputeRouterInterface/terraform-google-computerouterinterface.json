@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::ComputeRouterInterface",
-    "description": "CloudFormation equivalent of google_compute_router_interface",
+    "description": "Manages a Cloud Router interface. For more information see\n[the official documentation](https://cloud.google.com/compute/docs/cloudrouter)\nand\n[API](https://cloud.google.com/compute/docs/reference/latest/routers).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,25 +9,32 @@
             "type": "string"
         },
         "InterconnectAttachment": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or resource link to the\nVLAN interconnect for this interface. Changing this forces a new interface to\nbe created. Only one of `vpn_tunnel` and `interconnect_attachment` can be\nspecified."
         },
         "IpRange": {
-            "type": "string"
+            "type": "string",
+            "description": "IP address and range of the interface. The IP range must be\nin the RFC3927 link-local IP space. Changing this forces a new interface to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique name for the interface, required by GCE. Changing\nthis forces a new interface to be created."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the project in which this interface's router belongs. If it\nis not provided, the provider project is used. Changing this forces a new interface to be created."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region this interface's router sits in. If not specified,\nthe project region will be used. Changing this forces a new interface to be\ncreated."
         },
         "Router": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the router this interface will be attached to.\nChanging this forces a new interface to be created."
         },
         "VpnTunnel": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or resource link to the VPN tunnel this\ninterface will be linked to. Changing this forces a new interface to be created. Only\none of `vpn_tunnel` and `interconnect_attachment` can be specified."
         }
     },
     "additionalProperties": false,

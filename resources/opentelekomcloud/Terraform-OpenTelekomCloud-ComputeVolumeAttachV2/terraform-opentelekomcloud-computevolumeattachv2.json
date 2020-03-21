@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenTelekomCloud::ComputeVolumeAttachV2",
-    "description": "CloudFormation equivalent of opentelekomcloud_compute_volume_attach_v2",
+    "description": "Attaches a Block Storage Volume to an Instance using the OpenTelekomCloud\nCompute (Nova) v2 API.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,16 +23,19 @@
             "type": "string"
         },
         "Device": {
-            "type": "string"
+            "type": "string",
+            "description": "The device of the volume attachment (ex: `/dev/vdc`).\n_NOTE_: Being able to specify a device is dependent upon the hypervisor in\nuse. There is a chance that the device specified in Terraform will not be\nthe same device the hypervisor chose. If this happens, Terraform will wish\nto update the device upon subsequent applying which will cause the volume\nto be detached and reattached indefinitely. Please use with caution."
         },
         "InstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Instance to attach the Volume to."
         },
         "Region": {
             "type": "string"
         },
         "VolumeId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Volume to attach to an Instance."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

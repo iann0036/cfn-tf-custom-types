@@ -1,6 +1,11 @@
 # Terraform::Alicloud::SlbDomainExtension
 
-CloudFormation equivalent of alicloud_slb_domain_extension
+HTTPS listeners of guaranteed-performance SLB support configuring multiple certificates, allowing you to forward requests with different domain names to different backend servers.
+Please refer to the [documentation](https://www.alibabacloud.com/help/doc-detail/85956.htm?spm=a2c63.p38356.b99.40.1c881563Co8p6w) for details.
+
+-> **NOTE:** Available in 1.60.0+
+
+-> **NOTE:** The instance with shared loadBalancerSpec doesn't support domainExtension.
 
 ## Syntax
 
@@ -37,6 +42,8 @@ Properties:
 
 #### DeleteProtectionValidation
 
+Checking DeleteProtection of SLB instance before deleting. If true, this resource will not be deleted when its SLB instance enabled DeleteProtection. Default to false.
+
 _Required_: No
 
 _Type_: Boolean
@@ -44,6 +51,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Domain
+
+The domain name,.
 
 _Required_: Yes
 
@@ -53,6 +62,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FrontendPort
 
+The frontend port used by the HTTPS listener of the SLB instance. Valid values: 1–65535.
+
 _Required_: Yes
 
 _Type_: Double
@@ -61,6 +72,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LoadBalancerId
 
+The ID of the SLB instance.
+
 _Required_: Yes
 
 _Type_: String
@@ -68,6 +81,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServerCertificateId
+
+The ID of the certificate used by the domain name.
 
 _Required_: Yes
 

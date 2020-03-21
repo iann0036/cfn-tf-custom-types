@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::SdrsProtectiongroupV1
 
-CloudFormation equivalent of opentelekomcloud_sdrs_protectiongroup_v1
+Manages a SDRS protection group resource within OpenTelekomCloud.
 
 ## Syntax
 
@@ -43,6 +43,8 @@ Properties:
 
 #### Description
 
+The description of a protection group. Changing this creates a new group.
+
 _Required_: No
 
 _Type_: String
@@ -50,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DomainId
+
+Specifies the ID of an active-active domain. Changing this creates a new group.
 
 _Required_: Yes
 
@@ -59,6 +63,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DrType
 
+Specifies the deployment model. The default value is migration indicating migration within a VPC.
+Changing this creates a new group.
+
 _Required_: No
 
 _Type_: String
@@ -66,6 +73,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of a protection group.
 
 _Required_: Yes
 
@@ -75,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SourceAvailabilityZone
 
+Specifies the source AZ of a protection group. Changing this creates a new group.
+
 _Required_: Yes
 
 _Type_: String
@@ -83,6 +94,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SourceVpcId
 
+Specifies the ID of the source VPC. Changing this creates a new group.
+
 _Required_: Yes
 
 _Type_: String
@@ -90,6 +103,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TargetAvailabilityZone
+
+Specifies the target AZ of a protection group. Changing this creates a new group.
 
 _Required_: Yes
 

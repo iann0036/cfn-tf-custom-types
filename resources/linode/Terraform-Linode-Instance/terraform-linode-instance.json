@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Linode::Instance",
-    "description": "CloudFormation equivalent of linode_instance",
+    "description": "Provides a Linode Instance resource.  This can be used to create, modify, and delete Linodes.\nFor more information, see [Getting Started with Linode](https://linode.com/docs/getting-started/) and the [Linode APIv4 docs](https://developers.linode.com/api/v4#operation/createLinodeInstance).\n\nThe Linode Guide, [Use Terraform to Provision Linode Environments](https://www.linode.com/docs/applications/configuration-management/how-to-build-your-infrastructure-using-terraform-and-linode/), provides step-by-step guidance and additional examples.\n\nLinode Instances can also use [provisioners](/docs/provisioners/index.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Alerts": {
@@ -416,13 +416,15 @@
             }
         },
         "BackupsEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If this field is set to true, the created Linode will automatically be enrolled in the Linode Backup service. This will incur an additional charge. The cost for the Backup service is dependent on the Type of Linode deployed."
         },
         "BootConfigLabel": {
             "type": "string"
         },
         "Group": {
-            "type": "string"
+            "type": "string",
+            "description": "The display group of the Linode instance."
         },
         "Image": {
             "type": "string"
@@ -441,16 +443,19 @@
             "type": "string"
         },
         "Label": {
-            "type": "string"
+            "type": "string",
+            "description": "The Linode's label is for display purposes only. If no label is provided for a Linode, a default will be assigned."
         },
         "PrivateIp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If true, the created Linode will have private networking enabled, allowing use of the 192.168.128.0/17 network within the Linode's region. It can be enabled on an existing Linode but it can't be disabled."
         },
         "PrivateIpAddress": {
             "type": "string"
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "This is the location where the Linode is deployed. Examples are `\"us-east\"`, `\"us-west\"`, `\"ap-south\"`, etc. See all regions [here](https://api.linode.com/v4/regions). *Changing `region` forces the creation of a new Linode Instance.*."
         },
         "RootPass": {
             "type": "string"
@@ -511,13 +516,16 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of tags applied to this object. Tags are for organizational purposes only."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The Linode type defines the pricing, CPU, disk, and RAM specs of the instance. Examples are `\"g6-nanode-1\"`, `\"g6-standard-2\"`, `\"g6-highmem-16\"`, `\"g6-dedicated-16\"`, etc. See all types [here](https://api.linode.com/v4/linode/types)."
         },
         "WatchdogEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "The watchdog, named Lassie, is a Shutdown Watchdog that monitors your Linode and will reboot it if it powers off unexpectedly. It works by issuing a boot job when your Linode powers off without a shutdown job being responsible. To prevent a loop, Lassie will give up if there have been more than 5 boot jobs issued within 15 minutes."
         },
         "Alerts": {
             "type": "array",

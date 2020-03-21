@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::LbMonitorV2
 
-CloudFormation equivalent of opentelekomcloud_lb_monitor_v2
+Manages an Enhanced LB monitor resource within OpenTelekomCloud.
 
 ## Syntax
 
@@ -53,6 +53,9 @@ Properties:
 
 #### AdminStateUp
 
+The administrative state of the monitor.
+A valid value is true (UP) or false (DOWN).
+
 _Required_: No
 
 _Type_: Boolean
@@ -60,6 +63,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Delay
+
+The time, in seconds, between sending probes to members.
 
 _Required_: Yes
 
@@ -69,6 +74,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ExpectedCodes
 
+Required for HTTP types. Expected HTTP codes
+for a passing HTTP monitor. You can either specify a single status like
+"200", or a list like "200,202".
+
 _Required_: No
 
 _Type_: String
@@ -76,6 +85,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HttpMethod
+
+Required for HTTP types. The HTTP method used
+for requests by the monitor. If this attribute is not specified, it
+defaults to "GET".
 
 _Required_: No
 
@@ -85,6 +98,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxRetries
 
+Number of permissible ping failures before
+changing the member's status to INACTIVE. Must be a number between 1
+and 10.
+
 _Required_: Yes
 
 _Type_: Double
@@ -93,6 +110,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The Name of the Monitor.
+
 _Required_: No
 
 _Type_: String
@@ -100,6 +119,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PoolId
+
+The id of the pool that this monitor will be assigned to.
 
 _Required_: Yes
 
@@ -117,6 +138,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TenantId
 
+Required for admins. The UUID of the tenant who owns
+the monitor.  Only administrative users can specify a tenant UUID
+other than their own. Changing this creates a new monitor.
+
 _Required_: No
 
 _Type_: String
@@ -124,6 +149,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Timeout
+
+Maximum number of seconds for a monitor to wait for a
+ping reply before it times out. The value must be less than the delay
+value.
 
 _Required_: Yes
 
@@ -133,6 +162,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Type
 
+The type of probe, which is TCP, UDP_CONNECT, or HTTP,
+that is sent by the load balancer to verify the member state. Changing this
+creates a new monitor.
+
 _Required_: Yes
 
 _Type_: String
@@ -140,6 +173,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UrlPath
+
+Required for HTTP types. URI path that will be
+accessed if monitor type is HTTP.
 
 _Required_: No
 

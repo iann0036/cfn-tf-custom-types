@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::MarketOrder",
-    "description": "CloudFormation equivalent of alicloud_market_order",
+    "description": "Provides a market order resource.\n\n-> **NOTE:** Terraform will auto build a market order  while it uses `alicloud_market_order` to build a market order resource.\n\n-> **NOTE:** Available in 1.69.0+",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -26,28 +26,36 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Service providers customize additional components."
         },
         "CouponId": {
-            "type": "string"
+            "type": "string",
+            "description": "The coupon id of the market product."
         },
         "Duration": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of purchase cycles."
         },
         "PackageVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "The package version of the market product."
         },
         "PayType": {
-            "type": "string"
+            "type": "string",
+            "description": "Valid values are `PrePaid`, `PostPaid`,System default to `PostPaid`."
         },
         "PricingCycle": {
-            "type": "string"
+            "type": "string",
+            "description": "The purchase cycle of the product, valid values are `Day`, `Month` and `Year`."
         },
         "ProductCode": {
-            "type": "string"
+            "type": "string",
+            "description": "The product_code of market place product."
         },
         "Quantity": {
-            "type": "number"
+            "type": "number",
+            "description": "The quantity of the market product will be purchased."
         }
     },
     "additionalProperties": false,

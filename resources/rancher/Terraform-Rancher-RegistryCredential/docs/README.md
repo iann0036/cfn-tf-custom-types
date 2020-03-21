@@ -1,6 +1,6 @@
 # Terraform::Rancher::RegistryCredential
 
-CloudFormation equivalent of rancher_registry_credential
+Provides a Rancher Registy Credential resource. This can be used to create registry credentials for rancher environments and retrieve their information.
 
 ## Syntax
 
@@ -39,6 +39,8 @@ Properties:
 
 #### Description
 
+A registry credential description.
+
 _Required_: No
 
 _Type_: String
@@ -55,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the registry credential.
+
 _Required_: Yes
 
 _Type_: String
@@ -62,6 +66,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PublicValue
+
+The public value (user name) of the account.
 
 _Required_: Yes
 
@@ -71,6 +77,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RegistryId
 
+The ID of the registry to create the credential for.
+
 _Required_: Yes
 
 _Type_: String
@@ -78,6 +86,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecretValue
+
+The secret value (password) of the account.
 
 _Required_: Yes
 

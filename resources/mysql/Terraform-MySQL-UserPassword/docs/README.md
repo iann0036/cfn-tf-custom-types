@@ -1,6 +1,14 @@
 # Terraform::MySQL::UserPassword
 
-CloudFormation equivalent of mysql_user_password
+The `mysql_user_password` resource sets and manages a password for a given 
+user on a MySQL server.
+
+~> **NOTE on MySQL Passwords:** This resource conflicts with the `password` 
+   argument for `mysql_user`. This resource uses PGP encryption to avoid 
+   storing unencrypted passwords in Terraform state.
+   
+~> **NOTE on How Passwords are Created:** This resource **automatically**
+   generates a **random** password. The password will be a random UUID.
 
 ## Syntax
 
@@ -33,6 +41,8 @@ Properties:
 
 #### Host
 
+The source host of the user. Defaults to `localhost`.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +51,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PgpKey
 
+Either a base-64 encoded PGP public key, or a keybase username in the form `keybase:some_person_that_exists`.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +60,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### User
+
+The IAM user to associate with this access key.
 
 _Required_: Yes
 

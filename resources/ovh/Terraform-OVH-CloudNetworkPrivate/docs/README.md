@@ -1,6 +1,6 @@
 # Terraform::OVH::CloudNetworkPrivate
 
-CloudFormation equivalent of ovh_cloud_network_private
+Creates a private network in a public cloud project.
 
 ## Syntax
 
@@ -36,6 +36,8 @@ Properties:
 
 #### Name
 
+The name of the network.
+
 _Required_: Yes
 
 _Type_: String
@@ -43,6 +45,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProjectId
+
+The id of the public cloud project. If omitted,
+the `OVH_PROJECT_ID` environment variable is used.
 
 _Required_: Yes
 
@@ -52,6 +57,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Regions
 
+an array of valid OVH public cloud region ID in which the network
+will be available. Ex.: "GRA1". Defaults to all public cloud regions.
+
 _Required_: No
 
 _Type_: List of String
@@ -59,6 +67,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VlanId
+
+a vlan id to associate with the network.
+Changing this value recreates the resource. Defaults to 0.
 
 _Required_: No
 

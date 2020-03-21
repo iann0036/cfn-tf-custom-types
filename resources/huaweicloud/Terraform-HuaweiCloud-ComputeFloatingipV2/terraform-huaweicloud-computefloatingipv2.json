@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HuaweiCloud::ComputeFloatingipV2",
-    "description": "CloudFormation equivalent of huaweicloud_compute_floatingip_v2",
+    "description": "Manages a V2 floating IP resource within HuaweiCloud Nova (compute)\nthat can be used for compute instances.\n\nPlease note that managing floating IPs through the HuaweiCloud Compute API has\nbeen deprecated. Unless you are using an older HuaweiCloud environment, it is\nrecommended to use the [`huaweicloud_networking_floatingip_v2`](networking_floatingip_v2.html)\nresource instead, which uses the HuaweiCloud Networking API.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -18,10 +18,12 @@
             "type": "string"
         },
         "Pool": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the pool from which to obtain the floating\nIP. Only admin_external_net is valid. Changing this creates a new floating IP."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the V2 Compute client.\nA Compute client is needed to create a floating IP that can be used with\na compute instance. If omitted, the `region` argument of the provider\nis used. Changing this creates a new floating IP (which may or may not\nhave a different address)."
         }
     },
     "additionalProperties": false,

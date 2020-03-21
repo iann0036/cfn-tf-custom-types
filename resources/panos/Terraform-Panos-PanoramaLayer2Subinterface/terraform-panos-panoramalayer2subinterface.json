@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::PanoramaLayer2Subinterface",
-    "description": "CloudFormation equivalent of panos_panorama_layer2_subinterface",
+    "description": "This resource allows you to add/update/delete Panorama layer2 subinterfaces.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,31 +9,40 @@
             "type": "string"
         },
         "Comment": {
-            "type": "string"
+            "type": "string",
+            "description": "The interface comment."
         },
         "InterfaceType": {
-            "type": "string"
+            "type": "string",
+            "description": "The interface type.  Valid values are `ethernet` (default)\nor `aggregate-ethernet`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The interface's name."
         },
         "NetflowProfile": {
-            "type": "string"
+            "type": "string",
+            "description": "The netflow profile."
         },
         "ParentInterface": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the parent interface."
         },
         "ParentMode": {
-            "type": "string"
+            "type": "string",
+            "description": "The parent's mode.  Valid values are `layer2` (default)\nor `virtual-wire`."
         },
         "Tag": {
-            "type": "number"
+            "type": "number",
+            "description": "The interface's tag."
         },
         "Template": {
-            "type": "string"
+            "type": "string",
+            "description": "The template name."
         },
         "Vsys": {
-            "type": "string"
+            "type": "string",
+            "description": "The vsys that will use this interface.  This should be\nsomething like `vsys1` or `vsys3`."
         }
     },
     "additionalProperties": false,

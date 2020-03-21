@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::AsScalingGroup",
-    "description": "CloudFormation equivalent of tencentcloud_as_scaling_group",
+    "description": "Provides a resource to create a group of AS (Auto scaling) instances.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ForwardBalancerIds": {
@@ -8,13 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "ListenerId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Listener ID for application load balancers."
                 },
                 "LoadBalancerId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "ID of available load balancers."
                 },
                 "RuleId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "ID of forwarding rules."
                 },
                 "TargetAttribute": {
                     "type": "array",
@@ -34,10 +37,12 @@
             "additionalProperties": false,
             "properties": {
                 "Port": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Port number."
                 },
                 "Weight": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Weight."
                 }
             },
             "required": [
@@ -52,16 +57,19 @@
             "type": "string"
         },
         "ConfigurationId": {
-            "type": "string"
+            "type": "string",
+            "description": "An available ID for a launch configuration."
         },
         "CreateTime": {
             "type": "string"
         },
         "DefaultCooldown": {
-            "type": "number"
+            "type": "number",
+            "description": "Default cooldown time in second, and default value is 300."
         },
         "DesiredCapacity": {
-            "type": "number"
+            "type": "number",
+            "description": "Desired volume of CVM instances, which is between max_size and min_size."
         },
         "InstanceCount": {
             "type": "number"
@@ -71,22 +79,28 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "ID list of traditional load balancers."
         },
         "MaxSize": {
-            "type": "number"
+            "type": "number",
+            "description": "Maximum number of CVM instances (0~2000)."
         },
         "MinSize": {
-            "type": "number"
+            "type": "number",
+            "description": "Minimum number of CVM instances (0~2000)."
         },
         "ProjectId": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies to which project the scaling group belongs."
         },
         "RetryPolicy": {
-            "type": "string"
+            "type": "string",
+            "description": "Available values for retry policies include IMMEDIATE_RETRY and INCREMENTAL_INTERVALS."
         },
         "ScalingGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of a scaling group."
         },
         "Status": {
             "type": "string"
@@ -96,7 +110,8 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "ID list of subnet, and for VPC it is required."
         },
         "Tags": {
             "type": "array",
@@ -116,24 +131,28 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Tags of a scaling group."
         },
         "TerminationPolicies": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Available values for termination policies include OLDEST_INSTANCE and NEWEST_INSTANCE."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of VPC network."
         },
         "Zones": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of available zones, for Basic network it is required."
         },
         "ForwardBalancerIds": {
             "type": "array",

@@ -1,6 +1,22 @@
 # Terraform::Google::DeploymentManagerDeployment
 
-CloudFormation equivalent of google_deployment_manager_deployment
+A collection of resources that are deployed and managed together using
+a configuration file
+
+
+
+~> **Warning:** Deployment Manager shares similar behavior with Terraform as both
+products manage GCP resource lifecycle and state. This Terraform
+resource is intended only to manage a Deployment resource,
+and attempts to manage the Deployment's resources in Terraform as well
+will likely result in errors or unexpected behavior as the two tools
+fight over ownership. We strongly discourage doing so unless you are an
+experienced user of both tools.
+
+In addition, due to limitations of the API, Terraform will treat
+deployments in preview as recreate-only for any update operation other
+than actually deploying an in-preview deployment (i.e. `preview=true` to
+`preview=false`).
 
 ## Syntax
 

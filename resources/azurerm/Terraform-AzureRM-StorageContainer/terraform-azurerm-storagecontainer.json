@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::StorageContainer",
-    "description": "CloudFormation equivalent of azurerm_storage_container",
+    "description": "Manages a Container within an Azure Storage Account.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,7 +29,8 @@
             "type": "string"
         },
         "ContainerAccessType": {
-            "type": "string"
+            "type": "string",
+            "description": "The Access Level configured for this Container. Possible values are `blob`, `container` or `private`. Defaults to `private`."
         },
         "HasImmutabilityPolicy": {
             "type": "boolean"
@@ -55,13 +56,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of MetaData for this Container."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Container which should be created within the Storage Account."
         },
         "StorageAccountName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Storage Account where the Container should be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

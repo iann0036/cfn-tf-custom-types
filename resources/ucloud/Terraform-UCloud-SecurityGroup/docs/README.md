@@ -1,6 +1,6 @@
 # Terraform::UCloud::SecurityGroup
 
-CloudFormation equivalent of ucloud_security_group
+Provides a Security Group resource.
 
 ## Syntax
 
@@ -36,6 +36,8 @@ Properties:
 
 #### Name
 
+The name of the security group which contains 1-63 characters and only support Chinese, English, numbers, '-', '_' and '.'. If not specified, terraform will auto-generate a name beginning with `tf-security-group`.
+
 _Required_: No
 
 _Type_: String
@@ -44,6 +46,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Remark
 
+The remarks of the security group. (Default: `""`).
+
 _Required_: No
 
 _Type_: String
@@ -51,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tag
+
+A tag assigned to security group, which contains at most 63 characters and only support Chinese, English, numbers, '-', '_', and '.'. If it is not filled in or a empty string is filled in, then default tag will be assigned. (Default: `Default`).
 
 _Required_: No
 

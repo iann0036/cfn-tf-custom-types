@@ -1,6 +1,6 @@
 # Terraform::Kubernetes::Deployment
 
-CloudFormation equivalent of kubernetes_deployment
+A Deployment ensures that a specified number of pod “replicas” are running at any one time. In other words, a Deployment makes sure that a pod or homogeneous set of pods are always up and available. If there are too many pods, it will kill some. If there are too few, the Deployment will start more.
 
 ## Syntax
 

@@ -1,6 +1,24 @@
 # Terraform::Google::ComputeTargetInstance
 
-CloudFormation equivalent of google_compute_target_instance
+Represents a TargetInstance resource which defines an endpoint instance
+that terminates traffic of certain protocols. In particular, they are used
+in Protocol Forwarding, where forwarding rules can send packets to a
+non-NAT'ed target instance. Each target instance contains a single
+virtual machine instance that receives and handles traffic from the
+corresponding forwarding rules.
+
+
+To get more information about TargetInstance, see:
+
+* [API documentation](https://cloud.google.com/compute/docs/reference/v1/targetInstances)
+* How-to Guides
+    * [Using Protocol Forwarding](https://cloud.google.com/compute/docs/protocol-forwarding)
+
+<div class = "oics-button" style="float: right; margin: 0 0 -15px">
+  <a href="https://console.cloud.google.com/cloudshell/open?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fterraform-google-modules%2Fdocs-examples.git&cloudshell_working_dir=target_instance_basic&cloudshell_image=gcr.io%2Fgraphite-cloud-shell-images%2Fterraform%3Alatest&open_in_editor=main.tf&cloudshell_print=.%2Fmotd&cloudshell_tutorial=.%2Ftutorial.md" target="_blank">
+    <img alt="Open in Cloud Shell" src="//gstatic.com/cloudssh/images/open-btn.svg" style="max-height: 44px; margin: 32px auto; max-width: 100%;">
+  </a>
+</div>
 
 ## Syntax
 
@@ -72,6 +90,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
 
 _Required_: No
 

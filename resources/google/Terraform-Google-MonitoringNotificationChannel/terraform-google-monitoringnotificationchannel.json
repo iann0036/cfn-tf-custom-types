@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::MonitoringNotificationChannel",
-    "description": "CloudFormation equivalent of google_monitoring_notification_channel",
+    "description": "A NotificationChannel is a medium through which an alert is delivered\nwhen a policy violation is detected. Examples of channels include email, SMS,\nand third-party messaging applications. Fields containing sensitive information\nlike authentication tokens or contact info are only partially populated on retrieval.\n\nNotification Channels are designed to be flexible and are made up of a supported `type`\nand labels to configure that channel. Each `type` has specific labels that need to be\npresent for that channel to be correctly configured. The labels that are required to be\npresent for one channel `type` are often different than those required for another.\nDue to these loose constraints it's often best to set up a channel through the UI\nand import to Terraform when setting up a brand new channel type to determine which\nlabels are required.\n\nA list of supported channels per project the `list` endpoint can be\naccessed programmatically or through the api explorer at  https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.notificationChannelDescriptors/list .\nThis provides the channel type and all of the required labels that must be passed.\n\n\nTo get more information about NotificationChannel, see:\n\n* [API documentation](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.notificationChannels)\n* How-to Guides\n    * [Notification Options](https://cloud.google.com/monitoring/support/notification-options)\n    * [Monitoring API Documentation](https://cloud.google.com/monitoring/api/v3/)\n\n<div class = \"oics-button\" style=\"float: right; margin: 0 0 -15px\">\n  <a href=\"https://console.cloud.google.com/cloudshell/open?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fterraform-google-modules%2Fdocs-examples.git&cloudshell_working_dir=notification_channel_basic&cloudshell_image=gcr.io%2Fgraphite-cloud-shell-images%2Fterraform%3Alatest&open_in_editor=main.tf&cloudshell_print=.%2Fmotd&cloudshell_tutorial=.%2Ftutorial.md\" target=\"_blank\">\n    <img alt=\"Open in Cloud Shell\" src=\"//gstatic.com/cloudssh/images/open-btn.svg\" style=\"max-height: 44px; margin: 32px auto; max-width: 100%;\">\n  </a>\n</div>",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "SensitiveLabels": {
@@ -74,7 +74,8 @@
             "type": "string"
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used."
         },
         "Type": {
             "type": "string"

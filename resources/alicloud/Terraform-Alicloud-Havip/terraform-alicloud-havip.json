@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::Havip",
-    "description": "CloudFormation equivalent of alicloud_havip",
+    "description": "Provides a HaVip resource.\n\n-> **NOTE:** Terraform will auto build havip instance  while it uses `alicloud_havip` to build a havip resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the HaVip instance."
         },
         "IpAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "The ip address of the HaVip. If not filled, the default will be assigned one from the vswitch."
         },
         "VswitchId": {
-            "type": "string"
+            "type": "string",
+            "description": "The vswitch_id of the HaVip, the field can't be changed."
         }
     },
     "additionalProperties": false,

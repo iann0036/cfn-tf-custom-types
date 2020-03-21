@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::PolardbAccount",
-    "description": "CloudFormation equivalent of alicloud_polardb_account",
+    "description": "Provides a PolarDB account resource and used to manage databases.\n\n-> **NOTE:** Available in v1.67.0+.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,22 +9,28 @@
             "type": "string"
         },
         "AccountDescription": {
-            "type": "string"
+            "type": "string",
+            "description": "Account description. It cannot begin with https://. It must start with a Chinese character or English letter. It can include Chinese and English characters, underlines (_), hyphens (-), and numbers. The length may be 2-256 characters."
         },
         "AccountName": {
-            "type": "string"
+            "type": "string",
+            "description": "Operation account requiring a uniqueness check. It may consist of lower case letters, numbers, and underlines, and must start with a letter and have no more than 16 characters."
         },
         "AccountPassword": {
-            "type": "string"
+            "type": "string",
+            "description": "Operation password. It may consist of letters, digits, or underlines, with a length of 6 to 32 characters."
         },
         "AccountType": {
-            "type": "string"
+            "type": "string",
+            "description": "Account type, Valid values are `Normal`, `Super`, Default to `Normal`."
         },
         "DbClusterId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Id of cluster in which account belongs."
         },
         "KmsEncryptedPassword": {
-            "type": "string"
+            "type": "string",
+            "description": "An KMS encrypts password used to a db account. If the `account_password` is filled in, this field will be ignored."
         },
         "KmsEncryptionContext": {
             "type": "array",
@@ -44,7 +50,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "An KMS encryption context used to decrypt `kms_encrypted_password` before creating or updating a db account with `kms_encrypted_password`. See [Encryption Context](https://www.alibabacloud.com/help/doc-detail/42975.htm). It is valid when `kms_encrypted_password` is set."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,8 @@
 # Terraform::Datadog::Screenboard
 
-CloudFormation equivalent of datadog_screenboard
+Provides a Datadog screenboard resource. This can be used to create and manage Datadog screenboards.
+
+~> **Note:** This resource is outdated. Use the new [`datadog_dashboard`](dashboard.html) resource instead.
 
 ## Syntax
 
@@ -82,6 +84,13 @@ Properties:
 
 #### Height
 
+The screenboard's height.
+- `width` - (Optional) The screenboard's width.
+- `read_only` - (Optional) The read-only status of the screenboard. Default is false.
+- `shared` - (Optional) Whether the screenboard is shared or not. Default is false.
+- `widget` - (Required) Nested block describing a widget. The structure of this block is described below. Multiple widget blocks are allowed within a datadog_screenboard resource.
+- `template_variable` - (Optional) Nested block describing a template variable. The structure of this block is described below. Multiple template_variable blocks are allowed within a datadog_screenboard resource.
+
 _Required_: No
 
 _Type_: String
@@ -89,6 +98,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ReadOnly
+
+The read-only status of the screenboard. Default is false.
+- `shared` - (Optional) Whether the screenboard is shared or not. Default is false.
+- `widget` - (Required) Nested block describing a widget. The structure of this block is described below. Multiple widget blocks are allowed within a datadog_screenboard resource.
+- `template_variable` - (Optional) Nested block describing a template variable. The structure of this block is described below. Multiple template_variable blocks are allowed within a datadog_screenboard resource.
 
 _Required_: No
 
@@ -98,6 +112,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Shared
 
+Whether the screenboard is shared or not. Default is false.
+- `widget` - (Required) Nested block describing a widget. The structure of this block is described below. Multiple widget blocks are allowed within a datadog_screenboard resource.
+- `template_variable` - (Optional) Nested block describing a template variable. The structure of this block is described below. Multiple template_variable blocks are allowed within a datadog_screenboard resource.
+
 _Required_: No
 
 _Type_: Boolean
@@ -106,6 +124,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Title
 
+The name of the screenboard.
+- `height` - (Optional) The screenboard's height.
+- `width` - (Optional) The screenboard's width.
+- `read_only` - (Optional) The read-only status of the screenboard. Default is false.
+- `shared` - (Optional) Whether the screenboard is shared or not. Default is false.
+- `widget` - (Required) Nested block describing a widget. The structure of this block is described below. Multiple widget blocks are allowed within a datadog_screenboard resource.
+- `template_variable` - (Optional) Nested block describing a template variable. The structure of this block is described below. Multiple template_variable blocks are allowed within a datadog_screenboard resource.
+
 _Required_: Yes
 
 _Type_: String
@@ -113,6 +139,12 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Width
+
+The screenboard's width.
+- `read_only` - (Optional) The read-only status of the screenboard. Default is false.
+- `shared` - (Optional) Whether the screenboard is shared or not. Default is false.
+- `widget` - (Required) Nested block describing a widget. The structure of this block is described below. Multiple widget blocks are allowed within a datadog_screenboard resource.
+- `template_variable` - (Optional) Nested block describing a template variable. The structure of this block is described below. Multiple template_variable blocks are allowed within a datadog_screenboard resource.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenTelekomCloud::VpnaasEndpointGroupV2",
-    "description": "CloudFormation equivalent of opentelekomcloud_vpnaas_endpoint_group_v2",
+    "description": "Manages a V2 Endpoint Group resource within OpenTelekomCloud.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,26 +26,32 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The human-readable description for the group.\nChanging this updates the description of the existing group."
         },
         "Endpoints": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of endpoints of the same type, for the endpoint group. The values will depend on the type.\nChanging this creates a new group."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the group. Changing this updates the name of\nthe existing group."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the V2 Networking client.\nA Networking client is needed to create an endpoint group. If omitted, the\n`region` argument of the provider is used. Changing this creates a new\ngroup."
         },
         "TenantId": {
-            "type": "string"
+            "type": "string",
+            "description": "The owner of the group. Required if admin wants to\ncreate an endpoint group for another project. Changing this creates a new group."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of the endpoints in the group. A valid value is subnet, cidr, network, router, or vlan.\nChanging this creates a new group."
         },
         "ValueSpecs": {
             "type": "array",
@@ -65,7 +71,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Map of additional options."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

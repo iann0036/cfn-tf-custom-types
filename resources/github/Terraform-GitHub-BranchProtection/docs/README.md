@@ -1,6 +1,8 @@
 # Terraform::GitHub::BranchProtection
 
-CloudFormation equivalent of github_branch_protection
+Protects a GitHub branch.
+
+This resource allows you to configure branch protection for repositories in your organization. When applied, the branch will be protected from forced pushes and deletion. Additional constraints, such as required status checks or restrictions on users, teams, and apps, can also be configured.
 
 ## Syntax
 
@@ -44,6 +46,8 @@ Properties:
 
 #### Branch
 
+The Git branch to protect.
+
 _Required_: Yes
 
 _Type_: String
@@ -51,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnforceAdmins
+
+Boolean, setting this to `true` enforces status checks for repository administrators.
 
 _Required_: No
 
@@ -60,6 +66,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Repository
 
+The GitHub repository name.
+
 _Required_: Yes
 
 _Type_: String
@@ -67,6 +75,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RequireSignedCommits
+
+Boolean, setting this to `true` requires all commits to be signed with GPG.
 
 _Required_: No
 

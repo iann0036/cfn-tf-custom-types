@@ -1,6 +1,10 @@
 # Terraform::Docker::Image
 
-CloudFormation equivalent of docker_image
+Pulls a Docker image to a given Docker host from a Docker Registry.
+
+This resource will *not* pull new layers of the image automatically unless used in
+conjunction with [`docker_registry_image`](/docs/providers/docker/d/registry_image.html)
+data source to update the `pull_triggers` field.
 
 ## Syntax
 
@@ -36,6 +40,10 @@ Properties:
 
 #### KeepLocally
 
+If true, then the Docker image won't be
+deleted on destroy operation. If this is false, it will delete the image from
+the docker local storage on destroy operation.
+
 _Required_: No
 
 _Type_: Boolean
@@ -43,6 +51,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the Docker image, including any tags or SHA256 repo digests.
 
 _Required_: Yes
 
@@ -52,6 +62,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PullTrigger
 
+**Deprecated**, use `pull_triggers` instead.
+
 _Required_: No
 
 _Type_: String
@@ -59,6 +71,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PullTriggers
+
+List of values which cause an
+image pull when changed. This is used to store the image digest from the
+registry when using the `docker_registry_image` [data source](/docs/providers/docker/d/registry_image.html)
+to trigger an image update.
 
 _Required_: No
 

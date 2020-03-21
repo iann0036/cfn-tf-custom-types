@@ -1,6 +1,10 @@
 # Terraform::Alicloud::ApiGatewayAppAttachment
 
-CloudFormation equivalent of alicloud_api_gateway_app_attachment
+Provides an app attachment resource.It is used for authorizing a specific api to an app accessing. 
+
+For information about Api Gateway App attachment and how to use it, see [Add specified API access authorities](https://www.alibabacloud.com/help/doc-detail/43673.htm)
+
+-> **NOTE:** Terraform will auto build app attachment while it uses `alicloud_api_gateway_app_attachment` to build.
 
 ## Syntax
 
@@ -35,6 +39,8 @@ Properties:
 
 #### ApiId
 
+The api_id that app apply to access.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +48,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AppId
+
+The app that apply to the authorization.
 
 _Required_: Yes
 
@@ -51,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GroupId
 
+The group that the api belongs to.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +68,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StageName
+
+Stage that the app apply to access.
 
 _Required_: Yes
 

@@ -55,6 +55,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### AdditionalLoginParams
 
+Login parameters to send to the OpenID Connect authorization endpoint when a user logs in. Each parameter must be in the form "key=value".
+
 _Required_: No
 
 _Type_: List of <a href="authsettings-additionalloginparams.md">AdditionalLoginParams</a>
@@ -62,6 +64,8 @@ _Type_: List of <a href="authsettings-additionalloginparams.md">AdditionalLoginP
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowedExternalRedirectUrls
+
+External URLs that can be redirected to as part of logging in or logging out of the app.
 
 _Required_: No
 
@@ -71,6 +75,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DefaultProvider
 
+The default provider to use when multiple providers have been set up. Possible values are `AzureActiveDirectory`, `Facebook`, `Google`, `MicrosoftAccount` and `Twitter`.
+
 _Required_: No
 
 _Type_: String
@@ -78,6 +84,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Enabled
+
+Is Authentication enabled?.
 
 _Required_: Yes
 
@@ -87,6 +95,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Issuer
 
+Issuer URI. When using Azure Active Directory, this value is the URI of the directory tenant, e.g. https://sts.windows.net/{tenant-guid}/.
+
 _Required_: No
 
 _Type_: String
@@ -94,6 +104,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RuntimeVersion
+
+The runtime version of the Authentication/Authorization module.
 
 _Required_: No
 
@@ -103,6 +115,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TokenRefreshExtensionHours
 
+The number of hours after session token expiration that a session token can be used to call the token refresh API. Defaults to 72.
+
 _Required_: No
 
 _Type_: Double
@@ -111,6 +125,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TokenStoreEnabled
 
+If enabled the module will durably store platform-specific security tokens that are obtained during login flows. Defaults to false.
+
 _Required_: No
 
 _Type_: Boolean
@@ -118,6 +134,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UnauthenticatedClientAction
+
+The action to take when an unauthenticated client attempts to access the app. Possible values are `AllowAnonymous` and `RedirectToLoginPage`.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::AzureRM::StreamAnalyticsStreamInputBlob
 
-CloudFormation equivalent of azurerm_stream_analytics_stream_input_blob
+Manages a Stream Analytics Stream Input Blob.
 
 ## Syntax
 
@@ -50,6 +50,8 @@ Properties:
 
 #### DateFormat
 
+The date format. Wherever `{date}` appears in `path_pattern`, the value of this property is used as the date format instead.
+
 _Required_: Yes
 
 _Type_: String
@@ -57,6 +59,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the Stream Input Blob. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -66,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PathPattern
 
+The blob path pattern. Not a regular expression. It represents a pattern against which blob names will be matched to determine whether or not they should be included as input or output to the job.
+
 _Required_: Yes
 
 _Type_: String
@@ -73,6 +79,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the Resource Group where the Stream Analytics Job exists. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -82,6 +90,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StorageAccountKey
 
+The Access Key which should be used to connect to this Storage Account.
+
 _Required_: Yes
 
 _Type_: String
@@ -89,6 +99,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StorageAccountName
+
+The name of the Storage Account.
 
 _Required_: Yes
 
@@ -98,6 +110,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StorageContainerName
 
+The name of the Container within the Storage Account.
+
 _Required_: Yes
 
 _Type_: String
@@ -106,6 +120,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StreamAnalyticsJobName
 
+The name of the Stream Analytics Job. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -113,6 +129,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TimeFormat
+
+The time format. Wherever `{time}` appears in `path_pattern`, the value of this property is used as the time format instead.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::LoadBalancerListener",
-    "description": "CloudFormation equivalent of oci_load_balancer_listener",
+    "description": "This resource provides the Listener resource in Oracle Cloud Infrastructure Load Balancer service.\n\nAdds a listener to a load balancer.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ConnectionConfiguration": {
@@ -59,36 +59,44 @@
             "type": "string"
         },
         "DefaultBackendSetName": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The name of the associated backend set.  Example: `example_backend_set`."
         },
         "HostnameNames": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "(Updatable) An array of hostname resource names."
         },
         "LoadBalancerId": {
-            "type": "string"
+            "type": "string",
+            "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a listener."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_listener`."
         },
         "PathRouteSetName": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The name of the set of path-based routing rules, [PathRouteSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/), applied to this listener's traffic.  Example: `example_path_route_set`."
         },
         "Port": {
-            "type": "number"
+            "type": "number",
+            "description": "(Updatable) The communication port for the listener.  Example: `80`."
         },
         "Protocol": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The protocol on which the listener accepts connection requests. To get a list of valid protocols, use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation.  Example: `HTTP`."
         },
         "RuleSetNames": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "(Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: [\"example_rule_set\"]."
         },
         "State": {
             "type": "string"

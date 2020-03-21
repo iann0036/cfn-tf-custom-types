@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::CloudStack::Vpc",
-    "description": "CloudFormation equivalent of cloudstack_vpc",
+    "description": "Creates a VPC.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,19 +9,24 @@
             "type": "string"
         },
         "Cidr": {
-            "type": "string"
+            "type": "string",
+            "description": "The CIDR block for the VPC. Changing this forces a new\nresource to be created."
         },
         "DisplayText": {
-            "type": "string"
+            "type": "string",
+            "description": "The display text of the VPC."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the VPC."
         },
         "NetworkDomain": {
-            "type": "string"
+            "type": "string",
+            "description": "The default DNS domain for networks created in\nthis VPC. Changing this forces a new resource to be created."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or ID of the project to deploy this\ninstance to. Changing this forces a new resource to be created."
         },
         "SourceNatIp": {
             "type": "string"
@@ -47,10 +52,12 @@
             }
         },
         "VpcOffering": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or ID of the VPC offering to use for this VPC.\nChanging this forces a new resource to be created."
         },
         "Zone": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or ID of the zone where this disk volume will be\navailable. Changing this forces a new resource to be created."
         }
     },
     "additionalProperties": false,

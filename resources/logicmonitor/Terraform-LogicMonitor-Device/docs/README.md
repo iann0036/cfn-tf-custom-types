@@ -1,6 +1,6 @@
 # Terraform::LogicMonitor::Device
 
-CloudFormation equivalent of logicmonitor_device
+Provides a LogicMonitor device resource. This can be used to create and manage LogicMonitor devices
 
 ## Syntax
 
@@ -42,6 +42,8 @@ Properties:
 
 #### Collector
 
+The id of the collector that will monitoring the device.
+
 _Required_: Yes
 
 _Type_: Double
@@ -58,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisableAlerting
 
+The host is created with alerting disabled (default is true).
+
 _Required_: No
 
 _Type_: Boolean
@@ -65,6 +69,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+Display name of device, (default is ip_addr).
 
 _Required_: No
 
@@ -74,6 +80,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HostgroupId
 
+The host group id that specifies which group the device belongs to (multiple host group ids can be added, represented by a comma separated string).
+
 _Required_: No
 
 _Type_: String
@@ -82,6 +90,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IpAddr
 
+Ip Address/Hostname of device.
+
 _Required_: Yes
 
 _Type_: String
@@ -89,6 +99,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Properties
+
+The properties associated with this device group. Any string value pair will work (see example).
 
 _Required_: No
 

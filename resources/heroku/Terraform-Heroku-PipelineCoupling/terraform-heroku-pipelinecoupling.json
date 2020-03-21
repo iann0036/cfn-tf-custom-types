@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Heroku::PipelineCoupling",
-    "description": "CloudFormation equivalent of heroku_pipeline_coupling",
+    "description": "Provides a [Heroku Pipeline Coupling](https://devcenter.heroku.com/articles/pipelines)\nresource.\n\nA pipeline is a group of Heroku apps that share the same codebase. Once a\npipeline is created using [`heroku_pipeline`](./pipeline.html), and apps are added\nto different stages using `heroku_pipeline_coupling`, you can promote app slugs\nto the downstream stages.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,19 @@
             "type": "string"
         },
         "App": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the app for this coupling."
         },
         "AppId": {
             "type": "string"
         },
         "Pipeline": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the pipeline to add this app to."
         },
         "Stage": {
-            "type": "string"
+            "type": "string",
+            "description": "The stage to couple this app to. Must be one of\n`review`, `development`, `staging`, or `production`."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::CoreVirtualCircuit",
-    "description": "CloudFormation equivalent of oci_core_virtual_circuit",
+    "description": "This resource provides the Virtual Circuit resource in Oracle Cloud Infrastructure Core service.\n\nCreates a new virtual circuit to use with Oracle Cloud\nInfrastructure FastConnect. For more information, see\n[FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).\n\nFor the purposes of access control, you must provide the OCID of the\ncompartment where you want the virtual circuit to reside. If you're\nnot sure which compartment to use, put the virtual circuit in the\nsame compartment with the DRG it's using. For more information about\ncompartments and access control, see\n[Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).\nFor information about OCIDs, see\n[Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).\n\nYou may optionally specify a *display name* for the virtual circuit.\nIt does not have to be unique, and you can change it. Avoid entering confidential information.\n\n**Important:** When creating a virtual circuit, you specify a DRG for\nthe traffic to flow through. Make sure you attach the DRG to your\nVCN and confirm the VCN's routing sends traffic to the DRG. Otherwise\ntraffic will not flow. For more information, see\n[Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "CrossConnectMappings": {
@@ -66,7 +66,8 @@
             "type": "string"
         },
         "BandwidthShapeName": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The provisioned data rate of the connection.  To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`."
         },
         "BgpManagement": {
             "type": "string"
@@ -75,13 +76,16 @@
             "type": "string"
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The OCID of the compartment to contain the virtual circuit."
         },
         "CustomerAsn": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) Your BGP ASN (either public or private). Provide this value only if there's a BGP session that goes from your edge router to Oracle. Otherwise, leave this empty or null. Can be a 2-byte or 4-byte ASN. Uses \"asplain\" format.  Example: `12345` (2-byte) or `1587232876` (4-byte)."
         },
         "CustomerBgpAsn": {
-            "type": "number"
+            "type": "number",
+            "description": "(Updatable) Deprecated. Instead use `customerAsn`. If you specify values for both, the request will be rejected."
         },
         "DefinedTags": {
             "type": "array",
@@ -101,10 +105,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Operations.CostCenter\": \"42\"}`."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information."
         },
         "FreeformTags": {
             "type": "array",
@@ -124,19 +130,23 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
         },
         "GatewayId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) For private virtual circuits only. The OCID of the [dynamic routing gateway (DRG)](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Drg) that this virtual circuit uses."
         },
         "OracleBgpAsn": {
             "type": "number"
         },
         "ProviderServiceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/FastConnectProviderService/ListFastConnectProviderServices)."
         },
         "ProviderServiceKeyName": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The service key name offered by the provider (if the customer is connecting via a provider)."
         },
         "ProviderState": {
             "type": "string"
@@ -145,7 +155,8 @@
             "type": "string"
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The Oracle Cloud Infrastructure region where this virtual circuit is located. Example: `phx`."
         },
         "ServiceType": {
             "type": "string"
@@ -157,7 +168,8 @@
             "type": "string"
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16)."
         },
         "CrossConnectMappings": {
             "type": "array",

@@ -1,6 +1,9 @@
 # Terraform::Alicloud::SecurityGroupRule
 
-CloudFormation equivalent of alicloud_security_group_rule
+Provides a security group rule resource.
+Represents a single `ingress` or `egress` group rule, which can be added to external Security Groups.
+
+-> **NOTE:**  `nic_type` should set to `intranet` when security group type is `vpc` or specifying the `source_security_group_id`. In this situation it does not distinguish between intranet and internet, the rule is effective on them both.
 
 ## Syntax
 
@@ -49,6 +52,8 @@ Properties:
 
 #### CidrIp
 
+The target IP address range. The default value is 0.0.0.0/0 (which means no restriction will be applied). Other supported formats include 10.159.6.18/12. Only IPv4 is supported.
+
 _Required_: No
 
 _Type_: String
@@ -56,6 +61,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+The description of the security group rule. The description can be up to 1 to 512 characters in length. Defaults to null.
 
 _Required_: No
 
@@ -65,6 +72,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IpProtocol
 
+The protocol. Can be `tcp`, `udp`, `icmp`, `gre` or `all`.
+
 _Required_: Yes
 
 _Type_: String
@@ -72,6 +81,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NicType
+
+Network type, can be either `internet` or `intranet`, the default value is `internet`.
 
 _Required_: No
 
@@ -81,6 +92,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Policy
 
+Authorization policy, can be either `accept` or `drop`, the default value is `accept`.
+
 _Required_: No
 
 _Type_: String
@@ -88,6 +101,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PortRange
+
+The range of port numbers relevant to the IP protocol. Default to "-1/-1". When the protocol is tcp or udp, each side port number range from 1 to 65535 and '-1/-1' will be invalid.
+For example, `1/200` means that the range of the port numbers is 1-200. Other protocols' 'port_range' can only be "-1/-1", and other values will be invalid.
 
 _Required_: No
 
@@ -97,6 +113,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Priority
 
+Authorization policy priority, with parameter values: `1-100`, default value: 1.
+
 _Required_: No
 
 _Type_: Double
@@ -104,6 +122,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecurityGroupId
+
+The security group to apply this rule to.
 
 _Required_: Yes
 
@@ -113,6 +133,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SourceGroupOwnerAccount
 
+The Alibaba Cloud user account Id of the target security group when security groups are authorized across accounts.  This parameter is invalid if `cidr_ip` has already been set.
+
 _Required_: No
 
 _Type_: String
@@ -121,6 +143,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SourceSecurityGroupId
 
+The target security group ID within the same region. If this field is specified, the `nic_type` can only select `intranet`.
+
 _Required_: No
 
 _Type_: String
@@ -128,6 +152,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The type of rule being created. Valid options are `ingress` (inbound) or `egress` (outbound).
 
 _Required_: Yes
 

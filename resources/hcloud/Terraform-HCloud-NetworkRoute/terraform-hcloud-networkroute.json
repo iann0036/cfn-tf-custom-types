@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HCloud::NetworkRoute",
-    "description": "CloudFormation equivalent of hcloud_network_route",
+    "description": "Provides a Hetzner Cloud Network Route to represent a Network route in the Hetzner Cloud.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "Destination": {
-            "type": "string"
+            "type": "string",
+            "description": "Destination network or host of this route. Must be a subnet of the ip_range of the Network. Must not overlap with an existing ip_range in any subnets or with any destinations in other routes or with the first ip of the networks ip_range or with 172.31.1.1.\n- `gateway` - (Required, string) Gateway for the route. Cannot be the first ip of the networks ip_range and also cannot be 172.31.1.1 as this IP is being used as a gateway for the public network interface of servers."
         },
         "Gateway": {
-            "type": "string"
+            "type": "string",
+            "description": "Gateway for the route. Cannot be the first ip of the networks ip_range and also cannot be 172.31.1.1 as this IP is being used as a gateway for the public network interface of servers."
         },
         "NetworkId": {
-            "type": "number"
+            "type": "number",
+            "description": "ID of the Network the route should be added to.\n- `destination` - (Required, string) Destination network or host of this route. Must be a subnet of the ip_range of the Network. Must not overlap with an existing ip_range in any subnets or with any destinations in other routes or with the first ip of the networks ip_range or with 172.31.1.1.\n- `gateway` - (Required, string) Gateway for the route. Cannot be the first ip of the networks ip_range and also cannot be 172.31.1.1 as this IP is being used as a gateway for the public network interface of servers."
         }
     },
     "additionalProperties": false,

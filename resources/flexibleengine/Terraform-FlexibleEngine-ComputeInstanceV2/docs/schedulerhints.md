@@ -35,6 +35,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### BuildNearHostIp
 
+An IP Address in CIDR form. The instance
+will be placed on a compute node that is in the same subnet.
+
 _Required_: No
 
 _Type_: String
@@ -42,6 +45,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DifferentHost
+
+A list of instance UUIDs. The instance will
+be scheduled on a different host than all other instances.
 
 _Required_: No
 
@@ -51,6 +57,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Group
 
+A UUID of a Server Group. The instance will be placed
+into that group.
+
 _Required_: No
 
 _Type_: String
@@ -58,6 +67,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Query
+
+A conditional query that a compute node must pass in
+order to host an instance.
 
 _Required_: No
 
@@ -67,6 +79,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SameHost
 
+A list of instance UUIDs. The instance will be
+scheduled on the same host of those specified.
+
 _Required_: No
 
 _Type_: List of String
@@ -74,6 +89,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TargetCell
+
+The name of a cell to host the instance.
 
 _Required_: No
 

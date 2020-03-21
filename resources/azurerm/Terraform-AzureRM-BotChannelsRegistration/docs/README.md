@@ -1,6 +1,6 @@
 # Terraform::AzureRM::BotChannelsRegistration
 
-CloudFormation equivalent of azurerm_bot_channels_registration
+Manages a Bot Channels Registration.
 
 ## Syntax
 
@@ -52,6 +52,8 @@ Properties:
 
 #### DeveloperAppInsightsApiKey
 
+The Application Insights API Key to associate with the Bot Channels Registration.
+
 _Required_: No
 
 _Type_: String
@@ -59,6 +61,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DeveloperAppInsightsApplicationId
+
+The Application Insights Application ID to associate with the Bot Channels Registration.
 
 _Required_: No
 
@@ -68,6 +72,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DeveloperAppInsightsKey
 
+The Application Insights Key to associate with the Bot Channels Registration.
+
 _Required_: No
 
 _Type_: String
@@ -75,6 +81,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+The name of the Bot Channels Registration will be displayed as. This defaults to `name` if not specified.
 
 _Required_: No
 
@@ -84,6 +92,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Endpoint
 
+The Bot Channels Registration endpoint.
+
 _Required_: No
 
 _Type_: String
@@ -91,6 +101,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Location
+
+The supported Azure location where the resource exists. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -100,6 +112,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MicrosoftAppId
 
+The Microsoft Application ID for the Bot Channels Registration. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -107,6 +121,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the Bot Channels Registration. Changing this forces a new resource to be created. Must be globally unique.
 
 _Required_: Yes
 
@@ -116,6 +132,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to create the Bot Channels Registration. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -124,6 +142,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Sku
 
+The SKU of the Bot Channels Registration. Valid values include `F0` or `S1`. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -131,6 +151,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

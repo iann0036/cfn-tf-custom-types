@@ -52,6 +52,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ApplicationSecurityGroupIds
 
+List of Application Security Group IDs which should be attached to this NIC.
+
 _Required_: No
 
 _Type_: List of String
@@ -59,6 +61,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LoadBalancerBackendAddressPoolsIds
+
+List of Load Balancer Backend Address Pool IDs references to which this NIC belongs.
 
 _Required_: No
 
@@ -68,6 +72,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LoadBalancerInboundNatRulesIds
 
+List of Load Balancer Inbound Nat Rules IDs involving this NIC.
+
 _Required_: No
 
 _Type_: List of String
@@ -75,6 +81,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+User-defined name of the IP.
 
 _Required_: Yes
 
@@ -84,6 +92,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Primary
 
+Is this the Primary Network Interface? If set to `true` this should be the first `ip_configuration` in the array.
+
 _Required_: No
 
 _Type_: Boolean
@@ -91,6 +101,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PrivateIpAddress
+
+Static IP Address.
 
 _Required_: No
 
@@ -100,6 +112,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PrivateIpAddressAllocation
 
+Defines how a private IP address is assigned. Options are Static or Dynamic.
+
 _Required_: Yes
 
 _Type_: String
@@ -108,6 +122,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PublicIpAddressId
 
+Reference to a Public IP Address to associate with this NIC.
+
 _Required_: No
 
 _Type_: String
@@ -115,6 +131,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubnetId
+
+Reference to a subnet in which this NIC has been created.
 
 _Required_: Yes
 

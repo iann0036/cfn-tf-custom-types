@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::MySQL::Database",
-    "description": "CloudFormation equivalent of mysql_database",
+    "description": "The ``mysql_database`` resource creates and manages a database on a MySQL\nserver.\n\n~> **Caution:** The ``mysql_database`` resource can completely delete your\ndatabase just as easily as it can create it. To avoid costly accidents,\nconsider setting\n[``prevent_destroy``](/docs/configuration/resources.html#prevent_destroy)\non your database resources as an extra safety measure.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "DefaultCharacterSet": {
-            "type": "string"
+            "type": "string",
+            "description": "The default character set to use when\na table is created without specifying an explicit character set. Defaults\nto \"utf8\"."
         },
         "DefaultCollation": {
-            "type": "string"
+            "type": "string",
+            "description": "The default collation to use when a table\nis created without specifying an explicit collation. Defaults to\n``utf8_general_ci``. Each character set has its own set of collations, so\nchanging the character set requires also changing the collation."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the database. This must be unique within\na given MySQL server and may or may not be case-sensitive depending on\nthe operating system on which the MySQL server is running."
         }
     },
     "additionalProperties": false,

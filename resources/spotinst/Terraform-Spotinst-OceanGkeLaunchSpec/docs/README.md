@@ -1,6 +1,6 @@
 # Terraform::Spotinst::OceanGkeLaunchSpec
 
-CloudFormation equivalent of spotinst_ocean_gke_launch_spec
+Provides a custom Spotinst Ocean GKE Launch Spec resource.
 
 ## Syntax
 
@@ -43,6 +43,8 @@ Properties:
 
 #### OceanId
 
+The Ocean cluster ID required for launchSpec create.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SourceImage
+
+Image URL.
 
 _Required_: Yes
 

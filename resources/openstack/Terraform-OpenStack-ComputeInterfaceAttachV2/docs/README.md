@@ -1,6 +1,7 @@
 # Terraform::OpenStack::ComputeInterfaceAttachV2
 
-CloudFormation equivalent of openstack_compute_interface_attach_v2
+Attaches a Network Interface (a Port) to an Instance using the OpenStack
+Compute (Nova) v2 API.
 
 ## Syntax
 
@@ -39,6 +40,9 @@ Properties:
 
 #### FixedIp
 
+An IP address to assosciate with the port.
+_NOTE_: This option cannot be used with port_id. You must specifiy a network_id. The IP address must lie in a range on the supplied network.
+
 _Required_: No
 
 _Type_: String
@@ -46,6 +50,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceId
+
+The ID of the Instance to attach the Port or Network to.
 
 _Required_: Yes
 
@@ -55,6 +61,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NetworkId
 
+The ID of the Network to attach to an Instance. A port will be created automatically.
+_NOTE_: This option and `port_id` are mutually exclusive.
+
 _Required_: No
 
 _Type_: String
@@ -63,6 +72,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PortId
 
+The ID of the Port to attach to an Instance.
+_NOTE_: This option and `network_id` are mutually exclusive.
+
 _Required_: No
 
 _Type_: String
@@ -70,6 +82,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region in which to create the interface attachment.
+If omitted, the `region` argument of the provider is used. Changing this
+creates a new attachment.
 
 _Required_: No
 

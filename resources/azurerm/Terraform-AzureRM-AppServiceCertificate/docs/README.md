@@ -1,6 +1,6 @@
 # Terraform::AzureRM::AppServiceCertificate
 
-CloudFormation equivalent of azurerm_app_service_certificate
+Manages an App Service certificate.
 
 ## Syntax
 
@@ -44,6 +44,8 @@ Properties:
 
 #### KeyVaultSecretId
 
+The ID of the Key Vault secret. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -51,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Location
+
+Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -60,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the certificate. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -67,6 +73,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Password
+
+The password to access the certificate's private key. Changing this forces a new resource to be created.
 
 _Required_: No
 
@@ -76,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PfxBlob
 
+The base64-encoded contents of the certificate. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -83,6 +93,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which to create the certificate. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

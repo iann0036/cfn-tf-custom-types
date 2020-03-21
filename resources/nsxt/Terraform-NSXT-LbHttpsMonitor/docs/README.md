@@ -1,6 +1,6 @@
 # Terraform::NSXT::LbHttpsMonitor
 
-CloudFormation equivalent of nsxt_lb_https_monitor
+Provides a resource to configure lb https monitor on NSX-T manager
 
 ## Syntax
 
@@ -78,6 +78,8 @@ Properties:
 
 #### CertificateChainDepth
 
+Authentication depth is used to set the verification depth in the server certificates chain.
+
 _Required_: No
 
 _Type_: Double
@@ -85,6 +87,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ciphers
+
+List of supported SSL ciphers.
 
 _Required_: No
 
@@ -94,6 +98,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ClientCertificateId
 
+Client certificate can be specified to support client authentication.
+
 _Required_: No
 
 _Type_: String
@@ -101,6 +107,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Description of this resource.
 
 _Required_: No
 
@@ -110,6 +118,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+The display name of this resource. Defaults to ID if not set.
+
 _Required_: No
 
 _Type_: String
@@ -117,6 +127,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FallCount
+
+Number of consecutive checks that must fail before marking it down.
 
 _Required_: No
 
@@ -126,6 +138,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Interval
 
+The frequency at which the system issues the monitor check (in seconds).
+
 _Required_: No
 
 _Type_: Double
@@ -133,6 +147,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MonitorPort
+
+If the monitor port is specified, it would override pool member port setting for healthcheck. A port range is not supported.
 
 _Required_: No
 
@@ -142,6 +158,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Protocols
 
+SSL versions TLS1.1 and TLS1.2 are supported and enabled by default. SSLv2, SSLv3, and TLS1.0 are supported, but disabled by default.
+
 _Required_: No
 
 _Type_: List of String
@@ -149,6 +167,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RequestBody
+
+String to send as HTTP health check request body. Valid only for certain HTTP methods like POST.
 
 _Required_: No
 
@@ -158,6 +178,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RequestMethod
 
+Health check method for HTTP monitor type. Valid values are GET, HEAD, PUT, POST and OPTIONS.
+
 _Required_: No
 
 _Type_: String
@@ -165,6 +187,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RequestUrl
+
+URL used for HTTP monitor.
 
 _Required_: No
 
@@ -174,6 +198,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RequestVersion
 
+HTTP request version. Valid values are HTTP_VERSION_1_0 and HTTP_VERSION_1_1.
+
 _Required_: No
 
 _Type_: String
@@ -181,6 +207,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResponseBody
+
+If response body is specified, healthcheck HTTP response body is matched against the specified string and server is considered healthy only if there is a match (regular expressions not supported). If response body string is not specified, HTTP healthcheck is considered successful if the HTTP response status code is among configured values.
 
 _Required_: No
 
@@ -190,6 +218,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResponseStatusCodes
 
+HTTP response status code should be a valid HTTP status code.
+
 _Required_: No
 
 _Type_: List of Double
@@ -197,6 +227,8 @@ _Type_: List of Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RiseCount
+
+Number of consecutive checks that must pass before marking it up.
 
 _Required_: No
 
@@ -206,6 +238,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServerAuth
 
+Server authentication mode - REQUIRED or IGNORE.
+
 _Required_: No
 
 _Type_: String
@@ -213,6 +247,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServerAuthCaIds
+
+If server auth type is REQUIRED, server certificate must be signed by one of the trusted Certificate Authorities (CAs), also referred to as root CAs, whose self signed certificates are specified.
 
 _Required_: No
 
@@ -222,6 +258,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServerAuthCrlIds
 
+A Certificate Revocation List (CRL) can be specified in the server-side SSL profile binding to disallow compromised server certificates.
+
 _Required_: No
 
 _Type_: List of String
@@ -229,6 +267,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Timeout
+
+Number of seconds the target has to respond to the monitor request.
 
 _Required_: No
 

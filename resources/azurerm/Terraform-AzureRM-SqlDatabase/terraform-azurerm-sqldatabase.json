@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::SqlDatabase",
-    "description": "CloudFormation equivalent of azurerm_sql_database",
+    "description": "Allows you to manage an Azure SQL Database",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ExtendedAuditingPolicy": {
@@ -8,16 +8,20 @@
             "additionalProperties": false,
             "properties": {
                 "RetentionInDays": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Specifies the number of days to retain logs for in the storage account."
                 },
                 "StorageAccountAccessKey": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the access key to use for the auditing storage account."
                 },
                 "StorageAccountAccessKeyIsSecondary": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Specifies whether `storage_account_access_key` value is the storage's secondary key."
                 },
                 "StorageEndpoint": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net)."
                 }
             },
             "required": [
@@ -30,25 +34,32 @@
             "additionalProperties": false,
             "properties": {
                 "AdministratorLogin": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the name of the SQL administrator."
                 },
                 "AdministratorLoginPassword": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the password of the SQL administrator."
                 },
                 "AuthenticationType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the type of authentication used to access the server. Valid values are `SQL` or `ADPassword`."
                 },
                 "OperationMode": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the type of import operation being performed. The only allowable value is `Import`."
                 },
                 "StorageKey": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the access key for the storage account."
                 },
                 "StorageKeyType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the type of access key for the storage account. Valid values are `StorageAccessKey` or `SharedAccessKey`."
                 },
                 "StorageUri": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the blob URI of the .bacpac file."
                 }
             },
             "required": [
@@ -69,32 +80,40 @@
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Specifies a list of alerts which should be disabled. Possible values include `Access_Anomaly`, `Sql_Injection` and `Sql_Injection_Vulnerability`."
                 },
                 "EmailAccountAdmins": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Should the account administrators be emailed when this alert is triggered?."
                 },
                 "EmailAddresses": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of email addresses which alerts should be sent to."
                 },
                 "RetentionDays": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Specifies the number of days to keep in the Threat Detection audit logs."
                 },
                 "State": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The State of the Policy. Possible values are `Enabled`, `Disabled` or `New`."
                 },
                 "StorageAccountAccessKey": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the identifier key of the Threat Detection audit storage account. Required if `state` is `Enabled`."
                 },
                 "StorageEndpoint": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit logs. Required if `state` is `Enabled`."
                 },
                 "UseServerDefault": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Should the default server policy be used? Defaults to `Disabled`."
                 }
             },
             "required": []
@@ -125,10 +144,12 @@
             "type": "string"
         },
         "Collation": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the collation. Applies only if `create_mode` is `Default`.  Azure default is `SQL_LATIN1_GENERAL_CP1_CI_AS`. Changing this forces a new resource to be created."
         },
         "CreateMode": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies how to create the database. Valid values are: `Default`, `Copy`, `OnlineSecondary`, `NonReadableSecondary`,  `PointInTimeRestore`, `Recovery`, `Restore` or `RestoreLongTermRetentionBackup`. Must be `Default` to create a new database. Defaults to `Default`. Please see [Azure SQL Database REST API](https://docs.microsoft.com/en-us/rest/api/sql/databases/createorupdate#createmode)."
         },
         "CreationDate": {
             "type": "string"
@@ -137,49 +158,62 @@
             "type": "string"
         },
         "Edition": {
-            "type": "string"
+            "type": "string",
+            "description": "The edition of the database to be created. Applies only if `create_mode` is `Default`. Valid values are: `Basic`, `Standard`, `Premium`, `DataWarehouse`, `Business`, `BusinessCritical`, `Free`, `GeneralPurpose`, `Hyperscale`, `Premium`, `PremiumRS`, `Standard`, `Stretch`, `System`, `System2`, or `Web`. Please see [Azure SQL Database Service Tiers](https://azure.microsoft.com/en-gb/documentation/articles/sql-database-service-tiers/)."
         },
         "ElasticPoolName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the elastic database pool."
         },
         "Encryption": {
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "MaxSizeBytes": {
-            "type": "string"
+            "type": "string",
+            "description": "The maximum size that the database can grow to. Applies only if `create_mode` is `Default`.  Please see [Azure SQL Database Service Tiers](https://azure.microsoft.com/en-gb/documentation/articles/sql-database-service-tiers/)."
         },
         "MaxSizeGb": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the database."
         },
         "ReadScale": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Read-only connections will be redirected to a high-available replica. Please see [Use read-only replicas to load-balance read-only query workloads](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-read-scale-out)."
         },
         "RequestedServiceObjectiveId": {
-            "type": "string"
+            "type": "string",
+            "description": "A GUID/UUID corresponding to a configured Service Level Objective for the Azure SQL database which can be used to configure a performance level.\n."
         },
         "RequestedServiceObjectiveName": {
-            "type": "string"
+            "type": "string",
+            "description": "The service objective name for the database. Valid values depend on edition and location and may include `S0`, `S1`, `S2`, `S3`, `P1`, `P2`, `P4`, `P6`, `P11` and `ElasticPool`. You can list the available names with the cli: ```shell az sql db list-editions -l westus --edition Standard -o table ```. For further information please see [Azure CLI - az sql db](https://docs.microsoft.com/en-us/cli/azure/sql/db?view=azure-cli-latest#az-sql-db-list-editions)."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the database.  This must be the same as Database Server resource group currently."
         },
         "RestorePointInTime": {
-            "type": "string"
+            "type": "string",
+            "description": "The point in time for the restore. Only applies if `create_mode` is `PointInTimeRestore` e.g. 2013-11-08T22:00:40Z."
         },
         "ServerName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the SQL Server on which to create the database."
         },
         "SourceDatabaseDeletionDate": {
-            "type": "string"
+            "type": "string",
+            "description": "The deletion date time of the source database. Only applies to deleted databases where `create_mode` is `PointInTimeRestore`."
         },
         "SourceDatabaseId": {
-            "type": "string"
+            "type": "string",
+            "description": "The URI of the source database if `create_mode` value is not `Default`."
         },
         "Tags": {
             "type": "array",
@@ -199,10 +233,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "ZoneRedundant": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether or not this database is zone redundant, which means the replicas of this database will be spread across multiple availability zones."
         },
         "ExtendedAuditingPolicy": {
             "type": "array",

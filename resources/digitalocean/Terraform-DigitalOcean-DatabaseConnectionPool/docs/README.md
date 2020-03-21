@@ -1,6 +1,6 @@
 # Terraform::DigitalOcean::DatabaseConnectionPool
 
-CloudFormation equivalent of digitalocean_database_connection_pool
+Provides a DigitalOcean database connection pool resource.
 
 ## Syntax
 
@@ -39,6 +39,8 @@ Properties:
 
 #### ClusterId
 
+The ID of the source database cluster. Note: This must be a PostgreSQL cluster.
+
 _Required_: Yes
 
 _Type_: String
@@ -46,6 +48,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DbName
+
+The database for use with the connection pool.
 
 _Required_: Yes
 
@@ -55,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Mode
 
+The PGBouncer transaction mode for the connection pool. The allowed values are session, transaction, and statement.
+
 _Required_: Yes
 
 _Type_: String
@@ -62,6 +68,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name for the database connection pool.
 
 _Required_: Yes
 
@@ -71,6 +79,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Size
 
+The desired size of the PGBouncer connection pool.
+
 _Required_: Yes
 
 _Type_: Double
@@ -78,6 +88,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### User
+
+The name of the database user for use with the connection pool.
 
 _Required_: Yes
 

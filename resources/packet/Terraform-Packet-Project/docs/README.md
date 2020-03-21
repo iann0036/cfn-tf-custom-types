@@ -1,6 +1,7 @@
 # Terraform::Packet::Project
 
-CloudFormation equivalent of packet_project
+Provides a Packet project resource to allow you manage devices
+in your projects.
 
 ## Syntax
 
@@ -38,6 +39,8 @@ Properties:
 
 #### BackendTransfer
 
+Enable or disable [Backend Transfer](https://www.packet.com/developers/docs/network/basic/backend-transfer/), default is false.
+
 _Required_: No
 
 _Type_: Boolean
@@ -45,6 +48,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the project.
 
 _Required_: Yes
 
@@ -54,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OrganizationId
 
+The UUID of organization under which you want to create the project. If you leave it out, the project will be create under your the default organization of your account.
+
 _Required_: No
 
 _Type_: String
@@ -61,6 +68,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PaymentMethodId
+
+The UUID of payment method for this project. The payment method and the project need to belong to the same organization (passed with `organization_id`, or default).
 
 _Required_: No
 

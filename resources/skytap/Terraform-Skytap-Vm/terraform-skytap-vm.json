@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Skytap::Vm",
-    "description": "CloudFormation equivalent of skytap_vm",
+    "description": "Provides a Skytap Virtual Machine (VM) resource. The environment VM resource represents an image of a single virtual machine.\n\n~> **NOTE:**\n* VMs do not exist outside of environments or templates.\n* An environment or template can have multiple VMs.\n* Each VM is a unique resource. Therefore, a VM in a template will have a different ID than a VM in an environment created from that template.\n* The VM will be run immediately after creation.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Disk": {
@@ -24,10 +24,12 @@
             "additionalProperties": false,
             "properties": {
                 "Category": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Label category that  provide contextual meaning."
                 },
                 "Value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Label value to be use for reporting."
                 }
             },
             "required": [
@@ -89,10 +91,12 @@
             "type": "string"
         },
         "Cpus": {
-            "type": "number"
+            "type": "number",
+            "description": "Number of CPUs allocated to this virtual machine. Valid range is 1 to 12. Maximum limit depends on the `max_cpus` setting."
         },
         "EnvironmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the environment you want to add the VM to. If updating with a new one then the VM will be recreated."
         },
         "MaxCpus": {
             "type": "number"
@@ -101,13 +105,16 @@
             "type": "number"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique name for the published service.\n* `internal_port` - (Required, Force New) The port that is exposed on the interface. Typically this will be dictated by standard usage (e.g., port 80 for http traffic, port 22 for SSH)."
         },
         "OsDiskSize": {
-            "type": "number"
+            "type": "number",
+            "description": "The size of the OS disk. The disk size is in MiB; it will be converted to GiB in the Skytap UI. The maximum disk size is 2,096,128 MiB (1.999 TiB)."
         },
         "Ram": {
-            "type": "number"
+            "type": "number",
+            "description": "Amount of RAM allocated to this VM. Valid range is 256 and 131,072 (MB). Maximum limit depends on `max_ram` setting."
         },
         "ServiceIps": {
             "type": "array",
@@ -150,13 +157,16 @@
             }
         },
         "TemplateId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the template you want to create the vm from. If updating with a new one then the VM will be recreated."
         },
         "UserData": {
-            "type": "string"
+            "type": "string",
+            "description": "VM user data, available from the metadata server and the skytap api."
         },
         "VmId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the VM you want to create the VM from. If updating with a new one then the VM will be recreated."
         },
         "Disk": {
             "type": "array",

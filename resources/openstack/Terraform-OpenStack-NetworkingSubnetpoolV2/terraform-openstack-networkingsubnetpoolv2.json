@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::NetworkingSubnetpoolV2",
-    "description": "CloudFormation equivalent of openstack_networking_subnetpool_v2",
+    "description": "Manages a V2 Neutron subnetpool resource within OpenStack.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,7 +23,8 @@
             "type": "string"
         },
         "AddressScopeId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Neutron address scope to assign to the\nsubnetpool. Changing this updates the address scope id of the existing\nsubnetpool."
         },
         "AllTags": {
             "type": "array",
@@ -36,54 +37,66 @@
             "type": "string"
         },
         "DefaultPrefixlen": {
-            "type": "number"
+            "type": "number",
+            "description": "The size of the prefix to allocate when the cidr\nor prefixlen attributes are omitted when you create the subnet. Defaults to the\nMinPrefixLen. Changing this updates the default prefixlen of the existing\nsubnetpool."
         },
         "DefaultQuota": {
-            "type": "number"
+            "type": "number",
+            "description": "The per-project quota on the prefix space that can be\nallocated from the subnetpool for project subnets. Changing this updates the\ndefault quota of the existing subnetpool."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The human-readable description for the subnetpool.\nChanging this updates the description of the existing subnetpool."
         },
         "IpVersion": {
             "type": "number"
         },
         "IsDefault": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether the subnetpool is default\nsubnetpool or not. Changing this updates the default status of the existing\nsubnetpool."
         },
         "MaxPrefixlen": {
-            "type": "number"
+            "type": "number",
+            "description": "The maximum prefix size that can be allocated from\nthe subnetpool. For IPv4 subnetpools, default is 32. For IPv6 subnetpools,\ndefault is 128. Changing this updates the max prefixlen of the existing\nsubnetpool."
         },
         "MinPrefixlen": {
-            "type": "number"
+            "type": "number",
+            "description": "The smallest prefix that can be allocated from a\nsubnetpool. For IPv4 subnetpools, default is 8. For IPv6 subnetpools, default\nis 64. Changing this updates the min prefixlen of the existing subnetpool."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the subnetpool. Changing this updates the name of\nthe existing subnetpool."
         },
         "Prefixes": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of subnet prefixes to assign to the subnetpool.\nNeutron API merges adjacent prefixes and treats them as a single prefix. Each\nsubnet prefix must be unique among all subnet prefixes in all subnetpools that\nare associated with the address scope. Changing this updates the prefixes list\nof the existing subnetpool."
         },
         "ProjectId": {
-            "type": "string"
+            "type": "string",
+            "description": "The owner of the subnetpool. Required if admin wants to\ncreate a subnetpool for another project. Changing this creates a new subnetpool."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the V2 Networking client.\nA Networking client is needed to create a Neutron subnetpool. If omitted, the\n`region` argument of the provider is used. Changing this creates a new\nsubnetpool."
         },
         "RevisionNumber": {
             "type": "number"
         },
         "Shared": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether this subnetpool is shared across\nall projects. Changing this updates the shared status of the existing\nsubnetpool."
         },
         "Tags": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A set of string tags for the subnetpool."
         },
         "UpdatedAt": {
             "type": "string"
@@ -106,7 +119,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Map of additional options."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

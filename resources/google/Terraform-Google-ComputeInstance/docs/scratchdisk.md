@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Interface
 
+The disk interface to use for attaching this disk; either SCSI or NVME.
+
 _Required_: Yes
 
 _Type_: String

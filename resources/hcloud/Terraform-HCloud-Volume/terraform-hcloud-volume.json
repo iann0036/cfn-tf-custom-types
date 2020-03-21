@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HCloud::Volume",
-    "description": "CloudFormation equivalent of hcloud_volume",
+    "description": "Provides a Hetzner Cloud volume resource to manage volumes.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "Automount": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Automount the volume upon attaching it (server_id must be provided).\n- `format` - (Optional, string) Format volume after creation. `xfs` or `ext4`."
         },
         "Format": {
-            "type": "string"
+            "type": "string",
+            "description": "Format volume after creation. `xfs` or `ext4`."
         },
         "Labels": {
             "type": "array",
@@ -38,16 +40,19 @@
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Location of the volume to create, optional if server_id argument is passed.\n- `automount` - (Optional, bool) Automount the volume upon attaching it (server_id must be provided).\n- `format` - (Optional, string) Format volume after creation. `xfs` or `ext4`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the volume to create (must be unique per project).\n- `size` - (Required, int) Size of the volume (in GB).\n- `server` - (Optional, int) Server to attach the Volume to, optional if location argument is passed.\n- `location` - (Optional, string) Location of the volume to create, optional if server_id argument is passed.\n- `automount` - (Optional, bool) Automount the volume upon attaching it (server_id must be provided).\n- `format` - (Optional, string) Format volume after creation. `xfs` or `ext4`."
         },
         "ServerId": {
             "type": "number"
         },
         "Size": {
-            "type": "number"
+            "type": "number",
+            "description": "Size of the volume (in GB).\n- `server` - (Optional, int) Server to attach the Volume to, optional if location argument is passed.\n- `location` - (Optional, string) Location of the volume to create, optional if server_id argument is passed.\n- `automount` - (Optional, bool) Automount the volume upon attaching it (server_id must be provided).\n- `format` - (Optional, string) Format volume after creation. `xfs` or `ext4`."
         }
     },
     "additionalProperties": false,

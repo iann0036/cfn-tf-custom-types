@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::WebApplicationFirewallPolicy",
-    "description": "CloudFormation equivalent of azurerm_web_application_firewall_policy",
+    "description": "Manages a Azure Web Application Firewall Policy instance.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "CustomRules": {
@@ -117,13 +117,16 @@
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Resource location. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Gets name of the resource that is unique within a policy. This name can be used to access the resource."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group. Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -143,7 +146,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the Web Application Firewall Policy."
         },
         "CustomRules": {
             "type": "array",

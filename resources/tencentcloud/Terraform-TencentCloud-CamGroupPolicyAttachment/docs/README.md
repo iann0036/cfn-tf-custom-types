@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::CamGroupPolicyAttachment
 
-CloudFormation equivalent of tencentcloud_cam_group_policy_attachment
+Provides a resource to create a CAM group policy attachment.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### GroupId
 
+Id of the attached CAM group.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PolicyId
+
+Id of the policy.
 
 _Required_: Yes
 

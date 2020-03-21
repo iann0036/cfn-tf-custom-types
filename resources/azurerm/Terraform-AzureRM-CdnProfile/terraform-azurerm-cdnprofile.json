@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::CdnProfile",
-    "description": "CloudFormation equivalent of azurerm_cdn_profile",
+    "description": "Manages a CDN Profile to create a collection of CDN Endpoints.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,16 +29,20 @@
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the CDN Profile. Changing this forces a\nnew resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to\ncreate the CDN Profile."
         },
         "Sku": {
-            "type": "string"
+            "type": "string",
+            "description": "The pricing related information of current CDN profile. Accepted values are `Standard_Akamai`, `Standard_ChinaCdn`, `Standard_Microsoft`, `Standard_Verizon` or `Premium_Verizon`."
         },
         "Tags": {
             "type": "array",
@@ -58,7 +62,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

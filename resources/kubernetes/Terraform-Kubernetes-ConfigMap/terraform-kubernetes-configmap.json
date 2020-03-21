@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Kubernetes::ConfigMap",
-    "description": "CloudFormation equivalent of kubernetes_config_map",
+    "description": "The resource provides mechanisms to inject containers with configuration data while keeping containers agnostic of Kubernetes.\nConfig Map can be used to store fine-grained information like individual properties or coarse-grained information like entire config files or JSON blobs.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Metadata": {
@@ -83,7 +83,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "BinaryData contains the binary data. Each key must consist of alphanumeric characters, '-', '_' or '.'. BinaryData can contain byte sequences that are not in the UTF-8 range. The keys stored in BinaryData must not overlap with the ones in the Data field, this is enforced during validation process. Using this field will require 1.10+ apiserver and kubelet. This field only accepts base64-encoded payloads that will be decoded/received before being sent/received to the apiserver."
         },
         "Data": {
             "type": "array",
@@ -103,7 +104,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Data contains the configuration data. Each key must consist of alphanumeric characters, '-', '_' or '.'. Values with non-UTF-8 byte sequences must use the BinaryData field. The keys stored in Data must not overlap with the keys in the BinaryData field, this is enforced during validation process."
         },
         "Metadata": {
             "type": "array",

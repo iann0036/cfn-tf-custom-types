@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::CoreVolumeGroup",
-    "description": "CloudFormation equivalent of oci_core_volume_group",
+    "description": "This resource provides the Volume Group resource in Oracle Cloud Infrastructure Core service.\n\nCreates a new volume group in the specified compartment.\nA volume group is a collection of volumes and may be created from a list of volumes, cloning an existing\nvolume group, or by restoring a volume group backup. A volume group can contain up to 64 volumes.\nYou may optionally specify a *display name* for the volume group, which is simply a friendly name or\ndescription. It does not have to be unique, and you can change it. Avoid entering confidential information.\n\nFor more information, see [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).\n\nNote: If the volume group is created from another volume group or from a volume group backup, a copy of the volumes from the source is made in your compartment. However, this is not automatically deleted by Terraform when this volume group is deleted. To track these volumes, you can import them into the terraform statefile and run terraform destroy. Alternatively, you can also use another interface like CLI, SDK, or Console to remove them manually.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "SourceDetails": {
@@ -51,10 +51,12 @@
             "type": "string"
         },
         "AvailabilityDomain": {
-            "type": "string"
+            "type": "string",
+            "description": "The availability domain of the volume group."
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The OCID of the compartment that contains the volume group."
         },
         "DefinedTags": {
             "type": "array",
@@ -74,10 +76,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Operations.CostCenter\": \"42\"}`."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) A user-friendly name for the volume group. Does not have to be unique, and it's changeable. Avoid entering confidential information."
         },
         "FreeformTags": {
             "type": "array",
@@ -97,7 +101,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
         },
         "IsHydrated": {
             "type": "boolean"
@@ -119,7 +124,8 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "OCIDs for the volumes in this volume group."
         },
         "SourceDetails": {
             "type": "array",

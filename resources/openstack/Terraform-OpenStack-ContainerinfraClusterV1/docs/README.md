@@ -1,6 +1,6 @@
 # Terraform::OpenStack::ContainerinfraClusterV1
 
-CloudFormation equivalent of openstack_containerinfra_cluster_v1
+Manages a V1 Magnum cluster resource within OpenStack.
 
 ## Syntax
 

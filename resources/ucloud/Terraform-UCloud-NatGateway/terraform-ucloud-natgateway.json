@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::UCloud::NatGateway",
-    "description": "CloudFormation equivalent of ucloud_nat_gateway",
+    "description": "Provides a Nat Gateway resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,39 +12,48 @@
             "type": "string"
         },
         "EipId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of eip associate to the Nat Gateway."
         },
         "EnableWhiteList": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "The boolean value to Controls whether or not start the whitelist mode."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Nat Gateway which contains 6-63 characters and only support Chinese, English, numbers, '-', '_' and '.'. If not specified, terraform will auto-generate a name beginning with `tf-nat-gateway-`."
         },
         "Remark": {
-            "type": "string"
+            "type": "string",
+            "description": "The remarks of the Nat Gateway. (Default: `\"\"`)."
         },
         "SecurityGroup": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the associated security group."
         },
         "SubnetIds": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The list of subnet ID under the VPC."
         },
         "Tag": {
-            "type": "string"
+            "type": "string",
+            "description": "A tag assigned to Nat Gateway, which contains at most 63 characters and only support Chinese, English, numbers, '-', '_', and '.'. If it is not filled in or a empty string is filled in, then default tag will be assigned. (Default: `Default`)."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of VPC linked to the Nat Gateway."
         },
         "WhiteList": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The white list of instance under the Nat Gateway."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenTelekomCloud::WafFalsealarmmaskingRuleV1",
-    "description": "CloudFormation equivalent of opentelekomcloud_waf_falsealarmmasking_rule_v1",
+    "description": "Manages a WAF False Alarm Masking Rule resource within OpenTelekomCloud.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,13 +23,16 @@
             "type": "string"
         },
         "PolicyId": {
-            "type": "string"
+            "type": "string",
+            "description": "The WAF policy ID. Changing this creates a new rule."
         },
         "Rule": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the rule ID, which consists of six digits and cannot be empty. Changing this creates a new rule."
         },
         "Url": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies a misreported URL excluding a domain name. Changing this creates a new rule."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

@@ -1,6 +1,6 @@
 # Terraform::OpenStack::NetworkingQosPolicyV2
 
-CloudFormation equivalent of openstack_networking_qos_policy_v2
+Manages a V2 Neutron QoS policy resource within OpenStack.
 
 ## Syntax
 
@@ -47,6 +47,9 @@ Properties:
 
 #### Description
 
+The human-readable description for the QoS policy.
+Changing this updates the description of the existing QoS policy.
+
 _Required_: No
 
 _Type_: String
@@ -54,6 +57,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IsDefault
+
+Indicates whether the QoS policy is default
+QoS policy or not. Changing this updates the default status of the existing
+QoS policy.
 
 _Required_: No
 
@@ -63,6 +70,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the QoS policy. Changing this updates the name of
+the existing QoS policy.
+
 _Required_: No
 
 _Type_: String
@@ -70,6 +80,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProjectId
+
+The owner of the QoS policy. Required if admin wants to
+create a QoS policy for another project. Changing this creates a new QoS policy.
 
 _Required_: No
 
@@ -79,6 +92,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region in which to obtain the V2 Networking client.
+A Networking client is needed to create a Neutron Qos policy. If omitted, the
+`region` argument of the provider is used. Changing this creates a new
+QoS policy.
+
 _Required_: No
 
 _Type_: String
@@ -86,6 +104,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Shared
+
+Indicates whether this QoS policy is shared across
+all projects. Changing this updates the shared status of the existing
+QoS policy.
 
 _Required_: No
 
@@ -95,6 +117,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A set of string tags for the QoS policy.
+
 _Required_: No
 
 _Type_: List of String
@@ -102,6 +126,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ValueSpecs
+
+Map of additional options.
 
 _Required_: No
 

@@ -1,6 +1,8 @@
 # Terraform::Panos::PanoramaGreTunnel
 
-CloudFormation equivalent of panos_panorama_gre_tunnel
+This resource allows you to add/update/delete Panorama GRE tunnels.
+
+*Minimum PAN-OS version*: 9.0
 
 ## Syntax
 
@@ -55,6 +57,8 @@ Properties:
 
 #### CopyTos
 
+Copy IP TOS bits from inner packet to GRE packet.
+
 _Required_: No
 
 _Type_: Boolean
@@ -62,6 +66,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Disabled
+
+Disable the GRE tunnel.
 
 _Required_: No
 
@@ -71,6 +77,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableKeepAlive
 
+Enable tunnel monitoring.
+
 _Required_: No
 
 _Type_: Boolean
@@ -78,6 +86,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Interface
+
+Interface to terminate tunnel.
 
 _Required_: Yes
 
@@ -87,6 +97,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KeepAliveHoldTimer
 
+Keep alive hold timer.
+
 _Required_: No
 
 _Type_: Double
@@ -94,6 +106,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeepAliveInterval
+
+Keep alive interval.
 
 _Required_: No
 
@@ -103,6 +117,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KeepAliveRetry
 
+Keep alive retry.
+
 _Required_: No
 
 _Type_: Double
@@ -110,6 +126,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LocalAddressType
+
+Type of local address.  Valid values are
+`ip` (default) or `floating-ip`.
 
 _Required_: No
 
@@ -119,6 +138,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LocalAddressValue
 
+IP address value.
+
 _Required_: Yes
 
 _Type_: String
@@ -126,6 +147,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The GRE tunnel name.
 
 _Required_: Yes
 
@@ -135,6 +158,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PeerAddress
 
+Peer IP address.
+
 _Required_: Yes
 
 _Type_: String
@@ -142,6 +167,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Template
+
+The template name.
 
 _Required_: Yes
 
@@ -151,6 +178,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ttl
 
+Time to live.
+
 _Required_: No
 
 _Type_: Double
@@ -158,6 +187,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TunnelInterface
+
+Tunnel interface to apply the GRE tunnel to.
 
 _Required_: Yes
 

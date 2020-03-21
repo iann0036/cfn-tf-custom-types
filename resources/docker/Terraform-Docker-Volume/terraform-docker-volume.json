@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Docker::Volume",
-    "description": "CloudFormation equivalent of docker_volume",
+    "description": "Creates and destroys a volume in Docker. This can be used alongside\n[docker\\_container](/docs/providers/docker/r/container.html)\nto prepare volumes that can be shared across containers.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Labels": {
@@ -26,7 +26,8 @@
             "type": "string"
         },
         "Driver": {
-            "type": "string"
+            "type": "string",
+            "description": "Driver type for the volume (defaults to local)."
         },
         "DriverOpts": {
             "type": "array",
@@ -46,13 +47,15 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Options specific to the driver."
         },
         "Mountpoint": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Docker volume (generated if not\nprovided)."
         },
         "Labels": {
             "type": "array",

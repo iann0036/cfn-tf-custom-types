@@ -12,25 +12,32 @@
             "type": "string"
         },
         "ExternalServicePort": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies port used by ECSs or\nBMSs to provide services for external systems.\nChanging this creates a new dnat rule."
         },
         "FloatingIpId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the ID of the floating IP address.\nChanging this creates a new resource."
         },
         "InternalServicePort": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies port used by ECSs or BMSs\nto provide services for external systems. Changing this creates a new resource."
         },
         "NatGatewayId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the nat gateway this dnat rule belongs to.\nChanging this creates a new dnat rule."
         },
         "PortId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the port ID of an ECS or a BMS.\nThis parameter and private_ip are alternative. Changing this creates a\nnew dnat rule."
         },
         "PrivateIp": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the private IP address of a\nuser, for example, the IP address of a VPC for dedicated connection.\nThis parameter and port_id are alternative.\nChanging this creates a new dnat rule."
         },
         "Protocol": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the protocol type. Currently,\nTCP, UDP, and ANY are supported. The protocol number of TCP, UDP,\nand ANY is 6, 17, and 0, respectively.\nChanging this creates a new dnat rule."
         },
         "Status": {
             "type": "string"

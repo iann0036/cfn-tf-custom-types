@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::NS1::Team",
-    "description": "CloudFormation equivalent of ns1_team",
+    "description": "Provides a NS1 Team resource. This can be used to create, modify, and delete\nteams. The credentials used must have the `manage_teams` permission set.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "IpWhitelist": {
@@ -30,90 +30,116 @@
             "type": "string"
         },
         "AccountManageAccountSettings": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the team can modify account settings."
         },
         "AccountManageApikeys": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the team can modify account apikeys."
         },
         "AccountManagePaymentMethods": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the team can modify account payment methods."
         },
         "AccountManagePlan": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the team can modify the account plan."
         },
         "AccountManageTeams": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the team can modify other teams in the account."
         },
         "AccountManageUsers": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the team can modify account users."
         },
         "AccountViewActivityLog": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the team can view activity logs."
         },
         "AccountViewInvoices": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the team can view invoices."
         },
         "DataManageDatafeeds": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the team can modify data feeds."
         },
         "DataManageDatasources": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the team can modify data sources."
         },
         "DataPushToDatafeeds": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the team can publish to data feeds."
         },
         "DhcpManageDhcp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the team can manage DHCP.\nOnly relevant for the DDI product."
         },
         "DhcpViewDhcp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the team can view DHCP.\nOnly relevant for the DDI product."
         },
         "DnsManageZones": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the team can modify the accounts zones."
         },
         "DnsViewZones": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the team can view the accounts zones."
         },
         "DnsZonesAllow": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of zones that the team may access."
         },
         "DnsZonesAllowByDefault": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If true, enable the `dns_zones_allow` list, otherwise enable the `dns_zones_deny` list."
         },
         "DnsZonesDeny": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of zones that the team may not access."
         },
         "IpamManageIpam": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the team can manage IPAM.\nOnly relevant for the DDI product."
         },
         "IpamViewIpam": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the team can view IPAM.\nOnly relevant for the DDI product."
         },
         "MonitoringManageJobs": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the team can modify monitoring jobs."
         },
         "MonitoringManageLists": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the team can modify notification lists."
         },
         "MonitoringViewJobs": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the team can view monitoring jobs."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The free form name of the team."
         },
         "SecurityManageActiveDirectory": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the team can manage global active directory.\nOnly relevant for the DDI product."
         },
         "SecurityManageGlobal2fa": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the team can manage global two factor authentication."
         },
         "IpWhitelist": {
             "type": "array",

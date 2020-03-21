@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OVH::IploadbalancingHttpRoute",
-    "description": "CloudFormation equivalent of ovh_iploadbalancing_http_route",
+    "description": "Manage http route for a loadbalancer service",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Action": {
@@ -28,16 +28,20 @@
             "type": "string"
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "Human readable name for your route, this field is for you."
         },
         "FrontendId": {
-            "type": "number"
+            "type": "number",
+            "description": "Route traffic for this frontend."
         },
         "ServiceName": {
-            "type": "string"
+            "type": "string",
+            "description": "The internal name of your IP load balancing."
         },
         "Weight": {
-            "type": "number"
+            "type": "number",
+            "description": "Route priority ([0..255]). 0 if null. Highest priority routes are evaluated first. Only the first matching route will trigger an action."
         },
         "Action": {
             "type": "array",

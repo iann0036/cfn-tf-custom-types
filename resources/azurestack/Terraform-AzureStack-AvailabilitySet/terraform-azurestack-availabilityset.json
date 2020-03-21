@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureStack::AvailabilitySet",
-    "description": "CloudFormation equivalent of azurestack_availability_set",
+    "description": "Manages an availability set for virtual machines.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,22 +9,28 @@
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "Managed": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether the availability set is managed or not. Possible values are `true` (to specify aligned) or `false` (to specify classic). Default is `false`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the availability set. Changing this forces a new resource to be created."
         },
         "PlatformFaultDomainCount": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the number of fault domains that are used. Defaults to 3."
         },
         "PlatformUpdateDomainCount": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the number of update domains that are used. Defaults to 5."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the availability set. Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -44,7 +50,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         }
     },
     "additionalProperties": false,

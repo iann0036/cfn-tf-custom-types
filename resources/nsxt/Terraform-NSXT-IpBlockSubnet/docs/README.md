@@ -1,6 +1,6 @@
 # Terraform::NSXT::IpBlockSubnet
 
-CloudFormation equivalent of nsxt_ip_block_subnet
+Provides a resource to configure IP block subnet on NSX-T manager
 
 ## Syntax
 
@@ -38,6 +38,8 @@ Properties:
 
 #### BlockId
 
+Block id for which the subnet is created.
+
 _Required_: Yes
 
 _Type_: String
@@ -45,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Description of this resource.
 
 _Required_: No
 
@@ -54,6 +58,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+The display name of this resource. Defaults to ID if not set.
+
 _Required_: No
 
 _Type_: String
@@ -61,6 +67,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Size
+
+Represents the size or number of IP addresses in the subnet.
 
 _Required_: Yes
 

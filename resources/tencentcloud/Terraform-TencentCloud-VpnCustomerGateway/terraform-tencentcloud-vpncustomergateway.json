@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::VpnCustomerGateway",
-    "description": "CloudFormation equivalent of tencentcloud_vpn_customer_gateway",
+    "description": "Provides a resource to create a VPN customer gateway.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,10 +12,12 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the customer gateway. The length of character is limited to 1-60."
         },
         "PublicIpAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "Public ip of the customer gateway."
         },
         "Tags": {
             "type": "array",
@@ -35,7 +37,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A list of tags used to associate different resources."
         }
     },
     "additionalProperties": false,

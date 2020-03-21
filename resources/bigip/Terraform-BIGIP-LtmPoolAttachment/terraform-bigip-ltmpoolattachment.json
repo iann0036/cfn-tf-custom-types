@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::BIGIP::LtmPoolAttachment",
-    "description": "CloudFormation equivalent of bigip_ltm_pool_attachment",
+    "description": "`bigip_ltm_pool_attachment` Manages nodes membership in pools\n\nResources should be named with their \"full path\". The full path is the combination of the partition + name of the resource. For example /Common/my-pool.\n\nNote: node must be the full path to the node followed by the port. For example /Common/my-node:80",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "Node": {
-            "type": "string"
+            "type": "string",
+            "description": "Node to add to the pool in /Partition/NodeName:Port format (e.g. /Common/Node01:80)."
         },
         "Pool": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the pool in /Partition/Name format."
         }
     },
     "additionalProperties": false,

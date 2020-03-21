@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Bitbucket::Repository",
-    "description": "CloudFormation equivalent of bitbucket_repository",
+    "description": "Provides a Bitbucket repository resource.\n\nThis resource allows you manage your repositories such as scm type, if it is\nprivate, how to fork the repository and other options.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -15,43 +15,56 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "What the description of the repo is."
         },
         "ForkPolicy": {
-            "type": "string"
+            "type": "string",
+            "description": "What the fork policy should be. Defaults to\nallow_forks."
         },
         "HasIssues": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If this should have issues turned on or not."
         },
         "HasWiki": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If this should have wiki turned on or not."
         },
         "IsPrivate": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If this should be private or not. Defaults to `true`."
         },
         "Language": {
-            "type": "string"
+            "type": "string",
+            "description": "What the language of this repository should be."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the repository."
         },
         "Owner": {
-            "type": "string"
+            "type": "string",
+            "description": "The owner of this repository. Can be you or any team you\nhave write access to."
         },
         "PipelinesEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Turn on to enable pipelines support."
         },
         "ProjectKey": {
-            "type": "string"
+            "type": "string",
+            "description": "If you want to have this repo associated with a\nproject."
         },
         "Scm": {
-            "type": "string"
+            "type": "string",
+            "description": "What SCM you want to use. Valid options are hg or git.\nDefaults to git."
         },
         "Slug": {
-            "type": "string"
+            "type": "string",
+            "description": "The slug of the repository."
         },
         "Website": {
-            "type": "string"
+            "type": "string",
+            "description": "URL of website associated with this repository."
         }
     },
     "additionalProperties": false,

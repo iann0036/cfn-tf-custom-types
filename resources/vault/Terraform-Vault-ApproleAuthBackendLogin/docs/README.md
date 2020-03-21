@@ -1,6 +1,8 @@
 # Terraform::Vault::ApproleAuthBackendLogin
 
-CloudFormation equivalent of vault_approle_auth_backend_login
+Logs into Vault using the AppRole auth backend. See the [Vault
+documentation](https://www.vaultproject.io/docs/auth/approle.html) for more
+information.
 
 ## Syntax
 
@@ -33,6 +35,8 @@ Properties:
 
 #### Backend
 
+The unique path of the Vault backend to log in with.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +45,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RoleId
 
+The ID of the role to log in with.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +54,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecretId
+
+The secret ID of the role to log in with. Required
+unless `bind_secret_id` is set to false on the role.
 
 _Required_: No
 

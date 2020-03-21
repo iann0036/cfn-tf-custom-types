@@ -1,6 +1,6 @@
 # Terraform::NSXT::MacManagementSwitchingProfile
 
-CloudFormation equivalent of nsxt_mac_management_switching_profile
+Provides a resource to configure MAC management switching profile on NSX-T manager
 
 ## Syntax
 
@@ -39,6 +39,8 @@ Properties:
 
 #### Description
 
+Description of this resource.
+
 _Required_: No
 
 _Type_: String
@@ -47,6 +49,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+The display name of this resource. Defaults to ID if not set.
+
 _Required_: No
 
 _Type_: String
@@ -54,6 +58,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MacChangeAllowed
+
+A boolean flag indicating allowing source MAC address change.
 
 _Required_: No
 

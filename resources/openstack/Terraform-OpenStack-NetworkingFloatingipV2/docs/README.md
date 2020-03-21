@@ -1,6 +1,9 @@
 # Terraform::OpenStack::NetworkingFloatingipV2
 
-CloudFormation equivalent of openstack_networking_floatingip_v2
+Manages a V2 floating IP resource within OpenStack Neutron (networking)
+that can be used for load balancers.
+These are similar to Nova (compute) floating IP resources,
+but only compute floating IPs can be used with compute instances.
 
 ## Syntax
 
@@ -55,6 +58,11 @@ Properties:
 
 #### Address
 
+The actual/specific floating IP to obtain. By default,
+non-admin users are not able to specify a floating IP, so you must either be
+an admin user or have had a custom policy or role applied to your OpenStack
+user or project.
+
 _Required_: No
 
 _Type_: String
@@ -62,6 +70,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Human-readable description for the floating IP.
 
 _Required_: No
 
@@ -71,6 +81,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DnsDomain
 
+The floating IP DNS domain. Available, when Neutron
+DNS extension is enabled. The data in this attribute will be published in an
+external DNS service when Neutron is configured to integrate with such a
+service. Changing this creates a new floating IP.
+
 _Required_: No
 
 _Type_: String
@@ -78,6 +93,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DnsName
+
+The floating IP DNS name. Available, when Neutron DNS
+extension is enabled. The data in this attribute will be published in an
+external DNS service when Neutron is configured to integrate with such a
+service. Changing this creates a new floating IP.
 
 _Required_: No
 
@@ -87,6 +107,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FixedIp
 
+Fixed IP of the port to associate with this floating IP. Required if
+the port has multiple fixed IPs.
+
 _Required_: No
 
 _Type_: String
@@ -94,6 +117,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Pool
+
+The name of the pool from which to obtain the floating
+IP. Changing this creates a new floating IP.
 
 _Required_: Yes
 
@@ -103,6 +129,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PortId
 
+ID of an existing port with at least one IP address to
+associate with this floating IP.
+
 _Required_: No
 
 _Type_: String
@@ -110,6 +139,12 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region in which to obtain the V2 Networking client.
+A Networking client is needed to create a floating IP that can be used with
+another networking resource, such as a load balancer. If omitted, the
+`region` argument of the provider is used. Changing this creates a new
+floating IP (which may or may not have a different address).
 
 _Required_: No
 
@@ -119,6 +154,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubnetId
 
+The subnet ID of the floating IP pool. Specify this if
+the floating IP network has multiple subnets.
+
 _Required_: No
 
 _Type_: String
@@ -126,6 +164,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A set of string tags for the floating IP.
 
 _Required_: No
 
@@ -135,6 +175,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TenantId
 
+The target tenant ID in which to allocate the floating
+IP, if you specify this together with a port_id, make sure the target port
+belongs to the same tenant. Changing this creates a new floating IP (which
+may or may not have a different address).
+
 _Required_: No
 
 _Type_: String
@@ -142,6 +187,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ValueSpecs
+
+Map of additional options.
 
 _Required_: No
 

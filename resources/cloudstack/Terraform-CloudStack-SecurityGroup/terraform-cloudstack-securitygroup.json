@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::CloudStack::SecurityGroup",
-    "description": "CloudFormation equivalent of cloudstack_security_group",
+    "description": "Creates a security group.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the security group. Changing\nthis forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the security group. Changing this forces a\nnew resource to be created."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or ID of the project to create this security\ngroup in. Changing this forces a new resource to be created."
         }
     },
     "additionalProperties": false,

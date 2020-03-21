@@ -1,6 +1,9 @@
 # Terraform::OpenStack::IdentityUserV3
 
-CloudFormation equivalent of openstack_identity_user_v3
+Manages a V3 User resource within OpenStack Keystone.
+
+Note: You _must_ have admin privileges in your OpenStack cloud to use
+this resource.
 
 ## Syntax
 
@@ -55,6 +58,8 @@ Properties:
 
 #### DefaultProjectId
 
+The default project this user belongs to.
+
 _Required_: No
 
 _Type_: String
@@ -62,6 +67,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+A description of the user.
 
 _Required_: No
 
@@ -71,6 +78,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DomainId
 
+The domain this user belongs to.
+
 _Required_: No
 
 _Type_: String
@@ -78,6 +87,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Enabled
+
+Whether the user is enabled or disabled. Valid
+values are `true` and `false`.
 
 _Required_: No
 
@@ -87,6 +99,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Extra
 
+Free-form key/value pairs of extra information.
+
 _Required_: No
 
 _Type_: List of <a href="extra.md">Extra</a>
@@ -94,6 +108,9 @@ _Type_: List of <a href="extra.md">Extra</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IgnoreChangePasswordUponFirstUse
+
+User will not have to
+change their password upon first use. Valid values are `true` and `false`.
 
 _Required_: No
 
@@ -103,6 +120,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IgnoreLockoutFailureAttempts
 
+User will not have a failure
+lockout placed on their account. Valid values are `true` and `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -110,6 +130,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IgnorePasswordExpiry
+
+User's password will not expire.
+Valid values are `true` and `false`.
 
 _Required_: No
 
@@ -119,6 +142,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MultiFactorAuthEnabled
 
+Whether to enable multi-factor
+authentication. Valid values are `true` and `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -126,6 +152,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the user.
 
 _Required_: No
 
@@ -135,6 +163,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Password
 
+The password for the user.
+
 _Required_: No
 
 _Type_: String
@@ -142,6 +172,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region in which to obtain the V3 Keystone client.
+If omitted, the `region` argument of the provider is used. Changing this
+creates a new User.
 
 _Required_: No
 

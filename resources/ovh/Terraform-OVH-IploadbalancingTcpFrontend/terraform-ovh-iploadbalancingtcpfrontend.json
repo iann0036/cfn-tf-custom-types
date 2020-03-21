@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OVH::IploadbalancingTcpFrontend",
-    "description": "CloudFormation equivalent of ovh_iploadbalancing_tcp_frontend",
+    "description": "Creates a backend server group (frontend) to be used by loadbalancing frontend(s)",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -13,38 +13,48 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Restrict IP Load Balancing access to these ip block. No restriction if null. List of IP blocks."
         },
         "DedicatedIpfo": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Only attach frontend on these ip. No restriction if null. List of Ip blocks."
         },
         "DefaultFarmId": {
-            "type": "number"
+            "type": "number",
+            "description": "Default TCP Farm of your frontend."
         },
         "DefaultSslId": {
-            "type": "number"
+            "type": "number",
+            "description": "Default ssl served to your customer."
         },
         "Disabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Disable your frontend. Default: 'false'."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "Human readable name for your frontend, this field is for you."
         },
         "Port": {
-            "type": "string"
+            "type": "string",
+            "description": "Port(s) attached to your frontend. Supports single port (numerical value),\nrange (2 dash-delimited increasing ports) and comma-separated list of 'single port'\nand/or 'range'. Each port must be in the [1;49151] range."
         },
         "ServiceName": {
-            "type": "string"
+            "type": "string",
+            "description": "The internal name of your IP load balancing."
         },
         "Ssl": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "SSL deciphering. Default: 'false'."
         },
         "Zone": {
-            "type": "string"
+            "type": "string",
+            "description": "Zone where the frontend will be defined (ie. `gra`, `bhs` also supports `all`)."
         }
     },
     "additionalProperties": false,

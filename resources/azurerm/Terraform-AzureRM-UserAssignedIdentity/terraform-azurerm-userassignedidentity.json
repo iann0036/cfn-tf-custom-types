@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::UserAssignedIdentity",
-    "description": "CloudFormation equivalent of azurerm_user_assigned_identity",
+    "description": "Manages a user assigned identity.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -32,16 +32,19 @@
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "The location/region where the user assigned identity is\ncreated."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the user assigned identity. Changing this forces a\nnew identity to be created."
         },
         "PrincipalId": {
             "type": "string"
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to\ncreate the user assigned identity."
         },
         "Tags": {
             "type": "array",
@@ -61,7 +64,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

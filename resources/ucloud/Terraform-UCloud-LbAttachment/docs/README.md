@@ -1,6 +1,6 @@
 # Terraform::UCloud::LbAttachment
 
-CloudFormation equivalent of ucloud_lb_attachment
+Provides a Load Balancer Attachment resource for attaching Load Balancer to UHost Instance, etc.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### ListenerId
 
+The ID of a listener server.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LoadBalancerId
+
+The ID of a load balancer.
 
 _Required_: Yes
 
@@ -53,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Port
 
+The listening port of the backend server, range: 1-65535, (Default: `80`). Backend server port have the following restrictions: If the LB listener type is `request_proxy`, the backend serve can add different ports to implement different service instances of the same IP. Else if LB listener type is `packets_transmit`, the port of the backend server must be consistent with the LB listening port.
+
 _Required_: No
 
 _Type_: Double
@@ -61,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceId
 
+The ID of a backend server.
+
 _Required_: Yes
 
 _Type_: String
@@ -68,6 +76,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceType
+
+**Deprecated**, attribute `resource_type` is deprecated for optimizing parameters.
 
 _Required_: No
 

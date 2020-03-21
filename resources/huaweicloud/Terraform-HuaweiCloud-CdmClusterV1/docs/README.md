@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::CdmClusterV1
 
-CloudFormation equivalent of huaweicloud_cdm_cluster_v1
+cdm cluster management
 
 ## Syntax
 

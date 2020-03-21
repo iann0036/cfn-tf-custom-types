@@ -1,6 +1,7 @@
 # Terraform::Vault::OktaAuthBackendUser
 
-CloudFormation equivalent of vault_okta_auth_backend_user
+Provides a resource to create a user in an
+[Okta auth backend within Vault](https://www.vaultproject.io/docs/auth/okta.html).
 
 ## Syntax
 
@@ -37,6 +38,8 @@ Properties:
 
 #### Groups
 
+List of Okta groups to associate with this user.
+
 _Required_: No
 
 _Type_: List of String
@@ -44,6 +47,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Path
+
+The path where the Okta auth backend is mounted.
 
 _Required_: Yes
 
@@ -53,6 +58,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Policies
 
+List of Vault policies to associate with this user.
+
 _Required_: No
 
 _Type_: List of String
@@ -60,6 +67,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Username
+
+Name of the user within Okta.
 
 _Required_: Yes
 

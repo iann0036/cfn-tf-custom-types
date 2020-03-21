@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::AsNotification
 
-CloudFormation equivalent of tencentcloud_as_notification
+Provides a resource for an AS (Auto scaling) notification.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### NotificationTypes
 
+A list of Notification Types that trigger notifications. Acceptable values are SCALE_OUT_FAILED, SCALE_IN_SUCCESSFUL, SCALE_IN_FAILED, REPLACE_UNHEALTHY_INSTANCE_SUCCESSFUL and REPLACE_UNHEALTHY_INSTANCE_FAILED.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -43,6 +45,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NotificationUserGroupIds
 
+A group of user IDs to be notified.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -50,6 +54,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ScalingGroupId
+
+ID of a scaling group.
 
 _Required_: Yes
 

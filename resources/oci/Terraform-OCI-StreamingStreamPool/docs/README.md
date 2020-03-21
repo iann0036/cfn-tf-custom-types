@@ -1,6 +1,10 @@
 # Terraform::OCI::StreamingStreamPool
 
-CloudFormation equivalent of oci_streaming_stream_pool
+This resource provides the Stream Pool resource in Oracle Cloud Infrastructure Streaming service.
+
+Starts the provisioning of a new stream pool.
+To track the progress of the provisioning, you can periodically call GetStreamPool.
+In the response, the `lifecycleState` parameter of the object tells you its current state.
 
 ## Syntax
 
@@ -42,6 +46,8 @@ Properties:
 
 #### CompartmentId
 
+(Updatable) The OCID of the compartment that contains the stream.
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefinedTags
+
+(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`.
 
 _Required_: No
 
@@ -58,6 +66,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FreeformTags
 
+(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`.
+
 _Required_: No
 
 _Type_: List of <a href="freeformtags.md">FreeformTags</a>
@@ -65,6 +75,8 @@ _Type_: List of <a href="freeformtags.md">FreeformTags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+(Updatable) The name of the stream pool. Avoid entering confidential information.  Example: `MyStreamPool`.
 
 _Required_: Yes
 

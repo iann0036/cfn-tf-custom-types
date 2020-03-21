@@ -1,6 +1,6 @@
 # Terraform::Gitlab::ServiceSlack
 
-CloudFormation equivalent of gitlab_service_slack
+This resource allows you to manage Slack notifications integration.
 
 ## Syntax
 
@@ -71,6 +71,8 @@ Properties:
 
 #### ConfidentialIssueChannel
 
+The name of the channel to receive confidential issue events notifications.
+
 _Required_: No
 
 _Type_: String
@@ -78,6 +80,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ConfidentialIssuesEvents
+
+Enable notifications for confidential issues events.
 
 _Required_: No
 
@@ -87,6 +91,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ConfidentialNoteEvents
 
+Enable notifications for confidential note events.
+
 _Required_: No
 
 _Type_: Boolean
@@ -94,6 +100,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IssueChannel
+
+The name of the channel to receive issue events notifications.
 
 _Required_: No
 
@@ -103,6 +111,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IssuesEvents
 
+Enable notifications for issues events.
+
 _Required_: No
 
 _Type_: Boolean
@@ -110,6 +120,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MergeRequestChannel
+
+The name of the channel to receive merge request events notifications.
 
 _Required_: No
 
@@ -119,6 +131,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MergeRequestsEvents
 
+Enable notifications for merge requests events.
+
 _Required_: No
 
 _Type_: Boolean
@@ -126,6 +140,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NoteChannel
+
+The name of the channel to receive note events notifications.
 
 _Required_: No
 
@@ -135,6 +151,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NoteEvents
 
+Enable notifications for note events.
+
 _Required_: No
 
 _Type_: Boolean
@@ -142,6 +160,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NotifyOnlyBrokenPipelines
+
+Send notifications for broken pipelines.
 
 _Required_: No
 
@@ -151,6 +171,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NotifyOnlyDefaultBranch
 
+DEPRECATED: This parameter has been replaced with `branches_to_be_notified`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -158,6 +180,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PipelineChannel
+
+The name of the channel to receive pipeline events notifications.
 
 _Required_: No
 
@@ -167,6 +191,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PipelineEvents
 
+Enable notifications for pipeline events.
+
 _Required_: No
 
 _Type_: Boolean
@@ -174,6 +200,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+ID of the project you want to activate integration on.
 
 _Required_: Yes
 
@@ -183,6 +211,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PushChannel
 
+The name of the channel to receive push events notifications.
+
 _Required_: No
 
 _Type_: String
@@ -190,6 +220,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PushEvents
+
+Enable notifications for push events.
 
 _Required_: No
 
@@ -199,6 +231,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TagPushChannel
 
+The name of the channel to receive tag push events notifications.
+
 _Required_: No
 
 _Type_: String
@@ -206,6 +240,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TagPushEvents
+
+Enable notifications for tag push events.
 
 _Required_: No
 
@@ -215,6 +251,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Username
 
+Username to use.
+
 _Required_: No
 
 _Type_: String
@@ -222,6 +260,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Webhook
+
+Webhook URL (ex.: https://hooks.slack.com/services/...).
 
 _Required_: Yes
 
@@ -231,6 +271,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### WikiPageChannel
 
+The name of the channel to receive wiki page events notifications.
+
 _Required_: No
 
 _Type_: String
@@ -238,6 +280,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WikiPageEvents
+
+Enable notifications for wiki page events.
 
 _Required_: No
 

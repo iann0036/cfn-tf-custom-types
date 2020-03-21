@@ -1,6 +1,6 @@
 # Terraform::AzureRM::ServicebusQueueAuthorizationRule
 
-CloudFormation equivalent of azurerm_servicebus_queue_authorization_rule
+Manages an Authorization Rule for a ServiceBus Queue.
 
 ## Syntax
 
@@ -43,6 +43,8 @@ Properties:
 
 #### Listen
 
+Does this Authorization Rule have Listen permissions to the ServiceBus Queue? Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -50,6 +52,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Manage
+
+Does this Authorization Rule have Manage permissions to the ServiceBus Queue? When this property is `true` - both `listen` and `send` must be too. Defaults to `false`.
 
 _Required_: No
 
@@ -59,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the Authorization Rule. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -66,6 +72,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NamespaceName
+
+Specifies the name of the ServiceBus Namespace in which the Queue exists. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -75,6 +83,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### QueueName
 
+Specifies the name of the ServiceBus Queue. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -83,6 +93,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the Resource Group in which the ServiceBus Namespace exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -90,6 +102,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Send
+
+Does this Authorization Rule have Send permissions to the ServiceBus Queue? Defaults to `false`.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::CloudStack::SecondaryIpaddress
 
-CloudFormation equivalent of cloudstack_secondary_ipaddress
+Assigns a secondary IP to a NIC.
 
 ## Syntax
 
@@ -33,6 +33,10 @@ Properties:
 
 #### IpAddress
 
+The IP address to bind the to NIC. If not supplied
+an IP address will be selected randomly. Changing this forces a new resource
+to be	created.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +45,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NicId
 
+The NIC ID to which you want to attach the secondary IP
+address. Changing this forces a new resource to be created (defaults to the
+ID of the primary NIC).
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +56,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VirtualMachineId
+
+The ID of the virtual machine to which you
+want to attach the secondary IP address. Changing this forces a new resource
+to be created.
 
 _Required_: Yes
 

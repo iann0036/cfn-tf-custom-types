@@ -1,6 +1,9 @@
 # Terraform::AzureRM::DataLakeStoreFile
 
-CloudFormation equivalent of azurerm_data_lake_store_file
+Manages a Azure Data Lake Store File.
+
+~> **Note:** If you want to change the data in the remote file without changing the `local_file_path`, then
+taint the resource so the `azurerm_data_lake_store_file` gets recreated with the new data.
 
 ## Syntax
 
@@ -35,6 +38,8 @@ Properties:
 
 #### AccountName
 
+Specifies the name of the Data Lake Store for which the File should created.
+
 _Required_: Yes
 
 _Type_: String
@@ -43,6 +48,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LocalFilePath
 
+The path to the local file to be added to the Data Lake Store.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +57,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RemoteFilePath
+
+The path created for the file on the Data Lake Store.
 
 _Required_: Yes
 

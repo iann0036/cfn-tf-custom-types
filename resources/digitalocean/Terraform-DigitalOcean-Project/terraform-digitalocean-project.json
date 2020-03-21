@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::DigitalOcean::Project",
-    "description": "CloudFormation equivalent of digitalocean_project",
+    "description": "Provides a DigitalOcean Project resource.\n\nProjects allow you to organize your resources into groups that fit the way you work.\nYou can group resources (like Droplets, Spaces, Load Balancers, domains, and Floating IPs)\nin ways that align with the applications you host on DigitalOcean.\n\nThe following resource types can be associated with a project:\n\n* Database Clusters\n* Domains\n* Droplets\n* Floating IP\n* Load Balancers\n* Spaces Bucket\n* Volume\n\n**Note:** A Terraform managed project cannot be set as a default project.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,16 +12,19 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "the description of the project."
         },
         "Environment": {
-            "type": "string"
+            "type": "string",
+            "description": "the environment of the project's resources. The possible values are: `Development`, `Staging`, `Production`)."
         },
         "IsDefault": {
             "type": "boolean"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Project."
         },
         "OwnerId": {
             "type": "number"
@@ -30,14 +33,16 @@
             "type": "string"
         },
         "Purpose": {
-            "type": "string"
+            "type": "string",
+            "description": "the purpose of the project, (Default: \"Web Application\")."
         },
         "Resources": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "a list of uniform resource names (URNs) for the resources associated with the project."
         },
         "UpdatedAt": {
             "type": "string"

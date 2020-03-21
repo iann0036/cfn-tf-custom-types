@@ -1,6 +1,6 @@
 # Terraform::Gitlab::GroupMembership
 
-CloudFormation equivalent of gitlab_group_membership
+This resource allows you to add a user to an existing group.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### AccessLevel
 
+Acceptable values are: guest, reporter, developer, maintainer, owner.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ExpiresAt
+
+Expiration date for the group membership. Format: `YYYY-MM-DD`.
 
 _Required_: No
 
@@ -51,6 +55,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GroupId
 
+The id of the group.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserId
+
+The id of the user.
 
 _Required_: Yes
 

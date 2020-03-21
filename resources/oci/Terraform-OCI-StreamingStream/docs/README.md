@@ -1,6 +1,12 @@
 # Terraform::OCI::StreamingStream
 
-CloudFormation equivalent of oci_streaming_stream
+This resource provides the Stream resource in Oracle Cloud Infrastructure Streaming service.
+
+Starts the provisioning of a new stream.
+The stream will be created in the given compartment id or stream pool id, depending on which parameter is specified.
+Compartment id and stream pool id cannot be specified at the same time.
+To track the progress of the provisioning, you can periodically call [GetStream](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/Stream/GetStream).
+In the response, the `lifecycleState` parameter of the [Stream](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/Stream/) object tells you its current state.
 
 ## Syntax
 
@@ -45,6 +51,8 @@ Properties:
 
 #### CompartmentId
 
+(Updatable) The OCID of the compartment that contains the stream.
+
 _Required_: No
 
 _Type_: String
@@ -52,6 +60,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefinedTags
+
+(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`.
 
 _Required_: No
 
@@ -61,6 +71,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FreeformTags
 
+(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`.
+
 _Required_: No
 
 _Type_: List of <a href="freeformtags.md">FreeformTags</a>
@@ -68,6 +80,8 @@ _Type_: List of <a href="freeformtags.md">FreeformTags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the stream. Avoid entering confidential information.  Example: `TelemetryEvents`.
 
 _Required_: Yes
 
@@ -77,6 +91,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Partitions
 
+The number of partitions in the stream.
+
 _Required_: Yes
 
 _Type_: Double
@@ -85,6 +101,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RetentionInHours
 
+The retention period of the stream, in hours. Accepted values are between 24 and 168 (7 days). If not specified, the stream will have a retention period of 24 hours.
+
 _Required_: No
 
 _Type_: Double
@@ -92,6 +110,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StreamPoolId
+
+(Updatable) The OCID of the stream pool that contains the stream.
 
 _Required_: No
 

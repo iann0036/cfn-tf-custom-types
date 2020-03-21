@@ -1,6 +1,10 @@
 # Terraform::Panos::PanoramaAddressGroup
 
-CloudFormation equivalent of panos_panorama_address_group
+This resource allows you to add/update/delete Panorama address groups.
+
+Address groups are either statically defined or dynamically defined, so only
+`static_addresses` or `dynamic_match` should be defined within a given address
+group.
 
 ## Syntax
 
@@ -41,6 +45,8 @@ Properties:
 
 #### Description
 
+The address group's description.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +54,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DeviceGroup
+
+The device group to put the address group into
+(default: `shared`).
 
 _Required_: No
 
@@ -57,6 +66,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DynamicMatch
 
+The IP tags to include in this DAG.
+
 _Required_: No
 
 _Type_: String
@@ -64,6 +75,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The address group's name.
 
 _Required_: Yes
 
@@ -73,6 +86,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StaticAddresses
 
+The address objects to include in this
+statically defined address group.
+
 _Required_: No
 
 _Type_: List of String
@@ -80,6 +96,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+List of administrative tags.
 
 _Required_: No
 

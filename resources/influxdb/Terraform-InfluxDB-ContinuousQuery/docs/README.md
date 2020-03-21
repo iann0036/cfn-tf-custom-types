@@ -1,6 +1,6 @@
 # Terraform::InfluxDB::ContinuousQuery
 
-CloudFormation equivalent of influxdb_continuous_query
+The continuous_query resource allows a continuous query to be created on an InfluxDB server.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### Database
 
+The database for the continuous_query. This must be an existing influxdb database.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name for the continuous_query. This must be unique on the InfluxDB server.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Query
+
+The query for the continuous_query.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Vault::EgpPolicy",
-    "description": "CloudFormation equivalent of vault_egp_policy",
+    "description": "Provides a resource to manage Endpoint Governing Policy (EGP) via [Sentinel](https://www.vaultproject.io/docs/enterprise/sentinel/index.html).\n\n**Note** this feature is available only with Vault Enterprise.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,20 +9,24 @@
             "type": "string"
         },
         "EnforcementLevel": {
-            "type": "string"
+            "type": "string",
+            "description": "Enforcement level of Sentinel policy. Can be either `advisory` or `soft-mandatory` or `hard-mandatory`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the policy."
         },
         "Paths": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of paths to which the policy will be applied to."
         },
         "Policy": {
-            "type": "string"
+            "type": "string",
+            "description": "String containing a Sentinel policy."
         }
     },
     "additionalProperties": false,

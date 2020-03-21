@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::CloudStack::LoadbalancerRule",
-    "description": "CloudFormation equivalent of cloudstack_loadbalancer_rule",
+    "description": "Creates a loadbalancer rule.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,41 +9,51 @@
             "type": "string"
         },
         "Algorithm": {
-            "type": "string"
+            "type": "string",
+            "description": "Load balancer rule algorithm (source, roundrobin,\nleastconn). Changing this forces a new resource to be created."
         },
         "CertificateId": {
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the load balancer rule."
         },
         "IpAddressId": {
-            "type": "string"
+            "type": "string",
+            "description": "Public IP address ID from where the network\ntraffic will be load balanced from. Changing this forces a new resource\nto be created."
         },
         "MemberIds": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of instance IDs to assign to the load balancer\nrule. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the loadbalancer rule.\nChanging this forces a new resource to be created."
         },
         "NetworkId": {
-            "type": "string"
+            "type": "string",
+            "description": "The network ID this rule will be created for.\nRequired when public IP address is not associated with any network yet\n(VPC case)."
         },
         "PrivatePort": {
-            "type": "number"
+            "type": "number",
+            "description": "The private port of the private IP address\n(virtual machine) where the network traffic will be load balanced to.\nChanging this forces a new resource to be created."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or ID of the project to deploy this\ninstance to. Changing this forces a new resource to be created."
         },
         "Protocol": {
-            "type": "string"
+            "type": "string",
+            "description": "Load balancer protocol (tcp, udp, tcp-proxy).\nChanging this forces a new resource to be created."
         },
         "PublicPort": {
-            "type": "number"
+            "type": "number",
+            "description": "The public port from where the network traffic\nwill be load balanced from. Changing this forces a new resource to be\ncreated."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HuaweiCloud::ObsBucket",
-    "description": "CloudFormation equivalent of huaweicloud_obs_bucket",
+    "description": "Provides an OBS bucket resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "CorsRule": {
@@ -49,13 +49,16 @@
             "additionalProperties": false,
             "properties": {
                 "Enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Specifies lifecycle rule status."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Unique identifier for lifecycle rules. The Rule Name contains a maximum of 255 characters."
                 },
                 "Prefix": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Object key prefix identifying one or more objects to which the rule applies.\nIf omitted, all objects in the bucket will be managed by the lifecycle rule.\nThe prefix cannot start or end with a slash (/), cannot have consecutive slashes (/), and cannot contain the following special characters: \\:*?\"<>|."
                 },
                 "Expiration": {
                     "type": "array",
@@ -96,10 +99,12 @@
             "additionalProperties": false,
             "properties": {
                 "TargetBucket": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the bucket that will receive the log objects.\nThe acl policy of the target bucket should be `log-delivery-write`."
                 },
                 "TargetPrefix": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "To specify a key prefix for log objects."
                 }
             },
             "required": [
@@ -111,16 +116,20 @@
             "additionalProperties": false,
             "properties": {
                 "ErrorDocument": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the error page returned when an error occurs during static website access.\nOnly HTML, JPG, PNG, BMP, and WEBP files under the root directory are supported."
                 },
                 "IndexDocument": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the default homepage of the static website, only HTML web pages are supported.\nOBS only allows files such as `index.html` in the root directory of a bucket to function as the default homepage.\nThat is to say, do not set the default homepage with a multi-level directory structure (for example, /page/index.html)."
                 },
                 "RedirectAllRequestsTo": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A hostname to redirect all website requests for this bucket to. Hostname can optionally be prefixed with a protocol (`http://` or `https://`) to use when redirecting requests. The default is the protocol that is used in the original request."
                 },
                 "RoutingRules": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A JSON or XML format containing routing rules describing redirect behavior and when redirects are applied.\nEach rule contains a `Condition` and a `Redirect` as shown in the following table:."
                 }
             },
             "required": []
@@ -188,22 +197,27 @@
             "type": "string"
         },
         "Acl": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the ACL policy for a bucket. The predefined common policies are as follows: \"private\", \"public-read\", \"public-read-write\" and \"log-delivery-write\". Defaults to `private`."
         },
         "Bucket": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the bucket. Changing this parameter will create a new resource.\nA bucket must be named according to the globally applied DNS naming regulations as follows:\n* The name must be globally unique in OBS.\n* The name must contain 3 to 63 characters. Only lowercase letters, digits, hyphens (-), and periods (.) are allowed.\n* The name cannot start or end with a period (.) or hyphen (-), and cannot contain two consecutive periods (.) or contain a period (.) and a hyphen (-) adjacent to each other.\n* The name cannot be an IP address.\n* If the name contains any periods (.), a security certificate verification message may appear when you access the bucket or its objects by entering a domain name."
         },
         "BucketDomainName": {
             "type": "string"
         },
         "ForceDestroy": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "A boolean that indicates all objects should be deleted from the bucket so that the bucket can be destroyed without error. Default to `false`."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "If specified, the region this bucket should reside in. Otherwise, the region used by the provider."
         },
         "StorageClass": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the storage class of the bucket. OBS provides three storage classes: \"STANDARD\", \"WARM\" (Infrequent Access) and \"COLD\" (Archive). Defaults to `STANDARD`."
         },
         "Tags": {
             "type": "array",
@@ -223,10 +237,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the bucket. Each tag is represented by one key-value pair."
         },
         "Versioning": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether enable versioning. Once you version-enable a bucket, it can never return to an unversioned state.\nYou can, however, suspend versioning on that bucket."
         },
         "CorsRule": {
             "type": "array",

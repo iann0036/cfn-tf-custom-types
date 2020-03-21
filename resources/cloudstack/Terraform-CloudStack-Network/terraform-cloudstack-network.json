@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::CloudStack::Network",
-    "description": "CloudFormation equivalent of cloudstack_network",
+    "description": "Creates a network.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,49 +9,63 @@
             "type": "string"
         },
         "AclId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ACL ID that should be attached to the network or\n`none` if you do not want to attach an ACL. You can dynamically attach and\nswap ACL's, but if you want to detach an attached ACL and revert to using\n`none`, this will force a new resource to be created. (defaults `none`)."
         },
         "Cidr": {
-            "type": "string"
+            "type": "string",
+            "description": "The CIDR block for the network. Changing this forces a new\nresource to be created."
         },
         "DisplayText": {
-            "type": "string"
+            "type": "string",
+            "description": "The display text of the network."
         },
         "Endip": {
-            "type": "string"
+            "type": "string",
+            "description": "End of the IP block that will be available on the\nnetwork. Defaults to the last available IP in the range."
         },
         "Gateway": {
-            "type": "string"
+            "type": "string",
+            "description": "Gateway that will be provided to the instances in this\nnetwork. Defaults to the first usable IP in the range."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the network."
         },
         "NetworkDomain": {
-            "type": "string"
+            "type": "string",
+            "description": "DNS domain for the network."
         },
         "NetworkOffering": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or ID of the network offering to use\nfor this network."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or ID of the project to deploy this\ninstance to. Changing this forces a new resource to be created."
         },
         "SourceNatIp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If set to `true` a public IP will be associated\nwith the network. This is mainly used when the network supports the source\nNAT service which claims the first associated IP address. This prevents the\nability to manage the IP address as an independent entity."
         },
         "SourceNatIpId": {
             "type": "string"
         },
         "Startip": {
-            "type": "string"
+            "type": "string",
+            "description": "Start of the IP block that will be available on the\nnetwork. Defaults to the second available IP in the range."
         },
         "Vlan": {
-            "type": "number"
+            "type": "number",
+            "description": "The VLAN number (1-4095) the network will use. This might be\nrequired by the Network Offering if specifyVlan=true is set. Only the ROOT\nadmin can set this value."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "The VPC ID in which to create this network. Changing\nthis forces a new resource to be created."
         },
         "Zone": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or ID of the zone where this network will be\navailable. Changing this forces a new resource to be created."
         }
     },
     "additionalProperties": false,

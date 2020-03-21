@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Heroku::Formation",
-    "description": "CloudFormation equivalent of heroku_formation",
+    "description": "Provides a [Heroku Formation](https://devcenter.heroku.com/articles/platform-api-reference#formation)\nresource.\n\nA formation represents the formation of processes that should be set for an application.\n\n~> **NOTE:** \n- The application must have a dyno in order to update its formation.\n- If the heroku formation resource is removed and deleted, this will be a no-op action in Heroku.\nThe Heroku Platform does not have a `DELETE` endpoint for `formation`.\n- This resource works well with the `heroku_app_release` resource, which allows you to deploy a slug/release to an application\nbefore the formation can be updated.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,20 @@
             "type": "string"
         },
         "App": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the application."
         },
         "Quantity": {
-            "type": "number"
+            "type": "number",
+            "description": "number of processes to maintain."
         },
         "Size": {
-            "type": "string"
+            "type": "string",
+            "description": "dyno size (Example: \u201cstandard-1X\u201d). Capitalization does not matter."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "type of process such as \"web\"."
         }
     },
     "additionalProperties": false,

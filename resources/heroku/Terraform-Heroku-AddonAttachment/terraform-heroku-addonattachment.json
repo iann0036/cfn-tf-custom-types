@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Heroku::AddonAttachment",
-    "description": "CloudFormation equivalent of heroku_addon_attachment",
+    "description": "Attaches a Heroku Addon Resource to an additional Heroku App.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "AddonId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the existing Heroku Addon to attach."
         },
         "AppId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Heroku App to attach to."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A friendly name for the Heroku Addon Attachment."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::NSXT::IpDiscoverySwitchingProfile",
-    "description": "CloudFormation equivalent of nsxt_ip_discovery_switching_profile",
+    "description": "Provides a resource to configure IP discovery switching profile on NSX-T manager",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Tag": {
@@ -26,25 +26,31 @@
             "type": "string"
         },
         "ArpBindingsLimit": {
-            "type": "number"
+            "type": "number",
+            "description": "Limit for the amount of ARP bindings."
         },
         "ArpSnoopingEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "A boolean flag iIndicates whether ARP snooping is enabled."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of this resource."
         },
         "DhcpSnoopingEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "A boolean flag iIndicates whether DHCP snooping is enabled."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The display name of this resource. Defaults to ID if not set."
         },
         "Revision": {
             "type": "number"
         },
         "VmToolsEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "A boolean flag iIndicates whether VM tools will be enabled. This option is only supported on ESX where vm-tools is installed."
         },
         "Tag": {
             "type": "array",

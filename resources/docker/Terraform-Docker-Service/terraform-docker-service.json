@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Docker::Service",
-    "description": "CloudFormation equivalent of docker_service",
+    "description": "This resource manages the lifecycle of a Docker service. By default, the creation, update and delete of services are detached.\n\nWith the [Converge Config](#convergeconfig) the behavior of the `docker cli` is imitated to guarantee that\nfor example, all tasks of a service are running or successfully updated or to inform `terraform` that a service could not\nbe updated and was successfully rolled back.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ConvergeConfig": {
@@ -822,10 +822,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "See [Auth](#auth-1) below for details."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Docker service."
         },
         "ConvergeConfig": {
             "type": "array",

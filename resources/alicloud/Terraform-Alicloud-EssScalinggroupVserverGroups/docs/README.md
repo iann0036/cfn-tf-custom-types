@@ -1,6 +1,24 @@
 # Terraform::Alicloud::EssScalinggroupVserverGroups
 
-CloudFormation equivalent of alicloud_ess_scalinggroup_vserver_groups
+Attaches/Detaches vserver groups to a specified scaling group.
+
+-> **NOTE:** The load balancer of which vserver groups belongs to must be in `active` status.
+
+-> **NOTE:** If scaling group's network type is `VPC`, the vserver groups must be in the same `VPC`.
+ 
+-> **NOTE:** A scaling group can have at most 5 vserver groups attached by default.
+
+-> **NOTE:** Vserver groups and the default group of loadbalancer share the same backend server quota.
+
+-> **NOTE:** When attach vserver groups to scaling group, existing ECS instances will be added to vserver groups; Instead, ECS instances will be removed from vserver group when detach.
+
+-> **NOTE:** Detach action will be executed before attach action.
+
+-> **NOTE:** Vserver group is defined uniquely by `loadbalancer_id`, `vserver_group_id`, `port`.
+
+-> **NOTE:** Modifing `weight` attribute means detach vserver group first and then, attach with new weight parameter.
+
+-> **NOTE:** Resource `alicloud_ess_scalinggroup_vserver_groups` is available in 1.53.0+.
 
 ## Syntax
 
@@ -37,6 +55,8 @@ Properties:
 
 #### Force
 
+If instances of scaling group are attached/removed from slb backend server when attach/detach vserver group from scaling group. Default to true.
+
 _Required_: No
 
 _Type_: Boolean
@@ -44,6 +64,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ScalingGroupId
+
+ID of the scaling group.
 
 _Required_: Yes
 

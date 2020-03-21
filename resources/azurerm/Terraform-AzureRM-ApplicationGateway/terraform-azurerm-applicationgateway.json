@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::ApplicationGateway",
-    "description": "CloudFormation equivalent of azurerm_application_gateway",
+    "description": "Manages an Application Gateway.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "AuthenticationCertificate": {
@@ -8,7 +8,8 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the Authentication Certificate."
                 }
             },
             "required": [
@@ -20,10 +21,12 @@
             "additionalProperties": false,
             "properties": {
                 "MaxCapacity": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Maximum capacity for autoscaling. Accepted values are in the range `2` to `125`."
                 },
                 "MinCapacity": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Minimum capacity for autoscaling. Accepted values are in the range `0` to `100`."
                 }
             },
             "required": [
@@ -39,17 +42,20 @@
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of FQDN's which should be part of the Backend Address Pool."
                 },
                 "IpAddresses": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of IP Addresses which should be part of the Backend Address Pool."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the Backend Address Pool."
                 }
             },
             "required": [
@@ -61,41 +67,52 @@
             "additionalProperties": false,
             "properties": {
                 "AffinityCookieName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the affinity cookie."
                 },
                 "CookieBasedAffinity": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Is Cookie-Based Affinity enabled? Possible values are `Enabled` and `Disabled`."
                 },
                 "HostName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Host header to be sent to the backend servers. Cannot be set if `pick_host_name_from_backend_address` is set to `true`."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the Backend HTTP Settings Collection."
                 },
                 "Path": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Path which should be used as a prefix for all HTTP requests."
                 },
                 "PickHostNameFromBackendAddress": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Whether host header should be picked from the host name of the backend server. Defaults to `false`."
                 },
                 "Port": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The port which should be used for this Backend HTTP Settings Collection."
                 },
                 "ProbeName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of an associated HTTP Probe."
                 },
                 "Protocol": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Protocol which should be used. Possible values are `Http` and `Https`."
                 },
                 "RequestTimeout": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The request timeout in seconds, which must be between 1 and 86400 seconds."
                 },
                 "TrustedRootCertificateNames": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of `trusted_root_certificate` names."
                 },
                 "AuthenticationCertificate": {
                     "type": "array",
@@ -124,10 +141,12 @@
             "additionalProperties": false,
             "properties": {
                 "CustomErrorPageUrl": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Error page URL of the application gateway customer error."
                 },
                 "StatusCode": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Status code of the application gateway customer error. Possible values are `HttpStatus403` and `HttpStatus502`."
                 }
             },
             "required": [
@@ -140,19 +159,24 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the Frontend IP Configuration."
                 },
                 "PrivateIpAddress": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Private IP Address to use for the Application Gateway."
                 },
                 "PrivateIpAddressAllocation": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Allocation Method for the Private IP Address. Possible values are `Dynamic` and `Static`."
                 },
                 "PublicIpAddressId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of a Public IP Address which the Application Gateway should use."
                 },
                 "SubnetId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of the Subnet which the Application Gateway should be connected to."
                 }
             },
             "required": [
@@ -164,10 +188,12 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the Frontend Port."
                 },
                 "Port": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The port used for this Frontend Port."
                 }
             },
             "required": [
@@ -180,10 +206,12 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Name of this Gateway IP Configuration."
                 },
                 "SubnetId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of a Subnet."
                 }
             },
             "required": [
@@ -196,25 +224,32 @@
             "additionalProperties": false,
             "properties": {
                 "FrontendIpConfigurationName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Name of the Frontend IP Configuration used for this HTTP Listener."
                 },
                 "FrontendPortName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Name of the Frontend Port use for this HTTP Listener."
                 },
                 "HostName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Hostname which should be used for this HTTP Listener."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Name of the HTTP Listener."
                 },
                 "Protocol": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Protocol to use for this HTTP Listener. Possible values are `Http` and `Https`."
                 },
                 "RequireSni": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Should Server Name Indication be Required? Defaults to `false`."
                 },
                 "SslCertificateName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the associated SSL Certificate which should be used for this HTTP Listener."
                 },
                 "CustomErrorConfiguration": {
                     "type": "array",
@@ -240,10 +275,12 @@
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Specifies a list with a single user managed identity id to be assigned to the Application Gateway."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Managed Service Identity Type of this Application Gateway. The only possible value is `UserAssigned`. Defaults to `UserAssigned`."
                 }
             },
             "required": [
@@ -255,31 +292,40 @@
             "additionalProperties": false,
             "properties": {
                 "Host": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Hostname used for this Probe. If the Application Gateway is configured for a single site, by default the Host name should be specified as \u2018127.0.0.1\u2019, unless otherwise configured in custom probe. Cannot be set if `pick_host_name_from_backend_http_settings` is set to `true`."
                 },
                 "Interval": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The Interval between two consecutive probes in seconds. Possible values range from 1 second to a maximum of 86,400 seconds."
                 },
                 "MinimumServers": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The minimum number of servers that are always marked as healthy. Defaults to `0`."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Name of the Probe."
                 },
                 "Path": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Path used for this Probe."
                 },
                 "PickHostNameFromBackendHttpSettings": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Whether the host header should be picked from the backend http settings. Defaults to `false`."
                 },
                 "Protocol": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Protocol used for this Probe. Possible values are `Http` and `Https`."
                 },
                 "Timeout": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The Timeout used for this Probe, which indicates when a probe becomes unhealthy. Possible values range from 1 second to a maximum of 86,400 seconds."
                 },
                 "UnhealthyThreshold": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The Unhealthy Threshold for this Probe, which indicates the amount of retries which should be attempted before a node is deemed unhealthy. Possible values are from 1 - 20 seconds."
                 },
                 "Match": {
                     "type": "array",
@@ -303,22 +349,28 @@
             "additionalProperties": false,
             "properties": {
                 "IncludePath": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Whether or not to include the path in the redirected Url. Defaults to `false`."
                 },
                 "IncludeQueryString": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Whether or not to include the query string in the redirected Url. Default to `false`."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Unique name of the redirect configuration block."
                 },
                 "RedirectType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The type of redirect. Possible values are `Permanent`, `Temporary`, `Found` and `SeeOther`."
                 },
                 "TargetListenerName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the listener to redirect to. Cannot be set if `target_url` is set."
                 },
                 "TargetUrl": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Url to redirect the request to. Cannot be set if `target_listener_name` is set."
                 }
             },
             "required": [
@@ -331,28 +383,36 @@
             "additionalProperties": false,
             "properties": {
                 "BackendAddressPoolName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Name of the Backend Address Pool which should be used for this Routing Rule. Cannot be set if `redirect_configuration_name` is set."
                 },
                 "BackendHttpSettingsName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Name of the Backend HTTP Settings Collection which should be used for this Routing Rule. Cannot be set if `redirect_configuration_name` is set."
                 },
                 "HttpListenerName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Name of the HTTP Listener which should be used for this Routing Rule."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Name of this Request Routing Rule."
                 },
                 "RedirectConfigurationName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Name of the Redirect Configuration which should be used for this Routing Rule. Cannot be set if either `backend_address_pool_name` or `backend_http_settings_name` is set."
                 },
                 "RewriteRuleSetName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Name of the Rewrite Rule Set which should be used for this Routing Rule. Only valid for v2 SKUs."
                 },
                 "RuleType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Type of Routing that should be used for this Rule. Possible values are `Basic` and `PathBasedRouting`."
                 },
                 "UrlPathMapName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Name of the URL Path Map which should be associated with this Routing Rule."
                 }
             },
             "required": [
@@ -366,7 +426,8 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Unique name of the rewrite rule set block."
                 },
                 "RewriteRule": {
                     "type": "array",
@@ -385,13 +446,16 @@
             "additionalProperties": false,
             "properties": {
                 "Capacity": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The Capacity of the SKU to use for this Application Gateway. When using a V1 SKU this value must be between 1 and 32, and 1 to 125 for a V2 SKU. This property is optional if `autoscale_configuration` is set."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Name of the SKU to use for this Application Gateway. Possible values are `Standard_Small`, `Standard_Medium`, `Standard_Large`, `Standard_v2`, `WAF_Medium`, `WAF_Large`, and `WAF_v2`."
                 },
                 "Tier": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Tier of the SKU to use for this Application Gateway. Possible values are `Standard`, `Standard_v2`, `WAF` and `WAF_v2`."
                 }
             },
             "required": [
@@ -404,16 +468,20 @@
             "additionalProperties": false,
             "properties": {
                 "Data": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "PFX certificate. Required if `key_vault_secret_id` is not set."
                 },
                 "KeyVaultSecretId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Secret Id of (base-64 encoded unencrypted pfx) `Secret` or `Certificate` object stored in Azure KeyVault. You need to enable soft delete for keyvault to use this feature. Required if `data` is not set."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Name of the SSL certificate that is unique within this Application Gateway."
                 },
                 "Password": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Password for the pfx file specified in data.  Required if `data` is set."
                 }
             },
             "required": [
@@ -436,7 +504,8 @@
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of SSL Protocols which should be disabled on this Application Gateway. Possible values are `TLSv1_0`, `TLSv1_1` and `TLSv1_2`."
                 },
                 "MinProtocolVersion": {
                     "type": "string"
@@ -445,7 +514,8 @@
                     "type": "string"
                 },
                 "PolicyType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Type of the Policy. Possible values are `Predefined` and `Custom`."
                 }
             },
             "required": []
@@ -474,10 +544,12 @@
             "additionalProperties": false,
             "properties": {
                 "Data": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The contents of the Trusted Root Certificate which should be used."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Name of the Trusted Root Certificate to use."
                 }
             },
             "required": [
@@ -490,19 +562,24 @@
             "additionalProperties": false,
             "properties": {
                 "DefaultBackendAddressPoolName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Name of the Default Backend Address Pool which should be used for this URL Path Map. Cannot be set if `default_redirect_configuration_name` is set."
                 },
                 "DefaultBackendHttpSettingsName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Name of the Default Backend HTTP Settings Collection which should be used for this URL Path Map. Cannot be set if `default_redirect_configuration_name` is set."
                 },
                 "DefaultRedirectConfigurationName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Name of the Default Redirect Configuration which should be used for this URL Path Map. Cannot be set if either `default_backend_address_pool_name` or `default_backend_http_settings_name` is set."
                 },
                 "DefaultRewriteRuleSetName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Name of the Default Rewrite Rule Set which should be used for this URL Path Map. Only valid for v2 SKUs."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Name of the URL Path Map."
                 },
                 "PathRule": {
                     "type": "array",
@@ -521,25 +598,32 @@
             "additionalProperties": false,
             "properties": {
                 "Enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Is the Web Application Firewall be enabled?."
                 },
                 "FileUploadLimitMb": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The File Upload Limit in MB. Accepted values are in the range `1`MB to `500`MB. Defaults to `100`MB."
                 },
                 "FirewallMode": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Web Application Firewall Mode. Possible values are `Detection` and `Prevention`."
                 },
                 "MaxRequestBodySizeKb": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The Maximum Request Body Size in KB.  Accepted values are in the range `1`KB to `128`KB.  Defaults to `128`KB."
                 },
                 "RequestBodyCheck": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Is Request Body Inspection enabled?  Defaults to `true`."
                 },
                 "RuleSetType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Type of the Rule Set used for this Web Application Firewall."
                 },
                 "RuleSetVersion": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Version of the Rule Set used for this Web Application Firewall. Possible values are `2.2.9`, `3.0`, and `3.1`."
                 },
                 "DisabledRuleGroup": {
                     "type": "array",
@@ -567,10 +651,12 @@
             "additionalProperties": false,
             "properties": {
                 "DrainTimeoutSec": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The number of seconds connection draining is active. Acceptable values are from `1` second to `3600` seconds."
                 },
                 "Enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "If connection draining is enabled or not."
                 }
             },
             "required": [
@@ -600,10 +686,12 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Unique name of the rewrite rule block."
                 },
                 "RuleSequence": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Rule sequence of the rewrite rule that determines the order of execution in a set."
                 },
                 "Condition": {
                     "type": "array",
@@ -669,14 +757,16 @@
             "additionalProperties": false,
             "properties": {
                 "RuleGroupName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The rule group where specific rules should be disabled. Accepted values are:  `crs_20_protocol_violations`, `crs_21_protocol_anomalies`, `crs_23_request_limits`, `crs_30_http_policy`, `crs_35_bad_robots`, `crs_40_generic_attacks`, `crs_41_sql_injection_attacks`, `crs_41_xss_attacks`, `crs_42_tight_security`, `crs_45_trojans`, `General`, `REQUEST-911-METHOD-ENFORCEMENT`, `REQUEST-913-SCANNER-DETECTION`, `REQUEST-920-PROTOCOL-ENFORCEMENT`, `REQUEST-921-PROTOCOL-ATTACK`, `REQUEST-930-APPLICATION-ATTACK-LFI`, `REQUEST-931-APPLICATION-ATTACK-RFI`, `REQUEST-932-APPLICATION-ATTACK-RCE`, `REQUEST-933-APPLICATION-ATTACK-PHP`, `REQUEST-941-APPLICATION-ATTACK-XSS`, `REQUEST-942-APPLICATION-ATTACK-SQLI`, `REQUEST-943-APPLICATION-ATTACK-SESSION-FIXATION`."
                 },
                 "Rules": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "number"
-                    }
+                    },
+                    "description": "A list of rules which should be disabled in that group. Disables all rules in the specified group if `rules` is not specified."
                 }
             },
             "required": [
@@ -688,13 +778,16 @@
             "additionalProperties": false,
             "properties": {
                 "MatchVariable": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Match variable of the exclusion rule to exclude header, cookie or GET arguments. Possible values are `RequestHeaderNames`, `RequestArgNames` and `RequestCookieNames`."
                 },
                 "Selector": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "String value which will be used for the filter operation. If empty will exclude all traffic on this `match_variable`."
                 },
                 "SelectorMatchOperator": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Operator which will be used to search in the variable content. Possible values are `Equals`, `StartsWith`, `EndsWith`, `Contains`. If empty will exclude all traffic on this `match_variable`."
                 }
             },
             "required": [
@@ -706,16 +799,20 @@
             "additionalProperties": false,
             "properties": {
                 "IgnoreCase": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Perform a case in-sensitive comparison. Defaults to `false`."
                 },
                 "Negate": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Negate the result of the condition evaluation. Defaults to `false`."
                 },
                 "Pattern": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The pattern, either fixed string or regular expression, that evaluates the truthfulness of the condition."
                 },
                 "Variable": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The [variable](https://docs.microsoft.com/en-us/azure/application-gateway/rewrite-http-headers#server-variables) of the condition."
                 }
             },
             "required": [
@@ -728,10 +825,12 @@
             "additionalProperties": false,
             "properties": {
                 "HeaderName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Header name of the header configuration."
                 },
                 "HeaderValue": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Header value of the header configuration. To delete a request header set this property to an empty string."
                 }
             },
             "required": [
@@ -744,10 +843,12 @@
             "additionalProperties": false,
             "properties": {
                 "HeaderName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Header name of the header configuration."
                 },
                 "HeaderValue": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Header value of the header configuration. To delete a response header set this property to an empty string."
                 }
             },
             "required": [
@@ -762,16 +863,20 @@
             "type": "string"
         },
         "EnableHttp2": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is HTTP2 enabled on the application gateway resource? Defaults to `false`."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "The Azure region where the Application Gateway should exist. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Application Gateway. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to the Application Gateway should exist. Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -791,14 +896,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Zones": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A collection of availability zones to spread the Application Gateway over."
         },
         "AuthenticationCertificate": {
             "type": "array",

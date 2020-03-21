@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HuaweiCloud::DmsInstanceV1",
-    "description": "CloudFormation equivalent of huaweicloud_dms_instance_v1",
+    "description": "Manages a DMS instance in the huaweicloud DMS Service.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,14 +9,16 @@
             "type": "string"
         },
         "AccessUser": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates a username. If the engine is rabbitmq, this\nparameter is mandatory. If the engine is kafka, this parameter is optional.\nA username consists of 4 to 64 characters and supports only letters, digits, and\nhyphens (-)."
         },
         "AvailableZones": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Indicates the ID of an AZ. The parameter value can not be\nleft blank or an empty array. For details, see section Querying AZ Information."
         },
         "ConnectAddress": {
             "type": "string"
@@ -25,61 +27,75 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates the description of an instance. It is a character\nstring containing not more than 1024 characters."
         },
         "Engine": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates a message engine. Options: rabbitmq and kafka."
         },
         "EngineVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates the version of a message engine."
         },
         "MaintainBegin": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates the time at which a maintenance time window starts.\nFormat: HH:mm:ss.\nThe start time and end time of a maintenance time window must indicate the time segment of\na supported maintenance time window. For details, see section Querying Maintenance Time Windows.\nThe start time must be set to 22:00, 02:00, 06:00, 10:00, 14:00, or 18:00.\nParameters maintain_begin and maintain_end must be set in pairs. If parameter maintain_begin\nis left blank, parameter maintain_end is also blank. In this case, the system automatically\nallocates the default start time 02:00."
         },
         "MaintainEnd": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates the time at which a maintenance time window ends.\nFormat: HH:mm:ss.\nThe start time and end time of a maintenance time window must indicate the time segment of\na supported maintenance time window. For details, see section Querying Maintenance Time Windows.\nThe end time is four hours later than the start time. For example, if the start time is 22:00,\nthe end time is 02:00.\nParameters maintain_begin and maintain_end must be set in pairs. If parameter maintain_end is left\nblank, parameter maintain_begin is also blank. In this case, the system automatically allocates\nthe default end time 06:00."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates the name of an instance. An instance name starts with a letter,\nconsists of 4 to 64 characters, and supports only letters, digits, and hyphens (-)."
         },
         "OrderId": {
             "type": "string"
         },
         "PartitionNum": {
-            "type": "number"
+            "type": "number",
+            "description": "This parameter is mandatory when a Kafka instance is created.\nIndicates the maximum number of topics in a Kafka instance.\nWhen specification is 300 MB: 900\nWhen specification is 600 MB: 1800\nWhen specification is 1200 MB: 1800."
         },
         "Password": {
-            "type": "string"
+            "type": "string",
+            "description": "If the engine is rabbitmq, this parameter is mandatory.\nIf the engine is kafka, this parameter is mandatory when ssl_enable is true and is\ninvalid when ssl_enable is false. Indicates the password of an instance. An instance\npassword must meet the following complexity requirements: Must be 8 to 32 characters long.\nMust contain at least 2 of the following character types: lowercase letters, uppercase\nletters, digits, and special characters (`~!@#$%^&*()-_=+\\|[{}]:'\",<.>/?)."
         },
         "Port": {
             "type": "string"
         },
         "ProductId": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates a product ID."
         },
         "ResourceSpecCode": {
             "type": "string"
         },
         "SecurityGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates the ID of a security group."
         },
         "SecurityGroupName": {
             "type": "string"
         },
         "Specification": {
-            "type": "string"
+            "type": "string",
+            "description": "This parameter is mandatory if the engine is kafka.\nIndicates the baseline bandwidth of a Kafka instance, that is, the maximum amount\nof data transferred per unit time. Unit: byte/s. Options: 300 MB, 600 MB, 1200 MB."
         },
         "Status": {
             "type": "string"
         },
         "StorageSpace": {
-            "type": "number"
+            "type": "number",
+            "description": "Indicates the message storage space.\nValue range:\nSingle-node RabbitMQ instance: 100\u201390000 GB\nCluster RabbitMQ instance: 100 GB x Number of nodes to 90000 GB, 200 GB x Number of\nnodes to 90000 GB, 300 GB x Number of nodes to 90000 GB\nKafka instance with specification being 300 MB: 1200\u201390000 GB\nKafka instance with specification being 600 MB: 2400\u201390000 GB\nKafka instance with specification being 1200 MB: 4800\u201390000 GB."
         },
         "StorageSpecCode": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates the storage I/O specification. For details on how to\nselect a disk type, see Disk Types and Disk Performance. Options for a RabbitMQ instance:\ndms.physical.storage.normal\ndms.physical.storage.high\ndms.physical.storage.ultra\nOptions for a Kafka instance:\nWhen specification is 300 MB: dms.physical.storage.high or dms.physical.storage.ultra\nWhen specification is 600 MB: dms.physical.storage.ultra\nWhen specification is 1200 MB: dms.physical.storage.ultra."
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates the ID of a subnet."
         },
         "SubnetName": {
             "type": "string"
@@ -94,7 +110,8 @@
             "type": "string"
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates the ID of a VPC."
         },
         "VpcName": {
             "type": "string"

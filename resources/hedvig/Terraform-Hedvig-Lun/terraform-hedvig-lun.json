@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Hedvig::Lun",
-    "description": "CloudFormation equivalent of hedvig_lun",
+    "description": "A Hedvig Lun adds a vdisk resource to a particular controller, enabling the addition of ACL access resources to the vdisk.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "Controller": {
-            "type": "string"
+            "type": "string",
+            "description": "The fully qualified domain name for the controller that the LUN is to attach to."
         },
         "Vdisk": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the vdisk the LUN is on."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenTelekomCloud::WafPolicyV1",
-    "description": "CloudFormation equivalent of opentelekomcloud_waf_policy_v1",
+    "description": "Manages a WAF policy resource within OpenTelekomCloud.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Action": {
@@ -8,7 +8,8 @@
             "additionalProperties": false,
             "properties": {
                 "Category": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the protective action."
                 }
             },
             "required": [
@@ -20,46 +21,60 @@
             "additionalProperties": false,
             "properties": {
                 "Antitamper": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Specifies whether Web Tamper Protection is enabled."
                 },
                 "Cc": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Specifies whether CC Attack Protection is enabled."
                 },
                 "Common": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Specifies whether General Check in Basic Web Protection is enabled."
                 },
                 "Crawler": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Specifies whether the master crawler detection switch in Basic Web Protection is enabled."
                 },
                 "CrawlerEngine": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Specifies whether the Search Engine switch in Basic Web Protection is enabled."
                 },
                 "CrawlerOther": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Specifies whether detection of other crawlers in Basic Web Protection is enabled."
                 },
                 "CrawlerScanner": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Specifies whether the Scanner switch in Basic Web Protection is enabled."
                 },
                 "CrawlerScript": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Specifies whether the Script Tool switch in Basic Web Protection is enabled."
                 },
                 "Custom": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Specifies whether Precise Protection is enabled."
                 },
                 "Ignore": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Specifies whether False Alarm Masking is enabled."
                 },
                 "Privacy": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Specifies whether Data Masking is enabled."
                 },
                 "Webattack": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Specifies whether Basic Web Protection is enabled."
                 },
                 "Webshell": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Specifies whether webshell detection in Basic Web Protection is enabled."
                 },
                 "Whiteblackip": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Specifies whether Blacklist and Whitelist is enabled."
                 }
             },
             "required": []
@@ -84,20 +99,24 @@
             "type": "string"
         },
         "FullDetection": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies the detection mode in Precise Protection."
         },
         "Hosts": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "An array of the domain IDs."
         },
         "Level": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the protection level."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The policy name. The maximum length is 256 characters. Only digits, letters, underscores(_), and hyphens(-) are allowed."
         },
         "Action": {
             "type": "array",

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::CoreRouteTableAttachment",
-    "description": "CloudFormation equivalent of oci_core_route_table_attachment",
+    "description": "This resource provides the ability to associate a route table for a subnet in Oracle Cloud Infrastructure Core service.\n\nAttaches the specified `route table` to the specified `subnet`.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,10 +26,12 @@
             "type": "string"
         },
         "RouteTableId": {
-            "type": "string"
+            "type": "string",
+            "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table."
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

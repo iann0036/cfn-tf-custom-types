@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::TcaplusZone",
-    "description": "CloudFormation equivalent of tencentcloud_tcaplus_zone",
+    "description": "Use this resource to create tcaplus zone",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "AppId": {
-            "type": "string"
+            "type": "string",
+            "description": "Application of the tcapplus zone belongs."
         },
         "CreateTime": {
             "type": "string"
@@ -21,7 +22,8 @@
             "type": "number"
         },
         "ZoneName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the tcapplus zone. length should between 1 and 30."
         }
     },
     "additionalProperties": false,

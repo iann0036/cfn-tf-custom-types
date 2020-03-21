@@ -1,6 +1,6 @@
 # Terraform::Panos::PanoramaEdl
 
-CloudFormation equivalent of panos_panorama_edl
+This resource allows you to add/update/delete Panorama external dynamic lists (EDL).
 
 ## Syntax
 
@@ -54,6 +54,8 @@ Properties:
 
 #### CertificateProfile
 
+Profile for authenticating client certificates.
+
 _Required_: No
 
 _Type_: String
@@ -61,6 +63,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+The object's description.
 
 _Required_: No
 
@@ -70,6 +74,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DeviceGroup
 
+The device group (default: `shared`).
+
 _Required_: No
 
 _Type_: String
@@ -77,6 +83,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Exceptions
+
+Provide a list of exception entries.
 
 _Required_: No
 
@@ -86,6 +94,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The object's name.
+
 _Required_: Yes
 
 _Type_: String
@@ -93,6 +103,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Password
+
+EDL password.
 
 _Required_: No
 
@@ -102,6 +114,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Repeat
 
+How often to retrieve the EDL.  This can be `hourly` (the
+default), `daily`, `weekly`, `monthly`, or `every five minutes` (valid for
+PAN-OS 7.1+).
+
 _Required_: No
 
 _Type_: String
@@ -109,6 +125,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RepeatAt
+
+The time at which to retrieve the EDL.  Please refer
+to the section above for how to set this value properly.
 
 _Required_: No
 
@@ -118,6 +137,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RepeatDayOfMonth
 
+If `repeat` is `monthly`, then this should
+be set to the desired day of the month.
+
 _Required_: No
 
 _Type_: Double
@@ -125,6 +147,11 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RepeatDayOfWeek
+
+If `repeat` is `weekly`, then this should
+be set to the desired day of the week.  Valid values are `sunday`,
+`monday`, `tuesday`, `wednesday`, `thursday`, `friday`, `saturday`, and
+`sunday`.
 
 _Required_: No
 
@@ -134,6 +161,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Source
 
+The EDL source URL.
+
 _Required_: No
 
 _Type_: String
@@ -142,6 +171,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Type
 
+The type of EDL.  This can be `ip` (the default; and the
+only valid value for PAN-OS 6.1 - 7.0), `domain`, `url`, or `predefined`
+(PAN-OS 8.0+).
+
 _Required_: No
 
 _Type_: String
@@ -149,6 +182,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Username
+
+EDL username.
 
 _Required_: No
 

@@ -32,6 +32,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### EnableAutomaticUpgrades
 
+Are automatic updates enabled on this Virtual Machine? Defaults to `false.`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -40,6 +42,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProvisionVmAgent
 
+Should the Azure Virtual Machine Guest Agent be installed on this Virtual Machine? Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -47,6 +51,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Timezone
+
+Specifies the time zone of the virtual machine, [the possible values are defined here](http://jackstromberg.com/2017/01/list-of-time-zones-consumed-by-azure/).
 
 _Required_: No
 

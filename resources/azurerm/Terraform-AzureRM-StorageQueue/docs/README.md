@@ -1,6 +1,6 @@
 # Terraform::AzureRM::StorageQueue
 
-CloudFormation equivalent of azurerm_storage_queue
+Manages a Queue within an Azure Storage Account.
 
 ## Syntax
 
@@ -36,6 +36,8 @@ Properties:
 
 #### Metadata
 
+A mapping of MetaData which should be assigned to this Storage Queue.
+
 _Required_: No
 
 _Type_: List of <a href="metadata.md">Metadata</a>
@@ -44,6 +46,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the Queue which should be created within the Storage Account. Must be unique within the storage account the queue is located.
+
 _Required_: Yes
 
 _Type_: String
@@ -51,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StorageAccountName
+
+Specifies the Storage Account in which the Storage Queue should exist. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

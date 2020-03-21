@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HuaweiCloud::ElbLoadbalancer",
-    "description": "CloudFormation equivalent of huaweicloud_elb_loadbalancer",
+    "description": "Manages an elastic loadbalancer resource within huawei cloud.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,52 +26,65 @@
             "type": "string"
         },
         "AdminStateUp": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the status of the load balancer.\nValue range: 0 or false: indicates that the load balancer is stopped. Only\ntenants are allowed to enter these two values. 1 or true: indicates that\nthe load balancer is running properly. 2 or false: indicates that the load\nbalancer is frozen. Only tenants are allowed to enter these two values."
         },
         "Az": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the ID of the availability zone (AZ). This\nparameter is mandatory when type is set to Internal, and it is invalid\nwhen type is set to External."
         },
         "Bandwidth": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the bandwidth (Mbit/s). This parameter\nis mandatory when type is set to External, and it is invalid when type\nis set to Internal. The value ranges from 1 to 300."
         },
         "ChargeMode": {
-            "type": "string"
+            "type": "string",
+            "description": "This is a reserved field. If the system supports\ncharging by traffic and this field is specified, then you are charged by\ntraffic for elastic IP addresses. The value is traffic."
         },
         "CreateTime": {
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Provides supplementary information about the\nlistener. The value is a string of 0 to 128 characters and cannot be <>."
         },
         "EipType": {
-            "type": "string"
+            "type": "string",
+            "description": "This parameter is reserved."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the load balancer name. The name is a string\nof 1 to 64 characters that consist of letters, digits, underscores (_),\nand hyphens (-)."
         },
         "SecurityGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the security group ID. The\nvalue is a string of 1 to 200 characters that consists of uppercase and\nlowercase letters, digits, and hyphens (-). This parameter is mandatory\nonly when type is set to Internal."
         },
         "Status": {
             "type": "string"
         },
         "Tenantid": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the tenant ID. This parameter is mandatory\nonly when type is set to Internal."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the load balancer type. The value can be\nInternal or External."
         },
         "UpdateTime": {
             "type": "string"
         },
         "VipAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the IP address provided by ELB.\nWhen typeis set to External, the value of this parameter is the elastic\nIP address. When type is set to Internal, the value of this parameter is\nthe private network IP address. You can select an existing elastic IP address\nand create a public network load balancer. When this parameter is configured,\nparameters bandwidth, charge_mode, and eip_type are invalid."
         },
         "VipSubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the ID of the private network\nto be added. This parameter is mandatory when type is set to Internal,\nand it is invalid when type is set to External."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the VPC ID."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

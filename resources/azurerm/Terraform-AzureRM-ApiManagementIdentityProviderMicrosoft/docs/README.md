@@ -1,6 +1,6 @@
 # Terraform::AzureRM::ApiManagementIdentityProviderMicrosoft
 
-CloudFormation equivalent of azurerm_api_management_identity_provider_microsoft
+Manages an API Management Microsoft Identity Provider.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### ApiManagementName
 
+The Name of the API Management Service where this Microsoft Identity Provider should be created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClientId
+
+Client Id of the Azure AD Application.
 
 _Required_: Yes
 
@@ -53,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ClientSecret
 
+Client secret of the Azure AD Application.
+
 _Required_: Yes
 
 _Type_: String
@@ -60,6 +66,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The Name of the Resource Group where the API Management Service exists. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

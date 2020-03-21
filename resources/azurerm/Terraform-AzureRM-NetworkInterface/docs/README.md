@@ -1,6 +1,6 @@
 # Terraform::AzureRM::NetworkInterface
 
-CloudFormation equivalent of azurerm_network_interface
+Manages a Network Interface.
 
 ## Syntax
 
@@ -50,6 +50,8 @@ Properties:
 
 #### DnsServers
 
+A list of IP Addresses defining the DNS Servers which should be used for this Network Interface.
+
 _Required_: No
 
 _Type_: List of String
@@ -57,6 +59,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableAcceleratedNetworking
+
+Should Accelerated Networking be enabled? Defaults to `false`.
 
 _Required_: No
 
@@ -66,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableIpForwarding
 
+Should IP Forwarding be enabled? Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -73,6 +79,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InternalDnsNameLabel
+
+The (relative) DNS Name used for internal communications between Virtual Machines in the same Virtual Network.
 
 _Required_: No
 
@@ -82,6 +90,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Location
 
+The location where the Network Interface should exist. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -89,6 +99,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the Network Interface. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -98,6 +110,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the Resource Group in which to create the Network Interface. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -105,6 +119,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

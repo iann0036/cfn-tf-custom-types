@@ -1,6 +1,6 @@
 # Terraform::DigitalOcean::Record
 
-CloudFormation equivalent of digitalocean_record
+Provides a DigitalOcean DNS record resource.
 
 ## Syntax
 
@@ -47,6 +47,8 @@ Properties:
 
 #### Domain
 
+The domain to add the record to.
+
 _Required_: Yes
 
 _Type_: String
@@ -54,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Flags
+
+The flags of the record. Only valid when type is `CAA`. Must be between 0 and 255.
 
 _Required_: No
 
@@ -63,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the record. Use `@` for records on domain's name itself.
+
 _Required_: Yes
 
 _Type_: String
@@ -70,6 +76,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Port
+
+The port of the record. Only valid when type is `SRV`.  Must be between 1 and 65535.
 
 _Required_: No
 
@@ -79,6 +87,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Priority
 
+The priority of the record. Only valid when type is `MX` or `SRV`. Must be between 0 and 65535.
+
 _Required_: No
 
 _Type_: Double
@@ -86,6 +96,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tag
+
+The tag of the record. Only valid when type is `CAA`. Must be one of `issue`, `issuewild`, or `iodef`.
 
 _Required_: No
 
@@ -95,6 +107,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ttl
 
+The time to live for the record, in seconds. Must be at least 0.
+
 _Required_: No
 
 _Type_: Double
@@ -102,6 +116,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The type of record. Must be one of `A`, `AAAA`, `CAA`, `CNAME`, `MX`, `NS`, `TXT`, or `SRV`.
 
 _Required_: Yes
 
@@ -111,6 +127,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Value
 
+The value of the record.
+
 _Required_: Yes
 
 _Type_: String
@@ -118,6 +136,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Weight
+
+The weight of the record. Only valid when type is `SRV`.  Must be between 0 and 65535.
 
 _Required_: No
 

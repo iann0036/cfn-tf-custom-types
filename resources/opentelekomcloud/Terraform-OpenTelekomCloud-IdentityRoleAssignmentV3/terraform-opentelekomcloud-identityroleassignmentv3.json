@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenTelekomCloud::IdentityRoleAssignmentV3",
-    "description": "CloudFormation equivalent of opentelekomcloud_identity_role_assignment_v3",
+    "description": "Manages a V3 Role assignment within group on OpentelekomCloud IAM Service.\n\nNote: You _must_ have admin privileges in your OpentelekomCloud cloud to use\nthis resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,19 +9,24 @@
             "type": "string"
         },
         "DomainId": {
-            "type": "string"
+            "type": "string",
+            "description": "The domain to assign the role in."
         },
         "GroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "The group to assign the role to."
         },
         "ProjectId": {
-            "type": "string"
+            "type": "string",
+            "description": "The project to assign the role in."
         },
         "RoleId": {
-            "type": "string"
+            "type": "string",
+            "description": "The role to assign."
         },
         "UserId": {
-            "type": "string"
+            "type": "string",
+            "description": "The user to assign the role in."
         }
     },
     "additionalProperties": false,

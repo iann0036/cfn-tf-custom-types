@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HuaweiCloud::ElbBackendecs",
-    "description": "CloudFormation equivalent of huaweicloud_elb_backendecs",
+    "description": "Manages an elastic loadbalancer backendecs resource within huawei cloud.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -32,7 +32,8 @@
             "type": "string"
         },
         "ListenerId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the listener ID."
         },
         "Listeners": {
             "type": "array",
@@ -48,13 +49,15 @@
             }
         },
         "PrivateAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the private IP address of the backend member."
         },
         "PublicAddress": {
             "type": "string"
         },
         "ServerId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the backend member ID."
         },
         "ServerName": {
             "type": "string"

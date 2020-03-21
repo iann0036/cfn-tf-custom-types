@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TLS::SelfSignedCert",
-    "description": "CloudFormation equivalent of tls_self_signed_cert",
+    "description": "Generates a *self-signed* TLS certificate in PEM format, which is the typical\nformat used to configure TLS server software.\n\nSelf-signed certificates are generally not trusted by client software such\nas web browsers. Therefore clients are likely to generate trust warnings when\nconnecting to a server that has a self-signed certificate. Self-signed certificates\nare usually used only in development environments or apps deployed internally\nto an organization.\n\nThis resource is intended to be used in conjunction with a Terraform provider\nthat has a resource that requires a TLS certificate, such as:\n\n* ``aws_iam_server_certificate`` to register certificates for use with AWS *Elastic\nLoad Balancer*, *Elastic Beanstalk*, *CloudFront* or *OpsWorks*.\n\n* ``heroku_cert`` to register certificates for applications deployed on Heroku.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Subject": {
@@ -52,7 +52,8 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of keywords each describing a use that is permitted\nfor the issued certificate. The valid keywords are listed below."
         },
         "CertPem": {
             "type": "string"
@@ -62,45 +63,54 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of DNS names for which a certificate is being requested."
         },
         "EarlyRenewalHours": {
-            "type": "number"
+            "type": "number",
+            "description": "If set, the resource will consider the certificate to\nhave expired the given number of hours before its actual expiry time. This can be useful\nto deploy an updated certificate in advance of the expiration of the current certificate.\nNote however that the old certificate remains valid until its true expiration time, since\nthis resource does not (and cannot) support certificate revocation. Note also that this\nadvance update can only be performed should the Terraform configuration be applied during the\nearly renewal period."
         },
         "IpAddresses": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of IP addresses for which a certificate is being requested."
         },
         "IsCaCertificate": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean controlling whether the CA flag will be set in the\ngenerated certificate. Defaults to `false`, meaning that the certificate does not represent\na certificate authority."
         },
         "KeyAlgorithm": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the algorithm for the key provided\nin `private_key_pem`."
         },
         "PrivateKeyPem": {
-            "type": "string"
+            "type": "string",
+            "description": "PEM-encoded private key data. This can be\nread from a separate file using the ``file`` interpolation function. If the\ncertificate is being generated to be used for a throwaway development\nenvironment or other non-critical application, the `tls_private_key` resource\ncan be used to generate a TLS private key from within Terraform. Only\nan irreversable secure hash of the private key will be stored in the Terraform\nstate."
         },
         "ReadyForRenewal": {
             "type": "boolean"
         },
         "SetSubjectKeyId": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If `true`, the certificate will include\nthe subject key identifier. Defaults to `false`, in which case the subject\nkey identifier is not set at all."
         },
         "Uris": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of URIs for which a certificate is being requested."
         },
         "ValidityEndTime": {
             "type": "string"
         },
         "ValidityPeriodHours": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of hours after initial issuing that the\ncertificate will become invalid."
         },
         "ValidityStartTime": {
             "type": "string"

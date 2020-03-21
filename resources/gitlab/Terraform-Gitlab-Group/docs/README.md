@@ -1,6 +1,7 @@
 # Terraform::Gitlab::Group
 
-CloudFormation equivalent of gitlab_group
+This resource allows you to create and manage GitLab groups.
+Note your provider will need to be configured with admin-level access for this resource to work.
 
 ## Syntax
 
@@ -41,6 +42,8 @@ Properties:
 
 #### Description
 
+The description of the group.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +51,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LfsEnabled
+
+Boolean, defaults to true.  Whether to enable LFS
+support for projects in this group.
 
 _Required_: No
 
@@ -57,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of this group.
+
 _Required_: Yes
 
 _Type_: String
@@ -64,6 +72,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ParentId
+
+Integer, id of the parent group (creates a nested group).
 
 _Required_: No
 
@@ -73,6 +83,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Path
 
+The path of the group.
+
 _Required_: Yes
 
 _Type_: String
@@ -81,6 +93,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RequestAccessEnabled
 
+Boolean, defaults to false.  Whether to
+enable users to request access to the group.
+
 _Required_: No
 
 _Type_: Boolean
@@ -88,6 +103,10 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VisibilityLevel
+
+Set to `public` to create a public group.
+Valid values are `private`, `internal`, `public`.
+Groups are created as private by default.
 
 _Required_: No
 

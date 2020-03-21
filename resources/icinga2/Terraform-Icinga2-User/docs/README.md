@@ -1,6 +1,7 @@
 # Terraform::Icinga2::User
 
-CloudFormation equivalent of icinga2_user
+Configures an Icinga2 user resource. This allows users to be configured, updated,
+and deleted.
 
 ## Syntax
 
@@ -31,6 +32,8 @@ Properties:
 
 #### Email
 
+An email string for this user. Useful for notification commands.
+
 _Required_: No
 
 _Type_: String
@@ -38,6 +41,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The user.
 
 _Required_: Yes
 

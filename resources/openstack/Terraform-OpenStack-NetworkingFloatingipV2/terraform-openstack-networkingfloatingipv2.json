@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::NetworkingFloatingipV2",
-    "description": "CloudFormation equivalent of openstack_networking_floatingip_v2",
+    "description": "Manages a V2 floating IP resource within OpenStack Neutron (networking)\nthat can be used for load balancers.\nThese are similar to Nova (compute) floating IP resources,\nbut only compute floating IPs can be used with compute instances.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,7 +23,8 @@
             "type": "string"
         },
         "Address": {
-            "type": "string"
+            "type": "string",
+            "description": "The actual/specific floating IP to obtain. By default,\nnon-admin users are not able to specify a floating IP, so you must either be\nan admin user or have had a custom policy or role applied to your OpenStack\nuser or project."
         },
         "AllTags": {
             "type": "array",
@@ -33,38 +34,48 @@
             }
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Human-readable description for the floating IP."
         },
         "DnsDomain": {
-            "type": "string"
+            "type": "string",
+            "description": "The floating IP DNS domain. Available, when Neutron\nDNS extension is enabled. The data in this attribute will be published in an\nexternal DNS service when Neutron is configured to integrate with such a\nservice. Changing this creates a new floating IP."
         },
         "DnsName": {
-            "type": "string"
+            "type": "string",
+            "description": "The floating IP DNS name. Available, when Neutron DNS\nextension is enabled. The data in this attribute will be published in an\nexternal DNS service when Neutron is configured to integrate with such a\nservice. Changing this creates a new floating IP."
         },
         "FixedIp": {
-            "type": "string"
+            "type": "string",
+            "description": "Fixed IP of the port to associate with this floating IP. Required if\nthe port has multiple fixed IPs."
         },
         "Pool": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the pool from which to obtain the floating\nIP. Changing this creates a new floating IP."
         },
         "PortId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of an existing port with at least one IP address to\nassociate with this floating IP."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the V2 Networking client.\nA Networking client is needed to create a floating IP that can be used with\nanother networking resource, such as a load balancer. If omitted, the\n`region` argument of the provider is used. Changing this creates a new\nfloating IP (which may or may not have a different address)."
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "The subnet ID of the floating IP pool. Specify this if\nthe floating IP network has multiple subnets."
         },
         "Tags": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A set of string tags for the floating IP."
         },
         "TenantId": {
-            "type": "string"
+            "type": "string",
+            "description": "The target tenant ID in which to allocate the floating\nIP, if you specify this together with a port_id, make sure the target port\nbelongs to the same tenant. Changing this creates a new floating IP (which\nmay or may not have a different address)."
         },
         "ValueSpecs": {
             "type": "array",
@@ -84,7 +95,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Map of additional options."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

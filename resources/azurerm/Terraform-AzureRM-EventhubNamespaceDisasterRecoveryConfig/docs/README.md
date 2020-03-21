@@ -1,6 +1,6 @@
 # Terraform::AzureRM::EventhubNamespaceDisasterRecoveryConfig
 
-CloudFormation equivalent of azurerm_eventhub_namespace_disaster_recovery_config
+Manages an Disaster Recovery Config for an Event Hub Namespace.
 
 ## Syntax
 
@@ -39,6 +39,8 @@ Properties:
 
 #### AlternateName
 
+An alternate name to use when the Disaster Recovery Config's name is the same as the replicated namespace's name.
+
 _Required_: No
 
 _Type_: String
@@ -46,6 +48,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the Disaster Recovery Config. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -55,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NamespaceName
 
+Specifies the name of the primary EventHub Namespace to replicate. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -63,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PartnerNamespaceId
 
+The ID of the EventHub Namespace to replicate to.
+
 _Required_: Yes
 
 _Type_: String
@@ -70,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which the Disaster Recovery Config exists. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

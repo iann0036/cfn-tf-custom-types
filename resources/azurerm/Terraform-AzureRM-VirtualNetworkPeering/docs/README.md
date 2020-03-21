@@ -1,6 +1,7 @@
 # Terraform::AzureRM::VirtualNetworkPeering
 
-CloudFormation equivalent of azurerm_virtual_network_peering
+Manages a virtual network peering which allows resources to access other
+resources in the linked virtual network.
 
 ## Syntax
 
@@ -45,6 +46,9 @@ Properties:
 
 #### AllowForwardedTraffic
 
+Controls if forwarded traffic from  VMs
+in the remote virtual network is allowed. Defaults to false.
+
 _Required_: No
 
 _Type_: Boolean
@@ -52,6 +56,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowGatewayTransit
+
+Controls gatewayLinks can be used in the
+remote virtual network’s link to the local virtual network.
 
 _Required_: No
 
@@ -61,6 +68,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AllowVirtualNetworkAccess
 
+Controls if the VMs in the remote
+virtual network can access VMs in the local virtual network. Defaults to
+true.
+
 _Required_: No
 
 _Type_: Boolean
@@ -68,6 +79,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the virtual network peering. Changing this
+forces a new resource to be created.
 
 _Required_: Yes
 
@@ -77,6 +91,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RemoteVirtualNetworkId
 
+The full Azure resource ID of the
+remote virtual network.  Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -84,6 +101,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which to
+create the virtual network. Changing this forces a new resource to be
+created.
 
 _Required_: Yes
 
@@ -93,6 +114,13 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UseRemoteGateways
 
+Controls if remote gateways can be used on
+the local virtual network. If the flag is set to `true`, and
+`allow_gateway_transit` on the remote peering is also `true`, virtual network will
+use gateways of remote virtual network for transit. Only one peering can
+have this flag set to `true`. This flag cannot be set if virtual network
+already has a gateway. Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -100,6 +128,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VirtualNetworkName
+
+The name of the virtual network. Changing
+this forces a new resource to be created.
 
 _Required_: Yes
 

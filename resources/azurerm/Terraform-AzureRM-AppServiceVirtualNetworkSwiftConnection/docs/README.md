@@ -1,6 +1,6 @@
 # Terraform::AzureRM::AppServiceVirtualNetworkSwiftConnection
 
-CloudFormation equivalent of azurerm_app_service_virtual_network_swift_connection
+Manages an App Service Virtual Network Association (this is for the [Regional VNet Integration](https://docs.microsoft.com/en-us/azure/app-service/web-sites-integrate-with-vnet#regional-vnet-integration) which is still in preview).
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### AppServiceId
 
+The ID of the App Service to associate to the VNet. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -40,6 +42,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubnetId
+
+The ID of the subnet the app service will be associated to (the subnet must have a `service_delegation` configured for `Microsoft.Web/serverFarms`).
 
 _Required_: Yes
 

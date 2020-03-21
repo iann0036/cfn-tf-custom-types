@@ -1,6 +1,8 @@
 # Terraform::Vault::ApproleAuthBackendRole
 
-CloudFormation equivalent of vault_approle_auth_backend_role
+Manages an AppRole auth backend role in a Vault server. See the [Vault
+documentation](https://www.vaultproject.io/docs/auth/approle.html) for more
+information.
 
 ## Syntax
 
@@ -70,6 +72,9 @@ Properties:
 
 #### Backend
 
+The unique name of the auth backend to configure.
+Defaults to `approle`.
+
 _Required_: No
 
 _Type_: String
@@ -77,6 +82,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BindSecretId
+
+Whether or not to require `secret_id` to be
+presented when logging in using this AppRole. Defaults to `true`.
 
 _Required_: No
 
@@ -110,6 +118,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RoleId
 
+The RoleID of this role. If not specified, one will be
+auto-generated.
+
 _Required_: No
 
 _Type_: String
@@ -117,6 +128,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RoleName
+
+The name of the role.
 
 _Required_: Yes
 
@@ -126,6 +139,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecretIdBoundCidrs
 
+If set,
+specifies blocks of IP addresses which can perform the login operation.
+
 _Required_: No
 
 _Type_: List of String
@@ -134,6 +150,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecretIdNumUses
 
+The number of times any particular SecretID
+can be used to fetch a token from this AppRole, after which the SecretID will
+expire. A value of zero will allow unlimited uses.
+
 _Required_: No
 
 _Type_: Double
@@ -141,6 +161,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecretIdTtl
+
+The number of seconds after which any SecretID
+expires.
 
 _Required_: No
 

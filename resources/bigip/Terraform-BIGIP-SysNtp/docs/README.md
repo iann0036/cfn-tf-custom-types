@@ -1,6 +1,8 @@
 # Terraform::BIGIP::SysNtp
 
-CloudFormation equivalent of bigip_sys_ntp
+`bigip_sys_ntp` provides details about a specific bigip
+
+This resource is helpful when configuring NTP server on the BIG-IP.
 
 ## Syntax
 
@@ -42,6 +44,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Servers
 
+Adds NTP servers to or deletes NTP servers from the BIG-IP system.
+
 _Required_: No
 
 _Type_: List of String
@@ -49,6 +53,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Timezone
+
+Specifies the time zone that you want to use for the system time.
 
 _Required_: No
 

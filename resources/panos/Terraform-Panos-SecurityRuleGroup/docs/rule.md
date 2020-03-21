@@ -92,6 +92,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Action
 
+Action for the matched traffic.  This can be `allow`
+(default), `deny`, `drop`, `reset-client`, `reset-server`, or `reset-both`.
+
 _Required_: No
 
 _Type_: String
@@ -99,6 +102,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Applications
+
+List of applications.
 
 _Required_: Yes
 
@@ -108,6 +113,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Categories
 
+List of categories.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -115,6 +122,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DataFiltering
+
+Profile Setting: `Profiles` - The Data
+Filtering setting.
 
 _Required_: No
 
@@ -124,6 +134,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+The description.
+
 _Required_: No
 
 _Type_: String
@@ -131,6 +143,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DestinationAddresses
+
+List of destination addresses.
 
 _Required_: Yes
 
@@ -140,6 +154,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DestinationZones
 
+List of destination zones.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -147,6 +163,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisableServerResponseInspection
+
+Set to `true` to disable
+server response inspection.
 
 _Required_: No
 
@@ -156,6 +175,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Disabled
 
+Set to `true` to disable this rule.
+
 _Required_: No
 
 _Type_: Boolean
@@ -163,6 +184,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FileBlocking
+
+Profile Setting: `Profiles` - The file blocking
+setting.
 
 _Required_: No
 
@@ -172,6 +196,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Group
 
+Profile Setting: `Group` - The group profile name.
+
 _Required_: No
 
 _Type_: String
@@ -179,6 +205,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HipProfiles
+
+List of HIP profiles.
 
 _Required_: Yes
 
@@ -188,6 +216,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IcmpUnreachable
 
+Set to `true` to enable ICMP unreachable.
+
 _Required_: No
 
 _Type_: Boolean
@@ -195,6 +225,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LogEnd
+
+Log the end of the traffic flow (default: `true`).
 
 _Required_: No
 
@@ -204,6 +236,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LogSetting
 
+Log forwarding profile.
+
 _Required_: No
 
 _Type_: String
@@ -211,6 +245,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LogStart
+
+Log the start of the traffic flow.
 
 _Required_: No
 
@@ -220,6 +256,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The security rule name.
+
 _Required_: Yes
 
 _Type_: String
@@ -227,6 +265,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NegateDestination
+
+If the destination should be negated.
 
 _Required_: No
 
@@ -236,6 +276,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NegateSource
 
+If the source should be negated.
+
 _Required_: No
 
 _Type_: Boolean
@@ -243,6 +285,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Schedule
+
+The security rule schedule.
 
 _Required_: No
 
@@ -252,6 +296,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Services
 
+List of services.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -259,6 +305,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SourceAddresses
+
+List of source addresses.
 
 _Required_: Yes
 
@@ -268,6 +316,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SourceUsers
 
+List of source users.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -275,6 +325,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SourceZones
+
+List of source zones.
 
 _Required_: Yes
 
@@ -284,6 +336,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Spyware
 
+Profile Setting: `Profiles` - The anti-spyware
+setting.
+
 _Required_: No
 
 _Type_: String
@@ -291,6 +346,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+List of tags for this security rule.
 
 _Required_: No
 
@@ -300,6 +357,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Type
 
+Rule type.  This can be `universal` (default),
+`interzone`, or `intrazone`.
+
 _Required_: No
 
 _Type_: String
@@ -307,6 +367,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UrlFiltering
+
+Profile Setting: `Profiles` - The URL filtering
+setting.
 
 _Required_: No
 
@@ -316,6 +379,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Virus
 
+Profile Setting: `Profiles` - The antivirus setting.
+
 _Required_: No
 
 _Type_: String
@@ -324,6 +389,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Vulnerability
 
+Profile Setting: `Profiles` - The Vulnerability
+Protection setting.
+
 _Required_: No
 
 _Type_: String
@@ -331,6 +399,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WildfireAnalysis
+
+Profile Setting: `Profiles` - The WildFire
+Analysis setting.
 
 _Required_: No
 

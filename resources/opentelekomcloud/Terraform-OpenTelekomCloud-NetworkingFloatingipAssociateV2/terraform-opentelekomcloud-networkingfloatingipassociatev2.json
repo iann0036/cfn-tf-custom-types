@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenTelekomCloud::NetworkingFloatingipAssociateV2",
-    "description": "CloudFormation equivalent of opentelekomcloud_networking_floatingip_associate_v2",
+    "description": "Associates a floating IP to a port. This is useful for situations\nwhere you have a pre-allocated floating IP or are unable to use the\n`opentelekomcloud_networking_floatingip_v2` resource to create a floating IP.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "FloatingIp": {
-            "type": "string"
+            "type": "string",
+            "description": "IP Address of an existing floating IP."
         },
         "PortId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of an existing port with at least one IP address to\nassociate with this floating IP."
         },
         "Region": {
             "type": "string"

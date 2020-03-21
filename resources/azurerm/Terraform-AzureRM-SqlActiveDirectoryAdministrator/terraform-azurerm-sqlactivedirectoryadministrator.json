@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::SqlActiveDirectoryAdministrator",
-    "description": "CloudFormation equivalent of azurerm_sql_active_directory_administrator",
+    "description": "Allows you to set a user or group as the AD administrator for an Azure SQL server",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,19 +29,24 @@
             "type": "string"
         },
         "Login": {
-            "type": "string"
+            "type": "string",
+            "description": "The login name of the principal to set as the server administrator."
         },
         "ObjectId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the principal to set as the server administrator."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group for the SQL server. Changing this forces a new resource to be created."
         },
         "ServerName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the SQL Server on which to set the administrator. Changing this forces a new resource to be created."
         },
         "TenantId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Azure Tenant ID."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

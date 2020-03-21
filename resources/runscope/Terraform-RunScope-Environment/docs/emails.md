@@ -29,6 +29,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### NotifyAll
 
+Send an email to all team members according to the `notify_on` rules.
+
 _Required_: Yes
 
 _Type_: Boolean
@@ -36,6 +38,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NotifyOn
+
+Upon completion of a test run Runscope will send email notifications, allowed values: `all`, `failures`, `threshold` or `switch`.
 
 _Required_: Yes
 

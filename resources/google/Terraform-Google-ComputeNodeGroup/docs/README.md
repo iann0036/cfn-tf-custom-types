@@ -1,6 +1,24 @@
 # Terraform::Google::ComputeNodeGroup
 
-CloudFormation equivalent of google_compute_node_group
+Represents a NodeGroup resource to manage a group of sole-tenant nodes.
+
+
+To get more information about NodeGroup, see:
+
+* [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/nodeGroups)
+* How-to Guides
+    * [Sole-Tenant Nodes](https://cloud.google.com/compute/docs/nodes/)
+
+~> **Warning:** Due to limitations of the API, Terraform cannot update the
+number of nodes in a node group and changes to node group size either
+through Terraform config or through external changes will cause
+Terraform to delete and recreate the node group.
+
+<div class = "oics-button" style="float: right; margin: 0 0 -15px">
+  <a href="https://console.cloud.google.com/cloudshell/open?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fterraform-google-modules%2Fdocs-examples.git&cloudshell_working_dir=node_group_basic&cloudshell_image=gcr.io%2Fgraphite-cloud-shell-images%2Fterraform%3Alatest&open_in_editor=main.tf&cloudshell_print=.%2Fmotd&cloudshell_tutorial=.%2Ftutorial.md" target="_blank">
+    <img alt="Open in Cloud Shell" src="//gstatic.com/cloudssh/images/open-btn.svg" style="max-height: 44px; margin: 32px auto; max-width: 100%;">
+  </a>
+</div>
 
 ## Syntax
 
@@ -64,6 +82,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The ID of the project in which the resource belongs.
+If it is not provided, the provider project is used.
 
 _Required_: No
 

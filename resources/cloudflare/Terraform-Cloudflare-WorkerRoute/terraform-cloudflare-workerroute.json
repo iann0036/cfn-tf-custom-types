@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Cloudflare::WorkerRoute",
-    "description": "CloudFormation equivalent of cloudflare_worker_route",
+    "description": "Provides a Cloudflare worker route resource. A route will also require a `cloudflare_worker_script`.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,15 @@
             "type": "string"
         },
         "Pattern": {
-            "type": "string"
+            "type": "string",
+            "description": "The [route pattern](https://developers.cloudflare.com/workers/about/routes/)."
         },
         "ScriptName": {
             "type": "string"
         },
         "ZoneId": {
-            "type": "string"
+            "type": "string",
+            "description": "The zone ID to add the route to."
         }
     },
     "additionalProperties": false,

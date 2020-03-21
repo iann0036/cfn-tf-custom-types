@@ -25,6 +25,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Type
 
+(Required) Type of the operation will be applied on conditions. Should be one of match-all, match-any-condition or match-all-conditions.
+
 _Required_: Yes
 
 _Type_: String

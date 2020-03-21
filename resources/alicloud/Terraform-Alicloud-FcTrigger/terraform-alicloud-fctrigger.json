@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::FcTrigger",
-    "description": "CloudFormation equivalent of alicloud_fc_trigger",
+    "description": "Provides an Alicloud Function Compute Trigger resource. Based on trigger, execute your code in response to events in Alibaba Cloud.\n For information about Service and how to use it, see [What is Function Compute](https://www.alibabacloud.com/help/doc-detail/52895.htm).\n\n-> **NOTE:** The resource requires a provider field 'account_id'. [See account_id](https://www.terraform.io/docs/providers/alicloud/index.html#account_id).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,37 +9,46 @@
             "type": "string"
         },
         "Config": {
-            "type": "string"
+            "type": "string",
+            "description": "The config of Function Compute trigger.It is valid when `type` is not \"mns_topic\".See [Configure triggers and events](https://www.alibabacloud.com/help/doc-detail/70140.htm) for more details."
         },
         "ConfigMns": {
-            "type": "string"
+            "type": "string",
+            "description": "The config of Function Compute trigger when the type is \"mns_topic\".It is conflict with `config`."
         },
         "Function": {
-            "type": "string"
+            "type": "string",
+            "description": "The Function Compute function name."
         },
         "LastModified": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The Function Compute trigger name. It is the only in one service and is conflict with \"name_prefix\"."
         },
         "NamePrefix": {
-            "type": "string"
+            "type": "string",
+            "description": "Setting a prefix to get a only trigger name. It is conflict with \"name\"."
         },
         "Role": {
-            "type": "string"
+            "type": "string",
+            "description": "RAM role arn attached to the Function Compute trigger. Role used by the event source to call the function. The value format is \"acs:ram::$account-id:role/$role-name\". See [Create a trigger](https://www.alibabacloud.com/help/doc-detail/53102.htm) for more details."
         },
         "Service": {
-            "type": "string"
+            "type": "string",
+            "description": "The Function Compute service name."
         },
         "SourceArn": {
-            "type": "string"
+            "type": "string",
+            "description": "Event source resource address. See [Create a trigger](https://www.alibabacloud.com/help/doc-detail/53102.htm) for more details."
         },
         "TriggerId": {
             "type": "string"
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The Type of the trigger. Valid values: [\"oss\", \"log\", \"timer\", \"http\", \"mns_topic\", \"cdn_events\"]."
         }
     },
     "additionalProperties": false,

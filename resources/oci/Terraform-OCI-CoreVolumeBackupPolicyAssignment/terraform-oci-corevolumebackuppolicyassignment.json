@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::CoreVolumeBackupPolicyAssignment",
-    "description": "CloudFormation equivalent of oci_core_volume_backup_policy_assignment",
+    "description": "This resource provides the Volume Backup Policy Assignment resource in Oracle Cloud Infrastructure Core service.\n\nAssigns a volume backup policy to the specified volume. Note that a given volume can\nonly have one backup policy assigned to it. If this operation is used for a volume that already\nhas a different backup policy assigned, the prior backup policy will be silently unassigned.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,10 +26,12 @@
             "type": "string"
         },
         "AssetId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the volume to assign the policy to."
         },
         "PolicyId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the volume backup policy to assign to the volume."
         },
         "TimeCreated": {
             "type": "string"

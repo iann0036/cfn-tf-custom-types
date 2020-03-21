@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureStack::Lb",
-    "description": "CloudFormation equivalent of azurestack_lb",
+    "description": "Manages a Load Balancer Resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "FrontendIpConfiguration": {
@@ -8,19 +8,24 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the name of the frontend ip configuration."
                 },
                 "PrivateIpAddress": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Private IP Address to assign to the Load Balancer. The last one and first four IPs in any range are reserved and cannot be manually assigned."
                 },
                 "PrivateIpAddressAllocation": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Defines how a private IP address is assigned. Options are Static or Dynamic."
                 },
                 "PublicIpAddressId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Reference to Public IP address to be associated with the Load Balancer."
                 },
                 "SubnetId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Reference to subnet associated with the IP Configuration."
                 }
             },
             "required": [
@@ -34,10 +39,12 @@
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the LoadBalancer."
         },
         "PrivateIpAddress": {
             "type": "string"
@@ -50,7 +57,8 @@
             }
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the LoadBalancer."
         },
         "Tags": {
             "type": "array",
@@ -70,7 +78,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "FrontendIpConfiguration": {
             "type": "array",

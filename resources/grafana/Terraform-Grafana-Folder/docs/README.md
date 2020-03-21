@@ -1,6 +1,6 @@
 # Terraform::Grafana::Folder
 
-CloudFormation equivalent of grafana_folder
+The folder resource allows a folder to be created on a Grafana server.
 
 ## Syntax
 
@@ -28,6 +28,8 @@ Properties:
 ## Properties
 
 #### Title
+
+The title of the folder.
 
 _Required_: Yes
 

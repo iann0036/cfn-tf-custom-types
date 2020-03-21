@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::SlbMasterSlaveServerGroup",
-    "description": "CloudFormation equivalent of alicloud_slb_master_slave_server_group",
+    "description": "A master slave server group contains two ECS instances. The master slave server group can help you to define multiple listening dimension.\n\n-> **NOTE:** One ECS instance can be added into multiple master slave server groups.\n\n-> **NOTE:** One master slave server group can only add two ECS instances, which are master server and slave server.\n\n-> **NOTE:** One master slave server group can be attached with tcp/udp listeners in one load balancer.\n\n-> **NOTE:** One Classic and Internet load balancer, its master slave server group can add Classic and VPC ECS instances.\n\n-> **NOTE:** One Classic and Intranet load balancer, its master slave server group can only add Classic ECS instances.\n\n-> **NOTE:** One VPC load balancer, its master slave server group can only add the same VPC ECS instances.\n\n-> **NOTE:** Available in 1.54.0+",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Servers": {
@@ -38,13 +38,16 @@
             "type": "string"
         },
         "DeleteProtectionValidation": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Checking DeleteProtection of SLB instance before deleting. If true, this resource will not be deleted when its SLB instance enabled DeleteProtection. Default to false."
         },
         "LoadBalancerId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Load Balancer ID which is used to launch a new master slave server group."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the master slave server group."
         },
         "Servers": {
             "type": "array",

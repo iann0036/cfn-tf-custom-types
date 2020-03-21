@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::ObjectstorageTempurlV1",
-    "description": "CloudFormation equivalent of openstack_objectstorage_tempurl_v1",
+    "description": "Use this resource to generate an OpenStack Object Storage temporary URL.\n\nThe temporary URL will be valid for as long as TTL is set to (in seconds).\nOnce the URL has expired, it will no longer be valid, but the resource\nwill remain in place. If you wish to automatically regenerate a URL, set\nthe `regenerate` argument to `true`. This will create a new resource with\na new ID and URL.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,25 +9,31 @@
             "type": "string"
         },
         "Container": {
-            "type": "string"
+            "type": "string",
+            "description": "The container name the object belongs to."
         },
         "Method": {
-            "type": "string"
+            "type": "string",
+            "description": "The method allowed when accessing this URL.\nValid values are `GET`, and `POST`. Default is `GET`."
         },
         "Object": {
-            "type": "string"
+            "type": "string",
+            "description": "The object name the tempurl is for."
         },
         "Regenerate": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to automatically regenerate the URL when\nit has expired. If set to true, this will create a new resource with a new\nID and new URL. Defaults to false."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region the tempurl is located in."
         },
         "Split": {
             "type": "string"
         },
         "Ttl": {
-            "type": "number"
+            "type": "number",
+            "description": "The TTL, in seconds, for the URL. For how long it should\nbe valid."
         },
         "Url": {
             "type": "string"

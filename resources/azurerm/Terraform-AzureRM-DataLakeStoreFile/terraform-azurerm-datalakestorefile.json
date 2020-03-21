@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::DataLakeStoreFile",
-    "description": "CloudFormation equivalent of azurerm_data_lake_store_file",
+    "description": "Manages a Azure Data Lake Store File.\n\n~> **Note:** If you want to change the data in the remote file without changing the `local_file_path`, then\ntaint the resource so the `azurerm_data_lake_store_file` gets recreated with the new data.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,13 +29,16 @@
             "type": "string"
         },
         "AccountName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Data Lake Store for which the File should created."
         },
         "LocalFilePath": {
-            "type": "string"
+            "type": "string",
+            "description": "The path to the local file to be added to the Data Lake Store."
         },
         "RemoteFilePath": {
-            "type": "string"
+            "type": "string",
+            "description": "The path created for the file on the Data Lake Store."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

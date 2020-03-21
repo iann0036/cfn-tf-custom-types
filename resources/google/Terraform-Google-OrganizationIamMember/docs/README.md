@@ -1,6 +1,11 @@
 # Terraform::Google::OrganizationIamMember
 
-CloudFormation equivalent of google_organization_iam_member
+Allows creation and management of a single member for a single binding within
+the IAM policy for an existing Google Cloud Platform Organization.
+
+~> **Note:** This resource __must not__ be used in conjunction with
+   `google_organization_iam_binding` for the __same role__ or they will fight over
+   what your policy should be.
 
 ## Syntax
 
@@ -33,6 +38,8 @@ Properties:
 
 #### Member
 
+The user that the role should apply to. For more details on format and restrictions see https://cloud.google.com/billing/reference/rest/v1/Policy#Binding.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +48,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OrgId
 
+The numeric ID of the organization in which you want to create a custom role.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +57,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Role
+
+The role that should be applied. Note that custom roles must be of the format
+`[projects|organizations]/{parent-name}/roles/{role-name}`.
 
 _Required_: Yes
 

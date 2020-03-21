@@ -1,6 +1,6 @@
 # Terraform::DigitalOcean::Cdn
 
-CloudFormation equivalent of digitalocean_cdn
+Provides a DigitalOcean CDN Endpoint resource for use with Spaces.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### CertificateId
 
+The ID of a DigitalOcean managed TLS certificate used for SSL when a custom subdomain is provided.
+
 _Required_: No
 
 _Type_: String
@@ -42,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CustomDomain
+
+The fully qualified domain name (FQDN) of the custom subdomain used with the CDN Endpoint.
 
 _Required_: No
 
@@ -51,6 +55,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Origin
 
+The fully qualified domain name, (FQDN) for a Space.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ttl
+
+The time to live for the CDN Endpoint, in seconds. Default is 3600 seconds.
 
 _Required_: No
 

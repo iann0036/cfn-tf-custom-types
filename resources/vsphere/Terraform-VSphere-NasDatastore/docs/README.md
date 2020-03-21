@@ -1,6 +1,15 @@
 # Terraform::VSphere::NasDatastore
 
-CloudFormation equivalent of vsphere_nas_datastore
+The `vsphere_nas_datastore` resource can be used to create and manage NAS
+datastores on an ESXi host or a set of hosts. The resource supports mounting
+NFS v3 and v4.1 shares to be used as datastores.
+
+~> **NOTE:** Unlike [`vsphere_vmfs_datastore`][resource-vmfs-datastore], a NAS
+datastore is only mounted on the hosts you choose to mount it on. To mount on
+multiple hosts, you must specify each host that you want to add in the
+`host_system_ids` argument.
+
+[resource-vmfs-datastore]: /docs/providers/vsphere/r/vmfs_datastore.html
 
 ## Syntax
 
@@ -53,6 +62,11 @@ Properties:
 
 #### AccessMode
 
+Access mode for the mount point. Can be one of
+`readOnly` or `readWrite`. Note that `readWrite` does not necessarily mean
+that the datastore will be read-write depending on the permissions of the
+actual share. Default: `readWrite`. Forces a new resource if changed.
+
 _Required_: No
 
 _Type_: String
@@ -60,6 +74,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CustomAttributes
+
+Map of custom attribute ids to attribute
+value strings to set on datasource resource. See
+[here][docs-setting-custom-attributes] for a reference on how to set values
+for custom attributes.
 
 _Required_: No
 
@@ -69,6 +88,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DatastoreClusterId
 
+The [managed object
+ID][docs-about-morefs] of a datastore cluster to put this datastore in.
+Conflicts with `folder`.
+
 _Required_: No
 
 _Type_: String
@@ -76,6 +99,14 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Folder
+
+The relative path to a folder to put this datastore in.
+This is a path relative to the datacenter you are deploying the datastore to.
+Example: for the `dc1` datacenter, and a provided `folder` of `foo/bar`,
+Terraform will place a datastore named `terraform-test` in a datastore folder
+located at `/dc1/datastore/foo/bar`, with the final inventory path being
+`/dc1/datastore/foo/bar/terraform-test`. Conflicts with
+`datastore_cluster_id`.
 
 _Required_: No
 
@@ -85,6 +116,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HostSystemIds
 
+The [managed object IDs][docs-about-morefs] of
+the hosts to mount the datastore on.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -92,6 +126,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the datastore. Forces a new resource if
+changed.
 
 _Required_: Yes
 
@@ -101,6 +138,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RemoteHosts
 
+The hostnames or IP addresses of the remote
+server or servers. Only one element should be present for NFS v3 but multiple
+can be present for NFS v4.1. Forces a new resource if changed.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -108,6 +149,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RemotePath
+
+The remote path of the mount point. Forces a new
+resource if changed.
 
 _Required_: Yes
 
@@ -117,6 +161,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecurityType
 
+The security type to use when using NFS v4.1.
+Can be one of `AUTH_SYS`, `SEC_KRB5`, or `SEC_KRB5I`. Forces a new resource
+if changed.
+
 _Required_: No
 
 _Type_: String
@@ -125,6 +173,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+The IDs of any tags to attach to this resource. See
+[here][docs-applying-tags] for a reference on how to apply tags.
+
 _Required_: No
 
 _Type_: List of String
@@ -132,6 +183,10 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The type of NAS volume. Can be one of `NFS` (to denote
+v3) or `NFS41` (to denote NFS v4.1). Default: `NFS`. Forces a new resource if
+changed.
 
 _Required_: No
 

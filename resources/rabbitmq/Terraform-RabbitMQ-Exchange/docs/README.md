@@ -1,6 +1,6 @@
 # Terraform::RabbitMQ::Exchange
 
-CloudFormation equivalent of rabbitmq_exchange
+The ``rabbitmq_exchange`` resource creates and manages an exchange.
 
 ## Syntax
 
@@ -34,6 +34,8 @@ Properties:
 
 #### Name
 
+The name of the exchange.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vhost
+
+The vhost to create the resource in.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Cloudflare::RateLimit",
-    "description": "CloudFormation equivalent of cloudflare_rate_limit",
+    "description": "Provides a Cloudflare rate limit resource for a given zone. This can be used to limit the traffic you receive zone-wide, or matching more specific types of requests/responses.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Action": {
@@ -108,22 +108,28 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "URLs matching the patterns specified here will be excluded from rate limiting."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A note that you can use to describe the reason for a rate limit. This value is sanitized and all tags are removed."
         },
         "Disabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether this ratelimit is currently disabled. Default: `false`."
         },
         "Period": {
-            "type": "number"
+            "type": "number",
+            "description": "The time in seconds to count matching traffic. If the count exceeds threshold within this period the action will be performed (min: 1, max: 86,400)."
         },
         "Threshold": {
-            "type": "number"
+            "type": "number",
+            "description": "The threshold that triggers the rate limit mitigations, combine with period. i.e. threshold per period (min: 2, max: 1,000,000)."
         },
         "ZoneId": {
-            "type": "string"
+            "type": "string",
+            "description": "The DNS zone ID to apply rate limiting to."
         },
         "Action": {
             "type": "array",

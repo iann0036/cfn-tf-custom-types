@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::PolicySetDefinition",
-    "description": "CloudFormation equivalent of azurerm_policy_set_definition",
+    "description": "Manages a policy set definition.\n\n-> **NOTE:**  Policy set definitions (also known as policy initiatives) do not take effect until they are assigned to a scope using a Policy Set Assignment.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,28 +29,36 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the policy set definition."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The display name of the policy set definition."
         },
         "ManagementGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Management Group where this policy should be defined. Changing this forces a new resource to be created."
         },
         "Metadata": {
-            "type": "string"
+            "type": "string",
+            "description": "The metadata for the policy set definition. This is a json object representing additional metadata that should be stored with the policy definition."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the policy set definition. Changing this forces a new resource to be created."
         },
         "Parameters": {
-            "type": "string"
+            "type": "string",
+            "description": "Parameters for the policy set definition. This field is a json object that allows you to parameterize your policy definition."
         },
         "PolicyDefinitions": {
-            "type": "string"
+            "type": "string",
+            "description": "The policy definitions for the policy set definition. This is a json object representing the bundled policy definitions ."
         },
         "PolicyType": {
-            "type": "string"
+            "type": "string",
+            "description": "The policy set type. Possible values are `BuiltIn` or `Custom`. Changing this forces a new resource to be created."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

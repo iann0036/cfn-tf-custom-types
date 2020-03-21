@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::NosqlTable",
-    "description": "CloudFormation equivalent of oci_nosql_table",
+    "description": "This resource provides the Table resource in Oracle Cloud Infrastructure Nosql service.\n\nCreate a new table.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "TableLimits": {
@@ -46,10 +46,12 @@
             "type": "string"
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) Compartment Identifier."
         },
         "DdlStatement": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) Complete CREATE TABLE DDL statement."
         },
         "DefinedTags": {
             "type": "array",
@@ -69,7 +71,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`."
         },
         "FreeformTags": {
             "type": "array",
@@ -89,13 +92,15 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{\"bar-key\": \"value\"}`."
         },
         "LifecycleDetails": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Table name."
         },
         "Schema": {
             "type": "array",

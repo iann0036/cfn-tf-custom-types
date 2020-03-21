@@ -1,6 +1,6 @@
 # Terraform::Spotinst::ElastigroupAzure
 
-CloudFormation equivalent of spotinst_elastigroup_azure
+Provides a Spotinst elastigroup Azure resource.
 
 ## Syntax
 
@@ -115,6 +115,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DesiredCapacity
 
+The desired number of instances the group should have at any time.
+
 _Required_: No
 
 _Type_: Double
@@ -122,6 +124,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LowPrioritySizes
+
+Available Low-Priority sizes.
 
 _Required_: Yes
 
@@ -131,6 +135,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxSize
 
+The maximum number of instances the group should have at any time.
+
 _Required_: No
 
 _Type_: Double
@@ -138,6 +144,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MinSize
+
+The minimum number of instances the group should have at any time.
 
 _Required_: No
 
@@ -147,6 +155,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the managed identity.
+
 _Required_: Yes
 
 _Type_: String
@@ -154,6 +164,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OdSizes
+
+Available On-Demand sizes.
 
 _Required_: Yes
 
@@ -163,6 +175,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Product
 
+Operation system type. Valid values: `"Linux"`, `"Windows"`.
+
 _Required_: Yes
 
 _Type_: String
@@ -170,6 +184,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region your Azure group will be created in.
 
 _Required_: Yes
 
@@ -179,6 +195,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The Resource Group that the user-assigned managed identity resides in.
+* `name` - (Required) The name of the managed identity.
+
 _Required_: Yes
 
 _Type_: String
@@ -187,6 +206,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ShutdownScript
 
+Shutdown script for the group. Value should be passed as a string encoded at Base64 only.
+
 _Required_: No
 
 _Type_: String
@@ -194,6 +215,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserData
+
+Base64-encoded MIME user data to make available to the instances.
 
 _Required_: No
 

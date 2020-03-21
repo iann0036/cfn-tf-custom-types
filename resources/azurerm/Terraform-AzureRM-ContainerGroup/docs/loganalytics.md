@@ -29,6 +29,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### LogType
 
+The log type which should be used. Possible values are `ContainerInsights` and `ContainerInstanceLogs`. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -36,6 +38,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Metadata
+
+Any metadata required for Log Analytics. Changing this forces a new resource to be created.
 
 _Required_: No
 
@@ -45,6 +49,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### WorkspaceId
 
+The Workspace ID of the Log Analytics Workspace. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -52,6 +58,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WorkspaceKey
+
+The Workspace Key of the Log Analytics Workspace. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

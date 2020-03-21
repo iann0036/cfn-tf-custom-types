@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Type
 
+The Type of Identity which should be used for this Disk Encryption Set. At this time the only possible value is `SystemAssigned`.
+
 _Required_: Yes
 
 _Type_: String

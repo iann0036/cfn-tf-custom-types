@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::RedisCache",
-    "description": "CloudFormation equivalent of azurerm_redis_cache",
+    "description": "Manages a Redis Cache.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "PatchSchedule": {
@@ -32,34 +32,44 @@
                     "type": "string"
                 },
                 "EnableAuthentication": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "If set to `false`, the Redis instance will be accessible without authentication. Defaults to `true`."
                 },
                 "MaxfragmentationmemoryReserved": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Value in megabytes reserved to accommodate for memory fragmentation. Defaults are shown below."
                 },
                 "MaxmemoryDelta": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The max-memory delta for this Redis instance. Defaults are shown below."
                 },
                 "MaxmemoryPolicy": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "How Redis will select what to remove when `maxmemory` is reached. Defaults are shown below."
                 },
                 "MaxmemoryReserved": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Value in megabytes reserved for non-cache usage e.g. failover. Defaults are shown below."
                 },
                 "NotifyKeyspaceEvents": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Keyspace notifications allows clients to subscribe to Pub/Sub channels in order to receive events affecting the Redis data set in some way. [Reference](https://redis.io/topics/notifications#configuration)."
                 },
                 "RdbBackupEnabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Is Backup Enabled? Only supported on Premium SKU's."
                 },
                 "RdbBackupFrequency": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The Backup Frequency in Minutes. Only supported on Premium SKU's. Possible values are: `15`, `30`, `60`, `360`, `720` and `1440`."
                 },
                 "RdbBackupMaxSnapshotCount": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The maximum number of snapshots to create as a backup. Only supported for Premium SKU's."
                 },
                 "RdbStorageConnectionString": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Connection String to the Storage Account. Only supported for Premium SKU's. In the format: `DefaultEndpointsProtocol=https;BlobEndpoint=${azurerm_storage_account.example.primary_blob_endpoint};AccountName=${azurerm_storage_account.example.name};AccountKey=${azurerm_storage_account.example.primary_access_key}`."
                 }
             },
             "required": []
@@ -90,25 +100,31 @@
             "type": "string"
         },
         "Capacity": {
-            "type": "number"
+            "type": "number",
+            "description": "The size of the Redis cache to deploy. Valid values for a SKU `family` of C (Basic/Standard) are `0, 1, 2, 3, 4, 5, 6`, and for P (Premium) `family` are `1, 2, 3, 4`."
         },
         "EnableNonSslPort": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable the non-SSL port (6379) - disabled by default."
         },
         "Family": {
-            "type": "string"
+            "type": "string",
+            "description": "The SKU family/pricing group to use. Valid values are `C` (for Basic/Standard SKU family) and `P` (for `Premium`)."
         },
         "Hostname": {
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "The location of the resource group."
         },
         "MinimumTlsVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "The minimum TLS version.  Defaults to `1.0`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Redis instance. Changing this forces a\nnew resource to be created."
         },
         "Port": {
             "type": "number"
@@ -120,10 +136,12 @@
             "type": "string"
         },
         "PrivateStaticIpAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "The Static IP Address to assign to the Redis Cache when hosted inside the Virtual Network. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to\ncreate the Redis instance."
         },
         "SecondaryAccessKey": {
             "type": "string"
@@ -132,16 +150,19 @@
             "type": "string"
         },
         "ShardCount": {
-            "type": "number"
+            "type": "number",
+            "description": "*Only available when using the Premium SKU* The number of Shards to create on the Redis Cluster."
         },
         "SkuName": {
-            "type": "string"
+            "type": "string",
+            "description": "The SKU of Redis to use. Possible values are `Basic`, `Standard` and `Premium`."
         },
         "SslPort": {
             "type": "number"
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "*Only available when using the Premium SKU* The ID of the Subnet within which the Redis Cache should be deployed. This Subnet must only contain Azure Cache for Redis instances without any other type of resources. Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -161,14 +182,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Zones": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of a single item of the Availability Zone which the Redis Cache should be allocated in."
         },
         "PatchSchedule": {
             "type": "array",

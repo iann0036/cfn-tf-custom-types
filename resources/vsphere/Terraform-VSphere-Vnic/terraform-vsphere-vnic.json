@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::VSphere::Vnic",
-    "description": "CloudFormation equivalent of vsphere_vnic",
+    "description": "Provides a VMware vSphere vnic resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Ipv4": {
@@ -52,25 +52,31 @@
             "type": "string"
         },
         "DistributedPortGroup": {
-            "type": "string"
+            "type": "string",
+            "description": "Key of the distributed portgroup the nic will connect to."
         },
         "DistributedSwitchPort": {
-            "type": "string"
+            "type": "string",
+            "description": "UUID of the DVSwitch the nic will be attached to. Do not set if you set portgroup."
         },
         "Host": {
             "type": "string"
         },
         "Mac": {
-            "type": "string"
+            "type": "string",
+            "description": "MAC address of the interface."
         },
         "Mtu": {
-            "type": "number"
+            "type": "number",
+            "description": "MTU of the interface."
         },
         "Netstack": {
-            "type": "string"
+            "type": "string",
+            "description": "TCP/IP stack setting for this interface. Possible values are 'defaultTcpipStack', 'vmotion', 'vSphereProvisioning'. Changing this will force the creation of a new interface since it's not possible to change the stack once it gets created. (Default: `defaultTcpipStack`)."
         },
         "Portgroup": {
-            "type": "string"
+            "type": "string",
+            "description": "Portgroup to attach the nic to. Do not set if you set distributed_switch_port."
         },
         "Ipv4": {
             "type": "array",

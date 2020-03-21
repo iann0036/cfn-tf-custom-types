@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::PanoramaBgpAggregateAdvertiseFilter",
-    "description": "CloudFormation equivalent of panos_panorama_bgp_aggregate_advertise_filter",
+    "description": "This resource allows you to add/update/delete a Panorama route advertise filter for a\nBGP address aggregation rule.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "AddressPrefix": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "Exact": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Match exact prefix length."
                 },
                 "Prefix": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Address prefix."
                 }
             },
             "required": [
@@ -25,51 +27,64 @@
             "type": "string"
         },
         "AsPathRegex": {
-            "type": "string"
+            "type": "string",
+            "description": "AS path to match."
         },
         "BgpAggregate": {
-            "type": "string"
+            "type": "string",
+            "description": "The BGP address aggregation rule."
         },
         "CommunityRegex": {
-            "type": "string"
+            "type": "string",
+            "description": "Community to match."
         },
         "Enable": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable or not (default: `true`)."
         },
         "ExtendedCommunityRegex": {
-            "type": "string"
+            "type": "string",
+            "description": "Extended community to match."
         },
         "FromPeers": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of peers that advertised the route entry."
         },
         "Med": {
-            "type": "string"
+            "type": "string",
+            "description": "Match MED."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name."
         },
         "NextHops": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of next hop attributes."
         },
         "RouteTable": {
-            "type": "string"
+            "type": "string",
+            "description": "Route table to match rule.  Valid\nvalues are `unicast`, `multicast`, or `both`."
         },
         "Template": {
-            "type": "string"
+            "type": "string",
+            "description": "The template name."
         },
         "TemplateStack": {
-            "type": "string"
+            "type": "string",
+            "description": "The template stack name."
         },
         "VirtualRouter": {
-            "type": "string"
+            "type": "string",
+            "description": "The virtual router to add this filter to."
         },
         "AddressPrefix": {
             "type": "array",

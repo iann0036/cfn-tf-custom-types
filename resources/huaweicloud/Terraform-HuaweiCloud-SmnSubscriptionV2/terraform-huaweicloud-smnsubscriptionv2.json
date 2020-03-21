@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HuaweiCloud::SmnSubscriptionV2",
-    "description": "CloudFormation equivalent of huaweicloud_smn_subscription_v2",
+    "description": "Manages a V2 subscription resource within HuaweiCloud.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,25 +9,32 @@
             "type": "string"
         },
         "Endpoint": {
-            "type": "string"
+            "type": "string",
+            "description": "Message endpoint.\nFor an HTTP subscription, the endpoint starts with http\\://.\nFor an HTTPS subscription, the endpoint starts with https\\://.\nFor an email subscription, the endpoint is a mail address.\nFor an SMS message subscription, the endpoint is a phone number."
         },
         "Owner": {
-            "type": "string"
+            "type": "string",
+            "description": "Project ID of the topic creator."
         },
         "Protocol": {
-            "type": "string"
+            "type": "string",
+            "description": "Protocol of the message endpoint. Currently, email,\nsms, http, and https are supported."
         },
         "Remark": {
-            "type": "string"
+            "type": "string",
+            "description": "Remark information. The remarks must be a UTF-8-coded\ncharacter string containing 128 bytes."
         },
         "Status": {
-            "type": "number"
+            "type": "number",
+            "description": "Subscription status.\n0 indicates that the subscription is not confirmed.\n1 indicates that the subscription is confirmed.\n3 indicates that the subscription is canceled."
         },
         "SubscriptionUrn": {
-            "type": "string"
+            "type": "string",
+            "description": "Resource identifier of a subscription, which\nis unique."
         },
         "TopicUrn": {
-            "type": "string"
+            "type": "string",
+            "description": "Resource identifier of a topic, which is unique."
         }
     },
     "additionalProperties": false,

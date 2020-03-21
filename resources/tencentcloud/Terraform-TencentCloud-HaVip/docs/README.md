@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::HaVip
 
-CloudFormation equivalent of tencentcloud_ha_vip
+Provides a resource to create a HA VIP.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### Name
 
+Name of the HA VIP. The length of character is limited to 1-60.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubnetId
+
+Subnet id.
 
 _Required_: Yes
 
@@ -51,6 +55,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Vip
 
+Virtual IP address, it must not be occupied and in this VPC network segment. If not set, it will be assigned after resource created automatically.
+
 _Required_: No
 
 _Type_: String
@@ -58,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+VPC id.
 
 _Required_: Yes
 

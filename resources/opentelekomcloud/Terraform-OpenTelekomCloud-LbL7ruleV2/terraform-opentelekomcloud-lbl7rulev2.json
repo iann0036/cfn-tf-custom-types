@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenTelekomCloud::LbL7ruleV2",
-    "description": "CloudFormation equivalent of opentelekomcloud_lb_l7rule_v2",
+    "description": "Manages a V2 L7 Rule resource within OpentelekomCloud.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,31 +26,39 @@
             "type": "string"
         },
         "AdminStateUp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "The administrative state of the L7 Rule.\nThe value can only be true (UP)."
         },
         "CompareType": {
-            "type": "string"
+            "type": "string",
+            "description": "The comparison type for the L7 rule - can either be\nSTARTS\\_WITH, EQUAL_TO or REGEX."
         },
         "Key": {
-            "type": "string"
+            "type": "string",
+            "description": "The key to use for the comparison. For example, the name of the cookie to\nevaluate. Valid when `type` is set to COOKIE or HEADER. Changing this creates a new L7 Rule."
         },
         "L7policyId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the L7 Policy to query. Changing this creates a new\nL7 Rule."
         },
         "ListenerId": {
             "type": "string"
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the V2 Networking client.\nIf omitted, the `region` argument of the provider is used.\nChanging this creates a new L7 Rule."
         },
         "TenantId": {
-            "type": "string"
+            "type": "string",
+            "description": "Required for admins. The UUID of the tenant who owns\nthe L7 Rule.  Only administrative users can specify a tenant UUID\nother than their own. Changing this creates a new L7 Rule."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The L7 Rule type - can either be HOST\\_NAME or PATH. Changing this creates a new L7 Rule."
         },
         "Value": {
-            "type": "string"
+            "type": "string",
+            "description": "The value to use for the comparison. For example, the file type to\ncompare."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

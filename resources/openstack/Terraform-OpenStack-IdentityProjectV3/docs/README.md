@@ -1,6 +1,9 @@
 # Terraform::OpenStack::IdentityProjectV3
 
-CloudFormation equivalent of openstack_identity_project_v3
+Manages a V3 Project resource within OpenStack Keystone.
+
+Note: You _must_ have admin privileges in your OpenStack cloud to use
+this resource.
 
 ## Syntax
 
@@ -41,6 +44,8 @@ Properties:
 
 #### Description
 
+A description of the project.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DomainId
+
+The domain this project belongs to.
 
 _Required_: No
 
@@ -57,6 +64,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Enabled
 
+Whether the project is enabled or disabled. Valid
+values are `true` and `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -64,6 +74,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IsDomain
+
+Whether this project is a domain. Valid values
+are `true` and `false`.
 
 _Required_: No
 
@@ -73,6 +86,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the project.
+
 _Required_: No
 
 _Type_: String
@@ -81,6 +96,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ParentId
 
+The parent of this project.
+
 _Required_: No
 
 _Type_: String
@@ -88,6 +105,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region in which to obtain the V3 Keystone client.
+If omitted, the `region` argument of the provider is used. Changing this
+creates a new User.
 
 _Required_: No
 

@@ -46,6 +46,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Capacities
 
+The capacity tags applied to the nodes in the node type, the cluster resource manager uses these tags to understand how much resource a node has.
+
 _Required_: No
 
 _Type_: List of <a href="nodetype-capacities.md">Capacities</a>
@@ -53,6 +55,8 @@ _Type_: List of <a href="nodetype-capacities.md">Capacities</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClientEndpointPort
+
+The Port used for the Client Endpoint for this Node Type. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -62,6 +66,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DurabilityLevel
 
+The Durability Level for this Node Type. Possible values include `Bronze`, `Gold` and `Silver`. Defaults to `Bronze`. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -69,6 +75,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HttpEndpointPort
+
+The Port used for the HTTP Endpoint for this Node Type. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -78,6 +86,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceCount
 
+The number of nodes for this Node Type.
+
 _Required_: Yes
 
 _Type_: Double
@@ -85,6 +95,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IsPrimary
+
+Is this the Primary Node Type? Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -94,6 +106,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the Node Type. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -102,6 +116,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PlacementProperties
 
+The placement tags applied to nodes in the node type, which can be used to indicate where certain services (workload) should run.
+
 _Required_: No
 
 _Type_: List of <a href="nodetype-placementproperties.md">PlacementProperties</a>
@@ -109,6 +125,8 @@ _Type_: List of <a href="nodetype-placementproperties.md">PlacementProperties</a
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ReverseProxyEndpointPort
+
+The Port used for the Reverse Proxy Endpoint  for this Node Type. Changing this will upgrade the cluster.
 
 _Required_: No
 

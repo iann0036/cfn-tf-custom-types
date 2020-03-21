@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Rundeck::Project",
-    "description": "CloudFormation equivalent of rundeck_project",
+    "description": "The project resource allows Rundeck projects to be managed by Terraform. In Rundeck a project\nis the container object for a set of jobs and the configuration for which servers those jobs\ncan be run on.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ResourceModelSource": {
@@ -25,10 +25,12 @@
                             "Key",
                             "Value"
                         ]
-                    }
+                    },
+                    "description": "Map of arbitrary configuration properties for the selected resource model\nplugin."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the resource model plugin to use."
                 }
             },
             "required": [
@@ -43,13 +45,16 @@
             "type": "string"
         },
         "DefaultNodeExecutorPlugin": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of a plugin to use to run commands on\nnodes within this project. Defaults to `jsch-ssh`, which uses the SSH protocol to access the\nnodes."
         },
         "DefaultNodeFileCopierPlugin": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of a plugin to use to copy files onto\nnodes within this project. Defaults to `jsch-scp`, which uses the \"Secure Copy\" protocol\nto send files over SSH."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description of the project, to be displayed in the Rundeck UI.\nDefaults to \"Managed by Terraform\"."
         },
         "ExtraConfig": {
             "type": "array",
@@ -69,19 +74,24 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Behind the scenes a Rundeck project is really an arbitrary set of\nkey/value pairs. This map argument allows setting any configuration properties that aren't\nexplicitly supported by the other arguments described above, but due to limitations of Terraform\nthe key names must be written with slashes in place of dots. Do not use this argument to set\nproperties that the above arguments set, or undefined behavior will result."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the project, used both in the UI and to uniquely identify\nthe project. Must therefore be unique across a single Rundeck installation."
         },
         "SshAuthenticationType": {
-            "type": "string"
+            "type": "string",
+            "description": "When the SSH-based file copier and executor plugins are\nused, the type of SSH authentication to use. Defaults to `privateKey`."
         },
         "SshKeyFilePath": {
-            "type": "string"
+            "type": "string",
+            "description": "Like `ssh_key_storage_path` except that the key is read from\nthe Rundeck server's local filesystem, rather than from the key store."
         },
         "SshKeyStoragePath": {
-            "type": "string"
+            "type": "string",
+            "description": "When the SSH-based file copier and executor plugins are\nused, the location within Rundeck's key store where the SSH private key can be found. Private\nkeys can be uploaded to rundeck using the `rundeck_private_key` resource."
         },
         "UiUrl": {
             "type": "string"

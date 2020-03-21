@@ -1,6 +1,9 @@
 # Terraform::HuaweiCloud::IdentityGroupV3
 
-CloudFormation equivalent of huaweicloud_identity_group_v3
+Manages a User Group resource within HuaweiCloud IAM service.
+
+Note: You _must_ have admin privileges in your HuaweiCloud cloud to use
+this resource.
 
 ## Syntax
 
@@ -35,6 +38,8 @@ Properties:
 
 #### Description
 
+A description of the group.
+
 _Required_: No
 
 _Type_: String
@@ -42,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DomainId
+
+The domain this group belongs to.
 
 _Required_: No
 
@@ -51,6 +58,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the group.The length is less than or equal
+to 64 bytes.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +68,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region in which to obtain the V3 Keystone client.
+If omitted, the `region` argument of the provider is used. Changing this
+creates a new User Group.
 
 _Required_: No
 

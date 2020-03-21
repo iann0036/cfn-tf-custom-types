@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Vault::GcpAuthBackend",
-    "description": "CloudFormation equivalent of vault_gcp_auth_backend",
+    "description": "Provides a resource to configure the [GCP auth backend within Vault](https://www.vaultproject.io/docs/auth/gcp.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -15,7 +15,8 @@
             "type": "string"
         },
         "Credentials": {
-            "type": "string"
+            "type": "string",
+            "description": "A JSON string containing the contents of a GCP credentials file. If this value is empty, Vault will try to use Application Default Credentials from the machine on which the Vault server is running."
         },
         "Description": {
             "type": "string"

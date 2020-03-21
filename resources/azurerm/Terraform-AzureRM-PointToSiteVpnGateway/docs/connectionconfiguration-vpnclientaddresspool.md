@@ -23,6 +23,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### AddressPrefixes
 
+A list of CIDR Ranges which should be used as Address Prefixes.
+
 _Required_: Yes
 
 _Type_: List of String

@@ -1,6 +1,8 @@
 # Terraform::Tfe::RunTrigger
 
-CloudFormation equivalent of tfe_run_trigger
+Terraform Cloud provides a way to connect your workspace to one or more workspaces within your organization, known as "source workspaces". 
+These connections, called run triggers, allow runs to queue automatically in your workspace on successful apply of runs in any of the source workspaces. 
+You can connect your workspace to up to 20 source workspaces.
 
 ## Syntax
 
@@ -31,6 +33,8 @@ Properties:
 
 #### SourceableId
 
+The external id of the sourceable. The sourceable must be a workspace.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +42,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WorkspaceExternalId
+
+The external id of the workspace that owns the run trigger. This is the workspace where runs will be triggered.
 
 _Required_: Yes
 

@@ -1,6 +1,10 @@
 # Terraform::OCI::IdentityUser
 
-CloudFormation equivalent of oci_identity_user
+This resource provides the User Capabilities Management resource in Oracle Cloud Infrastructure Identity service.
+
+Manages the capabilities of the specified user.
+
+**Important:** Deleting the User Capabilities Management leaves the User resource in its existing state (rather than returning to its defaults)
 
 ## Syntax
 

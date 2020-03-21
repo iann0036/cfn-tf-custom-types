@@ -1,6 +1,13 @@
 # Terraform::Google::ComputeInstanceFromTemplate
 
-CloudFormation equivalent of google_compute_instance_from_template
+Manages a VM instance resource within GCE. For more information see
+[the official documentation](https://cloud.google.com/compute/docs/instances)
+and
+[API](https://cloud.google.com/compute/docs/reference/latest/instances).
+
+This resource is specifically to create a compute instance from a given
+`source_instance_template`. To create an instance without a template, use the
+`google_compute_instance` resource.
 
 ## Syntax
 
@@ -208,6 +215,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A unique name for the resource, required by GCE.
+Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -240,6 +250,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SourceInstanceTemplate
 
+Name or self link of an instance
+template to create the instance based on.
+
 _Required_: Yes
 
 _Type_: String
@@ -255,6 +268,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Zone
+
+The zone that the machine should be created in. If not
+set, the provider zone is used.
 
 _Required_: No
 

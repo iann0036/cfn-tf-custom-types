@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::AppEngineApplication",
-    "description": "CloudFormation equivalent of google_app_engine_application",
+    "description": "Allows creation and management of an App Engine application.\n\n~> App Engine applications cannot be deleted once they're created; you have to delete the\n   entire project to delete the application. Terraform will report the application has been\n   successfully deleted; this is a limitation of Terraform, and will go away in the future.\n   Terraform is not able to delete App Engine applications.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "FeatureSettings": {
@@ -8,7 +8,8 @@
             "additionalProperties": false,
             "properties": {
                 "SplitHealthChecks": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Set to false to use the legacy health check instead of the readiness\nand liveness checks."
                 }
             },
             "required": [
@@ -41,7 +42,8 @@
             "type": "string"
         },
         "AuthDomain": {
-            "type": "string"
+            "type": "string",
+            "description": "The domain to authenticate users with when using App Engine's User API."
         },
         "CodeBucket": {
             "type": "string"
@@ -56,16 +58,19 @@
             "type": "string"
         },
         "LocationId": {
-            "type": "string"
+            "type": "string",
+            "description": "The [location](https://cloud.google.com/appengine/docs/locations)\nto serve the app from."
         },
         "Name": {
             "type": "string"
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The project ID to create the application under.\n~>**NOTE**: GCP only accepts project ID, not project number. If you are using number,\nyou may get a \"Permission denied\" error."
         },
         "ServingStatus": {
-            "type": "string"
+            "type": "string",
+            "description": "The serving status of the app."
         },
         "UrlDispatchRule": {
             "type": "array",

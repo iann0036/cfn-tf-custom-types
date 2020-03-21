@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::DataprocCluster",
-    "description": "CloudFormation equivalent of google_dataproc_cluster",
+    "description": "Manages a Cloud Dataproc cluster resource within GCP. For more information see\n[the official dataproc documentation](https://cloud.google.com/dataproc/).\n\n\n!> **Warning:** Due to limitations of the API, all arguments except\n`labels`,`cluster_config.worker_config.num_instances` and `cluster_config.preemptible_worker_config.num_instances` are non-updatable. Changing others will cause recreation of the\nwhole cluster!",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ClusterConfig": {
@@ -8,7 +8,8 @@
             "additionalProperties": false,
             "properties": {
                 "StagingBucket": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Cloud Storage staging bucket used to stage files,\nsuch as Hadoop jars, between client machines and the cluster.\nNote: If you don't explicitly specify a `staging_bucket`\nthen GCP will auto create / assign one for you. However, you are not guaranteed\nan auto generated bucket which is solely dedicated to your cluster; it may be shared\nwith other clusters in the same region/zone also choosing to use the auto generation\noption."
                 },
                 "AutoscalingConfig": {
                     "type": "array",
@@ -109,7 +110,8 @@
             "additionalProperties": false,
             "properties": {
                 "KmsKeyName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Cloud KMS key name to use for PD disk encryption for\nall instances in the cluster."
                 }
             },
             "required": [
@@ -177,10 +179,12 @@
             "additionalProperties": false,
             "properties": {
                 "Script": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The script to be executed during initialization of the cluster.\nThe script must be a GCS file with a gs:// prefix."
                 },
                 "TimeoutSec": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The maximum duration (in seconds) which `script` is\nallowed to take to execute its action. GCP will default to a predetermined\ncomputed value if not set (currently 300)."
                 }
             },
             "required": [
@@ -432,16 +436,20 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "The list of labels (key/value pairs) to be applied to\ninstances in the cluster. GCP generates some itself including `goog-dataproc-cluster-name`\nwhich is the name of the cluster."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the cluster, unique within the project and\nzone."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the project in which the `cluster` will exist. If it\nis not provided, the provider project is used."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which the cluster and associated nodes will be created in.\nDefaults to `global`."
         },
         "ClusterConfig": {
             "type": "array",

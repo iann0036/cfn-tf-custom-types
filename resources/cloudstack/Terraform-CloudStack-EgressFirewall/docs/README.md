@@ -1,6 +1,6 @@
 # Terraform::CloudStack::EgressFirewall
 
-CloudFormation equivalent of cloudstack_egress_firewall
+Creates egress firewall rules for a given network.
 
 ## Syntax
 
@@ -36,6 +36,10 @@ Properties:
 
 #### Managed
 
+USE WITH CAUTION! If enabled all the egress firewall
+rules for this network will be managed by this resource. This means it will
+delete all firewall rules that are not in your config! (defaults false).
+
 _Required_: No
 
 _Type_: Boolean
@@ -43,6 +47,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NetworkId
+
+The network ID for which to create the egress
+firewall rules. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

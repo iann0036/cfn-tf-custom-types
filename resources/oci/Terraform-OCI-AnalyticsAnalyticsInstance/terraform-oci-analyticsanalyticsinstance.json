@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::AnalyticsAnalyticsInstance",
-    "description": "CloudFormation equivalent of oci_analytics_analytics_instance",
+    "description": "This resource provides the Analytics Instance resource in Oracle Cloud Infrastructure Analytics service.\n\nCreate a new AnalyticsInstance in the specified compartment. The operation is long-running\nand creates a new WorkRequest.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Capacity": {
@@ -42,7 +42,8 @@
             "type": "string"
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The OCID of the compartment."
         },
         "DefinedTags": {
             "type": "array",
@@ -62,16 +63,20 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Operations.CostCenter\": \"42\"}`."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) Optional description."
         },
         "EmailNotification": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) Email address receiving notifications."
         },
         "FeatureSet": {
-            "type": "string"
+            "type": "string",
+            "description": "Analytics feature set."
         },
         "FreeformTags": {
             "type": "array",
@@ -91,16 +96,20 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
         },
         "IdcsAccessToken": {
-            "type": "string"
+            "type": "string",
+            "description": "IDCS access token identifying a stripe and service administrator user."
         },
         "LicenseType": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The license used for the service."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed."
         },
         "ServiceUrl": {
             "type": "string"

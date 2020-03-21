@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::CamGroupMembership",
-    "description": "CloudFormation equivalent of tencentcloud_cam_group_membership",
+    "description": "Provides a resource to create a CAM group membership.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,14 +9,16 @@
             "type": "string"
         },
         "GroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "Id of CAM group."
         },
         "UserIds": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Id set of the CAM group members."
         }
     },
     "additionalProperties": false,

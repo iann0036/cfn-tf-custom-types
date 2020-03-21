@@ -1,6 +1,8 @@
 # Terraform::AzureRM::SecurityCenterContact
 
-CloudFormation equivalent of azurerm_security_center_contact
+Manages the subscription's Security Center Contact.
+
+~> **NOTE:** Owner access permission is required.
 
 ## Syntax
 
@@ -37,6 +39,8 @@ Properties:
 
 #### AlertNotifications
 
+Whether to send security alerts notifications to the security contact.
+
 _Required_: Yes
 
 _Type_: Boolean
@@ -44,6 +48,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AlertsToAdmins
+
+Whether to send security alerts notifications to subscription admins.
 
 _Required_: Yes
 
@@ -53,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Email
 
+The email of the Security Center Contact.
+
 _Required_: Yes
 
 _Type_: String
@@ -60,6 +68,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Phone
+
+The phone number of the Security Center Contact.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::NetworkWatcherFlowLog",
-    "description": "CloudFormation equivalent of azurerm_network_watcher_flow_log",
+    "description": "Manages a Network Watcher Flow Log.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "RetentionPolicy": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "Days": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The number of days to retain flow log records."
                 },
                 "Enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Boolean flag to enable/disable retention."
                 }
             },
             "required": [
@@ -43,19 +45,24 @@
             "additionalProperties": false,
             "properties": {
                 "Enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Boolean flag to enable/disable traffic analytics."
                 },
                 "IntervalInMinutes": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "How frequently service should do flow analytics in minutes."
                 },
                 "WorkspaceId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The resource guid of the attached workspace."
                 },
                 "WorkspaceRegion": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The location of the attached workspace."
                 },
                 "WorkspaceResourceId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The resource ID of the attached workspace."
                 }
             },
             "required": [
@@ -72,22 +79,28 @@
             "type": "string"
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Should Network Flow Logging be Enabled?."
         },
         "NetworkSecurityGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Network Security Group for which to enable flow logs for. Changing this forces a new resource to be created."
         },
         "NetworkWatcherName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Network Watcher. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which the Network Watcher was deployed. Changing this forces a new resource to be created."
         },
         "StorageAccountId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Storage Account where flow logs are stored."
         },
         "Version": {
-            "type": "number"
+            "type": "number",
+            "description": "The version (revision) of the flow log. Possible values are `1` and `2`."
         },
         "RetentionPolicy": {
             "type": "array",

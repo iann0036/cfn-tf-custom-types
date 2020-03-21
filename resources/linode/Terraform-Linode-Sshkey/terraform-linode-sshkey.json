@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Linode::Sshkey",
-    "description": "CloudFormation equivalent of linode_sshkey",
+    "description": "Provides a Linode SSH Key resource.  This can be used to create, modify, and delete Linodes SSH Keys.  Managed SSH Keys allow instances to be created with a list of Linode usernames, whose SSH keys will be automatically applied to the root account's `~/.ssh/authorized_keys` file.\nFor more information, see the [Linode APIv4 docs](https://developers.linode.com/api/v4#operation/getSSHKeys).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,10 +12,12 @@
             "type": "string"
         },
         "Label": {
-            "type": "string"
+            "type": "string",
+            "description": "A label for the SSH Key."
         },
         "SshKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The public SSH Key, which is used to authenticate to the root user of the Linodes you deploy."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 # Terraform::Grafana::Dashboard
 
-CloudFormation equivalent of grafana_dashboard
+The dashboard resource allows a dashboard to be created on a Grafana server.
 
 ## Syntax
 
@@ -30,6 +30,8 @@ Properties:
 ## Properties
 
 #### ConfigJson
+
+The JSON configuration for the dashboard.
 
 _Required_: Yes
 

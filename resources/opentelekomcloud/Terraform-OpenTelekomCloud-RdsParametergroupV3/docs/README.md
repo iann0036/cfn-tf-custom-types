@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::RdsParametergroupV3
 
-CloudFormation equivalent of opentelekomcloud_rds_parametergroup_v3
+Manages a V3 RDS parametergroup resource within OpenTelekomCloud.
 
 ## Syntax
 
@@ -39,6 +39,8 @@ Properties:
 
 #### Description
 
+The parameter group description. It contains a maximum of 256 characters and cannot contain the following special characters:>!<"&'= the value is left blank by default.
+
 _Required_: No
 
 _Type_: String
@@ -47,6 +49,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The parameter group name. It contains a maximum of 64 characters.
+
 _Required_: Yes
 
 _Type_: String
@@ -54,6 +58,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Values
+
+Parameter group values key/value pairs defined by users based on the default parameter groups.
 
 _Required_: No
 

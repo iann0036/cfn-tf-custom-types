@@ -1,6 +1,26 @@
 # Terraform::OCI::CoreCrossConnect
 
-CloudFormation equivalent of oci_core_cross_connect
+This resource provides the Cross Connect resource in Oracle Cloud Infrastructure Core service.
+
+Creates a new cross-connect. Oracle recommends you create each cross-connect in a
+[CrossConnectGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup) so you can use link aggregation
+with the connection.
+
+After creating the `CrossConnect` object, you need to go the FastConnect location
+and request to have the physical cable installed. For more information, see
+[FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
+
+For the purposes of access control, you must provide the OCID of the
+compartment where you want the cross-connect to reside. If you're
+not sure which compartment to use, put the cross-connect in the
+same compartment with your VCN. For more information about
+compartments and access control, see
+[Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+For information about OCIDs, see
+[Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+
+You may optionally specify a *display name* for the cross-connect.
+It does not have to be unique, and you can change it. Avoid entering confidential information.
 
 ## Syntax
 
@@ -53,6 +73,8 @@ Properties:
 
 #### CompartmentId
 
+(Updatable) The OCID of the compartment to contain the cross-connect.
+
 _Required_: Yes
 
 _Type_: String
@@ -60,6 +82,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CrossConnectGroupId
+
+The OCID of the cross-connect group to put this cross-connect in.
 
 _Required_: No
 
@@ -69,6 +93,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CustomerReferenceName
 
+(Updatable) A reference name or identifier for the physical fiber connection that this cross-connect uses.
+
 _Required_: No
 
 _Type_: String
@@ -76,6 +102,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefinedTags
+
+(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`.
 
 _Required_: No
 
@@ -85,6 +113,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+(Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+
 _Required_: No
 
 _Type_: String
@@ -92,6 +122,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FarCrossConnectOrCrossConnectGroupId
+
+If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on a different router (for the purposes of redundancy), provide the OCID of that existing cross-connect or cross-connect group.
 
 _Required_: No
 
@@ -101,6 +133,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FreeformTags
 
+(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`.
+
 _Required_: No
 
 _Type_: List of <a href="freeformtags.md">FreeformTags</a>
@@ -108,6 +142,8 @@ _Type_: List of <a href="freeformtags.md">FreeformTags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IsActive
+
+(Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
 
 _Required_: No
 
@@ -117,6 +153,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LocationName
 
+The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`.
+
 _Required_: Yes
 
 _Type_: String
@@ -125,6 +163,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NearCrossConnectOrCrossConnectGroupId
 
+If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the OCID of that existing cross-connect or cross-connect group.
+
 _Required_: No
 
 _Type_: String
@@ -132,6 +172,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PortSpeedShapeName
+
+The port speed for this cross-connect. To get a list of the available port speeds, see [ListCrossConnectPortSpeedShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectPortSpeedShape/ListCrossconnectPortSpeedShapes).  Example: `10 Gbps`.
 
 _Required_: Yes
 

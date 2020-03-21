@@ -1,6 +1,6 @@
 # Terraform::UCloud::VpcPeeringConnection
 
-CloudFormation equivalent of ucloud_vpc_peering_connection
+Provides an VPC Peering Connection for establishing a connection between multiple VPC.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### PeerProjectId
 
+The ID of accepter project of the specific VPC Peering Connection to retrieve.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PeerVpcId
 
+The short ID of accepter VPC of the specific VPC Peering Connection to retrieve.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+The short of ID of the requester VPC of the specific VPC Peering Connection to retrieve.
 
 _Required_: Yes
 

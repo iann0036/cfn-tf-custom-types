@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::SslVpnClientCert",
-    "description": "CloudFormation equivalent of alicloud_ssl_vpn_client_cert",
+    "description": "Provides a SSL VPN client cert resource.\n\n-> **NOTE:** Terraform will auto build SSL VPN client certs while it uses `alicloud_ssl_vpn_client_cert` to build a ssl vpn client certs resource.\nIt depends on VPN instance and SSL VPN Server.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -21,10 +21,12 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the client certificate.\n- `ssl_vpn_server_id` - (Required, ForceNew) The ID of the SSL-VPN server."
         },
         "SslVpnServerId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the SSL-VPN server."
         },
         "Status": {
             "type": "string"

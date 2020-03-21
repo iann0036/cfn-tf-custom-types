@@ -1,6 +1,6 @@
 # Terraform::CloudStack::Vpc
 
-CloudFormation equivalent of cloudstack_vpc
+Creates a VPC.
 
 ## Syntax
 
@@ -44,6 +44,9 @@ Properties:
 
 #### Cidr
 
+The CIDR block for the VPC. Changing this forces a new
+resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -51,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayText
+
+The display text of the VPC.
 
 _Required_: No
 
@@ -60,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the VPC.
+
 _Required_: Yes
 
 _Type_: String
@@ -68,6 +75,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NetworkDomain
 
+The default DNS domain for networks created in
+this VPC. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -75,6 +85,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The name or ID of the project to deploy this
+instance to. Changing this forces a new resource to be created.
 
 _Required_: No
 
@@ -92,6 +105,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VpcOffering
 
+The name or ID of the VPC offering to use for this VPC.
+Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -99,6 +115,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Zone
+
+The name or ID of the zone where this disk volume will be
+available. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

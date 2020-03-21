@@ -1,6 +1,11 @@
 # Terraform::Heroku::Config
 
-CloudFormation equivalent of heroku_config
+Provides a Heroku Config resource, making it possible to define variables 
+to be used throughout your Heroku terraform configurations. Combined with `heroku_app_config_association`,
+these two resources enable users to decouple setting config var(s) from the `heroku_app` resource.
+
+~> **NOTE:** Unlike most Terraform resources, this resource **DOES NOT** by itself create, update or delete anything in Heroku. 
+A [`heroku_app_config_association`](app_config_association.html), `heroku_app.config_vars`, or `heroku_app.sensitive_config_vars` is required to actually set these values on Heroku apps.
 
 ## Syntax
 
@@ -33,6 +38,10 @@ Properties:
 
 #### SensitiveVars
 
+This is the same as `vars`. The main difference between the two
+attributes is `sensitive_vars` outputs are redacted on-screen and replaced by a <sensitive> placeholder, following a terraform
+`plan` or `apply`. It is recommended to put private keys, passwords, etc in this argument.
+
 _Required_: No
 
 _Type_: List of <a href="sensitivevars.md">SensitiveVars</a>
@@ -40,6 +49,8 @@ _Type_: List of <a href="sensitivevars.md">SensitiveVars</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vars
+
+Map of vars that are can be outputted in plaintext.
 
 _Required_: No
 

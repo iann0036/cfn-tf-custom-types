@@ -1,6 +1,6 @@
 # Terraform::Nutanix::NetworkSecurityRule
 
-CloudFormation equivalent of nutanix_network_security_rule
+Provides a Nutanix network security rule resource to Create a network security rule.
 
 ## Syntax
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Heroku::Build",
-    "description": "CloudFormation equivalent of heroku_build",
+    "description": "Provides a [Heroku Build](https://devcenter.heroku.com/articles/platform-api-reference#build)\nresource, to deploy source code to a Heroku app.\n\nEither a [URL](#source-urls) or [local path](#local-source), pointing to a [tarball](https://en.wikipedia.org/wiki/Tar_(computing)) of the source code, may be deployed. If a local path is used, it may instead point to a directory of source code, which will be tarballed automatically and then deployed.\n\nThis resource waits until the [build](https://devcenter.heroku.com/articles/build-and-release-using-the-api) & [release](https://devcenter.heroku.com/articles/release-phase) completes.\n\nIf the build fails, the error will contain a URL to view the build log. `curl \"https://the-long-log-url-in-the-error\"`.\n\nTo start the app from a successful build, use a [Formation resource](formation.html) to specify the process, dyno size, and dyno quantity.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,14 +9,16 @@
             "type": "string"
         },
         "App": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Heroku app."
         },
         "Buildpacks": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of buildpack GitHub URLs."
         },
         "LocalChecksum": {
             "type": "string"
@@ -48,7 +50,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A block that specifies the source code to build & release:\n* `checksum` - Hash of the source archive for verifying its integrity, auto-generated when `source.path` is set, `SHA256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`\n* `path` - (Required unless `source.url` is set) Local path to the source directory or tarball archive for the app\n* `url` - (Required unless `source.path` is set) `https` location of the source archive for the app\n* `version` - Use to track what version of your source originated this build. If you are creating builds from git-versioned source code, for example, the commit hash, or release tag would be a good value to use for the version parameter."
         },
         "Stack": {
             "type": "string"

@@ -1,6 +1,7 @@
 # Terraform::Random::Shuffle
 
-CloudFormation equivalent of random_shuffle
+The resource `random_shuffle` generates a random permutation of a list
+of strings given as an argument.
 
 ## Syntax
 
@@ -37,6 +38,8 @@ Properties:
 
 #### Input
 
+The list of strings to shuffle.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -44,6 +47,10 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Keepers
+
+Arbitrary map of values that, when changed, will
+trigger a new id to be generated. See
+[the main provider documentation](../index.html) for more information.
 
 _Required_: No
 
@@ -53,6 +60,12 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResultCount
 
+The number of results to return. Defaults to
+the number of items in the `input` list. If fewer items are requested,
+some elements will be excluded from the result. If more items are requested,
+items will be repeated in the result but not more frequently than the number
+of items in the input list.
+
 _Required_: No
 
 _Type_: Double
@@ -60,6 +73,13 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Seed
+
+Arbitrary string with which to seed the random number
+generator, in order to produce less-volatile permutations of the list.
+**Important:** Even with an identical seed, it is not guaranteed that the
+same permutation will be produced across different versions of Terraform.
+This argument causes the result to be *less volatile*, but not fixed for
+all time.
 
 _Required_: No
 

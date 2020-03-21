@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::CloudScale::Volume",
-    "description": "CloudFormation equivalent of cloudscale_volume",
+    "description": "Provides a cloudscale.ch Volume (block storage) resource. This can be used to create, modify, and delete Volumes.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,23 +12,28 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the new volume."
         },
         "ServerUuids": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of server UUIDs. Default to an empty list. Currently a volume can only be attached to one server UUID."
         },
         "SizeGb": {
-            "type": "number"
+            "type": "number",
+            "description": "The volume size in GB. Valid values are multiples of 1 for type \"ssd\" and multiples of 100 for type \"bulk\"."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "For SSD/NVMe volumes specify \"ssd\" (default) or use \"bulk\" for our HDD cluster with NVMe caching. This is the only attribute that cannot be altered."
         },
         "ZoneSlug": {
-            "type": "string"
+            "type": "string",
+            "description": "You can specify a zone slug. Options include `lpg1` and `rma1`."
         }
     },
     "additionalProperties": false,

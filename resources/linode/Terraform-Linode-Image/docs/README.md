@@ -1,6 +1,8 @@
 # Terraform::Linode::Image
 
-CloudFormation equivalent of linode_image
+Provides a Linode Image resource.  This can be used to create, modify, and delete Linodes Images.  Linode Images are snapshots of a Linode Instance Disk which can then be used to provision more Linode Instances.  Images can be used across regions.
+
+For more information, see [Linode's documentation on Images](https://www.linode.com/docs/platform/disk-images/linode-images/) and the [Linode APIv4 docs](https://developers.linode.com/api/v4#operation/createImage).
 
 ## Syntax
 
@@ -37,6 +39,8 @@ Properties:
 
 #### Description
 
+A detailed description of this Image.
+
 _Required_: No
 
 _Type_: String
@@ -44,6 +48,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DiskId
+
+The ID of the Linode Disk that this Image will be created from.
 
 _Required_: Yes
 
@@ -53,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Label
 
+A short description of the Image. Labels cannot contain special characters.
+
 _Required_: Yes
 
 _Type_: String
@@ -60,6 +68,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LinodeId
+
+The ID of the Linode that this Image will be created from.
 
 _Required_: Yes
 

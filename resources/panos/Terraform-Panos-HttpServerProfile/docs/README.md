@@ -1,6 +1,8 @@
 # Terraform::Panos::HttpServerProfile
 
-CloudFormation equivalent of panos_http_server_profile
+This resource allows you to add/update/delete HTTP server profiles.
+
+**Minimum PAN-OS version**:  7.1
 
 ## Syntax
 
@@ -78,6 +80,8 @@ Properties:
 
 #### Name
 
+The name.
+
 _Required_: Yes
 
 _Type_: String
@@ -86,6 +90,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TagRegistration
 
+Perform tag registration.
+
 _Required_: No
 
 _Type_: Boolean
@@ -93,6 +99,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vsys
+
+The vsys (default: `shared`).
 
 _Required_: No
 

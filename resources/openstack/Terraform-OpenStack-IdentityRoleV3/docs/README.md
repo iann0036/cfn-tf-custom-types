@@ -1,6 +1,9 @@
 # Terraform::OpenStack::IdentityRoleV3
 
-CloudFormation equivalent of openstack_identity_role_v3
+Manages a V3 Role resource within OpenStack Keystone.
+
+Note: You _must_ have admin privileges in your OpenStack cloud to use
+this resource.
 
 ## Syntax
 
@@ -33,6 +36,8 @@ Properties:
 
 #### DomainId
 
+The domain the role belongs to.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +46,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the role.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +55,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region in which to obtain the V3 Keystone client.
+If omitted, the `region` argument of the provider is used. Changing this
+creates a new Role.
 
 _Required_: No
 

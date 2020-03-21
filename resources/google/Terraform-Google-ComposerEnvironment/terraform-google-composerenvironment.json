@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::ComposerEnvironment",
-    "description": "CloudFormation equivalent of google_composer_environment",
+    "description": "An environment for running orchestration tasks.\n\nEnvironments run Apache Airflow software on Google infrastructure.\n\nTo get more information about Environments, see:\n\n* [API documentation](https://cloud.google.com/composer/docs/reference/rest/)\n* How-to Guides\n    * [Official Documentation](https://cloud.google.com/composer/docs)\n    * [Configuring Shared VPC for Composer Environments](https://cloud.google.com/composer/docs/how-to/managing/configuring-shared-vpc)\n* [Apache Airflow Documentation](http://airflow.apache.org/)\n\n~> **Warning:** We **STRONGLY** recommend  you read the [GCP guides](https://cloud.google.com/composer/docs/how-to)\n  as the Environment resource requires a long deployment process and involves several layers of GCP infrastructure, \n  including a Kubernetes Engine cluster, Cloud Storage, and Compute networking resources. Due to limitations of the API,\n  Terraform will not be able to automatically find or manage many of these underlying resources. In particular:\n  * It can take up to one hour to create or update an environment resource. In addition, GCP may only detect some \n    errors in configuration when they are used (e.g. ~40-50 minutes into the creation process), and is prone to limited\n    error reporting. If you encounter confusing or uninformative errors, please verify your configuration is valid \n    against GCP Cloud Composer before filing bugs against the Terraform provider. \n  * **Environments create Google Cloud Storage buckets that do not get cleaned up automatically** on environment \n    deletion. [More about Composer's use of Cloud Storage](https://cloud.google.com/composer/docs/concepts/cloud-storage).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Config": {
@@ -232,7 +232,8 @@
             "type": "string"
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used."
         },
         "Region": {
             "type": "string"

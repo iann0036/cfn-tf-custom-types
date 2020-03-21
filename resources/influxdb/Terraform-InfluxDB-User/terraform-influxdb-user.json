@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::InfluxDB::User",
-    "description": "CloudFormation equivalent of influxdb_user",
+    "description": "The user resource allows a user to be created on an InfluxDB server.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Grant": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "Database": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the database the privilege is associated with."
                 },
                 "Privilege": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The privilege to grant (READ|WRITE|ALL)."
                 }
             },
             "required": [
@@ -26,13 +28,16 @@
             "type": "string"
         },
         "Admin": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Mark the user as admin."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name for the user."
         },
         "Password": {
-            "type": "string"
+            "type": "string",
+            "description": "The password for the user."
         },
         "Grant": {
             "type": "array",

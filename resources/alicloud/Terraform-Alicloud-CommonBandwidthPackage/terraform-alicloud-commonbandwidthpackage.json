@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::CommonBandwidthPackage",
-    "description": "CloudFormation equivalent of alicloud_common_bandwidth_package",
+    "description": "Provides a common bandwidth package resource.\n\n-> **NOTE:** Terraform will auto build common bandwidth package instance while it uses `alicloud_common_bandwidth_package` to build a common bandwidth package resource.\n\nFor information about common bandwidth package and how to use it, see [What is Common Bandwidth Package](https://www.alibabacloud.com/help/product/55092.htm).\n\nFor information about common bandwidth package billing methods, see [Common Bandwidth Package Billing Methods](https://www.alibabacloud.com/help/doc-detail/67459.html?spm=a2c5t.11065259.1996646101.searchclickresult.7ec93235Vfkwhy).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,22 +9,28 @@
             "type": "string"
         },
         "Bandwidth": {
-            "type": "number"
+            "type": "number",
+            "description": "The bandwidth of the common bandwidth package, in Mbps."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the common bandwidth package instance."
         },
         "InternetChargeType": {
-            "type": "string"
+            "type": "string",
+            "description": "The billing method of the common bandwidth package. Valid values are \"PayByBandwidth\" and \"PayBy95\" and \"PayByTraffic\". \"PayBy95\" is pay by classic 95th percentile pricing. International Account doesn't supports \"PayByBandwidth\" and \"PayBy95\". Default to \"PayByTraffic\"."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the common bandwidth package."
         },
         "Ratio": {
-            "type": "number"
+            "type": "number",
+            "description": "Ratio of the common bandwidth package. It is valid when `internet_charge_type` is `PayBy95`. Default to 100. Valid values: [10-100]."
         },
         "ResourceGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Id of resource group which the common bandwidth package belongs."
         }
     },
     "additionalProperties": false,

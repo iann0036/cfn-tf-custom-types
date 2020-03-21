@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::ACME::Registration",
-    "description": "CloudFormation equivalent of acme_registration",
+    "description": "The `acme_registration` resource can be used to create and manage accounts on an\nACME server. Once registered, the same private key that has been used for\nregistration can be used to request authorizations for certificates.\n\n-> This resource is named `acme_registration` for historical reasons - in the\nACME v1 spec, a _registration_ referred to the account entity.  This resource\nname is stable and more than likely will not change until a later major version\nof the provider, if at all.\n\n-> Keep in mind that when using this resource along with\n[`acme_certificate`][resource-acme-certificate] within the same configuration, a\nchange in the provider-level `server_url` (example: from the Let's Encrypt\nstaging to production environment) within the same Terraform state will result\nin a resource failure, as Terraform will attempt to look for the account in the\nwrong CA. Consider different workspaces per environment, and/or using [multiple\nprovider instances][multiple-provider-instances].\n\n[resource-acme-certificate]: /docs/providers/acme/r/certificate.html\n[multiple-provider-instances]: /docs/configuration/providers.html#multiple-provider-instances",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {

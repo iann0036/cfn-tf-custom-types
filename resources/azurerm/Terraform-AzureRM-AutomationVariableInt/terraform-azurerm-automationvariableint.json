@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::AutomationVariableInt",
-    "description": "CloudFormation equivalent of azurerm_automation_variable_int",
+    "description": "Manages a integer variable in Azure Automation",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,22 +29,28 @@
             "type": "string"
         },
         "AutomationAccountName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the automation account in which the Variable is created. Changing this forces a new resource to be created."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the Automation Variable."
         },
         "Encrypted": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies if the Automation Variable is encrypted. Defaults to `false`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Automation Variable. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the Automation Variable. Changing this forces a new resource to be created."
         },
         "Value": {
-            "type": "number"
+            "type": "number",
+            "description": "The value of the Automation Variable as a `integer`."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

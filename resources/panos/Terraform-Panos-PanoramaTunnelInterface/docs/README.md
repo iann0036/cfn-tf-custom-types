@@ -1,6 +1,7 @@
 # Terraform::Panos::PanoramaTunnelInterface
 
-CloudFormation equivalent of panos_panorama_tunnel_interface
+This resource allows you to add/update/delete Panorama tunnel interfaces
+for templates.
 
 ## Syntax
 
@@ -44,6 +45,8 @@ Properties:
 
 #### Comment
 
+The interface comment.
+
 _Required_: No
 
 _Type_: String
@@ -51,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ManagementProfile
+
+The management profile.
 
 _Required_: No
 
@@ -60,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Mtu
 
+The MTU.
+
 _Required_: No
 
 _Type_: Double
@@ -67,6 +74,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The interface's name.  This must start with `tunnel.`.
 
 _Required_: Yes
 
@@ -76,6 +85,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NetflowProfile
 
+The netflow profile.
+
 _Required_: No
 
 _Type_: String
@@ -83,6 +94,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StaticIps
+
+List of static IPv4 addresses to set for this data
+interface.
 
 _Required_: No
 
@@ -92,6 +106,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Template
 
+The template name.
+
 _Required_: Yes
 
 _Type_: String
@@ -99,6 +115,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vsys
+
+The vsys that will use this interface (default: `vsys1`).
 
 _Required_: No
 

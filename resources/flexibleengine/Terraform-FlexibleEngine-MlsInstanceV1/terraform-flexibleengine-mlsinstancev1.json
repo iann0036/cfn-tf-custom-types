@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::FlexibleEngine::MlsInstanceV1",
-    "description": "CloudFormation equivalent of flexibleengine_mls_instance_v1",
+    "description": "Manages mls instance resource within FlexibleEngine",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "MrsCluster": {
@@ -8,13 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "Id": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the ID of the MRS cluster. Changing this creates a new instance."
                 },
                 "UserName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the MRS cluster username. This parameter is mandatory\nonly when the MRS cluster is in the security mode. Changing this creates a new instance."
                 },
                 "UserPassword": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the password of the MRS cluster user. The password\nand username work in a pair. Changing this creates a new instance."
                 }
             },
             "required": [
@@ -26,16 +29,20 @@
             "additionalProperties": false,
             "properties": {
                 "AvailableZone": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the AZ of the instance.\nChanging this creates a new instance."
                 },
                 "SecurityGroup": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the ID of the security group of the instance.\nChanging this creates a new instance."
                 },
                 "SubnetId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the ID of the subnet where the instance resides.\nChanging this creates a new instance."
                 },
                 "VpcId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the ID of the virtual private cloud (VPC) where the\ninstance resides. Changing this creates a new instance."
                 },
                 "PublicIp": {
                     "type": "array",
@@ -69,7 +76,8 @@
             "additionalProperties": false,
             "properties": {
                 "BindType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the bind type. Possible values: `auto_assign` and\n`not_use`. Changing this creates a new instance."
                 },
                 "EipId": {
                     "type": "string"
@@ -86,25 +94,29 @@
             "type": "string"
         },
         "Agency": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the agency name. This parameter is mandatory only\nwhen you bind an instance to an elastic IP address (EIP). An instance must be\nbound to an EIP to grant MLS rights to abtain a tenant's token. NOTE: The tenant\nmust create an agency on the Identity and Access Management (IAM) interface in\nadvance. Changing this creates a new instance."
         },
         "Created": {
             "type": "string"
         },
         "Flavor": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the instance flavor, only `mls.c2.2xlarge.common`\nis supported now. Changing this creates a new instance."
         },
         "InnerEndpoint": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the MLS instance name. The DB instance name of\nthe same type is unique in the same tenant. Changing this creates a new instance."
         },
         "PublicEndpoint": {
             "type": "string"
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to create the MLS instance. If\nomitted, the `region` argument of the provider is used. Changing this\ncreates a new instance."
         },
         "Status": {
             "type": "string"
@@ -113,7 +125,8 @@
             "type": "string"
         },
         "Version": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies MLS Software version, only `1.2.0` is supported\nnow. Changing this creates a new instance."
         },
         "MrsCluster": {
             "type": "array",

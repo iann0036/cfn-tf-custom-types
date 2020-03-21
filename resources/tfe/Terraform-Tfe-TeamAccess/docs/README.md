@@ -1,6 +1,6 @@
 # Terraform::Tfe::TeamAccess
 
-CloudFormation equivalent of tfe_team_access
+Associate a team to permissions on a workspace.
 
 ## Syntax
 
@@ -33,6 +33,9 @@ Properties:
 
 #### Access
 
+Type of access to grant. Valid values are `admin`,
+`read`, `plan`, or `write`.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +44,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TeamId
 
+ID of the team to add to the workspace.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +53,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WorkspaceId
+
+The workspace to which the team will be added,
+specified as a human-readable ID (`<ORGANIZATION>/<WORKSPACE>`).
 
 _Required_: Yes
 

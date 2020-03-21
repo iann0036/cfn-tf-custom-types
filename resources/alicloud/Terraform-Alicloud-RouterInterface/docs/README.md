@@ -1,6 +1,10 @@
 # Terraform::Alicloud::RouterInterface
 
-CloudFormation equivalent of alicloud_router_interface
+Provides a VPC router interface resource aim to build a connection between two VPCs.
+
+-> **NOTE:** Only one pair of connected router interfaces can exist between two routers. Up to 5 router interfaces can be created for each router and each account.
+
+-> **NOTE:** The router interface is not connected when it is created. It can be connected by means of resource [alicloud_router_interface_connection](https://www.terraform.io/docs/providers/alicloud/r/router_interface_connection.html).
 
 ## Syntax
 
@@ -51,6 +55,8 @@ Properties:
 
 #### Description
 
+Description of the router interface. It can be 2-256 characters long or left blank. It cannot start with http:// and https://.
+
 _Required_: No
 
 _Type_: String
@@ -58,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HealthCheckSourceIp
+
+Used as the Packet Source IP of health check for disaster recovery or ECMP. It is only valid when `router_type` is `VBR`. The IP must be an unused IP in the local VPC. It and `health_check_target_ip` must be specified at the same time.
 
 _Required_: No
 
@@ -67,6 +75,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HealthCheckTargetIp
 
+Used as the Packet Target IP of health check for disaster recovery or ECMP. It is only valid when `router_type` is `VBR`. The IP must be an unused IP in the local VPC. It and `health_check_source_ip` must be specified at the same time.
+
 _Required_: No
 
 _Type_: String
@@ -74,6 +84,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceChargeType
+
+The billing method of the router interface. Valid values are "PrePaid" and "PostPaid". Default to "PostPaid". Router Interface doesn't support "PrePaid" when region and opposite_region are the same.
 
 _Required_: No
 
@@ -83,6 +95,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name of the router interface. Length must be 2-80 characters long. Only Chinese characters, English letters, numbers, period (.), underline (_), or dash (-) are permitted.
+If it is not specified, the default value is interface ID. The name cannot start with http:// and https://.
+
 _Required_: No
 
 _Type_: String
@@ -90,6 +105,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OppositeAccessPointId
+
+It has been deprecated from version 1.11.0.
 
 _Required_: No
 
@@ -99,6 +116,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OppositeRegion
 
+The Region of peer side.
+
 _Required_: Yes
 
 _Type_: String
@@ -106,6 +125,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Period
+
+The duration that you will buy the resource, in month. It is valid when `instance_charge_type` is `PrePaid`. Default to 1. Valid values: [1-9, 12, 24, 36]. At present, the provider does not support modify "period" and you can do that via web console.
 
 _Required_: No
 
@@ -115,6 +136,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Role
 
+The role the router interface plays. Optional value: `InitiatingSide`, `AcceptingSide`.
+
 _Required_: Yes
 
 _Type_: String
@@ -122,6 +145,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RouterId
+
+The Router ID.
 
 _Required_: Yes
 
@@ -131,6 +156,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RouterType
 
+Router Type. Optional value: VRouter, VBR. Accepting side router interface type only be VRouter.
+
 _Required_: Yes
 
 _Type_: String
@@ -138,6 +165,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Specification
+
+Specification of router interfaces. It is valid when `role` is `InitiatingSide`. Accepting side's role is default to set as 'Negative'. For more about the specification, refer to [Router interface specification](https://www.alibabacloud.com/help/doc-detail/36037.htm).
 
 _Required_: No
 
@@ -163,21 +192,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AccessPointId
 
-Returns the <code>AccessPointId</code> value.
+It has been deprecated from version 1.11.0.
 
 #### OppositeInterfaceId
 
-Returns the <code>OppositeInterfaceId</code> value.
+It has been deprecated from version 1.11.0. Use resource alicloud_router_interface_connection's 'opposite_router_id' instead.
 
 #### OppositeInterfaceOwnerId
 
-Returns the <code>OppositeInterfaceOwnerId</code> value.
+It has been deprecated from version 1.11.0. Use resource alicloud_router_interface_connection's 'opposite_interface_id' instead.
 
 #### OppositeRouterId
 
-Returns the <code>OppositeRouterId</code> value.
+It has been deprecated from version 1.11.0. Use resource alicloud_router_interface_connection's 'opposite_router_id' instead.
 
 #### OppositeRouterType
 
-Returns the <code>OppositeRouterType</code> value.
+It has been deprecated from version 1.11.0. resource alicloud_router_interface_connection's 'opposite_router_type' instead.
 

@@ -12,16 +12,20 @@
             "type": "string"
         },
         "DefaultLeaseTtlSeconds": {
-            "type": "number"
+            "type": "number",
+            "description": "Default lease duration for tokens and secrets in seconds."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Human-friendly description of the mount."
         },
         "Local": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean flag that can be explicitly set to true to enforce local mount in HA environment."
         },
         "MaxLeaseTtlSeconds": {
-            "type": "number"
+            "type": "number",
+            "description": "Maximum possible lease duration for tokens and secrets in seconds."
         },
         "Options": {
             "type": "array",
@@ -41,16 +45,20 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Specifies mount type specific options that are passed to the backend."
         },
         "Path": {
-            "type": "string"
+            "type": "string",
+            "description": "Where the secret backend will be mounted."
         },
         "SealWrap": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean flag that can be explicitly set to true to enable seal wrapping for the mount, causing values stored by the mount to be wrapped by the seal's encryption capability."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of the backend, such as \"aws\"."
         }
     },
     "additionalProperties": false,

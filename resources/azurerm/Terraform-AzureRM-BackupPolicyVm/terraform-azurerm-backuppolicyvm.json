@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::BackupPolicyVm",
-    "description": "CloudFormation equivalent of azurerm_backup_policy_vm",
+    "description": "Manages an Azure Backup VM Backup Policy.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Backup": {
@@ -8,17 +8,20 @@
             "additionalProperties": false,
             "properties": {
                 "Frequency": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Sets the backup frequency. Must be either `Daily` or`Weekly`."
                 },
                 "Time": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The time of day to perform the backup in 24hour format."
                 },
                 "Weekdays": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "The days of the week to perform backups on. Must be one of `Sunday`, `Monday`, `Tuesday`, `Wednesday`, `Thursday`, `Friday` or `Saturday`."
                 }
             },
             "required": [
@@ -31,7 +34,8 @@
             "additionalProperties": false,
             "properties": {
                 "Count": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The number of daily backups to keep. Must be between `1` and `9999`."
                 }
             },
             "required": [
@@ -43,21 +47,24 @@
             "additionalProperties": false,
             "properties": {
                 "Count": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The number of monthly backups to keep. Must be between `1` and `9999`."
                 },
                 "Weekdays": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "The weekday backups to retain . Must be one of `Sunday`, `Monday`, `Tuesday`, `Wednesday`, `Thursday`, `Friday` or `Saturday`."
                 },
                 "Weeks": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "The weeks of the month to retain backups of. Must be one of `First`, `Second`, `Third`, `Fourth`, `Last`."
                 }
             },
             "required": [
@@ -71,14 +78,16 @@
             "additionalProperties": false,
             "properties": {
                 "Count": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The number of weekly backups to keep. Must be between `1` and `9999`."
                 },
                 "Weekdays": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "The weekday backups to retain. Must be one of `Sunday`, `Monday`, `Tuesday`, `Wednesday`, `Thursday`, `Friday` or `Saturday`."
                 }
             },
             "required": [
@@ -91,28 +100,32 @@
             "additionalProperties": false,
             "properties": {
                 "Count": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The number of yearly backups to keep. Must be between `1` and `9999`."
                 },
                 "Months": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "The months of the year to retain backups of. Must be one of `January`, `February`, `March`, `April`, `May`, `June`, `July`, `Augest`, `September`, `October`, `November` and `December`."
                 },
                 "Weekdays": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "The weekday backups to retain . Must be one of `Sunday`, `Monday`, `Tuesday`, `Wednesday`, `Thursday`, `Friday` or `Saturday`."
                 },
                 "Weeks": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "The weeks of the month to retain backups of. Must be one of `First`, `Second`, `Third`, `Fourth`, `Last`."
                 }
             },
             "required": [
@@ -148,13 +161,16 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Backup Policy. Changing this forces a new resource to be created."
         },
         "RecoveryVaultName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Recovery Services Vault to use. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the policy. Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -174,10 +190,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Timezone": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the timezone. Defaults to `UTC`."
         },
         "Backup": {
             "type": "array",

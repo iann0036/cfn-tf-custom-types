@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::VpnaasEndpointGroupV2
 
-CloudFormation equivalent of opentelekomcloud_vpnaas_endpoint_group_v2
+Manages a V2 Endpoint Group resource within OpenTelekomCloud.
 
 ## Syntax
 
@@ -45,6 +45,9 @@ Properties:
 
 #### Description
 
+The human-readable description for the group.
+Changing this updates the description of the existing group.
+
 _Required_: No
 
 _Type_: String
@@ -52,6 +55,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Endpoints
+
+List of endpoints of the same type, for the endpoint group. The values will depend on the type.
+Changing this creates a new group.
 
 _Required_: No
 
@@ -61,6 +67,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the group. Changing this updates the name of
+the existing group.
+
 _Required_: No
 
 _Type_: String
@@ -68,6 +77,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region in which to obtain the V2 Networking client.
+A Networking client is needed to create an endpoint group. If omitted, the
+`region` argument of the provider is used. Changing this creates a new
+group.
 
 _Required_: No
 
@@ -77,6 +91,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TenantId
 
+The owner of the group. Required if admin wants to
+create an endpoint group for another project. Changing this creates a new group.
+
 _Required_: No
 
 _Type_: String
@@ -85,6 +102,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Type
 
+The type of the endpoints in the group. A valid value is subnet, cidr, network, router, or vlan.
+Changing this creates a new group.
+
 _Required_: No
 
 _Type_: String
@@ -92,6 +112,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ValueSpecs
+
+Map of additional options.
 
 _Required_: No
 

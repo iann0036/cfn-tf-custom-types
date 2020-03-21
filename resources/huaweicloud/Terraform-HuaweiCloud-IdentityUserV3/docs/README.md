@@ -1,6 +1,9 @@
 # Terraform::HuaweiCloud::IdentityUserV3
 
-CloudFormation equivalent of huaweicloud_identity_user_v3
+Manages a User resource within HuaweiCloud IAM service.
+
+Note: You _must_ have admin privileges in your HuaweiCloud cloud to use
+this resource.
 
 ## Syntax
 
@@ -41,6 +44,8 @@ Properties:
 
 #### DefaultProjectId
 
+The default project this user belongs to.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+A description of the user.
 
 _Required_: No
 
@@ -57,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DomainId
 
+The domain this user belongs to.
+
 _Required_: No
 
 _Type_: String
@@ -64,6 +73,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Enabled
+
+Whether the user is enabled or disabled. Valid
+values are `true` and `false`.
 
 _Required_: No
 
@@ -73,6 +85,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the user. The user name consists of 5 to 32
+characters. It can contain only uppercase letters, lowercase letters,
+digits, spaces, and special characters (-_) and cannot start with a digit.
+
 _Required_: Yes
 
 _Type_: String
@@ -81,6 +97,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Password
 
+The password for the user. It must contain at least
+two of the following character types: uppercase letters, lowercase letters,
+digits, and special characters.
+
 _Required_: No
 
 _Type_: String
@@ -88,6 +108,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region in which to obtain the V3 Keystone client.
+If omitted, the `region` argument of the provider is used. Changing this
+creates a new User.
 
 _Required_: No
 

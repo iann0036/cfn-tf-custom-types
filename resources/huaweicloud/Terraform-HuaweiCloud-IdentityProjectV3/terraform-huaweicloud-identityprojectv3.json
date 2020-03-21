@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HuaweiCloud::IdentityProjectV3",
-    "description": "CloudFormation equivalent of huaweicloud_identity_project_v3",
+    "description": "Manages a Project resource within HuaweiCloud Identity And Access \nManagement service.\n\nNote: You _must_ have security admin privileges in your HuaweiCloud \ncloud to use this resource. please refer to [User Management Model](\nhttps://docs.otc.t-systems.com/en-us/usermanual/iam/iam_01_0034.html)",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,19 +9,24 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description of the project."
         },
         "DomainId": {
-            "type": "string"
+            "type": "string",
+            "description": "The domain this project belongs to. Changing this\ncreates a new Project."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the project. it must start with\nID of an existing region_ and be less than or equal to 64 characters.\nExample: eu-de_project1."
         },
         "ParentId": {
-            "type": "string"
+            "type": "string",
+            "description": "The parent of this project. Changing this creates\na new Project."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the IAM client.\nIf omitted, the `region` argument of the provider is used. Changing this\ncreates a new Project."
         }
     },
     "additionalProperties": false,

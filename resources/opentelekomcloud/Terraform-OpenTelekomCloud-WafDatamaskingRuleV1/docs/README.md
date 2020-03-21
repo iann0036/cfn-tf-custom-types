@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::WafDatamaskingRuleV1
 
-CloudFormation equivalent of opentelekomcloud_waf_datamasking_rule_v1
+Manages a WAF Data Masking Rule resource within OpenTelekomCloud.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### Category
 
+Specifies the masked field. The options are params and header.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Index
+
+Specifies the masked subfield.
 
 _Required_: Yes
 
@@ -53,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PolicyId
 
+The WAF policy ID. Changing this creates a new rule.
+
 _Required_: Yes
 
 _Type_: String
@@ -60,6 +66,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Url
+
+Specifies the URL to which the data masking rule applies.
 
 _Required_: Yes
 

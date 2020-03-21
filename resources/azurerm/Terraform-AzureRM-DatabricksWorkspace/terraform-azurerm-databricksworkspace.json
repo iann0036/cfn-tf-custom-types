@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::DatabricksWorkspace",
-    "description": "CloudFormation equivalent of azurerm_databricks_workspace",
+    "description": "Manages a Databricks Workspace",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "CustomParameters": {
@@ -8,16 +8,20 @@
             "additionalProperties": false,
             "properties": {
                 "NoPublicIp": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Are public IP Addresses not allowed?."
                 },
                 "PrivateSubnetName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the Private Subnet within the Virtual Network. Required if `virtual_network_id` is set."
                 },
                 "PublicSubnetName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the Public Subnet within the Virtual Network. Required if `virtual_network_id` is set."
                 },
                 "VirtualNetworkId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of a Virtual Network where this Databricks Cluster should be created."
                 }
             },
             "required": []
@@ -48,22 +52,27 @@
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource has to be created. Changing this forces a new resource to be created."
         },
         "ManagedResourceGroupId": {
             "type": "string"
         },
         "ManagedResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group where Azure should place the managed Databricks resources. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Databricks Workspace resource. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Resource Group in which the Databricks Workspace should exist. Changing this forces a new resource to be created."
         },
         "Sku": {
-            "type": "string"
+            "type": "string",
+            "description": "The `sku` to use for the Databricks Workspace. Possible values are `standard`, `premium`, or `trial`. Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -83,7 +92,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "CustomParameters": {
             "type": "array",

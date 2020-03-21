@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HuaweiCloud::CsbsBackupV1",
-    "description": "CloudFormation equivalent of huaweicloud_csbs_backup_v1",
+    "description": "Provides an HuaweiCloud Backup of Resources.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,22 +23,26 @@
             "type": "string"
         },
         "BackupName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name for the backup. The value consists of 1 to 255 characters and can contain only letters, digits, underscores (_), and hyphens (-). Changing backup_name creates a new backup."
         },
         "BackupRecordId": {
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Backup description. The value consists of 0 to 255 characters and must not contain a greater-than sign (>) or less-than sign (<). Changing description creates a new backup."
         },
         "Region": {
             "type": "string"
         },
         "ResourceId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the target to which the backup is restored. Changing this creates a new backup."
         },
         "ResourceType": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of the target to which the backup is restored. The default value is **OS::Nova::Server** for an ECS. Changing this creates a new backup."
         },
         "Status": {
             "type": "string"

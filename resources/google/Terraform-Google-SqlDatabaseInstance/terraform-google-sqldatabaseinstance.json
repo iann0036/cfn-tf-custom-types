@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::SqlDatabaseInstance",
-    "description": "CloudFormation equivalent of google_sql_database_instance",
+    "description": "Creates a new Google SQL Database Instance. For more information, see the [official documentation](https://cloud.google.com/sql/),\nor the [JSON API](https://cloud.google.com/sql/docs/admin-api/v1beta4/instances).\n\n~> **NOTE on `google_sql_database_instance`:** - First-generation instances have been\ndeprecated and should no longer be created, see [upgrade docs](https://cloud.google.com/sql/docs/mysql/upgrade-2nd-gen)\nfor more details.\nTo upgrade your First-generation instance, update your Terraform config that the instance has\n* `settings.ip_configuration.ipv4_enabled=true`\n* `settings.backup_configuration.enabled=true`\n* `settings.backup_configuration.binary_log_enabled=true`.  \nApply the terraform config, then upgrade the instance in the console as described in the documentation.\nOnce upgraded, update the following attributes in your Terraform config to the correct value according to\nthe above documentation:\n* `region`\n* `database_version` (if applicable)\n* `tier`  \nRemove any fields that are not applicable to Second-generation instances:\n* `settings.crash_safe_replication`\n* `settings.replication_type`\n* `settings.authorized_gae_applications`\nAnd change values to appropriate values for Second-generation instances for:\n* `activation_policy` (\"ON_DEMAND\" is no longer an option)\n* `pricing_plan` (\"PER_USE\" is now the only valid option)\nChange `settings.backup_configuration.enabled` attribute back to its desired value and apply as necessary.\n\n~> **NOTE on `google_sql_database_instance`:** - Second-generation instances include a\ndefault 'root'@'%' user with no password. This user will be deleted by Terraform on\ninstance creation. You should use `google_sql_user` to define a custom user with\na restricted host and strong password.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ReplicaConfiguration": {
@@ -48,38 +48,48 @@
             "additionalProperties": false,
             "properties": {
                 "ActivationPolicy": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "This specifies when the instance should be\nactive. Can be either `ALWAYS`, `NEVER` or `ON_DEMAND`."
                 },
                 "AuthorizedGaeApplications": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "This property is only applicable to First Generation instances.\nFirst Generation instances are now deprecated, see [here](https://cloud.google.com/sql/docs/mysql/upgrade-2nd-gen)\nfor information on how to upgrade to Second Generation instances.\nA list of Google App Engine (GAE) project names that are allowed to access this instance."
                 },
                 "AvailabilityType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "This specifies whether a PostgreSQL instance\nshould be set up for high availability (`REGIONAL`) or single zone (`ZONAL`)."
                 },
                 "CrashSafeReplication": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "This property is only applicable to First Generation instances.\nFirst Generation instances are now deprecated, see [here](https://cloud.google.com/sql/docs/mysql/upgrade-2nd-gen)\nfor information on how to upgrade to Second Generation instances.\nSpecific to read instances, indicates\nwhen crash-safe replication flags are enabled."
                 },
                 "DiskAutoresize": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Configuration to increase storage size automatically.  Note that future `terraform apply` calls will attempt to resize the disk to the value specified in `disk_size` - if this is set, do not set `disk_size`."
                 },
                 "DiskSize": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The size of data disk, in GB. Size of a running instance cannot be reduced but can be increased."
                 },
                 "DiskType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The type of data disk: PD_SSD or PD_HDD."
                 },
                 "PricingPlan": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Pricing plan for this instance, can only be `PER_USE`."
                 },
                 "ReplicationType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "This property is only applicable to First Generation instances.\nFirst Generation instances are now deprecated, see [here](https://cloud.google.com/sql/docs/mysql/upgrade-2nd-gen)\nfor information on how to upgrade to Second Generation instances.\nReplication type for this instance, can be one of `ASYNCHRONOUS` or `SYNCHRONOUS`."
                 },
                 "Tier": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The machine type to use. See [tiers](https://cloud.google.com/sql/docs/admin-api/v1beta4/tiers)\nfor more details and supported versions. Postgres supports only shared-core machine types such as `db-f1-micro`,\nand custom machine types such as `db-custom-2-13312`. See the [Custom Machine Type Documentation](https://cloud.google.com/compute/docs/instances/creating-instance-with-custom-machine-type#create) to learn about specifying custom machine types."
                 },
                 "UserLabels": {
                     "type": "array",
@@ -99,7 +109,8 @@
                             "Key",
                             "Value"
                         ]
-                    }
+                    },
+                    "description": "A set of key/value user label pairs to assign to the instance."
                 },
                 "BackupConfiguration": {
                     "type": "array",
@@ -272,7 +283,8 @@
             "type": "string"
         },
         "DatabaseVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "The MySQL, PostgreSQL or\nSQL Server (beta) version to use. Supported values include `MYSQL_5_6`,\n`MYSQL_5_7`, `POSTGRES_9_6`,`POSTGRES_11`, `SQLSERVER_2017_STANDARD`,\n`SQLSERVER_2017_ENTERPRISE`, `SQLSERVER_2017_EXPRESS`, `SQLSERVER_2017_WEB`.\n[Database Version Policies](https://cloud.google.com/sql/docs/sqlserver/db-versions)\nincludes an up-to-date reference of supported versions."
         },
         "FirstIpAddress": {
             "type": "string"
@@ -297,22 +309,26 @@
             }
         },
         "MasterInstanceName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the instance that will act as\nthe master in the replication setup. Note, this requires the master to have\n`binary_log_enabled` set, as well as existing backups."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the instance. If the name is left\nblank, Terraform will randomly generate one when the instance is first\ncreated. This is done because after a name is used, it cannot be reused for\nup to [one week](https://cloud.google.com/sql/docs/delete-instance)."
         },
         "PrivateIpAddress": {
             "type": "string"
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs. If it\nis not provided, the provider project is used."
         },
         "PublicIpAddress": {
             "type": "string"
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region the instance will sit in. Note, Cloud SQL is not\navailable in all regions - choose from one of the options listed [here](https://cloud.google.com/sql/docs/mysql/instance-locations).\nA valid region must be provided to use this resource. If a region is not provided in the resource definition,\nthe provider region will be used instead, but this will be an apply-time error for instances if the provider\nregion is not supported with Cloud SQL. If you choose not to provide the `region` argument for this resource,\nmake sure you understand this."
         },
         "SelfLink": {
             "type": "string"

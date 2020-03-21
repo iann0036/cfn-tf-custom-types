@@ -1,6 +1,6 @@
 # Terraform::Vault::ConsulSecretBackendRole
 
-CloudFormation equivalent of vault_consul_secret_backend_role
+Manages a Consul secrets role for a Consul secrets engine in Vault. Consul secret backends can then issue Consul tokens.
 
 ## Syntax
 
@@ -44,6 +44,8 @@ Properties:
 
 #### Backend
 
+The unique name of an existing Consul secrets backend mount. Must not begin or end with a `/`. One of `path` or `backend` is required.
+
 _Required_: No
 
 _Type_: String
@@ -51,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Local
+
+Indicates that the token should not be replicated globally and instead be local to the current datacenter.
 
 _Required_: No
 
@@ -60,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxTtl
 
+Maximum TTL for leases associated with this role, in seconds.
+
 _Required_: No
 
 _Type_: Double
@@ -67,6 +73,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the Consul secrets engine role to create.
 
 _Required_: Yes
 
@@ -76,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Path
 
+The unique name of an existing Consul secrets backend mount. Must not begin or end with a `/`. **Deprecated**.
+
 _Required_: No
 
 _Type_: String
@@ -83,6 +93,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Policies
+
+The list of Consul ACL policies to associate with these roles.
 
 _Required_: Yes
 
@@ -92,6 +104,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TokenType
 
+Specifies the type of token to create when using this role. Valid values are "client" or "management".
+
 _Required_: No
 
 _Type_: String
@@ -99,6 +113,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ttl
+
+Specifies the TTL for this role.
 
 _Required_: No
 

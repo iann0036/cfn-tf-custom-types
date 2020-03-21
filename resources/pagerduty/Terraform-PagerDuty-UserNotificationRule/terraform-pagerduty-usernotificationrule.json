@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::PagerDuty::UserNotificationRule",
-    "description": "CloudFormation equivalent of pagerduty_user_notification_rule",
+    "description": "A [notification rule](https://v2.developer.pagerduty.com/v2/page/api-reference#!/Users/get_users_id_notification_rules_notification_rule_id) configures where and when a PagerDuty user is notified when a triggered incident is assigned to him. Unique notification rules can be created for both high and low-urgency incidents.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -26,16 +26,20 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A contact method block, configured as a block described below."
         },
         "StartDelayInMinutes": {
-            "type": "number"
+            "type": "number",
+            "description": "The delay before firing the rule, in minutes.\n* `urgency` - (Required) Which incident urgency this rule is used for. Account must have the `urgencies` ability to have a low urgency notification rule. Can be `high` or `low`.\n* `contact_method` - (Required) A contact method block, configured as a block described below."
         },
         "Urgency": {
-            "type": "string"
+            "type": "string",
+            "description": "Which incident urgency this rule is used for. Account must have the `urgencies` ability to have a low urgency notification rule. Can be `high` or `low`.\n* `contact_method` - (Required) A contact method block, configured as a block described below."
         },
         "UserId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the user.\n* `start_delay_in_minutes` - (Required) The delay before firing the rule, in minutes.\n* `urgency` - (Required) Which incident urgency this rule is used for. Account must have the `urgencies` ability to have a low urgency notification rule. Can be `high` or `low`.\n* `contact_method` - (Required) A contact method block, configured as a block described below."
         }
     },
     "additionalProperties": false,

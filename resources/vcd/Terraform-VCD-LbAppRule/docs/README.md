@@ -1,6 +1,18 @@
 # Terraform::VCD::LbAppRule
 
-CloudFormation equivalent of vcd_lb_app_rule
+Provides a vCloud Director Edge Gateway Load Balancer Application Rule resource. An application rule
+allows to directly manipulate and manage IP application traffic with load balancer.
+
+~> **Note:** To make load balancing work one must ensure that load balancing is enabled on edge
+gateway (edge gateway must be advanced).
+This depends on NSX version to work properly. Please refer to [VMware Product Interoperability
+Matrices](https://www.vmware.com/resources/compatibility/sim/interop_matrix.php#interop&29=&93=) 
+to check supported vCloud director and NSX for vSphere configurations.
+
+~> **Note:** The vCloud Director API for NSX supports a subset of the operations and objects defined
+in the NSX vSphere API Guide. The API supports NSX 6.2, 6.3, and 6.4.
+
+Supported in provider *v2.4+*
 
 ## Syntax
 
@@ -37,6 +49,8 @@ Properties:
 
 #### EdgeGateway
 
+The name of the edge gateway on which the application rule is to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +58,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Application rule name.
 
 _Required_: Yes
 
@@ -53,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Org
 
+The name of organization to use, optional if defined at provider level. Useful when connected as sysadmin working across different organisations.
+
 _Required_: No
 
 _Type_: String
@@ -61,6 +79,12 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Script
 
+A multiline application rule script.
+Terraform's [HEREDOC syntax](https://www.terraform.io/docs/configuration/expressions.html#string-literals)
+may be useful for multiline scripts. **Note:** For information on
+the application rule syntax, see more in [vCloud Director documentation]
+(https://docs.vmware.com/en/vCloud-Director/9.7/com.vmware.vcloud.tenantportal.doc/GUID-AFF9F70F-85C9-4053-BA69-F2B062F34C7F.html).
+
 _Required_: Yes
 
 _Type_: String
@@ -68,6 +92,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vdc
+
+The name of VDC to use, optional if defined at provider level.
 
 _Required_: No
 

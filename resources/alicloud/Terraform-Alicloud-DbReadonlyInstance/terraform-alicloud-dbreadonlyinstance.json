@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::DbReadonlyInstance",
-    "description": "CloudFormation equivalent of alicloud_db_readonly_instance",
+    "description": "Provides an RDS readonly instance resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Parameters": {
@@ -48,19 +48,24 @@
             "type": "string"
         },
         "EngineVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "Database version. Value options can refer to the latest docs [CreateDBInstance](https://www.alibabacloud.com/help/doc-detail/26228.htm) `EngineVersion`."
         },
         "InstanceName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of DB instance. It a string of 2 to 256 characters."
         },
         "InstanceStorage": {
-            "type": "number"
+            "type": "number",
+            "description": "User-defined DB instance storage space. Value range: [5, 2000] for MySQL/SQL Server HA dual node edition. Increase progressively at a rate of 5 GB. For details, see [Instance type table](https://www.alibabacloud.com/help/doc-detail/26312.htm)."
         },
         "InstanceType": {
-            "type": "string"
+            "type": "string",
+            "description": "DB Instance type. For details, see [Instance type table](https://www.alibabacloud.com/help/doc-detail/26312.htm)."
         },
         "MasterDbInstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the master instance."
         },
         "Port": {
             "type": "string"
@@ -83,13 +88,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource.\n- Key: It can be up to 64 characters in length. It cannot begin with \"aliyun\", \"acs:\", \"http://\", or \"https://\". It cannot be a null string.\n- Value: It can be up to 128 characters in length. It cannot begin with \"aliyun\", \"acs:\", \"http://\", or \"https://\". It can be a null string."
         },
         "VswitchId": {
-            "type": "string"
+            "type": "string",
+            "description": "The virtual switch ID to launch DB instances in one VPC."
         },
         "ZoneId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Zone to launch the DB instance."
         },
         "Parameters": {
             "type": "array",

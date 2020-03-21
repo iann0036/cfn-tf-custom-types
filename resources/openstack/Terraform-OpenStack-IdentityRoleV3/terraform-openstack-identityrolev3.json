@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::IdentityRoleV3",
-    "description": "CloudFormation equivalent of openstack_identity_role_v3",
+    "description": "Manages a V3 Role resource within OpenStack Keystone.\n\nNote: You _must_ have admin privileges in your OpenStack cloud to use\nthis resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "DomainId": {
-            "type": "string"
+            "type": "string",
+            "description": "The domain the role belongs to."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the role."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the V3 Keystone client.\nIf omitted, the `region` argument of the provider is used. Changing this\ncreates a new Role."
         }
     },
     "additionalProperties": false,

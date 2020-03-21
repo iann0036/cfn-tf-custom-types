@@ -1,6 +1,10 @@
 # Terraform::Alicloud::DdosbgpInstance
 
-CloudFormation equivalent of alicloud_ddosbgp_instance
+Anti-DDoS Advanced instance resource. "Ddosbgp" is the short term of this product.
+
+-> **NOTE:** The endpoint of bssopenapi used only support "business.aliyuncs.com" at present.
+
+-> **NOTE:** Available in 1.57.0+ .
 
 ## Syntax
 
@@ -41,6 +45,8 @@ Properties:
 
 #### Bandwidth
 
+Elastic defend bandwidth of the instance. This value must be larger than the base defend bandwidth. Valid values: 51,91,101,201,301. The unit is Gbps.
+
 _Required_: Yes
 
 _Type_: Double
@@ -48,6 +54,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BaseBandwidth
+
+Base defend bandwidth of the instance. Valid values: 20. The unit is Gbps. Default to `20`.
 
 _Required_: No
 
@@ -57,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IpCount
 
+IP count of the instance. Valid values: 100.
+
 _Required_: Yes
 
 _Type_: Double
@@ -64,6 +74,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IpType
+
+IP version of the instance. Valid values: IPv4,IPv6.
 
 _Required_: Yes
 
@@ -73,6 +85,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name of the instance. This name can have a string of 1 to 63 characters.
+
 _Required_: No
 
 _Type_: String
@@ -81,6 +95,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Period
 
+The duration that you will buy Ddosbgp instance (in month). Valid values: [1~9], 12, 24, 36. Default to 12. At present, the provider does not support modify "period".
+
 _Required_: No
 
 _Type_: Double
@@ -88,6 +104,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+Type of the instance. Valid values: Enterprise,Professional. Default to `Enterprise`.
 
 _Required_: No
 

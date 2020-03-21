@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HuaweiCloud::S3Bucket",
-    "description": "CloudFormation equivalent of huaweicloud_s3_bucket",
+    "description": "Provides a S3 bucket resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "CorsRule": {
@@ -52,13 +52,16 @@
                     "type": "number"
                 },
                 "Enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Specifies lifecycle rule status."
                 },
                 "Id": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Unique identifier for the rule."
                 },
                 "Prefix": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Object keyname prefix identifying one or more objects to which the rule applies. Set as an empty string to replicate the whole bucket."
                 },
                 "Expiration": {
                     "type": "array",
@@ -84,10 +87,12 @@
             "additionalProperties": false,
             "properties": {
                 "TargetBucket": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the bucket that will receive the log objects."
                 },
                 "TargetPrefix": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "To specify a key prefix for log objects."
                 }
             },
             "required": [
@@ -99,10 +104,12 @@
             "additionalProperties": false,
             "properties": {
                 "Enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Enable versioning. Once you version-enable a bucket, it can never return to an unversioned state. You can, however, suspend versioning on that bucket."
                 },
                 "MfaDelete": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Enable MFA delete for either `Change the versioning state of your bucket` or `Permanently delete an object version`. Default is `false`."
                 }
             },
             "required": []
@@ -112,16 +119,20 @@
             "additionalProperties": false,
             "properties": {
                 "ErrorDocument": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "An absolute path to the document to return in case of a 4XX error."
                 },
                 "IndexDocument": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Amazon S3 returns this index document when requests are made to the root domain or any of the subfolders."
                 },
                 "RedirectAllRequestsTo": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A hostname to redirect all website requests for this bucket to. Hostname can optionally be prefixed with a protocol (`http://` or `https://`) to use when redirecting requests. The default is the protocol that is used in the original request."
                 },
                 "RoutingRules": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A json array containing [routing rules](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules.html)\ndescribing redirect behavior and when redirects are applied."
                 }
             },
             "required": []
@@ -159,31 +170,37 @@
             "type": "string"
         },
         "Acl": {
-            "type": "string"
+            "type": "string",
+            "description": "The [canned ACL](https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl) to apply. Defaults to \"private\"."
         },
         "Arn": {
             "type": "string"
         },
         "Bucket": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the bucket. If omitted, Terraform will assign a random, unique name."
         },
         "BucketDomainName": {
             "type": "string"
         },
         "BucketPrefix": {
-            "type": "string"
+            "type": "string",
+            "description": "Creates a unique bucket name beginning with the specified prefix. Conflicts with `bucket`."
         },
         "ForceDestroy": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "A boolean that indicates all objects should be deleted from the bucket so that the bucket can be destroyed without error. These objects are *not* recoverable."
         },
         "HostedZoneId": {
             "type": "string"
         },
         "Policy": {
-            "type": "string"
+            "type": "string",
+            "description": "A valid [bucket policy](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html) JSON document. Note that if the policy document is not specific enough (but still valid), Terraform may view the policy as constantly changing in a `terraform plan`. In this case, please make sure you use the verbose/specific version of the policy."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "If specified, the region this bucket should reside in. Otherwise, the region used by the callee."
         },
         "Tags": {
             "type": "array",
@@ -203,7 +220,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the bucket."
         },
         "WebsiteDomain": {
             "type": "string"

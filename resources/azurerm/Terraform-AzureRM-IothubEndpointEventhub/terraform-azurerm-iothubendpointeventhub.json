@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::IothubEndpointEventhub",
-    "description": "CloudFormation equivalent of azurerm_iothub_endpoint_eventhub",
+    "description": "Manages an IotHub ServiceBus Queue Endpoint\n\n~> **NOTE:** Endpoints can be defined either directly on the `azurerm_iothub` resource, or using the `azurerm_iothub_endpoint_*` resources - but the two ways of defining the endpoints cannot be used together. If both are used against the same IoTHub, spurious changes will occur. Also, defining a `azurerm_iothub_endpoint_*` resource and another endpoint of a different type directly on the `azurerm_iothub` resource is not supported.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,13 +29,15 @@
             "type": "string"
         },
         "ConnectionString": {
-            "type": "string"
+            "type": "string",
+            "description": "The connection string for the endpoint."
         },
         "IothubName": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the endpoint. The name must be unique across endpoint types. The following names are reserved:  `events`, `operationsMonitoringEvents`, `fileNotifications` and `$default`."
         },
         "ResourceGroupName": {
             "type": "string"

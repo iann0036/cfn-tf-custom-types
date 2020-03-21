@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### KeyData
 
+The Public SSH Key used to access the cluster. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String

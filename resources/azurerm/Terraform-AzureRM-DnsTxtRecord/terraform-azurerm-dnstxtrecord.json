@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::DnsTxtRecord",
-    "description": "CloudFormation equivalent of azurerm_dns_txt_record",
+    "description": "Enables you to manage DNS TXT Records within Azure DNS.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Record": {
@@ -8,7 +8,8 @@
             "additionalProperties": false,
             "properties": {
                 "Value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The value of the record. Max length: 1024 characters."
                 }
             },
             "required": [
@@ -44,10 +45,12 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the DNS TXT Record."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the resource group where the resource exists. Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -67,13 +70,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Ttl": {
-            "type": "number"
+            "type": "number",
+            "description": "The Time To Live (TTL) of the DNS record in seconds."
         },
         "ZoneName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the DNS Zone where the DNS Zone (parent resource) exists. Changing this forces a new resource to be created."
         },
         "Record": {
             "type": "array",

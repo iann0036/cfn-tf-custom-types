@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Fastly::ServiceV1",
-    "description": "CloudFormation equivalent of fastly_service_v1",
+    "description": "Provides a Fastly Service, representing the configuration for a website, app,\nAPI, or anything else to be served through Fastly. A Service encompasses Domains\nand Backends.\n\nThe Service resource requires a domain name that is correctly set up to direct\ntraffic to the Fastly service. See Fastly's guide on [Adding CNAME Records][fastly-cname]\non their documentation site for guidance.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Acl": {
@@ -8,7 +8,8 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A unique name to identify this ACL."
                 }
             },
             "required": [
@@ -20,79 +21,104 @@
             "additionalProperties": false,
             "properties": {
                 "Address": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "An IPv4, hostname, or IPv6 address for the Backend."
                 },
                 "AutoLoadbalance": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Denotes if this Backend should be\nincluded in the pool of backends that requests are load balanced against.\nDefault `true`."
                 },
                 "BetweenBytesTimeout": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "How long to wait between bytes in milliseconds. Default `10000`."
                 },
                 "ConnectTimeout": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "How long to wait for a timeout in milliseconds.\nDefault `1000`."
                 },
                 "ErrorThreshold": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Number of errors to allow before the Backend is marked as down. Default `0`."
                 },
                 "FirstByteTimeout": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "How long to wait for the first bytes in milliseconds. Default `15000`."
                 },
                 "Healthcheck": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Name of a defined `healthcheck` to assign to this backend."
                 },
                 "MaxConn": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Maximum number of connections for this Backend.\nDefault `200`."
                 },
                 "MaxTlsVersion": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Maximum allowed TLS version on SSL connections to this backend."
                 },
                 "MinTlsVersion": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Minimum allowed TLS version on SSL connections to this backend."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The unique name for the condition."
                 },
                 "OverrideHost": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The hostname to override the Host header."
                 },
                 "Port": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The port number on which the Backend responds. Default `80`."
                 },
                 "RequestCondition": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Name of already defined `condition`, which if met, will select this backend during a request."
                 },
                 "Shield": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The POP of the shield designated to reduce inbound load."
                 },
                 "SslCaCert": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "CA certificate attached to origin."
                 },
                 "SslCertHostname": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Overrides ssl_hostname, but only for cert verification. Does not affect SNI at all."
                 },
                 "SslCheckCert": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Be strict about checking SSL certs. Default `true`."
                 },
                 "SslCiphers": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Comma separated list of OpenSSL Ciphers to try when negotiating to the backend."
                 },
                 "SslClientCert": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Client certificate attached to origin. Used when connecting to the backend."
                 },
                 "SslClientKey": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Client key attached to origin. Used when connecting to the backend."
                 },
                 "SslHostname": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Used for both SNI during the TLS handshake and to validate the cert."
                 },
                 "SslSniHostname": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Overrides ssl_hostname, but only for SNI in the handshake. Does not affect cert validation at all."
                 },
                 "UseSsl": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Whether or not to use SSL to reach the backend. Default `false`."
                 },
                 "Weight": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The [portion of traffic](https://docs.fastly.com/guides/performance-tuning/load-balancing-configuration.html#how-weight-affects-load-balancing) to send to this Backend. Each Backend receives `weight / total` of the traffic. Default `100`."
                 }
             },
             "required": [
@@ -105,34 +131,44 @@
             "additionalProperties": false,
             "properties": {
                 "Dataset": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of your BigQuery dataset."
                 },
                 "Email": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The email for the service account with write access to your BigQuery dataset. If not provided, this will be pulled from a `FASTLY_BQ_EMAIL` environment variable."
                 },
                 "Format": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Apache style log formatting. Must produce JSON that matches the schema of your BigQuery table."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A unique name to identify this BigQuery logging endpoint."
                 },
                 "Placement": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Where in the generated VCL the logging call should be placed; one of: `none` or `waf_debug`."
                 },
                 "ProjectId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of your GCP project."
                 },
                 "ResponseCondition": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Name of already defined `condition` to apply. This `condition` must be of type `RESPONSE`. For detailed information about Conditionals, see [Fastly's Documentation on Conditionals][fastly-conditionals]."
                 },
                 "SecretKey": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The secret key associated with the sservice account that has write access to your BigQuery table. If not provided, this will be pulled from the `FASTLY_BQ_SECRET_KEY` environment variable. Typical format for this is a private key in a string with newlines."
                 },
                 "Table": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of your BigQuery table."
                 },
                 "Template": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Big query table name suffix template. If set will be interpreted as a strftime compatible string and used as the [Template Suffix for your table](https://cloud.google.com/bigquery/streaming-data-into-bigquery#template-tables)."
                 }
             },
             "required": [
@@ -147,46 +183,60 @@
             "additionalProperties": false,
             "properties": {
                 "AccountName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The unique Azure Blob Storage namespace in which your data objects are stored."
                 },
                 "Container": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the Azure Blob Storage container in which to store logs."
                 },
                 "Format": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Apache-style string or VCL variables to use for log formatting. Default `%h %l %u %t \\\"%r\\\" %>s %b`."
                 },
                 "FormatVersion": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The version of the custom logging format used for the configured endpoint. Can be either `1` or `2`. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. Default `2`."
                 },
                 "GzipLevel": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Level of GZIP compression from `0`to `9`. `0` means no compression. `1` is the fastest and the least compressed version, `9` is the slowest and the most compressed version. Default `0`."
                 },
                 "MessageType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "How the message should be formatted. Can be either `classic`, `loggly`, `logplex` or `blank`.  Default `classic`."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A unique name to identify the Azure Blob Storage endpoint."
                 },
                 "Path": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The path to upload logs to. Must end with a trailing slash. If this field is left empty, the files will be saved in the container's root path."
                 },
                 "Period": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "How frequently the logs should be transferred in seconds. Default `3600`."
                 },
                 "Placement": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Where in the generated VCL the logging call should be placed, overriding any `format_version` default. Can be either `none` or `waf_debug`."
                 },
                 "PublicKey": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A PGP public key that Fastly will use to encrypt your log files before writing them to disk."
                 },
                 "ResponseCondition": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the `condition` to apply. If empty, always execute."
                 },
                 "SasToken": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Azure shared access signature providing write access to the blob service objects. Be sure to update your token before it expires or the logging functionality will not work."
                 },
                 "TimestampFormat": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "`strftime` specified timestamp formatting. Default `%Y-%m-%dT%H:%M:%S.000`."
                 }
             },
             "required": [
@@ -200,19 +250,24 @@
             "additionalProperties": false,
             "properties": {
                 "Action": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "One of `cache`, `pass`, or `restart`, as defined\non Fastly's documentation under [\"Caching action descriptions\"](https://docs.fastly.com/guides/performance-tuning/controlling-caching#caching-action-descriptions)."
                 },
                 "CacheCondition": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Name of already defined `condition` used to test whether this settings object should be used. This `condition` must be of type `CACHE`."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Unique name for this Cache Setting."
                 },
                 "StaleTtl": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Max \"Time To Live\" for stale (unreachable) objects."
                 },
                 "Ttl": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The Time-To-Live (TTL) for the object."
                 }
             },
             "required": [
@@ -224,7 +279,8 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Unique name to refer to this Request Setting."
                 },
                 "Priority": {
                     "type": "number"
@@ -247,10 +303,12 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A unique name to identify this dictionary."
                 },
                 "WriteOnly": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "If `true`, the dictionary is a private dictionary, and items are not readable in the UI or\nvia API. Default is `false`. It is important to note that changing this attribute will delete and recreate the\ndictionary, discard the current items in the dictionary. Using a write-only/private dictionary should only be done if\nthe items are managed outside of Terraform."
                 }
             },
             "required": [
@@ -266,28 +324,36 @@
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Names of defined backends to map the director to. Example: `[ \"origin1\", \"origin2\" ]`."
                 },
                 "Capacity": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Load balancing weight for the backends. Default `100`."
                 },
                 "Comment": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "An optional comment about the Director."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Unique name for this Director."
                 },
                 "Quorum": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Percentage of capacity that needs to be up for the director itself to be considered up. Default `75`."
                 },
                 "Retries": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "How many backends to search if it fails. Default `5`."
                 },
                 "Shield": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Selected POP to serve as a \"shield\" for origin servers."
                 },
                 "Type": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Type of load balance group to use. Integer, 1 to 4. Values: `1` (random), `3` (hash), `4` (client).  Default `1`."
                 }
             },
             "required": [
@@ -300,10 +366,12 @@
             "additionalProperties": false,
             "properties": {
                 "Comment": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "An optional comment about the Domain."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The domain to which this Service will respond."
                 }
             },
             "required": [
@@ -315,13 +383,16 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A name that is unique across \"regular\" and \"dynamic\" VCL Snippet configuration blocks."
                 },
                 "Priority": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Priority determines the ordering for multiple snippets. Lower numbers execute first.  Defaults to `100`."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The location in generated VCL where the snippet should be placed (can be one of `init`, `recv`, `hit`, `miss`, `pass`, `fetch`, `error`, `deliver`, `log` or `none`)."
                 }
             },
             "required": [
@@ -334,37 +405,48 @@
             "additionalProperties": false,
             "properties": {
                 "BucketName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the bucket in which to store the logs."
                 },
                 "Email": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The email address associated with the target GCS bucket on your account. You may optionally provide this secret via an environment variable, `FASTLY_GCS_EMAIL`."
                 },
                 "Format": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Apache-style string or VCL variables to use for log formatting. Defaults to Apache Common Log format (`%h %l %u %t %r %>s`)."
                 },
                 "GzipLevel": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Level of GZIP compression, from `0-9`. `0` is no\ncompression. `1` is fastest and least compressed, `9` is slowest and most\ncompressed. Default `0`."
                 },
                 "MessageType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "How the message should be formatted; one of: `classic`, `loggly`, `logplex` or `blank`. Default `classic`. [Fastly Documentation](https://docs.fastly.com/api/logging#logging_gcs)."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A unique name to identify this GCS endpoint."
                 },
                 "Path": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Path to store the files. Must end with a trailing slash.\nIf this field is left empty, the files will be saved in the bucket's root path."
                 },
                 "Period": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "How frequently the logs should be transferred, in\nseconds. Default `3600`."
                 },
                 "Placement": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Where in the generated VCL the logging call should be placed; one of: `none` or `waf_debug`."
                 },
                 "ResponseCondition": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Name of already defined `condition` to apply. This `condition` must be of type `RESPONSE`. For detailed information about Conditionals, see [Fastly's Documentation on Conditionals][fastly-conditionals]."
                 },
                 "SecretKey": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The secret key associated with the target gcs bucket on your account. You may optionally provide this secret via an environment variable, `FASTLY_GCS_SECRET_KEY`. A typical format for the key is PEM format, containing actual newline characters where required."
                 },
                 "TimestampFormat": {
                     "type": "string"
@@ -380,24 +462,28 @@
             "additionalProperties": false,
             "properties": {
                 "CacheCondition": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Name of already defined `condition` to apply. This `condition` must be of type `CACHE`."
                 },
                 "ContentTypes": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "The content-type for each type of content you wish to\nhave dynamically gzip'ed. Example: `[\"text/html\", \"text/css\"]`."
                 },
                 "Extensions": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "File extensions for each file type to dynamically\ngzip. Example: `[\"css\", \"js\"]`."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Unique name for this header attribute."
                 }
             },
             "required": [
@@ -457,37 +543,48 @@
             "additionalProperties": false,
             "properties": {
                 "CheckInterval": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "How often to run the Healthcheck in milliseconds. Default `5000`."
                 },
                 "ExpectedResponse": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The status code expected from the host. Default `200`."
                 },
                 "Host": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Host header to send for this Healthcheck."
                 },
                 "HttpVersion": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Whether to use version 1.0 or 1.1 HTTP. Default `1.1`."
                 },
                 "Initial": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "When loading a config, the initial number of probes to be seen as OK. Default `2`."
                 },
                 "Method": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Which HTTP method to use. Default `HEAD`."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A unique name to identify this Healthcheck."
                 },
                 "Path": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The path to check."
                 },
                 "Threshold": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "How many Healthchecks must succeed to be considered healthy. Default `3`."
                 },
                 "Timeout": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Timeout in milliseconds. Default `500`."
                 },
                 "Window": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The number of most recent Healthcheck queries to keep for this Healthcheck. Default `5`."
                 }
             },
             "required": [
@@ -501,28 +598,36 @@
             "additionalProperties": false,
             "properties": {
                 "Format": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Apache-style string or VCL variables to use for log formatting. Defaults to Apache Common Log format (`%h %l %u %t %r %>s`)."
                 },
                 "FormatVersion": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The version of the custom logging format used for the configured endpoint. Can be either 1 (the default, version 1 log format) or 2 (the version 2 log format)."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A unique name to identify this GCS endpoint."
                 },
                 "Placement": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Where in the generated VCL the logging call should be placed; one of: `none` or `waf_debug`."
                 },
                 "Port": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The port number configured in Logentries to send logs to. Defaults to `20000`."
                 },
                 "ResponseCondition": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Name of already defined `condition` to apply. This `condition` must be of type `RESPONSE`. For detailed information about Conditionals, see [Fastly's Documentation on Conditionals][fastly-conditionals]."
                 },
                 "Token": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Logentries Token to be used for authentication (https://logentries.com/doc/input-token/)."
                 },
                 "UseTls": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Whether to use TLS for secure logging. Defaults to `true`."
                 }
             },
             "required": [
@@ -535,22 +640,28 @@
             "additionalProperties": false,
             "properties": {
                 "Address": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The address of the Papertrail endpoint."
                 },
                 "Format": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Apache-style string or VCL variables to use for log formatting. Defaults to Apache Common Log format (`%h %l %u %t %r %>s`)."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A unique name to identify this Papertrail endpoint."
                 },
                 "Placement": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Where in the generated VCL the logging call should be placed; one of: `none` or `waf_debug`."
                 },
                 "Port": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The port associated with the address where the Papertrail endpoint can be accessed."
                 },
                 "ResponseCondition": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Name of already defined `condition` to apply. This `condition` must be of type `RESPONSE`. For detailed information about Conditionals,\nsee [Fastly's Documentation on Conditionals][fastly-conditionals]."
                 }
             },
             "required": [
@@ -609,25 +720,32 @@
             "additionalProperties": false,
             "properties": {
                 "CacheCondition": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Name of already defined `condition` to check after we have retrieved an object. If the condition passes then deliver this Request Object instead. This `condition` must be of type `CACHE`. For detailed information about Conditionals,\nsee [Fastly's Documentation on Conditionals][fastly-conditionals]."
                 },
                 "Content": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The content to deliver for the response object."
                 },
                 "ContentType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The MIME type of the content."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A unique name to identify this Response Object."
                 },
                 "RequestCondition": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Name of already defined `condition` to be checked during the request phase. If the condition passes then this object will be delivered. This `condition` must be of type `REQUEST`."
                 },
                 "Response": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The HTTP Response. Default `Ok`."
                 },
                 "Status": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The HTTP Status Code. Default `200`."
                 }
             },
             "required": [
@@ -639,49 +757,64 @@
             "additionalProperties": false,
             "properties": {
                 "BucketName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the bucket in which to store the logs."
                 },
                 "Domain": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "If you created the S3 bucket outside of `us-east-1`,\nthen specify the corresponding bucket endpoint. Example: `s3-us-west-2.amazonaws.com`."
                 },
                 "Format": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Apache-style string or VCL variables to use for log formatting. Defaults to Apache Common Log format (`%h %l %u %t %r %>s`)."
                 },
                 "FormatVersion": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The version of the custom logging format used for the configured endpoint. Can be either 1 (the default, version 1 log format) or 2 (the version 2 log format)."
                 },
                 "GzipLevel": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Level of GZIP compression, from `0-9`. `0` is no\ncompression. `1` is fastest and least compressed, `9` is slowest and most\ncompressed. Default `0`."
                 },
                 "MessageType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "How the message should be formatted; one of: `classic`, `loggly`, `logplex` or `blank`.  Default `classic`."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A unique name to identify this S3 Logging Bucket."
                 },
                 "Path": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Path to store the files. Must end with a trailing slash.\nIf this field is left empty, the files will be saved in the bucket's root path."
                 },
                 "Period": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "How frequently the logs should be transferred, in\nseconds. Default `3600`."
                 },
                 "Placement": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Where in the generated VCL the logging call should be placed; one of: `none` or `waf_debug`."
                 },
                 "Redundancy": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The S3 redundancy level. Should be formatted; one of: `standard`, `reduced_redundancy` or null. Default `null`."
                 },
                 "ResponseCondition": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Name of already defined `condition` to apply. This `condition` must be of type `RESPONSE`. For detailed information about Conditionals,\nsee [Fastly's Documentation on Conditionals][fastly-conditionals]."
                 },
                 "S3AccessKey": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "AWS Access Key of an account with the required\npermissions to post logs. It is **strongly** recommended you create a separate\nIAM user with permissions to only operate on this Bucket. This key will be\nnot be encrypted. You can provide this key via an environment variable, `FASTLY_S3_ACCESS_KEY`."
                 },
                 "S3SecretKey": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "AWS Secret Key of an account with the required\npermissions to post logs. It is **strongly** recommended you create a separate\nIAM user with permissions to only operate on this Bucket. This secret will be\nnot be encrypted. You can provide this secret via an environment variable, `FASTLY_S3_SECRET_KEY`."
                 },
                 "TimestampFormat": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "`strftime` specified timestamp formatting (default `%Y-%m-%dT%H:%M:%S.000`)."
                 }
             },
             "required": [
@@ -697,13 +830,16 @@
                     "type": "string"
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A name that is unique across \"regular\" and \"dynamic\" VCL Snippet configuration blocks."
                 },
                 "Priority": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Priority determines the ordering for multiple snippets. Lower numbers execute first.  Defaults to `100`."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The location in generated VCL where the snippet should be placed (can be one of `init`, `recv`, `hit`, `miss`, `pass`, `fetch`, `error`, `deliver`, `log` or `none`)."
                 }
             },
             "required": [
@@ -717,25 +853,32 @@
             "additionalProperties": false,
             "properties": {
                 "Format": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Apache-style string or VCL variables to use for log formatting. Default `%h %l %u %t \\\"%r\\\" %>s %b`."
                 },
                 "FormatVersion": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The version of the custom logging format used for the configured endpoint. Can be either `1` or `2`. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. Default `2`."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A unique name to identify the Splunk endpoint."
                 },
                 "Placement": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Where in the generated VCL the logging call should be placed, overriding any `format_version` default. Can be either `none` or `waf_debug`."
                 },
                 "ResponseCondition": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the `condition` to apply. If empty, always execute."
                 },
                 "Token": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Splunk token to be used for authentication."
                 },
                 "Url": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Splunk URL to stream logs to."
                 }
             },
             "required": [
@@ -748,25 +891,32 @@
             "additionalProperties": false,
             "properties": {
                 "Format": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Apache-style string or VCL variables to use for log formatting. Defaults to Apache Common Log format (`%h %l %u %t %r %>s`)."
                 },
                 "FormatVersion": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The version of the custom logging format used for the configured endpoint. Can be either 1 (the default, version 1 log format) or 2 (the version 2 log format)."
                 },
                 "MessageType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "How the message should be formatted; one of: `classic`, `loggly`, `logplex` or `blank`. Default `classic`. See [Fastly's Documentation on Sumologic][fastly-sumologic]."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A unique name to identify this Sumologic endpoint."
                 },
                 "Placement": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Where in the generated VCL the logging call should be placed; one of: `none` or `waf_debug`."
                 },
                 "ResponseCondition": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Name of already defined `condition` to apply. This `condition` must be of type `RESPONSE`. For detailed information about Conditionals, see [Fastly's Documentation on Conditionals][fastly-conditionals]."
                 },
                 "Url": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The URL to Sumologic collector endpoint."
                 }
             },
             "required": [
@@ -779,46 +929,60 @@
             "additionalProperties": false,
             "properties": {
                 "Address": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A hostname or IPv4 address of the Syslog endpoint."
                 },
                 "Format": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Apache-style string or VCL variables to use for log formatting. Defaults to Apache Common Log format (%h %l %u %t %r %>s)."
                 },
                 "FormatVersion": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The version of the custom logging format used for the configured endpoint. Can be either 1 (the default, version 1 log format) or 2 (the version 2 log format)."
                 },
                 "MessageType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "How the message should be formatted; one of: `classic`, `loggly`, `logplex` or `blank`.  Default `classic`."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A unique name to identify this Syslog endpoint."
                 },
                 "Placement": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Where in the generated VCL the logging call should be placed; one of: `none` or `waf_debug`."
                 },
                 "Port": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The port associated with the address where the Syslog endpoint can be accessed. Default `514`."
                 },
                 "ResponseCondition": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Name of already defined `condition` to apply. This `condition` must be of type `RESPONSE`. For detailed information about Conditionals,\nsee [Fastly's Documentation on Conditionals][fastly-conditionals]."
                 },
                 "TlsCaCert": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A secure certificate to authenticate the server with. Must be in PEM format. You can provide this certificate via an environment variable, `FASTLY_SYSLOG_CA_CERT`."
                 },
                 "TlsClientCert": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The client certificate used to make authenticated requests. Must be in PEM format. You can provide this certificate via an environment variable, `FASTLY_SYSLOG_CLIENT_CERT`."
                 },
                 "TlsClientKey": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The client private key used to make authenticated requests. Must be in PEM format. You can provide this key via an environment variable, `FASTLY_SYSLOG_CLIENT_KEY`."
                 },
                 "TlsHostname": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Used during the TLS handshake to validate the certificate."
                 },
                 "Token": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Whether to prepend each message with a specific token."
                 },
                 "UseTls": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Whether to use TLS for secure logging. Default `false`."
                 }
             },
             "required": [
@@ -831,13 +995,16 @@
             "additionalProperties": false,
             "properties": {
                 "Content": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The custom VCL code to upload."
                 },
                 "Main": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "If `true`, use this block as the main configuration. If\n`false`, use this block as an includable library. Only a single VCL block can be\nmarked as the main block. Default is `false`."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A unique name for this configuration block."
                 }
             },
             "required": [
@@ -852,7 +1019,8 @@
             "type": "string"
         },
         "Activate": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Conditionally prevents the Service from being activated. The apply step will continue to create a new draft version but will not activate it if this is set to false. Default true."
         },
         "ActiveVersion": {
             "type": "number"
@@ -861,22 +1029,28 @@
             "type": "number"
         },
         "Comment": {
-            "type": "string"
+            "type": "string",
+            "description": "Description field for the service. Default `Managed by Terraform`."
         },
         "DefaultHost": {
-            "type": "string"
+            "type": "string",
+            "description": "The default hostname."
         },
         "DefaultTtl": {
-            "type": "number"
+            "type": "number",
+            "description": "The default Time-to-live (TTL) for\nrequests."
         },
         "ForceDestroy": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Services that are active cannot be destroyed. In\norder to destroy the Service, set `force_destroy` to `true`. Default `false`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The unique name for the Service to create."
         },
         "VersionComment": {
-            "type": "string"
+            "type": "string",
+            "description": "Description field for the version."
         },
         "Acl": {
             "type": "array",

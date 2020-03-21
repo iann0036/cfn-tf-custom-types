@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::LogtankGroupV2
 
-CloudFormation equivalent of opentelekomcloud_logtank_group_v2
+Manages a log group resource within OpenTelekomCloud.
 
 ## Syntax
 
@@ -28,6 +28,9 @@ Properties:
 ## Properties
 
 #### GroupName
+
+Specifies the log group name.
+Changing this parameter will create a new resource.
 
 _Required_: Yes
 

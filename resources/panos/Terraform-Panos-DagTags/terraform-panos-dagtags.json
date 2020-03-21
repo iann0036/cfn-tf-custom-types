@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::DagTags",
-    "description": "CloudFormation equivalent of panos_dag_tags",
+    "description": "This resource allows you to add and remove dynamic address group tags.\n\nThe `ip` field should be unique in the `panos_dag_tags` block, and there\nshould only be one `panos_dag_tags` block defined in a given plan.\n\n**Note** - Tags are only removed during `terraform destroy`.  Updating an\napplied terraform plan to have alternative tags will leave behind the\nold tags from the previously published plan(s).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Register": {
@@ -30,7 +30,8 @@
             "type": "string"
         },
         "Vsys": {
-            "type": "string"
+            "type": "string",
+            "description": "The vsys to put the DAG tags in (default: `vsys1`)."
         },
         "Register": {
             "type": "array",

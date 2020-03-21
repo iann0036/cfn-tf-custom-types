@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::LbListenerV2
 
-CloudFormation equivalent of opentelekomcloud_lb_listener_v2
+Manages an Enhanced LB listener resource within OpenTelekomCloud.
 
 ## Syntax
 
@@ -52,6 +52,9 @@ Properties:
 
 #### AdminStateUp
 
+The administrative state of the Listener.
+A valid value is true (UP) or false (DOWN).
+
 _Required_: No
 
 _Type_: Boolean
@@ -59,6 +62,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefaultPoolId
+
+The ID of the default pool with which the
+Listener is associated. Changing this creates a new Listener.
 
 _Required_: No
 
@@ -68,6 +74,12 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DefaultTlsContainerRef
 
+A reference to a Barbican Secrets
+container which stores TLS information. This is required if the protocol
+is `TERMINATED_HTTPS`. See
+[here](https://wiki.openstack.org/wiki/Network/LBaaS/docs/how-to-create-tls-loadbalancer)
+for more information.
+
 _Required_: No
 
 _Type_: String
@@ -75,6 +87,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Human-readable description for the Listener.
 
 _Required_: No
 
@@ -84,6 +98,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LoadbalancerId
 
+The load balancer on which to provision this
+Listener. Changing this creates a new Listener.
+
 _Required_: Yes
 
 _Type_: String
@@ -91,6 +108,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Human-readable name for the Listener. Does not have
+to be unique.
 
 _Required_: No
 
@@ -100,6 +120,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Protocol
 
+The protocol - can either be TCP, HTTP, HTTPS or TERMINATED_HTTPS.
+Changing this creates a new Listener.
+
 _Required_: Yes
 
 _Type_: String
@@ -107,6 +130,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProtocolPort
+
+The port on which to listen for client traffic.
+Changing this creates a new Listener.
 
 _Required_: Yes
 
@@ -124,6 +150,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SniContainerRefs
 
+A list of references to Barbican Secrets
+containers which store SNI information. See
+[here](https://wiki.openstack.org/wiki/Network/LBaaS/docs/how-to-create-tls-loadbalancer)
+for more information.
+
 _Required_: No
 
 _Type_: List of String
@@ -131,6 +162,10 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TenantId
+
+Required for admins. The UUID of the tenant who owns
+the Listener.  Only administrative users can specify a tenant UUID
+other than their own. Changing this creates a new Listener.
 
 _Required_: No
 

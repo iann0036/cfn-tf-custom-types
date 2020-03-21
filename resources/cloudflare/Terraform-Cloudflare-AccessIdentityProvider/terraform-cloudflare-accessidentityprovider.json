@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Cloudflare::AccessIdentityProvider",
-    "description": "CloudFormation equivalent of cloudflare_access_identity_provider",
+    "description": "Provides a Cloudflare Access Identity Provider resource. Identity Providers are\nused as an authentication or authorisation source within Access.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Config": {
@@ -81,10 +81,12 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Friendly name of the Access Identity Provider configuration."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The provider type to use. Must be one of: `\"centrify\"`,\n`\"facebook\"`, `\"google-apps\"`, `\"oidc\"`, `\"github\"`, `\"google\"`, `\"saml\"`,\n`\"linkedin\"`, `\"azureAD\"`, `\"okta\"`, `\"onetimepin\"`, `\"onelogin\"`, `\"yandex\"`."
         },
         "Config": {
             "type": "array",

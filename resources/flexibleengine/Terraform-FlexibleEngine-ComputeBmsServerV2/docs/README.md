@@ -1,6 +1,6 @@
 # Terraform::FlexibleEngine::ComputeBmsServerV2
 
-CloudFormation equivalent of flexibleengine_compute_bms_server_v2
+Manages a BMS Server resource within FlexibleEngine.
 
 ## Syntax
 
@@ -63,6 +63,9 @@ Properties:
 
 #### AdminPass
 
+The administrative password to assign to the bms server.
+Changing this changes the root password on the existing server.
+
 _Required_: No
 
 _Type_: String
@@ -70,6 +73,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AvailabilityZone
+
+The availability zone in which to create
+the bms server.
 
 _Required_: Yes
 
@@ -79,6 +85,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FlavorId
 
+The flavor ID of
+the desired flavor for the bms server. Changing this resizes the existing bms server.
+
 _Required_: No
 
 _Type_: String
@@ -86,6 +95,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FlavorName
+
+The name of the
+desired flavor for the bms server. Changing this resizes the existing bms server.
 
 _Required_: No
 
@@ -95,6 +107,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ImageId
 
+Changing this creates a new bms server.
+
 _Required_: No
 
 _Type_: String
@@ -102,6 +116,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ImageName
+
+The name of the
+desired image for the bms server. Changing this creates a new bms server.
 
 _Required_: No
 
@@ -111,6 +128,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KeyPair
 
+The name of a key pair to put on the bms server. The key
+pair must already be created and associated with the tenant's account.
+Changing this creates a new bms server.
+
 _Required_: No
 
 _Type_: String
@@ -118,6 +139,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Metadata
+
+Metadata key/value pairs to make available from
+within the instance. Changing this updates the existing bms server metadata.
 
 _Required_: No
 
@@ -127,6 +151,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the BMS.
+
 _Required_: Yes
 
 _Type_: String
@@ -134,6 +160,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region in which to create the bms server instance. If
+omitted, the `region` argument of the provider is used. Changing this
+creates a new bms server.
 
 _Required_: No
 
@@ -143,6 +173,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecurityGroups
 
+An array of one or more security group names
+to associate with the bms server. Changing this results in adding/removing
+security groups from the existing bms server.
+
 _Required_: No
 
 _Type_: List of String
@@ -151,6 +185,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StopBeforeDestroy
 
+Whether to try stop instance gracefully
+before destroying it, thus giving chance for guest OS daemons to stop correctly.
+If instance doesn't stop within timeout, it will be destroyed anyway.
+
 _Required_: No
 
 _Type_: Boolean
@@ -158,6 +196,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserData
+
+The user data to provide when launching the instance.
+Changing this creates a new bms server.
 
 _Required_: No
 

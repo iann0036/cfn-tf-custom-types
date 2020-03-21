@@ -1,6 +1,7 @@
 # Terraform::Brightbox::LoadBalancer
 
-CloudFormation equivalent of brightbox_load_balancer
+Provides a Brightbox Load Balancer resource. This can be used to create,
+modify, and delete Load Balancers.
 
 ## Syntax
 
@@ -50,6 +51,8 @@ Properties:
 
 #### BufferSize
 
+Buffer size in bytes.
+
 _Required_: No
 
 _Type_: Double
@@ -57,6 +60,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CertificatePem
+
+A X509 SSL certificate in PEM format. Must be included along with `certificate_key`. If intermediate certificates are required they should be concatenated after the main certificate.
 
 _Required_: No
 
@@ -66,6 +71,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CertificatePrivateKey
 
+The RSA private key used to sign the certificate in PEM format. Must be included along with `certificate_pem`.
+
 _Required_: No
 
 _Type_: String
@@ -73,6 +80,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+A label assigned to the Load Balancer.
 
 _Required_: No
 
@@ -82,6 +91,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Nodes
 
+An array of Server IDs.
+
 _Required_: No
 
 _Type_: List of String
@@ -90,6 +101,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Policy
 
+Method of load balancing to use, either `least-connections` or `round-robin`.
+
 _Required_: No
 
 _Type_: String
@@ -97,6 +110,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Sslv3
+
+Allow SSL v3 to be used. Default is `false`.
 
 _Required_: No
 

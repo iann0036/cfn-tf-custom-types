@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::FlexibleEngine::ComputeServergroupV2",
-    "description": "CloudFormation equivalent of flexibleengine_compute_servergroup_v2",
+    "description": "Manages a V2 Server Group resource within FlexibleEngine.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -16,17 +16,20 @@
             }
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique name for the server group. Changing this creates\na new server group."
         },
         "Policies": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The set of policies for the server group. Only two\ntwo policies are available right now, and both are mutually exclusive. See\nthe Policies section for more information. Changing this creates a new\nserver group."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the V2 Compute client.\nIf omitted, the `region` argument of the provider is used. Changing\nthis creates a new server group."
         },
         "ValueSpecs": {
             "type": "array",
@@ -46,7 +49,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Map of additional options."
         }
     },
     "additionalProperties": false,

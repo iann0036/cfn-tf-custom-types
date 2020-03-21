@@ -1,6 +1,8 @@
 # Terraform::Panos::PanoramaGcpAccount
 
-CloudFormation equivalent of panos_panorama_gcp_account
+This resource allows you to add/update/delete GCP accounts on Panorama.
+
+This resource requires that the GCP plugin be installed.
 
 ## Syntax
 
@@ -37,6 +39,9 @@ Properties:
 
 #### CredentialFile
 
+The contents of a GCP credentials file; use the
+`file()` function to pass in the credentials file.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +49,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Account description.
 
 _Required_: No
 
@@ -53,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The account's name.
+
 _Required_: Yes
 
 _Type_: String
@@ -61,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProjectId
 
+The GCP project ID.
+
 _Required_: Yes
 
 _Type_: String
@@ -68,6 +79,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServiceAccountCredentialType
+
+The service account credential
+type.  Valid values are `gcp` (default) or `gke`.
 
 _Required_: No
 

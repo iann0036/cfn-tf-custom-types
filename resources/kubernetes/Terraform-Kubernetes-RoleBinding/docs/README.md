@@ -1,6 +1,6 @@
 # Terraform::Kubernetes::RoleBinding
 
-CloudFormation equivalent of kubernetes_role_binding
+A RoleBinding may be used to grant permission at the namespace level
 
 ## Syntax
 

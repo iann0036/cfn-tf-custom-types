@@ -1,6 +1,8 @@
 # Terraform::OCI::CoreRemotePeeringConnection
 
-CloudFormation equivalent of oci_core_remote_peering_connection
+This resource provides the Remote Peering Connection resource in Oracle Cloud Infrastructure Core service.
+
+Creates a new remote peering connection (RPC) for the specified DRG.
 
 ## Syntax
 
@@ -45,6 +47,8 @@ Properties:
 
 #### CompartmentId
 
+(Updatable) The OCID of the compartment to contain the RPC.
+
 _Required_: Yes
 
 _Type_: String
@@ -52,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefinedTags
+
+(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`.
 
 _Required_: No
 
@@ -61,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+(Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+
 _Required_: No
 
 _Type_: String
@@ -68,6 +76,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DrgId
+
+The OCID of the DRG the RPC belongs to.
 
 _Required_: Yes
 
@@ -77,6 +87,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FreeformTags
 
+(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`.
+
 _Required_: No
 
 _Type_: List of <a href="freeformtags.md">FreeformTags</a>
@@ -85,6 +97,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PeerId
 
+The OCID of the RPC you want to peer with.
+
 _Required_: No
 
 _Type_: String
@@ -92,6 +106,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PeerRegionName
+
+The name of the region that contains the RPC you want to peer with.  Example: `us-ashburn-1`.
 
 _Required_: No
 

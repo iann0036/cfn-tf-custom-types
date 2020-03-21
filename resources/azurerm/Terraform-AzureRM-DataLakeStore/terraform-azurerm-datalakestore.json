@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::DataLakeStore",
-    "description": "CloudFormation equivalent of azurerm_data_lake_store",
+    "description": "Manages an Azure Data Lake Store.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,28 +29,35 @@
             "type": "string"
         },
         "EncryptionState": {
-            "type": "string"
+            "type": "string",
+            "description": "Is Encryption enabled on this Data Lake Store Account? Possible values are `Enabled` or `Disabled`. Defaults to `Enabled`."
         },
         "EncryptionType": {
-            "type": "string"
+            "type": "string",
+            "description": "The Encryption Type used for this Data Lake Store Account. Currently can be set to `ServiceManaged` when `encryption_state` is `Enabled` - and must be a blank string when it's Disabled."
         },
         "Endpoint": {
             "type": "string"
         },
         "FirewallAllowAzureIps": {
-            "type": "string"
+            "type": "string",
+            "description": "are Azure Service IP's allowed through the firewall? Possible values are `Enabled` and `Disabled`. Defaults to `Enabled.`."
         },
         "FirewallState": {
-            "type": "string"
+            "type": "string",
+            "description": "the state of the Firewall. Possible values are `Enabled` and `Disabled`. Defaults to `Enabled.`."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Data Lake Store. Changing this forces a new resource to be created. Has to be between 3 to 24 characters."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the Data Lake Store."
         },
         "Tags": {
             "type": "array",
@@ -70,10 +77,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Tier": {
-            "type": "string"
+            "type": "string",
+            "description": "The monthly commitment tier for Data Lake Store. Accepted values are `Consumption`, `Commitment_1TB`, `Commitment_10TB`, `Commitment_100TB`, `Commitment_500TB`, `Commitment_1PB` or `Commitment_5PB`."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

@@ -1,6 +1,8 @@
 # Terraform::Google::ContainerNodePool
 
-CloudFormation equivalent of google_container_node_pool
+Manages a node pool in a Google Kubernetes Engine (GKE) cluster separately from
+the cluster control plane. For more information see [the official documentation](https://cloud.google.com/container-engine/docs/node-pools)
+and [the API reference](https://cloud.google.com/container-engine/reference/rest/v1/projects.zones.clusters.nodePools).
 
 ## Syntax
 
@@ -69,6 +71,8 @@ Properties:
 
 #### Cluster
 
+The cluster to create the node pool for. Cluster must be present in `location` provided for zonal clusters.
+
 _Required_: Yes
 
 _Type_: String
@@ -76,6 +80,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InitialNodeCount
+
+The initial number of nodes for the pool. In
+regional or multi-zonal clusters, this is the number of nodes per zone. Changing
+this will force recreation of the resource.
 
 _Required_: No
 
@@ -85,6 +93,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Location
 
+The location (region or zone) of the cluster.
+
 _Required_: No
 
 _Type_: String
@@ -92,6 +102,12 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MaxPodsPerNode
+
+The maximum number of pods per node in this node pool.
+Note that this does not work on node pools which are "route-based" - that is, node
+pools belonging to clusters that do not have IP Aliasing enabled.
+See the [official documentation](https://cloud.google.com/kubernetes-engine/docs/how-to/flexible-pod-cidr)
+for more information.
 
 _Required_: No
 
@@ -101,6 +117,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the node pool. If left blank, Terraform will
+auto-generate a unique name.
+
 _Required_: No
 
 _Type_: String
@@ -108,6 +127,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NamePrefix
+
+Creates a unique name for the node pool beginning
+with the specified prefix. Conflicts with `name`.
 
 _Required_: No
 
@@ -117,6 +139,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NodeCount
 
+The number of nodes per instance group. This field can be used to
+update the number of nodes per instance group but should not be used alongside `autoscaling`.
+
 _Required_: No
 
 _Type_: Double
@@ -124,6 +149,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The ID of the project in which to create the node pool. If blank,
+the provider-configured project will be used.
 
 _Required_: No
 
@@ -140,6 +168,13 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Version
+
+The Kubernetes version for the nodes in this pool. Note that if this field
+and `auto_upgrade` are both specified, they will fight each other for what the node version should
+be, so setting both is highly discouraged. While a fuzzy version can be specified, it's
+recommended that you specify explicit versions as Terraform will see spurious diffs
+when fuzzy versions are used. See the `google_container_engine_versions` data source's
+`version_prefix` field to approximate fuzzy versions in a Terraform-compatible way.
 
 _Required_: No
 

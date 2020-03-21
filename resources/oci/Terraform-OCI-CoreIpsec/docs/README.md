@@ -1,6 +1,26 @@
 # Terraform::OCI::CoreIpsec
 
-CloudFormation equivalent of oci_core_ipsec
+This resource provides the Ip Sec Connection resource in Oracle Cloud Infrastructure Core service.
+
+Creates a new IPSec connection between the specified DRG and CPE. For more information, see
+[IPSec VPNs](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPsec.htm).
+
+If you configure at least one tunnel to use static routing, then in the request you must provide
+at least one valid static route (you're allowed a maximum of 10). For example: 10.0.0.0/16.
+If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for
+the static routes. For more information, see the important note in
+[IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/).
+
+For the purposes of access control, you must provide the OCID of the compartment where you want the
+IPSec connection to reside. Notice that the IPSec connection doesn't have to be in the same compartment
+as the DRG, CPE, or other Networking Service components. If you're not sure which compartment to
+use, put the IPSec connection in the same compartment as the DRG. For more information about
+compartments and access control, see
+[Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+For information about OCIDs, see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+
+You may optionally specify a *display name* for the IPSec connection, otherwise a default is provided.
+It does not have to be unique, and you can change it. Avoid entering confidential information.
 
 ## Syntax
 
@@ -50,6 +70,8 @@ Properties:
 
 #### CompartmentId
 
+(Updatable) The OCID of the compartment to contain the IPSec connection.
+
 _Required_: Yes
 
 _Type_: String
@@ -57,6 +79,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CpeId
+
+The OCID of the [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/) object.
 
 _Required_: Yes
 
@@ -66,6 +90,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CpeLocalIdentifier
 
+(Updatable) Your identifier for your CPE device. Can be either an IP address or a hostname (specifically, the fully qualified domain name (FQDN)). The type of identifier you provide here must correspond to the value for `cpeLocalIdentifierType`.
+
 _Required_: No
 
 _Type_: String
@@ -73,6 +99,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CpeLocalIdentifierType
+
+(Updatable) The type of identifier for your CPE device. The value you provide here must correspond to the value for `cpeLocalIdentifier`.
 
 _Required_: No
 
@@ -82,6 +110,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DefinedTags
 
+(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`.
+
 _Required_: No
 
 _Type_: List of <a href="definedtags.md">DefinedTags</a>
@@ -89,6 +119,8 @@ _Type_: List of <a href="definedtags.md">DefinedTags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+(Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 _Required_: No
 
@@ -98,6 +130,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DrgId
 
+The OCID of the DRG.
+
 _Required_: Yes
 
 _Type_: String
@@ -106,6 +140,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FreeformTags
 
+(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`.
+
 _Required_: No
 
 _Type_: List of <a href="freeformtags.md">FreeformTags</a>
@@ -113,6 +149,8 @@ _Type_: List of <a href="freeformtags.md">FreeformTags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StaticRoutes
+
+(Updatable) Static routes to the CPE. A static route's CIDR must not be a multicast address or class E address.
 
 _Required_: Yes
 

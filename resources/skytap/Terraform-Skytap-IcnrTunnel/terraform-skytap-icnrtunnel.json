@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Skytap::IcnrTunnel",
-    "description": "CloudFormation equivalent of skytap_icnr_tunnel",
+    "description": "Provides ICNR Tunnel. Inter-Configuration Network Routing connects networks from different environments to a single, shared server. Without ICNR, environments are on isolated networks.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "Source": {
-            "type": "number"
+            "type": "number",
+            "description": "Source network from where the connection was initiated. This network does not need to be \u201ctunnelable\u201d (visible to other networks)."
         },
         "Target": {
-            "type": "number"
+            "type": "number",
+            "description": "Target network to which the connection was made. The network needs to be \u201ctunnelable\u201d (visible to other networks)."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Random::Pet",
-    "description": "CloudFormation equivalent of random_pet",
+    "description": "The resource `random_pet` generates random pet names that are intended to be\nused as unique identifiers for other resources.\n\nThis resource can be used in conjunction with resources that have\nthe `create_before_destroy` lifecycle flag set, to avoid conflicts with\nunique names during the brief period where both the old and new resources\nexist concurrently.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -26,16 +26,20 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Arbitrary map of values that, when changed, will\ntrigger a new id to be generated. See\n[the main provider documentation](../index.html) for more information."
         },
         "Length": {
-            "type": "number"
+            "type": "number",
+            "description": "The length (in words) of the pet name."
         },
         "Prefix": {
-            "type": "string"
+            "type": "string",
+            "description": "A string to prefix the name with."
         },
         "Separator": {
-            "type": "string"
+            "type": "string",
+            "description": "The character to separate words in the pet name."
         }
     },
     "additionalProperties": false,

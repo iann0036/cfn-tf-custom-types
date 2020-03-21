@@ -1,6 +1,16 @@
 # Terraform::OCI::CoreServiceGateway
 
-CloudFormation equivalent of oci_core_service_gateway
+This resource provides the Service Gateway resource in Oracle Cloud Infrastructure Core service.
+
+Creates a new service gateway in the specified compartment.
+
+For the purposes of access control, you must provide the OCID of the compartment where you want
+the service gateway to reside. For more information about compartments and access control, see
+[Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+For information about OCIDs, see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+
+You may optionally specify a *display name* for the service gateway, otherwise a default is provided.
+It does not have to be unique, and you can change it. Avoid entering confidential information.
 
 ## Syntax
 
@@ -46,6 +56,8 @@ Properties:
 
 #### CompartmentId
 
+(Updatable) The [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the service gateway.
+
 _Required_: Yes
 
 _Type_: String
@@ -53,6 +65,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefinedTags
+
+(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`.
 
 _Required_: No
 
@@ -62,6 +76,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+(Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+
 _Required_: No
 
 _Type_: String
@@ -69,6 +85,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FreeformTags
+
+(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`.
 
 _Required_: No
 
@@ -78,6 +96,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RouteTableId
 
+(Updatable) The OCID of the route table the service gateway will use.
+
 _Required_: No
 
 _Type_: String
@@ -85,6 +105,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VcnId
+
+The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::RunScope::Environment",
-    "description": "CloudFormation equivalent of runscope_environment",
+    "description": "An [environment](https://www.runscope.com/docs/api/environments) resource.\nAn [environment](https://www.runscope.com/docs/api-testing/environments)\nis is a group of configuration settings (initial variables, locations,\nnotifications, integrations, etc.) used when running a test.\nEvery test has at least one environment, but you can create additional\nenvironments as needed. For common settings (base URLs, API keys)\nthat you'd like to use across all tests within a bucket,\nuse a [Shared Environment](https://www.runscope.com/docs/api-testing/environments#shared).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Emails": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "NotifyAll": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Send an email to all team members according to the `notify_on` rules."
                 },
                 "NotifyOn": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Upon completion of a test run Runscope will send email notifications, allowed values: `all`, `failures`, `threshold` or `switch`."
                 },
                 "NotifyThreshold": {
                     "type": "number"
@@ -35,10 +37,12 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the remote agent."
                 },
                 "Uuid": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The uuid of the remote agent."
                 }
             },
             "required": [
@@ -51,13 +55,16 @@
             "additionalProperties": false,
             "properties": {
                 "Email": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The email address for this account."
                 },
                 "Id": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The unique identifier for this person's account."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the person."
                 }
             },
             "required": []
@@ -69,7 +76,8 @@
             "type": "string"
         },
         "BucketId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the bucket to associate this environment with."
         },
         "InitialVariables": {
             "type": "array",
@@ -89,36 +97,43 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Map of keys and values being used for variables when the test begins."
         },
         "Integrations": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of integration ids to enable for test runs using this environment."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of environment."
         },
         "PreserveCookies": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If this is set to true, tests using this enviornment will manage cookies between steps."
         },
         "Regions": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of [Runscope regions](https://www.runscope.com/docs/regions) to execute test runs in when using this environment."
         },
         "RetryOnFailure": {
             "type": "boolean"
         },
         "Script": {
-            "type": "string"
+            "type": "string",
+            "description": "The [script](https://www.runscope.com/docs/api-testing/scripts#initial-script)\nto to run to setup the environment."
         },
         "TestId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the test to associate this environment with.\nIf given, creates a test specific environment, otherwise creates a shared environment."
         },
         "VerifySsl": {
             "type": "boolean"

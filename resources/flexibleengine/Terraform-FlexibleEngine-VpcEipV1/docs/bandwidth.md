@@ -28,6 +28,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### ChargeMode
 
+This is a reserved field. If the system supports charging
+by traffic and this field is specified, then you are charged by traffic for elastic
+IP addresses. Changing this creates a new eip.
+
 _Required_: No
 
 _Type_: String
@@ -35,6 +39,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The bandwidth name, which is a string of 1 to 64 characters
+that contain letters, digits, underscores (_), and hyphens (-).
 
 _Required_: Yes
 
@@ -44,6 +51,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ShareType
 
+Whether the bandwidth is shared or exclusive. Changing
+this creates a new eip.
+
 _Required_: Yes
 
 _Type_: String
@@ -51,6 +61,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Size
+
+The bandwidth size. The value ranges from 1 to 1000 Mbit/s.
 
 _Required_: Yes
 

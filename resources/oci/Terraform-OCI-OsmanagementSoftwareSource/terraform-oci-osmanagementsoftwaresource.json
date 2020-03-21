@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::OsmanagementSoftwareSource",
-    "description": "CloudFormation equivalent of oci_osmanagement_software_source",
+    "description": "This resource provides the Software Source resource in Oracle Cloud Infrastructure Osmanagement service.\n\nCreates a new custom Software Source on the management system.\nThis will not contain any packages after it is first created,\nand they must be added later.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,7 +26,8 @@
             "type": "string"
         },
         "ArchType": {
-            "type": "string"
+            "type": "string",
+            "description": "The architecture type supported by the Software Source."
         },
         "AssociatedManagedInstances": {
             "type": "array",
@@ -45,10 +46,12 @@
             }
         },
         "ChecksumType": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The yum repository checksum type used by this software source."
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) OCID for the Compartment."
         },
         "DefinedTags": {
             "type": "array",
@@ -68,13 +71,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{\"foo-namespace.bar-key\": \"value\"}`."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) Information specified by the user about the software source."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) User friendly name for the software source."
         },
         "FreeformTags": {
             "type": "array",
@@ -94,7 +100,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{\"bar-key\": \"value\"}`."
         },
         "GpgKeyFingerprint": {
             "type": "string"
@@ -106,19 +113,23 @@
             "type": "string"
         },
         "MaintainerEmail": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) Email address of the person maintaining this software source."
         },
         "MaintainerName": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) Name of the person maintaining this software source."
         },
         "MaintainerPhone": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) Phone number of the person maintaining this software source."
         },
         "Packages": {
             "type": "number"
         },
         "ParentId": {
-            "type": "string"
+            "type": "string",
+            "description": "OCID for the parent software source, if there is one."
         },
         "ParentName": {
             "type": "string"

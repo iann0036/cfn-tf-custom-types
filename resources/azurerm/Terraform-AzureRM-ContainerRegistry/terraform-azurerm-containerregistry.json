@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::ContainerRegistry",
-    "description": "CloudFormation equivalent of azurerm_container_registry",
+    "description": "Manages an Azure Container Registry.\n\n~> **Note:** All arguments including the access key will be stored in the raw state as plain-text.\n[Read more about sensitive data in state](/docs/state/sensitive-data.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,7 +29,8 @@
             "type": "string"
         },
         "AdminEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether the admin user is enabled. Defaults to `false`."
         },
         "AdminPassword": {
             "type": "string"
@@ -42,16 +43,19 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of Azure locations where the container registry should be geo-replicated."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "LoginServer": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Container Registry. Changing this forces a new resource to be created."
         },
         "NetworkRuleSet": {
             "type": "array",
@@ -96,16 +100,20 @@
                         }
                     }
                 }
-            }
+            },
+            "description": "A `network_rule_set` block as documented below."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the Container Registry. Changing this forces a new resource to be created."
         },
         "Sku": {
-            "type": "string"
+            "type": "string",
+            "description": "The SKU name of the container registry. Possible values are  `Basic`, `Standard` and `Premium`. `Classic` (which was previously `Basic`) is supported only for existing resources."
         },
         "StorageAccountId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of a Storage Account which must be located in the same Azure Region as the Container Registry."
         },
         "Tags": {
             "type": "array",
@@ -125,7 +133,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

@@ -25,6 +25,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Id
 
+The ID which should be used for this Shared Identifier.
+
 _Required_: Yes
 
 _Type_: String

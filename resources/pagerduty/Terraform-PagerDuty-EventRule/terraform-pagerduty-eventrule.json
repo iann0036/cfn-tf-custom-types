@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::PagerDuty::EventRule",
-    "description": "CloudFormation equivalent of pagerduty_event_rule",
+    "description": "An [event rule](https://v2.developer.pagerduty.com/docs/global-event-rules-api) determines what happens to an event that is sent to PagerDuty by monitoring tools and other integrations.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,19 @@
             "type": "string"
         },
         "ActionJson": {
-            "type": "string"
+            "type": "string",
+            "description": "A list of one or more actions for each rule. Each action within the list is itself a list."
         },
         "AdvancedConditionJson": {
-            "type": "string"
+            "type": "string",
+            "description": "Contains a list of specific conditions including `active-between`,`scheduled-weekly`, and `frequency-over`. The first element in the list is the label for the condition, followed by a list of values for the specific condition. For more details on these conditions see [Advanced Condition](https://v2.developer.pagerduty.com/docs/global-event-rules-api#section-advanced-condition) in the PagerDuty API documentation."
         },
         "CatchAll": {
             "type": "boolean"
         },
         "ConditionJson": {
-            "type": "string"
+            "type": "string",
+            "description": "Contains a list of conditions. The first field in the list is `and` or `or`, followed by a list of operators and values."
         }
     },
     "additionalProperties": false,

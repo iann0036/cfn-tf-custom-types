@@ -1,6 +1,6 @@
 # Terraform::AzureRM::KustoCluster
 
-CloudFormation equivalent of azurerm_kusto_cluster
+Manages a Kusto (also known as Azure Data Explorer) Cluster
 
 ## Syntax
 
@@ -45,6 +45,8 @@ Properties:
 
 #### EnableDiskEncryption
 
+Specifies if the cluster's disks are encrypted.
+
 _Required_: No
 
 _Type_: Boolean
@@ -52,6 +54,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableStreamingIngest
+
+Specifies if the streaming ingest is enabled.
 
 _Required_: No
 
@@ -61,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Location
 
+The location where the Kusto Cluster should be created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -68,6 +74,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the Kusto Cluster to create. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -77,6 +85,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+Specifies the Resource Group where the Kusto Cluster should exist. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -84,6 +94,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

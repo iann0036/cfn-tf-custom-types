@@ -1,6 +1,6 @@
 # Terraform::OpsGenie::Escalation
 
-CloudFormation equivalent of opsgenie_escalation
+Manages an Escalation within Opsgenie.
 
 ## Syntax
 
@@ -42,6 +42,8 @@ Properties:
 
 #### Description
 
+Description of the escalation.
+
 _Required_: No
 
 _Type_: String
@@ -50,6 +52,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name of the escalation.
+
 _Required_: Yes
 
 _Type_: String
@@ -57,6 +61,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OwnerTeamId
+
+Owner team id of the escalation.
 
 _Required_: No
 

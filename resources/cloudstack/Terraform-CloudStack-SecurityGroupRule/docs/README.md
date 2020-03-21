@@ -1,6 +1,6 @@
 # Terraform::CloudStack::SecurityGroupRule
 
-CloudFormation equivalent of cloudstack_security_group_rule
+Authorizes and revokes both ingress and egress rulea for a given security group.
 
 ## Syntax
 
@@ -44,6 +44,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Project
 
+The name or ID of the project in which the security
+group is created. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: String
@@ -51,6 +54,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecurityGroupId
+
+The security group ID for which to create
+the rules. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 # Terraform::Nutanix::VirtualMachine
 
-CloudFormation equivalent of nutanix_virtual_machine
+Provides a Nutanix Virtual Machine resource to Create a virtual machine.
 
 ## Syntax
 
@@ -182,6 +182,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GuestCustomizationCloudInitMetaData
 
+The contents of the meta_data configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+
 _Required_: No
 
 _Type_: String
@@ -261,6 +263,8 @@ _Type_: List of <a href="ngtcredentials.md">NgtCredentials</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NgtEnabledCapabilityList
+
+Application names that are enabled.
 
 _Required_: No
 

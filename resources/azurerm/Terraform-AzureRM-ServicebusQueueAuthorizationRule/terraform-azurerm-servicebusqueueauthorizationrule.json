@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::ServicebusQueueAuthorizationRule",
-    "description": "CloudFormation equivalent of azurerm_servicebus_queue_authorization_rule",
+    "description": "Manages an Authorization Rule for a ServiceBus Queue.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,16 +29,20 @@
             "type": "string"
         },
         "Listen": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Does this Authorization Rule have Listen permissions to the ServiceBus Queue? Defaults to `false`."
         },
         "Manage": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Does this Authorization Rule have Manage permissions to the ServiceBus Queue? When this property is `true` - both `listen` and `send` must be too. Defaults to `false`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Authorization Rule. Changing this forces a new resource to be created."
         },
         "NamespaceName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the ServiceBus Namespace in which the Queue exists. Changing this forces a new resource to be created."
         },
         "PrimaryConnectionString": {
             "type": "string"
@@ -47,10 +51,12 @@
             "type": "string"
         },
         "QueueName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the ServiceBus Queue. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Resource Group in which the ServiceBus Namespace exists. Changing this forces a new resource to be created."
         },
         "SecondaryConnectionString": {
             "type": "string"
@@ -59,7 +65,8 @@
             "type": "string"
         },
         "Send": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Does this Authorization Rule have Send permissions to the ServiceBus Queue? Defaults to `false`."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

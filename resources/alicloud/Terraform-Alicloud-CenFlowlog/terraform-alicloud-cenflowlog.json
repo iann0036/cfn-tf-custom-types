@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::CenFlowlog",
-    "description": "CloudFormation equivalent of alicloud_cen_flowlog",
+    "description": "This resource used to create a flow log function in Cloud Enterprise Network (CEN). \nBy using the flow log function, you can capture the traffic data of the network instances in different regions of a CEN. \nYou can also use the data aggregated in flow logs to analyze cross-region traffic flows, minimize traffic costs, and troubleshoot network faults.\n\nFor information about CEN flow log and how to use it, see [Manage CEN flowlog](https://www.alibabacloud.com/help/doc-detail/123006.htm).\n\n-> **NOTE:** Available in 1.73.0+",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,22 +9,28 @@
             "type": "string"
         },
         "CenId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the CEN Instance."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of flowlog."
         },
         "FlowLogName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of flowlog."
         },
         "LogStoreName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the log store which is in the  `project_name` SLS project."
         },
         "ProjectName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the SLS project."
         },
         "Status": {
-            "type": "string"
+            "type": "string",
+            "description": "The status of flowlog. Valid values: [\"Active\", \"Inactive\"]. Default to \"Active\"."
         }
     },
     "additionalProperties": false,

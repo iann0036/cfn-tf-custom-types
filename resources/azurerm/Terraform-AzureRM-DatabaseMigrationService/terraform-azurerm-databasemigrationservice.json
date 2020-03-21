@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::DatabaseMigrationService",
-    "description": "CloudFormation equivalent of azurerm_database_migration_service",
+    "description": "Manages a Azure Database Migration Service.\n\n~> **NOTE:** Destroying a Database Migration Service will leave any outstanding tasks untouched. This is to avoid unexpectedly deleting any tasks managed outside of terraform.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,19 +29,24 @@
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specify the name of the database migration service. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the resource group in which to create the database migration service. Changing this forces a new resource to be created."
         },
         "SkuName": {
-            "type": "string"
+            "type": "string",
+            "description": "The sku name of the database migration service. Possible values are `Premium_4vCores`, `Standard_1vCores`, `Standard_2vCores` and `Standard_4vCores`. Changing this forces a new resource to be created."
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the virtual subnet resource to which the database migration service should be joined. Changing this forces a new resource to be created."
         },
         "Tags": {
             "type": "array",
@@ -61,7 +66,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assigned to the resource."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

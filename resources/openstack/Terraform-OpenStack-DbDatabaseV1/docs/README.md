@@ -1,6 +1,6 @@
 # Terraform::OpenStack::DbDatabaseV1
 
-CloudFormation equivalent of openstack_db_database_v1
+Manages a V1 DB database resource within OpenStack.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### InstanceId
 
+The ID for the database instance.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+A unique name for the resource.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::NasMountTarget",
-    "description": "CloudFormation equivalent of alicloud_nas_mount_target",
+    "description": "Provides a Nas Mount Target resource.\n\n-> NOTE: Available in v1.34.0+.\n\n-> NOTE: Currently this resource support create a mount point in a classic network only when current region is China mainland regions.\n\n-> NOTE: You must grant NAS with specific RAM permissions when creating a classic mount targets,\nand it only can be achieved by creating a classic mount target mannually.\nSee [Add a mount point](https://www.alibabacloud.com/help/doc-detail/60431.htm) and [Why do I need RAM permissions to create a mount point in a classic network](https://www.alibabacloud.com/help/faq-detail/42176.htm).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,20 @@
             "type": "string"
         },
         "AccessGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "Permission group name."
         },
         "FileSystemId": {
-            "type": "string"
+            "type": "string",
+            "description": "File system ID."
         },
         "Status": {
-            "type": "string"
+            "type": "string",
+            "description": "Whether the MountTarget is active. An inactive MountTarget is inusable. Valid values are Active(default) and Inactive."
         },
         "VswitchId": {
-            "type": "string"
+            "type": "string",
+            "description": "VSwitch ID."
         }
     },
     "additionalProperties": false,

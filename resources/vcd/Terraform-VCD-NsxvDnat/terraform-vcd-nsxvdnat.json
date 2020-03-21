@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::VCD::NsxvDnat",
-    "description": "CloudFormation equivalent of vcd_nsxv_dnat",
+    "description": "Provides a vCloud Director DNAT resource for advanced edge gateways (NSX-V). This can be used to create,\nmodify, and delete destination NATs to map an external IP/port to an internal IP/port. Replaces\n[`vcd_dnat`](/docs/providers/vcd/r/dnat.html) resource.\n\n~> **Note:** This resource requires advanced edge gateway. For non-advanced edge gateways please\nuse the [`vcd_dnat`](/docs/providers/vcd/r/dnat.html) resource.\n\n!> **Warning:** Do not use older [`vcd_dnat`](/docs/providers/vcd/r/dnat.html) resource with this one\nbecause it will change IDs and this resource will not be able to lookup rules.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,52 +9,67 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Free text description."
         },
         "EdgeGateway": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the edge gateway on which to apply the DNAT rule."
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Defines if the rule is enabaled. Default `true`."
         },
         "IcmpType": {
-            "type": "string"
+            "type": "string",
+            "description": "Only when `protocol` is set to `icmp`. One of `any`,\n`address-mask-request`, `address-mask-reply`, `destination-unreachable`, `echo-request`,\n`echo-reply`, `parameter-problem`, `redirect`, `router-advertisement`, `router-solicitation`,\n`source-quench`, `time-exceeded`, `timestamp-request`, `timestamp-reply`. Default `any`."
         },
         "LoggingEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Defines if the logging for this rule is enabaled. Default `false`."
         },
         "NetworkName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the network on which to apply the DNAT rule."
         },
         "NetworkType": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of the network on which to apply the DNAT rule. Possible values\n`org` or `ext`."
         },
         "Org": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of organization to use, optional if defined at provider level. Useful\nwhen connected as sysadmin working across different organisations."
         },
         "OriginalAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "IP address, range or subnet. This address must be the public IP\naddress of the edge gateway for which you are configuring the DNAT rule. In the packet being\ninspected, this IP address or range would be those that appear as the destination IP address of the\npacket. These packet destination addresses are the ones translated by this DNAT rule."
         },
         "OriginalPort": {
-            "type": "string"
+            "type": "string",
+            "description": "Select the port or port range that the incoming traffic uses on the\nedge gateway to connect to the internal network on which the virtual machines are connected. This\nselection is not available when the Protocol is set to `icmp` or `any`. Default `any`."
         },
         "Protocol": {
-            "type": "string"
+            "type": "string",
+            "description": "Select the protocol to which the rule applies. One of `tcp`, `udp`,\n`icmp`, `any`. Default `any`\nprotocols, select Any."
         },
         "RuleTag": {
-            "type": "number"
+            "type": "number",
+            "description": "This can be used to specify user-controlled rule tag. If not specified,\nit will report rule ID after creation. Must be between 65537-131072."
         },
         "RuleType": {
             "type": "string"
         },
         "TranslatedAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "IP address, range or subnet. IP addresses to which destination\naddresses on inbound packets will be translated. These addresses are the IP addresses of the one or\nmore virtual machines for which you are configuring DNAT so that they can receive traffic from the\nexternal network."
         },
         "TranslatedPort": {
-            "type": "string"
+            "type": "string",
+            "description": "Select the port or port range that inbound traffic is connecting\nto on the virtual machines on the internal network. These ports are the ones into which the DNAT\nrule is translating for the packets inbound to the virtual machines."
         },
         "Vdc": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of VDC to use, optional if defined at provider level."
         }
     },
     "additionalProperties": false,

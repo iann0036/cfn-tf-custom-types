@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Docker::Image",
-    "description": "CloudFormation equivalent of docker_image",
+    "description": "Pulls a Docker image to a given Docker host from a Docker Registry.\n\nThis resource will *not* pull new layers of the image automatically unless used in\nconjunction with [`docker_registry_image`](/docs/providers/docker/d/registry_image.html)\ndata source to update the `pull_triggers` field.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,23 +9,27 @@
             "type": "string"
         },
         "KeepLocally": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If true, then the Docker image won't be\ndeleted on destroy operation. If this is false, it will delete the image from\nthe docker local storage on destroy operation."
         },
         "Latest": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Docker image, including any tags or SHA256 repo digests."
         },
         "PullTrigger": {
-            "type": "string"
+            "type": "string",
+            "description": "**Deprecated**, use `pull_triggers` instead."
         },
         "PullTriggers": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of values which cause an\nimage pull when changed. This is used to store the image digest from the\nregistry when using the `docker_registry_image` [data source](/docs/providers/docker/d/registry_image.html)\nto trigger an image update."
         }
     },
     "additionalProperties": false,

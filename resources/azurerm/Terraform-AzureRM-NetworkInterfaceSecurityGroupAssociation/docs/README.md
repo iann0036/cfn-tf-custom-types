@@ -1,6 +1,6 @@
 # Terraform::AzureRM::NetworkInterfaceSecurityGroupAssociation
 
-CloudFormation equivalent of azurerm_network_interface_security_group_association
+Manages the association between a Network Interface and a Network Security Group.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### NetworkInterfaceId
 
+The ID of the Network Interface. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -40,6 +42,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NetworkSecurityGroupId
+
+The ID of the Network Security Group which should be attached to the Network Interface. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

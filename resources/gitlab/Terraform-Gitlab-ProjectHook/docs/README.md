@@ -1,6 +1,8 @@
 # Terraform::Gitlab::ProjectHook
 
-CloudFormation equivalent of gitlab_project_hook
+This resource allows you to create and manage hooks for your GitLab projects.
+For further information on hooks, consult the [gitlab
+documentation](https://docs.gitlab.com/ce/user/project/integrations/webhooks.html).
 
 ## Syntax
 
@@ -51,6 +53,9 @@ Properties:
 
 #### EnableSslVerification
 
+Enable ssl verification when invoking
+the hook.
+
 _Required_: No
 
 _Type_: Boolean
@@ -58,6 +63,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IssuesEvents
+
+Invoke the hook for issues events.
 
 _Required_: No
 
@@ -67,6 +74,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### JobEvents
 
+Invoke the hook for job events.
+
 _Required_: No
 
 _Type_: Boolean
@@ -74,6 +83,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MergeRequestsEvents
+
+Invoke the hook for merge requests.
 
 _Required_: No
 
@@ -83,6 +94,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NoteEvents
 
+Invoke the hook for notes events.
+
 _Required_: No
 
 _Type_: Boolean
@@ -90,6 +103,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PipelineEvents
+
+Invoke the hook for pipeline events.
 
 _Required_: No
 
@@ -99,6 +114,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Project
 
+The name or id of the project to add the hook to.
+
 _Required_: Yes
 
 _Type_: String
@@ -106,6 +123,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PushEvents
+
+Invoke the hook for push events.
 
 _Required_: No
 
@@ -115,6 +134,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TagPushEvents
 
+Invoke the hook for tag push events.
+
 _Required_: No
 
 _Type_: Boolean
@@ -122,6 +143,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Token
+
+A token to present when invoking the hook.
 
 _Required_: No
 
@@ -131,6 +154,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Url
 
+The url of the hook to invoke.
+
 _Required_: Yes
 
 _Type_: String
@@ -138,6 +163,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WikiPageEvents
+
+Invoke the hook for wiki page events.
 
 _Required_: No
 

@@ -1,6 +1,7 @@
 # Terraform::RabbitMQ::Binding
 
-CloudFormation equivalent of rabbitmq_binding
+The ``rabbitmq_binding`` resource creates and manages a binding relationship
+between a queue an exchange.
 
 ## Syntax
 
@@ -40,6 +41,8 @@ Properties:
 
 #### Arguments
 
+Additional key/value arguments for the binding.
+
 _Required_: No
 
 _Type_: List of <a href="arguments.md">Arguments</a>
@@ -47,6 +50,8 @@ _Type_: List of <a href="arguments.md">Arguments</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Destination
+
+The destination queue or exchange.
 
 _Required_: Yes
 
@@ -56,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DestinationType
 
+The type of destination (queue or exchange).
+
 _Required_: Yes
 
 _Type_: String
@@ -63,6 +70,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RoutingKey
+
+A routing key for the binding.
 
 _Required_: No
 
@@ -72,6 +81,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Source
 
+The source exchange.
+
 _Required_: Yes
 
 _Type_: String
@@ -79,6 +90,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vhost
+
+The vhost to create the resource in.
 
 _Required_: Yes
 

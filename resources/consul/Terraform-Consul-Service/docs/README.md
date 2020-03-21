@@ -1,6 +1,12 @@
 # Terraform::Consul::Service
 
-CloudFormation equivalent of consul_service
+A high-level resource for creating a Service in Consul in the Consul catalog. This
+is appropriate for registering [external services](https://www.consul.io/docs/guides/external.html) and
+can be used to create services addressable by Consul that cannot be registered
+with a [local agent](https://www.consul.io/docs/agent/basics.html).
+
+If the Consul agent is running on the node where this service is registered, it is
+not recommended to use this resource.
 
 ## Syntax
 
@@ -53,6 +59,9 @@ Properties:
 
 #### Address
 
+The address of the service. Defaults to the
+address of the node.
+
 _Required_: No
 
 _Type_: String
@@ -60,6 +69,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Datacenter
+
+The datacenter to use. This overrides the
+agent's default datacenter and the datacenter in the provider setup.
 
 _Required_: No
 
@@ -77,6 +89,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Meta
 
+A map of arbitrary KV metadata linked to the service
+instance.
+
 _Required_: No
 
 _Type_: List of <a href="meta.md">Meta</a>
@@ -84,6 +99,8 @@ _Type_: List of <a href="meta.md">Meta</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the header.
 
 _Required_: Yes
 
@@ -93,6 +110,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Node
 
+The name of the node the to register the service on.
+
 _Required_: Yes
 
 _Type_: String
@@ -100,6 +119,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Port
+
+The port of the service.
 
 _Required_: No
 
@@ -116,6 +137,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A list of values that are opaque to Consul,
+but can be used to distinguish between services or nodes.
 
 _Required_: No
 

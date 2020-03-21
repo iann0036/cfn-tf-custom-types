@@ -1,6 +1,8 @@
 # Terraform::TencentCloud::TcaplusApplication
 
-CloudFormation equivalent of tencentcloud_tcaplus_application
+Use this resource to create tcaplus application
+
+~> **NOTE:** tcaplus now only supports the following regions:ap-shanghai,ap-hongkong,na-siliconvalley,ap-singapore,ap-seoul,ap-tokyo,eu-frankfurt
 
 ## Syntax
 
@@ -39,6 +41,8 @@ Properties:
 
 #### AppName
 
+Name of the tcapplus application. length should between 1 and 30.
+
 _Required_: Yes
 
 _Type_: String
@@ -46,6 +50,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IdlType
+
+Idl type of the tcapplus application.Valid values are PROTO,TDR,MIX.
 
 _Required_: Yes
 
@@ -55,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OldPasswordExpireLast
 
+Old password expected expiration seconds after change password,must >= 300.
+
 _Required_: No
 
 _Type_: Double
@@ -62,6 +70,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Password
+
+Password of the tcapplus application. length should between 12 and 16,a-z and 0-9 and A-Z must contain.
 
 _Required_: Yes
 
@@ -71,6 +81,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubnetId
 
+Subnet id of the tcapplus application.
+
 _Required_: Yes
 
 _Type_: String
@@ -78,6 +90,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+VPC id of the tcapplus application.
 
 _Required_: Yes
 

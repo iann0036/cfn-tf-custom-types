@@ -1,6 +1,11 @@
 # Terraform::OCI::OdaOdaInstance
 
-CloudFormation equivalent of oci_oda_oda_instance
+This resource provides the Oda Instance resource in Oracle Cloud Infrastructure Digital Assistant service.
+
+Starts an asynchronous job to create a Digital Assistant instance.
+
+To monitor the status of the job, take the `opc-work-request-id` response
+header value and use it to call `GET /workRequests/{workRequestID}`.
 
 ## Syntax
 
@@ -45,6 +50,8 @@ Properties:
 
 #### CompartmentId
 
+(Updatable) Identifier of the compartment.
+
 _Required_: Yes
 
 _Type_: String
@@ -52,6 +59,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefinedTags
+
+(Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`.
 
 _Required_: No
 
@@ -61,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+(Updatable) Description of the Digital Assistant instance.
+
 _Required_: No
 
 _Type_: String
@@ -68,6 +79,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+(Updatable) User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
 
 _Required_: No
 
@@ -77,6 +90,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FreeformTags
 
+(Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`.
+
 _Required_: No
 
 _Type_: List of <a href="freeformtags.md">FreeformTags</a>
@@ -84,6 +99,8 @@ _Type_: List of <a href="freeformtags.md">FreeformTags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ShapeName
+
+Shape or size of the instance.
 
 _Required_: Yes
 

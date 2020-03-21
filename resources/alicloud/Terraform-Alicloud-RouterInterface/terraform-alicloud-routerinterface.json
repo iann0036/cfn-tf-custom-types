@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::RouterInterface",
-    "description": "CloudFormation equivalent of alicloud_router_interface",
+    "description": "Provides a VPC router interface resource aim to build a connection between two VPCs.\n\n-> **NOTE:** Only one pair of connected router interfaces can exist between two routers. Up to 5 router interfaces can be created for each router and each account.\n\n-> **NOTE:** The router interface is not connected when it is created. It can be connected by means of resource [alicloud_router_interface_connection](https://www.terraform.io/docs/providers/alicloud/r/router_interface_connection.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,55 +9,72 @@
             "type": "string"
         },
         "AccessPointId": {
-            "type": "string"
+            "type": "string",
+            "description": "It has been deprecated from version 1.11.0."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the router interface. It can be 2-256 characters long or left blank. It cannot start with http:// and https://."
         },
         "HealthCheckSourceIp": {
-            "type": "string"
+            "type": "string",
+            "description": "Used as the Packet Source IP of health check for disaster recovery or ECMP. It is only valid when `router_type` is `VBR`. The IP must be an unused IP in the local VPC. It and `health_check_target_ip` must be specified at the same time."
         },
         "HealthCheckTargetIp": {
-            "type": "string"
+            "type": "string",
+            "description": "Used as the Packet Target IP of health check for disaster recovery or ECMP. It is only valid when `router_type` is `VBR`. The IP must be an unused IP in the local VPC. It and `health_check_source_ip` must be specified at the same time."
         },
         "InstanceChargeType": {
-            "type": "string"
+            "type": "string",
+            "description": "The billing method of the router interface. Valid values are \"PrePaid\" and \"PostPaid\". Default to \"PostPaid\". Router Interface doesn't support \"PrePaid\" when region and opposite_region are the same."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the router interface. Length must be 2-80 characters long. Only Chinese characters, English letters, numbers, period (.), underline (_), or dash (-) are permitted.\nIf it is not specified, the default value is interface ID. The name cannot start with http:// and https://."
         },
         "OppositeAccessPointId": {
-            "type": "string"
+            "type": "string",
+            "description": "It has been deprecated from version 1.11.0."
         },
         "OppositeInterfaceId": {
-            "type": "string"
+            "type": "string",
+            "description": "It has been deprecated from version 1.11.0. Use resource alicloud_router_interface_connection's 'opposite_router_id' instead."
         },
         "OppositeInterfaceOwnerId": {
-            "type": "string"
+            "type": "string",
+            "description": "It has been deprecated from version 1.11.0. Use resource alicloud_router_interface_connection's 'opposite_interface_id' instead."
         },
         "OppositeRegion": {
-            "type": "string"
+            "type": "string",
+            "description": "The Region of peer side."
         },
         "OppositeRouterId": {
-            "type": "string"
+            "type": "string",
+            "description": "It has been deprecated from version 1.11.0. Use resource alicloud_router_interface_connection's 'opposite_router_id' instead."
         },
         "OppositeRouterType": {
-            "type": "string"
+            "type": "string",
+            "description": "It has been deprecated from version 1.11.0. resource alicloud_router_interface_connection's 'opposite_router_type' instead."
         },
         "Period": {
-            "type": "number"
+            "type": "number",
+            "description": "The duration that you will buy the resource, in month. It is valid when `instance_charge_type` is `PrePaid`. Default to 1. Valid values: [1-9, 12, 24, 36]. At present, the provider does not support modify \"period\" and you can do that via web console."
         },
         "Role": {
-            "type": "string"
+            "type": "string",
+            "description": "The role the router interface plays. Optional value: `InitiatingSide`, `AcceptingSide`."
         },
         "RouterId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Router ID."
         },
         "RouterType": {
-            "type": "string"
+            "type": "string",
+            "description": "Router Type. Optional value: VRouter, VBR. Accepting side router interface type only be VRouter."
         },
         "Specification": {
-            "type": "string"
+            "type": "string",
+            "description": "Specification of router interfaces. It is valid when `role` is `InitiatingSide`. Accepting side's role is default to set as 'Negative'. For more about the specification, refer to [Router interface specification](https://www.alibabacloud.com/help/doc-detail/36037.htm)."
         }
     },
     "additionalProperties": false,

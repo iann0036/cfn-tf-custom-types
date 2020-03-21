@@ -1,6 +1,8 @@
 # Terraform::Vault::KubernetesAuthBackendRole
 
-CloudFormation equivalent of vault_kubernetes_auth_backend_role
+Manages an Kubernetes auth backend role in a Vault server. See the [Vault
+documentation](https://www.vaultproject.io/docs/auth/kubernetes.html) for more
+information.
 
 ## Syntax
 
@@ -73,6 +75,8 @@ Properties:
 
 #### Audience
 
+Audience claim to verify in the JWT.
+
 _Required_: No
 
 _Type_: String
@@ -80,6 +84,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Backend
+
+Unique name of the kubernetes backend to configure.
 
 _Required_: No
 
@@ -97,6 +103,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### BoundServiceAccountNames
 
+List of service account names able to access this role. If set to `["*"]` all names are allowed, both this and bound_service_account_namespaces can not be "*".
+
 _Required_: Yes
 
 _Type_: List of String
@@ -104,6 +112,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BoundServiceAccountNamespaces
+
+List of namespaces allowed to access this role. If set to `["*"]` all namespaces are allowed, both this and bound_service_account_names can not be set to "*".
 
 _Required_: Yes
 
@@ -144,6 +154,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RoleName
+
+Name of the role.
 
 _Required_: Yes
 

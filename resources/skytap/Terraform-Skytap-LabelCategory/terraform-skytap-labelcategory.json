@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Skytap::LabelCategory",
-    "description": "CloudFormation equivalent of skytap_label_category",
+    "description": "Provides a Skytap label category resource. Label categories provide a taxonomy of the usa reporting, once the label category is define it can be use to label resources. There are [restrictions for the use of labels](https://help.skytap.com/using-labels-for-in-depth-reporting.html#Restrictions) for example:\n\n* An account can have a maximum of 100 active categories.\n* An account can have a maximum combined total active and inactive (deleted) 200 categories.\n \n\n~> **NOTE:** Creating a label category fail when we reuse the name and change for label single value.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "User-defined label category name."
         },
         "SingleValue": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "With single value labels can have only one value for a category, with false labels can have multiple values."
         }
     },
     "additionalProperties": false,

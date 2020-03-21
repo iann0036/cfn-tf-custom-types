@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::ComputeNetworkEndpoint",
-    "description": "CloudFormation equivalent of google_compute_network_endpoint",
+    "description": "A Network endpoint represents a IP address and port combination that is\npart of a specific network endpoint group (NEG). NEGs are zonals\ncollection of these endpoints for GCP resources within a\nsingle subnet. **NOTE**: Network endpoints cannot be created outside of a\nnetwork endpoint group.\n\n\nTo get more information about NetworkEndpoint, see:\n\n* [API documentation](https://cloud.google.com/compute/docs/reference/rest/beta/networkEndpointGroups)\n* How-to Guides\n    * [Official Documentation](https://cloud.google.com/load-balancing/docs/negs/)",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -35,7 +35,8 @@
             "type": "number"
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the project in which the resource belongs.\nIf it is not provided, the provider project is used."
         },
         "Zone": {
             "type": "string"

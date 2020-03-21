@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::CsPeeringConnectV1
 
-CloudFormation equivalent of huaweicloud_cs_peering_connect_v1
+Cloud Stream Service cluster peering connect management
 
 ## Syntax
 

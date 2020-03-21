@@ -34,6 +34,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### EnableBackendSsl30
 
+Should SSL 3.0 be enabled on the backend of the gateway? Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -41,6 +43,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableBackendTls10
+
+Should TLS 1.0 be enabled on the backend of the gateway? Defaults to `false`.
 
 _Required_: No
 
@@ -50,6 +54,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableBackendTls11
 
+Should TLS 1.1 be enabled on the backend of the gateway? Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -57,6 +63,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableFrontendSsl30
+
+Should SSL 3.0 be enabled on the frontend of the gateway? Defaults to `false`.
 
 _Required_: No
 
@@ -66,6 +74,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableFrontendTls10
 
+Should TLS 1.0 be enabled on the frontend of the gateway? Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -74,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableFrontendTls11
 
+Should TLS 1.1 be enabled on the frontend of the gateway? Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -81,6 +93,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableTripleDesCiphers
+
+Should the `TLS_RSA_WITH_3DES_EDE_CBC_SHA` cipher be enabled for alL TLS versions (1.0, 1.1 and 1.2)? Defaults to `false`.
 
 _Required_: No
 

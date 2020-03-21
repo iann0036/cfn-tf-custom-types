@@ -1,6 +1,8 @@
 # Terraform::Bitbucket::BranchRestriction
 
-CloudFormation equivalent of bitbucket_branch_restriction
+Provides a Bitbucket branch restriction resource.
+
+This allows you for setting up branch restrictions for your repository.
 
 ## Syntax
 
@@ -43,6 +45,8 @@ Properties:
 
 #### Kind
 
+The type of restriction that is being applied. List of possible stages is [here](https://developer.atlassian.com/bitbucket/api/2/reference/resource/repositories/%7Busername%7D/%7Brepo_slug%7D/branch-restrictions).
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +54,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Owner
+
+The owner of this repository. Can be you or any team you
+have write access to.
 
 _Required_: Yes
 
@@ -59,6 +66,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Pattern
 
+The pattern to determine which branches will be restricted.
+
 _Required_: Yes
 
 _Type_: String
@@ -67,6 +76,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Repository
 
+The name of the repository.
+
 _Required_: Yes
 
 _Type_: String
@@ -74,6 +85,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Users
+
+A list of users to use.
 
 _Required_: No
 

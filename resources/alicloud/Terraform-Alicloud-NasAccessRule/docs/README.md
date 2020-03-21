@@ -1,6 +1,10 @@
 # Terraform::Alicloud::NasAccessRule
 
-CloudFormation equivalent of alicloud_nas_access_rule
+Provides a Nas Access Rule resource.
+
+When NAS is activated, the Default VPC Permission Group is automatically generated. It allows all IP addresses in a VPC to access the mount point with full permissions. Full permissions include Read/Write permission with no restriction on root users.
+
+-> **NOTE:** Available in v1.34.0+.
 
 ## Syntax
 
@@ -37,6 +41,8 @@ Properties:
 
 #### AccessGroupName
 
+Permission group name.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +50,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Priority
+
+Priority level. Range: 1-100. Default value: 1.
 
 _Required_: No
 
@@ -53,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RwAccessType
 
+Read-write permission type: RDWR (default), RDONLY.
+
 _Required_: No
 
 _Type_: String
@@ -61,6 +71,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SourceCidrIp
 
+Address or address segment.
+
 _Required_: Yes
 
 _Type_: String
@@ -68,6 +80,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserAccessType
+
+User permission type: no_squash (default), root_squash, all_squash.
 
 _Required_: No
 

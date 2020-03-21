@@ -36,6 +36,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### AddressSpace
 
+The address space out of which ip addresses for
+vpn clients will be taken. You can provide more than one address space, e.g.
+in CIDR notation.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -43,6 +47,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RadiusServerAddress
+
+The address of the Radius server.
+This setting is incompatible with the use of `root_certificate` and `revoked_certificate`.
 
 _Required_: No
 
@@ -52,6 +59,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RadiusServerSecret
 
+The secret used by the Radius server.
+This setting is incompatible with the use of `root_certificate` and `revoked_certificate`.
+
 _Required_: No
 
 _Type_: String
@@ -59,6 +69,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpnClientProtocols
+
+List of the protocols supported by the vpn client.
+The supported values are `SSTP`, `IkeV2` and `OpenVPN`.
 
 _Required_: No
 

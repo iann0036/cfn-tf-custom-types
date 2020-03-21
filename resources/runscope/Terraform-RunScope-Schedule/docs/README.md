@@ -1,6 +1,9 @@
 # Terraform::RunScope::Schedule
 
-CloudFormation equivalent of runscope_schedule
+A [schedule](https://www.runscope.com/docs/api/schedules) resource.
+Tests can be scheduled to run on frequencies up to every minute.
+One ore more schedules can be configured per test with each schedule
+using a unique Test-specific or Shared [Environment](environment.html).
 
 ## Syntax
 
@@ -37,6 +40,8 @@ Properties:
 
 #### BucketId
 
+The id of the bucket to associate this schedule with.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +49,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnvironmentId
+
+The id of the environment to use when running the test.
+If given, creates a test specific schedule, otherwise creates a shared schedule.
 
 _Required_: Yes
 
@@ -53,6 +61,15 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Interval
 
+The schedule's interval, must be one of:
+* 1m — every minute
+* 5m — every 5 minutes
+* 15m — every 15 minutes
+* 30m — every 30 minutes
+* 1h — every hour
+* 6h — every 6 hours
+* 1d — every day.
+
 _Required_: No
 
 _Type_: String
@@ -61,6 +78,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Note
 
+A human-friendly description for the schedule.
+
 _Required_: No
 
 _Type_: String
@@ -68,6 +87,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TestId
+
+The id of the test to associate this schedule with.
 
 _Required_: Yes
 

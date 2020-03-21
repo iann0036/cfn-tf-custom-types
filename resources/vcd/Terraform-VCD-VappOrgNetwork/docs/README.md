@@ -1,6 +1,8 @@
 # Terraform::VCD::VappOrgNetwork
 
-CloudFormation equivalent of vcd_vapp_org_network
+Provides capability to attach an existing Org VDC Network to a vApp and toggle network features.
+
+Supported in provider *v2.7+*
 
 ## Syntax
 
@@ -43,6 +45,8 @@ Properties:
 
 #### FirewallEnabled
 
+Firewall service enabled or disabled. Configurable when `is_fenced` is true. Default is true.
+
 _Required_: No
 
 _Type_: Boolean
@@ -59,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NatEnabled
 
+NAT service enabled or disabled. Configurable when `is_fenced` and `firewall_enabled` is true.
+
 _Required_: No
 
 _Type_: Boolean
@@ -66,6 +72,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Org
+
+The name of organization to use, optional if defined at provider level. Useful when
+connected as sysadmin working across different organisations.
 
 _Required_: No
 
@@ -75,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OrgNetworkName
 
+An Org network name to which vApp network is connected. If not configured, then an isolated network is created.
+
 _Required_: Yes
 
 _Type_: String
@@ -82,6 +93,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RetainIpMacEnabled
+
+Specifies whether the network resources such as IP/MAC of router will be retained across deployments. Configurable when `is_fenced` is true.
 
 _Required_: No
 
@@ -91,6 +104,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VappName
 
+The vApp this network belongs to.
+
 _Required_: Yes
 
 _Type_: String
@@ -98,6 +113,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vdc
+
+The name of VDC to use, optional if defined at provider level.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Panos::PanoramaTemplateVariable",
-    "description": "CloudFormation equivalent of panos_panorama_template_variable",
+    "description": "This resource allows you to add/update/delete variables for both Panorama\ntemplates and template stacks.\n\nTemplate variables are available in PAN-OS 8.1+.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,19 +9,24 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The template's name.  This must start with a dollar sign ($)."
         },
         "Template": {
-            "type": "string"
+            "type": "string",
+            "description": "The template name."
         },
         "TemplateStack": {
-            "type": "string"
+            "type": "string",
+            "description": "The template stack name."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The variable type.  Valid values are `ip-netmask`\n(default), `ip-range`, `fqdn`, `group-id`, or `interface`."
         },
         "Value": {
-            "type": "string"
+            "type": "string",
+            "description": "The variable value."
         }
     },
     "additionalProperties": false,

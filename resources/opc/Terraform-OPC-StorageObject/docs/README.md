@@ -1,6 +1,6 @@
 # Terraform::OPC::StorageObject
 
-CloudFormation equivalent of opc_storage_object
+Creates and manages a Object in an Oracle Cloud Infrastructure Storage Classic container. `storage_endpoint` must be set in the provider or environment to manage these resources.
 
 ## Syntax
 
@@ -52,6 +52,8 @@ Properties:
 
 #### Container
 
+The name of Storage Container the store the object in.
+
 _Required_: Yes
 
 _Type_: String
@@ -59,6 +61,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Content
+
+Raw content in string-form of the data.
 
 _Required_: No
 
@@ -68,6 +72,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ContentDisposition
 
+Set the HTTP `Content-Disposition` header to specify the override behaviour for the browser, e.g. `inline` or `attachment`.
+
 _Required_: No
 
 _Type_: String
@@ -75,6 +81,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ContentEncoding
+
+set the HTTP `Content-Encoding` for the object.
 
 _Required_: No
 
@@ -84,6 +92,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ContentType
 
+set the MIME type for the object.
+
 _Required_: No
 
 _Type_: String
@@ -91,6 +101,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CopyFrom
+
+name of an existing object used to create the new object as a copy. The value is in form `container/object`. You must UTF-8-encode and then URL-encode the names of the container and object.
 
 _Required_: No
 
@@ -100,6 +112,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DeleteAt
 
+The date and time in UNIX Epoch time stamp format when the system removes the object.
+
 _Required_: No
 
 _Type_: Double
@@ -107,6 +121,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Etag
+
+MD5 checksum value of the request body. Strongly Recommended.
 
 _Required_: No
 
@@ -116,6 +132,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### File
 
+File path for the content to use for data.
+
 _Required_: No
 
 _Type_: String
@@ -123,6 +141,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Metadata
+
+Additional object metadata headers. See [Object Metadata ](#object-metadata) below for more information.
 
 _Required_: No
 
@@ -132,6 +152,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the Storage Object.
+
 _Required_: Yes
 
 _Type_: String
@@ -139,6 +161,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TransferEncoding
+
+Set to `chunked` to enable chunked transfer encoding.
 
 _Required_: No
 

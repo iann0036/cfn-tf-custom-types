@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::NSXT::LogicalDhcpPort",
-    "description": "CloudFormation equivalent of nsxt_logical_dhcp_port",
+    "description": "This resource provides a resource to configure a logical port on a logical switch, and attach it to a DHCP server.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Tag": {
@@ -26,19 +26,24 @@
             "type": "string"
         },
         "AdminState": {
-            "type": "string"
+            "type": "string",
+            "description": "Admin state for the logical port. Accepted values - 'UP' or 'DOWN'. The default value is 'UP'."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of this resource."
         },
         "DhcpServerId": {
-            "type": "string"
+            "type": "string",
+            "description": "Logical DHCP server ID for the logical port."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "Display name, defaults to ID if not set."
         },
         "LogicalSwitchId": {
-            "type": "string"
+            "type": "string",
+            "description": "Logical switch ID for the logical port."
         },
         "Revision": {
             "type": "number"

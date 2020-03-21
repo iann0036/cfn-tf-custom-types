@@ -1,6 +1,13 @@
 # Terraform::RunScope::Environment
 
-CloudFormation equivalent of runscope_environment
+An [environment](https://www.runscope.com/docs/api/environments) resource.
+An [environment](https://www.runscope.com/docs/api-testing/environments)
+is is a group of configuration settings (initial variables, locations,
+notifications, integrations, etc.) used when running a test.
+Every test has at least one environment, but you can create additional
+environments as needed. For common settings (base URLs, API keys)
+that you'd like to use across all tests within a bucket,
+use a [Shared Environment](https://www.runscope.com/docs/api-testing/environments#shared).
 
 ## Syntax
 
@@ -62,6 +69,8 @@ Properties:
 
 #### BucketId
 
+The id of the bucket to associate this environment with.
+
 _Required_: Yes
 
 _Type_: String
@@ -69,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InitialVariables
+
+Map of keys and values being used for variables when the test begins.
 
 _Required_: No
 
@@ -78,6 +89,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Integrations
 
+A list of integration ids to enable for test runs using this environment.
+
 _Required_: No
 
 _Type_: List of String
@@ -85,6 +98,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of environment.
 
 _Required_: Yes
 
@@ -94,6 +109,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PreserveCookies
 
+If this is set to true, tests using this enviornment will manage cookies between steps.
+
 _Required_: No
 
 _Type_: Boolean
@@ -101,6 +118,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Regions
+
+A list of [Runscope regions](https://www.runscope.com/docs/regions) to execute test runs in when using this environment.
 
 _Required_: No
 
@@ -118,6 +137,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Script
 
+The [script](https://www.runscope.com/docs/api-testing/scripts#initial-script)
+to to run to setup the environment.
+
 _Required_: No
 
 _Type_: String
@@ -125,6 +147,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TestId
+
+The id of the test to associate this environment with.
+If given, creates a test specific environment, otherwise creates a shared environment.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::AzureRM::PublicIp
 
-CloudFormation equivalent of azurerm_public_ip
+Manages a Public IP Address.
 
 ## Syntax
 
@@ -55,6 +55,8 @@ Properties:
 
 #### AllocationMethod
 
+Defines the allocation method for this IP address. Possible values are `Static` or `Dynamic`.
+
 _Required_: Yes
 
 _Type_: String
@@ -62,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DomainNameLabel
+
+Label for the Domain Name. Will be used to make up the FQDN.  If a domain name label is specified, an A DNS record is created for the public IP in the Microsoft Azure DNS system.
 
 _Required_: No
 
@@ -71,6 +75,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IdleTimeoutInMinutes
 
+Specifies the timeout for the TCP idle connection. The value can be set between 4 and 30 minutes.
+
 _Required_: No
 
 _Type_: Double
@@ -78,6 +84,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IpVersion
+
+The IP Version to use, IPv6 or IPv4.
 
 _Required_: No
 
@@ -87,6 +95,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Location
 
+Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -94,6 +104,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the Public IP resource . Changing this forces a
+new resource to be created.
 
 _Required_: Yes
 
@@ -103,6 +116,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PublicIpPrefixId
 
+If specified then public IP address allocated will be provided from the public IP prefix resource.
+
 _Required_: No
 
 _Type_: String
@@ -110,6 +125,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which to
+create the public ip.
 
 _Required_: Yes
 
@@ -119,6 +137,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ReverseFqdn
 
+A fully qualified domain name that resolves to this public IP address. If the reverseFqdn is specified, then a PTR DNS record is created pointing from the IP address in the in-addr.arpa domain to the reverse FQDN.
+
 _Required_: No
 
 _Type_: String
@@ -126,6 +146,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Sku
+
+The SKU of the Public IP. Accepted values are `Basic` and `Standard`. Defaults to `Basic`.
 
 _Required_: No
 
@@ -135,6 +157,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -142,6 +166,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Zones
+
+A collection containing the availability zone to allocate the Public IP in.
 
 _Required_: No
 

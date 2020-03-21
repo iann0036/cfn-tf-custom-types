@@ -1,6 +1,6 @@
 # Terraform::Spotinst::OceanEcs
 
-CloudFormation equivalent of spotinst_ocean_ecs
+Provides a Spotinst Ocean ECS resource.
 
 ## Syntax
 
@@ -87,6 +87,8 @@ Properties:
 
 #### AssociatePublicIpAddress
 
+Configure public IP address allocation.
+
 _Required_: No
 
 _Type_: Boolean
@@ -94,6 +96,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClusterName
+
+The ocean cluster name.
 
 _Required_: Yes
 
@@ -103,6 +107,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DesiredCapacity
 
+The number of instances to launch and maintain in the cluster.
+
 _Required_: No
 
 _Type_: Double
@@ -110,6 +116,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DrainingTimeout
+
+The time in seconds, the instance is allowed to run while detached from the ELB. This is to allow the instance time to be drained from incoming TCP connections before terminating it, during a scale down operation.
 
 _Required_: No
 
@@ -119,6 +127,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EbsOptimized
 
+Enable EBS optimized for cluster. Flag will enable optimized capacity for high bandwidth connectivity to the EB service for non EBS optimized instance types. For instances that are EBS optimized this flag will be ignored.
+
 _Required_: No
 
 _Type_: Boolean
@@ -126,6 +136,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IamInstanceProfile
+
+The instance profile iam role.
 
 _Required_: No
 
@@ -135,6 +147,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ImageId
 
+ID of the image used to launch the instances.
+
 _Required_: No
 
 _Type_: String
@@ -142,6 +156,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeyPair
+
+The key pair to attach the instances.
 
 _Required_: No
 
@@ -151,6 +167,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxSize
 
+The upper limit of instances the cluster can scale up to.
+
 _Required_: No
 
 _Type_: Double
@@ -158,6 +176,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MinSize
+
+The lower limit of instances the cluster can scale down to.
 
 _Required_: No
 
@@ -167,6 +187,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Monitoring
 
+Enable detailed monitoring for cluster. Flag will enable Cloud Watch detailed detailed monitoring (one minute increments). Note: there are additional hourly costs for this service based on the region used.
+
 _Required_: No
 
 _Type_: Boolean
@@ -174,6 +196,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The Ocean cluster name.
 
 _Required_: Yes
 
@@ -183,6 +207,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region the cluster will run in.
+
 _Required_: Yes
 
 _Type_: String
@@ -190,6 +216,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecurityGroupIds
+
+One or more security group ids.
 
 _Required_: Yes
 
@@ -199,6 +227,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubnetIds
 
+A comma-separated list of subnet identifiers for the Ocean cluster. Subnet IDs should be configured with auto assign public ip.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -206,6 +236,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserData
+
+Base64-encoded MIME user data to make available to the instances.
 
 _Required_: No
 
@@ -222,6 +254,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Whitelist
+
+Instance types allowed in the Ocean cluster.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::Vault::PkiSecretBackendRole
 
-CloudFormation equivalent of vault_pki_secret_backend_role
+Creates a role on an PKI Secret Backend for Vault.
 
 ## Syntax
 
@@ -114,6 +114,8 @@ Properties:
 
 #### AllowAnyName
 
+Flag to allow any name.
+
 _Required_: No
 
 _Type_: Boolean
@@ -121,6 +123,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowBareDomains
+
+Flag to allow certificates matching the actual domain.
 
 _Required_: No
 
@@ -130,6 +134,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AllowGlobDomains
 
+Flag to allow names containing glob patterns.
+
 _Required_: No
 
 _Type_: Boolean
@@ -137,6 +143,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowIpSans
+
+Flag to allow IP SANs.
 
 _Required_: No
 
@@ -146,6 +154,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AllowLocalhost
 
+Flag to allow certificates for localhost.
+
 _Required_: No
 
 _Type_: Boolean
@@ -153,6 +163,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowSubdomains
+
+Flag to allow certificates matching subdomains.
 
 _Required_: No
 
@@ -162,6 +174,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AllowedDomains
 
+List of allowed domains for certificates.
+
 _Required_: No
 
 _Type_: List of String
@@ -169,6 +183,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowedOtherSans
+
+Defines allowed custom SANs.
 
 _Required_: No
 
@@ -178,6 +194,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AllowedUriSans
 
+Defines allowed URI SANs.
+
 _Required_: No
 
 _Type_: List of String
@@ -185,6 +203,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Backend
+
+The path the PKI secret backend is mounted at, with no leading or trailing `/`s.
 
 _Required_: Yes
 
@@ -194,6 +214,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### BasicConstraintsValidForNonCa
 
+Flag to mark basic constraints valid when issuing non-CA certificates.
+
 _Required_: No
 
 _Type_: Boolean
@@ -201,6 +223,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClientFlag
+
+Flag to specify certificates for client use.
 
 _Required_: No
 
@@ -210,6 +234,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CodeSigningFlag
 
+Flag to specify certificates for code signing use.
+
 _Required_: No
 
 _Type_: Boolean
@@ -217,6 +243,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Country
+
+The country of generated certificates.
 
 _Required_: No
 
@@ -226,6 +254,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EmailProtectionFlag
 
+Flag to specify certificates for email protection use.
+
 _Required_: No
 
 _Type_: Boolean
@@ -233,6 +263,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnforceHostnames
+
+Flag to allow only valid host names.
 
 _Required_: No
 
@@ -242,6 +274,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ExtKeyUsage
 
+Specify the allowed extended key usage constraint on issued certificates.
+
 _Required_: No
 
 _Type_: List of String
@@ -249,6 +283,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GenerateLease
+
+Flag to generate leases with certificates.
 
 _Required_: No
 
@@ -258,6 +294,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KeyBits
 
+The number of bits of generated keys.
+
 _Required_: No
 
 _Type_: Double
@@ -265,6 +303,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeyType
+
+The type of generated keys.
 
 _Required_: No
 
@@ -274,6 +314,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KeyUsage
 
+Specify the allowed key usage constraint on issued certificates.
+
 _Required_: No
 
 _Type_: List of String
@@ -281,6 +323,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Locality
+
+The locality of generated certificates.
 
 _Required_: No
 
@@ -290,6 +334,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxTtl
 
+The maximum TTL.
+
 _Required_: No
 
 _Type_: String
@@ -297,6 +343,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name to identify this role within the backend. Must be unique within the backend.
 
 _Required_: Yes
 
@@ -306,6 +354,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NoStore
 
+Flag to not store certificates in the storage backend.
+
 _Required_: No
 
 _Type_: Boolean
@@ -313,6 +363,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NotBeforeDuration
+
+Specifies the duration by which to backdate the NotBefore property.
 
 _Required_: No
 
@@ -322,6 +374,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Organization
 
+The organization of generated certificates.
+
 _Required_: No
 
 _Type_: List of String
@@ -329,6 +383,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ou
+
+The organization unit of generated certificates.
 
 _Required_: No
 
@@ -338,6 +394,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PolicyIdentifiers
 
+Specify the list of allowed policies IODs.
+
 _Required_: No
 
 _Type_: List of String
@@ -345,6 +403,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PostalCode
+
+The postal code of generated certificates.
 
 _Required_: No
 
@@ -354,6 +414,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Province
 
+The province of generated certificates.
+
 _Required_: No
 
 _Type_: List of String
@@ -361,6 +423,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RequireCn
+
+Flag to force CN usage.
 
 _Required_: No
 
@@ -370,6 +434,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServerFlag
 
+Flag to specify certificates for server use.
+
 _Required_: No
 
 _Type_: Boolean
@@ -377,6 +443,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StreetAddress
+
+The street address of generated certificates.
 
 _Required_: No
 
@@ -386,6 +454,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ttl
 
+The TTL.
+
 _Required_: No
 
 _Type_: String
@@ -394,6 +464,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UseCsrCommonName
 
+Flag to use the CN in the CSR.
+
 _Required_: No
 
 _Type_: Boolean
@@ -401,6 +473,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UseCsrSans
+
+Flag to use the SANs in the CSR.
 
 _Required_: No
 

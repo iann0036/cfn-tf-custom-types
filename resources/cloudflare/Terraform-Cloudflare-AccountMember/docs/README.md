@@ -1,6 +1,6 @@
 # Terraform::Cloudflare::AccountMember
 
-CloudFormation equivalent of cloudflare_account_member
+Provides a resource which manages Cloudflare account members.
 
 ## Syntax
 
@@ -32,6 +32,8 @@ Properties:
 
 #### EmailAddress
 
+The email address of the user who you wish to manage. Note: Following creation, this field becomes read only via the API and cannot be updated.
+
 _Required_: Yes
 
 _Type_: String
@@ -39,6 +41,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RoleIds
+
+Array of account role IDs that you want to assign to a member.
 
 _Required_: Yes
 

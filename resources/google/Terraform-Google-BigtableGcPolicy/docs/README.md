@@ -1,6 +1,8 @@
 # Terraform::Google::BigtableGcPolicy
 
-CloudFormation equivalent of google_bigtable_gc_policy
+Creates a Google Cloud Bigtable GC Policy inside a family. For more information see
+[the official documentation](https://cloud.google.com/bigtable/) and
+[API](https://cloud.google.com/bigtable/docs/go/reference).
 
 ## Syntax
 
@@ -43,6 +45,8 @@ Properties:
 
 #### ColumnFamily
 
+The name of the column family.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceName
+
+The name of the Bigtable instance.
 
 _Required_: Yes
 
@@ -59,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Mode
 
+If multiple policies are set, you should choose between `UNION` OR `INTERSECTION`.
+
 _Required_: No
 
 _Type_: String
@@ -67,6 +75,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Project
 
+The ID of the project in which the resource belongs. If it is not provided, the provider project is used.
+
 _Required_: No
 
 _Type_: String
@@ -74,6 +84,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Table
+
+The name of the table.
 
 _Required_: Yes
 

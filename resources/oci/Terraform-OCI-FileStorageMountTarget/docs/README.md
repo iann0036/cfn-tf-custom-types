@@ -1,6 +1,39 @@
 # Terraform::OCI::FileStorageMountTarget
 
-CloudFormation equivalent of oci_file_storage_mount_target
+This resource provides the Mount Target resource in Oracle Cloud Infrastructure File Storage service.
+
+Creates a new mount target in the specified compartment and
+subnet. You can associate a file system with a mount
+target only when they exist in the same availability domain. Instances
+can connect to mount targets in another availablity domain, but
+you might see higher latency than with instances in the same
+availability domain as the mount target.
+
+Mount targets have one or more private IP addresses that you can
+provide as the host portion of remote target parameters in
+client mount commands. These private IP addresses are listed
+in the privateIpIds property of the mount target and are highly available. Mount
+targets also consume additional IP addresses in their subnet.
+Do not use /30 or smaller subnets for mount target creation because they
+do not have sufficient available IP addresses.
+Allow at least three IP addresses for each mount target.
+
+For information about access control and compartments, see
+[Overview of the IAM
+Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+
+For information about availability domains, see [Regions and
+Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+To get a list of availability domains, use the
+`ListAvailabilityDomains` operation in the Identity and Access
+Management Service API.
+
+All Oracle Cloud Infrastructure Services resources, including
+mount targets, get an Oracle-assigned, unique ID called an
+Oracle Cloud Identifier (OCID).  When you create a resource,
+you can find its OCID in the response. You can also retrieve a
+resource's OCID by using a List API operation on that resource
+type, or by viewing the resource in the Console.
 
 ## Syntax
 
@@ -50,6 +83,8 @@ Properties:
 
 #### AvailabilityDomain
 
+The availability domain in which to create the mount target.  Example: `Uocm:PHX-AD-1`.
+
 _Required_: Yes
 
 _Type_: String
@@ -57,6 +92,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CompartmentId
+
+(Updatable) The OCID of the compartment in which to create the mount target.
 
 _Required_: Yes
 
@@ -66,6 +103,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DefinedTags
 
+(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`.
+
 _Required_: No
 
 _Type_: List of <a href="definedtags.md">DefinedTags</a>
@@ -73,6 +112,8 @@ _Type_: List of <a href="definedtags.md">DefinedTags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+(Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My mount target`.
 
 _Required_: No
 
@@ -82,6 +123,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FreeformTags
 
+(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`.
+
 _Required_: No
 
 _Type_: List of <a href="freeformtags.md">FreeformTags</a>
@@ -89,6 +132,8 @@ _Type_: List of <a href="freeformtags.md">FreeformTags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HostnameLabel
+
+The hostname for the mount target's IP address, used for DNS resolution. The value is the hostname portion of the private IP address's fully qualified domain name (FQDN). For example, `files-1` in the FQDN `files-1.subnet123.vcn1.oraclevcn.com`. Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
 
 _Required_: No
 
@@ -98,6 +143,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IpAddress
 
+A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`.
+
 _Required_: No
 
 _Type_: String
@@ -106,6 +153,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NsgIds
 
+(Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+
 _Required_: No
 
 _Type_: List of String
@@ -113,6 +162,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubnetId
+
+The OCID of the subnet in which to create the mount target.
 
 _Required_: Yes
 

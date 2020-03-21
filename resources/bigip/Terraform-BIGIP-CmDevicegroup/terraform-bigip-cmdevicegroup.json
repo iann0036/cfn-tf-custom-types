@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::BIGIP::CmDevicegroup",
-    "description": "CloudFormation equivalent of bigip_cm_devicegroup",
+    "description": "`bigip_cm_devicegroup` A device group is a collection of BIG-IP devices that are configured to securely synchronize their BIG-IP configuration data, and fail over when needed.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Device": {
@@ -23,7 +23,8 @@
             "type": "string"
         },
         "AutoSync": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies if the device-group will automatically sync configuration data to its members."
         },
         "Description": {
             "type": "string"
@@ -35,7 +36,8 @@
             "type": "number"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Is the name of the device Group."
         },
         "NetworkFailover": {
             "type": "string"
@@ -47,7 +49,8 @@
             "type": "string"
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies if the device-group will be used for failover or resource syncing."
         },
         "Device": {
             "type": "array",

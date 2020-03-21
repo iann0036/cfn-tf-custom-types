@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::AppServicePlan",
-    "description": "CloudFormation equivalent of azurerm_app_service_plan",
+    "description": "Manages an App Service Plan component.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Sku": {
@@ -8,13 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "Capacity": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Specifies the number of workers associated with this App Service Plan."
                 },
                 "Size": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the plan's instance size."
                 },
                 "Tier": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the plan's pricing tier."
                 }
             },
             "required": [
@@ -48,34 +51,42 @@
             "type": "string"
         },
         "AppServiceEnvironmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the App Service Environment where the App Service Plan should be located. Changing forces a new resource to be created."
         },
         "IsXenon": {
             "type": "boolean"
         },
         "Kind": {
-            "type": "string"
+            "type": "string",
+            "description": "The kind of the App Service Plan to create. Possible values are `Windows` (also available as `App`), `Linux`, `elastic` (for Premium Consumption) and `FunctionApp` (for a Consumption Plan). Defaults to `Windows`. Changing this forces a new resource to be created."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "MaximumElasticWorkerCount": {
-            "type": "number"
+            "type": "number",
+            "description": "The maximum number of total workers allowed for this ElasticScaleEnabled App Service Plan."
         },
         "MaximumNumberOfWorkers": {
             "type": "number"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the App Service Plan component. Changing this forces a new resource to be created."
         },
         "PerSiteScaling": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Can Apps assigned to this App Service Plan be scaled independently? If set to `false` apps assigned to this plan will scale to all instances of the plan.  Defaults to `false`."
         },
         "Reserved": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is this App Service Plan `Reserved`. Defaults to `false`."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the App Service Plan component."
         },
         "Tags": {
             "type": "array",
@@ -95,7 +106,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Sku": {
             "type": "array",

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Cobbler::Repo",
-    "description": "CloudFormation equivalent of cobbler_repo",
+    "description": "Manages a repo within Cobbler.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -13,58 +13,72 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of Apt components such as main,\nrestricted, universe. Applicable to apt breeds only."
         },
         "AptDists": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of Apt distribution names such as trusty,\ntrusty-updates. Applicable to apt breeds only."
         },
         "Arch": {
-            "type": "string"
+            "type": "string",
+            "description": "The architecture of the repo. Valid options\nare: i386, x86_64, ia64, ppc, ppc64, s390, arm."
         },
         "Breed": {
-            "type": "string"
+            "type": "string",
+            "description": "The \"breed\" of distribution. Valid options\nare: rsync, rhn, yum, apt, and wget. These choices may vary depending on the\nversion of Cobbler in use."
         },
         "Comment": {
-            "type": "string"
+            "type": "string",
+            "description": "Free form text description."
         },
         "CreaterepoFlags": {
-            "type": "string"
+            "type": "string",
+            "description": "Flags to use with `createrepo`."
         },
         "Environment": {
-            "type": "string"
+            "type": "string",
+            "description": "Environment variables to use during repo command\nexecution."
         },
         "KeepUpdated": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Update the repo upon Cobbler sync. Valid values\nare true or false."
         },
         "Mirror": {
-            "type": "string"
+            "type": "string",
+            "description": "Address of the repo to mirror."
         },
         "MirrorLocally": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to copy the files locally or just\nreferences to the external files. Valid values are true or false."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A name for the repo."
         },
         "Owners": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of Owners for authz_ownership."
         },
         "Proxy": {
-            "type": "string"
+            "type": "string",
+            "description": "Proxy to use for downloading the repo. This argument does\nnot work on older versions of Cobbler."
         },
         "RpmList": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of specific RPMs to mirror."
         }
     },
     "additionalProperties": false,

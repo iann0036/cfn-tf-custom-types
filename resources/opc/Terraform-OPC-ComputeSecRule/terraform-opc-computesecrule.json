@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OPC::ComputeSecRule",
-    "description": "CloudFormation equivalent of opc_compute_sec_rule",
+    "description": "The ``opc_compute_sec_rule`` resource creates and manages a sec rule in an Oracle Cloud Infrastructure Compute Classic identity domain, which joins together a source security list (or security IP list), a destination security list (or security IP list), and a security application.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,25 +9,32 @@
             "type": "string"
         },
         "Action": {
-            "type": "string"
+            "type": "string",
+            "description": "Whether to `permit`, `refuse` or `deny` packets to which this rule applies. This will ordinarily\nbe `permit`."
         },
         "Application": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the application to which the rule applies."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description for this security rule."
         },
         "DestinationList": {
-            "type": "string"
+            "type": "string",
+            "description": "The destination security list (prefixed with `seclist:`), or security IP list (prefixed with\n`seciplist:`)."
         },
         "Disabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to disable this security rule. This is useful if you want to temporarily disable a rule\nwithout removing it outright from your Terraform resource definition. Defaults to `false`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The unique (within the identity domain) name of the security rule."
         },
         "SourceList": {
-            "type": "string"
+            "type": "string",
+            "description": "The source security list (prefixed with `seclist:`), or security IP list (prefixed with\n`seciplist:`)."
         }
     },
     "additionalProperties": false,

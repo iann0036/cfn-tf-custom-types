@@ -1,6 +1,15 @@
 # Terraform::Panos::PanoramaNatRuleGroup
 
-CloudFormation equivalent of panos_panorama_nat_rule_group
+This resource allows you to add/update/delete a group of Panorama NAT rules.
+
+This resource manages clusters of NAT rules in a single device group,
+enforcing both the contents of individual rules as well as their
+ordering.  Rules are defined in a `rule` config block.
+
+Although you cannot modify non-group NAT rules with this
+resource, the `position_keyword` and `position_reference` parameters allow you
+to reference some other NAT rule that already exists, using it as
+a means to ensure some rough placement within the ruleset as a whole.
 
 ## Syntax
 
@@ -83,6 +92,9 @@ Properties:
 
 #### DeviceGroup
 
+Device group the NAT rules should be put into
+(default: `shared`).
+
 _Required_: No
 
 _Type_: String
@@ -90,6 +102,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PositionKeyword
+
+A positioning keyword for this group.  This
+can be `before`, `directly before`, `after`, `directly after`, `top`,
+`bottom`, or left empty (the default) to have no particular placement.  This
+param works in combination with the `position_reference` param.
 
 _Required_: No
 
@@ -99,6 +116,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PositionReference
 
+Required if `position_keyword` is one of the
+"above" or "below" variants, this is the name of a non-group rule to use
+as a reference to place this group.
+
 _Required_: No
 
 _Type_: String
@@ -106,6 +127,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Rulebase
+
+The rulebase the NAT rules should be put into.  Valid
+values are `pre-rulebase` (default), `rulebase`, or `post-rulebase`.
 
 _Required_: No
 

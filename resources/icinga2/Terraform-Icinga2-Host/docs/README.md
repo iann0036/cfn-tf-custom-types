@@ -1,6 +1,7 @@
 # Terraform::Icinga2::Host
 
-CloudFormation equivalent of icinga2_host
+Configures an Icinga2 host resource. This allows hosts to be configured, updated,
+and deleted.
 
 ## Syntax
 
@@ -42,6 +43,8 @@ Properties:
 
 #### Address
 
+The address of the host.
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CheckCommand
+
+The name of an existing Icinga2 CheckCommand object that is used to determine if the host is available or not.
 
 _Required_: Yes
 
@@ -58,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Groups
 
+The groups of the host.
+
 _Required_: No
 
 _Type_: List of String
@@ -65,6 +72,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Hostname
+
+The hostname of the host.
 
 _Required_: Yes
 
@@ -74,6 +83,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Templates
 
+A list of Icinga2 templates to assign to the host.
+
 _Required_: No
 
 _Type_: List of String
@@ -81,6 +92,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vars
+
+A mapping of variables to assign to the host.
 
 _Required_: No
 

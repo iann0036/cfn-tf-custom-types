@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::ACME::Certificate",
-    "description": "CloudFormation equivalent of acme_certificate",
+    "description": "The `acme_certificate` resource can be used to create and manage an ACME TLS\ncertificate.\n\n-> **NOTE:** As the usage model of Terraform generally sees it as being run on\na different server than a certificate would normally be placed on, the\n`acme_certificate` resource only supports DNS challenges.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "DnsChallenge": {
@@ -51,25 +51,29 @@
             "type": "string"
         },
         "CertificateP12Password": {
-            "type": "string"
+            "type": "string",
+            "description": "Password to be used when generating\nthe PFX file stored in [`certificate_p12`](#certificate_p12). Defaults to an\nempty string."
         },
         "CertificatePem": {
             "type": "string"
         },
         "CertificateRequestPem": {
-            "type": "string"
+            "type": "string",
+            "description": "A pre-created certificate request, such as one\nfrom [`tls_cert_request`][tls-cert-request], or one from an external source,\nin PEM format.  Either this, or the in-resource request options (`common_name`,\n`key_type`, and optionally `subject_alternative_names`) need to be specified."
         },
         "CertificateUrl": {
             "type": "string"
         },
         "CommonName": {
-            "type": "string"
+            "type": "string",
+            "description": "The certificate's common name, the primary domain that the\ncertificate will be recognized for. Required when not specifying a CSR."
         },
         "IssuerPem": {
             "type": "string"
         },
         "KeyType": {
-            "type": "string"
+            "type": "string",
+            "description": "The key type for the certificate's private key. Can be one of:\n`P256` and `P384` (for ECDSA keys of respective length) or `2048`, `4096`, and\n`8192` (for RSA keys of respective length). Required when not specifying a\nCSR. The default is `2048` (RSA key of 2048 bits)."
         },
         "MinDaysRemaining": {
             "type": "number"
@@ -92,7 +96,8 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The certificate's subject alternative names,\ndomains that this certificate will also be recognized for. Only valid when not\nspecifying a CSR."
         },
         "DnsChallenge": {
             "type": "array",

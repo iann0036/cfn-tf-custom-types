@@ -1,6 +1,6 @@
 # Terraform::Rancher::Stack
 
-CloudFormation equivalent of rancher_stack
+Provides a Rancher Stack resource. This can be used to create and manage stacks on rancher.
 
 ## Syntax
 
@@ -48,6 +48,8 @@ Properties:
 
 #### CatalogId
 
+The catalog ID to link this stack to. When provided, `docker_compose` and `rancher_compose` will be retrieved from the catalog unless they are overridden.
+
 _Required_: No
 
 _Type_: String
@@ -55,6 +57,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+A stack description.
 
 _Required_: No
 
@@ -64,6 +68,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DockerCompose
 
+The `docker-compose.yml` content to apply for the stack.
+
 _Required_: No
 
 _Type_: String
@@ -71,6 +77,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Environment
+
+The environment to apply to interpret the docker-compose and rancher-compose files.
 
 _Required_: No
 
@@ -80,6 +88,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnvironmentId
 
+The ID of the environment to create the stack for.
+
 _Required_: Yes
 
 _Type_: String
@@ -87,6 +97,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FinishUpgrade
+
+Whether to automatically finish upgrades to this stack.
 
 _Required_: No
 
@@ -96,6 +108,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the stack.
+
 _Required_: Yes
 
 _Type_: String
@@ -103,6 +117,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RancherCompose
+
+The `rancher-compose.yml` content to apply for the stack.
 
 _Required_: No
 
@@ -112,6 +128,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Scope
 
+The scope to attach the stack to. Must be one of **user** or **system**. Defaults to **user**.
+
 _Required_: No
 
 _Type_: String
@@ -119,6 +137,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StartOnCreate
+
+Whether to start the stack automatically.
 
 _Required_: No
 

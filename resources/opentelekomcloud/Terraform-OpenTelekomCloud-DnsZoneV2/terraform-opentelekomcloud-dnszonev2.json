@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenTelekomCloud::DnsZoneV2",
-    "description": "CloudFormation equivalent of opentelekomcloud_dns_zone_v2",
+    "description": "Manages a DNS zone in the OpenTelekomCloud DNS Service.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Router": {
@@ -42,29 +42,35 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description of the zone."
         },
         "Email": {
-            "type": "string"
+            "type": "string",
+            "description": "The email contact for the zone record."
         },
         "Masters": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "An array of master DNS servers."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the zone. Note the `.` at the end of the name.\nChanging this creates a new DNS zone."
         },
         "Region": {
             "type": "string"
         },
         "Ttl": {
-            "type": "number"
+            "type": "number",
+            "description": "The time to live (TTL) of the zone."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of zone. Can either be `public` or `private`.\nChanging this creates a new zone."
         },
         "ValueSpecs": {
             "type": "array",
@@ -84,7 +90,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Map of additional options. Changing this creates a\nnew zone."
         },
         "Router": {
             "type": "array",

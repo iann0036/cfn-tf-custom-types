@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::MonitorLogProfile",
-    "description": "CloudFormation equivalent of azurerm_monitor_log_profile",
+    "description": "Manages a [Log Profile](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs#export-the-activity-log-with-a-log-profile). A Log Profile configures how Activity Logs are exported.\n\n-> **NOTE:** It's only possible to configure one Log Profile per Subscription. If you are trying to create more than one Log Profile, an error with `StatusCode=409` will occur.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "RetentionPolicy": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "Days": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The number of days for the retention policy. Defaults to 0."
                 },
                 "Enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "A boolean value to indicate whether the retention policy is enabled."
                 }
             },
             "required": [
@@ -48,23 +50,28 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of categories of the logs."
         },
         "Locations": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of regions for which Activity Log events are stored or streamed."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Log Profile. Changing this forces a\nnew resource to be created."
         },
         "ServicebusRuleId": {
-            "type": "string"
+            "type": "string",
+            "description": "The service bus (or event hub) rule ID of the service bus (or event hub) namespace in which the Activity Log is streamed to. At least one of `storage_account_id` or `servicebus_rule_id` must be set."
         },
         "StorageAccountId": {
-            "type": "string"
+            "type": "string",
+            "description": "The resource ID of the storage account in which the Activity Log is stored. At least one of `storage_account_id` or `servicebus_rule_id` must be set."
         },
         "RetentionPolicy": {
             "type": "array",

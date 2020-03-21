@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::BIGIP::LtmPolicy",
-    "description": "CloudFormation equivalent of bigip_ltm_policy",
+    "description": "`bigip_ltm_policy` Configures Virtual Server\n\nFor resources should be named with their \"full path\". The full path is the combination of the partition + name of the resource. For example /Common/my-pool.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Rule": {
@@ -634,23 +634,28 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Specifies the controls."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the Policy."
         },
         "PublishedCopy": {
-            "type": "string"
+            "type": "string",
+            "description": "If you want to publish the policy else it will be deployed in Drafts mode."
         },
         "Requires": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Specifies the protocol."
         },
         "Strategy": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the match strategy."
         },
         "Rule": {
             "type": "array",

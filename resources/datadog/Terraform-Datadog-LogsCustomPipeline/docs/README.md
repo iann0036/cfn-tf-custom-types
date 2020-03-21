@@ -1,6 +1,6 @@
 # Terraform::Datadog::LogsCustomPipeline
 
-CloudFormation equivalent of datadog_logs_custom_pipeline
+Provides a Datadog [Logs Pipeline API](https://docs.datadoghq.com/api/?lang=python#logs-pipelines) resource, which is used to create and manage Datadog logs custom pipelines.
 
 ## Syntax
 
@@ -85,6 +85,8 @@ Properties:
 
 #### IsEnabled
 
+Boolean value to enable your pipeline.
+
 _Required_: No
 
 _Type_: Boolean
@@ -92,6 +94,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Your pipeline name.
 
 _Required_: Yes
 

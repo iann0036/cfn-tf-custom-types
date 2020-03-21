@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::AsScalingConfig",
-    "description": "CloudFormation equivalent of tencentcloud_as_scaling_config",
+    "description": "Provides a resource to create a configuration for an AS (Auto scaling) instance.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "DataDisk": {
@@ -8,13 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "DiskSize": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Volume of disk in GB. Default is 0."
                 },
                 "DiskType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Types of disk, available values: CLOUD_PREMIUM and CLOUD_SSD."
                 },
                 "SnapshotId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Data disk snapshot ID."
                 }
             },
             "required": []
@@ -26,19 +29,23 @@
             "type": "string"
         },
         "ConfigurationName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of a launch configuration."
         },
         "CreateTime": {
             "type": "string"
         },
         "EnhancedMonitorService": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "To specify whether to enable cloud monitor service. Default is TRUE."
         },
         "EnhancedSecurityService": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "To specify whether to enable cloud security service. Default is TRUE."
         },
         "ImageId": {
-            "type": "string"
+            "type": "string",
+            "description": "An available image ID for a cvm instance."
         },
         "InstanceTags": {
             "type": "array",
@@ -58,58 +65,71 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A list of tags used to associate different resources."
         },
         "InstanceTypes": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Specified types of CVM instances."
         },
         "InternetChargeType": {
-            "type": "string"
+            "type": "string",
+            "description": "Charge types for network traffic. Available values include `BANDWIDTH_PREPAID`, `TRAFFIC_POSTPAID_BY_HOUR`, `TRAFFIC_POSTPAID_BY_HOUR` and `BANDWIDTH_PACKAGE`."
         },
         "InternetMaxBandwidthOut": {
-            "type": "number"
+            "type": "number",
+            "description": "Max bandwidth of Internet access in Mbps. Default is 0."
         },
         "KeepImageLogin": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specify whether to keep original settings of a CVM image. And it can't be used with password or key_ids together."
         },
         "KeyIds": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "ID list of keys."
         },
         "Password": {
-            "type": "string"
+            "type": "string",
+            "description": "Password to access."
         },
         "ProjectId": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifys to which project the configuration belongs."
         },
         "PublicIpAssigned": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specify whether to assign an Internet IP address."
         },
         "SecurityGroupIds": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Security groups to which a CVM instance belongs."
         },
         "Status": {
             "type": "string"
         },
         "SystemDiskSize": {
-            "type": "number"
+            "type": "number",
+            "description": "Volume of system disk in GB. Default is 50."
         },
         "SystemDiskType": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of a CVM disk, and available values include CLOUD_PREMIUM and CLOUD_SSD. Default is CLOUD_PREMIUM."
         },
         "UserData": {
-            "type": "string"
+            "type": "string",
+            "description": "ase64-encoded User Data text, the length limit is 16KB."
         },
         "DataDisk": {
             "type": "array",

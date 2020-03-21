@@ -1,6 +1,10 @@
 # Terraform::OCI::CoreVnicAttachment
 
-CloudFormation equivalent of oci_core_vnic_attachment
+This resource provides the Vnic Attachment resource in Oracle Cloud Infrastructure Core service.
+
+Creates a secondary VNIC and attaches it to the specified instance.
+For more information about secondary VNICs, see
+[Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
 
 ## Syntax
 
@@ -38,6 +42,8 @@ Properties:
 
 #### DisplayName
 
+A user-friendly name for the attachment. Does not have to be unique, and it cannot be changed. Avoid entering confidential information.
+
 _Required_: No
 
 _Type_: String
@@ -46,6 +52,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceId
 
+The OCID of the instance.
+
 _Required_: Yes
 
 _Type_: String
@@ -53,6 +61,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NicIndex
+
+Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
 
 _Required_: No
 
@@ -106,7 +116,7 @@ Returns the <code>State</code> value.
 
 #### SubnetId
 
-Returns the <code>SubnetId</code> value.
+The OCID of the subnet to create the VNIC in. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/requests/LaunchInstanceDetails). Alternatively, the `vlanId` can be used instead of a `subnetId`. At least one `subnetId` value is required if this field is populated; if you provide both, the values must match. If both the `vlanId` and `subnetId` fields are provided, the launch will fail.
 
 #### TimeCreated
 

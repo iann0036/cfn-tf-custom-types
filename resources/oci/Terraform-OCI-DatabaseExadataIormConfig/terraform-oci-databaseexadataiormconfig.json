@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::DatabaseExadataIormConfig",
-    "description": "CloudFormation equivalent of oci_database_exadata_iorm_config",
+    "description": "This resource provides the Exadata Iorm Config resource in Oracle Cloud Infrastructure Database service.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "DbPlans": {
@@ -42,13 +42,15 @@
             "type": "string"
         },
         "DbSystemId": {
-            "type": "string"
+            "type": "string",
+            "description": "The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)."
         },
         "LifecycleDetails": {
             "type": "string"
         },
         "Objective": {
-            "type": "string"
+            "type": "string",
+            "description": "Value for the IORM objective Default is \"Auto\"."
         },
         "State": {
             "type": "string"

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::FlexibleEngine::AntiddosV1",
-    "description": "CloudFormation equivalent of flexibleengine_antiddos_v1",
+    "description": "Anti-DDoS monitors the service traffic from the Internet to ECSs, ELB instances, and BMSs to detect attack traffic in real time. It then cleans attack traffic according to user-configured defense policies so that services run as normal.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,25 +26,31 @@
             "type": "string"
         },
         "AppTypeId": {
-            "type": "number"
+            "type": "number",
+            "description": "The application type ID."
         },
         "CleaningAccessPosId": {
-            "type": "number"
+            "type": "number",
+            "description": "The position ID of access limit during cleaning. The value ranges from 1 to 8."
         },
         "EnableL7": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether to enable L7 defense."
         },
         "FloatingIpId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID corresponding to the Elastic IP Address (EIP) of a user."
         },
         "HttpRequestPosId": {
-            "type": "number"
+            "type": "number",
+            "description": "The position ID of number of HTTP requests. The value ranges from 1 to 15."
         },
         "Region": {
             "type": "string"
         },
         "TrafficPosId": {
-            "type": "number"
+            "type": "number",
+            "description": "The position ID of traffic. The value ranges from 1 to 9."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

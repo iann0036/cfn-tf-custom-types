@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::BIGIP::SysIapp",
-    "description": "CloudFormation equivalent of bigip_sys_iapp",
+    "description": "`bigip_sys_iapp` resource helps you to deploy Application Services template that can be used to automate and orchestrate Layer 4-7 applications service deployments using F5 Network.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Lists": {
@@ -108,10 +108,12 @@
             "type": "string"
         },
         "Jsonfile": {
-            "type": "string"
+            "type": "string",
+            "description": "Refer to the Json file which will be deployed on F5 BIG-IP."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the iApp."
         },
         "Partition": {
             "type": "string"

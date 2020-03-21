@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::CoreShapeManagement",
-    "description": "CloudFormation equivalent of oci_core_shape_management",
+    "description": "This resource provides the Shape Management resource in Oracle Cloud Infrastructure Core service.\n\nAdd/Remove the specified shape from the compatible shapes list for the image.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,13 +26,16 @@
             "type": "string"
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the compartment containing the image."
         },
         "ImageId": {
-            "type": "string"
+            "type": "string",
+            "description": "The OCID of the Image to which the shape should be added."
         },
         "ShapeName": {
-            "type": "string"
+            "type": "string",
+            "description": "The compatible shape that is to be added to the compatible shapes list for the image."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

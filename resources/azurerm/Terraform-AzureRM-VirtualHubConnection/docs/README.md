@@ -1,6 +1,6 @@
 # Terraform::AzureRM::VirtualHubConnection
 
-CloudFormation equivalent of azurerm_virtual_hub_connection
+Manages a Connection for a Virtual Hub.
 
 ## Syntax
 
@@ -41,6 +41,8 @@ Properties:
 
 #### HubToVitualNetworkTrafficAllowed
 
+Is the Virtual Hub traffic allowed to transit via the Remote Virtual Network? Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: Boolean
@@ -48,6 +50,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InternetSecurityEnabled
+
+Should Internet Security be enabled to secure internet traffic? Changing this forces a new resource to be created.
 
 _Required_: No
 
@@ -57,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The Name which should be used for this Connection, which must be unique within the Virtual Hub. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -64,6 +70,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RemoteVirtualNetworkId
+
+The ID of the Virtual Network which the Virtual Hub should be connected to. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -73,6 +81,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VirtualHubId
 
+The ID of the Virtual Hub within which this connection should be created. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -80,6 +90,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VitualNetworkToHubGatewaysTrafficAllowed
+
+Is Remote Virtual Network traffic allowed to transit the Hub's Virtual Network Gateway's? Changing this forces a new resource to be created.
 
 _Required_: No
 

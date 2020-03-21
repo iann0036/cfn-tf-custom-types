@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::NetworkingNetworkV2",
-    "description": "CloudFormation equivalent of openstack_networking_network_v2",
+    "description": "Manages a V2 Neutron network resource within OpenStack.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Segments": {
@@ -8,13 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "NetworkType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The type of physical network."
                 },
                 "PhysicalNetwork": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The physical network where this network is implemented."
                 },
                 "SegmentationId": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "An isolated segment on the physical network."
                 }
             },
             "required": []
@@ -39,7 +42,8 @@
             "type": "string"
         },
         "AdminStateUp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "The administrative state of the network.\nAcceptable values are \"true\" and \"false\". Changing this value updates the\nstate of the existing network."
         },
         "AllTags": {
             "type": "array",
@@ -53,47 +57,60 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "An availability zone is used to make\nnetwork resources highly available. Used for resources with high availability\nso that they are scheduled on different availability zones. Changing this\ncreates a new network."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Human-readable description of the network. Changing this\nupdates the name of the existing network."
         },
         "DnsDomain": {
-            "type": "string"
+            "type": "string",
+            "description": "The network DNS domain. Available, when Neutron DNS\nextension is enabled. The `dns_domain` of a network in conjunction with the\n`dns_name` attribute of its ports will be published in an external DNS\nservice when Neutron is configured to integrate with such a service."
         },
         "External": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether the network resource has the\nexternal routing facility. Valid values are true and false. Defaults to\nfalse. Changing this updates the external attribute of the existing network."
         },
         "Mtu": {
-            "type": "number"
+            "type": "number",
+            "description": "The network MTU. Available for read-only, when Neutron\n`net-mtu` extension is enabled. Available for the modification, when\nNeutron `net-mtu-writable` extension is enabled."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the network. Changing this updates the name of\nthe existing network."
         },
         "PortSecurityEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to explicitly enable or disable\nport security on the network. Port Security is usually enabled by default, so\nomitting this argument will usually result in a value of \"true\". Setting this\nexplicitly to `false` will disable port security. Valid values are `true` and\n`false`."
         },
         "QosPolicyId": {
-            "type": "string"
+            "type": "string",
+            "description": "Reference to the associated QoS policy."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the V2 Networking client.\nA Networking client is needed to create a Neutron network. If omitted, the\n`region` argument of the provider is used. Changing this creates a new\nnetwork."
         },
         "Shared": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether the network resource can be accessed\nby any tenant or not. Changing this updates the sharing capabilities of the\nexisting network."
         },
         "Tags": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A set of string tags for the network."
         },
         "TenantId": {
-            "type": "string"
+            "type": "string",
+            "description": "The owner of the network. Required if admin wants to\ncreate a network for another tenant. Changing this creates a new network."
         },
         "TransparentVlan": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether the network resource has the\nVLAN transparent attribute set. Valid values are true and false. Defaults to\nfalse. Changing this updates the `transparent_vlan` attribute of the existing\nnetwork."
         },
         "ValueSpecs": {
             "type": "array",
@@ -113,7 +130,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Map of additional options."
         },
         "Segments": {
             "type": "array",

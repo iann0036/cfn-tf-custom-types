@@ -1,6 +1,7 @@
 # Terraform::Tfe::SshKey
 
-CloudFormation equivalent of tfe_ssh_key
+This resource represents an SSH key which includes a name and the SSH private
+key. An organization can have multiple SSH keys available.
 
 ## Syntax
 
@@ -33,6 +34,8 @@ Properties:
 
 #### Key
 
+The text of the SSH private key.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +44,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name to identify the SSH key.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Organization
+
+Name of the organization.
 
 _Required_: Yes
 

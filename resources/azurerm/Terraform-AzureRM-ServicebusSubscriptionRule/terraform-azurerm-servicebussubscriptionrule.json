@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::ServicebusSubscriptionRule",
-    "description": "CloudFormation equivalent of azurerm_servicebus_subscription_rule",
+    "description": "Manages a ServiceBus Subscription Rule.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "CorrelationFilter": {
@@ -8,28 +8,36 @@
             "additionalProperties": false,
             "properties": {
                 "ContentType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Content type of the message."
                 },
                 "CorrelationId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Identifier of the correlation."
                 },
                 "Label": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Application specific label."
                 },
                 "MessageId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Identifier of the message."
                 },
                 "ReplyTo": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Address of the queue to reply to."
                 },
                 "ReplyToSessionId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Session identifier to reply to."
                 },
                 "SessionId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Session identifier."
                 },
                 "To": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Address to send to."
                 }
             },
             "required": []
@@ -60,28 +68,36 @@
             "type": "string"
         },
         "Action": {
-            "type": "string"
+            "type": "string",
+            "description": "Represents set of actions written in SQL language-based syntax that is performed against a BrokeredMessage."
         },
         "FilterType": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of filter to be applied to a BrokeredMessage. Possible values are `SqlFilter` and `CorrelationFilter`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the ServiceBus Subscription Rule. Changing this forces a new resource to be created."
         },
         "NamespaceName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the ServiceBus Namespace in which the ServiceBus Topic exists. Changing this forces a new resource to be created."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in the ServiceBus Namespace exists. Changing this forces a new resource to be created."
         },
         "SqlFilter": {
-            "type": "string"
+            "type": "string",
+            "description": "Represents a filter written in SQL language-based syntax that to be evaluated against a BrokeredMessage. Required when `filter_type` is set to `SqlFilter`."
         },
         "SubscriptionName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the ServiceBus Subscription in which this Rule should be created. Changing this forces a new resource to be created."
         },
         "TopicName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the ServiceBus Topic in which the ServiceBus Subscription exists. Changing this forces a new resource to be created."
         },
         "CorrelationFilter": {
             "type": "array",

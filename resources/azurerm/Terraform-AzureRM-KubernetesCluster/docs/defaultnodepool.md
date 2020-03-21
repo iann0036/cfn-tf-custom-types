@@ -54,6 +54,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### AvailabilityZones
 
+A list of Availability Zones across which the Node Pool should be spread.
+
 _Required_: No
 
 _Type_: List of String
@@ -62,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableAutoScaling
 
+Should [the Kubernetes Auto Scaler](https://docs.microsoft.com/en-us/azure/aks/cluster-autoscaler) be enabled for this Node Pool? Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -69,6 +73,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableNodePublicIp
+
+Should nodes in this Node Pool have a Public IP Address? Defaults to `false`.
 
 _Required_: No
 
@@ -86,6 +92,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxPods
 
+The maximum number of pods that can run on each agent. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: Double
@@ -101,6 +109,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name which should be used for the default Kubernetes Node Pool. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -118,6 +128,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NodeLabels
 
+A map of Kubernetes labels which should be applied to nodes in the Default Node Pool.
+
 _Required_: No
 
 _Type_: List of <a href="defaultnodepool-nodelabels.md">NodeLabels</a>
@@ -125,6 +137,8 @@ _Type_: List of <a href="defaultnodepool-nodelabels.md">NodeLabels</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NodeTaints
+
+A list of Kubernetes taints which should be applied to nodes in the agent pool (e.g `key=value:NoSchedule`).
 
 _Required_: No
 
@@ -134,6 +148,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OsDiskSizeGb
 
+The size of the OS Disk which should be used for each agent in the Node Pool. Changing this forces a new resource to be created.
+
 _Required_: No
 
 _Type_: Double
@@ -141,6 +157,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 
@@ -150,6 +168,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Type
 
+The type of Node Pool which should be created. Possible values are `AvailabilitySet` and `VirtualMachineScaleSets`. Defaults to `VirtualMachineScaleSets`.
+
 _Required_: No
 
 _Type_: String
@@ -158,6 +178,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VmSize
 
+The size of the Virtual Machine, such as `Standard_DS2_v2`.
+
 _Required_: Yes
 
 _Type_: String
@@ -165,6 +187,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VnetSubnetId
+
+The ID of a Subnet where the Kubernetes Node Pool should exist. Changing this forces a new resource to be created.
 
 _Required_: No
 

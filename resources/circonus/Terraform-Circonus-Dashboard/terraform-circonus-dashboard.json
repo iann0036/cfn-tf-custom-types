@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Circonus::Dashboard",
-    "description": "CloudFormation equivalent of circonus_dashboard",
+    "description": "The ``circonus_dashboard`` resource creates and manages a\n[Circonus Dashboard](https://login.circonus.com/resources/docs/user/Dashboards.html).\n\nhttps://login.circonus.com/resources/api/calls/dashboard.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Options": {
@@ -383,7 +383,8 @@
             "type": "string"
         },
         "AccountDefault": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean. Whether this dash is set as the default\nfor the account."
         },
         "GridLayout": {
             "type": "array",
@@ -403,13 +404,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Map. Has members `width` and `height` to control the\ndimensions of the dashboard."
         },
         "Shared": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean. Whether this dash is shared with everyone in the\nCirconus account or private to the user."
         },
         "Title": {
-            "type": "string"
+            "type": "string",
+            "description": "String. The title of the dashboard."
         },
         "Uuid": {
             "type": "string"

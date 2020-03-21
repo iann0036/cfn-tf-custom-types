@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::IdentityRoleV3
 
-CloudFormation equivalent of opentelekomcloud_identity_role_v3
+custom role management
 
 ## Syntax
 

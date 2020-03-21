@@ -1,6 +1,6 @@
 # Terraform::HuaweiCloud::CssClusterV1
 
-CloudFormation equivalent of huaweicloud_css_cluster_v1
+cluster management
 
 ## Syntax
 

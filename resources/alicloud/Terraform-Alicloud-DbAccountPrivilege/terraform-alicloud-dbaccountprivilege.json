@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::DbAccountPrivilege",
-    "description": "CloudFormation equivalent of alicloud_db_account_privilege",
+    "description": "Provides an RDS account privilege resource and used to grant several database some access privilege. A database can be granted by multiple account.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,20 +9,24 @@
             "type": "string"
         },
         "AccountName": {
-            "type": "string"
+            "type": "string",
+            "description": "A specified account name."
         },
         "DbNames": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of specified database name."
         },
         "InstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Id of instance in which account belongs."
         },
         "Privilege": {
-            "type": "string"
+            "type": "string",
+            "description": "The privilege of one account access database. Valid values:\n- ReadOnly: This value is only for MySQL, MariaDB and SQL Server\n- ReadWrite: This value is only for MySQL, MariaDB and SQL Server\n- DDLOnly: (Available in 1.64.0+) This value is only for MySQL and MariaDB\n- DMLOnly: (Available in 1.64.0+) This value is only for MySQL and MariaDB\n- DBOwner: (Available in 1.64.0+) This value is only for SQL Server and PostgreSQL."
         }
     },
     "additionalProperties": false,

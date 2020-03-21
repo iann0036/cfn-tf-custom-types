@@ -1,6 +1,6 @@
 # Terraform::DigitalOcean::Domain
 
-CloudFormation equivalent of digitalocean_domain
+Provides a DigitalOcean domain resource.
 
 ## Syntax
 
@@ -31,6 +31,9 @@ Properties:
 
 #### IpAddress
 
+The IP address of the domain. If specified, this IP
+is used to created an initial A record for the domain.
+
 _Required_: No
 
 _Type_: String
@@ -38,6 +41,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the domain.
 
 _Required_: Yes
 

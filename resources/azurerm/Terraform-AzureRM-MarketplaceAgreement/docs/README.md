@@ -1,6 +1,6 @@
 # Terraform::AzureRM::MarketplaceAgreement
 
-CloudFormation equivalent of azurerm_marketplace_agreement
+Allows accepting the Legal Terms for a Marketplace Image.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### Offer
 
+The Offer of the Marketplace Image. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -43,6 +45,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Plan
 
+The Plan of the Marketplace Image. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Publisher
+
+The Publisher of the Marketplace Image. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

@@ -1,6 +1,9 @@
 # Terraform::OpenStack::IdentityRoleAssignmentV3
 
-CloudFormation equivalent of openstack_identity_role_assignment_v3
+Manages a V3 Role assignment within OpenStack Keystone.
+
+Note: You _must_ have admin privileges in your OpenStack cloud to use
+this resource.
 
 ## Syntax
 
@@ -39,6 +42,8 @@ Properties:
 
 #### DomainId
 
+The domain to assign the role in.
+
 _Required_: No
 
 _Type_: String
@@ -47,6 +52,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GroupId
 
+The group to assign the role to.
+
 _Required_: No
 
 _Type_: String
@@ -54,6 +61,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProjectId
+
+The project to assign the role in.
 
 _Required_: No
 
@@ -71,6 +80,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RoleId
 
+The role to assign.
+
 _Required_: Yes
 
 _Type_: String
@@ -78,6 +89,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserId
+
+The user to assign the role to.
 
 _Required_: No
 

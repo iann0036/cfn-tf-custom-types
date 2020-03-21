@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenTelekomCloud::CceNodeV3",
-    "description": "CloudFormation equivalent of opentelekomcloud_cce_node_v3",
+    "description": "Add a node to a container cluster.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "DataVolumes": {
@@ -78,47 +78,60 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Node annotation, key/value pair format. Changing this parameter will create a new resource."
         },
         "AvailabilityZone": {
-            "type": "string"
+            "type": "string",
+            "description": "specify the name of the available partition (AZ). Changing this parameter will create a new resource."
         },
         "BandwidthChargeMode": {
-            "type": "string"
+            "type": "string",
+            "description": "Bandwidth billing type. Changing this parameter will create a new resource."
         },
         "BandwidthSize": {
-            "type": "number"
+            "type": "number",
+            "description": "Bandwidth size. Changing this parameter will create a new resource."
         },
         "BillingMode": {
-            "type": "number"
+            "type": "number",
+            "description": "Node's billing mode: The value is 0 (on demand). Changing this parameter will create a new resource."
         },
         "ClusterId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the cluster. Changing this parameter will create a new resource."
         },
         "EcsPerformanceType": {
-            "type": "string"
+            "type": "string",
+            "description": "Classification of cloud server specifications. Changing this parameter will create a new cluster resource."
         },
         "EipCount": {
-            "type": "number"
+            "type": "number",
+            "description": "Number of elastic IPs to be dynamically created. Changing this parameter will create a new resource."
         },
         "EipIds": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of existing elastic IP IDs. Changing this parameter will create a new resource."
         },
         "ExtendParamChargingMode": {
-            "type": "number"
+            "type": "number",
+            "description": "Node charging mode, 0 is on-demand charging. Changing this parameter will create a new cluster resource."
         },
         "FlavorId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the flavor id. Changing this parameter will create a new resource."
         },
         "Iptype": {
-            "type": "string"
+            "type": "string",
+            "description": "Elastic IP type."
         },
         "KeyPair": {
-            "type": "string"
+            "type": "string",
+            "description": "Key pair name when logging in to select the key pair mode. Changing this parameter will create a new resource."
         },
         "Labels": {
             "type": "array",
@@ -138,37 +151,46 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Node tag, key/value pair format. Changing this parameter will create a new resource."
         },
         "MaxPods": {
-            "type": "number"
+            "type": "number",
+            "description": "The maximum number of instances a node is allowed to create. Changing this parameter will create a new cluster resource."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Node Name."
         },
         "OrderId": {
-            "type": "string"
+            "type": "string",
+            "description": "Order ID, mandatory when the node payment type is the automatic payment package period type. Changing this parameter will create a new cluster resource."
         },
         "Postinstall": {
-            "type": "string"
+            "type": "string",
+            "description": "Script required after installation. The input value can be a Base64 encoded string or not.\nChanging this parameter will create a new resource."
         },
         "Preinstall": {
-            "type": "string"
+            "type": "string",
+            "description": "Script required before installation. The input value can be a Base64 encoded string or not.\nChanging this parameter will create a new resource."
         },
         "PrivateIp": {
             "type": "string"
         },
         "ProductId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Product ID. Changing this parameter will create a new cluster resource."
         },
         "PublicKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The Public key. Changing this parameter will create a new cluster resource."
         },
         "Region": {
             "type": "string"
         },
         "Sharetype": {
-            "type": "string"
+            "type": "string",
+            "description": "Bandwidth sharing type. Changing this parameter will create a new resource."
         },
         "DataVolumes": {
             "type": "array",

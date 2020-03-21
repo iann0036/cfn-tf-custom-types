@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::HuaweiCloud::ElbListener",
-    "description": "CloudFormation equivalent of huaweicloud_elb_listener",
+    "description": "Manages an elastic loadbalancer listener resource within huawei cloud.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,13 +29,16 @@
             "type": "boolean"
         },
         "BackendPort": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the backend port. The value ranges from\n1 to 65535."
         },
         "BackendProtocol": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the backend protocol. If the value\nof protocol is UDP, the value of this parameter can only be UDP. The value can\nbe HTTP, TCP, or UDP."
         },
         "CertificateId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the ID of the SSL certificate used\nfor security authentication when HTTPS is used to make API calls. This parameter\nis mandatory if the value of protocol is HTTPS. The value can be obtained by\nviewing the details of the SSL certificate."
         },
         "Certificates": {
             "type": "array",
@@ -45,61 +48,76 @@
             }
         },
         "CookieTimeout": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the cookie timeout period (minutes).\nThis parameter is valid when protocol is set to HTTP, session_sticky to true,\nand sticky_session_type to insert. This parameter is invalid when protocol is\nset to TCP or UDP. The value ranges from 1 to 1440."
         },
         "CreateTime": {
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Provides supplementary information about the listener.\nThe value is a string of 0 to 128 characters and cannot be <>."
         },
         "HealthcheckId": {
             "type": "string"
         },
         "LbAlgorithm": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the load balancing algorithm for the\nlistener. The value can be roundrobin, leastconn, or source."
         },
         "LoadbalancerId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the ID of the load balancer to which\nthe listener belongs."
         },
         "MemberNumber": {
             "type": "number"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the load balancer name. The name is a string\nof 1 to 64 characters that consist of letters, digits, underscores (_), and\nhyphens (-)."
         },
         "Port": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the listening port. The value ranges from 1\nto 65535."
         },
         "Protocol": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the listening protocol used for layer 4\nor 7. The value can be HTTP, TCP, HTTPS, or UDP."
         },
         "SessionSticky": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether to enable sticky session.\nThe value can be true or false. The Sticky session is enabled when the value\nis true, and is disabled when the value is false. If the value of protocol is\nHTTP, HTTPS, or TCP, and the value of lb_algorithm is not roundrobin, the value\nof this parameter can only be false."
         },
         "SslCiphers": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the cipher suite of an encryption protocol.\nThis parameter is valid only when the value of protocol is set to HTTPS. The\nvalue is Default, Extended, or Strict. The default value is Default. The value\ncan only be set to Extended if the value of ssl_protocols is set to TLSv1.2\nTLSv1.1 TLSv1."
         },
         "SslProtocols": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the SSL protocol standard supported\nby a tracker, which is used for enabling specified encryption protocols. This\nparameter is valid only when the value of protocol is set to HTTPS. The value\nis TLSv1.2 or TLSv1.2 TLSv1.1 TLSv1. The default value is TLSv1.2."
         },
         "Status": {
             "type": "string"
         },
         "StickySessionType": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the cookie processing method.\nThe value is insert. insert indicates that the cookie is inserted by the load\nbalancer. This parameter is valid when protocol is set to HTTP, and session_sticky\nto true. The default value is insert. This parameter is invalid when protocol\nis set to TCP or UDP, which means the parameter is empty."
         },
         "TcpDraining": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether to maintain the TCP connection\nto the backend ECS after the ECS is deleted. This parameter is valid when protocol\nis set to TCP. The value can be true or false."
         },
         "TcpDrainingTimeout": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the timeout duration (minutes)\nfor the TCP connection to the backend ECS after the ECS is deleted. This parameter\nis valid when protocol is set to TCP, and tcp_draining to true. The value ranges\nfrom 0 to 60."
         },
         "TcpTimeout": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the TCP timeout period (minutes). This\nparameter is valid when protocol is set to TCP. The value ranges from 1 to 5."
         },
         "UdpTimeout": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the UDP timeout duration (minutes). This\nparameter is valid when protocol is set to UDP. The value ranges from 1 to 1440."
         },
         "UpdateTime": {
             "type": "string"

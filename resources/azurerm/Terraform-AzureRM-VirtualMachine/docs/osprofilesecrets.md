@@ -25,6 +25,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### SourceVaultId
 
+Specifies the ID of the Key Vault to use.
+
 _Required_: Yes
 
 _Type_: String

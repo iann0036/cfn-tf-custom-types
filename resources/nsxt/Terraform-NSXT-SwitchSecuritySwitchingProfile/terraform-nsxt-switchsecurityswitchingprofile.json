@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::NSXT::SwitchSecuritySwitchingProfile",
-    "description": "CloudFormation equivalent of nsxt_switch_security_switching_profile",
+    "description": "Provides a resource to configure switch security switching profile on NSX-T manager",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "RateLimits": {
@@ -48,29 +48,36 @@
             "type": "string"
         },
         "BlockClientDhcp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether DHCP client blocking is enabled."
         },
         "BlockNonIp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether blocking of all traffic except IP/(G)ARP/BPDU is enabled."
         },
         "BlockServerDhcp": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether DHCP server blocking is enabled."
         },
         "BpduFilterEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether BPDU filter is enabled."
         },
         "BpduFilterWhitelist": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Set of allowed MAC addresses to be excluded from BPDU filtering, if enabled."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of this resource."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The display name of this resource. Defaults to ID if not set."
         },
         "Revision": {
             "type": "number"

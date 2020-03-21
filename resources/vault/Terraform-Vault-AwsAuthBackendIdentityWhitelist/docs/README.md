@@ -1,6 +1,9 @@
 # Terraform::Vault::AwsAuthBackendIdentityWhitelist
 
-CloudFormation equivalent of vault_aws_auth_backend_identity_whitelist
+Configures the periodic tidying operation of the whitelisted identity entries.
+
+For more information, see the
+[Vault docs](https://www.vaultproject.io/api/auth/aws/index.html#configure-identity-whitelist-tidy-operation).
 
 ## Syntax
 
@@ -33,6 +36,8 @@ Properties:
 
 #### Backend
 
+The path of the AWS backend being configured.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +46,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisablePeriodicTidy
 
+If set to true, disables the periodic
+tidying of the identity-whitelist entries.
+
 _Required_: No
 
 _Type_: Boolean
@@ -48,6 +56,10 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SafetyBuffer
+
+The amount of extra time, in minutes, that must
+have passed beyond the roletag expiration, before it is removed from the
+backend storage.
 
 _Required_: No
 

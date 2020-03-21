@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::CloudStack::VpnGateway",
-    "description": "CloudFormation equivalent of cloudstack_vpn_gateway",
+    "description": "Creates a site to site VPN local gateway.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,7 +12,8 @@
             "type": "string"
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the VPC for which to create the VPN Gateway.\nChanging this forces a new resource to be created."
         }
     },
     "additionalProperties": false,

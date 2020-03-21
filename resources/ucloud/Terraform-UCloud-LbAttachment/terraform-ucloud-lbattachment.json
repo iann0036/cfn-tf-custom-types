@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::UCloud::LbAttachment",
-    "description": "CloudFormation equivalent of ucloud_lb_attachment",
+    "description": "Provides a Load Balancer Attachment resource for attaching Load Balancer to UHost Instance, etc.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,22 +9,27 @@
             "type": "string"
         },
         "ListenerId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of a listener server."
         },
         "LoadBalancerId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of a load balancer."
         },
         "Port": {
-            "type": "number"
+            "type": "number",
+            "description": "The listening port of the backend server, range: 1-65535, (Default: `80`). Backend server port have the following restrictions: If the LB listener type is `request_proxy`, the backend serve can add different ports to implement different service instances of the same IP. Else if LB listener type is `packets_transmit`, the port of the backend server must be consistent with the LB listening port."
         },
         "PrivateIp": {
             "type": "string"
         },
         "ResourceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of a backend server."
         },
         "ResourceType": {
-            "type": "string"
+            "type": "string",
+            "description": "**Deprecated**, attribute `resource_type` is deprecated for optimizing parameters."
         },
         "Status": {
             "type": "string"

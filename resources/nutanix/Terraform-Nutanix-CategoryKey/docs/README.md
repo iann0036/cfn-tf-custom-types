@@ -1,6 +1,6 @@
 # Terraform::Nutanix::CategoryKey
 
-CloudFormation equivalent of nutanix_category_key
+Provides a Nutanix Category key resource to Create a category key name.
 
 ## Syntax
 

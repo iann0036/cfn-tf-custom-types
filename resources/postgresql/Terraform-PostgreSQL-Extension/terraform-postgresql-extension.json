@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::PostgreSQL::Extension",
-    "description": "CloudFormation equivalent of postgresql_extension",
+    "description": "The ``postgresql_extension`` resource creates and manages an extension on a PostgreSQL\nserver.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,20 @@
             "type": "string"
         },
         "Database": {
-            "type": "string"
+            "type": "string",
+            "description": "Which database to create the extension on. Defaults to provider database."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the extension."
         },
         "Schema": {
-            "type": "string"
+            "type": "string",
+            "description": "Sets the schema of an extension."
         },
         "Version": {
-            "type": "string"
+            "type": "string",
+            "description": "Sets the version number of the extension."
         }
     },
     "additionalProperties": false,

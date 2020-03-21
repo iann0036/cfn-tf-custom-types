@@ -1,6 +1,6 @@
 # Terraform::AzureRM::BackupProtectedVm
 
-CloudFormation equivalent of azurerm_backup_protected_vm
+Manages Azure Backup for an Azure VM
 
 ## Syntax
 
@@ -40,6 +40,8 @@ Properties:
 
 #### BackupPolicyId
 
+Specifies the id of the backup policy to use.
+
 _Required_: Yes
 
 _Type_: String
@@ -47,6 +49,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RecoveryVaultName
+
+Specifies the name of the Recovery Services Vault to use. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -56,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to create the Recovery Services Protected VM. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -64,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SourceVmId
 
+Specifies the ID of the VM to backup. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -71,6 +79,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

@@ -39,6 +39,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### AcceptedProtocols
 
+Protocol schemes to match for the Backend Routing Rule. Defaults to `Http`.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -46,6 +48,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Enabled
+
+`Enable` or `Disable` use of this Backend Routing Rule. Permitted values are `true` or `false`. Defaults to `true`.
 
 _Required_: No
 
@@ -55,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FrontendEndpoints
 
+The names of the `frontend_endpoint` blocks whithin this resource to associate with this `routing_rule`.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -63,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the Routing Rule.
+
 _Required_: Yes
 
 _Type_: String
@@ -70,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PatternsToMatch
+
+The route patterns for the Backend Routing Rule. Defaults to `/*`.
 
 _Required_: Yes
 

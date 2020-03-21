@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::ManagedDisk",
-    "description": "CloudFormation equivalent of azurerm_managed_disk",
+    "description": "Manages a managed disk.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "EncryptionSettings": {
@@ -8,7 +8,8 @@
             "additionalProperties": false,
             "properties": {
                 "Enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Is Encryption enabled on this Managed Disk? Changing this forces a new resource to be created."
                 },
                 "DiskEncryptionKey": {
                     "type": "array",
@@ -69,10 +70,12 @@
             "additionalProperties": false,
             "properties": {
                 "KeyUrl": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The URL to the Key Vault Key used as the Key Encryption Key. This can be found as `id` on the `azurerm_key_vault_key` resource."
                 },
                 "SourceVaultId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of the source Key Vault."
                 }
             },
             "required": [
@@ -87,46 +90,60 @@
             "type": "string"
         },
         "CreateOption": {
-            "type": "string"
+            "type": "string",
+            "description": "The method to use when creating the managed disk. Changing this forces a new resource to be created. Possible values include:\n* `Import` - Import a VHD file in to the managed disk (VHD specified with `source_uri`).\n* `Empty` - Create an empty managed disk.\n* `Copy` - Copy an existing managed disk or snapshot (specified with `source_resource_id`).\n* `FromImage` - Copy a Platform Image (specified with `image_reference_id`)\n* `Restore` - Set by Azure Backup or Site Recovery on a restored disk (specified with `source_resource_id`)."
         },
         "DiskEncryptionSetId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of a Disk Encryption Set which should be used to encrypt this Managed Disk. Changing this forces a new resource to be created."
         },
         "DiskIopsReadWrite": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of IOPS allowed for this disk; only settable for UltraSSD disks. One operation can transfer between 4k and 256k bytes."
         },
         "DiskMbpsReadWrite": {
-            "type": "number"
+            "type": "number",
+            "description": "The bandwidth allowed for this disk; only settable for UltraSSD disks. MBps means millions of bytes per second."
         },
         "DiskSizeGb": {
-            "type": "number"
+            "type": "number",
+            "description": "Specifies the size of the managed disk to create in gigabytes. If `create_option` is `Copy` or `FromImage`, then the value must be equal to or greater than the source's size."
         },
         "ImageReferenceId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of an existing platform/marketplace disk image to copy when `create_option` is `FromImage`."
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specified the supported Azure location where the resource exists. Changing this forces a new resource to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Managed Disk. Changing this forces a new resource to be created."
         },
         "OsType": {
-            "type": "string"
+            "type": "string",
+            "description": "Specify a value when the source of an `Import` or `Copy` operation targets a source that contains an operating system. Valid values are `Linux` or `Windows`."
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Resource Group where the Managed Disk should exist."
         },
         "SourceResourceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of an existing Managed Disk to copy `create_option` is `Copy` or the recovery point to restore when `create_option` is `Restore`."
         },
         "SourceUri": {
-            "type": "string"
+            "type": "string",
+            "description": "URI to a valid VHD file to be used when `create_option` is `Import`."
         },
         "StorageAccountId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Storage Account where the `source_uri` is located. Required when `create_option` is set to `Import`.  Changing this forces a new resource to be created."
         },
         "StorageAccountType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of storage to use for the managed disk. Possible values are `Standard_LRS`, `Premium_LRS`, `StandardSSD_LRS` or `UltraSSD_LRS`."
         },
         "Tags": {
             "type": "array",
@@ -146,14 +163,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Zones": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A collection containing the availability zone to allocate the Managed Disk in."
         },
         "EncryptionSettings": {
             "type": "array",

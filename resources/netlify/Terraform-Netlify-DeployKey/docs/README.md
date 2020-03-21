@@ -1,6 +1,6 @@
 # Terraform::Netlify::DeployKey
 
-CloudFormation equivalent of netlify_deploy_key
+Creates a new netlify deploy key, typically used by the `netlify_site` resource.
 
 ## Syntax
 

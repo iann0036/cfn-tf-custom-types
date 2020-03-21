@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Heroku::AppWebhook",
-    "description": "CloudFormation equivalent of heroku_app_webhook",
+    "description": "Provides a [Heroku App Webhook](https://devcenter.heroku.com/categories/app-webhooks).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,26 +9,32 @@
             "type": "string"
         },
         "AppId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Heroku app to add to."
         },
         "Authorization": {
-            "type": "string"
+            "type": "string",
+            "description": "Values used in `Authorization` header. Once set, this value cannot be fetched from the Heroku API, but it can be updated."
         },
         "Include": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of events to deliver to the webhook."
         },
         "Level": {
-            "type": "string"
+            "type": "string",
+            "description": "The webhook level (either `notify` or `sync`)."
         },
         "Secret": {
-            "type": "string"
+            "type": "string",
+            "description": "Value used to sign webhook payloads. Once set, this value cannot be fetched from the Heroku API, but it can be updated."
         },
         "Url": {
-            "type": "string"
+            "type": "string",
+            "description": "Optional plan configuration."
         }
     },
     "additionalProperties": false,

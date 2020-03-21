@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Tfe::SentinelPolicy",
-    "description": "CloudFormation equivalent of tfe_sentinel_policy",
+    "description": "Sentinel Policy as Code is an embedded policy as code framework integrated\nwith Terraform Enterprise.\n\nPolicies are configured on a per-organization level and are organized and\ngrouped into policy sets, which define the workspaces on which policies are\nenforced during runs.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,19 +9,24 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description of the policy's purpose."
         },
         "EnforceMode": {
-            "type": "string"
+            "type": "string",
+            "description": "The enforcement level of the policy. Valid\nvalues are `advisory`, `hard-mandatory` and `soft-mandatory`. Defaults\nto `soft-mandatory`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the policy."
         },
         "Organization": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the organization."
         },
         "Policy": {
-            "type": "string"
+            "type": "string",
+            "description": "The actual policy itself."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,8 @@
 # Terraform::OCI::DatabaseAutonomousDatabaseBackup
 
-CloudFormation equivalent of oci_database_autonomous_database_backup
+This resource provides the Autonomous Database Backup resource in Oracle Cloud Infrastructure Database service.
+
+Creates a new Autonomous Database backup for the specified database based on the provided request parameters.
 
 ## Syntax
 
@@ -33,6 +35,8 @@ Properties:
 
 #### AutonomousDatabaseId
 
+The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+
 _Required_: Yes
 
 _Type_: String
@@ -40,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
+
+The user-friendly name for the backup. The name does not have to be unique.
 
 _Required_: Yes
 

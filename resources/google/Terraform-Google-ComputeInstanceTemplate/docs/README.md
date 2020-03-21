@@ -1,6 +1,9 @@
 # Terraform::Google::ComputeInstanceTemplate
 
-CloudFormation equivalent of google_compute_instance_template
+Manages a VM instance template resource within GCE. For more information see
+[the official documentation](https://cloud.google.com/compute/docs/instance-templates)
+and
+[API](https://cloud.google.com/compute/docs/reference/latest/instanceTemplates).
 
 ## Syntax
 
@@ -88,6 +91,9 @@ Properties:
 
 #### CanIpForward
 
+Whether to allow sending and receiving of
+packets with non-matching source or destination IPs. This defaults to false.
+
 _Required_: No
 
 _Type_: Boolean
@@ -95,6 +101,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+A brief description of this resource.
 
 _Required_: No
 
@@ -104,6 +112,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableDisplay
 
+Enable [Virtual Displays](https://cloud.google.com/compute/docs/instances/enable-instance-virtual-display#verify_display_driver) on this instance.
+**Note**: [`allow_stopping_for_update`](#allow_stopping_for_update) must be set to true in order to update this field.
+
 _Required_: No
 
 _Type_: Boolean
@@ -111,6 +122,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceDescription
+
+A brief description to use for instances
+created from this template.
 
 _Required_: No
 
@@ -120,6 +134,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Labels
 
+A set of key/value label pairs to assign to instances
+created from this template,.
+
 _Required_: No
 
 _Type_: List of <a href="labels.md">Labels</a>
@@ -127,6 +144,8 @@ _Type_: List of <a href="labels.md">Labels</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MachineType
+
+The machine type to create.
 
 _Required_: Yes
 
@@ -136,6 +155,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Metadata
 
+Metadata key/value pairs to make available from
+within instances created from this template.
+
 _Required_: No
 
 _Type_: List of <a href="metadata.md">Metadata</a>
@@ -143,6 +165,11 @@ _Type_: List of <a href="metadata.md">Metadata</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MetadataStartupScript
+
+An alternative to using the
+startup-script metadata key, mostly to match the compute_instance resource.
+This replaces the startup-script metadata key on the created instance and
+thus the two mechanisms are not allowed to be used simultaneously.
 
 _Required_: No
 
@@ -152,6 +179,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MinCpuPlatform
 
+Specifies a minimum CPU platform. Applicable values are the friendly names of CPU platforms, such as
+`Intel Haswell` or `Intel Skylake`. See the complete list [here](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform).
+
 _Required_: No
 
 _Type_: String
@@ -159,6 +189,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the instance template. If you leave
+this blank, Terraform will auto-generate a unique name.
 
 _Required_: No
 
@@ -168,6 +201,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NamePrefix
 
+Creates a unique name beginning with the specified
+prefix. Conflicts with `name`.
+
 _Required_: No
 
 _Type_: String
@@ -175,6 +211,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Project
+
+The ID of the project in which the resource belongs. If it
+is not provided, the provider project is used.
 
 _Required_: No
 
@@ -184,6 +223,13 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+An instance template is a global resource that is not
+bound to a zone or a region. However, you can still specify some regional
+resources in an instance template, which restricts the template to the
+region where that resource resides. For example, a custom `subnetwork`
+resource is tied to a specific region. Defaults to the region of the
+Provider if no value is given.
+
 _Required_: No
 
 _Type_: String
@@ -191,6 +237,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Tags to attach to the instance.
 
 _Required_: No
 

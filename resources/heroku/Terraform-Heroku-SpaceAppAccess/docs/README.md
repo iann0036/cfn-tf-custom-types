@@ -1,6 +1,6 @@
 # Terraform::Heroku::SpaceAppAccess
 
-CloudFormation equivalent of heroku_space_app_access
+Provides a resource for managing permissions for the entire Private Space. Members with the admin role will always have full permissions in the Private Space, so using this resource on an admin will have no effect. The provided email must already be a member of the Heroku Team. Currently the only supported permission is `create_apps`.
 
 ## Syntax
 
@@ -34,6 +34,8 @@ Properties:
 
 #### Email
 
+The email of the existing Heroku Team member.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +44,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Permissions
 
+The permissions to grant the team member for the Private Space. Currently `create_apps` is the only supported permission. If not provided the member will have no permissions to the space. Members with admin role will always have `create_apps` permissions, which cannot be removed.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -49,6 +53,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Space
+
+The name of the Private Space.
 
 _Required_: Yes
 

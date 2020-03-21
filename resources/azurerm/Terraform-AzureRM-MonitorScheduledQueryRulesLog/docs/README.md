@@ -1,6 +1,6 @@
 # Terraform::AzureRM::MonitorScheduledQueryRulesLog
 
-CloudFormation equivalent of azurerm_monitor_scheduled_query_rules_log
+Manages a LogToMetricAction Scheduled Query Rules resource within Azure Monitor.
 
 ## Syntax
 
@@ -61,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DataSourceId
 
+The resource uri over which log search query is to be run.
+
 _Required_: Yes
 
 _Type_: String
@@ -69,6 +71,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+The description of the scheduled query rule.
+
 _Required_: No
 
 _Type_: String
@@ -76,6 +80,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Enabled
+
+Whether this scheduled query rule is enabled.  Default is `true`.
 
 _Required_: No
 
@@ -93,6 +99,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the scheduled query rule. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -100,6 +108,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceGroupName
+
+The name of the resource group in which to create the scheduled query rule instance.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::DatabaseExadataInfrastructure",
-    "description": "CloudFormation equivalent of oci_database_exadata_infrastructure",
+    "description": "This resource provides the Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.\n\nCreate Exadata infrastructure.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,22 +26,28 @@
             "type": "string"
         },
         "ActivationFile": {
-            "type": "string"
+            "type": "string",
+            "description": "The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure."
         },
         "AdminNetworkCidr": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The CIDR block for the Exadata administration network."
         },
         "CloudControlPlaneServer1": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The IP address for the first control plane server."
         },
         "CloudControlPlaneServer2": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The IP address for the second control plane server."
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment."
         },
         "CorporateProxy": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The corporate network proxy for access to the control plane network. Oracle recommends using an HTTPS proxy when possible for enhanced security."
         },
         "CpusEnabled": {
             "type": "number"
@@ -67,17 +73,20 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)."
         },
         "DisplayName": {
-            "type": "string"
+            "type": "string",
+            "description": "The user-friendly name for the Exadata infrastructure. The name does not need to be unique."
         },
         "DnsServer": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "(Updatable) The list of DNS server IP addresses. Maximum of 3 allowed."
         },
         "FreeformTags": {
             "type": "array",
@@ -97,29 +106,35 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
         },
         "Gateway": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The gateway for the control plane network."
         },
         "InfiniBandNetworkCidr": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The CIDR block for the Exadata InfiniBand interconnect."
         },
         "LifecycleDetails": {
             "type": "string"
         },
         "Netmask": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The netmask for the control plane network."
         },
         "NtpServer": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "(Updatable) The list of NTP server IP addresses. Maximum of 3 allowed."
         },
         "Shape": {
-            "type": "string"
+            "type": "string",
+            "description": "The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance."
         },
         "State": {
             "type": "string"
@@ -128,7 +143,8 @@
             "type": "string"
         },
         "TimeZone": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm)."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Brightbox::ServerGroup",
-    "description": "CloudFormation equivalent of brightbox_server_group",
+    "description": "Provides a Brightbox Server Group resource. This can be used to create,\nmodify, and delete Server Groups.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A further description of the Server Group."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A label assigned to the Server Group."
         }
     },
     "additionalProperties": false,

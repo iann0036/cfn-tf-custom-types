@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::PowerDNS::Zone",
-    "description": "CloudFormation equivalent of powerdns_zone",
+    "description": "Provides a PowerDNS zone.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,20 +9,24 @@
             "type": "string"
         },
         "Kind": {
-            "type": "string"
+            "type": "string",
+            "description": "The kind of the zone."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of zone."
         },
         "Nameservers": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The zone nameservers."
         },
         "SoaEditApi": {
-            "type": "string"
+            "type": "string",
+            "description": "This should map to one of the [supported API values](https://doc.powerdns.com/authoritative/dnsupdate.html#soa-edit-dnsupdate-settings) *or* in [case you wish to remove the setting](https://doc.powerdns.com/authoritative/domainmetadata.html#soa-edit-api), set this argument as `\\\"\\\"` (that will translate to the API value `\"\"`)."
         }
     },
     "additionalProperties": false,

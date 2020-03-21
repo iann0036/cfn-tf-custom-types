@@ -1,6 +1,10 @@
 # Terraform::AzureRM::BackupProtectedFileShare
 
-CloudFormation equivalent of azurerm_backup_protected_file_share
+Manages an Azure Backup Protected File Share to enable backups for file shares within an Azure Storage Account
+
+-> **NOTE:** Azure Backup for Azure File Shares is currently in public preview. During the preview, the service is subject to additional limitations and unsupported backup scenarios. [Read More](https://docs.microsoft.com/en-us/azure/backup/backup-azure-files#limitations-for-azure-file-share-backup-during-preview)
+
+-> **NOTE** Azure Backup for Azure File Shares does not support Soft Delete at this time. Deleting this resource will also delete all associated backup data. Please exercise caution. Consider using [`prevent_destroy`](https://www.terraform.io/docs/configuration/resources.html#prevent_destroy) to guard against accidental deletion.
 
 ## Syntax
 
@@ -39,6 +43,8 @@ Properties:
 
 #### BackupPolicyId
 
+Specifies the ID of the backup policy to use. The policy must be an Azure File Share backup policy. Other types are not supported.
+
 _Required_: Yes
 
 _Type_: String
@@ -46,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RecoveryVaultName
+
+Specifies the name of the Recovery Services Vault to use. Changing this forces a new resource to be created.
 
 _Required_: Yes
 
@@ -55,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceGroupName
 
+The name of the resource group in which to create the Azure Backup Protected File Share. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -63,6 +73,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SourceFileShareName
 
+Specifies the name of the file share to backup. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -70,6 +82,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SourceStorageAccountId
+
+Specifies the ID of the storage account of the file share to backup. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

@@ -1,6 +1,8 @@
 # Terraform::Vault::KubernetesAuthBackendConfig
 
-CloudFormation equivalent of vault_kubernetes_auth_backend_config
+Manages an Kubernetes auth backend config in a Vault server. See the [Vault
+documentation](https://www.vaultproject.io/docs/auth/kubernetes.html) for more
+information.
 
 ## Syntax
 
@@ -48,6 +50,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Issuer
 
+Optional JWT issuer. If no issuer is specified, `kubernetes.io/serviceaccount` will be used as the default issuer.
+
 _Required_: No
 
 _Type_: String
@@ -55,6 +59,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KubernetesCaCert
+
+PEM encoded CA cert for use by the TLS client used to talk with the Kubernetes API.
 
 _Required_: No
 
@@ -64,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KubernetesHost
 
+Host must be a host string, a host:port pair, or a URL to the base of the Kubernetes API server.
+
 _Required_: Yes
 
 _Type_: String
@@ -72,6 +80,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PemKeys
 
+List of PEM-formatted public keys or certificates used to verify the signatures of Kubernetes service account JWTs. If a certificate is given, its public key will be extracted. Not every installation of Kubernetes exposes these keys.
+
 _Required_: No
 
 _Type_: List of String
@@ -79,6 +89,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TokenReviewerJwt
+
+A service account JWT used to access the TokenReview API to validate other JWTs during login. If not set the JWT used for login will be used to access the API.
 
 _Required_: No
 

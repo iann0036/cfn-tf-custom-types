@@ -1,6 +1,6 @@
 # Terraform::Triton::Fabric
 
-CloudFormation equivalent of triton_fabric
+The `triton_fabric` resource represents an fabric for a Triton account. The fabric is a logical set of interconnected switches.
 
 ## Syntax
 
@@ -49,6 +49,8 @@ Properties:
 
 #### Description
 
+Optional description of network.
+
 _Required_: No
 
 _Type_: String
@@ -56,6 +58,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Gateway
+
+Optional gateway IP.
 
 _Required_: No
 
@@ -65,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InternetNat
 
+If a NAT zone is provisioned at Gateway IP address. Default is `true`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -72,6 +78,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Network name.
 
 _Required_: Yes
 
@@ -81,6 +89,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProvisionEndIp
 
+Last assignable IP on the network.
+
 _Required_: Yes
 
 _Type_: String
@@ -88,6 +98,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProvisionStartIp
+
+First IP on the network that can be assigned.
 
 _Required_: Yes
 
@@ -97,6 +109,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Resolvers
 
+Array of IP addresses for resolvers.
+
 _Required_: No
 
 _Type_: List of String
@@ -104,6 +118,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Routes
+
+Map of CIDR block to Gateway IP address.
 
 _Required_: No
 
@@ -113,6 +129,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Subnet
 
+CIDR formatted string describing network.
+
 _Required_: Yes
 
 _Type_: String
@@ -120,6 +138,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VlanId
+
+VLAN id the network is on. Number between 0-4095 indicating VLAN ID.
 
 _Required_: Yes
 

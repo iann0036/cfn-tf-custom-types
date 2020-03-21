@@ -1,6 +1,6 @@
 # Terraform::Cloudflare::WafGroup
 
-CloudFormation equivalent of cloudflare_waf_group
+Provides a Cloudflare WAF rule group resource for a particular zone. This can be used to configure firewall behaviour for pre-defined firewall groups.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### GroupId
 
+The WAF Rule Group ID.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Mode
+
+The mode of the group, can be one of ["on", "off"].
 
 _Required_: No
 
@@ -51,6 +55,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PackageId
 
+The ID of the WAF Rule Package that contains the group.
+
 _Required_: No
 
 _Type_: String
@@ -58,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneId
+
+The DNS zone ID to apply to.
 
 _Required_: Yes
 

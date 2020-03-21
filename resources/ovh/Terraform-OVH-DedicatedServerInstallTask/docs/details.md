@@ -48,6 +48,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### ChangeLog
 
+Template change log details.
+
 _Required_: No
 
 _Type_: String
@@ -55,6 +57,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CustomHostname
+
+Set up the server using the provided hostname instead of the default hostname.
 
 _Required_: No
 
@@ -64,6 +68,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DiskGroupId
 
+Disk group id.
+
 _Required_: No
 
 _Type_: Double
@@ -71,6 +77,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstallRtm
+
+set to true to install RTM.
 
 _Required_: No
 
@@ -80,6 +88,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstallSqlServer
 
+set to true to install sql server (Windows template only).
+
 _Required_: No
 
 _Type_: Boolean
@@ -87,6 +97,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Language
+
+language.
 
 _Required_: No
 
@@ -96,6 +108,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NoRaid
 
+set to true to disable RAID.
+
 _Required_: No
 
 _Type_: Boolean
@@ -103,6 +117,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PostInstallationScriptLink
+
+Indicate the URL where your postinstall customisation script is located.
 
 _Required_: No
 
@@ -112,6 +128,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PostInstallationScriptReturn
 
+Indicate the string returned by your postinstall customisation script on successful execution. Advice: your script should return a unique validation string in case of succes. A good example is 'loh1Xee7eo OK OK OK UGh8Ang1Gu'.
+
 _Required_: No
 
 _Type_: String
@@ -119,6 +137,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResetHwRaid
+
+set to true to make a hardware raid reset.
 
 _Required_: No
 
@@ -128,6 +148,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SoftRaidDevices
 
+soft raid devices.
+
 _Required_: No
 
 _Type_: Double
@@ -135,6 +157,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SshKeyName
+
+Name of the ssh key that should be installed. Password login will be disabled.
 
 _Required_: No
 
@@ -144,6 +168,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UseDistribKernel
 
+Use the distribution's native kernel instead of the recommended OVH Kernel.
+
 _Required_: No
 
 _Type_: Boolean
@@ -151,6 +177,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UseSpla
+
+set to true to use SPLA.
 
 _Required_: No
 

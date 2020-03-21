@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Heroku::Cert",
-    "description": "CloudFormation equivalent of heroku_cert",
+    "description": "Provides a Heroku SSL certificate resource. It allows to set a given certificate for a Heroku app.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "App": {
-            "type": "string"
+            "type": "string",
+            "description": "The Heroku app to add to."
         },
         "CertificateChain": {
-            "type": "string"
+            "type": "string",
+            "description": "The certificate chain to add."
         },
         "Cname": {
             "type": "string"
@@ -21,7 +23,8 @@
             "type": "string"
         },
         "PrivateKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The private key for a given certificate chain."
         }
     },
     "additionalProperties": false,

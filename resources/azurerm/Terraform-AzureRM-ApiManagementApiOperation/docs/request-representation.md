@@ -31,6 +31,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### ContentType
 
+The Content Type of this representation, such as `application/json`.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Sample
+
+An example of this representation.
 
 _Required_: No
 
@@ -47,6 +51,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SchemaId
 
+The ID of an API Management Schema which represents this Response.
+
 _Required_: No
 
 _Type_: String
@@ -54,6 +60,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TypeName
+
+The Type Name defined by the Schema.
 
 _Required_: No
 

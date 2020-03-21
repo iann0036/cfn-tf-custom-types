@@ -1,6 +1,7 @@
 # Terraform::Icinga2::Notification
 
-CloudFormation equivalent of icinga2_notification
+Configures an Icinga2 notification resource. This allows notifications to be configured, updated,
+and deleted.
 
 ## Syntax
 
@@ -44,6 +45,8 @@ Properties:
 
 #### Command
 
+Notification command to use.
+
 _Required_: Yes
 
 _Type_: String
@@ -51,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Hostname
+
+The hostname the notification applies to.
 
 _Required_: Yes
 
@@ -68,6 +73,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Servicename
 
+Service to send notification for.
+
 _Required_: No
 
 _Type_: String
@@ -83,6 +90,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Users
+
+List of users to notification.
 
 _Required_: No
 

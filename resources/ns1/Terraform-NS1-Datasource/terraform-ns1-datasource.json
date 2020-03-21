@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::NS1::Datasource",
-    "description": "CloudFormation equivalent of ns1_datasource",
+    "description": "Provides a NS1 Data Source resource. This can be used to create, modify, and delete data sources.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -26,13 +26,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "The data source configuration, determined by its type,\nmatching the specification in `config` from /data/sourcetypes."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The free form name of the data source."
         },
         "Sourcetype": {
-            "type": "string"
+            "type": "string",
+            "description": "The data sources type, listed in API endpoint https://api.nsone.net/v1/data/sourcetypes."
         }
     },
     "additionalProperties": false,

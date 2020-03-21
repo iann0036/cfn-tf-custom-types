@@ -1,6 +1,8 @@
 # Terraform::Vault::DatabaseSecretBackendStaticRole
 
-CloudFormation equivalent of vault_database_secret_backend_static_role
+Creates a Database Secret Backend static role in Vault. Database secret backend
+static roles can be used to manage 1-to-1 mapping of a Vault Role to a user in a
+database for the database.
 
 ## Syntax
 
@@ -40,6 +42,8 @@ Properties:
 
 #### Backend
 
+The unique name of the Vault mount to configure.
+
 _Required_: Yes
 
 _Type_: String
@@ -47,6 +51,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DbName
+
+The unique name of the database connection to use for the static role.
 
 _Required_: Yes
 
@@ -56,6 +62,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A unique name to give the static role.
+
 _Required_: Yes
 
 _Type_: String
@@ -63,6 +71,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RotationPeriod
+
+The amount of time Vault should wait before rotating the password, in seconds.
 
 _Required_: Yes
 
@@ -72,6 +82,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RotationStatements
 
+Database statements to execute to rotate the password for the configured database user.
+
 _Required_: No
 
 _Type_: List of String
@@ -79,6 +91,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Username
+
+The database username that this static role corresponds to.
 
 _Required_: Yes
 

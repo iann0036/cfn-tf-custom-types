@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::ComputeFlavorV2",
-    "description": "CloudFormation equivalent of openstack_compute_flavor_v2",
+    "description": "Manages a V2 flavor resource within OpenStack.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "Disk": {
-            "type": "number"
+            "type": "number",
+            "description": "The amount of disk space in gigabytes to use for the root\n(/) partition. Changing this creates a new flavor."
         },
         "Ephemeral": {
             "type": "number"
@@ -32,28 +33,36 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Key/Value pairs of metadata for the flavor."
         },
         "IsPublic": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the flavor is public. Changing this creates\na new flavor."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique name for the flavor. Changing this creates a new\nflavor."
         },
         "Ram": {
-            "type": "number"
+            "type": "number",
+            "description": "The amount of RAM to use, in megabytes. Changing this\ncreates a new flavor."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the V2 Compute client.\nFlavors are associated with accounts, but a Compute client is needed to\ncreate one. If omitted, the `region` argument of the provider is used.\nChanging this creates a new flavor."
         },
         "RxTxFactor": {
-            "type": "number"
+            "type": "number",
+            "description": "RX/TX bandwith factor. The default is 1. Changing\nthis creates a new flavor."
         },
         "Swap": {
-            "type": "number"
+            "type": "number",
+            "description": "The amount of disk space in megabytes to use. If\nunspecified, the default is 0. Changing this creates a new flavor."
         },
         "Vcpus": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of virtual CPUs to use. Changing this creates\na new flavor."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,8 @@
 # Terraform::OpenStack::IdentityEndpointV3
 
-CloudFormation equivalent of openstack_identity_endpoint_v3
+Manages a V3 Endpoint resource within OpenStack Keystone.
+
+~> **Note:** This usually requires admin privileges.
 
 ## Syntax
 
@@ -39,6 +41,9 @@ Properties:
 
 #### EndpointRegion
 
+The endpoint region. The `region` and
+`endpoint_region` can be different.
+
 _Required_: Yes
 
 _Type_: String
@@ -46,6 +51,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Interface
+
+The endpoint interface. Valid values are `public`,
+`internal` and `admin`. Default value is `public`.
 
 _Required_: No
 
@@ -55,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The endpoint name.
+
 _Required_: No
 
 _Type_: String
@@ -62,6 +72,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The region in which to obtain the V3 Keystone client.
+If omitted, the `region` argument of the provider is used.
 
 _Required_: No
 
@@ -71,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServiceId
 
+The endpoint service ID.
+
 _Required_: Yes
 
 _Type_: String
@@ -78,6 +93,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Url
+
+The endpoint url.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Linode::Stackscript",
-    "description": "CloudFormation equivalent of linode_stackscript",
+    "description": "Provides a Linode StackScript resource.  This can be used to create, modify, and delete Linode StackScripts.  StackScripts are private or public managed scripts which run within an instance during startup.  StackScripts can include variables whose values are specified when the Instance is created.  \n\nFor more information, see [Automate Deployment with StackScripts](https://www.linode.com/docs/platform/stackscripts/) and the [Linode APIv4 docs](https://developers.linode.com/api/v4#tag/StackScripts).\n\nThe Linode Guide, [Deploy a WordPress Site Using Terraform and Linode StackScripts](https://www.linode.com/docs/applications/configuration-management/deploy-a-wordpress-site-using-terraform-and-linode-stackscripts/), shows how a public StackScript can be used to provision a Linode Instance.   The guide, [Create a Terraform Module](https://www.linode.com/docs/applications/configuration-management/create-terraform-module/), demonstrates StackScript use through a wrapping module.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -18,26 +18,32 @@
             "type": "number"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description for the StackScript."
         },
         "Images": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "An array of Image IDs representing the Images that this StackScript is compatible for deploying with."
         },
         "IsPublic": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "This determines whether other users can use your StackScript. Once a StackScript is made public, it cannot be made private. *Changing `is_public` forces the creation of a new StackScript*."
         },
         "Label": {
-            "type": "string"
+            "type": "string",
+            "description": "The StackScript's label is for display purposes only."
         },
         "RevNote": {
-            "type": "string"
+            "type": "string",
+            "description": "This field allows you to add notes for the set of revisions made to this StackScript."
         },
         "Script": {
-            "type": "string"
+            "type": "string",
+            "description": "The script to execute when provisioning a new Linode with this StackScript."
         },
         "Updated": {
             "type": "string"

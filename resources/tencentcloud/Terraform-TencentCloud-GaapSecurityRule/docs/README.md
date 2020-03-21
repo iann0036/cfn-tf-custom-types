@@ -1,6 +1,6 @@
 # Terraform::TencentCloud::GaapSecurityRule
 
-CloudFormation equivalent of tencentcloud_gaap_security_rule
+Provides a resource to create a security policy rule.
 
 ## Syntax
 
@@ -39,6 +39,8 @@ Properties:
 
 #### Action
 
+Policy of the rule, the available values include `ACCEPT` and `DROP`.
+
 _Required_: Yes
 
 _Type_: String
@@ -46,6 +48,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CidrIp
+
+A network address block of the request source.
 
 _Required_: Yes
 
@@ -55,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name of the security policy rule. Maximum length is 30.
+
 _Required_: No
 
 _Type_: String
@@ -62,6 +68,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PolicyId
+
+ID of the security policy.
 
 _Required_: Yes
 
@@ -71,6 +79,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Port
 
+Target port. Default value is `ALL`, the available values include `80`, `80,443` and `3306-20000`.
+
 _Required_: No
 
 _Type_: String
@@ -78,6 +88,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Protocol
+
+Protocol of the security policy rule. Default value is `ALL`, the available values include `TCP`, `UDP` and `ALL`.
 
 _Required_: No
 

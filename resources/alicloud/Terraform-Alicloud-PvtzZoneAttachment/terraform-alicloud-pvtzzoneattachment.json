@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::PvtzZoneAttachment",
-    "description": "CloudFormation equivalent of alicloud_pvtz_zone_attachment",
+    "description": "Provides vpcs bound to Alicloud Private Zone resource.\n\n-> **NOTE:** Terraform will auto bind vpc to a Private Zone while it uses `alicloud_pvtz_zone_attachment` to build a Private Zone and VPC binding resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Vpcs": {
@@ -25,20 +25,24 @@
             "type": "string"
         },
         "Lang": {
-            "type": "string"
+            "type": "string",
+            "description": "The language of code."
         },
         "UserClientIp": {
-            "type": "string"
+            "type": "string",
+            "description": "The user custom IP address."
         },
         "VpcIds": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The id List of the VPC with the same region, for example:[\"vpc-1\",\"vpc-2\"]."
         },
         "ZoneId": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Private Zone Record."
         },
         "Vpcs": {
             "type": "array",

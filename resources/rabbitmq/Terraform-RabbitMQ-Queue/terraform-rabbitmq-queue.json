@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::RabbitMQ::Queue",
-    "description": "CloudFormation equivalent of rabbitmq_queue",
+    "description": "The ``rabbitmq_queue`` resource creates and manages a queue.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Settings": {
@@ -25,16 +25,20 @@
                             "Key",
                             "Value"
                         ]
-                    }
+                    },
+                    "description": "Additional key/value settings for the queue.\nAll values will be sent to RabbitMQ as a string. If you require non-string\nvalues, use `arguments_json`."
                 },
                 "ArgumentsJson": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A nested JSON string which contains additional\nsettings for the queue. This is useful for when the arguments contain\nnon-string values."
                 },
                 "AutoDelete": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Whether the queue will self-delete when all\nconsumers have unsubscribed."
                 },
                 "Durable": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Whether the queue survives server restarts.\nDefaults to `false`."
                 }
             },
             "required": []
@@ -46,10 +50,12 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the queue."
         },
         "Vhost": {
-            "type": "string"
+            "type": "string",
+            "description": "The vhost to create the resource in."
         },
         "Settings": {
             "type": "array",

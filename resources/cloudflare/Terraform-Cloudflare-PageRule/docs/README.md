@@ -1,6 +1,6 @@
 # Terraform::Cloudflare::PageRule
 
-CloudFormation equivalent of cloudflare_page_rule
+Provides a Cloudflare page rule resource.
 
 ## Syntax
 
@@ -44,6 +44,8 @@ Properties:
 
 #### Priority
 
+The priority of the page rule among others for this target, the higher the number the higher the priority as per [API documentation](https://api.cloudflare.com/#page-rules-for-a-zone-create-page-rule).
+
 _Required_: No
 
 _Type_: Double
@@ -51,6 +53,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Status
+
+Whether the page rule is active or disabled.
 
 _Required_: No
 
@@ -60,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Target
 
+The URL pattern to target with the page rule.
+
 _Required_: Yes
 
 _Type_: String
@@ -67,6 +73,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneId
+
+The DNS zone ID to which the page rule should be added.
 
 _Required_: Yes
 

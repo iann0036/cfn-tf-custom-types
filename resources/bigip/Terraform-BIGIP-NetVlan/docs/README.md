@@ -1,6 +1,8 @@
 # Terraform::BIGIP::NetVlan
 
-CloudFormation equivalent of bigip_net_vlan
+`bigip_net_vlan` Manages a vlan configuration
+
+For resources should be named with their "full path". The full path is the combination of the partition + name of the resource. For example /Common/my-pool.
 
 ## Syntax
 
@@ -34,6 +36,8 @@ Properties:
 
 #### Name
 
+Name of the vlan.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +45,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tag
+
+Specifies a number that the system adds into the header of any frame passing through the VLAN.
 
 _Required_: No
 

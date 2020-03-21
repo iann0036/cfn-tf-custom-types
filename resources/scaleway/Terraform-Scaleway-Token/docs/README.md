@@ -1,6 +1,8 @@
 # Terraform::Scaleway::Token
 
-CloudFormation equivalent of scaleway_token
+**DEPRECATED**: This resource is deprecated and will be removed in `v2.0+`.
+
+Provides Tokens for scaleway API access. For additional details please refer to [API documentation](https://developer.scaleway.com/#tokens-tokens-post).
 
 ## Syntax
 
@@ -35,6 +37,8 @@ Properties:
 
 #### Description
 
+Token description.
+
 _Required_: No
 
 _Type_: String
@@ -42,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Email
+
+Scaleway account email. Defaults to registered account.
 
 _Required_: No
 
@@ -51,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Expires
 
+Define if the token should automatically expire or not.
+
 _Required_: No
 
 _Type_: Boolean
@@ -58,6 +66,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Password
+
+Scaleway account password. Required for cross-account token management.
 
 _Required_: No
 

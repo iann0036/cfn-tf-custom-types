@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::BatchCertificate",
-    "description": "CloudFormation equivalent of azurerm_batch_certificate",
+    "description": "Manages a certificate in an Azure Batch account.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,28 +29,34 @@
             "type": "string"
         },
         "AccountName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Batch account. Changing this forces a new resource to be created."
         },
         "Certificate": {
-            "type": "string"
+            "type": "string",
+            "description": "The base64-encoded contents of the certificate."
         },
         "Format": {
-            "type": "string"
+            "type": "string",
+            "description": "The format of the certificate. Possible values are `Cer` or `Pfx`."
         },
         "Name": {
             "type": "string"
         },
         "Password": {
-            "type": "string"
+            "type": "string",
+            "description": "The password to access the certificate's private key. This must and can only be specified when `format` is `Pfx`."
         },
         "PublicData": {
             "type": "string"
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the resource group in which to create the Batch account. Changing this forces a new resource to be created."
         },
         "Thumbprint": {
-            "type": "string"
+            "type": "string",
+            "description": "The thumbprint of the certificate. At this time the only supported value is 'SHA1'."
         },
         "ThumbprintAlgorithm": {
             "type": "string"

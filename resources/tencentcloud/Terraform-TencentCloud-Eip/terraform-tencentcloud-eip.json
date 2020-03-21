@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::TencentCloud::Eip",
-    "description": "CloudFormation equivalent of tencentcloud_eip",
+    "description": "Provides an EIP resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,22 +9,28 @@
             "type": "string"
         },
         "AnycastZone": {
-            "type": "string"
+            "type": "string",
+            "description": "The zone of anycast, and available values include `ANYCAST_ZONE_GLOBAL` and `ANYCAST_ZONE_OVERSEAS`."
         },
         "ApplicableForClb": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "It has been deprecated from version 1.27.0. Indicates whether the anycast eip can be associated to a CLB."
         },
         "InternetChargeType": {
-            "type": "string"
+            "type": "string",
+            "description": "The charge type of eip, and available values include `BANDWIDTH_PACKAGE`, `BANDWIDTH_POSTPAID_BY_HOUR` and `TRAFFIC_POSTPAID_BY_HOUR`."
         },
         "InternetMaxBandwidthOut": {
-            "type": "number"
+            "type": "number",
+            "description": "The bandwidth limit of eip, unit is Mbps, and the range is 1-1000."
         },
         "InternetServiceProvider": {
-            "type": "string"
+            "type": "string",
+            "description": "Internet service provider of eip, and available values include `BGP`, `CMCC`, `CTCC` and `CUCC`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of eip."
         },
         "PublicIp": {
             "type": "string"
@@ -50,10 +56,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "The tags of eip."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of eip, and available values include `EIP` and `AnycastEIP`. Default is `EIP`."
         }
     },
     "additionalProperties": false,

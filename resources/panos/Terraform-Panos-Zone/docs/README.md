@@ -1,6 +1,11 @@
 # Terraform::Panos::Zone
 
-CloudFormation equivalent of panos_zone
+This resource allows you to add/update/delete zones.
+
+This resource has some overlap with the `panos_zone_entry`
+resource.  If you want to use this resource with the other one, then make
+sure that your `panos_zone` spec does not define the
+`interfaces` field.
 
 ## Syntax
 
@@ -48,6 +53,8 @@ Properties:
 
 #### EnableUserId
 
+Boolean to enable user identification.
+
 _Required_: No
 
 _Type_: Boolean
@@ -55,6 +62,10 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ExcludeAcls
+
+Users from these addresses/subnets will not
+be identified.  This can be an address object, an address group, a single
+IP address, or an IP address subnet.
 
 _Required_: No
 
@@ -64,6 +75,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IncludeAcls
 
+Users from these addresses/subnets will
+be identified.  This can be an address object, an address group, a single
+IP address, or an IP address subnet.
+
 _Required_: No
 
 _Type_: List of String
@@ -71,6 +86,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Interfaces
+
+List of interfaces to associated with this zone.
 
 _Required_: No
 
@@ -80,6 +97,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LogSetting
 
+Log setting.
+
 _Required_: No
 
 _Type_: String
@@ -87,6 +106,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Mode
+
+The zone's mode.  This can be `layer3`, `layer2`,
+`virtual-wire`, `tap`, or `tunnel`.
 
 _Required_: No
 
@@ -96,6 +118,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The zone's name.
+
 _Required_: Yes
 
 _Type_: String
@@ -104,6 +128,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Vsys
 
+The vsys to put the zone into (default: `vsys1`).
+
 _Required_: No
 
 _Type_: String
@@ -111,6 +137,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneProfile
+
+The zone protection profile.
 
 _Required_: No
 

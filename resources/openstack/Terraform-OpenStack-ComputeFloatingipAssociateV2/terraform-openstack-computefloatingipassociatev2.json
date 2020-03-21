@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenStack::ComputeFloatingipAssociateV2",
-    "description": "CloudFormation equivalent of openstack_compute_floatingip_associate_v2",
+    "description": "Associate a floating IP to an instance. This can be used instead of the\n`floating_ip` options in `openstack_compute_instance_v2`.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -20,19 +20,24 @@
             "type": "string"
         },
         "FixedIp": {
-            "type": "string"
+            "type": "string",
+            "description": "The specific IP address to direct traffic to."
         },
         "FloatingIp": {
-            "type": "string"
+            "type": "string",
+            "description": "The floating IP to associate."
         },
         "InstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The instance to associte the floating IP with."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The region in which to obtain the V2 Compute client.\nKeypairs are associated with accounts, but a Compute client is needed to\ncreate one. If omitted, the `region` argument of the provider is used.\nChanging this creates a new floatingip_associate."
         },
         "WaitUntilAssociated": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "In cases where the OpenStack environment\ndoes not automatically wait until the association has finished, set this\noption to have Terraform poll the instance until the floating IP has been\nassociated. Defaults to false."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

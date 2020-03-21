@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Triton::Fabric",
-    "description": "CloudFormation equivalent of triton_fabric",
+    "description": "The `triton_fabric` resource represents an fabric for a Triton account. The fabric is a logical set of interconnected switches.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,25 +9,31 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Optional description of network."
         },
         "Fabric": {
             "type": "boolean"
         },
         "Gateway": {
-            "type": "string"
+            "type": "string",
+            "description": "Optional gateway IP."
         },
         "InternetNat": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If a NAT zone is provisioned at Gateway IP address. Default is `true`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Network name."
         },
         "ProvisionEndIp": {
-            "type": "string"
+            "type": "string",
+            "description": "Last assignable IP on the network."
         },
         "ProvisionStartIp": {
-            "type": "string"
+            "type": "string",
+            "description": "First IP on the network that can be assigned."
         },
         "Public": {
             "type": "boolean"
@@ -37,7 +43,8 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Array of IP addresses for resolvers."
         },
         "Routes": {
             "type": "array",
@@ -57,13 +64,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Map of CIDR block to Gateway IP address."
         },
         "Subnet": {
-            "type": "string"
+            "type": "string",
+            "description": "CIDR formatted string describing network."
         },
         "VlanId": {
-            "type": "number"
+            "type": "number",
+            "description": "VLAN id the network is on. Number between 0-4095 indicating VLAN ID."
         }
     },
     "additionalProperties": false,

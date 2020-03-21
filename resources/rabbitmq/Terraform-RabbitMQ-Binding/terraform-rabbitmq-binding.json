@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::RabbitMQ::Binding",
-    "description": "CloudFormation equivalent of rabbitmq_binding",
+    "description": "The ``rabbitmq_binding`` resource creates and manages a binding relationship\nbetween a queue an exchange.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -26,25 +26,31 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "Additional key/value arguments for the binding."
         },
         "Destination": {
-            "type": "string"
+            "type": "string",
+            "description": "The destination queue or exchange."
         },
         "DestinationType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of destination (queue or exchange)."
         },
         "PropertiesKey": {
             "type": "string"
         },
         "RoutingKey": {
-            "type": "string"
+            "type": "string",
+            "description": "A routing key for the binding."
         },
         "Source": {
-            "type": "string"
+            "type": "string",
+            "description": "The source exchange."
         },
         "Vhost": {
-            "type": "string"
+            "type": "string",
+            "description": "The vhost to create the resource in."
         }
     },
     "additionalProperties": false,

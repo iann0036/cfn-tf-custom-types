@@ -1,6 +1,6 @@
 # Terraform::DigitalOcean::KubernetesCluster
 
-CloudFormation equivalent of digitalocean_kubernetes_cluster
+Provides a DigitalOcean Kubernetes cluster resource. This can be used to create, delete, and modify clusters. For more information see the [official documentation](https://www.digitalocean.com/docs/kubernetes/).
 
 ## Syntax
 
@@ -39,6 +39,15 @@ Properties:
 
 #### Name
 
+A name for the node pool.
+- `size` - (Required) The slug identifier for the type of Droplet to be used as workers in the node pool.
+- `node_count` - (Optional) The number of Droplet instances in the node pool. If auto-scaling is enabled, this should only be set if the desired result is to explicitly reset the number of nodes to this value. If auto-scaling is enabled, and the node count is outside of the given min/max range, it will use the min nodes value.
+- `auto_scale` - (Optional) Enable auto-scaling of the number of nodes in the node pool within the given min/max range.
+- `min_nodes` - (Optional) If auto-scaling is enabled, this represents the minimum number of nodes that the node pool can be scaled down to.
+- `max_nodes` - (Optional) If auto-scaling is enabled, this represents the maximum number of nodes that the node pool can be scaled up to.
+- `tags` - (Optional) A list of tag names to be applied to the Kubernetes cluster.
+- `labels` - (Optional) A map of key/value pairs to apply to nodes in the pool. The labels are exposed in the Kubernetes API as labels in the metadata of the corresponding [Node resources](https://kubernetes.io/docs/concepts/architecture/nodes/).
+
 _Required_: Yes
 
 _Type_: String
@@ -46,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The slug identifier for the region where the Kubernetes cluster will be created.
 
 _Required_: Yes
 
@@ -55,6 +66,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A list of tag names to be applied to the Kubernetes cluster.
+
 _Required_: No
 
 _Type_: List of String
@@ -62,6 +75,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Version
+
+The slug identifier for the version of Kubernetes used for the cluster. Use [doctl](https://github.com/digitalocean/doctl) to find the available versions `doctl kubernetes options versions`. (**Note:** A cluster may only be upgraded to newer versions in-place. If the version is decreased, a new resource will be created.).
 
 _Required_: Yes
 

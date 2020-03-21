@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::VSphere::VappContainer",
-    "description": "CloudFormation equivalent of vsphere_vapp_container",
+    "description": "The `vsphere_vapp_container` resource can be used to create and manage\nvApps.\n\nFor more information on vSphere vApps, see [this\npage][ref-vsphere-vapp].\n\n[ref-vsphere-vapp]: https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.vm_admin.doc/GUID-2A95EBB8-1779-40FA-B4FB-4D0845750879.html",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,19 +9,24 @@
             "type": "string"
         },
         "CpuExpandable": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Determines if the reservation on a vApp\ncontainer can grow beyond the specified value if the parent resource pool has\nunreserved resources. Default: `true`."
         },
         "CpuLimit": {
-            "type": "number"
+            "type": "number",
+            "description": "The CPU utilization of a vApp container will not\nexceed this limit, even if there are available resources. Set to `-1` for\nunlimited.\nDefault: `-1`."
         },
         "CpuReservation": {
-            "type": "number"
+            "type": "number",
+            "description": "Amount of CPU (MHz) that is guaranteed\navailable to the vApp container. Default: `0`."
         },
         "CpuShareLevel": {
-            "type": "string"
+            "type": "string",
+            "description": "The CPU allocation level. The level is a\nsimplified view of shares. Levels map to a pre-determined set of numeric\nvalues for shares. Can be one of `low`, `normal`, `high`, or `custom`. When\n`low`, `normal`, or `high` are specified values in `cpu_shares` will be\nignored.  Default: `normal`."
         },
         "CpuShares": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of shares allocated for CPU. Used to\ndetermine resource allocation in case of resource contention. If this is set,\n`cpu_share_level` must be `custom`."
         },
         "CustomAttributes": {
             "type": "array",
@@ -44,35 +49,44 @@
             }
         },
         "MemoryExpandable": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Determines if the reservation on a vApp\ncontainer can grow beyond the specified value if the parent resource pool has\nunreserved resources. Default: `true`."
         },
         "MemoryLimit": {
-            "type": "number"
+            "type": "number",
+            "description": "The CPU utilization of a vApp container will not\nexceed this limit, even if there are available resources. Set to `-1` for\nunlimited.\nDefault: `-1`."
         },
         "MemoryReservation": {
-            "type": "number"
+            "type": "number",
+            "description": "Amount of CPU (MHz) that is guaranteed\navailable to the vApp container. Default: `0`."
         },
         "MemoryShareLevel": {
-            "type": "string"
+            "type": "string",
+            "description": "The CPU allocation level. The level is a\nsimplified view of shares. Levels map to a pre-determined set of numeric\nvalues for shares. Can be one of `low`, `normal`, `high`, or `custom`. When\n`low`, `normal`, or `high` are specified values in `memory_shares` will be\nignored.  Default: `normal`."
         },
         "MemoryShares": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of shares allocated for CPU. Used to\ndetermine resource allocation in case of resource contention. If this is set,\n`memory_share_level` must be `custom`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the vApp container."
         },
         "ParentFolderId": {
-            "type": "string"
+            "type": "string",
+            "description": "The [managed object ID][docs-about-morefs] of\nthe vApp container's parent folder."
         },
         "ParentResourcePoolId": {
-            "type": "string"
+            "type": "string",
+            "description": "The [managed object ID][docs-about-morefs]\nof the parent resource pool. This can be the root resource pool for a cluster\nor standalone host, or a resource pool itself. When moving a vApp container\nfrom one parent resource pool to another, both must share a common root\nresource pool or the move will fail."
         },
         "Tags": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The IDs of any tags to attach to this resource. See\n[here][docs-applying-tags] for a reference on how to apply tags."
         }
     },
     "additionalProperties": false,

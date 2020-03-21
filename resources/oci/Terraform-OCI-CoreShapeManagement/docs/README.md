@@ -1,6 +1,8 @@
 # Terraform::OCI::CoreShapeManagement
 
-CloudFormation equivalent of oci_core_shape_management
+This resource provides the Shape Management resource in Oracle Cloud Infrastructure Core service.
+
+Add/Remove the specified shape from the compatible shapes list for the image.
 
 ## Syntax
 
@@ -35,6 +37,8 @@ Properties:
 
 #### CompartmentId
 
+The OCID of the compartment containing the image.
+
 _Required_: Yes
 
 _Type_: String
@@ -43,6 +47,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ImageId
 
+The OCID of the Image to which the shape should be added.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ShapeName
+
+The compatible shape that is to be added to the compatible shapes list for the image.
 
 _Required_: Yes
 

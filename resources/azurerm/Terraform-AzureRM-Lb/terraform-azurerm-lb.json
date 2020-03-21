@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AzureRM::Lb",
-    "description": "CloudFormation equivalent of azurerm_lb",
+    "description": "Manages a Load Balancer Resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "FrontendIpConfiguration": {
@@ -8,32 +8,40 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the name of the frontend ip configuration."
                 },
                 "PrivateIpAddress": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Private IP Address to assign to the Load Balancer. The last one and first four IPs in any range are reserved and cannot be manually assigned."
                 },
                 "PrivateIpAddressAllocation": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The allocation method for the Private IP Address used by this Load Balancer. Possible values as `Dynamic` and `Static`."
                 },
                 "PrivateIpAddressVersion": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The version of IP that the Private IP Address is. Possible values are `IPv4` or `IPv6`."
                 },
                 "PublicIpAddressId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of a Public IP Address which should be associated with the Load Balancer."
                 },
                 "PublicIpPrefixId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of a Public IP Prefix which should be associated with the Load Balancer. Public IP Prefix can only be used with outbound rules."
                 },
                 "SubnetId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of the Subnet which should be associated with the IP Configuration."
                 },
                 "Zones": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of Availability Zones which the Load Balancer's IP Addresses should be created in."
                 }
             },
             "required": [
@@ -66,10 +74,12 @@
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the supported Azure Region where the Load Balancer should be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Load Balancer."
         },
         "PrivateIpAddress": {
             "type": "string"
@@ -82,10 +92,12 @@
             }
         },
         "ResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Resource Group in which to create the Load Balancer."
         },
         "Sku": {
-            "type": "string"
+            "type": "string",
+            "description": "The SKU of the Azure Load Balancer. Accepted values are `Basic` and `Standard`. Defaults to `Basic`."
         },
         "Tags": {
             "type": "array",
@@ -105,7 +117,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "FrontendIpConfiguration": {
             "type": "array",

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OCI::DnsTsigKey",
-    "description": "CloudFormation equivalent of oci_dns_tsig_key",
+    "description": "This resource provides the Tsig Key resource in Oracle Cloud Infrastructure Dns service.\n\nCreates a new TSIG key in the specified compartment. There is no\n`opc-retry-token` header since TSIG key names must be globally unique.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,10 +26,12 @@
             "type": "string"
         },
         "Algorithm": {
-            "type": "string"
+            "type": "string",
+            "description": "TSIG key algorithms are encoded as domain names, but most consist of only one non-empty label, which is not required to be explicitly absolute. Applicable algorithms include: hmac-sha1, hmac-sha224, hmac-sha256, hmac-sha512. For more information on these algorithms, see [RFC 4635](https://tools.ietf.org/html/rfc4635#section-2)."
         },
         "CompartmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "(Updatable) The OCID of the compartment containing the TSIG key."
         },
         "DefinedTags": {
             "type": "array",
@@ -49,7 +51,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)."
         },
         "FreeformTags": {
             "type": "array",
@@ -69,13 +72,16 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A globally unique domain name identifying the key for a given pair of hosts."
         },
         "Secret": {
-            "type": "string"
+            "type": "string",
+            "description": "A base64 string encoding the binary shared secret."
         },
         "Self": {
             "type": "string"

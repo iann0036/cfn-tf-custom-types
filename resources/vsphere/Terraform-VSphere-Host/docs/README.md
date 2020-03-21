@@ -1,6 +1,7 @@
 # Terraform::VSphere::Host
 
-CloudFormation equivalent of vsphere_host
+Provides a VMware vSphere host resource. This represents an ESXi host that
+can be used either as part of a Compute Cluster or Standalone.
 
 ## Syntax
 
@@ -49,6 +50,9 @@ Properties:
 
 #### Cluster
 
+The ID of the Compute Cluster this host should
+be added to. This should not be set if `datacenter` is set.
+
 _Required_: No
 
 _Type_: String
@@ -56,6 +60,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Connected
+
+If set to false then the host will be disconected.
+Default is `false`.
 
 _Required_: No
 
@@ -65,6 +72,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Datacenter
 
+The ID of the datacenter this host should
+be added to. This should not be set if `cluster` is set.
+
 _Required_: No
 
 _Type_: String
@@ -72,6 +82,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Force
+
+If set to true then it will force the host to be added, even
+if the host is already connected to a different vSphere instance. Default is `false`.
 
 _Required_: No
 
@@ -81,6 +94,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Hostname
 
+FQDN or IP address of the host to be added.
+
 _Required_: Yes
 
 _Type_: String
@@ -88,6 +103,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### License
+
+The license key that will be applied to the host.
+The license key is expected to be present in vSphere.
 
 _Required_: No
 
@@ -97,6 +115,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Lockdown
 
+Set the lockdown state of the host. Valid options are
+`disabled`, `normal`, and `strict`. Default is `disabled`.
+
 _Required_: No
 
 _Type_: String
@@ -104,6 +125,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Maintenance
+
+Set the management state of the host. Default is `false`.
 
 _Required_: No
 
@@ -113,6 +136,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Password
 
+Password that will be used by vSphere to authenticate
+to the host.
+
 _Required_: Yes
 
 _Type_: String
@@ -121,6 +147,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Thumbprint
 
+Host's certificate SHA-1 thumbprint. If not set the the
+CA that signed the host's certificate should be trusted. If the CA is not trusted
+and no thumbprint is set then the operation will fail.
+
 _Required_: No
 
 _Type_: String
@@ -128,6 +158,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Username
+
+Username that will be used by vSphere to authenticate
+to the host.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 # Terraform::OpenTelekomCloud::DnsRecordsetV2
 
-CloudFormation equivalent of opentelekomcloud_dns_recordset_v2
+Manages a DNS record set in the OpenTelekomCloud DNS Service.
 
 ## Syntax
 
@@ -47,6 +47,8 @@ Properties:
 
 #### Description
 
+A description of the  record set.
+
 _Required_: No
 
 _Type_: String
@@ -55,6 +57,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the record set. Note the `.` at the end of the name.
+Changing this creates a new DNS  record set.
+
 _Required_: Yes
 
 _Type_: String
@@ -62,6 +67,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Records
+
+An array of DNS records.
 
 _Required_: Yes
 
@@ -79,6 +86,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ttl
 
+The time to live (TTL) of the record set.
+
 _Required_: No
 
 _Type_: Double
@@ -86,6 +95,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The type of record set. Examples: "A", "MX".
+Changing this creates a new DNS  record set.
 
 _Required_: Yes
 
@@ -95,6 +107,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ValueSpecs
 
+Map of additional options. Changing this creates a
+new record set.
+
 _Required_: No
 
 _Type_: List of <a href="valuespecs.md">ValueSpecs</a>
@@ -102,6 +117,9 @@ _Type_: List of <a href="valuespecs.md">ValueSpecs</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneId
+
+The ID of the zone in which to create the record set.
+Changing this creates a new DNS  record set.
 
 _Required_: Yes
 

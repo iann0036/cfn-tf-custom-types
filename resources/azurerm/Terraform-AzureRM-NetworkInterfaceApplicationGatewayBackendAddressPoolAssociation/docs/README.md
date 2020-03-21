@@ -1,6 +1,6 @@
 # Terraform::AzureRM::NetworkInterfaceApplicationGatewayBackendAddressPoolAssociation
 
-CloudFormation equivalent of azurerm_network_interface_application_gateway_backend_address_pool_association
+Manages the association between a Network Interface and a Application Gateway's Backend Address Pool.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### BackendAddressPoolId
 
+The ID of the Application Gateway's Backend Address Pool which this Network Interface which should be connected to. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -43,6 +45,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IpConfigurationName
 
+The Name of the IP Configuration within the Network Interface which should be connected to the Backend Address Pool. Changing this forces a new resource to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NetworkInterfaceId
+
+The ID of the Network Interface. Changing this forces a new resource to be created.
 
 _Required_: Yes
 

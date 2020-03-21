@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Rancher::Registry",
-    "description": "CloudFormation equivalent of rancher_registry",
+    "description": "Provides a Rancher Registy resource. This can be used to create registries for rancher environments and retrieve their information",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,20 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A registry description."
         },
         "EnvironmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the environment to create the registry for."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the registry."
         },
         "ServerAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "The server address for the registry."
         }
     },
     "additionalProperties": false,

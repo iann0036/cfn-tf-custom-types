@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Vault::ApproleAuthBackendRole",
-    "description": "CloudFormation equivalent of vault_approle_auth_backend_role",
+    "description": "Manages an AppRole auth backend role in a Vault server. See the [Vault\ndocumentation](https://www.vaultproject.io/docs/auth/approle.html) for more\ninformation.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "Backend": {
-            "type": "string"
+            "type": "string",
+            "description": "The unique name of the auth backend to configure.\nDefaults to `approle`."
         },
         "BindSecretId": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether or not to require `secret_id` to be\npresented when logging in using this AppRole. Defaults to `true`."
         },
         "BoundCidrList": {
             "type": "array",
@@ -32,23 +34,28 @@
             }
         },
         "RoleId": {
-            "type": "string"
+            "type": "string",
+            "description": "The RoleID of this role. If not specified, one will be\nauto-generated."
         },
         "RoleName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the role."
         },
         "SecretIdBoundCidrs": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "If set,\nspecifies blocks of IP addresses which can perform the login operation."
         },
         "SecretIdNumUses": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of times any particular SecretID\ncan be used to fetch a token from this AppRole, after which the SecretID will\nexpire. A value of zero will allow unlimited uses."
         },
         "SecretIdTtl": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of seconds after which any SecretID\nexpires."
         },
         "TokenBoundCidrs": {
             "type": "array",

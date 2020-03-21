@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Google::ContainerNodePool",
-    "description": "CloudFormation equivalent of google_container_node_pool",
+    "description": "Manages a node pool in a Google Kubernetes Engine (GKE) cluster separately from\nthe cluster control plane. For more information see [the official documentation](https://cloud.google.com/container-engine/docs/node-pools)\nand [the API reference](https://cloud.google.com/container-engine/reference/rest/v1/projects.zones.clusters.nodePools).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Autoscaling": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "MaxNodeCount": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Maximum number of nodes in the NodePool. Must be >= min_node_count."
                 },
                 "MinNodeCount": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Minimum number of nodes in the NodePool. Must be >=0 and\n<= `max_node_count`."
                 }
             },
             "required": [
@@ -24,10 +26,12 @@
             "additionalProperties": false,
             "properties": {
                 "AutoRepair": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Whether the nodes will be automatically repaired."
                 },
                 "AutoUpgrade": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Whether the nodes will be automatically upgraded."
                 }
             },
             "required": []
@@ -233,10 +237,12 @@
             "type": "string"
         },
         "Cluster": {
-            "type": "string"
+            "type": "string",
+            "description": "The cluster to create the node pool for. Cluster must be present in `location` provided for zonal clusters."
         },
         "InitialNodeCount": {
-            "type": "number"
+            "type": "number",
+            "description": "The initial number of nodes for the pool. In\nregional or multi-zonal clusters, this is the number of nodes per zone. Changing\nthis will force recreation of the resource."
         },
         "InstanceGroupUrls": {
             "type": "array",
@@ -246,28 +252,35 @@
             }
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "The location (region or zone) of the cluster."
         },
         "MaxPodsPerNode": {
-            "type": "number"
+            "type": "number",
+            "description": "The maximum number of pods per node in this node pool.\nNote that this does not work on node pools which are \"route-based\" - that is, node\npools belonging to clusters that do not have IP Aliasing enabled.\nSee the [official documentation](https://cloud.google.com/kubernetes-engine/docs/how-to/flexible-pod-cidr)\nfor more information."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the node pool. If left blank, Terraform will\nauto-generate a unique name."
         },
         "NamePrefix": {
-            "type": "string"
+            "type": "string",
+            "description": "Creates a unique name for the node pool beginning\nwith the specified prefix. Conflicts with `name`."
         },
         "NodeCount": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of nodes per instance group. This field can be used to\nupdate the number of nodes per instance group but should not be used alongside `autoscaling`."
         },
         "Project": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the project in which to create the node pool. If blank,\nthe provider-configured project will be used."
         },
         "Region": {
             "type": "string"
         },
         "Version": {
-            "type": "string"
+            "type": "string",
+            "description": "The Kubernetes version for the nodes in this pool. Note that if this field\nand `auto_upgrade` are both specified, they will fight each other for what the node version should\nbe, so setting both is highly discouraged. While a fuzzy version can be specified, it's\nrecommended that you specify explicit versions as Terraform will see spurious diffs\nwhen fuzzy versions are used. See the `google_container_engine_versions` data source's\n`version_prefix` field to approximate fuzzy versions in a Terraform-compatible way."
         },
         "Zone": {
             "type": "string"

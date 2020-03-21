@@ -1,6 +1,6 @@
 # Terraform::Nutanix::CategoryValue
 
-CloudFormation equivalent of nutanix_category_value
+Provides a Nutanix Category value resource to Create a category value.
 
 ## Syntax
 
@@ -48,6 +48,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Value
+
+The value for the category value.
 
 _Required_: Yes
 

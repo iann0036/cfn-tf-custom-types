@@ -1,6 +1,12 @@
 # Terraform::Alicloud::CasCertificate
 
-CloudFormation equivalent of alicloud_cas_certificate
+Provides a CAS Certificate resource.
+
+-> **NOTE:** The Certificate name which you want to add must be already registered and had not added by another account. Every Certificate name can only exist in a unique group.
+
+-> **NOTE:** The Cas Certificate region only support cn-hangzhou, ap-south-1, me-east-1, eu-central-1, ap-northeast-1, ap-southeast-2.
+
+-> **NOTE:** Available in 1.35.0+ .
 
 ## Syntax
 
@@ -33,6 +39,8 @@ Properties:
 
 #### Cert
 
+Cert of the Certificate in which the Certificate will add.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +49,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Key
 
+Key of the Certificate in which the Certificate will add.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +58,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of the Certificate. This name without suffix can have a string of 1 to 63 characters, must contain only alphanumeric characters or "-", and must not begin or end with "-", and "-" must not in the 3th and 4th character positions at the same time. Suffix `.sh` and `.tel` are not supported.
 
 _Required_: Yes
 

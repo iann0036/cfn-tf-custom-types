@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Triton::Machine",
-    "description": "CloudFormation equivalent of triton_machine",
+    "description": "The `triton_machine` resource represents a virtual machine or infrastructure container running in Triton.\n\n~> **Note:** Starting with Triton 0.2.0, Please note that when you want to specify the networks that you want the machine to be attached to, use the `networks` parameter\nand not the `nic` parameter.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Cns": {
@@ -79,17 +79,20 @@
             "type": "string"
         },
         "AdministratorPw": {
-            "type": "string"
+            "type": "string",
+            "description": "The initial password for the Administrator user. Only used for Windows virtual machines."
         },
         "Affinity": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of valid [Affinity Rules](https://apidocs.joyent.com/cloudapi/#affinity-rules) to apply to the machine which assist in data center placement. Using this attribute will force resource creation to be serial. NOTE: Affinity rules are best guess and assist in placing instances across a data center. They're used at creation and not referenced after."
         },
         "CloudConfig": {
-            "type": "string"
+            "type": "string",
+            "description": "Cloud-init configuration for Linux brand machines, used instead of `user_data`."
         },
         "ComputeNode": {
             "type": "string"
@@ -101,7 +104,8 @@
             "type": "string"
         },
         "DeletionProtectionEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether an instance is destroyable. Default is `false`."
         },
         "Disk": {
             "type": "number"
@@ -114,10 +118,12 @@
             }
         },
         "FirewallEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Default: `false`\nWhether the cloud firewall should be enabled for this machine."
         },
         "Image": {
-            "type": "string"
+            "type": "string",
+            "description": "The UUID of the image to provision."
         },
         "Ips": {
             "type": "array",
@@ -147,26 +153,31 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of metadata to apply to the machine."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The friendly name for the machine. Triton will generate a name if one is not specified."
         },
         "Networks": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The list of networks to associate with the machine. The network ID will be in hex form, e.g `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`."
         },
         "Package": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the package to use for provisioning."
         },
         "Primaryip": {
             "type": "string"
         },
         "RootAuthorizedKeys": {
-            "type": "string"
+            "type": "string",
+            "description": "The public keys authorized for root access via SSH to the machine."
         },
         "Tags": {
             "type": "array",
@@ -186,7 +197,8 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to apply to the machine."
         },
         "Type": {
             "type": "string"
@@ -195,10 +207,12 @@
             "type": "string"
         },
         "UserData": {
-            "type": "string"
+            "type": "string",
+            "description": "Data to be copied to the machine on boot. **NOTE:** The content of `user_data`\nwill _not be executed_ on boot. The data will only be written to the file on each\nboot before the content of the script from `user_script` is to be run."
         },
         "UserScript": {
-            "type": "string"
+            "type": "string",
+            "description": "The user script to run on boot (every boot on SmartMachines). To learn more about\nboth the user script and user data see the [metadata API][2] documentation and the\n[Joyent Metadata Data Dictionary][1] specification."
         },
         "Cns": {
             "type": "array",

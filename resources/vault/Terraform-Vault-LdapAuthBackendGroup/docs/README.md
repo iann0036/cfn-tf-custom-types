@@ -1,6 +1,6 @@
 # Terraform::Vault::LdapAuthBackendGroup
 
-CloudFormation equivalent of vault_ldap_auth_backend_group
+Provides a resource to create a group in an [LDAP auth backend within Vault](https://www.vaultproject.io/docs/auth/ldap.html).
 
 ## Syntax
 
@@ -34,6 +34,8 @@ Properties:
 
 #### Backend
 
+Path to the authentication backend.
+
 _Required_: No
 
 _Type_: String
@@ -42,6 +44,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Groupname
 
+The LDAP groupname.
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Policies
+
+Policies which should be granted to members of the group.
 
 _Required_: No
 

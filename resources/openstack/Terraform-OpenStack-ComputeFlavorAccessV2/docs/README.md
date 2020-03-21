@@ -1,6 +1,11 @@
 # Terraform::OpenStack::ComputeFlavorAccessV2
 
-CloudFormation equivalent of openstack_compute_flavor_access_v2
+Manages a project access for flavor V2 resource within OpenStack.
+
+Note: You _must_ have admin privileges in your OpenStack cloud to use
+this resource.
+
+---
 
 ## Syntax
 
@@ -33,6 +38,8 @@ Properties:
 
 #### FlavorId
 
+The UUID of flavor to use. Changing this creates a new flavor access.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +48,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+The region in which to obtain the V2 Compute client.
+If omitted, the `region` argument of the provider is used.
+Changing this creates a new flavor access.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +59,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TenantId
+
+The UUID of tenant which is allowed to use the flavor.
+Changing this creates a new flavor access.
 
 _Required_: Yes
 

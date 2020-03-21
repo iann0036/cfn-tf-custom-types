@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::OpenTelekomCloud::IdentityUserV3",
-    "description": "CloudFormation equivalent of opentelekomcloud_identity_user_v3",
+    "description": "Manages a User resource within OpentelekomCloud IAM service.\n\nNote: You _must_ have admin privileges in your OpentelekomCloud cloud to use\nthis resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,19 +9,24 @@
             "type": "string"
         },
         "DefaultProjectId": {
-            "type": "string"
+            "type": "string",
+            "description": "The default project this user belongs to."
         },
         "DomainId": {
-            "type": "string"
+            "type": "string",
+            "description": "The domain this user belongs to."
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the user is enabled or disabled. Valid\nvalues are `true` and `false`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the user. The user name consists of 5 to 32\ncharacters. It can contain only uppercase letters, lowercase letters,\ndigits, spaces, and special characters (-_) and cannot start with a digit."
         },
         "Password": {
-            "type": "string"
+            "type": "string",
+            "description": "The password for the user. It must contain at least\ntwo of the following character types: uppercase letters, lowercase letters,\ndigits, and special characters."
         },
         "Region": {
             "type": "string"

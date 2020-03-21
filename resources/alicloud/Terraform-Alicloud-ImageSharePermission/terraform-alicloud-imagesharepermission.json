@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::ImageSharePermission",
-    "description": "CloudFormation equivalent of alicloud_image_share_permission",
+    "description": "Manage image sharing permissions. You can share your custom image to other Alibaba Cloud users. The user can use the shared custom image to create ECS instances or replace the system disk of the instance.\n\n-> **NOTE:** You can only share your own custom images to other Alibaba Cloud users.\n\n-> **NOTE:** Each custom image can be shared with up to 50 Alibaba Cloud accounts. You can submit a ticket to share with more users.\n\n-> **NOTE:** After creating an ECS instance using a shared image, once the custom image owner releases the image sharing relationship or deletes the custom image, the instance cannot initialize the system disk.\n\n-> **NOTE:** Available in 1.68.0+.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "AccountId": {
-            "type": "string"
+            "type": "string",
+            "description": "Alibaba Cloud Account ID. It is used to share images."
         },
         "ImageId": {
-            "type": "string"
+            "type": "string",
+            "description": "The source image ID."
         }
     },
     "additionalProperties": false,

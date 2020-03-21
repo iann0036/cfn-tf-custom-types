@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::Alicloud::YundunBastionhostInstance",
-    "description": "CloudFormation equivalent of alicloud_yundun_bastionhost_instance",
+    "description": "Cloud Bastionhost instance resource (\"Yundun_bastionhost\" is the short term of this product).\n\n-> **NOTE:** The endpoint of bssopenapi used only support \"business.aliyuncs.com\" at present.\n\n-> **NOTE:** Available in 1.63.0+ .\n\n-> **NOTE:** In order to destroy Cloud Bastionhost instance , users are required to apply for white list first",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,20 +23,23 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the instance. This name can have a string of 1 to 63 characters."
         },
         "LicenseCode": {
             "type": "string"
         },
         "Period": {
-            "type": "number"
+            "type": "number",
+            "description": "Duration for initially producing the instance. Valid values: [1~9], 12, 24, 36. Default to 1. At present, the provider does not support modify \"period\"."
         },
         "SecurityGroupIds": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "security group IDs configured to bastionhost."
         },
         "Tags": {
             "type": "array",
@@ -56,10 +59,12 @@
                     "Key",
                     "Value"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "VswitchId": {
-            "type": "string"
+            "type": "string",
+            "description": "vSwtich ID configured to bastionhost."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

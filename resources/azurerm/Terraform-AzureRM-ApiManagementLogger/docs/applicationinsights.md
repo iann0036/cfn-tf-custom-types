@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### InstrumentationKey
 
+The instrumentation key used to push data to Application Insights.
+
 _Required_: Yes
 
 _Type_: String
