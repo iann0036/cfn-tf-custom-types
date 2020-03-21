@@ -44,7 +44,7 @@ You can also use `all` as the provider name to generate resources for all provid
 
 ### Resource Submission
 
-Once you have generated the required resource files, you can submit the type by running the following:
+Once you have generated the required resource files, you can submit the type to the CloudFormation registry by running the following:
 
 ```
 python3 submit.py <resourcename>
