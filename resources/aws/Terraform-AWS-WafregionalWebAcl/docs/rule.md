@@ -33,6 +33,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Priority
 
 _Required_: Yes
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -40,6 +41,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RuleId
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -47,6 +49,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Type
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -54,6 +57,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Action
 
 _Required_: No
+
 _Type_: List of <a href="rule-action.md">Action</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -61,6 +65,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### OverrideAction
 
 _Required_: No
+
 _Type_: List of <a href="rule-overrideaction.md">OverrideAction</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

@@ -47,6 +47,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Capacities
 
 _Required_: No
+
 _Type_: List of <a href="nodetype-capacities.md">Capacities</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -54,6 +55,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ClientEndpointPort
 
 _Required_: Yes
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -61,6 +63,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DurabilityLevel
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -68,6 +71,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### HttpEndpointPort
 
 _Required_: Yes
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -75,6 +79,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### InstanceCount
 
 _Required_: Yes
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -82,6 +87,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### IsPrimary
 
 _Required_: Yes
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -89,6 +95,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Name
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -96,6 +103,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### PlacementProperties
 
 _Required_: No
+
 _Type_: List of <a href="nodetype-placementproperties.md">PlacementProperties</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -103,6 +111,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ReverseProxyEndpointPort
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -110,6 +119,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ApplicationPorts
 
 _Required_: No
+
 _Type_: List of <a href="nodetype-applicationports.md">ApplicationPorts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -117,6 +127,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### EphemeralPorts
 
 _Required_: No
+
 _Type_: List of <a href="nodetype-ephemeralports.md">EphemeralPorts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

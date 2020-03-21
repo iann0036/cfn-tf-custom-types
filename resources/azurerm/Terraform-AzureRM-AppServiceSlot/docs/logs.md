@@ -27,6 +27,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### ApplicationLogs
 
 _Required_: No
+
 _Type_: List of <a href="logs-applicationlogs.md">ApplicationLogs</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -34,6 +35,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### HttpLogs
 
 _Required_: No
+
 _Type_: List of <a href="logs-httplogs.md">HttpLogs</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

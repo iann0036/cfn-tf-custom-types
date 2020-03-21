@@ -42,6 +42,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### CertificateId
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -49,6 +50,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### CipherGroup
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -56,6 +58,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ClientAddressHeader
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -63,6 +66,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### IsBehindCdn
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -70,6 +74,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### IsCacheControlRespected
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -77,6 +82,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### IsHttpsEnabled
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -84,6 +90,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### IsHttpsForced
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -91,6 +98,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### IsOriginCompressionEnabled
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -98,6 +106,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### IsResponseBufferingEnabled
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -105,6 +114,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### TlsProtocols
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

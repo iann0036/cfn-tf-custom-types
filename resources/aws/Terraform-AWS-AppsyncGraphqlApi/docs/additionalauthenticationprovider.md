@@ -29,6 +29,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### AuthenticationType
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -36,6 +37,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### OpenidConnectConfig
 
 _Required_: No
+
 _Type_: List of <a href="additionalauthenticationprovider-openidconnectconfig.md">OpenidConnectConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -43,6 +45,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### UserPoolConfig
 
 _Required_: No
+
 _Type_: List of <a href="additionalauthenticationprovider-userpoolconfig.md">UserPoolConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

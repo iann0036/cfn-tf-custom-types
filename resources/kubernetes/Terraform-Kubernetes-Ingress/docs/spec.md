@@ -30,6 +30,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Backend
 
 _Required_: No
+
 _Type_: List of <a href="spec-backend.md">Backend</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -37,6 +38,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Rule
 
 _Required_: No
+
 _Type_: List of <a href="spec-rule.md">Rule</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -44,6 +46,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Tls
 
 _Required_: No
+
 _Type_: List of <a href="spec-tls.md">Tls</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

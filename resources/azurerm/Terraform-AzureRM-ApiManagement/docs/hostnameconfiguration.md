@@ -33,6 +33,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Management
 
 _Required_: No
+
 _Type_: List of <a href="hostnameconfiguration-management.md">Management</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -40,6 +41,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Portal
 
 _Required_: No
+
 _Type_: List of <a href="hostnameconfiguration-portal.md">Portal</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -47,6 +49,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Proxy
 
 _Required_: No
+
 _Type_: List of <a href="hostnameconfiguration-proxy.md">Proxy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -54,6 +57,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Scm
 
 _Required_: No
+
 _Type_: List of <a href="hostnameconfiguration-scm.md">Scm</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

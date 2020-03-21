@@ -33,6 +33,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### CorsRule
 
 _Required_: No
+
 _Type_: List of <a href="queueproperties-corsrule.md">CorsRule</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -40,6 +41,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### HourMetrics
 
 _Required_: No
+
 _Type_: List of <a href="queueproperties-hourmetrics.md">HourMetrics</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -47,6 +49,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Logging
 
 _Required_: No
+
 _Type_: List of <a href="queueproperties-logging.md">Logging</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -54,6 +57,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### MinuteMetrics
 
 _Required_: No
+
 _Type_: List of <a href="queueproperties-minutemetrics.md">MinuteMetrics</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

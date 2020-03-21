@@ -30,6 +30,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### ResourceTypes
 
 _Required_: Yes
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -37,6 +38,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### TargetTags
 
 _Required_: Yes
+
 _Type_: List of <a href="policydetails-targettags.md">TargetTags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -44,6 +46,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Schedule
 
 _Required_: No
+
 _Type_: List of <a href="policydetails-schedule.md">Schedule</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

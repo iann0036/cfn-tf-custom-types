@@ -30,6 +30,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### ProdTrafficRoute
 
 _Required_: No
+
 _Type_: List of <a href="loadbalancerinfo-targetgrouppairinfo-prodtrafficroute.md">ProdTrafficRoute</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -37,6 +38,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### TargetGroup
 
 _Required_: No
+
 _Type_: List of <a href="loadbalancerinfo-targetgrouppairinfo-targetgroup.md">TargetGroup</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -44,6 +46,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### TestTrafficRoute
 
 _Required_: No
+
 _Type_: List of <a href="loadbalancerinfo-targetgrouppairinfo-testtrafficroute.md">TestTrafficRoute</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

@@ -30,6 +30,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### CloudwatchEncryption
 
 _Required_: No
+
 _Type_: List of <a href="encryptionconfiguration-cloudwatchencryption.md">CloudwatchEncryption</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -37,6 +38,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### JobBookmarksEncryption
 
 _Required_: No
+
 _Type_: List of <a href="encryptionconfiguration-jobbookmarksencryption.md">JobBookmarksEncryption</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -44,6 +46,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### S3Encryption
 
 _Required_: No
+
 _Type_: List of <a href="encryptionconfiguration-s3encryption.md">S3Encryption</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

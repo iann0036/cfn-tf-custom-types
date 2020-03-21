@@ -60,6 +60,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### ArithmeticProcessor
 
 _Required_: No
+
 _Type_: List of <a href="processor-arithmeticprocessor.md">ArithmeticProcessor</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -67,6 +68,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### AttributeRemapper
 
 _Required_: No
+
 _Type_: List of <a href="processor-attributeremapper.md">AttributeRemapper</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -74,6 +76,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### CategoryProcessor
 
 _Required_: No
+
 _Type_: List of <a href="processor-categoryprocessor.md">CategoryProcessor</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -81,6 +84,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DateRemapper
 
 _Required_: No
+
 _Type_: List of <a href="processor-dateremapper.md">DateRemapper</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -88,6 +92,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### GeoIpParser
 
 _Required_: No
+
 _Type_: List of <a href="processor-geoipparser.md">GeoIpParser</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -95,6 +100,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### GrokParser
 
 _Required_: No
+
 _Type_: List of <a href="processor-grokparser.md">GrokParser</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -102,6 +108,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### MessageRemapper
 
 _Required_: No
+
 _Type_: List of <a href="processor-messageremapper.md">MessageRemapper</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -109,6 +116,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ServiceRemapper
 
 _Required_: No
+
 _Type_: List of <a href="processor-serviceremapper.md">ServiceRemapper</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -116,6 +124,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### StatusRemapper
 
 _Required_: No
+
 _Type_: List of <a href="processor-statusremapper.md">StatusRemapper</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -123,6 +132,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### StringBuilderProcessor
 
 _Required_: No
+
 _Type_: List of <a href="processor-stringbuilderprocessor.md">StringBuilderProcessor</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -130,6 +140,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### TraceIdRemapper
 
 _Required_: No
+
 _Type_: List of <a href="processor-traceidremapper.md">TraceIdRemapper</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -137,6 +148,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### UrlParser
 
 _Required_: No
+
 _Type_: List of <a href="processor-urlparser.md">UrlParser</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -144,6 +156,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### UserAgentParser
 
 _Required_: No
+
 _Type_: List of <a href="processor-useragentparser.md">UserAgentParser</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

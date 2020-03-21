@@ -33,6 +33,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### HorizontalPodAutoscaling
 
 _Required_: No
+
 _Type_: List of <a href="addonsconfig-horizontalpodautoscaling.md">HorizontalPodAutoscaling</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -40,6 +41,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### HttpLoadBalancing
 
 _Required_: No
+
 _Type_: List of <a href="addonsconfig-httploadbalancing.md">HttpLoadBalancing</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -47,6 +49,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### KubernetesDashboard
 
 _Required_: No
+
 _Type_: List of <a href="addonsconfig-kubernetesdashboard.md">KubernetesDashboard</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -54,6 +57,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### NetworkPolicyConfig
 
 _Required_: No
+
 _Type_: List of <a href="addonsconfig-networkpolicyconfig.md">NetworkPolicyConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

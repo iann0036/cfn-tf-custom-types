@@ -30,6 +30,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### DeploymentReadyOption
 
 _Required_: No
+
 _Type_: List of <a href="bluegreendeploymentconfig-deploymentreadyoption.md">DeploymentReadyOption</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -37,6 +38,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### GreenFleetProvisioningOption
 
 _Required_: No
+
 _Type_: List of <a href="bluegreendeploymentconfig-greenfleetprovisioningoption.md">GreenFleetProvisioningOption</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -44,6 +46,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### TerminateBlueInstancesOnDeploymentSuccess
 
 _Required_: No
+
 _Type_: List of <a href="bluegreendeploymentconfig-terminateblueinstancesondeploymentsuccess.md">TerminateBlueInstancesOnDeploymentSuccess</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

@@ -42,6 +42,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### CorsPolicy
 
 _Required_: No
+
 _Type_: List of <a href="pathmatcher-routerules-routeaction-corspolicy.md">CorsPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -49,6 +50,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### FaultInjectionPolicy
 
 _Required_: No
+
 _Type_: List of <a href="pathmatcher-routerules-routeaction-faultinjectionpolicy.md">FaultInjectionPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -56,6 +58,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RequestMirrorPolicy
 
 _Required_: No
+
 _Type_: List of <a href="pathmatcher-routerules-routeaction-requestmirrorpolicy.md">RequestMirrorPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -63,6 +66,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RetryPolicy
 
 _Required_: No
+
 _Type_: List of <a href="pathmatcher-routerules-routeaction-retrypolicy.md">RetryPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -70,6 +74,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Timeout
 
 _Required_: No
+
 _Type_: List of <a href="pathmatcher-routerules-routeaction-timeout.md">Timeout</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -77,6 +82,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### UrlRewrite
 
 _Required_: No
+
 _Type_: List of <a href="pathmatcher-routerules-routeaction-urlrewrite.md">UrlRewrite</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -84,6 +90,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### WeightedBackendServices
 
 _Required_: No
+
 _Type_: List of <a href="pathmatcher-routerules-routeaction-weightedbackendservices.md">WeightedBackendServices</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

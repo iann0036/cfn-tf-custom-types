@@ -27,6 +27,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### OrcSerDe
 
 _Required_: No
+
 _Type_: List of <a href="dataformatconversionconfiguration-outputformatconfiguration-serializer-orcserde.md">OrcSerDe</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -34,6 +35,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ParquetSerDe
 
 _Required_: No
+
 _Type_: List of <a href="dataformatconversionconfiguration-outputformatconfiguration-serializer-parquetserde.md">ParquetSerDe</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

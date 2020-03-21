@@ -27,6 +27,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Limits
 
 _Required_: No
+
 _Type_: List of <a href="volumeclaimtemplate-spec-resources-limits.md">Limits</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -34,6 +35,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Requests
 
 _Required_: No
+
 _Type_: List of <a href="volumeclaimtemplate-spec-resources-requests.md">Requests</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

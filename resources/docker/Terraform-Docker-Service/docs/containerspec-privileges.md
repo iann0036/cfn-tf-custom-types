@@ -27,6 +27,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### CredentialSpec
 
 _Required_: No
+
 _Type_: List of <a href="containerspec-privileges-credentialspec.md">CredentialSpec</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -34,6 +35,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SeLinuxContext
 
 _Required_: No
+
 _Type_: List of <a href="containerspec-privileges-selinuxcontext.md">SeLinuxContext</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

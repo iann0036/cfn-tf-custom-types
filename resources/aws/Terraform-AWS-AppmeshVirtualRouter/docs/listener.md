@@ -24,6 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### PortMapping
 
 _Required_: No
+
 _Type_: List of <a href="listener-portmapping.md">PortMapping</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

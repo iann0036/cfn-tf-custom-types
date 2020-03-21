@@ -33,6 +33,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Dynamic
 
 _Required_: No
+
 _Type_: List of <a href="rule-translatedpacket-destination-dynamic.md">Dynamic</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -40,6 +41,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DynamicTranslation
 
 _Required_: No
+
 _Type_: List of <a href="rule-translatedpacket-destination-dynamictranslation.md">DynamicTranslation</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -47,6 +49,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Static
 
 _Required_: No
+
 _Type_: List of <a href="rule-translatedpacket-destination-static.md">Static</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -54,6 +57,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### StaticTranslation
 
 _Required_: No
+
 _Type_: List of <a href="rule-translatedpacket-destination-statictranslation.md">StaticTranslation</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

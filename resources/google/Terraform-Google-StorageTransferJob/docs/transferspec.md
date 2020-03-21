@@ -39,6 +39,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### AwsS3DataSource
 
 _Required_: No
+
 _Type_: List of <a href="transferspec-awss3datasource.md">AwsS3DataSource</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -46,6 +47,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### GcsDataSink
 
 _Required_: No
+
 _Type_: List of <a href="transferspec-gcsdatasink.md">GcsDataSink</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -53,6 +55,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### GcsDataSource
 
 _Required_: No
+
 _Type_: List of <a href="transferspec-gcsdatasource.md">GcsDataSource</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -60,6 +63,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### HttpDataSource
 
 _Required_: No
+
 _Type_: List of <a href="transferspec-httpdatasource.md">HttpDataSource</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -67,6 +71,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ObjectConditions
 
 _Required_: No
+
 _Type_: List of <a href="transferspec-objectconditions.md">ObjectConditions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -74,6 +79,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### TransferOptions
 
 _Required_: No
+
 _Type_: List of <a href="transferspec-transferoptions.md">TransferOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

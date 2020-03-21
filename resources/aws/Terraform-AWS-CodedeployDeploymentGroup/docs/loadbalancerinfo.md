@@ -30,6 +30,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### ElbInfo
 
 _Required_: No
+
 _Type_: List of <a href="loadbalancerinfo-elbinfo.md">ElbInfo</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -37,6 +38,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### TargetGroupInfo
 
 _Required_: No
+
 _Type_: List of <a href="loadbalancerinfo-targetgroupinfo.md">TargetGroupInfo</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -44,6 +46,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### TargetGroupPairInfo
 
 _Required_: No
+
 _Type_: List of <a href="loadbalancerinfo-targetgrouppairinfo.md">TargetGroupPairInfo</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

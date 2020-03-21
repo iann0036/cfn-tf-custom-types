@@ -27,6 +27,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### InstancesDistribution
 
 _Required_: No
+
 _Type_: List of <a href="mixedinstancespolicy-instancesdistribution.md">InstancesDistribution</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -34,6 +35,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### LaunchTemplate
 
 _Required_: No
+
 _Type_: List of <a href="mixedinstancespolicy-launchtemplate.md">LaunchTemplate</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

@@ -27,6 +27,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### HiveJsonSerDe
 
 _Required_: No
+
 _Type_: List of <a href="deserializer-hivejsonserde.md">HiveJsonSerDe</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -34,6 +35,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### OpenXJsonSerDe
 
 _Required_: No
+
 _Type_: List of <a href="deserializer-openxjsonserde.md">OpenXJsonSerDe</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

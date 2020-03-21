@@ -27,6 +27,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Abort
 
 _Required_: No
+
 _Type_: List of <a href="pathmatcher-routerules-routeaction-faultinjectionpolicy-abort.md">Abort</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -34,6 +35,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Delay
 
 _Required_: No
+
 _Type_: List of <a href="pathmatcher-routerules-routeaction-faultinjectionpolicy-delay.md">Delay</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

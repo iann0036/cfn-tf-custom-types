@@ -75,6 +75,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### AwsElasticBlockStore
 
 _Required_: No
+
 _Type_: List of <a href="spec-persistentvolumesource-awselasticblockstore.md">AwsElasticBlockStore</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -82,6 +83,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### AzureDisk
 
 _Required_: No
+
 _Type_: List of <a href="spec-persistentvolumesource-azuredisk.md">AzureDisk</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -89,6 +91,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### AzureFile
 
 _Required_: No
+
 _Type_: List of <a href="spec-persistentvolumesource-azurefile.md">AzureFile</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -96,6 +99,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### CephFs
 
 _Required_: No
+
 _Type_: List of <a href="spec-persistentvolumesource-cephfs.md">CephFs</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -103,6 +107,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Cinder
 
 _Required_: No
+
 _Type_: List of <a href="spec-persistentvolumesource-cinder.md">Cinder</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -110,6 +115,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Fc
 
 _Required_: No
+
 _Type_: List of <a href="spec-persistentvolumesource-fc.md">Fc</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -117,6 +123,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### FlexVolume
 
 _Required_: No
+
 _Type_: List of <a href="spec-persistentvolumesource-flexvolume.md">FlexVolume</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -124,6 +131,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Flocker
 
 _Required_: No
+
 _Type_: List of <a href="spec-persistentvolumesource-flocker.md">Flocker</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -131,6 +139,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### GcePersistentDisk
 
 _Required_: No
+
 _Type_: List of <a href="spec-persistentvolumesource-gcepersistentdisk.md">GcePersistentDisk</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -138,6 +147,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Glusterfs
 
 _Required_: No
+
 _Type_: List of <a href="spec-persistentvolumesource-glusterfs.md">Glusterfs</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -145,6 +155,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### HostPath
 
 _Required_: No
+
 _Type_: List of <a href="spec-persistentvolumesource-hostpath.md">HostPath</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -152,6 +163,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Iscsi
 
 _Required_: No
+
 _Type_: List of <a href="spec-persistentvolumesource-iscsi.md">Iscsi</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -159,6 +171,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Local
 
 _Required_: No
+
 _Type_: List of <a href="spec-persistentvolumesource-local.md">Local</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -166,6 +179,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Nfs
 
 _Required_: No
+
 _Type_: List of <a href="spec-persistentvolumesource-nfs.md">Nfs</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -173,6 +187,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### PhotonPersistentDisk
 
 _Required_: No
+
 _Type_: List of <a href="spec-persistentvolumesource-photonpersistentdisk.md">PhotonPersistentDisk</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -180,6 +195,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Quobyte
 
 _Required_: No
+
 _Type_: List of <a href="spec-persistentvolumesource-quobyte.md">Quobyte</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -187,6 +203,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Rbd
 
 _Required_: No
+
 _Type_: List of <a href="spec-persistentvolumesource-rbd.md">Rbd</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -194,6 +211,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### VsphereVolume
 
 _Required_: No
+
 _Type_: List of <a href="spec-persistentvolumesource-vspherevolume.md">VsphereVolume</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

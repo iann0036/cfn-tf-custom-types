@@ -29,6 +29,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Type
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -36,6 +37,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### TimeBasedCanary
 
 _Required_: No
+
 _Type_: List of <a href="trafficroutingconfig-timebasedcanary.md">TimeBasedCanary</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -43,6 +45,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### TimeBasedLinear
 
 _Required_: No
+
 _Type_: List of <a href="trafficroutingconfig-timebasedlinear.md">TimeBasedLinear</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

@@ -33,6 +33,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### AutomationParameters
 
 _Required_: No
+
 _Type_: List of <a href="taskinvocationparameters-automationparameters.md">AutomationParameters</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -40,6 +41,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### LambdaParameters
 
 _Required_: No
+
 _Type_: List of <a href="taskinvocationparameters-lambdaparameters.md">LambdaParameters</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -47,6 +49,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RunCommandParameters
 
 _Required_: No
+
 _Type_: List of <a href="taskinvocationparameters-runcommandparameters.md">RunCommandParameters</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -54,6 +57,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### StepFunctionsParameters
 
 _Required_: No
+
 _Type_: List of <a href="taskinvocationparameters-stepfunctionsparameters.md">StepFunctionsParameters</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
