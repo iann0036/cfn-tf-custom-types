@@ -1,0 +1,148 @@
+{
+    "typeName": "Terraform::DigitalOcean::DatabaseCluster",
+    "description": "CloudFormation equivalent of digitalocean_database_cluster",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "MaintenanceWindow": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Day": {
+                    "type": "string"
+                },
+                "Hour": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Day",
+                "Hour"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Database": {
+            "type": "string"
+        },
+        "Engine": {
+            "type": "string"
+        },
+        "EvictionPolicy": {
+            "type": "string"
+        },
+        "Host": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NodeCount": {
+            "type": "number"
+        },
+        "Password": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "number"
+        },
+        "PrivateHost": {
+            "type": "string"
+        },
+        "PrivateUri": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "Size": {
+            "type": "string"
+        },
+        "SqlMode": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Uri": {
+            "type": "string"
+        },
+        "Urn": {
+            "type": "string"
+        },
+        "User": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "string"
+        },
+        "MaintenanceWindow": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MaintenanceWindow"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Engine",
+        "Name",
+        "NodeCount",
+        "Region",
+        "Size"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Database",
+        "/properties/Host",
+        "/properties/Password",
+        "/properties/Port",
+        "/properties/PrivateHost",
+        "/properties/PrivateUri",
+        "/properties/Uri",
+        "/properties/Urn",
+        "/properties/User"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

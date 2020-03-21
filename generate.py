@@ -107,6 +107,12 @@ PROVIDER_TYPE = sys.argv[1]
 def tf_to_cfn_str(obj):
     return re.sub(r'(?:^|_)(\w)', lambda x: x.group(1).upper(), obj)
 
+def tf_type_to_cfn_type(tf_name, provider_name):
+    split_provider_name = tf_name.split("_")
+    split_provider_name.pop(0)
+    cfn_provider_name = CASE_MAP[provider_name][0]
+    return "Terraform::" + cfn_provider_name + "::" + tf_to_cfn_str("_".join(split_provider_name))
+
 def check_call(args, cwd, inputstr):
     proc = subprocess.Popen(args,
         stdin=subprocess.PIPE,
@@ -202,6 +208,8 @@ provider "{provider}" {{}}
 print("Downloading latest provider version...")
 check_call(['terraform', 'init'], tempdir.absolute(), None)
 tfschema = json.loads(check_call(['terraform', 'providers', 'schema', '-json'], tempdir.absolute(), None))
+
+check_call(['git', 'clone', 'https://github.com/terraform-providers/terraform-provider-{}.git'.format(PROVIDER_TYPE), PROVIDER_TYPE], tempdir.absolute(), None)
 
 outstandingblocks = {}
 schema = {}
@@ -425,3 +433,244 @@ for k,v in tfschema['provider_schemas'][PROVIDER_TYPE]['resource_schemas'].items
     except:
         traceback.print_exc(file=sys.stdout)
         print("Failed to generate " + cfntypename)
+
+# Docs
+def process_file(provider_name, file_contents, provider_readme_items):
+    section = ""
+
+    resource_type = ""
+    description = ""
+    example = ""
+    arguments = []
+    argument_lines = []
+    attributes = {}
+
+    lines = file_contents.split("\n")
+    for line in lines:
+        if line.startswith("# " + provider_name):
+            resource_type = line[2:].replace("\\", "")
+            section = "description"
+        elif line == "## Example Usage":
+            section = "example"
+        elif line == "## Argument Reference":
+            section = "arguments"
+        elif line == "## Attributes Reference":
+            section = "attributes"
+        elif line.startswith("##"):
+            section = ""
+        elif section == "description":
+            description += line + "\n"
+        elif section == "example":
+            example += line + "\n"
+        elif section == "arguments":
+            argument_lines.append(line)
+        elif section == "attributes":
+            if line.strip().startswith("* "):
+                startpos = line.strip().find("`")
+                endpos = line.strip().find("`", startpos+1)
+                if startpos != -1 and endpos != -1:
+                    attribute_name = line.strip()[startpos+1:endpos]
+                    if line.strip()[endpos+1:].strip().startswith("- ") or line.strip()[endpos+1:].strip().startswith("= "):
+                        attribute_description = line.strip()[endpos+1:].strip()[2:]
+                        if attribute_description[-1] != ".":
+                            attribute_description += "."
+                        attributes[attribute_name] = attribute_description
+    
+    # process arguments
+    argument_names = []
+    argument_block = None
+    for line_number, line in enumerate(argument_lines):
+        if line.strip().startswith("* ") or line.strip().startswith("- "):
+            startpos = line.strip().find("`")
+            endpos = line.strip().find("`", startpos+1)
+            if startpos != -1 and endpos != -1:
+                argument_name = line.strip()[startpos+1:endpos]
+                argument_names.append(argument_name)
+                if line.strip()[endpos+1:].strip().startswith("- ") or line.strip()[endpos+1:].strip().startswith("= "):
+                    argument_description = line.strip()[endpos+1:].strip()[2:]
+
+                    # concat lines in newlines for description of attribute
+                    line_num_iterator = 1
+                    while len(argument_lines) > line_number+line_num_iterator and (argument_lines[line_number+line_num_iterator].strip() != "" and not argument_lines[line_number+line_num_iterator].startswith("* ") and not argument_lines[line_number+line_num_iterator].startswith("#")):
+                        argument_description += "\n" + argument_lines[line_number+line_num_iterator].strip()
+                        line_num_iterator += 1
+
+                    if argument_description[-1] != ".":
+                        argument_description += "."
+                    
+                    arguments.append({
+                        'name': argument_name,
+                        'description': argument_description,
+                        'property_of': argument_block
+                    })
+        if line.strip().endswith(":") and argument_lines[line_number+1].strip() == "":
+            for argument_name in argument_names:
+                if "`{}`".format(argument_name) in line:
+                    argument_block = argument_name
+
+    if resource_type != "":
+        split_provider_name = resource_type.split("_")
+        split_provider_name.pop(0)
+        if provider_name in CASE_MAP:
+            cfn_type = tf_type_to_cfn_type(resource_type, provider_name)
+            provider_readme_items.append("* [{cfn_type}](../resources/{provider_name}/{type_stub}/docs/README.md)".format(
+                cfn_type=cfn_type,
+                provider_name=provider_name,
+                type_stub=tf_type_to_cfn_type(provider_name + "_" + "_".join(split_provider_name), provider_name).replace("::","-")
+            ))
+        else:
+            return
+        
+        description = description.strip()
+
+        # properties
+        properties = ""
+        property_of_list = []
+        for arg in arguments:
+            if not arg['property_of']:
+                properties += "`{ret}` - {desc}\n\n".format(
+                    ret=tf_to_cfn_str(arg['name']),
+                    desc=arg['description']
+                )
+            else:
+                property_of_list.append(arg['property_of'])
+
+        used_property_of_list = []
+        for property_of in property_of_list:
+            if property_of not in used_property_of_list:
+                used_property_of_list.append(property_of)
+                properties += "### {} Properties\n\n".format(tf_to_cfn_str(property_of))
+                for arg in arguments:
+                    if arg['property_of'] == property_of:
+                        properties += "`{ret}` - {desc}\n\n".format(
+                            ret=tf_to_cfn_str(arg['name']),
+                            desc=arg['description']
+                        )
+
+        # return values
+        return_values = ""
+        if attributes:
+            return_values = "## Return Values\n\n### Fn::GetAtt\n\n"
+            for attr in attributes:
+                return_values += "`{ret}` - {desc}\n\n".format(
+                    ret=tf_to_cfn_str(attr),
+                    desc=attributes[attr]
+                )
+        return_values = return_values.replace("Argument Reference","Properties")
+
+        # output
+        output = "# {cfn_type}\n\n{description}\n\n## Properties\n\n{properties}\n{return_values}## See Also\n\n* [{provider_name}_{split_provider_name_joined}](https://www.terraform.io/docs/providers/{provider_name}/r/{split_provider_name_joined}.html) in the _Terraform Provider Documentation_".format(
+            properties=properties,
+            provider_name=provider_name,
+            split_provider_name_joined="_".join(split_provider_name),
+            cfn_type=cfn_type,
+            description=description,
+            return_values=return_values
+        )
+
+        for argument_name in argument_names:
+            output = output.replace("`" + argument_name + "`", "`{}`".format(tf_to_cfn_str(argument_name)))
+        
+        output = re.sub(r"(\`%s\_.+\`)" % provider_name, lambda x: "`" + tf_type_to_cfn_type(x.group(1), provider_name), output) # TODO - why only one backtick used?!?
+
+        '''
+        try:
+            os.makedirs("../docs/providers/{}/".format(provider_name))
+        except:
+            pass
+        with open("../docs/providers/{}/{}.md".format(provider_name, tf_to_cfn_str("_".join(split_provider_name))), 'w') as resource_readme:
+            resource_readme.write(output)
+        '''
+
+resources_path = (tempdir / PROVIDER_TYPE / "website" / "docs" / "r").absolute()
+index_path = (tempdir / PROVIDER_TYPE / "website" / "docs" / "index.html.markdown").absolute()
+provider_reference_path = (tempdir / PROVIDER_TYPE / "website" / "docs" / "provider_reference.html.markdown").absolute()
+provider_readme_items = []
+
+if os.path.isdir(resources_path) and PROVIDER_TYPE in CASE_MAP:
+    
+    with open(Path("docs") / "{}.md".format(PROVIDER_TYPE), 'w') as provider_readme:
+        readable_provider_name = CASE_MAP[PROVIDER_TYPE][1]
+        
+        # provider info
+        with open(index_path, 'r') as f:
+            section = ""
+            first_argument_found = False
+            arguments = []
+            index_file_contents = f.read()
+            lines = index_file_contents.split("\n")
+            for line in lines:
+                if line.startswith("*") and section == "arguments":
+                    first_argument_found = True
+                if line.startswith("## Argument Reference") or line.startswith("## Arguments Reference") or line.startswith("## Configuration Reference") or "the following arguments:" in line or "provide the following credentials:" in line:
+                    section = "arguments"
+                elif line.startswith("#"):
+                    section = ""
+                elif section == "arguments" and first_argument_found:
+                    arguments.append(line)
+        
+        # try provider reference (eg. google)
+        if len(arguments) == 0:
+            try:
+                with open(provider_reference_path, 'r') as f:
+                    section = ""
+                    first_argument_found = False
+                    arguments = []
+                    index_file_contents = f.read()
+                    lines = index_file_contents.split("\n")
+                    for line in lines:
+                        if (line.startswith("*") or line.startswith("-")) and section == "arguments":
+                            first_argument_found = True
+                        if line.startswith("## Argument Reference") or line.startswith("## Arguments Reference") or line.startswith("## Configuration Reference") or "the following arguments:" in line or "provide the following credentials:" in line:
+                            section = "arguments"
+                        elif line.startswith("#"):
+                            section = ""
+                        elif section == "arguments" and first_argument_found and not "navigation to the left" in line:
+                            if line.startswith("-"):
+                                line[0] = "*"
+                            arguments.append(line)
+            except:
+                pass
+        
+        # remove environmental variable references
+        argument_text = "\n".join(arguments)
+        if PROVIDER_TYPE not in ['digitalocean', 'fastly', 'flexibleengine', 'google', 'oneandone', 'profitbricks']:
+            sentences = argument_text.split(".")
+            i = 0
+            while len(sentences) > i:
+                if ("environment variable" in sentences[i] or "environmental variable" in sentences[i] or "Can be sourced from" in sentences[i]):
+                    del sentences[i]
+                else:
+                    i+=1
+            argument_text = ".".join(sentences)
+        
+        # replace tf references
+        if PROVIDER_TYPE in ['aws']:
+            argument_text = re.sub(r"(\`%s\_.+\`)" % PROVIDER_TYPE, lambda x: "`" + tf_type_to_cfn_type(x.group(1), PROVIDER_TYPE), argument_text) # TODO - why only one backtick used?!?
+
+        has_required_arguments = False
+        if "required" in argument_text.lower():
+            has_required_arguments = True
+        provider_readme.write("# {} Provider\n\n## Configuration\n\n".format(readable_provider_name))
+        if len(arguments) == 0:
+            provider_readme.write("No configuration is required for this provider.\n\n")
+        elif not has_required_arguments:
+            provider_readme.write("To configure this resource, you may optionally create an AWS Secrets Manager secret with the name **terraform/{}**. The below arguments may be included as the key/value or JSON properties in the secret or metadata object:\n\n".format(PROVIDER_TYPE))
+            provider_readme.write(argument_text + "\n\n")
+        else:
+            provider_readme.write("To configure this resource, you must create an AWS Secrets Manager secret with the name **terraform/{}**. The below arguments may be included as the key/value or JSON properties in the secret or metadata object:\n\n".format(PROVIDER_TYPE))
+            provider_readme.write(argument_text + "\n\n")
+
+        # iterate provider resources
+        provider_readme.write("## Supported Resources\n\n")
+        provider_readme_items = []
+        files = [f for f in os.listdir(resources_path) if os.path.isfile(os.path.join(resources_path, f))]
+        for filename in files:
+            with open(os.path.join(resources_path, filename), 'r') as f:
+                #print(filename)
+                resource_file_contents = f.read()
+                process_file(PROVIDER_TYPE, resource_file_contents, provider_readme_items)
+        
+        provider_readme_items = list(set(provider_readme_items))
+        provider_readme_items.sort()
+        provider_readme.write("\n".join(provider_readme_items))

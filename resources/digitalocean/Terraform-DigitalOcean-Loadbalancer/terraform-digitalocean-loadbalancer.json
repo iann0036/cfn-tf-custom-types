@@ -1,0 +1,193 @@
+{
+    "typeName": "Terraform::DigitalOcean::Loadbalancer",
+    "description": "CloudFormation equivalent of digitalocean_loadbalancer",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "ForwardingRule": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateId": {
+                    "type": "string"
+                },
+                "EntryPort": {
+                    "type": "number"
+                },
+                "EntryProtocol": {
+                    "type": "string"
+                },
+                "TargetPort": {
+                    "type": "number"
+                },
+                "TargetProtocol": {
+                    "type": "string"
+                },
+                "TlsPassthrough": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "EntryPort",
+                "EntryProtocol",
+                "TargetPort",
+                "TargetProtocol"
+            ]
+        },
+        "Healthcheck": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CheckIntervalSeconds": {
+                    "type": "number"
+                },
+                "HealthyThreshold": {
+                    "type": "number"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "ResponseTimeoutSeconds": {
+                    "type": "number"
+                },
+                "UnhealthyThreshold": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Port",
+                "Protocol"
+            ]
+        },
+        "StickySessions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CookieName": {
+                    "type": "string"
+                },
+                "CookieTtlSeconds": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Algorithm": {
+            "type": "string"
+        },
+        "DropletIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "number"
+            }
+        },
+        "DropletTag": {
+            "type": "string"
+        },
+        "EnableProxyProtocol": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ip": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "RedirectHttpToHttps": {
+            "type": "boolean"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Urn": {
+            "type": "string"
+        },
+        "ForwardingRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ForwardingRule"
+            },
+            "minItems": 1
+        },
+        "Healthcheck": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Healthcheck"
+            },
+            "maxItems": 1
+        },
+        "StickySessions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StickySessions"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Region"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Ip",
+        "/properties/Status",
+        "/properties/Urn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}
