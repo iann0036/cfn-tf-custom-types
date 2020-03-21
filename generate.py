@@ -290,6 +290,9 @@ def process_provider(provider_type):
 
             if 'attributes' in v['block']:
                 for attrname,attr in v['block']['attributes'].items():
+                    if attrname == "id":
+                        continue
+                    
                     cfnattrname = tf_to_cfn_str(attrname)
                     attrtype = attr['type']
 
