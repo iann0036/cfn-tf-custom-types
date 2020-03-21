@@ -12,6 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::DbBackupPolicy",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#archivebackupkeepcount" title="ArchiveBackupKeepCount">ArchiveBackupKeepCount</a>" : <i>Double</i>,
         "<a href="#archivebackupkeeppolicy" title="ArchiveBackupKeepPolicy">ArchiveBackupKeepPolicy</a>" : <i>String</i>,
         "<a href="#archivebackupretentionperiod" title="ArchiveBackupRetentionPeriod">ArchiveBackupRetentionPeriod</a>" : <i>Double</i>,
@@ -21,7 +22,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#compresstype" title="CompressType">CompressType</a>" : <i>String</i>,
         "<a href="#enablebackuplog" title="EnableBackupLog">EnableBackupLog</a>" : <i>Boolean</i>,
         "<a href="#highspaceusageprotection" title="HighSpaceUsageProtection">HighSpaceUsageProtection</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#instanceid" title="InstanceId">InstanceId</a>" : <i>String</i>,
         "<a href="#locallogretentionhours" title="LocalLogRetentionHours">LocalLogRetentionHours</a>" : <i>Double</i>,
         "<a href="#locallogretentionspace" title="LocalLogRetentionSpace">LocalLogRetentionSpace</a>" : <i>Double</i>,
@@ -41,6 +41,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::DbBackupPolicy
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#archivebackupkeepcount" title="ArchiveBackupKeepCount">ArchiveBackupKeepCount</a>: <i>Double</i>
     <a href="#archivebackupkeeppolicy" title="ArchiveBackupKeepPolicy">ArchiveBackupKeepPolicy</a>: <i>String</i>
     <a href="#archivebackupretentionperiod" title="ArchiveBackupRetentionPeriod">ArchiveBackupRetentionPeriod</a>: <i>Double</i>
@@ -51,7 +52,6 @@ Properties:
     <a href="#compresstype" title="CompressType">CompressType</a>: <i>String</i>
     <a href="#enablebackuplog" title="EnableBackupLog">EnableBackupLog</a>: <i>Boolean</i>
     <a href="#highspaceusageprotection" title="HighSpaceUsageProtection">HighSpaceUsageProtection</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#instanceid" title="InstanceId">InstanceId</a>: <i>String</i>
     <a href="#locallogretentionhours" title="LocalLogRetentionHours">LocalLogRetentionHours</a>: <i>Double</i>
     <a href="#locallogretentionspace" title="LocalLogRetentionSpace">LocalLogRetentionSpace</a>: <i>Double</i>
@@ -66,6 +66,16 @@ Properties:
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ArchiveBackupKeepCount
 
@@ -132,14 +142,6 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HighSpaceUsageProtection
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 

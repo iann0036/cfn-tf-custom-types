@@ -44,7 +44,6 @@ class ResourceModel(BaseResourceModel):
     EngineType: Optional[str]
     EngineVersion: Optional[str]
     HostInstanceType: Optional[str]
-    Id: Optional[str]
     Instances: Optional[Sequence["_Instances"]]
     PubliclyAccessible: Optional[bool]
     SecurityGroups: Optional[Sequence[str]]
@@ -73,7 +72,6 @@ class ResourceModel(BaseResourceModel):
             EngineType=json_data.get("EngineType"),
             EngineVersion=json_data.get("EngineVersion"),
             HostInstanceType=json_data.get("HostInstanceType"),
-            Id=json_data.get("Id"),
             Instances=json_data.get("Instances"),
             PubliclyAccessible=json_data.get("PubliclyAccessible"),
             SecurityGroups=json_data.get("SecurityGroups"),

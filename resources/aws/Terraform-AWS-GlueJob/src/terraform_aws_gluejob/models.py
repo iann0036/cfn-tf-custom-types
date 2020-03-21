@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     DefaultArguments: Optional[Sequence["_DefaultArguments"]]
     Description: Optional[str]
     GlueVersion: Optional[str]
-    Id: Optional[str]
     MaxCapacity: Optional[float]
     MaxRetries: Optional[float]
     Name: Optional[str]
@@ -71,7 +70,6 @@ class ResourceModel(BaseResourceModel):
             DefaultArguments=json_data.get("DefaultArguments"),
             Description=json_data.get("Description"),
             GlueVersion=json_data.get("GlueVersion"),
-            Id=json_data.get("Id"),
             MaxCapacity=json_data.get("MaxCapacity"),
             MaxRetries=json_data.get("MaxRetries"),
             Name=json_data.get("Name"),

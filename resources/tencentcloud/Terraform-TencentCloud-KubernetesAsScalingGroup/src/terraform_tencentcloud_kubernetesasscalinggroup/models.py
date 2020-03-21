@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ClusterId: Optional[str]
-    Id: Optional[str]
     AutoScalingConfig: Optional[Sequence["_AutoScalingConfig"]]
     AutoScalingGroup: Optional[Sequence["_AutoScalingGroup"]]
     DataDisk: Optional[Sequence["_DataDisk"]]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             ClusterId=json_data.get("ClusterId"),
-            Id=json_data.get("Id"),
             AutoScalingConfig=json_data.get("AutoScalingConfig"),
             AutoScalingGroup=json_data.get("AutoScalingGroup"),
             DataDisk=json_data.get("DataDisk"),

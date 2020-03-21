@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Etag: Optional[str]
-    Id: Optional[str]
     Key: Optional[str]
     ReadOnly: Optional[bool]
     Repository: Optional[str]
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Etag=json_data.get("Etag"),
-            Id=json_data.get("Id"),
             Key=json_data.get("Key"),
             ReadOnly=json_data.get("ReadOnly"),
             Repository=json_data.get("Repository"),

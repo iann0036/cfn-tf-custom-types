@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#translatedaddresses" title="TranslatedAddresses">TranslatedAddresses</a>" : <i>[ String, ... ]</i>,
-    "<a href="#fallback" title="Fallback">Fallback</a>" : <i>[ <a href="source-dynamicip-fallback.md">Fallback</a>, ... ]</i>
+    "<a href="#fallback" title="Fallback">Fallback</a>" : <i>[ &lt;a href=&#34;source-dynamicip-fallback.md&#34;&gt;Fallback&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -19,7 +19,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#translatedaddresses" title="TranslatedAddresses">TranslatedAddresses</a>: <i>
       - String</i>
 <a href="#fallback" title="Fallback">Fallback</a>: <i>
-      - <a href="source-dynamicip-fallback.md">Fallback</a></i>
+      - &lt;a href=&#34;source-dynamicip-fallback.md&#34;&gt;Fallback&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -27,7 +27,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### TranslatedAddresses
 
 _Required_: Yes
-
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -35,8 +34,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Fallback
 
 _Required_: No
-
-_Type_: List of <a href="source-dynamicip-fallback.md">Fallback</a>
+_Type_: List of &lt;a href=&#34;source-dynamicip-fallback.md&#34;&gt;Fallback&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

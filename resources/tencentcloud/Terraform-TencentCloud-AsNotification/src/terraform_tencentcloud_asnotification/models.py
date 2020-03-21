@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     NotificationTypes: Optional[Sequence[str]]
     NotificationUserGroupIds: Optional[Sequence[str]]
     ScalingGroupId: Optional[str]
@@ -50,7 +49,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             NotificationTypes=json_data.get("NotificationTypes"),
             NotificationUserGroupIds=json_data.get("NotificationUserGroupIds"),
             ScalingGroupId=json_data.get("ScalingGroupId"),

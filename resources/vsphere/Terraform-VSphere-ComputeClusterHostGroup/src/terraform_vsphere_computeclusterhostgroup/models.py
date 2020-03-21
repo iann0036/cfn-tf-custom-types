@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ComputeClusterId: Optional[str]
     HostSystemIds: Optional[Sequence[str]]
-    Id: Optional[str]
     Name: Optional[str]
 
     @classmethod
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ComputeClusterId=json_data.get("ComputeClusterId"),
             HostSystemIds=json_data.get("HostSystemIds"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
         )
 

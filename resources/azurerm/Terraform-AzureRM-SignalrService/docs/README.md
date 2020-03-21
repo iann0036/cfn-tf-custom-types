@@ -12,15 +12,23 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureRM::SignalrService",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#hostname" title="Hostname">Hostname</a>" : <i>String</i>,
+        "<a href="#ipaddress" title="IpAddress">IpAddress</a>" : <i>String</i>,
         "<a href="#location" title="Location">Location</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
+        "<a href="#primaryaccesskey" title="PrimaryAccessKey">PrimaryAccessKey</a>" : <i>String</i>,
+        "<a href="#primaryconnectionstring" title="PrimaryConnectionString">PrimaryConnectionString</a>" : <i>String</i>,
+        "<a href="#publicport" title="PublicPort">PublicPort</a>" : <i>Double</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
-        "<a href="#cors" title="Cors">Cors</a>" : <i>[ <a href="cors.md">Cors</a>, ... ]</i>,
-        "<a href="#features" title="Features">Features</a>" : <i>[ <a href="features.md">Features</a>, ... ]</i>,
-        "<a href="#sku" title="Sku">Sku</a>" : <i>[ <a href="sku.md">Sku</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
+        "<a href="#secondaryaccesskey" title="SecondaryAccessKey">SecondaryAccessKey</a>" : <i>String</i>,
+        "<a href="#secondaryconnectionstring" title="SecondaryConnectionString">SecondaryConnectionString</a>" : <i>String</i>,
+        "<a href="#serverport" title="ServerPort">ServerPort</a>" : <i>Double</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#cors" title="Cors">Cors</a>" : <i>[ &lt;a href=&#34;cors.md&#34;&gt;Cors&lt;/a&gt;, ... ]</i>,
+        "<a href="#features" title="Features">Features</a>" : <i>[ &lt;a href=&#34;features.md&#34;&gt;Features&lt;/a&gt;, ... ]</i>,
+        "<a href="#sku" title="Sku">Sku</a>" : <i>[ &lt;a href=&#34;sku.md&#34;&gt;Sku&lt;/a&gt;, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     }
 }
 </pre>
@@ -30,24 +38,50 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureRM::SignalrService
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#hostname" title="Hostname">Hostname</a>: <i>String</i>
+    <a href="#ipaddress" title="IpAddress">IpAddress</a>: <i>String</i>
     <a href="#location" title="Location">Location</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
+    <a href="#primaryaccesskey" title="PrimaryAccessKey">PrimaryAccessKey</a>: <i>String</i>
+    <a href="#primaryconnectionstring" title="PrimaryConnectionString">PrimaryConnectionString</a>: <i>String</i>
+    <a href="#publicport" title="PublicPort">PublicPort</a>: <i>Double</i>
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
+    <a href="#secondaryaccesskey" title="SecondaryAccessKey">SecondaryAccessKey</a>: <i>String</i>
+    <a href="#secondaryconnectionstring" title="SecondaryConnectionString">SecondaryConnectionString</a>: <i>String</i>
+    <a href="#serverport" title="ServerPort">ServerPort</a>: <i>Double</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
     <a href="#cors" title="Cors">Cors</a>: <i>
-      - <a href="cors.md">Cors</a></i>
+      - &lt;a href=&#34;cors.md&#34;&gt;Cors&lt;/a&gt;</i>
     <a href="#features" title="Features">Features</a>: <i>
-      - <a href="features.md">Features</a></i>
+      - &lt;a href=&#34;features.md&#34;&gt;Features&lt;/a&gt;</i>
     <a href="#sku" title="Sku">Sku</a>: <i>
-      - <a href="sku.md">Sku</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;sku.md&#34;&gt;Sku&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Hostname
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### IpAddress
 
 _Required_: No
 
@@ -71,6 +105,30 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### PrimaryAccessKey
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### PrimaryConnectionString
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### PublicPort
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### ResourceGroupName
 
 _Required_: Yes
@@ -79,11 +137,35 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### SecondaryAccessKey
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### SecondaryConnectionString
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ServerPort
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Tags
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -91,7 +173,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="cors.md">Cors</a>
+_Type_: List of &lt;a href=&#34;cors.md&#34;&gt;Cors&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -99,7 +181,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="features.md">Features</a>
+_Type_: List of &lt;a href=&#34;features.md&#34;&gt;Features&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -107,7 +189,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="sku.md">Sku</a>
+_Type_: List of &lt;a href=&#34;sku.md&#34;&gt;Sku&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -115,7 +197,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -137,33 +219,33 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Hostname
 
-Returns the <code>Hostname</code> value.
+Returns the &lt;code&gt;Hostname&lt;/code&gt; value.
 
 #### IpAddress
 
-Returns the <code>IpAddress</code> value.
+Returns the &lt;code&gt;IpAddress&lt;/code&gt; value.
 
 #### PrimaryAccessKey
 
-Returns the <code>PrimaryAccessKey</code> value.
+Returns the &lt;code&gt;PrimaryAccessKey&lt;/code&gt; value.
 
 #### PrimaryConnectionString
 
-Returns the <code>PrimaryConnectionString</code> value.
+Returns the &lt;code&gt;PrimaryConnectionString&lt;/code&gt; value.
 
 #### PublicPort
 
-Returns the <code>PublicPort</code> value.
+Returns the &lt;code&gt;PublicPort&lt;/code&gt; value.
 
 #### SecondaryAccessKey
 
-Returns the <code>SecondaryAccessKey</code> value.
+Returns the &lt;code&gt;SecondaryAccessKey&lt;/code&gt; value.
 
 #### SecondaryConnectionString
 
-Returns the <code>SecondaryConnectionString</code> value.
+Returns the &lt;code&gt;SecondaryConnectionString&lt;/code&gt; value.
 
 #### ServerPort
 
-Returns the <code>ServerPort</code> value.
+Returns the &lt;code&gt;ServerPort&lt;/code&gt; value.
 

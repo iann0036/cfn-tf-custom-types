@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     FunctionId: Optional[str]
     FunctionVersion: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     RequestMappingTemplate: Optional[str]
     ResponseMappingTemplate: Optional[str]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             FunctionId=json_data.get("FunctionId"),
             FunctionVersion=json_data.get("FunctionVersion"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             RequestMappingTemplate=json_data.get("RequestMappingTemplate"),
             ResponseMappingTemplate=json_data.get("ResponseMappingTemplate"),

@@ -12,13 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::BIGIP::LtmProfileTcp",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#closewaittimeout" title="CloseWaitTimeout">CloseWaitTimeout</a>" : <i>Double</i>,
         "<a href="#defaultsfrom" title="DefaultsFrom">DefaultsFrom</a>" : <i>String</i>,
         "<a href="#deferredaccept" title="DeferredAccept">DeferredAccept</a>" : <i>String</i>,
         "<a href="#fastopen" title="FastOpen">FastOpen</a>" : <i>String</i>,
         "<a href="#finwait2timeout" title="Finwait2timeout">Finwait2timeout</a>" : <i>Double</i>,
         "<a href="#finwaittimeout" title="FinwaitTimeout">FinwaitTimeout</a>" : <i>Double</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#idletimeout" title="IdleTimeout">IdleTimeout</a>" : <i>Double</i>,
         "<a href="#keepaliveinterval" title="KeepaliveInterval">KeepaliveInterval</a>" : <i>Double</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
@@ -32,13 +32,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::BIGIP::LtmProfileTcp
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#closewaittimeout" title="CloseWaitTimeout">CloseWaitTimeout</a>: <i>Double</i>
     <a href="#defaultsfrom" title="DefaultsFrom">DefaultsFrom</a>: <i>String</i>
     <a href="#deferredaccept" title="DeferredAccept">DeferredAccept</a>: <i>String</i>
     <a href="#fastopen" title="FastOpen">FastOpen</a>: <i>String</i>
     <a href="#finwait2timeout" title="Finwait2timeout">Finwait2timeout</a>: <i>Double</i>
     <a href="#finwaittimeout" title="FinwaitTimeout">FinwaitTimeout</a>: <i>Double</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#idletimeout" title="IdleTimeout">IdleTimeout</a>: <i>Double</i>
     <a href="#keepaliveinterval" title="KeepaliveInterval">KeepaliveInterval</a>: <i>Double</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
@@ -46,6 +46,16 @@ Properties:
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CloseWaitTimeout
 
@@ -92,14 +102,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

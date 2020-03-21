@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     Duration: Optional[float]
     EngineVersion: Optional[str]
     ExpireTime: Optional[str]
-    Id: Optional[str]
     InstanceType: Optional[str]
     IpSet: Optional[Sequence["_IpSet"]]
     Name: Optional[str]
@@ -67,7 +66,6 @@ class ResourceModel(BaseResourceModel):
             Duration=json_data.get("Duration"),
             EngineVersion=json_data.get("EngineVersion"),
             ExpireTime=json_data.get("ExpireTime"),
-            Id=json_data.get("Id"),
             InstanceType=json_data.get("InstanceType"),
             IpSet=json_data.get("IpSet"),
             Name=json_data.get("Name"),

@@ -12,10 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::QuicksightUser",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#awsaccountid" title="AwsAccountId">AwsAccountId</a>" : <i>String</i>,
         "<a href="#email" title="Email">Email</a>" : <i>String</i>,
         "<a href="#iamarn" title="IamArn">IamArn</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#identitytype" title="IdentityType">IdentityType</a>" : <i>String</i>,
         "<a href="#namespace" title="Namespace">Namespace</a>" : <i>String</i>,
         "<a href="#sessionname" title="SessionName">SessionName</a>" : <i>String</i>,
@@ -30,10 +31,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::QuicksightUser
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#awsaccountid" title="AwsAccountId">AwsAccountId</a>: <i>String</i>
     <a href="#email" title="Email">Email</a>: <i>String</i>
     <a href="#iamarn" title="IamArn">IamArn</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#identitytype" title="IdentityType">IdentityType</a>: <i>String</i>
     <a href="#namespace" title="Namespace">Namespace</a>: <i>String</i>
     <a href="#sessionname" title="SessionName">SessionName</a>: <i>String</i>
@@ -42,6 +44,24 @@ Properties:
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Arn
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AwsAccountId
 
@@ -60,14 +80,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IamArn
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 
@@ -133,5 +145,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the <code>Arn</code> value.
+Returns the &lt;code&gt;Arn&lt;/code&gt; value.
 

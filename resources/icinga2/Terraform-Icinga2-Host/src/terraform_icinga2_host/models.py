@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     CheckCommand: Optional[str]
     Groups: Optional[Sequence[str]]
     Hostname: Optional[str]
-    Id: Optional[str]
     Templates: Optional[Sequence[str]]
     Vars: Optional[Sequence["_Vars"]]
 
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
             CheckCommand=json_data.get("CheckCommand"),
             Groups=json_data.get("Groups"),
             Hostname=json_data.get("Hostname"),
-            Id=json_data.get("Id"),
             Templates=json_data.get("Templates"),
             Vars=json_data.get("Vars"),
         )

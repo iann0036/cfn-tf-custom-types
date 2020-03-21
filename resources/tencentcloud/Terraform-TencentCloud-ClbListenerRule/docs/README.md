@@ -12,6 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::TencentCloud::ClbListenerRule",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#certificatecaid" title="CertificateCaId">CertificateCaId</a>" : <i>String</i>,
         "<a href="#certificateid" title="CertificateId">CertificateId</a>" : <i>String</i>,
         "<a href="#certificatesslmode" title="CertificateSslMode">CertificateSslMode</a>" : <i>String</i>,
@@ -25,7 +26,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#healthcheckintervaltime" title="HealthCheckIntervalTime">HealthCheckIntervalTime</a>" : <i>Double</i>,
         "<a href="#healthcheckswitch" title="HealthCheckSwitch">HealthCheckSwitch</a>" : <i>Boolean</i>,
         "<a href="#healthcheckunhealthnum" title="HealthCheckUnhealthNum">HealthCheckUnhealthNum</a>" : <i>Double</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#listenerid" title="ListenerId">ListenerId</a>" : <i>String</i>,
         "<a href="#scheduler" title="Scheduler">Scheduler</a>" : <i>String</i>,
         "<a href="#sessionexpiretime" title="SessionExpireTime">SessionExpireTime</a>" : <i>Double</i>,
@@ -39,6 +39,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::TencentCloud::ClbListenerRule
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#certificatecaid" title="CertificateCaId">CertificateCaId</a>: <i>String</i>
     <a href="#certificateid" title="CertificateId">CertificateId</a>: <i>String</i>
     <a href="#certificatesslmode" title="CertificateSslMode">CertificateSslMode</a>: <i>String</i>
@@ -52,7 +53,6 @@ Properties:
     <a href="#healthcheckintervaltime" title="HealthCheckIntervalTime">HealthCheckIntervalTime</a>: <i>Double</i>
     <a href="#healthcheckswitch" title="HealthCheckSwitch">HealthCheckSwitch</a>: <i>Boolean</i>
     <a href="#healthcheckunhealthnum" title="HealthCheckUnhealthNum">HealthCheckUnhealthNum</a>: <i>Double</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#listenerid" title="ListenerId">ListenerId</a>: <i>String</i>
     <a href="#scheduler" title="Scheduler">Scheduler</a>: <i>String</i>
     <a href="#sessionexpiretime" title="SessionExpireTime">SessionExpireTime</a>: <i>Double</i>
@@ -60,6 +60,16 @@ Properties:
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CertificateCaId
 
@@ -162,14 +172,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

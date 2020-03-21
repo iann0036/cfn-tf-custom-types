@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     ByteMatchTuple: Optional[Sequence["_ByteMatchTuple"]]
     ByteMatchTuples: Optional[Sequence["_ByteMatchTuples"]]
@@ -51,7 +50,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ByteMatchTuple=json_data.get("ByteMatchTuple"),
             ByteMatchTuples=json_data.get("ByteMatchTuples"),

@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Allowedaddresses: Optional[Sequence[str]]
-    Id: Optional[str]
     SysContact: Optional[str]
     SysLocation: Optional[str]
 
@@ -51,7 +50,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Allowedaddresses=json_data.get("Allowedaddresses"),
-            Id=json_data.get("Id"),
             SysContact=json_data.get("SysContact"),
             SysLocation=json_data.get("SysLocation"),
         )

@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DefaultBackendSetName: Optional[str]
     HostnameNames: Optional[Sequence[str]]
-    Id: Optional[str]
     LoadBalancerId: Optional[str]
     Name: Optional[str]
     PathRouteSetName: Optional[str]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DefaultBackendSetName=json_data.get("DefaultBackendSetName"),
             HostnameNames=json_data.get("HostnameNames"),
-            Id=json_data.get("Id"),
             LoadBalancerId=json_data.get("LoadBalancerId"),
             Name=json_data.get("Name"),
             PathRouteSetName=json_data.get("PathRouteSetName"),

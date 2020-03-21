@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     BackendsetName: Optional[str]
     Backup: Optional[bool]
     Drain: Optional[bool]
-    Id: Optional[str]
     IpAddress: Optional[str]
     LoadBalancerId: Optional[str]
     Name: Optional[str]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             BackendsetName=json_data.get("BackendsetName"),
             Backup=json_data.get("Backup"),
             Drain=json_data.get("Drain"),
-            Id=json_data.get("Id"),
             IpAddress=json_data.get("IpAddress"),
             LoadBalancerId=json_data.get("LoadBalancerId"),
             Name=json_data.get("Name"),

@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Arn: Optional[str]
     DirectInternetAccess: Optional[str]
-    Id: Optional[str]
     InstanceType: Optional[str]
     KmsKeyId: Optional[str]
     LifecycleConfigName: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Arn=json_data.get("Arn"),
             DirectInternetAccess=json_data.get("DirectInternetAccess"),
-            Id=json_data.get("Id"),
             InstanceType=json_data.get("InstanceType"),
             KmsKeyId=json_data.get("KmsKeyId"),
             LifecycleConfigName=json_data.get("LifecycleConfigName"),

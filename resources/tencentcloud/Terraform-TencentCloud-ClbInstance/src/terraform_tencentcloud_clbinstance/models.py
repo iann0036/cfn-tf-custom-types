@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ClbName: Optional[str]
     ClbVips: Optional[Sequence[str]]
-    Id: Optional[str]
     NetworkType: Optional[str]
     ProjectId: Optional[float]
     SecurityGroups: Optional[Sequence[str]]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ClbName=json_data.get("ClbName"),
             ClbVips=json_data.get("ClbVips"),
-            Id=json_data.get("Id"),
             NetworkType=json_data.get("NetworkType"),
             ProjectId=json_data.get("ProjectId"),
             SecurityGroups=json_data.get("SecurityGroups"),

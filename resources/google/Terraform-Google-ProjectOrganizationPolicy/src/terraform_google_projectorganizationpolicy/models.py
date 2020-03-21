@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Constraint: Optional[str]
     Etag: Optional[str]
-    Id: Optional[str]
     Project: Optional[str]
     UpdateTime: Optional[str]
     Version: Optional[float]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Constraint=json_data.get("Constraint"),
             Etag=json_data.get("Etag"),
-            Id=json_data.get("Id"),
             Project=json_data.get("Project"),
             UpdateTime=json_data.get("UpdateTime"),
             Version=json_data.get("Version"),

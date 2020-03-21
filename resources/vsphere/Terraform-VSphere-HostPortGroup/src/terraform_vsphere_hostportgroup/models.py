@@ -44,7 +44,6 @@ class ResourceModel(BaseResourceModel):
     ComputedPolicy: Optional[Sequence["_ComputedPolicy"]]
     Failback: Optional[bool]
     HostSystemId: Optional[str]
-    Id: Optional[str]
     Key: Optional[str]
     Name: Optional[str]
     NotifySwitches: Optional[bool]
@@ -75,7 +74,6 @@ class ResourceModel(BaseResourceModel):
             ComputedPolicy=json_data.get("ComputedPolicy"),
             Failback=json_data.get("Failback"),
             HostSystemId=json_data.get("HostSystemId"),
-            Id=json_data.get("Id"),
             Key=json_data.get("Key"),
             Name=json_data.get("Name"),
             NotifySwitches=json_data.get("NotifySwitches"),

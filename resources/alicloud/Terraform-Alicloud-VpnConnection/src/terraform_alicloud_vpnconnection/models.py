@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CustomerGatewayId: Optional[str]
     EffectImmediately: Optional[bool]
-    Id: Optional[str]
     LocalSubnet: Optional[Sequence[str]]
     Name: Optional[str]
     RemoteSubnet: Optional[Sequence[str]]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CustomerGatewayId=json_data.get("CustomerGatewayId"),
             EffectImmediately=json_data.get("EffectImmediately"),
-            Id=json_data.get("Id"),
             LocalSubnet=json_data.get("LocalSubnet"),
             Name=json_data.get("Name"),
             RemoteSubnet=json_data.get("RemoteSubnet"),

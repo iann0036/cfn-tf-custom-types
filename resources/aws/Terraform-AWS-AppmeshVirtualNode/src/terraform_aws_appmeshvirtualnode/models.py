@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Arn: Optional[str]
     CreatedDate: Optional[str]
-    Id: Optional[str]
     LastUpdatedDate: Optional[str]
     MeshName: Optional[str]
     Name: Optional[str]
@@ -67,7 +66,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Arn=json_data.get("Arn"),
             CreatedDate=json_data.get("CreatedDate"),
-            Id=json_data.get("Id"),
             LastUpdatedDate=json_data.get("LastUpdatedDate"),
             MeshName=json_data.get("MeshName"),
             Name=json_data.get("Name"),

@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Accounts: Optional[Sequence["_Accounts"]]
     Arn: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     ParentId: Optional[str]
 
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Accounts=json_data.get("Accounts"),
             Arn=json_data.get("Arn"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ParentId=json_data.get("ParentId"),
         )

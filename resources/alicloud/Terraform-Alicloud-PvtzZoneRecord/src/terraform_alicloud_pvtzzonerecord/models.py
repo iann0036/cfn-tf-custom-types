@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     Priority: Optional[float]
     RecordId: Optional[float]
     ResourceRecord: Optional[str]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             Priority=json_data.get("Priority"),
             RecordId=json_data.get("RecordId"),
             ResourceRecord=json_data.get("ResourceRecord"),

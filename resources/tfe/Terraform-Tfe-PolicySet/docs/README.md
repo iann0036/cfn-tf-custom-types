@@ -12,15 +12,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Tfe::PolicySet",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#global" title="Global">Global</a>" : <i>Boolean</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#organization" title="Organization">Organization</a>" : <i>String</i>,
         "<a href="#policiespath" title="PoliciesPath">PoliciesPath</a>" : <i>String</i>,
         "<a href="#policyids" title="PolicyIds">PolicyIds</a>" : <i>[ String, ... ]</i>,
         "<a href="#workspaceexternalids" title="WorkspaceExternalIds">WorkspaceExternalIds</a>" : <i>[ String, ... ]</i>,
-        "<a href="#vcsrepo" title="VcsRepo">VcsRepo</a>" : <i>[ <a href="vcsrepo.md">VcsRepo</a>, ... ]</i>
+        "<a href="#vcsrepo" title="VcsRepo">VcsRepo</a>" : <i>[ &lt;a href=&#34;vcsrepo.md&#34;&gt;VcsRepo&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -30,9 +30,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Tfe::PolicySet
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#global" title="Global">Global</a>: <i>Boolean</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#organization" title="Organization">Organization</a>: <i>String</i>
     <a href="#policiespath" title="PoliciesPath">PoliciesPath</a>: <i>String</i>
@@ -41,10 +41,20 @@ Properties:
     <a href="#workspaceexternalids" title="WorkspaceExternalIds">WorkspaceExternalIds</a>: <i>
       - String</i>
     <a href="#vcsrepo" title="VcsRepo">VcsRepo</a>: <i>
-      - <a href="vcsrepo.md">VcsRepo</a></i>
+      - &lt;a href=&#34;vcsrepo.md&#34;&gt;VcsRepo&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -59,14 +69,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -114,7 +116,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="vcsrepo.md">VcsRepo</a>
+_Type_: List of &lt;a href=&#34;vcsrepo.md&#34;&gt;VcsRepo&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

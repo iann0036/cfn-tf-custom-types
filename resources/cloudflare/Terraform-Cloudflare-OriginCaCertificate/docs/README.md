@@ -12,9 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Cloudflare::OriginCaCertificate",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#certificate" title="Certificate">Certificate</a>" : <i>String</i>,
         "<a href="#csr" title="Csr">Csr</a>" : <i>String</i>,
+        "<a href="#expireson" title="ExpiresOn">ExpiresOn</a>" : <i>String</i>,
         "<a href="#hostnames" title="Hostnames">Hostnames</a>" : <i>[ String, ... ]</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#requesttype" title="RequestType">RequestType</a>" : <i>String</i>,
         "<a href="#requestedvalidity" title="RequestedValidity">RequestedValidity</a>" : <i>Double</i>
     }
@@ -26,19 +28,47 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Cloudflare::OriginCaCertificate
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#certificate" title="Certificate">Certificate</a>: <i>String</i>
     <a href="#csr" title="Csr">Csr</a>: <i>String</i>
+    <a href="#expireson" title="ExpiresOn">ExpiresOn</a>: <i>String</i>
     <a href="#hostnames" title="Hostnames">Hostnames</a>: <i>
       - String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#requesttype" title="RequestType">RequestType</a>: <i>String</i>
     <a href="#requestedvalidity" title="RequestedValidity">RequestedValidity</a>: <i>Double</i>
 </pre>
 
 ## Properties
 
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Certificate
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Csr
 
 _Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ExpiresOn
+
+_Required_: No
 
 _Type_: String
 
@@ -49,14 +79,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: Yes
 
 _Type_: List of String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -94,9 +116,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Certificate
 
-Returns the <code>Certificate</code> value.
+Returns the &lt;code&gt;Certificate&lt;/code&gt; value.
 
 #### ExpiresOn
 
-Returns the <code>ExpiresOn</code> value.
+Returns the &lt;code&gt;ExpiresOn&lt;/code&gt; value.
 

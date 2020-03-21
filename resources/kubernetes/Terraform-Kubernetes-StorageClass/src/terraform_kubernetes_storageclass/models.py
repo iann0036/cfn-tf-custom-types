@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AllowVolumeExpansion: Optional[bool]
-    Id: Optional[str]
     MountOptions: Optional[Sequence[str]]
     Parameters: Optional[Sequence["_Parameters"]]
     ReclaimPolicy: Optional[str]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             AllowVolumeExpansion=json_data.get("AllowVolumeExpansion"),
-            Id=json_data.get("Id"),
             MountOptions=json_data.get("MountOptions"),
             Parameters=json_data.get("Parameters"),
             ReclaimPolicy=json_data.get("ReclaimPolicy"),

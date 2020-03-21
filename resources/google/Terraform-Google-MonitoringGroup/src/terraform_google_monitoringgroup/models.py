@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DisplayName: Optional[str]
     Filter: Optional[str]
-    Id: Optional[str]
     IsCluster: Optional[bool]
     Name: Optional[str]
     ParentName: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DisplayName=json_data.get("DisplayName"),
             Filter=json_data.get("Filter"),
-            Id=json_data.get("Id"),
             IsCluster=json_data.get("IsCluster"),
             Name=json_data.get("Name"),
             ParentName=json_data.get("ParentName"),

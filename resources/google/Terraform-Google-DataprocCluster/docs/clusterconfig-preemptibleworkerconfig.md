@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#numinstances" title="NumInstances">NumInstances</a>" : <i>Double</i>,
-    "<a href="#diskconfig" title="DiskConfig">DiskConfig</a>" : <i>[ <a href="clusterconfig-preemptibleworkerconfig-diskconfig.md">DiskConfig</a>, ... ]</i>
+    "<a href="#diskconfig" title="DiskConfig">DiskConfig</a>" : <i>[ &lt;a href=&#34;clusterconfig-preemptibleworkerconfig-diskconfig.md&#34;&gt;DiskConfig&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#numinstances" title="NumInstances">NumInstances</a>: <i>Double</i>
 <a href="#diskconfig" title="DiskConfig">DiskConfig</a>: <i>
-      - <a href="clusterconfig-preemptibleworkerconfig-diskconfig.md">DiskConfig</a></i>
+      - &lt;a href=&#34;clusterconfig-preemptibleworkerconfig-diskconfig.md&#34;&gt;DiskConfig&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -26,7 +26,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### NumInstances
 
 _Required_: No
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -34,8 +33,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DiskConfig
 
 _Required_: No
-
-_Type_: List of <a href="clusterconfig-preemptibleworkerconfig-diskconfig.md">DiskConfig</a>
+_Type_: List of &lt;a href=&#34;clusterconfig-preemptibleworkerconfig-diskconfig.md&#34;&gt;DiskConfig&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

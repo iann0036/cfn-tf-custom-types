@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     Disabled: Optional[bool]
     Filter: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Project: Optional[str]
 
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             Disabled=json_data.get("Disabled"),
             Filter=json_data.get("Filter"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Project=json_data.get("Project"),
         )

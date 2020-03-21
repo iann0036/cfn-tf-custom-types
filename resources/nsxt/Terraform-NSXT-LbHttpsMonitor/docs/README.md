@@ -12,14 +12,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::NSXT::LbHttpsMonitor",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#certificatechaindepth" title="CertificateChainDepth">CertificateChainDepth</a>" : <i>Double</i>,
         "<a href="#ciphers" title="Ciphers">Ciphers</a>" : <i>[ String, ... ]</i>,
         "<a href="#clientcertificateid" title="ClientCertificateId">ClientCertificateId</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#displayname" title="DisplayName">DisplayName</a>" : <i>String</i>,
         "<a href="#fallcount" title="FallCount">FallCount</a>" : <i>Double</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#interval" title="Interval">Interval</a>" : <i>Double</i>,
+        "<a href="#issecure" title="IsSecure">IsSecure</a>" : <i>Boolean</i>,
         "<a href="#monitorport" title="MonitorPort">MonitorPort</a>" : <i>String</i>,
         "<a href="#protocols" title="Protocols">Protocols</a>" : <i>[ String, ... ]</i>,
         "<a href="#requestbody" title="RequestBody">RequestBody</a>" : <i>String</i>,
@@ -28,13 +29,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#requestversion" title="RequestVersion">RequestVersion</a>" : <i>String</i>,
         "<a href="#responsebody" title="ResponseBody">ResponseBody</a>" : <i>String</i>,
         "<a href="#responsestatuscodes" title="ResponseStatusCodes">ResponseStatusCodes</a>" : <i>[ Double, ... ]</i>,
+        "<a href="#revision" title="Revision">Revision</a>" : <i>Double</i>,
         "<a href="#risecount" title="RiseCount">RiseCount</a>" : <i>Double</i>,
         "<a href="#serverauth" title="ServerAuth">ServerAuth</a>" : <i>String</i>,
         "<a href="#serverauthcaids" title="ServerAuthCaIds">ServerAuthCaIds</a>" : <i>[ String, ... ]</i>,
         "<a href="#serverauthcrlids" title="ServerAuthCrlIds">ServerAuthCrlIds</a>" : <i>[ String, ... ]</i>,
         "<a href="#timeout" title="Timeout">Timeout</a>" : <i>Double</i>,
-        "<a href="#requestheader" title="RequestHeader">RequestHeader</a>" : <i>[ <a href="requestheader.md">RequestHeader</a>, ... ]</i>,
-        "<a href="#tag" title="Tag">Tag</a>" : <i>[ <a href="tag.md">Tag</a>, ... ]</i>
+        "<a href="#requestheader" title="RequestHeader">RequestHeader</a>" : <i>[ &lt;a href=&#34;requestheader.md&#34;&gt;RequestHeader&lt;/a&gt;, ... ]</i>,
+        "<a href="#tag" title="Tag">Tag</a>" : <i>[ &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -44,6 +46,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::NSXT::LbHttpsMonitor
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#certificatechaindepth" title="CertificateChainDepth">CertificateChainDepth</a>: <i>Double</i>
     <a href="#ciphers" title="Ciphers">Ciphers</a>: <i>
       - String</i>
@@ -51,8 +54,8 @@ Properties:
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#displayname" title="DisplayName">DisplayName</a>: <i>String</i>
     <a href="#fallcount" title="FallCount">FallCount</a>: <i>Double</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#interval" title="Interval">Interval</a>: <i>Double</i>
+    <a href="#issecure" title="IsSecure">IsSecure</a>: <i>Boolean</i>
     <a href="#monitorport" title="MonitorPort">MonitorPort</a>: <i>String</i>
     <a href="#protocols" title="Protocols">Protocols</a>: <i>
       - String</i>
@@ -63,6 +66,7 @@ Properties:
     <a href="#responsebody" title="ResponseBody">ResponseBody</a>: <i>String</i>
     <a href="#responsestatuscodes" title="ResponseStatusCodes">ResponseStatusCodes</a>: <i>
       - Double</i>
+    <a href="#revision" title="Revision">Revision</a>: <i>Double</i>
     <a href="#risecount" title="RiseCount">RiseCount</a>: <i>Double</i>
     <a href="#serverauth" title="ServerAuth">ServerAuth</a>: <i>String</i>
     <a href="#serverauthcaids" title="ServerAuthCaIds">ServerAuthCaIds</a>: <i>
@@ -71,12 +75,22 @@ Properties:
       - String</i>
     <a href="#timeout" title="Timeout">Timeout</a>: <i>Double</i>
     <a href="#requestheader" title="RequestHeader">RequestHeader</a>: <i>
-      - <a href="requestheader.md">RequestHeader</a></i>
+      - &lt;a href=&#34;requestheader.md&#34;&gt;RequestHeader&lt;/a&gt;</i>
     <a href="#tag" title="Tag">Tag</a>: <i>
-      - <a href="tag.md">Tag</a></i>
+      - &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CertificateChainDepth
 
@@ -126,19 +140,19 @@ _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Interval
 
 _Required_: No
 
 _Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### IsSecure
+
+_Required_: No
+
+_Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -206,6 +220,14 @@ _Type_: List of Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### Revision
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### RiseCount
 
 _Required_: No
@@ -250,7 +272,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="requestheader.md">RequestHeader</a>
+_Type_: List of &lt;a href=&#34;requestheader.md&#34;&gt;RequestHeader&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -258,7 +280,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tag.md">Tag</a>
+_Type_: List of &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -280,9 +302,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### IsSecure
 
-Returns the <code>IsSecure</code> value.
+Returns the &lt;code&gt;IsSecure&lt;/code&gt; value.
 
 #### Revision
 
-Returns the <code>Revision</code> value.
+Returns the &lt;code&gt;Revision&lt;/code&gt; value.
 

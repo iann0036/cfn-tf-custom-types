@@ -12,15 +12,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OCI::FunctionsInvokeFunction",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#base64encodecontent" title="Base64EncodeContent">Base64EncodeContent</a>" : <i>Boolean</i>,
+        "<a href="#content" title="Content">Content</a>" : <i>String</i>,
         "<a href="#fnintent" title="FnIntent">FnIntent</a>" : <i>String</i>,
         "<a href="#fninvoketype" title="FnInvokeType">FnInvokeType</a>" : <i>String</i>,
         "<a href="#functionid" title="FunctionId">FunctionId</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#inputbodysourcepath" title="InputBodySourcePath">InputBodySourcePath</a>" : <i>String</i>,
+        "<a href="#invokeendpoint" title="InvokeEndpoint">InvokeEndpoint</a>" : <i>String</i>,
         "<a href="#invokefunctionbody" title="InvokeFunctionBody">InvokeFunctionBody</a>" : <i>String</i>,
         "<a href="#invokefunctionbodybase64encoded" title="InvokeFunctionBodyBase64Encoded">InvokeFunctionBodyBase64Encoded</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     }
 }
 </pre>
@@ -30,24 +32,44 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OCI::FunctionsInvokeFunction
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#base64encodecontent" title="Base64EncodeContent">Base64EncodeContent</a>: <i>Boolean</i>
+    <a href="#content" title="Content">Content</a>: <i>String</i>
     <a href="#fnintent" title="FnIntent">FnIntent</a>: <i>String</i>
     <a href="#fninvoketype" title="FnInvokeType">FnInvokeType</a>: <i>String</i>
     <a href="#functionid" title="FunctionId">FunctionId</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#inputbodysourcepath" title="InputBodySourcePath">InputBodySourcePath</a>: <i>String</i>
+    <a href="#invokeendpoint" title="InvokeEndpoint">InvokeEndpoint</a>: <i>String</i>
     <a href="#invokefunctionbody" title="InvokeFunctionBody">InvokeFunctionBody</a>: <i>String</i>
     <a href="#invokefunctionbodybase64encoded" title="InvokeFunctionBodyBase64Encoded">InvokeFunctionBodyBase64Encoded</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Base64EncodeContent
 
 _Required_: No
 
 _Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Content
+
+_Required_: No
+
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -75,7 +97,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### InputBodySourcePath
 
 _Required_: No
 
@@ -83,7 +105,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### InputBodySourcePath
+#### InvokeEndpoint
 
 _Required_: No
 
@@ -111,7 +133,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -133,9 +155,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Content
 
-Returns the <code>Content</code> value.
+Returns the &lt;code&gt;Content&lt;/code&gt; value.
 
 #### InvokeEndpoint
 
-Returns the <code>InvokeEndpoint</code> value.
+Returns the &lt;code&gt;InvokeEndpoint&lt;/code&gt; value.
 

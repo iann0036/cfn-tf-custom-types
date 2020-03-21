@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DefaultLeaseTtlSeconds: Optional[float]
     Description: Optional[str]
-    Id: Optional[str]
     MaxLeaseTtlSeconds: Optional[float]
     Path: Optional[str]
 
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DefaultLeaseTtlSeconds=json_data.get("DefaultLeaseTtlSeconds"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             MaxLeaseTtlSeconds=json_data.get("MaxLeaseTtlSeconds"),
             Path=json_data.get("Path"),
         )

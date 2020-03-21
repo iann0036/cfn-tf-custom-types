@@ -12,14 +12,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::S3BucketAnalyticsConfiguration",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#bucket" title="Bucket">Bucket</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#filter" title="Filter">Filter</a>" : <i>[ <a href="filter.md">Filter</a>, ... ]</i>,
-        "<a href="#storageclassanalysis" title="StorageClassAnalysis">StorageClassAnalysis</a>" : <i>[ <a href="storageclassanalysis.md">StorageClassAnalysis</a>, ... ]</i>,
-        "<a href="#dataexport" title="DataExport">DataExport</a>" : <i>[ <a href="dataexport.md">DataExport</a>, ... ]</i>,
-        "<a href="#destination" title="Destination">Destination</a>" : <i>[ <a href="destination.md">Destination</a>, ... ]</i>,
-        "<a href="#s3bucketdestination" title="S3BucketDestination">S3BucketDestination</a>" : <i>[ <a href="s3bucketdestination.md">S3BucketDestination</a>, ... ]</i>
+        "<a href="#filter" title="Filter">Filter</a>" : <i>[ &lt;a href=&#34;filter.md&#34;&gt;Filter&lt;/a&gt;, ... ]</i>,
+        "<a href="#storageclassanalysis" title="StorageClassAnalysis">StorageClassAnalysis</a>" : <i>[ &lt;a href=&#34;storageclassanalysis.md&#34;&gt;StorageClassAnalysis&lt;/a&gt;, ... ]</i>,
+        "<a href="#dataexport" title="DataExport">DataExport</a>" : <i>[ &lt;a href=&#34;dataexport.md&#34;&gt;DataExport&lt;/a&gt;, ... ]</i>,
+        "<a href="#destination" title="Destination">Destination</a>" : <i>[ &lt;a href=&#34;destination.md&#34;&gt;Destination&lt;/a&gt;, ... ]</i>,
+        "<a href="#s3bucketdestination" title="S3BucketDestination">S3BucketDestination</a>" : <i>[ &lt;a href=&#34;s3bucketdestination.md&#34;&gt;S3BucketDestination&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -29,34 +29,36 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::S3BucketAnalyticsConfiguration
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#bucket" title="Bucket">Bucket</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#filter" title="Filter">Filter</a>: <i>
-      - <a href="filter.md">Filter</a></i>
+      - &lt;a href=&#34;filter.md&#34;&gt;Filter&lt;/a&gt;</i>
     <a href="#storageclassanalysis" title="StorageClassAnalysis">StorageClassAnalysis</a>: <i>
-      - <a href="storageclassanalysis.md">StorageClassAnalysis</a></i>
+      - &lt;a href=&#34;storageclassanalysis.md&#34;&gt;StorageClassAnalysis&lt;/a&gt;</i>
     <a href="#dataexport" title="DataExport">DataExport</a>: <i>
-      - <a href="dataexport.md">DataExport</a></i>
+      - &lt;a href=&#34;dataexport.md&#34;&gt;DataExport&lt;/a&gt;</i>
     <a href="#destination" title="Destination">Destination</a>: <i>
-      - <a href="destination.md">Destination</a></i>
+      - &lt;a href=&#34;destination.md&#34;&gt;Destination&lt;/a&gt;</i>
     <a href="#s3bucketdestination" title="S3BucketDestination">S3BucketDestination</a>: <i>
-      - <a href="s3bucketdestination.md">S3BucketDestination</a></i>
+      - &lt;a href=&#34;s3bucketdestination.md&#34;&gt;S3BucketDestination&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
-#### Bucket
+#### tfcfnid
 
-_Required_: Yes
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
 
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### Bucket
 
-_Required_: No
+_Required_: Yes
 
 _Type_: String
 
@@ -74,7 +76,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="filter.md">Filter</a>
+_Type_: List of &lt;a href=&#34;filter.md&#34;&gt;Filter&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -82,7 +84,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="storageclassanalysis.md">StorageClassAnalysis</a>
+_Type_: List of &lt;a href=&#34;storageclassanalysis.md&#34;&gt;StorageClassAnalysis&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -90,7 +92,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="dataexport.md">DataExport</a>
+_Type_: List of &lt;a href=&#34;dataexport.md&#34;&gt;DataExport&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -98,7 +100,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="destination.md">Destination</a>
+_Type_: List of &lt;a href=&#34;destination.md&#34;&gt;Destination&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -106,7 +108,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="s3bucketdestination.md">S3BucketDestination</a>
+_Type_: List of &lt;a href=&#34;s3bucketdestination.md&#34;&gt;S3BucketDestination&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

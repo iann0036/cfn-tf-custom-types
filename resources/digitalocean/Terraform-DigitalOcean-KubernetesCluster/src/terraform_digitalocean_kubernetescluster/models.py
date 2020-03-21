@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     ClusterSubnet: Optional[str]
     CreatedAt: Optional[str]
     Endpoint: Optional[str]
-    Id: Optional[str]
     Ipv4Address: Optional[str]
     KubeConfig: Optional[Sequence["_KubeConfig"]]
     Name: Optional[str]
@@ -63,7 +62,6 @@ class ResourceModel(BaseResourceModel):
             ClusterSubnet=json_data.get("ClusterSubnet"),
             CreatedAt=json_data.get("CreatedAt"),
             Endpoint=json_data.get("Endpoint"),
-            Id=json_data.get("Id"),
             Ipv4Address=json_data.get("Ipv4Address"),
             KubeConfig=json_data.get("KubeConfig"),
             Name=json_data.get("Name"),

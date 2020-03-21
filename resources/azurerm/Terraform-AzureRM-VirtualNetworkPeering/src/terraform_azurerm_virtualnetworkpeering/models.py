@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AllowForwardedTraffic: Optional[bool]
     AllowGatewayTransit: Optional[bool]
     AllowVirtualNetworkAccess: Optional[bool]
-    Id: Optional[str]
     Name: Optional[str]
     RemoteVirtualNetworkId: Optional[str]
     ResourceGroupName: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             AllowForwardedTraffic=json_data.get("AllowForwardedTraffic"),
             AllowGatewayTransit=json_data.get("AllowGatewayTransit"),
             AllowVirtualNetworkAccess=json_data.get("AllowVirtualNetworkAccess"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             RemoteVirtualNetworkId=json_data.get("RemoteVirtualNetworkId"),
             ResourceGroupName=json_data.get("ResourceGroupName"),

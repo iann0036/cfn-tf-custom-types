@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AlbTargetGroupArn: Optional[str]
     AutoscalingGroupName: Optional[str]
     Elb: Optional[str]
-    Id: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             AlbTargetGroupArn=json_data.get("AlbTargetGroupArn"),
             AutoscalingGroupName=json_data.get("AutoscalingGroupName"),
             Elb=json_data.get("Elb"),
-            Id=json_data.get("Id"),
         )
 
 

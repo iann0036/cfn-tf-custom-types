@@ -12,12 +12,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Linode::Domain",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#axfrips" title="AxfrIps">AxfrIps</a>" : <i>[ String, ... ]</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#domain" title="Domain">Domain</a>" : <i>String</i>,
         "<a href="#expiresec" title="ExpireSec">ExpireSec</a>" : <i>Double</i>,
         "<a href="#group" title="Group">Group</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#masterips" title="MasterIps">MasterIps</a>" : <i>[ String, ... ]</i>,
         "<a href="#refreshsec" title="RefreshSec">RefreshSec</a>" : <i>Double</i>,
         "<a href="#retrysec" title="RetrySec">RetrySec</a>" : <i>Double</i>,
@@ -35,13 +35,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Linode::Domain
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#axfrips" title="AxfrIps">AxfrIps</a>: <i>
       - String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#domain" title="Domain">Domain</a>: <i>String</i>
     <a href="#expiresec" title="ExpireSec">ExpireSec</a>: <i>Double</i>
     <a href="#group" title="Group">Group</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#masterips" title="MasterIps">MasterIps</a>: <i>
       - String</i>
     <a href="#refreshsec" title="RefreshSec">RefreshSec</a>: <i>Double</i>
@@ -55,6 +55,16 @@ Properties:
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AxfrIps
 
@@ -89,14 +99,6 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Group
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 

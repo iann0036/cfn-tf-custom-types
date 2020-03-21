@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     CustomSslOptions: Optional[Sequence["_CustomSslOptions"]]
     ExpiresOn: Optional[str]
     Hosts: Optional[Sequence[str]]
-    Id: Optional[str]
     Issuer: Optional[str]
     ModifiedOn: Optional[str]
     Priority: Optional[float]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             CustomSslOptions=json_data.get("CustomSslOptions"),
             ExpiresOn=json_data.get("ExpiresOn"),
             Hosts=json_data.get("Hosts"),
-            Id=json_data.get("Id"),
             Issuer=json_data.get("Issuer"),
             ModifiedOn=json_data.get("ModifiedOn"),
             Priority=json_data.get("Priority"),

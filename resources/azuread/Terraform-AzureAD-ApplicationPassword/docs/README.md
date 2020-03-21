@@ -12,11 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureAD::ApplicationPassword",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#applicationid" title="ApplicationId">ApplicationId</a>" : <i>String</i>,
         "<a href="#applicationobjectid" title="ApplicationObjectId">ApplicationObjectId</a>" : <i>String</i>,
         "<a href="#enddate" title="EndDate">EndDate</a>" : <i>String</i>,
         "<a href="#enddaterelative" title="EndDateRelative">EndDateRelative</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#keyid" title="KeyId">KeyId</a>" : <i>String</i>,
         "<a href="#startdate" title="StartDate">StartDate</a>" : <i>String</i>,
         "<a href="#value" title="Value">Value</a>" : <i>String</i>
@@ -29,17 +29,27 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureAD::ApplicationPassword
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#applicationid" title="ApplicationId">ApplicationId</a>: <i>String</i>
     <a href="#applicationobjectid" title="ApplicationObjectId">ApplicationObjectId</a>: <i>String</i>
     <a href="#enddate" title="EndDate">EndDate</a>: <i>String</i>
     <a href="#enddaterelative" title="EndDateRelative">EndDateRelative</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#keyid" title="KeyId">KeyId</a>: <i>String</i>
     <a href="#startdate" title="StartDate">StartDate</a>: <i>String</i>
     <a href="#value" title="Value">Value</a>: <i>String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ApplicationId
 
@@ -66,14 +76,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EndDateRelative
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 

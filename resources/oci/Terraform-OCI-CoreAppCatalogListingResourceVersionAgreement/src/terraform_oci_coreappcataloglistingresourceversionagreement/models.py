@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     EulaLink: Optional[str]
-    Id: Optional[str]
     ListingId: Optional[str]
     ListingResourceVersion: Optional[str]
     OracleTermsOfUseLink: Optional[str]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             EulaLink=json_data.get("EulaLink"),
-            Id=json_data.get("Id"),
             ListingId=json_data.get("ListingId"),
             ListingResourceVersion=json_data.get("ListingResourceVersion"),
             OracleTermsOfUseLink=json_data.get("OracleTermsOfUseLink"),

@@ -46,7 +46,6 @@ class ResourceModel(BaseResourceModel):
     HashLength: Optional[float]
     HashOffset: Optional[float]
     Httponly: Optional[str]
-    Id: Optional[str]
     MatchAcrossPools: Optional[str]
     MatchAcrossServices: Optional[str]
     MatchAcrossVirtuals: Optional[str]
@@ -74,7 +73,6 @@ class ResourceModel(BaseResourceModel):
             HashLength=json_data.get("HashLength"),
             HashOffset=json_data.get("HashOffset"),
             Httponly=json_data.get("Httponly"),
-            Id=json_data.get("Id"),
             MatchAcrossPools=json_data.get("MatchAcrossPools"),
             MatchAcrossServices=json_data.get("MatchAcrossServices"),
             MatchAcrossVirtuals=json_data.get("MatchAcrossVirtuals"),

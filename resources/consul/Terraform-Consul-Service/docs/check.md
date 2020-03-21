@@ -19,7 +19,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#tcp" title="Tcp">Tcp</a>" : <i>String</i>,
     "<a href="#timeout" title="Timeout">Timeout</a>" : <i>String</i>,
     "<a href="#tlsskipverify" title="TlsSkipVerify">TlsSkipVerify</a>" : <i>Boolean</i>,
-    "<a href="#header" title="Header">Header</a>" : <i>[ <a href="check-header.md">Header</a>, ... ]</i>
+    "<a href="#header" title="Header">Header</a>" : <i>[ &lt;a href=&#34;check-header.md&#34;&gt;Header&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -38,7 +38,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#timeout" title="Timeout">Timeout</a>: <i>String</i>
 <a href="#tlsskipverify" title="TlsSkipVerify">TlsSkipVerify</a>: <i>Boolean</i>
 <a href="#header" title="Header">Header</a>: <i>
-      - <a href="check-header.md">Header</a></i>
+      - &lt;a href=&#34;check-header.md&#34;&gt;Header&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -46,7 +46,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### CheckId
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -54,7 +53,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DeregisterCriticalServiceAfter
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -62,7 +60,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Http
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -70,7 +67,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Interval
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -78,7 +74,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Method
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -86,7 +81,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Name
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -94,7 +88,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Notes
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -102,7 +95,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Status
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -110,7 +102,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Tcp
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -118,7 +109,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Timeout
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -126,7 +116,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### TlsSkipVerify
 
 _Required_: No
-
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -134,8 +123,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Header
 
 _Required_: No
-
-_Type_: List of <a href="check-header.md">Header</a>
+_Type_: List of &lt;a href=&#34;check-header.md&#34;&gt;Header&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

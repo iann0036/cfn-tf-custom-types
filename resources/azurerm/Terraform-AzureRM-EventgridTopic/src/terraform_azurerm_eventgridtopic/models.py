@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Endpoint: Optional[str]
-    Id: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
     PrimaryAccessKey: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Endpoint=json_data.get("Endpoint"),
-            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),
             PrimaryAccessKey=json_data.get("PrimaryAccessKey"),

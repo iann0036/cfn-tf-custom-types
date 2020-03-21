@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Bucket: Optional[str]
     DefaultAcl: Optional[str]
-    Id: Optional[str]
     PredefinedAcl: Optional[str]
     RoleEntity: Optional[Sequence[str]]
 
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Bucket=json_data.get("Bucket"),
             DefaultAcl=json_data.get("DefaultAcl"),
-            Id=json_data.get("Id"),
             PredefinedAcl=json_data.get("PredefinedAcl"),
             RoleEntity=json_data.get("RoleEntity"),
         )

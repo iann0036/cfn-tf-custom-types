@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     DdlStatement: Optional[str]
     DefinedTags: Optional[Sequence["_DefinedTags"]]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     LifecycleDetails: Optional[str]
     Name: Optional[str]
     Schema: Optional[Sequence["_Schema"]]
@@ -63,7 +62,6 @@ class ResourceModel(BaseResourceModel):
             DdlStatement=json_data.get("DdlStatement"),
             DefinedTags=json_data.get("DefinedTags"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             LifecycleDetails=json_data.get("LifecycleDetails"),
             Name=json_data.get("Name"),
             Schema=json_data.get("Schema"),

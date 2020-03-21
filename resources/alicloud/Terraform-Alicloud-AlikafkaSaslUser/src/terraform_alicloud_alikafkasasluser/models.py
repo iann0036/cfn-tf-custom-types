@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     InstanceId: Optional[str]
     KmsEncryptedPassword: Optional[str]
     KmsEncryptionContext: Optional[Sequence["_KmsEncryptionContext"]]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
             KmsEncryptedPassword=json_data.get("KmsEncryptedPassword"),
             KmsEncryptionContext=json_data.get("KmsEncryptionContext"),

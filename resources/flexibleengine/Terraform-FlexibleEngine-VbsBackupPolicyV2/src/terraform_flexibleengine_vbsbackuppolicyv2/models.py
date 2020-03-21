@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Frequency: Optional[float]
-    Id: Optional[str]
     Name: Optional[str]
     PolicyResourceCount: Optional[float]
     Region: Optional[str]
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Frequency=json_data.get("Frequency"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             PolicyResourceCount=json_data.get("PolicyResourceCount"),
             Region=json_data.get("Region"),

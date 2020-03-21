@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CustomAttributes: Optional[Sequence["_CustomAttributes"]]
     Folder: Optional[str]
-    Id: Optional[str]
     Moid: Optional[str]
     Name: Optional[str]
     Tags: Optional[Sequence[str]]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CustomAttributes=json_data.get("CustomAttributes"),
             Folder=json_data.get("Folder"),
-            Id=json_data.get("Id"),
             Moid=json_data.get("Moid"),
             Name=json_data.get("Name"),
             Tags=json_data.get("Tags"),

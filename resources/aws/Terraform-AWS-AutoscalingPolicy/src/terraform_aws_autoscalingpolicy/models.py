@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     AutoscalingGroupName: Optional[str]
     Cooldown: Optional[float]
     EstimatedInstanceWarmup: Optional[float]
-    Id: Optional[str]
     MetricAggregationType: Optional[str]
     MinAdjustmentMagnitude: Optional[float]
     MinAdjustmentStep: Optional[float]
@@ -68,7 +67,6 @@ class ResourceModel(BaseResourceModel):
             AutoscalingGroupName=json_data.get("AutoscalingGroupName"),
             Cooldown=json_data.get("Cooldown"),
             EstimatedInstanceWarmup=json_data.get("EstimatedInstanceWarmup"),
-            Id=json_data.get("Id"),
             MetricAggregationType=json_data.get("MetricAggregationType"),
             MinAdjustmentMagnitude=json_data.get("MinAdjustmentMagnitude"),
             MinAdjustmentStep=json_data.get("MinAdjustmentStep"),

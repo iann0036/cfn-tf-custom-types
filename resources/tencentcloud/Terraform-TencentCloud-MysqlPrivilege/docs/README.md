@@ -12,13 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::TencentCloud::MysqlPrivilege",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#accountname" title="AccountName">AccountName</a>" : <i>String</i>,
         "<a href="#global" title="Global">Global</a>" : <i>[ String, ... ]</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#mysqlid" title="MysqlId">MysqlId</a>" : <i>String</i>,
-        "<a href="#column" title="Column">Column</a>" : <i>[ <a href="column.md">Column</a>, ... ]</i>,
-        "<a href="#database" title="Database">Database</a>" : <i>[ <a href="database.md">Database</a>, ... ]</i>,
-        "<a href="#table" title="Table">Table</a>" : <i>[ <a href="table.md">Table</a>, ... ]</i>
+        "<a href="#column" title="Column">Column</a>" : <i>[ &lt;a href=&#34;column.md&#34;&gt;Column&lt;/a&gt;, ... ]</i>,
+        "<a href="#database" title="Database">Database</a>" : <i>[ &lt;a href=&#34;database.md&#34;&gt;Database&lt;/a&gt;, ... ]</i>,
+        "<a href="#table" title="Table">Table</a>" : <i>[ &lt;a href=&#34;table.md&#34;&gt;Table&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -28,20 +28,30 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::TencentCloud::MysqlPrivilege
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#accountname" title="AccountName">AccountName</a>: <i>String</i>
     <a href="#global" title="Global">Global</a>: <i>
       - String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#mysqlid" title="MysqlId">MysqlId</a>: <i>String</i>
     <a href="#column" title="Column">Column</a>: <i>
-      - <a href="column.md">Column</a></i>
+      - &lt;a href=&#34;column.md&#34;&gt;Column&lt;/a&gt;</i>
     <a href="#database" title="Database">Database</a>: <i>
-      - <a href="database.md">Database</a></i>
+      - &lt;a href=&#34;database.md&#34;&gt;Database&lt;/a&gt;</i>
     <a href="#table" title="Table">Table</a>: <i>
-      - <a href="table.md">Table</a></i>
+      - &lt;a href=&#34;table.md&#34;&gt;Table&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AccountName
 
@@ -59,14 +69,6 @@ _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### MysqlId
 
 _Required_: Yes
@@ -79,7 +81,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="column.md">Column</a>
+_Type_: List of &lt;a href=&#34;column.md&#34;&gt;Column&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -87,7 +89,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="database.md">Database</a>
+_Type_: List of &lt;a href=&#34;database.md&#34;&gt;Database&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -95,7 +97,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="table.md">Table</a>
+_Type_: List of &lt;a href=&#34;table.md&#34;&gt;Table&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

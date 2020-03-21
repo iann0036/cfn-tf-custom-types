@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Href: Optional[str]
-    Id: Optional[str]
     Mtu: Optional[float]
     Name: Optional[str]
     Subnets: Optional[Sequence["_Subnets"]]
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Href=json_data.get("Href"),
-            Id=json_data.get("Id"),
             Mtu=json_data.get("Mtu"),
             Name=json_data.get("Name"),
             Subnets=json_data.get("Subnets"),

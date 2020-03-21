@@ -8,7 +8,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#domains" title="Domains">Domains</a>" : <i>[ <a href="integrationroute53-domains.md">Domains</a>, ... ]</i>
+    "<a href="#domains" title="Domains">Domains</a>" : <i>[ &lt;a href=&#34;integrationroute53-domains.md&#34;&gt;Domains&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#domains" title="Domains">Domains</a>: <i>
-      - <a href="integrationroute53-domains.md">Domains</a></i>
+      - &lt;a href=&#34;integrationroute53-domains.md&#34;&gt;Domains&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -24,8 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Domains
 
 _Required_: No
-
-_Type_: List of <a href="integrationroute53-domains.md">Domains</a>
+_Type_: List of &lt;a href=&#34;integrationroute53-domains.md&#34;&gt;Domains&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

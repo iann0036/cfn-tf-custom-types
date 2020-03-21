@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     DistributedPortGroup: Optional[str]
     DistributedSwitchPort: Optional[str]
     Host: Optional[str]
-    Id: Optional[str]
     Mac: Optional[str]
     Mtu: Optional[float]
     Netstack: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             DistributedPortGroup=json_data.get("DistributedPortGroup"),
             DistributedSwitchPort=json_data.get("DistributedSwitchPort"),
             Host=json_data.get("Host"),
-            Id=json_data.get("Id"),
             Mac=json_data.get("Mac"),
             Mtu=json_data.get("Mtu"),
             Netstack=json_data.get("Netstack"),

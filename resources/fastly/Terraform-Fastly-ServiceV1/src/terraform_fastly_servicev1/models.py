@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     DefaultHost: Optional[str]
     DefaultTtl: Optional[float]
     ForceDestroy: Optional[bool]
-    Id: Optional[str]
     Name: Optional[str]
     VersionComment: Optional[str]
     Acl: Optional[Sequence["_Acl"]]
@@ -87,7 +86,6 @@ class ResourceModel(BaseResourceModel):
             DefaultHost=json_data.get("DefaultHost"),
             DefaultTtl=json_data.get("DefaultTtl"),
             ForceDestroy=json_data.get("ForceDestroy"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             VersionComment=json_data.get("VersionComment"),
             Acl=json_data.get("Acl"),

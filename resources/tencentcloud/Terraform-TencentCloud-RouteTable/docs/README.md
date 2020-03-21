@@ -12,9 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::TencentCloud::RouteTable",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#createtime" title="CreateTime">CreateTime</a>" : <i>String</i>,
+        "<a href="#isdefault" title="IsDefault">IsDefault</a>" : <i>Boolean</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#routeentryids" title="RouteEntryIds">RouteEntryIds</a>" : <i>[ String, ... ]</i>,
+        "<a href="#subnetids" title="SubnetIds">SubnetIds</a>" : <i>[ String, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
         "<a href="#vpcid" title="VpcId">VpcId</a>" : <i>String</i>
     }
 }
@@ -25,20 +29,44 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::TencentCloud::RouteTable
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#createtime" title="CreateTime">CreateTime</a>: <i>String</i>
+    <a href="#isdefault" title="IsDefault">IsDefault</a>: <i>Boolean</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
+    <a href="#routeentryids" title="RouteEntryIds">RouteEntryIds</a>: <i>
+      - String</i>
+    <a href="#subnetids" title="SubnetIds">SubnetIds</a>: <i>
+      - String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
     <a href="#vpcid" title="VpcId">VpcId</a>: <i>String</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
 _Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### CreateTime
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### IsDefault
+
+_Required_: No
+
+_Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -50,11 +78,27 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### RouteEntryIds
+
+_Required_: No
+
+_Type_: List of String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### SubnetIds
+
+_Required_: No
+
+_Type_: List of String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Tags
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -84,17 +128,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateTime
 
-Returns the <code>CreateTime</code> value.
+Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
 
 #### IsDefault
 
-Returns the <code>IsDefault</code> value.
+Returns the &lt;code&gt;IsDefault&lt;/code&gt; value.
 
 #### RouteEntryIds
 
-Returns the <code>RouteEntryIds</code> value.
+Returns the &lt;code&gt;RouteEntryIds&lt;/code&gt; value.
 
 #### SubnetIds
 
-Returns the <code>SubnetIds</code> value.
+Returns the &lt;code&gt;SubnetIds&lt;/code&gt; value.
 

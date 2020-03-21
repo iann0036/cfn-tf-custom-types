@@ -12,9 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureRM::DevTestLinuxVirtualMachine",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#allowclaim" title="AllowClaim">AllowClaim</a>" : <i>Boolean</i>,
         "<a href="#disallowpublicipaddress" title="DisallowPublicIpAddress">DisallowPublicIpAddress</a>" : <i>Boolean</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#fqdn" title="Fqdn">Fqdn</a>" : <i>String</i>,
         "<a href="#labname" title="LabName">LabName</a>" : <i>String</i>,
         "<a href="#labsubnetname" title="LabSubnetName">LabSubnetName</a>" : <i>String</i>,
         "<a href="#labvirtualnetworkid" title="LabVirtualNetworkId">LabVirtualNetworkId</a>" : <i>String</i>,
@@ -26,11 +27,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#size" title="Size">Size</a>" : <i>String</i>,
         "<a href="#sshkey" title="SshKey">SshKey</a>" : <i>String</i>,
         "<a href="#storagetype" title="StorageType">StorageType</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#uniqueidentifier" title="UniqueIdentifier">UniqueIdentifier</a>" : <i>String</i>,
         "<a href="#username" title="Username">Username</a>" : <i>String</i>,
-        "<a href="#galleryimagereference" title="GalleryImageReference">GalleryImageReference</a>" : <i>[ <a href="galleryimagereference.md">GalleryImageReference</a>, ... ]</i>,
-        "<a href="#inboundnatrule" title="InboundNatRule">InboundNatRule</a>" : <i>[ <a href="inboundnatrule.md">InboundNatRule</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
+        "<a href="#galleryimagereference" title="GalleryImageReference">GalleryImageReference</a>" : <i>[ &lt;a href=&#34;galleryimagereference.md&#34;&gt;GalleryImageReference&lt;/a&gt;, ... ]</i>,
+        "<a href="#inboundnatrule" title="InboundNatRule">InboundNatRule</a>" : <i>[ &lt;a href=&#34;inboundnatrule.md&#34;&gt;InboundNatRule&lt;/a&gt;, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     }
 }
 </pre>
@@ -40,9 +42,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureRM::DevTestLinuxVirtualMachine
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#allowclaim" title="AllowClaim">AllowClaim</a>: <i>Boolean</i>
     <a href="#disallowpublicipaddress" title="DisallowPublicIpAddress">DisallowPublicIpAddress</a>: <i>Boolean</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#fqdn" title="Fqdn">Fqdn</a>: <i>String</i>
     <a href="#labname" title="LabName">LabName</a>: <i>String</i>
     <a href="#labsubnetname" title="LabSubnetName">LabSubnetName</a>: <i>String</i>
     <a href="#labvirtualnetworkid" title="LabVirtualNetworkId">LabVirtualNetworkId</a>: <i>String</i>
@@ -55,16 +58,27 @@ Properties:
     <a href="#sshkey" title="SshKey">SshKey</a>: <i>String</i>
     <a href="#storagetype" title="StorageType">StorageType</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+    <a href="#uniqueidentifier" title="UniqueIdentifier">UniqueIdentifier</a>: <i>String</i>
     <a href="#username" title="Username">Username</a>: <i>String</i>
     <a href="#galleryimagereference" title="GalleryImageReference">GalleryImageReference</a>: <i>
-      - <a href="galleryimagereference.md">GalleryImageReference</a></i>
+      - &lt;a href=&#34;galleryimagereference.md&#34;&gt;GalleryImageReference&lt;/a&gt;</i>
     <a href="#inboundnatrule" title="InboundNatRule">InboundNatRule</a>: <i>
-      - <a href="inboundnatrule.md">InboundNatRule</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;inboundnatrule.md&#34;&gt;InboundNatRule&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowClaim
 
@@ -82,7 +96,7 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### Fqdn
 
 _Required_: No
 
@@ -182,7 +196,15 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### UniqueIdentifier
+
+_Required_: No
+
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -198,7 +220,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="galleryimagereference.md">GalleryImageReference</a>
+_Type_: List of &lt;a href=&#34;galleryimagereference.md&#34;&gt;GalleryImageReference&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -206,7 +228,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="inboundnatrule.md">InboundNatRule</a>
+_Type_: List of &lt;a href=&#34;inboundnatrule.md&#34;&gt;InboundNatRule&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -214,7 +236,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -236,9 +258,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Fqdn
 
-Returns the <code>Fqdn</code> value.
+Returns the &lt;code&gt;Fqdn&lt;/code&gt; value.
 
 #### UniqueIdentifier
 
-Returns the <code>UniqueIdentifier</code> value.
+Returns the &lt;code&gt;UniqueIdentifier&lt;/code&gt; value.
 

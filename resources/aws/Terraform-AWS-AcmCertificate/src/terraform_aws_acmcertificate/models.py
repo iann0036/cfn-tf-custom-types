@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     CertificateChain: Optional[str]
     DomainName: Optional[str]
     DomainValidationOptions: Optional[Sequence["_DomainValidationOptions"]]
-    Id: Optional[str]
     PrivateKey: Optional[str]
     SubjectAlternativeNames: Optional[Sequence[str]]
     Tags: Optional[Sequence["_Tags"]]
@@ -65,7 +64,6 @@ class ResourceModel(BaseResourceModel):
             CertificateChain=json_data.get("CertificateChain"),
             DomainName=json_data.get("DomainName"),
             DomainValidationOptions=json_data.get("DomainValidationOptions"),
-            Id=json_data.get("Id"),
             PrivateKey=json_data.get("PrivateKey"),
             SubjectAlternativeNames=json_data.get("SubjectAlternativeNames"),
             Tags=json_data.get("Tags"),

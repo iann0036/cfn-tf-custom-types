@@ -12,16 +12,23 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Vault::TransitSecretBackendKey",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#allowplaintextbackup" title="AllowPlaintextBackup">AllowPlaintextBackup</a>" : <i>Boolean</i>,
         "<a href="#backend" title="Backend">Backend</a>" : <i>String</i>,
         "<a href="#convergentencryption" title="ConvergentEncryption">ConvergentEncryption</a>" : <i>Boolean</i>,
         "<a href="#deletionallowed" title="DeletionAllowed">DeletionAllowed</a>" : <i>Boolean</i>,
         "<a href="#derived" title="Derived">Derived</a>" : <i>Boolean</i>,
         "<a href="#exportable" title="Exportable">Exportable</a>" : <i>Boolean</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#keys" title="Keys">Keys</a>" : <i>[ [ &lt;a href=&#34;keys.md&#34;&gt;Keys&lt;/a&gt;, ... ], ... ]</i>,
+        "<a href="#latestversion" title="LatestVersion">LatestVersion</a>" : <i>Double</i>,
+        "<a href="#minavailableversion" title="MinAvailableVersion">MinAvailableVersion</a>" : <i>Double</i>,
         "<a href="#mindecryptionversion" title="MinDecryptionVersion">MinDecryptionVersion</a>" : <i>Double</i>,
         "<a href="#minencryptionversion" title="MinEncryptionVersion">MinEncryptionVersion</a>" : <i>Double</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
+        "<a href="#supportsdecryption" title="SupportsDecryption">SupportsDecryption</a>" : <i>Boolean</i>,
+        "<a href="#supportsderivation" title="SupportsDerivation">SupportsDerivation</a>" : <i>Boolean</i>,
+        "<a href="#supportsencryption" title="SupportsEncryption">SupportsEncryption</a>" : <i>Boolean</i>,
+        "<a href="#supportssigning" title="SupportsSigning">SupportsSigning</a>" : <i>Boolean</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>
     }
 }
@@ -32,20 +39,38 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Vault::TransitSecretBackendKey
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#allowplaintextbackup" title="AllowPlaintextBackup">AllowPlaintextBackup</a>: <i>Boolean</i>
     <a href="#backend" title="Backend">Backend</a>: <i>String</i>
     <a href="#convergentencryption" title="ConvergentEncryption">ConvergentEncryption</a>: <i>Boolean</i>
     <a href="#deletionallowed" title="DeletionAllowed">DeletionAllowed</a>: <i>Boolean</i>
     <a href="#derived" title="Derived">Derived</a>: <i>Boolean</i>
     <a href="#exportable" title="Exportable">Exportable</a>: <i>Boolean</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#keys" title="Keys">Keys</a>: <i>
+      - List of &lt;a href=&#34;keys.md&#34;&gt;Keys&lt;/a&gt;</i>
+    <a href="#latestversion" title="LatestVersion">LatestVersion</a>: <i>Double</i>
+    <a href="#minavailableversion" title="MinAvailableVersion">MinAvailableVersion</a>: <i>Double</i>
     <a href="#mindecryptionversion" title="MinDecryptionVersion">MinDecryptionVersion</a>: <i>Double</i>
     <a href="#minencryptionversion" title="MinEncryptionVersion">MinEncryptionVersion</a>: <i>Double</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
+    <a href="#supportsdecryption" title="SupportsDecryption">SupportsDecryption</a>: <i>Boolean</i>
+    <a href="#supportsderivation" title="SupportsDerivation">SupportsDerivation</a>: <i>Boolean</i>
+    <a href="#supportsencryption" title="SupportsEncryption">SupportsEncryption</a>: <i>Boolean</i>
+    <a href="#supportssigning" title="SupportsSigning">SupportsSigning</a>: <i>Boolean</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowPlaintextBackup
 
@@ -95,11 +120,27 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### Keys
 
 _Required_: No
 
-_Type_: String
+_Type_: List of List of &lt;a href=&#34;keys.md&#34;&gt;Keys&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### LatestVersion
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### MinAvailableVersion
+
+_Required_: No
+
+_Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -124,6 +165,38 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: Yes
 
 _Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### SupportsDecryption
+
+_Required_: No
+
+_Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### SupportsDerivation
+
+_Required_: No
+
+_Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### SupportsEncryption
+
+_Required_: No
+
+_Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### SupportsSigning
+
+_Required_: No
+
+_Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -153,29 +226,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Keys
 
-Returns the <code>Keys</code> value.
+Returns the &lt;code&gt;Keys&lt;/code&gt; value.
 
 #### LatestVersion
 
-Returns the <code>LatestVersion</code> value.
+Returns the &lt;code&gt;LatestVersion&lt;/code&gt; value.
 
 #### MinAvailableVersion
 
-Returns the <code>MinAvailableVersion</code> value.
+Returns the &lt;code&gt;MinAvailableVersion&lt;/code&gt; value.
 
 #### SupportsDecryption
 
-Returns the <code>SupportsDecryption</code> value.
+Returns the &lt;code&gt;SupportsDecryption&lt;/code&gt; value.
 
 #### SupportsDerivation
 
-Returns the <code>SupportsDerivation</code> value.
+Returns the &lt;code&gt;SupportsDerivation&lt;/code&gt; value.
 
 #### SupportsEncryption
 
-Returns the <code>SupportsEncryption</code> value.
+Returns the &lt;code&gt;SupportsEncryption&lt;/code&gt; value.
 
 #### SupportsSigning
 
-Returns the <code>SupportsSigning</code> value.
+Returns the &lt;code&gt;SupportsSigning&lt;/code&gt; value.
 

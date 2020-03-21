@@ -12,7 +12,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::CloudScale::ServerGroup",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#href" title="Href">Href</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
         "<a href="#zoneslug" title="ZoneSlug">ZoneSlug</a>" : <i>String</i>
@@ -25,7 +26,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::CloudScale::ServerGroup
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#href" title="Href">Href</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
     <a href="#zoneslug" title="ZoneSlug">ZoneSlug</a>: <i>String</i>
@@ -33,7 +35,17 @@ Properties:
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Href
 
 _Required_: No
 
@@ -83,5 +95,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Href
 
-Returns the <code>Href</code> value.
+Returns the &lt;code&gt;Href&lt;/code&gt; value.
 

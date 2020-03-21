@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     EffectiveInterval: Optional[str]
     Enabled: Optional[bool]
     EndTime: Optional[float]
-    Id: Optional[str]
     Metric: Optional[str]
     Name: Optional[str]
     NotifyType: Optional[float]
@@ -70,7 +69,6 @@ class ResourceModel(BaseResourceModel):
             EffectiveInterval=json_data.get("EffectiveInterval"),
             Enabled=json_data.get("Enabled"),
             EndTime=json_data.get("EndTime"),
-            Id=json_data.get("Id"),
             Metric=json_data.get("Metric"),
             Name=json_data.get("Name"),
             NotifyType=json_data.get("NotifyType"),

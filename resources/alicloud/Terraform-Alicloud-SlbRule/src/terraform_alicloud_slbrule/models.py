@@ -49,7 +49,6 @@ class ResourceModel(BaseResourceModel):
     HealthCheckTimeout: Optional[float]
     HealthCheckUri: Optional[str]
     HealthyThreshold: Optional[float]
-    Id: Optional[str]
     ListenerSync: Optional[str]
     LoadBalancerId: Optional[str]
     Name: Optional[str]
@@ -82,7 +81,6 @@ class ResourceModel(BaseResourceModel):
             HealthCheckTimeout=json_data.get("HealthCheckTimeout"),
             HealthCheckUri=json_data.get("HealthCheckUri"),
             HealthyThreshold=json_data.get("HealthyThreshold"),
-            Id=json_data.get("Id"),
             ListenerSync=json_data.get("ListenerSync"),
             LoadBalancerId=json_data.get("LoadBalancerId"),
             Name=json_data.get("Name"),

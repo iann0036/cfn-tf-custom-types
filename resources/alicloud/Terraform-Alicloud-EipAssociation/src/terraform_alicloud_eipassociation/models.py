@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AllocationId: Optional[str]
-    Id: Optional[str]
     InstanceId: Optional[str]
     InstanceType: Optional[str]
     PrivateIpAddress: Optional[str]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             AllocationId=json_data.get("AllocationId"),
-            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
             InstanceType=json_data.get("InstanceType"),
             PrivateIpAddress=json_data.get("PrivateIpAddress"),

@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     AlarmEnabled: Optional[bool]
     AlarmName: Optional[str]
     AlarmState: Optional[str]
-    Id: Optional[str]
     UpdateTime: Optional[float]
     AlarmActions: Optional[Sequence["_AlarmActions"]]
     Condition: Optional[Sequence["_Condition"]]
@@ -65,7 +64,6 @@ class ResourceModel(BaseResourceModel):
             AlarmEnabled=json_data.get("AlarmEnabled"),
             AlarmName=json_data.get("AlarmName"),
             AlarmState=json_data.get("AlarmState"),
-            Id=json_data.get("Id"),
             UpdateTime=json_data.get("UpdateTime"),
             AlarmActions=json_data.get("AlarmActions"),
             Condition=json_data.get("Condition"),

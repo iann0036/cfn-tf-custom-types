@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DestinationPort: Optional[str]
     DeviceGroup: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     OverrideHalfClosedTimeout: Optional[float]
     OverrideSessionTimeout: Optional[bool]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DestinationPort=json_data.get("DestinationPort"),
             DeviceGroup=json_data.get("DeviceGroup"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             OverrideHalfClosedTimeout=json_data.get("OverrideHalfClosedTimeout"),
             OverrideSessionTimeout=json_data.get("OverrideSessionTimeout"),

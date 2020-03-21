@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DnsDomain: Optional[str]
     External: Optional[bool]
-    Id: Optional[str]
     Mtu: Optional[float]
     Name: Optional[str]
     PortSecurityEnabled: Optional[bool]
@@ -71,7 +70,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DnsDomain=json_data.get("DnsDomain"),
             External=json_data.get("External"),
-            Id=json_data.get("Id"),
             Mtu=json_data.get("Mtu"),
             Name=json_data.get("Name"),
             PortSecurityEnabled=json_data.get("PortSecurityEnabled"),

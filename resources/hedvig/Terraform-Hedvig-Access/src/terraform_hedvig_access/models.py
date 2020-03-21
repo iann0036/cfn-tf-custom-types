@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Address: Optional[str]
     Host: Optional[str]
-    Id: Optional[str]
     Type: Optional[str]
     Vdisk: Optional[str]
 
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Address=json_data.get("Address"),
             Host=json_data.get("Host"),
-            Id=json_data.get("Id"),
             Type=json_data.get("Type"),
             Vdisk=json_data.get("Vdisk"),
         )

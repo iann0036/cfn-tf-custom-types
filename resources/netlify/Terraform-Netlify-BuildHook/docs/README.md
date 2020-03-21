@@ -12,10 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Netlify::BuildHook",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#branch" title="Branch">Branch</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#siteid" title="SiteId">SiteId</a>" : <i>String</i>,
         "<a href="#title" title="Title">Title</a>" : <i>String</i>,
+        "<a href="#url" title="Url">Url</a>" : <i>String</i>
     }
 }
 </pre>
@@ -25,25 +26,28 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Netlify::BuildHook
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#branch" title="Branch">Branch</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#siteid" title="SiteId">SiteId</a>: <i>String</i>
     <a href="#title" title="Title">Title</a>: <i>String</i>
+    <a href="#url" title="Url">Url</a>: <i>String</i>
 </pre>
 
 ## Properties
 
-#### Branch
+#### tfcfnid
 
-_Required_: Yes
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
 
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### Branch
 
-_Required_: No
+_Required_: Yes
 
 _Type_: String
 
@@ -60,6 +64,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Title
 
 _Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Url
+
+_Required_: No
 
 _Type_: String
 
@@ -83,5 +95,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Url
 
-Returns the <code>Url</code> value.
+Returns the &lt;code&gt;Url&lt;/code&gt; value.
 

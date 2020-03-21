@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ContentHandling: Optional[str]
     HttpMethod: Optional[str]
-    Id: Optional[str]
     ResourceId: Optional[str]
     ResponseParameters: Optional[Sequence["_ResponseParameters"]]
     ResponseParametersInJson: Optional[str]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ContentHandling=json_data.get("ContentHandling"),
             HttpMethod=json_data.get("HttpMethod"),
-            Id=json_data.get("Id"),
             ResourceId=json_data.get("ResourceId"),
             ResponseParameters=json_data.get("ResponseParameters"),
             ResponseParametersInJson=json_data.get("ResponseParametersInJson"),

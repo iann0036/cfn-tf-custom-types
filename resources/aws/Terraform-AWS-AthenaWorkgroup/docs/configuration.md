@@ -11,7 +11,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#bytesscannedcutoffperquery" title="BytesScannedCutoffPerQuery">BytesScannedCutoffPerQuery</a>" : <i>Double</i>,
     "<a href="#enforceworkgroupconfiguration" title="EnforceWorkgroupConfiguration">EnforceWorkgroupConfiguration</a>" : <i>Boolean</i>,
     "<a href="#publishcloudwatchmetricsenabled" title="PublishCloudwatchMetricsEnabled">PublishCloudwatchMetricsEnabled</a>" : <i>Boolean</i>,
-    "<a href="#resultconfiguration" title="ResultConfiguration">ResultConfiguration</a>" : <i>[ <a href="configuration-resultconfiguration.md">ResultConfiguration</a>, ... ]</i>
+    "<a href="#resultconfiguration" title="ResultConfiguration">ResultConfiguration</a>" : <i>[ &lt;a href=&#34;configuration-resultconfiguration.md&#34;&gt;ResultConfiguration&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -22,7 +22,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#enforceworkgroupconfiguration" title="EnforceWorkgroupConfiguration">EnforceWorkgroupConfiguration</a>: <i>Boolean</i>
 <a href="#publishcloudwatchmetricsenabled" title="PublishCloudwatchMetricsEnabled">PublishCloudwatchMetricsEnabled</a>: <i>Boolean</i>
 <a href="#resultconfiguration" title="ResultConfiguration">ResultConfiguration</a>: <i>
-      - <a href="configuration-resultconfiguration.md">ResultConfiguration</a></i>
+      - &lt;a href=&#34;configuration-resultconfiguration.md&#34;&gt;ResultConfiguration&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -30,7 +30,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### BytesScannedCutoffPerQuery
 
 _Required_: No
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -38,7 +37,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### EnforceWorkgroupConfiguration
 
 _Required_: No
-
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -46,7 +44,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### PublishCloudwatchMetricsEnabled
 
 _Required_: No
-
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -54,8 +51,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ResultConfiguration
 
 _Required_: No
-
-_Type_: List of <a href="configuration-resultconfiguration.md">ResultConfiguration</a>
+_Type_: List of &lt;a href=&#34;configuration-resultconfiguration.md&#34;&gt;ResultConfiguration&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

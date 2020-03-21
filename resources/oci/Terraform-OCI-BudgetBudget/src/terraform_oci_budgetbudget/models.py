@@ -45,7 +45,6 @@ class ResourceModel(BaseResourceModel):
     DisplayName: Optional[str]
     ForecastedSpend: Optional[float]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     ResetPeriod: Optional[str]
     State: Optional[str]
     TargetCompartmentId: Optional[str]
@@ -75,7 +74,6 @@ class ResourceModel(BaseResourceModel):
             DisplayName=json_data.get("DisplayName"),
             ForecastedSpend=json_data.get("ForecastedSpend"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             ResetPeriod=json_data.get("ResetPeriod"),
             State=json_data.get("State"),
             TargetCompartmentId=json_data.get("TargetCompartmentId"),

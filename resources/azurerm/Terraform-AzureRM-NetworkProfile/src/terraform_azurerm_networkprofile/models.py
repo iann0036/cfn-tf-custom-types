@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ContainerNetworkInterfaceIds: Optional[Sequence[str]]
-    Id: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
     ResourceGroupName: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             ContainerNetworkInterfaceIds=json_data.get("ContainerNetworkInterfaceIds"),
-            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),
             ResourceGroupName=json_data.get("ResourceGroupName"),

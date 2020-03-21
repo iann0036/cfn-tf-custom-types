@@ -12,12 +12,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OCI::FileStorageExport",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#exportsetid" title="ExportSetId">ExportSetId</a>" : <i>String</i>,
         "<a href="#filesystemid" title="FileSystemId">FileSystemId</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#path" title="Path">Path</a>" : <i>String</i>,
-        "<a href="#exportoptions" title="ExportOptions">ExportOptions</a>" : <i>[ <a href="exportoptions.md">ExportOptions</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
+        "<a href="#state" title="State">State</a>" : <i>String</i>,
+        "<a href="#timecreated" title="TimeCreated">TimeCreated</a>" : <i>String</i>,
+        "<a href="#exportoptions" title="ExportOptions">ExportOptions</a>" : <i>[ &lt;a href=&#34;exportoptions.md&#34;&gt;ExportOptions&lt;/a&gt;, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     }
 }
 </pre>
@@ -27,16 +29,28 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OCI::FileStorageExport
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#exportsetid" title="ExportSetId">ExportSetId</a>: <i>String</i>
     <a href="#filesystemid" title="FileSystemId">FileSystemId</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#path" title="Path">Path</a>: <i>String</i>
+    <a href="#state" title="State">State</a>: <i>String</i>
+    <a href="#timecreated" title="TimeCreated">TimeCreated</a>: <i>String</i>
     <a href="#exportoptions" title="ExportOptions">ExportOptions</a>: <i>
-      - <a href="exportoptions.md">ExportOptions</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;exportoptions.md&#34;&gt;ExportOptions&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ExportSetId
 
@@ -54,7 +68,15 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### Path
+
+_Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### State
 
 _Required_: No
 
@@ -62,9 +84,9 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Path
+#### TimeCreated
 
-_Required_: Yes
+_Required_: No
 
 _Type_: String
 
@@ -74,7 +96,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="exportoptions.md">ExportOptions</a>
+_Type_: List of &lt;a href=&#34;exportoptions.md&#34;&gt;ExportOptions&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -82,7 +104,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -104,9 +126,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### State
 
-Returns the <code>State</code> value.
+Returns the &lt;code&gt;State&lt;/code&gt; value.
 
 #### TimeCreated
 
-Returns the <code>TimeCreated</code> value.
+Returns the &lt;code&gt;TimeCreated&lt;/code&gt; value.
 

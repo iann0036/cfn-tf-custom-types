@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CreationTimestamp: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     LabelFingerprint: Optional[str]
     Labels: Optional[Sequence["_Labels"]]
     LastAttachTimestamp: Optional[str]
@@ -69,7 +68,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CreationTimestamp=json_data.get("CreationTimestamp"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             LabelFingerprint=json_data.get("LabelFingerprint"),
             Labels=json_data.get("Labels"),
             LastAttachTimestamp=json_data.get("LastAttachTimestamp"),

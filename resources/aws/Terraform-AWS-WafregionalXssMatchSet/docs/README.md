@@ -12,10 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::WafregionalXssMatchSet",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#xssmatchtuple" title="XssMatchTuple">XssMatchTuple</a>" : <i>[ <a href="xssmatchtuple.md">XssMatchTuple</a>, ... ]</i>,
-        "<a href="#fieldtomatch" title="FieldToMatch">FieldToMatch</a>" : <i>[ <a href="fieldtomatch.md">FieldToMatch</a>, ... ]</i>
+        "<a href="#xssmatchtuple" title="XssMatchTuple">XssMatchTuple</a>" : <i>[ &lt;a href=&#34;xssmatchtuple.md&#34;&gt;XssMatchTuple&lt;/a&gt;, ... ]</i>,
+        "<a href="#fieldtomatch" title="FieldToMatch">FieldToMatch</a>" : <i>[ &lt;a href=&#34;fieldtomatch.md&#34;&gt;FieldToMatch&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -25,17 +25,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::WafregionalXssMatchSet
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#xssmatchtuple" title="XssMatchTuple">XssMatchTuple</a>: <i>
-      - <a href="xssmatchtuple.md">XssMatchTuple</a></i>
+      - &lt;a href=&#34;xssmatchtuple.md&#34;&gt;XssMatchTuple&lt;/a&gt;</i>
     <a href="#fieldtomatch" title="FieldToMatch">FieldToMatch</a>: <i>
-      - <a href="fieldtomatch.md">FieldToMatch</a></i>
+      - &lt;a href=&#34;fieldtomatch.md&#34;&gt;FieldToMatch&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
@@ -55,7 +57,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="xssmatchtuple.md">XssMatchTuple</a>
+_Type_: List of &lt;a href=&#34;xssmatchtuple.md&#34;&gt;XssMatchTuple&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -63,7 +65,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="fieldtomatch.md">FieldToMatch</a>
+_Type_: List of &lt;a href=&#34;fieldtomatch.md&#34;&gt;FieldToMatch&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

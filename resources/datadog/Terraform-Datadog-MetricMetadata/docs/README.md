@@ -12,8 +12,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Datadog::MetricMetadata",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#metric" title="Metric">Metric</a>" : <i>String</i>,
         "<a href="#perunit" title="PerUnit">PerUnit</a>" : <i>String</i>,
         "<a href="#shortname" title="ShortName">ShortName</a>" : <i>String</i>,
@@ -29,8 +29,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Datadog::MetricMetadata
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#metric" title="Metric">Metric</a>: <i>String</i>
     <a href="#perunit" title="PerUnit">PerUnit</a>: <i>String</i>
     <a href="#shortname" title="ShortName">ShortName</a>: <i>String</i>
@@ -41,7 +41,9 @@ Properties:
 
 ## Properties
 
-#### Description
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
@@ -49,7 +51,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### Description
 
 _Required_: No
 

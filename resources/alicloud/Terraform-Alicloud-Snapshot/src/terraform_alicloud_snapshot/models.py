@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     DiskId: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
     Timeouts: Optional["_Timeouts"]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             DiskId=json_data.get("DiskId"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Tags=json_data.get("Tags"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),

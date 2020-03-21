@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CaCertificate: Optional[str]
     CertificateName: Optional[str]
-    Id: Optional[str]
     LoadBalancerId: Optional[str]
     Passphrase: Optional[str]
     PrivateKey: Optional[str]
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CaCertificate=json_data.get("CaCertificate"),
             CertificateName=json_data.get("CertificateName"),
-            Id=json_data.get("Id"),
             LoadBalancerId=json_data.get("LoadBalancerId"),
             Passphrase=json_data.get("Passphrase"),
             PrivateKey=json_data.get("PrivateKey"),

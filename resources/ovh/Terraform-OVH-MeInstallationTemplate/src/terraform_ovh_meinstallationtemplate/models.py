@@ -48,7 +48,6 @@ class ResourceModel(BaseResourceModel):
     Family: Optional[str]
     Filesystems: Optional[Sequence[str]]
     HardRaidConfiguration: Optional[bool]
-    Id: Optional[str]
     LastModification: Optional[str]
     RemoveDefaultPartitionSchemes: Optional[bool]
     SupportsDistributionKernel: Optional[bool]
@@ -80,7 +79,6 @@ class ResourceModel(BaseResourceModel):
             Family=json_data.get("Family"),
             Filesystems=json_data.get("Filesystems"),
             HardRaidConfiguration=json_data.get("HardRaidConfiguration"),
-            Id=json_data.get("Id"),
             LastModification=json_data.get("LastModification"),
             RemoveDefaultPartitionSchemes=json_data.get("RemoveDefaultPartitionSchemes"),
             SupportsDistributionKernel=json_data.get("SupportsDistributionKernel"),

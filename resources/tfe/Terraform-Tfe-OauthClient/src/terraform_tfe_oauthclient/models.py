@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ApiUrl: Optional[str]
     HttpUrl: Optional[str]
-    Id: Optional[str]
     OauthToken: Optional[str]
     OauthTokenId: Optional[str]
     Organization: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ApiUrl=json_data.get("ApiUrl"),
             HttpUrl=json_data.get("HttpUrl"),
-            Id=json_data.get("Id"),
             OauthToken=json_data.get("OauthToken"),
             OauthTokenId=json_data.get("OauthTokenId"),
             Organization=json_data.get("Organization"),

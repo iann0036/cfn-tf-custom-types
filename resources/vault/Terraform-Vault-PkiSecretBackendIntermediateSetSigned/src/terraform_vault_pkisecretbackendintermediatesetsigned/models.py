@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Backend: Optional[str]
     Certificate: Optional[str]
-    Id: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -51,7 +50,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Backend=json_data.get("Backend"),
             Certificate=json_data.get("Certificate"),
-            Id=json_data.get("Id"),
         )
 
 

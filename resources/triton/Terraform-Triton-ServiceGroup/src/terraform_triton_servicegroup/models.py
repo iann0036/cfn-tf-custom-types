@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Capacity: Optional[float]
     GroupName: Optional[str]
-    Id: Optional[str]
     Template: Optional[str]
     Timeouts: Optional["_Timeouts"]
 
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Capacity=json_data.get("Capacity"),
             GroupName=json_data.get("GroupName"),
-            Id=json_data.get("Id"),
             Template=json_data.get("Template"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),
         )

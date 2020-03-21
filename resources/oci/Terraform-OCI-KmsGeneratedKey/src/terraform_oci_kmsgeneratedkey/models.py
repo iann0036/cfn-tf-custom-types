@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AssociatedData: Optional[Sequence["_AssociatedData"]]
     Ciphertext: Optional[str]
     CryptoEndpoint: Optional[str]
-    Id: Optional[str]
     IncludePlaintextKey: Optional[bool]
     KeyId: Optional[str]
     LoggingContext: Optional[Sequence["_LoggingContext"]]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             AssociatedData=json_data.get("AssociatedData"),
             Ciphertext=json_data.get("Ciphertext"),
             CryptoEndpoint=json_data.get("CryptoEndpoint"),
-            Id=json_data.get("Id"),
             IncludePlaintextKey=json_data.get("IncludePlaintextKey"),
             KeyId=json_data.get("KeyId"),
             LoggingContext=json_data.get("LoggingContext"),

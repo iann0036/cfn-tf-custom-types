@@ -12,7 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureRM::PacketCapture",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#maximumbytesperpacket" title="MaximumBytesPerPacket">MaximumBytesPerPacket</a>" : <i>Double</i>,
         "<a href="#maximumbytespersession" title="MaximumBytesPerSession">MaximumBytesPerSession</a>" : <i>Double</i>,
         "<a href="#maximumcaptureduration" title="MaximumCaptureDuration">MaximumCaptureDuration</a>" : <i>Double</i>,
@@ -20,9 +20,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#networkwatchername" title="NetworkWatcherName">NetworkWatcherName</a>" : <i>String</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
         "<a href="#targetresourceid" title="TargetResourceId">TargetResourceId</a>" : <i>String</i>,
-        "<a href="#filter" title="Filter">Filter</a>" : <i>[ <a href="filter.md">Filter</a>, ... ]</i>,
-        "<a href="#storagelocation" title="StorageLocation">StorageLocation</a>" : <i>[ <a href="storagelocation.md">StorageLocation</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
+        "<a href="#filter" title="Filter">Filter</a>" : <i>[ &lt;a href=&#34;filter.md&#34;&gt;Filter&lt;/a&gt;, ... ]</i>,
+        "<a href="#storagelocation" title="StorageLocation">StorageLocation</a>" : <i>[ &lt;a href=&#34;storagelocation.md&#34;&gt;StorageLocation&lt;/a&gt;, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     }
 }
 </pre>
@@ -32,7 +32,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureRM::PacketCapture
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#maximumbytesperpacket" title="MaximumBytesPerPacket">MaximumBytesPerPacket</a>: <i>Double</i>
     <a href="#maximumbytespersession" title="MaximumBytesPerSession">MaximumBytesPerSession</a>: <i>Double</i>
     <a href="#maximumcaptureduration" title="MaximumCaptureDuration">MaximumCaptureDuration</a>: <i>Double</i>
@@ -41,15 +41,17 @@ Properties:
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
     <a href="#targetresourceid" title="TargetResourceId">TargetResourceId</a>: <i>String</i>
     <a href="#filter" title="Filter">Filter</a>: <i>
-      - <a href="filter.md">Filter</a></i>
+      - &lt;a href=&#34;filter.md&#34;&gt;Filter&lt;/a&gt;</i>
     <a href="#storagelocation" title="StorageLocation">StorageLocation</a>: <i>
-      - <a href="storagelocation.md">StorageLocation</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;storagelocation.md&#34;&gt;StorageLocation&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
@@ -117,7 +119,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="filter.md">Filter</a>
+_Type_: List of &lt;a href=&#34;filter.md&#34;&gt;Filter&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -125,7 +127,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="storagelocation.md">StorageLocation</a>
+_Type_: List of &lt;a href=&#34;storagelocation.md&#34;&gt;StorageLocation&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -133,7 +135,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

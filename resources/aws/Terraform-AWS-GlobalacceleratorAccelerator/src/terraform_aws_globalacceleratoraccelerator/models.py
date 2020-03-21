@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     DnsName: Optional[str]
     Enabled: Optional[bool]
     HostedZoneId: Optional[str]
-    Id: Optional[str]
     IpAddressType: Optional[str]
     IpSets: Optional[Sequence["_IpSets"]]
     Name: Optional[str]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             DnsName=json_data.get("DnsName"),
             Enabled=json_data.get("Enabled"),
             HostedZoneId=json_data.get("HostedZoneId"),
-            Id=json_data.get("Id"),
             IpAddressType=json_data.get("IpAddressType"),
             IpSets=json_data.get("IpSets"),
             Name=json_data.get("Name"),

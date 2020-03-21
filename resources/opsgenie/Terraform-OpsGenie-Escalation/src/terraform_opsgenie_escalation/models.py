@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     OwnerTeamId: Optional[str]
     Repeat: Optional[Sequence["_Repeat"]]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             OwnerTeamId=json_data.get("OwnerTeamId"),
             Repeat=json_data.get("Repeat"),

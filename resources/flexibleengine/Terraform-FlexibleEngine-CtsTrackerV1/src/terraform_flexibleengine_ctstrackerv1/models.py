@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     BucketName: Optional[str]
     FilePrefixName: Optional[str]
-    Id: Optional[str]
     Region: Optional[str]
     Status: Optional[str]
     TrackerName: Optional[str]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             BucketName=json_data.get("BucketName"),
             FilePrefixName=json_data.get("FilePrefixName"),
-            Id=json_data.get("Id"),
             Region=json_data.get("Region"),
             Status=json_data.get("Status"),
             TrackerName=json_data.get("TrackerName"),

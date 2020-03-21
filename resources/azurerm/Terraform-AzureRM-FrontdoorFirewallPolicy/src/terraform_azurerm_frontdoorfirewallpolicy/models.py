@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     CustomBlockResponseStatusCode: Optional[float]
     Enabled: Optional[bool]
     FrontendEndpointIds: Optional[Sequence[str]]
-    Id: Optional[str]
     Location: Optional[str]
     Mode: Optional[str]
     Name: Optional[str]
@@ -68,7 +67,6 @@ class ResourceModel(BaseResourceModel):
             CustomBlockResponseStatusCode=json_data.get("CustomBlockResponseStatusCode"),
             Enabled=json_data.get("Enabled"),
             FrontendEndpointIds=json_data.get("FrontendEndpointIds"),
-            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             Mode=json_data.get("Mode"),
             Name=json_data.get("Name"),

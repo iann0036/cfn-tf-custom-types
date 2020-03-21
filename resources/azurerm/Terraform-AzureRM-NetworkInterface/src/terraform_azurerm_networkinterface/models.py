@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     DnsServers: Optional[Sequence[str]]
     EnableAcceleratedNetworking: Optional[bool]
     EnableIpForwarding: Optional[bool]
-    Id: Optional[str]
     InternalDnsNameLabel: Optional[str]
     Location: Optional[str]
     MacAddress: Optional[str]
@@ -66,7 +65,6 @@ class ResourceModel(BaseResourceModel):
             DnsServers=json_data.get("DnsServers"),
             EnableAcceleratedNetworking=json_data.get("EnableAcceleratedNetworking"),
             EnableIpForwarding=json_data.get("EnableIpForwarding"),
-            Id=json_data.get("Id"),
             InternalDnsNameLabel=json_data.get("InternalDnsNameLabel"),
             Location=json_data.get("Location"),
             MacAddress=json_data.get("MacAddress"),

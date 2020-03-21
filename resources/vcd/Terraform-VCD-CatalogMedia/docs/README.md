@@ -12,14 +12,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::VCD::CatalogMedia",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#catalog" title="Catalog">Catalog</a>" : <i>String</i>,
+        "<a href="#creationdate" title="CreationDate">CreationDate</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#isiso" title="IsIso">IsIso</a>" : <i>Boolean</i>,
+        "<a href="#ispublished" title="IsPublished">IsPublished</a>" : <i>Boolean</i>,
         "<a href="#mediapath" title="MediaPath">MediaPath</a>" : <i>String</i>,
-        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ <a href="metadata.md">Metadata</a>, ... ]</i>,
+        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;, ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#org" title="Org">Org</a>" : <i>String</i>,
+        "<a href="#ownername" title="OwnerName">OwnerName</a>" : <i>String</i>,
         "<a href="#showuploadprogress" title="ShowUploadProgress">ShowUploadProgress</a>" : <i>Boolean</i>,
+        "<a href="#size" title="Size">Size</a>" : <i>Double</i>,
+        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
+        "<a href="#storageprofilename" title="StorageProfileName">StorageProfileName</a>" : <i>String</i>,
         "<a href="#uploadpiecesize" title="UploadPieceSize">UploadPieceSize</a>" : <i>Double</i>
     }
 }
@@ -30,23 +37,48 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::VCD::CatalogMedia
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#catalog" title="Catalog">Catalog</a>: <i>String</i>
+    <a href="#creationdate" title="CreationDate">CreationDate</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#isiso" title="IsIso">IsIso</a>: <i>Boolean</i>
+    <a href="#ispublished" title="IsPublished">IsPublished</a>: <i>Boolean</i>
     <a href="#mediapath" title="MediaPath">MediaPath</a>: <i>String</i>
     <a href="#metadata" title="Metadata">Metadata</a>: <i>
-      - <a href="metadata.md">Metadata</a></i>
+      - &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#org" title="Org">Org</a>: <i>String</i>
+    <a href="#ownername" title="OwnerName">OwnerName</a>: <i>String</i>
     <a href="#showuploadprogress" title="ShowUploadProgress">ShowUploadProgress</a>: <i>Boolean</i>
+    <a href="#size" title="Size">Size</a>: <i>Double</i>
+    <a href="#status" title="Status">Status</a>: <i>String</i>
+    <a href="#storageprofilename" title="StorageProfileName">StorageProfileName</a>: <i>String</i>
     <a href="#uploadpiecesize" title="UploadPieceSize">UploadPieceSize</a>: <i>Double</i>
 </pre>
 
 ## Properties
 
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Catalog
 
 _Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### CreationDate
+
+_Required_: No
 
 _Type_: String
 
@@ -60,11 +92,19 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### IsIso
 
 _Required_: No
 
-_Type_: String
+_Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### IsPublished
+
+_Required_: No
+
+_Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -80,7 +120,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="metadata.md">Metadata</a>
+_Type_: List of &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -100,11 +140,43 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### OwnerName
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### ShowUploadProgress
 
 _Required_: No
 
 _Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Size
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Status
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### StorageProfileName
+
+_Required_: No
+
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -134,29 +206,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreationDate
 
-Returns the <code>CreationDate</code> value.
+Returns the &lt;code&gt;CreationDate&lt;/code&gt; value.
 
 #### IsIso
 
-Returns the <code>IsIso</code> value.
+Returns the &lt;code&gt;IsIso&lt;/code&gt; value.
 
 #### IsPublished
 
-Returns the <code>IsPublished</code> value.
+Returns the &lt;code&gt;IsPublished&lt;/code&gt; value.
 
 #### OwnerName
 
-Returns the <code>OwnerName</code> value.
+Returns the &lt;code&gt;OwnerName&lt;/code&gt; value.
 
 #### Size
 
-Returns the <code>Size</code> value.
+Returns the &lt;code&gt;Size&lt;/code&gt; value.
 
 #### Status
 
-Returns the <code>Status</code> value.
+Returns the &lt;code&gt;Status&lt;/code&gt; value.
 
 #### StorageProfileName
 
-Returns the <code>StorageProfileName</code> value.
+Returns the &lt;code&gt;StorageProfileName&lt;/code&gt; value.
 

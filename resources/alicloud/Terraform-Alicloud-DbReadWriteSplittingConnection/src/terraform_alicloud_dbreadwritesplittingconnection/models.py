@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     ConnectionPrefix: Optional[str]
     ConnectionString: Optional[str]
     DistributionType: Optional[str]
-    Id: Optional[str]
     InstanceId: Optional[str]
     MaxDelayTime: Optional[float]
     Port: Optional[float]
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
             ConnectionPrefix=json_data.get("ConnectionPrefix"),
             ConnectionString=json_data.get("ConnectionString"),
             DistributionType=json_data.get("DistributionType"),
-            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
             MaxDelayTime=json_data.get("MaxDelayTime"),
             Port=json_data.get("Port"),

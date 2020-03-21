@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Bandwidth: Optional[float]
     BaseBandwidth: Optional[float]
-    Id: Optional[str]
     IpCount: Optional[float]
     IpType: Optional[str]
     Name: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Bandwidth=json_data.get("Bandwidth"),
             BaseBandwidth=json_data.get("BaseBandwidth"),
-            Id=json_data.get("Id"),
             IpCount=json_data.get("IpCount"),
             IpType=json_data.get("IpType"),
             Name=json_data.get("Name"),

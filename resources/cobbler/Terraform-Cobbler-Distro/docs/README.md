@@ -12,12 +12,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Cobbler::Distro",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#arch" title="Arch">Arch</a>" : <i>String</i>,
         "<a href="#bootfiles" title="BootFiles">BootFiles</a>" : <i>String</i>,
         "<a href="#breed" title="Breed">Breed</a>" : <i>String</i>,
         "<a href="#comment" title="Comment">Comment</a>" : <i>String</i>,
         "<a href="#fetchablefiles" title="FetchableFiles">FetchableFiles</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#initrd" title="Initrd">Initrd</a>" : <i>String</i>,
         "<a href="#kernel" title="Kernel">Kernel</a>" : <i>String</i>,
         "<a href="#kerneloptions" title="KernelOptions">KernelOptions</a>" : <i>String</i>,
@@ -38,12 +38,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Cobbler::Distro
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#arch" title="Arch">Arch</a>: <i>String</i>
     <a href="#bootfiles" title="BootFiles">BootFiles</a>: <i>String</i>
     <a href="#breed" title="Breed">Breed</a>: <i>String</i>
     <a href="#comment" title="Comment">Comment</a>: <i>String</i>
     <a href="#fetchablefiles" title="FetchableFiles">FetchableFiles</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#initrd" title="Initrd">Initrd</a>: <i>String</i>
     <a href="#kernel" title="Kernel">Kernel</a>: <i>String</i>
     <a href="#kerneloptions" title="KernelOptions">KernelOptions</a>: <i>String</i>
@@ -60,6 +60,16 @@ Properties:
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Arch
 
@@ -94,14 +104,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FetchableFiles
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 

@@ -50,7 +50,6 @@ class ResourceModel(BaseResourceModel):
     ExecutorShape: Optional[str]
     FileUri: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     Language: Optional[str]
     LifecycleDetails: Optional[str]
     LogsBucketUri: Optional[str]
@@ -91,7 +90,6 @@ class ResourceModel(BaseResourceModel):
             ExecutorShape=json_data.get("ExecutorShape"),
             FileUri=json_data.get("FileUri"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             Language=json_data.get("Language"),
             LifecycleDetails=json_data.get("LifecycleDetails"),
             LogsBucketUri=json_data.get("LogsBucketUri"),

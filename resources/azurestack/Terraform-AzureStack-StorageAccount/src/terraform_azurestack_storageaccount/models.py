@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     AccountTier: Optional[str]
     AccountType: Optional[str]
     EnableBlobEncryption: Optional[bool]
-    Id: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
     PrimaryAccessKey: Optional[str]
@@ -79,7 +78,6 @@ class ResourceModel(BaseResourceModel):
             AccountTier=json_data.get("AccountTier"),
             AccountType=json_data.get("AccountType"),
             EnableBlobEncryption=json_data.get("EnableBlobEncryption"),
-            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),
             PrimaryAccessKey=json_data.get("PrimaryAccessKey"),

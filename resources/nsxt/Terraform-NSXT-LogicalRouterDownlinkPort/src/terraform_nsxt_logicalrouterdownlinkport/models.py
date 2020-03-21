@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     DisplayName: Optional[str]
-    Id: Optional[str]
     IpAddress: Optional[str]
     LinkedLogicalSwitchPortId: Optional[str]
     LogicalRouterId: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             DisplayName=json_data.get("DisplayName"),
-            Id=json_data.get("Id"),
             IpAddress=json_data.get("IpAddress"),
             LinkedLogicalSwitchPortId=json_data.get("LinkedLogicalSwitchPortId"),
             LogicalRouterId=json_data.get("LogicalRouterId"),

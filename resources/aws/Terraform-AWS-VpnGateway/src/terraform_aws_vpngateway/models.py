@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AmazonSideAsn: Optional[str]
     AvailabilityZone: Optional[str]
-    Id: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
     VpcId: Optional[str]
 
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AmazonSideAsn=json_data.get("AmazonSideAsn"),
             AvailabilityZone=json_data.get("AvailabilityZone"),
-            Id=json_data.get("Id"),
             Tags=json_data.get("Tags"),
             VpcId=json_data.get("VpcId"),
         )

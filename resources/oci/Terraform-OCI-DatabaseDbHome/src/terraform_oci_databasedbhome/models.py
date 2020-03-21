@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     DbSystemId: Optional[str]
     DbVersion: Optional[str]
     DisplayName: Optional[str]
-    Id: Optional[str]
     LastPatchHistoryEntryId: Optional[str]
     LifecycleDetails: Optional[str]
     Source: Optional[str]
@@ -67,7 +66,6 @@ class ResourceModel(BaseResourceModel):
             DbSystemId=json_data.get("DbSystemId"),
             DbVersion=json_data.get("DbVersion"),
             DisplayName=json_data.get("DisplayName"),
-            Id=json_data.get("Id"),
             LastPatchHistoryEntryId=json_data.get("LastPatchHistoryEntryId"),
             LifecycleDetails=json_data.get("LifecycleDetails"),
             Source=json_data.get("Source"),

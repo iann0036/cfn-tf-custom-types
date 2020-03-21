@@ -45,7 +45,6 @@ class ResourceModel(BaseResourceModel):
     DedicatedHostId: Optional[str]
     DisablePasswordAuthentication: Optional[bool]
     EvictionPolicy: Optional[str]
-    Id: Optional[str]
     Location: Optional[str]
     MaxBidPrice: Optional[float]
     Name: Optional[str]
@@ -93,7 +92,6 @@ class ResourceModel(BaseResourceModel):
             DedicatedHostId=json_data.get("DedicatedHostId"),
             DisablePasswordAuthentication=json_data.get("DisablePasswordAuthentication"),
             EvictionPolicy=json_data.get("EvictionPolicy"),
-            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             MaxBidPrice=json_data.get("MaxBidPrice"),
             Name=json_data.get("Name"),

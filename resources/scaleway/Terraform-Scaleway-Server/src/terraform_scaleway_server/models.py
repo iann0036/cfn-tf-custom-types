@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     Cloudinit: Optional[str]
     DynamicIpRequired: Optional[bool]
     EnableIpv6: Optional[bool]
-    Id: Optional[str]
     Image: Optional[str]
     Name: Optional[str]
     PrivateIp: Optional[str]
@@ -68,7 +67,6 @@ class ResourceModel(BaseResourceModel):
             Cloudinit=json_data.get("Cloudinit"),
             DynamicIpRequired=json_data.get("DynamicIpRequired"),
             EnableIpv6=json_data.get("EnableIpv6"),
-            Id=json_data.get("Id"),
             Image=json_data.get("Image"),
             Name=json_data.get("Name"),
             PrivateIp=json_data.get("PrivateIp"),

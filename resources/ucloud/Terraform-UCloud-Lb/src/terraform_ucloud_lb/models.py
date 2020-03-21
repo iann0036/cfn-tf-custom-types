@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     ChargeType: Optional[str]
     CreateTime: Optional[str]
     ExpireTime: Optional[str]
-    Id: Optional[str]
     Internal: Optional[bool]
     IpSet: Optional[Sequence["_IpSet"]]
     Name: Optional[str]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             ChargeType=json_data.get("ChargeType"),
             CreateTime=json_data.get("CreateTime"),
             ExpireTime=json_data.get("ExpireTime"),
-            Id=json_data.get("Id"),
             Internal=json_data.get("Internal"),
             IpSet=json_data.get("IpSet"),
             Name=json_data.get("Name"),

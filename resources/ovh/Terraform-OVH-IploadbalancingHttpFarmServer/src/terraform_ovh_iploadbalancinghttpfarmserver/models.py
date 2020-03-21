@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     Cookie: Optional[str]
     DisplayName: Optional[str]
     FarmId: Optional[float]
-    Id: Optional[str]
     Port: Optional[float]
     Probe: Optional[bool]
     ProxyProtocolVersion: Optional[str]
@@ -66,7 +65,6 @@ class ResourceModel(BaseResourceModel):
             Cookie=json_data.get("Cookie"),
             DisplayName=json_data.get("DisplayName"),
             FarmId=json_data.get("FarmId"),
-            Id=json_data.get("Id"),
             Port=json_data.get("Port"),
             Probe=json_data.get("Probe"),
             ProxyProtocolVersion=json_data.get("ProxyProtocolVersion"),

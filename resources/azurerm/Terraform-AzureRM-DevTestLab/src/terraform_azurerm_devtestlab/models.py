@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     ArtifactsStorageAccountId: Optional[str]
     DefaultPremiumStorageAccountId: Optional[str]
     DefaultStorageAccountId: Optional[str]
-    Id: Optional[str]
     KeyVaultId: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             ArtifactsStorageAccountId=json_data.get("ArtifactsStorageAccountId"),
             DefaultPremiumStorageAccountId=json_data.get("DefaultPremiumStorageAccountId"),
             DefaultStorageAccountId=json_data.get("DefaultStorageAccountId"),
-            Id=json_data.get("Id"),
             KeyVaultId=json_data.get("KeyVaultId"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),

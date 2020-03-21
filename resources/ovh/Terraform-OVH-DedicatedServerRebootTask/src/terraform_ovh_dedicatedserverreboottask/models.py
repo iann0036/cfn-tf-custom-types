@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Comment: Optional[str]
     DoneDate: Optional[str]
     Function: Optional[str]
-    Id: Optional[str]
     Keepers: Optional[Sequence[str]]
     LastUpdate: Optional[str]
     ServiceName: Optional[str]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             Comment=json_data.get("Comment"),
             DoneDate=json_data.get("DoneDate"),
             Function=json_data.get("Function"),
-            Id=json_data.get("Id"),
             Keepers=json_data.get("Keepers"),
             LastUpdate=json_data.get("LastUpdate"),
             ServiceName=json_data.get("ServiceName"),

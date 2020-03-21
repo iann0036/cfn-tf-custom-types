@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     ApplicationType: Optional[str]
     DailyDataCapInGb: Optional[float]
     DailyDataCapNotificationsDisabled: Optional[bool]
-    Id: Optional[str]
     InstrumentationKey: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
@@ -63,7 +62,6 @@ class ResourceModel(BaseResourceModel):
             ApplicationType=json_data.get("ApplicationType"),
             DailyDataCapInGb=json_data.get("DailyDataCapInGb"),
             DailyDataCapNotificationsDisabled=json_data.get("DailyDataCapNotificationsDisabled"),
-            Id=json_data.get("Id"),
             InstrumentationKey=json_data.get("InstrumentationKey"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),

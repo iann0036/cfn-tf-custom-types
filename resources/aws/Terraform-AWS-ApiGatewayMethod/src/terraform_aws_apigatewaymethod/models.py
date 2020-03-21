@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     AuthorizationScopes: Optional[Sequence[str]]
     AuthorizerId: Optional[str]
     HttpMethod: Optional[str]
-    Id: Optional[str]
     RequestModels: Optional[Sequence["_RequestModels"]]
     RequestParameters: Optional[Sequence["_RequestParameters"]]
     RequestParametersInJson: Optional[str]
@@ -63,7 +62,6 @@ class ResourceModel(BaseResourceModel):
             AuthorizationScopes=json_data.get("AuthorizationScopes"),
             AuthorizerId=json_data.get("AuthorizerId"),
             HttpMethod=json_data.get("HttpMethod"),
-            Id=json_data.get("Id"),
             RequestModels=json_data.get("RequestModels"),
             RequestParameters=json_data.get("RequestParameters"),
             RequestParametersInJson=json_data.get("RequestParametersInJson"),

@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     EmailVerificationMessage: Optional[str]
     EmailVerificationSubject: Optional[str]
     Endpoint: Optional[str]
-    Id: Optional[str]
     LastModifiedDate: Optional[str]
     MfaConfiguration: Optional[str]
     Name: Optional[str]
@@ -82,7 +81,6 @@ class ResourceModel(BaseResourceModel):
             EmailVerificationMessage=json_data.get("EmailVerificationMessage"),
             EmailVerificationSubject=json_data.get("EmailVerificationSubject"),
             Endpoint=json_data.get("Endpoint"),
-            Id=json_data.get("Id"),
             LastModifiedDate=json_data.get("LastModifiedDate"),
             MfaConfiguration=json_data.get("MfaConfiguration"),
             Name=json_data.get("Name"),

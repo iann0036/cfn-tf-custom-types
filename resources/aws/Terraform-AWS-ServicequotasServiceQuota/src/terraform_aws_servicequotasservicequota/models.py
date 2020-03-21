@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Adjustable: Optional[bool]
     Arn: Optional[str]
     DefaultValue: Optional[float]
-    Id: Optional[str]
     QuotaCode: Optional[str]
     QuotaName: Optional[str]
     RequestId: Optional[str]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             Adjustable=json_data.get("Adjustable"),
             Arn=json_data.get("Arn"),
             DefaultValue=json_data.get("DefaultValue"),
-            Id=json_data.get("Id"),
             QuotaCode=json_data.get("QuotaCode"),
             QuotaName=json_data.get("QuotaName"),
             RequestId=json_data.get("RequestId"),

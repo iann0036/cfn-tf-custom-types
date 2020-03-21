@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     BackupPeriod: Optional[Sequence[str]]
     BackupTime: Optional[str]
-    Id: Optional[str]
     InstanceId: Optional[str]
 
     @classmethod
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             BackupPeriod=json_data.get("BackupPeriod"),
             BackupTime=json_data.get("BackupTime"),
-            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
         )
 

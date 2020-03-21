@@ -52,7 +52,6 @@ class ResourceModel(BaseResourceModel):
     ExternalOtc: Optional[str]
     FlavorId: Optional[str]
     HighwaySubnetId: Optional[str]
-    Id: Optional[str]
     Internal: Optional[str]
     Labels: Optional[Sequence["_Labels"]]
     MultiAz: Optional[bool]
@@ -88,7 +87,6 @@ class ResourceModel(BaseResourceModel):
             ExternalOtc=json_data.get("ExternalOtc"),
             FlavorId=json_data.get("FlavorId"),
             HighwaySubnetId=json_data.get("HighwaySubnetId"),
-            Id=json_data.get("Id"),
             Internal=json_data.get("Internal"),
             Labels=json_data.get("Labels"),
             MultiAz=json_data.get("MultiAz"),

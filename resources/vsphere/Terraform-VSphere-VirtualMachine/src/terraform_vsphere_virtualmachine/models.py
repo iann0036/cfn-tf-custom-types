@@ -65,7 +65,6 @@ class ResourceModel(BaseResourceModel):
     GuestIpAddresses: Optional[Sequence[str]]
     HostSystemId: Optional[str]
     HvMode: Optional[str]
-    Id: Optional[str]
     IgnoredGuestIps: Optional[Sequence[str]]
     Imported: Optional[bool]
     LatencySensitivity: Optional[str]
@@ -150,7 +149,6 @@ class ResourceModel(BaseResourceModel):
             GuestIpAddresses=json_data.get("GuestIpAddresses"),
             HostSystemId=json_data.get("HostSystemId"),
             HvMode=json_data.get("HvMode"),
-            Id=json_data.get("Id"),
             IgnoredGuestIps=json_data.get("IgnoredGuestIps"),
             Imported=json_data.get("Imported"),
             LatencySensitivity=json_data.get("LatencySensitivity"),

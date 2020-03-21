@@ -12,14 +12,22 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OCI::CoreVolumeGroupBackup",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#compartmentid" title="CompartmentId">CompartmentId</a>" : <i>String</i>,
-        "<a href="#definedtags" title="DefinedTags">DefinedTags</a>" : <i>[ <a href="definedtags.md">DefinedTags</a>, ... ]</i>,
+        "<a href="#definedtags" title="DefinedTags">DefinedTags</a>" : <i>[ &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;, ... ]</i>,
         "<a href="#displayname" title="DisplayName">DisplayName</a>" : <i>String</i>,
-        "<a href="#freeformtags" title="FreeformTags">FreeformTags</a>" : <i>[ <a href="freeformtags.md">FreeformTags</a>, ... ]</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#freeformtags" title="FreeformTags">FreeformTags</a>" : <i>[ &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;, ... ]</i>,
+        "<a href="#sizeingbs" title="SizeInGbs">SizeInGbs</a>" : <i>String</i>,
+        "<a href="#sizeinmbs" title="SizeInMbs">SizeInMbs</a>" : <i>String</i>,
+        "<a href="#state" title="State">State</a>" : <i>String</i>,
+        "<a href="#timecreated" title="TimeCreated">TimeCreated</a>" : <i>String</i>,
+        "<a href="#timerequestreceived" title="TimeRequestReceived">TimeRequestReceived</a>" : <i>String</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
+        "<a href="#uniquesizeingbs" title="UniqueSizeInGbs">UniqueSizeInGbs</a>" : <i>String</i>,
+        "<a href="#uniquesizeinmbs" title="UniqueSizeInMbs">UniqueSizeInMbs</a>" : <i>String</i>,
+        "<a href="#volumebackupids" title="VolumeBackupIds">VolumeBackupIds</a>" : <i>[ String, ... ]</i>,
         "<a href="#volumegroupid" title="VolumeGroupId">VolumeGroupId</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     }
 }
 </pre>
@@ -29,19 +37,38 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OCI::CoreVolumeGroupBackup
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#compartmentid" title="CompartmentId">CompartmentId</a>: <i>String</i>
     <a href="#definedtags" title="DefinedTags">DefinedTags</a>: <i>
-      - <a href="definedtags.md">DefinedTags</a></i>
+      - &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;</i>
     <a href="#displayname" title="DisplayName">DisplayName</a>: <i>String</i>
     <a href="#freeformtags" title="FreeformTags">FreeformTags</a>: <i>
-      - <a href="freeformtags.md">FreeformTags</a></i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+      - &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;</i>
+    <a href="#sizeingbs" title="SizeInGbs">SizeInGbs</a>: <i>String</i>
+    <a href="#sizeinmbs" title="SizeInMbs">SizeInMbs</a>: <i>String</i>
+    <a href="#state" title="State">State</a>: <i>String</i>
+    <a href="#timecreated" title="TimeCreated">TimeCreated</a>: <i>String</i>
+    <a href="#timerequestreceived" title="TimeRequestReceived">TimeRequestReceived</a>: <i>String</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
+    <a href="#uniquesizeingbs" title="UniqueSizeInGbs">UniqueSizeInGbs</a>: <i>String</i>
+    <a href="#uniquesizeinmbs" title="UniqueSizeInMbs">UniqueSizeInMbs</a>: <i>String</i>
+    <a href="#volumebackupids" title="VolumeBackupIds">VolumeBackupIds</a>: <i>
+      - String</i>
     <a href="#volumegroupid" title="VolumeGroupId">VolumeGroupId</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CompartmentId
 
@@ -55,7 +82,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="definedtags.md">DefinedTags</a>
+_Type_: List of &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -71,11 +98,43 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="freeformtags.md">FreeformTags</a>
+_Type_: List of &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### SizeInGbs
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### SizeInMbs
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### State
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### TimeCreated
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### TimeRequestReceived
 
 _Required_: No
 
@@ -91,6 +150,30 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### UniqueSizeInGbs
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### UniqueSizeInMbs
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### VolumeBackupIds
+
+_Required_: No
+
+_Type_: List of String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### VolumeGroupId
 
 _Required_: Yes
@@ -103,7 +186,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -125,33 +208,33 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### SizeInGbs
 
-Returns the <code>SizeInGbs</code> value.
+Returns the &lt;code&gt;SizeInGbs&lt;/code&gt; value.
 
 #### SizeInMbs
 
-Returns the <code>SizeInMbs</code> value.
+Returns the &lt;code&gt;SizeInMbs&lt;/code&gt; value.
 
 #### State
 
-Returns the <code>State</code> value.
+Returns the &lt;code&gt;State&lt;/code&gt; value.
 
 #### TimeCreated
 
-Returns the <code>TimeCreated</code> value.
+Returns the &lt;code&gt;TimeCreated&lt;/code&gt; value.
 
 #### TimeRequestReceived
 
-Returns the <code>TimeRequestReceived</code> value.
+Returns the &lt;code&gt;TimeRequestReceived&lt;/code&gt; value.
 
 #### UniqueSizeInGbs
 
-Returns the <code>UniqueSizeInGbs</code> value.
+Returns the &lt;code&gt;UniqueSizeInGbs&lt;/code&gt; value.
 
 #### UniqueSizeInMbs
 
-Returns the <code>UniqueSizeInMbs</code> value.
+Returns the &lt;code&gt;UniqueSizeInMbs&lt;/code&gt; value.
 
 #### VolumeBackupIds
 
-Returns the <code>VolumeBackupIds</code> value.
+Returns the &lt;code&gt;VolumeBackupIds&lt;/code&gt; value.
 

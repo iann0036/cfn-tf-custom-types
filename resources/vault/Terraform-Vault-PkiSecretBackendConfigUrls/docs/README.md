@@ -12,9 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Vault::PkiSecretBackendConfigUrls",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#backend" title="Backend">Backend</a>" : <i>String</i>,
         "<a href="#crldistributionpoints" title="CrlDistributionPoints">CrlDistributionPoints</a>" : <i>[ String, ... ]</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#issuingcertificates" title="IssuingCertificates">IssuingCertificates</a>" : <i>[ String, ... ]</i>,
         "<a href="#ocspservers" title="OcspServers">OcspServers</a>" : <i>[ String, ... ]</i>
     }
@@ -26,10 +26,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Vault::PkiSecretBackendConfigUrls
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#backend" title="Backend">Backend</a>: <i>String</i>
     <a href="#crldistributionpoints" title="CrlDistributionPoints">CrlDistributionPoints</a>: <i>
       - String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#issuingcertificates" title="IssuingCertificates">IssuingCertificates</a>: <i>
       - String</i>
     <a href="#ocspservers" title="OcspServers">OcspServers</a>: <i>
@@ -37,6 +37,16 @@ Properties:
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Backend
 
@@ -51,14 +61,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: List of String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

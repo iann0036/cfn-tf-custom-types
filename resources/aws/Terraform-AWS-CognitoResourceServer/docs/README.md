@@ -12,11 +12,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::CognitoResourceServer",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#identifier" title="Identifier">Identifier</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
+        "<a href="#scopeidentifiers" title="ScopeIdentifiers">ScopeIdentifiers</a>" : <i>[ String, ... ]</i>,
         "<a href="#userpoolid" title="UserPoolId">UserPoolId</a>" : <i>String</i>,
-        "<a href="#scope" title="Scope">Scope</a>" : <i>[ <a href="scope.md">Scope</a>, ... ]</i>
+        "<a href="#scope" title="Scope">Scope</a>" : <i>[ &lt;a href=&#34;scope.md&#34;&gt;Scope&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -26,17 +27,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::CognitoResourceServer
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#identifier" title="Identifier">Identifier</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
+    <a href="#scopeidentifiers" title="ScopeIdentifiers">ScopeIdentifiers</a>: <i>
+      - String</i>
     <a href="#userpoolid" title="UserPoolId">UserPoolId</a>: <i>String</i>
     <a href="#scope" title="Scope">Scope</a>: <i>
-      - <a href="scope.md">Scope</a></i>
+      - &lt;a href=&#34;scope.md&#34;&gt;Scope&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
@@ -60,6 +65,14 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### ScopeIdentifiers
+
+_Required_: No
+
+_Type_: List of String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### UserPoolId
 
 _Required_: Yes
@@ -72,7 +85,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="scope.md">Scope</a>
+_Type_: List of &lt;a href=&#34;scope.md&#34;&gt;Scope&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -94,5 +107,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ScopeIdentifiers
 
-Returns the <code>ScopeIdentifiers</code> value.
+Returns the &lt;code&gt;ScopeIdentifiers&lt;/code&gt; value.
 

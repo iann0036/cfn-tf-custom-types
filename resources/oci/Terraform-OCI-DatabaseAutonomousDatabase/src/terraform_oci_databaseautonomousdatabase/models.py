@@ -53,7 +53,6 @@ class ResourceModel(BaseResourceModel):
     DefinedTags: Optional[Sequence["_DefinedTags"]]
     DisplayName: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     IsAutoScalingEnabled: Optional[bool]
     IsDedicated: Optional[bool]
     IsFreeTier: Optional[bool]
@@ -106,7 +105,6 @@ class ResourceModel(BaseResourceModel):
             DefinedTags=json_data.get("DefinedTags"),
             DisplayName=json_data.get("DisplayName"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             IsAutoScalingEnabled=json_data.get("IsAutoScalingEnabled"),
             IsDedicated=json_data.get("IsDedicated"),
             IsFreeTier=json_data.get("IsFreeTier"),

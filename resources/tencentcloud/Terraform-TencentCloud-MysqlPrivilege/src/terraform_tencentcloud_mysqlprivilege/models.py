@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AccountName: Optional[str]
     Global: Optional[Sequence[str]]
-    Id: Optional[str]
     MysqlId: Optional[str]
     Column: Optional[Sequence["_Column"]]
     Database: Optional[Sequence["_Database"]]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AccountName=json_data.get("AccountName"),
             Global=json_data.get("Global"),
-            Id=json_data.get("Id"),
             MysqlId=json_data.get("MysqlId"),
             Column=json_data.get("Column"),
             Database=json_data.get("Database"),

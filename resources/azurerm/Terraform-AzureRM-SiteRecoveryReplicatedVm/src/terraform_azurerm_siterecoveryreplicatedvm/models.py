@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     ManagedDisk: Optional[Sequence["_ManagedDisk"]]
     Name: Optional[str]
     RecoveryReplicationPolicyId: Optional[str]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             ManagedDisk=json_data.get("ManagedDisk"),
             Name=json_data.get("Name"),
             RecoveryReplicationPolicyId=json_data.get("RecoveryReplicationPolicyId"),

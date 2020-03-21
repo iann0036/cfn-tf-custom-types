@@ -17,10 +17,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#prefix" title="Prefix">Prefix</a>" : <i>String</i>,
     "<a href="#rolearn" title="RoleArn">RoleArn</a>" : <i>String</i>,
     "<a href="#s3backupmode" title="S3BackupMode">S3BackupMode</a>" : <i>String</i>,
-    "<a href="#cloudwatchloggingoptions" title="CloudwatchLoggingOptions">CloudwatchLoggingOptions</a>" : <i>[ <a href="extendeds3configuration-cloudwatchloggingoptions.md">CloudwatchLoggingOptions</a>, ... ]</i>,
-    "<a href="#dataformatconversionconfiguration" title="DataFormatConversionConfiguration">DataFormatConversionConfiguration</a>" : <i>[ <a href="extendeds3configuration-dataformatconversionconfiguration.md">DataFormatConversionConfiguration</a>, ... ]</i>,
-    "<a href="#processingconfiguration" title="ProcessingConfiguration">ProcessingConfiguration</a>" : <i>[ <a href="extendeds3configuration-processingconfiguration.md">ProcessingConfiguration</a>, ... ]</i>,
-    "<a href="#s3backupconfiguration" title="S3BackupConfiguration">S3BackupConfiguration</a>" : <i>[ <a href="extendeds3configuration-s3backupconfiguration.md">S3BackupConfiguration</a>, ... ]</i>
+    "<a href="#cloudwatchloggingoptions" title="CloudwatchLoggingOptions">CloudwatchLoggingOptions</a>" : <i>[ &lt;a href=&#34;extendeds3configuration-cloudwatchloggingoptions.md&#34;&gt;CloudwatchLoggingOptions&lt;/a&gt;, ... ]</i>,
+    "<a href="#dataformatconversionconfiguration" title="DataFormatConversionConfiguration">DataFormatConversionConfiguration</a>" : <i>[ &lt;a href=&#34;extendeds3configuration-dataformatconversionconfiguration.md&#34;&gt;DataFormatConversionConfiguration&lt;/a&gt;, ... ]</i>,
+    "<a href="#processingconfiguration" title="ProcessingConfiguration">ProcessingConfiguration</a>" : <i>[ &lt;a href=&#34;extendeds3configuration-processingconfiguration.md&#34;&gt;ProcessingConfiguration&lt;/a&gt;, ... ]</i>,
+    "<a href="#s3backupconfiguration" title="S3BackupConfiguration">S3BackupConfiguration</a>" : <i>[ &lt;a href=&#34;extendeds3configuration-s3backupconfiguration.md&#34;&gt;S3BackupConfiguration&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -37,13 +37,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#rolearn" title="RoleArn">RoleArn</a>: <i>String</i>
 <a href="#s3backupmode" title="S3BackupMode">S3BackupMode</a>: <i>String</i>
 <a href="#cloudwatchloggingoptions" title="CloudwatchLoggingOptions">CloudwatchLoggingOptions</a>: <i>
-      - <a href="extendeds3configuration-cloudwatchloggingoptions.md">CloudwatchLoggingOptions</a></i>
+      - &lt;a href=&#34;extendeds3configuration-cloudwatchloggingoptions.md&#34;&gt;CloudwatchLoggingOptions&lt;/a&gt;</i>
 <a href="#dataformatconversionconfiguration" title="DataFormatConversionConfiguration">DataFormatConversionConfiguration</a>: <i>
-      - <a href="extendeds3configuration-dataformatconversionconfiguration.md">DataFormatConversionConfiguration</a></i>
+      - &lt;a href=&#34;extendeds3configuration-dataformatconversionconfiguration.md&#34;&gt;DataFormatConversionConfiguration&lt;/a&gt;</i>
 <a href="#processingconfiguration" title="ProcessingConfiguration">ProcessingConfiguration</a>: <i>
-      - <a href="extendeds3configuration-processingconfiguration.md">ProcessingConfiguration</a></i>
+      - &lt;a href=&#34;extendeds3configuration-processingconfiguration.md&#34;&gt;ProcessingConfiguration&lt;/a&gt;</i>
 <a href="#s3backupconfiguration" title="S3BackupConfiguration">S3BackupConfiguration</a>: <i>
-      - <a href="extendeds3configuration-s3backupconfiguration.md">S3BackupConfiguration</a></i>
+      - &lt;a href=&#34;extendeds3configuration-s3backupconfiguration.md&#34;&gt;S3BackupConfiguration&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -51,7 +51,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### BucketArn
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -59,7 +58,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### BufferInterval
 
 _Required_: No
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -67,7 +65,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### BufferSize
 
 _Required_: No
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -75,7 +72,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### CompressionFormat
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -83,7 +79,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ErrorOutputPrefix
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -91,7 +86,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### KmsKeyArn
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -99,7 +93,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Prefix
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -107,7 +100,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RoleArn
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -115,7 +107,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### S3BackupMode
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -123,32 +114,28 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### CloudwatchLoggingOptions
 
 _Required_: No
-
-_Type_: List of <a href="extendeds3configuration-cloudwatchloggingoptions.md">CloudwatchLoggingOptions</a>
+_Type_: List of &lt;a href=&#34;extendeds3configuration-cloudwatchloggingoptions.md&#34;&gt;CloudwatchLoggingOptions&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DataFormatConversionConfiguration
 
 _Required_: No
-
-_Type_: List of <a href="extendeds3configuration-dataformatconversionconfiguration.md">DataFormatConversionConfiguration</a>
+_Type_: List of &lt;a href=&#34;extendeds3configuration-dataformatconversionconfiguration.md&#34;&gt;DataFormatConversionConfiguration&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProcessingConfiguration
 
 _Required_: No
-
-_Type_: List of <a href="extendeds3configuration-processingconfiguration.md">ProcessingConfiguration</a>
+_Type_: List of &lt;a href=&#34;extendeds3configuration-processingconfiguration.md&#34;&gt;ProcessingConfiguration&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### S3BackupConfiguration
 
 _Required_: No
-
-_Type_: List of <a href="extendeds3configuration-s3backupconfiguration.md">S3BackupConfiguration</a>
+_Type_: List of &lt;a href=&#34;extendeds3configuration-s3backupconfiguration.md&#34;&gt;S3BackupConfiguration&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

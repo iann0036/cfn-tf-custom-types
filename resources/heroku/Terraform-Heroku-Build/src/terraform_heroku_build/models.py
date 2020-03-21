@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     App: Optional[str]
     Buildpacks: Optional[Sequence[str]]
-    Id: Optional[str]
     LocalChecksum: Optional[str]
     OutputStreamUrl: Optional[str]
     ReleaseId: Optional[str]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             App=json_data.get("App"),
             Buildpacks=json_data.get("Buildpacks"),
-            Id=json_data.get("Id"),
             LocalChecksum=json_data.get("LocalChecksum"),
             OutputStreamUrl=json_data.get("OutputStreamUrl"),
             ReleaseId=json_data.get("ReleaseId"),

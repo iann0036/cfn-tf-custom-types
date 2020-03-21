@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Arn: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     NamespaceId: Optional[str]
     DnsConfig: Optional[Sequence["_DnsConfig"]]
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Arn=json_data.get("Arn"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             NamespaceId=json_data.get("NamespaceId"),
             DnsConfig=json_data.get("DnsConfig"),

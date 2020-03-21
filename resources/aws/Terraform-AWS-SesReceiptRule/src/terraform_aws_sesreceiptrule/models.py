@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     After: Optional[str]
     Enabled: Optional[bool]
-    Id: Optional[str]
     Name: Optional[str]
     Recipients: Optional[Sequence[str]]
     RuleSetName: Optional[str]
@@ -63,7 +62,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             After=json_data.get("After"),
             Enabled=json_data.get("Enabled"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Recipients=json_data.get("Recipients"),
             RuleSetName=json_data.get("RuleSetName"),

@@ -44,7 +44,6 @@ class ResourceModel(BaseResourceModel):
     ExternalNetworkGateway: Optional[str]
     ExternalNetworkNetmask: Optional[str]
     Href: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Org: Optional[str]
     Shared: Optional[bool]
@@ -67,7 +66,6 @@ class ResourceModel(BaseResourceModel):
             ExternalNetworkGateway=json_data.get("ExternalNetworkGateway"),
             ExternalNetworkNetmask=json_data.get("ExternalNetworkNetmask"),
             Href=json_data.get("Href"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Org=json_data.get("Org"),
             Shared=json_data.get("Shared"),

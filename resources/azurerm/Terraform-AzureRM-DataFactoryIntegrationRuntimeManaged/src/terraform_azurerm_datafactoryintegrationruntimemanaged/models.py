@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     DataFactoryName: Optional[str]
     Description: Optional[str]
     Edition: Optional[str]
-    Id: Optional[str]
     LicenseType: Optional[str]
     Location: Optional[str]
     MaxParallelExecutionsPerNode: Optional[float]
@@ -64,7 +63,6 @@ class ResourceModel(BaseResourceModel):
             DataFactoryName=json_data.get("DataFactoryName"),
             Description=json_data.get("Description"),
             Edition=json_data.get("Edition"),
-            Id=json_data.get("Id"),
             LicenseType=json_data.get("LicenseType"),
             Location=json_data.get("Location"),
             MaxParallelExecutionsPerNode=json_data.get("MaxParallelExecutionsPerNode"),

@@ -11,7 +11,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#maxreplicas" title="MaxReplicas">MaxReplicas</a>" : <i>Double</i>,
     "<a href="#minreplicas" title="MinReplicas">MinReplicas</a>" : <i>Double</i>,
     "<a href="#targetcpuutilizationpercentage" title="TargetCpuUtilizationPercentage">TargetCpuUtilizationPercentage</a>" : <i>Double</i>,
-    "<a href="#scaletargetref" title="ScaleTargetRef">ScaleTargetRef</a>" : <i>[ <a href="spec-scaletargetref.md">ScaleTargetRef</a>, ... ]</i>
+    "<a href="#scaletargetref" title="ScaleTargetRef">ScaleTargetRef</a>" : <i>[ &lt;a href=&#34;spec-scaletargetref.md&#34;&gt;ScaleTargetRef&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -22,7 +22,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#minreplicas" title="MinReplicas">MinReplicas</a>: <i>Double</i>
 <a href="#targetcpuutilizationpercentage" title="TargetCpuUtilizationPercentage">TargetCpuUtilizationPercentage</a>: <i>Double</i>
 <a href="#scaletargetref" title="ScaleTargetRef">ScaleTargetRef</a>: <i>
-      - <a href="spec-scaletargetref.md">ScaleTargetRef</a></i>
+      - &lt;a href=&#34;spec-scaletargetref.md&#34;&gt;ScaleTargetRef&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -30,7 +30,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### MaxReplicas
 
 _Required_: Yes
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -38,7 +37,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### MinReplicas
 
 _Required_: No
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -46,7 +44,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### TargetCpuUtilizationPercentage
 
 _Required_: No
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -54,8 +51,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ScaleTargetRef
 
 _Required_: No
-
-_Type_: List of <a href="spec-scaletargetref.md">ScaleTargetRef</a>
+_Type_: List of &lt;a href=&#34;spec-scaletargetref.md&#34;&gt;ScaleTargetRef&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

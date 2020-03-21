@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DropletId: Optional[float]
-    Id: Optional[str]
     VolumeId: Optional[str]
 
     @classmethod
@@ -50,7 +49,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             DropletId=json_data.get("DropletId"),
-            Id=json_data.get("Id"),
             VolumeId=json_data.get("VolumeId"),
         )
 

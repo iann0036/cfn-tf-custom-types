@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     Ec2Endpoint: Optional[str]
     IamEndpoint: Optional[str]
     IamServerIdHeaderValue: Optional[str]
-    Id: Optional[str]
     SecretKey: Optional[str]
     StsEndpoint: Optional[str]
 
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             Ec2Endpoint=json_data.get("Ec2Endpoint"),
             IamEndpoint=json_data.get("IamEndpoint"),
             IamServerIdHeaderValue=json_data.get("IamServerIdHeaderValue"),
-            Id=json_data.get("Id"),
             SecretKey=json_data.get("SecretKey"),
             StsEndpoint=json_data.get("StsEndpoint"),
         )

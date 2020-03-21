@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AccountName: Optional[str]
     Certificate: Optional[str]
     Format: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Password: Optional[str]
     PublicData: Optional[str]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             AccountName=json_data.get("AccountName"),
             Certificate=json_data.get("Certificate"),
             Format=json_data.get("Format"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Password=json_data.get("Password"),
             PublicData=json_data.get("PublicData"),

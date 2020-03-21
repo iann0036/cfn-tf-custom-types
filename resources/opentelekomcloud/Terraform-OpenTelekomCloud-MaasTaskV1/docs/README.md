@@ -12,14 +12,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OpenTelekomCloud::MaasTaskV1",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#enablekms" title="EnableKms">EnableKms</a>" : <i>Boolean</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#name" title="Name">Name</a>" : <i>String</i>,
+        "<a href="#status" title="Status">Status</a>" : <i>Double</i>,
         "<a href="#threadnum" title="ThreadNum">ThreadNum</a>" : <i>Double</i>,
-        "<a href="#dstnode" title="DstNode">DstNode</a>" : <i>[ <a href="dstnode.md">DstNode</a>, ... ]</i>,
-        "<a href="#smninfo" title="SmnInfo">SmnInfo</a>" : <i>[ <a href="smninfo.md">SmnInfo</a>, ... ]</i>,
-        "<a href="#srcnode" title="SrcNode">SrcNode</a>" : <i>[ <a href="srcnode.md">SrcNode</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
+        "<a href="#dstnode" title="DstNode">DstNode</a>" : <i>[ &lt;a href=&#34;dstnode.md&#34;&gt;DstNode&lt;/a&gt;, ... ]</i>,
+        "<a href="#smninfo" title="SmnInfo">SmnInfo</a>" : <i>[ &lt;a href=&#34;smninfo.md&#34;&gt;SmnInfo&lt;/a&gt;, ... ]</i>,
+        "<a href="#srcnode" title="SrcNode">SrcNode</a>" : <i>[ &lt;a href=&#34;srcnode.md&#34;&gt;SrcNode&lt;/a&gt;, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     }
 }
 </pre>
@@ -29,20 +31,32 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OpenTelekomCloud::MaasTaskV1
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#enablekms" title="EnableKms">EnableKms</a>: <i>Boolean</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#name" title="Name">Name</a>: <i>String</i>
+    <a href="#status" title="Status">Status</a>: <i>Double</i>
     <a href="#threadnum" title="ThreadNum">ThreadNum</a>: <i>Double</i>
     <a href="#dstnode" title="DstNode">DstNode</a>: <i>
-      - <a href="dstnode.md">DstNode</a></i>
+      - &lt;a href=&#34;dstnode.md&#34;&gt;DstNode&lt;/a&gt;</i>
     <a href="#smninfo" title="SmnInfo">SmnInfo</a>: <i>
-      - <a href="smninfo.md">SmnInfo</a></i>
+      - &lt;a href=&#34;smninfo.md&#34;&gt;SmnInfo&lt;/a&gt;</i>
     <a href="#srcnode" title="SrcNode">SrcNode</a>: <i>
-      - <a href="srcnode.md">SrcNode</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;srcnode.md&#34;&gt;SrcNode&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -60,11 +74,19 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### Name
 
 _Required_: No
 
 _Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Status
+
+_Required_: No
+
+_Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -80,7 +102,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="dstnode.md">DstNode</a>
+_Type_: List of &lt;a href=&#34;dstnode.md&#34;&gt;DstNode&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -88,7 +110,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="smninfo.md">SmnInfo</a>
+_Type_: List of &lt;a href=&#34;smninfo.md&#34;&gt;SmnInfo&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -96,7 +118,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="srcnode.md">SrcNode</a>
+_Type_: List of &lt;a href=&#34;srcnode.md&#34;&gt;SrcNode&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -104,7 +126,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -126,9 +148,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Name
 
-Returns the <code>Name</code> value.
+Returns the &lt;code&gt;Name&lt;/code&gt; value.
 
 #### Status
 
-Returns the <code>Status</code> value.
+Returns the &lt;code&gt;Status&lt;/code&gt; value.
 

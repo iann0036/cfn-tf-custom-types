@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     BypassUrlPatterns: Optional[Sequence[str]]
     Description: Optional[str]
     Disabled: Optional[bool]
-    Id: Optional[str]
     Period: Optional[float]
     Threshold: Optional[float]
     ZoneId: Optional[str]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             BypassUrlPatterns=json_data.get("BypassUrlPatterns"),
             Description=json_data.get("Description"),
             Disabled=json_data.get("Disabled"),
-            Id=json_data.get("Id"),
             Period=json_data.get("Period"),
             Threshold=json_data.get("Threshold"),
             ZoneId=json_data.get("ZoneId"),

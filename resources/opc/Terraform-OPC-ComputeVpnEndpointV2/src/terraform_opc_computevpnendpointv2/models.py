@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     CustomerVpnGateway: Optional[str]
     Description: Optional[str]
     Enabled: Optional[bool]
-    Id: Optional[str]
     IkeIdentifier: Optional[str]
     IpNetwork: Optional[str]
     LocalGatewayIpAddress: Optional[str]
@@ -68,7 +67,6 @@ class ResourceModel(BaseResourceModel):
             CustomerVpnGateway=json_data.get("CustomerVpnGateway"),
             Description=json_data.get("Description"),
             Enabled=json_data.get("Enabled"),
-            Id=json_data.get("Id"),
             IkeIdentifier=json_data.get("IkeIdentifier"),
             IpNetwork=json_data.get("IpNetwork"),
             LocalGatewayIpAddress=json_data.get("LocalGatewayIpAddress"),

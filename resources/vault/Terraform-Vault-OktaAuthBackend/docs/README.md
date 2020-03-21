@@ -12,17 +12,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Vault::OktaAuthBackend",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#accessor" title="Accessor">Accessor</a>" : <i>String</i>,
         "<a href="#baseurl" title="BaseUrl">BaseUrl</a>" : <i>String</i>,
         "<a href="#bypassoktamfa" title="BypassOktaMfa">BypassOktaMfa</a>" : <i>Boolean</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#group" title="Group">Group</a>" : <i>[ <a href="group.md">Group</a>, ... ]</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#group" title="Group">Group</a>" : <i>[ &lt;a href=&#34;group.md&#34;&gt;Group&lt;/a&gt;, ... ]</i>,
         "<a href="#maxttl" title="MaxTtl">MaxTtl</a>" : <i>String</i>,
         "<a href="#organization" title="Organization">Organization</a>" : <i>String</i>,
         "<a href="#path" title="Path">Path</a>" : <i>String</i>,
         "<a href="#token" title="Token">Token</a>" : <i>String</i>,
         "<a href="#ttl" title="Ttl">Ttl</a>" : <i>String</i>,
-        "<a href="#user" title="User">User</a>" : <i>[ <a href="user.md">User</a>, ... ]</i>
+        "<a href="#user" title="User">User</a>" : <i>[ &lt;a href=&#34;user.md&#34;&gt;User&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -32,22 +33,41 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Vault::OktaAuthBackend
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#accessor" title="Accessor">Accessor</a>: <i>String</i>
     <a href="#baseurl" title="BaseUrl">BaseUrl</a>: <i>String</i>
     <a href="#bypassoktamfa" title="BypassOktaMfa">BypassOktaMfa</a>: <i>Boolean</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#group" title="Group">Group</a>: <i>
-      - <a href="group.md">Group</a></i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+      - &lt;a href=&#34;group.md&#34;&gt;Group&lt;/a&gt;</i>
     <a href="#maxttl" title="MaxTtl">MaxTtl</a>: <i>String</i>
     <a href="#organization" title="Organization">Organization</a>: <i>String</i>
     <a href="#path" title="Path">Path</a>: <i>String</i>
     <a href="#token" title="Token">Token</a>: <i>String</i>
     <a href="#ttl" title="Ttl">Ttl</a>: <i>String</i>
     <a href="#user" title="User">User</a>: <i>
-      - <a href="user.md">User</a></i>
+      - &lt;a href=&#34;user.md&#34;&gt;User&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Accessor
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BaseUrl
 
@@ -77,15 +97,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="group.md">Group</a>
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
-
-_Type_: String
+_Type_: List of &lt;a href=&#34;group.md&#34;&gt;Group&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -133,7 +145,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="user.md">User</a>
+_Type_: List of &lt;a href=&#34;user.md&#34;&gt;User&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -155,5 +167,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Accessor
 
-Returns the <code>Accessor</code> value.
+Returns the &lt;code&gt;Accessor&lt;/code&gt; value.
 

@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CheckCommand: Optional[str]
     Hostname: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Vars: Optional[Sequence["_Vars"]]
 
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CheckCommand=json_data.get("CheckCommand"),
             Hostname=json_data.get("Hostname"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Vars=json_data.get("Vars"),
         )

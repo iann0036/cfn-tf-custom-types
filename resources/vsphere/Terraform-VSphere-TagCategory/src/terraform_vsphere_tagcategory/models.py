@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AssociableTypes: Optional[Sequence[str]]
     Cardinality: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
 
     @classmethod
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             AssociableTypes=json_data.get("AssociableTypes"),
             Cardinality=json_data.get("Cardinality"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
         )
 

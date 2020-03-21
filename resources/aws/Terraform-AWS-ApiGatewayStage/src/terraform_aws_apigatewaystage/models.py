@@ -44,7 +44,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DocumentationVersion: Optional[str]
     ExecutionArn: Optional[str]
-    Id: Optional[str]
     InvokeUrl: Optional[str]
     RestApiId: Optional[str]
     StageName: Optional[str]
@@ -70,7 +69,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DocumentationVersion=json_data.get("DocumentationVersion"),
             ExecutionArn=json_data.get("ExecutionArn"),
-            Id=json_data.get("Id"),
             InvokeUrl=json_data.get("InvokeUrl"),
             RestApiId=json_data.get("RestApiId"),
             StageName=json_data.get("StageName"),

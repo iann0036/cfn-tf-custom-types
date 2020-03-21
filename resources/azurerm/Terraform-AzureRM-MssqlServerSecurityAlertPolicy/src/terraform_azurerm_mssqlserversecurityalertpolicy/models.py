@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     DisabledAlerts: Optional[Sequence[str]]
     EmailAccountAdmins: Optional[bool]
     EmailAddresses: Optional[Sequence[str]]
-    Id: Optional[str]
     ResourceGroupName: Optional[str]
     RetentionDays: Optional[float]
     ServerName: Optional[str]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             DisabledAlerts=json_data.get("DisabledAlerts"),
             EmailAccountAdmins=json_data.get("EmailAccountAdmins"),
             EmailAddresses=json_data.get("EmailAddresses"),
-            Id=json_data.get("Id"),
             ResourceGroupName=json_data.get("ResourceGroupName"),
             RetentionDays=json_data.get("RetentionDays"),
             ServerName=json_data.get("ServerName"),

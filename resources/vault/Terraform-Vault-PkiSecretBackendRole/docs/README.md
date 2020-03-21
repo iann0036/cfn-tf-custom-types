@@ -12,6 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Vault::PkiSecretBackendRole",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#allowanyname" title="AllowAnyName">AllowAnyName</a>" : <i>Boolean</i>,
         "<a href="#allowbaredomains" title="AllowBareDomains">AllowBareDomains</a>" : <i>Boolean</i>,
         "<a href="#allowglobdomains" title="AllowGlobDomains">AllowGlobDomains</a>" : <i>Boolean</i>,
@@ -30,7 +31,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#enforcehostnames" title="EnforceHostnames">EnforceHostnames</a>" : <i>Boolean</i>,
         "<a href="#extkeyusage" title="ExtKeyUsage">ExtKeyUsage</a>" : <i>[ String, ... ]</i>,
         "<a href="#generatelease" title="GenerateLease">GenerateLease</a>" : <i>Boolean</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#keybits" title="KeyBits">KeyBits</a>" : <i>Double</i>,
         "<a href="#keytype" title="KeyType">KeyType</a>" : <i>String</i>,
         "<a href="#keyusage" title="KeyUsage">KeyUsage</a>" : <i>[ String, ... ]</i>,
@@ -59,6 +59,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Vault::PkiSecretBackendRole
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#allowanyname" title="AllowAnyName">AllowAnyName</a>: <i>Boolean</i>
     <a href="#allowbaredomains" title="AllowBareDomains">AllowBareDomains</a>: <i>Boolean</i>
     <a href="#allowglobdomains" title="AllowGlobDomains">AllowGlobDomains</a>: <i>Boolean</i>
@@ -82,7 +83,6 @@ Properties:
     <a href="#extkeyusage" title="ExtKeyUsage">ExtKeyUsage</a>: <i>
       - String</i>
     <a href="#generatelease" title="GenerateLease">GenerateLease</a>: <i>Boolean</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#keybits" title="KeyBits">KeyBits</a>: <i>Double</i>
     <a href="#keytype" title="KeyType">KeyType</a>: <i>String</i>
     <a href="#keyusage" title="KeyUsage">KeyUsage</a>: <i>
@@ -113,6 +113,16 @@ Properties:
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowAnyName
 
@@ -255,14 +265,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

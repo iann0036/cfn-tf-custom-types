@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DomainName: Optional[str]
     DomainNameServers: Optional[str]
-    Id: Optional[str]
     NetbiosNameServers: Optional[Sequence[str]]
     NetbiosNodeType: Optional[str]
     NtpServers: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DomainName=json_data.get("DomainName"),
             DomainNameServers=json_data.get("DomainNameServers"),
-            Id=json_data.get("Id"),
             NetbiosNameServers=json_data.get("NetbiosNameServers"),
             NetbiosNodeType=json_data.get("NetbiosNodeType"),
             NtpServers=json_data.get("NtpServers"),

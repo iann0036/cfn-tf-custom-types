@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     EncapsulationMode: Optional[str]
     EncryptionAlgorithm: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Pfs: Optional[str]
     Region: Optional[str]
@@ -63,7 +62,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             EncapsulationMode=json_data.get("EncapsulationMode"),
             EncryptionAlgorithm=json_data.get("EncryptionAlgorithm"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Pfs=json_data.get("Pfs"),
             Region=json_data.get("Region"),

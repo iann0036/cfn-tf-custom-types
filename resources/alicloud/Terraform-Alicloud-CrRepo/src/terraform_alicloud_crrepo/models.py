@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Detail: Optional[str]
     DomainList: Optional[Sequence["_DomainList"]]
-    Id: Optional[str]
     Name: Optional[str]
     Namespace: Optional[str]
     RepoType: Optional[str]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Detail=json_data.get("Detail"),
             DomainList=json_data.get("DomainList"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Namespace=json_data.get("Namespace"),
             RepoType=json_data.get("RepoType"),

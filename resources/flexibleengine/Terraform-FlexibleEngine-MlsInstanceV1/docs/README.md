@@ -12,10 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::FlexibleEngine::MlsInstanceV1",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#agency" title="Agency">Agency</a>" : <i>String</i>,
         "<a href="#created" title="Created">Created</a>" : <i>String</i>,
         "<a href="#flavor" title="Flavor">Flavor</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#innerendpoint" title="InnerEndpoint">InnerEndpoint</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#publicendpoint" title="PublicEndpoint">PublicEndpoint</a>" : <i>String</i>,
@@ -23,10 +23,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#status" title="Status">Status</a>" : <i>String</i>,
         "<a href="#updated" title="Updated">Updated</a>" : <i>String</i>,
         "<a href="#version" title="Version">Version</a>" : <i>String</i>,
-        "<a href="#mrscluster" title="MrsCluster">MrsCluster</a>" : <i>[ <a href="mrscluster.md">MrsCluster</a>, ... ]</i>,
-        "<a href="#network" title="Network">Network</a>" : <i>[ <a href="network.md">Network</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
-        "<a href="#publicip" title="PublicIp">PublicIp</a>" : <i>[ <a href="publicip.md">PublicIp</a>, ... ]</i>
+        "<a href="#mrscluster" title="MrsCluster">MrsCluster</a>" : <i>[ &lt;a href=&#34;mrscluster.md&#34;&gt;MrsCluster&lt;/a&gt;, ... ]</i>,
+        "<a href="#network" title="Network">Network</a>" : <i>[ &lt;a href=&#34;network.md&#34;&gt;Network&lt;/a&gt;, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
+        "<a href="#publicip" title="PublicIp">PublicIp</a>" : <i>[ &lt;a href=&#34;publicip.md&#34;&gt;PublicIp&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -36,10 +36,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::FlexibleEngine::MlsInstanceV1
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#agency" title="Agency">Agency</a>: <i>String</i>
     <a href="#created" title="Created">Created</a>: <i>String</i>
     <a href="#flavor" title="Flavor">Flavor</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#innerendpoint" title="InnerEndpoint">InnerEndpoint</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#publicendpoint" title="PublicEndpoint">PublicEndpoint</a>: <i>String</i>
@@ -48,15 +48,25 @@ Properties:
     <a href="#updated" title="Updated">Updated</a>: <i>String</i>
     <a href="#version" title="Version">Version</a>: <i>String</i>
     <a href="#mrscluster" title="MrsCluster">MrsCluster</a>: <i>
-      - <a href="mrscluster.md">MrsCluster</a></i>
+      - &lt;a href=&#34;mrscluster.md&#34;&gt;MrsCluster&lt;/a&gt;</i>
     <a href="#network" title="Network">Network</a>: <i>
-      - <a href="network.md">Network</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;network.md&#34;&gt;Network&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     <a href="#publicip" title="PublicIp">PublicIp</a>: <i>
-      - <a href="publicip.md">PublicIp</a></i>
+      - &lt;a href=&#34;publicip.md&#34;&gt;PublicIp&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Agency
 
@@ -77,14 +87,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Flavor
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
 
 _Type_: String
 
@@ -150,7 +152,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="mrscluster.md">MrsCluster</a>
+_Type_: List of &lt;a href=&#34;mrscluster.md&#34;&gt;MrsCluster&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -158,7 +160,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="network.md">Network</a>
+_Type_: List of &lt;a href=&#34;network.md&#34;&gt;Network&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -166,7 +168,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -174,7 +176,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="publicip.md">PublicIp</a>
+_Type_: List of &lt;a href=&#34;publicip.md&#34;&gt;PublicIp&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

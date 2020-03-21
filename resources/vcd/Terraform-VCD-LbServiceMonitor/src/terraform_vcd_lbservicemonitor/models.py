@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     EdgeGateway: Optional[str]
     Expected: Optional[str]
     Extension: Optional[Sequence["_Extension"]]
-    Id: Optional[str]
     Interval: Optional[float]
     MaxRetries: Optional[float]
     Method: Optional[str]
@@ -64,7 +63,6 @@ class ResourceModel(BaseResourceModel):
             EdgeGateway=json_data.get("EdgeGateway"),
             Expected=json_data.get("Expected"),
             Extension=json_data.get("Extension"),
-            Id=json_data.get("Id"),
             Interval=json_data.get("Interval"),
             MaxRetries=json_data.get("MaxRetries"),
             Method=json_data.get("Method"),

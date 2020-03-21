@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CompartmentId: Optional[str]
     GroupId: Optional[str]
-    Id: Optional[str]
     InactiveState: Optional[str]
     State: Optional[str]
     TimeCreated: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CompartmentId=json_data.get("CompartmentId"),
             GroupId=json_data.get("GroupId"),
-            Id=json_data.get("Id"),
             InactiveState=json_data.get("InactiveState"),
             State=json_data.get("State"),
             TimeCreated=json_data.get("TimeCreated"),

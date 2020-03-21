@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     Description: Optional[str]
     HostedZone: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
 
     @classmethod
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             Description=json_data.get("Description"),
             HostedZone=json_data.get("HostedZone"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
         )
 

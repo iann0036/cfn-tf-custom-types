@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     ComputeClusterId: Optional[str]
     DrsAutomationLevel: Optional[str]
     DrsEnabled: Optional[bool]
-    Id: Optional[str]
     VirtualMachineId: Optional[str]
 
     @classmethod
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             ComputeClusterId=json_data.get("ComputeClusterId"),
             DrsAutomationLevel=json_data.get("DrsAutomationLevel"),
             DrsEnabled=json_data.get("DrsEnabled"),
-            Id=json_data.get("Id"),
             VirtualMachineId=json_data.get("VirtualMachineId"),
         )
 

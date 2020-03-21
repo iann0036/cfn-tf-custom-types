@@ -45,7 +45,6 @@ class ResourceModel(BaseResourceModel):
     BgpAuthKey: Optional[str]
     ConnectionId: Optional[str]
     CustomerAddress: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     OwnerAccountId: Optional[str]
     RouteFilterPrefixes: Optional[Sequence[str]]
@@ -70,7 +69,6 @@ class ResourceModel(BaseResourceModel):
             BgpAuthKey=json_data.get("BgpAuthKey"),
             ConnectionId=json_data.get("ConnectionId"),
             CustomerAddress=json_data.get("CustomerAddress"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             OwnerAccountId=json_data.get("OwnerAccountId"),
             RouteFilterPrefixes=json_data.get("RouteFilterPrefixes"),

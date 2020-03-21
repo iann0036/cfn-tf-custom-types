@@ -15,8 +15,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#interactionthreshold" title="InteractionThreshold">InteractionThreshold</a>" : <i>Double</i>,
     "<a href="#isenabled" title="IsEnabled">IsEnabled</a>" : <i>Boolean</i>,
     "<a href="#recordingperiodinseconds" title="RecordingPeriodInSeconds">RecordingPeriodInSeconds</a>" : <i>Double</i>,
-    "<a href="#challengesettings" title="ChallengeSettings">ChallengeSettings</a>" : <i>[ <a href="wafconfig-humaninteractionchallenge-challengesettings.md">ChallengeSettings</a>, ... ]</i>,
-    "<a href="#sethttpheader" title="SetHttpHeader">SetHttpHeader</a>" : <i>[ <a href="wafconfig-humaninteractionchallenge-sethttpheader.md">SetHttpHeader</a>, ... ]</i>
+    "<a href="#challengesettings" title="ChallengeSettings">ChallengeSettings</a>" : <i>[ &lt;a href=&#34;wafconfig-humaninteractionchallenge-challengesettings.md&#34;&gt;ChallengeSettings&lt;/a&gt;, ... ]</i>,
+    "<a href="#sethttpheader" title="SetHttpHeader">SetHttpHeader</a>" : <i>[ &lt;a href=&#34;wafconfig-humaninteractionchallenge-sethttpheader.md&#34;&gt;SetHttpHeader&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -31,9 +31,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#isenabled" title="IsEnabled">IsEnabled</a>: <i>Boolean</i>
 <a href="#recordingperiodinseconds" title="RecordingPeriodInSeconds">RecordingPeriodInSeconds</a>: <i>Double</i>
 <a href="#challengesettings" title="ChallengeSettings">ChallengeSettings</a>: <i>
-      - <a href="wafconfig-humaninteractionchallenge-challengesettings.md">ChallengeSettings</a></i>
+      - &lt;a href=&#34;wafconfig-humaninteractionchallenge-challengesettings.md&#34;&gt;ChallengeSettings&lt;/a&gt;</i>
 <a href="#sethttpheader" title="SetHttpHeader">SetHttpHeader</a>: <i>
-      - <a href="wafconfig-humaninteractionchallenge-sethttpheader.md">SetHttpHeader</a></i>
+      - &lt;a href=&#34;wafconfig-humaninteractionchallenge-sethttpheader.md&#34;&gt;SetHttpHeader&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -41,7 +41,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Action
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -49,7 +48,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ActionExpirationInSeconds
 
 _Required_: No
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -57,7 +55,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### FailureThreshold
 
 _Required_: No
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -65,7 +62,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### FailureThresholdExpirationInSeconds
 
 _Required_: No
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -73,7 +69,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### InteractionThreshold
 
 _Required_: No
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -81,7 +76,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### IsEnabled
 
 _Required_: Yes
-
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -89,7 +83,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RecordingPeriodInSeconds
 
 _Required_: No
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -97,16 +90,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ChallengeSettings
 
 _Required_: No
-
-_Type_: List of <a href="wafconfig-humaninteractionchallenge-challengesettings.md">ChallengeSettings</a>
+_Type_: List of &lt;a href=&#34;wafconfig-humaninteractionchallenge-challengesettings.md&#34;&gt;ChallengeSettings&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SetHttpHeader
 
 _Required_: No
-
-_Type_: List of <a href="wafconfig-humaninteractionchallenge-sethttpheader.md">SetHttpHeader</a>
+_Type_: List of &lt;a href=&#34;wafconfig-humaninteractionchallenge-sethttpheader.md&#34;&gt;SetHttpHeader&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

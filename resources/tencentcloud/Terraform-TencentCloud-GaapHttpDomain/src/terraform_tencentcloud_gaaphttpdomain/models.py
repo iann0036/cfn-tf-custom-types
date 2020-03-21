@@ -44,7 +44,6 @@ class ResourceModel(BaseResourceModel):
     Domain: Optional[str]
     GaapAuth: Optional[bool]
     GaapAuthId: Optional[str]
-    Id: Optional[str]
     ListenerId: Optional[str]
     RealserverAuth: Optional[bool]
     RealserverCertificateDomain: Optional[str]
@@ -68,7 +67,6 @@ class ResourceModel(BaseResourceModel):
             Domain=json_data.get("Domain"),
             GaapAuth=json_data.get("GaapAuth"),
             GaapAuthId=json_data.get("GaapAuthId"),
-            Id=json_data.get("Id"),
             ListenerId=json_data.get("ListenerId"),
             RealserverAuth=json_data.get("RealserverAuth"),
             RealserverCertificateDomain=json_data.get("RealserverCertificateDomain"),

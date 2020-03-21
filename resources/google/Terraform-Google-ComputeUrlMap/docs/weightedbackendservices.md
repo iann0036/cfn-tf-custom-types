@@ -10,7 +10,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#backendservice" title="BackendService">BackendService</a>" : <i>String</i>,
     "<a href="#weight" title="Weight">Weight</a>" : <i>Double</i>,
-    "<a href="#headeraction" title="HeaderAction">HeaderAction</a>" : <i>[ <a href="weightedbackendservices-headeraction.md">HeaderAction</a>, ... ]</i>
+    "<a href="#headeraction" title="HeaderAction">HeaderAction</a>" : <i>[ &lt;a href=&#34;weightedbackendservices-headeraction.md&#34;&gt;HeaderAction&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -20,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#backendservice" title="BackendService">BackendService</a>: <i>String</i>
 <a href="#weight" title="Weight">Weight</a>: <i>Double</i>
 <a href="#headeraction" title="HeaderAction">HeaderAction</a>: <i>
-      - <a href="weightedbackendservices-headeraction.md">HeaderAction</a></i>
+      - &lt;a href=&#34;weightedbackendservices-headeraction.md&#34;&gt;HeaderAction&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -28,7 +28,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### BackendService
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -36,7 +35,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Weight
 
 _Required_: Yes
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -44,8 +42,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### HeaderAction
 
 _Required_: No
-
-_Type_: List of <a href="weightedbackendservices-headeraction.md">HeaderAction</a>
+_Type_: List of &lt;a href=&#34;weightedbackendservices-headeraction.md&#34;&gt;HeaderAction&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

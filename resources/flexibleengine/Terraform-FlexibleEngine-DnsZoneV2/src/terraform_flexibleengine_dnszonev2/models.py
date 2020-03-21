@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     Email: Optional[str]
-    Id: Optional[str]
     Masters: Optional[Sequence[str]]
     Name: Optional[str]
     Region: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             Email=json_data.get("Email"),
-            Id=json_data.get("Id"),
             Masters=json_data.get("Masters"),
             Name=json_data.get("Name"),
             Region=json_data.get("Region"),

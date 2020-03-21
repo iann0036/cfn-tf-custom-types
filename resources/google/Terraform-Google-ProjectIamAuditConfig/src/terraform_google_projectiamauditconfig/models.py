@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Etag: Optional[str]
-    Id: Optional[str]
     Project: Optional[str]
     Service: Optional[str]
     AuditLogConfig: Optional[Sequence["_AuditLogConfig"]]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Etag=json_data.get("Etag"),
-            Id=json_data.get("Id"),
             Project=json_data.get("Project"),
             Service=json_data.get("Service"),
             AuditLogConfig=json_data.get("AuditLogConfig"),

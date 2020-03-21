@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AccessLevel: Optional[str]
     ExpiresAt: Optional[str]
     GroupId: Optional[str]
-    Id: Optional[str]
     UserId: Optional[float]
 
     @classmethod
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             AccessLevel=json_data.get("AccessLevel"),
             ExpiresAt=json_data.get("ExpiresAt"),
             GroupId=json_data.get("GroupId"),
-            Id=json_data.get("Id"),
             UserId=json_data.get("UserId"),
         )
 

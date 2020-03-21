@@ -1,6 +1,6 @@
 # Terraform::NS1::Record
 
-An example resource schema demonstrating some basic constructs and validation rules.
+CloudFormation equivalent of ns1_record
 
 ## Syntax
 
@@ -12,14 +12,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::NS1::Record",
     "Properties" : {
-        "<a href="#title" title="Title">Title</a>" : <i>String</i>,
-        "<a href="#coversheetincluded" title="CoverSheetIncluded">CoverSheetIncluded</a>" : <i>Boolean</i>,
-        "<a href="#duedate" title="DueDate">DueDate</a>" : <i>String</i>,
-        "<a href="#approvaldate" title="ApprovalDate">ApprovalDate</a>" : <i>String</i>,
-        "<a href="#memo" title="Memo">Memo</a>" : <i>&lt;a href=&#34;secondcopyofmemo.md&#34;&gt;SecondCopyOfMemo&lt;/a&gt;</i>,
-        "<a href="#secondcopyofmemo" title="SecondCopyOfMemo">SecondCopyOfMemo</a>" : <i>&lt;a href=&#34;secondcopyofmemo.md&#34;&gt;SecondCopyOfMemo&lt;/a&gt;</i>,
-        "<a href="#testcode" title="TestCode">TestCode</a>" : <i>String</i>,
-        "<a href="#authors" title="Authors">Authors</a>" : <i>[ String, ... ]</i>
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#domain" title="Domain">Domain</a>" : <i>String</i>,
+        "<a href="#link" title="Link">Link</a>" : <i>String</i>,
+        "<a href="#meta" title="Meta">Meta</a>" : <i>[ &lt;a href=&#34;meta.md&#34;&gt;Meta&lt;/a&gt;, ... ]</i>,
+        "<a href="#shortanswers" title="ShortAnswers">ShortAnswers</a>" : <i>[ String, ... ]</i>,
+        "<a href="#ttl" title="Ttl">Ttl</a>" : <i>Double</i>,
+        "<a href="#type" title="Type">Type</a>" : <i>String</i>,
+        "<a href="#useclientsubnet" title="UseClientSubnet">UseClientSubnet</a>" : <i>Boolean</i>,
+        "<a href="#zone" title="Zone">Zone</a>" : <i>String</i>,
+        "<a href="#answers" title="Answers">Answers</a>" : <i>[ &lt;a href=&#34;answers.md&#34;&gt;Answers&lt;/a&gt;, ... ]</i>,
+        "<a href="#filters" title="Filters">Filters</a>" : <i>[ &lt;a href=&#34;filters.md&#34;&gt;Filters&lt;/a&gt;, ... ]</i>,
+        "<a href="#regions" title="Regions">Regions</a>" : <i>[ &lt;a href=&#34;regions.md&#34;&gt;Regions&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -29,44 +33,46 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::NS1::Record
 Properties:
-    <a href="#title" title="Title">Title</a>: <i>String</i>
-    <a href="#coversheetincluded" title="CoverSheetIncluded">CoverSheetIncluded</a>: <i>Boolean</i>
-    <a href="#duedate" title="DueDate">DueDate</a>: <i>String</i>
-    <a href="#approvaldate" title="ApprovalDate">ApprovalDate</a>: <i>String</i>
-    <a href="#memo" title="Memo">Memo</a>: <i>&lt;a href=&#34;secondcopyofmemo.md&#34;&gt;SecondCopyOfMemo&lt;/a&gt;</i>
-    <a href="#secondcopyofmemo" title="SecondCopyOfMemo">SecondCopyOfMemo</a>: <i>&lt;a href=&#34;secondcopyofmemo.md&#34;&gt;SecondCopyOfMemo&lt;/a&gt;</i>
-    <a href="#testcode" title="TestCode">TestCode</a>: <i>String</i>
-    <a href="#authors" title="Authors">Authors</a>: <i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#domain" title="Domain">Domain</a>: <i>String</i>
+    <a href="#link" title="Link">Link</a>: <i>String</i>
+    <a href="#meta" title="Meta">Meta</a>: <i>
+      - &lt;a href=&#34;meta.md&#34;&gt;Meta&lt;/a&gt;</i>
+    <a href="#shortanswers" title="ShortAnswers">ShortAnswers</a>: <i>
       - String</i>
+    <a href="#ttl" title="Ttl">Ttl</a>: <i>Double</i>
+    <a href="#type" title="Type">Type</a>: <i>String</i>
+    <a href="#useclientsubnet" title="UseClientSubnet">UseClientSubnet</a>: <i>Boolean</i>
+    <a href="#zone" title="Zone">Zone</a>: <i>String</i>
+    <a href="#answers" title="Answers">Answers</a>: <i>
+      - &lt;a href=&#34;answers.md&#34;&gt;Answers&lt;/a&gt;</i>
+    <a href="#filters" title="Filters">Filters</a>: <i>
+      - &lt;a href=&#34;filters.md&#34;&gt;Filters&lt;/a&gt;</i>
+    <a href="#regions" title="Regions">Regions</a>: <i>
+      - &lt;a href=&#34;regions.md&#34;&gt;Regions&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
-#### Title
+#### tfcfnid
 
-The title of the TPS report is a mandatory element.
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Domain
 
 _Required_: Yes
 
 _Type_: String
 
-_Minimum_: <code>20</code>
-
-_Maximum_: <code>250</code>
-
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### CoverSheetIncluded
-
-Required for all TPS Reports submitted after 2/19/1999
-
-_Required_: No
-
-_Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### DueDate
+#### Link
 
 _Required_: No
 
@@ -74,41 +80,15 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### ApprovalDate
+#### Meta
 
 _Required_: No
 
-_Type_: String
+_Type_: List of &lt;a href=&#34;meta.md&#34;&gt;Meta&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Memo
-
-_Required_: No
-
-_Type_: &lt;a href=&#34;secondcopyofmemo.md&#34;&gt;SecondCopyOfMemo&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### SecondCopyOfMemo
-
-_Required_: No
-
-_Type_: &lt;a href=&#34;secondcopyofmemo.md&#34;&gt;SecondCopyOfMemo&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### TestCode
-
-_Required_: Yes
-
-_Type_: String
-
-_Allowed Values_: <code>NOT_STARTED</code> | <code>CANCELLED</code>
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Authors
+#### ShortAnswers
 
 _Required_: No
 
@@ -116,11 +96,67 @@ _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### Ttl
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Type
+
+_Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### UseClientSubnet
+
+_Required_: No
+
+_Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Zone
+
+_Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Answers
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;answers.md&#34;&gt;Answers&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Filters
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;filters.md&#34;&gt;Filters&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Regions
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;regions.md&#34;&gt;Regions&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 ## Return Values
 
 ### Ref
 
-When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the TPSCode.
+When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the tfcfnid.
 
 ### Fn::GetAtt
 
@@ -128,7 +164,7 @@ The `Fn::GetAtt` intrinsic function returns a value for a specified attribute of
 
 For more information about using the `Fn::GetAtt` intrinsic function, see [Fn::GetAtt](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html).
 
-#### TPSCode
+#### tfcfnid
 
-A TPS Code is automatically generated on creation and assigned as the unique identifier.
+Internal identifier for tracking resource changes. Do not use.
 

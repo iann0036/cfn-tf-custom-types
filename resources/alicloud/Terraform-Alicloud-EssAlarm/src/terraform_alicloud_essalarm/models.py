@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     Dimensions: Optional[Sequence["_Dimensions"]]
     Enable: Optional[bool]
     EvaluationCount: Optional[float]
-    Id: Optional[str]
     MetricName: Optional[str]
     MetricType: Optional[str]
     Name: Optional[str]
@@ -69,7 +68,6 @@ class ResourceModel(BaseResourceModel):
             Dimensions=json_data.get("Dimensions"),
             Enable=json_data.get("Enable"),
             EvaluationCount=json_data.get("EvaluationCount"),
-            Id=json_data.get("Id"),
             MetricName=json_data.get("MetricName"),
             MetricType=json_data.get("MetricType"),
             Name=json_data.get("Name"),

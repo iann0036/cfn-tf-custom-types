@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Cluster: Optional[str]
-    Id: Optional[str]
     InitialNodeCount: Optional[float]
     InstanceGroupUrls: Optional[Sequence[str]]
     Location: Optional[str]
@@ -67,7 +66,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Cluster=json_data.get("Cluster"),
-            Id=json_data.get("Id"),
             InitialNodeCount=json_data.get("InitialNodeCount"),
             InstanceGroupUrls=json_data.get("InstanceGroupUrls"),
             Location=json_data.get("Location"),

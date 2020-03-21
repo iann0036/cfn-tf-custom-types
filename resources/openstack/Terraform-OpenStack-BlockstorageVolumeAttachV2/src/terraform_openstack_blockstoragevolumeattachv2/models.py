@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     Device: Optional[str]
     DriverVolumeType: Optional[str]
     HostName: Optional[str]
-    Id: Optional[str]
     Initiator: Optional[str]
     InstanceId: Optional[str]
     IpAddress: Optional[str]
@@ -69,7 +68,6 @@ class ResourceModel(BaseResourceModel):
             Device=json_data.get("Device"),
             DriverVolumeType=json_data.get("DriverVolumeType"),
             HostName=json_data.get("HostName"),
-            Id=json_data.get("Id"),
             Initiator=json_data.get("Initiator"),
             InstanceId=json_data.get("InstanceId"),
             IpAddress=json_data.get("IpAddress"),

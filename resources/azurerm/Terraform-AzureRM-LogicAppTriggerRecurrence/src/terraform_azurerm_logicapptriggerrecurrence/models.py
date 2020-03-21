@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Frequency: Optional[str]
-    Id: Optional[str]
     Interval: Optional[float]
     LogicAppId: Optional[str]
     Name: Optional[str]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Frequency=json_data.get("Frequency"),
-            Id=json_data.get("Id"),
             Interval=json_data.get("Interval"),
             LogicAppId=json_data.get("LogicAppId"),
             Name=json_data.get("Name"),

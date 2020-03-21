@@ -12,11 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::SnsSmsPreferences",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#defaultsenderid" title="DefaultSenderId">DefaultSenderId</a>" : <i>String</i>,
         "<a href="#defaultsmstype" title="DefaultSmsType">DefaultSmsType</a>" : <i>String</i>,
         "<a href="#deliverystatusiamrolearn" title="DeliveryStatusIamRoleArn">DeliveryStatusIamRoleArn</a>" : <i>String</i>,
         "<a href="#deliverystatussuccesssamplingrate" title="DeliveryStatusSuccessSamplingRate">DeliveryStatusSuccessSamplingRate</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#monthlyspendlimit" title="MonthlySpendLimit">MonthlySpendLimit</a>" : <i>String</i>,
         "<a href="#usagereports3bucket" title="UsageReportS3Bucket">UsageReportS3Bucket</a>" : <i>String</i>
     }
@@ -28,16 +28,26 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::SnsSmsPreferences
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#defaultsenderid" title="DefaultSenderId">DefaultSenderId</a>: <i>String</i>
     <a href="#defaultsmstype" title="DefaultSmsType">DefaultSmsType</a>: <i>String</i>
     <a href="#deliverystatusiamrolearn" title="DeliveryStatusIamRoleArn">DeliveryStatusIamRoleArn</a>: <i>String</i>
     <a href="#deliverystatussuccesssamplingrate" title="DeliveryStatusSuccessSamplingRate">DeliveryStatusSuccessSamplingRate</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#monthlyspendlimit" title="MonthlySpendLimit">MonthlySpendLimit</a>: <i>String</i>
     <a href="#usagereports3bucket" title="UsageReportS3Bucket">UsageReportS3Bucket</a>: <i>String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefaultSenderId
 
@@ -64,14 +74,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DeliveryStatusSuccessSamplingRate
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 

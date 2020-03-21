@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     EnableEcsManagedTags: Optional[bool]
     HealthCheckGracePeriodSeconds: Optional[float]
     IamRole: Optional[str]
-    Id: Optional[str]
     LaunchType: Optional[str]
     Name: Optional[str]
     PlatformVersion: Optional[str]
@@ -76,7 +75,6 @@ class ResourceModel(BaseResourceModel):
             EnableEcsManagedTags=json_data.get("EnableEcsManagedTags"),
             HealthCheckGracePeriodSeconds=json_data.get("HealthCheckGracePeriodSeconds"),
             IamRole=json_data.get("IamRole"),
-            Id=json_data.get("Id"),
             LaunchType=json_data.get("LaunchType"),
             Name=json_data.get("Name"),
             PlatformVersion=json_data.get("PlatformVersion"),

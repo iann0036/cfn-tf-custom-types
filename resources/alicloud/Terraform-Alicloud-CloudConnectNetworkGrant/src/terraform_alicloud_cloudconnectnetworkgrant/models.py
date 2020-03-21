@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     CcnId: Optional[str]
     CenId: Optional[str]
     CenUid: Optional[str]
-    Id: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             CcnId=json_data.get("CcnId"),
             CenId=json_data.get("CenId"),
             CenUid=json_data.get("CenUid"),
-            Id=json_data.get("Id"),
         )
 
 

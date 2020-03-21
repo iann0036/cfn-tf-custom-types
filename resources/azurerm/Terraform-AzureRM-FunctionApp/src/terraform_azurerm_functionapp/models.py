@@ -44,7 +44,6 @@ class ResourceModel(BaseResourceModel):
     EnableBuiltinLogging: Optional[bool]
     Enabled: Optional[bool]
     HttpsOnly: Optional[bool]
-    Id: Optional[str]
     Kind: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
@@ -85,7 +84,6 @@ class ResourceModel(BaseResourceModel):
             EnableBuiltinLogging=json_data.get("EnableBuiltinLogging"),
             Enabled=json_data.get("Enabled"),
             HttpsOnly=json_data.get("HttpsOnly"),
-            Id=json_data.get("Id"),
             Kind=json_data.get("Kind"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),

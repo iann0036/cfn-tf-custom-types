@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CreateTime: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Parent: Optional[str]
     PerimeterType: Optional[str]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CreateTime=json_data.get("CreateTime"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Parent=json_data.get("Parent"),
             PerimeterType=json_data.get("PerimeterType"),

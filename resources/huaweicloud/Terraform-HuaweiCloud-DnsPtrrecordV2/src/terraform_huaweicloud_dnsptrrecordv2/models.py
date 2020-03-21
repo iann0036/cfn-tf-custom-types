@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Address: Optional[str]
     Description: Optional[str]
     FloatingipId: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
     Ttl: Optional[float]
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
             Address=json_data.get("Address"),
             Description=json_data.get("Description"),
             FloatingipId=json_data.get("FloatingipId"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Tags=json_data.get("Tags"),
             Ttl=json_data.get("Ttl"),

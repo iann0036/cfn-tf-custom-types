@@ -12,13 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureRM::AutomationModule",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#automationaccountname" title="AutomationAccountName">AutomationAccountName</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
-        "<a href="#modulelink" title="ModuleLink">ModuleLink</a>" : <i>[ <a href="modulelink.md">ModuleLink</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
-        "<a href="#hash" title="Hash">Hash</a>" : <i>[ <a href="hash.md">Hash</a>, ... ]</i>
+        "<a href="#modulelink" title="ModuleLink">ModuleLink</a>" : <i>[ &lt;a href=&#34;modulelink.md&#34;&gt;ModuleLink&lt;/a&gt;, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
+        "<a href="#hash" title="Hash">Hash</a>" : <i>[ &lt;a href=&#34;hash.md&#34;&gt;Hash&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -28,30 +28,32 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureRM::AutomationModule
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#automationaccountname" title="AutomationAccountName">AutomationAccountName</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
     <a href="#modulelink" title="ModuleLink">ModuleLink</a>: <i>
-      - <a href="modulelink.md">ModuleLink</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;modulelink.md&#34;&gt;ModuleLink&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     <a href="#hash" title="Hash">Hash</a>: <i>
-      - <a href="hash.md">Hash</a></i>
+      - &lt;a href=&#34;hash.md&#34;&gt;Hash&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
-#### AutomationAccountName
+#### tfcfnid
 
-_Required_: Yes
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
 
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### AutomationAccountName
 
-_Required_: No
+_Required_: Yes
 
 _Type_: String
 
@@ -77,7 +79,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="modulelink.md">ModuleLink</a>
+_Type_: List of &lt;a href=&#34;modulelink.md&#34;&gt;ModuleLink&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -85,7 +87,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -93,7 +95,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="hash.md">Hash</a>
+_Type_: List of &lt;a href=&#34;hash.md&#34;&gt;Hash&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

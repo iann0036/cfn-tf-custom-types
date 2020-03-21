@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     HomeLocation: Optional[str]
-    Id: Optional[str]
     IpAddress: Optional[str]
     IpNetwork: Optional[str]
     Labels: Optional[Sequence["_Labels"]]
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             HomeLocation=json_data.get("HomeLocation"),
-            Id=json_data.get("Id"),
             IpAddress=json_data.get("IpAddress"),
             IpNetwork=json_data.get("IpNetwork"),
             Labels=json_data.get("Labels"),

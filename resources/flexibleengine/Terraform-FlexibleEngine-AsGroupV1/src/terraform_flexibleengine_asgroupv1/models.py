@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     DesireInstanceNumber: Optional[float]
     HealthPeriodicAuditMethod: Optional[str]
     HealthPeriodicAuditTime: Optional[float]
-    Id: Optional[str]
     InstanceTerminatePolicy: Optional[str]
     Instances: Optional[Sequence[str]]
     LbListenerId: Optional[str]
@@ -75,7 +74,6 @@ class ResourceModel(BaseResourceModel):
             DesireInstanceNumber=json_data.get("DesireInstanceNumber"),
             HealthPeriodicAuditMethod=json_data.get("HealthPeriodicAuditMethod"),
             HealthPeriodicAuditTime=json_data.get("HealthPeriodicAuditTime"),
-            Id=json_data.get("Id"),
             InstanceTerminatePolicy=json_data.get("InstanceTerminatePolicy"),
             Instances=json_data.get("Instances"),
             LbListenerId=json_data.get("LbListenerId"),

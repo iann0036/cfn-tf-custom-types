@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     Cpu: Optional[float]
     CvmType: Optional[str]
     DockerGraphPath: Optional[str]
-    Id: Optional[str]
     InstanceId: Optional[str]
     InstanceName: Optional[str]
     InstanceType: Optional[str]
@@ -83,7 +82,6 @@ class ResourceModel(BaseResourceModel):
             Cpu=json_data.get("Cpu"),
             CvmType=json_data.get("CvmType"),
             DockerGraphPath=json_data.get("DockerGraphPath"),
-            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
             InstanceName=json_data.get("InstanceName"),
             InstanceType=json_data.get("InstanceType"),

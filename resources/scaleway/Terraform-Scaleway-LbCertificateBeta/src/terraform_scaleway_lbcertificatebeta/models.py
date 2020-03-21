@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CommonName: Optional[str]
     Fingerprint: Optional[str]
-    Id: Optional[str]
     LbId: Optional[str]
     Name: Optional[str]
     NotValidAfter: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CommonName=json_data.get("CommonName"),
             Fingerprint=json_data.get("Fingerprint"),
-            Id=json_data.get("Id"),
             LbId=json_data.get("LbId"),
             Name=json_data.get("Name"),
             NotValidAfter=json_data.get("NotValidAfter"),

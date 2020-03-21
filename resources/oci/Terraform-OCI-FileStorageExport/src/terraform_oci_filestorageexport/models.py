@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ExportSetId: Optional[str]
     FileSystemId: Optional[str]
-    Id: Optional[str]
     Path: Optional[str]
     State: Optional[str]
     TimeCreated: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ExportSetId=json_data.get("ExportSetId"),
             FileSystemId=json_data.get("FileSystemId"),
-            Id=json_data.get("Id"),
             Path=json_data.get("Path"),
             State=json_data.get("State"),
             TimeCreated=json_data.get("TimeCreated"),

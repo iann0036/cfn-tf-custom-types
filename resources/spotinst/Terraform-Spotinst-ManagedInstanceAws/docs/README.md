@@ -12,6 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Spotinst::ManagedInstanceAws",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#autohealing" title="AutoHealing">AutoHealing</a>" : <i>Boolean</i>,
         "<a href="#blockdevicesmode" title="BlockDevicesMode">BlockDevicesMode</a>" : <i>String</i>,
         "<a href="#cpucredits" title="CpuCredits">CpuCredits</a>" : <i>String</i>,
@@ -24,7 +25,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#graceperiod" title="GracePeriod">GracePeriod</a>" : <i>Double</i>,
         "<a href="#healthchecktype" title="HealthCheckType">HealthCheckType</a>" : <i>String</i>,
         "<a href="#iaminstanceprofile" title="IamInstanceProfile">IamInstanceProfile</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#imageid" title="ImageId">ImageId</a>" : <i>String</i>,
         "<a href="#instancetypes" title="InstanceTypes">InstanceTypes</a>" : <i>[ String, ... ]</i>,
         "<a href="#keypair" title="KeyPair">KeyPair</a>" : <i>String</i>,
@@ -47,14 +47,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#userdata" title="UserData">UserData</a>" : <i>String</i>,
         "<a href="#utilizereservedinstances" title="UtilizeReservedInstances">UtilizeReservedInstances</a>" : <i>Boolean</i>,
         "<a href="#vpcid" title="VpcId">VpcId</a>" : <i>String</i>,
-        "<a href="#integrationroute53" title="IntegrationRoute53">IntegrationRoute53</a>" : <i>[ <a href="integrationroute53.md">IntegrationRoute53</a>, ... ]</i>,
-        "<a href="#loadbalancers" title="LoadBalancers">LoadBalancers</a>" : <i>[ <a href="loadbalancers.md">LoadBalancers</a>, ... ]</i>,
-        "<a href="#networkinterface" title="NetworkInterface">NetworkInterface</a>" : <i>[ <a href="networkinterface.md">NetworkInterface</a>, ... ]</i>,
-        "<a href="#reverttospot" title="RevertToSpot">RevertToSpot</a>" : <i>[ <a href="reverttospot.md">RevertToSpot</a>, ... ]</i>,
-        "<a href="#scheduledtask" title="ScheduledTask">ScheduledTask</a>" : <i>[ <a href="scheduledtask.md">ScheduledTask</a>, ... ]</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
-        "<a href="#domains" title="Domains">Domains</a>" : <i>[ <a href="domains.md">Domains</a>, ... ]</i>,
-        "<a href="#recordsets" title="RecordSets">RecordSets</a>" : <i>[ <a href="recordsets.md">RecordSets</a>, ... ]</i>
+        "<a href="#integrationroute53" title="IntegrationRoute53">IntegrationRoute53</a>" : <i>[ &lt;a href=&#34;integrationroute53.md&#34;&gt;IntegrationRoute53&lt;/a&gt;, ... ]</i>,
+        "<a href="#loadbalancers" title="LoadBalancers">LoadBalancers</a>" : <i>[ &lt;a href=&#34;loadbalancers.md&#34;&gt;LoadBalancers&lt;/a&gt;, ... ]</i>,
+        "<a href="#networkinterface" title="NetworkInterface">NetworkInterface</a>" : <i>[ &lt;a href=&#34;networkinterface.md&#34;&gt;NetworkInterface&lt;/a&gt;, ... ]</i>,
+        "<a href="#reverttospot" title="RevertToSpot">RevertToSpot</a>" : <i>[ &lt;a href=&#34;reverttospot.md&#34;&gt;RevertToSpot&lt;/a&gt;, ... ]</i>,
+        "<a href="#scheduledtask" title="ScheduledTask">ScheduledTask</a>" : <i>[ &lt;a href=&#34;scheduledtask.md&#34;&gt;ScheduledTask&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#domains" title="Domains">Domains</a>" : <i>[ &lt;a href=&#34;domains.md&#34;&gt;Domains&lt;/a&gt;, ... ]</i>,
+        "<a href="#recordsets" title="RecordSets">RecordSets</a>" : <i>[ &lt;a href=&#34;recordsets.md&#34;&gt;RecordSets&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -64,6 +64,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Spotinst::ManagedInstanceAws
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#autohealing" title="AutoHealing">AutoHealing</a>: <i>Boolean</i>
     <a href="#blockdevicesmode" title="BlockDevicesMode">BlockDevicesMode</a>: <i>String</i>
     <a href="#cpucredits" title="CpuCredits">CpuCredits</a>: <i>String</i>
@@ -76,7 +77,6 @@ Properties:
     <a href="#graceperiod" title="GracePeriod">GracePeriod</a>: <i>Double</i>
     <a href="#healthchecktype" title="HealthCheckType">HealthCheckType</a>: <i>String</i>
     <a href="#iaminstanceprofile" title="IamInstanceProfile">IamInstanceProfile</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#imageid" title="ImageId">ImageId</a>: <i>String</i>
     <a href="#instancetypes" title="InstanceTypes">InstanceTypes</a>: <i>
       - String</i>
@@ -104,24 +104,34 @@ Properties:
     <a href="#utilizereservedinstances" title="UtilizeReservedInstances">UtilizeReservedInstances</a>: <i>Boolean</i>
     <a href="#vpcid" title="VpcId">VpcId</a>: <i>String</i>
     <a href="#integrationroute53" title="IntegrationRoute53">IntegrationRoute53</a>: <i>
-      - <a href="integrationroute53.md">IntegrationRoute53</a></i>
+      - &lt;a href=&#34;integrationroute53.md&#34;&gt;IntegrationRoute53&lt;/a&gt;</i>
     <a href="#loadbalancers" title="LoadBalancers">LoadBalancers</a>: <i>
-      - <a href="loadbalancers.md">LoadBalancers</a></i>
+      - &lt;a href=&#34;loadbalancers.md&#34;&gt;LoadBalancers&lt;/a&gt;</i>
     <a href="#networkinterface" title="NetworkInterface">NetworkInterface</a>: <i>
-      - <a href="networkinterface.md">NetworkInterface</a></i>
+      - &lt;a href=&#34;networkinterface.md&#34;&gt;NetworkInterface&lt;/a&gt;</i>
     <a href="#reverttospot" title="RevertToSpot">RevertToSpot</a>: <i>
-      - <a href="reverttospot.md">RevertToSpot</a></i>
+      - &lt;a href=&#34;reverttospot.md&#34;&gt;RevertToSpot&lt;/a&gt;</i>
     <a href="#scheduledtask" title="ScheduledTask">ScheduledTask</a>: <i>
-      - <a href="scheduledtask.md">ScheduledTask</a></i>
+      - &lt;a href=&#34;scheduledtask.md&#34;&gt;ScheduledTask&lt;/a&gt;</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
     <a href="#domains" title="Domains">Domains</a>: <i>
-      - <a href="domains.md">Domains</a></i>
+      - &lt;a href=&#34;domains.md&#34;&gt;Domains&lt;/a&gt;</i>
     <a href="#recordsets" title="RecordSets">RecordSets</a>: <i>
-      - <a href="recordsets.md">RecordSets</a></i>
+      - &lt;a href=&#34;recordsets.md&#34;&gt;RecordSets&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AutoHealing
 
@@ -212,14 +222,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IamInstanceProfile
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 
@@ -407,7 +409,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="integrationroute53.md">IntegrationRoute53</a>
+_Type_: List of &lt;a href=&#34;integrationroute53.md&#34;&gt;IntegrationRoute53&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -415,7 +417,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="loadbalancers.md">LoadBalancers</a>
+_Type_: List of &lt;a href=&#34;loadbalancers.md&#34;&gt;LoadBalancers&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -423,7 +425,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="networkinterface.md">NetworkInterface</a>
+_Type_: List of &lt;a href=&#34;networkinterface.md&#34;&gt;NetworkInterface&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -431,7 +433,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="reverttospot.md">RevertToSpot</a>
+_Type_: List of &lt;a href=&#34;reverttospot.md&#34;&gt;RevertToSpot&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -439,7 +441,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="scheduledtask.md">ScheduledTask</a>
+_Type_: List of &lt;a href=&#34;scheduledtask.md&#34;&gt;ScheduledTask&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -447,7 +449,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -455,7 +457,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="domains.md">Domains</a>
+_Type_: List of &lt;a href=&#34;domains.md&#34;&gt;Domains&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -463,7 +465,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="recordsets.md">RecordSets</a>
+_Type_: List of &lt;a href=&#34;recordsets.md&#34;&gt;RecordSets&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

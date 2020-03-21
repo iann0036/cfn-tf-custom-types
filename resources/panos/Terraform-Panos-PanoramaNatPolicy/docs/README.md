@@ -12,6 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Panos::PanoramaNatPolicy",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#dataddress" title="DatAddress">DatAddress</a>" : <i>String</i>,
         "<a href="#datdynamicdistribution" title="DatDynamicDistribution">DatDynamicDistribution</a>" : <i>String</i>,
         "<a href="#datport" title="DatPort">DatPort</a>" : <i>Double</i>,
@@ -21,7 +22,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#destinationzone" title="DestinationZone">DestinationZone</a>" : <i>String</i>,
         "<a href="#devicegroup" title="DeviceGroup">DeviceGroup</a>" : <i>String</i>,
         "<a href="#disabled" title="Disabled">Disabled</a>" : <i>Boolean</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#negatetarget" title="NegateTarget">NegateTarget</a>" : <i>Boolean</i>,
         "<a href="#rulebase" title="Rulebase">Rulebase</a>" : <i>String</i>,
@@ -43,7 +43,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
         "<a href="#tointerface" title="ToInterface">ToInterface</a>" : <i>String</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-        "<a href="#target" title="Target">Target</a>" : <i>[ <a href="target.md">Target</a>, ... ]</i>
+        "<a href="#target" title="Target">Target</a>" : <i>[ &lt;a href=&#34;target.md&#34;&gt;Target&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -53,6 +53,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Panos::PanoramaNatPolicy
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#dataddress" title="DatAddress">DatAddress</a>: <i>String</i>
     <a href="#datdynamicdistribution" title="DatDynamicDistribution">DatDynamicDistribution</a>: <i>String</i>
     <a href="#datport" title="DatPort">DatPort</a>: <i>Double</i>
@@ -63,7 +64,6 @@ Properties:
     <a href="#destinationzone" title="DestinationZone">DestinationZone</a>: <i>String</i>
     <a href="#devicegroup" title="DeviceGroup">DeviceGroup</a>: <i>String</i>
     <a href="#disabled" title="Disabled">Disabled</a>: <i>Boolean</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#negatetarget" title="NegateTarget">NegateTarget</a>: <i>Boolean</i>
     <a href="#rulebase" title="Rulebase">Rulebase</a>: <i>String</i>
@@ -91,10 +91,20 @@ Properties:
     <a href="#tointerface" title="ToInterface">ToInterface</a>: <i>String</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
     <a href="#target" title="Target">Target</a>: <i>
-      - <a href="target.md">Target</a></i>
+      - &lt;a href=&#34;target.md&#34;&gt;Target&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DatAddress
 
@@ -165,14 +175,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -348,7 +350,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="target.md">Target</a>
+_Type_: List of &lt;a href=&#34;target.md&#34;&gt;Target&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

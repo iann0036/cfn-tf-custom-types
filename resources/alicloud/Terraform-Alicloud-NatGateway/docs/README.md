@@ -12,15 +12,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::NatGateway",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#bandwidthpackageids" title="BandwidthPackageIds">BandwidthPackageIds</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#forwardtableids" title="ForwardTableIds">ForwardTableIds</a>" : <i>String</i>,
         "<a href="#instancechargetype" title="InstanceChargeType">InstanceChargeType</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#period" title="Period">Period</a>" : <i>Double</i>,
+        "<a href="#snattableids" title="SnatTableIds">SnatTableIds</a>" : <i>String</i>,
         "<a href="#spec" title="Spec">Spec</a>" : <i>String</i>,
         "<a href="#specification" title="Specification">Specification</a>" : <i>String</i>,
         "<a href="#vpcid" title="VpcId">VpcId</a>" : <i>String</i>,
-        "<a href="#bandwidthpackages" title="BandwidthPackages">BandwidthPackages</a>" : <i>[ <a href="bandwidthpackages.md">BandwidthPackages</a>, ... ]</i>
+        "<a href="#bandwidthpackages" title="BandwidthPackages">BandwidthPackages</a>" : <i>[ &lt;a href=&#34;bandwidthpackages.md&#34;&gt;BandwidthPackages&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -30,19 +33,40 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::NatGateway
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#bandwidthpackageids" title="BandwidthPackageIds">BandwidthPackageIds</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#forwardtableids" title="ForwardTableIds">ForwardTableIds</a>: <i>String</i>
     <a href="#instancechargetype" title="InstanceChargeType">InstanceChargeType</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#period" title="Period">Period</a>: <i>Double</i>
+    <a href="#snattableids" title="SnatTableIds">SnatTableIds</a>: <i>String</i>
     <a href="#spec" title="Spec">Spec</a>: <i>String</i>
     <a href="#specification" title="Specification">Specification</a>: <i>String</i>
     <a href="#vpcid" title="VpcId">VpcId</a>: <i>String</i>
     <a href="#bandwidthpackages" title="BandwidthPackages">BandwidthPackages</a>: <i>
-      - <a href="bandwidthpackages.md">BandwidthPackages</a></i>
+      - &lt;a href=&#34;bandwidthpackages.md&#34;&gt;BandwidthPackages&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### BandwidthPackageIds
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -52,7 +76,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### ForwardTableIds
 
 _Required_: No
 
@@ -84,6 +108,14 @@ _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### SnatTableIds
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Spec
 
 _Required_: No
@@ -112,7 +144,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="bandwidthpackages.md">BandwidthPackages</a>
+_Type_: List of &lt;a href=&#34;bandwidthpackages.md&#34;&gt;BandwidthPackages&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -134,13 +166,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### BandwidthPackageIds
 
-Returns the <code>BandwidthPackageIds</code> value.
+Returns the &lt;code&gt;BandwidthPackageIds&lt;/code&gt; value.
 
 #### ForwardTableIds
 
-Returns the <code>ForwardTableIds</code> value.
+Returns the &lt;code&gt;ForwardTableIds&lt;/code&gt; value.
 
 #### SnatTableIds
 
-Returns the <code>SnatTableIds</code> value.
+Returns the &lt;code&gt;SnatTableIds&lt;/code&gt; value.
 

@@ -1,6 +1,6 @@
 # Terraform::OCI::CoreClusterNetwork
 
-An example resource schema demonstrating some basic constructs and validation rules.
+CloudFormation equivalent of oci_core_cluster_network
 
 ## Syntax
 
@@ -12,14 +12,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OCI::CoreClusterNetwork",
     "Properties" : {
-        "<a href="#title" title="Title">Title</a>" : <i>String</i>,
-        "<a href="#coversheetincluded" title="CoverSheetIncluded">CoverSheetIncluded</a>" : <i>Boolean</i>,
-        "<a href="#duedate" title="DueDate">DueDate</a>" : <i>String</i>,
-        "<a href="#approvaldate" title="ApprovalDate">ApprovalDate</a>" : <i>String</i>,
-        "<a href="#memo" title="Memo">Memo</a>" : <i>&lt;a href=&#34;secondcopyofmemo.md&#34;&gt;SecondCopyOfMemo&lt;/a&gt;</i>,
-        "<a href="#secondcopyofmemo" title="SecondCopyOfMemo">SecondCopyOfMemo</a>" : <i>&lt;a href=&#34;secondcopyofmemo.md&#34;&gt;SecondCopyOfMemo&lt;/a&gt;</i>,
-        "<a href="#testcode" title="TestCode">TestCode</a>" : <i>String</i>,
-        "<a href="#authors" title="Authors">Authors</a>" : <i>[ String, ... ]</i>
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#compartmentid" title="CompartmentId">CompartmentId</a>" : <i>String</i>,
+        "<a href="#definedtags" title="DefinedTags">DefinedTags</a>" : <i>[ &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;, ... ]</i>,
+        "<a href="#displayname" title="DisplayName">DisplayName</a>" : <i>String</i>,
+        "<a href="#freeformtags" title="FreeformTags">FreeformTags</a>" : <i>[ &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;, ... ]</i>,
+        "<a href="#state" title="State">State</a>" : <i>String</i>,
+        "<a href="#timecreated" title="TimeCreated">TimeCreated</a>" : <i>String</i>,
+        "<a href="#timeupdated" title="TimeUpdated">TimeUpdated</a>" : <i>String</i>,
+        "<a href="#instancepools" title="InstancePools">InstancePools</a>" : <i>[ &lt;a href=&#34;instancepools.md&#34;&gt;InstancePools&lt;/a&gt;, ... ]</i>,
+        "<a href="#placementconfiguration" title="PlacementConfiguration">PlacementConfiguration</a>" : <i>[ &lt;a href=&#34;placementconfiguration.md&#34;&gt;PlacementConfiguration&lt;/a&gt;, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
+        "<a href="#secondaryvnicsubnets" title="SecondaryVnicSubnets">SecondaryVnicSubnets</a>" : <i>[ &lt;a href=&#34;secondaryvnicsubnets.md&#34;&gt;SecondaryVnicSubnets&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -29,44 +33,54 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OCI::CoreClusterNetwork
 Properties:
-    <a href="#title" title="Title">Title</a>: <i>String</i>
-    <a href="#coversheetincluded" title="CoverSheetIncluded">CoverSheetIncluded</a>: <i>Boolean</i>
-    <a href="#duedate" title="DueDate">DueDate</a>: <i>String</i>
-    <a href="#approvaldate" title="ApprovalDate">ApprovalDate</a>: <i>String</i>
-    <a href="#memo" title="Memo">Memo</a>: <i>&lt;a href=&#34;secondcopyofmemo.md&#34;&gt;SecondCopyOfMemo&lt;/a&gt;</i>
-    <a href="#secondcopyofmemo" title="SecondCopyOfMemo">SecondCopyOfMemo</a>: <i>&lt;a href=&#34;secondcopyofmemo.md&#34;&gt;SecondCopyOfMemo&lt;/a&gt;</i>
-    <a href="#testcode" title="TestCode">TestCode</a>: <i>String</i>
-    <a href="#authors" title="Authors">Authors</a>: <i>
-      - String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#compartmentid" title="CompartmentId">CompartmentId</a>: <i>String</i>
+    <a href="#definedtags" title="DefinedTags">DefinedTags</a>: <i>
+      - &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;</i>
+    <a href="#displayname" title="DisplayName">DisplayName</a>: <i>String</i>
+    <a href="#freeformtags" title="FreeformTags">FreeformTags</a>: <i>
+      - &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;</i>
+    <a href="#state" title="State">State</a>: <i>String</i>
+    <a href="#timecreated" title="TimeCreated">TimeCreated</a>: <i>String</i>
+    <a href="#timeupdated" title="TimeUpdated">TimeUpdated</a>: <i>String</i>
+    <a href="#instancepools" title="InstancePools">InstancePools</a>: <i>
+      - &lt;a href=&#34;instancepools.md&#34;&gt;InstancePools&lt;/a&gt;</i>
+    <a href="#placementconfiguration" title="PlacementConfiguration">PlacementConfiguration</a>: <i>
+      - &lt;a href=&#34;placementconfiguration.md&#34;&gt;PlacementConfiguration&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#secondaryvnicsubnets" title="SecondaryVnicSubnets">SecondaryVnicSubnets</a>: <i>
+      - &lt;a href=&#34;secondaryvnicsubnets.md&#34;&gt;SecondaryVnicSubnets&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
-#### Title
+#### tfcfnid
 
-The title of the TPS report is a mandatory element.
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### CompartmentId
 
 _Required_: Yes
 
 _Type_: String
 
-_Minimum_: <code>20</code>
-
-_Maximum_: <code>250</code>
-
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### CoverSheetIncluded
-
-Required for all TPS Reports submitted after 2/19/1999
+#### DefinedTags
 
 _Required_: No
 
-_Type_: Boolean
+_Type_: List of &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### DueDate
+#### DisplayName
 
 _Required_: No
 
@@ -74,7 +88,15 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### ApprovalDate
+#### FreeformTags
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### State
 
 _Required_: No
 
@@ -82,37 +104,51 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Memo
+#### TimeCreated
 
 _Required_: No
-
-_Type_: &lt;a href=&#34;secondcopyofmemo.md&#34;&gt;SecondCopyOfMemo&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### SecondCopyOfMemo
-
-_Required_: No
-
-_Type_: &lt;a href=&#34;secondcopyofmemo.md&#34;&gt;SecondCopyOfMemo&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### TestCode
-
-_Required_: Yes
 
 _Type_: String
 
-_Allowed Values_: <code>NOT_STARTED</code> | <code>CANCELLED</code>
-
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Authors
+#### TimeUpdated
 
 _Required_: No
 
-_Type_: List of String
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### InstancePools
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;instancepools.md&#34;&gt;InstancePools&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### PlacementConfiguration
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;placementconfiguration.md&#34;&gt;PlacementConfiguration&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Timeouts
+
+_Required_: No
+
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### SecondaryVnicSubnets
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;secondaryvnicsubnets.md&#34;&gt;SecondaryVnicSubnets&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -120,7 +156,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 ### Ref
 
-When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the TPSCode.
+When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the tfcfnid.
 
 ### Fn::GetAtt
 
@@ -128,7 +164,19 @@ The `Fn::GetAtt` intrinsic function returns a value for a specified attribute of
 
 For more information about using the `Fn::GetAtt` intrinsic function, see [Fn::GetAtt](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html).
 
-#### TPSCode
+#### tfcfnid
 
-A TPS Code is automatically generated on creation and assigned as the unique identifier.
+Internal identifier for tracking resource changes. Do not use.
+
+#### State
+
+Returns the &lt;code&gt;State&lt;/code&gt; value.
+
+#### TimeCreated
+
+Returns the &lt;code&gt;TimeCreated&lt;/code&gt; value.
+
+#### TimeUpdated
+
+Returns the &lt;code&gt;TimeUpdated&lt;/code&gt; value.
 

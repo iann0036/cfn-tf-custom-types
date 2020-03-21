@@ -12,18 +12,20 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::NSXT::FirewallSection",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#displayname" title="DisplayName">DisplayName</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#insertbefore" title="InsertBefore">InsertBefore</a>" : <i>String</i>,
+        "<a href="#isdefault" title="IsDefault">IsDefault</a>" : <i>Boolean</i>,
+        "<a href="#revision" title="Revision">Revision</a>" : <i>Double</i>,
         "<a href="#sectiontype" title="SectionType">SectionType</a>" : <i>String</i>,
         "<a href="#stateful" title="Stateful">Stateful</a>" : <i>Boolean</i>,
-        "<a href="#appliedto" title="AppliedTo">AppliedTo</a>" : <i>[ <a href="appliedto.md">AppliedTo</a>, ... ]</i>,
-        "<a href="#rule" title="Rule">Rule</a>" : <i>[ <a href="rule.md">Rule</a>, ... ]</i>,
-        "<a href="#tag" title="Tag">Tag</a>" : <i>[ <a href="tag.md">Tag</a>, ... ]</i>,
-        "<a href="#destination" title="Destination">Destination</a>" : <i>[ <a href="destination.md">Destination</a>, ... ]</i>,
-        "<a href="#service" title="Service">Service</a>" : <i>[ <a href="service.md">Service</a>, ... ]</i>,
-        "<a href="#source" title="Source">Source</a>" : <i>[ <a href="source.md">Source</a>, ... ]</i>
+        "<a href="#appliedto" title="AppliedTo">AppliedTo</a>" : <i>[ &lt;a href=&#34;appliedto.md&#34;&gt;AppliedTo&lt;/a&gt;, ... ]</i>,
+        "<a href="#rule" title="Rule">Rule</a>" : <i>[ &lt;a href=&#34;rule.md&#34;&gt;Rule&lt;/a&gt;, ... ]</i>,
+        "<a href="#tag" title="Tag">Tag</a>" : <i>[ &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;, ... ]</i>,
+        "<a href="#destination" title="Destination">Destination</a>" : <i>[ &lt;a href=&#34;destination.md&#34;&gt;Destination&lt;/a&gt;, ... ]</i>,
+        "<a href="#service" title="Service">Service</a>" : <i>[ &lt;a href=&#34;service.md&#34;&gt;Service&lt;/a&gt;, ... ]</i>,
+        "<a href="#source" title="Source">Source</a>" : <i>[ &lt;a href=&#34;source.md&#34;&gt;Source&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -33,27 +35,39 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::NSXT::FirewallSection
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#displayname" title="DisplayName">DisplayName</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#insertbefore" title="InsertBefore">InsertBefore</a>: <i>String</i>
+    <a href="#isdefault" title="IsDefault">IsDefault</a>: <i>Boolean</i>
+    <a href="#revision" title="Revision">Revision</a>: <i>Double</i>
     <a href="#sectiontype" title="SectionType">SectionType</a>: <i>String</i>
     <a href="#stateful" title="Stateful">Stateful</a>: <i>Boolean</i>
     <a href="#appliedto" title="AppliedTo">AppliedTo</a>: <i>
-      - <a href="appliedto.md">AppliedTo</a></i>
+      - &lt;a href=&#34;appliedto.md&#34;&gt;AppliedTo&lt;/a&gt;</i>
     <a href="#rule" title="Rule">Rule</a>: <i>
-      - <a href="rule.md">Rule</a></i>
+      - &lt;a href=&#34;rule.md&#34;&gt;Rule&lt;/a&gt;</i>
     <a href="#tag" title="Tag">Tag</a>: <i>
-      - <a href="tag.md">Tag</a></i>
+      - &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;</i>
     <a href="#destination" title="Destination">Destination</a>: <i>
-      - <a href="destination.md">Destination</a></i>
+      - &lt;a href=&#34;destination.md&#34;&gt;Destination&lt;/a&gt;</i>
     <a href="#service" title="Service">Service</a>: <i>
-      - <a href="service.md">Service</a></i>
+      - &lt;a href=&#34;service.md&#34;&gt;Service&lt;/a&gt;</i>
     <a href="#source" title="Source">Source</a>: <i>
-      - <a href="source.md">Source</a></i>
+      - &lt;a href=&#34;source.md&#34;&gt;Source&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -71,7 +85,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### InsertBefore
 
 _Required_: No
 
@@ -79,11 +93,19 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### InsertBefore
+#### IsDefault
 
 _Required_: No
 
-_Type_: String
+_Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Revision
+
+_Required_: No
+
+_Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -107,7 +129,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="appliedto.md">AppliedTo</a>
+_Type_: List of &lt;a href=&#34;appliedto.md&#34;&gt;AppliedTo&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -115,7 +137,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="rule.md">Rule</a>
+_Type_: List of &lt;a href=&#34;rule.md&#34;&gt;Rule&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -123,7 +145,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tag.md">Tag</a>
+_Type_: List of &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -131,7 +153,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="destination.md">Destination</a>
+_Type_: List of &lt;a href=&#34;destination.md&#34;&gt;Destination&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -139,7 +161,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="service.md">Service</a>
+_Type_: List of &lt;a href=&#34;service.md&#34;&gt;Service&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -147,7 +169,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="source.md">Source</a>
+_Type_: List of &lt;a href=&#34;source.md&#34;&gt;Source&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -169,9 +191,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### IsDefault
 
-Returns the <code>IsDefault</code> value.
+Returns the &lt;code&gt;IsDefault&lt;/code&gt; value.
 
 #### Revision
 
-Returns the <code>Revision</code> value.
+Returns the &lt;code&gt;Revision&lt;/code&gt; value.
 

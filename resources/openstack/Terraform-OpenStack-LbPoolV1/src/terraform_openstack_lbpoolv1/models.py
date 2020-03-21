@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     LbMethod: Optional[str]
     LbProvider: Optional[str]
     Member: Optional[Sequence[str]]
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             LbMethod=json_data.get("LbMethod"),
             LbProvider=json_data.get("LbProvider"),
             Member=json_data.get("Member"),

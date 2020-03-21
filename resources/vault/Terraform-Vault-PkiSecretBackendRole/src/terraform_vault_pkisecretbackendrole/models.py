@@ -54,7 +54,6 @@ class ResourceModel(BaseResourceModel):
     EnforceHostnames: Optional[bool]
     ExtKeyUsage: Optional[Sequence[str]]
     GenerateLease: Optional[bool]
-    Id: Optional[str]
     KeyBits: Optional[float]
     KeyType: Optional[str]
     KeyUsage: Optional[Sequence[str]]
@@ -102,7 +101,6 @@ class ResourceModel(BaseResourceModel):
             EnforceHostnames=json_data.get("EnforceHostnames"),
             ExtKeyUsage=json_data.get("ExtKeyUsage"),
             GenerateLease=json_data.get("GenerateLease"),
-            Id=json_data.get("Id"),
             KeyBits=json_data.get("KeyBits"),
             KeyType=json_data.get("KeyType"),
             KeyUsage=json_data.get("KeyUsage"),

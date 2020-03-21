@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     EdgeGateway: Optional[str]
     Gateway: Optional[str]
     Href: Optional[str]
-    Id: Optional[str]
     InterfaceType: Optional[str]
     Name: Optional[str]
     Netmask: Optional[str]
@@ -69,7 +68,6 @@ class ResourceModel(BaseResourceModel):
             EdgeGateway=json_data.get("EdgeGateway"),
             Gateway=json_data.get("Gateway"),
             Href=json_data.get("Href"),
-            Id=json_data.get("Id"),
             InterfaceType=json_data.get("InterfaceType"),
             Name=json_data.get("Name"),
             Netmask=json_data.get("Netmask"),

@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     Enabled: Optional[bool]
     Frequency: Optional[float]
-    Id: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
     Query: Optional[str]
@@ -70,7 +69,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             Enabled=json_data.get("Enabled"),
             Frequency=json_data.get("Frequency"),
-            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),
             Query=json_data.get("Query"),

@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     AllowUpdates: Optional[bool]
     DefaultVersion: Optional[str]
     DisplayName: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     ResourceGroupName: Optional[str]
     Timeouts: Optional["_Timeouts"]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             AllowUpdates=json_data.get("AllowUpdates"),
             DefaultVersion=json_data.get("DefaultVersion"),
             DisplayName=json_data.get("DisplayName"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ResourceGroupName=json_data.get("ResourceGroupName"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),

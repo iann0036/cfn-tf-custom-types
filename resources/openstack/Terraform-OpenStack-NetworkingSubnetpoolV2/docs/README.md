@@ -12,11 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OpenStack::NetworkingSubnetpoolV2",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#addressscopeid" title="AddressScopeId">AddressScopeId</a>" : <i>String</i>,
+        "<a href="#alltags" title="AllTags">AllTags</a>" : <i>[ String, ... ]</i>,
+        "<a href="#createdat" title="CreatedAt">CreatedAt</a>" : <i>String</i>,
         "<a href="#defaultprefixlen" title="DefaultPrefixlen">DefaultPrefixlen</a>" : <i>Double</i>,
         "<a href="#defaultquota" title="DefaultQuota">DefaultQuota</a>" : <i>Double</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#ipversion" title="IpVersion">IpVersion</a>" : <i>Double</i>,
         "<a href="#isdefault" title="IsDefault">IsDefault</a>" : <i>Boolean</i>,
         "<a href="#maxprefixlen" title="MaxPrefixlen">MaxPrefixlen</a>" : <i>Double</i>,
@@ -25,10 +27,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#prefixes" title="Prefixes">Prefixes</a>" : <i>[ String, ... ]</i>,
         "<a href="#projectid" title="ProjectId">ProjectId</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
+        "<a href="#revisionnumber" title="RevisionNumber">RevisionNumber</a>" : <i>Double</i>,
         "<a href="#shared" title="Shared">Shared</a>" : <i>Boolean</i>,
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
-        "<a href="#valuespecs" title="ValueSpecs">ValueSpecs</a>" : <i>[ <a href="valuespecs.md">ValueSpecs</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
+        "<a href="#updatedat" title="UpdatedAt">UpdatedAt</a>" : <i>String</i>,
+        "<a href="#valuespecs" title="ValueSpecs">ValueSpecs</a>" : <i>[ &lt;a href=&#34;valuespecs.md&#34;&gt;ValueSpecs&lt;/a&gt;, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     }
 }
 </pre>
@@ -38,11 +42,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OpenStack::NetworkingSubnetpoolV2
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#addressscopeid" title="AddressScopeId">AddressScopeId</a>: <i>String</i>
+    <a href="#alltags" title="AllTags">AllTags</a>: <i>
+      - String</i>
+    <a href="#createdat" title="CreatedAt">CreatedAt</a>: <i>String</i>
     <a href="#defaultprefixlen" title="DefaultPrefixlen">DefaultPrefixlen</a>: <i>Double</i>
     <a href="#defaultquota" title="DefaultQuota">DefaultQuota</a>: <i>Double</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#ipversion" title="IpVersion">IpVersion</a>: <i>Double</i>
     <a href="#isdefault" title="IsDefault">IsDefault</a>: <i>Boolean</i>
     <a href="#maxprefixlen" title="MaxPrefixlen">MaxPrefixlen</a>: <i>Double</i>
@@ -52,17 +59,45 @@ Properties:
       - String</i>
     <a href="#projectid" title="ProjectId">ProjectId</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
+    <a href="#revisionnumber" title="RevisionNumber">RevisionNumber</a>: <i>Double</i>
     <a href="#shared" title="Shared">Shared</a>: <i>Boolean</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
       - String</i>
+    <a href="#updatedat" title="UpdatedAt">UpdatedAt</a>: <i>String</i>
     <a href="#valuespecs" title="ValueSpecs">ValueSpecs</a>: <i>
-      - <a href="valuespecs.md">ValueSpecs</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;valuespecs.md&#34;&gt;ValueSpecs&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### AddressScopeId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### AllTags
+
+_Required_: No
+
+_Type_: List of String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### CreatedAt
 
 _Required_: No
 
@@ -87,14 +122,6 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 
@@ -166,6 +193,14 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### RevisionNumber
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Shared
 
 _Required_: No
@@ -182,11 +217,19 @@ _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### UpdatedAt
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### ValueSpecs
 
 _Required_: No
 
-_Type_: List of <a href="valuespecs.md">ValueSpecs</a>
+_Type_: List of &lt;a href=&#34;valuespecs.md&#34;&gt;ValueSpecs&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -194,7 +237,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -216,17 +259,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AllTags
 
-Returns the <code>AllTags</code> value.
+Returns the &lt;code&gt;AllTags&lt;/code&gt; value.
 
 #### CreatedAt
 
-Returns the <code>CreatedAt</code> value.
+Returns the &lt;code&gt;CreatedAt&lt;/code&gt; value.
 
 #### RevisionNumber
 
-Returns the <code>RevisionNumber</code> value.
+Returns the &lt;code&gt;RevisionNumber&lt;/code&gt; value.
 
 #### UpdatedAt
 
-Returns the <code>UpdatedAt</code> value.
+Returns the &lt;code&gt;UpdatedAt&lt;/code&gt; value.
 

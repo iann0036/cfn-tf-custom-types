@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Bucket: Optional[str]
     ForceDestroy: Optional[bool]
-    Id: Optional[str]
     Name: Optional[str]
     EncryptionConfiguration: Optional[Sequence["_EncryptionConfiguration"]]
 
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Bucket=json_data.get("Bucket"),
             ForceDestroy=json_data.get("ForceDestroy"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             EncryptionConfiguration=json_data.get("EncryptionConfiguration"),
         )

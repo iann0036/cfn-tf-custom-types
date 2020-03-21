@@ -12,11 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureRM::ExpressRouteCircuitAuthorization",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#authorizationkey" title="AuthorizationKey">AuthorizationKey</a>" : <i>String</i>,
+        "<a href="#authorizationusestatus" title="AuthorizationUseStatus">AuthorizationUseStatus</a>" : <i>String</i>,
         "<a href="#expressroutecircuitname" title="ExpressRouteCircuitName">ExpressRouteCircuitName</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     }
 }
 </pre>
@@ -26,26 +28,46 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureRM::ExpressRouteCircuitAuthorization
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#authorizationkey" title="AuthorizationKey">AuthorizationKey</a>: <i>String</i>
+    <a href="#authorizationusestatus" title="AuthorizationUseStatus">AuthorizationUseStatus</a>: <i>String</i>
     <a href="#expressroutecircuitname" title="ExpressRouteCircuitName">ExpressRouteCircuitName</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
-#### ExpressRouteCircuitName
+#### tfcfnid
 
-_Required_: Yes
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
 
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### AuthorizationKey
 
 _Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### AuthorizationUseStatus
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ExpressRouteCircuitName
+
+_Required_: Yes
 
 _Type_: String
 
@@ -71,7 +93,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -93,9 +115,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AuthorizationKey
 
-Returns the <code>AuthorizationKey</code> value.
+Returns the &lt;code&gt;AuthorizationKey&lt;/code&gt; value.
 
 #### AuthorizationUseStatus
 
-Returns the <code>AuthorizationUseStatus</code> value.
+Returns the &lt;code&gt;AuthorizationUseStatus&lt;/code&gt; value.
 

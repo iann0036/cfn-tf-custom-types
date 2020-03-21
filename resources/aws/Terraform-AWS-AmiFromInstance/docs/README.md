@@ -12,13 +12,23 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::AmiFromInstance",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#architecture" title="Architecture">Architecture</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#enasupport" title="EnaSupport">EnaSupport</a>" : <i>Boolean</i>,
+        "<a href="#imagelocation" title="ImageLocation">ImageLocation</a>" : <i>String</i>,
+        "<a href="#kernelid" title="KernelId">KernelId</a>" : <i>String</i>,
+        "<a href="#manageebssnapshots" title="ManageEbsSnapshots">ManageEbsSnapshots</a>" : <i>Boolean</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
+        "<a href="#ramdiskid" title="RamdiskId">RamdiskId</a>" : <i>String</i>,
+        "<a href="#rootdevicename" title="RootDeviceName">RootDeviceName</a>" : <i>String</i>,
+        "<a href="#rootsnapshotid" title="RootSnapshotId">RootSnapshotId</a>" : <i>String</i>,
         "<a href="#snapshotwithoutreboot" title="SnapshotWithoutReboot">SnapshotWithoutReboot</a>" : <i>Boolean</i>,
         "<a href="#sourceinstanceid" title="SourceInstanceId">SourceInstanceId</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
+        "<a href="#sriovnetsupport" title="SriovNetSupport">SriovNetSupport</a>" : <i>String</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#virtualizationtype" title="VirtualizationType">VirtualizationType</a>" : <i>String</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     }
 }
 </pre>
@@ -28,17 +38,45 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::AmiFromInstance
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#architecture" title="Architecture">Architecture</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#enasupport" title="EnaSupport">EnaSupport</a>: <i>Boolean</i>
+    <a href="#imagelocation" title="ImageLocation">ImageLocation</a>: <i>String</i>
+    <a href="#kernelid" title="KernelId">KernelId</a>: <i>String</i>
+    <a href="#manageebssnapshots" title="ManageEbsSnapshots">ManageEbsSnapshots</a>: <i>Boolean</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
+    <a href="#ramdiskid" title="RamdiskId">RamdiskId</a>: <i>String</i>
+    <a href="#rootdevicename" title="RootDeviceName">RootDeviceName</a>: <i>String</i>
+    <a href="#rootsnapshotid" title="RootSnapshotId">RootSnapshotId</a>: <i>String</i>
     <a href="#snapshotwithoutreboot" title="SnapshotWithoutReboot">SnapshotWithoutReboot</a>: <i>Boolean</i>
     <a href="#sourceinstanceid" title="SourceInstanceId">SourceInstanceId</a>: <i>String</i>
+    <a href="#sriovnetsupport" title="SriovNetSupport">SriovNetSupport</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+    <a href="#virtualizationtype" title="VirtualizationType">VirtualizationType</a>: <i>String</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Architecture
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -48,7 +86,15 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### EnaSupport
+
+_Required_: No
+
+_Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ImageLocation
 
 _Required_: No
 
@@ -56,9 +102,49 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### KernelId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ManageEbsSnapshots
+
+_Required_: No
+
+_Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Name
 
 _Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### RamdiskId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### RootDeviceName
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### RootSnapshotId
+
+_Required_: No
 
 _Type_: String
 
@@ -80,11 +166,27 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### SriovNetSupport
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Tags
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### VirtualizationType
+
+_Required_: No
+
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -92,7 +194,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -114,41 +216,41 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Architecture
 
-Returns the <code>Architecture</code> value.
+Returns the &lt;code&gt;Architecture&lt;/code&gt; value.
 
 #### EnaSupport
 
-Returns the <code>EnaSupport</code> value.
+Returns the &lt;code&gt;EnaSupport&lt;/code&gt; value.
 
 #### ImageLocation
 
-Returns the <code>ImageLocation</code> value.
+Returns the &lt;code&gt;ImageLocation&lt;/code&gt; value.
 
 #### KernelId
 
-Returns the <code>KernelId</code> value.
+Returns the &lt;code&gt;KernelId&lt;/code&gt; value.
 
 #### ManageEbsSnapshots
 
-Returns the <code>ManageEbsSnapshots</code> value.
+Returns the &lt;code&gt;ManageEbsSnapshots&lt;/code&gt; value.
 
 #### RamdiskId
 
-Returns the <code>RamdiskId</code> value.
+Returns the &lt;code&gt;RamdiskId&lt;/code&gt; value.
 
 #### RootDeviceName
 
-Returns the <code>RootDeviceName</code> value.
+Returns the &lt;code&gt;RootDeviceName&lt;/code&gt; value.
 
 #### RootSnapshotId
 
-Returns the <code>RootSnapshotId</code> value.
+Returns the &lt;code&gt;RootSnapshotId&lt;/code&gt; value.
 
 #### SriovNetSupport
 
-Returns the <code>SriovNetSupport</code> value.
+Returns the &lt;code&gt;SriovNetSupport&lt;/code&gt; value.
 
 #### VirtualizationType
 
-Returns the <code>VirtualizationType</code> value.
+Returns the &lt;code&gt;VirtualizationType&lt;/code&gt; value.
 

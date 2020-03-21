@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     DataSource: Optional[str]
     Field: Optional[str]
-    Id: Optional[str]
     Kind: Optional[str]
     RequestTemplate: Optional[str]
     ResponseTemplate: Optional[str]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             DataSource=json_data.get("DataSource"),
             Field=json_data.get("Field"),
-            Id=json_data.get("Id"),
             Kind=json_data.get("Kind"),
             RequestTemplate=json_data.get("RequestTemplate"),
             ResponseTemplate=json_data.get("ResponseTemplate"),

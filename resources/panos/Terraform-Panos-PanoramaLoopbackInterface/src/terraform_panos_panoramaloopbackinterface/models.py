@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AdjustTcpMss: Optional[bool]
     Comment: Optional[str]
-    Id: Optional[str]
     Ipv4MssAdjust: Optional[float]
     Ipv6MssAdjust: Optional[float]
     ManagementProfile: Optional[str]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AdjustTcpMss=json_data.get("AdjustTcpMss"),
             Comment=json_data.get("Comment"),
-            Id=json_data.get("Id"),
             Ipv4MssAdjust=json_data.get("Ipv4MssAdjust"),
             Ipv6MssAdjust=json_data.get("Ipv6MssAdjust"),
             ManagementProfile=json_data.get("ManagementProfile"),

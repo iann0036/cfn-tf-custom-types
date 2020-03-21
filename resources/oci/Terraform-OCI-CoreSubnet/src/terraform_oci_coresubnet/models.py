@@ -44,7 +44,6 @@ class ResourceModel(BaseResourceModel):
     DisplayName: Optional[str]
     DnsLabel: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     Ipv6cidrBlock: Optional[str]
     Ipv6publicCidrBlock: Optional[str]
     Ipv6virtualRouterIp: Optional[str]
@@ -76,7 +75,6 @@ class ResourceModel(BaseResourceModel):
             DisplayName=json_data.get("DisplayName"),
             DnsLabel=json_data.get("DnsLabel"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             Ipv6cidrBlock=json_data.get("Ipv6cidrBlock"),
             Ipv6publicCidrBlock=json_data.get("Ipv6publicCidrBlock"),
             Ipv6virtualRouterIp=json_data.get("Ipv6virtualRouterIp"),

@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Arn: Optional[str]
     ForceDestroy: Optional[bool]
-    Id: Optional[str]
     Name: Optional[str]
     Path: Optional[str]
     PermissionsBoundary: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Arn=json_data.get("Arn"),
             ForceDestroy=json_data.get("ForceDestroy"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Path=json_data.get("Path"),
             PermissionsBoundary=json_data.get("PermissionsBoundary"),

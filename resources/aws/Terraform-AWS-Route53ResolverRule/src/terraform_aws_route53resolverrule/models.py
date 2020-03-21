@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Arn: Optional[str]
     DomainName: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     OwnerId: Optional[str]
     ResolverEndpointId: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Arn=json_data.get("Arn"),
             DomainName=json_data.get("DomainName"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             OwnerId=json_data.get("OwnerId"),
             ResolverEndpointId=json_data.get("ResolverEndpointId"),

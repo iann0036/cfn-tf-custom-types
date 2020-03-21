@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Auth: Optional[Sequence["_Auth"]]
-    Id: Optional[str]
     Name: Optional[str]
     ConvergeConfig: Optional[Sequence["_ConvergeConfig"]]
     EndpointSpec: Optional[Sequence["_EndpointSpec"]]
@@ -79,7 +78,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Auth=json_data.get("Auth"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ConvergeConfig=json_data.get("ConvergeConfig"),
             EndpointSpec=json_data.get("EndpointSpec"),

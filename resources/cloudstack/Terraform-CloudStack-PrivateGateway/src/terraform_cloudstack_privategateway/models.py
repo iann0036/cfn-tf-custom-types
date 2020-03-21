@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AclId: Optional[str]
     Gateway: Optional[str]
-    Id: Optional[str]
     IpAddress: Optional[str]
     Netmask: Optional[str]
     NetworkOffering: Optional[str]
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AclId=json_data.get("AclId"),
             Gateway=json_data.get("Gateway"),
-            Id=json_data.get("Id"),
             IpAddress=json_data.get("IpAddress"),
             Netmask=json_data.get("Netmask"),
             NetworkOffering=json_data.get("NetworkOffering"),

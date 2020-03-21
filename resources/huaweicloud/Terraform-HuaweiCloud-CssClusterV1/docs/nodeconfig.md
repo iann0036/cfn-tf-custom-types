@@ -10,8 +10,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#availabilityzone" title="AvailabilityZone">AvailabilityZone</a>" : <i>String</i>,
     "<a href="#flavor" title="Flavor">Flavor</a>" : <i>String</i>,
-    "<a href="#networkinfo" title="NetworkInfo">NetworkInfo</a>" : <i>[ <a href="nodeconfig-networkinfo.md">NetworkInfo</a>, ... ]</i>,
-    "<a href="#volume" title="Volume">Volume</a>" : <i>[ <a href="nodeconfig-volume.md">Volume</a>, ... ]</i>
+    "<a href="#networkinfo" title="NetworkInfo">NetworkInfo</a>" : <i>[ &lt;a href=&#34;nodeconfig-networkinfo.md&#34;&gt;NetworkInfo&lt;/a&gt;, ... ]</i>,
+    "<a href="#volume" title="Volume">Volume</a>" : <i>[ &lt;a href=&#34;nodeconfig-volume.md&#34;&gt;Volume&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -21,9 +21,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#availabilityzone" title="AvailabilityZone">AvailabilityZone</a>: <i>String</i>
 <a href="#flavor" title="Flavor">Flavor</a>: <i>String</i>
 <a href="#networkinfo" title="NetworkInfo">NetworkInfo</a>: <i>
-      - <a href="nodeconfig-networkinfo.md">NetworkInfo</a></i>
+      - &lt;a href=&#34;nodeconfig-networkinfo.md&#34;&gt;NetworkInfo&lt;/a&gt;</i>
 <a href="#volume" title="Volume">Volume</a>: <i>
-      - <a href="nodeconfig-volume.md">Volume</a></i>
+      - &lt;a href=&#34;nodeconfig-volume.md&#34;&gt;Volume&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -31,7 +31,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### AvailabilityZone
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -39,7 +38,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Flavor
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -47,16 +45,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### NetworkInfo
 
 _Required_: No
-
-_Type_: List of <a href="nodeconfig-networkinfo.md">NetworkInfo</a>
+_Type_: List of &lt;a href=&#34;nodeconfig-networkinfo.md&#34;&gt;NetworkInfo&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Volume
 
 _Required_: No
-
-_Type_: List of <a href="nodeconfig-volume.md">Volume</a>
+_Type_: List of &lt;a href=&#34;nodeconfig-volume.md&#34;&gt;Volume&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

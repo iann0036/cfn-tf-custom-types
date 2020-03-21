@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     EventhubEndpointName: Optional[str]
-    Id: Optional[str]
     IothubName: Optional[str]
     Name: Optional[str]
     ResourceGroupName: Optional[str]
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             EventhubEndpointName=json_data.get("EventhubEndpointName"),
-            Id=json_data.get("Id"),
             IothubName=json_data.get("IothubName"),
             Name=json_data.get("Name"),
             ResourceGroupName=json_data.get("ResourceGroupName"),

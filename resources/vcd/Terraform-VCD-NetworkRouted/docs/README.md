@@ -12,6 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::VCD::NetworkRouted",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#dns1" title="Dns1">Dns1</a>" : <i>String</i>,
         "<a href="#dns2" title="Dns2">Dns2</a>" : <i>String</i>,
@@ -19,15 +20,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#edgegateway" title="EdgeGateway">EdgeGateway</a>" : <i>String</i>,
         "<a href="#gateway" title="Gateway">Gateway</a>" : <i>String</i>,
         "<a href="#href" title="Href">Href</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#interfacetype" title="InterfaceType">InterfaceType</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#netmask" title="Netmask">Netmask</a>" : <i>String</i>,
         "<a href="#org" title="Org">Org</a>" : <i>String</i>,
         "<a href="#shared" title="Shared">Shared</a>" : <i>Boolean</i>,
         "<a href="#vdc" title="Vdc">Vdc</a>" : <i>String</i>,
-        "<a href="#dhcppool" title="DhcpPool">DhcpPool</a>" : <i>[ <a href="dhcppool.md">DhcpPool</a>, ... ]</i>,
-        "<a href="#staticippool" title="StaticIpPool">StaticIpPool</a>" : <i>[ <a href="staticippool.md">StaticIpPool</a>, ... ]</i>
+        "<a href="#dhcppool" title="DhcpPool">DhcpPool</a>" : <i>[ &lt;a href=&#34;dhcppool.md&#34;&gt;DhcpPool&lt;/a&gt;, ... ]</i>,
+        "<a href="#staticippool" title="StaticIpPool">StaticIpPool</a>" : <i>[ &lt;a href=&#34;staticippool.md&#34;&gt;StaticIpPool&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -37,6 +37,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::VCD::NetworkRouted
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#dns1" title="Dns1">Dns1</a>: <i>String</i>
     <a href="#dns2" title="Dns2">Dns2</a>: <i>String</i>
@@ -44,7 +45,6 @@ Properties:
     <a href="#edgegateway" title="EdgeGateway">EdgeGateway</a>: <i>String</i>
     <a href="#gateway" title="Gateway">Gateway</a>: <i>String</i>
     <a href="#href" title="Href">Href</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#interfacetype" title="InterfaceType">InterfaceType</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#netmask" title="Netmask">Netmask</a>: <i>String</i>
@@ -52,12 +52,22 @@ Properties:
     <a href="#shared" title="Shared">Shared</a>: <i>Boolean</i>
     <a href="#vdc" title="Vdc">Vdc</a>: <i>String</i>
     <a href="#dhcppool" title="DhcpPool">DhcpPool</a>: <i>
-      - <a href="dhcppool.md">DhcpPool</a></i>
+      - &lt;a href=&#34;dhcppool.md&#34;&gt;DhcpPool&lt;/a&gt;</i>
     <a href="#staticippool" title="StaticIpPool">StaticIpPool</a>: <i>
-      - <a href="staticippool.md">StaticIpPool</a></i>
+      - &lt;a href=&#34;staticippool.md&#34;&gt;StaticIpPool&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -108,14 +118,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Href
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 
@@ -175,7 +177,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="dhcppool.md">DhcpPool</a>
+_Type_: List of &lt;a href=&#34;dhcppool.md&#34;&gt;DhcpPool&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -183,7 +185,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="staticippool.md">StaticIpPool</a>
+_Type_: List of &lt;a href=&#34;staticippool.md&#34;&gt;StaticIpPool&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

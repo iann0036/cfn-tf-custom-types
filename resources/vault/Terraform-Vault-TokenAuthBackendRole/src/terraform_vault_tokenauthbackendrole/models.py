@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     BoundCidrs: Optional[Sequence[str]]
     DisallowedPolicies: Optional[Sequence[str]]
     ExplicitMaxTtl: Optional[str]
-    Id: Optional[str]
     Orphan: Optional[bool]
     PathSuffix: Optional[str]
     Period: Optional[str]
@@ -69,7 +68,6 @@ class ResourceModel(BaseResourceModel):
             BoundCidrs=json_data.get("BoundCidrs"),
             DisallowedPolicies=json_data.get("DisallowedPolicies"),
             ExplicitMaxTtl=json_data.get("ExplicitMaxTtl"),
-            Id=json_data.get("Id"),
             Orphan=json_data.get("Orphan"),
             PathSuffix=json_data.get("PathSuffix"),
             Period=json_data.get("Period"),

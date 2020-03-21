@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     RecoveryVaultName: Optional[str]
     ResourceGroupName: Optional[str]
     StorageAccountId: Optional[str]
@@ -51,7 +50,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             RecoveryVaultName=json_data.get("RecoveryVaultName"),
             ResourceGroupName=json_data.get("ResourceGroupName"),
             StorageAccountId=json_data.get("StorageAccountId"),

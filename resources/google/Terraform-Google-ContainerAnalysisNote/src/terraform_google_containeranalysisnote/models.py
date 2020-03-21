@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Project: Optional[str]
     AttestationAuthority: Optional[Sequence["_AttestationAuthority"]]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Project=json_data.get("Project"),
             AttestationAuthority=json_data.get("AttestationAuthority"),

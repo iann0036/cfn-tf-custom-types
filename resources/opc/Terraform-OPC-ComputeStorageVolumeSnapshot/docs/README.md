@@ -12,14 +12,26 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OPC::ComputeStorageVolumeSnapshot",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#account" title="Account">Account</a>" : <i>String</i>,
         "<a href="#collocated" title="Collocated">Collocated</a>" : <i>Boolean</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#machineimagename" title="MachineImageName">MachineImageName</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#parentvolumebootable" title="ParentVolumeBootable">ParentVolumeBootable</a>" : <i>Boolean</i>,
+        "<a href="#platform" title="Platform">Platform</a>" : <i>String</i>,
+        "<a href="#property" title="Property">Property</a>" : <i>String</i>,
+        "<a href="#size" title="Size">Size</a>" : <i>String</i>,
+        "<a href="#snapshotid" title="SnapshotId">SnapshotId</a>" : <i>String</i>,
+        "<a href="#snapshottimestamp" title="SnapshotTimestamp">SnapshotTimestamp</a>" : <i>String</i>,
+        "<a href="#starttimestamp" title="StartTimestamp">StartTimestamp</a>" : <i>String</i>,
+        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
+        "<a href="#statusdetail" title="StatusDetail">StatusDetail</a>" : <i>String</i>,
+        "<a href="#statustimestamp" title="StatusTimestamp">StatusTimestamp</a>" : <i>String</i>,
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
+        "<a href="#uri" title="Uri">Uri</a>" : <i>String</i>,
         "<a href="#volumename" title="VolumeName">VolumeName</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     }
 }
 </pre>
@@ -29,18 +41,48 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OPC::ComputeStorageVolumeSnapshot
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#account" title="Account">Account</a>: <i>String</i>
     <a href="#collocated" title="Collocated">Collocated</a>: <i>Boolean</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#machineimagename" title="MachineImageName">MachineImageName</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#parentvolumebootable" title="ParentVolumeBootable">ParentVolumeBootable</a>: <i>Boolean</i>
+    <a href="#platform" title="Platform">Platform</a>: <i>String</i>
+    <a href="#property" title="Property">Property</a>: <i>String</i>
+    <a href="#size" title="Size">Size</a>: <i>String</i>
+    <a href="#snapshotid" title="SnapshotId">SnapshotId</a>: <i>String</i>
+    <a href="#snapshottimestamp" title="SnapshotTimestamp">SnapshotTimestamp</a>: <i>String</i>
+    <a href="#starttimestamp" title="StartTimestamp">StartTimestamp</a>: <i>String</i>
+    <a href="#status" title="Status">Status</a>: <i>String</i>
+    <a href="#statusdetail" title="StatusDetail">StatusDetail</a>: <i>String</i>
+    <a href="#statustimestamp" title="StatusTimestamp">StatusTimestamp</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
       - String</i>
+    <a href="#uri" title="Uri">Uri</a>: <i>String</i>
     <a href="#volumename" title="VolumeName">VolumeName</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Account
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Collocated
 
@@ -58,7 +100,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### MachineImageName
 
 _Required_: No
 
@@ -82,11 +124,91 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### Platform
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Property
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Size
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### SnapshotId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### SnapshotTimestamp
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### StartTimestamp
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Status
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### StatusDetail
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### StatusTimestamp
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Tags
 
 _Required_: No
 
 _Type_: List of String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Uri
+
+_Required_: No
+
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -102,7 +224,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -124,49 +246,49 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Account
 
-Returns the <code>Account</code> value.
+Returns the &lt;code&gt;Account&lt;/code&gt; value.
 
 #### MachineImageName
 
-Returns the <code>MachineImageName</code> value.
+Returns the &lt;code&gt;MachineImageName&lt;/code&gt; value.
 
 #### Platform
 
-Returns the <code>Platform</code> value.
+Returns the &lt;code&gt;Platform&lt;/code&gt; value.
 
 #### Property
 
-Returns the <code>Property</code> value.
+Returns the &lt;code&gt;Property&lt;/code&gt; value.
 
 #### Size
 
-Returns the <code>Size</code> value.
+Returns the &lt;code&gt;Size&lt;/code&gt; value.
 
 #### SnapshotId
 
-Returns the <code>SnapshotId</code> value.
+Returns the &lt;code&gt;SnapshotId&lt;/code&gt; value.
 
 #### SnapshotTimestamp
 
-Returns the <code>SnapshotTimestamp</code> value.
+Returns the &lt;code&gt;SnapshotTimestamp&lt;/code&gt; value.
 
 #### StartTimestamp
 
-Returns the <code>StartTimestamp</code> value.
+Returns the &lt;code&gt;StartTimestamp&lt;/code&gt; value.
 
 #### Status
 
-Returns the <code>Status</code> value.
+Returns the &lt;code&gt;Status&lt;/code&gt; value.
 
 #### StatusDetail
 
-Returns the <code>StatusDetail</code> value.
+Returns the &lt;code&gt;StatusDetail&lt;/code&gt; value.
 
 #### StatusTimestamp
 
-Returns the <code>StatusTimestamp</code> value.
+Returns the &lt;code&gt;StatusTimestamp&lt;/code&gt; value.
 
 #### Uri
 
-Returns the <code>Uri</code> value.
+Returns the &lt;code&gt;Uri&lt;/code&gt; value.
 

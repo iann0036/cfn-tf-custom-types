@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AccessPolicies: Optional[str]
     DomainName: Optional[str]
-    Id: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -51,7 +50,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AccessPolicies=json_data.get("AccessPolicies"),
             DomainName=json_data.get("DomainName"),
-            Id=json_data.get("Id"),
         )
 
 

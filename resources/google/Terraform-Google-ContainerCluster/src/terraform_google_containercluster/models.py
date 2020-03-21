@@ -46,7 +46,6 @@ class ResourceModel(BaseResourceModel):
     EnableLegacyAbac: Optional[bool]
     EnableTpu: Optional[bool]
     Endpoint: Optional[str]
-    Id: Optional[str]
     InitialNodeCount: Optional[float]
     InstanceGroupUrls: Optional[Sequence[str]]
     LabelFingerprint: Optional[str]
@@ -115,7 +114,6 @@ class ResourceModel(BaseResourceModel):
             EnableLegacyAbac=json_data.get("EnableLegacyAbac"),
             EnableTpu=json_data.get("EnableTpu"),
             Endpoint=json_data.get("Endpoint"),
-            Id=json_data.get("Id"),
             InitialNodeCount=json_data.get("InitialNodeCount"),
             InstanceGroupUrls=json_data.get("InstanceGroupUrls"),
             LabelFingerprint=json_data.get("LabelFingerprint"),

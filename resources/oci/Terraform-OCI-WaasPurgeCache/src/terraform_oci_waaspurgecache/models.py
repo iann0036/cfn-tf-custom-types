@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     Resources: Optional[Sequence[str]]
     WaasPolicyId: Optional[str]
     Timeouts: Optional["_Timeouts"]
@@ -50,7 +49,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             Resources=json_data.get("Resources"),
             WaasPolicyId=json_data.get("WaasPolicyId"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),

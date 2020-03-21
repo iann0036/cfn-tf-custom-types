@@ -20,9 +20,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#securitygroupids" title="SecurityGroupIds">SecurityGroupIds</a>" : <i>[ String, ... ]</i>,
     "<a href="#spotiamfleetrole" title="SpotIamFleetRole">SpotIamFleetRole</a>" : <i>String</i>,
     "<a href="#subnets" title="Subnets">Subnets</a>" : <i>[ String, ... ]</i>,
-    "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="computeresources-tags.md">Tags</a>, ... ]</i>,
+    "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;computeresources-tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
     "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-    "<a href="#launchtemplate" title="LaunchTemplate">LaunchTemplate</a>" : <i>[ <a href="computeresources-launchtemplate.md">LaunchTemplate</a>, ... ]</i>
+    "<a href="#launchtemplate" title="LaunchTemplate">LaunchTemplate</a>" : <i>[ &lt;a href=&#34;computeresources-launchtemplate.md&#34;&gt;LaunchTemplate&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -45,10 +45,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#subnets" title="Subnets">Subnets</a>: <i>
       - String</i>
 <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="computeresources-tags.md">Tags</a></i>
+      - &lt;a href=&#34;computeresources-tags.md&#34;&gt;Tags&lt;/a&gt;</i>
 <a href="#type" title="Type">Type</a>: <i>String</i>
 <a href="#launchtemplate" title="LaunchTemplate">LaunchTemplate</a>: <i>
-      - <a href="computeresources-launchtemplate.md">LaunchTemplate</a></i>
+      - &lt;a href=&#34;computeresources-launchtemplate.md&#34;&gt;LaunchTemplate&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -56,7 +56,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### AllocationStrategy
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -64,7 +63,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### BidPercentage
 
 _Required_: No
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -72,7 +70,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DesiredVcpus
 
 _Required_: No
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -80,7 +77,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Ec2KeyPair
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -88,7 +84,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ImageId
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -96,7 +91,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### InstanceRole
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -104,7 +98,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### InstanceType
 
 _Required_: Yes
-
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -112,7 +105,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### MaxVcpus
 
 _Required_: Yes
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -120,7 +112,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### MinVcpus
 
 _Required_: Yes
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -128,7 +119,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SecurityGroupIds
 
 _Required_: Yes
-
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -136,7 +126,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SpotIamFleetRole
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -144,7 +133,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Subnets
 
 _Required_: Yes
-
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -152,15 +140,13 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Tags
 
 _Required_: No
-
-_Type_: List of <a href="computeresources-tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;computeresources-tags.md&#34;&gt;Tags&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -168,8 +154,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### LaunchTemplate
 
 _Required_: No
-
-_Type_: List of <a href="computeresources-launchtemplate.md">LaunchTemplate</a>
+_Type_: List of &lt;a href=&#34;computeresources-launchtemplate.md&#34;&gt;LaunchTemplate&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     ComputeEnvironmentNamePrefix: Optional[str]
     EccClusterArn: Optional[str]
     EcsClusterArn: Optional[str]
-    Id: Optional[str]
     ServiceRole: Optional[str]
     State: Optional[str]
     Status: Optional[str]
@@ -64,7 +63,6 @@ class ResourceModel(BaseResourceModel):
             ComputeEnvironmentNamePrefix=json_data.get("ComputeEnvironmentNamePrefix"),
             EccClusterArn=json_data.get("EccClusterArn"),
             EcsClusterArn=json_data.get("EcsClusterArn"),
-            Id=json_data.get("Id"),
             ServiceRole=json_data.get("ServiceRole"),
             State=json_data.get("State"),
             Status=json_data.get("Status"),

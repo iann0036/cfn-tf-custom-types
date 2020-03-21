@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     Cpu: Optional[str]
     ExecutionRoleArn: Optional[str]
     Family: Optional[str]
-    Id: Optional[str]
     IpcMode: Optional[str]
     Memory: Optional[str]
     NetworkMode: Optional[str]
@@ -70,7 +69,6 @@ class ResourceModel(BaseResourceModel):
             Cpu=json_data.get("Cpu"),
             ExecutionRoleArn=json_data.get("ExecutionRoleArn"),
             Family=json_data.get("Family"),
-            Id=json_data.get("Id"),
             IpcMode=json_data.get("IpcMode"),
             Memory=json_data.get("Memory"),
             NetworkMode=json_data.get("NetworkMode"),

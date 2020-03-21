@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     RepeatHours: Optional[Sequence[float]]
     RepeatWeekdays: Optional[Sequence[float]]
     RetentionDays: Optional[float]
@@ -51,7 +50,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             RepeatHours=json_data.get("RepeatHours"),
             RepeatWeekdays=json_data.get("RepeatWeekdays"),
             RetentionDays=json_data.get("RetentionDays"),

@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     HostRecord: Optional[str]
-    Id: Optional[str]
     Locked: Optional[bool]
     Name: Optional[str]
     Priority: Optional[float]
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             HostRecord=json_data.get("HostRecord"),
-            Id=json_data.get("Id"),
             Locked=json_data.get("Locked"),
             Name=json_data.get("Name"),
             Priority=json_data.get("Priority"),

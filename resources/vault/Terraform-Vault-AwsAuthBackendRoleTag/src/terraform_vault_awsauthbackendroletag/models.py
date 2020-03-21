@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AllowInstanceMigration: Optional[bool]
     Backend: Optional[str]
     DisallowReauthentication: Optional[bool]
-    Id: Optional[str]
     InstanceId: Optional[str]
     MaxTtl: Optional[str]
     Policies: Optional[Sequence[str]]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             AllowInstanceMigration=json_data.get("AllowInstanceMigration"),
             Backend=json_data.get("Backend"),
             DisallowReauthentication=json_data.get("DisallowReauthentication"),
-            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
             MaxTtl=json_data.get("MaxTtl"),
             Policies=json_data.get("Policies"),

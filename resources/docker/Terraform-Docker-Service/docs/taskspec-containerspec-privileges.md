@@ -8,8 +8,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#credentialspec" title="CredentialSpec">CredentialSpec</a>" : <i>[ <a href="taskspec-containerspec-privileges-credentialspec.md">CredentialSpec</a>, ... ]</i>,
-    "<a href="#selinuxcontext" title="SeLinuxContext">SeLinuxContext</a>" : <i>[ <a href="taskspec-containerspec-privileges-selinuxcontext.md">SeLinuxContext</a>, ... ]</i>
+    "<a href="#credentialspec" title="CredentialSpec">CredentialSpec</a>" : <i>[ &lt;a href=&#34;taskspec-containerspec-privileges-credentialspec.md&#34;&gt;CredentialSpec&lt;/a&gt;, ... ]</i>,
+    "<a href="#selinuxcontext" title="SeLinuxContext">SeLinuxContext</a>" : <i>[ &lt;a href=&#34;taskspec-containerspec-privileges-selinuxcontext.md&#34;&gt;SeLinuxContext&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -17,9 +17,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#credentialspec" title="CredentialSpec">CredentialSpec</a>: <i>
-      - <a href="taskspec-containerspec-privileges-credentialspec.md">CredentialSpec</a></i>
+      - &lt;a href=&#34;taskspec-containerspec-privileges-credentialspec.md&#34;&gt;CredentialSpec&lt;/a&gt;</i>
 <a href="#selinuxcontext" title="SeLinuxContext">SeLinuxContext</a>: <i>
-      - <a href="taskspec-containerspec-privileges-selinuxcontext.md">SeLinuxContext</a></i>
+      - &lt;a href=&#34;taskspec-containerspec-privileges-selinuxcontext.md&#34;&gt;SeLinuxContext&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -27,16 +27,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### CredentialSpec
 
 _Required_: No
-
-_Type_: List of <a href="taskspec-containerspec-privileges-credentialspec.md">CredentialSpec</a>
+_Type_: List of &lt;a href=&#34;taskspec-containerspec-privileges-credentialspec.md&#34;&gt;CredentialSpec&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SeLinuxContext
 
 _Required_: No
-
-_Type_: List of <a href="taskspec-containerspec-privileges-selinuxcontext.md">SeLinuxContext</a>
+_Type_: List of &lt;a href=&#34;taskspec-containerspec-privileges-selinuxcontext.md&#34;&gt;SeLinuxContext&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

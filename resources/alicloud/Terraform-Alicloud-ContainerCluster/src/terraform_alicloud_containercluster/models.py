@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     CidrBlock: Optional[str]
     DiskCategory: Optional[str]
     DiskSize: Optional[float]
-    Id: Optional[str]
     ImageId: Optional[str]
     InstanceType: Optional[str]
     IsOutdated: Optional[bool]
@@ -70,7 +69,6 @@ class ResourceModel(BaseResourceModel):
             CidrBlock=json_data.get("CidrBlock"),
             DiskCategory=json_data.get("DiskCategory"),
             DiskSize=json_data.get("DiskSize"),
-            Id=json_data.get("Id"),
             ImageId=json_data.get("ImageId"),
             InstanceType=json_data.get("InstanceType"),
             IsOutdated=json_data.get("IsOutdated"),

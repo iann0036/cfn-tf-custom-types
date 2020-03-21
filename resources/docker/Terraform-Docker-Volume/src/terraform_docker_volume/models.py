@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Driver: Optional[str]
     DriverOpts: Optional[Sequence["_DriverOpts"]]
-    Id: Optional[str]
     Mountpoint: Optional[str]
     Name: Optional[str]
     Labels: Optional[Sequence["_Labels"]]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Driver=json_data.get("Driver"),
             DriverOpts=json_data.get("DriverOpts"),
-            Id=json_data.get("Id"),
             Mountpoint=json_data.get("Mountpoint"),
             Name=json_data.get("Name"),
             Labels=json_data.get("Labels"),

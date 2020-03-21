@@ -12,7 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::Ec2TransitGatewayRouteTableAssociation",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#resourceid" title="ResourceId">ResourceId</a>" : <i>String</i>,
+        "<a href="#resourcetype" title="ResourceType">ResourceType</a>" : <i>String</i>,
         "<a href="#transitgatewayattachmentid" title="TransitGatewayAttachmentId">TransitGatewayAttachmentId</a>" : <i>String</i>,
         "<a href="#transitgatewayroutetableid" title="TransitGatewayRouteTableId">TransitGatewayRouteTableId</a>" : <i>String</i>
     }
@@ -24,14 +26,34 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::Ec2TransitGatewayRouteTableAssociation
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#resourceid" title="ResourceId">ResourceId</a>: <i>String</i>
+    <a href="#resourcetype" title="ResourceType">ResourceType</a>: <i>String</i>
     <a href="#transitgatewayattachmentid" title="TransitGatewayAttachmentId">TransitGatewayAttachmentId</a>: <i>String</i>
     <a href="#transitgatewayroutetableid" title="TransitGatewayRouteTableId">TransitGatewayRouteTableId</a>: <i>String</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ResourceId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ResourceType
 
 _Required_: No
 
@@ -73,9 +95,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ResourceId
 
-Returns the <code>ResourceId</code> value.
+Returns the &lt;code&gt;ResourceId&lt;/code&gt; value.
 
 #### ResourceType
 
-Returns the <code>ResourceType</code> value.
+Returns the &lt;code&gt;ResourceType&lt;/code&gt; value.
 

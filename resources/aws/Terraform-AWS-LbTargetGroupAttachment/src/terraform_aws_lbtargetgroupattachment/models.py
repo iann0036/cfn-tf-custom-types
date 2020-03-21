@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AvailabilityZone: Optional[str]
-    Id: Optional[str]
     Port: Optional[float]
     TargetGroupArn: Optional[str]
     TargetId: Optional[str]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             AvailabilityZone=json_data.get("AvailabilityZone"),
-            Id=json_data.get("Id"),
             Port=json_data.get("Port"),
             TargetGroupArn=json_data.get("TargetGroupArn"),
             TargetId=json_data.get("TargetId"),

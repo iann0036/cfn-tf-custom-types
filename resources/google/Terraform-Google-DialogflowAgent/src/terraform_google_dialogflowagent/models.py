@@ -44,7 +44,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DisplayName: Optional[str]
     EnableLogging: Optional[bool]
-    Id: Optional[str]
     MatchMode: Optional[str]
     Project: Optional[str]
     SupportedLanguageCodes: Optional[Sequence[str]]
@@ -69,7 +68,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DisplayName=json_data.get("DisplayName"),
             EnableLogging=json_data.get("EnableLogging"),
-            Id=json_data.get("Id"),
             MatchMode=json_data.get("MatchMode"),
             Project=json_data.get("Project"),
             SupportedLanguageCodes=json_data.get("SupportedLanguageCodes"),

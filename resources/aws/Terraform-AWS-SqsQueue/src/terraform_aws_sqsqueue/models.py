@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     ContentBasedDeduplication: Optional[bool]
     DelaySeconds: Optional[float]
     FifoQueue: Optional[bool]
-    Id: Optional[str]
     KmsDataKeyReusePeriodSeconds: Optional[float]
     KmsMasterKeyId: Optional[str]
     MaxMessageSize: Optional[float]
@@ -66,7 +65,6 @@ class ResourceModel(BaseResourceModel):
             ContentBasedDeduplication=json_data.get("ContentBasedDeduplication"),
             DelaySeconds=json_data.get("DelaySeconds"),
             FifoQueue=json_data.get("FifoQueue"),
-            Id=json_data.get("Id"),
             KmsDataKeyReusePeriodSeconds=json_data.get("KmsDataKeyReusePeriodSeconds"),
             KmsMasterKeyId=json_data.get("KmsMasterKeyId"),
             MaxMessageSize=json_data.get("MaxMessageSize"),

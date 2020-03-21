@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Attempts: Optional[float]
-    Id: Optional[str]
     Name: Optional[str]
     Parallelism: Optional[float]
     ResourceGroupName: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Attempts=json_data.get("Attempts"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Parallelism=json_data.get("Parallelism"),
             ResourceGroupName=json_data.get("ResourceGroupName"),

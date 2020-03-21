@@ -12,13 +12,20 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::StoragegatewayCachedIscsiVolume",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
+        "<a href="#chapenabled" title="ChapEnabled">ChapEnabled</a>" : <i>Boolean</i>,
         "<a href="#gatewayarn" title="GatewayArn">GatewayArn</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#lunnumber" title="LunNumber">LunNumber</a>" : <i>Double</i>,
         "<a href="#networkinterfaceid" title="NetworkInterfaceId">NetworkInterfaceId</a>" : <i>String</i>,
+        "<a href="#networkinterfaceport" title="NetworkInterfacePort">NetworkInterfacePort</a>" : <i>Double</i>,
         "<a href="#snapshotid" title="SnapshotId">SnapshotId</a>" : <i>String</i>,
         "<a href="#sourcevolumearn" title="SourceVolumeArn">SourceVolumeArn</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#targetarn" title="TargetArn">TargetArn</a>" : <i>String</i>,
         "<a href="#targetname" title="TargetName">TargetName</a>" : <i>String</i>,
+        "<a href="#volumearn" title="VolumeArn">VolumeArn</a>" : <i>String</i>,
+        "<a href="#volumeid" title="VolumeId">VolumeId</a>" : <i>String</i>,
         "<a href="#volumesizeinbytes" title="VolumeSizeInBytes">VolumeSizeInBytes</a>" : <i>Double</i>
     }
 }
@@ -29,18 +36,51 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::StoragegatewayCachedIscsiVolume
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
+    <a href="#chapenabled" title="ChapEnabled">ChapEnabled</a>: <i>Boolean</i>
     <a href="#gatewayarn" title="GatewayArn">GatewayArn</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#lunnumber" title="LunNumber">LunNumber</a>: <i>Double</i>
     <a href="#networkinterfaceid" title="NetworkInterfaceId">NetworkInterfaceId</a>: <i>String</i>
+    <a href="#networkinterfaceport" title="NetworkInterfacePort">NetworkInterfacePort</a>: <i>Double</i>
     <a href="#snapshotid" title="SnapshotId">SnapshotId</a>: <i>String</i>
     <a href="#sourcevolumearn" title="SourceVolumeArn">SourceVolumeArn</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+    <a href="#targetarn" title="TargetArn">TargetArn</a>: <i>String</i>
     <a href="#targetname" title="TargetName">TargetName</a>: <i>String</i>
+    <a href="#volumearn" title="VolumeArn">VolumeArn</a>: <i>String</i>
+    <a href="#volumeid" title="VolumeId">VolumeId</a>: <i>String</i>
     <a href="#volumesizeinbytes" title="VolumeSizeInBytes">VolumeSizeInBytes</a>: <i>Double</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Arn
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ChapEnabled
+
+_Required_: No
+
+_Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GatewayArn
 
@@ -50,11 +90,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### LunNumber
 
 _Required_: No
 
-_Type_: String
+_Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -63,6 +103,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: Yes
 
 _Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### NetworkInterfacePort
+
+_Required_: No
+
+_Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -86,13 +134,37 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### TargetArn
+
+_Required_: No
+
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TargetName
 
 _Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### VolumeArn
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### VolumeId
+
+_Required_: No
 
 _Type_: String
 
@@ -124,29 +196,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the <code>Arn</code> value.
+Returns the &lt;code&gt;Arn&lt;/code&gt; value.
 
 #### ChapEnabled
 
-Returns the <code>ChapEnabled</code> value.
+Returns the &lt;code&gt;ChapEnabled&lt;/code&gt; value.
 
 #### LunNumber
 
-Returns the <code>LunNumber</code> value.
+Returns the &lt;code&gt;LunNumber&lt;/code&gt; value.
 
 #### NetworkInterfacePort
 
-Returns the <code>NetworkInterfacePort</code> value.
+Returns the &lt;code&gt;NetworkInterfacePort&lt;/code&gt; value.
 
 #### TargetArn
 
-Returns the <code>TargetArn</code> value.
+Returns the &lt;code&gt;TargetArn&lt;/code&gt; value.
 
 #### VolumeArn
 
-Returns the <code>VolumeArn</code> value.
+Returns the &lt;code&gt;VolumeArn&lt;/code&gt; value.
 
 #### VolumeId
 
-Returns the <code>VolumeId</code> value.
+Returns the &lt;code&gt;VolumeId&lt;/code&gt; value.
 

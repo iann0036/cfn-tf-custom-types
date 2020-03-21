@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     VpcId: Optional[str]
     VpcRegion: Optional[str]
     ZoneId: Optional[str]
@@ -50,7 +49,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             VpcId=json_data.get("VpcId"),
             VpcRegion=json_data.get("VpcRegion"),
             ZoneId=json_data.get("ZoneId"),

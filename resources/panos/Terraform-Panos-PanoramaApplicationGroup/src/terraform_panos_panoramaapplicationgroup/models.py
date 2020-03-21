@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Applications: Optional[Sequence[str]]
     DeviceGroup: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
 
     @classmethod
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Applications=json_data.get("Applications"),
             DeviceGroup=json_data.get("DeviceGroup"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
         )
 

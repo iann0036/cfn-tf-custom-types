@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AccessEndpoint: Optional[str]
     ConnectorEndpointIpAddresses: Optional[Sequence[str]]
     ConnectorOutboundIpAddresses: Optional[Sequence[str]]
-    Id: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
     Parameters: Optional[Sequence["_Parameters"]]
@@ -63,7 +62,6 @@ class ResourceModel(BaseResourceModel):
             AccessEndpoint=json_data.get("AccessEndpoint"),
             ConnectorEndpointIpAddresses=json_data.get("ConnectorEndpointIpAddresses"),
             ConnectorOutboundIpAddresses=json_data.get("ConnectorOutboundIpAddresses"),
-            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),
             Parameters=json_data.get("Parameters"),

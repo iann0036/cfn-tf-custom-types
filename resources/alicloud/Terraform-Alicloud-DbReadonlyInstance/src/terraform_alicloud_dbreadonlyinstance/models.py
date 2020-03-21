@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     ConnectionString: Optional[str]
     Engine: Optional[str]
     EngineVersion: Optional[str]
-    Id: Optional[str]
     InstanceName: Optional[str]
     InstanceStorage: Optional[float]
     InstanceType: Optional[str]
@@ -63,7 +62,6 @@ class ResourceModel(BaseResourceModel):
             ConnectionString=json_data.get("ConnectionString"),
             Engine=json_data.get("Engine"),
             EngineVersion=json_data.get("EngineVersion"),
-            Id=json_data.get("Id"),
             InstanceName=json_data.get("InstanceName"),
             InstanceStorage=json_data.get("InstanceStorage"),
             InstanceType=json_data.get("InstanceType"),

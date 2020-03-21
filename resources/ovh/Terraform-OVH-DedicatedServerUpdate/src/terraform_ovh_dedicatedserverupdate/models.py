@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     BootId: Optional[float]
-    Id: Optional[str]
     Monitoring: Optional[bool]
     ServiceName: Optional[str]
     State: Optional[str]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             BootId=json_data.get("BootId"),
-            Id=json_data.get("Id"),
             Monitoring=json_data.get("Monitoring"),
             ServiceName=json_data.get("ServiceName"),
             State=json_data.get("State"),

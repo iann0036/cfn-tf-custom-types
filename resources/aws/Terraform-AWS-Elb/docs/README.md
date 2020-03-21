@@ -12,11 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::Elb",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#availabilityzones" title="AvailabilityZones">AvailabilityZones</a>" : <i>[ String, ... ]</i>,
         "<a href="#connectiondraining" title="ConnectionDraining">ConnectionDraining</a>" : <i>Boolean</i>,
         "<a href="#connectiondrainingtimeout" title="ConnectionDrainingTimeout">ConnectionDrainingTimeout</a>" : <i>Double</i>,
         "<a href="#crosszoneloadbalancing" title="CrossZoneLoadBalancing">CrossZoneLoadBalancing</a>" : <i>Boolean</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#dnsname" title="DnsName">DnsName</a>" : <i>String</i>,
         "<a href="#idletimeout" title="IdleTimeout">IdleTimeout</a>" : <i>Double</i>,
         "<a href="#instances" title="Instances">Instances</a>" : <i>[ String, ... ]</i>,
         "<a href="#internal" title="Internal">Internal</a>" : <i>Boolean</i>,
@@ -24,11 +26,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#nameprefix" title="NamePrefix">NamePrefix</a>" : <i>String</i>,
         "<a href="#securitygroups" title="SecurityGroups">SecurityGroups</a>" : <i>[ String, ... ]</i>,
         "<a href="#sourcesecuritygroup" title="SourceSecurityGroup">SourceSecurityGroup</a>" : <i>String</i>,
+        "<a href="#sourcesecuritygroupid" title="SourceSecurityGroupId">SourceSecurityGroupId</a>" : <i>String</i>,
         "<a href="#subnets" title="Subnets">Subnets</a>" : <i>[ String, ... ]</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
-        "<a href="#accesslogs" title="AccessLogs">AccessLogs</a>" : <i>[ <a href="accesslogs.md">AccessLogs</a>, ... ]</i>,
-        "<a href="#healthcheck" title="HealthCheck">HealthCheck</a>" : <i>[ <a href="healthcheck.md">HealthCheck</a>, ... ]</i>,
-        "<a href="#listener" title="Listener">Listener</a>" : <i>[ <a href="listener.md">Listener</a>, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#zoneid" title="ZoneId">ZoneId</a>" : <i>String</i>,
+        "<a href="#accesslogs" title="AccessLogs">AccessLogs</a>" : <i>[ &lt;a href=&#34;accesslogs.md&#34;&gt;AccessLogs&lt;/a&gt;, ... ]</i>,
+        "<a href="#healthcheck" title="HealthCheck">HealthCheck</a>" : <i>[ &lt;a href=&#34;healthcheck.md&#34;&gt;HealthCheck&lt;/a&gt;, ... ]</i>,
+        "<a href="#listener" title="Listener">Listener</a>" : <i>[ &lt;a href=&#34;listener.md&#34;&gt;Listener&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -38,12 +42,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::Elb
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#availabilityzones" title="AvailabilityZones">AvailabilityZones</a>: <i>
       - String</i>
     <a href="#connectiondraining" title="ConnectionDraining">ConnectionDraining</a>: <i>Boolean</i>
     <a href="#connectiondrainingtimeout" title="ConnectionDrainingTimeout">ConnectionDrainingTimeout</a>: <i>Double</i>
     <a href="#crosszoneloadbalancing" title="CrossZoneLoadBalancing">CrossZoneLoadBalancing</a>: <i>Boolean</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#dnsname" title="DnsName">DnsName</a>: <i>String</i>
     <a href="#idletimeout" title="IdleTimeout">IdleTimeout</a>: <i>Double</i>
     <a href="#instances" title="Instances">Instances</a>: <i>
       - String</i>
@@ -53,19 +59,39 @@ Properties:
     <a href="#securitygroups" title="SecurityGroups">SecurityGroups</a>: <i>
       - String</i>
     <a href="#sourcesecuritygroup" title="SourceSecurityGroup">SourceSecurityGroup</a>: <i>String</i>
+    <a href="#sourcesecuritygroupid" title="SourceSecurityGroupId">SourceSecurityGroupId</a>: <i>String</i>
     <a href="#subnets" title="Subnets">Subnets</a>: <i>
       - String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+    <a href="#zoneid" title="ZoneId">ZoneId</a>: <i>String</i>
     <a href="#accesslogs" title="AccessLogs">AccessLogs</a>: <i>
-      - <a href="accesslogs.md">AccessLogs</a></i>
+      - &lt;a href=&#34;accesslogs.md&#34;&gt;AccessLogs&lt;/a&gt;</i>
     <a href="#healthcheck" title="HealthCheck">HealthCheck</a>: <i>
-      - <a href="healthcheck.md">HealthCheck</a></i>
+      - &lt;a href=&#34;healthcheck.md&#34;&gt;HealthCheck&lt;/a&gt;</i>
     <a href="#listener" title="Listener">Listener</a>: <i>
-      - <a href="listener.md">Listener</a></i>
+      - &lt;a href=&#34;listener.md&#34;&gt;Listener&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Arn
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AvailabilityZones
 
@@ -99,7 +125,7 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### DnsName
 
 _Required_: No
 
@@ -163,6 +189,14 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### SourceSecurityGroupId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Subnets
 
 _Required_: No
@@ -175,7 +209,15 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ZoneId
+
+_Required_: No
+
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -183,7 +225,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="accesslogs.md">AccessLogs</a>
+_Type_: List of &lt;a href=&#34;accesslogs.md&#34;&gt;AccessLogs&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -191,7 +233,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="healthcheck.md">HealthCheck</a>
+_Type_: List of &lt;a href=&#34;healthcheck.md&#34;&gt;HealthCheck&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -199,7 +241,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="listener.md">Listener</a>
+_Type_: List of &lt;a href=&#34;listener.md&#34;&gt;Listener&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -221,17 +263,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the <code>Arn</code> value.
+Returns the &lt;code&gt;Arn&lt;/code&gt; value.
 
 #### DnsName
 
-Returns the <code>DnsName</code> value.
+Returns the &lt;code&gt;DnsName&lt;/code&gt; value.
 
 #### SourceSecurityGroupId
 
-Returns the <code>SourceSecurityGroupId</code> value.
+Returns the &lt;code&gt;SourceSecurityGroupId&lt;/code&gt; value.
 
 #### ZoneId
 
-Returns the <code>ZoneId</code> value.
+Returns the &lt;code&gt;ZoneId&lt;/code&gt; value.
 

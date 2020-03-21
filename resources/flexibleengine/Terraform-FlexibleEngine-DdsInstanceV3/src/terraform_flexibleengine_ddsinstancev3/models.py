@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AvailabilityZone: Optional[str]
     DbUsername: Optional[str]
     DiskEncryptionId: Optional[str]
-    Id: Optional[str]
     Mode: Optional[str]
     Name: Optional[str]
     Password: Optional[str]
@@ -64,7 +63,6 @@ class ResourceModel(BaseResourceModel):
             AvailabilityZone=json_data.get("AvailabilityZone"),
             DbUsername=json_data.get("DbUsername"),
             DiskEncryptionId=json_data.get("DiskEncryptionId"),
-            Id=json_data.get("Id"),
             Mode=json_data.get("Mode"),
             Name=json_data.get("Name"),
             Password=json_data.get("Password"),

@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DeviceName: Optional[str]
     ForceDetach: Optional[bool]
-    Id: Optional[str]
     InstanceId: Optional[str]
     SkipDestroy: Optional[bool]
     VolumeId: Optional[str]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DeviceName=json_data.get("DeviceName"),
             ForceDetach=json_data.get("ForceDetach"),
-            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
             SkipDestroy=json_data.get("SkipDestroy"),
             VolumeId=json_data.get("VolumeId"),

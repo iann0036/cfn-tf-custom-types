@@ -12,21 +12,24 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::GameliftFleet",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#buildid" title="BuildId">BuildId</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#ec2instancetype" title="Ec2InstanceType">Ec2InstanceType</a>" : <i>String</i>,
         "<a href="#fleettype" title="FleetType">FleetType</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#instancerolearn" title="InstanceRoleArn">InstanceRoleArn</a>" : <i>String</i>,
+        "<a href="#logpaths" title="LogPaths">LogPaths</a>" : <i>[ String, ... ]</i>,
         "<a href="#metricgroups" title="MetricGroups">MetricGroups</a>" : <i>[ String, ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#newgamesessionprotectionpolicy" title="NewGameSessionProtectionPolicy">NewGameSessionProtectionPolicy</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
-        "<a href="#ec2inboundpermission" title="Ec2InboundPermission">Ec2InboundPermission</a>" : <i>[ <a href="ec2inboundpermission.md">Ec2InboundPermission</a>, ... ]</i>,
-        "<a href="#resourcecreationlimitpolicy" title="ResourceCreationLimitPolicy">ResourceCreationLimitPolicy</a>" : <i>[ <a href="resourcecreationlimitpolicy.md">ResourceCreationLimitPolicy</a>, ... ]</i>,
-        "<a href="#runtimeconfiguration" title="RuntimeConfiguration">RuntimeConfiguration</a>" : <i>[ <a href="runtimeconfiguration.md">RuntimeConfiguration</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
-        "<a href="#serverprocess" title="ServerProcess">ServerProcess</a>" : <i>[ <a href="serverprocess.md">ServerProcess</a>, ... ]</i>
+        "<a href="#operatingsystem" title="OperatingSystem">OperatingSystem</a>" : <i>String</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#ec2inboundpermission" title="Ec2InboundPermission">Ec2InboundPermission</a>" : <i>[ &lt;a href=&#34;ec2inboundpermission.md&#34;&gt;Ec2InboundPermission&lt;/a&gt;, ... ]</i>,
+        "<a href="#resourcecreationlimitpolicy" title="ResourceCreationLimitPolicy">ResourceCreationLimitPolicy</a>" : <i>[ &lt;a href=&#34;resourcecreationlimitpolicy.md&#34;&gt;ResourceCreationLimitPolicy&lt;/a&gt;, ... ]</i>,
+        "<a href="#runtimeconfiguration" title="RuntimeConfiguration">RuntimeConfiguration</a>" : <i>[ &lt;a href=&#34;runtimeconfiguration.md&#34;&gt;RuntimeConfiguration&lt;/a&gt;, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
+        "<a href="#serverprocess" title="ServerProcess">ServerProcess</a>" : <i>[ &lt;a href=&#34;serverprocess.md&#34;&gt;ServerProcess&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -36,30 +39,52 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::GameliftFleet
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#buildid" title="BuildId">BuildId</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#ec2instancetype" title="Ec2InstanceType">Ec2InstanceType</a>: <i>String</i>
     <a href="#fleettype" title="FleetType">FleetType</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#instancerolearn" title="InstanceRoleArn">InstanceRoleArn</a>: <i>String</i>
+    <a href="#logpaths" title="LogPaths">LogPaths</a>: <i>
+      - String</i>
     <a href="#metricgroups" title="MetricGroups">MetricGroups</a>: <i>
       - String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#newgamesessionprotectionpolicy" title="NewGameSessionProtectionPolicy">NewGameSessionProtectionPolicy</a>: <i>String</i>
+    <a href="#operatingsystem" title="OperatingSystem">OperatingSystem</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
     <a href="#ec2inboundpermission" title="Ec2InboundPermission">Ec2InboundPermission</a>: <i>
-      - <a href="ec2inboundpermission.md">Ec2InboundPermission</a></i>
+      - &lt;a href=&#34;ec2inboundpermission.md&#34;&gt;Ec2InboundPermission&lt;/a&gt;</i>
     <a href="#resourcecreationlimitpolicy" title="ResourceCreationLimitPolicy">ResourceCreationLimitPolicy</a>: <i>
-      - <a href="resourcecreationlimitpolicy.md">ResourceCreationLimitPolicy</a></i>
+      - &lt;a href=&#34;resourcecreationlimitpolicy.md&#34;&gt;ResourceCreationLimitPolicy&lt;/a&gt;</i>
     <a href="#runtimeconfiguration" title="RuntimeConfiguration">RuntimeConfiguration</a>: <i>
-      - <a href="runtimeconfiguration.md">RuntimeConfiguration</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;runtimeconfiguration.md&#34;&gt;RuntimeConfiguration&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     <a href="#serverprocess" title="ServerProcess">ServerProcess</a>: <i>
-      - <a href="serverprocess.md">ServerProcess</a></i>
+      - &lt;a href=&#34;serverprocess.md&#34;&gt;ServerProcess&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Arn
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BuildId
 
@@ -93,7 +118,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### InstanceRoleArn
 
 _Required_: No
 
@@ -101,11 +126,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### InstanceRoleArn
+#### LogPaths
 
 _Required_: No
 
-_Type_: String
+_Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -133,11 +158,19 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### OperatingSystem
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Tags
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -145,7 +178,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="ec2inboundpermission.md">Ec2InboundPermission</a>
+_Type_: List of &lt;a href=&#34;ec2inboundpermission.md&#34;&gt;Ec2InboundPermission&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -153,7 +186,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="resourcecreationlimitpolicy.md">ResourceCreationLimitPolicy</a>
+_Type_: List of &lt;a href=&#34;resourcecreationlimitpolicy.md&#34;&gt;ResourceCreationLimitPolicy&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -161,7 +194,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="runtimeconfiguration.md">RuntimeConfiguration</a>
+_Type_: List of &lt;a href=&#34;runtimeconfiguration.md&#34;&gt;RuntimeConfiguration&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -169,7 +202,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -177,7 +210,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="serverprocess.md">ServerProcess</a>
+_Type_: List of &lt;a href=&#34;serverprocess.md&#34;&gt;ServerProcess&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -199,13 +232,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the <code>Arn</code> value.
+Returns the &lt;code&gt;Arn&lt;/code&gt; value.
 
 #### LogPaths
 
-Returns the <code>LogPaths</code> value.
+Returns the &lt;code&gt;LogPaths&lt;/code&gt; value.
 
 #### OperatingSystem
 
-Returns the <code>OperatingSystem</code> value.
+Returns the &lt;code&gt;OperatingSystem&lt;/code&gt; value.
 

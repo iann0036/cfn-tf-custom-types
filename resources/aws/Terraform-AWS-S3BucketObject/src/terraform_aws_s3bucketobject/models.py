@@ -47,7 +47,6 @@ class ResourceModel(BaseResourceModel):
     ContentType: Optional[str]
     Etag: Optional[str]
     ForceDestroy: Optional[bool]
-    Id: Optional[str]
     Key: Optional[str]
     KmsKeyId: Optional[str]
     Metadata: Optional[Sequence["_Metadata"]]
@@ -81,7 +80,6 @@ class ResourceModel(BaseResourceModel):
             ContentType=json_data.get("ContentType"),
             Etag=json_data.get("Etag"),
             ForceDestroy=json_data.get("ForceDestroy"),
-            Id=json_data.get("Id"),
             Key=json_data.get("Key"),
             KmsKeyId=json_data.get("KmsKeyId"),
             Metadata=json_data.get("Metadata"),

@@ -12,11 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Bitbucket::Repository",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#clonehttps" title="CloneHttps">CloneHttps</a>" : <i>String</i>,
+        "<a href="#clonessh" title="CloneSsh">CloneSsh</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#forkpolicy" title="ForkPolicy">ForkPolicy</a>" : <i>String</i>,
         "<a href="#hasissues" title="HasIssues">HasIssues</a>" : <i>Boolean</i>,
         "<a href="#haswiki" title="HasWiki">HasWiki</a>" : <i>Boolean</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#isprivate" title="IsPrivate">IsPrivate</a>" : <i>Boolean</i>,
         "<a href="#language" title="Language">Language</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
@@ -35,11 +37,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Bitbucket::Repository
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#clonehttps" title="CloneHttps">CloneHttps</a>: <i>String</i>
+    <a href="#clonessh" title="CloneSsh">CloneSsh</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#forkpolicy" title="ForkPolicy">ForkPolicy</a>: <i>String</i>
     <a href="#hasissues" title="HasIssues">HasIssues</a>: <i>Boolean</i>
     <a href="#haswiki" title="HasWiki">HasWiki</a>: <i>Boolean</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#isprivate" title="IsPrivate">IsPrivate</a>: <i>Boolean</i>
     <a href="#language" title="Language">Language</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
@@ -52,6 +56,32 @@ Properties:
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### CloneHttps
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### CloneSsh
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -82,14 +112,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -183,9 +205,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CloneHttps
 
-Returns the <code>CloneHttps</code> value.
+Returns the &lt;code&gt;CloneHttps&lt;/code&gt; value.
 
 #### CloneSsh
 
-Returns the <code>CloneSsh</code> value.
+Returns the &lt;code&gt;CloneSsh&lt;/code&gt; value.
 

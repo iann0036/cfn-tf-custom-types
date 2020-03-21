@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     Endpoints: Optional[Sequence[str]]
-    Id: Optional[str]
     Name: Optional[str]
     Region: Optional[str]
     TenantId: Optional[str]
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             Endpoints=json_data.get("Endpoints"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Region=json_data.get("Region"),
             TenantId=json_data.get("TenantId"),

@@ -12,8 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::LightsailStaticIpAttachment",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#instancename" title="InstanceName">InstanceName</a>" : <i>String</i>,
+        "<a href="#ipaddress" title="IpAddress">IpAddress</a>" : <i>String</i>,
         "<a href="#staticipname" title="StaticIpName">StaticIpName</a>" : <i>String</i>
     }
 }
@@ -24,14 +25,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::LightsailStaticIpAttachment
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#instancename" title="InstanceName">InstanceName</a>: <i>String</i>
+    <a href="#ipaddress" title="IpAddress">IpAddress</a>: <i>String</i>
     <a href="#staticipname" title="StaticIpName">StaticIpName</a>: <i>String</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
@@ -42,6 +46,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### InstanceName
 
 _Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### IpAddress
+
+_Required_: No
 
 _Type_: String
 
@@ -73,5 +85,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### IpAddress
 
-Returns the <code>IpAddress</code> value.
+Returns the &lt;code&gt;IpAddress&lt;/code&gt; value.
 

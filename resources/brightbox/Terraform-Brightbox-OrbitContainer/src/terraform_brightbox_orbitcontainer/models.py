@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     ContainerWrite: Optional[Sequence[str]]
     CreatedAt: Optional[str]
     HistoryLocation: Optional[str]
-    Id: Optional[str]
     Metadata: Optional[Sequence["_Metadata"]]
     Name: Optional[str]
     ObjectCount: Optional[float]
@@ -66,7 +65,6 @@ class ResourceModel(BaseResourceModel):
             ContainerWrite=json_data.get("ContainerWrite"),
             CreatedAt=json_data.get("CreatedAt"),
             HistoryLocation=json_data.get("HistoryLocation"),
-            Id=json_data.get("Id"),
             Metadata=json_data.get("Metadata"),
             Name=json_data.get("Name"),
             ObjectCount=json_data.get("ObjectCount"),

@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     EventRw: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     OssBucketName: Optional[str]
     OssKeyPrefix: Optional[str]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             EventRw=json_data.get("EventRw"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             OssBucketName=json_data.get("OssBucketName"),
             OssKeyPrefix=json_data.get("OssKeyPrefix"),

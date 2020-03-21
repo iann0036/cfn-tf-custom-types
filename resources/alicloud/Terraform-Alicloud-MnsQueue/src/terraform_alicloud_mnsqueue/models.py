@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DelaySeconds: Optional[float]
-    Id: Optional[str]
     MaximumMessageSize: Optional[float]
     MessageRetentionPeriod: Optional[float]
     Name: Optional[str]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             DelaySeconds=json_data.get("DelaySeconds"),
-            Id=json_data.get("Id"),
             MaximumMessageSize=json_data.get("MaximumMessageSize"),
             MessageRetentionPeriod=json_data.get("MessageRetentionPeriod"),
             Name=json_data.get("Name"),

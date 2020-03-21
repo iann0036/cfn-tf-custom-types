@@ -35,15 +35,15 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 
 @dataclass
 class ResourceModel(BaseResourceModel):
-    TPSCode: Optional[str]
-    Title: Optional[str]
-    CoverSheetIncluded: Optional[bool]
-    DueDate: Optional[str]
-    ApprovalDate: Optional[str]
-    Memo: Optional["_Memo"]
-    SecondCopyOfMemo: Optional["_Memo"]
-    TestCode: Optional[str]
-    Authors: Optional[Sequence[str]]
+    tfcfnid: Optional[str]
+    Arn: Optional[str]
+    EnableNetworkIsolation: Optional[bool]
+    ExecutionRoleArn: Optional[str]
+    Name: Optional[str]
+    Tags: Optional[Sequence["_Tags"]]
+    Container: Optional[Sequence["_Container"]]
+    PrimaryContainer: Optional[Sequence["_PrimaryContainer"]]
+    VpcConfig: Optional[Sequence["_VpcConfig"]]
 
     @classmethod
     def _deserialize(
@@ -53,15 +53,15 @@ class ResourceModel(BaseResourceModel):
         if not json_data:
             return None
         return cls(
-            TPSCode=json_data.get("TPSCode"),
-            Title=json_data.get("Title"),
-            CoverSheetIncluded=json_data.get("CoverSheetIncluded"),
-            DueDate=json_data.get("DueDate"),
-            ApprovalDate=json_data.get("ApprovalDate"),
-            Memo=Memo._deserialize(json_data.get("Memo")),
-            SecondCopyOfMemo=Memo._deserialize(json_data.get("SecondCopyOfMemo")),
-            TestCode=json_data.get("TestCode"),
-            Authors=json_data.get("Authors"),
+            tfcfnid=json_data.get("tfcfnid"),
+            Arn=json_data.get("Arn"),
+            EnableNetworkIsolation=json_data.get("EnableNetworkIsolation"),
+            ExecutionRoleArn=json_data.get("ExecutionRoleArn"),
+            Name=json_data.get("Name"),
+            Tags=json_data.get("Tags"),
+            Container=json_data.get("Container"),
+            PrimaryContainer=json_data.get("PrimaryContainer"),
+            VpcConfig=json_data.get("VpcConfig"),
         )
 
 
@@ -70,24 +70,142 @@ _ResourceModel = ResourceModel
 
 
 @dataclass
-class Memo:
-    Heading: Optional[str]
-    Body: Optional[str]
+class Tags:
+    Key: Optional[str]
+    Value: Optional[str]
 
     @classmethod
     def _deserialize(
-        cls: Type["_Memo"],
+        cls: Type["_Tags"],
         json_data: Optional[Mapping[str, Any]],
-    ) -> Optional["_Memo"]:
+    ) -> Optional["_Tags"]:
         if not json_data:
             return None
         return cls(
-            Heading=json_data.get("Heading"),
-            Body=json_data.get("Body"),
+            Key=json_data.get("Key"),
+            Value=json_data.get("Value"),
         )
 
 
 # work around possible type aliasing issues when variable has same name as a model
-_Memo = Memo
+_Tags = Tags
+
+
+@dataclass
+class Container:
+    ContainerHostname: Optional[str]
+    Environment: Optional[Sequence["_Environment"]]
+    Image: Optional[str]
+    ModelDataUrl: Optional[str]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_Container"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_Container"]:
+        if not json_data:
+            return None
+        return cls(
+            ContainerHostname=json_data.get("ContainerHostname"),
+            Environment=json_data.get("Environment"),
+            Image=json_data.get("Image"),
+            ModelDataUrl=json_data.get("ModelDataUrl"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_Container = Container
+
+
+@dataclass
+class Environment:
+    Key: Optional[str]
+    Value: Optional[str]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_Environment"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_Environment"]:
+        if not json_data:
+            return None
+        return cls(
+            Key=json_data.get("Key"),
+            Value=json_data.get("Value"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_Environment = Environment
+
+
+@dataclass
+class PrimaryContainer:
+    ContainerHostname: Optional[str]
+    Environment: Optional[Sequence["_Environment2"]]
+    Image: Optional[str]
+    ModelDataUrl: Optional[str]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_PrimaryContainer"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_PrimaryContainer"]:
+        if not json_data:
+            return None
+        return cls(
+            ContainerHostname=json_data.get("ContainerHostname"),
+            Environment=json_data.get("Environment"),
+            Image=json_data.get("Image"),
+            ModelDataUrl=json_data.get("ModelDataUrl"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_PrimaryContainer = PrimaryContainer
+
+
+@dataclass
+class Environment2:
+    Key: Optional[str]
+    Value: Optional[str]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_Environment2"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_Environment2"]:
+        if not json_data:
+            return None
+        return cls(
+            Key=json_data.get("Key"),
+            Value=json_data.get("Value"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_Environment2 = Environment2
+
+
+@dataclass
+class VpcConfig:
+    SecurityGroupIds: Optional[Sequence[str]]
+    Subnets: Optional[Sequence[str]]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_VpcConfig"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_VpcConfig"]:
+        if not json_data:
+            return None
+        return cls(
+            SecurityGroupIds=json_data.get("SecurityGroupIds"),
+            Subnets=json_data.get("Subnets"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_VpcConfig = VpcConfig
 
 

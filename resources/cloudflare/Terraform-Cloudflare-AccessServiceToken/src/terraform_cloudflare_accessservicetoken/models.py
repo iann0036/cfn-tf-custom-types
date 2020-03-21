@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AccountId: Optional[str]
     ClientId: Optional[str]
     ClientSecret: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
 
     @classmethod
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             AccountId=json_data.get("AccountId"),
             ClientId=json_data.get("ClientId"),
             ClientSecret=json_data.get("ClientSecret"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
         )
 

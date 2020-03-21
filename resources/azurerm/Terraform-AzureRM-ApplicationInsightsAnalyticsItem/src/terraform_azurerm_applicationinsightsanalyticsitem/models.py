@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     ApplicationInsightsId: Optional[str]
     Content: Optional[str]
     FunctionAlias: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Scope: Optional[str]
     TimeCreated: Optional[str]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             ApplicationInsightsId=json_data.get("ApplicationInsightsId"),
             Content=json_data.get("Content"),
             FunctionAlias=json_data.get("FunctionAlias"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Scope=json_data.get("Scope"),
             TimeCreated=json_data.get("TimeCreated"),

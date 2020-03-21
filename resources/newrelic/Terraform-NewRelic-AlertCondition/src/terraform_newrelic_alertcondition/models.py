@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     Enabled: Optional[bool]
     Entities: Optional[Sequence[float]]
     GcMetric: Optional[str]
-    Id: Optional[str]
     Metric: Optional[str]
     Name: Optional[str]
     PolicyId: Optional[float]
@@ -64,7 +63,6 @@ class ResourceModel(BaseResourceModel):
             Enabled=json_data.get("Enabled"),
             Entities=json_data.get("Entities"),
             GcMetric=json_data.get("GcMetric"),
-            Id=json_data.get("Id"),
             Metric=json_data.get("Metric"),
             Name=json_data.get("Name"),
             PolicyId=json_data.get("PolicyId"),

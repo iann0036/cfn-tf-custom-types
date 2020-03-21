@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Bucket: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Filter: Optional[Sequence["_Filter"]]
 
@@ -51,7 +50,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Bucket=json_data.get("Bucket"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Filter=json_data.get("Filter"),
         )

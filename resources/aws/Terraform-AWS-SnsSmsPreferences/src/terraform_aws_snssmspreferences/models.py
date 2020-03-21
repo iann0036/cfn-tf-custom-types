@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     DefaultSmsType: Optional[str]
     DeliveryStatusIamRoleArn: Optional[str]
     DeliveryStatusSuccessSamplingRate: Optional[str]
-    Id: Optional[str]
     MonthlySpendLimit: Optional[str]
     UsageReportS3Bucket: Optional[str]
 
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
             DefaultSmsType=json_data.get("DefaultSmsType"),
             DeliveryStatusIamRoleArn=json_data.get("DeliveryStatusIamRoleArn"),
             DeliveryStatusSuccessSamplingRate=json_data.get("DeliveryStatusSuccessSamplingRate"),
-            Id=json_data.get("Id"),
             MonthlySpendLimit=json_data.get("MonthlySpendLimit"),
             UsageReportS3Bucket=json_data.get("UsageReportS3Bucket"),
         )

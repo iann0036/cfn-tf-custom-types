@@ -81,7 +81,6 @@ class ResourceModel(BaseResourceModel):
     HaVmRestartTimeout: Optional[float]
     HostClusterExitTimeout: Optional[float]
     HostSystemIds: Optional[Sequence[str]]
-    Id: Optional[str]
     Name: Optional[str]
     ProactiveHaAutomationLevel: Optional[str]
     ProactiveHaEnabled: Optional[bool]
@@ -145,7 +144,6 @@ class ResourceModel(BaseResourceModel):
             HaVmRestartTimeout=json_data.get("HaVmRestartTimeout"),
             HostClusterExitTimeout=json_data.get("HostClusterExitTimeout"),
             HostSystemIds=json_data.get("HostSystemIds"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ProactiveHaAutomationLevel=json_data.get("ProactiveHaAutomationLevel"),
             ProactiveHaEnabled=json_data.get("ProactiveHaEnabled"),

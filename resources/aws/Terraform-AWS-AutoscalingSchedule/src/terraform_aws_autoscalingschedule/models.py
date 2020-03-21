@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     AutoscalingGroupName: Optional[str]
     DesiredCapacity: Optional[float]
     EndTime: Optional[str]
-    Id: Optional[str]
     MaxSize: Optional[float]
     MinSize: Optional[float]
     Recurrence: Optional[str]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             AutoscalingGroupName=json_data.get("AutoscalingGroupName"),
             DesiredCapacity=json_data.get("DesiredCapacity"),
             EndTime=json_data.get("EndTime"),
-            Id=json_data.get("Id"),
             MaxSize=json_data.get("MaxSize"),
             MinSize=json_data.get("MinSize"),
             Recurrence=json_data.get("Recurrence"),

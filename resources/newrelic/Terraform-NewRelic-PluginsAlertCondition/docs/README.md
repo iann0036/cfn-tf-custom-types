@@ -12,9 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::NewRelic::PluginsAlertCondition",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#enabled" title="Enabled">Enabled</a>" : <i>Boolean</i>,
         "<a href="#entities" title="Entities">Entities</a>" : <i>[ Double, ... ]</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#metric" title="Metric">Metric</a>" : <i>String</i>,
         "<a href="#metricdescription" title="MetricDescription">MetricDescription</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
@@ -23,7 +23,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#policyid" title="PolicyId">PolicyId</a>" : <i>Double</i>,
         "<a href="#runbookurl" title="RunbookUrl">RunbookUrl</a>" : <i>String</i>,
         "<a href="#valuefunction" title="ValueFunction">ValueFunction</a>" : <i>String</i>,
-        "<a href="#term" title="Term">Term</a>" : <i>[ <a href="term.md">Term</a>, ... ]</i>
+        "<a href="#term" title="Term">Term</a>" : <i>[ &lt;a href=&#34;term.md&#34;&gt;Term&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -33,10 +33,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::NewRelic::PluginsAlertCondition
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#enabled" title="Enabled">Enabled</a>: <i>Boolean</i>
     <a href="#entities" title="Entities">Entities</a>: <i>
       - Double</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#metric" title="Metric">Metric</a>: <i>String</i>
     <a href="#metricdescription" title="MetricDescription">MetricDescription</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
@@ -46,10 +46,20 @@ Properties:
     <a href="#runbookurl" title="RunbookUrl">RunbookUrl</a>: <i>String</i>
     <a href="#valuefunction" title="ValueFunction">ValueFunction</a>: <i>String</i>
     <a href="#term" title="Term">Term</a>: <i>
-      - <a href="term.md">Term</a></i>
+      - &lt;a href=&#34;term.md&#34;&gt;Term&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Enabled
 
@@ -64,14 +74,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: Yes
 
 _Type_: List of Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -143,7 +145,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="term.md">Term</a>
+_Type_: List of &lt;a href=&#34;term.md&#34;&gt;Term&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

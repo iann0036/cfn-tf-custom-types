@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     BotName: Optional[str]
     EmailAddress: Optional[str]
     EmailPassword: Optional[str]
-    Id: Optional[str]
     Location: Optional[str]
     ResourceGroupName: Optional[str]
     Timeouts: Optional["_Timeouts"]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             BotName=json_data.get("BotName"),
             EmailAddress=json_data.get("EmailAddress"),
             EmailPassword=json_data.get("EmailPassword"),
-            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             ResourceGroupName=json_data.get("ResourceGroupName"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),

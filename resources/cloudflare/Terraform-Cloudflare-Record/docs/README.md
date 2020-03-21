@@ -12,10 +12,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Cloudflare::Record",
     "Properties" : {
-        "<a href="#data" title="Data">Data</a>" : <i>[ <a href="data.md">Data</a>, ... ]</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#createdon" title="CreatedOn">CreatedOn</a>" : <i>String</i>,
+        "<a href="#data" title="Data">Data</a>" : <i>[ &lt;a href=&#34;data.md&#34;&gt;Data&lt;/a&gt;, ... ]</i>,
+        "<a href="#hostname" title="Hostname">Hostname</a>" : <i>String</i>,
+        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;, ... ]</i>,
+        "<a href="#modifiedon" title="ModifiedOn">ModifiedOn</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#priority" title="Priority">Priority</a>" : <i>Double</i>,
+        "<a href="#proxiable" title="Proxiable">Proxiable</a>" : <i>Boolean</i>,
         "<a href="#proxied" title="Proxied">Proxied</a>" : <i>Boolean</i>,
         "<a href="#ttl" title="Ttl">Ttl</a>" : <i>Double</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
@@ -30,11 +35,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Cloudflare::Record
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#createdon" title="CreatedOn">CreatedOn</a>: <i>String</i>
     <a href="#data" title="Data">Data</a>: <i>
-      - <a href="data.md">Data</a></i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+      - &lt;a href=&#34;data.md&#34;&gt;Data&lt;/a&gt;</i>
+    <a href="#hostname" title="Hostname">Hostname</a>: <i>String</i>
+    <a href="#metadata" title="Metadata">Metadata</a>: <i>
+      - &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;</i>
+    <a href="#modifiedon" title="ModifiedOn">ModifiedOn</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#priority" title="Priority">Priority</a>: <i>Double</i>
+    <a href="#proxiable" title="Proxiable">Proxiable</a>: <i>Boolean</i>
     <a href="#proxied" title="Proxied">Proxied</a>: <i>Boolean</i>
     <a href="#ttl" title="Ttl">Ttl</a>: <i>Double</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
@@ -44,15 +55,49 @@ Properties:
 
 ## Properties
 
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### CreatedOn
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Data
 
 _Required_: No
 
-_Type_: List of <a href="data.md">Data</a>
+_Type_: List of &lt;a href=&#34;data.md&#34;&gt;Data&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### Hostname
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Metadata
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ModifiedOn
 
 _Required_: No
 
@@ -73,6 +118,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Proxiable
+
+_Required_: No
+
+_Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -134,21 +187,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreatedOn
 
-Returns the <code>CreatedOn</code> value.
+Returns the &lt;code&gt;CreatedOn&lt;/code&gt; value.
 
 #### Hostname
 
-Returns the <code>Hostname</code> value.
+Returns the &lt;code&gt;Hostname&lt;/code&gt; value.
 
 #### Metadata
 
-Returns the <code>Metadata</code> value.
+Returns the &lt;code&gt;Metadata&lt;/code&gt; value.
 
 #### ModifiedOn
 
-Returns the <code>ModifiedOn</code> value.
+Returns the &lt;code&gt;ModifiedOn&lt;/code&gt; value.
 
 #### Proxiable
 
-Returns the <code>Proxiable</code> value.
+Returns the &lt;code&gt;Proxiable&lt;/code&gt; value.
 

@@ -10,7 +10,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#targetinstancecount" title="TargetInstanceCount">TargetInstanceCount</a>" : <i>Double</i>,
     "<a href="#vmsize" title="VmSize">VmSize</a>" : <i>String</i>,
-    "<a href="#installscriptaction" title="InstallScriptAction">InstallScriptAction</a>" : <i>[ <a href="roles-edgenode-installscriptaction.md">InstallScriptAction</a>, ... ]</i>
+    "<a href="#installscriptaction" title="InstallScriptAction">InstallScriptAction</a>" : <i>[ &lt;a href=&#34;roles-edgenode-installscriptaction.md&#34;&gt;InstallScriptAction&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -20,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#targetinstancecount" title="TargetInstanceCount">TargetInstanceCount</a>: <i>Double</i>
 <a href="#vmsize" title="VmSize">VmSize</a>: <i>String</i>
 <a href="#installscriptaction" title="InstallScriptAction">InstallScriptAction</a>: <i>
-      - <a href="roles-edgenode-installscriptaction.md">InstallScriptAction</a></i>
+      - &lt;a href=&#34;roles-edgenode-installscriptaction.md&#34;&gt;InstallScriptAction&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -28,7 +28,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### TargetInstanceCount
 
 _Required_: Yes
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -36,7 +35,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### VmSize
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -44,8 +42,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### InstallScriptAction
 
 _Required_: No
-
-_Type_: List of <a href="roles-edgenode-installscriptaction.md">InstallScriptAction</a>
+_Type_: List of &lt;a href=&#34;roles-edgenode-installscriptaction.md&#34;&gt;InstallScriptAction&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Components: Optional[Sequence["_Components"]]
     CouponId: Optional[str]
     Duration: Optional[float]
-    Id: Optional[str]
     PackageVersion: Optional[str]
     PayType: Optional[str]
     PricingCycle: Optional[str]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             Components=json_data.get("Components"),
             CouponId=json_data.get("CouponId"),
             Duration=json_data.get("Duration"),
-            Id=json_data.get("Id"),
             PackageVersion=json_data.get("PackageVersion"),
             PayType=json_data.get("PayType"),
             PricingCycle=json_data.get("PricingCycle"),

@@ -12,6 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Panos::PanoramaSyslogServerProfile",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#authformat" title="AuthFormat">AuthFormat</a>" : <i>String</i>,
         "<a href="#configformat" title="ConfigFormat">ConfigFormat</a>" : <i>String</i>,
         "<a href="#dataformat" title="DataFormat">DataFormat</a>" : <i>String</i>,
@@ -20,7 +21,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#escapedcharacters" title="EscapedCharacters">EscapedCharacters</a>" : <i>String</i>,
         "<a href="#gtpformat" title="GtpFormat">GtpFormat</a>" : <i>String</i>,
         "<a href="#hipmatchformat" title="HipMatchFormat">HipMatchFormat</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#iptagformat" title="IptagFormat">IptagFormat</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#sctpformat" title="SctpFormat">SctpFormat</a>" : <i>String</i>,
@@ -34,7 +34,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#useridformat" title="UserIdFormat">UserIdFormat</a>" : <i>String</i>,
         "<a href="#vsys" title="Vsys">Vsys</a>" : <i>String</i>,
         "<a href="#wildfireformat" title="WildfireFormat">WildfireFormat</a>" : <i>String</i>,
-        "<a href="#syslogserver" title="SyslogServer">SyslogServer</a>" : <i>[ <a href="syslogserver.md">SyslogServer</a>, ... ]</i>
+        "<a href="#syslogserver" title="SyslogServer">SyslogServer</a>" : <i>[ &lt;a href=&#34;syslogserver.md&#34;&gt;SyslogServer&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -44,6 +44,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Panos::PanoramaSyslogServerProfile
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#authformat" title="AuthFormat">AuthFormat</a>: <i>String</i>
     <a href="#configformat" title="ConfigFormat">ConfigFormat</a>: <i>String</i>
     <a href="#dataformat" title="DataFormat">DataFormat</a>: <i>String</i>
@@ -52,7 +53,6 @@ Properties:
     <a href="#escapedcharacters" title="EscapedCharacters">EscapedCharacters</a>: <i>String</i>
     <a href="#gtpformat" title="GtpFormat">GtpFormat</a>: <i>String</i>
     <a href="#hipmatchformat" title="HipMatchFormat">HipMatchFormat</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#iptagformat" title="IptagFormat">IptagFormat</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#sctpformat" title="SctpFormat">SctpFormat</a>: <i>String</i>
@@ -67,10 +67,20 @@ Properties:
     <a href="#vsys" title="Vsys">Vsys</a>: <i>String</i>
     <a href="#wildfireformat" title="WildfireFormat">WildfireFormat</a>: <i>String</i>
     <a href="#syslogserver" title="SyslogServer">SyslogServer</a>: <i>
-      - <a href="syslogserver.md">SyslogServer</a></i>
+      - &lt;a href=&#34;syslogserver.md&#34;&gt;SyslogServer&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AuthFormat
 
@@ -129,14 +139,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HipMatchFormat
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 
@@ -252,7 +254,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="syslogserver.md">SyslogServer</a>
+_Type_: List of &lt;a href=&#34;syslogserver.md&#34;&gt;SyslogServer&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

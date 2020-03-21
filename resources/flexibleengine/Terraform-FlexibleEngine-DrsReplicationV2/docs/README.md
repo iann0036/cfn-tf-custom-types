@@ -12,11 +12,20 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::FlexibleEngine::DrsReplicationV2",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#createdat" title="CreatedAt">CreatedAt</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#failuredetail" title="FailureDetail">FailureDetail</a>" : <i>String</i>,
+        "<a href="#faultlevel" title="FaultLevel">FaultLevel</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#prioritystation" title="PriorityStation">PriorityStation</a>" : <i>String</i>,
+        "<a href="#progress" title="Progress">Progress</a>" : <i>String</i>,
+        "<a href="#recordmetadata" title="RecordMetadata">RecordMetadata</a>" : <i>String</i>,
+        "<a href="#replicationconsistencygroupid" title="ReplicationConsistencyGroupId">ReplicationConsistencyGroupId</a>" : <i>String</i>,
         "<a href="#replicationmodel" title="ReplicationModel">ReplicationModel</a>" : <i>String</i>,
+        "<a href="#replicationstatus" title="ReplicationStatus">ReplicationStatus</a>" : <i>String</i>,
+        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
+        "<a href="#updatedat" title="UpdatedAt">UpdatedAt</a>" : <i>String</i>,
         "<a href="#volumeids" title="VolumeIds">VolumeIds</a>" : <i>[ String, ... ]</i>
     }
 }
@@ -27,16 +36,43 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::FlexibleEngine::DrsReplicationV2
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#createdat" title="CreatedAt">CreatedAt</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#failuredetail" title="FailureDetail">FailureDetail</a>: <i>String</i>
+    <a href="#faultlevel" title="FaultLevel">FaultLevel</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#prioritystation" title="PriorityStation">PriorityStation</a>: <i>String</i>
+    <a href="#progress" title="Progress">Progress</a>: <i>String</i>
+    <a href="#recordmetadata" title="RecordMetadata">RecordMetadata</a>: <i>String</i>
+    <a href="#replicationconsistencygroupid" title="ReplicationConsistencyGroupId">ReplicationConsistencyGroupId</a>: <i>String</i>
     <a href="#replicationmodel" title="ReplicationModel">ReplicationModel</a>: <i>String</i>
+    <a href="#replicationstatus" title="ReplicationStatus">ReplicationStatus</a>: <i>String</i>
+    <a href="#status" title="Status">Status</a>: <i>String</i>
+    <a href="#updatedat" title="UpdatedAt">UpdatedAt</a>: <i>String</i>
     <a href="#volumeids" title="VolumeIds">VolumeIds</a>: <i>
       - String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### CreatedAt
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -46,7 +82,15 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### FailureDetail
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### FaultLevel
 
 _Required_: No
 
@@ -70,7 +114,55 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### Progress
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### RecordMetadata
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ReplicationConsistencyGroupId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### ReplicationModel
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ReplicationStatus
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Status
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### UpdatedAt
 
 _Required_: No
 
@@ -104,37 +196,37 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreatedAt
 
-Returns the <code>CreatedAt</code> value.
+Returns the &lt;code&gt;CreatedAt&lt;/code&gt; value.
 
 #### FailureDetail
 
-Returns the <code>FailureDetail</code> value.
+Returns the &lt;code&gt;FailureDetail&lt;/code&gt; value.
 
 #### FaultLevel
 
-Returns the <code>FaultLevel</code> value.
+Returns the &lt;code&gt;FaultLevel&lt;/code&gt; value.
 
 #### Progress
 
-Returns the <code>Progress</code> value.
+Returns the &lt;code&gt;Progress&lt;/code&gt; value.
 
 #### RecordMetadata
 
-Returns the <code>RecordMetadata</code> value.
+Returns the &lt;code&gt;RecordMetadata&lt;/code&gt; value.
 
 #### ReplicationConsistencyGroupId
 
-Returns the <code>ReplicationConsistencyGroupId</code> value.
+Returns the &lt;code&gt;ReplicationConsistencyGroupId&lt;/code&gt; value.
 
 #### ReplicationStatus
 
-Returns the <code>ReplicationStatus</code> value.
+Returns the &lt;code&gt;ReplicationStatus&lt;/code&gt; value.
 
 #### Status
 
-Returns the <code>Status</code> value.
+Returns the &lt;code&gt;Status&lt;/code&gt; value.
 
 #### UpdatedAt
 
-Returns the <code>UpdatedAt</code> value.
+Returns the &lt;code&gt;UpdatedAt&lt;/code&gt; value.
 

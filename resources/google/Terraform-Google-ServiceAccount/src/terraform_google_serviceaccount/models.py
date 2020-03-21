@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DisplayName: Optional[str]
     Email: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Project: Optional[str]
     UniqueId: Optional[str]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DisplayName=json_data.get("DisplayName"),
             Email=json_data.get("Email"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Project=json_data.get("Project"),
             UniqueId=json_data.get("UniqueId"),

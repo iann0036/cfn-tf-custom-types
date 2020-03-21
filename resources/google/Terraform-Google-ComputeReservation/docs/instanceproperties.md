@@ -10,8 +10,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#machinetype" title="MachineType">MachineType</a>" : <i>String</i>,
     "<a href="#mincpuplatform" title="MinCpuPlatform">MinCpuPlatform</a>" : <i>String</i>,
-    "<a href="#guestaccelerators" title="GuestAccelerators">GuestAccelerators</a>" : <i>[ <a href="instanceproperties-guestaccelerators.md">GuestAccelerators</a>, ... ]</i>,
-    "<a href="#localssds" title="LocalSsds">LocalSsds</a>" : <i>[ <a href="instanceproperties-localssds.md">LocalSsds</a>, ... ]</i>
+    "<a href="#guestaccelerators" title="GuestAccelerators">GuestAccelerators</a>" : <i>[ &lt;a href=&#34;instanceproperties-guestaccelerators.md&#34;&gt;GuestAccelerators&lt;/a&gt;, ... ]</i>,
+    "<a href="#localssds" title="LocalSsds">LocalSsds</a>" : <i>[ &lt;a href=&#34;instanceproperties-localssds.md&#34;&gt;LocalSsds&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -21,9 +21,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#machinetype" title="MachineType">MachineType</a>: <i>String</i>
 <a href="#mincpuplatform" title="MinCpuPlatform">MinCpuPlatform</a>: <i>String</i>
 <a href="#guestaccelerators" title="GuestAccelerators">GuestAccelerators</a>: <i>
-      - <a href="instanceproperties-guestaccelerators.md">GuestAccelerators</a></i>
+      - &lt;a href=&#34;instanceproperties-guestaccelerators.md&#34;&gt;GuestAccelerators&lt;/a&gt;</i>
 <a href="#localssds" title="LocalSsds">LocalSsds</a>: <i>
-      - <a href="instanceproperties-localssds.md">LocalSsds</a></i>
+      - &lt;a href=&#34;instanceproperties-localssds.md&#34;&gt;LocalSsds&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -31,7 +31,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### MachineType
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -39,7 +38,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### MinCpuPlatform
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -47,16 +45,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### GuestAccelerators
 
 _Required_: No
-
-_Type_: List of <a href="instanceproperties-guestaccelerators.md">GuestAccelerators</a>
+_Type_: List of &lt;a href=&#34;instanceproperties-guestaccelerators.md&#34;&gt;GuestAccelerators&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LocalSsds
 
 _Required_: No
-
-_Type_: List of <a href="instanceproperties-localssds.md">LocalSsds</a>
+_Type_: List of &lt;a href=&#34;instanceproperties-localssds.md&#34;&gt;LocalSsds&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

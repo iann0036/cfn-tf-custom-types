@@ -12,8 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::TencentCloud::HaVip",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#addressip" title="AddressIp">AddressIp</a>" : <i>String</i>,
+        "<a href="#createtime" title="CreateTime">CreateTime</a>" : <i>String</i>,
+        "<a href="#instanceid" title="InstanceId">InstanceId</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
+        "<a href="#networkinterfaceid" title="NetworkInterfaceId">NetworkInterfaceId</a>" : <i>String</i>,
+        "<a href="#state" title="State">State</a>" : <i>String</i>,
         "<a href="#subnetid" title="SubnetId">SubnetId</a>" : <i>String</i>,
         "<a href="#vip" title="Vip">Vip</a>" : <i>String</i>,
         "<a href="#vpcid" title="VpcId">VpcId</a>" : <i>String</i>
@@ -26,8 +31,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::TencentCloud::HaVip
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#addressip" title="AddressIp">AddressIp</a>: <i>String</i>
+    <a href="#createtime" title="CreateTime">CreateTime</a>: <i>String</i>
+    <a href="#instanceid" title="InstanceId">InstanceId</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
+    <a href="#networkinterfaceid" title="NetworkInterfaceId">NetworkInterfaceId</a>: <i>String</i>
+    <a href="#state" title="State">State</a>: <i>String</i>
     <a href="#subnetid" title="SubnetId">SubnetId</a>: <i>String</i>
     <a href="#vip" title="Vip">Vip</a>: <i>String</i>
     <a href="#vpcid" title="VpcId">VpcId</a>: <i>String</i>
@@ -35,7 +45,33 @@ Properties:
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### AddressIp
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### CreateTime
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### InstanceId
 
 _Required_: No
 
@@ -46,6 +82,22 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Name
 
 _Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### NetworkInterfaceId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### State
+
+_Required_: No
 
 _Type_: String
 
@@ -93,21 +145,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AddressIp
 
-Returns the <code>AddressIp</code> value.
+Returns the &lt;code&gt;AddressIp&lt;/code&gt; value.
 
 #### CreateTime
 
-Returns the <code>CreateTime</code> value.
+Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
 
 #### InstanceId
 
-Returns the <code>InstanceId</code> value.
+Returns the &lt;code&gt;InstanceId&lt;/code&gt; value.
 
 #### NetworkInterfaceId
 
-Returns the <code>NetworkInterfaceId</code> value.
+Returns the &lt;code&gt;NetworkInterfaceId&lt;/code&gt; value.
 
 #### State
 
-Returns the <code>State</code> value.
+Returns the &lt;code&gt;State&lt;/code&gt; value.
 

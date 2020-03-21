@@ -12,14 +12,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OpenTelekomCloud::NatDnatRuleV2",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#createdat" title="CreatedAt">CreatedAt</a>" : <i>String</i>,
         "<a href="#externalserviceport" title="ExternalServicePort">ExternalServicePort</a>" : <i>Double</i>,
+        "<a href="#floatingipaddress" title="FloatingIpAddress">FloatingIpAddress</a>" : <i>String</i>,
         "<a href="#floatingipid" title="FloatingIpId">FloatingIpId</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#internalserviceport" title="InternalServicePort">InternalServicePort</a>" : <i>Double</i>,
         "<a href="#natgatewayid" title="NatGatewayId">NatGatewayId</a>" : <i>String</i>,
         "<a href="#portid" title="PortId">PortId</a>" : <i>String</i>,
         "<a href="#privateip" title="PrivateIp">PrivateIp</a>" : <i>String</i>,
         "<a href="#protocol" title="Protocol">Protocol</a>" : <i>String</i>,
+        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
+        "<a href="#tenantid" title="TenantId">TenantId</a>" : <i>String</i>
     }
 }
 </pre>
@@ -29,17 +33,39 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OpenTelekomCloud::NatDnatRuleV2
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#createdat" title="CreatedAt">CreatedAt</a>: <i>String</i>
     <a href="#externalserviceport" title="ExternalServicePort">ExternalServicePort</a>: <i>Double</i>
+    <a href="#floatingipaddress" title="FloatingIpAddress">FloatingIpAddress</a>: <i>String</i>
     <a href="#floatingipid" title="FloatingIpId">FloatingIpId</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#internalserviceport" title="InternalServicePort">InternalServicePort</a>: <i>Double</i>
     <a href="#natgatewayid" title="NatGatewayId">NatGatewayId</a>: <i>String</i>
     <a href="#portid" title="PortId">PortId</a>: <i>String</i>
     <a href="#privateip" title="PrivateIp">PrivateIp</a>: <i>String</i>
     <a href="#protocol" title="Protocol">Protocol</a>: <i>String</i>
+    <a href="#status" title="Status">Status</a>: <i>String</i>
+    <a href="#tenantid" title="TenantId">TenantId</a>: <i>String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### CreatedAt
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ExternalServicePort
 
@@ -49,17 +75,17 @@ _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### FloatingIpId
+#### FloatingIpAddress
 
-_Required_: Yes
+_Required_: No
 
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### FloatingIpId
 
-_Required_: No
+_Required_: Yes
 
 _Type_: String
 
@@ -105,6 +131,22 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### Status
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### TenantId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 ## Return Values
 
 ### Ref
@@ -123,17 +165,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreatedAt
 
-Returns the <code>CreatedAt</code> value.
+Returns the &lt;code&gt;CreatedAt&lt;/code&gt; value.
 
 #### FloatingIpAddress
 
-Returns the <code>FloatingIpAddress</code> value.
+Returns the &lt;code&gt;FloatingIpAddress&lt;/code&gt; value.
 
 #### Status
 
-Returns the <code>Status</code> value.
+Returns the &lt;code&gt;Status&lt;/code&gt; value.
 
 #### TenantId
 
-Returns the <code>TenantId</code> value.
+Returns the &lt;code&gt;TenantId&lt;/code&gt; value.
 

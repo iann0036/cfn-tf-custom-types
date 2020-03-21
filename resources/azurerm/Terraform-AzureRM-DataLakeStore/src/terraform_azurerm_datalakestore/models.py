@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     Endpoint: Optional[str]
     FirewallAllowAzureIps: Optional[str]
     FirewallState: Optional[str]
-    Id: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
     ResourceGroupName: Optional[str]
@@ -63,7 +62,6 @@ class ResourceModel(BaseResourceModel):
             Endpoint=json_data.get("Endpoint"),
             FirewallAllowAzureIps=json_data.get("FirewallAllowAzureIps"),
             FirewallState=json_data.get("FirewallState"),
-            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),
             ResourceGroupName=json_data.get("ResourceGroupName"),

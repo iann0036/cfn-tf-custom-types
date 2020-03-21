@@ -12,18 +12,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Docker::Network",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#attachable" title="Attachable">Attachable</a>" : <i>Boolean</i>,
         "<a href="#checkduplicate" title="CheckDuplicate">CheckDuplicate</a>" : <i>Boolean</i>,
         "<a href="#driver" title="Driver">Driver</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#ingress" title="Ingress">Ingress</a>" : <i>Boolean</i>,
         "<a href="#internal" title="Internal">Internal</a>" : <i>Boolean</i>,
         "<a href="#ipamdriver" title="IpamDriver">IpamDriver</a>" : <i>String</i>,
         "<a href="#ipv6" title="Ipv6">Ipv6</a>" : <i>Boolean</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#options" title="Options">Options</a>" : <i>[ <a href="options.md">Options</a>, ... ]</i>,
-        "<a href="#ipamconfig" title="IpamConfig">IpamConfig</a>" : <i>[ <a href="ipamconfig.md">IpamConfig</a>, ... ]</i>,
-        "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="labels.md">Labels</a>, ... ]</i>
+        "<a href="#options" title="Options">Options</a>" : <i>[ &lt;a href=&#34;options.md&#34;&gt;Options&lt;/a&gt;, ... ]</i>,
+        "<a href="#scope" title="Scope">Scope</a>" : <i>String</i>,
+        "<a href="#ipamconfig" title="IpamConfig">IpamConfig</a>" : <i>[ &lt;a href=&#34;ipamconfig.md&#34;&gt;IpamConfig&lt;/a&gt;, ... ]</i>,
+        "<a href="#labels" title="Labels">Labels</a>" : <i>[ &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -33,24 +34,35 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Docker::Network
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#attachable" title="Attachable">Attachable</a>: <i>Boolean</i>
     <a href="#checkduplicate" title="CheckDuplicate">CheckDuplicate</a>: <i>Boolean</i>
     <a href="#driver" title="Driver">Driver</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#ingress" title="Ingress">Ingress</a>: <i>Boolean</i>
     <a href="#internal" title="Internal">Internal</a>: <i>Boolean</i>
     <a href="#ipamdriver" title="IpamDriver">IpamDriver</a>: <i>String</i>
     <a href="#ipv6" title="Ipv6">Ipv6</a>: <i>Boolean</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#options" title="Options">Options</a>: <i>
-      - <a href="options.md">Options</a></i>
+      - &lt;a href=&#34;options.md&#34;&gt;Options&lt;/a&gt;</i>
+    <a href="#scope" title="Scope">Scope</a>: <i>String</i>
     <a href="#ipamconfig" title="IpamConfig">IpamConfig</a>: <i>
-      - <a href="ipamconfig.md">IpamConfig</a></i>
+      - &lt;a href=&#34;ipamconfig.md&#34;&gt;IpamConfig&lt;/a&gt;</i>
     <a href="#labels" title="Labels">Labels</a>: <i>
-      - <a href="labels.md">Labels</a></i>
+      - &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Attachable
 
@@ -69,14 +81,6 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Driver
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 
@@ -128,7 +132,15 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="options.md">Options</a>
+_Type_: List of &lt;a href=&#34;options.md&#34;&gt;Options&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Scope
+
+_Required_: No
+
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -136,7 +148,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="ipamconfig.md">IpamConfig</a>
+_Type_: List of &lt;a href=&#34;ipamconfig.md&#34;&gt;IpamConfig&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -144,7 +156,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="labels.md">Labels</a>
+_Type_: List of &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -166,5 +178,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Scope
 
-Returns the <code>Scope</code> value.
+Returns the &lt;code&gt;Scope&lt;/code&gt; value.
 

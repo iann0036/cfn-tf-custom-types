@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DatastoreClusterId: Optional[str]
-    Id: Optional[str]
     SdrsAutomationLevel: Optional[str]
     SdrsEnabled: Optional[str]
     SdrsIntraVmAffinity: Optional[str]
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             DatastoreClusterId=json_data.get("DatastoreClusterId"),
-            Id=json_data.get("Id"),
             SdrsAutomationLevel=json_data.get("SdrsAutomationLevel"),
             SdrsEnabled=json_data.get("SdrsEnabled"),
             SdrsIntraVmAffinity=json_data.get("SdrsIntraVmAffinity"),

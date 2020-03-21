@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Configuration: Optional[Sequence["_Configuration"]]
-    Id: Optional[str]
     Mode: Optional[str]
     Notes: Optional[str]
     ZoneId: Optional[str]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Configuration=json_data.get("Configuration"),
-            Id=json_data.get("Id"),
             Mode=json_data.get("Mode"),
             Notes=json_data.get("Notes"),
             ZoneId=json_data.get("ZoneId"),

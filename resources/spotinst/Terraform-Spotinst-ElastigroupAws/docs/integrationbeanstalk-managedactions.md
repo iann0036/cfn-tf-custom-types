@@ -8,7 +8,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#platformupdate" title="PlatformUpdate">PlatformUpdate</a>" : <i>[ <a href="integrationbeanstalk-managedactions-platformupdate.md">PlatformUpdate</a>, ... ]</i>
+    "<a href="#platformupdate" title="PlatformUpdate">PlatformUpdate</a>" : <i>[ &lt;a href=&#34;integrationbeanstalk-managedactions-platformupdate.md&#34;&gt;PlatformUpdate&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#platformupdate" title="PlatformUpdate">PlatformUpdate</a>: <i>
-      - <a href="integrationbeanstalk-managedactions-platformupdate.md">PlatformUpdate</a></i>
+      - &lt;a href=&#34;integrationbeanstalk-managedactions-platformupdate.md&#34;&gt;PlatformUpdate&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -24,8 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### PlatformUpdate
 
 _Required_: No
-
-_Type_: List of <a href="integrationbeanstalk-managedactions-platformupdate.md">PlatformUpdate</a>
+_Type_: List of &lt;a href=&#34;integrationbeanstalk-managedactions-platformupdate.md&#34;&gt;PlatformUpdate&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -12,22 +12,24 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OCI::CoreNetworkSecurityGroupSecurityRule",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#destination" title="Destination">Destination</a>" : <i>String</i>,
         "<a href="#destinationtype" title="DestinationType">DestinationType</a>" : <i>String</i>,
         "<a href="#direction" title="Direction">Direction</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#isvalid" title="IsValid">IsValid</a>" : <i>Boolean</i>,
         "<a href="#networksecuritygroupid" title="NetworkSecurityGroupId">NetworkSecurityGroupId</a>" : <i>String</i>,
         "<a href="#protocol" title="Protocol">Protocol</a>" : <i>String</i>,
         "<a href="#source" title="Source">Source</a>" : <i>String</i>,
         "<a href="#sourcetype" title="SourceType">SourceType</a>" : <i>String</i>,
         "<a href="#stateless" title="Stateless">Stateless</a>" : <i>Boolean</i>,
-        "<a href="#icmpoptions" title="IcmpOptions">IcmpOptions</a>" : <i>[ <a href="icmpoptions.md">IcmpOptions</a>, ... ]</i>,
-        "<a href="#tcpoptions" title="TcpOptions">TcpOptions</a>" : <i>[ <a href="tcpoptions.md">TcpOptions</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
-        "<a href="#udpoptions" title="UdpOptions">UdpOptions</a>" : <i>[ <a href="udpoptions.md">UdpOptions</a>, ... ]</i>,
-        "<a href="#destinationportrange" title="DestinationPortRange">DestinationPortRange</a>" : <i>[ <a href="destinationportrange.md">DestinationPortRange</a>, ... ]</i>,
-        "<a href="#sourceportrange" title="SourcePortRange">SourcePortRange</a>" : <i>[ <a href="sourceportrange.md">SourcePortRange</a>, ... ]</i>
+        "<a href="#timecreated" title="TimeCreated">TimeCreated</a>" : <i>String</i>,
+        "<a href="#icmpoptions" title="IcmpOptions">IcmpOptions</a>" : <i>[ &lt;a href=&#34;icmpoptions.md&#34;&gt;IcmpOptions&lt;/a&gt;, ... ]</i>,
+        "<a href="#tcpoptions" title="TcpOptions">TcpOptions</a>" : <i>[ &lt;a href=&#34;tcpoptions.md&#34;&gt;TcpOptions&lt;/a&gt;, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
+        "<a href="#udpoptions" title="UdpOptions">UdpOptions</a>" : <i>[ &lt;a href=&#34;udpoptions.md&#34;&gt;UdpOptions&lt;/a&gt;, ... ]</i>,
+        "<a href="#destinationportrange" title="DestinationPortRange">DestinationPortRange</a>" : <i>[ &lt;a href=&#34;destinationportrange.md&#34;&gt;DestinationPortRange&lt;/a&gt;, ... ]</i>,
+        "<a href="#sourceportrange" title="SourcePortRange">SourcePortRange</a>" : <i>[ &lt;a href=&#34;sourceportrange.md&#34;&gt;SourcePortRange&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -37,30 +39,42 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OCI::CoreNetworkSecurityGroupSecurityRule
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#destination" title="Destination">Destination</a>: <i>String</i>
     <a href="#destinationtype" title="DestinationType">DestinationType</a>: <i>String</i>
     <a href="#direction" title="Direction">Direction</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#isvalid" title="IsValid">IsValid</a>: <i>Boolean</i>
     <a href="#networksecuritygroupid" title="NetworkSecurityGroupId">NetworkSecurityGroupId</a>: <i>String</i>
     <a href="#protocol" title="Protocol">Protocol</a>: <i>String</i>
     <a href="#source" title="Source">Source</a>: <i>String</i>
     <a href="#sourcetype" title="SourceType">SourceType</a>: <i>String</i>
     <a href="#stateless" title="Stateless">Stateless</a>: <i>Boolean</i>
+    <a href="#timecreated" title="TimeCreated">TimeCreated</a>: <i>String</i>
     <a href="#icmpoptions" title="IcmpOptions">IcmpOptions</a>: <i>
-      - <a href="icmpoptions.md">IcmpOptions</a></i>
+      - &lt;a href=&#34;icmpoptions.md&#34;&gt;IcmpOptions&lt;/a&gt;</i>
     <a href="#tcpoptions" title="TcpOptions">TcpOptions</a>: <i>
-      - <a href="tcpoptions.md">TcpOptions</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;tcpoptions.md&#34;&gt;TcpOptions&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     <a href="#udpoptions" title="UdpOptions">UdpOptions</a>: <i>
-      - <a href="udpoptions.md">UdpOptions</a></i>
+      - &lt;a href=&#34;udpoptions.md&#34;&gt;UdpOptions&lt;/a&gt;</i>
     <a href="#destinationportrange" title="DestinationPortRange">DestinationPortRange</a>: <i>
-      - <a href="destinationportrange.md">DestinationPortRange</a></i>
+      - &lt;a href=&#34;destinationportrange.md&#34;&gt;DestinationPortRange&lt;/a&gt;</i>
     <a href="#sourceportrange" title="SourcePortRange">SourcePortRange</a>: <i>
-      - <a href="sourceportrange.md">SourcePortRange</a></i>
+      - &lt;a href=&#34;sourceportrange.md&#34;&gt;SourcePortRange&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -94,11 +108,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### IsValid
 
 _Required_: No
 
-_Type_: String
+_Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -142,11 +156,19 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### TimeCreated
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### IcmpOptions
 
 _Required_: No
 
-_Type_: List of <a href="icmpoptions.md">IcmpOptions</a>
+_Type_: List of &lt;a href=&#34;icmpoptions.md&#34;&gt;IcmpOptions&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -154,7 +176,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tcpoptions.md">TcpOptions</a>
+_Type_: List of &lt;a href=&#34;tcpoptions.md&#34;&gt;TcpOptions&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -162,7 +184,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -170,7 +192,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="udpoptions.md">UdpOptions</a>
+_Type_: List of &lt;a href=&#34;udpoptions.md&#34;&gt;UdpOptions&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -178,7 +200,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="destinationportrange.md">DestinationPortRange</a>
+_Type_: List of &lt;a href=&#34;destinationportrange.md&#34;&gt;DestinationPortRange&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -186,7 +208,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="sourceportrange.md">SourcePortRange</a>
+_Type_: List of &lt;a href=&#34;sourceportrange.md&#34;&gt;SourcePortRange&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -208,9 +230,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### IsValid
 
-Returns the <code>IsValid</code> value.
+Returns the &lt;code&gt;IsValid&lt;/code&gt; value.
 
 #### TimeCreated
 
-Returns the <code>TimeCreated</code> value.
+Returns the &lt;code&gt;TimeCreated&lt;/code&gt; value.
 

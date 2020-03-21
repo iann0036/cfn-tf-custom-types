@@ -45,7 +45,6 @@ class ResourceModel(BaseResourceModel):
     CheckPath: Optional[str]
     CheckTimeout: Optional[float]
     CipherSuite: Optional[str]
-    Id: Optional[str]
     NodeStatus: Optional[Sequence["_NodeStatus"]]
     NodebalancerId: Optional[float]
     Port: Optional[float]
@@ -74,7 +73,6 @@ class ResourceModel(BaseResourceModel):
             CheckPath=json_data.get("CheckPath"),
             CheckTimeout=json_data.get("CheckTimeout"),
             CipherSuite=json_data.get("CipherSuite"),
-            Id=json_data.get("Id"),
             NodeStatus=json_data.get("NodeStatus"),
             NodebalancerId=json_data.get("NodebalancerId"),
             Port=json_data.get("Port"),

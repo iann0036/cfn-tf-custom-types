@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     ApiName: Optional[str]
     Description: Optional[str]
     DisplayName: Optional[str]
-    Id: Optional[str]
     Method: Optional[str]
     OperationId: Optional[str]
     ResourceGroupName: Optional[str]
@@ -67,7 +66,6 @@ class ResourceModel(BaseResourceModel):
             ApiName=json_data.get("ApiName"),
             Description=json_data.get("Description"),
             DisplayName=json_data.get("DisplayName"),
-            Id=json_data.get("Id"),
             Method=json_data.get("Method"),
             OperationId=json_data.get("OperationId"),
             ResourceGroupName=json_data.get("ResourceGroupName"),

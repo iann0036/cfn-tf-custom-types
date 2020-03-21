@@ -8,7 +8,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#read" title="Read">Read</a>" : <i>[ <a href="acl-read.md">Read</a>, ... ]</i>
+    "<a href="#read" title="Read">Read</a>" : <i>[ &lt;a href=&#34;acl-read.md&#34;&gt;Read&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#read" title="Read">Read</a>: <i>
-      - <a href="acl-read.md">Read</a></i>
+      - &lt;a href=&#34;acl-read.md&#34;&gt;Read&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -24,8 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Read
 
 _Required_: No
-
-_Type_: List of <a href="acl-read.md">Read</a>
+_Type_: List of &lt;a href=&#34;acl-read.md&#34;&gt;Read&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

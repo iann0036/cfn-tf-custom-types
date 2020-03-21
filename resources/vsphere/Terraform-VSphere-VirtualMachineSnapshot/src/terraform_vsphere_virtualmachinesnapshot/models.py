@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Consolidate: Optional[bool]
     Description: Optional[str]
-    Id: Optional[str]
     Memory: Optional[bool]
     Quiesce: Optional[bool]
     RemoveChildren: Optional[bool]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Consolidate=json_data.get("Consolidate"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Memory=json_data.get("Memory"),
             Quiesce=json_data.get("Quiesce"),
             RemoveChildren=json_data.get("RemoveChildren"),

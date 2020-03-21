@@ -12,15 +12,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Spotinst::MultaiRoutingRule",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#balancerid" title="BalancerId">BalancerId</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#listenerid" title="ListenerId">ListenerId</a>" : <i>String</i>,
         "<a href="#middlewareids" title="MiddlewareIds">MiddlewareIds</a>" : <i>[ String, ... ]</i>,
         "<a href="#priority" title="Priority">Priority</a>" : <i>Double</i>,
         "<a href="#route" title="Route">Route</a>" : <i>String</i>,
         "<a href="#strategy" title="Strategy">Strategy</a>" : <i>String</i>,
         "<a href="#targetsetids" title="TargetSetIds">TargetSetIds</a>" : <i>[ String, ... ]</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -30,8 +30,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Spotinst::MultaiRoutingRule
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#balancerid" title="BalancerId">BalancerId</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#listenerid" title="ListenerId">ListenerId</a>: <i>String</i>
     <a href="#middlewareids" title="MiddlewareIds">MiddlewareIds</a>: <i>
       - String</i>
@@ -41,22 +41,24 @@ Properties:
     <a href="#targetsetids" title="TargetSetIds">TargetSetIds</a>: <i>
       - String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
-#### BalancerId
+#### tfcfnid
 
-_Required_: Yes
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
 
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### BalancerId
 
-_Required_: No
+_Required_: Yes
 
 _Type_: String
 
@@ -114,7 +116,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

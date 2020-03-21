@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     GlobalDefault: Optional[bool]
-    Id: Optional[str]
     Value: Optional[float]
     Metadata: Optional[Sequence["_Metadata"]]
 
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             GlobalDefault=json_data.get("GlobalDefault"),
-            Id=json_data.get("Id"),
             Value=json_data.get("Value"),
             Metadata=json_data.get("Metadata"),
         )

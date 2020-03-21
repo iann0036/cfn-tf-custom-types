@@ -12,14 +12,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::GitHub::RepositoryFile",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#branch" title="Branch">Branch</a>" : <i>String</i>,
         "<a href="#commitauthor" title="CommitAuthor">CommitAuthor</a>" : <i>String</i>,
         "<a href="#commitemail" title="CommitEmail">CommitEmail</a>" : <i>String</i>,
         "<a href="#commitmessage" title="CommitMessage">CommitMessage</a>" : <i>String</i>,
         "<a href="#content" title="Content">Content</a>" : <i>String</i>,
         "<a href="#file" title="File">File</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#repository" title="Repository">Repository</a>" : <i>String</i>,
+        "<a href="#sha" title="Sha">Sha</a>" : <i>String</i>
     }
 }
 </pre>
@@ -29,17 +30,28 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::GitHub::RepositoryFile
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#branch" title="Branch">Branch</a>: <i>String</i>
     <a href="#commitauthor" title="CommitAuthor">CommitAuthor</a>: <i>String</i>
     <a href="#commitemail" title="CommitEmail">CommitEmail</a>: <i>String</i>
     <a href="#commitmessage" title="CommitMessage">CommitMessage</a>: <i>String</i>
     <a href="#content" title="Content">Content</a>: <i>String</i>
     <a href="#file" title="File">File</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#repository" title="Repository">Repository</a>: <i>String</i>
+    <a href="#sha" title="Sha">Sha</a>: <i>String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Branch
 
@@ -89,17 +101,17 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### Repository
 
-_Required_: No
+_Required_: Yes
 
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Repository
+#### Sha
 
-_Required_: Yes
+_Required_: No
 
 _Type_: String
 
@@ -123,5 +135,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Sha
 
-Returns the <code>Sha</code> value.
+Returns the &lt;code&gt;Sha&lt;/code&gt; value.
 

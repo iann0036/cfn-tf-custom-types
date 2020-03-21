@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DestinationPorts: Optional[Sequence[str]]
     DisplayName: Optional[str]
-    Id: Optional[str]
     Protocol: Optional[str]
     Revision: Optional[float]
     SourcePorts: Optional[Sequence[str]]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DestinationPorts=json_data.get("DestinationPorts"),
             DisplayName=json_data.get("DisplayName"),
-            Id=json_data.get("Id"),
             Protocol=json_data.get("Protocol"),
             Revision=json_data.get("Revision"),
             SourcePorts=json_data.get("SourcePorts"),

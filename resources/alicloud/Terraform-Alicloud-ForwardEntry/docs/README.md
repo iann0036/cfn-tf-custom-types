@@ -12,10 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::ForwardEntry",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#externalip" title="ExternalIp">ExternalIp</a>" : <i>String</i>,
         "<a href="#externalport" title="ExternalPort">ExternalPort</a>" : <i>String</i>,
+        "<a href="#forwardentryid" title="ForwardEntryId">ForwardEntryId</a>" : <i>String</i>,
         "<a href="#forwardtableid" title="ForwardTableId">ForwardTableId</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#internalip" title="InternalIp">InternalIp</a>" : <i>String</i>,
         "<a href="#internalport" title="InternalPort">InternalPort</a>" : <i>String</i>,
         "<a href="#ipprotocol" title="IpProtocol">IpProtocol</a>" : <i>String</i>,
@@ -29,10 +30,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::ForwardEntry
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#externalip" title="ExternalIp">ExternalIp</a>: <i>String</i>
     <a href="#externalport" title="ExternalPort">ExternalPort</a>: <i>String</i>
+    <a href="#forwardentryid" title="ForwardEntryId">ForwardEntryId</a>: <i>String</i>
     <a href="#forwardtableid" title="ForwardTableId">ForwardTableId</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#internalip" title="InternalIp">InternalIp</a>: <i>String</i>
     <a href="#internalport" title="InternalPort">InternalPort</a>: <i>String</i>
     <a href="#ipprotocol" title="IpProtocol">IpProtocol</a>: <i>String</i>
@@ -40,6 +42,16 @@ Properties:
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ExternalIp
 
@@ -57,17 +69,17 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### ForwardTableId
+#### ForwardEntryId
 
-_Required_: Yes
+_Required_: No
 
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### ForwardTableId
 
-_Required_: No
+_Required_: Yes
 
 _Type_: String
 
@@ -123,5 +135,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ForwardEntryId
 
-Returns the <code>ForwardEntryId</code> value.
+Returns the &lt;code&gt;ForwardEntryId&lt;/code&gt; value.
 

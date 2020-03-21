@@ -45,7 +45,6 @@ class ResourceModel(BaseResourceModel):
     DedicatedHostId: Optional[str]
     EnableAutomaticUpdates: Optional[bool]
     EvictionPolicy: Optional[str]
-    Id: Optional[str]
     LicenseType: Optional[str]
     Location: Optional[str]
     MaxBidPrice: Optional[float]
@@ -96,7 +95,6 @@ class ResourceModel(BaseResourceModel):
             DedicatedHostId=json_data.get("DedicatedHostId"),
             EnableAutomaticUpdates=json_data.get("EnableAutomaticUpdates"),
             EvictionPolicy=json_data.get("EvictionPolicy"),
-            Id=json_data.get("Id"),
             LicenseType=json_data.get("LicenseType"),
             Location=json_data.get("Location"),
             MaxBidPrice=json_data.get("MaxBidPrice"),

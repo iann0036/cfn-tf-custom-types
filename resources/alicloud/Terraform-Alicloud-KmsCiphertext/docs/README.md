@@ -12,8 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::KmsCiphertext",
     "Properties" : {
-        "<a href="#encryptioncontext" title="EncryptionContext">EncryptionContext</a>" : <i>[ <a href="encryptioncontext.md">EncryptionContext</a>, ... ]</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#ciphertextblob" title="CiphertextBlob">CiphertextBlob</a>" : <i>String</i>,
+        "<a href="#encryptioncontext" title="EncryptionContext">EncryptionContext</a>" : <i>[ &lt;a href=&#34;encryptioncontext.md&#34;&gt;EncryptionContext&lt;/a&gt;, ... ]</i>,
         "<a href="#keyid" title="KeyId">KeyId</a>" : <i>String</i>,
         "<a href="#plaintext" title="Plaintext">Plaintext</a>" : <i>String</i>
     }
@@ -25,28 +26,39 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::KmsCiphertext
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#ciphertextblob" title="CiphertextBlob">CiphertextBlob</a>: <i>String</i>
     <a href="#encryptioncontext" title="EncryptionContext">EncryptionContext</a>: <i>
-      - <a href="encryptioncontext.md">EncryptionContext</a></i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+      - &lt;a href=&#34;encryptioncontext.md&#34;&gt;EncryptionContext&lt;/a&gt;</i>
     <a href="#keyid" title="KeyId">KeyId</a>: <i>String</i>
     <a href="#plaintext" title="Plaintext">Plaintext</a>: <i>String</i>
 </pre>
 
 ## Properties
 
-#### EncryptionContext
+#### tfcfnid
 
-_Required_: No
-
-_Type_: List of <a href="encryptioncontext.md">EncryptionContext</a>
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
 _Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### CiphertextBlob
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### EncryptionContext
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;encryptioncontext.md&#34;&gt;EncryptionContext&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -84,5 +96,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CiphertextBlob
 
-Returns the <code>CiphertextBlob</code> value.
+Returns the &lt;code&gt;CiphertextBlob&lt;/code&gt; value.
 

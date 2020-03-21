@@ -11,7 +11,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#headers" title="Headers">Headers</a>" : <i>[ String, ... ]</i>,
     "<a href="#querystring" title="QueryString">QueryString</a>" : <i>Boolean</i>,
     "<a href="#querystringcachekeys" title="QueryStringCacheKeys">QueryStringCacheKeys</a>" : <i>[ String, ... ]</i>,
-    "<a href="#cookies" title="Cookies">Cookies</a>" : <i>[ <a href="forwardedvalues-cookies.md">Cookies</a>, ... ]</i>
+    "<a href="#cookies" title="Cookies">Cookies</a>" : <i>[ &lt;a href=&#34;forwardedvalues-cookies.md&#34;&gt;Cookies&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -24,7 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#querystringcachekeys" title="QueryStringCacheKeys">QueryStringCacheKeys</a>: <i>
       - String</i>
 <a href="#cookies" title="Cookies">Cookies</a>: <i>
-      - <a href="forwardedvalues-cookies.md">Cookies</a></i>
+      - &lt;a href=&#34;forwardedvalues-cookies.md&#34;&gt;Cookies&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -32,7 +32,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Headers
 
 _Required_: No
-
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -40,7 +39,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### QueryString
 
 _Required_: Yes
-
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -48,7 +46,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### QueryStringCacheKeys
 
 _Required_: No
-
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -56,8 +53,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Cookies
 
 _Required_: No
-
-_Type_: List of <a href="forwardedvalues-cookies.md">Cookies</a>
+_Type_: List of &lt;a href=&#34;forwardedvalues-cookies.md&#34;&gt;Cookies&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

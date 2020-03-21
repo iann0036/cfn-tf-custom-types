@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     DbDtuMin: Optional[float]
     Dtu: Optional[float]
     Edition: Optional[str]
-    Id: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
     PoolSize: Optional[float]
@@ -64,7 +63,6 @@ class ResourceModel(BaseResourceModel):
             DbDtuMin=json_data.get("DbDtuMin"),
             Dtu=json_data.get("Dtu"),
             Edition=json_data.get("Edition"),
-            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),
             PoolSize=json_data.get("PoolSize"),

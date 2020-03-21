@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     BgpAsn: Optional[float]
-    Id: Optional[str]
     IpAddress: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
     Type: Optional[str]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             BgpAsn=json_data.get("BgpAsn"),
-            Id=json_data.get("Id"),
             IpAddress=json_data.get("IpAddress"),
             Tags=json_data.get("Tags"),
             Type=json_data.get("Type"),

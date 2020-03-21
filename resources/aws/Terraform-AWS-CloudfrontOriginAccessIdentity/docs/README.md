@@ -12,8 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::CloudfrontOriginAccessIdentity",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#callerreference" title="CallerReference">CallerReference</a>" : <i>String</i>,
+        "<a href="#cloudfrontaccessidentitypath" title="CloudfrontAccessIdentityPath">CloudfrontAccessIdentityPath</a>" : <i>String</i>,
         "<a href="#comment" title="Comment">Comment</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#etag" title="Etag">Etag</a>" : <i>String</i>,
+        "<a href="#iamarn" title="IamArn">IamArn</a>" : <i>String</i>,
+        "<a href="#s3canonicaluserid" title="S3CanonicalUserId">S3CanonicalUserId</a>" : <i>String</i>
     }
 }
 </pre>
@@ -23,11 +28,42 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::CloudfrontOriginAccessIdentity
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#callerreference" title="CallerReference">CallerReference</a>: <i>String</i>
+    <a href="#cloudfrontaccessidentitypath" title="CloudfrontAccessIdentityPath">CloudfrontAccessIdentityPath</a>: <i>String</i>
     <a href="#comment" title="Comment">Comment</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#etag" title="Etag">Etag</a>: <i>String</i>
+    <a href="#iamarn" title="IamArn">IamArn</a>: <i>String</i>
+    <a href="#s3canonicaluserid" title="S3CanonicalUserId">S3CanonicalUserId</a>: <i>String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### CallerReference
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### CloudfrontAccessIdentityPath
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Comment
 
@@ -37,7 +73,23 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### Etag
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### IamArn
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### S3CanonicalUserId
 
 _Required_: No
 
@@ -63,21 +115,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CallerReference
 
-Returns the <code>CallerReference</code> value.
+Returns the &lt;code&gt;CallerReference&lt;/code&gt; value.
 
 #### CloudfrontAccessIdentityPath
 
-Returns the <code>CloudfrontAccessIdentityPath</code> value.
+Returns the &lt;code&gt;CloudfrontAccessIdentityPath&lt;/code&gt; value.
 
 #### Etag
 
-Returns the <code>Etag</code> value.
+Returns the &lt;code&gt;Etag&lt;/code&gt; value.
 
 #### IamArn
 
-Returns the <code>IamArn</code> value.
+Returns the &lt;code&gt;IamArn&lt;/code&gt; value.
 
 #### S3CanonicalUserId
 
-Returns the <code>S3CanonicalUserId</code> value.
+Returns the &lt;code&gt;S3CanonicalUserId&lt;/code&gt; value.
 

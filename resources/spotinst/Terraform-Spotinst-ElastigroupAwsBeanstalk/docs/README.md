@@ -12,10 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Spotinst::ElastigroupAwsBeanstalk",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#beanstalkenvironmentid" title="BeanstalkEnvironmentId">BeanstalkEnvironmentId</a>" : <i>String</i>,
         "<a href="#beanstalkenvironmentname" title="BeanstalkEnvironmentName">BeanstalkEnvironmentName</a>" : <i>String</i>,
         "<a href="#desiredcapacity" title="DesiredCapacity">DesiredCapacity</a>" : <i>Double</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#instancetypesspot" title="InstanceTypesSpot">InstanceTypesSpot</a>" : <i>[ String, ... ]</i>,
         "<a href="#maintenance" title="Maintenance">Maintenance</a>" : <i>String</i>,
         "<a href="#maxsize" title="MaxSize">MaxSize</a>" : <i>Double</i>,
@@ -23,11 +23,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#product" title="Product">Product</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
-        "<a href="#deploymentpreferences" title="DeploymentPreferences">DeploymentPreferences</a>" : <i>[ <a href="deploymentpreferences.md">DeploymentPreferences</a>, ... ]</i>,
-        "<a href="#managedactions" title="ManagedActions">ManagedActions</a>" : <i>[ <a href="managedactions.md">ManagedActions</a>, ... ]</i>,
-        "<a href="#scheduledtask" title="ScheduledTask">ScheduledTask</a>" : <i>[ <a href="scheduledtask.md">ScheduledTask</a>, ... ]</i>,
-        "<a href="#strategy" title="Strategy">Strategy</a>" : <i>[ <a href="strategy.md">Strategy</a>, ... ]</i>,
-        "<a href="#platformupdate" title="PlatformUpdate">PlatformUpdate</a>" : <i>[ <a href="platformupdate.md">PlatformUpdate</a>, ... ]</i>
+        "<a href="#deploymentpreferences" title="DeploymentPreferences">DeploymentPreferences</a>" : <i>[ &lt;a href=&#34;deploymentpreferences.md&#34;&gt;DeploymentPreferences&lt;/a&gt;, ... ]</i>,
+        "<a href="#managedactions" title="ManagedActions">ManagedActions</a>" : <i>[ &lt;a href=&#34;managedactions.md&#34;&gt;ManagedActions&lt;/a&gt;, ... ]</i>,
+        "<a href="#scheduledtask" title="ScheduledTask">ScheduledTask</a>" : <i>[ &lt;a href=&#34;scheduledtask.md&#34;&gt;ScheduledTask&lt;/a&gt;, ... ]</i>,
+        "<a href="#strategy" title="Strategy">Strategy</a>" : <i>[ &lt;a href=&#34;strategy.md&#34;&gt;Strategy&lt;/a&gt;, ... ]</i>,
+        "<a href="#platformupdate" title="PlatformUpdate">PlatformUpdate</a>" : <i>[ &lt;a href=&#34;platformupdate.md&#34;&gt;PlatformUpdate&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -37,10 +37,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Spotinst::ElastigroupAwsBeanstalk
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#beanstalkenvironmentid" title="BeanstalkEnvironmentId">BeanstalkEnvironmentId</a>: <i>String</i>
     <a href="#beanstalkenvironmentname" title="BeanstalkEnvironmentName">BeanstalkEnvironmentName</a>: <i>String</i>
     <a href="#desiredcapacity" title="DesiredCapacity">DesiredCapacity</a>: <i>Double</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#instancetypesspot" title="InstanceTypesSpot">InstanceTypesSpot</a>: <i>
       - String</i>
     <a href="#maintenance" title="Maintenance">Maintenance</a>: <i>String</i>
@@ -50,18 +50,28 @@ Properties:
     <a href="#product" title="Product">Product</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
     <a href="#deploymentpreferences" title="DeploymentPreferences">DeploymentPreferences</a>: <i>
-      - <a href="deploymentpreferences.md">DeploymentPreferences</a></i>
+      - &lt;a href=&#34;deploymentpreferences.md&#34;&gt;DeploymentPreferences&lt;/a&gt;</i>
     <a href="#managedactions" title="ManagedActions">ManagedActions</a>: <i>
-      - <a href="managedactions.md">ManagedActions</a></i>
+      - &lt;a href=&#34;managedactions.md&#34;&gt;ManagedActions&lt;/a&gt;</i>
     <a href="#scheduledtask" title="ScheduledTask">ScheduledTask</a>: <i>
-      - <a href="scheduledtask.md">ScheduledTask</a></i>
+      - &lt;a href=&#34;scheduledtask.md&#34;&gt;ScheduledTask&lt;/a&gt;</i>
     <a href="#strategy" title="Strategy">Strategy</a>: <i>
-      - <a href="strategy.md">Strategy</a></i>
+      - &lt;a href=&#34;strategy.md&#34;&gt;Strategy&lt;/a&gt;</i>
     <a href="#platformupdate" title="PlatformUpdate">PlatformUpdate</a>: <i>
-      - <a href="platformupdate.md">PlatformUpdate</a></i>
+      - &lt;a href=&#34;platformupdate.md&#34;&gt;PlatformUpdate&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BeanstalkEnvironmentId
 
@@ -84,14 +94,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: Yes
 
 _Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -155,7 +157,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="deploymentpreferences.md">DeploymentPreferences</a>
+_Type_: List of &lt;a href=&#34;deploymentpreferences.md&#34;&gt;DeploymentPreferences&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -163,7 +165,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="managedactions.md">ManagedActions</a>
+_Type_: List of &lt;a href=&#34;managedactions.md&#34;&gt;ManagedActions&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -171,7 +173,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="scheduledtask.md">ScheduledTask</a>
+_Type_: List of &lt;a href=&#34;scheduledtask.md&#34;&gt;ScheduledTask&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -179,7 +181,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="strategy.md">Strategy</a>
+_Type_: List of &lt;a href=&#34;strategy.md&#34;&gt;Strategy&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -187,7 +189,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="platformupdate.md">PlatformUpdate</a>
+_Type_: List of &lt;a href=&#34;platformupdate.md&#34;&gt;PlatformUpdate&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

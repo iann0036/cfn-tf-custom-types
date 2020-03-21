@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Address: Optional[str]
     AlertIds: Optional[Sequence[str]]
     CreateTime: Optional[str]
-    Id: Optional[str]
     Interval: Optional[float]
     OptionsJson: Optional[str]
     TaskName: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             Address=json_data.get("Address"),
             AlertIds=json_data.get("AlertIds"),
             CreateTime=json_data.get("CreateTime"),
-            Id=json_data.get("Id"),
             Interval=json_data.get("Interval"),
             OptionsJson=json_data.get("OptionsJson"),
             TaskName=json_data.get("TaskName"),

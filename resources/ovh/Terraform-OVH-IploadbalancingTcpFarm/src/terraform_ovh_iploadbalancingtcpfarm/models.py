@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Balance: Optional[str]
     DisplayName: Optional[str]
-    Id: Optional[str]
     Port: Optional[float]
     ServiceName: Optional[str]
     Stickiness: Optional[str]
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Balance=json_data.get("Balance"),
             DisplayName=json_data.get("DisplayName"),
-            Id=json_data.get("Id"),
             Port=json_data.get("Port"),
             ServiceName=json_data.get("ServiceName"),
             Stickiness=json_data.get("Stickiness"),

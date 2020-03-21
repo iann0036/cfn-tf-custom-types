@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     CompartmentId: Optional[str]
     Description: Optional[str]
     DisplayName: Optional[str]
-    Id: Optional[str]
     IsEnabled: Optional[bool]
     LifecycleDetails: Optional[str]
     MaintenanceRunId: Optional[str]
@@ -65,7 +64,6 @@ class ResourceModel(BaseResourceModel):
             CompartmentId=json_data.get("CompartmentId"),
             Description=json_data.get("Description"),
             DisplayName=json_data.get("DisplayName"),
-            Id=json_data.get("Id"),
             IsEnabled=json_data.get("IsEnabled"),
             LifecycleDetails=json_data.get("LifecycleDetails"),
             MaintenanceRunId=json_data.get("MaintenanceRunId"),

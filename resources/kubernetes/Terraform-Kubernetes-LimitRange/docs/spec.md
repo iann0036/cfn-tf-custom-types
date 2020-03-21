@@ -8,7 +8,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#limit" title="Limit">Limit</a>" : <i>[ <a href="spec-limit.md">Limit</a>, ... ]</i>
+    "<a href="#limit" title="Limit">Limit</a>" : <i>[ &lt;a href=&#34;spec-limit.md&#34;&gt;Limit&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#limit" title="Limit">Limit</a>: <i>
-      - <a href="spec-limit.md">Limit</a></i>
+      - &lt;a href=&#34;spec-limit.md&#34;&gt;Limit&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -24,8 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Limit
 
 _Required_: No
-
-_Type_: List of <a href="spec-limit.md">Limit</a>
+_Type_: List of &lt;a href=&#34;spec-limit.md&#34;&gt;Limit&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

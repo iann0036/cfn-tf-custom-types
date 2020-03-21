@@ -8,8 +8,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#interfaceaddress" title="InterfaceAddress">InterfaceAddress</a>" : <i>[ <a href="translatedpacket-source-dynamicip-fallback-interfaceaddress.md">InterfaceAddress</a>, ... ]</i>,
-    "<a href="#translatedaddress" title="TranslatedAddress">TranslatedAddress</a>" : <i>[ <a href="translatedpacket-source-dynamicip-fallback-translatedaddress.md">TranslatedAddress</a>, ... ]</i>
+    "<a href="#interfaceaddress" title="InterfaceAddress">InterfaceAddress</a>" : <i>[ &lt;a href=&#34;translatedpacket-source-dynamicip-fallback-interfaceaddress.md&#34;&gt;InterfaceAddress&lt;/a&gt;, ... ]</i>,
+    "<a href="#translatedaddress" title="TranslatedAddress">TranslatedAddress</a>" : <i>[ &lt;a href=&#34;translatedpacket-source-dynamicip-fallback-translatedaddress.md&#34;&gt;TranslatedAddress&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -17,9 +17,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#interfaceaddress" title="InterfaceAddress">InterfaceAddress</a>: <i>
-      - <a href="translatedpacket-source-dynamicip-fallback-interfaceaddress.md">InterfaceAddress</a></i>
+      - &lt;a href=&#34;translatedpacket-source-dynamicip-fallback-interfaceaddress.md&#34;&gt;InterfaceAddress&lt;/a&gt;</i>
 <a href="#translatedaddress" title="TranslatedAddress">TranslatedAddress</a>: <i>
-      - <a href="translatedpacket-source-dynamicip-fallback-translatedaddress.md">TranslatedAddress</a></i>
+      - &lt;a href=&#34;translatedpacket-source-dynamicip-fallback-translatedaddress.md&#34;&gt;TranslatedAddress&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -27,16 +27,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### InterfaceAddress
 
 _Required_: No
-
-_Type_: List of <a href="translatedpacket-source-dynamicip-fallback-interfaceaddress.md">InterfaceAddress</a>
+_Type_: List of &lt;a href=&#34;translatedpacket-source-dynamicip-fallback-interfaceaddress.md&#34;&gt;InterfaceAddress&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TranslatedAddress
 
 _Required_: No
-
-_Type_: List of <a href="translatedpacket-source-dynamicip-fallback-translatedaddress.md">TranslatedAddress</a>
+_Type_: List of &lt;a href=&#34;translatedpacket-source-dynamicip-fallback-translatedaddress.md&#34;&gt;TranslatedAddress&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

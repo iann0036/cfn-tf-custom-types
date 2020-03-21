@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     BackupRetentionPeriod: Optional[str]
     DbClusterId: Optional[str]
-    Id: Optional[str]
     PreferredBackupPeriod: Optional[Sequence[str]]
     PreferredBackupTime: Optional[str]
 
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             BackupRetentionPeriod=json_data.get("BackupRetentionPeriod"),
             DbClusterId=json_data.get("DbClusterId"),
-            Id=json_data.get("Id"),
             PreferredBackupPeriod=json_data.get("PreferredBackupPeriod"),
             PreferredBackupTime=json_data.get("PreferredBackupTime"),
         )

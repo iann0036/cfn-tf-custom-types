@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AutoReleaseTime: Optional[str]
     Description: Optional[str]
     HostName: Optional[str]
-    Id: Optional[str]
     ImageId: Optional[str]
     ImageOwnerAlias: Optional[str]
     InstanceChargeType: Optional[str]
@@ -82,7 +81,6 @@ class ResourceModel(BaseResourceModel):
             AutoReleaseTime=json_data.get("AutoReleaseTime"),
             Description=json_data.get("Description"),
             HostName=json_data.get("HostName"),
-            Id=json_data.get("Id"),
             ImageId=json_data.get("ImageId"),
             ImageOwnerAlias=json_data.get("ImageOwnerAlias"),
             InstanceChargeType=json_data.get("InstanceChargeType"),

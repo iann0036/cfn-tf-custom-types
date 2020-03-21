@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     BackendService: Optional[str]
     CreationTimestamp: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Project: Optional[str]
     ProxyHeader: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             BackendService=json_data.get("BackendService"),
             CreationTimestamp=json_data.get("CreationTimestamp"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Project=json_data.get("Project"),
             ProxyHeader=json_data.get("ProxyHeader"),

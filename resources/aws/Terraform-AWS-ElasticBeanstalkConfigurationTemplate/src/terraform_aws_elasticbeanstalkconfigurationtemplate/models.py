@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Application: Optional[str]
     Description: Optional[str]
     EnvironmentId: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     SolutionStackName: Optional[str]
     Setting: Optional[Sequence["_Setting"]]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             Application=json_data.get("Application"),
             Description=json_data.get("Description"),
             EnvironmentId=json_data.get("EnvironmentId"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             SolutionStackName=json_data.get("SolutionStackName"),
             Setting=json_data.get("Setting"),

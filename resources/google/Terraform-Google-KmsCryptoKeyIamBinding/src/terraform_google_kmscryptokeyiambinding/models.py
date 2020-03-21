@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CryptoKeyId: Optional[str]
     Etag: Optional[str]
-    Id: Optional[str]
     Members: Optional[Sequence[str]]
     Role: Optional[str]
 
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CryptoKeyId=json_data.get("CryptoKeyId"),
             Etag=json_data.get("Etag"),
-            Id=json_data.get("Id"),
             Members=json_data.get("Members"),
             Role=json_data.get("Role"),
         )

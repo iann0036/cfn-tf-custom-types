@@ -12,12 +12,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureAD::User",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#accountenabled" title="AccountEnabled">AccountEnabled</a>" : <i>Boolean</i>,
         "<a href="#displayname" title="DisplayName">DisplayName</a>" : <i>String</i>,
         "<a href="#forcepasswordchange" title="ForcePasswordChange">ForcePasswordChange</a>" : <i>Boolean</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#immutableid" title="ImmutableId">ImmutableId</a>" : <i>String</i>,
+        "<a href="#mail" title="Mail">Mail</a>" : <i>String</i>,
         "<a href="#mailnickname" title="MailNickname">MailNickname</a>" : <i>String</i>,
+        "<a href="#objectid" title="ObjectId">ObjectId</a>" : <i>String</i>,
+        "<a href="#onpremisessamaccountname" title="OnpremisesSamAccountName">OnpremisesSamAccountName</a>" : <i>String</i>,
+        "<a href="#onpremisesuserprincipalname" title="OnpremisesUserPrincipalName">OnpremisesUserPrincipalName</a>" : <i>String</i>,
         "<a href="#password" title="Password">Password</a>" : <i>String</i>,
         "<a href="#usagelocation" title="UsageLocation">UsageLocation</a>" : <i>String</i>,
         "<a href="#userprincipalname" title="UserPrincipalName">UserPrincipalName</a>" : <i>String</i>
@@ -30,18 +34,32 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureAD::User
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#accountenabled" title="AccountEnabled">AccountEnabled</a>: <i>Boolean</i>
     <a href="#displayname" title="DisplayName">DisplayName</a>: <i>String</i>
     <a href="#forcepasswordchange" title="ForcePasswordChange">ForcePasswordChange</a>: <i>Boolean</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#immutableid" title="ImmutableId">ImmutableId</a>: <i>String</i>
+    <a href="#mail" title="Mail">Mail</a>: <i>String</i>
     <a href="#mailnickname" title="MailNickname">MailNickname</a>: <i>String</i>
+    <a href="#objectid" title="ObjectId">ObjectId</a>: <i>String</i>
+    <a href="#onpremisessamaccountname" title="OnpremisesSamAccountName">OnpremisesSamAccountName</a>: <i>String</i>
+    <a href="#onpremisesuserprincipalname" title="OnpremisesUserPrincipalName">OnpremisesUserPrincipalName</a>: <i>String</i>
     <a href="#password" title="Password">Password</a>: <i>String</i>
     <a href="#usagelocation" title="UsageLocation">UsageLocation</a>: <i>String</i>
     <a href="#userprincipalname" title="UserPrincipalName">UserPrincipalName</a>: <i>String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AccountEnabled
 
@@ -67,14 +85,6 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### ImmutableId
 
 _Required_: No
@@ -83,7 +93,39 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### Mail
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### MailNickname
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ObjectId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### OnpremisesSamAccountName
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### OnpremisesUserPrincipalName
 
 _Required_: No
 
@@ -133,17 +175,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Mail
 
-Returns the <code>Mail</code> value.
+Returns the &lt;code&gt;Mail&lt;/code&gt; value.
 
 #### ObjectId
 
-Returns the <code>ObjectId</code> value.
+Returns the &lt;code&gt;ObjectId&lt;/code&gt; value.
 
 #### OnpremisesSamAccountName
 
-Returns the <code>OnpremisesSamAccountName</code> value.
+Returns the &lt;code&gt;OnpremisesSamAccountName&lt;/code&gt; value.
 
 #### OnpremisesUserPrincipalName
 
-Returns the <code>OnpremisesUserPrincipalName</code> value.
+Returns the &lt;code&gt;OnpremisesUserPrincipalName&lt;/code&gt; value.
 

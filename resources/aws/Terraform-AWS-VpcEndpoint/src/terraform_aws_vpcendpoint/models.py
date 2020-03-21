@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AutoAccept: Optional[bool]
     CidrBlocks: Optional[Sequence[str]]
     DnsEntry: Optional[Sequence["_DnsEntry"]]
-    Id: Optional[str]
     NetworkInterfaceIds: Optional[Sequence[str]]
     OwnerId: Optional[str]
     Policy: Optional[str]
@@ -68,7 +67,6 @@ class ResourceModel(BaseResourceModel):
             AutoAccept=json_data.get("AutoAccept"),
             CidrBlocks=json_data.get("CidrBlocks"),
             DnsEntry=json_data.get("DnsEntry"),
-            Id=json_data.get("Id"),
             NetworkInterfaceIds=json_data.get("NetworkInterfaceIds"),
             OwnerId=json_data.get("OwnerId"),
             Policy=json_data.get("Policy"),

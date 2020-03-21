@@ -44,7 +44,6 @@ class ResourceModel(BaseResourceModel):
     EnableSnat: Optional[bool]
     ExternalGateway: Optional[str]
     ExternalNetworkId: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Region: Optional[str]
     Tags: Optional[Sequence[str]]
@@ -71,7 +70,6 @@ class ResourceModel(BaseResourceModel):
             EnableSnat=json_data.get("EnableSnat"),
             ExternalGateway=json_data.get("ExternalGateway"),
             ExternalNetworkId=json_data.get("ExternalNetworkId"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Region=json_data.get("Region"),
             Tags=json_data.get("Tags"),

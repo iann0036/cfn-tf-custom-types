@@ -12,12 +12,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OpenStack::BlockstorageVolumeAttachV3",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#attachmode" title="AttachMode">AttachMode</a>" : <i>String</i>,
+        "<a href="#data" title="Data">Data</a>" : <i>[ &lt;a href=&#34;data.md&#34;&gt;Data&lt;/a&gt;, ... ]</i>,
         "<a href="#device" title="Device">Device</a>" : <i>String</i>,
+        "<a href="#drivervolumetype" title="DriverVolumeType">DriverVolumeType</a>" : <i>String</i>,
         "<a href="#hostname" title="HostName">HostName</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#initiator" title="Initiator">Initiator</a>" : <i>String</i>,
         "<a href="#ipaddress" title="IpAddress">IpAddress</a>" : <i>String</i>,
+        "<a href="#mountpointbase" title="MountPointBase">MountPointBase</a>" : <i>String</i>,
         "<a href="#multipath" title="Multipath">Multipath</a>" : <i>Boolean</i>,
         "<a href="#ostype" title="OsType">OsType</a>" : <i>String</i>,
         "<a href="#platform" title="Platform">Platform</a>" : <i>String</i>,
@@ -25,7 +28,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#volumeid" title="VolumeId">VolumeId</a>" : <i>String</i>,
         "<a href="#wwnn" title="Wwnn">Wwnn</a>" : <i>String</i>,
         "<a href="#wwpn" title="Wwpn">Wwpn</a>" : <i>[ String, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     }
 }
 </pre>
@@ -35,12 +38,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OpenStack::BlockstorageVolumeAttachV3
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#attachmode" title="AttachMode">AttachMode</a>: <i>String</i>
+    <a href="#data" title="Data">Data</a>: <i>
+      - &lt;a href=&#34;data.md&#34;&gt;Data&lt;/a&gt;</i>
     <a href="#device" title="Device">Device</a>: <i>String</i>
+    <a href="#drivervolumetype" title="DriverVolumeType">DriverVolumeType</a>: <i>String</i>
     <a href="#hostname" title="HostName">HostName</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#initiator" title="Initiator">Initiator</a>: <i>String</i>
     <a href="#ipaddress" title="IpAddress">IpAddress</a>: <i>String</i>
+    <a href="#mountpointbase" title="MountPointBase">MountPointBase</a>: <i>String</i>
     <a href="#multipath" title="Multipath">Multipath</a>: <i>Boolean</i>
     <a href="#ostype" title="OsType">OsType</a>: <i>String</i>
     <a href="#platform" title="Platform">Platform</a>: <i>String</i>
@@ -49,10 +56,20 @@ Properties:
     <a href="#wwnn" title="Wwnn">Wwnn</a>: <i>String</i>
     <a href="#wwpn" title="Wwpn">Wwpn</a>: <i>
       - String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AttachMode
 
@@ -62,7 +79,23 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### Data
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;data.md&#34;&gt;Data&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Device
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### DriverVolumeType
 
 _Required_: No
 
@@ -78,14 +111,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Initiator
 
 _Required_: No
@@ -95,6 +120,14 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IpAddress
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### MountPointBase
 
 _Required_: No
 
@@ -162,7 +195,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -184,13 +217,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Data
 
-Returns the <code>Data</code> value.
+Returns the &lt;code&gt;Data&lt;/code&gt; value.
 
 #### DriverVolumeType
 
-Returns the <code>DriverVolumeType</code> value.
+Returns the &lt;code&gt;DriverVolumeType&lt;/code&gt; value.
 
 #### MountPointBase
 
-Returns the <code>MountPointBase</code> value.
+Returns the &lt;code&gt;MountPointBase&lt;/code&gt; value.
 

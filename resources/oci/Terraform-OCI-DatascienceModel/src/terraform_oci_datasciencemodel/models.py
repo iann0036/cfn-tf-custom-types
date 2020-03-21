@@ -47,7 +47,6 @@ class ResourceModel(BaseResourceModel):
     DisplayName: Optional[str]
     EmptyModel: Optional[bool]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     ModelArtifact: Optional[str]
     ProjectId: Optional[str]
     State: Optional[str]
@@ -74,7 +73,6 @@ class ResourceModel(BaseResourceModel):
             DisplayName=json_data.get("DisplayName"),
             EmptyModel=json_data.get("EmptyModel"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             ModelArtifact=json_data.get("ModelArtifact"),
             ProjectId=json_data.get("ProjectId"),
             State=json_data.get("State"),

@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DeviceGroup: Optional[str]
     Exceptions: Optional[Sequence[str]]
-    Id: Optional[str]
     Name: Optional[str]
     Password: Optional[str]
     PasswordEnc: Optional[str]
@@ -65,7 +64,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DeviceGroup=json_data.get("DeviceGroup"),
             Exceptions=json_data.get("Exceptions"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Password=json_data.get("Password"),
             PasswordEnc=json_data.get("PasswordEnc"),

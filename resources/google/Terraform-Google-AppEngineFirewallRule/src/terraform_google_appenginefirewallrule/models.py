@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Action: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     Priority: Optional[float]
     Project: Optional[str]
     SourceRange: Optional[str]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Action=json_data.get("Action"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Priority=json_data.get("Priority"),
             Project=json_data.get("Project"),
             SourceRange=json_data.get("SourceRange"),

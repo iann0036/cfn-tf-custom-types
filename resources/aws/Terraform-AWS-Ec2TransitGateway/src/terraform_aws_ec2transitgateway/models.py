@@ -44,7 +44,6 @@ class ResourceModel(BaseResourceModel):
     DefaultRouteTablePropagation: Optional[str]
     Description: Optional[str]
     DnsSupport: Optional[str]
-    Id: Optional[str]
     OwnerId: Optional[str]
     PropagationDefaultRouteTableId: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
@@ -67,7 +66,6 @@ class ResourceModel(BaseResourceModel):
             DefaultRouteTablePropagation=json_data.get("DefaultRouteTablePropagation"),
             Description=json_data.get("Description"),
             DnsSupport=json_data.get("DnsSupport"),
-            Id=json_data.get("Id"),
             OwnerId=json_data.get("OwnerId"),
             PropagationDefaultRouteTableId=json_data.get("PropagationDefaultRouteTableId"),
             Tags=json_data.get("Tags"),

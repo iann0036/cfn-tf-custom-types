@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     Keepers: Optional[Sequence["_Keepers"]]
     Length: Optional[float]
     Prefix: Optional[str]
@@ -51,7 +50,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             Keepers=json_data.get("Keepers"),
             Length=json_data.get("Length"),
             Prefix=json_data.get("Prefix"),

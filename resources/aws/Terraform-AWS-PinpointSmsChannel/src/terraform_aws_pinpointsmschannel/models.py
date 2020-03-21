@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ApplicationId: Optional[str]
     Enabled: Optional[bool]
-    Id: Optional[str]
     PromotionalMessagesPerSecond: Optional[float]
     SenderId: Optional[str]
     ShortCode: Optional[str]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ApplicationId=json_data.get("ApplicationId"),
             Enabled=json_data.get("Enabled"),
-            Id=json_data.get("Id"),
             PromotionalMessagesPerSecond=json_data.get("PromotionalMessagesPerSecond"),
             SenderId=json_data.get("SenderId"),
             ShortCode=json_data.get("ShortCode"),

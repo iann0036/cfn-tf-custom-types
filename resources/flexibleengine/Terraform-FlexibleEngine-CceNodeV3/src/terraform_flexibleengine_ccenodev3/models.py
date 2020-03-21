@@ -47,7 +47,6 @@ class ResourceModel(BaseResourceModel):
     EipIds: Optional[Sequence[str]]
     ExtendParamChargingMode: Optional[float]
     FlavorId: Optional[str]
-    Id: Optional[str]
     Iptype: Optional[str]
     KeyPair: Optional[str]
     Labels: Optional[Sequence["_Labels"]]
@@ -87,7 +86,6 @@ class ResourceModel(BaseResourceModel):
             EipIds=json_data.get("EipIds"),
             ExtendParamChargingMode=json_data.get("ExtendParamChargingMode"),
             FlavorId=json_data.get("FlavorId"),
-            Id=json_data.get("Id"),
             Iptype=json_data.get("Iptype"),
             KeyPair=json_data.get("KeyPair"),
             Labels=json_data.get("Labels"),

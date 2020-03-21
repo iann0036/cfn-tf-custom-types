@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DestinationList: Optional[str]
     Disabled: Optional[bool]
-    Id: Optional[str]
     Name: Optional[str]
     SourceList: Optional[str]
 
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DestinationList=json_data.get("DestinationList"),
             Disabled=json_data.get("Disabled"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             SourceList=json_data.get("SourceList"),
         )

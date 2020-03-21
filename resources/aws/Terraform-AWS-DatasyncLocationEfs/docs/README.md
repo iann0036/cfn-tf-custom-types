@@ -12,11 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::DatasyncLocationEfs",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#efsfilesystemarn" title="EfsFileSystemArn">EfsFileSystemArn</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#subdirectory" title="Subdirectory">Subdirectory</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
-        "<a href="#ec2config" title="Ec2Config">Ec2Config</a>" : <i>[ <a href="ec2config.md">Ec2Config</a>, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#uri" title="Uri">Uri</a>" : <i>String</i>,
+        "<a href="#ec2config" title="Ec2Config">Ec2Config</a>" : <i>[ &lt;a href=&#34;ec2config.md&#34;&gt;Ec2Config&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -26,28 +28,40 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::DatasyncLocationEfs
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#efsfilesystemarn" title="EfsFileSystemArn">EfsFileSystemArn</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#subdirectory" title="Subdirectory">Subdirectory</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+    <a href="#uri" title="Uri">Uri</a>: <i>String</i>
     <a href="#ec2config" title="Ec2Config">Ec2Config</a>: <i>
-      - <a href="ec2config.md">Ec2Config</a></i>
+      - &lt;a href=&#34;ec2config.md&#34;&gt;Ec2Config&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
-#### EfsFileSystemArn
+#### tfcfnid
 
-_Required_: Yes
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
 
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### Arn
 
 _Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### EfsFileSystemArn
+
+_Required_: Yes
 
 _Type_: String
 
@@ -65,7 +79,15 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Uri
+
+_Required_: No
+
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -73,7 +95,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="ec2config.md">Ec2Config</a>
+_Type_: List of &lt;a href=&#34;ec2config.md&#34;&gt;Ec2Config&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -95,9 +117,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the <code>Arn</code> value.
+Returns the &lt;code&gt;Arn&lt;/code&gt; value.
 
 #### Uri
 
-Returns the <code>Uri</code> value.
+Returns the &lt;code&gt;Uri&lt;/code&gt; value.
 

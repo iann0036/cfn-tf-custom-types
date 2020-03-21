@@ -14,7 +14,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#rotationvirtualstart" title="RotationVirtualStart">RotationVirtualStart</a>" : <i>String</i>,
     "<a href="#start" title="Start">Start</a>" : <i>String</i>,
     "<a href="#users" title="Users">Users</a>" : <i>[ String, ... ]</i>,
-    "<a href="#restriction" title="Restriction">Restriction</a>" : <i>[ <a href="layer-restriction.md">Restriction</a>, ... ]</i>
+    "<a href="#restriction" title="Restriction">Restriction</a>" : <i>[ &lt;a href=&#34;layer-restriction.md&#34;&gt;Restriction&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -29,7 +29,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#users" title="Users">Users</a>: <i>
       - String</i>
 <a href="#restriction" title="Restriction">Restriction</a>: <i>
-      - <a href="layer-restriction.md">Restriction</a></i>
+      - &lt;a href=&#34;layer-restriction.md&#34;&gt;Restriction&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -37,7 +37,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### End
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -45,7 +44,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Name
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -53,7 +51,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RotationTurnLengthSeconds
 
 _Required_: Yes
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -61,7 +58,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RotationVirtualStart
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -69,7 +65,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Start
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -77,7 +72,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Users
 
 _Required_: Yes
-
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -85,8 +79,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Restriction
 
 _Required_: No
-
-_Type_: List of <a href="layer-restriction.md">Restriction</a>
+_Type_: List of &lt;a href=&#34;layer-restriction.md&#34;&gt;Restriction&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

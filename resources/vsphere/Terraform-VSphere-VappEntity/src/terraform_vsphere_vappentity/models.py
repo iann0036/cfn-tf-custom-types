@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ContainerId: Optional[str]
     CustomAttributes: Optional[Sequence["_CustomAttributes"]]
-    Id: Optional[str]
     StartAction: Optional[str]
     StartDelay: Optional[float]
     StartOrder: Optional[float]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ContainerId=json_data.get("ContainerId"),
             CustomAttributes=json_data.get("CustomAttributes"),
-            Id=json_data.get("Id"),
             StartAction=json_data.get("StartAction"),
             StartDelay=json_data.get("StartDelay"),
             StartOrder=json_data.get("StartOrder"),

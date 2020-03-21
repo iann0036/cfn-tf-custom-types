@@ -12,10 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::VCD::EdgegatewayVpn",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#edgegateway" title="EdgeGateway">EdgeGateway</a>" : <i>String</i>,
         "<a href="#encryptionprotocol" title="EncryptionProtocol">EncryptionProtocol</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#localid" title="LocalId">LocalId</a>" : <i>String</i>,
         "<a href="#localipaddress" title="LocalIpAddress">LocalIpAddress</a>" : <i>String</i>,
         "<a href="#mtu" title="Mtu">Mtu</a>" : <i>Double</i>,
@@ -25,8 +25,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#peeripaddress" title="PeerIpAddress">PeerIpAddress</a>" : <i>String</i>,
         "<a href="#sharedsecret" title="SharedSecret">SharedSecret</a>" : <i>String</i>,
         "<a href="#vdc" title="Vdc">Vdc</a>" : <i>String</i>,
-        "<a href="#localsubnets" title="LocalSubnets">LocalSubnets</a>" : <i>[ <a href="localsubnets.md">LocalSubnets</a>, ... ]</i>,
-        "<a href="#peersubnets" title="PeerSubnets">PeerSubnets</a>" : <i>[ <a href="peersubnets.md">PeerSubnets</a>, ... ]</i>
+        "<a href="#localsubnets" title="LocalSubnets">LocalSubnets</a>" : <i>[ &lt;a href=&#34;localsubnets.md&#34;&gt;LocalSubnets&lt;/a&gt;, ... ]</i>,
+        "<a href="#peersubnets" title="PeerSubnets">PeerSubnets</a>" : <i>[ &lt;a href=&#34;peersubnets.md&#34;&gt;PeerSubnets&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -36,10 +36,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::VCD::EdgegatewayVpn
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#edgegateway" title="EdgeGateway">EdgeGateway</a>: <i>String</i>
     <a href="#encryptionprotocol" title="EncryptionProtocol">EncryptionProtocol</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#localid" title="LocalId">LocalId</a>: <i>String</i>
     <a href="#localipaddress" title="LocalIpAddress">LocalIpAddress</a>: <i>String</i>
     <a href="#mtu" title="Mtu">Mtu</a>: <i>Double</i>
@@ -50,12 +50,22 @@ Properties:
     <a href="#sharedsecret" title="SharedSecret">SharedSecret</a>: <i>String</i>
     <a href="#vdc" title="Vdc">Vdc</a>: <i>String</i>
     <a href="#localsubnets" title="LocalSubnets">LocalSubnets</a>: <i>
-      - <a href="localsubnets.md">LocalSubnets</a></i>
+      - &lt;a href=&#34;localsubnets.md&#34;&gt;LocalSubnets&lt;/a&gt;</i>
     <a href="#peersubnets" title="PeerSubnets">PeerSubnets</a>: <i>
-      - <a href="peersubnets.md">PeerSubnets</a></i>
+      - &lt;a href=&#34;peersubnets.md&#34;&gt;PeerSubnets&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -76,14 +86,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### EncryptionProtocol
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
 
 _Type_: String
 
@@ -165,7 +167,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="localsubnets.md">LocalSubnets</a>
+_Type_: List of &lt;a href=&#34;localsubnets.md&#34;&gt;LocalSubnets&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -173,7 +175,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="peersubnets.md">PeerSubnets</a>
+_Type_: List of &lt;a href=&#34;peersubnets.md&#34;&gt;PeerSubnets&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

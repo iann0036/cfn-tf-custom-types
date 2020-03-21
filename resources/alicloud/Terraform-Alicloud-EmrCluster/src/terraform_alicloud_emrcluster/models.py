@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     EasEnable: Optional[bool]
     EmrVer: Optional[str]
     HighAvailabilityEnable: Optional[bool]
-    Id: Optional[str]
     IsOpenPublicIp: Optional[bool]
     KeyPairName: Optional[str]
     MasterPwd: Optional[str]
@@ -75,7 +74,6 @@ class ResourceModel(BaseResourceModel):
             EasEnable=json_data.get("EasEnable"),
             EmrVer=json_data.get("EmrVer"),
             HighAvailabilityEnable=json_data.get("HighAvailabilityEnable"),
-            Id=json_data.get("Id"),
             IsOpenPublicIp=json_data.get("IsOpenPublicIp"),
             KeyPairName=json_data.get("KeyPairName"),
             MasterPwd=json_data.get("MasterPwd"),

@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DisplayName: Optional[str]
     HaPersistenceMirroring: Optional[bool]
-    Id: Optional[str]
     PersistenceShared: Optional[bool]
     PurgeWhenFull: Optional[bool]
     Revision: Optional[float]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DisplayName=json_data.get("DisplayName"),
             HaPersistenceMirroring=json_data.get("HaPersistenceMirroring"),
-            Id=json_data.get("Id"),
             PersistenceShared=json_data.get("PersistenceShared"),
             PurgeWhenFull=json_data.get("PurgeWhenFull"),
             Revision=json_data.get("Revision"),

@@ -12,14 +12,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::DigitalOcean::KubernetesNodePool",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#actualnodecount" title="ActualNodeCount">ActualNodeCount</a>" : <i>Double</i>,
         "<a href="#autoscale" title="AutoScale">AutoScale</a>" : <i>Boolean</i>,
         "<a href="#clusterid" title="ClusterId">ClusterId</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="labels.md">Labels</a>, ... ]</i>,
+        "<a href="#labels" title="Labels">Labels</a>" : <i>[ &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;, ... ]</i>,
         "<a href="#maxnodes" title="MaxNodes">MaxNodes</a>" : <i>Double</i>,
         "<a href="#minnodes" title="MinNodes">MinNodes</a>" : <i>Double</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#nodecount" title="NodeCount">NodeCount</a>" : <i>Double</i>,
+        "<a href="#nodes" title="Nodes">Nodes</a>" : <i>[ &lt;a href=&#34;nodes.md&#34;&gt;Nodes&lt;/a&gt;, ... ]</i>,
         "<a href="#size" title="Size">Size</a>" : <i>String</i>,
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>
     }
@@ -31,21 +33,42 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::DigitalOcean::KubernetesNodePool
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#actualnodecount" title="ActualNodeCount">ActualNodeCount</a>: <i>Double</i>
     <a href="#autoscale" title="AutoScale">AutoScale</a>: <i>Boolean</i>
     <a href="#clusterid" title="ClusterId">ClusterId</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#labels" title="Labels">Labels</a>: <i>
-      - <a href="labels.md">Labels</a></i>
+      - &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;</i>
     <a href="#maxnodes" title="MaxNodes">MaxNodes</a>: <i>Double</i>
     <a href="#minnodes" title="MinNodes">MinNodes</a>: <i>Double</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#nodecount" title="NodeCount">NodeCount</a>: <i>Double</i>
+    <a href="#nodes" title="Nodes">Nodes</a>: <i>
+      - &lt;a href=&#34;nodes.md&#34;&gt;Nodes&lt;/a&gt;</i>
     <a href="#size" title="Size">Size</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
       - String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ActualNodeCount
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AutoScale
 
@@ -63,19 +86,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Labels
 
 _Required_: No
 
-_Type_: List of <a href="labels.md">Labels</a>
+_Type_: List of &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -108,6 +123,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Nodes
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;nodes.md&#34;&gt;Nodes&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -145,9 +168,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ActualNodeCount
 
-Returns the <code>ActualNodeCount</code> value.
+Returns the &lt;code&gt;ActualNodeCount&lt;/code&gt; value.
 
 #### Nodes
 
-Returns the <code>Nodes</code> value.
+Returns the &lt;code&gt;Nodes&lt;/code&gt; value.
 

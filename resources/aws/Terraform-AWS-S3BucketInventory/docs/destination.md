@@ -8,7 +8,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#bucket" title="Bucket">Bucket</a>" : <i>[ <a href="destination-bucket.md">Bucket</a>, ... ]</i>
+    "<a href="#bucket" title="Bucket">Bucket</a>" : <i>[ &lt;a href=&#34;destination-bucket.md&#34;&gt;Bucket&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#bucket" title="Bucket">Bucket</a>: <i>
-      - <a href="destination-bucket.md">Bucket</a></i>
+      - &lt;a href=&#34;destination-bucket.md&#34;&gt;Bucket&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -24,8 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Bucket
 
 _Required_: No
-
-_Type_: List of <a href="destination-bucket.md">Bucket</a>
+_Type_: List of &lt;a href=&#34;destination-bucket.md&#34;&gt;Bucket&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

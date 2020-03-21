@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     DefinedTags: Optional[Sequence["_DefinedTags"]]
     DisplayName: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     IsHydrated: Optional[bool]
     KmsKeyId: Optional[str]
     SizeInGbs: Optional[str]
@@ -71,7 +70,6 @@ class ResourceModel(BaseResourceModel):
             DefinedTags=json_data.get("DefinedTags"),
             DisplayName=json_data.get("DisplayName"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             IsHydrated=json_data.get("IsHydrated"),
             KmsKeyId=json_data.get("KmsKeyId"),
             SizeInGbs=json_data.get("SizeInGbs"),

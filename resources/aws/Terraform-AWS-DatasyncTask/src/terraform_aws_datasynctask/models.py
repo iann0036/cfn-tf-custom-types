@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     CloudwatchLogGroupArn: Optional[str]
     DestinationLocationArn: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     SourceLocationArn: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             CloudwatchLogGroupArn=json_data.get("CloudwatchLogGroupArn"),
             DestinationLocationArn=json_data.get("DestinationLocationArn"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             SourceLocationArn=json_data.get("SourceLocationArn"),
             Tags=json_data.get("Tags"),

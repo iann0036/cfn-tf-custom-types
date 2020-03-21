@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     DomainName: Optional[str]
     ElasticsearchVersion: Optional[str]
     Endpoint: Optional[str]
-    Id: Optional[str]
     KibanaEndpoint: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
     ClusterConfig: Optional[Sequence["_ClusterConfig"]]
@@ -73,7 +72,6 @@ class ResourceModel(BaseResourceModel):
             DomainName=json_data.get("DomainName"),
             ElasticsearchVersion=json_data.get("ElasticsearchVersion"),
             Endpoint=json_data.get("Endpoint"),
-            Id=json_data.get("Id"),
             KibanaEndpoint=json_data.get("KibanaEndpoint"),
             Tags=json_data.get("Tags"),
             ClusterConfig=json_data.get("ClusterConfig"),

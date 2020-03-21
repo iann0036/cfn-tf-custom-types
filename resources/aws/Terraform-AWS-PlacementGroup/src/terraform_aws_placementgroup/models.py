@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     PlacementGroupId: Optional[str]
     Strategy: Optional[str]
@@ -51,7 +50,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             PlacementGroupId=json_data.get("PlacementGroupId"),
             Strategy=json_data.get("Strategy"),

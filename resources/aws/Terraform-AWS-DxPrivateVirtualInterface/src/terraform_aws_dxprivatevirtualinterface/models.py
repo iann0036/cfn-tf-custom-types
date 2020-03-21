@@ -46,7 +46,6 @@ class ResourceModel(BaseResourceModel):
     ConnectionId: Optional[str]
     CustomerAddress: Optional[str]
     DxGatewayId: Optional[str]
-    Id: Optional[str]
     JumboFrameCapable: Optional[bool]
     Mtu: Optional[float]
     Name: Optional[str]
@@ -74,7 +73,6 @@ class ResourceModel(BaseResourceModel):
             ConnectionId=json_data.get("ConnectionId"),
             CustomerAddress=json_data.get("CustomerAddress"),
             DxGatewayId=json_data.get("DxGatewayId"),
-            Id=json_data.get("Id"),
             JumboFrameCapable=json_data.get("JumboFrameCapable"),
             Mtu=json_data.get("Mtu"),
             Name=json_data.get("Name"),

@@ -11,8 +11,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#accessmodes" title="AccessModes">AccessModes</a>" : <i>[ String, ... ]</i>,
     "<a href="#storageclassname" title="StorageClassName">StorageClassName</a>" : <i>String</i>,
     "<a href="#volumename" title="VolumeName">VolumeName</a>" : <i>String</i>,
-    "<a href="#resources" title="Resources">Resources</a>" : <i>[ <a href="volumeclaimtemplate-spec-resources.md">Resources</a>, ... ]</i>,
-    "<a href="#selector" title="Selector">Selector</a>" : <i>[ <a href="volumeclaimtemplate-spec-selector.md">Selector</a>, ... ]</i>
+    "<a href="#resources" title="Resources">Resources</a>" : <i>[ &lt;a href=&#34;volumeclaimtemplate-spec-resources.md&#34;&gt;Resources&lt;/a&gt;, ... ]</i>,
+    "<a href="#selector" title="Selector">Selector</a>" : <i>[ &lt;a href=&#34;volumeclaimtemplate-spec-selector.md&#34;&gt;Selector&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -24,9 +24,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#storageclassname" title="StorageClassName">StorageClassName</a>: <i>String</i>
 <a href="#volumename" title="VolumeName">VolumeName</a>: <i>String</i>
 <a href="#resources" title="Resources">Resources</a>: <i>
-      - <a href="volumeclaimtemplate-spec-resources.md">Resources</a></i>
+      - &lt;a href=&#34;volumeclaimtemplate-spec-resources.md&#34;&gt;Resources&lt;/a&gt;</i>
 <a href="#selector" title="Selector">Selector</a>: <i>
-      - <a href="volumeclaimtemplate-spec-selector.md">Selector</a></i>
+      - &lt;a href=&#34;volumeclaimtemplate-spec-selector.md&#34;&gt;Selector&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -34,7 +34,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### AccessModes
 
 _Required_: Yes
-
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -42,7 +41,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### StorageClassName
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -50,7 +48,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### VolumeName
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -58,16 +55,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Resources
 
 _Required_: No
-
-_Type_: List of <a href="volumeclaimtemplate-spec-resources.md">Resources</a>
+_Type_: List of &lt;a href=&#34;volumeclaimtemplate-spec-resources.md&#34;&gt;Resources&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Selector
 
 _Required_: No
-
-_Type_: List of <a href="volumeclaimtemplate-spec-selector.md">Selector</a>
+_Type_: List of &lt;a href=&#34;volumeclaimtemplate-spec-selector.md&#34;&gt;Selector&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

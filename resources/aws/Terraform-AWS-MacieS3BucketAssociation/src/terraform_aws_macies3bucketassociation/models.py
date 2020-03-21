@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     BucketName: Optional[str]
-    Id: Optional[str]
     MemberAccountId: Optional[str]
     Prefix: Optional[str]
     ClassificationType: Optional[Sequence["_ClassificationType"]]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             BucketName=json_data.get("BucketName"),
-            Id=json_data.get("Id"),
             MemberAccountId=json_data.get("MemberAccountId"),
             Prefix=json_data.get("Prefix"),
             ClassificationType=json_data.get("ClassificationType"),

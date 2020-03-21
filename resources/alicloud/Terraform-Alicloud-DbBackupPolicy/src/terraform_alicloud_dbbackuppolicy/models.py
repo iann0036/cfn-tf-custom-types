@@ -45,7 +45,6 @@ class ResourceModel(BaseResourceModel):
     CompressType: Optional[str]
     EnableBackupLog: Optional[bool]
     HighSpaceUsageProtection: Optional[str]
-    Id: Optional[str]
     InstanceId: Optional[str]
     LocalLogRetentionHours: Optional[float]
     LocalLogRetentionSpace: Optional[float]
@@ -75,7 +74,6 @@ class ResourceModel(BaseResourceModel):
             CompressType=json_data.get("CompressType"),
             EnableBackupLog=json_data.get("EnableBackupLog"),
             HighSpaceUsageProtection=json_data.get("HighSpaceUsageProtection"),
-            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
             LocalLogRetentionHours=json_data.get("LocalLogRetentionHours"),
             LocalLogRetentionSpace=json_data.get("LocalLogRetentionSpace"),

@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Connect: Optional[bool]
     Datacenter: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Near: Optional[str]
     OnlyPassing: Optional[bool]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Connect=json_data.get("Connect"),
             Datacenter=json_data.get("Datacenter"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Near=json_data.get("Near"),
             OnlyPassing=json_data.get("OnlyPassing"),

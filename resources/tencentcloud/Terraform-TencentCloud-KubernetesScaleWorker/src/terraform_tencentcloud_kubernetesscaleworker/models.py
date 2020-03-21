@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ClusterId: Optional[str]
-    Id: Optional[str]
     WorkerInstancesList: Optional[Sequence["_WorkerInstancesList"]]
     WorkerConfig: Optional[Sequence["_WorkerConfig"]]
     DataDisk: Optional[Sequence["_DataDisk"]]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             ClusterId=json_data.get("ClusterId"),
-            Id=json_data.get("Id"),
             WorkerInstancesList=json_data.get("WorkerInstancesList"),
             WorkerConfig=json_data.get("WorkerConfig"),
             DataDisk=json_data.get("DataDisk"),

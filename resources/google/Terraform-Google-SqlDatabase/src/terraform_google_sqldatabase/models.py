@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Charset: Optional[str]
     Collation: Optional[str]
-    Id: Optional[str]
     Instance: Optional[str]
     Name: Optional[str]
     Project: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Charset=json_data.get("Charset"),
             Collation=json_data.get("Collation"),
-            Id=json_data.get("Id"),
             Instance=json_data.get("Instance"),
             Name=json_data.get("Name"),
             Project=json_data.get("Project"),

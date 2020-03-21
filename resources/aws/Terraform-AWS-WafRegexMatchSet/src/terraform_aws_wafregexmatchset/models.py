@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Arn: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     RegexMatchTuple: Optional[Sequence["_RegexMatchTuple"]]
     FieldToMatch: Optional[Sequence["_FieldToMatch"]]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Arn=json_data.get("Arn"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             RegexMatchTuple=json_data.get("RegexMatchTuple"),
             FieldToMatch=json_data.get("FieldToMatch"),

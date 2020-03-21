@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     Family: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Parameter: Optional[Sequence["_Parameter"]]
 
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             Family=json_data.get("Family"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Parameter=json_data.get("Parameter"),
         )

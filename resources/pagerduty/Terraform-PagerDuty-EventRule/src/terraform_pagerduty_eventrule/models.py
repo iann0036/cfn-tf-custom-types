@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     AdvancedConditionJson: Optional[str]
     CatchAll: Optional[bool]
     ConditionJson: Optional[str]
-    Id: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             AdvancedConditionJson=json_data.get("AdvancedConditionJson"),
             CatchAll=json_data.get("CatchAll"),
             ConditionJson=json_data.get("ConditionJson"),
-            Id=json_data.get("Id"),
         )
 
 

@@ -55,7 +55,6 @@ class ResourceModel(BaseResourceModel):
     GpsPreferIpv6: Optional[bool]
     GpsPublishConnectedRoutes: Optional[bool]
     GpsPublishRoutes: Optional[Sequence[str]]
-    Id: Optional[str]
     MkAuthKey: Optional[str]
     MkAuthKeyEnc: Optional[str]
     MkAuthType: Optional[str]
@@ -105,7 +104,6 @@ class ResourceModel(BaseResourceModel):
             GpsPreferIpv6=json_data.get("GpsPreferIpv6"),
             GpsPublishConnectedRoutes=json_data.get("GpsPublishConnectedRoutes"),
             GpsPublishRoutes=json_data.get("GpsPublishRoutes"),
-            Id=json_data.get("Id"),
             MkAuthKey=json_data.get("MkAuthKey"),
             MkAuthKeyEnc=json_data.get("MkAuthKeyEnc"),
             MkAuthType=json_data.get("MkAuthType"),

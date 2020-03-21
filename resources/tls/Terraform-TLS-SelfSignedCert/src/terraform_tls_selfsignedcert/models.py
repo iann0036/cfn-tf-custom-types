@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     CertPem: Optional[str]
     DnsNames: Optional[Sequence[str]]
     EarlyRenewalHours: Optional[float]
-    Id: Optional[str]
     IpAddresses: Optional[Sequence[str]]
     IsCaCertificate: Optional[bool]
     KeyAlgorithm: Optional[str]
@@ -66,7 +65,6 @@ class ResourceModel(BaseResourceModel):
             CertPem=json_data.get("CertPem"),
             DnsNames=json_data.get("DnsNames"),
             EarlyRenewalHours=json_data.get("EarlyRenewalHours"),
-            Id=json_data.get("Id"),
             IpAddresses=json_data.get("IpAddresses"),
             IsCaCertificate=json_data.get("IsCaCertificate"),
             KeyAlgorithm=json_data.get("KeyAlgorithm"),

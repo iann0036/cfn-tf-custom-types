@@ -12,13 +12,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::DbReadWriteSplittingConnection",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#connectionprefix" title="ConnectionPrefix">ConnectionPrefix</a>" : <i>String</i>,
+        "<a href="#connectionstring" title="ConnectionString">ConnectionString</a>" : <i>String</i>,
         "<a href="#distributiontype" title="DistributionType">DistributionType</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#instanceid" title="InstanceId">InstanceId</a>" : <i>String</i>,
         "<a href="#maxdelaytime" title="MaxDelayTime">MaxDelayTime</a>" : <i>Double</i>,
         "<a href="#port" title="Port">Port</a>" : <i>Double</i>,
-        "<a href="#weight" title="Weight">Weight</a>" : <i>[ <a href="weight.md">Weight</a>, ... ]</i>
+        "<a href="#weight" title="Weight">Weight</a>" : <i>[ &lt;a href=&#34;weight.md&#34;&gt;Weight&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -28,19 +29,38 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::DbReadWriteSplittingConnection
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#connectionprefix" title="ConnectionPrefix">ConnectionPrefix</a>: <i>String</i>
+    <a href="#connectionstring" title="ConnectionString">ConnectionString</a>: <i>String</i>
     <a href="#distributiontype" title="DistributionType">DistributionType</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#instanceid" title="InstanceId">InstanceId</a>: <i>String</i>
     <a href="#maxdelaytime" title="MaxDelayTime">MaxDelayTime</a>: <i>Double</i>
     <a href="#port" title="Port">Port</a>: <i>Double</i>
     <a href="#weight" title="Weight">Weight</a>: <i>
-      - <a href="weight.md">Weight</a></i>
+      - &lt;a href=&#34;weight.md&#34;&gt;Weight&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### ConnectionPrefix
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ConnectionString
 
 _Required_: No
 
@@ -51,14 +71,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DistributionType
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
 
 _Type_: String
 
@@ -92,7 +104,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="weight.md">Weight</a>
+_Type_: List of &lt;a href=&#34;weight.md&#34;&gt;Weight&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -114,5 +126,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ConnectionString
 
-Returns the <code>ConnectionString</code> value.
+Returns the &lt;code&gt;ConnectionString&lt;/code&gt; value.
 

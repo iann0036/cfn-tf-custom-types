@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AuthPasswordEnc: Optional[Sequence["_AuthPasswordEnc"]]
     AuthPasswordRaw: Optional[Sequence["_AuthPasswordRaw"]]
-    Id: Optional[str]
     Name: Optional[str]
     PrivPasswordEnc: Optional[Sequence["_PrivPasswordEnc"]]
     PrivPasswordRaw: Optional[Sequence["_PrivPasswordRaw"]]
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AuthPasswordEnc=json_data.get("AuthPasswordEnc"),
             AuthPasswordRaw=json_data.get("AuthPasswordRaw"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             PrivPasswordEnc=json_data.get("PrivPasswordEnc"),
             PrivPasswordRaw=json_data.get("PrivPasswordRaw"),

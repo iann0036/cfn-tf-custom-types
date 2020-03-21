@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     HostProject: Optional[str]
-    Id: Optional[str]
     ServiceProject: Optional[str]
 
     @classmethod
@@ -50,7 +49,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             HostProject=json_data.get("HostProject"),
-            Id=json_data.get("Id"),
             ServiceProject=json_data.get("ServiceProject"),
         )
 

@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     ContainerWrite: Optional[str]
     ContentType: Optional[str]
     ForceDestroy: Optional[bool]
-    Id: Optional[str]
     Metadata: Optional[Sequence["_Metadata"]]
     Name: Optional[str]
     Region: Optional[str]
@@ -63,7 +62,6 @@ class ResourceModel(BaseResourceModel):
             ContainerWrite=json_data.get("ContainerWrite"),
             ContentType=json_data.get("ContentType"),
             ForceDestroy=json_data.get("ForceDestroy"),
-            Id=json_data.get("Id"),
             Metadata=json_data.get("Metadata"),
             Name=json_data.get("Name"),
             Region=json_data.get("Region"),

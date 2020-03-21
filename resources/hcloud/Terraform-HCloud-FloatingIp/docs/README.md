@@ -12,10 +12,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::HCloud::FloatingIp",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#homelocation" title="HomeLocation">HomeLocation</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="labels.md">Labels</a>, ... ]</i>,
+        "<a href="#ipaddress" title="IpAddress">IpAddress</a>" : <i>String</i>,
+        "<a href="#ipnetwork" title="IpNetwork">IpNetwork</a>" : <i>String</i>,
+        "<a href="#labels" title="Labels">Labels</a>" : <i>[ &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;, ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#serverid" title="ServerId">ServerId</a>" : <i>Double</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>
@@ -28,17 +30,29 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::HCloud::FloatingIp
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#homelocation" title="HomeLocation">HomeLocation</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#ipaddress" title="IpAddress">IpAddress</a>: <i>String</i>
+    <a href="#ipnetwork" title="IpNetwork">IpNetwork</a>: <i>String</i>
     <a href="#labels" title="Labels">Labels</a>: <i>
-      - <a href="labels.md">Labels</a></i>
+      - &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#serverid" title="ServerId">ServerId</a>: <i>Double</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -56,7 +70,15 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### IpAddress
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### IpNetwork
 
 _Required_: No
 
@@ -68,7 +90,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="labels.md">Labels</a>
+_Type_: List of &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -114,9 +136,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### IpAddress
 
-Returns the <code>IpAddress</code> value.
+Returns the &lt;code&gt;IpAddress&lt;/code&gt; value.
 
 #### IpNetwork
 
-Returns the <code>IpNetwork</code> value.
+Returns the &lt;code&gt;IpNetwork&lt;/code&gt; value.
 

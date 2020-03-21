@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Enabled: Optional[bool]
-    Id: Optional[str]
     Method: Optional[str]
     To: Optional[str]
     Username: Optional[str]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Enabled=json_data.get("Enabled"),
-            Id=json_data.get("Id"),
             Method=json_data.get("Method"),
             To=json_data.get("To"),
             Username=json_data.get("Username"),

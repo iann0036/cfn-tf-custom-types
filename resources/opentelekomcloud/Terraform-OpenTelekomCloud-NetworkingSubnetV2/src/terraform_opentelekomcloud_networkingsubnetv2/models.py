@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     DnsNameservers: Optional[Sequence[str]]
     EnableDhcp: Optional[bool]
     GatewayIp: Optional[str]
-    Id: Optional[str]
     IpVersion: Optional[float]
     Name: Optional[str]
     NetworkId: Optional[str]
@@ -65,7 +64,6 @@ class ResourceModel(BaseResourceModel):
             DnsNameservers=json_data.get("DnsNameservers"),
             EnableDhcp=json_data.get("EnableDhcp"),
             GatewayIp=json_data.get("GatewayIp"),
-            Id=json_data.get("Id"),
             IpVersion=json_data.get("IpVersion"),
             Name=json_data.get("Name"),
             NetworkId=json_data.get("NetworkId"),

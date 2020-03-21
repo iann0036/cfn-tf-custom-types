@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Cidr: Optional[str]
     DataCidr: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Organization: Optional[str]
     OutboundIps: Optional[Sequence[str]]
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Cidr=json_data.get("Cidr"),
             DataCidr=json_data.get("DataCidr"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Organization=json_data.get("Organization"),
             OutboundIps=json_data.get("OutboundIps"),

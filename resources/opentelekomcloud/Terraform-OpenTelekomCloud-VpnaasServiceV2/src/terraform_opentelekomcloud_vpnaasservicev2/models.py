@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     ExternalV4Ip: Optional[str]
     ExternalV6Ip: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Region: Optional[str]
     RouterId: Optional[str]
@@ -63,7 +62,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             ExternalV4Ip=json_data.get("ExternalV4Ip"),
             ExternalV6Ip=json_data.get("ExternalV6Ip"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Region=json_data.get("Region"),
             RouterId=json_data.get("RouterId"),

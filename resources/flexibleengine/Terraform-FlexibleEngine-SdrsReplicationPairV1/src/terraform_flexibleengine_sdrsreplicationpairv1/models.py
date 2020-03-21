@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     FaultLevel: Optional[str]
     GroupId: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     ReplicationModel: Optional[str]
     Status: Optional[str]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             FaultLevel=json_data.get("FaultLevel"),
             GroupId=json_data.get("GroupId"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ReplicationModel=json_data.get("ReplicationModel"),
             Status=json_data.get("Status"),

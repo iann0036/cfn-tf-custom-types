@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     ConsoleLogin: Optional[bool]
     CountryCode: Optional[str]
     Email: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     NeedResetPassword: Optional[bool]
     Password: Optional[str]
@@ -63,7 +62,6 @@ class ResourceModel(BaseResourceModel):
             ConsoleLogin=json_data.get("ConsoleLogin"),
             CountryCode=json_data.get("CountryCode"),
             Email=json_data.get("Email"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             NeedResetPassword=json_data.get("NeedResetPassword"),
             Password=json_data.get("Password"),

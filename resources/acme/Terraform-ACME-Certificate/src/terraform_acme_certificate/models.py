@@ -44,7 +44,6 @@ class ResourceModel(BaseResourceModel):
     CertificateRequestPem: Optional[str]
     CertificateUrl: Optional[str]
     CommonName: Optional[str]
-    Id: Optional[str]
     IssuerPem: Optional[str]
     KeyType: Optional[str]
     MinDaysRemaining: Optional[float]
@@ -71,7 +70,6 @@ class ResourceModel(BaseResourceModel):
             CertificateRequestPem=json_data.get("CertificateRequestPem"),
             CertificateUrl=json_data.get("CertificateUrl"),
             CommonName=json_data.get("CommonName"),
-            Id=json_data.get("Id"),
             IssuerPem=json_data.get("IssuerPem"),
             KeyType=json_data.get("KeyType"),
             MinDaysRemaining=json_data.get("MinDaysRemaining"),

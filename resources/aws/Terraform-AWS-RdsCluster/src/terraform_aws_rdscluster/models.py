@@ -61,7 +61,6 @@ class ResourceModel(BaseResourceModel):
     HostedZoneId: Optional[str]
     IamDatabaseAuthenticationEnabled: Optional[bool]
     IamRoles: Optional[Sequence[str]]
-    Id: Optional[str]
     KmsKeyId: Optional[str]
     MasterPassword: Optional[str]
     MasterUsername: Optional[str]
@@ -114,7 +113,6 @@ class ResourceModel(BaseResourceModel):
             HostedZoneId=json_data.get("HostedZoneId"),
             IamDatabaseAuthenticationEnabled=json_data.get("IamDatabaseAuthenticationEnabled"),
             IamRoles=json_data.get("IamRoles"),
-            Id=json_data.get("Id"),
             KmsKeyId=json_data.get("KmsKeyId"),
             MasterPassword=json_data.get("MasterPassword"),
             MasterUsername=json_data.get("MasterUsername"),

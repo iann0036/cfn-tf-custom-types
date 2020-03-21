@@ -12,7 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::TencentCloud::AsNotification",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#notificationtypes" title="NotificationTypes">NotificationTypes</a>" : <i>[ String, ... ]</i>,
         "<a href="#notificationusergroupids" title="NotificationUserGroupIds">NotificationUserGroupIds</a>" : <i>[ String, ... ]</i>,
         "<a href="#scalinggroupid" title="ScalingGroupId">ScalingGroupId</a>" : <i>String</i>
@@ -25,7 +25,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::TencentCloud::AsNotification
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#notificationtypes" title="NotificationTypes">NotificationTypes</a>: <i>
       - String</i>
     <a href="#notificationusergroupids" title="NotificationUserGroupIds">NotificationUserGroupIds</a>: <i>
@@ -35,7 +35,9 @@ Properties:
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 

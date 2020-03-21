@@ -12,17 +12,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::HuaweiCloud::ObsBucketObject",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#acl" title="Acl">Acl</a>" : <i>String</i>,
         "<a href="#bucket" title="Bucket">Bucket</a>" : <i>String</i>,
         "<a href="#content" title="Content">Content</a>" : <i>String</i>,
         "<a href="#contenttype" title="ContentType">ContentType</a>" : <i>String</i>,
         "<a href="#encryption" title="Encryption">Encryption</a>" : <i>Boolean</i>,
         "<a href="#etag" title="Etag">Etag</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#key" title="Key">Key</a>" : <i>String</i>,
         "<a href="#kmskeyid" title="KmsKeyId">KmsKeyId</a>" : <i>String</i>,
+        "<a href="#size" title="Size">Size</a>" : <i>Double</i>,
         "<a href="#source" title="Source">Source</a>" : <i>String</i>,
         "<a href="#storageclass" title="StorageClass">StorageClass</a>" : <i>String</i>,
+        "<a href="#versionid" title="VersionId">VersionId</a>" : <i>String</i>
     }
 }
 </pre>
@@ -32,20 +34,32 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::HuaweiCloud::ObsBucketObject
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#acl" title="Acl">Acl</a>: <i>String</i>
     <a href="#bucket" title="Bucket">Bucket</a>: <i>String</i>
     <a href="#content" title="Content">Content</a>: <i>String</i>
     <a href="#contenttype" title="ContentType">ContentType</a>: <i>String</i>
     <a href="#encryption" title="Encryption">Encryption</a>: <i>Boolean</i>
     <a href="#etag" title="Etag">Etag</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#key" title="Key">Key</a>: <i>String</i>
     <a href="#kmskeyid" title="KmsKeyId">KmsKeyId</a>: <i>String</i>
+    <a href="#size" title="Size">Size</a>: <i>Double</i>
     <a href="#source" title="Source">Source</a>: <i>String</i>
     <a href="#storageclass" title="StorageClass">StorageClass</a>: <i>String</i>
+    <a href="#versionid" title="VersionId">VersionId</a>: <i>String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Acl
 
@@ -95,14 +109,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Key
 
 _Required_: Yes
@@ -119,6 +125,14 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### Size
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Source
 
 _Required_: No
@@ -128,6 +142,14 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StorageClass
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### VersionId
 
 _Required_: No
 
@@ -153,9 +175,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Size
 
-Returns the <code>Size</code> value.
+Returns the &lt;code&gt;Size&lt;/code&gt; value.
 
 #### VersionId
 
-Returns the <code>VersionId</code> value.
+Returns the &lt;code&gt;VersionId&lt;/code&gt; value.
 

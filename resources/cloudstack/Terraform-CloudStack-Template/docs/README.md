@@ -12,14 +12,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::CloudStack::Template",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#displaytext" title="DisplayText">DisplayText</a>" : <i>String</i>,
         "<a href="#format" title="Format">Format</a>" : <i>String</i>,
         "<a href="#hypervisor" title="Hypervisor">Hypervisor</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#isdynamicallyscalable" title="IsDynamicallyScalable">IsDynamicallyScalable</a>" : <i>Boolean</i>,
         "<a href="#isextractable" title="IsExtractable">IsExtractable</a>" : <i>Boolean</i>,
         "<a href="#isfeatured" title="IsFeatured">IsFeatured</a>" : <i>Boolean</i>,
         "<a href="#ispublic" title="IsPublic">IsPublic</a>" : <i>Boolean</i>,
+        "<a href="#isready" title="IsReady">IsReady</a>" : <i>Boolean</i>,
         "<a href="#isreadytimeout" title="IsReadyTimeout">IsReadyTimeout</a>" : <i>Double</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#ostype" title="OsType">OsType</a>" : <i>String</i>,
@@ -36,14 +37,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::CloudStack::Template
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#displaytext" title="DisplayText">DisplayText</a>: <i>String</i>
     <a href="#format" title="Format">Format</a>: <i>String</i>
     <a href="#hypervisor" title="Hypervisor">Hypervisor</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#isdynamicallyscalable" title="IsDynamicallyScalable">IsDynamicallyScalable</a>: <i>Boolean</i>
     <a href="#isextractable" title="IsExtractable">IsExtractable</a>: <i>Boolean</i>
     <a href="#isfeatured" title="IsFeatured">IsFeatured</a>: <i>Boolean</i>
     <a href="#ispublic" title="IsPublic">IsPublic</a>: <i>Boolean</i>
+    <a href="#isready" title="IsReady">IsReady</a>: <i>Boolean</i>
     <a href="#isreadytimeout" title="IsReadyTimeout">IsReadyTimeout</a>: <i>Double</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#ostype" title="OsType">OsType</a>: <i>String</i>
@@ -54,6 +56,16 @@ Properties:
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayText
 
@@ -74,14 +86,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Hypervisor
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
 
 _Type_: String
 
@@ -112,6 +116,14 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IsPublic
+
+_Required_: No
+
+_Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### IsReady
 
 _Required_: No
 
@@ -193,5 +205,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### IsReady
 
-Returns the <code>IsReady</code> value.
+Returns the &lt;code&gt;IsReady&lt;/code&gt; value.
 

@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DeleteServiceOnDestroy: Optional[bool]
     EnvVariables: Optional[Sequence["_EnvVariables"]]
-    Id: Optional[str]
     InstanceClass: Optional[str]
     Name: Optional[str]
     NoopOnDestroy: Optional[bool]
@@ -69,7 +68,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DeleteServiceOnDestroy=json_data.get("DeleteServiceOnDestroy"),
             EnvVariables=json_data.get("EnvVariables"),
-            Id=json_data.get("Id"),
             InstanceClass=json_data.get("InstanceClass"),
             Name=json_data.get("Name"),
             NoopOnDestroy=json_data.get("NoopOnDestroy"),

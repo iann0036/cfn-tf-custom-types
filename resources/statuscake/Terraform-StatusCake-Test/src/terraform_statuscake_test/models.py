@@ -49,7 +49,6 @@ class ResourceModel(BaseResourceModel):
     FinalEndpoint: Optional[str]
     FindString: Optional[str]
     FollowRedirect: Optional[bool]
-    Id: Optional[str]
     LogoImage: Optional[str]
     NodeLocations: Optional[Sequence[str]]
     Paused: Optional[bool]
@@ -95,7 +94,6 @@ class ResourceModel(BaseResourceModel):
             FinalEndpoint=json_data.get("FinalEndpoint"),
             FindString=json_data.get("FindString"),
             FollowRedirect=json_data.get("FollowRedirect"),
-            Id=json_data.get("Id"),
             LogoImage=json_data.get("LogoImage"),
             NodeLocations=json_data.get("NodeLocations"),
             Paused=json_data.get("Paused"),

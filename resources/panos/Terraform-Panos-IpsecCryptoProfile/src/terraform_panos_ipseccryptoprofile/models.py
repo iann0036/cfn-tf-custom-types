@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Authentications: Optional[Sequence[str]]
     DhGroup: Optional[str]
     Encryptions: Optional[Sequence[str]]
-    Id: Optional[str]
     LifesizeType: Optional[str]
     LifesizeValue: Optional[float]
     LifetimeType: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             Authentications=json_data.get("Authentications"),
             DhGroup=json_data.get("DhGroup"),
             Encryptions=json_data.get("Encryptions"),
-            Id=json_data.get("Id"),
             LifesizeType=json_data.get("LifesizeType"),
             LifesizeValue=json_data.get("LifesizeValue"),
             LifetimeType=json_data.get("LifetimeType"),

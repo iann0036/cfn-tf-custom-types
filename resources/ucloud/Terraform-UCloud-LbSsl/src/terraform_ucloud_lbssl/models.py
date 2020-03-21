@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CaCert: Optional[str]
     CreateTime: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     PrivateKey: Optional[str]
     UserCert: Optional[str]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CaCert=json_data.get("CaCert"),
             CreateTime=json_data.get("CreateTime"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             PrivateKey=json_data.get("PrivateKey"),
             UserCert=json_data.get("UserCert"),

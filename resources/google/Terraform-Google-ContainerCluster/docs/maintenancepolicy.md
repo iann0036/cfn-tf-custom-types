@@ -8,7 +8,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#dailymaintenancewindow" title="DailyMaintenanceWindow">DailyMaintenanceWindow</a>" : <i>[ <a href="maintenancepolicy-dailymaintenancewindow.md">DailyMaintenanceWindow</a>, ... ]</i>
+    "<a href="#dailymaintenancewindow" title="DailyMaintenanceWindow">DailyMaintenanceWindow</a>" : <i>[ &lt;a href=&#34;maintenancepolicy-dailymaintenancewindow.md&#34;&gt;DailyMaintenanceWindow&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#dailymaintenancewindow" title="DailyMaintenanceWindow">DailyMaintenanceWindow</a>: <i>
-      - <a href="maintenancepolicy-dailymaintenancewindow.md">DailyMaintenanceWindow</a></i>
+      - &lt;a href=&#34;maintenancepolicy-dailymaintenancewindow.md&#34;&gt;DailyMaintenanceWindow&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -24,8 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### DailyMaintenanceWindow
 
 _Required_: No
-
-_Type_: List of <a href="maintenancepolicy-dailymaintenancewindow.md">DailyMaintenanceWindow</a>
+_Type_: List of &lt;a href=&#34;maintenancepolicy-dailymaintenancewindow.md&#34;&gt;DailyMaintenanceWindow&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

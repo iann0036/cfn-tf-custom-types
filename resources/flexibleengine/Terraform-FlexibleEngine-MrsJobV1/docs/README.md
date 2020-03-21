@@ -12,20 +12,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::FlexibleEngine::MrsJobV1",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#arguments" title="Arguments">Arguments</a>" : <i>String</i>,
         "<a href="#clusterid" title="ClusterId">ClusterId</a>" : <i>String</i>,
         "<a href="#hivescriptpath" title="HiveScriptPath">HiveScriptPath</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#input" title="Input">Input</a>" : <i>String</i>,
         "<a href="#isprotected" title="IsProtected">IsProtected</a>" : <i>Boolean</i>,
         "<a href="#ispublic" title="IsPublic">IsPublic</a>" : <i>Boolean</i>,
         "<a href="#jarpath" title="JarPath">JarPath</a>" : <i>String</i>,
         "<a href="#joblog" title="JobLog">JobLog</a>" : <i>String</i>,
         "<a href="#jobname" title="JobName">JobName</a>" : <i>String</i>,
+        "<a href="#jobstate" title="JobState">JobState</a>" : <i>String</i>,
         "<a href="#jobtype" title="JobType">JobType</a>" : <i>Double</i>,
         "<a href="#output" title="Output">Output</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     }
 }
 </pre>
@@ -35,23 +36,34 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::FlexibleEngine::MrsJobV1
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#arguments" title="Arguments">Arguments</a>: <i>String</i>
     <a href="#clusterid" title="ClusterId">ClusterId</a>: <i>String</i>
     <a href="#hivescriptpath" title="HiveScriptPath">HiveScriptPath</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#input" title="Input">Input</a>: <i>String</i>
     <a href="#isprotected" title="IsProtected">IsProtected</a>: <i>Boolean</i>
     <a href="#ispublic" title="IsPublic">IsPublic</a>: <i>Boolean</i>
     <a href="#jarpath" title="JarPath">JarPath</a>: <i>String</i>
     <a href="#joblog" title="JobLog">JobLog</a>: <i>String</i>
     <a href="#jobname" title="JobName">JobName</a>: <i>String</i>
+    <a href="#jobstate" title="JobState">JobState</a>: <i>String</i>
     <a href="#jobtype" title="JobType">JobType</a>: <i>Double</i>
     <a href="#output" title="Output">Output</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Arguments
 
@@ -70,14 +82,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HiveScriptPath
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 
@@ -133,6 +137,14 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### JobState
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### JobType
 
 _Required_: Yes
@@ -161,7 +173,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -183,5 +195,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### JobState
 
-Returns the <code>JobState</code> value.
+Returns the &lt;code&gt;JobState&lt;/code&gt; value.
 

@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     Blacklisted: Optional[bool]
     CountryCode: Optional[float]
     Enabled: Optional[bool]
-    Id: Optional[str]
     Label: Optional[str]
     SendShortEmail: Optional[bool]
     Type: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             Blacklisted=json_data.get("Blacklisted"),
             CountryCode=json_data.get("CountryCode"),
             Enabled=json_data.get("Enabled"),
-            Id=json_data.get("Id"),
             Label=json_data.get("Label"),
             SendShortEmail=json_data.get("SendShortEmail"),
             Type=json_data.get("Type"),

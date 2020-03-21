@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     Email: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     PublicValue: Optional[str]
     RegistryId: Optional[str]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             Email=json_data.get("Email"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             PublicValue=json_data.get("PublicValue"),
             RegistryId=json_data.get("RegistryId"),

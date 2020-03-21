@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DisableRollback: Optional[bool]
     EnvironmentOpts: Optional[Sequence["_EnvironmentOpts"]]
-    Id: Optional[str]
     Name: Optional[str]
     NotificationTopics: Optional[Sequence[str]]
     Parameters: Optional[Sequence["_Parameters"]]
@@ -70,7 +69,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DisableRollback=json_data.get("DisableRollback"),
             EnvironmentOpts=json_data.get("EnvironmentOpts"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             NotificationTopics=json_data.get("NotificationTopics"),
             Parameters=json_data.get("Parameters"),

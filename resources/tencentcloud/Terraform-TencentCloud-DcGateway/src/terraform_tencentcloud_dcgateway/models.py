@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     CreateTime: Optional[str]
     EnableBgp: Optional[bool]
     GatewayType: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     NetworkInstanceId: Optional[str]
     NetworkType: Optional[str]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             CreateTime=json_data.get("CreateTime"),
             EnableBgp=json_data.get("EnableBgp"),
             GatewayType=json_data.get("GatewayType"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             NetworkInstanceId=json_data.get("NetworkInstanceId"),
             NetworkType=json_data.get("NetworkType"),

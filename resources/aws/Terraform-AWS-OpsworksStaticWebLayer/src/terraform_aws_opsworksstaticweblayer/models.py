@@ -50,7 +50,6 @@ class ResourceModel(BaseResourceModel):
     CustomUndeployRecipes: Optional[Sequence[str]]
     DrainElbOnShutdown: Optional[bool]
     ElasticLoadBalancer: Optional[str]
-    Id: Optional[str]
     InstallUpdatesOnBoot: Optional[bool]
     InstanceShutdownTimeout: Optional[float]
     Name: Optional[str]
@@ -83,7 +82,6 @@ class ResourceModel(BaseResourceModel):
             CustomUndeployRecipes=json_data.get("CustomUndeployRecipes"),
             DrainElbOnShutdown=json_data.get("DrainElbOnShutdown"),
             ElasticLoadBalancer=json_data.get("ElasticLoadBalancer"),
-            Id=json_data.get("Id"),
             InstallUpdatesOnBoot=json_data.get("InstallUpdatesOnBoot"),
             InstanceShutdownTimeout=json_data.get("InstanceShutdownTimeout"),
             Name=json_data.get("Name"),

@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     Certificate: Optional[str]
     DefaultAuthenticationMethod: Optional[str]
     Enabled: Optional[bool]
-    Id: Optional[str]
     PrivateKey: Optional[str]
     TeamId: Optional[str]
     TokenKey: Optional[str]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             Certificate=json_data.get("Certificate"),
             DefaultAuthenticationMethod=json_data.get("DefaultAuthenticationMethod"),
             Enabled=json_data.get("Enabled"),
-            Id=json_data.get("Id"),
             PrivateKey=json_data.get("PrivateKey"),
             TeamId=json_data.get("TeamId"),
             TokenKey=json_data.get("TokenKey"),

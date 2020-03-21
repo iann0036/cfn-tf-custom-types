@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Container: Optional[str]
-    Id: Optional[str]
     Method: Optional[str]
     Object: Optional[str]
     Regenerate: Optional[bool]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Container=json_data.get("Container"),
-            Id=json_data.get("Id"),
             Method=json_data.get("Method"),
             Object=json_data.get("Object"),
             Regenerate=json_data.get("Regenerate"),

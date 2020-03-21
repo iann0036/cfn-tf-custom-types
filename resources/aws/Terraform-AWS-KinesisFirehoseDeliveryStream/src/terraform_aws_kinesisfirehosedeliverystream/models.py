@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     Destination: Optional[str]
     DestinationId: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
     VersionId: Optional[str]
@@ -78,7 +77,6 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             Destination=json_data.get("Destination"),
             DestinationId=json_data.get("DestinationId"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Tags=json_data.get("Tags"),
             VersionId=json_data.get("VersionId"),

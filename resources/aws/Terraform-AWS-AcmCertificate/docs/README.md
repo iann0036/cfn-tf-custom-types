@@ -12,16 +12,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::AcmCertificate",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#certificateauthorityarn" title="CertificateAuthorityArn">CertificateAuthorityArn</a>" : <i>String</i>,
         "<a href="#certificatebody" title="CertificateBody">CertificateBody</a>" : <i>String</i>,
         "<a href="#certificatechain" title="CertificateChain">CertificateChain</a>" : <i>String</i>,
         "<a href="#domainname" title="DomainName">DomainName</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#domainvalidationoptions" title="DomainValidationOptions">DomainValidationOptions</a>" : <i>[ &lt;a href=&#34;domainvalidationoptions.md&#34;&gt;DomainValidationOptions&lt;/a&gt;, ... ]</i>,
         "<a href="#privatekey" title="PrivateKey">PrivateKey</a>" : <i>String</i>,
         "<a href="#subjectalternativenames" title="SubjectAlternativeNames">SubjectAlternativeNames</a>" : <i>[ String, ... ]</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#validationemails" title="ValidationEmails">ValidationEmails</a>" : <i>[ String, ... ]</i>,
         "<a href="#validationmethod" title="ValidationMethod">ValidationMethod</a>" : <i>String</i>,
-        "<a href="#options" title="Options">Options</a>" : <i>[ <a href="options.md">Options</a>, ... ]</i>
+        "<a href="#options" title="Options">Options</a>" : <i>[ &lt;a href=&#34;options.md&#34;&gt;Options&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -31,22 +34,45 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::AcmCertificate
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#certificateauthorityarn" title="CertificateAuthorityArn">CertificateAuthorityArn</a>: <i>String</i>
     <a href="#certificatebody" title="CertificateBody">CertificateBody</a>: <i>String</i>
     <a href="#certificatechain" title="CertificateChain">CertificateChain</a>: <i>String</i>
     <a href="#domainname" title="DomainName">DomainName</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#domainvalidationoptions" title="DomainValidationOptions">DomainValidationOptions</a>: <i>
+      - &lt;a href=&#34;domainvalidationoptions.md&#34;&gt;DomainValidationOptions&lt;/a&gt;</i>
     <a href="#privatekey" title="PrivateKey">PrivateKey</a>: <i>String</i>
     <a href="#subjectalternativenames" title="SubjectAlternativeNames">SubjectAlternativeNames</a>: <i>
       - String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+    <a href="#validationemails" title="ValidationEmails">ValidationEmails</a>: <i>
+      - String</i>
     <a href="#validationmethod" title="ValidationMethod">ValidationMethod</a>: <i>String</i>
     <a href="#options" title="Options">Options</a>: <i>
-      - <a href="options.md">Options</a></i>
+      - &lt;a href=&#34;options.md&#34;&gt;Options&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Arn
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CertificateAuthorityArn
 
@@ -80,11 +106,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### DomainValidationOptions
 
 _Required_: No
 
-_Type_: String
+_Type_: List of &lt;a href=&#34;domainvalidationoptions.md&#34;&gt;DomainValidationOptions&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -108,7 +134,15 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ValidationEmails
+
+_Required_: No
+
+_Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -124,7 +158,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="options.md">Options</a>
+_Type_: List of &lt;a href=&#34;options.md&#34;&gt;Options&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -146,13 +180,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the <code>Arn</code> value.
+Returns the &lt;code&gt;Arn&lt;/code&gt; value.
 
 #### DomainValidationOptions
 
-Returns the <code>DomainValidationOptions</code> value.
+Returns the &lt;code&gt;DomainValidationOptions&lt;/code&gt; value.
 
 #### ValidationEmails
 
-Returns the <code>ValidationEmails</code> value.
+Returns the &lt;code&gt;ValidationEmails&lt;/code&gt; value.
 

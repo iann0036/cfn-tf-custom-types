@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     CreatedDate: Optional[str]
     Description: Optional[str]
     Enabled: Optional[bool]
-    Id: Optional[str]
     LastUpdatedDate: Optional[str]
     Name: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             CreatedDate=json_data.get("CreatedDate"),
             Description=json_data.get("Description"),
             Enabled=json_data.get("Enabled"),
-            Id=json_data.get("Id"),
             LastUpdatedDate=json_data.get("LastUpdatedDate"),
             Name=json_data.get("Name"),
             Tags=json_data.get("Tags"),

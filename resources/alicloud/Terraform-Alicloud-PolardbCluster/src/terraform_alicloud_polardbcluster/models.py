@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     DbType: Optional[str]
     DbVersion: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     MaintainTime: Optional[str]
     ModifyType: Optional[str]
     PayType: Optional[str]
@@ -68,7 +67,6 @@ class ResourceModel(BaseResourceModel):
             DbType=json_data.get("DbType"),
             DbVersion=json_data.get("DbVersion"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             MaintainTime=json_data.get("MaintainTime"),
             ModifyType=json_data.get("ModifyType"),
             PayType=json_data.get("PayType"),

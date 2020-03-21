@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     Metadata: Optional[Sequence["_Metadata"]]
     Subset: Optional[Sequence["_Subset"]]
     Address: Optional[Sequence["_Address"]]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             Metadata=json_data.get("Metadata"),
             Subset=json_data.get("Subset"),
             Address=json_data.get("Address"),

@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     FileshareId: Optional[str]
     GatewayArn: Optional[str]
     GuessMimeTypeEnabled: Optional[bool]
-    Id: Optional[str]
     InvalidUserList: Optional[Sequence[str]]
     KmsEncrypted: Optional[bool]
     KmsKeyArn: Optional[str]
@@ -70,7 +69,6 @@ class ResourceModel(BaseResourceModel):
             FileshareId=json_data.get("FileshareId"),
             GatewayArn=json_data.get("GatewayArn"),
             GuessMimeTypeEnabled=json_data.get("GuessMimeTypeEnabled"),
-            Id=json_data.get("Id"),
             InvalidUserList=json_data.get("InvalidUserList"),
             KmsEncrypted=json_data.get("KmsEncrypted"),
             KmsKeyArn=json_data.get("KmsKeyArn"),

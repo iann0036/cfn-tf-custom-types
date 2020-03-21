@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Curve: Optional[str]
     E: Optional[str]
     ExpirationDate: Optional[str]
-    Id: Optional[str]
     KeyOpts: Optional[Sequence[str]]
     KeySize: Optional[float]
     KeyType: Optional[str]
@@ -65,7 +64,6 @@ class ResourceModel(BaseResourceModel):
             Curve=json_data.get("Curve"),
             E=json_data.get("E"),
             ExpirationDate=json_data.get("ExpirationDate"),
-            Id=json_data.get("Id"),
             KeyOpts=json_data.get("KeyOpts"),
             KeySize=json_data.get("KeySize"),
             KeyType=json_data.get("KeyType"),

@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AutonomousDatabaseId: Optional[str]
-    Id: Optional[str]
     ShouldRotate: Optional[bool]
     State: Optional[str]
     TimeRotated: Optional[str]
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             AutonomousDatabaseId=json_data.get("AutonomousDatabaseId"),
-            Id=json_data.get("Id"),
             ShouldRotate=json_data.get("ShouldRotate"),
             State=json_data.get("State"),
             TimeRotated=json_data.get("TimeRotated"),

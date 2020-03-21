@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     Etag: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     Name: Optional[str]
     State: Optional[str]
     TimeCreated: Optional[str]
@@ -64,7 +63,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             Etag=json_data.get("Etag"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             State=json_data.get("State"),
             TimeCreated=json_data.get("TimeCreated"),

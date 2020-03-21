@@ -12,13 +12,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::HuaweiCloud::CsbsBackupV1",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#backupname" title="BackupName">BackupName</a>" : <i>String</i>,
+        "<a href="#backuprecordid" title="BackupRecordId">BackupRecordId</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
         "<a href="#resourceid" title="ResourceId">ResourceId</a>" : <i>String</i>,
         "<a href="#resourcetype" title="ResourceType">ResourceType</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
+        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
+        "<a href="#vmmetadata" title="VmMetadata">VmMetadata</a>" : <i>[ &lt;a href=&#34;vmmetadata.md&#34;&gt;VmMetadata&lt;/a&gt;, ... ]</i>,
+        "<a href="#volumebackups" title="VolumeBackups">VolumeBackups</a>" : <i>[ &lt;a href=&#34;volumebackups.md&#34;&gt;VolumeBackups&lt;/a&gt;, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     }
 }
 </pre>
@@ -28,16 +32,32 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::HuaweiCloud::CsbsBackupV1
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#backupname" title="BackupName">BackupName</a>: <i>String</i>
+    <a href="#backuprecordid" title="BackupRecordId">BackupRecordId</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
     <a href="#resourceid" title="ResourceId">ResourceId</a>: <i>String</i>
     <a href="#resourcetype" title="ResourceType">ResourceType</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+    <a href="#status" title="Status">Status</a>: <i>String</i>
+    <a href="#vmmetadata" title="VmMetadata">VmMetadata</a>: <i>
+      - &lt;a href=&#34;vmmetadata.md&#34;&gt;VmMetadata&lt;/a&gt;</i>
+    <a href="#volumebackups" title="VolumeBackups">VolumeBackups</a>: <i>
+      - &lt;a href=&#34;volumebackups.md&#34;&gt;VolumeBackups&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BackupName
 
@@ -47,7 +67,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Description
+#### BackupRecordId
 
 _Required_: No
 
@@ -55,7 +75,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### Description
 
 _Required_: No
 
@@ -87,11 +107,35 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### Status
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### VmMetadata
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;vmmetadata.md&#34;&gt;VmMetadata&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### VolumeBackups
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;volumebackups.md&#34;&gt;VolumeBackups&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Timeouts
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -113,17 +157,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### BackupRecordId
 
-Returns the <code>BackupRecordId</code> value.
+Returns the &lt;code&gt;BackupRecordId&lt;/code&gt; value.
 
 #### Status
 
-Returns the <code>Status</code> value.
+Returns the &lt;code&gt;Status&lt;/code&gt; value.
 
 #### VmMetadata
 
-Returns the <code>VmMetadata</code> value.
+Returns the &lt;code&gt;VmMetadata&lt;/code&gt; value.
 
 #### VolumeBackups
 
-Returns the <code>VolumeBackups</code> value.
+Returns the &lt;code&gt;VolumeBackups&lt;/code&gt; value.
 

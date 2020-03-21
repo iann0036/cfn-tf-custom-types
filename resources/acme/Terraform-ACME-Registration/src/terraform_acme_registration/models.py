@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AccountKeyPem: Optional[str]
     EmailAddress: Optional[str]
-    Id: Optional[str]
     RegistrationUrl: Optional[str]
 
     @classmethod
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AccountKeyPem=json_data.get("AccountKeyPem"),
             EmailAddress=json_data.get("EmailAddress"),
-            Id=json_data.get("Id"),
             RegistrationUrl=json_data.get("RegistrationUrl"),
         )
 

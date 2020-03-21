@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     BackendTransfer: Optional[bool]
     Created: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     OrganizationId: Optional[str]
     PaymentMethodId: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             BackendTransfer=json_data.get("BackendTransfer"),
             Created=json_data.get("Created"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             OrganizationId=json_data.get("OrganizationId"),
             PaymentMethodId=json_data.get("PaymentMethodId"),

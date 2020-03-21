@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     Content: Optional[str]
     CreateTime: Optional[str]
     EndTime: Optional[str]
-    Id: Optional[str]
     IssuerCn: Optional[str]
     Key: Optional[str]
     Name: Optional[str]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             Content=json_data.get("Content"),
             CreateTime=json_data.get("CreateTime"),
             EndTime=json_data.get("EndTime"),
-            Id=json_data.get("Id"),
             IssuerCn=json_data.get("IssuerCn"),
             Key=json_data.get("Key"),
             Name=json_data.get("Name"),

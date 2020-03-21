@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     AwsServiceAccessPrincipals: Optional[Sequence[str]]
     EnabledPolicyTypes: Optional[Sequence[str]]
     FeatureSet: Optional[str]
-    Id: Optional[str]
     MasterAccountArn: Optional[str]
     MasterAccountEmail: Optional[str]
     MasterAccountId: Optional[str]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             AwsServiceAccessPrincipals=json_data.get("AwsServiceAccessPrincipals"),
             EnabledPolicyTypes=json_data.get("EnabledPolicyTypes"),
             FeatureSet=json_data.get("FeatureSet"),
-            Id=json_data.get("Id"),
             MasterAccountArn=json_data.get("MasterAccountArn"),
             MasterAccountEmail=json_data.get("MasterAccountEmail"),
             MasterAccountId=json_data.get("MasterAccountId"),

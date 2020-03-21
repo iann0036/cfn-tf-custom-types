@@ -45,7 +45,6 @@ class ResourceModel(BaseResourceModel):
     Fingerprint: Optional[str]
     Fqdn: Optional[str]
     Hostname: Optional[str]
-    Id: Optional[str]
     ImageFormat: Optional[str]
     ImageList: Optional[str]
     InstanceAttributes: Optional[str]
@@ -90,7 +89,6 @@ class ResourceModel(BaseResourceModel):
             Fingerprint=json_data.get("Fingerprint"),
             Fqdn=json_data.get("Fqdn"),
             Hostname=json_data.get("Hostname"),
-            Id=json_data.get("Id"),
             ImageFormat=json_data.get("ImageFormat"),
             ImageList=json_data.get("ImageList"),
             InstanceAttributes=json_data.get("InstanceAttributes"),

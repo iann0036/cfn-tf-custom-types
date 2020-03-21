@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AuthCodes: Optional[Sequence[str]]
     Delicense: Optional[bool]
-    Id: Optional[str]
     Licenses: Optional[Sequence["_Licenses"]]
     Mode: Optional[str]
 
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AuthCodes=json_data.get("AuthCodes"),
             Delicense=json_data.get("Delicense"),
-            Id=json_data.get("Id"),
             Licenses=json_data.get("Licenses"),
             Mode=json_data.get("Mode"),
         )

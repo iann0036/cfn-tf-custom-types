@@ -50,7 +50,6 @@ class ResourceModel(BaseResourceModel):
     DefaultSshKeyName: Optional[str]
     DefaultSubnetId: Optional[str]
     HostnameTheme: Optional[str]
-    Id: Optional[str]
     ManageBerkshelf: Optional[bool]
     Name: Optional[str]
     Region: Optional[str]
@@ -85,7 +84,6 @@ class ResourceModel(BaseResourceModel):
             DefaultSshKeyName=json_data.get("DefaultSshKeyName"),
             DefaultSubnetId=json_data.get("DefaultSubnetId"),
             HostnameTheme=json_data.get("HostnameTheme"),
-            Id=json_data.get("Id"),
             ManageBerkshelf=json_data.get("ManageBerkshelf"),
             Name=json_data.get("Name"),
             Region=json_data.get("Region"),

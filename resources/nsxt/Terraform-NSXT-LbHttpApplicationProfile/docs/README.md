@@ -12,18 +12,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::NSXT::LbHttpApplicationProfile",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#displayname" title="DisplayName">DisplayName</a>" : <i>String</i>,
         "<a href="#httpredirectto" title="HttpRedirectTo">HttpRedirectTo</a>" : <i>String</i>,
         "<a href="#httpredirecttohttps" title="HttpRedirectToHttps">HttpRedirectToHttps</a>" : <i>Boolean</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#idletimeout" title="IdleTimeout">IdleTimeout</a>" : <i>Double</i>,
         "<a href="#ntlm" title="Ntlm">Ntlm</a>" : <i>Boolean</i>,
         "<a href="#requestbodysize" title="RequestBodySize">RequestBodySize</a>" : <i>Double</i>,
         "<a href="#requestheadersize" title="RequestHeaderSize">RequestHeaderSize</a>" : <i>Double</i>,
         "<a href="#responsetimeout" title="ResponseTimeout">ResponseTimeout</a>" : <i>Double</i>,
+        "<a href="#revision" title="Revision">Revision</a>" : <i>Double</i>,
         "<a href="#xforwardedfor" title="XForwardedFor">XForwardedFor</a>" : <i>String</i>,
-        "<a href="#tag" title="Tag">Tag</a>" : <i>[ <a href="tag.md">Tag</a>, ... ]</i>
+        "<a href="#tag" title="Tag">Tag</a>" : <i>[ &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -33,22 +34,33 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::NSXT::LbHttpApplicationProfile
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#displayname" title="DisplayName">DisplayName</a>: <i>String</i>
     <a href="#httpredirectto" title="HttpRedirectTo">HttpRedirectTo</a>: <i>String</i>
     <a href="#httpredirecttohttps" title="HttpRedirectToHttps">HttpRedirectToHttps</a>: <i>Boolean</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#idletimeout" title="IdleTimeout">IdleTimeout</a>: <i>Double</i>
     <a href="#ntlm" title="Ntlm">Ntlm</a>: <i>Boolean</i>
     <a href="#requestbodysize" title="RequestBodySize">RequestBodySize</a>: <i>Double</i>
     <a href="#requestheadersize" title="RequestHeaderSize">RequestHeaderSize</a>: <i>Double</i>
     <a href="#responsetimeout" title="ResponseTimeout">ResponseTimeout</a>: <i>Double</i>
+    <a href="#revision" title="Revision">Revision</a>: <i>Double</i>
     <a href="#xforwardedfor" title="XForwardedFor">XForwardedFor</a>: <i>String</i>
     <a href="#tag" title="Tag">Tag</a>: <i>
-      - <a href="tag.md">Tag</a></i>
+      - &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -79,14 +91,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -130,6 +134,14 @@ _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### Revision
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### XForwardedFor
 
 _Required_: No
@@ -142,7 +154,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tag.md">Tag</a>
+_Type_: List of &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -164,5 +176,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Revision
 
-Returns the <code>Revision</code> value.
+Returns the &lt;code&gt;Revision&lt;/code&gt; value.
 

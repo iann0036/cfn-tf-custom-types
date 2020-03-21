@@ -44,7 +44,6 @@ class ResourceModel(BaseResourceModel):
     IamRequestBody: Optional[str]
     IamRequestHeaders: Optional[str]
     IamRequestUrl: Optional[str]
-    Id: Optional[str]
     Identity: Optional[str]
     LeaseDuration: Optional[float]
     LeaseStartTime: Optional[str]
@@ -73,7 +72,6 @@ class ResourceModel(BaseResourceModel):
             IamRequestBody=json_data.get("IamRequestBody"),
             IamRequestHeaders=json_data.get("IamRequestHeaders"),
             IamRequestUrl=json_data.get("IamRequestUrl"),
-            Id=json_data.get("Id"),
             Identity=json_data.get("Identity"),
             LeaseDuration=json_data.get("LeaseDuration"),
             LeaseStartTime=json_data.get("LeaseStartTime"),

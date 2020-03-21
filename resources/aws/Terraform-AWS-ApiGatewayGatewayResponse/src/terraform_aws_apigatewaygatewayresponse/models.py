@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     ResponseParameters: Optional[Sequence["_ResponseParameters"]]
     ResponseTemplates: Optional[Sequence["_ResponseTemplates"]]
     ResponseType: Optional[str]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             ResponseParameters=json_data.get("ResponseParameters"),
             ResponseTemplates=json_data.get("ResponseTemplates"),
             ResponseType=json_data.get("ResponseType"),

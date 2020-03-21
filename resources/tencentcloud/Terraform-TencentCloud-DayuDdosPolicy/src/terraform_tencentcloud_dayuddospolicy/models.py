@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     BlackIps: Optional[Sequence[str]]
     CreateTime: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     PolicyId: Optional[str]
     ResourceType: Optional[str]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             BlackIps=json_data.get("BlackIps"),
             CreateTime=json_data.get("CreateTime"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             PolicyId=json_data.get("PolicyId"),
             ResourceType=json_data.get("ResourceType"),

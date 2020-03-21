@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     DisplayName: Optional[str]
     FaultDomain: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     RemainingOcpus: Optional[float]
     State: Optional[str]
     TimeCreated: Optional[str]
@@ -66,7 +65,6 @@ class ResourceModel(BaseResourceModel):
             DisplayName=json_data.get("DisplayName"),
             FaultDomain=json_data.get("FaultDomain"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             RemainingOcpus=json_data.get("RemainingOcpus"),
             State=json_data.get("State"),
             TimeCreated=json_data.get("TimeCreated"),

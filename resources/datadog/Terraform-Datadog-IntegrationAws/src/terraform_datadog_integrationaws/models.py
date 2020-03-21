@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     ExternalId: Optional[str]
     FilterTags: Optional[Sequence[str]]
     HostTags: Optional[Sequence[str]]
-    Id: Optional[str]
     RoleName: Optional[str]
 
     @classmethod
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             ExternalId=json_data.get("ExternalId"),
             FilterTags=json_data.get("FilterTags"),
             HostTags=json_data.get("HostTags"),
-            Id=json_data.get("Id"),
             RoleName=json_data.get("RoleName"),
         )
 

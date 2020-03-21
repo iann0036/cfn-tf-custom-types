@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     Cooldown: Optional[float]
     DisableScaleIn: Optional[bool]
     EstimatedInstanceWarmup: Optional[float]
-    Id: Optional[str]
     MetricName: Optional[str]
     ScalingGroupId: Optional[str]
     ScalingRuleName: Optional[str]
@@ -65,7 +64,6 @@ class ResourceModel(BaseResourceModel):
             Cooldown=json_data.get("Cooldown"),
             DisableScaleIn=json_data.get("DisableScaleIn"),
             EstimatedInstanceWarmup=json_data.get("EstimatedInstanceWarmup"),
-            Id=json_data.get("Id"),
             MetricName=json_data.get("MetricName"),
             ScalingGroupId=json_data.get("ScalingGroupId"),
             ScalingRuleName=json_data.get("ScalingRuleName"),

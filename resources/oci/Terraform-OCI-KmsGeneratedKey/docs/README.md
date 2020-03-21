@@ -12,14 +12,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OCI::KmsGeneratedKey",
     "Properties" : {
-        "<a href="#associateddata" title="AssociatedData">AssociatedData</a>" : <i>[ <a href="associateddata.md">AssociatedData</a>, ... ]</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#associateddata" title="AssociatedData">AssociatedData</a>" : <i>[ &lt;a href=&#34;associateddata.md&#34;&gt;AssociatedData&lt;/a&gt;, ... ]</i>,
+        "<a href="#ciphertext" title="Ciphertext">Ciphertext</a>" : <i>String</i>,
         "<a href="#cryptoendpoint" title="CryptoEndpoint">CryptoEndpoint</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#includeplaintextkey" title="IncludePlaintextKey">IncludePlaintextKey</a>" : <i>Boolean</i>,
         "<a href="#keyid" title="KeyId">KeyId</a>" : <i>String</i>,
-        "<a href="#loggingcontext" title="LoggingContext">LoggingContext</a>" : <i>[ <a href="loggingcontext.md">LoggingContext</a>, ... ]</i>,
-        "<a href="#keyshape" title="KeyShape">KeyShape</a>" : <i>[ <a href="keyshape.md">KeyShape</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
+        "<a href="#loggingcontext" title="LoggingContext">LoggingContext</a>" : <i>[ &lt;a href=&#34;loggingcontext.md&#34;&gt;LoggingContext&lt;/a&gt;, ... ]</i>,
+        "<a href="#plaintext" title="Plaintext">Plaintext</a>" : <i>String</i>,
+        "<a href="#plaintextchecksum" title="PlaintextChecksum">PlaintextChecksum</a>" : <i>String</i>,
+        "<a href="#keyshape" title="KeyShape">KeyShape</a>" : <i>[ &lt;a href=&#34;keyshape.md&#34;&gt;KeyShape&lt;/a&gt;, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     }
 }
 </pre>
@@ -29,40 +32,53 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OCI::KmsGeneratedKey
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#associateddata" title="AssociatedData">AssociatedData</a>: <i>
-      - <a href="associateddata.md">AssociatedData</a></i>
+      - &lt;a href=&#34;associateddata.md&#34;&gt;AssociatedData&lt;/a&gt;</i>
+    <a href="#ciphertext" title="Ciphertext">Ciphertext</a>: <i>String</i>
     <a href="#cryptoendpoint" title="CryptoEndpoint">CryptoEndpoint</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#includeplaintextkey" title="IncludePlaintextKey">IncludePlaintextKey</a>: <i>Boolean</i>
     <a href="#keyid" title="KeyId">KeyId</a>: <i>String</i>
     <a href="#loggingcontext" title="LoggingContext">LoggingContext</a>: <i>
-      - <a href="loggingcontext.md">LoggingContext</a></i>
+      - &lt;a href=&#34;loggingcontext.md&#34;&gt;LoggingContext&lt;/a&gt;</i>
+    <a href="#plaintext" title="Plaintext">Plaintext</a>: <i>String</i>
+    <a href="#plaintextchecksum" title="PlaintextChecksum">PlaintextChecksum</a>: <i>String</i>
     <a href="#keyshape" title="KeyShape">KeyShape</a>: <i>
-      - <a href="keyshape.md">KeyShape</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;keyshape.md&#34;&gt;KeyShape&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AssociatedData
 
 _Required_: No
 
-_Type_: List of <a href="associateddata.md">AssociatedData</a>
+_Type_: List of &lt;a href=&#34;associateddata.md&#34;&gt;AssociatedData&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Ciphertext
+
+_Required_: No
+
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CryptoEndpoint
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
 
 _Type_: String
 
@@ -88,7 +104,23 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="loggingcontext.md">LoggingContext</a>
+_Type_: List of &lt;a href=&#34;loggingcontext.md&#34;&gt;LoggingContext&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Plaintext
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### PlaintextChecksum
+
+_Required_: No
+
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -96,7 +128,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="keyshape.md">KeyShape</a>
+_Type_: List of &lt;a href=&#34;keyshape.md&#34;&gt;KeyShape&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -104,7 +136,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -126,13 +158,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Ciphertext
 
-Returns the <code>Ciphertext</code> value.
+Returns the &lt;code&gt;Ciphertext&lt;/code&gt; value.
 
 #### Plaintext
 
-Returns the <code>Plaintext</code> value.
+Returns the &lt;code&gt;Plaintext&lt;/code&gt; value.
 
 #### PlaintextChecksum
 
-Returns the <code>PlaintextChecksum</code> value.
+Returns the &lt;code&gt;PlaintextChecksum&lt;/code&gt; value.
 

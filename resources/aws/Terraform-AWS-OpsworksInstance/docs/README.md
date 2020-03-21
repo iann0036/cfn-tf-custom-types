@@ -12,6 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::OpsworksInstance",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#agentversion" title="AgentVersion">AgentVersion</a>" : <i>String</i>,
         "<a href="#amiid" title="AmiId">AmiId</a>" : <i>String</i>,
         "<a href="#architecture" title="Architecture">Architecture</a>" : <i>String</i>,
@@ -21,10 +22,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#deleteebs" title="DeleteEbs">DeleteEbs</a>" : <i>Boolean</i>,
         "<a href="#deleteeip" title="DeleteEip">DeleteEip</a>" : <i>Boolean</i>,
         "<a href="#ebsoptimized" title="EbsOptimized">EbsOptimized</a>" : <i>Boolean</i>,
+        "<a href="#ec2instanceid" title="Ec2InstanceId">Ec2InstanceId</a>" : <i>String</i>,
         "<a href="#ecsclusterarn" title="EcsClusterArn">EcsClusterArn</a>" : <i>String</i>,
         "<a href="#elasticip" title="ElasticIp">ElasticIp</a>" : <i>String</i>,
         "<a href="#hostname" title="Hostname">Hostname</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#infrastructureclass" title="InfrastructureClass">InfrastructureClass</a>" : <i>String</i>,
         "<a href="#installupdatesonboot" title="InstallUpdatesOnBoot">InstallUpdatesOnBoot</a>" : <i>Boolean</i>,
         "<a href="#instanceprofilearn" title="InstanceProfileArn">InstanceProfileArn</a>" : <i>String</i>,
@@ -54,10 +55,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#subnetid" title="SubnetId">SubnetId</a>" : <i>String</i>,
         "<a href="#tenancy" title="Tenancy">Tenancy</a>" : <i>String</i>,
         "<a href="#virtualizationtype" title="VirtualizationType">VirtualizationType</a>" : <i>String</i>,
-        "<a href="#ebsblockdevice" title="EbsBlockDevice">EbsBlockDevice</a>" : <i>[ <a href="ebsblockdevice.md">EbsBlockDevice</a>, ... ]</i>,
-        "<a href="#ephemeralblockdevice" title="EphemeralBlockDevice">EphemeralBlockDevice</a>" : <i>[ <a href="ephemeralblockdevice.md">EphemeralBlockDevice</a>, ... ]</i>,
-        "<a href="#rootblockdevice" title="RootBlockDevice">RootBlockDevice</a>" : <i>[ <a href="rootblockdevice.md">RootBlockDevice</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
+        "<a href="#ebsblockdevice" title="EbsBlockDevice">EbsBlockDevice</a>" : <i>[ &lt;a href=&#34;ebsblockdevice.md&#34;&gt;EbsBlockDevice&lt;/a&gt;, ... ]</i>,
+        "<a href="#ephemeralblockdevice" title="EphemeralBlockDevice">EphemeralBlockDevice</a>" : <i>[ &lt;a href=&#34;ephemeralblockdevice.md&#34;&gt;EphemeralBlockDevice&lt;/a&gt;, ... ]</i>,
+        "<a href="#rootblockdevice" title="RootBlockDevice">RootBlockDevice</a>" : <i>[ &lt;a href=&#34;rootblockdevice.md&#34;&gt;RootBlockDevice&lt;/a&gt;, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     }
 }
 </pre>
@@ -67,6 +68,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::OpsworksInstance
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#agentversion" title="AgentVersion">AgentVersion</a>: <i>String</i>
     <a href="#amiid" title="AmiId">AmiId</a>: <i>String</i>
     <a href="#architecture" title="Architecture">Architecture</a>: <i>String</i>
@@ -76,10 +78,10 @@ Properties:
     <a href="#deleteebs" title="DeleteEbs">DeleteEbs</a>: <i>Boolean</i>
     <a href="#deleteeip" title="DeleteEip">DeleteEip</a>: <i>Boolean</i>
     <a href="#ebsoptimized" title="EbsOptimized">EbsOptimized</a>: <i>Boolean</i>
+    <a href="#ec2instanceid" title="Ec2InstanceId">Ec2InstanceId</a>: <i>String</i>
     <a href="#ecsclusterarn" title="EcsClusterArn">EcsClusterArn</a>: <i>String</i>
     <a href="#elasticip" title="ElasticIp">ElasticIp</a>: <i>String</i>
     <a href="#hostname" title="Hostname">Hostname</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#infrastructureclass" title="InfrastructureClass">InfrastructureClass</a>: <i>String</i>
     <a href="#installupdatesonboot" title="InstallUpdatesOnBoot">InstallUpdatesOnBoot</a>: <i>Boolean</i>
     <a href="#instanceprofilearn" title="InstanceProfileArn">InstanceProfileArn</a>: <i>String</i>
@@ -112,15 +114,25 @@ Properties:
     <a href="#tenancy" title="Tenancy">Tenancy</a>: <i>String</i>
     <a href="#virtualizationtype" title="VirtualizationType">VirtualizationType</a>: <i>String</i>
     <a href="#ebsblockdevice" title="EbsBlockDevice">EbsBlockDevice</a>: <i>
-      - <a href="ebsblockdevice.md">EbsBlockDevice</a></i>
+      - &lt;a href=&#34;ebsblockdevice.md&#34;&gt;EbsBlockDevice&lt;/a&gt;</i>
     <a href="#ephemeralblockdevice" title="EphemeralBlockDevice">EphemeralBlockDevice</a>: <i>
-      - <a href="ephemeralblockdevice.md">EphemeralBlockDevice</a></i>
+      - &lt;a href=&#34;ephemeralblockdevice.md&#34;&gt;EphemeralBlockDevice&lt;/a&gt;</i>
     <a href="#rootblockdevice" title="RootBlockDevice">RootBlockDevice</a>: <i>
-      - <a href="rootblockdevice.md">RootBlockDevice</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;rootblockdevice.md&#34;&gt;RootBlockDevice&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AgentVersion
 
@@ -194,6 +206,14 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### Ec2InstanceId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### EcsClusterArn
 
 _Required_: No
@@ -211,14 +231,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Hostname
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 
@@ -462,7 +474,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="ebsblockdevice.md">EbsBlockDevice</a>
+_Type_: List of &lt;a href=&#34;ebsblockdevice.md&#34;&gt;EbsBlockDevice&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -470,7 +482,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="ephemeralblockdevice.md">EphemeralBlockDevice</a>
+_Type_: List of &lt;a href=&#34;ephemeralblockdevice.md&#34;&gt;EphemeralBlockDevice&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -478,7 +490,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="rootblockdevice.md">RootBlockDevice</a>
+_Type_: List of &lt;a href=&#34;rootblockdevice.md&#34;&gt;RootBlockDevice&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -486,7 +498,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -508,5 +520,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Ec2InstanceId
 
-Returns the <code>Ec2InstanceId</code> value.
+Returns the &lt;code&gt;Ec2InstanceId&lt;/code&gt; value.
 

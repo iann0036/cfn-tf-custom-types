@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     DisplayName: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
     HostnameLabel: Optional[str]
-    Id: Optional[str]
     IpAddress: Optional[str]
     IsPrimary: Optional[bool]
     SubnetId: Optional[str]
@@ -65,7 +64,6 @@ class ResourceModel(BaseResourceModel):
             DisplayName=json_data.get("DisplayName"),
             FreeformTags=json_data.get("FreeformTags"),
             HostnameLabel=json_data.get("HostnameLabel"),
-            Id=json_data.get("Id"),
             IpAddress=json_data.get("IpAddress"),
             IsPrimary=json_data.get("IsPrimary"),
             SubnetId=json_data.get("SubnetId"),

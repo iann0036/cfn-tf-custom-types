@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Config: Optional[Sequence["_Config"]]
-    Id: Optional[str]
     Name: Optional[str]
     Sourcetype: Optional[str]
 
@@ -51,7 +50,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Config=json_data.get("Config"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Sourcetype=json_data.get("Sourcetype"),
         )

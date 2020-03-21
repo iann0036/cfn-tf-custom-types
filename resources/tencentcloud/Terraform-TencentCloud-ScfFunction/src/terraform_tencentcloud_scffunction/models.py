@@ -51,7 +51,6 @@ class ResourceModel(BaseResourceModel):
     ErrNo: Optional[float]
     Handler: Optional[str]
     Host: Optional[str]
-    Id: Optional[str]
     InstallDependency: Optional[bool]
     L5Enable: Optional[bool]
     MemSize: Optional[float]
@@ -95,7 +94,6 @@ class ResourceModel(BaseResourceModel):
             ErrNo=json_data.get("ErrNo"),
             Handler=json_data.get("Handler"),
             Host=json_data.get("Host"),
-            Id=json_data.get("Id"),
             InstallDependency=json_data.get("InstallDependency"),
             L5Enable=json_data.get("L5Enable"),
             MemSize=json_data.get("MemSize"),

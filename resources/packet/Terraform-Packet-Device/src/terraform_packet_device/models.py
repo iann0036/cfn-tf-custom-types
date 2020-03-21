@@ -49,7 +49,6 @@ class ResourceModel(BaseResourceModel):
     ForceDetachVolumes: Optional[bool]
     HardwareReservationId: Optional[str]
     Hostname: Optional[str]
-    Id: Optional[str]
     IpAddressTypes: Optional[Sequence[str]]
     IpxeScriptUrl: Optional[str]
     Locked: Optional[bool]
@@ -94,7 +93,6 @@ class ResourceModel(BaseResourceModel):
             ForceDetachVolumes=json_data.get("ForceDetachVolumes"),
             HardwareReservationId=json_data.get("HardwareReservationId"),
             Hostname=json_data.get("Hostname"),
-            Id=json_data.get("Id"),
             IpAddressTypes=json_data.get("IpAddressTypes"),
             IpxeScriptUrl=json_data.get("IpxeScriptUrl"),
             Locked=json_data.get("Locked"),

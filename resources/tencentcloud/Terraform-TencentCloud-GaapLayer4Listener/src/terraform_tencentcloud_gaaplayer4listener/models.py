@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     ConnectTimeout: Optional[float]
     CreateTime: Optional[str]
     HealthCheck: Optional[bool]
-    Id: Optional[str]
     Interval: Optional[float]
     Name: Optional[str]
     Port: Optional[float]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             ConnectTimeout=json_data.get("ConnectTimeout"),
             CreateTime=json_data.get("CreateTime"),
             HealthCheck=json_data.get("HealthCheck"),
-            Id=json_data.get("Id"),
             Interval=json_data.get("Interval"),
             Name=json_data.get("Name"),
             Port=json_data.get("Port"),

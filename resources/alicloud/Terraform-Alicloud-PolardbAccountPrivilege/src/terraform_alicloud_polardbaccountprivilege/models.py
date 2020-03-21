@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     AccountPrivilege: Optional[str]
     DbClusterId: Optional[str]
     DbNames: Optional[Sequence[str]]
-    Id: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             AccountPrivilege=json_data.get("AccountPrivilege"),
             DbClusterId=json_data.get("DbClusterId"),
             DbNames=json_data.get("DbNames"),
-            Id=json_data.get("Id"),
         )
 
 

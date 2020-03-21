@@ -12,6 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::TencentCloud::ContainerCluster",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#bandwidth" title="Bandwidth">Bandwidth</a>" : <i>Double</i>,
         "<a href="#bandwidthtype" title="BandwidthType">BandwidthType</a>" : <i>String</i>,
         "<a href="#clustercidr" title="ClusterCidr">ClusterCidr</a>" : <i>String</i>,
@@ -22,13 +23,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#cvmtype" title="CvmType">CvmType</a>" : <i>String</i>,
         "<a href="#dockergraphpath" title="DockerGraphPath">DockerGraphPath</a>" : <i>String</i>,
         "<a href="#goodsnum" title="GoodsNum">GoodsNum</a>" : <i>Double</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#instancename" title="InstanceName">InstanceName</a>" : <i>String</i>,
         "<a href="#instancetype" title="InstanceType">InstanceType</a>" : <i>String</i>,
         "<a href="#isvpcgateway" title="IsVpcGateway">IsVpcGateway</a>" : <i>Double</i>,
         "<a href="#keyid" title="KeyId">KeyId</a>" : <i>String</i>,
+        "<a href="#kubernetesversion" title="KubernetesVersion">KubernetesVersion</a>" : <i>String</i>,
         "<a href="#mem" title="Mem">Mem</a>" : <i>Double</i>,
         "<a href="#mounttarget" title="MountTarget">MountTarget</a>" : <i>String</i>,
+        "<a href="#nodesnum" title="NodesNum">NodesNum</a>" : <i>Double</i>,
+        "<a href="#nodesstatus" title="NodesStatus">NodesStatus</a>" : <i>String</i>,
         "<a href="#osname" title="OsName">OsName</a>" : <i>String</i>,
         "<a href="#password" title="Password">Password</a>" : <i>String</i>,
         "<a href="#period" title="Period">Period</a>" : <i>Double</i>,
@@ -39,6 +42,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#storagesize" title="StorageSize">StorageSize</a>" : <i>Double</i>,
         "<a href="#storagetype" title="StorageType">StorageType</a>" : <i>String</i>,
         "<a href="#subnetid" title="SubnetId">SubnetId</a>" : <i>String</i>,
+        "<a href="#totalcpu" title="TotalCpu">TotalCpu</a>" : <i>Double</i>,
+        "<a href="#totalmem" title="TotalMem">TotalMem</a>" : <i>Double</i>,
         "<a href="#unschedulable" title="Unschedulable">Unschedulable</a>" : <i>Double</i>,
         "<a href="#userscript" title="UserScript">UserScript</a>" : <i>String</i>,
         "<a href="#vpcid" title="VpcId">VpcId</a>" : <i>String</i>,
@@ -52,6 +57,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::TencentCloud::ContainerCluster
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#bandwidth" title="Bandwidth">Bandwidth</a>: <i>Double</i>
     <a href="#bandwidthtype" title="BandwidthType">BandwidthType</a>: <i>String</i>
     <a href="#clustercidr" title="ClusterCidr">ClusterCidr</a>: <i>String</i>
@@ -62,13 +68,15 @@ Properties:
     <a href="#cvmtype" title="CvmType">CvmType</a>: <i>String</i>
     <a href="#dockergraphpath" title="DockerGraphPath">DockerGraphPath</a>: <i>String</i>
     <a href="#goodsnum" title="GoodsNum">GoodsNum</a>: <i>Double</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#instancename" title="InstanceName">InstanceName</a>: <i>String</i>
     <a href="#instancetype" title="InstanceType">InstanceType</a>: <i>String</i>
     <a href="#isvpcgateway" title="IsVpcGateway">IsVpcGateway</a>: <i>Double</i>
     <a href="#keyid" title="KeyId">KeyId</a>: <i>String</i>
+    <a href="#kubernetesversion" title="KubernetesVersion">KubernetesVersion</a>: <i>String</i>
     <a href="#mem" title="Mem">Mem</a>: <i>Double</i>
     <a href="#mounttarget" title="MountTarget">MountTarget</a>: <i>String</i>
+    <a href="#nodesnum" title="NodesNum">NodesNum</a>: <i>Double</i>
+    <a href="#nodesstatus" title="NodesStatus">NodesStatus</a>: <i>String</i>
     <a href="#osname" title="OsName">OsName</a>: <i>String</i>
     <a href="#password" title="Password">Password</a>: <i>String</i>
     <a href="#period" title="Period">Period</a>: <i>Double</i>
@@ -79,6 +87,8 @@ Properties:
     <a href="#storagesize" title="StorageSize">StorageSize</a>: <i>Double</i>
     <a href="#storagetype" title="StorageType">StorageType</a>: <i>String</i>
     <a href="#subnetid" title="SubnetId">SubnetId</a>: <i>String</i>
+    <a href="#totalcpu" title="TotalCpu">TotalCpu</a>: <i>Double</i>
+    <a href="#totalmem" title="TotalMem">TotalMem</a>: <i>Double</i>
     <a href="#unschedulable" title="Unschedulable">Unschedulable</a>: <i>Double</i>
     <a href="#userscript" title="UserScript">UserScript</a>: <i>String</i>
     <a href="#vpcid" title="VpcId">VpcId</a>: <i>String</i>
@@ -86,6 +96,16 @@ Properties:
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Bandwidth
 
@@ -167,14 +187,6 @@ _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### InstanceName
 
 _Required_: No
@@ -207,6 +219,14 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### KubernetesVersion
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Mem
 
 _Required_: No
@@ -216,6 +236,22 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MountTarget
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### NodesNum
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### NodesStatus
 
 _Required_: No
 
@@ -303,6 +339,22 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### TotalCpu
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### TotalMem
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Unschedulable
 
 _Required_: No
@@ -353,21 +405,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### KubernetesVersion
 
-Returns the <code>KubernetesVersion</code> value.
+Returns the &lt;code&gt;KubernetesVersion&lt;/code&gt; value.
 
 #### NodesNum
 
-Returns the <code>NodesNum</code> value.
+Returns the &lt;code&gt;NodesNum&lt;/code&gt; value.
 
 #### NodesStatus
 
-Returns the <code>NodesStatus</code> value.
+Returns the &lt;code&gt;NodesStatus&lt;/code&gt; value.
 
 #### TotalCpu
 
-Returns the <code>TotalCpu</code> value.
+Returns the &lt;code&gt;TotalCpu&lt;/code&gt; value.
 
 #### TotalMem
 
-Returns the <code>TotalMem</code> value.
+Returns the &lt;code&gt;TotalMem&lt;/code&gt; value.
 

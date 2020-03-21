@@ -12,7 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::TencentCloud::PlacementGroup",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#createtime" title="CreateTime">CreateTime</a>" : <i>String</i>,
+        "<a href="#currentnum" title="CurrentNum">CurrentNum</a>" : <i>Double</i>,
+        "<a href="#cvmquotatotal" title="CvmQuotaTotal">CvmQuotaTotal</a>" : <i>Double</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>
     }
@@ -24,18 +27,47 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::TencentCloud::PlacementGroup
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#createtime" title="CreateTime">CreateTime</a>: <i>String</i>
+    <a href="#currentnum" title="CurrentNum">CurrentNum</a>: <i>Double</i>
+    <a href="#cvmquotatotal" title="CvmQuotaTotal">CvmQuotaTotal</a>: <i>Double</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
 _Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### CreateTime
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### CurrentNum
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### CvmQuotaTotal
+
+_Required_: No
+
+_Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -73,13 +105,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateTime
 
-Returns the <code>CreateTime</code> value.
+Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
 
 #### CurrentNum
 
-Returns the <code>CurrentNum</code> value.
+Returns the &lt;code&gt;CurrentNum&lt;/code&gt; value.
 
 #### CvmQuotaTotal
 
-Returns the <code>CvmQuotaTotal</code> value.
+Returns the &lt;code&gt;CvmQuotaTotal&lt;/code&gt; value.
 

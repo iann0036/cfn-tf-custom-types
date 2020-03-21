@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     DeletePolicy: Optional[str]
     DeploymentId: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     Manifest: Optional[str]
     Name: Optional[str]
     Preview: Optional[bool]
@@ -65,7 +64,6 @@ class ResourceModel(BaseResourceModel):
             DeletePolicy=json_data.get("DeletePolicy"),
             DeploymentId=json_data.get("DeploymentId"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Manifest=json_data.get("Manifest"),
             Name=json_data.get("Name"),
             Preview=json_data.get("Preview"),

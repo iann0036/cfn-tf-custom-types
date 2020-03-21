@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     DnsSuffix: Optional[str]
     Gateway: Optional[str]
     Href: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Netmask: Optional[str]
     Org: Optional[str]
@@ -66,7 +65,6 @@ class ResourceModel(BaseResourceModel):
             DnsSuffix=json_data.get("DnsSuffix"),
             Gateway=json_data.get("Gateway"),
             Href=json_data.get("Href"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Netmask=json_data.get("Netmask"),
             Org=json_data.get("Org"),

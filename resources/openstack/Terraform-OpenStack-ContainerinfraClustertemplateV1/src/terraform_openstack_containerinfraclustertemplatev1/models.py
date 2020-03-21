@@ -50,7 +50,6 @@ class ResourceModel(BaseResourceModel):
     FloatingIpEnabled: Optional[bool]
     HttpProxy: Optional[str]
     HttpsProxy: Optional[str]
-    Id: Optional[str]
     Image: Optional[str]
     InsecureRegistry: Optional[str]
     KeypairId: Optional[str]
@@ -94,7 +93,6 @@ class ResourceModel(BaseResourceModel):
             FloatingIpEnabled=json_data.get("FloatingIpEnabled"),
             HttpProxy=json_data.get("HttpProxy"),
             HttpsProxy=json_data.get("HttpsProxy"),
-            Id=json_data.get("Id"),
             Image=json_data.get("Image"),
             InsecureRegistry=json_data.get("InsecureRegistry"),
             KeypairId=json_data.get("KeypairId"),

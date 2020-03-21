@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     DnsIpAddresses: Optional[Sequence[str]]
     Edition: Optional[str]
     EnableSso: Optional[bool]
-    Id: Optional[str]
     Name: Optional[str]
     Password: Optional[str]
     SecurityGroupId: Optional[str]
@@ -68,7 +67,6 @@ class ResourceModel(BaseResourceModel):
             DnsIpAddresses=json_data.get("DnsIpAddresses"),
             Edition=json_data.get("Edition"),
             EnableSso=json_data.get("EnableSso"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Password=json_data.get("Password"),
             SecurityGroupId=json_data.get("SecurityGroupId"),

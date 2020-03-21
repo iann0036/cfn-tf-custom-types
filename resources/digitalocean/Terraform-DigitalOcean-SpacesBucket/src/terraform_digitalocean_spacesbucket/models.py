@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Acl: Optional[str]
     BucketDomainName: Optional[str]
     ForceDestroy: Optional[bool]
-    Id: Optional[str]
     Name: Optional[str]
     Region: Optional[str]
     Urn: Optional[str]
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
             Acl=json_data.get("Acl"),
             BucketDomainName=json_data.get("BucketDomainName"),
             ForceDestroy=json_data.get("ForceDestroy"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Region=json_data.get("Region"),
             Urn=json_data.get("Urn"),

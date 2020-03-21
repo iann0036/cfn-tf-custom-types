@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     DatabaseId: Optional[str]
     DatabaseSizeInGbs: Optional[float]
     DisplayName: Optional[str]
-    Id: Optional[str]
     LifecycleDetails: Optional[str]
     State: Optional[str]
     TimeEnded: Optional[str]
@@ -65,7 +64,6 @@ class ResourceModel(BaseResourceModel):
             DatabaseId=json_data.get("DatabaseId"),
             DatabaseSizeInGbs=json_data.get("DatabaseSizeInGbs"),
             DisplayName=json_data.get("DisplayName"),
-            Id=json_data.get("Id"),
             LifecycleDetails=json_data.get("LifecycleDetails"),
             State=json_data.get("State"),
             TimeEnded=json_data.get("TimeEnded"),

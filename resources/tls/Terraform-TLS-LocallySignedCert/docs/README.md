@@ -12,16 +12,20 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::TLS::LocallySignedCert",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#alloweduses" title="AllowedUses">AllowedUses</a>" : <i>[ String, ... ]</i>,
         "<a href="#cacertpem" title="CaCertPem">CaCertPem</a>" : <i>String</i>,
         "<a href="#cakeyalgorithm" title="CaKeyAlgorithm">CaKeyAlgorithm</a>" : <i>String</i>,
         "<a href="#caprivatekeypem" title="CaPrivateKeyPem">CaPrivateKeyPem</a>" : <i>String</i>,
+        "<a href="#certpem" title="CertPem">CertPem</a>" : <i>String</i>,
         "<a href="#certrequestpem" title="CertRequestPem">CertRequestPem</a>" : <i>String</i>,
         "<a href="#earlyrenewalhours" title="EarlyRenewalHours">EarlyRenewalHours</a>" : <i>Double</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#iscacertificate" title="IsCaCertificate">IsCaCertificate</a>" : <i>Boolean</i>,
+        "<a href="#readyforrenewal" title="ReadyForRenewal">ReadyForRenewal</a>" : <i>Boolean</i>,
         "<a href="#setsubjectkeyid" title="SetSubjectKeyId">SetSubjectKeyId</a>" : <i>Boolean</i>,
+        "<a href="#validityendtime" title="ValidityEndTime">ValidityEndTime</a>" : <i>String</i>,
         "<a href="#validityperiodhours" title="ValidityPeriodHours">ValidityPeriodHours</a>" : <i>Double</i>,
+        "<a href="#validitystarttime" title="ValidityStartTime">ValidityStartTime</a>" : <i>String</i>
     }
 }
 </pre>
@@ -31,20 +35,34 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::TLS::LocallySignedCert
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#alloweduses" title="AllowedUses">AllowedUses</a>: <i>
       - String</i>
     <a href="#cacertpem" title="CaCertPem">CaCertPem</a>: <i>String</i>
     <a href="#cakeyalgorithm" title="CaKeyAlgorithm">CaKeyAlgorithm</a>: <i>String</i>
     <a href="#caprivatekeypem" title="CaPrivateKeyPem">CaPrivateKeyPem</a>: <i>String</i>
+    <a href="#certpem" title="CertPem">CertPem</a>: <i>String</i>
     <a href="#certrequestpem" title="CertRequestPem">CertRequestPem</a>: <i>String</i>
     <a href="#earlyrenewalhours" title="EarlyRenewalHours">EarlyRenewalHours</a>: <i>Double</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#iscacertificate" title="IsCaCertificate">IsCaCertificate</a>: <i>Boolean</i>
+    <a href="#readyforrenewal" title="ReadyForRenewal">ReadyForRenewal</a>: <i>Boolean</i>
     <a href="#setsubjectkeyid" title="SetSubjectKeyId">SetSubjectKeyId</a>: <i>Boolean</i>
+    <a href="#validityendtime" title="ValidityEndTime">ValidityEndTime</a>: <i>String</i>
     <a href="#validityperiodhours" title="ValidityPeriodHours">ValidityPeriodHours</a>: <i>Double</i>
+    <a href="#validitystarttime" title="ValidityStartTime">ValidityStartTime</a>: <i>String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowedUses
 
@@ -78,6 +96,14 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### CertPem
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### CertRequestPem
 
 _Required_: Yes
@@ -94,15 +120,15 @@ _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### IsCaCertificate
 
 _Required_: No
 
-_Type_: String
+_Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### IsCaCertificate
+#### ReadyForRenewal
 
 _Required_: No
 
@@ -118,11 +144,27 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### ValidityEndTime
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### ValidityPeriodHours
 
 _Required_: Yes
 
 _Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ValidityStartTime
+
+_Required_: No
+
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -144,17 +186,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CertPem
 
-Returns the <code>CertPem</code> value.
+Returns the &lt;code&gt;CertPem&lt;/code&gt; value.
 
 #### ReadyForRenewal
 
-Returns the <code>ReadyForRenewal</code> value.
+Returns the &lt;code&gt;ReadyForRenewal&lt;/code&gt; value.
 
 #### ValidityEndTime
 
-Returns the <code>ValidityEndTime</code> value.
+Returns the &lt;code&gt;ValidityEndTime&lt;/code&gt; value.
 
 #### ValidityStartTime
 
-Returns the <code>ValidityStartTime</code> value.
+Returns the &lt;code&gt;ValidityStartTime&lt;/code&gt; value.
 

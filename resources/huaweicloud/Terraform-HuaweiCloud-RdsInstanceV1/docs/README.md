@@ -12,26 +12,26 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::HuaweiCloud::RdsInstanceV1",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#availabilityzone" title="Availabilityzone">Availabilityzone</a>" : <i>String</i>,
         "<a href="#created" title="Created">Created</a>" : <i>String</i>,
         "<a href="#dbport" title="Dbport">Dbport</a>" : <i>String</i>,
         "<a href="#dbrtpd" title="Dbrtpd">Dbrtpd</a>" : <i>String</i>,
         "<a href="#flavorref" title="Flavorref">Flavorref</a>" : <i>String</i>,
         "<a href="#hostname" title="Hostname">Hostname</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
         "<a href="#status" title="Status">Status</a>" : <i>String</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
         "<a href="#updated" title="Updated">Updated</a>" : <i>String</i>,
         "<a href="#vpc" title="Vpc">Vpc</a>" : <i>String</i>,
-        "<a href="#backupstrategy" title="Backupstrategy">Backupstrategy</a>" : <i>[ <a href="backupstrategy.md">Backupstrategy</a>, ... ]</i>,
-        "<a href="#datastore" title="Datastore">Datastore</a>" : <i>[ <a href="datastore.md">Datastore</a>, ... ]</i>,
-        "<a href="#ha" title="Ha">Ha</a>" : <i>[ <a href="ha.md">Ha</a>, ... ]</i>,
-        "<a href="#nics" title="Nics">Nics</a>" : <i>[ <a href="nics.md">Nics</a>, ... ]</i>,
-        "<a href="#securitygroup" title="Securitygroup">Securitygroup</a>" : <i>[ <a href="securitygroup.md">Securitygroup</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
-        "<a href="#volume" title="Volume">Volume</a>" : <i>[ <a href="volume.md">Volume</a>, ... ]</i>
+        "<a href="#backupstrategy" title="Backupstrategy">Backupstrategy</a>" : <i>[ &lt;a href=&#34;backupstrategy.md&#34;&gt;Backupstrategy&lt;/a&gt;, ... ]</i>,
+        "<a href="#datastore" title="Datastore">Datastore</a>" : <i>[ &lt;a href=&#34;datastore.md&#34;&gt;Datastore&lt;/a&gt;, ... ]</i>,
+        "<a href="#ha" title="Ha">Ha</a>" : <i>[ &lt;a href=&#34;ha.md&#34;&gt;Ha&lt;/a&gt;, ... ]</i>,
+        "<a href="#nics" title="Nics">Nics</a>" : <i>[ &lt;a href=&#34;nics.md&#34;&gt;Nics&lt;/a&gt;, ... ]</i>,
+        "<a href="#securitygroup" title="Securitygroup">Securitygroup</a>" : <i>[ &lt;a href=&#34;securitygroup.md&#34;&gt;Securitygroup&lt;/a&gt;, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
+        "<a href="#volume" title="Volume">Volume</a>" : <i>[ &lt;a href=&#34;volume.md&#34;&gt;Volume&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -41,13 +41,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::HuaweiCloud::RdsInstanceV1
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#availabilityzone" title="Availabilityzone">Availabilityzone</a>: <i>String</i>
     <a href="#created" title="Created">Created</a>: <i>String</i>
     <a href="#dbport" title="Dbport">Dbport</a>: <i>String</i>
     <a href="#dbrtpd" title="Dbrtpd">Dbrtpd</a>: <i>String</i>
     <a href="#flavorref" title="Flavorref">Flavorref</a>: <i>String</i>
     <a href="#hostname" title="Hostname">Hostname</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
     <a href="#status" title="Status">Status</a>: <i>String</i>
@@ -55,21 +55,31 @@ Properties:
     <a href="#updated" title="Updated">Updated</a>: <i>String</i>
     <a href="#vpc" title="Vpc">Vpc</a>: <i>String</i>
     <a href="#backupstrategy" title="Backupstrategy">Backupstrategy</a>: <i>
-      - <a href="backupstrategy.md">Backupstrategy</a></i>
+      - &lt;a href=&#34;backupstrategy.md&#34;&gt;Backupstrategy&lt;/a&gt;</i>
     <a href="#datastore" title="Datastore">Datastore</a>: <i>
-      - <a href="datastore.md">Datastore</a></i>
+      - &lt;a href=&#34;datastore.md&#34;&gt;Datastore&lt;/a&gt;</i>
     <a href="#ha" title="Ha">Ha</a>: <i>
-      - <a href="ha.md">Ha</a></i>
+      - &lt;a href=&#34;ha.md&#34;&gt;Ha&lt;/a&gt;</i>
     <a href="#nics" title="Nics">Nics</a>: <i>
-      - <a href="nics.md">Nics</a></i>
+      - &lt;a href=&#34;nics.md&#34;&gt;Nics&lt;/a&gt;</i>
     <a href="#securitygroup" title="Securitygroup">Securitygroup</a>: <i>
-      - <a href="securitygroup.md">Securitygroup</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;securitygroup.md&#34;&gt;Securitygroup&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     <a href="#volume" title="Volume">Volume</a>: <i>
-      - <a href="volume.md">Volume</a></i>
+      - &lt;a href=&#34;volume.md&#34;&gt;Volume&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Availabilityzone
 
@@ -112,14 +122,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Hostname
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 
@@ -179,7 +181,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="backupstrategy.md">Backupstrategy</a>
+_Type_: List of &lt;a href=&#34;backupstrategy.md&#34;&gt;Backupstrategy&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -187,7 +189,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="datastore.md">Datastore</a>
+_Type_: List of &lt;a href=&#34;datastore.md&#34;&gt;Datastore&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -195,7 +197,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="ha.md">Ha</a>
+_Type_: List of &lt;a href=&#34;ha.md&#34;&gt;Ha&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -203,7 +205,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="nics.md">Nics</a>
+_Type_: List of &lt;a href=&#34;nics.md&#34;&gt;Nics&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -211,7 +213,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="securitygroup.md">Securitygroup</a>
+_Type_: List of &lt;a href=&#34;securitygroup.md&#34;&gt;Securitygroup&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -219,7 +221,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -227,7 +229,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="volume.md">Volume</a>
+_Type_: List of &lt;a href=&#34;volume.md&#34;&gt;Volume&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     Encrypted: Optional[bool]
     Force: Optional[bool]
-    Id: Optional[str]
     ImageName: Optional[str]
     KmsKeyId: Optional[str]
     Name: Optional[str]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             Encrypted=json_data.get("Encrypted"),
             Force=json_data.get("Force"),
-            Id=json_data.get("Id"),
             ImageName=json_data.get("ImageName"),
             KmsKeyId=json_data.get("KmsKeyId"),
             Name=json_data.get("Name"),

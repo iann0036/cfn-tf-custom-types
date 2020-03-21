@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Encoding: Optional[str]
     Fingerprint: Optional[str]
-    Id: Optional[str]
     PublicKey: Optional[str]
     SshPublicKeyId: Optional[str]
     Status: Optional[str]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Encoding=json_data.get("Encoding"),
             Fingerprint=json_data.get("Fingerprint"),
-            Id=json_data.get("Id"),
             PublicKey=json_data.get("PublicKey"),
             SshPublicKeyId=json_data.get("SshPublicKeyId"),
             Status=json_data.get("Status"),

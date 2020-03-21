@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     ConsistencyGroupId: Optional[str]
     Description: Optional[str]
     EnableOnlineResize: Optional[bool]
-    Id: Optional[str]
     ImageId: Optional[str]
     Metadata: Optional[Sequence["_Metadata"]]
     Multiattach: Optional[bool]
@@ -68,7 +67,6 @@ class ResourceModel(BaseResourceModel):
             ConsistencyGroupId=json_data.get("ConsistencyGroupId"),
             Description=json_data.get("Description"),
             EnableOnlineResize=json_data.get("EnableOnlineResize"),
-            Id=json_data.get("Id"),
             ImageId=json_data.get("ImageId"),
             Metadata=json_data.get("Metadata"),
             Multiattach=json_data.get("Multiattach"),

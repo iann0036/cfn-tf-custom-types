@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ConfigJson: Optional[str]
     Folder: Optional[float]
-    Id: Optional[str]
     Slug: Optional[str]
 
     @classmethod
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ConfigJson=json_data.get("ConfigJson"),
             Folder=json_data.get("Folder"),
-            Id=json_data.get("Id"),
             Slug=json_data.get("Slug"),
         )
 

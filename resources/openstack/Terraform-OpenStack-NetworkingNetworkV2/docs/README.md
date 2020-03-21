@@ -12,12 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OpenStack::NetworkingNetworkV2",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#adminstateup" title="AdminStateUp">AdminStateUp</a>" : <i>Boolean</i>,
+        "<a href="#alltags" title="AllTags">AllTags</a>" : <i>[ String, ... ]</i>,
         "<a href="#availabilityzonehints" title="AvailabilityZoneHints">AvailabilityZoneHints</a>" : <i>[ String, ... ]</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#dnsdomain" title="DnsDomain">DnsDomain</a>" : <i>String</i>,
         "<a href="#external" title="External">External</a>" : <i>Boolean</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#mtu" title="Mtu">Mtu</a>" : <i>Double</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#portsecurityenabled" title="PortSecurityEnabled">PortSecurityEnabled</a>" : <i>Boolean</i>,
@@ -27,9 +28,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
         "<a href="#tenantid" title="TenantId">TenantId</a>" : <i>String</i>,
         "<a href="#transparentvlan" title="TransparentVlan">TransparentVlan</a>" : <i>Boolean</i>,
-        "<a href="#valuespecs" title="ValueSpecs">ValueSpecs</a>" : <i>[ <a href="valuespecs.md">ValueSpecs</a>, ... ]</i>,
-        "<a href="#segments" title="Segments">Segments</a>" : <i>[ <a href="segments.md">Segments</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
+        "<a href="#valuespecs" title="ValueSpecs">ValueSpecs</a>" : <i>[ &lt;a href=&#34;valuespecs.md&#34;&gt;ValueSpecs&lt;/a&gt;, ... ]</i>,
+        "<a href="#segments" title="Segments">Segments</a>" : <i>[ &lt;a href=&#34;segments.md&#34;&gt;Segments&lt;/a&gt;, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     }
 }
 </pre>
@@ -39,13 +40,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OpenStack::NetworkingNetworkV2
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#adminstateup" title="AdminStateUp">AdminStateUp</a>: <i>Boolean</i>
+    <a href="#alltags" title="AllTags">AllTags</a>: <i>
+      - String</i>
     <a href="#availabilityzonehints" title="AvailabilityZoneHints">AvailabilityZoneHints</a>: <i>
       - String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#dnsdomain" title="DnsDomain">DnsDomain</a>: <i>String</i>
     <a href="#external" title="External">External</a>: <i>Boolean</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#mtu" title="Mtu">Mtu</a>: <i>Double</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#portsecurityenabled" title="PortSecurityEnabled">PortSecurityEnabled</a>: <i>Boolean</i>
@@ -57,19 +60,37 @@ Properties:
     <a href="#tenantid" title="TenantId">TenantId</a>: <i>String</i>
     <a href="#transparentvlan" title="TransparentVlan">TransparentVlan</a>: <i>Boolean</i>
     <a href="#valuespecs" title="ValueSpecs">ValueSpecs</a>: <i>
-      - <a href="valuespecs.md">ValueSpecs</a></i>
+      - &lt;a href=&#34;valuespecs.md&#34;&gt;ValueSpecs&lt;/a&gt;</i>
     <a href="#segments" title="Segments">Segments</a>: <i>
-      - <a href="segments.md">Segments</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;segments.md&#34;&gt;Segments&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AdminStateUp
 
 _Required_: No
 
 _Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### AllTags
+
+_Required_: No
+
+_Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -102,14 +123,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -189,7 +202,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="valuespecs.md">ValueSpecs</a>
+_Type_: List of &lt;a href=&#34;valuespecs.md&#34;&gt;ValueSpecs&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -197,7 +210,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="segments.md">Segments</a>
+_Type_: List of &lt;a href=&#34;segments.md&#34;&gt;Segments&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -205,7 +218,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -227,5 +240,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AllTags
 
-Returns the <code>AllTags</code> value.
+Returns the &lt;code&gt;AllTags&lt;/code&gt; value.
 

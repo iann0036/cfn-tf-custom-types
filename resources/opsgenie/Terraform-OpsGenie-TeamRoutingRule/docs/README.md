@@ -12,17 +12,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OpsGenie::TeamRoutingRule",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#order" title="Order">Order</a>" : <i>Double</i>,
         "<a href="#teamid" title="TeamId">TeamId</a>" : <i>String</i>,
         "<a href="#timezone" title="Timezone">Timezone</a>" : <i>String</i>,
-        "<a href="#criteria" title="Criteria">Criteria</a>" : <i>[ <a href="criteria.md">Criteria</a>, ... ]</i>,
-        "<a href="#notify" title="Notify">Notify</a>" : <i>[ <a href="notify.md">Notify</a>, ... ]</i>,
-        "<a href="#timerestriction" title="TimeRestriction">TimeRestriction</a>" : <i>[ <a href="timerestriction.md">TimeRestriction</a>, ... ]</i>,
-        "<a href="#conditions" title="Conditions">Conditions</a>" : <i>[ <a href="conditions.md">Conditions</a>, ... ]</i>,
-        "<a href="#restriction" title="Restriction">Restriction</a>" : <i>[ <a href="restriction.md">Restriction</a>, ... ]</i>,
-        "<a href="#restrictions" title="Restrictions">Restrictions</a>" : <i>[ <a href="restrictions.md">Restrictions</a>, ... ]</i>
+        "<a href="#criteria" title="Criteria">Criteria</a>" : <i>[ &lt;a href=&#34;criteria.md&#34;&gt;Criteria&lt;/a&gt;, ... ]</i>,
+        "<a href="#notify" title="Notify">Notify</a>" : <i>[ &lt;a href=&#34;notify.md&#34;&gt;Notify&lt;/a&gt;, ... ]</i>,
+        "<a href="#timerestriction" title="TimeRestriction">TimeRestriction</a>" : <i>[ &lt;a href=&#34;timerestriction.md&#34;&gt;TimeRestriction&lt;/a&gt;, ... ]</i>,
+        "<a href="#conditions" title="Conditions">Conditions</a>" : <i>[ &lt;a href=&#34;conditions.md&#34;&gt;Conditions&lt;/a&gt;, ... ]</i>,
+        "<a href="#restriction" title="Restriction">Restriction</a>" : <i>[ &lt;a href=&#34;restriction.md&#34;&gt;Restriction&lt;/a&gt;, ... ]</i>,
+        "<a href="#restrictions" title="Restrictions">Restrictions</a>" : <i>[ &lt;a href=&#34;restrictions.md&#34;&gt;Restrictions&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -32,28 +32,30 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OpsGenie::TeamRoutingRule
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#order" title="Order">Order</a>: <i>Double</i>
     <a href="#teamid" title="TeamId">TeamId</a>: <i>String</i>
     <a href="#timezone" title="Timezone">Timezone</a>: <i>String</i>
     <a href="#criteria" title="Criteria">Criteria</a>: <i>
-      - <a href="criteria.md">Criteria</a></i>
+      - &lt;a href=&#34;criteria.md&#34;&gt;Criteria&lt;/a&gt;</i>
     <a href="#notify" title="Notify">Notify</a>: <i>
-      - <a href="notify.md">Notify</a></i>
+      - &lt;a href=&#34;notify.md&#34;&gt;Notify&lt;/a&gt;</i>
     <a href="#timerestriction" title="TimeRestriction">TimeRestriction</a>: <i>
-      - <a href="timerestriction.md">TimeRestriction</a></i>
+      - &lt;a href=&#34;timerestriction.md&#34;&gt;TimeRestriction&lt;/a&gt;</i>
     <a href="#conditions" title="Conditions">Conditions</a>: <i>
-      - <a href="conditions.md">Conditions</a></i>
+      - &lt;a href=&#34;conditions.md&#34;&gt;Conditions&lt;/a&gt;</i>
     <a href="#restriction" title="Restriction">Restriction</a>: <i>
-      - <a href="restriction.md">Restriction</a></i>
+      - &lt;a href=&#34;restriction.md&#34;&gt;Restriction&lt;/a&gt;</i>
     <a href="#restrictions" title="Restrictions">Restrictions</a>: <i>
-      - <a href="restrictions.md">Restrictions</a></i>
+      - &lt;a href=&#34;restrictions.md&#34;&gt;Restrictions&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
@@ -97,7 +99,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="criteria.md">Criteria</a>
+_Type_: List of &lt;a href=&#34;criteria.md&#34;&gt;Criteria&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -105,7 +107,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="notify.md">Notify</a>
+_Type_: List of &lt;a href=&#34;notify.md&#34;&gt;Notify&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -113,7 +115,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="timerestriction.md">TimeRestriction</a>
+_Type_: List of &lt;a href=&#34;timerestriction.md&#34;&gt;TimeRestriction&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -121,7 +123,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="conditions.md">Conditions</a>
+_Type_: List of &lt;a href=&#34;conditions.md&#34;&gt;Conditions&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -129,7 +131,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="restriction.md">Restriction</a>
+_Type_: List of &lt;a href=&#34;restriction.md&#34;&gt;Restriction&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -137,7 +139,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="restrictions.md">Restrictions</a>
+_Type_: List of &lt;a href=&#34;restrictions.md&#34;&gt;Restrictions&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

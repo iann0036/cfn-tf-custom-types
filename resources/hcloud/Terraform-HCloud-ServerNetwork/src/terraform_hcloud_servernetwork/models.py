@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AliasIps: Optional[Sequence[str]]
-    Id: Optional[str]
     Ip: Optional[str]
     MacAddress: Optional[str]
     NetworkId: Optional[float]
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             AliasIps=json_data.get("AliasIps"),
-            Id=json_data.get("Id"),
             Ip=json_data.get("Ip"),
             MacAddress=json_data.get("MacAddress"),
             NetworkId=json_data.get("NetworkId"),

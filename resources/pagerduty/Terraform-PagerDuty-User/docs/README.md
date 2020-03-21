@@ -12,10 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::PagerDuty::User",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#avatarurl" title="AvatarUrl">AvatarUrl</a>" : <i>String</i>,
         "<a href="#color" title="Color">Color</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#email" title="Email">Email</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#htmlurl" title="HtmlUrl">HtmlUrl</a>" : <i>String</i>,
+        "<a href="#invitationsent" title="InvitationSent">InvitationSent</a>" : <i>Boolean</i>,
         "<a href="#jobtitle" title="JobTitle">JobTitle</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#role" title="Role">Role</a>" : <i>String</i>,
@@ -30,10 +33,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::PagerDuty::User
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#avatarurl" title="AvatarUrl">AvatarUrl</a>: <i>String</i>
     <a href="#color" title="Color">Color</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#email" title="Email">Email</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#htmlurl" title="HtmlUrl">HtmlUrl</a>: <i>String</i>
+    <a href="#invitationsent" title="InvitationSent">InvitationSent</a>: <i>Boolean</i>
     <a href="#jobtitle" title="JobTitle">JobTitle</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#role" title="Role">Role</a>: <i>String</i>
@@ -43,6 +49,24 @@ Properties:
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### AvatarUrl
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Color
 
@@ -68,11 +92,19 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### HtmlUrl
 
 _Required_: No
 
 _Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### InvitationSent
+
+_Required_: No
+
+_Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -134,13 +166,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AvatarUrl
 
-Returns the <code>AvatarUrl</code> value.
+Returns the &lt;code&gt;AvatarUrl&lt;/code&gt; value.
 
 #### HtmlUrl
 
-Returns the <code>HtmlUrl</code> value.
+Returns the &lt;code&gt;HtmlUrl&lt;/code&gt; value.
 
 #### InvitationSent
 
-Returns the <code>InvitationSent</code> value.
+Returns the &lt;code&gt;InvitationSent&lt;/code&gt; value.
 

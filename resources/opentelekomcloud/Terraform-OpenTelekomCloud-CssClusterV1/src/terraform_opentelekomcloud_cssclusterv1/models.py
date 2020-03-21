@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     EnableHttps: Optional[bool]
     Endpoint: Optional[str]
     ExpectNodeNum: Optional[float]
-    Id: Optional[str]
     Name: Optional[str]
     Nodes: Optional[Sequence["_Nodes"]]
     Updated: Optional[str]
@@ -64,7 +63,6 @@ class ResourceModel(BaseResourceModel):
             EnableHttps=json_data.get("EnableHttps"),
             Endpoint=json_data.get("Endpoint"),
             ExpectNodeNum=json_data.get("ExpectNodeNum"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Nodes=json_data.get("Nodes"),
             Updated=json_data.get("Updated"),

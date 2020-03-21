@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ContentType: Optional[str]
     ExpirationDate: Optional[str]
-    Id: Optional[str]
     KeyVaultId: Optional[str]
     Name: Optional[str]
     NotBeforeDate: Optional[str]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ContentType=json_data.get("ContentType"),
             ExpirationDate=json_data.get("ExpirationDate"),
-            Id=json_data.get("Id"),
             KeyVaultId=json_data.get("KeyVaultId"),
             Name=json_data.get("Name"),
             NotBeforeDate=json_data.get("NotBeforeDate"),

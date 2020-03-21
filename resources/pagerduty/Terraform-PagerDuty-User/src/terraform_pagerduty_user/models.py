@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     Email: Optional[str]
     HtmlUrl: Optional[str]
-    Id: Optional[str]
     InvitationSent: Optional[bool]
     JobTitle: Optional[str]
     Name: Optional[str]
@@ -63,7 +62,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             Email=json_data.get("Email"),
             HtmlUrl=json_data.get("HtmlUrl"),
-            Id=json_data.get("Id"),
             InvitationSent=json_data.get("InvitationSent"),
             JobTitle=json_data.get("JobTitle"),
             Name=json_data.get("Name"),

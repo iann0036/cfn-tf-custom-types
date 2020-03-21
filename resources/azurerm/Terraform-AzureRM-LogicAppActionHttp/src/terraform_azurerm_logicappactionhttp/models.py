@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Body: Optional[str]
     Headers: Optional[Sequence["_Headers"]]
-    Id: Optional[str]
     LogicAppId: Optional[str]
     Method: Optional[str]
     Name: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Body=json_data.get("Body"),
             Headers=json_data.get("Headers"),
-            Id=json_data.get("Id"),
             LogicAppId=json_data.get("LogicAppId"),
             Method=json_data.get("Method"),
             Name=json_data.get("Name"),

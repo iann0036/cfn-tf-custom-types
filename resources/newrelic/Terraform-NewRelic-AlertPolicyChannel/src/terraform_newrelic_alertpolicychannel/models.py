@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ChannelId: Optional[float]
     ChannelIds: Optional[Sequence[float]]
-    Id: Optional[str]
     PolicyId: Optional[float]
 
     @classmethod
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ChannelId=json_data.get("ChannelId"),
             ChannelIds=json_data.get("ChannelIds"),
-            Id=json_data.get("Id"),
             PolicyId=json_data.get("PolicyId"),
         )
 

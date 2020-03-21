@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AccessGroupId: Optional[str]
     AuthClientIp: Optional[str]
-    Id: Optional[str]
     Priority: Optional[float]
     RwPermission: Optional[str]
     UserPermission: Optional[str]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AccessGroupId=json_data.get("AccessGroupId"),
             AuthClientIp=json_data.get("AuthClientIp"),
-            Id=json_data.get("Id"),
             Priority=json_data.get("Priority"),
             RwPermission=json_data.get("RwPermission"),
             UserPermission=json_data.get("UserPermission"),

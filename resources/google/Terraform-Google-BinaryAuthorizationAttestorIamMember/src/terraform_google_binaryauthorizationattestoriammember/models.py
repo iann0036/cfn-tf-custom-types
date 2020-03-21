@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Attestor: Optional[str]
     Etag: Optional[str]
-    Id: Optional[str]
     Member: Optional[str]
     Project: Optional[str]
     Role: Optional[str]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Attestor=json_data.get("Attestor"),
             Etag=json_data.get("Etag"),
-            Id=json_data.get("Id"),
             Member=json_data.get("Member"),
             Project=json_data.get("Project"),
             Role=json_data.get("Role"),

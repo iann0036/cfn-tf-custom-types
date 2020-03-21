@@ -12,13 +12,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::UCloud::Disk",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#availabilityzone" title="AvailabilityZone">AvailabilityZone</a>" : <i>String</i>,
         "<a href="#chargetype" title="ChargeType">ChargeType</a>" : <i>String</i>,
+        "<a href="#createtime" title="CreateTime">CreateTime</a>" : <i>String</i>,
         "<a href="#disksize" title="DiskSize">DiskSize</a>" : <i>Double</i>,
         "<a href="#disktype" title="DiskType">DiskType</a>" : <i>String</i>,
         "<a href="#duration" title="Duration">Duration</a>" : <i>Double</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#expiretime" title="ExpireTime">ExpireTime</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
+        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
         "<a href="#tag" title="Tag">Tag</a>" : <i>String</i>
     }
 }
@@ -29,17 +32,30 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::UCloud::Disk
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#availabilityzone" title="AvailabilityZone">AvailabilityZone</a>: <i>String</i>
     <a href="#chargetype" title="ChargeType">ChargeType</a>: <i>String</i>
+    <a href="#createtime" title="CreateTime">CreateTime</a>: <i>String</i>
     <a href="#disksize" title="DiskSize">DiskSize</a>: <i>Double</i>
     <a href="#disktype" title="DiskType">DiskType</a>: <i>String</i>
     <a href="#duration" title="Duration">Duration</a>: <i>Double</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#expiretime" title="ExpireTime">ExpireTime</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
+    <a href="#status" title="Status">Status</a>: <i>String</i>
     <a href="#tag" title="Tag">Tag</a>: <i>String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AvailabilityZone
 
@@ -50,6 +66,14 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ChargeType
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### CreateTime
 
 _Required_: No
 
@@ -81,7 +105,7 @@ _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### ExpireTime
 
 _Required_: No
 
@@ -90,6 +114,14 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Status
 
 _Required_: No
 
@@ -123,13 +155,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateTime
 
-Returns the <code>CreateTime</code> value.
+Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
 
 #### ExpireTime
 
-Returns the <code>ExpireTime</code> value.
+Returns the &lt;code&gt;ExpireTime&lt;/code&gt; value.
 
 #### Status
 
-Returns the <code>Status</code> value.
+Returns the &lt;code&gt;Status&lt;/code&gt; value.
 

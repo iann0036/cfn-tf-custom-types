@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Action: Optional[str]
     Description: Optional[str]
     DestinationName: Optional[str]
-    Id: Optional[str]
     Meta: Optional[Sequence["_Meta"]]
     SourceName: Optional[str]
 
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             Action=json_data.get("Action"),
             Description=json_data.get("Description"),
             DestinationName=json_data.get("DestinationName"),
-            Id=json_data.get("Id"),
             Meta=json_data.get("Meta"),
             SourceName=json_data.get("SourceName"),
         )

@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     Description: Optional[str]
     Enabled: Optional[bool]
-    Id: Optional[str]
     Name: Optional[str]
     Sql: Optional[str]
     SqlVersion: Optional[str]
@@ -67,7 +66,6 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             Description=json_data.get("Description"),
             Enabled=json_data.get("Enabled"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Sql=json_data.get("Sql"),
             SqlVersion=json_data.get("SqlVersion"),

@@ -51,7 +51,6 @@ class ResourceModel(BaseResourceModel):
     DefaultCriticalOptions: Optional[Sequence["_DefaultCriticalOptions"]]
     DefaultExtensions: Optional[Sequence["_DefaultExtensions"]]
     DefaultUser: Optional[str]
-    Id: Optional[str]
     KeyIdFormat: Optional[str]
     KeyType: Optional[str]
     MaxTtl: Optional[str]
@@ -82,7 +81,6 @@ class ResourceModel(BaseResourceModel):
             DefaultCriticalOptions=json_data.get("DefaultCriticalOptions"),
             DefaultExtensions=json_data.get("DefaultExtensions"),
             DefaultUser=json_data.get("DefaultUser"),
-            Id=json_data.get("Id"),
             KeyIdFormat=json_data.get("KeyIdFormat"),
             KeyType=json_data.get("KeyType"),
             MaxTtl=json_data.get("MaxTtl"),

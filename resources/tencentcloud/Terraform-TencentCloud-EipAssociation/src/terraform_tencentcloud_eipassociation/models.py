@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     EipId: Optional[str]
-    Id: Optional[str]
     InstanceId: Optional[str]
     NetworkInterfaceId: Optional[str]
     PrivateIp: Optional[str]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             EipId=json_data.get("EipId"),
-            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
             NetworkInterfaceId=json_data.get("NetworkInterfaceId"),
             PrivateIp=json_data.get("PrivateIp"),

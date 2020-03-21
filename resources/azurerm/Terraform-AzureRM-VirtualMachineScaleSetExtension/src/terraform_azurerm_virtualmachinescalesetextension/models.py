@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AutoUpgradeMinorVersion: Optional[bool]
     ForceUpdateTag: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     ProtectedSettings: Optional[str]
     ProvisionAfterExtensions: Optional[Sequence[str]]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AutoUpgradeMinorVersion=json_data.get("AutoUpgradeMinorVersion"),
             ForceUpdateTag=json_data.get("ForceUpdateTag"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ProtectedSettings=json_data.get("ProtectedSettings"),
             ProvisionAfterExtensions=json_data.get("ProvisionAfterExtensions"),

@@ -12,7 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::RamAccessKey",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#encryptedsecret" title="EncryptedSecret">EncryptedSecret</a>" : <i>String</i>,
+        "<a href="#keyfingerprint" title="KeyFingerprint">KeyFingerprint</a>" : <i>String</i>,
         "<a href="#pgpkey" title="PgpKey">PgpKey</a>" : <i>String</i>,
         "<a href="#secretfile" title="SecretFile">SecretFile</a>" : <i>String</i>,
         "<a href="#status" title="Status">Status</a>" : <i>String</i>,
@@ -26,7 +28,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::RamAccessKey
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#encryptedsecret" title="EncryptedSecret">EncryptedSecret</a>: <i>String</i>
+    <a href="#keyfingerprint" title="KeyFingerprint">KeyFingerprint</a>: <i>String</i>
     <a href="#pgpkey" title="PgpKey">PgpKey</a>: <i>String</i>
     <a href="#secretfile" title="SecretFile">SecretFile</a>: <i>String</i>
     <a href="#status" title="Status">Status</a>: <i>String</i>
@@ -35,7 +39,25 @@ Properties:
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### EncryptedSecret
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### KeyFingerprint
 
 _Required_: No
 
@@ -93,9 +115,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### EncryptedSecret
 
-Returns the <code>EncryptedSecret</code> value.
+Returns the &lt;code&gt;EncryptedSecret&lt;/code&gt; value.
 
 #### KeyFingerprint
 
-Returns the <code>KeyFingerprint</code> value.
+Returns the &lt;code&gt;KeyFingerprint&lt;/code&gt; value.
 

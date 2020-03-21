@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     EnableSslPassthrough: Optional[bool]
     Expiration: Optional[float]
     HttpRedirectUrl: Optional[str]
-    Id: Optional[str]
     InsertXForwardedHttpHeader: Optional[bool]
     Name: Optional[str]
     Org: Optional[str]
@@ -67,7 +66,6 @@ class ResourceModel(BaseResourceModel):
             EnableSslPassthrough=json_data.get("EnableSslPassthrough"),
             Expiration=json_data.get("Expiration"),
             HttpRedirectUrl=json_data.get("HttpRedirectUrl"),
-            Id=json_data.get("Id"),
             InsertXForwardedHttpHeader=json_data.get("InsertXForwardedHttpHeader"),
             Name=json_data.get("Name"),
             Org=json_data.get("Org"),

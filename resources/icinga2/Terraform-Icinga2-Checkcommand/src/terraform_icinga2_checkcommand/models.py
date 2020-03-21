@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Arguments: Optional[Sequence["_Arguments"]]
     Command: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Templates: Optional[Sequence[str]]
 
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Arguments=json_data.get("Arguments"),
             Command=json_data.get("Command"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Templates=json_data.get("Templates"),
         )

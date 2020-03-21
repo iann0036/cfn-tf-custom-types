@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AllocationMethod: Optional[str]
     DomainNameLabel: Optional[str]
     Fqdn: Optional[str]
-    Id: Optional[str]
     IdleTimeoutInMinutes: Optional[float]
     IpAddress: Optional[str]
     IpVersion: Optional[str]
@@ -65,7 +64,6 @@ class ResourceModel(BaseResourceModel):
             AllocationMethod=json_data.get("AllocationMethod"),
             DomainNameLabel=json_data.get("DomainNameLabel"),
             Fqdn=json_data.get("Fqdn"),
-            Id=json_data.get("Id"),
             IdleTimeoutInMinutes=json_data.get("IdleTimeoutInMinutes"),
             IpAddress=json_data.get("IpAddress"),
             IpVersion=json_data.get("IpVersion"),

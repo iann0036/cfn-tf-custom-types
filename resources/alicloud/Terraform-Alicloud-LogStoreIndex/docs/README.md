@@ -12,12 +12,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::LogStoreIndex",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#logstore" title="Logstore">Logstore</a>" : <i>String</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
-        "<a href="#fieldsearch" title="FieldSearch">FieldSearch</a>" : <i>[ <a href="fieldsearch.md">FieldSearch</a>, ... ]</i>,
-        "<a href="#fulltext" title="FullText">FullText</a>" : <i>[ <a href="fulltext.md">FullText</a>, ... ]</i>,
-        "<a href="#jsonkeys" title="JsonKeys">JsonKeys</a>" : <i>[ <a href="jsonkeys.md">JsonKeys</a>, ... ]</i>
+        "<a href="#fieldsearch" title="FieldSearch">FieldSearch</a>" : <i>[ &lt;a href=&#34;fieldsearch.md&#34;&gt;FieldSearch&lt;/a&gt;, ... ]</i>,
+        "<a href="#fulltext" title="FullText">FullText</a>" : <i>[ &lt;a href=&#34;fulltext.md&#34;&gt;FullText&lt;/a&gt;, ... ]</i>,
+        "<a href="#jsonkeys" title="JsonKeys">JsonKeys</a>" : <i>[ &lt;a href=&#34;jsonkeys.md&#34;&gt;JsonKeys&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -27,20 +27,22 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::LogStoreIndex
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#logstore" title="Logstore">Logstore</a>: <i>String</i>
     <a href="#project" title="Project">Project</a>: <i>String</i>
     <a href="#fieldsearch" title="FieldSearch">FieldSearch</a>: <i>
-      - <a href="fieldsearch.md">FieldSearch</a></i>
+      - &lt;a href=&#34;fieldsearch.md&#34;&gt;FieldSearch&lt;/a&gt;</i>
     <a href="#fulltext" title="FullText">FullText</a>: <i>
-      - <a href="fulltext.md">FullText</a></i>
+      - &lt;a href=&#34;fulltext.md&#34;&gt;FullText&lt;/a&gt;</i>
     <a href="#jsonkeys" title="JsonKeys">JsonKeys</a>: <i>
-      - <a href="jsonkeys.md">JsonKeys</a></i>
+      - &lt;a href=&#34;jsonkeys.md&#34;&gt;JsonKeys&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
@@ -68,7 +70,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="fieldsearch.md">FieldSearch</a>
+_Type_: List of &lt;a href=&#34;fieldsearch.md&#34;&gt;FieldSearch&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -76,7 +78,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="fulltext.md">FullText</a>
+_Type_: List of &lt;a href=&#34;fulltext.md&#34;&gt;FullText&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -84,7 +86,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="jsonkeys.md">JsonKeys</a>
+_Type_: List of &lt;a href=&#34;jsonkeys.md&#34;&gt;JsonKeys&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     DefaultPoolId: Optional[str]
     DefaultTlsContainerRef: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     LoadbalancerId: Optional[str]
     Name: Optional[str]
     Protocol: Optional[str]
@@ -64,7 +63,6 @@ class ResourceModel(BaseResourceModel):
             DefaultPoolId=json_data.get("DefaultPoolId"),
             DefaultTlsContainerRef=json_data.get("DefaultTlsContainerRef"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             LoadbalancerId=json_data.get("LoadbalancerId"),
             Name=json_data.get("Name"),
             Protocol=json_data.get("Protocol"),

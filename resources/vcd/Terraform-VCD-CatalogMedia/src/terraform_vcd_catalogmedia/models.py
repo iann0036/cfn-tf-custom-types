@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Catalog: Optional[str]
     CreationDate: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     IsIso: Optional[bool]
     IsPublished: Optional[bool]
     MediaPath: Optional[str]
@@ -65,7 +64,6 @@ class ResourceModel(BaseResourceModel):
             Catalog=json_data.get("Catalog"),
             CreationDate=json_data.get("CreationDate"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             IsIso=json_data.get("IsIso"),
             IsPublished=json_data.get("IsPublished"),
             MediaPath=json_data.get("MediaPath"),

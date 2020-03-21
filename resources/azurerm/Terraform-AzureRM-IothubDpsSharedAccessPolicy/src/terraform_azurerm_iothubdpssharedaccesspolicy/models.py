@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     EnrollmentRead: Optional[bool]
     EnrollmentWrite: Optional[bool]
-    Id: Optional[str]
     IothubDpsName: Optional[str]
     Name: Optional[str]
     PrimaryConnectionString: Optional[str]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             EnrollmentRead=json_data.get("EnrollmentRead"),
             EnrollmentWrite=json_data.get("EnrollmentWrite"),
-            Id=json_data.get("Id"),
             IothubDpsName=json_data.get("IothubDpsName"),
             Name=json_data.get("Name"),
             PrimaryConnectionString=json_data.get("PrimaryConnectionString"),

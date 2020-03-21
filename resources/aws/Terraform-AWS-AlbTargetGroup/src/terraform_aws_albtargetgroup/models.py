@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     ArnSuffix: Optional[str]
     DeregistrationDelay: Optional[float]
-    Id: Optional[str]
     LambdaMultiValueHeadersEnabled: Optional[bool]
     LoadBalancingAlgorithmType: Optional[str]
     Name: Optional[str]
@@ -66,7 +65,6 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             ArnSuffix=json_data.get("ArnSuffix"),
             DeregistrationDelay=json_data.get("DeregistrationDelay"),
-            Id=json_data.get("Id"),
             LambdaMultiValueHeadersEnabled=json_data.get("LambdaMultiValueHeadersEnabled"),
             LoadBalancingAlgorithmType=json_data.get("LoadBalancingAlgorithmType"),
             Name=json_data.get("Name"),

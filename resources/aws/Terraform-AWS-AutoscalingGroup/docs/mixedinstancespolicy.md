@@ -8,8 +8,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#instancesdistribution" title="InstancesDistribution">InstancesDistribution</a>" : <i>[ <a href="mixedinstancespolicy-instancesdistribution.md">InstancesDistribution</a>, ... ]</i>,
-    "<a href="#launchtemplate" title="LaunchTemplate">LaunchTemplate</a>" : <i>[ <a href="mixedinstancespolicy-launchtemplate.md">LaunchTemplate</a>, ... ]</i>
+    "<a href="#instancesdistribution" title="InstancesDistribution">InstancesDistribution</a>" : <i>[ &lt;a href=&#34;mixedinstancespolicy-instancesdistribution.md&#34;&gt;InstancesDistribution&lt;/a&gt;, ... ]</i>,
+    "<a href="#launchtemplate" title="LaunchTemplate">LaunchTemplate</a>" : <i>[ &lt;a href=&#34;mixedinstancespolicy-launchtemplate.md&#34;&gt;LaunchTemplate&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -17,9 +17,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#instancesdistribution" title="InstancesDistribution">InstancesDistribution</a>: <i>
-      - <a href="mixedinstancespolicy-instancesdistribution.md">InstancesDistribution</a></i>
+      - &lt;a href=&#34;mixedinstancespolicy-instancesdistribution.md&#34;&gt;InstancesDistribution&lt;/a&gt;</i>
 <a href="#launchtemplate" title="LaunchTemplate">LaunchTemplate</a>: <i>
-      - <a href="mixedinstancespolicy-launchtemplate.md">LaunchTemplate</a></i>
+      - &lt;a href=&#34;mixedinstancespolicy-launchtemplate.md&#34;&gt;LaunchTemplate&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -27,16 +27,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### InstancesDistribution
 
 _Required_: No
-
-_Type_: List of <a href="mixedinstancespolicy-instancesdistribution.md">InstancesDistribution</a>
+_Type_: List of &lt;a href=&#34;mixedinstancespolicy-instancesdistribution.md&#34;&gt;InstancesDistribution&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LaunchTemplate
 
 _Required_: No
-
-_Type_: List of <a href="mixedinstancespolicy-launchtemplate.md">LaunchTemplate</a>
+_Type_: List of &lt;a href=&#34;mixedinstancespolicy-launchtemplate.md&#34;&gt;LaunchTemplate&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

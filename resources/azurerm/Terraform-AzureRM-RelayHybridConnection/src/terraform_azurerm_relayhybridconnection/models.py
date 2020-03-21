@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     RelayNamespaceName: Optional[str]
     RequiresClientAuthorization: Optional[bool]
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             RelayNamespaceName=json_data.get("RelayNamespaceName"),
             RequiresClientAuthorization=json_data.get("RequiresClientAuthorization"),

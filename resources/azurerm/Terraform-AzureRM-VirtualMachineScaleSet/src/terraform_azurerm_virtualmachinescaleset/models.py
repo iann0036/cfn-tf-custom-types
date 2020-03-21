@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AutomaticOsUpgrade: Optional[bool]
     EvictionPolicy: Optional[str]
     HealthProbeId: Optional[str]
-    Id: Optional[str]
     LicenseType: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
@@ -86,7 +85,6 @@ class ResourceModel(BaseResourceModel):
             AutomaticOsUpgrade=json_data.get("AutomaticOsUpgrade"),
             EvictionPolicy=json_data.get("EvictionPolicy"),
             HealthProbeId=json_data.get("HealthProbeId"),
-            Id=json_data.get("Id"),
             LicenseType=json_data.get("LicenseType"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),

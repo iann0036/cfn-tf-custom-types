@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     AwsDevice: Optional[str]
     Bandwidth: Optional[str]
     HasLogicalRedundancy: Optional[str]
-    Id: Optional[str]
     JumboFrameCapable: Optional[bool]
     Location: Optional[str]
     Name: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             AwsDevice=json_data.get("AwsDevice"),
             Bandwidth=json_data.get("Bandwidth"),
             HasLogicalRedundancy=json_data.get("HasLogicalRedundancy"),
-            Id=json_data.get("Id"),
             JumboFrameCapable=json_data.get("JumboFrameCapable"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),

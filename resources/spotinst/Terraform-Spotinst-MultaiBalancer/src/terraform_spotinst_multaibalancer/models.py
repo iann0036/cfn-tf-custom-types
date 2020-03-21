@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DnsCnameAliases: Optional[Sequence[str]]
-    Id: Optional[str]
     Name: Optional[str]
     Scheme: Optional[str]
     ConnectionTimeouts: Optional[Sequence["_ConnectionTimeouts"]]
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             DnsCnameAliases=json_data.get("DnsCnameAliases"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Scheme=json_data.get("Scheme"),
             ConnectionTimeouts=json_data.get("ConnectionTimeouts"),

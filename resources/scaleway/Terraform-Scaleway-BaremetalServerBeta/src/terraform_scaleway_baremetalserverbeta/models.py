@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     Domain: Optional[str]
-    Id: Optional[str]
     Ips: Optional[Sequence["_Ips"]]
     Name: Optional[str]
     Offer: Optional[str]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             Domain=json_data.get("Domain"),
-            Id=json_data.get("Id"),
             Ips=json_data.get("Ips"),
             Name=json_data.get("Name"),
             Offer=json_data.get("Offer"),

@@ -12,15 +12,22 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureRM::AppServiceCertificate",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#expirationdate" title="ExpirationDate">ExpirationDate</a>" : <i>String</i>,
+        "<a href="#friendlyname" title="FriendlyName">FriendlyName</a>" : <i>String</i>,
+        "<a href="#hostnames" title="HostNames">HostNames</a>" : <i>[ String, ... ]</i>,
+        "<a href="#issuedate" title="IssueDate">IssueDate</a>" : <i>String</i>,
+        "<a href="#issuer" title="Issuer">Issuer</a>" : <i>String</i>,
         "<a href="#keyvaultsecretid" title="KeyVaultSecretId">KeyVaultSecretId</a>" : <i>String</i>,
         "<a href="#location" title="Location">Location</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#password" title="Password">Password</a>" : <i>String</i>,
         "<a href="#pfxblob" title="PfxBlob">PfxBlob</a>" : <i>String</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
+        "<a href="#subjectname" title="SubjectName">SubjectName</a>" : <i>String</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#thumbprint" title="Thumbprint">Thumbprint</a>" : <i>String</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     }
 }
 </pre>
@@ -30,21 +37,71 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureRM::AppServiceCertificate
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#expirationdate" title="ExpirationDate">ExpirationDate</a>: <i>String</i>
+    <a href="#friendlyname" title="FriendlyName">FriendlyName</a>: <i>String</i>
+    <a href="#hostnames" title="HostNames">HostNames</a>: <i>
+      - String</i>
+    <a href="#issuedate" title="IssueDate">IssueDate</a>: <i>String</i>
+    <a href="#issuer" title="Issuer">Issuer</a>: <i>String</i>
     <a href="#keyvaultsecretid" title="KeyVaultSecretId">KeyVaultSecretId</a>: <i>String</i>
     <a href="#location" title="Location">Location</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#password" title="Password">Password</a>: <i>String</i>
     <a href="#pfxblob" title="PfxBlob">PfxBlob</a>: <i>String</i>
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
+    <a href="#subjectname" title="SubjectName">SubjectName</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+    <a href="#thumbprint" title="Thumbprint">Thumbprint</a>: <i>String</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ExpirationDate
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### FriendlyName
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### HostNames
+
+_Required_: No
+
+_Type_: List of String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### IssueDate
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Issuer
 
 _Required_: No
 
@@ -100,11 +157,27 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### SubjectName
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Tags
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Thumbprint
+
+_Required_: No
+
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -112,7 +185,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -134,29 +207,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ExpirationDate
 
-Returns the <code>ExpirationDate</code> value.
+Returns the &lt;code&gt;ExpirationDate&lt;/code&gt; value.
 
 #### FriendlyName
 
-Returns the <code>FriendlyName</code> value.
+Returns the &lt;code&gt;FriendlyName&lt;/code&gt; value.
 
 #### HostNames
 
-Returns the <code>HostNames</code> value.
+Returns the &lt;code&gt;HostNames&lt;/code&gt; value.
 
 #### IssueDate
 
-Returns the <code>IssueDate</code> value.
+Returns the &lt;code&gt;IssueDate&lt;/code&gt; value.
 
 #### Issuer
 
-Returns the <code>Issuer</code> value.
+Returns the &lt;code&gt;Issuer&lt;/code&gt; value.
 
 #### SubjectName
 
-Returns the <code>SubjectName</code> value.
+Returns the &lt;code&gt;SubjectName&lt;/code&gt; value.
 
 #### Thumbprint
 
-Returns the <code>Thumbprint</code> value.
+Returns the &lt;code&gt;Thumbprint&lt;/code&gt; value.
 

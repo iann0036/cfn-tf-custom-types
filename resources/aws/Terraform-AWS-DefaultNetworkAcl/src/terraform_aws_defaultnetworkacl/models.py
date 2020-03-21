@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DefaultNetworkAclId: Optional[str]
-    Id: Optional[str]
     OwnerId: Optional[str]
     SubnetIds: Optional[Sequence[str]]
     Tags: Optional[Sequence["_Tags"]]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             DefaultNetworkAclId=json_data.get("DefaultNetworkAclId"),
-            Id=json_data.get("Id"),
             OwnerId=json_data.get("OwnerId"),
             SubnetIds=json_data.get("SubnetIds"),
             Tags=json_data.get("Tags"),

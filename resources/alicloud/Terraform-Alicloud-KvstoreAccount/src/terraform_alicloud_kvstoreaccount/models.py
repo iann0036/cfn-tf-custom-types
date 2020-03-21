@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     AccountPrivilege: Optional[str]
     AccountType: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     InstanceId: Optional[str]
     KmsEncryptedPassword: Optional[str]
     KmsEncryptionContext: Optional[Sequence["_KmsEncryptionContext"]]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             AccountPrivilege=json_data.get("AccountPrivilege"),
             AccountType=json_data.get("AccountType"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
             KmsEncryptedPassword=json_data.get("KmsEncryptedPassword"),
             KmsEncryptionContext=json_data.get("KmsEncryptionContext"),

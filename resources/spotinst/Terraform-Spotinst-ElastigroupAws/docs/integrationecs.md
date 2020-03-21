@@ -13,9 +13,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#autoscaleisenabled" title="AutoscaleIsEnabled">AutoscaleIsEnabled</a>" : <i>Boolean</i>,
     "<a href="#autoscalescaledownnonservicetasks" title="AutoscaleScaleDownNonServiceTasks">AutoscaleScaleDownNonServiceTasks</a>" : <i>Boolean</i>,
     "<a href="#clustername" title="ClusterName">ClusterName</a>" : <i>String</i>,
-    "<a href="#autoscaleattributes" title="AutoscaleAttributes">AutoscaleAttributes</a>" : <i>[ <a href="integrationecs-autoscaleattributes.md">AutoscaleAttributes</a>, ... ]</i>,
-    "<a href="#autoscaledown" title="AutoscaleDown">AutoscaleDown</a>" : <i>[ <a href="integrationecs-autoscaledown.md">AutoscaleDown</a>, ... ]</i>,
-    "<a href="#autoscaleheadroom" title="AutoscaleHeadroom">AutoscaleHeadroom</a>" : <i>[ <a href="integrationecs-autoscaleheadroom.md">AutoscaleHeadroom</a>, ... ]</i>
+    "<a href="#autoscaleattributes" title="AutoscaleAttributes">AutoscaleAttributes</a>" : <i>[ &lt;a href=&#34;integrationecs-autoscaleattributes.md&#34;&gt;AutoscaleAttributes&lt;/a&gt;, ... ]</i>,
+    "<a href="#autoscaledown" title="AutoscaleDown">AutoscaleDown</a>" : <i>[ &lt;a href=&#34;integrationecs-autoscaledown.md&#34;&gt;AutoscaleDown&lt;/a&gt;, ... ]</i>,
+    "<a href="#autoscaleheadroom" title="AutoscaleHeadroom">AutoscaleHeadroom</a>" : <i>[ &lt;a href=&#34;integrationecs-autoscaleheadroom.md&#34;&gt;AutoscaleHeadroom&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -28,11 +28,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#autoscalescaledownnonservicetasks" title="AutoscaleScaleDownNonServiceTasks">AutoscaleScaleDownNonServiceTasks</a>: <i>Boolean</i>
 <a href="#clustername" title="ClusterName">ClusterName</a>: <i>String</i>
 <a href="#autoscaleattributes" title="AutoscaleAttributes">AutoscaleAttributes</a>: <i>
-      - <a href="integrationecs-autoscaleattributes.md">AutoscaleAttributes</a></i>
+      - &lt;a href=&#34;integrationecs-autoscaleattributes.md&#34;&gt;AutoscaleAttributes&lt;/a&gt;</i>
 <a href="#autoscaledown" title="AutoscaleDown">AutoscaleDown</a>: <i>
-      - <a href="integrationecs-autoscaledown.md">AutoscaleDown</a></i>
+      - &lt;a href=&#34;integrationecs-autoscaledown.md&#34;&gt;AutoscaleDown&lt;/a&gt;</i>
 <a href="#autoscaleheadroom" title="AutoscaleHeadroom">AutoscaleHeadroom</a>: <i>
-      - <a href="integrationecs-autoscaleheadroom.md">AutoscaleHeadroom</a></i>
+      - &lt;a href=&#34;integrationecs-autoscaleheadroom.md&#34;&gt;AutoscaleHeadroom&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -40,7 +40,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### AutoscaleCooldown
 
 _Required_: No
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -48,7 +47,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### AutoscaleIsAutoConfig
 
 _Required_: No
-
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -56,7 +54,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### AutoscaleIsEnabled
 
 _Required_: No
-
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -64,7 +61,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### AutoscaleScaleDownNonServiceTasks
 
 _Required_: No
-
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -72,7 +68,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ClusterName
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -80,24 +75,21 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### AutoscaleAttributes
 
 _Required_: No
-
-_Type_: List of <a href="integrationecs-autoscaleattributes.md">AutoscaleAttributes</a>
+_Type_: List of &lt;a href=&#34;integrationecs-autoscaleattributes.md&#34;&gt;AutoscaleAttributes&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AutoscaleDown
 
 _Required_: No
-
-_Type_: List of <a href="integrationecs-autoscaledown.md">AutoscaleDown</a>
+_Type_: List of &lt;a href=&#34;integrationecs-autoscaledown.md&#34;&gt;AutoscaleDown&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AutoscaleHeadroom
 
 _Required_: No
-
-_Type_: List of <a href="integrationecs-autoscaleheadroom.md">AutoscaleHeadroom</a>
+_Type_: List of &lt;a href=&#34;integrationecs-autoscaleheadroom.md&#34;&gt;AutoscaleHeadroom&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

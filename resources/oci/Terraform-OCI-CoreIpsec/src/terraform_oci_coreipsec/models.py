@@ -44,7 +44,6 @@ class ResourceModel(BaseResourceModel):
     DisplayName: Optional[str]
     DrgId: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     State: Optional[str]
     StaticRoutes: Optional[Sequence[str]]
     TimeCreated: Optional[str]
@@ -67,7 +66,6 @@ class ResourceModel(BaseResourceModel):
             DisplayName=json_data.get("DisplayName"),
             DrgId=json_data.get("DrgId"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             State=json_data.get("State"),
             StaticRoutes=json_data.get("StaticRoutes"),
             TimeCreated=json_data.get("TimeCreated"),

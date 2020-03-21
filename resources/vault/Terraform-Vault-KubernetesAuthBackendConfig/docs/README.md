@@ -12,8 +12,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Vault::KubernetesAuthBackendConfig",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#backend" title="Backend">Backend</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#issuer" title="Issuer">Issuer</a>" : <i>String</i>,
         "<a href="#kubernetescacert" title="KubernetesCaCert">KubernetesCaCert</a>" : <i>String</i>,
         "<a href="#kuberneteshost" title="KubernetesHost">KubernetesHost</a>" : <i>String</i>,
@@ -28,8 +28,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Vault::KubernetesAuthBackendConfig
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#backend" title="Backend">Backend</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#issuer" title="Issuer">Issuer</a>: <i>String</i>
     <a href="#kubernetescacert" title="KubernetesCaCert">KubernetesCaCert</a>: <i>String</i>
     <a href="#kuberneteshost" title="KubernetesHost">KubernetesHost</a>: <i>String</i>
@@ -40,7 +40,9 @@ Properties:
 
 ## Properties
 
-#### Backend
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
@@ -48,7 +50,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### Backend
 
 _Required_: No
 

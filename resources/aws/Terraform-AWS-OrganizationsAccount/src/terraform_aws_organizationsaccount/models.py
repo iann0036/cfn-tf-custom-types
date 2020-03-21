@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     Email: Optional[str]
     IamUserAccessToBilling: Optional[str]
-    Id: Optional[str]
     JoinedMethod: Optional[str]
     JoinedTimestamp: Optional[str]
     Name: Optional[str]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             Email=json_data.get("Email"),
             IamUserAccessToBilling=json_data.get("IamUserAccessToBilling"),
-            Id=json_data.get("Id"),
             JoinedMethod=json_data.get("JoinedMethod"),
             JoinedTimestamp=json_data.get("JoinedTimestamp"),
             Name=json_data.get("Name"),

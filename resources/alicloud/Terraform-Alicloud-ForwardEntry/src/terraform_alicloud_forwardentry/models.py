@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     ExternalPort: Optional[str]
     ForwardEntryId: Optional[str]
     ForwardTableId: Optional[str]
-    Id: Optional[str]
     InternalIp: Optional[str]
     InternalPort: Optional[str]
     IpProtocol: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             ExternalPort=json_data.get("ExternalPort"),
             ForwardEntryId=json_data.get("ForwardEntryId"),
             ForwardTableId=json_data.get("ForwardTableId"),
-            Id=json_data.get("Id"),
             InternalIp=json_data.get("InternalIp"),
             InternalPort=json_data.get("InternalPort"),
             IpProtocol=json_data.get("IpProtocol"),

@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     App: Optional[str]
     CertificateChain: Optional[str]
     Cname: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     PrivateKey: Optional[str]
 
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             App=json_data.get("App"),
             CertificateChain=json_data.get("CertificateChain"),
             Cname=json_data.get("Cname"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             PrivateKey=json_data.get("PrivateKey"),
         )

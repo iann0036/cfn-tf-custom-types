@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     DataFormat: Optional[str]
     DatabaseName: Optional[str]
     EventhubId: Optional[str]
-    Id: Optional[str]
     Location: Optional[str]
     MappingRuleName: Optional[str]
     Name: Optional[str]
@@ -63,7 +62,6 @@ class ResourceModel(BaseResourceModel):
             DataFormat=json_data.get("DataFormat"),
             DatabaseName=json_data.get("DatabaseName"),
             EventhubId=json_data.get("EventhubId"),
-            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             MappingRuleName=json_data.get("MappingRuleName"),
             Name=json_data.get("Name"),

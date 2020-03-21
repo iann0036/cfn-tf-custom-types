@@ -12,6 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Panos::NatRule",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#dataddress" title="DatAddress">DatAddress</a>" : <i>String</i>,
         "<a href="#datdynamicdistribution" title="DatDynamicDistribution">DatDynamicDistribution</a>" : <i>String</i>,
         "<a href="#datport" title="DatPort">DatPort</a>" : <i>Double</i>,
@@ -20,7 +21,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#destinationaddresses" title="DestinationAddresses">DestinationAddresses</a>" : <i>[ String, ... ]</i>,
         "<a href="#destinationzone" title="DestinationZone">DestinationZone</a>" : <i>String</i>,
         "<a href="#disabled" title="Disabled">Disabled</a>" : <i>Boolean</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#rulebase" title="Rulebase">Rulebase</a>" : <i>String</i>,
         "<a href="#sataddresstype" title="SatAddressType">SatAddressType</a>" : <i>String</i>,
@@ -51,6 +51,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Panos::NatRule
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#dataddress" title="DatAddress">DatAddress</a>: <i>String</i>
     <a href="#datdynamicdistribution" title="DatDynamicDistribution">DatDynamicDistribution</a>: <i>String</i>
     <a href="#datport" title="DatPort">DatPort</a>: <i>Double</i>
@@ -60,7 +61,6 @@ Properties:
       - String</i>
     <a href="#destinationzone" title="DestinationZone">DestinationZone</a>: <i>String</i>
     <a href="#disabled" title="Disabled">Disabled</a>: <i>Boolean</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#rulebase" title="Rulebase">Rulebase</a>: <i>String</i>
     <a href="#sataddresstype" title="SatAddressType">SatAddressType</a>: <i>String</i>
@@ -90,6 +90,16 @@ Properties:
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DatAddress
 
@@ -152,14 +162,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

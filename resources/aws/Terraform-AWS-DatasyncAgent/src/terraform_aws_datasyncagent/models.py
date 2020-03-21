@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ActivationKey: Optional[str]
     Arn: Optional[str]
-    Id: Optional[str]
     IpAddress: Optional[str]
     Name: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ActivationKey=json_data.get("ActivationKey"),
             Arn=json_data.get("Arn"),
-            Id=json_data.get("Id"),
             IpAddress=json_data.get("IpAddress"),
             Name=json_data.get("Name"),
             Tags=json_data.get("Tags"),

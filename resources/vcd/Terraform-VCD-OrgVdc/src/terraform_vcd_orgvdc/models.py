@@ -48,7 +48,6 @@ class ResourceModel(BaseResourceModel):
     EnableThinProvisioning: Optional[bool]
     EnableVmDiscovery: Optional[bool]
     Enabled: Optional[bool]
-    Id: Optional[str]
     IncludeVmMemoryOverhead: Optional[bool]
     MemoryGuaranteed: Optional[float]
     Metadata: Optional[Sequence["_Metadata"]]
@@ -85,7 +84,6 @@ class ResourceModel(BaseResourceModel):
             EnableThinProvisioning=json_data.get("EnableThinProvisioning"),
             EnableVmDiscovery=json_data.get("EnableVmDiscovery"),
             Enabled=json_data.get("Enabled"),
-            Id=json_data.get("Id"),
             IncludeVmMemoryOverhead=json_data.get("IncludeVmMemoryOverhead"),
             MemoryGuaranteed=json_data.get("MemoryGuaranteed"),
             Metadata=json_data.get("Metadata"),

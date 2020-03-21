@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     Domain: Optional[str]
     ExpireSec: Optional[float]
     Group: Optional[str]
-    Id: Optional[str]
     MasterIps: Optional[Sequence[str]]
     RefreshSec: Optional[float]
     RetrySec: Optional[float]
@@ -65,7 +64,6 @@ class ResourceModel(BaseResourceModel):
             Domain=json_data.get("Domain"),
             ExpireSec=json_data.get("ExpireSec"),
             Group=json_data.get("Group"),
-            Id=json_data.get("Id"),
             MasterIps=json_data.get("MasterIps"),
             RefreshSec=json_data.get("RefreshSec"),
             RetrySec=json_data.get("RetrySec"),

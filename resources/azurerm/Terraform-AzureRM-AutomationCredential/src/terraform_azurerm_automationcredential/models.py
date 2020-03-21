@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AutomationAccountName: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Password: Optional[str]
     ResourceGroupName: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AutomationAccountName=json_data.get("AutomationAccountName"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Password=json_data.get("Password"),
             ResourceGroupName=json_data.get("ResourceGroupName"),

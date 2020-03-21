@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Arn: Optional[str]
     CapacityProviders: Optional[Sequence[str]]
-    Id: Optional[str]
     Name: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
     DefaultCapacityProviderStrategy: Optional[Sequence["_DefaultCapacityProviderStrategy"]]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Arn=json_data.get("Arn"),
             CapacityProviders=json_data.get("CapacityProviders"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Tags=json_data.get("Tags"),
             DefaultCapacityProviderStrategy=json_data.get("DefaultCapacityProviderStrategy"),

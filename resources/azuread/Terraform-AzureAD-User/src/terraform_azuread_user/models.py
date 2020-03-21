@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AccountEnabled: Optional[bool]
     DisplayName: Optional[str]
     ForcePasswordChange: Optional[bool]
-    Id: Optional[str]
     ImmutableId: Optional[str]
     Mail: Optional[str]
     MailNickname: Optional[str]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             AccountEnabled=json_data.get("AccountEnabled"),
             DisplayName=json_data.get("DisplayName"),
             ForcePasswordChange=json_data.get("ForcePasswordChange"),
-            Id=json_data.get("Id"),
             ImmutableId=json_data.get("ImmutableId"),
             Mail=json_data.get("Mail"),
             MailNickname=json_data.get("MailNickname"),

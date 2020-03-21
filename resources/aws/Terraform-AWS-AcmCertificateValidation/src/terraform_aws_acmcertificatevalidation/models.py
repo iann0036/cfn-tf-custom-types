@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CertificateArn: Optional[str]
-    Id: Optional[str]
     ValidationRecordFqdns: Optional[Sequence[str]]
     Timeouts: Optional["_Timeouts"]
 
@@ -51,7 +50,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             CertificateArn=json_data.get("CertificateArn"),
-            Id=json_data.get("Id"),
             ValidationRecordFqdns=json_data.get("ValidationRecordFqdns"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),
         )

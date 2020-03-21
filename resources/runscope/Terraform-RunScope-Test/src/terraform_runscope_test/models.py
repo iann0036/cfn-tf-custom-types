@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     BucketId: Optional[str]
     DefaultEnvironmentId: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
 
     @classmethod
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             BucketId=json_data.get("BucketId"),
             DefaultEnvironmentId=json_data.get("DefaultEnvironmentId"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
         )
 

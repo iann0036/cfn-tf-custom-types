@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     IamInstanceProfile: Optional[str]
-    Id: Optional[str]
     ImageId: Optional[str]
     Name: Optional[str]
     OceanId: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             IamInstanceProfile=json_data.get("IamInstanceProfile"),
-            Id=json_data.get("Id"),
             ImageId=json_data.get("ImageId"),
             Name=json_data.get("Name"),
             OceanId=json_data.get("OceanId"),

@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     Dns: Optional[Sequence[str]]
     ExadataInfrastructureId: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     LifecycleDetails: Optional[str]
     Ntp: Optional[Sequence[str]]
     State: Optional[str]
@@ -69,7 +68,6 @@ class ResourceModel(BaseResourceModel):
             Dns=json_data.get("Dns"),
             ExadataInfrastructureId=json_data.get("ExadataInfrastructureId"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             LifecycleDetails=json_data.get("LifecycleDetails"),
             Ntp=json_data.get("Ntp"),
             State=json_data.get("State"),

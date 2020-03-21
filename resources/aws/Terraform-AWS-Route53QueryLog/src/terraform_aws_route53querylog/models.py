@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CloudwatchLogGroupArn: Optional[str]
-    Id: Optional[str]
     ZoneId: Optional[str]
 
     @classmethod
@@ -50,7 +49,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             CloudwatchLogGroupArn=json_data.get("CloudwatchLogGroupArn"),
-            Id=json_data.get("Id"),
             ZoneId=json_data.get("ZoneId"),
         )
 

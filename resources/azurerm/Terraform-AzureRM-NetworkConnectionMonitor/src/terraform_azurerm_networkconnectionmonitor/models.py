@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AutoStart: Optional[bool]
-    Id: Optional[str]
     IntervalInSeconds: Optional[float]
     Location: Optional[str]
     Name: Optional[str]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             AutoStart=json_data.get("AutoStart"),
-            Id=json_data.get("Id"),
             IntervalInSeconds=json_data.get("IntervalInSeconds"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),

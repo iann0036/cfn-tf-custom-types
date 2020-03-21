@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Disk: Optional[float]
     Ephemeral: Optional[float]
     ExtraSpecs: Optional[Sequence["_ExtraSpecs"]]
-    Id: Optional[str]
     IsPublic: Optional[bool]
     Name: Optional[str]
     Ram: Optional[float]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             Disk=json_data.get("Disk"),
             Ephemeral=json_data.get("Ephemeral"),
             ExtraSpecs=json_data.get("ExtraSpecs"),
-            Id=json_data.get("Id"),
             IsPublic=json_data.get("IsPublic"),
             Name=json_data.get("Name"),
             Ram=json_data.get("Ram"),

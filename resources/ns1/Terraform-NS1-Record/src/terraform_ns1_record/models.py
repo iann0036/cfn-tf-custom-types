@@ -35,15 +35,18 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 
 @dataclass
 class ResourceModel(BaseResourceModel):
-    TPSCode: Optional[str]
-    Title: Optional[str]
-    CoverSheetIncluded: Optional[bool]
-    DueDate: Optional[str]
-    ApprovalDate: Optional[str]
-    Memo: Optional["_Memo"]
-    SecondCopyOfMemo: Optional["_Memo"]
-    TestCode: Optional[str]
-    Authors: Optional[Sequence[str]]
+    tfcfnid: Optional[str]
+    Domain: Optional[str]
+    Link: Optional[str]
+    Meta: Optional[Sequence["_Meta"]]
+    ShortAnswers: Optional[Sequence[str]]
+    Ttl: Optional[float]
+    Type: Optional[str]
+    UseClientSubnet: Optional[bool]
+    Zone: Optional[str]
+    Answers: Optional[Sequence["_Answers"]]
+    Filters: Optional[Sequence["_Filters"]]
+    Regions: Optional[Sequence["_Regions"]]
 
     @classmethod
     def _deserialize(
@@ -53,15 +56,18 @@ class ResourceModel(BaseResourceModel):
         if not json_data:
             return None
         return cls(
-            TPSCode=json_data.get("TPSCode"),
-            Title=json_data.get("Title"),
-            CoverSheetIncluded=json_data.get("CoverSheetIncluded"),
-            DueDate=json_data.get("DueDate"),
-            ApprovalDate=json_data.get("ApprovalDate"),
-            Memo=Memo._deserialize(json_data.get("Memo")),
-            SecondCopyOfMemo=Memo._deserialize(json_data.get("SecondCopyOfMemo")),
-            TestCode=json_data.get("TestCode"),
-            Authors=json_data.get("Authors"),
+            tfcfnid=json_data.get("tfcfnid"),
+            Domain=json_data.get("Domain"),
+            Link=json_data.get("Link"),
+            Meta=json_data.get("Meta"),
+            ShortAnswers=json_data.get("ShortAnswers"),
+            Ttl=json_data.get("Ttl"),
+            Type=json_data.get("Type"),
+            UseClientSubnet=json_data.get("UseClientSubnet"),
+            Zone=json_data.get("Zone"),
+            Answers=json_data.get("Answers"),
+            Filters=json_data.get("Filters"),
+            Regions=json_data.get("Regions"),
         )
 
 
@@ -70,24 +76,160 @@ _ResourceModel = ResourceModel
 
 
 @dataclass
-class Memo:
-    Heading: Optional[str]
-    Body: Optional[str]
+class Meta:
+    Key: Optional[str]
+    Value: Optional[str]
 
     @classmethod
     def _deserialize(
-        cls: Type["_Memo"],
+        cls: Type["_Meta"],
         json_data: Optional[Mapping[str, Any]],
-    ) -> Optional["_Memo"]:
+    ) -> Optional["_Meta"]:
         if not json_data:
             return None
         return cls(
-            Heading=json_data.get("Heading"),
-            Body=json_data.get("Body"),
+            Key=json_data.get("Key"),
+            Value=json_data.get("Value"),
         )
 
 
 # work around possible type aliasing issues when variable has same name as a model
-_Memo = Memo
+_Meta = Meta
+
+
+@dataclass
+class Answers:
+    Answer: Optional[str]
+    Meta: Optional[Sequence["_Meta2"]]
+    Region: Optional[str]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_Answers"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_Answers"]:
+        if not json_data:
+            return None
+        return cls(
+            Answer=json_data.get("Answer"),
+            Meta=json_data.get("Meta"),
+            Region=json_data.get("Region"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_Answers = Answers
+
+
+@dataclass
+class Meta2:
+    Key: Optional[str]
+    Value: Optional[str]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_Meta2"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_Meta2"]:
+        if not json_data:
+            return None
+        return cls(
+            Key=json_data.get("Key"),
+            Value=json_data.get("Value"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_Meta2 = Meta2
+
+
+@dataclass
+class Filters:
+    Config: Optional[Sequence["_Config"]]
+    Disabled: Optional[bool]
+    Filter: Optional[str]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_Filters"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_Filters"]:
+        if not json_data:
+            return None
+        return cls(
+            Config=json_data.get("Config"),
+            Disabled=json_data.get("Disabled"),
+            Filter=json_data.get("Filter"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_Filters = Filters
+
+
+@dataclass
+class Config:
+    Key: Optional[str]
+    Value: Optional[str]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_Config"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_Config"]:
+        if not json_data:
+            return None
+        return cls(
+            Key=json_data.get("Key"),
+            Value=json_data.get("Value"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_Config = Config
+
+
+@dataclass
+class Regions:
+    Meta: Optional[Sequence["_Meta3"]]
+    Name: Optional[str]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_Regions"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_Regions"]:
+        if not json_data:
+            return None
+        return cls(
+            Meta=json_data.get("Meta"),
+            Name=json_data.get("Name"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_Regions = Regions
+
+
+@dataclass
+class Meta3:
+    Key: Optional[str]
+    Value: Optional[str]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_Meta3"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_Meta3"]:
+        if not json_data:
+            return None
+        return cls(
+            Key=json_data.get("Key"),
+            Value=json_data.get("Value"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_Meta3 = Meta3
 
 

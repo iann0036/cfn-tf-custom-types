@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     DefinedTags: Optional[Sequence["_DefinedTags"]]
     FileSystemId: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     Name: Optional[str]
     State: Optional[str]
     TimeCreated: Optional[str]
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
             DefinedTags=json_data.get("DefinedTags"),
             FileSystemId=json_data.get("FileSystemId"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             State=json_data.get("State"),
             TimeCreated=json_data.get("TimeCreated"),

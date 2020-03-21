@@ -15,10 +15,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#loadbalancerip" title="LoadBalancerIp">LoadBalancerIp</a>" : <i>String</i>,
     "<a href="#loadbalancersourceranges" title="LoadBalancerSourceRanges">LoadBalancerSourceRanges</a>" : <i>[ String, ... ]</i>,
     "<a href="#publishnotreadyaddresses" title="PublishNotReadyAddresses">PublishNotReadyAddresses</a>" : <i>Boolean</i>,
-    "<a href="#selector" title="Selector">Selector</a>" : <i>[ <a href="spec-selector.md">Selector</a>, ... ]</i>,
+    "<a href="#selector" title="Selector">Selector</a>" : <i>[ &lt;a href=&#34;spec-selector.md&#34;&gt;Selector&lt;/a&gt;, ... ]</i>,
     "<a href="#sessionaffinity" title="SessionAffinity">SessionAffinity</a>" : <i>String</i>,
     "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-    "<a href="#port" title="Port">Port</a>" : <i>[ <a href="spec-port.md">Port</a>, ... ]</i>
+    "<a href="#port" title="Port">Port</a>" : <i>[ &lt;a href=&#34;spec-port.md&#34;&gt;Port&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -35,11 +35,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
       - String</i>
 <a href="#publishnotreadyaddresses" title="PublishNotReadyAddresses">PublishNotReadyAddresses</a>: <i>Boolean</i>
 <a href="#selector" title="Selector">Selector</a>: <i>
-      - <a href="spec-selector.md">Selector</a></i>
+      - &lt;a href=&#34;spec-selector.md&#34;&gt;Selector&lt;/a&gt;</i>
 <a href="#sessionaffinity" title="SessionAffinity">SessionAffinity</a>: <i>String</i>
 <a href="#type" title="Type">Type</a>: <i>String</i>
 <a href="#port" title="Port">Port</a>: <i>
-      - <a href="spec-port.md">Port</a></i>
+      - &lt;a href=&#34;spec-port.md&#34;&gt;Port&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -47,7 +47,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### ClusterIp
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -55,7 +54,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ExternalIps
 
 _Required_: No
-
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -63,7 +61,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ExternalName
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -71,7 +68,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ExternalTrafficPolicy
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -79,7 +75,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### LoadBalancerIp
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -87,7 +82,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### LoadBalancerSourceRanges
 
 _Required_: No
-
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -95,7 +89,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### PublishNotReadyAddresses
 
 _Required_: No
-
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -103,15 +96,13 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Selector
 
 _Required_: No
-
-_Type_: List of <a href="spec-selector.md">Selector</a>
+_Type_: List of &lt;a href=&#34;spec-selector.md&#34;&gt;Selector&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SessionAffinity
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -119,7 +110,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Type
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -127,8 +117,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Port
 
 _Required_: No
-
-_Type_: List of <a href="spec-port.md">Port</a>
+_Type_: List of &lt;a href=&#34;spec-port.md&#34;&gt;Port&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

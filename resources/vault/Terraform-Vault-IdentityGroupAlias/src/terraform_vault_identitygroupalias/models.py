@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CanonicalId: Optional[str]
-    Id: Optional[str]
     MountAccessor: Optional[str]
     Name: Optional[str]
 
@@ -51,7 +50,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             CanonicalId=json_data.get("CanonicalId"),
-            Id=json_data.get("Id"),
             MountAccessor=json_data.get("MountAccessor"),
             Name=json_data.get("Name"),
         )

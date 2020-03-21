@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AclId: Optional[str]
-    Id: Optional[str]
     Managed: Optional[bool]
     Parallelism: Optional[float]
     Project: Optional[str]
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             AclId=json_data.get("AclId"),
-            Id=json_data.get("Id"),
             Managed=json_data.get("Managed"),
             Parallelism=json_data.get("Parallelism"),
             Project=json_data.get("Project"),

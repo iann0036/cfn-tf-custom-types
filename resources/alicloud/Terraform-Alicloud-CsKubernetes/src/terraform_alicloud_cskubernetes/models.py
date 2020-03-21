@@ -45,7 +45,6 @@ class ResourceModel(BaseResourceModel):
     CpuPolicy: Optional[str]
     EnableSsh: Optional[bool]
     ForceUpdate: Optional[bool]
-    Id: Optional[str]
     ImageId: Optional[str]
     InstallCloudMonitor: Optional[bool]
     KeyName: Optional[str]
@@ -121,7 +120,6 @@ class ResourceModel(BaseResourceModel):
             CpuPolicy=json_data.get("CpuPolicy"),
             EnableSsh=json_data.get("EnableSsh"),
             ForceUpdate=json_data.get("ForceUpdate"),
-            Id=json_data.get("Id"),
             ImageId=json_data.get("ImageId"),
             InstallCloudMonitor=json_data.get("InstallCloudMonitor"),
             KeyName=json_data.get("KeyName"),

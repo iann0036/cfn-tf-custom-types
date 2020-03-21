@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AutoCreateNetwork: Optional[bool]
     BillingAccount: Optional[str]
     FolderId: Optional[str]
-    Id: Optional[str]
     Labels: Optional[Sequence["_Labels"]]
     Name: Optional[str]
     Number: Optional[str]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             AutoCreateNetwork=json_data.get("AutoCreateNetwork"),
             BillingAccount=json_data.get("BillingAccount"),
             FolderId=json_data.get("FolderId"),
-            Id=json_data.get("Id"),
             Labels=json_data.get("Labels"),
             Name=json_data.get("Name"),
             Number=json_data.get("Number"),

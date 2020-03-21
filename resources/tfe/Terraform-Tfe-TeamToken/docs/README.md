@@ -12,9 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Tfe::TeamToken",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#forceregenerate" title="ForceRegenerate">ForceRegenerate</a>" : <i>Boolean</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#teamid" title="TeamId">TeamId</a>" : <i>String</i>,
+        "<a href="#token" title="Token">Token</a>" : <i>String</i>
     }
 }
 </pre>
@@ -24,12 +25,23 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Tfe::TeamToken
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#forceregenerate" title="ForceRegenerate">ForceRegenerate</a>: <i>Boolean</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#teamid" title="TeamId">TeamId</a>: <i>String</i>
+    <a href="#token" title="Token">Token</a>: <i>String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ForceRegenerate
 
@@ -39,17 +51,17 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### TeamId
 
-_Required_: No
+_Required_: Yes
 
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### TeamId
+#### Token
 
-_Required_: Yes
+_Required_: No
 
 _Type_: String
 
@@ -73,5 +85,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Token
 
-Returns the <code>Token</code> value.
+Returns the &lt;code&gt;Token&lt;/code&gt; value.
 

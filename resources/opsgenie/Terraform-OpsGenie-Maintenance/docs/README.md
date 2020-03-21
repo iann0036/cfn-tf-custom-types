@@ -12,11 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OpsGenie::Maintenance",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#rules" title="Rules">Rules</a>" : <i>[ <a href="rules.md">Rules</a>, ... ]</i>,
-        "<a href="#time" title="Time">Time</a>" : <i>[ <a href="time.md">Time</a>, ... ]</i>,
-        "<a href="#entity" title="Entity">Entity</a>" : <i>[ <a href="entity.md">Entity</a>, ... ]</i>
+        "<a href="#rules" title="Rules">Rules</a>" : <i>[ &lt;a href=&#34;rules.md&#34;&gt;Rules&lt;/a&gt;, ... ]</i>,
+        "<a href="#time" title="Time">Time</a>" : <i>[ &lt;a href=&#34;time.md&#34;&gt;Time&lt;/a&gt;, ... ]</i>,
+        "<a href="#entity" title="Entity">Entity</a>" : <i>[ &lt;a href=&#34;entity.md&#34;&gt;Entity&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -26,17 +26,27 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OpsGenie::Maintenance
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#rules" title="Rules">Rules</a>: <i>
-      - <a href="rules.md">Rules</a></i>
+      - &lt;a href=&#34;rules.md&#34;&gt;Rules&lt;/a&gt;</i>
     <a href="#time" title="Time">Time</a>: <i>
-      - <a href="time.md">Time</a></i>
+      - &lt;a href=&#34;time.md&#34;&gt;Time&lt;/a&gt;</i>
     <a href="#entity" title="Entity">Entity</a>: <i>
-      - <a href="entity.md">Entity</a></i>
+      - &lt;a href=&#34;entity.md&#34;&gt;Entity&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -46,19 +56,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Rules
 
 _Required_: No
 
-_Type_: List of <a href="rules.md">Rules</a>
+_Type_: List of &lt;a href=&#34;rules.md&#34;&gt;Rules&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -66,7 +68,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="time.md">Time</a>
+_Type_: List of &lt;a href=&#34;time.md&#34;&gt;Time&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -74,7 +76,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="entity.md">Entity</a>
+_Type_: List of &lt;a href=&#34;entity.md&#34;&gt;Entity&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

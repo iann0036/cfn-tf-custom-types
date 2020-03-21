@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     CreatedAt: Optional[float]
     Enabled: Optional[bool]
     Event: Optional[str]
-    Id: Optional[str]
     IntegrationProvider: Optional[str]
     Name: Optional[str]
     PolicyId: Optional[float]
@@ -67,7 +66,6 @@ class ResourceModel(BaseResourceModel):
             CreatedAt=json_data.get("CreatedAt"),
             Enabled=json_data.get("Enabled"),
             Event=json_data.get("Event"),
-            Id=json_data.get("Id"),
             IntegrationProvider=json_data.get("IntegrationProvider"),
             Name=json_data.get("Name"),
             PolicyId=json_data.get("PolicyId"),

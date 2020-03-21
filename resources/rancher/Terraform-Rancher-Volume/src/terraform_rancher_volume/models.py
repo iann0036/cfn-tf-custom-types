@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     Driver: Optional[str]
     EnvironmentId: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
 
     @classmethod
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             Driver=json_data.get("Driver"),
             EnvironmentId=json_data.get("EnvironmentId"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
         )
 

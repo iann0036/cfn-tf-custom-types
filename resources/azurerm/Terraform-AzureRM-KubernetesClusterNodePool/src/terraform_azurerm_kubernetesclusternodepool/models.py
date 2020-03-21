@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AvailabilityZones: Optional[Sequence[str]]
     EnableAutoScaling: Optional[bool]
     EnableNodePublicIp: Optional[bool]
-    Id: Optional[str]
     KubernetesClusterId: Optional[str]
     MaxCount: Optional[float]
     MaxPods: Optional[float]
@@ -67,7 +66,6 @@ class ResourceModel(BaseResourceModel):
             AvailabilityZones=json_data.get("AvailabilityZones"),
             EnableAutoScaling=json_data.get("EnableAutoScaling"),
             EnableNodePublicIp=json_data.get("EnableNodePublicIp"),
-            Id=json_data.get("Id"),
             KubernetesClusterId=json_data.get("KubernetesClusterId"),
             MaxCount=json_data.get("MaxCount"),
             MaxPods=json_data.get("MaxPods"),

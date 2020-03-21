@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AutomationAccountName: Optional[str]
     Content: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     Location: Optional[str]
     LogProgress: Optional[bool]
     LogVerbose: Optional[bool]
@@ -63,7 +62,6 @@ class ResourceModel(BaseResourceModel):
             AutomationAccountName=json_data.get("AutomationAccountName"),
             Content=json_data.get("Content"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             LogProgress=json_data.get("LogProgress"),
             LogVerbose=json_data.get("LogVerbose"),

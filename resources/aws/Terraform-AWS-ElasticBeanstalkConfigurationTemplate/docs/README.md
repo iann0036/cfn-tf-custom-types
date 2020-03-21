@@ -12,13 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::ElasticBeanstalkConfigurationTemplate",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#application" title="Application">Application</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#environmentid" title="EnvironmentId">EnvironmentId</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#solutionstackname" title="SolutionStackName">SolutionStackName</a>" : <i>String</i>,
-        "<a href="#setting" title="Setting">Setting</a>" : <i>[ <a href="setting.md">Setting</a>, ... ]</i>
+        "<a href="#setting" title="Setting">Setting</a>" : <i>[ &lt;a href=&#34;setting.md&#34;&gt;Setting&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -28,17 +28,27 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::ElasticBeanstalkConfigurationTemplate
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#application" title="Application">Application</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#environmentid" title="EnvironmentId">EnvironmentId</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#solutionstackname" title="SolutionStackName">SolutionStackName</a>: <i>String</i>
     <a href="#setting" title="Setting">Setting</a>: <i>
-      - <a href="setting.md">Setting</a></i>
+      - &lt;a href=&#34;setting.md&#34;&gt;Setting&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Application
 
@@ -57,14 +67,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnvironmentId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 
@@ -92,7 +94,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="setting.md">Setting</a>
+_Type_: List of &lt;a href=&#34;setting.md&#34;&gt;Setting&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

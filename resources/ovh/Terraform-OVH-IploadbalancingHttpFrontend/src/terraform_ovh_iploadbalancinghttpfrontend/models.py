@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     DefaultSslId: Optional[float]
     Disabled: Optional[bool]
     DisplayName: Optional[str]
-    Id: Optional[str]
     Port: Optional[str]
     ServiceName: Optional[str]
     Ssl: Optional[bool]
@@ -63,7 +62,6 @@ class ResourceModel(BaseResourceModel):
             DefaultSslId=json_data.get("DefaultSslId"),
             Disabled=json_data.get("Disabled"),
             DisplayName=json_data.get("DisplayName"),
-            Id=json_data.get("Id"),
             Port=json_data.get("Port"),
             ServiceName=json_data.get("ServiceName"),
             Ssl=json_data.get("Ssl"),

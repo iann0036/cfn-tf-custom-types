@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     CreateTime: Optional[str]
     Domain: Optional[str]
     EndTime: Optional[str]
-    Id: Optional[str]
     Key: Optional[str]
     Name: Optional[str]
     ProductZhName: Optional[str]
@@ -64,7 +63,6 @@ class ResourceModel(BaseResourceModel):
             CreateTime=json_data.get("CreateTime"),
             Domain=json_data.get("Domain"),
             EndTime=json_data.get("EndTime"),
-            Id=json_data.get("Id"),
             Key=json_data.get("Key"),
             Name=json_data.get("Name"),
             ProductZhName=json_data.get("ProductZhName"),

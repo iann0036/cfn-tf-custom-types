@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ClusterId: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     TargetVpcInfo: Optional[Sequence["_TargetVpcInfo"]]
     Timeouts: Optional["_Timeouts"]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             ClusterId=json_data.get("ClusterId"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             TargetVpcInfo=json_data.get("TargetVpcInfo"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),

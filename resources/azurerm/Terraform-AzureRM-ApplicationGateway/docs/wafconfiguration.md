@@ -15,8 +15,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#requestbodycheck" title="RequestBodyCheck">RequestBodyCheck</a>" : <i>Boolean</i>,
     "<a href="#rulesettype" title="RuleSetType">RuleSetType</a>" : <i>String</i>,
     "<a href="#rulesetversion" title="RuleSetVersion">RuleSetVersion</a>" : <i>String</i>,
-    "<a href="#disabledrulegroup" title="DisabledRuleGroup">DisabledRuleGroup</a>" : <i>[ <a href="wafconfiguration-disabledrulegroup.md">DisabledRuleGroup</a>, ... ]</i>,
-    "<a href="#exclusion" title="Exclusion">Exclusion</a>" : <i>[ <a href="wafconfiguration-exclusion.md">Exclusion</a>, ... ]</i>
+    "<a href="#disabledrulegroup" title="DisabledRuleGroup">DisabledRuleGroup</a>" : <i>[ &lt;a href=&#34;wafconfiguration-disabledrulegroup.md&#34;&gt;DisabledRuleGroup&lt;/a&gt;, ... ]</i>,
+    "<a href="#exclusion" title="Exclusion">Exclusion</a>" : <i>[ &lt;a href=&#34;wafconfiguration-exclusion.md&#34;&gt;Exclusion&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -31,9 +31,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#rulesettype" title="RuleSetType">RuleSetType</a>: <i>String</i>
 <a href="#rulesetversion" title="RuleSetVersion">RuleSetVersion</a>: <i>String</i>
 <a href="#disabledrulegroup" title="DisabledRuleGroup">DisabledRuleGroup</a>: <i>
-      - <a href="wafconfiguration-disabledrulegroup.md">DisabledRuleGroup</a></i>
+      - &lt;a href=&#34;wafconfiguration-disabledrulegroup.md&#34;&gt;DisabledRuleGroup&lt;/a&gt;</i>
 <a href="#exclusion" title="Exclusion">Exclusion</a>: <i>
-      - <a href="wafconfiguration-exclusion.md">Exclusion</a></i>
+      - &lt;a href=&#34;wafconfiguration-exclusion.md&#34;&gt;Exclusion&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -41,7 +41,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Enabled
 
 _Required_: Yes
-
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -49,7 +48,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### FileUploadLimitMb
 
 _Required_: No
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -57,7 +55,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### FirewallMode
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -65,7 +62,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### MaxRequestBodySizeKb
 
 _Required_: No
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -73,7 +69,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RequestBodyCheck
 
 _Required_: No
-
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -81,7 +76,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RuleSetType
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -89,7 +83,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RuleSetVersion
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -97,16 +90,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DisabledRuleGroup
 
 _Required_: No
-
-_Type_: List of <a href="wafconfiguration-disabledrulegroup.md">DisabledRuleGroup</a>
+_Type_: List of &lt;a href=&#34;wafconfiguration-disabledrulegroup.md&#34;&gt;DisabledRuleGroup&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Exclusion
 
 _Required_: No
-
-_Type_: List of <a href="wafconfiguration-exclusion.md">Exclusion</a>
+_Type_: List of &lt;a href=&#34;wafconfiguration-exclusion.md&#34;&gt;Exclusion&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

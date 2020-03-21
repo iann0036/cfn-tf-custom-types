@@ -12,10 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::S3BucketPublicAccessBlock",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#blockpublicacls" title="BlockPublicAcls">BlockPublicAcls</a>" : <i>Boolean</i>,
         "<a href="#blockpublicpolicy" title="BlockPublicPolicy">BlockPublicPolicy</a>" : <i>Boolean</i>,
         "<a href="#bucket" title="Bucket">Bucket</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#ignorepublicacls" title="IgnorePublicAcls">IgnorePublicAcls</a>" : <i>Boolean</i>,
         "<a href="#restrictpublicbuckets" title="RestrictPublicBuckets">RestrictPublicBuckets</a>" : <i>Boolean</i>
     }
@@ -27,15 +27,25 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::S3BucketPublicAccessBlock
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#blockpublicacls" title="BlockPublicAcls">BlockPublicAcls</a>: <i>Boolean</i>
     <a href="#blockpublicpolicy" title="BlockPublicPolicy">BlockPublicPolicy</a>: <i>Boolean</i>
     <a href="#bucket" title="Bucket">Bucket</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#ignorepublicacls" title="IgnorePublicAcls">IgnorePublicAcls</a>: <i>Boolean</i>
     <a href="#restrictpublicbuckets" title="RestrictPublicBuckets">RestrictPublicBuckets</a>: <i>Boolean</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BlockPublicAcls
 
@@ -56,14 +66,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Bucket
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
 
 _Type_: String
 

@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ConfigurationId: Optional[str]
     FlavorId: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Region: Optional[str]
     Size: Optional[float]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ConfigurationId=json_data.get("ConfigurationId"),
             FlavorId=json_data.get("FlavorId"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Region=json_data.get("Region"),
             Size=json_data.get("Size"),

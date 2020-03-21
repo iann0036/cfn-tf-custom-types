@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     Attributes: Optional[Sequence["_Attributes"]]
     DefaultClientId: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     ThingTypeName: Optional[str]
     Version: Optional[float]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             Attributes=json_data.get("Attributes"),
             DefaultClientId=json_data.get("DefaultClientId"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ThingTypeName=json_data.get("ThingTypeName"),
             Version=json_data.get("Version"),

@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     DisplayName: Optional[str]
-    Id: Optional[str]
     IpAddresses: Optional[Sequence[str]]
     Revision: Optional[float]
     Tag: Optional[Sequence["_Tag"]]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             DisplayName=json_data.get("DisplayName"),
-            Id=json_data.get("Id"),
             IpAddresses=json_data.get("IpAddresses"),
             Revision=json_data.get("Revision"),
             Tag=json_data.get("Tag"),

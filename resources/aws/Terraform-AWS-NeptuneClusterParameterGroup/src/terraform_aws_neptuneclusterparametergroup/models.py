@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     Description: Optional[str]
     Family: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     NamePrefix: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             Description=json_data.get("Description"),
             Family=json_data.get("Family"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             NamePrefix=json_data.get("NamePrefix"),
             Tags=json_data.get("Tags"),

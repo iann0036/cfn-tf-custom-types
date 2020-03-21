@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     DisplayName: Optional[str]
     Enabled: Optional[bool]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     State: Optional[str]
     TimeCreated: Optional[str]
     VcnId: Optional[str]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             DisplayName=json_data.get("DisplayName"),
             Enabled=json_data.get("Enabled"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             State=json_data.get("State"),
             TimeCreated=json_data.get("TimeCreated"),
             VcnId=json_data.get("VcnId"),

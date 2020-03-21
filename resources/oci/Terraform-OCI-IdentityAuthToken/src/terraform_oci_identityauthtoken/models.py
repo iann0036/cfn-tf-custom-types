@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     InactiveState: Optional[str]
     State: Optional[str]
     TimeCreated: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             InactiveState=json_data.get("InactiveState"),
             State=json_data.get("State"),
             TimeCreated=json_data.get("TimeCreated"),

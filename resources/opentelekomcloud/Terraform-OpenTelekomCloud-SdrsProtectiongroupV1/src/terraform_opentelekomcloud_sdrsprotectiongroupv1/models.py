@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DomainId: Optional[str]
     DrType: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     SourceAvailabilityZone: Optional[str]
     SourceVpcId: Optional[str]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DomainId=json_data.get("DomainId"),
             DrType=json_data.get("DrType"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             SourceAvailabilityZone=json_data.get("SourceAvailabilityZone"),
             SourceVpcId=json_data.get("SourceVpcId"),

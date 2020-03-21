@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DomainNameLabel: Optional[str]
     Fqdn: Optional[str]
-    Id: Optional[str]
     IdleTimeoutInMinutes: Optional[float]
     IpAddress: Optional[str]
     Location: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DomainNameLabel=json_data.get("DomainNameLabel"),
             Fqdn=json_data.get("Fqdn"),
-            Id=json_data.get("Id"),
             IdleTimeoutInMinutes=json_data.get("IdleTimeoutInMinutes"),
             IpAddress=json_data.get("IpAddress"),
             Location=json_data.get("Location"),

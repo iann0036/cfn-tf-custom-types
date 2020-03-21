@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Database: Optional[str]
     DropCascade: Optional[bool]
-    Id: Optional[str]
     IfNotExists: Optional[bool]
     Name: Optional[str]
     Owner: Optional[str]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Database=json_data.get("Database"),
             DropCascade=json_data.get("DropCascade"),
-            Id=json_data.get("Id"),
             IfNotExists=json_data.get("IfNotExists"),
             Name=json_data.get("Name"),
             Owner=json_data.get("Owner"),

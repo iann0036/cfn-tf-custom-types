@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     Fabric: Optional[bool]
     Gateway: Optional[str]
-    Id: Optional[str]
     InternetNat: Optional[bool]
     Name: Optional[str]
     ProvisionEndIp: Optional[str]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             Fabric=json_data.get("Fabric"),
             Gateway=json_data.get("Gateway"),
-            Id=json_data.get("Id"),
             InternetNat=json_data.get("InternetNat"),
             Name=json_data.get("Name"),
             ProvisionEndIp=json_data.get("ProvisionEndIp"),

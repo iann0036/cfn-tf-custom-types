@@ -45,7 +45,6 @@ class ResourceModel(BaseResourceModel):
     Csr: Optional[str]
     ExcludeCnFromSans: Optional[bool]
     Format: Optional[str]
-    Id: Optional[str]
     IpSans: Optional[Sequence[str]]
     IssuingCa: Optional[str]
     Locality: Optional[str]
@@ -80,7 +79,6 @@ class ResourceModel(BaseResourceModel):
             Csr=json_data.get("Csr"),
             ExcludeCnFromSans=json_data.get("ExcludeCnFromSans"),
             Format=json_data.get("Format"),
-            Id=json_data.get("Id"),
             IpSans=json_data.get("IpSans"),
             IssuingCa=json_data.get("IssuingCa"),
             Locality=json_data.get("Locality"),

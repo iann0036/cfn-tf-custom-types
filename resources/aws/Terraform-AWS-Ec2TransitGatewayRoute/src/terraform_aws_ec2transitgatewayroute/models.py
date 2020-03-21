@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Blackhole: Optional[bool]
     DestinationCidrBlock: Optional[str]
-    Id: Optional[str]
     TransitGatewayAttachmentId: Optional[str]
     TransitGatewayRouteTableId: Optional[str]
 
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Blackhole=json_data.get("Blackhole"),
             DestinationCidrBlock=json_data.get("DestinationCidrBlock"),
-            Id=json_data.get("Id"),
             TransitGatewayAttachmentId=json_data.get("TransitGatewayAttachmentId"),
             TransitGatewayRouteTableId=json_data.get("TransitGatewayRouteTableId"),
         )

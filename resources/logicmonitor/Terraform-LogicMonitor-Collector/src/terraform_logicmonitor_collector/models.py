@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     EnableCollectorDeviceFailover: Optional[bool]
     EnableFailback: Optional[bool]
     EscalationChainId: Optional[float]
-    Id: Optional[str]
     Properties: Optional[Sequence["_Properties"]]
     ResendInterval: Optional[float]
     SuppressAlertClear: Optional[bool]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             EnableCollectorDeviceFailover=json_data.get("EnableCollectorDeviceFailover"),
             EnableFailback=json_data.get("EnableFailback"),
             EscalationChainId=json_data.get("EscalationChainId"),
-            Id=json_data.get("Id"),
             Properties=json_data.get("Properties"),
             ResendInterval=json_data.get("ResendInterval"),
             SuppressAlertClear=json_data.get("SuppressAlertClear"),

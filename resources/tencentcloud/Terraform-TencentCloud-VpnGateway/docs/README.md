@@ -12,13 +12,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::TencentCloud::VpnGateway",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#bandwidth" title="Bandwidth">Bandwidth</a>" : <i>Double</i>,
         "<a href="#chargetype" title="ChargeType">ChargeType</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#createtime" title="CreateTime">CreateTime</a>" : <i>String</i>,
+        "<a href="#expiredtime" title="ExpiredTime">ExpiredTime</a>" : <i>String</i>,
+        "<a href="#isaddressblocked" title="IsAddressBlocked">IsAddressBlocked</a>" : <i>Boolean</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
+        "<a href="#newpurchaseplan" title="NewPurchasePlan">NewPurchasePlan</a>" : <i>String</i>,
         "<a href="#prepaidperiod" title="PrepaidPeriod">PrepaidPeriod</a>" : <i>Double</i>,
         "<a href="#prepaidrenewflag" title="PrepaidRenewFlag">PrepaidRenewFlag</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#publicipaddress" title="PublicIpAddress">PublicIpAddress</a>" : <i>String</i>,
+        "<a href="#restrictstate" title="RestrictState">RestrictState</a>" : <i>String</i>,
+        "<a href="#state" title="State">State</a>" : <i>String</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#type" title="Type">Type</a>" : <i>String</i>,
         "<a href="#vpcid" title="VpcId">VpcId</a>" : <i>String</i>,
         "<a href="#zone" title="Zone">Zone</a>" : <i>String</i>
     }
@@ -30,19 +38,37 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::TencentCloud::VpnGateway
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#bandwidth" title="Bandwidth">Bandwidth</a>: <i>Double</i>
     <a href="#chargetype" title="ChargeType">ChargeType</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#createtime" title="CreateTime">CreateTime</a>: <i>String</i>
+    <a href="#expiredtime" title="ExpiredTime">ExpiredTime</a>: <i>String</i>
+    <a href="#isaddressblocked" title="IsAddressBlocked">IsAddressBlocked</a>: <i>Boolean</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
+    <a href="#newpurchaseplan" title="NewPurchasePlan">NewPurchasePlan</a>: <i>String</i>
     <a href="#prepaidperiod" title="PrepaidPeriod">PrepaidPeriod</a>: <i>Double</i>
     <a href="#prepaidrenewflag" title="PrepaidRenewFlag">PrepaidRenewFlag</a>: <i>String</i>
+    <a href="#publicipaddress" title="PublicIpAddress">PublicIpAddress</a>: <i>String</i>
+    <a href="#restrictstate" title="RestrictState">RestrictState</a>: <i>String</i>
+    <a href="#state" title="State">State</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+    <a href="#type" title="Type">Type</a>: <i>String</i>
     <a href="#vpcid" title="VpcId">VpcId</a>: <i>String</i>
     <a href="#zone" title="Zone">Zone</a>: <i>String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Bandwidth
 
@@ -60,7 +86,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### CreateTime
 
 _Required_: No
 
@@ -68,9 +94,33 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### ExpiredTime
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### IsAddressBlocked
+
+_Required_: No
+
+_Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Name
 
 _Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### NewPurchasePlan
+
+_Required_: No
 
 _Type_: String
 
@@ -92,11 +142,43 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### PublicIpAddress
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### RestrictState
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### State
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Tags
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Type
+
+_Required_: No
+
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -134,33 +216,33 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateTime
 
-Returns the <code>CreateTime</code> value.
+Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
 
 #### ExpiredTime
 
-Returns the <code>ExpiredTime</code> value.
+Returns the &lt;code&gt;ExpiredTime&lt;/code&gt; value.
 
 #### IsAddressBlocked
 
-Returns the <code>IsAddressBlocked</code> value.
+Returns the &lt;code&gt;IsAddressBlocked&lt;/code&gt; value.
 
 #### NewPurchasePlan
 
-Returns the <code>NewPurchasePlan</code> value.
+Returns the &lt;code&gt;NewPurchasePlan&lt;/code&gt; value.
 
 #### PublicIpAddress
 
-Returns the <code>PublicIpAddress</code> value.
+Returns the &lt;code&gt;PublicIpAddress&lt;/code&gt; value.
 
 #### RestrictState
 
-Returns the <code>RestrictState</code> value.
+Returns the &lt;code&gt;RestrictState&lt;/code&gt; value.
 
 #### State
 
-Returns the <code>State</code> value.
+Returns the &lt;code&gt;State&lt;/code&gt; value.
 
 #### Type
 
-Returns the <code>Type</code> value.
+Returns the &lt;code&gt;Type&lt;/code&gt; value.
 

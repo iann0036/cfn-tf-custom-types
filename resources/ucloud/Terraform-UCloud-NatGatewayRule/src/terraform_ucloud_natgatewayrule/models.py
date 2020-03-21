@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DstIp: Optional[str]
     DstPortRange: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     NatGatewayId: Optional[str]
     Protocol: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DstIp=json_data.get("DstIp"),
             DstPortRange=json_data.get("DstPortRange"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             NatGatewayId=json_data.get("NatGatewayId"),
             Protocol=json_data.get("Protocol"),

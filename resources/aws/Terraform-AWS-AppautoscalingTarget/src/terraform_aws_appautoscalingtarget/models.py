@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     MaxCapacity: Optional[float]
     MinCapacity: Optional[float]
     ResourceId: Optional[str]
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             MaxCapacity=json_data.get("MaxCapacity"),
             MinCapacity=json_data.get("MinCapacity"),
             ResourceId=json_data.get("ResourceId"),

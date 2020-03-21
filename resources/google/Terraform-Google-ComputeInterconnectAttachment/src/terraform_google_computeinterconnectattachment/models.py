@@ -45,7 +45,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     EdgeAvailabilityDomain: Optional[str]
     GoogleReferenceId: Optional[str]
-    Id: Optional[str]
     Interconnect: Optional[str]
     Name: Optional[str]
     PairingKey: Optional[str]
@@ -78,7 +77,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             EdgeAvailabilityDomain=json_data.get("EdgeAvailabilityDomain"),
             GoogleReferenceId=json_data.get("GoogleReferenceId"),
-            Id=json_data.get("Id"),
             Interconnect=json_data.get("Interconnect"),
             Name=json_data.get("Name"),
             PairingKey=json_data.get("PairingKey"),

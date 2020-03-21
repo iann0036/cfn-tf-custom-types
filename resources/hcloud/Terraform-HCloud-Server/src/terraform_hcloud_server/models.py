@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     BackupWindow: Optional[str]
     Backups: Optional[bool]
     Datacenter: Optional[str]
-    Id: Optional[str]
     Image: Optional[str]
     Ipv4Address: Optional[str]
     Ipv6Address: Optional[str]
@@ -67,7 +66,6 @@ class ResourceModel(BaseResourceModel):
             BackupWindow=json_data.get("BackupWindow"),
             Backups=json_data.get("Backups"),
             Datacenter=json_data.get("Datacenter"),
-            Id=json_data.get("Id"),
             Image=json_data.get("Image"),
             Ipv4Address=json_data.get("Ipv4Address"),
             Ipv6Address=json_data.get("Ipv6Address"),

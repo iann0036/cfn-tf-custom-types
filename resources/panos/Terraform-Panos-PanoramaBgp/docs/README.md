@@ -12,6 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Panos::PanoramaBgp",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#aggregatemed" title="AggregateMed">AggregateMed</a>" : <i>Boolean</i>,
         "<a href="#allowredistributedefaultroute" title="AllowRedistributeDefaultRoute">AllowRedistributeDefaultRoute</a>" : <i>Boolean</i>,
         "<a href="#alwayscomparemed" title="AlwaysCompareMed">AlwaysCompareMed</a>" : <i>Boolean</i>,
@@ -25,7 +26,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#enable" title="Enable">Enable</a>" : <i>Boolean</i>,
         "<a href="#enablegracefulrestart" title="EnableGracefulRestart">EnableGracefulRestart</a>" : <i>Boolean</i>,
         "<a href="#enforcefirstas" title="EnforceFirstAs">EnforceFirstAs</a>" : <i>Boolean</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#installroute" title="InstallRoute">InstallRoute</a>" : <i>Boolean</i>,
         "<a href="#localrestarttime" title="LocalRestartTime">LocalRestartTime</a>" : <i>Double</i>,
         "<a href="#maxpeerrestarttime" title="MaxPeerRestartTime">MaxPeerRestartTime</a>" : <i>Double</i>,
@@ -45,6 +45,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Panos::PanoramaBgp
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#aggregatemed" title="AggregateMed">AggregateMed</a>: <i>Boolean</i>
     <a href="#allowredistributedefaultroute" title="AllowRedistributeDefaultRoute">AllowRedistributeDefaultRoute</a>: <i>Boolean</i>
     <a href="#alwayscomparemed" title="AlwaysCompareMed">AlwaysCompareMed</a>: <i>Boolean</i>
@@ -58,7 +59,6 @@ Properties:
     <a href="#enable" title="Enable">Enable</a>: <i>Boolean</i>
     <a href="#enablegracefulrestart" title="EnableGracefulRestart">EnableGracefulRestart</a>: <i>Boolean</i>
     <a href="#enforcefirstas" title="EnforceFirstAs">EnforceFirstAs</a>: <i>Boolean</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#installroute" title="InstallRoute">InstallRoute</a>: <i>Boolean</i>
     <a href="#localrestarttime" title="LocalRestartTime">LocalRestartTime</a>: <i>Double</i>
     <a href="#maxpeerrestarttime" title="MaxPeerRestartTime">MaxPeerRestartTime</a>: <i>Double</i>
@@ -72,6 +72,16 @@ Properties:
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AggregateMed
 
@@ -174,14 +184,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

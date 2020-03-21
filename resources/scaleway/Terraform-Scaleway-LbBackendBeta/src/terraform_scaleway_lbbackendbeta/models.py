@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     HealthCheckMaxRetries: Optional[float]
     HealthCheckPort: Optional[float]
     HealthCheckTimeout: Optional[str]
-    Id: Optional[str]
     LbId: Optional[str]
     Name: Optional[str]
     OnMarkedDownAction: Optional[str]
@@ -74,7 +73,6 @@ class ResourceModel(BaseResourceModel):
             HealthCheckMaxRetries=json_data.get("HealthCheckMaxRetries"),
             HealthCheckPort=json_data.get("HealthCheckPort"),
             HealthCheckTimeout=json_data.get("HealthCheckTimeout"),
-            Id=json_data.get("Id"),
             LbId=json_data.get("LbId"),
             Name=json_data.get("Name"),
             OnMarkedDownAction=json_data.get("OnMarkedDownAction"),

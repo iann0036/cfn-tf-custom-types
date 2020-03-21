@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     EncryptionType: Optional[str]
     EnforceConsumerDeletion: Optional[bool]
-    Id: Optional[str]
     KmsKeyId: Optional[str]
     Name: Optional[str]
     RetentionPeriod: Optional[float]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             EncryptionType=json_data.get("EncryptionType"),
             EnforceConsumerDeletion=json_data.get("EnforceConsumerDeletion"),
-            Id=json_data.get("Id"),
             KmsKeyId=json_data.get("KmsKeyId"),
             Name=json_data.get("Name"),
             RetentionPeriod=json_data.get("RetentionPeriod"),

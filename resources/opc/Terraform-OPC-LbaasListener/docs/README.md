@@ -12,18 +12,22 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OPC::LbaasListener",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#balancerprotocol" title="BalancerProtocol">BalancerProtocol</a>" : <i>String</i>,
         "<a href="#certificates" title="Certificates">Certificates</a>" : <i>[ String, ... ]</i>,
         "<a href="#enabled" title="Enabled">Enabled</a>" : <i>Boolean</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#loadbalancer" title="LoadBalancer">LoadBalancer</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
+        "<a href="#operationdetails" title="OperationDetails">OperationDetails</a>" : <i>String</i>,
+        "<a href="#parentlistener" title="ParentListener">ParentListener</a>" : <i>String</i>,
         "<a href="#pathprefixes" title="PathPrefixes">PathPrefixes</a>" : <i>[ String, ... ]</i>,
         "<a href="#policies" title="Policies">Policies</a>" : <i>[ String, ... ]</i>,
         "<a href="#port" title="Port">Port</a>" : <i>Double</i>,
         "<a href="#serverpool" title="ServerPool">ServerPool</a>" : <i>String</i>,
         "<a href="#serverprotocol" title="ServerProtocol">ServerProtocol</a>" : <i>String</i>,
+        "<a href="#state" title="State">State</a>" : <i>Boolean</i>,
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
+        "<a href="#uri" title="Uri">Uri</a>" : <i>String</i>,
         "<a href="#virtualhosts" title="VirtualHosts">VirtualHosts</a>" : <i>[ String, ... ]</i>
     }
 }
@@ -34,13 +38,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OPC::LbaasListener
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#balancerprotocol" title="BalancerProtocol">BalancerProtocol</a>: <i>String</i>
     <a href="#certificates" title="Certificates">Certificates</a>: <i>
       - String</i>
     <a href="#enabled" title="Enabled">Enabled</a>: <i>Boolean</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#loadbalancer" title="LoadBalancer">LoadBalancer</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
+    <a href="#operationdetails" title="OperationDetails">OperationDetails</a>: <i>String</i>
+    <a href="#parentlistener" title="ParentListener">ParentListener</a>: <i>String</i>
     <a href="#pathprefixes" title="PathPrefixes">PathPrefixes</a>: <i>
       - String</i>
     <a href="#policies" title="Policies">Policies</a>: <i>
@@ -48,13 +54,25 @@ Properties:
     <a href="#port" title="Port">Port</a>: <i>Double</i>
     <a href="#serverpool" title="ServerPool">ServerPool</a>: <i>String</i>
     <a href="#serverprotocol" title="ServerProtocol">ServerProtocol</a>: <i>String</i>
+    <a href="#state" title="State">State</a>: <i>Boolean</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
       - String</i>
+    <a href="#uri" title="Uri">Uri</a>: <i>String</i>
     <a href="#virtualhosts" title="VirtualHosts">VirtualHosts</a>: <i>
       - String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BalancerProtocol
 
@@ -80,14 +98,6 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### LoadBalancer
 
 _Required_: Yes
@@ -99,6 +109,22 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Name
 
 _Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### OperationDetails
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ParentListener
+
+_Required_: No
 
 _Type_: String
 
@@ -144,11 +170,27 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### State
+
+_Required_: No
+
+_Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Tags
 
 _Required_: No
 
 _Type_: List of String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Uri
+
+_Required_: No
+
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -178,17 +220,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### OperationDetails
 
-Returns the <code>OperationDetails</code> value.
+Returns the &lt;code&gt;OperationDetails&lt;/code&gt; value.
 
 #### ParentListener
 
-Returns the <code>ParentListener</code> value.
+Returns the &lt;code&gt;ParentListener&lt;/code&gt; value.
 
 #### State
 
-Returns the <code>State</code> value.
+Returns the &lt;code&gt;State&lt;/code&gt; value.
 
 #### Uri
 
-Returns the <code>Uri</code> value.
+Returns the &lt;code&gt;Uri&lt;/code&gt; value.
 

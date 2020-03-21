@@ -8,8 +8,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#limits" title="Limits">Limits</a>" : <i>[ <a href="template-spec-containers-resources-limits.md">Limits</a>, ... ]</i>,
-    "<a href="#requests" title="Requests">Requests</a>" : <i>[ <a href="template-spec-containers-resources-requests.md">Requests</a>, ... ]</i>
+    "<a href="#limits" title="Limits">Limits</a>" : <i>[ &lt;a href=&#34;template-spec-containers-resources-limits.md&#34;&gt;Limits&lt;/a&gt;, ... ]</i>,
+    "<a href="#requests" title="Requests">Requests</a>" : <i>[ &lt;a href=&#34;template-spec-containers-resources-requests.md&#34;&gt;Requests&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -17,9 +17,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#limits" title="Limits">Limits</a>: <i>
-      - <a href="template-spec-containers-resources-limits.md">Limits</a></i>
+      - &lt;a href=&#34;template-spec-containers-resources-limits.md&#34;&gt;Limits&lt;/a&gt;</i>
 <a href="#requests" title="Requests">Requests</a>: <i>
-      - <a href="template-spec-containers-resources-requests.md">Requests</a></i>
+      - &lt;a href=&#34;template-spec-containers-resources-requests.md&#34;&gt;Requests&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -27,16 +27,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Limits
 
 _Required_: No
-
-_Type_: List of <a href="template-spec-containers-resources-limits.md">Limits</a>
+_Type_: List of &lt;a href=&#34;template-spec-containers-resources-limits.md&#34;&gt;Limits&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Requests
 
 _Required_: No
-
-_Type_: List of <a href="template-spec-containers-resources-requests.md">Requests</a>
+_Type_: List of &lt;a href=&#34;template-spec-containers-resources-requests.md&#34;&gt;Requests&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

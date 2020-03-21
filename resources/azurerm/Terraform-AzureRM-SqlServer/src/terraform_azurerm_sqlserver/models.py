@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AdministratorLogin: Optional[str]
     AdministratorLoginPassword: Optional[str]
     FullyQualifiedDomainName: Optional[str]
-    Id: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
     ResourceGroupName: Optional[str]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             AdministratorLogin=json_data.get("AdministratorLogin"),
             AdministratorLoginPassword=json_data.get("AdministratorLoginPassword"),
             FullyQualifiedDomainName=json_data.get("FullyQualifiedDomainName"),
-            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),
             ResourceGroupName=json_data.get("ResourceGroupName"),

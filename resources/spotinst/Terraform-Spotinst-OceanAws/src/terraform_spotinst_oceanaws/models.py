@@ -44,7 +44,6 @@ class ResourceModel(BaseResourceModel):
     EbsOptimized: Optional[bool]
     FallbackToOndemand: Optional[bool]
     IamInstanceProfile: Optional[str]
-    Id: Optional[str]
     ImageId: Optional[str]
     KeyName: Optional[str]
     MaxSize: Optional[float]
@@ -85,7 +84,6 @@ class ResourceModel(BaseResourceModel):
             EbsOptimized=json_data.get("EbsOptimized"),
             FallbackToOndemand=json_data.get("FallbackToOndemand"),
             IamInstanceProfile=json_data.get("IamInstanceProfile"),
-            Id=json_data.get("Id"),
             ImageId=json_data.get("ImageId"),
             KeyName=json_data.get("KeyName"),
             MaxSize=json_data.get("MaxSize"),

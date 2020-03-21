@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     Serial: Optional[str]
     Template: Optional[str]
     VsysList: Optional[Sequence[str]]
@@ -50,7 +49,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             Serial=json_data.get("Serial"),
             Template=json_data.get("Template"),
             VsysList=json_data.get("VsysList"),

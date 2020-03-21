@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     DataOrigin: Optional[str]
     Description: Optional[str]
     DiskFormat: Optional[str]
-    Id: Optional[str]
     ImageSize: Optional[str]
     ImageUrl: Optional[str]
     InstanceId: Optional[str]
@@ -68,7 +67,6 @@ class ResourceModel(BaseResourceModel):
             DataOrigin=json_data.get("DataOrigin"),
             Description=json_data.get("Description"),
             DiskFormat=json_data.get("DiskFormat"),
-            Id=json_data.get("Id"),
             ImageSize=json_data.get("ImageSize"),
             ImageUrl=json_data.get("ImageUrl"),
             InstanceId=json_data.get("InstanceId"),

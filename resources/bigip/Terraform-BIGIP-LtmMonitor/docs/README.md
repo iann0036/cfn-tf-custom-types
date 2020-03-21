@@ -12,6 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::BIGIP::LtmMonitor",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#adaptive" title="Adaptive">Adaptive</a>" : <i>String</i>,
         "<a href="#adaptivelimit" title="AdaptiveLimit">AdaptiveLimit</a>" : <i>Double</i>,
         "<a href="#compatibility" title="Compatibility">Compatibility</a>" : <i>String</i>,
@@ -19,7 +20,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#defaultsfrom" title="DefaultsFrom">DefaultsFrom</a>" : <i>String</i>,
         "<a href="#destination" title="Destination">Destination</a>" : <i>String</i>,
         "<a href="#filename" title="Filename">Filename</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#interval" title="Interval">Interval</a>" : <i>Double</i>,
         "<a href="#ipdscp" title="IpDscp">IpDscp</a>" : <i>Double</i>,
         "<a href="#manualresume" title="ManualResume">ManualResume</a>" : <i>String</i>,
@@ -44,6 +44,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::BIGIP::LtmMonitor
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#adaptive" title="Adaptive">Adaptive</a>: <i>String</i>
     <a href="#adaptivelimit" title="AdaptiveLimit">AdaptiveLimit</a>: <i>Double</i>
     <a href="#compatibility" title="Compatibility">Compatibility</a>: <i>String</i>
@@ -51,7 +52,6 @@ Properties:
     <a href="#defaultsfrom" title="DefaultsFrom">DefaultsFrom</a>: <i>String</i>
     <a href="#destination" title="Destination">Destination</a>: <i>String</i>
     <a href="#filename" title="Filename">Filename</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#interval" title="Interval">Interval</a>: <i>Double</i>
     <a href="#ipdscp" title="IpDscp">IpDscp</a>: <i>Double</i>
     <a href="#manualresume" title="ManualResume">ManualResume</a>: <i>String</i>
@@ -70,6 +70,16 @@ Properties:
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Adaptive
 
@@ -120,14 +130,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Filename
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 

@@ -12,6 +12,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::AutoscalingGroup",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#availabilityzones" title="AvailabilityZones">AvailabilityZones</a>" : <i>[ String, ... ]</i>,
         "<a href="#defaultcooldown" title="DefaultCooldown">DefaultCooldown</a>" : <i>Double</i>,
         "<a href="#desiredcapacity" title="DesiredCapacity">DesiredCapacity</a>" : <i>Double</i>,
@@ -19,7 +21,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#forcedelete" title="ForceDelete">ForceDelete</a>" : <i>Boolean</i>,
         "<a href="#healthcheckgraceperiod" title="HealthCheckGracePeriod">HealthCheckGracePeriod</a>" : <i>Double</i>,
         "<a href="#healthchecktype" title="HealthCheckType">HealthCheckType</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#launchconfiguration" title="LaunchConfiguration">LaunchConfiguration</a>" : <i>String</i>,
         "<a href="#loadbalancers" title="LoadBalancers">LoadBalancers</a>" : <i>[ String, ... ]</i>,
         "<a href="#maxinstancelifetime" title="MaxInstanceLifetime">MaxInstanceLifetime</a>" : <i>Double</i>,
@@ -33,20 +34,20 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#protectfromscalein" title="ProtectFromScaleIn">ProtectFromScaleIn</a>" : <i>Boolean</i>,
         "<a href="#servicelinkedrolearn" title="ServiceLinkedRoleArn">ServiceLinkedRoleArn</a>" : <i>String</i>,
         "<a href="#suspendedprocesses" title="SuspendedProcesses">SuspendedProcesses</a>" : <i>[ String, ... ]</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ [ <a href="tags.md">Tags</a>, ... ], ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ [ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ], ... ]</i>,
         "<a href="#targetgrouparns" title="TargetGroupArns">TargetGroupArns</a>" : <i>[ String, ... ]</i>,
         "<a href="#terminationpolicies" title="TerminationPolicies">TerminationPolicies</a>" : <i>[ String, ... ]</i>,
         "<a href="#vpczoneidentifier" title="VpcZoneIdentifier">VpcZoneIdentifier</a>" : <i>[ String, ... ]</i>,
         "<a href="#waitforcapacitytimeout" title="WaitForCapacityTimeout">WaitForCapacityTimeout</a>" : <i>String</i>,
         "<a href="#waitforelbcapacity" title="WaitForElbCapacity">WaitForElbCapacity</a>" : <i>Double</i>,
-        "<a href="#initiallifecyclehook" title="InitialLifecycleHook">InitialLifecycleHook</a>" : <i>[ <a href="initiallifecyclehook.md">InitialLifecycleHook</a>, ... ]</i>,
-        "<a href="#launchtemplate" title="LaunchTemplate">LaunchTemplate</a>" : <i>[ <a href="launchtemplate.md">LaunchTemplate</a>, ... ]</i>,
-        "<a href="#mixedinstancespolicy" title="MixedInstancesPolicy">MixedInstancesPolicy</a>" : <i>[ <a href="mixedinstancespolicy.md">MixedInstancesPolicy</a>, ... ]</i>,
-        "<a href="#tag" title="Tag">Tag</a>" : <i>[ <a href="tag.md">Tag</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
-        "<a href="#instancesdistribution" title="InstancesDistribution">InstancesDistribution</a>" : <i>[ <a href="instancesdistribution.md">InstancesDistribution</a>, ... ]</i>,
-        "<a href="#launchtemplatespecification" title="LaunchTemplateSpecification">LaunchTemplateSpecification</a>" : <i>[ <a href="launchtemplatespecification.md">LaunchTemplateSpecification</a>, ... ]</i>,
-        "<a href="#override" title="Override">Override</a>" : <i>[ <a href="override.md">Override</a>, ... ]</i>
+        "<a href="#initiallifecyclehook" title="InitialLifecycleHook">InitialLifecycleHook</a>" : <i>[ &lt;a href=&#34;initiallifecyclehook.md&#34;&gt;InitialLifecycleHook&lt;/a&gt;, ... ]</i>,
+        "<a href="#launchtemplate" title="LaunchTemplate">LaunchTemplate</a>" : <i>[ &lt;a href=&#34;launchtemplate.md&#34;&gt;LaunchTemplate&lt;/a&gt;, ... ]</i>,
+        "<a href="#mixedinstancespolicy" title="MixedInstancesPolicy">MixedInstancesPolicy</a>" : <i>[ &lt;a href=&#34;mixedinstancespolicy.md&#34;&gt;MixedInstancesPolicy&lt;/a&gt;, ... ]</i>,
+        "<a href="#tag" title="Tag">Tag</a>" : <i>[ &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
+        "<a href="#instancesdistribution" title="InstancesDistribution">InstancesDistribution</a>" : <i>[ &lt;a href=&#34;instancesdistribution.md&#34;&gt;InstancesDistribution&lt;/a&gt;, ... ]</i>,
+        "<a href="#launchtemplatespecification" title="LaunchTemplateSpecification">LaunchTemplateSpecification</a>" : <i>[ &lt;a href=&#34;launchtemplatespecification.md&#34;&gt;LaunchTemplateSpecification&lt;/a&gt;, ... ]</i>,
+        "<a href="#override" title="Override">Override</a>" : <i>[ &lt;a href=&#34;override.md&#34;&gt;Override&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -56,6 +57,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::AutoscalingGroup
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#availabilityzones" title="AvailabilityZones">AvailabilityZones</a>: <i>
       - String</i>
     <a href="#defaultcooldown" title="DefaultCooldown">DefaultCooldown</a>: <i>Double</i>
@@ -65,7 +68,6 @@ Properties:
     <a href="#forcedelete" title="ForceDelete">ForceDelete</a>: <i>Boolean</i>
     <a href="#healthcheckgraceperiod" title="HealthCheckGracePeriod">HealthCheckGracePeriod</a>: <i>Double</i>
     <a href="#healthchecktype" title="HealthCheckType">HealthCheckType</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#launchconfiguration" title="LaunchConfiguration">LaunchConfiguration</a>: <i>String</i>
     <a href="#loadbalancers" title="LoadBalancers">LoadBalancers</a>: <i>
       - String</i>
@@ -82,7 +84,7 @@ Properties:
     <a href="#suspendedprocesses" title="SuspendedProcesses">SuspendedProcesses</a>: <i>
       - String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - List of <a href="tags.md">Tags</a></i>
+      - List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
     <a href="#targetgrouparns" title="TargetGroupArns">TargetGroupArns</a>: <i>
       - String</i>
     <a href="#terminationpolicies" title="TerminationPolicies">TerminationPolicies</a>: <i>
@@ -92,23 +94,41 @@ Properties:
     <a href="#waitforcapacitytimeout" title="WaitForCapacityTimeout">WaitForCapacityTimeout</a>: <i>String</i>
     <a href="#waitforelbcapacity" title="WaitForElbCapacity">WaitForElbCapacity</a>: <i>Double</i>
     <a href="#initiallifecyclehook" title="InitialLifecycleHook">InitialLifecycleHook</a>: <i>
-      - <a href="initiallifecyclehook.md">InitialLifecycleHook</a></i>
+      - &lt;a href=&#34;initiallifecyclehook.md&#34;&gt;InitialLifecycleHook&lt;/a&gt;</i>
     <a href="#launchtemplate" title="LaunchTemplate">LaunchTemplate</a>: <i>
-      - <a href="launchtemplate.md">LaunchTemplate</a></i>
+      - &lt;a href=&#34;launchtemplate.md&#34;&gt;LaunchTemplate&lt;/a&gt;</i>
     <a href="#mixedinstancespolicy" title="MixedInstancesPolicy">MixedInstancesPolicy</a>: <i>
-      - <a href="mixedinstancespolicy.md">MixedInstancesPolicy</a></i>
+      - &lt;a href=&#34;mixedinstancespolicy.md&#34;&gt;MixedInstancesPolicy&lt;/a&gt;</i>
     <a href="#tag" title="Tag">Tag</a>: <i>
-      - <a href="tag.md">Tag</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     <a href="#instancesdistribution" title="InstancesDistribution">InstancesDistribution</a>: <i>
-      - <a href="instancesdistribution.md">InstancesDistribution</a></i>
+      - &lt;a href=&#34;instancesdistribution.md&#34;&gt;InstancesDistribution&lt;/a&gt;</i>
     <a href="#launchtemplatespecification" title="LaunchTemplateSpecification">LaunchTemplateSpecification</a>: <i>
-      - <a href="launchtemplatespecification.md">LaunchTemplateSpecification</a></i>
+      - &lt;a href=&#34;launchtemplatespecification.md&#34;&gt;LaunchTemplateSpecification&lt;/a&gt;</i>
     <a href="#override" title="Override">Override</a>: <i>
-      - <a href="override.md">Override</a></i>
+      - &lt;a href=&#34;override.md&#34;&gt;Override&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Arn
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AvailabilityZones
 
@@ -159,14 +179,6 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HealthCheckType
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 
@@ -282,7 +294,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of List of <a href="tags.md">Tags</a>
+_Type_: List of List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -330,7 +342,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="initiallifecyclehook.md">InitialLifecycleHook</a>
+_Type_: List of &lt;a href=&#34;initiallifecyclehook.md&#34;&gt;InitialLifecycleHook&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -338,7 +350,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="launchtemplate.md">LaunchTemplate</a>
+_Type_: List of &lt;a href=&#34;launchtemplate.md&#34;&gt;LaunchTemplate&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -346,7 +358,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="mixedinstancespolicy.md">MixedInstancesPolicy</a>
+_Type_: List of &lt;a href=&#34;mixedinstancespolicy.md&#34;&gt;MixedInstancesPolicy&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -354,7 +366,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tag.md">Tag</a>
+_Type_: List of &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -362,7 +374,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -370,7 +382,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="instancesdistribution.md">InstancesDistribution</a>
+_Type_: List of &lt;a href=&#34;instancesdistribution.md&#34;&gt;InstancesDistribution&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -378,7 +390,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="launchtemplatespecification.md">LaunchTemplateSpecification</a>
+_Type_: List of &lt;a href=&#34;launchtemplatespecification.md&#34;&gt;LaunchTemplateSpecification&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -386,7 +398,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="override.md">Override</a>
+_Type_: List of &lt;a href=&#34;override.md&#34;&gt;Override&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -408,5 +420,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the <code>Arn</code> value.
+Returns the &lt;code&gt;Arn&lt;/code&gt; value.
 

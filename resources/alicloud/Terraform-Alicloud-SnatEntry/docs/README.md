@@ -12,7 +12,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::SnatEntry",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#snatentryid" title="SnatEntryId">SnatEntryId</a>" : <i>String</i>,
         "<a href="#snatentryname" title="SnatEntryName">SnatEntryName</a>" : <i>String</i>,
         "<a href="#snatip" title="SnatIp">SnatIp</a>" : <i>String</i>,
         "<a href="#snattableid" title="SnatTableId">SnatTableId</a>" : <i>String</i>,
@@ -27,7 +28,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::SnatEntry
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#snatentryid" title="SnatEntryId">SnatEntryId</a>: <i>String</i>
     <a href="#snatentryname" title="SnatEntryName">SnatEntryName</a>: <i>String</i>
     <a href="#snatip" title="SnatIp">SnatIp</a>: <i>String</i>
     <a href="#snattableid" title="SnatTableId">SnatTableId</a>: <i>String</i>
@@ -37,7 +39,17 @@ Properties:
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### SnatEntryId
 
 _Required_: No
 
@@ -103,5 +115,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### SnatEntryId
 
-Returns the <code>SnatEntryId</code> value.
+Returns the &lt;code&gt;SnatEntryId&lt;/code&gt; value.
 

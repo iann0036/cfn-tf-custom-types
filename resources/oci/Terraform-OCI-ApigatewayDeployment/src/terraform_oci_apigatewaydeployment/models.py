@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     Endpoint: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
     GatewayId: Optional[str]
-    Id: Optional[str]
     LifecycleDetails: Optional[str]
     PathPrefix: Optional[str]
     State: Optional[str]
@@ -77,7 +76,6 @@ class ResourceModel(BaseResourceModel):
             Endpoint=json_data.get("Endpoint"),
             FreeformTags=json_data.get("FreeformTags"),
             GatewayId=json_data.get("GatewayId"),
-            Id=json_data.get("Id"),
             LifecycleDetails=json_data.get("LifecycleDetails"),
             PathPrefix=json_data.get("PathPrefix"),
             State=json_data.get("State"),

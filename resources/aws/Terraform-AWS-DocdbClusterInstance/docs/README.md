@@ -12,20 +12,31 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::DocdbClusterInstance",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#applyimmediately" title="ApplyImmediately">ApplyImmediately</a>" : <i>Boolean</i>,
+        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#autominorversionupgrade" title="AutoMinorVersionUpgrade">AutoMinorVersionUpgrade</a>" : <i>Boolean</i>,
         "<a href="#availabilityzone" title="AvailabilityZone">AvailabilityZone</a>" : <i>String</i>,
         "<a href="#cacertidentifier" title="CaCertIdentifier">CaCertIdentifier</a>" : <i>String</i>,
         "<a href="#clusteridentifier" title="ClusterIdentifier">ClusterIdentifier</a>" : <i>String</i>,
+        "<a href="#dbsubnetgroupname" title="DbSubnetGroupName">DbSubnetGroupName</a>" : <i>String</i>,
+        "<a href="#dbiresourceid" title="DbiResourceId">DbiResourceId</a>" : <i>String</i>,
+        "<a href="#endpoint" title="Endpoint">Endpoint</a>" : <i>String</i>,
         "<a href="#engine" title="Engine">Engine</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#engineversion" title="EngineVersion">EngineVersion</a>" : <i>String</i>,
         "<a href="#identifier" title="Identifier">Identifier</a>" : <i>String</i>,
         "<a href="#identifierprefix" title="IdentifierPrefix">IdentifierPrefix</a>" : <i>String</i>,
         "<a href="#instanceclass" title="InstanceClass">InstanceClass</a>" : <i>String</i>,
+        "<a href="#kmskeyid" title="KmsKeyId">KmsKeyId</a>" : <i>String</i>,
+        "<a href="#port" title="Port">Port</a>" : <i>Double</i>,
+        "<a href="#preferredbackupwindow" title="PreferredBackupWindow">PreferredBackupWindow</a>" : <i>String</i>,
         "<a href="#preferredmaintenancewindow" title="PreferredMaintenanceWindow">PreferredMaintenanceWindow</a>" : <i>String</i>,
         "<a href="#promotiontier" title="PromotionTier">PromotionTier</a>" : <i>Double</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
+        "<a href="#publiclyaccessible" title="PubliclyAccessible">PubliclyAccessible</a>" : <i>Boolean</i>,
+        "<a href="#storageencrypted" title="StorageEncrypted">StorageEncrypted</a>" : <i>Boolean</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#writer" title="Writer">Writer</a>" : <i>Boolean</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     }
 }
 </pre>
@@ -35,30 +46,59 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::DocdbClusterInstance
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#applyimmediately" title="ApplyImmediately">ApplyImmediately</a>: <i>Boolean</i>
+    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#autominorversionupgrade" title="AutoMinorVersionUpgrade">AutoMinorVersionUpgrade</a>: <i>Boolean</i>
     <a href="#availabilityzone" title="AvailabilityZone">AvailabilityZone</a>: <i>String</i>
     <a href="#cacertidentifier" title="CaCertIdentifier">CaCertIdentifier</a>: <i>String</i>
     <a href="#clusteridentifier" title="ClusterIdentifier">ClusterIdentifier</a>: <i>String</i>
+    <a href="#dbsubnetgroupname" title="DbSubnetGroupName">DbSubnetGroupName</a>: <i>String</i>
+    <a href="#dbiresourceid" title="DbiResourceId">DbiResourceId</a>: <i>String</i>
+    <a href="#endpoint" title="Endpoint">Endpoint</a>: <i>String</i>
     <a href="#engine" title="Engine">Engine</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#engineversion" title="EngineVersion">EngineVersion</a>: <i>String</i>
     <a href="#identifier" title="Identifier">Identifier</a>: <i>String</i>
     <a href="#identifierprefix" title="IdentifierPrefix">IdentifierPrefix</a>: <i>String</i>
     <a href="#instanceclass" title="InstanceClass">InstanceClass</a>: <i>String</i>
+    <a href="#kmskeyid" title="KmsKeyId">KmsKeyId</a>: <i>String</i>
+    <a href="#port" title="Port">Port</a>: <i>Double</i>
+    <a href="#preferredbackupwindow" title="PreferredBackupWindow">PreferredBackupWindow</a>: <i>String</i>
     <a href="#preferredmaintenancewindow" title="PreferredMaintenanceWindow">PreferredMaintenanceWindow</a>: <i>String</i>
     <a href="#promotiontier" title="PromotionTier">PromotionTier</a>: <i>Double</i>
+    <a href="#publiclyaccessible" title="PubliclyAccessible">PubliclyAccessible</a>: <i>Boolean</i>
+    <a href="#storageencrypted" title="StorageEncrypted">StorageEncrypted</a>: <i>Boolean</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+    <a href="#writer" title="Writer">Writer</a>: <i>Boolean</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ApplyImmediately
 
 _Required_: No
 
 _Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Arn
+
+_Required_: No
+
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -94,6 +134,30 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### DbSubnetGroupName
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### DbiResourceId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Endpoint
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Engine
 
 _Required_: No
@@ -102,7 +166,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### EngineVersion
 
 _Required_: No
 
@@ -134,6 +198,30 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### KmsKeyId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Port
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### PreferredBackupWindow
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### PreferredMaintenanceWindow
 
 _Required_: No
@@ -150,11 +238,35 @@ _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### PubliclyAccessible
+
+_Required_: No
+
+_Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### StorageEncrypted
+
+_Required_: No
+
+_Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Tags
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Writer
+
+_Required_: No
+
+_Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -162,7 +274,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -184,45 +296,45 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the <code>Arn</code> value.
+Returns the &lt;code&gt;Arn&lt;/code&gt; value.
 
 #### DbSubnetGroupName
 
-Returns the <code>DbSubnetGroupName</code> value.
+Returns the &lt;code&gt;DbSubnetGroupName&lt;/code&gt; value.
 
 #### DbiResourceId
 
-Returns the <code>DbiResourceId</code> value.
+Returns the &lt;code&gt;DbiResourceId&lt;/code&gt; value.
 
 #### Endpoint
 
-Returns the <code>Endpoint</code> value.
+Returns the &lt;code&gt;Endpoint&lt;/code&gt; value.
 
 #### EngineVersion
 
-Returns the <code>EngineVersion</code> value.
+Returns the &lt;code&gt;EngineVersion&lt;/code&gt; value.
 
 #### KmsKeyId
 
-Returns the <code>KmsKeyId</code> value.
+Returns the &lt;code&gt;KmsKeyId&lt;/code&gt; value.
 
 #### Port
 
-Returns the <code>Port</code> value.
+Returns the &lt;code&gt;Port&lt;/code&gt; value.
 
 #### PreferredBackupWindow
 
-Returns the <code>PreferredBackupWindow</code> value.
+Returns the &lt;code&gt;PreferredBackupWindow&lt;/code&gt; value.
 
 #### PubliclyAccessible
 
-Returns the <code>PubliclyAccessible</code> value.
+Returns the &lt;code&gt;PubliclyAccessible&lt;/code&gt; value.
 
 #### StorageEncrypted
 
-Returns the <code>StorageEncrypted</code> value.
+Returns the &lt;code&gt;StorageEncrypted&lt;/code&gt; value.
 
 #### Writer
 
-Returns the <code>Writer</code> value.
+Returns the &lt;code&gt;Writer&lt;/code&gt; value.
 

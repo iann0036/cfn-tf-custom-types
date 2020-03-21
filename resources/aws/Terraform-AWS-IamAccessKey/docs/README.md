@@ -12,8 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::IamAccessKey",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#encryptedsecret" title="EncryptedSecret">EncryptedSecret</a>" : <i>String</i>,
+        "<a href="#keyfingerprint" title="KeyFingerprint">KeyFingerprint</a>" : <i>String</i>,
         "<a href="#pgpkey" title="PgpKey">PgpKey</a>" : <i>String</i>,
+        "<a href="#secret" title="Secret">Secret</a>" : <i>String</i>,
+        "<a href="#sessmtppassword" title="SesSmtpPassword">SesSmtpPassword</a>" : <i>String</i>,
+        "<a href="#sessmtppasswordv4" title="SesSmtpPasswordV4">SesSmtpPasswordV4</a>" : <i>String</i>,
         "<a href="#status" title="Status">Status</a>" : <i>String</i>,
         "<a href="#user" title="User">User</a>" : <i>String</i>
     }
@@ -25,15 +30,38 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::IamAccessKey
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#encryptedsecret" title="EncryptedSecret">EncryptedSecret</a>: <i>String</i>
+    <a href="#keyfingerprint" title="KeyFingerprint">KeyFingerprint</a>: <i>String</i>
     <a href="#pgpkey" title="PgpKey">PgpKey</a>: <i>String</i>
+    <a href="#secret" title="Secret">Secret</a>: <i>String</i>
+    <a href="#sessmtppassword" title="SesSmtpPassword">SesSmtpPassword</a>: <i>String</i>
+    <a href="#sessmtppasswordv4" title="SesSmtpPasswordV4">SesSmtpPasswordV4</a>: <i>String</i>
     <a href="#status" title="Status">Status</a>: <i>String</i>
     <a href="#user" title="User">User</a>: <i>String</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### EncryptedSecret
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### KeyFingerprint
 
 _Required_: No
 
@@ -42,6 +70,30 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PgpKey
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Secret
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### SesSmtpPassword
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### SesSmtpPasswordV4
 
 _Required_: No
 
@@ -83,21 +135,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### EncryptedSecret
 
-Returns the <code>EncryptedSecret</code> value.
+Returns the &lt;code&gt;EncryptedSecret&lt;/code&gt; value.
 
 #### KeyFingerprint
 
-Returns the <code>KeyFingerprint</code> value.
+Returns the &lt;code&gt;KeyFingerprint&lt;/code&gt; value.
 
 #### Secret
 
-Returns the <code>Secret</code> value.
+Returns the &lt;code&gt;Secret&lt;/code&gt; value.
 
 #### SesSmtpPassword
 
-Returns the <code>SesSmtpPassword</code> value.
+Returns the &lt;code&gt;SesSmtpPassword&lt;/code&gt; value.
 
 #### SesSmtpPasswordV4
 
-Returns the <code>SesSmtpPasswordV4</code> value.
+Returns the &lt;code&gt;SesSmtpPasswordV4&lt;/code&gt; value.
 

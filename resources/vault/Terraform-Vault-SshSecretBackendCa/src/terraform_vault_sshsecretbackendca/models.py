@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Backend: Optional[str]
     GenerateSigningKey: Optional[bool]
-    Id: Optional[str]
     PrivateKey: Optional[str]
     PublicKey: Optional[str]
 
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Backend=json_data.get("Backend"),
             GenerateSigningKey=json_data.get("GenerateSigningKey"),
-            Id=json_data.get("Id"),
             PrivateKey=json_data.get("PrivateKey"),
             PublicKey=json_data.get("PublicKey"),
         )

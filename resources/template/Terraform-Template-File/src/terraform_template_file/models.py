@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Filename: Optional[str]
-    Id: Optional[str]
     Rendered: Optional[str]
     Template: Optional[str]
     Vars: Optional[Sequence["_Vars"]]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Filename=json_data.get("Filename"),
-            Id=json_data.get("Id"),
             Rendered=json_data.get("Rendered"),
             Template=json_data.get("Template"),
             Vars=json_data.get("Vars"),

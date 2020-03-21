@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     Endpoint: Optional[str]
-    Id: Optional[str]
     IsPublic: Optional[bool]
     Name: Optional[str]
     OrganizationId: Optional[str]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             Endpoint=json_data.get("Endpoint"),
-            Id=json_data.get("Id"),
             IsPublic=json_data.get("IsPublic"),
             Name=json_data.get("Name"),
             OrganizationId=json_data.get("OrganizationId"),

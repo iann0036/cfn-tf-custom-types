@@ -47,7 +47,6 @@ class ResourceModel(BaseResourceModel):
     FallbackStatusCodes: Optional[Sequence[str]]
     HeadErase: Optional[str]
     HeadInsert: Optional[str]
-    Id: Optional[str]
     InsertXforwardedFor: Optional[str]
     LwsSeparator: Optional[str]
     Name: Optional[str]
@@ -84,7 +83,6 @@ class ResourceModel(BaseResourceModel):
             FallbackStatusCodes=json_data.get("FallbackStatusCodes"),
             HeadErase=json_data.get("HeadErase"),
             HeadInsert=json_data.get("HeadInsert"),
-            Id=json_data.get("Id"),
             InsertXforwardedFor=json_data.get("InsertXforwardedFor"),
             LwsSeparator=json_data.get("LwsSeparator"),
             Name=json_data.get("Name"),

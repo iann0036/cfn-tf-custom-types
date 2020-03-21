@@ -12,35 +12,49 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OCI::DatabaseAutonomousDatabase",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#adminpassword" title="AdminPassword">AdminPassword</a>" : <i>String</i>,
         "<a href="#autonomouscontainerdatabaseid" title="AutonomousContainerDatabaseId">AutonomousContainerDatabaseId</a>" : <i>String</i>,
         "<a href="#autonomousdatabasebackupid" title="AutonomousDatabaseBackupId">AutonomousDatabaseBackupId</a>" : <i>String</i>,
         "<a href="#autonomousdatabaseid" title="AutonomousDatabaseId">AutonomousDatabaseId</a>" : <i>String</i>,
         "<a href="#clonetype" title="CloneType">CloneType</a>" : <i>String</i>,
         "<a href="#compartmentid" title="CompartmentId">CompartmentId</a>" : <i>String</i>,
+        "<a href="#connectionstrings" title="ConnectionStrings">ConnectionStrings</a>" : <i>[ &lt;a href=&#34;connectionstrings.md&#34;&gt;ConnectionStrings&lt;/a&gt;, ... ]</i>,
+        "<a href="#connectionurls" title="ConnectionUrls">ConnectionUrls</a>" : <i>[ &lt;a href=&#34;connectionurls.md&#34;&gt;ConnectionUrls&lt;/a&gt;, ... ]</i>,
         "<a href="#cpucorecount" title="CpuCoreCount">CpuCoreCount</a>" : <i>Double</i>,
         "<a href="#datasafestatus" title="DataSafeStatus">DataSafeStatus</a>" : <i>String</i>,
         "<a href="#datastoragesizeintbs" title="DataStorageSizeInTbs">DataStorageSizeInTbs</a>" : <i>Double</i>,
         "<a href="#dbname" title="DbName">DbName</a>" : <i>String</i>,
         "<a href="#dbversion" title="DbVersion">DbVersion</a>" : <i>String</i>,
         "<a href="#dbworkload" title="DbWorkload">DbWorkload</a>" : <i>String</i>,
-        "<a href="#definedtags" title="DefinedTags">DefinedTags</a>" : <i>[ <a href="definedtags.md">DefinedTags</a>, ... ]</i>,
+        "<a href="#definedtags" title="DefinedTags">DefinedTags</a>" : <i>[ &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;, ... ]</i>,
         "<a href="#displayname" title="DisplayName">DisplayName</a>" : <i>String</i>,
-        "<a href="#freeformtags" title="FreeformTags">FreeformTags</a>" : <i>[ <a href="freeformtags.md">FreeformTags</a>, ... ]</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#freeformtags" title="FreeformTags">FreeformTags</a>" : <i>[ &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;, ... ]</i>,
         "<a href="#isautoscalingenabled" title="IsAutoScalingEnabled">IsAutoScalingEnabled</a>" : <i>Boolean</i>,
         "<a href="#isdedicated" title="IsDedicated">IsDedicated</a>" : <i>Boolean</i>,
         "<a href="#isfreetier" title="IsFreeTier">IsFreeTier</a>" : <i>Boolean</i>,
+        "<a href="#ispreview" title="IsPreview">IsPreview</a>" : <i>Boolean</i>,
         "<a href="#ispreviewversionwithservicetermsaccepted" title="IsPreviewVersionWithServiceTermsAccepted">IsPreviewVersionWithServiceTermsAccepted</a>" : <i>Boolean</i>,
         "<a href="#licensemodel" title="LicenseModel">LicenseModel</a>" : <i>String</i>,
+        "<a href="#lifecycledetails" title="LifecycleDetails">LifecycleDetails</a>" : <i>String</i>,
         "<a href="#nsgids" title="NsgIds">NsgIds</a>" : <i>[ String, ... ]</i>,
+        "<a href="#privateendpoint" title="PrivateEndpoint">PrivateEndpoint</a>" : <i>String</i>,
         "<a href="#privateendpointlabel" title="PrivateEndpointLabel">PrivateEndpointLabel</a>" : <i>String</i>,
+        "<a href="#serviceconsoleurl" title="ServiceConsoleUrl">ServiceConsoleUrl</a>" : <i>String</i>,
         "<a href="#source" title="Source">Source</a>" : <i>String</i>,
         "<a href="#sourceid" title="SourceId">SourceId</a>" : <i>String</i>,
+        "<a href="#state" title="State">State</a>" : <i>String</i>,
         "<a href="#subnetid" title="SubnetId">SubnetId</a>" : <i>String</i>,
+        "<a href="#systemtags" title="SystemTags">SystemTags</a>" : <i>[ &lt;a href=&#34;systemtags.md&#34;&gt;SystemTags&lt;/a&gt;, ... ]</i>,
+        "<a href="#timecreated" title="TimeCreated">TimeCreated</a>" : <i>String</i>,
+        "<a href="#timedeletionoffreeautonomousdatabase" title="TimeDeletionOfFreeAutonomousDatabase">TimeDeletionOfFreeAutonomousDatabase</a>" : <i>String</i>,
+        "<a href="#timemaintenancebegin" title="TimeMaintenanceBegin">TimeMaintenanceBegin</a>" : <i>String</i>,
+        "<a href="#timemaintenanceend" title="TimeMaintenanceEnd">TimeMaintenanceEnd</a>" : <i>String</i>,
+        "<a href="#timereclamationoffreeautonomousdatabase" title="TimeReclamationOfFreeAutonomousDatabase">TimeReclamationOfFreeAutonomousDatabase</a>" : <i>String</i>,
         "<a href="#timestamp" title="Timestamp">Timestamp</a>" : <i>String</i>,
+        "<a href="#useddatastoragesizeintbs" title="UsedDataStorageSizeInTbs">UsedDataStorageSizeInTbs</a>" : <i>Double</i>,
         "<a href="#whitelistedips" title="WhitelistedIps">WhitelistedIps</a>" : <i>[ String, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     }
 }
 </pre>
@@ -50,12 +64,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OCI::DatabaseAutonomousDatabase
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#adminpassword" title="AdminPassword">AdminPassword</a>: <i>String</i>
     <a href="#autonomouscontainerdatabaseid" title="AutonomousContainerDatabaseId">AutonomousContainerDatabaseId</a>: <i>String</i>
     <a href="#autonomousdatabasebackupid" title="AutonomousDatabaseBackupId">AutonomousDatabaseBackupId</a>: <i>String</i>
     <a href="#autonomousdatabaseid" title="AutonomousDatabaseId">AutonomousDatabaseId</a>: <i>String</i>
     <a href="#clonetype" title="CloneType">CloneType</a>: <i>String</i>
     <a href="#compartmentid" title="CompartmentId">CompartmentId</a>: <i>String</i>
+    <a href="#connectionstrings" title="ConnectionStrings">ConnectionStrings</a>: <i>
+      - &lt;a href=&#34;connectionstrings.md&#34;&gt;ConnectionStrings&lt;/a&gt;</i>
+    <a href="#connectionurls" title="ConnectionUrls">ConnectionUrls</a>: <i>
+      - &lt;a href=&#34;connectionurls.md&#34;&gt;ConnectionUrls&lt;/a&gt;</i>
     <a href="#cpucorecount" title="CpuCoreCount">CpuCoreCount</a>: <i>Double</i>
     <a href="#datasafestatus" title="DataSafeStatus">DataSafeStatus</a>: <i>String</i>
     <a href="#datastoragesizeintbs" title="DataStorageSizeInTbs">DataStorageSizeInTbs</a>: <i>Double</i>
@@ -63,29 +82,51 @@ Properties:
     <a href="#dbversion" title="DbVersion">DbVersion</a>: <i>String</i>
     <a href="#dbworkload" title="DbWorkload">DbWorkload</a>: <i>String</i>
     <a href="#definedtags" title="DefinedTags">DefinedTags</a>: <i>
-      - <a href="definedtags.md">DefinedTags</a></i>
+      - &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;</i>
     <a href="#displayname" title="DisplayName">DisplayName</a>: <i>String</i>
     <a href="#freeformtags" title="FreeformTags">FreeformTags</a>: <i>
-      - <a href="freeformtags.md">FreeformTags</a></i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+      - &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;</i>
     <a href="#isautoscalingenabled" title="IsAutoScalingEnabled">IsAutoScalingEnabled</a>: <i>Boolean</i>
     <a href="#isdedicated" title="IsDedicated">IsDedicated</a>: <i>Boolean</i>
     <a href="#isfreetier" title="IsFreeTier">IsFreeTier</a>: <i>Boolean</i>
+    <a href="#ispreview" title="IsPreview">IsPreview</a>: <i>Boolean</i>
     <a href="#ispreviewversionwithservicetermsaccepted" title="IsPreviewVersionWithServiceTermsAccepted">IsPreviewVersionWithServiceTermsAccepted</a>: <i>Boolean</i>
     <a href="#licensemodel" title="LicenseModel">LicenseModel</a>: <i>String</i>
+    <a href="#lifecycledetails" title="LifecycleDetails">LifecycleDetails</a>: <i>String</i>
     <a href="#nsgids" title="NsgIds">NsgIds</a>: <i>
       - String</i>
+    <a href="#privateendpoint" title="PrivateEndpoint">PrivateEndpoint</a>: <i>String</i>
     <a href="#privateendpointlabel" title="PrivateEndpointLabel">PrivateEndpointLabel</a>: <i>String</i>
+    <a href="#serviceconsoleurl" title="ServiceConsoleUrl">ServiceConsoleUrl</a>: <i>String</i>
     <a href="#source" title="Source">Source</a>: <i>String</i>
     <a href="#sourceid" title="SourceId">SourceId</a>: <i>String</i>
+    <a href="#state" title="State">State</a>: <i>String</i>
     <a href="#subnetid" title="SubnetId">SubnetId</a>: <i>String</i>
+    <a href="#systemtags" title="SystemTags">SystemTags</a>: <i>
+      - &lt;a href=&#34;systemtags.md&#34;&gt;SystemTags&lt;/a&gt;</i>
+    <a href="#timecreated" title="TimeCreated">TimeCreated</a>: <i>String</i>
+    <a href="#timedeletionoffreeautonomousdatabase" title="TimeDeletionOfFreeAutonomousDatabase">TimeDeletionOfFreeAutonomousDatabase</a>: <i>String</i>
+    <a href="#timemaintenancebegin" title="TimeMaintenanceBegin">TimeMaintenanceBegin</a>: <i>String</i>
+    <a href="#timemaintenanceend" title="TimeMaintenanceEnd">TimeMaintenanceEnd</a>: <i>String</i>
+    <a href="#timereclamationoffreeautonomousdatabase" title="TimeReclamationOfFreeAutonomousDatabase">TimeReclamationOfFreeAutonomousDatabase</a>: <i>String</i>
     <a href="#timestamp" title="Timestamp">Timestamp</a>: <i>String</i>
+    <a href="#useddatastoragesizeintbs" title="UsedDataStorageSizeInTbs">UsedDataStorageSizeInTbs</a>: <i>Double</i>
     <a href="#whitelistedips" title="WhitelistedIps">WhitelistedIps</a>: <i>
       - String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AdminPassword
 
@@ -132,6 +173,22 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: Yes
 
 _Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ConnectionStrings
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;connectionstrings.md&#34;&gt;ConnectionStrings&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ConnectionUrls
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;connectionurls.md&#34;&gt;ConnectionUrls&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -187,7 +244,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="definedtags.md">DefinedTags</a>
+_Type_: List of &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -203,15 +260,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="freeformtags.md">FreeformTags</a>
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
-
-_Type_: String
+_Type_: List of &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -239,6 +288,14 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### IsPreview
+
+_Required_: No
+
+_Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### IsPreviewVersionWithServiceTermsAccepted
 
 _Required_: No
@@ -255,6 +312,14 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### LifecycleDetails
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### NsgIds
 
 _Required_: No
@@ -263,7 +328,23 @@ _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### PrivateEndpoint
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### PrivateEndpointLabel
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ServiceConsoleUrl
 
 _Required_: No
 
@@ -287,7 +368,63 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### State
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### SubnetId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### SystemTags
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;systemtags.md&#34;&gt;SystemTags&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### TimeCreated
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### TimeDeletionOfFreeAutonomousDatabase
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### TimeMaintenanceBegin
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### TimeMaintenanceEnd
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### TimeReclamationOfFreeAutonomousDatabase
 
 _Required_: No
 
@@ -303,6 +440,14 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### UsedDataStorageSizeInTbs
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### WhitelistedIps
 
 _Required_: No
@@ -315,7 +460,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -337,57 +482,57 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ConnectionStrings
 
-Returns the <code>ConnectionStrings</code> value.
+Returns the &lt;code&gt;ConnectionStrings&lt;/code&gt; value.
 
 #### ConnectionUrls
 
-Returns the <code>ConnectionUrls</code> value.
+Returns the &lt;code&gt;ConnectionUrls&lt;/code&gt; value.
 
 #### IsPreview
 
-Returns the <code>IsPreview</code> value.
+Returns the &lt;code&gt;IsPreview&lt;/code&gt; value.
 
 #### LifecycleDetails
 
-Returns the <code>LifecycleDetails</code> value.
+Returns the &lt;code&gt;LifecycleDetails&lt;/code&gt; value.
 
 #### PrivateEndpoint
 
-Returns the <code>PrivateEndpoint</code> value.
+Returns the &lt;code&gt;PrivateEndpoint&lt;/code&gt; value.
 
 #### ServiceConsoleUrl
 
-Returns the <code>ServiceConsoleUrl</code> value.
+Returns the &lt;code&gt;ServiceConsoleUrl&lt;/code&gt; value.
 
 #### State
 
-Returns the <code>State</code> value.
+Returns the &lt;code&gt;State&lt;/code&gt; value.
 
 #### SystemTags
 
-Returns the <code>SystemTags</code> value.
+Returns the &lt;code&gt;SystemTags&lt;/code&gt; value.
 
 #### TimeCreated
 
-Returns the <code>TimeCreated</code> value.
+Returns the &lt;code&gt;TimeCreated&lt;/code&gt; value.
 
 #### TimeDeletionOfFreeAutonomousDatabase
 
-Returns the <code>TimeDeletionOfFreeAutonomousDatabase</code> value.
+Returns the &lt;code&gt;TimeDeletionOfFreeAutonomousDatabase&lt;/code&gt; value.
 
 #### TimeMaintenanceBegin
 
-Returns the <code>TimeMaintenanceBegin</code> value.
+Returns the &lt;code&gt;TimeMaintenanceBegin&lt;/code&gt; value.
 
 #### TimeMaintenanceEnd
 
-Returns the <code>TimeMaintenanceEnd</code> value.
+Returns the &lt;code&gt;TimeMaintenanceEnd&lt;/code&gt; value.
 
 #### TimeReclamationOfFreeAutonomousDatabase
 
-Returns the <code>TimeReclamationOfFreeAutonomousDatabase</code> value.
+Returns the &lt;code&gt;TimeReclamationOfFreeAutonomousDatabase&lt;/code&gt; value.
 
 #### UsedDataStorageSizeInTbs
 
-Returns the <code>UsedDataStorageSizeInTbs</code> value.
+Returns the &lt;code&gt;UsedDataStorageSizeInTbs&lt;/code&gt; value.
 

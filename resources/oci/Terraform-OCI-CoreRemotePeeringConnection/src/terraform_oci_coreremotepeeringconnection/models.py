@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     DisplayName: Optional[str]
     DrgId: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     IsCrossTenancyPeering: Optional[bool]
     PeerId: Optional[str]
     PeerRegionName: Optional[str]
@@ -65,7 +64,6 @@ class ResourceModel(BaseResourceModel):
             DisplayName=json_data.get("DisplayName"),
             DrgId=json_data.get("DrgId"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             IsCrossTenancyPeering=json_data.get("IsCrossTenancyPeering"),
             PeerId=json_data.get("PeerId"),
             PeerRegionName=json_data.get("PeerRegionName"),

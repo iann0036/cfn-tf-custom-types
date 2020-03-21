@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Attachable: Optional[bool]
     CheckDuplicate: Optional[bool]
     Driver: Optional[str]
-    Id: Optional[str]
     Ingress: Optional[bool]
     Internal: Optional[bool]
     IpamDriver: Optional[str]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             Attachable=json_data.get("Attachable"),
             CheckDuplicate=json_data.get("CheckDuplicate"),
             Driver=json_data.get("Driver"),
-            Id=json_data.get("Id"),
             Ingress=json_data.get("Ingress"),
             Internal=json_data.get("Internal"),
             IpamDriver=json_data.get("IpamDriver"),

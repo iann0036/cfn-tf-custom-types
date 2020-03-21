@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AdminState: Optional[str]
     Description: Optional[str]
     DisplayName: Optional[str]
-    Id: Optional[str]
     IpPoolId: Optional[str]
     MacPoolId: Optional[str]
     ReplicationMode: Optional[str]
@@ -63,7 +62,6 @@ class ResourceModel(BaseResourceModel):
             AdminState=json_data.get("AdminState"),
             Description=json_data.get("Description"),
             DisplayName=json_data.get("DisplayName"),
-            Id=json_data.get("Id"),
             IpPoolId=json_data.get("IpPoolId"),
             MacPoolId=json_data.get("MacPoolId"),
             ReplicationMode=json_data.get("ReplicationMode"),

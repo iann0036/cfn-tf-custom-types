@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DisplayName: Optional[str]
     EtherType: Optional[float]
-    Id: Optional[str]
     Revision: Optional[float]
     Tag: Optional[Sequence["_Tag"]]
 
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DisplayName=json_data.get("DisplayName"),
             EtherType=json_data.get("EtherType"),
-            Id=json_data.get("Id"),
             Revision=json_data.get("Revision"),
             Tag=json_data.get("Tag"),
         )

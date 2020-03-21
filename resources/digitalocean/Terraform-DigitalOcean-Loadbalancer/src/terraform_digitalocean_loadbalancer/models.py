@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     DropletIds: Optional[Sequence[float]]
     DropletTag: Optional[str]
     EnableProxyProtocol: Optional[bool]
-    Id: Optional[str]
     Ip: Optional[str]
     Name: Optional[str]
     RedirectHttpToHttps: Optional[bool]
@@ -64,7 +63,6 @@ class ResourceModel(BaseResourceModel):
             DropletIds=json_data.get("DropletIds"),
             DropletTag=json_data.get("DropletTag"),
             EnableProxyProtocol=json_data.get("EnableProxyProtocol"),
-            Id=json_data.get("Id"),
             Ip=json_data.get("Ip"),
             Name=json_data.get("Name"),
             RedirectHttpToHttps=json_data.get("RedirectHttpToHttps"),

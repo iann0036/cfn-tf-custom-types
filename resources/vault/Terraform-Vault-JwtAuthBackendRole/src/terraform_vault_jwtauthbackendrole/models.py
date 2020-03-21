@@ -47,7 +47,6 @@ class ResourceModel(BaseResourceModel):
     ExpirationLeeway: Optional[float]
     GroupsClaim: Optional[str]
     GroupsClaimDelimiterPattern: Optional[str]
-    Id: Optional[str]
     MaxTtl: Optional[float]
     NotBeforeLeeway: Optional[float]
     NumUses: Optional[float]
@@ -89,7 +88,6 @@ class ResourceModel(BaseResourceModel):
             ExpirationLeeway=json_data.get("ExpirationLeeway"),
             GroupsClaim=json_data.get("GroupsClaim"),
             GroupsClaimDelimiterPattern=json_data.get("GroupsClaimDelimiterPattern"),
-            Id=json_data.get("Id"),
             MaxTtl=json_data.get("MaxTtl"),
             NotBeforeLeeway=json_data.get("NotBeforeLeeway"),
             NumUses=json_data.get("NumUses"),

@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     DefinedTags: Optional[Sequence["_DefinedTags"]]
     DisplayName: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     LifecycleDetails: Optional[str]
     NotebookSessionUrl: Optional[str]
     ProjectId: Optional[str]
@@ -64,7 +63,6 @@ class ResourceModel(BaseResourceModel):
             DefinedTags=json_data.get("DefinedTags"),
             DisplayName=json_data.get("DisplayName"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             LifecycleDetails=json_data.get("LifecycleDetails"),
             NotebookSessionUrl=json_data.get("NotebookSessionUrl"),
             ProjectId=json_data.get("ProjectId"),

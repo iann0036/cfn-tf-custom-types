@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     Disabled: Optional[bool]
     End: Optional[float]
     EndDate: Optional[str]
-    Id: Optional[str]
     Message: Optional[str]
     MonitorId: Optional[float]
     MonitorTags: Optional[Sequence[str]]
@@ -63,7 +62,6 @@ class ResourceModel(BaseResourceModel):
             Disabled=json_data.get("Disabled"),
             End=json_data.get("End"),
             EndDate=json_data.get("EndDate"),
-            Id=json_data.get("Id"),
             Message=json_data.get("Message"),
             MonitorId=json_data.get("MonitorId"),
             MonitorTags=json_data.get("MonitorTags"),

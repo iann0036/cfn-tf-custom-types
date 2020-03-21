@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AdminStateUp: Optional[bool]
     Description: Optional[str]
-    Id: Optional[str]
     IkepolicyId: Optional[str]
     Initiator: Optional[str]
     IpsecpolicyId: Optional[str]
@@ -69,7 +68,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AdminStateUp=json_data.get("AdminStateUp"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             IkepolicyId=json_data.get("IkepolicyId"),
             Initiator=json_data.get("Initiator"),
             IpsecpolicyId=json_data.get("IpsecpolicyId"),

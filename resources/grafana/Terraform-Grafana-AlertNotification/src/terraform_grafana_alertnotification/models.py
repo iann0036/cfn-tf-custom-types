@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     IsDefault: Optional[bool]
     Name: Optional[str]
     Settings: Optional[Sequence["_Settings"]]
@@ -51,7 +50,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             IsDefault=json_data.get("IsDefault"),
             Name=json_data.get("Name"),
             Settings=json_data.get("Settings"),

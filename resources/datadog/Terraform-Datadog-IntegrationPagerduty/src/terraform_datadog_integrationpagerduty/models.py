@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ApiToken: Optional[str]
-    Id: Optional[str]
     IndividualServices: Optional[bool]
     Schedules: Optional[Sequence[str]]
     Subdomain: Optional[str]
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             ApiToken=json_data.get("ApiToken"),
-            Id=json_data.get("Id"),
             IndividualServices=json_data.get("IndividualServices"),
             Schedules=json_data.get("Schedules"),
             Subdomain=json_data.get("Subdomain"),

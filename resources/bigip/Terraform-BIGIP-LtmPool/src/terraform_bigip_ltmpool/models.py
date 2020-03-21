@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AllowNat: Optional[str]
     AllowSnat: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     LoadBalancingMode: Optional[str]
     Monitors: Optional[Sequence[str]]
     Name: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             AllowNat=json_data.get("AllowNat"),
             AllowSnat=json_data.get("AllowSnat"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             LoadBalancingMode=json_data.get("LoadBalancingMode"),
             Monitors=json_data.get("Monitors"),
             Name=json_data.get("Name"),

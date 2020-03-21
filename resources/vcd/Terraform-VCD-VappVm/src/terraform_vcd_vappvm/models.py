@@ -45,7 +45,6 @@ class ResourceModel(BaseResourceModel):
     ExposeHardwareVirtualization: Optional[bool]
     GuestProperties: Optional[Sequence["_GuestProperties"]]
     Href: Optional[str]
-    Id: Optional[str]
     Initscript: Optional[str]
     InternalDisk: Optional[Sequence["_InternalDisk"]]
     Ip: Optional[str]
@@ -86,7 +85,6 @@ class ResourceModel(BaseResourceModel):
             ExposeHardwareVirtualization=json_data.get("ExposeHardwareVirtualization"),
             GuestProperties=json_data.get("GuestProperties"),
             Href=json_data.get("Href"),
-            Id=json_data.get("Id"),
             Initscript=json_data.get("Initscript"),
             InternalDisk=json_data.get("InternalDisk"),
             Ip=json_data.get("Ip"),

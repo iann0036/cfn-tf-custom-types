@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Address: Optional[str]
     FixedIp: Optional[str]
-    Id: Optional[str]
     Pool: Optional[str]
     PortId: Optional[str]
     Region: Optional[str]
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Address=json_data.get("Address"),
             FixedIp=json_data.get("FixedIp"),
-            Id=json_data.get("Id"),
             Pool=json_data.get("Pool"),
             PortId=json_data.get("PortId"),
             Region=json_data.get("Region"),

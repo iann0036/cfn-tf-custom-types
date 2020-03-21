@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     ApiManagementName: Optional[str]
     Description: Optional[str]
     DisplayName: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     ResourceGroupName: Optional[str]
     VersionHeaderName: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             ApiManagementName=json_data.get("ApiManagementName"),
             Description=json_data.get("Description"),
             DisplayName=json_data.get("DisplayName"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ResourceGroupName=json_data.get("ResourceGroupName"),
             VersionHeaderName=json_data.get("VersionHeaderName"),

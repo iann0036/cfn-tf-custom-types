@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CidrBlocks: Optional[Sequence[str]]
     CreateTime: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     NetworkInfo: Optional[Sequence["_NetworkInfo"]]
     Remark: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CidrBlocks=json_data.get("CidrBlocks"),
             CreateTime=json_data.get("CreateTime"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             NetworkInfo=json_data.get("NetworkInfo"),
             Remark=json_data.get("Remark"),

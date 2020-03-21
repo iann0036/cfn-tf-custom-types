@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AccountAlias: Optional[str]
-    Id: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -49,7 +48,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             AccountAlias=json_data.get("AccountAlias"),
-            Id=json_data.get("Id"),
         )
 
 

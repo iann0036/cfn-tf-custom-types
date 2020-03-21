@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AutomountServiceAccountToken: Optional[bool]
     DefaultSecretName: Optional[str]
-    Id: Optional[str]
     ImagePullSecret: Optional[Sequence["_ImagePullSecret"]]
     Metadata: Optional[Sequence["_Metadata"]]
     Secret: Optional[Sequence["_Secret"]]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AutomountServiceAccountToken=json_data.get("AutomountServiceAccountToken"),
             DefaultSecretName=json_data.get("DefaultSecretName"),
-            Id=json_data.get("Id"),
             ImagePullSecret=json_data.get("ImagePullSecret"),
             Metadata=json_data.get("Metadata"),
             Secret=json_data.get("Secret"),

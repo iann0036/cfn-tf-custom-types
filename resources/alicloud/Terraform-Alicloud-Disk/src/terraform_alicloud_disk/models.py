@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     EnableAutoSnapshot: Optional[bool]
     Encrypted: Optional[bool]
-    Id: Optional[str]
     Name: Optional[str]
     ResourceGroupId: Optional[str]
     Size: Optional[float]
@@ -67,7 +66,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             EnableAutoSnapshot=json_data.get("EnableAutoSnapshot"),
             Encrypted=json_data.get("Encrypted"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ResourceGroupId=json_data.get("ResourceGroupId"),
             Size=json_data.get("Size"),

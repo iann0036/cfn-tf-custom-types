@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     App: Optional[str]
     Config: Optional[Sequence["_Config"]]
     ConfigVars: Optional[Sequence[str]]
-    Id: Optional[str]
     Name: Optional[str]
     Plan: Optional[str]
     ProviderId: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             App=json_data.get("App"),
             Config=json_data.get("Config"),
             ConfigVars=json_data.get("ConfigVars"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Plan=json_data.get("Plan"),
             ProviderId=json_data.get("ProviderId"),

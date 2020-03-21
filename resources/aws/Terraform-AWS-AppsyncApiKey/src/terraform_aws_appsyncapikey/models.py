@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     ApiId: Optional[str]
     Description: Optional[str]
     Expires: Optional[str]
-    Id: Optional[str]
     Key: Optional[str]
 
     @classmethod
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             ApiId=json_data.get("ApiId"),
             Description=json_data.get("Description"),
             Expires=json_data.get("Expires"),
-            Id=json_data.get("Id"),
             Key=json_data.get("Key"),
         )
 

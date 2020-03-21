@@ -12,8 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::ApiGatewayResource",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#parentid" title="ParentId">ParentId</a>" : <i>String</i>,
+        "<a href="#path" title="Path">Path</a>" : <i>String</i>,
         "<a href="#pathpart" title="PathPart">PathPart</a>" : <i>String</i>,
         "<a href="#restapiid" title="RestApiId">RestApiId</a>" : <i>String</i>
     }
@@ -25,15 +26,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::ApiGatewayResource
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#parentid" title="ParentId">ParentId</a>: <i>String</i>
+    <a href="#path" title="Path">Path</a>: <i>String</i>
     <a href="#pathpart" title="PathPart">PathPart</a>: <i>String</i>
     <a href="#restapiid" title="RestApiId">RestApiId</a>: <i>String</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
@@ -44,6 +48,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ParentId
 
 _Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Path
+
+_Required_: No
 
 _Type_: String
 
@@ -83,5 +95,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Path
 
-Returns the <code>Path</code> value.
+Returns the &lt;code&gt;Path&lt;/code&gt; value.
 

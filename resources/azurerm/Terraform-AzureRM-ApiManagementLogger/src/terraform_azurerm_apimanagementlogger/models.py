@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     ApiManagementName: Optional[str]
     Buffered: Optional[bool]
     Description: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     ResourceGroupName: Optional[str]
     ApplicationInsights: Optional[Sequence["_ApplicationInsights"]]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             ApiManagementName=json_data.get("ApiManagementName"),
             Buffered=json_data.get("Buffered"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ResourceGroupName=json_data.get("ResourceGroupName"),
             ApplicationInsights=json_data.get("ApplicationInsights"),

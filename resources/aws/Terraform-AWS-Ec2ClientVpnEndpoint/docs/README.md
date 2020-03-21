@@ -12,16 +12,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::Ec2ClientVpnEndpoint",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#clientcidrblock" title="ClientCidrBlock">ClientCidrBlock</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
+        "<a href="#dnsname" title="DnsName">DnsName</a>" : <i>String</i>,
         "<a href="#dnsservers" title="DnsServers">DnsServers</a>" : <i>[ String, ... ]</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#servercertificatearn" title="ServerCertificateArn">ServerCertificateArn</a>" : <i>String</i>,
         "<a href="#splittunnel" title="SplitTunnel">SplitTunnel</a>" : <i>Boolean</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
         "<a href="#transportprotocol" title="TransportProtocol">TransportProtocol</a>" : <i>String</i>,
-        "<a href="#authenticationoptions" title="AuthenticationOptions">AuthenticationOptions</a>" : <i>[ <a href="authenticationoptions.md">AuthenticationOptions</a>, ... ]</i>,
-        "<a href="#connectionlogoptions" title="ConnectionLogOptions">ConnectionLogOptions</a>" : <i>[ <a href="connectionlogoptions.md">ConnectionLogOptions</a>, ... ]</i>
+        "<a href="#authenticationoptions" title="AuthenticationOptions">AuthenticationOptions</a>" : <i>[ &lt;a href=&#34;authenticationoptions.md&#34;&gt;AuthenticationOptions&lt;/a&gt;, ... ]</i>,
+        "<a href="#connectionlogoptions" title="ConnectionLogOptions">ConnectionLogOptions</a>" : <i>[ &lt;a href=&#34;connectionlogoptions.md&#34;&gt;ConnectionLogOptions&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -31,23 +33,35 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::Ec2ClientVpnEndpoint
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#clientcidrblock" title="ClientCidrBlock">ClientCidrBlock</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
+    <a href="#dnsname" title="DnsName">DnsName</a>: <i>String</i>
     <a href="#dnsservers" title="DnsServers">DnsServers</a>: <i>
       - String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#servercertificatearn" title="ServerCertificateArn">ServerCertificateArn</a>: <i>String</i>
     <a href="#splittunnel" title="SplitTunnel">SplitTunnel</a>: <i>Boolean</i>
+    <a href="#status" title="Status">Status</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
     <a href="#transportprotocol" title="TransportProtocol">TransportProtocol</a>: <i>String</i>
     <a href="#authenticationoptions" title="AuthenticationOptions">AuthenticationOptions</a>: <i>
-      - <a href="authenticationoptions.md">AuthenticationOptions</a></i>
+      - &lt;a href=&#34;authenticationoptions.md&#34;&gt;AuthenticationOptions&lt;/a&gt;</i>
     <a href="#connectionlogoptions" title="ConnectionLogOptions">ConnectionLogOptions</a>: <i>
-      - <a href="connectionlogoptions.md">ConnectionLogOptions</a></i>
+      - &lt;a href=&#34;connectionlogoptions.md&#34;&gt;ConnectionLogOptions&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClientCidrBlock
 
@@ -65,19 +79,19 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### DnsName
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### DnsServers
 
 _Required_: No
 
 _Type_: List of String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -97,11 +111,19 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### Status
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Tags
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -117,7 +139,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="authenticationoptions.md">AuthenticationOptions</a>
+_Type_: List of &lt;a href=&#34;authenticationoptions.md&#34;&gt;AuthenticationOptions&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -125,7 +147,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="connectionlogoptions.md">ConnectionLogOptions</a>
+_Type_: List of &lt;a href=&#34;connectionlogoptions.md&#34;&gt;ConnectionLogOptions&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -147,9 +169,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### DnsName
 
-Returns the <code>DnsName</code> value.
+Returns the &lt;code&gt;DnsName&lt;/code&gt; value.
 
 #### Status
 
-Returns the <code>Status</code> value.
+Returns the &lt;code&gt;Status&lt;/code&gt; value.
 

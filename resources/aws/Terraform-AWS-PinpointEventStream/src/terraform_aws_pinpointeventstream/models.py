@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ApplicationId: Optional[str]
     DestinationStreamArn: Optional[str]
-    Id: Optional[str]
     RoleArn: Optional[str]
 
     @classmethod
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ApplicationId=json_data.get("ApplicationId"),
             DestinationStreamArn=json_data.get("DestinationStreamArn"),
-            Id=json_data.get("Id"),
             RoleArn=json_data.get("RoleArn"),
         )
 

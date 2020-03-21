@@ -12,23 +12,23 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Vault::DatabaseSecretBackendConnection",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#allowedroles" title="AllowedRoles">AllowedRoles</a>" : <i>[ String, ... ]</i>,
         "<a href="#backend" title="Backend">Backend</a>" : <i>String</i>,
-        "<a href="#data" title="Data">Data</a>" : <i>[ <a href="data.md">Data</a>, ... ]</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#data" title="Data">Data</a>" : <i>[ &lt;a href=&#34;data.md&#34;&gt;Data&lt;/a&gt;, ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#rootrotationstatements" title="RootRotationStatements">RootRotationStatements</a>" : <i>[ String, ... ]</i>,
         "<a href="#verifyconnection" title="VerifyConnection">VerifyConnection</a>" : <i>Boolean</i>,
-        "<a href="#cassandra" title="Cassandra">Cassandra</a>" : <i>[ <a href="cassandra.md">Cassandra</a>, ... ]</i>,
-        "<a href="#hana" title="Hana">Hana</a>" : <i>[ <a href="hana.md">Hana</a>, ... ]</i>,
-        "<a href="#mongodb" title="Mongodb">Mongodb</a>" : <i>[ <a href="mongodb.md">Mongodb</a>, ... ]</i>,
-        "<a href="#mssql" title="Mssql">Mssql</a>" : <i>[ <a href="mssql.md">Mssql</a>, ... ]</i>,
-        "<a href="#mysql" title="Mysql">Mysql</a>" : <i>[ <a href="mysql.md">Mysql</a>, ... ]</i>,
-        "<a href="#mysqlaurora" title="MysqlAurora">MysqlAurora</a>" : <i>[ <a href="mysqlaurora.md">MysqlAurora</a>, ... ]</i>,
-        "<a href="#mysqllegacy" title="MysqlLegacy">MysqlLegacy</a>" : <i>[ <a href="mysqllegacy.md">MysqlLegacy</a>, ... ]</i>,
-        "<a href="#mysqlrds" title="MysqlRds">MysqlRds</a>" : <i>[ <a href="mysqlrds.md">MysqlRds</a>, ... ]</i>,
-        "<a href="#oracle" title="Oracle">Oracle</a>" : <i>[ <a href="oracle.md">Oracle</a>, ... ]</i>,
-        "<a href="#postgresql" title="Postgresql">Postgresql</a>" : <i>[ <a href="postgresql.md">Postgresql</a>, ... ]</i>
+        "<a href="#cassandra" title="Cassandra">Cassandra</a>" : <i>[ &lt;a href=&#34;cassandra.md&#34;&gt;Cassandra&lt;/a&gt;, ... ]</i>,
+        "<a href="#hana" title="Hana">Hana</a>" : <i>[ &lt;a href=&#34;hana.md&#34;&gt;Hana&lt;/a&gt;, ... ]</i>,
+        "<a href="#mongodb" title="Mongodb">Mongodb</a>" : <i>[ &lt;a href=&#34;mongodb.md&#34;&gt;Mongodb&lt;/a&gt;, ... ]</i>,
+        "<a href="#mssql" title="Mssql">Mssql</a>" : <i>[ &lt;a href=&#34;mssql.md&#34;&gt;Mssql&lt;/a&gt;, ... ]</i>,
+        "<a href="#mysql" title="Mysql">Mysql</a>" : <i>[ &lt;a href=&#34;mysql.md&#34;&gt;Mysql&lt;/a&gt;, ... ]</i>,
+        "<a href="#mysqlaurora" title="MysqlAurora">MysqlAurora</a>" : <i>[ &lt;a href=&#34;mysqlaurora.md&#34;&gt;MysqlAurora&lt;/a&gt;, ... ]</i>,
+        "<a href="#mysqllegacy" title="MysqlLegacy">MysqlLegacy</a>" : <i>[ &lt;a href=&#34;mysqllegacy.md&#34;&gt;MysqlLegacy&lt;/a&gt;, ... ]</i>,
+        "<a href="#mysqlrds" title="MysqlRds">MysqlRds</a>" : <i>[ &lt;a href=&#34;mysqlrds.md&#34;&gt;MysqlRds&lt;/a&gt;, ... ]</i>,
+        "<a href="#oracle" title="Oracle">Oracle</a>" : <i>[ &lt;a href=&#34;oracle.md&#34;&gt;Oracle&lt;/a&gt;, ... ]</i>,
+        "<a href="#postgresql" title="Postgresql">Postgresql</a>" : <i>[ &lt;a href=&#34;postgresql.md&#34;&gt;Postgresql&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -38,39 +38,49 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Vault::DatabaseSecretBackendConnection
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#allowedroles" title="AllowedRoles">AllowedRoles</a>: <i>
       - String</i>
     <a href="#backend" title="Backend">Backend</a>: <i>String</i>
     <a href="#data" title="Data">Data</a>: <i>
-      - <a href="data.md">Data</a></i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+      - &lt;a href=&#34;data.md&#34;&gt;Data&lt;/a&gt;</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#rootrotationstatements" title="RootRotationStatements">RootRotationStatements</a>: <i>
       - String</i>
     <a href="#verifyconnection" title="VerifyConnection">VerifyConnection</a>: <i>Boolean</i>
     <a href="#cassandra" title="Cassandra">Cassandra</a>: <i>
-      - <a href="cassandra.md">Cassandra</a></i>
+      - &lt;a href=&#34;cassandra.md&#34;&gt;Cassandra&lt;/a&gt;</i>
     <a href="#hana" title="Hana">Hana</a>: <i>
-      - <a href="hana.md">Hana</a></i>
+      - &lt;a href=&#34;hana.md&#34;&gt;Hana&lt;/a&gt;</i>
     <a href="#mongodb" title="Mongodb">Mongodb</a>: <i>
-      - <a href="mongodb.md">Mongodb</a></i>
+      - &lt;a href=&#34;mongodb.md&#34;&gt;Mongodb&lt;/a&gt;</i>
     <a href="#mssql" title="Mssql">Mssql</a>: <i>
-      - <a href="mssql.md">Mssql</a></i>
+      - &lt;a href=&#34;mssql.md&#34;&gt;Mssql&lt;/a&gt;</i>
     <a href="#mysql" title="Mysql">Mysql</a>: <i>
-      - <a href="mysql.md">Mysql</a></i>
+      - &lt;a href=&#34;mysql.md&#34;&gt;Mysql&lt;/a&gt;</i>
     <a href="#mysqlaurora" title="MysqlAurora">MysqlAurora</a>: <i>
-      - <a href="mysqlaurora.md">MysqlAurora</a></i>
+      - &lt;a href=&#34;mysqlaurora.md&#34;&gt;MysqlAurora&lt;/a&gt;</i>
     <a href="#mysqllegacy" title="MysqlLegacy">MysqlLegacy</a>: <i>
-      - <a href="mysqllegacy.md">MysqlLegacy</a></i>
+      - &lt;a href=&#34;mysqllegacy.md&#34;&gt;MysqlLegacy&lt;/a&gt;</i>
     <a href="#mysqlrds" title="MysqlRds">MysqlRds</a>: <i>
-      - <a href="mysqlrds.md">MysqlRds</a></i>
+      - &lt;a href=&#34;mysqlrds.md&#34;&gt;MysqlRds&lt;/a&gt;</i>
     <a href="#oracle" title="Oracle">Oracle</a>: <i>
-      - <a href="oracle.md">Oracle</a></i>
+      - &lt;a href=&#34;oracle.md&#34;&gt;Oracle&lt;/a&gt;</i>
     <a href="#postgresql" title="Postgresql">Postgresql</a>: <i>
-      - <a href="postgresql.md">Postgresql</a></i>
+      - &lt;a href=&#34;postgresql.md&#34;&gt;Postgresql&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowedRoles
 
@@ -92,15 +102,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="data.md">Data</a>
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
-
-_Type_: String
+_Type_: List of &lt;a href=&#34;data.md&#34;&gt;Data&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -132,7 +134,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="cassandra.md">Cassandra</a>
+_Type_: List of &lt;a href=&#34;cassandra.md&#34;&gt;Cassandra&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -140,7 +142,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="hana.md">Hana</a>
+_Type_: List of &lt;a href=&#34;hana.md&#34;&gt;Hana&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -148,7 +150,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="mongodb.md">Mongodb</a>
+_Type_: List of &lt;a href=&#34;mongodb.md&#34;&gt;Mongodb&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -156,7 +158,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="mssql.md">Mssql</a>
+_Type_: List of &lt;a href=&#34;mssql.md&#34;&gt;Mssql&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -164,7 +166,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="mysql.md">Mysql</a>
+_Type_: List of &lt;a href=&#34;mysql.md&#34;&gt;Mysql&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -172,7 +174,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="mysqlaurora.md">MysqlAurora</a>
+_Type_: List of &lt;a href=&#34;mysqlaurora.md&#34;&gt;MysqlAurora&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -180,7 +182,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="mysqllegacy.md">MysqlLegacy</a>
+_Type_: List of &lt;a href=&#34;mysqllegacy.md&#34;&gt;MysqlLegacy&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -188,7 +190,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="mysqlrds.md">MysqlRds</a>
+_Type_: List of &lt;a href=&#34;mysqlrds.md&#34;&gt;MysqlRds&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -196,7 +198,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="oracle.md">Oracle</a>
+_Type_: List of &lt;a href=&#34;oracle.md&#34;&gt;Oracle&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -204,7 +206,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="postgresql.md">Postgresql</a>
+_Type_: List of &lt;a href=&#34;postgresql.md&#34;&gt;Postgresql&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

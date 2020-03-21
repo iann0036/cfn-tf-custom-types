@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     CredentialFile: Optional[str]
     CredentialFileEnc: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     ProjectId: Optional[str]
     ServiceAccountCredentialType: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             CredentialFile=json_data.get("CredentialFile"),
             CredentialFileEnc=json_data.get("CredentialFileEnc"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ProjectId=json_data.get("ProjectId"),
             ServiceAccountCredentialType=json_data.get("ServiceAccountCredentialType"),

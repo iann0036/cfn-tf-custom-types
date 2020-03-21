@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     Filename: Optional[str]
     FunctionName: Optional[str]
     Handler: Optional[str]
-    Id: Optional[str]
     InvokeArn: Optional[str]
     KmsKeyArn: Optional[str]
     LastModified: Optional[str]
@@ -80,7 +79,6 @@ class ResourceModel(BaseResourceModel):
             Filename=json_data.get("Filename"),
             FunctionName=json_data.get("FunctionName"),
             Handler=json_data.get("Handler"),
-            Id=json_data.get("Id"),
             InvokeArn=json_data.get("InvokeArn"),
             KmsKeyArn=json_data.get("KmsKeyArn"),
             LastModified=json_data.get("LastModified"),

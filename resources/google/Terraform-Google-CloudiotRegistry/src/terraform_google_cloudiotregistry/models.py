@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     EventNotificationConfig: Optional[Sequence["_EventNotificationConfig"]]
     HttpConfig: Optional[Sequence["_HttpConfig"]]
-    Id: Optional[str]
     LogLevel: Optional[str]
     MqttConfig: Optional[Sequence["_MqttConfig"]]
     Name: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             EventNotificationConfig=json_data.get("EventNotificationConfig"),
             HttpConfig=json_data.get("HttpConfig"),
-            Id=json_data.get("Id"),
             LogLevel=json_data.get("LogLevel"),
             MqttConfig=json_data.get("MqttConfig"),
             Name=json_data.get("Name"),

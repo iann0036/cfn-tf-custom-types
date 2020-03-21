@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     CreatedAt: Optional[str]
     EnabledClusterLogTypes: Optional[Sequence[str]]
     Endpoint: Optional[str]
-    Id: Optional[str]
     Identity: Optional[Sequence["_Identity"]]
     Name: Optional[str]
     PlatformVersion: Optional[str]
@@ -68,7 +67,6 @@ class ResourceModel(BaseResourceModel):
             CreatedAt=json_data.get("CreatedAt"),
             EnabledClusterLogTypes=json_data.get("EnabledClusterLogTypes"),
             Endpoint=json_data.get("Endpoint"),
-            Id=json_data.get("Id"),
             Identity=json_data.get("Identity"),
             Name=json_data.get("Name"),
             PlatformVersion=json_data.get("PlatformVersion"),

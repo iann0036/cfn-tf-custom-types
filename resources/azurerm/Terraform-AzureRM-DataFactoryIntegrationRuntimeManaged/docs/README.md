@@ -12,10 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureRM::DataFactoryIntegrationRuntimeManaged",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#datafactoryname" title="DataFactoryName">DataFactoryName</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#edition" title="Edition">Edition</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#licensetype" title="LicenseType">LicenseType</a>" : <i>String</i>,
         "<a href="#location" title="Location">Location</a>" : <i>String</i>,
         "<a href="#maxparallelexecutionspernode" title="MaxParallelExecutionsPerNode">MaxParallelExecutionsPerNode</a>" : <i>Double</i>,
@@ -23,10 +23,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#nodesize" title="NodeSize">NodeSize</a>" : <i>String</i>,
         "<a href="#numberofnodes" title="NumberOfNodes">NumberOfNodes</a>" : <i>Double</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
-        "<a href="#cataloginfo" title="CatalogInfo">CatalogInfo</a>" : <i>[ <a href="cataloginfo.md">CatalogInfo</a>, ... ]</i>,
-        "<a href="#customsetupscript" title="CustomSetupScript">CustomSetupScript</a>" : <i>[ <a href="customsetupscript.md">CustomSetupScript</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
-        "<a href="#vnetintegration" title="VnetIntegration">VnetIntegration</a>" : <i>[ <a href="vnetintegration.md">VnetIntegration</a>, ... ]</i>
+        "<a href="#cataloginfo" title="CatalogInfo">CatalogInfo</a>" : <i>[ &lt;a href=&#34;cataloginfo.md&#34;&gt;CatalogInfo&lt;/a&gt;, ... ]</i>,
+        "<a href="#customsetupscript" title="CustomSetupScript">CustomSetupScript</a>" : <i>[ &lt;a href=&#34;customsetupscript.md&#34;&gt;CustomSetupScript&lt;/a&gt;, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
+        "<a href="#vnetintegration" title="VnetIntegration">VnetIntegration</a>" : <i>[ &lt;a href=&#34;vnetintegration.md&#34;&gt;VnetIntegration&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -36,10 +36,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureRM::DataFactoryIntegrationRuntimeManaged
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#datafactoryname" title="DataFactoryName">DataFactoryName</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#edition" title="Edition">Edition</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#licensetype" title="LicenseType">LicenseType</a>: <i>String</i>
     <a href="#location" title="Location">Location</a>: <i>String</i>
     <a href="#maxparallelexecutionspernode" title="MaxParallelExecutionsPerNode">MaxParallelExecutionsPerNode</a>: <i>Double</i>
@@ -48,15 +48,25 @@ Properties:
     <a href="#numberofnodes" title="NumberOfNodes">NumberOfNodes</a>: <i>Double</i>
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
     <a href="#cataloginfo" title="CatalogInfo">CatalogInfo</a>: <i>
-      - <a href="cataloginfo.md">CatalogInfo</a></i>
+      - &lt;a href=&#34;cataloginfo.md&#34;&gt;CatalogInfo&lt;/a&gt;</i>
     <a href="#customsetupscript" title="CustomSetupScript">CustomSetupScript</a>: <i>
-      - <a href="customsetupscript.md">CustomSetupScript</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;customsetupscript.md&#34;&gt;CustomSetupScript&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     <a href="#vnetintegration" title="VnetIntegration">VnetIntegration</a>: <i>
-      - <a href="vnetintegration.md">VnetIntegration</a></i>
+      - &lt;a href=&#34;vnetintegration.md&#34;&gt;VnetIntegration&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DataFactoryName
 
@@ -75,14 +85,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Edition
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 
@@ -150,7 +152,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="cataloginfo.md">CatalogInfo</a>
+_Type_: List of &lt;a href=&#34;cataloginfo.md&#34;&gt;CatalogInfo&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -158,7 +160,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="customsetupscript.md">CustomSetupScript</a>
+_Type_: List of &lt;a href=&#34;customsetupscript.md&#34;&gt;CustomSetupScript&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -166,7 +168,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -174,7 +176,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="vnetintegration.md">VnetIntegration</a>
+_Type_: List of &lt;a href=&#34;vnetintegration.md&#34;&gt;VnetIntegration&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

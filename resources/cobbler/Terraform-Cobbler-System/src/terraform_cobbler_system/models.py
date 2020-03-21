@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     FetchableFiles: Optional[str]
     Gateway: Optional[str]
     Hostname: Optional[str]
-    Id: Optional[str]
     Image: Optional[str]
     Ipv6DefaultDevice: Optional[str]
     KernelOptions: Optional[str]
@@ -96,7 +95,6 @@ class ResourceModel(BaseResourceModel):
             FetchableFiles=json_data.get("FetchableFiles"),
             Gateway=json_data.get("Gateway"),
             Hostname=json_data.get("Hostname"),
-            Id=json_data.get("Id"),
             Image=json_data.get("Image"),
             Ipv6DefaultDevice=json_data.get("Ipv6DefaultDevice"),
             KernelOptions=json_data.get("KernelOptions"),

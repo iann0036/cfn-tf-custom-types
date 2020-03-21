@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     DisplayName: Optional[str]
-    Id: Optional[str]
     MatchStrategy: Optional[str]
     Revision: Optional[float]
     CookieCondition: Optional[Sequence["_CookieCondition"]]
@@ -64,7 +63,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             DisplayName=json_data.get("DisplayName"),
-            Id=json_data.get("Id"),
             MatchStrategy=json_data.get("MatchStrategy"),
             Revision=json_data.get("Revision"),
             CookieCondition=json_data.get("CookieCondition"),

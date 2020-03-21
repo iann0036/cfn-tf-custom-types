@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     FilesystemPath: Optional[str]
-    Id: Optional[str]
     Label: Optional[str]
     LinodeId: Optional[float]
     Region: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             FilesystemPath=json_data.get("FilesystemPath"),
-            Id=json_data.get("Id"),
             Label=json_data.get("Label"),
             LinodeId=json_data.get("LinodeId"),
             Region=json_data.get("Region"),

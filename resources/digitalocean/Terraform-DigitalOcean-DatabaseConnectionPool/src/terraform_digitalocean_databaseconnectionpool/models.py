@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     ClusterId: Optional[str]
     DbName: Optional[str]
     Host: Optional[str]
-    Id: Optional[str]
     Mode: Optional[str]
     Name: Optional[str]
     Password: Optional[str]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             ClusterId=json_data.get("ClusterId"),
             DbName=json_data.get("DbName"),
             Host=json_data.get("Host"),
-            Id=json_data.get("Id"),
             Mode=json_data.get("Mode"),
             Name=json_data.get("Name"),
             Password=json_data.get("Password"),

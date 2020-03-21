@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     EniId: Optional[str]
     IamRoleArn: Optional[str]
-    Id: Optional[str]
     LogDestination: Optional[str]
     LogDestinationType: Optional[str]
     LogFormat: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             EniId=json_data.get("EniId"),
             IamRoleArn=json_data.get("IamRoleArn"),
-            Id=json_data.get("Id"),
             LogDestination=json_data.get("LogDestination"),
             LogDestinationType=json_data.get("LogDestinationType"),
             LogFormat=json_data.get("LogFormat"),

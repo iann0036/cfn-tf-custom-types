@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     Region: Optional[str]
     ValueSpecs: Optional[Sequence["_ValueSpecs"]]
     Bandwidth: Optional[Sequence["_Bandwidth"]]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             Region=json_data.get("Region"),
             ValueSpecs=json_data.get("ValueSpecs"),
             Bandwidth=json_data.get("Bandwidth"),

@@ -1,6 +1,6 @@
 # Terraform::Kubernetes::NetworkPolicy
 
-An example resource schema demonstrating some basic constructs and validation rules.
+CloudFormation equivalent of kubernetes_network_policy
 
 ## Syntax
 
@@ -12,14 +12,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Kubernetes::NetworkPolicy",
     "Properties" : {
-        "<a href="#title" title="Title">Title</a>" : <i>String</i>,
-        "<a href="#coversheetincluded" title="CoverSheetIncluded">CoverSheetIncluded</a>" : <i>Boolean</i>,
-        "<a href="#duedate" title="DueDate">DueDate</a>" : <i>String</i>,
-        "<a href="#approvaldate" title="ApprovalDate">ApprovalDate</a>" : <i>String</i>,
-        "<a href="#memo" title="Memo">Memo</a>" : <i>&lt;a href=&#34;secondcopyofmemo.md&#34;&gt;SecondCopyOfMemo&lt;/a&gt;</i>,
-        "<a href="#secondcopyofmemo" title="SecondCopyOfMemo">SecondCopyOfMemo</a>" : <i>&lt;a href=&#34;secondcopyofmemo.md&#34;&gt;SecondCopyOfMemo&lt;/a&gt;</i>,
-        "<a href="#testcode" title="TestCode">TestCode</a>" : <i>String</i>,
-        "<a href="#authors" title="Authors">Authors</a>" : <i>[ String, ... ]</i>
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;, ... ]</i>,
+        "<a href="#spec" title="Spec">Spec</a>" : <i>[ &lt;a href=&#34;spec.md&#34;&gt;Spec&lt;/a&gt;, ... ]</i>,
+        "<a href="#egress" title="Egress">Egress</a>" : <i>[ &lt;a href=&#34;egress.md&#34;&gt;Egress&lt;/a&gt;, ... ]</i>,
+        "<a href="#ingress" title="Ingress">Ingress</a>" : <i>[ &lt;a href=&#34;ingress.md&#34;&gt;Ingress&lt;/a&gt;, ... ]</i>,
+        "<a href="#podselector" title="PodSelector">PodSelector</a>" : <i>[ &lt;a href=&#34;podselector.md&#34;&gt;PodSelector&lt;/a&gt;, ... ]</i>,
+        "<a href="#ports" title="Ports">Ports</a>" : <i>[ &lt;a href=&#34;ports.md&#34;&gt;Ports&lt;/a&gt;, ... ]</i>,
+        "<a href="#to" title="To">To</a>" : <i>[ &lt;a href=&#34;to.md&#34;&gt;To&lt;/a&gt;, ... ]</i>,
+        "<a href="#from" title="From">From</a>" : <i>[ &lt;a href=&#34;from.md&#34;&gt;From&lt;/a&gt;, ... ]</i>,
+        "<a href="#matchexpressions" title="MatchExpressions">MatchExpressions</a>" : <i>[ &lt;a href=&#34;matchexpressions.md&#34;&gt;MatchExpressions&lt;/a&gt;, ... ]</i>,
+        "<a href="#ipblock" title="IpBlock">IpBlock</a>" : <i>[ &lt;a href=&#34;ipblock.md&#34;&gt;IpBlock&lt;/a&gt;, ... ]</i>,
+        "<a href="#namespaceselector" title="NamespaceSelector">NamespaceSelector</a>" : <i>[ &lt;a href=&#34;namespaceselector.md&#34;&gt;NamespaceSelector&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -29,44 +33,36 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Kubernetes::NetworkPolicy
 Properties:
-    <a href="#title" title="Title">Title</a>: <i>String</i>
-    <a href="#coversheetincluded" title="CoverSheetIncluded">CoverSheetIncluded</a>: <i>Boolean</i>
-    <a href="#duedate" title="DueDate">DueDate</a>: <i>String</i>
-    <a href="#approvaldate" title="ApprovalDate">ApprovalDate</a>: <i>String</i>
-    <a href="#memo" title="Memo">Memo</a>: <i>&lt;a href=&#34;secondcopyofmemo.md&#34;&gt;SecondCopyOfMemo&lt;/a&gt;</i>
-    <a href="#secondcopyofmemo" title="SecondCopyOfMemo">SecondCopyOfMemo</a>: <i>&lt;a href=&#34;secondcopyofmemo.md&#34;&gt;SecondCopyOfMemo&lt;/a&gt;</i>
-    <a href="#testcode" title="TestCode">TestCode</a>: <i>String</i>
-    <a href="#authors" title="Authors">Authors</a>: <i>
-      - String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#metadata" title="Metadata">Metadata</a>: <i>
+      - &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;</i>
+    <a href="#spec" title="Spec">Spec</a>: <i>
+      - &lt;a href=&#34;spec.md&#34;&gt;Spec&lt;/a&gt;</i>
+    <a href="#egress" title="Egress">Egress</a>: <i>
+      - &lt;a href=&#34;egress.md&#34;&gt;Egress&lt;/a&gt;</i>
+    <a href="#ingress" title="Ingress">Ingress</a>: <i>
+      - &lt;a href=&#34;ingress.md&#34;&gt;Ingress&lt;/a&gt;</i>
+    <a href="#podselector" title="PodSelector">PodSelector</a>: <i>
+      - &lt;a href=&#34;podselector.md&#34;&gt;PodSelector&lt;/a&gt;</i>
+    <a href="#ports" title="Ports">Ports</a>: <i>
+      - &lt;a href=&#34;ports.md&#34;&gt;Ports&lt;/a&gt;</i>
+    <a href="#to" title="To">To</a>: <i>
+      - &lt;a href=&#34;to.md&#34;&gt;To&lt;/a&gt;</i>
+    <a href="#from" title="From">From</a>: <i>
+      - &lt;a href=&#34;from.md&#34;&gt;From&lt;/a&gt;</i>
+    <a href="#matchexpressions" title="MatchExpressions">MatchExpressions</a>: <i>
+      - &lt;a href=&#34;matchexpressions.md&#34;&gt;MatchExpressions&lt;/a&gt;</i>
+    <a href="#ipblock" title="IpBlock">IpBlock</a>: <i>
+      - &lt;a href=&#34;ipblock.md&#34;&gt;IpBlock&lt;/a&gt;</i>
+    <a href="#namespaceselector" title="NamespaceSelector">NamespaceSelector</a>: <i>
+      - &lt;a href=&#34;namespaceselector.md&#34;&gt;NamespaceSelector&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
-#### Title
+#### tfcfnid
 
-The title of the TPS report is a mandatory element.
-
-_Required_: Yes
-
-_Type_: String
-
-_Minimum_: <code>20</code>
-
-_Maximum_: <code>250</code>
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CoverSheetIncluded
-
-Required for all TPS Reports submitted after 2/19/1999
-
-_Required_: No
-
-_Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### DueDate
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
@@ -74,45 +70,91 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### ApprovalDate
+#### Metadata
 
 _Required_: No
 
-_Type_: String
+_Type_: List of &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Memo
+#### Spec
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;secondcopyofmemo.md&#34;&gt;SecondCopyOfMemo&lt;/a&gt;
+_Type_: List of &lt;a href=&#34;spec.md&#34;&gt;Spec&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### SecondCopyOfMemo
+#### Egress
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;secondcopyofmemo.md&#34;&gt;SecondCopyOfMemo&lt;/a&gt;
+_Type_: List of &lt;a href=&#34;egress.md&#34;&gt;Egress&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### TestCode
-
-_Required_: Yes
-
-_Type_: String
-
-_Allowed Values_: <code>NOT_STARTED</code> | <code>CANCELLED</code>
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Authors
+#### Ingress
 
 _Required_: No
 
-_Type_: List of String
+_Type_: List of &lt;a href=&#34;ingress.md&#34;&gt;Ingress&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### PodSelector
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;podselector.md&#34;&gt;PodSelector&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Ports
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;ports.md&#34;&gt;Ports&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### To
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;to.md&#34;&gt;To&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### From
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;from.md&#34;&gt;From&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### MatchExpressions
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;matchexpressions.md&#34;&gt;MatchExpressions&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### IpBlock
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;ipblock.md&#34;&gt;IpBlock&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### NamespaceSelector
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;namespaceselector.md&#34;&gt;NamespaceSelector&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -120,7 +162,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 ### Ref
 
-When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the TPSCode.
+When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the tfcfnid.
 
 ### Fn::GetAtt
 
@@ -128,7 +170,7 @@ The `Fn::GetAtt` intrinsic function returns a value for a specified attribute of
 
 For more information about using the `Fn::GetAtt` intrinsic function, see [Fn::GetAtt](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html).
 
-#### TPSCode
+#### tfcfnid
 
-A TPS Code is automatically generated on creation and assigned as the unique identifier.
+Internal identifier for tracking resource changes. Do not use.
 

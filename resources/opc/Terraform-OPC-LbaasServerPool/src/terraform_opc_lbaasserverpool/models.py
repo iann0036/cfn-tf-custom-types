@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Consumers: Optional[str]
     Enabled: Optional[bool]
-    Id: Optional[str]
     LoadBalancer: Optional[str]
     Name: Optional[str]
     OperationDetails: Optional[bool]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Consumers=json_data.get("Consumers"),
             Enabled=json_data.get("Enabled"),
-            Id=json_data.get("Id"),
             LoadBalancer=json_data.get("LoadBalancer"),
             Name=json_data.get("Name"),
             OperationDetails=json_data.get("OperationDetails"),

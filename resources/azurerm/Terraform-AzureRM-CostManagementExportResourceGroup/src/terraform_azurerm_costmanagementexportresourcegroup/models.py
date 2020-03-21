@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Active: Optional[bool]
-    Id: Optional[str]
     Name: Optional[str]
     RecurrencePeriodEnd: Optional[str]
     RecurrencePeriodStart: Optional[str]
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Active=json_data.get("Active"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             RecurrencePeriodEnd=json_data.get("RecurrencePeriodEnd"),
             RecurrencePeriodStart=json_data.get("RecurrencePeriodStart"),

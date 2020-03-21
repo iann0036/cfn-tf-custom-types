@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     Disabled: Optional[bool]
     Email: Optional[str]
     Handle: Optional[str]
-    Id: Optional[str]
     IsAdmin: Optional[bool]
     Name: Optional[str]
     Role: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             Disabled=json_data.get("Disabled"),
             Email=json_data.get("Email"),
             Handle=json_data.get("Handle"),
-            Id=json_data.get("Id"),
             IsAdmin=json_data.get("IsAdmin"),
             Name=json_data.get("Name"),
             Role=json_data.get("Role"),

@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     Edition: Optional[str]
     ElasticPoolName: Optional[str]
     Encryption: Optional[str]
-    Id: Optional[str]
     Location: Optional[str]
     MaxSizeBytes: Optional[str]
     MaxSizeGb: Optional[str]
@@ -79,7 +78,6 @@ class ResourceModel(BaseResourceModel):
             Edition=json_data.get("Edition"),
             ElasticPoolName=json_data.get("ElasticPoolName"),
             Encryption=json_data.get("Encryption"),
-            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             MaxSizeBytes=json_data.get("MaxSizeBytes"),
             MaxSizeGb=json_data.get("MaxSizeGb"),

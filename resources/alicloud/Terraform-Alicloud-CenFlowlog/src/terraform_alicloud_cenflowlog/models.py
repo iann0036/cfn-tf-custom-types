@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     CenId: Optional[str]
     Description: Optional[str]
     FlowLogName: Optional[str]
-    Id: Optional[str]
     LogStoreName: Optional[str]
     ProjectName: Optional[str]
     Status: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             CenId=json_data.get("CenId"),
             Description=json_data.get("Description"),
             FlowLogName=json_data.get("FlowLogName"),
-            Id=json_data.get("Id"),
             LogStoreName=json_data.get("LogStoreName"),
             ProjectName=json_data.get("ProjectName"),
             Status=json_data.get("Status"),

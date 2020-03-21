@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     OwnerId: Optional[str]
     PropagatingVgws: Optional[Sequence[str]]
     Route: Optional[Sequence["_Route"]]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             OwnerId=json_data.get("OwnerId"),
             PropagatingVgws=json_data.get("PropagatingVgws"),
             Route=json_data.get("Route"),

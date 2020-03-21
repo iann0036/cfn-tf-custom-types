@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AccountName: Optional[str]
     DisplayName: Optional[str]
-    Id: Optional[str]
     MaxTasksPerNode: Optional[float]
     Metadata: Optional[Sequence["_Metadata"]]
     Name: Optional[str]
@@ -71,7 +70,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AccountName=json_data.get("AccountName"),
             DisplayName=json_data.get("DisplayName"),
-            Id=json_data.get("Id"),
             MaxTasksPerNode=json_data.get("MaxTasksPerNode"),
             Metadata=json_data.get("Metadata"),
             Name=json_data.get("Name"),

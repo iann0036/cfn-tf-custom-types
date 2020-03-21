@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Controller: Optional[str]
-    Id: Optional[str]
     Vdisk: Optional[str]
 
     @classmethod
@@ -50,7 +49,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Controller=json_data.get("Controller"),
-            Id=json_data.get("Id"),
             Vdisk=json_data.get("Vdisk"),
         )
 

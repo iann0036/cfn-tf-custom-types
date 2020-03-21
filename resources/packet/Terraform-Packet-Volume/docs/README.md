@@ -12,15 +12,20 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Packet::Volume",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#attachments" title="Attachments">Attachments</a>" : <i>[ &lt;a href=&#34;attachments.md&#34;&gt;Attachments&lt;/a&gt;, ... ]</i>,
         "<a href="#billingcycle" title="BillingCycle">BillingCycle</a>" : <i>String</i>,
+        "<a href="#created" title="Created">Created</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#facility" title="Facility">Facility</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#locked" title="Locked">Locked</a>" : <i>Boolean</i>,
+        "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#plan" title="Plan">Plan</a>" : <i>String</i>,
         "<a href="#projectid" title="ProjectId">ProjectId</a>" : <i>String</i>,
         "<a href="#size" title="Size">Size</a>" : <i>Double</i>,
-        "<a href="#snapshotpolicies" title="SnapshotPolicies">SnapshotPolicies</a>" : <i>[ <a href="snapshotpolicies.md">SnapshotPolicies</a>, ... ]</i>
+        "<a href="#state" title="State">State</a>" : <i>String</i>,
+        "<a href="#updated" title="Updated">Updated</a>" : <i>String</i>,
+        "<a href="#snapshotpolicies" title="SnapshotPolicies">SnapshotPolicies</a>" : <i>[ &lt;a href=&#34;snapshotpolicies.md&#34;&gt;SnapshotPolicies&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -30,21 +35,53 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Packet::Volume
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#attachments" title="Attachments">Attachments</a>: <i>
+      - &lt;a href=&#34;attachments.md&#34;&gt;Attachments&lt;/a&gt;</i>
     <a href="#billingcycle" title="BillingCycle">BillingCycle</a>: <i>String</i>
+    <a href="#created" title="Created">Created</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#facility" title="Facility">Facility</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#locked" title="Locked">Locked</a>: <i>Boolean</i>
+    <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#plan" title="Plan">Plan</a>: <i>String</i>
     <a href="#projectid" title="ProjectId">ProjectId</a>: <i>String</i>
     <a href="#size" title="Size">Size</a>: <i>Double</i>
+    <a href="#state" title="State">State</a>: <i>String</i>
+    <a href="#updated" title="Updated">Updated</a>: <i>String</i>
     <a href="#snapshotpolicies" title="SnapshotPolicies">SnapshotPolicies</a>: <i>
-      - <a href="snapshotpolicies.md">SnapshotPolicies</a></i>
+      - &lt;a href=&#34;snapshotpolicies.md&#34;&gt;SnapshotPolicies&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Attachments
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;attachments.md&#34;&gt;Attachments&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### BillingCycle
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Created
 
 _Required_: No
 
@@ -68,19 +105,19 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Locked
 
 _Required_: No
 
 _Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Name
+
+_Required_: No
+
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -108,11 +145,27 @@ _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### State
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Updated
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### SnapshotPolicies
 
 _Required_: No
 
-_Type_: List of <a href="snapshotpolicies.md">SnapshotPolicies</a>
+_Type_: List of &lt;a href=&#34;snapshotpolicies.md&#34;&gt;SnapshotPolicies&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -134,21 +187,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Attachments
 
-Returns the <code>Attachments</code> value.
+Returns the &lt;code&gt;Attachments&lt;/code&gt; value.
 
 #### Created
 
-Returns the <code>Created</code> value.
+Returns the &lt;code&gt;Created&lt;/code&gt; value.
 
 #### Name
 
-Returns the <code>Name</code> value.
+Returns the &lt;code&gt;Name&lt;/code&gt; value.
 
 #### State
 
-Returns the <code>State</code> value.
+Returns the &lt;code&gt;State&lt;/code&gt; value.
 
 #### Updated
 
-Returns the <code>Updated</code> value.
+Returns the &lt;code&gt;Updated&lt;/code&gt; value.
 

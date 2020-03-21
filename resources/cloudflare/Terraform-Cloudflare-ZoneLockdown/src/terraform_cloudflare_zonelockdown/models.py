@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     Paused: Optional[bool]
     Priority: Optional[float]
     Urls: Optional[Sequence[str]]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Paused=json_data.get("Paused"),
             Priority=json_data.get("Priority"),
             Urls=json_data.get("Urls"),

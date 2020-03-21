@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     CreateTime: Optional[str]
     Description: Optional[str]
     Document: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Type: Optional[float]
     UpdateTime: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             CreateTime=json_data.get("CreateTime"),
             Description=json_data.get("Description"),
             Document=json_data.get("Document"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Type=json_data.get("Type"),
             UpdateTime=json_data.get("UpdateTime"),

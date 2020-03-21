@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     ConnectionDrainingTimeout: Optional[float]
     CrossZoneLoadBalancing: Optional[bool]
     DnsName: Optional[str]
-    Id: Optional[str]
     IdleTimeout: Optional[float]
     Instances: Optional[Sequence[str]]
     Internal: Optional[bool]
@@ -73,7 +72,6 @@ class ResourceModel(BaseResourceModel):
             ConnectionDrainingTimeout=json_data.get("ConnectionDrainingTimeout"),
             CrossZoneLoadBalancing=json_data.get("CrossZoneLoadBalancing"),
             DnsName=json_data.get("DnsName"),
-            Id=json_data.get("Id"),
             IdleTimeout=json_data.get("IdleTimeout"),
             Instances=json_data.get("Instances"),
             Internal=json_data.get("Internal"),

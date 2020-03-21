@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     CreatedDate: Optional[str]
     Description: Optional[str]
     ExpirationDate: Optional[str]
-    Id: Optional[str]
     PemEncodedCertificate: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
 
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
             CreatedDate=json_data.get("CreatedDate"),
             Description=json_data.get("Description"),
             ExpirationDate=json_data.get("ExpirationDate"),
-            Id=json_data.get("Id"),
             PemEncodedCertificate=json_data.get("PemEncodedCertificate"),
             Tags=json_data.get("Tags"),
         )

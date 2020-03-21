@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     CreateTime: Optional[str]
     CustomerGatewayId: Optional[str]
     EncryptProto: Optional[str]
-    Id: Optional[str]
     IkeDhGroupName: Optional[str]
     IkeExchangeMode: Optional[str]
     IkeLocalAddress: Optional[str]
@@ -80,7 +79,6 @@ class ResourceModel(BaseResourceModel):
             CreateTime=json_data.get("CreateTime"),
             CustomerGatewayId=json_data.get("CustomerGatewayId"),
             EncryptProto=json_data.get("EncryptProto"),
-            Id=json_data.get("Id"),
             IkeDhGroupName=json_data.get("IkeDhGroupName"),
             IkeExchangeMode=json_data.get("IkeExchangeMode"),
             IkeLocalAddress=json_data.get("IkeLocalAddress"),

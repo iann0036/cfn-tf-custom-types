@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     Content: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Type: Optional[str]
 
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             Content=json_data.get("Content"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Type=json_data.get("Type"),
         )

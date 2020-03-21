@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AllSecurityGroupIds: Optional[Sequence[str]]
     Enforce: Optional[bool]
-    Id: Optional[str]
     PortId: Optional[str]
     Region: Optional[str]
     SecurityGroupIds: Optional[Sequence[str]]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AllSecurityGroupIds=json_data.get("AllSecurityGroupIds"),
             Enforce=json_data.get("Enforce"),
-            Id=json_data.get("Id"),
             PortId=json_data.get("PortId"),
             Region=json_data.get("Region"),
             SecurityGroupIds=json_data.get("SecurityGroupIds"),

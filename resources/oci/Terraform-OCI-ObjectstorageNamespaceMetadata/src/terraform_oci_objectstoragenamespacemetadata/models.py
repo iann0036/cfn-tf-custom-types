@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DefaultS3compartmentId: Optional[str]
     DefaultSwiftCompartmentId: Optional[str]
-    Id: Optional[str]
     Namespace: Optional[str]
     Timeouts: Optional["_Timeouts"]
 
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DefaultS3compartmentId=json_data.get("DefaultS3compartmentId"),
             DefaultSwiftCompartmentId=json_data.get("DefaultSwiftCompartmentId"),
-            Id=json_data.get("Id"),
             Namespace=json_data.get("Namespace"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),
         )

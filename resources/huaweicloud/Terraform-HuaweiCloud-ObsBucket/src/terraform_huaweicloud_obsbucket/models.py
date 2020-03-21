@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     Bucket: Optional[str]
     BucketDomainName: Optional[str]
     ForceDestroy: Optional[bool]
-    Id: Optional[str]
     Region: Optional[str]
     StorageClass: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
@@ -67,7 +66,6 @@ class ResourceModel(BaseResourceModel):
             Bucket=json_data.get("Bucket"),
             BucketDomainName=json_data.get("BucketDomainName"),
             ForceDestroy=json_data.get("ForceDestroy"),
-            Id=json_data.get("Id"),
             Region=json_data.get("Region"),
             StorageClass=json_data.get("StorageClass"),
             Tags=json_data.get("Tags"),

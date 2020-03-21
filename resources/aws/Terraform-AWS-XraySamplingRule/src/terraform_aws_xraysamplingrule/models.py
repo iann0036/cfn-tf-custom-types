@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     FixedRate: Optional[float]
     Host: Optional[str]
     HttpMethod: Optional[str]
-    Id: Optional[str]
     Priority: Optional[float]
     ReservoirSize: Optional[float]
     ResourceArn: Optional[str]
@@ -65,7 +64,6 @@ class ResourceModel(BaseResourceModel):
             FixedRate=json_data.get("FixedRate"),
             Host=json_data.get("Host"),
             HttpMethod=json_data.get("HttpMethod"),
-            Id=json_data.get("Id"),
             Priority=json_data.get("Priority"),
             ReservoirSize=json_data.get("ReservoirSize"),
             ResourceArn=json_data.get("ResourceArn"),

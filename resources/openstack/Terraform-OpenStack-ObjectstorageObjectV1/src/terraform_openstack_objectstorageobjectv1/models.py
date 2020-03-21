@@ -48,7 +48,6 @@ class ResourceModel(BaseResourceModel):
     DeleteAt: Optional[str]
     DetectContentType: Optional[bool]
     Etag: Optional[str]
-    Id: Optional[str]
     LastModified: Optional[str]
     Metadata: Optional[Sequence["_Metadata"]]
     Name: Optional[str]
@@ -78,7 +77,6 @@ class ResourceModel(BaseResourceModel):
             DeleteAt=json_data.get("DeleteAt"),
             DetectContentType=json_data.get("DetectContentType"),
             Etag=json_data.get("Etag"),
-            Id=json_data.get("Id"),
             LastModified=json_data.get("LastModified"),
             Metadata=json_data.get("Metadata"),
             Name=json_data.get("Name"),

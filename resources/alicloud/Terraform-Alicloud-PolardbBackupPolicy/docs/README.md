@@ -12,8 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::PolardbBackupPolicy",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#backupretentionperiod" title="BackupRetentionPeriod">BackupRetentionPeriod</a>" : <i>String</i>,
         "<a href="#dbclusterid" title="DbClusterId">DbClusterId</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#preferredbackupperiod" title="PreferredBackupPeriod">PreferredBackupPeriod</a>" : <i>[ String, ... ]</i>,
         "<a href="#preferredbackuptime" title="PreferredBackupTime">PreferredBackupTime</a>" : <i>String</i>
     }
@@ -25,8 +26,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::PolardbBackupPolicy
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#backupretentionperiod" title="BackupRetentionPeriod">BackupRetentionPeriod</a>: <i>String</i>
     <a href="#dbclusterid" title="DbClusterId">DbClusterId</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#preferredbackupperiod" title="PreferredBackupPeriod">PreferredBackupPeriod</a>: <i>
       - String</i>
     <a href="#preferredbackuptime" title="PreferredBackupTime">PreferredBackupTime</a>: <i>String</i>
@@ -34,17 +36,27 @@ Properties:
 
 ## Properties
 
-#### DbClusterId
+#### tfcfnid
 
-_Required_: Yes
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
 
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### BackupRetentionPeriod
 
 _Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### DbClusterId
+
+_Required_: Yes
 
 _Type_: String
 
@@ -84,5 +96,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### BackupRetentionPeriod
 
-Returns the <code>BackupRetentionPeriod</code> value.
+Returns the &lt;code&gt;BackupRetentionPeriod&lt;/code&gt; value.
 

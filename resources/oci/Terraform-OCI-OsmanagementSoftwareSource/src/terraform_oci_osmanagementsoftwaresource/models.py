@@ -47,7 +47,6 @@ class ResourceModel(BaseResourceModel):
     GpgKeyFingerprint: Optional[str]
     GpgKeyId: Optional[str]
     GpgKeyUrl: Optional[str]
-    Id: Optional[str]
     MaintainerEmail: Optional[str]
     MaintainerName: Optional[str]
     MaintainerPhone: Optional[str]
@@ -80,7 +79,6 @@ class ResourceModel(BaseResourceModel):
             GpgKeyFingerprint=json_data.get("GpgKeyFingerprint"),
             GpgKeyId=json_data.get("GpgKeyId"),
             GpgKeyUrl=json_data.get("GpgKeyUrl"),
-            Id=json_data.get("Id"),
             MaintainerEmail=json_data.get("MaintainerEmail"),
             MaintainerName=json_data.get("MaintainerName"),
             MaintainerPhone=json_data.get("MaintainerPhone"),

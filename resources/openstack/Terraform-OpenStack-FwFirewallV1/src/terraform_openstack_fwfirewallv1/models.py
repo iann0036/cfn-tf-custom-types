@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AdminStateUp: Optional[bool]
     AssociatedRouters: Optional[Sequence[str]]
     Description: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     NoRouters: Optional[bool]
     PolicyId: Optional[str]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             AdminStateUp=json_data.get("AdminStateUp"),
             AssociatedRouters=json_data.get("AssociatedRouters"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             NoRouters=json_data.get("NoRouters"),
             PolicyId=json_data.get("PolicyId"),

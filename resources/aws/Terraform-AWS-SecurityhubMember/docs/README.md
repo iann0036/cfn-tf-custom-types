@@ -12,10 +12,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::SecurityhubMember",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#accountid" title="AccountId">AccountId</a>" : <i>String</i>,
         "<a href="#email" title="Email">Email</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#invite" title="Invite">Invite</a>" : <i>Boolean</i>,
+        "<a href="#masterid" title="MasterId">MasterId</a>" : <i>String</i>,
+        "<a href="#memberstatus" title="MemberStatus">MemberStatus</a>" : <i>String</i>
     }
 }
 </pre>
@@ -25,13 +27,25 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::SecurityhubMember
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#accountid" title="AccountId">AccountId</a>: <i>String</i>
     <a href="#email" title="Email">Email</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#invite" title="Invite">Invite</a>: <i>Boolean</i>
+    <a href="#masterid" title="MasterId">MasterId</a>: <i>String</i>
+    <a href="#memberstatus" title="MemberStatus">MemberStatus</a>: <i>String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AccountId
 
@@ -49,7 +63,15 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### Invite
+
+_Required_: No
+
+_Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### MasterId
 
 _Required_: No
 
@@ -57,11 +79,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Invite
+#### MemberStatus
 
 _Required_: No
 
-_Type_: Boolean
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -83,9 +105,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### MasterId
 
-Returns the <code>MasterId</code> value.
+Returns the &lt;code&gt;MasterId&lt;/code&gt; value.
 
 #### MemberStatus
 
-Returns the <code>MemberStatus</code> value.
+Returns the &lt;code&gt;MemberStatus&lt;/code&gt; value.
 

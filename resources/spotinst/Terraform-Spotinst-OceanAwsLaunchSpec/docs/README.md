@@ -12,17 +12,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Spotinst::OceanAwsLaunchSpec",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#iaminstanceprofile" title="IamInstanceProfile">IamInstanceProfile</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#imageid" title="ImageId">ImageId</a>" : <i>String</i>,
         "<a href="#oceanid" title="OceanId">OceanId</a>" : <i>String</i>,
         "<a href="#rootvolumesize" title="RootVolumeSize">RootVolumeSize</a>" : <i>Double</i>,
         "<a href="#securitygroups" title="SecurityGroups">SecurityGroups</a>" : <i>[ String, ... ]</i>,
         "<a href="#subnetids" title="SubnetIds">SubnetIds</a>" : <i>[ String, ... ]</i>,
         "<a href="#userdata" title="UserData">UserData</a>" : <i>String</i>,
-        "<a href="#autoscaleheadrooms" title="AutoscaleHeadrooms">AutoscaleHeadrooms</a>" : <i>[ <a href="autoscaleheadrooms.md">AutoscaleHeadrooms</a>, ... ]</i>,
-        "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="labels.md">Labels</a>, ... ]</i>,
-        "<a href="#taints" title="Taints">Taints</a>" : <i>[ <a href="taints.md">Taints</a>, ... ]</i>
+        "<a href="#autoscaleheadrooms" title="AutoscaleHeadrooms">AutoscaleHeadrooms</a>" : <i>[ &lt;a href=&#34;autoscaleheadrooms.md&#34;&gt;AutoscaleHeadrooms&lt;/a&gt;, ... ]</i>,
+        "<a href="#labels" title="Labels">Labels</a>" : <i>[ &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;, ... ]</i>,
+        "<a href="#taints" title="Taints">Taints</a>" : <i>[ &lt;a href=&#34;taints.md&#34;&gt;Taints&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -32,8 +32,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Spotinst::OceanAwsLaunchSpec
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#iaminstanceprofile" title="IamInstanceProfile">IamInstanceProfile</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#imageid" title="ImageId">ImageId</a>: <i>String</i>
     <a href="#oceanid" title="OceanId">OceanId</a>: <i>String</i>
     <a href="#rootvolumesize" title="RootVolumeSize">RootVolumeSize</a>: <i>Double</i>
@@ -43,16 +43,18 @@ Properties:
       - String</i>
     <a href="#userdata" title="UserData">UserData</a>: <i>String</i>
     <a href="#autoscaleheadrooms" title="AutoscaleHeadrooms">AutoscaleHeadrooms</a>: <i>
-      - <a href="autoscaleheadrooms.md">AutoscaleHeadrooms</a></i>
+      - &lt;a href=&#34;autoscaleheadrooms.md&#34;&gt;AutoscaleHeadrooms&lt;/a&gt;</i>
     <a href="#labels" title="Labels">Labels</a>: <i>
-      - <a href="labels.md">Labels</a></i>
+      - &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;</i>
     <a href="#taints" title="Taints">Taints</a>: <i>
-      - <a href="taints.md">Taints</a></i>
+      - &lt;a href=&#34;taints.md&#34;&gt;Taints&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
-#### IamInstanceProfile
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
@@ -60,7 +62,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### IamInstanceProfile
 
 _Required_: No
 
@@ -120,7 +122,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="autoscaleheadrooms.md">AutoscaleHeadrooms</a>
+_Type_: List of &lt;a href=&#34;autoscaleheadrooms.md&#34;&gt;AutoscaleHeadrooms&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -128,7 +130,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="labels.md">Labels</a>
+_Type_: List of &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -136,7 +138,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="taints.md">Taints</a>
+_Type_: List of &lt;a href=&#34;taints.md&#34;&gt;Taints&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

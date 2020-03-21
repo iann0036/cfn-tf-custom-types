@@ -12,10 +12,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::VCD::NetworkDirect",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#externalnetwork" title="ExternalNetwork">ExternalNetwork</a>" : <i>String</i>,
+        "<a href="#externalnetworkdns1" title="ExternalNetworkDns1">ExternalNetworkDns1</a>" : <i>String</i>,
+        "<a href="#externalnetworkdns2" title="ExternalNetworkDns2">ExternalNetworkDns2</a>" : <i>String</i>,
+        "<a href="#externalnetworkdnssuffix" title="ExternalNetworkDnsSuffix">ExternalNetworkDnsSuffix</a>" : <i>String</i>,
+        "<a href="#externalnetworkgateway" title="ExternalNetworkGateway">ExternalNetworkGateway</a>" : <i>String</i>,
+        "<a href="#externalnetworknetmask" title="ExternalNetworkNetmask">ExternalNetworkNetmask</a>" : <i>String</i>,
         "<a href="#href" title="Href">Href</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#org" title="Org">Org</a>" : <i>String</i>,
         "<a href="#shared" title="Shared">Shared</a>" : <i>Boolean</i>,
@@ -29,10 +34,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::VCD::NetworkDirect
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#externalnetwork" title="ExternalNetwork">ExternalNetwork</a>: <i>String</i>
+    <a href="#externalnetworkdns1" title="ExternalNetworkDns1">ExternalNetworkDns1</a>: <i>String</i>
+    <a href="#externalnetworkdns2" title="ExternalNetworkDns2">ExternalNetworkDns2</a>: <i>String</i>
+    <a href="#externalnetworkdnssuffix" title="ExternalNetworkDnsSuffix">ExternalNetworkDnsSuffix</a>: <i>String</i>
+    <a href="#externalnetworkgateway" title="ExternalNetworkGateway">ExternalNetworkGateway</a>: <i>String</i>
+    <a href="#externalnetworknetmask" title="ExternalNetworkNetmask">ExternalNetworkNetmask</a>: <i>String</i>
     <a href="#href" title="Href">Href</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#org" title="Org">Org</a>: <i>String</i>
     <a href="#shared" title="Shared">Shared</a>: <i>Boolean</i>
@@ -40,6 +50,16 @@ Properties:
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -57,7 +77,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Href
+#### ExternalNetworkDns1
 
 _Required_: No
 
@@ -65,7 +85,39 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### ExternalNetworkDns2
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ExternalNetworkDnsSuffix
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ExternalNetworkGateway
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ExternalNetworkNetmask
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Href
 
 _Required_: No
 
@@ -123,21 +175,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ExternalNetworkDns1
 
-Returns the <code>ExternalNetworkDns1</code> value.
+Returns the &lt;code&gt;ExternalNetworkDns1&lt;/code&gt; value.
 
 #### ExternalNetworkDns2
 
-Returns the <code>ExternalNetworkDns2</code> value.
+Returns the &lt;code&gt;ExternalNetworkDns2&lt;/code&gt; value.
 
 #### ExternalNetworkDnsSuffix
 
-Returns the <code>ExternalNetworkDnsSuffix</code> value.
+Returns the &lt;code&gt;ExternalNetworkDnsSuffix&lt;/code&gt; value.
 
 #### ExternalNetworkGateway
 
-Returns the <code>ExternalNetworkGateway</code> value.
+Returns the &lt;code&gt;ExternalNetworkGateway&lt;/code&gt; value.
 
 #### ExternalNetworkNetmask
 
-Returns the <code>ExternalNetworkNetmask</code> value.
+Returns the &lt;code&gt;ExternalNetworkNetmask&lt;/code&gt; value.
 

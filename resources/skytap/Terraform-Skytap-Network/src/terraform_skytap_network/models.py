@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Domain: Optional[str]
     EnvironmentId: Optional[str]
     Gateway: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Subnet: Optional[str]
     Tunnelable: Optional[bool]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             Domain=json_data.get("Domain"),
             EnvironmentId=json_data.get("EnvironmentId"),
             Gateway=json_data.get("Gateway"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Subnet=json_data.get("Subnet"),
             Tunnelable=json_data.get("Tunnelable"),

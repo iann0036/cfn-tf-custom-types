@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AppId: Optional[str]
     Authorization: Optional[str]
-    Id: Optional[str]
     Include: Optional[Sequence[str]]
     Level: Optional[str]
     Secret: Optional[str]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AppId=json_data.get("AppId"),
             Authorization=json_data.get("Authorization"),
-            Id=json_data.get("Id"),
             Include=json_data.get("Include"),
             Level=json_data.get("Level"),
             Secret=json_data.get("Secret"),

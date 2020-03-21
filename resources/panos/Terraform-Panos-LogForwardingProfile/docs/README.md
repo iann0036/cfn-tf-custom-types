@@ -12,18 +12,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Panos::LogForwardingProfile",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#enhancedlogging" title="EnhancedLogging">EnhancedLogging</a>" : <i>Boolean</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#vsys" title="Vsys">Vsys</a>" : <i>String</i>,
-        "<a href="#matchlist" title="MatchList">MatchList</a>" : <i>[ <a href="matchlist.md">MatchList</a>, ... ]</i>,
-        "<a href="#action" title="Action">Action</a>" : <i>[ <a href="action.md">Action</a>, ... ]</i>,
-        "<a href="#azureintegration" title="AzureIntegration">AzureIntegration</a>" : <i>[ <a href="azureintegration.md">AzureIntegration</a>, ... ]</i>,
-        "<a href="#taggingintegration" title="TaggingIntegration">TaggingIntegration</a>" : <i>[ <a href="taggingintegration.md">TaggingIntegration</a>, ... ]</i>,
-        "<a href="#localregistration" title="LocalRegistration">LocalRegistration</a>" : <i>[ <a href="localregistration.md">LocalRegistration</a>, ... ]</i>,
-        "<a href="#panoramaregistration" title="PanoramaRegistration">PanoramaRegistration</a>" : <i>[ <a href="panoramaregistration.md">PanoramaRegistration</a>, ... ]</i>,
-        "<a href="#remoteregistration" title="RemoteRegistration">RemoteRegistration</a>" : <i>[ <a href="remoteregistration.md">RemoteRegistration</a>, ... ]</i>
+        "<a href="#matchlist" title="MatchList">MatchList</a>" : <i>[ &lt;a href=&#34;matchlist.md&#34;&gt;MatchList&lt;/a&gt;, ... ]</i>,
+        "<a href="#action" title="Action">Action</a>" : <i>[ &lt;a href=&#34;action.md&#34;&gt;Action&lt;/a&gt;, ... ]</i>,
+        "<a href="#azureintegration" title="AzureIntegration">AzureIntegration</a>" : <i>[ &lt;a href=&#34;azureintegration.md&#34;&gt;AzureIntegration&lt;/a&gt;, ... ]</i>,
+        "<a href="#taggingintegration" title="TaggingIntegration">TaggingIntegration</a>" : <i>[ &lt;a href=&#34;taggingintegration.md&#34;&gt;TaggingIntegration&lt;/a&gt;, ... ]</i>,
+        "<a href="#localregistration" title="LocalRegistration">LocalRegistration</a>" : <i>[ &lt;a href=&#34;localregistration.md&#34;&gt;LocalRegistration&lt;/a&gt;, ... ]</i>,
+        "<a href="#panoramaregistration" title="PanoramaRegistration">PanoramaRegistration</a>" : <i>[ &lt;a href=&#34;panoramaregistration.md&#34;&gt;PanoramaRegistration&lt;/a&gt;, ... ]</i>,
+        "<a href="#remoteregistration" title="RemoteRegistration">RemoteRegistration</a>" : <i>[ &lt;a href=&#34;remoteregistration.md&#34;&gt;RemoteRegistration&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -33,28 +33,38 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Panos::LogForwardingProfile
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#enhancedlogging" title="EnhancedLogging">EnhancedLogging</a>: <i>Boolean</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#vsys" title="Vsys">Vsys</a>: <i>String</i>
     <a href="#matchlist" title="MatchList">MatchList</a>: <i>
-      - <a href="matchlist.md">MatchList</a></i>
+      - &lt;a href=&#34;matchlist.md&#34;&gt;MatchList&lt;/a&gt;</i>
     <a href="#action" title="Action">Action</a>: <i>
-      - <a href="action.md">Action</a></i>
+      - &lt;a href=&#34;action.md&#34;&gt;Action&lt;/a&gt;</i>
     <a href="#azureintegration" title="AzureIntegration">AzureIntegration</a>: <i>
-      - <a href="azureintegration.md">AzureIntegration</a></i>
+      - &lt;a href=&#34;azureintegration.md&#34;&gt;AzureIntegration&lt;/a&gt;</i>
     <a href="#taggingintegration" title="TaggingIntegration">TaggingIntegration</a>: <i>
-      - <a href="taggingintegration.md">TaggingIntegration</a></i>
+      - &lt;a href=&#34;taggingintegration.md&#34;&gt;TaggingIntegration&lt;/a&gt;</i>
     <a href="#localregistration" title="LocalRegistration">LocalRegistration</a>: <i>
-      - <a href="localregistration.md">LocalRegistration</a></i>
+      - &lt;a href=&#34;localregistration.md&#34;&gt;LocalRegistration&lt;/a&gt;</i>
     <a href="#panoramaregistration" title="PanoramaRegistration">PanoramaRegistration</a>: <i>
-      - <a href="panoramaregistration.md">PanoramaRegistration</a></i>
+      - &lt;a href=&#34;panoramaregistration.md&#34;&gt;PanoramaRegistration&lt;/a&gt;</i>
     <a href="#remoteregistration" title="RemoteRegistration">RemoteRegistration</a>: <i>
-      - <a href="remoteregistration.md">RemoteRegistration</a></i>
+      - &lt;a href=&#34;remoteregistration.md&#34;&gt;RemoteRegistration&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -69,14 +79,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -100,7 +102,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="matchlist.md">MatchList</a>
+_Type_: List of &lt;a href=&#34;matchlist.md&#34;&gt;MatchList&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -108,7 +110,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="action.md">Action</a>
+_Type_: List of &lt;a href=&#34;action.md&#34;&gt;Action&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -116,7 +118,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="azureintegration.md">AzureIntegration</a>
+_Type_: List of &lt;a href=&#34;azureintegration.md&#34;&gt;AzureIntegration&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -124,7 +126,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="taggingintegration.md">TaggingIntegration</a>
+_Type_: List of &lt;a href=&#34;taggingintegration.md&#34;&gt;TaggingIntegration&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -132,7 +134,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="localregistration.md">LocalRegistration</a>
+_Type_: List of &lt;a href=&#34;localregistration.md&#34;&gt;LocalRegistration&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -140,7 +142,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="panoramaregistration.md">PanoramaRegistration</a>
+_Type_: List of &lt;a href=&#34;panoramaregistration.md&#34;&gt;PanoramaRegistration&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -148,7 +150,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="remoteregistration.md">RemoteRegistration</a>
+_Type_: List of &lt;a href=&#34;remoteregistration.md&#34;&gt;RemoteRegistration&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

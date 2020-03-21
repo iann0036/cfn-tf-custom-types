@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     DefaultPrefixlen: Optional[float]
     DefaultQuota: Optional[float]
     Description: Optional[str]
-    Id: Optional[str]
     IpVersion: Optional[float]
     IsDefault: Optional[bool]
     MaxPrefixlen: Optional[float]
@@ -73,7 +72,6 @@ class ResourceModel(BaseResourceModel):
             DefaultPrefixlen=json_data.get("DefaultPrefixlen"),
             DefaultQuota=json_data.get("DefaultQuota"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             IpVersion=json_data.get("IpVersion"),
             IsDefault=json_data.get("IsDefault"),
             MaxPrefixlen=json_data.get("MaxPrefixlen"),

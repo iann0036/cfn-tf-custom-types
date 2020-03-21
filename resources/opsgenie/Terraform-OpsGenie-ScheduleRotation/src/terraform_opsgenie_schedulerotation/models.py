@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     EndDate: Optional[str]
-    Id: Optional[str]
     Length: Optional[float]
     Name: Optional[str]
     ScheduleId: Optional[str]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             EndDate=json_data.get("EndDate"),
-            Id=json_data.get("Id"),
             Length=json_data.get("Length"),
             Name=json_data.get("Name"),
             ScheduleId=json_data.get("ScheduleId"),

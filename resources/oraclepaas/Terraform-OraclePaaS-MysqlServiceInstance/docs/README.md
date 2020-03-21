@@ -12,23 +12,27 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OraclePaaS::MysqlServiceInstance",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#availabilitydomain" title="AvailabilityDomain">AvailabilityDomain</a>" : <i>String</i>,
         "<a href="#backupdestination" title="BackupDestination">BackupDestination</a>" : <i>String</i>,
+        "<a href="#basereleaseversion" title="BaseReleaseVersion">BaseReleaseVersion</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#emurl" title="EmUrl">EmUrl</a>" : <i>String</i>,
         "<a href="#ipnetwork" title="IpNetwork">IpNetwork</a>" : <i>String</i>,
         "<a href="#meteringfrequency" title="MeteringFrequency">MeteringFrequency</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#notificationemail" title="NotificationEmail">NotificationEmail</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
+        "<a href="#releaseversion" title="ReleaseVersion">ReleaseVersion</a>" : <i>String</i>,
+        "<a href="#serviceversion" title="ServiceVersion">ServiceVersion</a>" : <i>String</i>,
         "<a href="#shape" title="Shape">Shape</a>" : <i>String</i>,
         "<a href="#sshpublickey" title="SshPublicKey">SshPublicKey</a>" : <i>String</i>,
         "<a href="#subnet" title="Subnet">Subnet</a>" : <i>String</i>,
         "<a href="#vmuser" title="VmUser">VmUser</a>" : <i>String</i>,
-        "<a href="#backups" title="Backups">Backups</a>" : <i>[ <a href="backups.md">Backups</a>, ... ]</i>,
-        "<a href="#mysqlconfiguration" title="MysqlConfiguration">MysqlConfiguration</a>" : <i>[ <a href="mysqlconfiguration.md">MysqlConfiguration</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
-        "<a href="#enterprisemonitorconfiguration" title="EnterpriseMonitorConfiguration">EnterpriseMonitorConfiguration</a>" : <i>[ <a href="enterprisemonitorconfiguration.md">EnterpriseMonitorConfiguration</a>, ... ]</i>
+        "<a href="#backups" title="Backups">Backups</a>" : <i>[ &lt;a href=&#34;backups.md&#34;&gt;Backups&lt;/a&gt;, ... ]</i>,
+        "<a href="#mysqlconfiguration" title="MysqlConfiguration">MysqlConfiguration</a>" : <i>[ &lt;a href=&#34;mysqlconfiguration.md&#34;&gt;MysqlConfiguration&lt;/a&gt;, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
+        "<a href="#enterprisemonitorconfiguration" title="EnterpriseMonitorConfiguration">EnterpriseMonitorConfiguration</a>" : <i>[ &lt;a href=&#34;enterprisemonitorconfiguration.md&#34;&gt;EnterpriseMonitorConfiguration&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -38,29 +42,43 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OraclePaaS::MysqlServiceInstance
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#availabilitydomain" title="AvailabilityDomain">AvailabilityDomain</a>: <i>String</i>
     <a href="#backupdestination" title="BackupDestination">BackupDestination</a>: <i>String</i>
+    <a href="#basereleaseversion" title="BaseReleaseVersion">BaseReleaseVersion</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#emurl" title="EmUrl">EmUrl</a>: <i>String</i>
     <a href="#ipnetwork" title="IpNetwork">IpNetwork</a>: <i>String</i>
     <a href="#meteringfrequency" title="MeteringFrequency">MeteringFrequency</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#notificationemail" title="NotificationEmail">NotificationEmail</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
+    <a href="#releaseversion" title="ReleaseVersion">ReleaseVersion</a>: <i>String</i>
+    <a href="#serviceversion" title="ServiceVersion">ServiceVersion</a>: <i>String</i>
     <a href="#shape" title="Shape">Shape</a>: <i>String</i>
     <a href="#sshpublickey" title="SshPublicKey">SshPublicKey</a>: <i>String</i>
     <a href="#subnet" title="Subnet">Subnet</a>: <i>String</i>
     <a href="#vmuser" title="VmUser">VmUser</a>: <i>String</i>
     <a href="#backups" title="Backups">Backups</a>: <i>
-      - <a href="backups.md">Backups</a></i>
+      - &lt;a href=&#34;backups.md&#34;&gt;Backups&lt;/a&gt;</i>
     <a href="#mysqlconfiguration" title="MysqlConfiguration">MysqlConfiguration</a>: <i>
-      - <a href="mysqlconfiguration.md">MysqlConfiguration</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;mysqlconfiguration.md&#34;&gt;MysqlConfiguration&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     <a href="#enterprisemonitorconfiguration" title="EnterpriseMonitorConfiguration">EnterpriseMonitorConfiguration</a>: <i>
-      - <a href="enterprisemonitorconfiguration.md">EnterpriseMonitorConfiguration</a></i>
+      - &lt;a href=&#34;enterprisemonitorconfiguration.md&#34;&gt;EnterpriseMonitorConfiguration&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AvailabilityDomain
 
@@ -78,6 +96,14 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### BaseReleaseVersion
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Description
 
 _Required_: No
@@ -86,7 +112,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### EmUrl
 
 _Required_: No
 
@@ -134,6 +160,22 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### ReleaseVersion
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ServiceVersion
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Shape
 
 _Required_: Yes
@@ -170,7 +212,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="backups.md">Backups</a>
+_Type_: List of &lt;a href=&#34;backups.md&#34;&gt;Backups&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -178,7 +220,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="mysqlconfiguration.md">MysqlConfiguration</a>
+_Type_: List of &lt;a href=&#34;mysqlconfiguration.md&#34;&gt;MysqlConfiguration&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -186,7 +228,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -194,7 +236,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="enterprisemonitorconfiguration.md">EnterpriseMonitorConfiguration</a>
+_Type_: List of &lt;a href=&#34;enterprisemonitorconfiguration.md&#34;&gt;EnterpriseMonitorConfiguration&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -216,17 +258,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### BaseReleaseVersion
 
-Returns the <code>BaseReleaseVersion</code> value.
+Returns the &lt;code&gt;BaseReleaseVersion&lt;/code&gt; value.
 
 #### EmUrl
 
-Returns the <code>EmUrl</code> value.
+Returns the &lt;code&gt;EmUrl&lt;/code&gt; value.
 
 #### ReleaseVersion
 
-Returns the <code>ReleaseVersion</code> value.
+Returns the &lt;code&gt;ReleaseVersion&lt;/code&gt; value.
 
 #### ServiceVersion
 
-Returns the <code>ServiceVersion</code> value.
+Returns the &lt;code&gt;ServiceVersion&lt;/code&gt; value.
 

@@ -12,10 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureAD::Group",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#members" title="Members">Members</a>" : <i>[ String, ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
+        "<a href="#objectid" title="ObjectId">ObjectId</a>" : <i>String</i>,
         "<a href="#owners" title="Owners">Owners</a>" : <i>[ String, ... ]</i>
     }
 }
@@ -26,18 +27,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureAD::Group
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#members" title="Members">Members</a>: <i>
       - String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
+    <a href="#objectid" title="ObjectId">ObjectId</a>: <i>String</i>
     <a href="#owners" title="Owners">Owners</a>: <i>
       - String</i>
 </pre>
 
 ## Properties
 
-#### Description
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
@@ -45,7 +49,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### Description
 
 _Required_: No
 
@@ -64,6 +68,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Name
 
 _Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ObjectId
+
+_Required_: No
 
 _Type_: String
 
@@ -95,5 +107,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ObjectId
 
-Returns the <code>ObjectId</code> value.
+Returns the &lt;code&gt;ObjectId&lt;/code&gt; value.
 

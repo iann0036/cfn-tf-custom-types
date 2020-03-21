@@ -12,8 +12,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#machinetype" title="MachineType">MachineType</a>" : <i>String</i>,
     "<a href="#mincpuplatform" title="MinCpuPlatform">MinCpuPlatform</a>" : <i>String</i>,
     "<a href="#numinstances" title="NumInstances">NumInstances</a>" : <i>Double</i>,
-    "<a href="#accelerators" title="Accelerators">Accelerators</a>" : <i>[ <a href="workerconfig-accelerators.md">Accelerators</a>, ... ]</i>,
-    "<a href="#diskconfig" title="DiskConfig">DiskConfig</a>" : <i>[ <a href="workerconfig-diskconfig.md">DiskConfig</a>, ... ]</i>
+    "<a href="#accelerators" title="Accelerators">Accelerators</a>" : <i>[ &lt;a href=&#34;workerconfig-accelerators.md&#34;&gt;Accelerators&lt;/a&gt;, ... ]</i>,
+    "<a href="#diskconfig" title="DiskConfig">DiskConfig</a>" : <i>[ &lt;a href=&#34;workerconfig-diskconfig.md&#34;&gt;DiskConfig&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -25,9 +25,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#mincpuplatform" title="MinCpuPlatform">MinCpuPlatform</a>: <i>String</i>
 <a href="#numinstances" title="NumInstances">NumInstances</a>: <i>Double</i>
 <a href="#accelerators" title="Accelerators">Accelerators</a>: <i>
-      - <a href="workerconfig-accelerators.md">Accelerators</a></i>
+      - &lt;a href=&#34;workerconfig-accelerators.md&#34;&gt;Accelerators&lt;/a&gt;</i>
 <a href="#diskconfig" title="DiskConfig">DiskConfig</a>: <i>
-      - <a href="workerconfig-diskconfig.md">DiskConfig</a></i>
+      - &lt;a href=&#34;workerconfig-diskconfig.md&#34;&gt;DiskConfig&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -35,7 +35,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### ImageUri
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -43,7 +42,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### MachineType
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -51,7 +49,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### MinCpuPlatform
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -59,7 +56,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### NumInstances
 
 _Required_: No
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -67,16 +63,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Accelerators
 
 _Required_: No
-
-_Type_: List of <a href="workerconfig-accelerators.md">Accelerators</a>
+_Type_: List of &lt;a href=&#34;workerconfig-accelerators.md&#34;&gt;Accelerators&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DiskConfig
 
 _Required_: No
-
-_Type_: List of <a href="workerconfig-diskconfig.md">DiskConfig</a>
+_Type_: List of &lt;a href=&#34;workerconfig-diskconfig.md&#34;&gt;DiskConfig&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -12,9 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Heroku::Cert",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#app" title="App">App</a>" : <i>String</i>,
         "<a href="#certificatechain" title="CertificateChain">CertificateChain</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#cname" title="Cname">Cname</a>" : <i>String</i>,
+        "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#privatekey" title="PrivateKey">PrivateKey</a>" : <i>String</i>
     }
 }
@@ -25,13 +27,25 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Heroku::Cert
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#app" title="App">App</a>: <i>String</i>
     <a href="#certificatechain" title="CertificateChain">CertificateChain</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#cname" title="Cname">Cname</a>: <i>String</i>
+    <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#privatekey" title="PrivateKey">PrivateKey</a>: <i>String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### App
 
@@ -49,7 +63,15 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### Cname
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Name
 
 _Required_: No
 
@@ -83,9 +105,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Cname
 
-Returns the <code>Cname</code> value.
+Returns the &lt;code&gt;Cname&lt;/code&gt; value.
 
 #### Name
 
-Returns the <code>Name</code> value.
+Returns the &lt;code&gt;Name&lt;/code&gt; value.
 

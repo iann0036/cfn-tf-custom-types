@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     DestinationPrefixListId: Optional[str]
     EgressOnlyGatewayId: Optional[str]
     GatewayId: Optional[str]
-    Id: Optional[str]
     InstanceId: Optional[str]
     InstanceOwnerId: Optional[str]
     NatGatewayId: Optional[str]
@@ -67,7 +66,6 @@ class ResourceModel(BaseResourceModel):
             DestinationPrefixListId=json_data.get("DestinationPrefixListId"),
             EgressOnlyGatewayId=json_data.get("EgressOnlyGatewayId"),
             GatewayId=json_data.get("GatewayId"),
-            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
             InstanceOwnerId=json_data.get("InstanceOwnerId"),
             NatGatewayId=json_data.get("NatGatewayId"),

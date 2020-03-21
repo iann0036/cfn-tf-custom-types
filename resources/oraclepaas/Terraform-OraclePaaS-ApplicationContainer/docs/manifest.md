@@ -17,8 +17,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#shutdowntime" title="ShutdownTime">ShutdownTime</a>" : <i>Double</i>,
     "<a href="#startuptime" title="StartupTime">StartupTime</a>" : <i>Double</i>,
     "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-    "<a href="#release" title="Release">Release</a>" : <i>[ <a href="manifest-release.md">Release</a>, ... ]</i>,
-    "<a href="#runtime" title="Runtime">Runtime</a>" : <i>[ <a href="manifest-runtime.md">Runtime</a>, ... ]</i>
+    "<a href="#release" title="Release">Release</a>" : <i>[ &lt;a href=&#34;manifest-release.md&#34;&gt;Release&lt;/a&gt;, ... ]</i>,
+    "<a href="#runtime" title="Runtime">Runtime</a>" : <i>[ &lt;a href=&#34;manifest-runtime.md&#34;&gt;Runtime&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -35,9 +35,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#startuptime" title="StartupTime">StartupTime</a>: <i>Double</i>
 <a href="#type" title="Type">Type</a>: <i>String</i>
 <a href="#release" title="Release">Release</a>: <i>
-      - <a href="manifest-release.md">Release</a></i>
+      - &lt;a href=&#34;manifest-release.md&#34;&gt;Release&lt;/a&gt;</i>
 <a href="#runtime" title="Runtime">Runtime</a>: <i>
-      - <a href="manifest-runtime.md">Runtime</a></i>
+      - &lt;a href=&#34;manifest-runtime.md&#34;&gt;Runtime&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -45,7 +45,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Clustered
 
 _Required_: No
-
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -53,7 +52,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Command
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -61,7 +59,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### HealthCheckEndpoint
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -69,7 +66,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Home
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -77,7 +73,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Mode
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -85,7 +80,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Notes
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -93,7 +87,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ShutdownTime
 
 _Required_: No
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -101,7 +94,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### StartupTime
 
 _Required_: No
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -109,7 +101,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Type
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -117,16 +108,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Release
 
 _Required_: No
-
-_Type_: List of <a href="manifest-release.md">Release</a>
+_Type_: List of &lt;a href=&#34;manifest-release.md&#34;&gt;Release&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Runtime
 
 _Required_: No
-
-_Type_: List of <a href="manifest-runtime.md">Runtime</a>
+_Type_: List of &lt;a href=&#34;manifest-runtime.md&#34;&gt;Runtime&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

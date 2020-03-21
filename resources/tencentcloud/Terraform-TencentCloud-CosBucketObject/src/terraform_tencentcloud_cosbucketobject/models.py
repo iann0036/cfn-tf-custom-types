@@ -44,7 +44,6 @@ class ResourceModel(BaseResourceModel):
     ContentEncoding: Optional[str]
     ContentType: Optional[str]
     Etag: Optional[str]
-    Id: Optional[str]
     Key: Optional[str]
     Source: Optional[str]
     StorageClass: Optional[str]
@@ -66,7 +65,6 @@ class ResourceModel(BaseResourceModel):
             ContentEncoding=json_data.get("ContentEncoding"),
             ContentType=json_data.get("ContentType"),
             Etag=json_data.get("Etag"),
-            Id=json_data.get("Id"),
             Key=json_data.get("Key"),
             Source=json_data.get("Source"),
             StorageClass=json_data.get("StorageClass"),

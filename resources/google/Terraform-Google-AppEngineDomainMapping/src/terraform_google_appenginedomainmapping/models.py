@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DomainName: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     OverrideStrategy: Optional[str]
     Project: Optional[str]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             DomainName=json_data.get("DomainName"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             OverrideStrategy=json_data.get("OverrideStrategy"),
             Project=json_data.get("Project"),

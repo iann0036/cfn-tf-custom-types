@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Audited: Optional[bool]
     Description: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Region: Optional[str]
     Rules: Optional[Sequence[str]]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Audited=json_data.get("Audited"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Region=json_data.get("Region"),
             Rules=json_data.get("Rules"),

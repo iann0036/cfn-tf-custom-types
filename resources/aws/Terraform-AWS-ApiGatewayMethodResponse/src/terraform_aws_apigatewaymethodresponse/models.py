@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     HttpMethod: Optional[str]
-    Id: Optional[str]
     ResourceId: Optional[str]
     ResponseModels: Optional[Sequence["_ResponseModels"]]
     ResponseParameters: Optional[Sequence["_ResponseParameters"]]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             HttpMethod=json_data.get("HttpMethod"),
-            Id=json_data.get("Id"),
             ResourceId=json_data.get("ResourceId"),
             ResponseModels=json_data.get("ResponseModels"),
             ResponseParameters=json_data.get("ResponseParameters"),

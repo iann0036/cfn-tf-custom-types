@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     Disabled: Optional[bool]
     Filter: Optional[str]
     Folder: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
 
     @classmethod
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             Disabled=json_data.get("Disabled"),
             Filter=json_data.get("Filter"),
             Folder=json_data.get("Folder"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
         )
 

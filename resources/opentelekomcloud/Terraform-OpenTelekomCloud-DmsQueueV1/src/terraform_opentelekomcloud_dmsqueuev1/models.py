@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Created: Optional[str]
     Description: Optional[str]
     GroupCount: Optional[float]
-    Id: Optional[str]
     MaxConsumeCount: Optional[float]
     MaxMsgSizeByte: Optional[float]
     Name: Optional[str]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             Created=json_data.get("Created"),
             Description=json_data.get("Description"),
             GroupCount=json_data.get("GroupCount"),
-            Id=json_data.get("Id"),
             MaxConsumeCount=json_data.get("MaxConsumeCount"),
             MaxMsgSizeByte=json_data.get("MaxMsgSizeByte"),
             Name=json_data.get("Name"),

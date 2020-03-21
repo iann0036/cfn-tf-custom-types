@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AddressBindingWhitelistEnabled: Optional[bool]
     Description: Optional[str]
     DisplayName: Optional[str]
-    Id: Optional[str]
     Revision: Optional[float]
     Tag: Optional[Sequence["_Tag"]]
 
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             AddressBindingWhitelistEnabled=json_data.get("AddressBindingWhitelistEnabled"),
             Description=json_data.get("Description"),
             DisplayName=json_data.get("DisplayName"),
-            Id=json_data.get("Id"),
             Revision=json_data.get("Revision"),
             Tag=json_data.get("Tag"),
         )

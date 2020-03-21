@@ -54,7 +54,6 @@ class ResourceModel(BaseResourceModel):
     ClusterVersion: Optional[str]
     ContainerRuntime: Optional[str]
     Domain: Optional[str]
-    Id: Optional[str]
     IgnoreClusterCidrConflict: Optional[bool]
     ManagedClusterInternetSecurityPolicies: Optional[Sequence[str]]
     Password: Optional[str]
@@ -96,7 +95,6 @@ class ResourceModel(BaseResourceModel):
             ClusterVersion=json_data.get("ClusterVersion"),
             ContainerRuntime=json_data.get("ContainerRuntime"),
             Domain=json_data.get("Domain"),
-            Id=json_data.get("Id"),
             IgnoreClusterCidrConflict=json_data.get("IgnoreClusterCidrConflict"),
             ManagedClusterInternetSecurityPolicies=json_data.get("ManagedClusterInternetSecurityPolicies"),
             Password=json_data.get("Password"),

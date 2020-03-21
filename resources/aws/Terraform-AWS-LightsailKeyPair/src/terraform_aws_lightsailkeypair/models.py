@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     EncryptedFingerprint: Optional[str]
     EncryptedPrivateKey: Optional[str]
     Fingerprint: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     NamePrefix: Optional[str]
     PgpKey: Optional[str]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             EncryptedFingerprint=json_data.get("EncryptedFingerprint"),
             EncryptedPrivateKey=json_data.get("EncryptedPrivateKey"),
             Fingerprint=json_data.get("Fingerprint"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             NamePrefix=json_data.get("NamePrefix"),
             PgpKey=json_data.get("PgpKey"),

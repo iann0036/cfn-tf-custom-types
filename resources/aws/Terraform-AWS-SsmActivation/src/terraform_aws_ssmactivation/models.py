@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     ExpirationDate: Optional[str]
     Expired: Optional[str]
     IamRole: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     RegistrationCount: Optional[float]
     RegistrationLimit: Optional[float]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             ExpirationDate=json_data.get("ExpirationDate"),
             Expired=json_data.get("Expired"),
             IamRole=json_data.get("IamRole"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             RegistrationCount=json_data.get("RegistrationCount"),
             RegistrationLimit=json_data.get("RegistrationLimit"),

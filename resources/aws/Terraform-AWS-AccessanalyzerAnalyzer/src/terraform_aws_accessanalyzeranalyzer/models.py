@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AnalyzerName: Optional[str]
     Arn: Optional[str]
-    Id: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
     Type: Optional[str]
 
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AnalyzerName=json_data.get("AnalyzerName"),
             Arn=json_data.get("Arn"),
-            Id=json_data.get("Id"),
             Tags=json_data.get("Tags"),
             Type=json_data.get("Type"),
         )

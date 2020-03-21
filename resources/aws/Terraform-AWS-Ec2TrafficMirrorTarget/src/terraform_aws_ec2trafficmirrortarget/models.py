@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     NetworkInterfaceId: Optional[str]
     NetworkLoadBalancerArn: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             NetworkInterfaceId=json_data.get("NetworkInterfaceId"),
             NetworkLoadBalancerArn=json_data.get("NetworkLoadBalancerArn"),
             Tags=json_data.get("Tags"),

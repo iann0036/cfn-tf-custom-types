@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     EnableNonSslPort: Optional[bool]
     Family: Optional[str]
     Hostname: Optional[str]
-    Id: Optional[str]
     Location: Optional[str]
     MinimumTlsVersion: Optional[str]
     Name: Optional[str]
@@ -74,7 +73,6 @@ class ResourceModel(BaseResourceModel):
             EnableNonSslPort=json_data.get("EnableNonSslPort"),
             Family=json_data.get("Family"),
             Hostname=json_data.get("Hostname"),
-            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             MinimumTlsVersion=json_data.get("MinimumTlsVersion"),
             Name=json_data.get("Name"),

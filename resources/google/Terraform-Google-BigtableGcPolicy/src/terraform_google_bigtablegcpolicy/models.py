@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ColumnFamily: Optional[str]
-    Id: Optional[str]
     InstanceName: Optional[str]
     Mode: Optional[str]
     Project: Optional[str]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             ColumnFamily=json_data.get("ColumnFamily"),
-            Id=json_data.get("Id"),
             InstanceName=json_data.get("InstanceName"),
             Mode=json_data.get("Mode"),
             Project=json_data.get("Project"),

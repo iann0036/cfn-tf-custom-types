@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     DnsDomain: Optional[str]
     DnsName: Optional[str]
     FixedIp: Optional[str]
-    Id: Optional[str]
     Pool: Optional[str]
     PortId: Optional[str]
     Region: Optional[str]
@@ -67,7 +66,6 @@ class ResourceModel(BaseResourceModel):
             DnsDomain=json_data.get("DnsDomain"),
             DnsName=json_data.get("DnsName"),
             FixedIp=json_data.get("FixedIp"),
-            Id=json_data.get("Id"),
             Pool=json_data.get("Pool"),
             PortId=json_data.get("PortId"),
             Region=json_data.get("Region"),

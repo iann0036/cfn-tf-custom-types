@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     DesiredState: Optional[str]
     DisplayName: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     ManagementEndpoint: Optional[str]
     State: Optional[str]
     TimeCreated: Optional[str]
@@ -66,7 +65,6 @@ class ResourceModel(BaseResourceModel):
             DesiredState=json_data.get("DesiredState"),
             DisplayName=json_data.get("DisplayName"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             ManagementEndpoint=json_data.get("ManagementEndpoint"),
             State=json_data.get("State"),
             TimeCreated=json_data.get("TimeCreated"),

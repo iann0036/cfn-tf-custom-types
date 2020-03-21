@@ -44,7 +44,6 @@ class ResourceModel(BaseResourceModel):
     DnsNameServers: Optional[Sequence[str]]
     DomainName: Optional[str]
     GatewayIp: Optional[str]
-    Id: Optional[str]
     Revision: Optional[float]
     DhcpGenericOption: Optional[Sequence["_DhcpGenericOption"]]
     DhcpOption121: Optional[Sequence["_DhcpOption121"]]
@@ -67,7 +66,6 @@ class ResourceModel(BaseResourceModel):
             DnsNameServers=json_data.get("DnsNameServers"),
             DomainName=json_data.get("DomainName"),
             GatewayIp=json_data.get("GatewayIp"),
-            Id=json_data.get("Id"),
             Revision=json_data.get("Revision"),
             DhcpGenericOption=json_data.get("DhcpGenericOption"),
             DhcpOption121=json_data.get("DhcpOption121"),

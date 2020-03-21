@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Arn: Optional[str]
     EngineName: Optional[str]
-    Id: Optional[str]
     MajorEngineVersion: Optional[str]
     Name: Optional[str]
     NamePrefix: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Arn=json_data.get("Arn"),
             EngineName=json_data.get("EngineName"),
-            Id=json_data.get("Id"),
             MajorEngineVersion=json_data.get("MajorEngineVersion"),
             Name=json_data.get("Name"),
             NamePrefix=json_data.get("NamePrefix"),

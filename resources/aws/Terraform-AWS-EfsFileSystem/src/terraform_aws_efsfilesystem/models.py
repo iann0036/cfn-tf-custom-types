@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     CreationToken: Optional[str]
     DnsName: Optional[str]
     Encrypted: Optional[bool]
-    Id: Optional[str]
     KmsKeyId: Optional[str]
     PerformanceMode: Optional[str]
     ProvisionedThroughputInMibps: Optional[float]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             CreationToken=json_data.get("CreationToken"),
             DnsName=json_data.get("DnsName"),
             Encrypted=json_data.get("Encrypted"),
-            Id=json_data.get("Id"),
             KmsKeyId=json_data.get("KmsKeyId"),
             PerformanceMode=json_data.get("PerformanceMode"),
             ProvisionedThroughputInMibps=json_data.get("ProvisionedThroughputInMibps"),

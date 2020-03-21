@@ -12,15 +12,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OCI::LoadBalancerBackendSet",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#backend" title="Backend">Backend</a>" : <i>[ &lt;a href=&#34;backend.md&#34;&gt;Backend&lt;/a&gt;, ... ]</i>,
         "<a href="#loadbalancerid" title="LoadBalancerId">LoadBalancerId</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#policy" title="Policy">Policy</a>" : <i>String</i>,
-        "<a href="#healthchecker" title="HealthChecker">HealthChecker</a>" : <i>[ <a href="healthchecker.md">HealthChecker</a>, ... ]</i>,
-        "<a href="#lbcookiesessionpersistenceconfiguration" title="LbCookieSessionPersistenceConfiguration">LbCookieSessionPersistenceConfiguration</a>" : <i>[ <a href="lbcookiesessionpersistenceconfiguration.md">LbCookieSessionPersistenceConfiguration</a>, ... ]</i>,
-        "<a href="#sessionpersistenceconfiguration" title="SessionPersistenceConfiguration">SessionPersistenceConfiguration</a>" : <i>[ <a href="sessionpersistenceconfiguration.md">SessionPersistenceConfiguration</a>, ... ]</i>,
-        "<a href="#sslconfiguration" title="SslConfiguration">SslConfiguration</a>" : <i>[ <a href="sslconfiguration.md">SslConfiguration</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
+        "<a href="#state" title="State">State</a>" : <i>String</i>,
+        "<a href="#healthchecker" title="HealthChecker">HealthChecker</a>" : <i>[ &lt;a href=&#34;healthchecker.md&#34;&gt;HealthChecker&lt;/a&gt;, ... ]</i>,
+        "<a href="#lbcookiesessionpersistenceconfiguration" title="LbCookieSessionPersistenceConfiguration">LbCookieSessionPersistenceConfiguration</a>" : <i>[ &lt;a href=&#34;lbcookiesessionpersistenceconfiguration.md&#34;&gt;LbCookieSessionPersistenceConfiguration&lt;/a&gt;, ... ]</i>,
+        "<a href="#sessionpersistenceconfiguration" title="SessionPersistenceConfiguration">SessionPersistenceConfiguration</a>" : <i>[ &lt;a href=&#34;sessionpersistenceconfiguration.md&#34;&gt;SessionPersistenceConfiguration&lt;/a&gt;, ... ]</i>,
+        "<a href="#sslconfiguration" title="SslConfiguration">SslConfiguration</a>" : <i>[ &lt;a href=&#34;sslconfiguration.md&#34;&gt;SslConfiguration&lt;/a&gt;, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     }
 }
 </pre>
@@ -30,28 +32,41 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OCI::LoadBalancerBackendSet
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#backend" title="Backend">Backend</a>: <i>
+      - &lt;a href=&#34;backend.md&#34;&gt;Backend&lt;/a&gt;</i>
     <a href="#loadbalancerid" title="LoadBalancerId">LoadBalancerId</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#policy" title="Policy">Policy</a>: <i>String</i>
+    <a href="#state" title="State">State</a>: <i>String</i>
     <a href="#healthchecker" title="HealthChecker">HealthChecker</a>: <i>
-      - <a href="healthchecker.md">HealthChecker</a></i>
+      - &lt;a href=&#34;healthchecker.md&#34;&gt;HealthChecker&lt;/a&gt;</i>
     <a href="#lbcookiesessionpersistenceconfiguration" title="LbCookieSessionPersistenceConfiguration">LbCookieSessionPersistenceConfiguration</a>: <i>
-      - <a href="lbcookiesessionpersistenceconfiguration.md">LbCookieSessionPersistenceConfiguration</a></i>
+      - &lt;a href=&#34;lbcookiesessionpersistenceconfiguration.md&#34;&gt;LbCookieSessionPersistenceConfiguration&lt;/a&gt;</i>
     <a href="#sessionpersistenceconfiguration" title="SessionPersistenceConfiguration">SessionPersistenceConfiguration</a>: <i>
-      - <a href="sessionpersistenceconfiguration.md">SessionPersistenceConfiguration</a></i>
+      - &lt;a href=&#34;sessionpersistenceconfiguration.md&#34;&gt;SessionPersistenceConfiguration&lt;/a&gt;</i>
     <a href="#sslconfiguration" title="SslConfiguration">SslConfiguration</a>: <i>
-      - <a href="sslconfiguration.md">SslConfiguration</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;sslconfiguration.md&#34;&gt;SslConfiguration&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
 _Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Backend
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;backend.md&#34;&gt;Backend&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -79,11 +94,19 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### State
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### HealthChecker
 
 _Required_: No
 
-_Type_: List of <a href="healthchecker.md">HealthChecker</a>
+_Type_: List of &lt;a href=&#34;healthchecker.md&#34;&gt;HealthChecker&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -91,7 +114,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="lbcookiesessionpersistenceconfiguration.md">LbCookieSessionPersistenceConfiguration</a>
+_Type_: List of &lt;a href=&#34;lbcookiesessionpersistenceconfiguration.md&#34;&gt;LbCookieSessionPersistenceConfiguration&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -99,7 +122,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="sessionpersistenceconfiguration.md">SessionPersistenceConfiguration</a>
+_Type_: List of &lt;a href=&#34;sessionpersistenceconfiguration.md&#34;&gt;SessionPersistenceConfiguration&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -107,7 +130,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="sslconfiguration.md">SslConfiguration</a>
+_Type_: List of &lt;a href=&#34;sslconfiguration.md&#34;&gt;SslConfiguration&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -115,7 +138,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -137,9 +160,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Backend
 
-Returns the <code>Backend</code> value.
+Returns the &lt;code&gt;Backend&lt;/code&gt; value.
 
 #### State
 
-Returns the <code>State</code> value.
+Returns the &lt;code&gt;State&lt;/code&gt; value.
 

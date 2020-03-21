@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Ciphertext: Optional[str]
     CryptoKey: Optional[str]
-    Id: Optional[str]
     Plaintext: Optional[str]
     Timeouts: Optional["_Timeouts"]
 
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Ciphertext=json_data.get("Ciphertext"),
             CryptoKey=json_data.get("CryptoKey"),
-            Id=json_data.get("Id"),
             Plaintext=json_data.get("Plaintext"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),
         )

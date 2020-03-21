@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CidrBlock: Optional[str]
-    Id: Optional[str]
     VpcId: Optional[str]
     Timeouts: Optional["_Timeouts"]
 
@@ -51,7 +50,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             CidrBlock=json_data.get("CidrBlock"),
-            Id=json_data.get("Id"),
             VpcId=json_data.get("VpcId"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),
         )

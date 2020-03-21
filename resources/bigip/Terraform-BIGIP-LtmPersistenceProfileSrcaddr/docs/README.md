@@ -12,10 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::BIGIP::LtmPersistenceProfileSrcaddr",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#appservice" title="AppService">AppService</a>" : <i>String</i>,
         "<a href="#defaultsfrom" title="DefaultsFrom">DefaultsFrom</a>" : <i>String</i>,
         "<a href="#hashalgorithm" title="HashAlgorithm">HashAlgorithm</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#mapproxies" title="MapProxies">MapProxies</a>" : <i>String</i>,
         "<a href="#mask" title="Mask">Mask</a>" : <i>String</i>,
         "<a href="#matchacrosspools" title="MatchAcrossPools">MatchAcrossPools</a>" : <i>String</i>,
@@ -34,10 +34,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::BIGIP::LtmPersistenceProfileSrcaddr
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#appservice" title="AppService">AppService</a>: <i>String</i>
     <a href="#defaultsfrom" title="DefaultsFrom">DefaultsFrom</a>: <i>String</i>
     <a href="#hashalgorithm" title="HashAlgorithm">HashAlgorithm</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#mapproxies" title="MapProxies">MapProxies</a>: <i>String</i>
     <a href="#mask" title="Mask">Mask</a>: <i>String</i>
     <a href="#matchacrosspools" title="MatchAcrossPools">MatchAcrossPools</a>: <i>String</i>
@@ -50,6 +50,16 @@ Properties:
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AppService
 
@@ -68,14 +78,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HashAlgorithm
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 

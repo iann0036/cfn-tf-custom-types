@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     DisplayName: Optional[str]
     Enabled: Optional[bool]
     ErrorLogLevel: Optional[str]
-    Id: Optional[str]
     LogicalRouterId: Optional[str]
     Revision: Optional[float]
     Size: Optional[str]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             DisplayName=json_data.get("DisplayName"),
             Enabled=json_data.get("Enabled"),
             ErrorLogLevel=json_data.get("ErrorLogLevel"),
-            Id=json_data.get("Id"),
             LogicalRouterId=json_data.get("LogicalRouterId"),
             Revision=json_data.get("Revision"),
             Size=json_data.get("Size"),

@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Floatingip: Optional[float]
-    Id: Optional[str]
     Network: Optional[float]
     Port: Optional[float]
     ProjectId: Optional[str]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Floatingip=json_data.get("Floatingip"),
-            Id=json_data.get("Id"),
             Network=json_data.get("Network"),
             Port=json_data.get("Port"),
             ProjectId=json_data.get("ProjectId"),

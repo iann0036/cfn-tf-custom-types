@@ -12,8 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Google::OrganizationIamCustomRole",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#deleted" title="Deleted">Deleted</a>" : <i>Boolean</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#orgid" title="OrgId">OrgId</a>" : <i>String</i>,
         "<a href="#permissions" title="Permissions">Permissions</a>" : <i>[ String, ... ]</i>,
         "<a href="#roleid" title="RoleId">RoleId</a>" : <i>String</i>,
@@ -28,8 +29,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Google::OrganizationIamCustomRole
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#deleted" title="Deleted">Deleted</a>: <i>Boolean</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#orgid" title="OrgId">OrgId</a>: <i>String</i>
     <a href="#permissions" title="Permissions">Permissions</a>: <i>
       - String</i>
@@ -40,7 +42,9 @@ Properties:
 
 ## Properties
 
-#### Description
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
@@ -48,7 +52,15 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### Deleted
+
+_Required_: No
+
+_Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Description
 
 _Required_: No
 
@@ -114,5 +126,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Deleted
 
-Returns the <code>Deleted</code> value.
+Returns the &lt;code&gt;Deleted&lt;/code&gt; value.
 

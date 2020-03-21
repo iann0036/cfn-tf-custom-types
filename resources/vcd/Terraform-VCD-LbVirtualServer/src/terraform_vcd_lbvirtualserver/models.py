@@ -44,7 +44,6 @@ class ResourceModel(BaseResourceModel):
     EdgeGateway: Optional[str]
     EnableAcceleration: Optional[bool]
     Enabled: Optional[bool]
-    Id: Optional[str]
     IpAddress: Optional[str]
     Name: Optional[str]
     Org: Optional[str]
@@ -70,7 +69,6 @@ class ResourceModel(BaseResourceModel):
             EdgeGateway=json_data.get("EdgeGateway"),
             EnableAcceleration=json_data.get("EnableAcceleration"),
             Enabled=json_data.get("Enabled"),
-            Id=json_data.get("Id"),
             IpAddress=json_data.get("IpAddress"),
             Name=json_data.get("Name"),
             Org=json_data.get("Org"),

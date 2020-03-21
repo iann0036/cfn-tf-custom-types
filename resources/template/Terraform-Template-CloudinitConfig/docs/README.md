@@ -12,10 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Template::CloudinitConfig",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#base64encode" title="Base64Encode">Base64Encode</a>" : <i>Boolean</i>,
         "<a href="#gzip" title="Gzip">Gzip</a>" : <i>Boolean</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#part" title="Part">Part</a>" : <i>[ <a href="part.md">Part</a>, ... ]</i>
+        "<a href="#rendered" title="Rendered">Rendered</a>" : <i>String</i>,
+        "<a href="#part" title="Part">Part</a>" : <i>[ &lt;a href=&#34;part.md&#34;&gt;Part&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -25,14 +26,25 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Template::CloudinitConfig
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#base64encode" title="Base64Encode">Base64Encode</a>: <i>Boolean</i>
     <a href="#gzip" title="Gzip">Gzip</a>: <i>Boolean</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#rendered" title="Rendered">Rendered</a>: <i>String</i>
     <a href="#part" title="Part">Part</a>: <i>
-      - <a href="part.md">Part</a></i>
+      - &lt;a href=&#34;part.md&#34;&gt;Part&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Base64Encode
 
@@ -50,7 +62,7 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### Rendered
 
 _Required_: No
 
@@ -62,7 +74,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="part.md">Part</a>
+_Type_: List of &lt;a href=&#34;part.md&#34;&gt;Part&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -84,5 +96,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Rendered
 
-Returns the <code>Rendered</code> value.
+Returns the &lt;code&gt;Rendered&lt;/code&gt; value.
 

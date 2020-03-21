@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
     Guid: Optional[str]
-    Id: Optional[str]
     IdcsAccessToken: Optional[str]
     IdcsTenancy: Optional[str]
     InstanceUsageType: Optional[str]
@@ -72,7 +71,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             FreeformTags=json_data.get("FreeformTags"),
             Guid=json_data.get("Guid"),
-            Id=json_data.get("Id"),
             IdcsAccessToken=json_data.get("IdcsAccessToken"),
             IdcsTenancy=json_data.get("IdcsTenancy"),
             InstanceUsageType=json_data.get("InstanceUsageType"),

@@ -12,8 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::HuaweiCloud::DmsGroupV1",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#availabledeadletters" title="AvailableDeadletters">AvailableDeadletters</a>" : <i>Double</i>,
+        "<a href="#availablemessages" title="AvailableMessages">AvailableMessages</a>" : <i>Double</i>,
+        "<a href="#consumedmessages" title="ConsumedMessages">ConsumedMessages</a>" : <i>Double</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
+        "<a href="#produceddeadletters" title="ProducedDeadletters">ProducedDeadletters</a>" : <i>Double</i>,
+        "<a href="#producedmessages" title="ProducedMessages">ProducedMessages</a>" : <i>Double</i>,
         "<a href="#queueid" title="QueueId">QueueId</a>" : <i>String</i>
     }
 }
@@ -24,18 +29,49 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::HuaweiCloud::DmsGroupV1
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#availabledeadletters" title="AvailableDeadletters">AvailableDeadletters</a>: <i>Double</i>
+    <a href="#availablemessages" title="AvailableMessages">AvailableMessages</a>: <i>Double</i>
+    <a href="#consumedmessages" title="ConsumedMessages">ConsumedMessages</a>: <i>Double</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
+    <a href="#produceddeadletters" title="ProducedDeadletters">ProducedDeadletters</a>: <i>Double</i>
+    <a href="#producedmessages" title="ProducedMessages">ProducedMessages</a>: <i>Double</i>
     <a href="#queueid" title="QueueId">QueueId</a>: <i>String</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
 _Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### AvailableDeadletters
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### AvailableMessages
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ConsumedMessages
+
+_Required_: No
+
+_Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -44,6 +80,22 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: Yes
 
 _Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ProducedDeadletters
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ProducedMessages
+
+_Required_: No
+
+_Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -73,21 +125,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AvailableDeadletters
 
-Returns the <code>AvailableDeadletters</code> value.
+Returns the &lt;code&gt;AvailableDeadletters&lt;/code&gt; value.
 
 #### AvailableMessages
 
-Returns the <code>AvailableMessages</code> value.
+Returns the &lt;code&gt;AvailableMessages&lt;/code&gt; value.
 
 #### ConsumedMessages
 
-Returns the <code>ConsumedMessages</code> value.
+Returns the &lt;code&gt;ConsumedMessages&lt;/code&gt; value.
 
 #### ProducedDeadletters
 
-Returns the <code>ProducedDeadletters</code> value.
+Returns the &lt;code&gt;ProducedDeadletters&lt;/code&gt; value.
 
 #### ProducedMessages
 
-Returns the <code>ProducedMessages</code> value.
+Returns the &lt;code&gt;ProducedMessages&lt;/code&gt; value.
 

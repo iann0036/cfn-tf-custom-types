@@ -13,8 +13,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#nexthoptype" title="NextHopType">NextHopType</a>" : <i>String</i>,
     "<a href="#nexthopvalue" title="NextHopValue">NextHopValue</a>" : <i>String</i>,
     "<a href="#vsys" title="Vsys">Vsys</a>" : <i>String</i>,
-    "<a href="#monitor" title="Monitor">Monitor</a>" : <i>[ <a href="rule-forwarding-monitor.md">Monitor</a>, ... ]</i>,
-    "<a href="#symmetricreturn" title="SymmetricReturn">SymmetricReturn</a>" : <i>[ <a href="rule-forwarding-symmetricreturn.md">SymmetricReturn</a>, ... ]</i>
+    "<a href="#monitor" title="Monitor">Monitor</a>" : <i>[ &lt;a href=&#34;rule-forwarding-monitor.md&#34;&gt;Monitor&lt;/a&gt;, ... ]</i>,
+    "<a href="#symmetricreturn" title="SymmetricReturn">SymmetricReturn</a>" : <i>[ &lt;a href=&#34;rule-forwarding-symmetricreturn.md&#34;&gt;SymmetricReturn&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -27,9 +27,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#nexthopvalue" title="NextHopValue">NextHopValue</a>: <i>String</i>
 <a href="#vsys" title="Vsys">Vsys</a>: <i>String</i>
 <a href="#monitor" title="Monitor">Monitor</a>: <i>
-      - <a href="rule-forwarding-monitor.md">Monitor</a></i>
+      - &lt;a href=&#34;rule-forwarding-monitor.md&#34;&gt;Monitor&lt;/a&gt;</i>
 <a href="#symmetricreturn" title="SymmetricReturn">SymmetricReturn</a>: <i>
-      - <a href="rule-forwarding-symmetricreturn.md">SymmetricReturn</a></i>
+      - &lt;a href=&#34;rule-forwarding-symmetricreturn.md&#34;&gt;SymmetricReturn&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -37,7 +37,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Action
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -45,7 +44,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### EgressInterface
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -53,7 +51,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### NextHopType
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -61,7 +58,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### NextHopValue
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -69,7 +65,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Vsys
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -77,16 +72,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Monitor
 
 _Required_: No
-
-_Type_: List of <a href="rule-forwarding-monitor.md">Monitor</a>
+_Type_: List of &lt;a href=&#34;rule-forwarding-monitor.md&#34;&gt;Monitor&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SymmetricReturn
 
 _Required_: No
-
-_Type_: List of <a href="rule-forwarding-symmetricreturn.md">SymmetricReturn</a>
+_Type_: List of &lt;a href=&#34;rule-forwarding-symmetricreturn.md&#34;&gt;SymmetricReturn&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

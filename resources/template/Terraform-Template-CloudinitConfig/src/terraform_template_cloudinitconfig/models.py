@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Base64Encode: Optional[bool]
     Gzip: Optional[bool]
-    Id: Optional[str]
     Rendered: Optional[str]
     Part: Optional[Sequence["_Part"]]
 
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Base64Encode=json_data.get("Base64Encode"),
             Gzip=json_data.get("Gzip"),
-            Id=json_data.get("Id"),
             Rendered=json_data.get("Rendered"),
             Part=json_data.get("Part"),
         )

@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     IpCidrRange: Optional[str]
     MaxThroughput: Optional[float]
     MinThroughput: Optional[float]
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             IpCidrRange=json_data.get("IpCidrRange"),
             MaxThroughput=json_data.get("MaxThroughput"),
             MinThroughput=json_data.get("MinThroughput"),

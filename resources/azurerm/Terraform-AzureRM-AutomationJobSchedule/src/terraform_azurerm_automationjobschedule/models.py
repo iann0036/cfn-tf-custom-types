@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AutomationAccountName: Optional[str]
-    Id: Optional[str]
     JobScheduleId: Optional[str]
     Parameters: Optional[Sequence["_Parameters"]]
     ResourceGroupName: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             AutomationAccountName=json_data.get("AutomationAccountName"),
-            Id=json_data.get("Id"),
             JobScheduleId=json_data.get("JobScheduleId"),
             Parameters=json_data.get("Parameters"),
             ResourceGroupName=json_data.get("ResourceGroupName"),

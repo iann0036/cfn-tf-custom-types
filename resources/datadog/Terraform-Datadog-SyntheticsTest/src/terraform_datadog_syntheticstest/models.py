@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Assertions: Optional[Sequence[Sequence["_Assertions"]]]
     DeviceIds: Optional[Sequence[str]]
-    Id: Optional[str]
     Locations: Optional[Sequence[str]]
     Message: Optional[str]
     MonitorId: Optional[float]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Assertions=json_data.get("Assertions"),
             DeviceIds=json_data.get("DeviceIds"),
-            Id=json_data.get("Id"),
             Locations=json_data.get("Locations"),
             Message=json_data.get("Message"),
             MonitorId=json_data.get("MonitorId"),

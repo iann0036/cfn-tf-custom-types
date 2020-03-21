@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Active: Optional[bool]
     Config: Optional[Sequence["_Config"]]
     Frequency: Optional[float]
-    Id: Optional[str]
     JobType: Optional[str]
     Name: Optional[str]
     Notes: Optional[str]
@@ -65,7 +64,6 @@ class ResourceModel(BaseResourceModel):
             Active=json_data.get("Active"),
             Config=json_data.get("Config"),
             Frequency=json_data.get("Frequency"),
-            Id=json_data.get("Id"),
             JobType=json_data.get("JobType"),
             Name=json_data.get("Name"),
             Notes=json_data.get("Notes"),

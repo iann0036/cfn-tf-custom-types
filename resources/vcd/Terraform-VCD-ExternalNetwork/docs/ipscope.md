@@ -13,7 +13,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#dnssuffix" title="DnsSuffix">DnsSuffix</a>" : <i>String</i>,
     "<a href="#gateway" title="Gateway">Gateway</a>" : <i>String</i>,
     "<a href="#netmask" title="Netmask">Netmask</a>" : <i>String</i>,
-    "<a href="#staticippool" title="StaticIpPool">StaticIpPool</a>" : <i>[ <a href="ipscope-staticippool.md">StaticIpPool</a>, ... ]</i>
+    "<a href="#staticippool" title="StaticIpPool">StaticIpPool</a>" : <i>[ &lt;a href=&#34;ipscope-staticippool.md&#34;&gt;StaticIpPool&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -26,7 +26,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#gateway" title="Gateway">Gateway</a>: <i>String</i>
 <a href="#netmask" title="Netmask">Netmask</a>: <i>String</i>
 <a href="#staticippool" title="StaticIpPool">StaticIpPool</a>: <i>
-      - <a href="ipscope-staticippool.md">StaticIpPool</a></i>
+      - &lt;a href=&#34;ipscope-staticippool.md&#34;&gt;StaticIpPool&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -34,7 +34,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Dns1
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -42,7 +41,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Dns2
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -50,7 +48,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DnsSuffix
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -58,7 +55,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Gateway
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -66,7 +62,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Netmask
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -74,8 +69,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### StaticIpPool
 
 _Required_: No
-
-_Type_: List of <a href="ipscope-staticippool.md">StaticIpPool</a>
+_Type_: List of &lt;a href=&#34;ipscope-staticippool.md&#34;&gt;StaticIpPool&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

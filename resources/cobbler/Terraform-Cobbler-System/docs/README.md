@@ -12,13 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Cobbler::System",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#bootfiles" title="BootFiles">BootFiles</a>" : <i>String</i>,
         "<a href="#comment" title="Comment">Comment</a>" : <i>String</i>,
         "<a href="#enablegpxe" title="EnableGpxe">EnableGpxe</a>" : <i>Boolean</i>,
         "<a href="#fetchablefiles" title="FetchableFiles">FetchableFiles</a>" : <i>String</i>,
         "<a href="#gateway" title="Gateway">Gateway</a>" : <i>String</i>,
         "<a href="#hostname" title="Hostname">Hostname</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#image" title="Image">Image</a>" : <i>String</i>,
         "<a href="#ipv6defaultdevice" title="Ipv6DefaultDevice">Ipv6DefaultDevice</a>" : <i>String</i>,
         "<a href="#kerneloptions" title="KernelOptions">KernelOptions</a>" : <i>String</i>,
@@ -55,7 +55,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#virtpxeboot" title="VirtPxeBoot">VirtPxeBoot</a>" : <i>Double</i>,
         "<a href="#virtram" title="VirtRam">VirtRam</a>" : <i>String</i>,
         "<a href="#virttype" title="VirtType">VirtType</a>" : <i>String</i>,
-        "<a href="#interface" title="Interface">Interface</a>" : <i>[ <a href="interface.md">Interface</a>, ... ]</i>
+        "<a href="#interface" title="Interface">Interface</a>" : <i>[ &lt;a href=&#34;interface.md&#34;&gt;Interface&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -65,13 +65,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Cobbler::System
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#bootfiles" title="BootFiles">BootFiles</a>: <i>String</i>
     <a href="#comment" title="Comment">Comment</a>: <i>String</i>
     <a href="#enablegpxe" title="EnableGpxe">EnableGpxe</a>: <i>Boolean</i>
     <a href="#fetchablefiles" title="FetchableFiles">FetchableFiles</a>: <i>String</i>
     <a href="#gateway" title="Gateway">Gateway</a>: <i>String</i>
     <a href="#hostname" title="Hostname">Hostname</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#image" title="Image">Image</a>: <i>String</i>
     <a href="#ipv6defaultdevice" title="Ipv6DefaultDevice">Ipv6DefaultDevice</a>: <i>String</i>
     <a href="#kerneloptions" title="KernelOptions">KernelOptions</a>: <i>String</i>
@@ -113,10 +113,20 @@ Properties:
     <a href="#virtram" title="VirtRam">VirtRam</a>: <i>String</i>
     <a href="#virttype" title="VirtType">VirtType</a>: <i>String</i>
     <a href="#interface" title="Interface">Interface</a>: <i>
-      - <a href="interface.md">Interface</a></i>
+      - &lt;a href=&#34;interface.md&#34;&gt;Interface&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BootFiles
 
@@ -159,14 +169,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Hostname
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 
@@ -466,7 +468,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="interface.md">Interface</a>
+_Type_: List of &lt;a href=&#34;interface.md&#34;&gt;Interface&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

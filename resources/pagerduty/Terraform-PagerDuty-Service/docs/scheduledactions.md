@@ -10,7 +10,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#tourgency" title="ToUrgency">ToUrgency</a>" : <i>String</i>,
     "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-    "<a href="#at" title="At">At</a>" : <i>[ <a href="scheduledactions-at.md">At</a>, ... ]</i>
+    "<a href="#at" title="At">At</a>" : <i>[ &lt;a href=&#34;scheduledactions-at.md&#34;&gt;At&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -20,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#tourgency" title="ToUrgency">ToUrgency</a>: <i>String</i>
 <a href="#type" title="Type">Type</a>: <i>String</i>
 <a href="#at" title="At">At</a>: <i>
-      - <a href="scheduledactions-at.md">At</a></i>
+      - &lt;a href=&#34;scheduledactions-at.md&#34;&gt;At&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -28,7 +28,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### ToUrgency
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -36,7 +35,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Type
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -44,8 +42,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### At
 
 _Required_: No
-
-_Type_: List of <a href="scheduledactions-at.md">At</a>
+_Type_: List of &lt;a href=&#34;scheduledactions-at.md&#34;&gt;At&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

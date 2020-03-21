@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     EnableSni: Optional[bool]
     FailureThreshold: Optional[float]
     Fqdn: Optional[str]
-    Id: Optional[str]
     InsufficientDataHealthStatus: Optional[str]
     InvertHealthcheck: Optional[bool]
     IpAddress: Optional[str]
@@ -73,7 +72,6 @@ class ResourceModel(BaseResourceModel):
             EnableSni=json_data.get("EnableSni"),
             FailureThreshold=json_data.get("FailureThreshold"),
             Fqdn=json_data.get("Fqdn"),
-            Id=json_data.get("Id"),
             InsufficientDataHealthStatus=json_data.get("InsufficientDataHealthStatus"),
             InvertHealthcheck=json_data.get("InvertHealthcheck"),
             IpAddress=json_data.get("IpAddress"),

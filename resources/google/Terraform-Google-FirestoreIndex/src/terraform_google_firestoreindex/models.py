@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Collection: Optional[str]
     Database: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Project: Optional[str]
     QueryScope: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Collection=json_data.get("Collection"),
             Database=json_data.get("Database"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Project=json_data.get("Project"),
             QueryScope=json_data.get("QueryScope"),

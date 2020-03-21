@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     BoundCidrs: Optional[Sequence[str]]
     BoundServiceAccountNames: Optional[Sequence[str]]
     BoundServiceAccountNamespaces: Optional[Sequence[str]]
-    Id: Optional[str]
     MaxTtl: Optional[float]
     NumUses: Optional[float]
     Period: Optional[float]
@@ -72,7 +71,6 @@ class ResourceModel(BaseResourceModel):
             BoundCidrs=json_data.get("BoundCidrs"),
             BoundServiceAccountNames=json_data.get("BoundServiceAccountNames"),
             BoundServiceAccountNamespaces=json_data.get("BoundServiceAccountNamespaces"),
-            Id=json_data.get("Id"),
             MaxTtl=json_data.get("MaxTtl"),
             NumUses=json_data.get("NumUses"),
             Period=json_data.get("Period"),

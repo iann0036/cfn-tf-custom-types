@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     Bucket: Optional[str]
     DomainName: Optional[str]
     HasPublicAccessPolicy: Optional[bool]
-    Id: Optional[str]
     Name: Optional[str]
     NetworkOrigin: Optional[str]
     Policy: Optional[str]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             Bucket=json_data.get("Bucket"),
             DomainName=json_data.get("DomainName"),
             HasPublicAccessPolicy=json_data.get("HasPublicAccessPolicy"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             NetworkOrigin=json_data.get("NetworkOrigin"),
             Policy=json_data.get("Policy"),

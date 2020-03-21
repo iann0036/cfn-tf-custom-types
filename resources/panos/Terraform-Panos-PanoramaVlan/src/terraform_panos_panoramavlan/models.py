@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     Interfaces: Optional[Sequence[str]]
     Name: Optional[str]
     Template: Optional[str]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             Interfaces=json_data.get("Interfaces"),
             Name=json_data.get("Name"),
             Template=json_data.get("Template"),

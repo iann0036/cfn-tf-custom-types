@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     CookieName: Optional[str]
     Description: Optional[str]
     DisplayName: Optional[str]
-    Id: Optional[str]
     PersistenceShared: Optional[bool]
     Revision: Optional[float]
     InsertModeParams: Optional[Sequence["_InsertModeParams"]]
@@ -63,7 +62,6 @@ class ResourceModel(BaseResourceModel):
             CookieName=json_data.get("CookieName"),
             Description=json_data.get("Description"),
             DisplayName=json_data.get("DisplayName"),
-            Id=json_data.get("Id"),
             PersistenceShared=json_data.get("PersistenceShared"),
             Revision=json_data.get("Revision"),
             InsertModeParams=json_data.get("InsertModeParams"),

@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#optional" title="Optional">Optional</a>" : <i>Boolean</i>,
-    "<a href="#localobjectreference" title="LocalObjectReference">LocalObjectReference</a>" : <i>[ <a href="spec-containers-envfrom-secretref-localobjectreference.md">LocalObjectReference</a>, ... ]</i>
+    "<a href="#localobjectreference" title="LocalObjectReference">LocalObjectReference</a>" : <i>[ &lt;a href=&#34;spec-containers-envfrom-secretref-localobjectreference.md&#34;&gt;LocalObjectReference&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#optional" title="Optional">Optional</a>: <i>Boolean</i>
 <a href="#localobjectreference" title="LocalObjectReference">LocalObjectReference</a>: <i>
-      - <a href="spec-containers-envfrom-secretref-localobjectreference.md">LocalObjectReference</a></i>
+      - &lt;a href=&#34;spec-containers-envfrom-secretref-localobjectreference.md&#34;&gt;LocalObjectReference&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -26,7 +26,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Optional
 
 _Required_: No
-
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -34,8 +33,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### LocalObjectReference
 
 _Required_: No
-
-_Type_: List of <a href="spec-containers-envfrom-secretref-localobjectreference.md">LocalObjectReference</a>
+_Type_: List of &lt;a href=&#34;spec-containers-envfrom-secretref-localobjectreference.md&#34;&gt;LocalObjectReference&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     Enabled: Optional[bool]
     ExpirationModel: Optional[str]
-    Id: Optional[str]
     KeyMaterialBase64: Optional[str]
     KeyState: Optional[str]
     KeyUsage: Optional[str]
@@ -63,7 +62,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             Enabled=json_data.get("Enabled"),
             ExpirationModel=json_data.get("ExpirationModel"),
-            Id=json_data.get("Id"),
             KeyMaterialBase64=json_data.get("KeyMaterialBase64"),
             KeyState=json_data.get("KeyState"),
             KeyUsage=json_data.get("KeyUsage"),

@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     ConsistencyGroupId: Optional[str]
     Description: Optional[str]
     DeviceType: Optional[str]
-    Id: Optional[str]
     ImageId: Optional[str]
     Metadata: Optional[Sequence["_Metadata"]]
     Name: Optional[str]
@@ -71,7 +70,6 @@ class ResourceModel(BaseResourceModel):
             ConsistencyGroupId=json_data.get("ConsistencyGroupId"),
             Description=json_data.get("Description"),
             DeviceType=json_data.get("DeviceType"),
-            Id=json_data.get("Id"),
             ImageId=json_data.get("ImageId"),
             Metadata=json_data.get("Metadata"),
             Name=json_data.get("Name"),

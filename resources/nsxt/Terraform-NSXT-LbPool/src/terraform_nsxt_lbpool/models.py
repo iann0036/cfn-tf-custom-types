@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     Algorithm: Optional[str]
     Description: Optional[str]
     DisplayName: Optional[str]
-    Id: Optional[str]
     MinActiveMembers: Optional[float]
     PassiveMonitorId: Optional[str]
     Revision: Optional[float]
@@ -65,7 +64,6 @@ class ResourceModel(BaseResourceModel):
             Algorithm=json_data.get("Algorithm"),
             Description=json_data.get("Description"),
             DisplayName=json_data.get("DisplayName"),
-            Id=json_data.get("Id"),
             MinActiveMembers=json_data.get("MinActiveMembers"),
             PassiveMonitorId=json_data.get("PassiveMonitorId"),
             Revision=json_data.get("Revision"),

@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     BotName: Optional[str]
     CallingWebHook: Optional[str]
     EnableCalling: Optional[bool]
-    Id: Optional[str]
     Location: Optional[str]
     ResourceGroupName: Optional[str]
     Timeouts: Optional["_Timeouts"]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             BotName=json_data.get("BotName"),
             CallingWebHook=json_data.get("CallingWebHook"),
             EnableCalling=json_data.get("EnableCalling"),
-            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             ResourceGroupName=json_data.get("ResourceGroupName"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),

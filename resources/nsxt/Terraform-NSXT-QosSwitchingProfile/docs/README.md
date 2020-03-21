@@ -12,16 +12,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::NSXT::QosSwitchingProfile",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#classofservice" title="ClassOfService">ClassOfService</a>" : <i>Double</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#displayname" title="DisplayName">DisplayName</a>" : <i>String</i>,
         "<a href="#dscppriority" title="DscpPriority">DscpPriority</a>" : <i>Double</i>,
         "<a href="#dscptrusted" title="DscpTrusted">DscpTrusted</a>" : <i>Boolean</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#egressrateshaper" title="EgressRateShaper">EgressRateShaper</a>" : <i>[ <a href="egressrateshaper.md">EgressRateShaper</a>, ... ]</i>,
-        "<a href="#ingressbroadcastrateshaper" title="IngressBroadcastRateShaper">IngressBroadcastRateShaper</a>" : <i>[ <a href="ingressbroadcastrateshaper.md">IngressBroadcastRateShaper</a>, ... ]</i>,
-        "<a href="#ingressrateshaper" title="IngressRateShaper">IngressRateShaper</a>" : <i>[ <a href="ingressrateshaper.md">IngressRateShaper</a>, ... ]</i>,
-        "<a href="#tag" title="Tag">Tag</a>" : <i>[ <a href="tag.md">Tag</a>, ... ]</i>
+        "<a href="#revision" title="Revision">Revision</a>" : <i>Double</i>,
+        "<a href="#egressrateshaper" title="EgressRateShaper">EgressRateShaper</a>" : <i>[ &lt;a href=&#34;egressrateshaper.md&#34;&gt;EgressRateShaper&lt;/a&gt;, ... ]</i>,
+        "<a href="#ingressbroadcastrateshaper" title="IngressBroadcastRateShaper">IngressBroadcastRateShaper</a>" : <i>[ &lt;a href=&#34;ingressbroadcastrateshaper.md&#34;&gt;IngressBroadcastRateShaper&lt;/a&gt;, ... ]</i>,
+        "<a href="#ingressrateshaper" title="IngressRateShaper">IngressRateShaper</a>" : <i>[ &lt;a href=&#34;ingressrateshaper.md&#34;&gt;IngressRateShaper&lt;/a&gt;, ... ]</i>,
+        "<a href="#tag" title="Tag">Tag</a>" : <i>[ &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -31,23 +32,34 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::NSXT::QosSwitchingProfile
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#classofservice" title="ClassOfService">ClassOfService</a>: <i>Double</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#displayname" title="DisplayName">DisplayName</a>: <i>String</i>
     <a href="#dscppriority" title="DscpPriority">DscpPriority</a>: <i>Double</i>
     <a href="#dscptrusted" title="DscpTrusted">DscpTrusted</a>: <i>Boolean</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#revision" title="Revision">Revision</a>: <i>Double</i>
     <a href="#egressrateshaper" title="EgressRateShaper">EgressRateShaper</a>: <i>
-      - <a href="egressrateshaper.md">EgressRateShaper</a></i>
+      - &lt;a href=&#34;egressrateshaper.md&#34;&gt;EgressRateShaper&lt;/a&gt;</i>
     <a href="#ingressbroadcastrateshaper" title="IngressBroadcastRateShaper">IngressBroadcastRateShaper</a>: <i>
-      - <a href="ingressbroadcastrateshaper.md">IngressBroadcastRateShaper</a></i>
+      - &lt;a href=&#34;ingressbroadcastrateshaper.md&#34;&gt;IngressBroadcastRateShaper&lt;/a&gt;</i>
     <a href="#ingressrateshaper" title="IngressRateShaper">IngressRateShaper</a>: <i>
-      - <a href="ingressrateshaper.md">IngressRateShaper</a></i>
+      - &lt;a href=&#34;ingressrateshaper.md&#34;&gt;IngressRateShaper&lt;/a&gt;</i>
     <a href="#tag" title="Tag">Tag</a>: <i>
-      - <a href="tag.md">Tag</a></i>
+      - &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClassOfService
 
@@ -89,11 +101,11 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### Revision
 
 _Required_: No
 
-_Type_: String
+_Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -101,7 +113,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="egressrateshaper.md">EgressRateShaper</a>
+_Type_: List of &lt;a href=&#34;egressrateshaper.md&#34;&gt;EgressRateShaper&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -109,7 +121,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="ingressbroadcastrateshaper.md">IngressBroadcastRateShaper</a>
+_Type_: List of &lt;a href=&#34;ingressbroadcastrateshaper.md&#34;&gt;IngressBroadcastRateShaper&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -117,7 +129,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="ingressrateshaper.md">IngressRateShaper</a>
+_Type_: List of &lt;a href=&#34;ingressrateshaper.md&#34;&gt;IngressRateShaper&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -125,7 +137,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tag.md">Tag</a>
+_Type_: List of &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -147,5 +159,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Revision
 
-Returns the <code>Revision</code> value.
+Returns the &lt;code&gt;Revision&lt;/code&gt; value.
 

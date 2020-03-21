@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     CustomerAddress: Optional[str]
     DcId: Optional[str]
     DcgId: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     NetworkType: Optional[str]
     RouteFilterPrefixes: Optional[Sequence[str]]
@@ -69,7 +68,6 @@ class ResourceModel(BaseResourceModel):
             CustomerAddress=json_data.get("CustomerAddress"),
             DcId=json_data.get("DcId"),
             DcgId=json_data.get("DcgId"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             NetworkType=json_data.get("NetworkType"),
             RouteFilterPrefixes=json_data.get("RouteFilterPrefixes"),

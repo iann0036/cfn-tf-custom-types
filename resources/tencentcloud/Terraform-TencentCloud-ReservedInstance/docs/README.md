@@ -12,9 +12,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::TencentCloud::ReservedInstance",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#configid" title="ConfigId">ConfigId</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#endtime" title="EndTime">EndTime</a>" : <i>String</i>,
         "<a href="#instancecount" title="InstanceCount">InstanceCount</a>" : <i>Double</i>,
+        "<a href="#starttime" title="StartTime">StartTime</a>" : <i>String</i>,
+        "<a href="#status" title="Status">Status</a>" : <i>String</i>
     }
 }
 </pre>
@@ -24,12 +27,25 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::TencentCloud::ReservedInstance
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#configid" title="ConfigId">ConfigId</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#endtime" title="EndTime">EndTime</a>: <i>String</i>
     <a href="#instancecount" title="InstanceCount">InstanceCount</a>: <i>Double</i>
+    <a href="#starttime" title="StartTime">StartTime</a>: <i>String</i>
+    <a href="#status" title="Status">Status</a>: <i>String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ConfigId
 
@@ -39,7 +55,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### EndTime
 
 _Required_: No
 
@@ -52,6 +68,22 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: Yes
 
 _Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### StartTime
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Status
+
+_Required_: No
+
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -73,13 +105,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### EndTime
 
-Returns the <code>EndTime</code> value.
+Returns the &lt;code&gt;EndTime&lt;/code&gt; value.
 
 #### StartTime
 
-Returns the <code>StartTime</code> value.
+Returns the &lt;code&gt;StartTime&lt;/code&gt; value.
 
 #### Status
 
-Returns the <code>Status</code> value.
+Returns the &lt;code&gt;Status&lt;/code&gt; value.
 

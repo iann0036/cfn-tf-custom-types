@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DisplayName: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     State: Optional[str]
     TimeCreated: Optional[str]
     Timeouts: Optional["_Timeouts"]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DisplayName=json_data.get("DisplayName"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             State=json_data.get("State"),
             TimeCreated=json_data.get("TimeCreated"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),

@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     EnableCdn: Optional[bool]
     Fingerprint: Optional[str]
     HealthChecks: Optional[Sequence[str]]
-    Id: Optional[str]
     LoadBalancingScheme: Optional[str]
     Name: Optional[str]
     PortName: Optional[str]
@@ -75,7 +74,6 @@ class ResourceModel(BaseResourceModel):
             EnableCdn=json_data.get("EnableCdn"),
             Fingerprint=json_data.get("Fingerprint"),
             HealthChecks=json_data.get("HealthChecks"),
-            Id=json_data.get("Id"),
             LoadBalancingScheme=json_data.get("LoadBalancingScheme"),
             Name=json_data.get("Name"),
             PortName=json_data.get("PortName"),

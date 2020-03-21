@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#category" title="Category">Category</a>" : <i>String</i>,
-    "<a href="#configuration" title="Configuration">Configuration</a>" : <i>[ <a href="stage-action-configuration.md">Configuration</a>, ... ]</i>,
+    "<a href="#configuration" title="Configuration">Configuration</a>" : <i>[ &lt;a href=&#34;stage-action-configuration.md&#34;&gt;Configuration&lt;/a&gt;, ... ]</i>,
     "<a href="#inputartifacts" title="InputArtifacts">InputArtifacts</a>" : <i>[ String, ... ]</i>,
     "<a href="#name" title="Name">Name</a>" : <i>String</i>,
     "<a href="#outputartifacts" title="OutputArtifacts">OutputArtifacts</a>" : <i>[ String, ... ]</i>,
@@ -26,7 +26,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#category" title="Category">Category</a>: <i>String</i>
 <a href="#configuration" title="Configuration">Configuration</a>: <i>
-      - <a href="stage-action-configuration.md">Configuration</a></i>
+      - &lt;a href=&#34;stage-action-configuration.md&#34;&gt;Configuration&lt;/a&gt;</i>
 <a href="#inputartifacts" title="InputArtifacts">InputArtifacts</a>: <i>
       - String</i>
 <a href="#name" title="Name">Name</a>: <i>String</i>
@@ -44,7 +44,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Category
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -52,15 +51,13 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Configuration
 
 _Required_: No
-
-_Type_: List of <a href="stage-action-configuration.md">Configuration</a>
+_Type_: List of &lt;a href=&#34;stage-action-configuration.md&#34;&gt;Configuration&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InputArtifacts
 
 _Required_: No
-
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -68,7 +65,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Name
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -76,7 +72,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### OutputArtifacts
 
 _Required_: No
-
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -84,7 +79,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Owner
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -92,7 +86,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Provider
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -100,7 +93,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RoleArn
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -108,7 +100,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RunOrder
 
 _Required_: No
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -116,7 +107,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Version
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

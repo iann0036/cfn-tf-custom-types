@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Arn: Optional[str]
     Duration: Optional[float]
-    Id: Optional[str]
     Name: Optional[str]
     RulesPackageArns: Optional[Sequence[str]]
     Tags: Optional[Sequence["_Tags"]]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Arn=json_data.get("Arn"),
             Duration=json_data.get("Duration"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             RulesPackageArns=json_data.get("RulesPackageArns"),
             Tags=json_data.get("Tags"),

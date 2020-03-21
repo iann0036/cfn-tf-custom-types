@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     Region: Optional[str]
     ScalingConfigurationName: Optional[str]
     InstanceConfig: Optional[Sequence["_InstanceConfig"]]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             Region=json_data.get("Region"),
             ScalingConfigurationName=json_data.get("ScalingConfigurationName"),
             InstanceConfig=json_data.get("InstanceConfig"),

@@ -12,12 +12,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OCI::IdentityTagDefault",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#compartmentid" title="CompartmentId">CompartmentId</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#isrequired" title="IsRequired">IsRequired</a>" : <i>Boolean</i>,
+        "<a href="#state" title="State">State</a>" : <i>String</i>,
         "<a href="#tagdefinitionid" title="TagDefinitionId">TagDefinitionId</a>" : <i>String</i>,
+        "<a href="#tagdefinitionname" title="TagDefinitionName">TagDefinitionName</a>" : <i>String</i>,
+        "<a href="#tagnamespaceid" title="TagNamespaceId">TagNamespaceId</a>" : <i>String</i>,
+        "<a href="#timecreated" title="TimeCreated">TimeCreated</a>" : <i>String</i>,
         "<a href="#value" title="Value">Value</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     }
 }
 </pre>
@@ -27,27 +31,33 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OCI::IdentityTagDefault
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#compartmentid" title="CompartmentId">CompartmentId</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#isrequired" title="IsRequired">IsRequired</a>: <i>Boolean</i>
+    <a href="#state" title="State">State</a>: <i>String</i>
     <a href="#tagdefinitionid" title="TagDefinitionId">TagDefinitionId</a>: <i>String</i>
+    <a href="#tagdefinitionname" title="TagDefinitionName">TagDefinitionName</a>: <i>String</i>
+    <a href="#tagnamespaceid" title="TagNamespaceId">TagNamespaceId</a>: <i>String</i>
+    <a href="#timecreated" title="TimeCreated">TimeCreated</a>: <i>String</i>
     <a href="#value" title="Value">Value</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
-#### CompartmentId
+#### tfcfnid
 
-_Required_: Yes
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
 
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### CompartmentId
 
-_Required_: No
+_Required_: Yes
 
 _Type_: String
 
@@ -61,9 +71,41 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### State
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### TagDefinitionId
 
 _Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### TagDefinitionName
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### TagNamespaceId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### TimeCreated
+
+_Required_: No
 
 _Type_: String
 
@@ -81,7 +123,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -103,17 +145,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### State
 
-Returns the <code>State</code> value.
+Returns the &lt;code&gt;State&lt;/code&gt; value.
 
 #### TagDefinitionName
 
-Returns the <code>TagDefinitionName</code> value.
+Returns the &lt;code&gt;TagDefinitionName&lt;/code&gt; value.
 
 #### TagNamespaceId
 
-Returns the <code>TagNamespaceId</code> value.
+Returns the &lt;code&gt;TagNamespaceId&lt;/code&gt; value.
 
 #### TimeCreated
 
-Returns the <code>TimeCreated</code> value.
+Returns the &lt;code&gt;TimeCreated&lt;/code&gt; value.
 

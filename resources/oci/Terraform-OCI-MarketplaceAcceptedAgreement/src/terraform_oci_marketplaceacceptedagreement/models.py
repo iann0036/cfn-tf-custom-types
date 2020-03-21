@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     DefinedTags: Optional[Sequence["_DefinedTags"]]
     DisplayName: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     ListingId: Optional[str]
     PackageVersion: Optional[str]
     Signature: Optional[str]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             DefinedTags=json_data.get("DefinedTags"),
             DisplayName=json_data.get("DisplayName"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             ListingId=json_data.get("ListingId"),
             PackageVersion=json_data.get("PackageVersion"),
             Signature=json_data.get("Signature"),

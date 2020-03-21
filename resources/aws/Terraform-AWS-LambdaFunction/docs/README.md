@@ -12,15 +12,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::LambdaFunction",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#filename" title="Filename">Filename</a>" : <i>String</i>,
         "<a href="#functionname" title="FunctionName">FunctionName</a>" : <i>String</i>,
         "<a href="#handler" title="Handler">Handler</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#invokearn" title="InvokeArn">InvokeArn</a>" : <i>String</i>,
         "<a href="#kmskeyarn" title="KmsKeyArn">KmsKeyArn</a>" : <i>String</i>,
+        "<a href="#lastmodified" title="LastModified">LastModified</a>" : <i>String</i>,
         "<a href="#layers" title="Layers">Layers</a>" : <i>[ String, ... ]</i>,
         "<a href="#memorysize" title="MemorySize">MemorySize</a>" : <i>Double</i>,
         "<a href="#publish" title="Publish">Publish</a>" : <i>Boolean</i>,
+        "<a href="#qualifiedarn" title="QualifiedArn">QualifiedArn</a>" : <i>String</i>,
         "<a href="#reservedconcurrentexecutions" title="ReservedConcurrentExecutions">ReservedConcurrentExecutions</a>" : <i>Double</i>,
         "<a href="#role" title="Role">Role</a>" : <i>String</i>,
         "<a href="#runtime" title="Runtime">Runtime</a>" : <i>String</i>,
@@ -28,13 +32,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#s3key" title="S3Key">S3Key</a>" : <i>String</i>,
         "<a href="#s3objectversion" title="S3ObjectVersion">S3ObjectVersion</a>" : <i>String</i>,
         "<a href="#sourcecodehash" title="SourceCodeHash">SourceCodeHash</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#sourcecodesize" title="SourceCodeSize">SourceCodeSize</a>" : <i>Double</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
         "<a href="#timeout" title="Timeout">Timeout</a>" : <i>Double</i>,
-        "<a href="#deadletterconfig" title="DeadLetterConfig">DeadLetterConfig</a>" : <i>[ <a href="deadletterconfig.md">DeadLetterConfig</a>, ... ]</i>,
-        "<a href="#environment" title="Environment">Environment</a>" : <i>[ <a href="environment.md">Environment</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
-        "<a href="#tracingconfig" title="TracingConfig">TracingConfig</a>" : <i>[ <a href="tracingconfig.md">TracingConfig</a>, ... ]</i>,
-        "<a href="#vpcconfig" title="VpcConfig">VpcConfig</a>" : <i>[ <a href="vpcconfig.md">VpcConfig</a>, ... ]</i>
+        "<a href="#version" title="Version">Version</a>" : <i>String</i>,
+        "<a href="#deadletterconfig" title="DeadLetterConfig">DeadLetterConfig</a>" : <i>[ &lt;a href=&#34;deadletterconfig.md&#34;&gt;DeadLetterConfig&lt;/a&gt;, ... ]</i>,
+        "<a href="#environment" title="Environment">Environment</a>" : <i>[ &lt;a href=&#34;environment.md&#34;&gt;Environment&lt;/a&gt;, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
+        "<a href="#tracingconfig" title="TracingConfig">TracingConfig</a>" : <i>[ &lt;a href=&#34;tracingconfig.md&#34;&gt;TracingConfig&lt;/a&gt;, ... ]</i>,
+        "<a href="#vpcconfig" title="VpcConfig">VpcConfig</a>" : <i>[ &lt;a href=&#34;vpcconfig.md&#34;&gt;VpcConfig&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -44,16 +50,20 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::LambdaFunction
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#filename" title="Filename">Filename</a>: <i>String</i>
     <a href="#functionname" title="FunctionName">FunctionName</a>: <i>String</i>
     <a href="#handler" title="Handler">Handler</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#invokearn" title="InvokeArn">InvokeArn</a>: <i>String</i>
     <a href="#kmskeyarn" title="KmsKeyArn">KmsKeyArn</a>: <i>String</i>
+    <a href="#lastmodified" title="LastModified">LastModified</a>: <i>String</i>
     <a href="#layers" title="Layers">Layers</a>: <i>
       - String</i>
     <a href="#memorysize" title="MemorySize">MemorySize</a>: <i>Double</i>
     <a href="#publish" title="Publish">Publish</a>: <i>Boolean</i>
+    <a href="#qualifiedarn" title="QualifiedArn">QualifiedArn</a>: <i>String</i>
     <a href="#reservedconcurrentexecutions" title="ReservedConcurrentExecutions">ReservedConcurrentExecutions</a>: <i>Double</i>
     <a href="#role" title="Role">Role</a>: <i>String</i>
     <a href="#runtime" title="Runtime">Runtime</a>: <i>String</i>
@@ -61,21 +71,41 @@ Properties:
     <a href="#s3key" title="S3Key">S3Key</a>: <i>String</i>
     <a href="#s3objectversion" title="S3ObjectVersion">S3ObjectVersion</a>: <i>String</i>
     <a href="#sourcecodehash" title="SourceCodeHash">SourceCodeHash</a>: <i>String</i>
+    <a href="#sourcecodesize" title="SourceCodeSize">SourceCodeSize</a>: <i>Double</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
     <a href="#timeout" title="Timeout">Timeout</a>: <i>Double</i>
+    <a href="#version" title="Version">Version</a>: <i>String</i>
     <a href="#deadletterconfig" title="DeadLetterConfig">DeadLetterConfig</a>: <i>
-      - <a href="deadletterconfig.md">DeadLetterConfig</a></i>
+      - &lt;a href=&#34;deadletterconfig.md&#34;&gt;DeadLetterConfig&lt;/a&gt;</i>
     <a href="#environment" title="Environment">Environment</a>: <i>
-      - <a href="environment.md">Environment</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;environment.md&#34;&gt;Environment&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     <a href="#tracingconfig" title="TracingConfig">TracingConfig</a>: <i>
-      - <a href="tracingconfig.md">TracingConfig</a></i>
+      - &lt;a href=&#34;tracingconfig.md&#34;&gt;TracingConfig&lt;/a&gt;</i>
     <a href="#vpcconfig" title="VpcConfig">VpcConfig</a>: <i>
-      - <a href="vpcconfig.md">VpcConfig</a></i>
+      - &lt;a href=&#34;vpcconfig.md&#34;&gt;VpcConfig&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Arn
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -109,7 +139,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### InvokeArn
 
 _Required_: No
 
@@ -118,6 +148,14 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KmsKeyArn
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### LastModified
 
 _Required_: No
 
@@ -146,6 +184,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### QualifiedArn
+
+_Required_: No
+
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -205,11 +251,19 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### SourceCodeSize
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Tags
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -221,11 +275,19 @@ _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### Version
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### DeadLetterConfig
 
 _Required_: No
 
-_Type_: List of <a href="deadletterconfig.md">DeadLetterConfig</a>
+_Type_: List of &lt;a href=&#34;deadletterconfig.md&#34;&gt;DeadLetterConfig&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -233,7 +295,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="environment.md">Environment</a>
+_Type_: List of &lt;a href=&#34;environment.md&#34;&gt;Environment&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -241,7 +303,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -249,7 +311,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tracingconfig.md">TracingConfig</a>
+_Type_: List of &lt;a href=&#34;tracingconfig.md&#34;&gt;TracingConfig&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -257,7 +319,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="vpcconfig.md">VpcConfig</a>
+_Type_: List of &lt;a href=&#34;vpcconfig.md&#34;&gt;VpcConfig&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -279,25 +341,25 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the <code>Arn</code> value.
+Returns the &lt;code&gt;Arn&lt;/code&gt; value.
 
 #### InvokeArn
 
-Returns the <code>InvokeArn</code> value.
+Returns the &lt;code&gt;InvokeArn&lt;/code&gt; value.
 
 #### LastModified
 
-Returns the <code>LastModified</code> value.
+Returns the &lt;code&gt;LastModified&lt;/code&gt; value.
 
 #### QualifiedArn
 
-Returns the <code>QualifiedArn</code> value.
+Returns the &lt;code&gt;QualifiedArn&lt;/code&gt; value.
 
 #### SourceCodeSize
 
-Returns the <code>SourceCodeSize</code> value.
+Returns the &lt;code&gt;SourceCodeSize&lt;/code&gt; value.
 
 #### Version
 
-Returns the <code>Version</code> value.
+Returns the &lt;code&gt;Version&lt;/code&gt; value.
 

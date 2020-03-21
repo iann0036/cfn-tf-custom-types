@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Category: Optional[str]
     Description: Optional[str]
     Hcl: Optional[bool]
-    Id: Optional[str]
     Key: Optional[str]
     Sensitive: Optional[bool]
     Value: Optional[str]
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
             Category=json_data.get("Category"),
             Description=json_data.get("Description"),
             Hcl=json_data.get("Hcl"),
-            Id=json_data.get("Id"),
             Key=json_data.get("Key"),
             Sensitive=json_data.get("Sensitive"),
             Value=json_data.get("Value"),

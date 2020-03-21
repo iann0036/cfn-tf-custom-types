@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AvailabilityDomain: Optional[str]
     CompartmentId: Optional[str]
     DisplayName: Optional[str]
-    Id: Optional[str]
     InstanceId: Optional[str]
     NicIndex: Optional[float]
     State: Optional[str]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             AvailabilityDomain=json_data.get("AvailabilityDomain"),
             CompartmentId=json_data.get("CompartmentId"),
             DisplayName=json_data.get("DisplayName"),
-            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
             NicIndex=json_data.get("NicIndex"),
             State=json_data.get("State"),

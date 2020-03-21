@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     GrantId: Optional[str]
     GrantToken: Optional[str]
     GranteePrincipal: Optional[str]
-    Id: Optional[str]
     KeyId: Optional[str]
     Name: Optional[str]
     Operations: Optional[Sequence[str]]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             GrantId=json_data.get("GrantId"),
             GrantToken=json_data.get("GrantToken"),
             GranteePrincipal=json_data.get("GranteePrincipal"),
-            Id=json_data.get("Id"),
             KeyId=json_data.get("KeyId"),
             Name=json_data.get("Name"),
             Operations=json_data.get("Operations"),

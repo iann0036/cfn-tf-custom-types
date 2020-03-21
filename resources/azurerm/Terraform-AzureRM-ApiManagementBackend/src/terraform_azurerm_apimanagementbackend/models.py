@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ApiManagementName: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Protocol: Optional[str]
     ResourceGroupName: Optional[str]
@@ -64,7 +63,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ApiManagementName=json_data.get("ApiManagementName"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Protocol=json_data.get("Protocol"),
             ResourceGroupName=json_data.get("ResourceGroupName"),

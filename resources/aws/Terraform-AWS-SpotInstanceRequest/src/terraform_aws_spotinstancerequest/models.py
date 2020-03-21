@@ -49,7 +49,6 @@ class ResourceModel(BaseResourceModel):
     Hibernation: Optional[bool]
     HostId: Optional[str]
     IamInstanceProfile: Optional[str]
-    Id: Optional[str]
     InstanceInitiatedShutdownBehavior: Optional[str]
     InstanceInterruptionBehaviour: Optional[str]
     InstanceState: Optional[str]
@@ -113,7 +112,6 @@ class ResourceModel(BaseResourceModel):
             Hibernation=json_data.get("Hibernation"),
             HostId=json_data.get("HostId"),
             IamInstanceProfile=json_data.get("IamInstanceProfile"),
-            Id=json_data.get("Id"),
             InstanceInitiatedShutdownBehavior=json_data.get("InstanceInitiatedShutdownBehavior"),
             InstanceInterruptionBehaviour=json_data.get("InstanceInterruptionBehaviour"),
             InstanceState=json_data.get("InstanceState"),

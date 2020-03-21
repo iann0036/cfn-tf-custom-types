@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     DuplicateDetectionHistoryTimeWindow: Optional[str]
     EnableExpress: Optional[bool]
     EnablePartitioning: Optional[bool]
-    Id: Optional[str]
     LockDuration: Optional[str]
     MaxDeliveryCount: Optional[float]
     MaxSizeInMegabytes: Optional[float]
@@ -68,7 +67,6 @@ class ResourceModel(BaseResourceModel):
             DuplicateDetectionHistoryTimeWindow=json_data.get("DuplicateDetectionHistoryTimeWindow"),
             EnableExpress=json_data.get("EnableExpress"),
             EnablePartitioning=json_data.get("EnablePartitioning"),
-            Id=json_data.get("Id"),
             LockDuration=json_data.get("LockDuration"),
             MaxDeliveryCount=json_data.get("MaxDeliveryCount"),
             MaxSizeInMegabytes=json_data.get("MaxSizeInMegabytes"),

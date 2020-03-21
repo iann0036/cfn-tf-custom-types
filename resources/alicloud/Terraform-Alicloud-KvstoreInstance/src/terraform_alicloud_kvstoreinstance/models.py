@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     BackupId: Optional[str]
     ConnectionDomain: Optional[str]
     EngineVersion: Optional[str]
-    Id: Optional[str]
     InstanceChargeType: Optional[str]
     InstanceClass: Optional[str]
     InstanceName: Optional[str]
@@ -76,7 +75,6 @@ class ResourceModel(BaseResourceModel):
             BackupId=json_data.get("BackupId"),
             ConnectionDomain=json_data.get("ConnectionDomain"),
             EngineVersion=json_data.get("EngineVersion"),
-            Id=json_data.get("Id"),
             InstanceChargeType=json_data.get("InstanceChargeType"),
             InstanceClass=json_data.get("InstanceClass"),
             InstanceName=json_data.get("InstanceName"),

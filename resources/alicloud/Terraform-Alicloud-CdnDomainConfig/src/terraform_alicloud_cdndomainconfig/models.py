@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DomainName: Optional[str]
     FunctionName: Optional[str]
-    Id: Optional[str]
     FunctionArgs: Optional[Sequence["_FunctionArgs"]]
 
     @classmethod
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DomainName=json_data.get("DomainName"),
             FunctionName=json_data.get("FunctionName"),
-            Id=json_data.get("Id"),
             FunctionArgs=json_data.get("FunctionArgs"),
         )
 

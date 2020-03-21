@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     BypassHeadRequest: Optional[bool]
     Frequency: Optional[float]
-    Id: Optional[str]
     Locations: Optional[Sequence[str]]
     Name: Optional[str]
     SlaThreshold: Optional[float]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             BypassHeadRequest=json_data.get("BypassHeadRequest"),
             Frequency=json_data.get("Frequency"),
-            Id=json_data.get("Id"),
             Locations=json_data.get("Locations"),
             Name=json_data.get("Name"),
             SlaThreshold=json_data.get("SlaThreshold"),

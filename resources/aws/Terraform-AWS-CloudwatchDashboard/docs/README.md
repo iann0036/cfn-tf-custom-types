@@ -12,9 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::CloudwatchDashboard",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#dashboardarn" title="DashboardArn">DashboardArn</a>" : <i>String</i>,
         "<a href="#dashboardbody" title="DashboardBody">DashboardBody</a>" : <i>String</i>,
-        "<a href="#dashboardname" title="DashboardName">DashboardName</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>
+        "<a href="#dashboardname" title="DashboardName">DashboardName</a>" : <i>String</i>
     }
 }
 </pre>
@@ -24,12 +25,31 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::CloudwatchDashboard
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#dashboardarn" title="DashboardArn">DashboardArn</a>: <i>String</i>
     <a href="#dashboardbody" title="DashboardBody">DashboardBody</a>: <i>String</i>
     <a href="#dashboardname" title="DashboardName">DashboardName</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### DashboardArn
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DashboardBody
 
@@ -42,14 +62,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DashboardName
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
 
 _Type_: String
 
@@ -73,5 +85,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### DashboardArn
 
-Returns the <code>DashboardArn</code> value.
+Returns the &lt;code&gt;DashboardArn&lt;/code&gt; value.
 

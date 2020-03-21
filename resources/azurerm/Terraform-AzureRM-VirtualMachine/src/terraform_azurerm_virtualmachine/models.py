@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AvailabilitySetId: Optional[str]
     DeleteDataDisksOnTermination: Optional[bool]
     DeleteOsDiskOnTermination: Optional[bool]
-    Id: Optional[str]
     LicenseType: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
@@ -79,7 +78,6 @@ class ResourceModel(BaseResourceModel):
             AvailabilitySetId=json_data.get("AvailabilitySetId"),
             DeleteDataDisksOnTermination=json_data.get("DeleteDataDisksOnTermination"),
             DeleteOsDiskOnTermination=json_data.get("DeleteOsDiskOnTermination"),
-            Id=json_data.get("Id"),
             LicenseType=json_data.get("LicenseType"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),

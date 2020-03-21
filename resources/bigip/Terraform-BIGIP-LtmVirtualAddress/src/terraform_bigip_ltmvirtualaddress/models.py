@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     ConnLimit: Optional[float]
     Enabled: Optional[bool]
     IcmpEcho: Optional[bool]
-    Id: Optional[str]
     Name: Optional[str]
     TrafficGroup: Optional[str]
 
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             ConnLimit=json_data.get("ConnLimit"),
             Enabled=json_data.get("Enabled"),
             IcmpEcho=json_data.get("IcmpEcho"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             TrafficGroup=json_data.get("TrafficGroup"),
         )

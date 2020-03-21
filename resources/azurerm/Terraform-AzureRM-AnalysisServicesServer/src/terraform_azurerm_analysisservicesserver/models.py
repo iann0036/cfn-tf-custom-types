@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AdminUsers: Optional[Sequence[str]]
     BackupBlobContainerUri: Optional[str]
     EnablePowerBiService: Optional[bool]
-    Id: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
     QuerypoolConnectionMode: Optional[str]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             AdminUsers=json_data.get("AdminUsers"),
             BackupBlobContainerUri=json_data.get("BackupBlobContainerUri"),
             EnablePowerBiService=json_data.get("EnablePowerBiService"),
-            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),
             QuerypoolConnectionMode=json_data.get("QuerypoolConnectionMode"),

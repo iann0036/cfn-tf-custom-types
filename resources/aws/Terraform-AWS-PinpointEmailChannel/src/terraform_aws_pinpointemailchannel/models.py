@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     ApplicationId: Optional[str]
     Enabled: Optional[bool]
     FromAddress: Optional[str]
-    Id: Optional[str]
     Identity: Optional[str]
     MessagesPerSecond: Optional[float]
     RoleArn: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             ApplicationId=json_data.get("ApplicationId"),
             Enabled=json_data.get("Enabled"),
             FromAddress=json_data.get("FromAddress"),
-            Id=json_data.get("Id"),
             Identity=json_data.get("Identity"),
             MessagesPerSecond=json_data.get("MessagesPerSecond"),
             RoleArn=json_data.get("RoleArn"),

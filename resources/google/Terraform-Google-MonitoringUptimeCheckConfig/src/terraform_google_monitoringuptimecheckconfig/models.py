@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DisplayName: Optional[str]
-    Id: Optional[str]
     IsInternal: Optional[bool]
     Name: Optional[str]
     Period: Optional[str]
@@ -64,7 +63,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             DisplayName=json_data.get("DisplayName"),
-            Id=json_data.get("Id"),
             IsInternal=json_data.get("IsInternal"),
             Name=json_data.get("Name"),
             Period=json_data.get("Period"),

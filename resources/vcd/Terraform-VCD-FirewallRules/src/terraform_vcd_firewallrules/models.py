@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DefaultAction: Optional[str]
     EdgeGateway: Optional[str]
-    Id: Optional[str]
     Org: Optional[str]
     Vdc: Optional[str]
     Rule: Optional[Sequence["_Rule"]]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DefaultAction=json_data.get("DefaultAction"),
             EdgeGateway=json_data.get("EdgeGateway"),
-            Id=json_data.get("Id"),
             Org=json_data.get("Org"),
             Vdc=json_data.get("Vdc"),
             Rule=json_data.get("Rule"),

@@ -12,11 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::CloudwatchLogMetricFilter",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#loggroupname" title="LogGroupName">LogGroupName</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#pattern" title="Pattern">Pattern</a>" : <i>String</i>,
-        "<a href="#metrictransformation" title="MetricTransformation">MetricTransformation</a>" : <i>[ <a href="metrictransformation.md">MetricTransformation</a>, ... ]</i>
+        "<a href="#metrictransformation" title="MetricTransformation">MetricTransformation</a>" : <i>[ &lt;a href=&#34;metrictransformation.md&#34;&gt;MetricTransformation&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -26,17 +26,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::CloudwatchLogMetricFilter
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#loggroupname" title="LogGroupName">LogGroupName</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#pattern" title="Pattern">Pattern</a>: <i>String</i>
     <a href="#metrictransformation" title="MetricTransformation">MetricTransformation</a>: <i>
-      - <a href="metrictransformation.md">MetricTransformation</a></i>
+      - &lt;a href=&#34;metrictransformation.md&#34;&gt;MetricTransformation&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
@@ -72,7 +74,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="metrictransformation.md">MetricTransformation</a>
+_Type_: List of &lt;a href=&#34;metrictransformation.md&#34;&gt;MetricTransformation&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

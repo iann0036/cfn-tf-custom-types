@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DeleteProtectionValidation: Optional[bool]
-    Id: Optional[str]
     LoadBalancerId: Optional[str]
     BackendServers: Optional[Sequence["_BackendServers"]]
 
@@ -51,7 +50,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             DeleteProtectionValidation=json_data.get("DeleteProtectionValidation"),
-            Id=json_data.get("Id"),
             LoadBalancerId=json_data.get("LoadBalancerId"),
             BackendServers=json_data.get("BackendServers"),
         )

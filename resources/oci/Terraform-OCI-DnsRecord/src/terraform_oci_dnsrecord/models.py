@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CompartmentId: Optional[str]
     Domain: Optional[str]
-    Id: Optional[str]
     IsProtected: Optional[bool]
     Rdata: Optional[str]
     RecordHash: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CompartmentId=json_data.get("CompartmentId"),
             Domain=json_data.get("Domain"),
-            Id=json_data.get("Id"),
             IsProtected=json_data.get("IsProtected"),
             Rdata=json_data.get("Rdata"),
             RecordHash=json_data.get("RecordHash"),

@@ -12,10 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OVH::CloudNetworkPrivate",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#projectid" title="ProjectId">ProjectId</a>" : <i>String</i>,
         "<a href="#regions" title="Regions">Regions</a>" : <i>[ String, ... ]</i>,
+        "<a href="#regionsstatus" title="RegionsStatus">RegionsStatus</a>" : <i>[ &lt;a href=&#34;regionsstatus.md&#34;&gt;RegionsStatus&lt;/a&gt;, ... ]</i>,
+        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
+        "<a href="#type" title="Type">Type</a>" : <i>String</i>,
         "<a href="#vlanid" title="VlanId">VlanId</a>" : <i>Double</i>
     }
 }
@@ -26,17 +29,23 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OVH::CloudNetworkPrivate
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#projectid" title="ProjectId">ProjectId</a>: <i>String</i>
     <a href="#regions" title="Regions">Regions</a>: <i>
       - String</i>
+    <a href="#regionsstatus" title="RegionsStatus">RegionsStatus</a>: <i>
+      - &lt;a href=&#34;regionsstatus.md&#34;&gt;RegionsStatus&lt;/a&gt;</i>
+    <a href="#status" title="Status">Status</a>: <i>String</i>
+    <a href="#type" title="Type">Type</a>: <i>String</i>
     <a href="#vlanid" title="VlanId">VlanId</a>: <i>Double</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
@@ -68,6 +77,30 @@ _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### RegionsStatus
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;regionsstatus.md&#34;&gt;RegionsStatus&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Status
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Type
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### VlanId
 
 _Required_: No
@@ -94,13 +127,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### RegionsStatus
 
-Returns the <code>RegionsStatus</code> value.
+Returns the &lt;code&gt;RegionsStatus&lt;/code&gt; value.
 
 #### Status
 
-Returns the <code>Status</code> value.
+Returns the &lt;code&gt;Status&lt;/code&gt; value.
 
 #### Type
 
-Returns the <code>Type</code> value.
+Returns the &lt;code&gt;Type&lt;/code&gt; value.
 

@@ -12,18 +12,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::HuaweiCloud::DisStreamV2",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#autoscalemaxpartitioncount" title="AutoScaleMaxPartitionCount">AutoScaleMaxPartitionCount</a>" : <i>Double</i>,
         "<a href="#autoscaleminpartitioncount" title="AutoScaleMinPartitionCount">AutoScaleMinPartitionCount</a>" : <i>Double</i>,
         "<a href="#compressionformat" title="CompressionFormat">CompressionFormat</a>" : <i>String</i>,
+        "<a href="#created" title="Created">Created</a>" : <i>Double</i>,
         "<a href="#csvdelimiter" title="CsvDelimiter">CsvDelimiter</a>" : <i>String</i>,
         "<a href="#dataschema" title="DataSchema">DataSchema</a>" : <i>String</i>,
         "<a href="#datatype" title="DataType">DataType</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#partitioncount" title="PartitionCount">PartitionCount</a>" : <i>Double</i>,
+        "<a href="#readablepartitioncount" title="ReadablePartitionCount">ReadablePartitionCount</a>" : <i>Double</i>,
         "<a href="#retentionperiod" title="RetentionPeriod">RetentionPeriod</a>" : <i>Double</i>,
         "<a href="#streamname" title="StreamName">StreamName</a>" : <i>String</i>,
         "<a href="#streamtype" title="StreamType">StreamType</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>
+        "<a href="#writablepartitioncount" title="WritablePartitionCount">WritablePartitionCount</a>" : <i>Double</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -33,22 +36,35 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::HuaweiCloud::DisStreamV2
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#autoscalemaxpartitioncount" title="AutoScaleMaxPartitionCount">AutoScaleMaxPartitionCount</a>: <i>Double</i>
     <a href="#autoscaleminpartitioncount" title="AutoScaleMinPartitionCount">AutoScaleMinPartitionCount</a>: <i>Double</i>
     <a href="#compressionformat" title="CompressionFormat">CompressionFormat</a>: <i>String</i>
+    <a href="#created" title="Created">Created</a>: <i>Double</i>
     <a href="#csvdelimiter" title="CsvDelimiter">CsvDelimiter</a>: <i>String</i>
     <a href="#dataschema" title="DataSchema">DataSchema</a>: <i>String</i>
     <a href="#datatype" title="DataType">DataType</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#partitioncount" title="PartitionCount">PartitionCount</a>: <i>Double</i>
+    <a href="#readablepartitioncount" title="ReadablePartitionCount">ReadablePartitionCount</a>: <i>Double</i>
     <a href="#retentionperiod" title="RetentionPeriod">RetentionPeriod</a>: <i>Double</i>
     <a href="#streamname" title="StreamName">StreamName</a>: <i>String</i>
     <a href="#streamtype" title="StreamType">StreamType</a>: <i>String</i>
+    <a href="#writablepartitioncount" title="WritablePartitionCount">WritablePartitionCount</a>: <i>Double</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AutoScaleMaxPartitionCount
 
@@ -71,6 +87,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Created
+
+_Required_: No
+
+_Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -98,17 +122,17 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### PartitionCount
 
 _Required_: Yes
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ReadablePartitionCount
+
+_Required_: No
 
 _Type_: Double
 
@@ -138,11 +162,19 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### WritablePartitionCount
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Tags
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -164,13 +196,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Created
 
-Returns the <code>Created</code> value.
+Returns the &lt;code&gt;Created&lt;/code&gt; value.
 
 #### ReadablePartitionCount
 
-Returns the <code>ReadablePartitionCount</code> value.
+Returns the &lt;code&gt;ReadablePartitionCount&lt;/code&gt; value.
 
 #### WritablePartitionCount
 
-Returns the <code>WritablePartitionCount</code> value.
+Returns the &lt;code&gt;WritablePartitionCount&lt;/code&gt; value.
 

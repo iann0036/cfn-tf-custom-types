@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     CommonName: Optional[str]
     CreateTime: Optional[str]
     ExpirationTime: Optional[str]
-    Id: Optional[str]
     Instance: Optional[str]
     PrivateKey: Optional[str]
     Project: Optional[str]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             CommonName=json_data.get("CommonName"),
             CreateTime=json_data.get("CreateTime"),
             ExpirationTime=json_data.get("ExpirationTime"),
-            Id=json_data.get("Id"),
             Instance=json_data.get("Instance"),
             PrivateKey=json_data.get("PrivateKey"),
             Project=json_data.get("Project"),

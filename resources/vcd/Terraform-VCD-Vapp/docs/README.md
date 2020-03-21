@@ -12,21 +12,24 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::VCD::Vapp",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#acceptalleulas" title="AcceptAllEulas">AcceptAllEulas</a>" : <i>Boolean</i>,
         "<a href="#catalogname" title="CatalogName">CatalogName</a>" : <i>String</i>,
         "<a href="#cpus" title="Cpus">Cpus</a>" : <i>Double</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#guestproperties" title="GuestProperties">GuestProperties</a>" : <i>[ <a href="guestproperties.md">GuestProperties</a>, ... ]</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#guestproperties" title="GuestProperties">GuestProperties</a>" : <i>[ &lt;a href=&#34;guestproperties.md&#34;&gt;GuestProperties&lt;/a&gt;, ... ]</i>,
+        "<a href="#href" title="Href">Href</a>" : <i>String</i>,
         "<a href="#initscript" title="Initscript">Initscript</a>" : <i>String</i>,
         "<a href="#ip" title="Ip">Ip</a>" : <i>String</i>,
         "<a href="#memory" title="Memory">Memory</a>" : <i>Double</i>,
-        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ <a href="metadata.md">Metadata</a>, ... ]</i>,
+        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;, ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#networkname" title="NetworkName">NetworkName</a>" : <i>String</i>,
         "<a href="#org" title="Org">Org</a>" : <i>String</i>,
-        "<a href="#ovf" title="Ovf">Ovf</a>" : <i>[ <a href="ovf.md">Ovf</a>, ... ]</i>,
+        "<a href="#ovf" title="Ovf">Ovf</a>" : <i>[ &lt;a href=&#34;ovf.md&#34;&gt;Ovf&lt;/a&gt;, ... ]</i>,
         "<a href="#poweron" title="PowerOn">PowerOn</a>" : <i>Boolean</i>,
+        "<a href="#status" title="Status">Status</a>" : <i>Double</i>,
+        "<a href="#statustext" title="StatusText">StatusText</a>" : <i>String</i>,
         "<a href="#storageprofile" title="StorageProfile">StorageProfile</a>" : <i>String</i>,
         "<a href="#templatename" title="TemplateName">TemplateName</a>" : <i>String</i>,
         "<a href="#vdc" title="Vdc">Vdc</a>" : <i>String</i>
@@ -39,30 +42,43 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::VCD::Vapp
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#acceptalleulas" title="AcceptAllEulas">AcceptAllEulas</a>: <i>Boolean</i>
     <a href="#catalogname" title="CatalogName">CatalogName</a>: <i>String</i>
     <a href="#cpus" title="Cpus">Cpus</a>: <i>Double</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#guestproperties" title="GuestProperties">GuestProperties</a>: <i>
-      - <a href="guestproperties.md">GuestProperties</a></i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+      - &lt;a href=&#34;guestproperties.md&#34;&gt;GuestProperties&lt;/a&gt;</i>
+    <a href="#href" title="Href">Href</a>: <i>String</i>
     <a href="#initscript" title="Initscript">Initscript</a>: <i>String</i>
     <a href="#ip" title="Ip">Ip</a>: <i>String</i>
     <a href="#memory" title="Memory">Memory</a>: <i>Double</i>
     <a href="#metadata" title="Metadata">Metadata</a>: <i>
-      - <a href="metadata.md">Metadata</a></i>
+      - &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#networkname" title="NetworkName">NetworkName</a>: <i>String</i>
     <a href="#org" title="Org">Org</a>: <i>String</i>
     <a href="#ovf" title="Ovf">Ovf</a>: <i>
-      - <a href="ovf.md">Ovf</a></i>
+      - &lt;a href=&#34;ovf.md&#34;&gt;Ovf&lt;/a&gt;</i>
     <a href="#poweron" title="PowerOn">PowerOn</a>: <i>Boolean</i>
+    <a href="#status" title="Status">Status</a>: <i>Double</i>
+    <a href="#statustext" title="StatusText">StatusText</a>: <i>String</i>
     <a href="#storageprofile" title="StorageProfile">StorageProfile</a>: <i>String</i>
     <a href="#templatename" title="TemplateName">TemplateName</a>: <i>String</i>
     <a href="#vdc" title="Vdc">Vdc</a>: <i>String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AcceptAllEulas
 
@@ -100,11 +116,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="guestproperties.md">GuestProperties</a>
+_Type_: List of &lt;a href=&#34;guestproperties.md&#34;&gt;GuestProperties&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### Href
 
 _Required_: No
 
@@ -140,7 +156,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="metadata.md">Metadata</a>
+_Type_: List of &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -172,7 +188,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="ovf.md">Ovf</a>
+_Type_: List of &lt;a href=&#34;ovf.md&#34;&gt;Ovf&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -181,6 +197,22 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Status
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### StatusText
+
+_Required_: No
+
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -226,13 +258,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Href
 
-Returns the <code>Href</code> value.
+Returns the &lt;code&gt;Href&lt;/code&gt; value.
 
 #### Status
 
-Returns the <code>Status</code> value.
+Returns the &lt;code&gt;Status&lt;/code&gt; value.
 
 #### StatusText
 
-Returns the <code>StatusText</code> value.
+Returns the &lt;code&gt;StatusText&lt;/code&gt; value.
 

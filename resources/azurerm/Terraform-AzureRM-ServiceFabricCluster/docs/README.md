@@ -12,29 +12,30 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureRM::ServiceFabricCluster",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#addonfeatures" title="AddOnFeatures">AddOnFeatures</a>" : <i>[ String, ... ]</i>,
         "<a href="#clustercodeversion" title="ClusterCodeVersion">ClusterCodeVersion</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#clusterendpoint" title="ClusterEndpoint">ClusterEndpoint</a>" : <i>String</i>,
         "<a href="#location" title="Location">Location</a>" : <i>String</i>,
         "<a href="#managementendpoint" title="ManagementEndpoint">ManagementEndpoint</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#reliabilitylevel" title="ReliabilityLevel">ReliabilityLevel</a>" : <i>String</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
         "<a href="#upgrademode" title="UpgradeMode">UpgradeMode</a>" : <i>String</i>,
         "<a href="#vmimage" title="VmImage">VmImage</a>" : <i>String</i>,
-        "<a href="#azureactivedirectory" title="AzureActiveDirectory">AzureActiveDirectory</a>" : <i>[ <a href="azureactivedirectory.md">AzureActiveDirectory</a>, ... ]</i>,
-        "<a href="#certificate" title="Certificate">Certificate</a>" : <i>[ <a href="certificate.md">Certificate</a>, ... ]</i>,
-        "<a href="#certificatecommonnames" title="CertificateCommonNames">CertificateCommonNames</a>" : <i>[ <a href="certificatecommonnames.md">CertificateCommonNames</a>, ... ]</i>,
-        "<a href="#clientcertificatethumbprint" title="ClientCertificateThumbprint">ClientCertificateThumbprint</a>" : <i>[ <a href="clientcertificatethumbprint.md">ClientCertificateThumbprint</a>, ... ]</i>,
-        "<a href="#diagnosticsconfig" title="DiagnosticsConfig">DiagnosticsConfig</a>" : <i>[ <a href="diagnosticsconfig.md">DiagnosticsConfig</a>, ... ]</i>,
-        "<a href="#fabricsettings" title="FabricSettings">FabricSettings</a>" : <i>[ <a href="fabricsettings.md">FabricSettings</a>, ... ]</i>,
-        "<a href="#nodetype" title="NodeType">NodeType</a>" : <i>[ <a href="nodetype.md">NodeType</a>, ... ]</i>,
-        "<a href="#reverseproxycertificate" title="ReverseProxyCertificate">ReverseProxyCertificate</a>" : <i>[ <a href="reverseproxycertificate.md">ReverseProxyCertificate</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
-        "<a href="#commonnames" title="CommonNames">CommonNames</a>" : <i>[ <a href="commonnames.md">CommonNames</a>, ... ]</i>,
-        "<a href="#applicationports" title="ApplicationPorts">ApplicationPorts</a>" : <i>[ <a href="applicationports.md">ApplicationPorts</a>, ... ]</i>,
-        "<a href="#ephemeralports" title="EphemeralPorts">EphemeralPorts</a>" : <i>[ <a href="ephemeralports.md">EphemeralPorts</a>, ... ]</i>
+        "<a href="#azureactivedirectory" title="AzureActiveDirectory">AzureActiveDirectory</a>" : <i>[ &lt;a href=&#34;azureactivedirectory.md&#34;&gt;AzureActiveDirectory&lt;/a&gt;, ... ]</i>,
+        "<a href="#certificate" title="Certificate">Certificate</a>" : <i>[ &lt;a href=&#34;certificate.md&#34;&gt;Certificate&lt;/a&gt;, ... ]</i>,
+        "<a href="#certificatecommonnames" title="CertificateCommonNames">CertificateCommonNames</a>" : <i>[ &lt;a href=&#34;certificatecommonnames.md&#34;&gt;CertificateCommonNames&lt;/a&gt;, ... ]</i>,
+        "<a href="#clientcertificatethumbprint" title="ClientCertificateThumbprint">ClientCertificateThumbprint</a>" : <i>[ &lt;a href=&#34;clientcertificatethumbprint.md&#34;&gt;ClientCertificateThumbprint&lt;/a&gt;, ... ]</i>,
+        "<a href="#diagnosticsconfig" title="DiagnosticsConfig">DiagnosticsConfig</a>" : <i>[ &lt;a href=&#34;diagnosticsconfig.md&#34;&gt;DiagnosticsConfig&lt;/a&gt;, ... ]</i>,
+        "<a href="#fabricsettings" title="FabricSettings">FabricSettings</a>" : <i>[ &lt;a href=&#34;fabricsettings.md&#34;&gt;FabricSettings&lt;/a&gt;, ... ]</i>,
+        "<a href="#nodetype" title="NodeType">NodeType</a>" : <i>[ &lt;a href=&#34;nodetype.md&#34;&gt;NodeType&lt;/a&gt;, ... ]</i>,
+        "<a href="#reverseproxycertificate" title="ReverseProxyCertificate">ReverseProxyCertificate</a>" : <i>[ &lt;a href=&#34;reverseproxycertificate.md&#34;&gt;ReverseProxyCertificate&lt;/a&gt;, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
+        "<a href="#commonnames" title="CommonNames">CommonNames</a>" : <i>[ &lt;a href=&#34;commonnames.md&#34;&gt;CommonNames&lt;/a&gt;, ... ]</i>,
+        "<a href="#applicationports" title="ApplicationPorts">ApplicationPorts</a>" : <i>[ &lt;a href=&#34;applicationports.md&#34;&gt;ApplicationPorts&lt;/a&gt;, ... ]</i>,
+        "<a href="#ephemeralports" title="EphemeralPorts">EphemeralPorts</a>" : <i>[ &lt;a href=&#34;ephemeralports.md&#34;&gt;EphemeralPorts&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -44,45 +45,56 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureRM::ServiceFabricCluster
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#addonfeatures" title="AddOnFeatures">AddOnFeatures</a>: <i>
       - String</i>
     <a href="#clustercodeversion" title="ClusterCodeVersion">ClusterCodeVersion</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#clusterendpoint" title="ClusterEndpoint">ClusterEndpoint</a>: <i>String</i>
     <a href="#location" title="Location">Location</a>: <i>String</i>
     <a href="#managementendpoint" title="ManagementEndpoint">ManagementEndpoint</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#reliabilitylevel" title="ReliabilityLevel">ReliabilityLevel</a>: <i>String</i>
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
     <a href="#upgrademode" title="UpgradeMode">UpgradeMode</a>: <i>String</i>
     <a href="#vmimage" title="VmImage">VmImage</a>: <i>String</i>
     <a href="#azureactivedirectory" title="AzureActiveDirectory">AzureActiveDirectory</a>: <i>
-      - <a href="azureactivedirectory.md">AzureActiveDirectory</a></i>
+      - &lt;a href=&#34;azureactivedirectory.md&#34;&gt;AzureActiveDirectory&lt;/a&gt;</i>
     <a href="#certificate" title="Certificate">Certificate</a>: <i>
-      - <a href="certificate.md">Certificate</a></i>
+      - &lt;a href=&#34;certificate.md&#34;&gt;Certificate&lt;/a&gt;</i>
     <a href="#certificatecommonnames" title="CertificateCommonNames">CertificateCommonNames</a>: <i>
-      - <a href="certificatecommonnames.md">CertificateCommonNames</a></i>
+      - &lt;a href=&#34;certificatecommonnames.md&#34;&gt;CertificateCommonNames&lt;/a&gt;</i>
     <a href="#clientcertificatethumbprint" title="ClientCertificateThumbprint">ClientCertificateThumbprint</a>: <i>
-      - <a href="clientcertificatethumbprint.md">ClientCertificateThumbprint</a></i>
+      - &lt;a href=&#34;clientcertificatethumbprint.md&#34;&gt;ClientCertificateThumbprint&lt;/a&gt;</i>
     <a href="#diagnosticsconfig" title="DiagnosticsConfig">DiagnosticsConfig</a>: <i>
-      - <a href="diagnosticsconfig.md">DiagnosticsConfig</a></i>
+      - &lt;a href=&#34;diagnosticsconfig.md&#34;&gt;DiagnosticsConfig&lt;/a&gt;</i>
     <a href="#fabricsettings" title="FabricSettings">FabricSettings</a>: <i>
-      - <a href="fabricsettings.md">FabricSettings</a></i>
+      - &lt;a href=&#34;fabricsettings.md&#34;&gt;FabricSettings&lt;/a&gt;</i>
     <a href="#nodetype" title="NodeType">NodeType</a>: <i>
-      - <a href="nodetype.md">NodeType</a></i>
+      - &lt;a href=&#34;nodetype.md&#34;&gt;NodeType&lt;/a&gt;</i>
     <a href="#reverseproxycertificate" title="ReverseProxyCertificate">ReverseProxyCertificate</a>: <i>
-      - <a href="reverseproxycertificate.md">ReverseProxyCertificate</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;reverseproxycertificate.md&#34;&gt;ReverseProxyCertificate&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     <a href="#commonnames" title="CommonNames">CommonNames</a>: <i>
-      - <a href="commonnames.md">CommonNames</a></i>
+      - &lt;a href=&#34;commonnames.md&#34;&gt;CommonNames&lt;/a&gt;</i>
     <a href="#applicationports" title="ApplicationPorts">ApplicationPorts</a>: <i>
-      - <a href="applicationports.md">ApplicationPorts</a></i>
+      - &lt;a href=&#34;applicationports.md&#34;&gt;ApplicationPorts&lt;/a&gt;</i>
     <a href="#ephemeralports" title="EphemeralPorts">EphemeralPorts</a>: <i>
-      - <a href="ephemeralports.md">EphemeralPorts</a></i>
+      - &lt;a href=&#34;ephemeralports.md&#34;&gt;EphemeralPorts&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AddOnFeatures
 
@@ -100,7 +112,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### ClusterEndpoint
 
 _Required_: No
 
@@ -152,7 +164,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -176,7 +188,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="azureactivedirectory.md">AzureActiveDirectory</a>
+_Type_: List of &lt;a href=&#34;azureactivedirectory.md&#34;&gt;AzureActiveDirectory&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -184,7 +196,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="certificate.md">Certificate</a>
+_Type_: List of &lt;a href=&#34;certificate.md&#34;&gt;Certificate&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -192,7 +204,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="certificatecommonnames.md">CertificateCommonNames</a>
+_Type_: List of &lt;a href=&#34;certificatecommonnames.md&#34;&gt;CertificateCommonNames&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -200,7 +212,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="clientcertificatethumbprint.md">ClientCertificateThumbprint</a>
+_Type_: List of &lt;a href=&#34;clientcertificatethumbprint.md&#34;&gt;ClientCertificateThumbprint&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -208,7 +220,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="diagnosticsconfig.md">DiagnosticsConfig</a>
+_Type_: List of &lt;a href=&#34;diagnosticsconfig.md&#34;&gt;DiagnosticsConfig&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -216,7 +228,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="fabricsettings.md">FabricSettings</a>
+_Type_: List of &lt;a href=&#34;fabricsettings.md&#34;&gt;FabricSettings&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -224,7 +236,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="nodetype.md">NodeType</a>
+_Type_: List of &lt;a href=&#34;nodetype.md&#34;&gt;NodeType&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -232,7 +244,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="reverseproxycertificate.md">ReverseProxyCertificate</a>
+_Type_: List of &lt;a href=&#34;reverseproxycertificate.md&#34;&gt;ReverseProxyCertificate&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -240,7 +252,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -248,7 +260,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="commonnames.md">CommonNames</a>
+_Type_: List of &lt;a href=&#34;commonnames.md&#34;&gt;CommonNames&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -256,7 +268,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="applicationports.md">ApplicationPorts</a>
+_Type_: List of &lt;a href=&#34;applicationports.md&#34;&gt;ApplicationPorts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -264,7 +276,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="ephemeralports.md">EphemeralPorts</a>
+_Type_: List of &lt;a href=&#34;ephemeralports.md&#34;&gt;EphemeralPorts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -286,5 +298,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ClusterEndpoint
 
-Returns the <code>ClusterEndpoint</code> value.
+Returns the &lt;code&gt;ClusterEndpoint&lt;/code&gt; value.
 

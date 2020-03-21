@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     Confirmation: Optional[str]
     Email: Optional[str]
     FirstName: Optional[str]
-    Id: Optional[str]
     LastName: Optional[str]
     Note: Optional[str]
     Password: Optional[str]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             Confirmation=json_data.get("Confirmation"),
             Email=json_data.get("Email"),
             FirstName=json_data.get("FirstName"),
-            Id=json_data.get("Id"),
             LastName=json_data.get("LastName"),
             Note=json_data.get("Note"),
             Password=json_data.get("Password"),

@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     DefinedTags: Optional[Sequence["_DefinedTags"]]
     Description: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     IsRetired: Optional[bool]
     Name: Optional[str]
     State: Optional[str]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             DefinedTags=json_data.get("DefinedTags"),
             Description=json_data.get("Description"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             IsRetired=json_data.get("IsRetired"),
             Name=json_data.get("Name"),
             State=json_data.get("State"),

@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Action: Optional[str]
     Description: Optional[str]
     FilterId: Optional[str]
-    Id: Optional[str]
     Paused: Optional[bool]
     Priority: Optional[float]
     Products: Optional[Sequence[str]]
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
             Action=json_data.get("Action"),
             Description=json_data.get("Description"),
             FilterId=json_data.get("FilterId"),
-            Id=json_data.get("Id"),
             Paused=json_data.get("Paused"),
             Priority=json_data.get("Priority"),
             Products=json_data.get("Products"),

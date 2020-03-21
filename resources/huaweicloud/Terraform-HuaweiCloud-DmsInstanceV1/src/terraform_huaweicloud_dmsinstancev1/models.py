@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     Engine: Optional[str]
     EngineVersion: Optional[str]
-    Id: Optional[str]
     MaintainBegin: Optional[str]
     MaintainEnd: Optional[str]
     Name: Optional[str]
@@ -83,7 +82,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             Engine=json_data.get("Engine"),
             EngineVersion=json_data.get("EngineVersion"),
-            Id=json_data.get("Id"),
             MaintainBegin=json_data.get("MaintainBegin"),
             MaintainEnd=json_data.get("MaintainEnd"),
             Name=json_data.get("Name"),

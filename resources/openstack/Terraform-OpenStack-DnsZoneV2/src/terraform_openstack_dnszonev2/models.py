@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Attributes: Optional[Sequence["_Attributes"]]
     Description: Optional[str]
     Email: Optional[str]
-    Id: Optional[str]
     Masters: Optional[Sequence[str]]
     Name: Optional[str]
     Region: Optional[str]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             Attributes=json_data.get("Attributes"),
             Description=json_data.get("Description"),
             Email=json_data.get("Email"),
-            Id=json_data.get("Id"),
             Masters=json_data.get("Masters"),
             Name=json_data.get("Name"),
             Region=json_data.get("Region"),

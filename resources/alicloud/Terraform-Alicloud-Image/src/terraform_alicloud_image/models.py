@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Architecture: Optional[str]
     Description: Optional[str]
     Force: Optional[bool]
-    Id: Optional[str]
     ImageName: Optional[str]
     InstanceId: Optional[str]
     Name: Optional[str]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             Architecture=json_data.get("Architecture"),
             Description=json_data.get("Description"),
             Force=json_data.get("Force"),
-            Id=json_data.get("Id"),
             ImageName=json_data.get("ImageName"),
             InstanceId=json_data.get("InstanceId"),
             Name=json_data.get("Name"),

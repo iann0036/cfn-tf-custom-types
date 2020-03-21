@@ -12,23 +12,24 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::DmsEndpoint",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#certificatearn" title="CertificateArn">CertificateArn</a>" : <i>String</i>,
         "<a href="#databasename" title="DatabaseName">DatabaseName</a>" : <i>String</i>,
+        "<a href="#endpointarn" title="EndpointArn">EndpointArn</a>" : <i>String</i>,
         "<a href="#endpointid" title="EndpointId">EndpointId</a>" : <i>String</i>,
         "<a href="#endpointtype" title="EndpointType">EndpointType</a>" : <i>String</i>,
         "<a href="#enginename" title="EngineName">EngineName</a>" : <i>String</i>,
         "<a href="#extraconnectionattributes" title="ExtraConnectionAttributes">ExtraConnectionAttributes</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#kmskeyarn" title="KmsKeyArn">KmsKeyArn</a>" : <i>String</i>,
         "<a href="#password" title="Password">Password</a>" : <i>String</i>,
         "<a href="#port" title="Port">Port</a>" : <i>Double</i>,
         "<a href="#servername" title="ServerName">ServerName</a>" : <i>String</i>,
         "<a href="#serviceaccessrole" title="ServiceAccessRole">ServiceAccessRole</a>" : <i>String</i>,
         "<a href="#sslmode" title="SslMode">SslMode</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
         "<a href="#username" title="Username">Username</a>" : <i>String</i>,
-        "<a href="#mongodbsettings" title="MongodbSettings">MongodbSettings</a>" : <i>[ <a href="mongodbsettings.md">MongodbSettings</a>, ... ]</i>,
-        "<a href="#s3settings" title="S3Settings">S3Settings</a>" : <i>[ <a href="s3settings.md">S3Settings</a>, ... ]</i>
+        "<a href="#mongodbsettings" title="MongodbSettings">MongodbSettings</a>" : <i>[ &lt;a href=&#34;mongodbsettings.md&#34;&gt;MongodbSettings&lt;/a&gt;, ... ]</i>,
+        "<a href="#s3settings" title="S3Settings">S3Settings</a>" : <i>[ &lt;a href=&#34;s3settings.md&#34;&gt;S3Settings&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -38,13 +39,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::DmsEndpoint
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#certificatearn" title="CertificateArn">CertificateArn</a>: <i>String</i>
     <a href="#databasename" title="DatabaseName">DatabaseName</a>: <i>String</i>
+    <a href="#endpointarn" title="EndpointArn">EndpointArn</a>: <i>String</i>
     <a href="#endpointid" title="EndpointId">EndpointId</a>: <i>String</i>
     <a href="#endpointtype" title="EndpointType">EndpointType</a>: <i>String</i>
     <a href="#enginename" title="EngineName">EngineName</a>: <i>String</i>
     <a href="#extraconnectionattributes" title="ExtraConnectionAttributes">ExtraConnectionAttributes</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#kmskeyarn" title="KmsKeyArn">KmsKeyArn</a>: <i>String</i>
     <a href="#password" title="Password">Password</a>: <i>String</i>
     <a href="#port" title="Port">Port</a>: <i>Double</i>
@@ -52,15 +54,25 @@ Properties:
     <a href="#serviceaccessrole" title="ServiceAccessRole">ServiceAccessRole</a>: <i>String</i>
     <a href="#sslmode" title="SslMode">SslMode</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
     <a href="#username" title="Username">Username</a>: <i>String</i>
     <a href="#mongodbsettings" title="MongodbSettings">MongodbSettings</a>: <i>
-      - <a href="mongodbsettings.md">MongodbSettings</a></i>
+      - &lt;a href=&#34;mongodbsettings.md&#34;&gt;MongodbSettings&lt;/a&gt;</i>
     <a href="#s3settings" title="S3Settings">S3Settings</a>: <i>
-      - <a href="s3settings.md">S3Settings</a></i>
+      - &lt;a href=&#34;s3settings.md&#34;&gt;S3Settings&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CertificateArn
 
@@ -71,6 +83,14 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DatabaseName
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### EndpointArn
 
 _Required_: No
 
@@ -103,14 +123,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ExtraConnectionAttributes
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 
@@ -170,7 +182,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -186,7 +198,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="mongodbsettings.md">MongodbSettings</a>
+_Type_: List of &lt;a href=&#34;mongodbsettings.md&#34;&gt;MongodbSettings&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -194,7 +206,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="s3settings.md">S3Settings</a>
+_Type_: List of &lt;a href=&#34;s3settings.md&#34;&gt;S3Settings&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -216,5 +228,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### EndpointArn
 
-Returns the <code>EndpointArn</code> value.
+Returns the &lt;code&gt;EndpointArn&lt;/code&gt; value.
 

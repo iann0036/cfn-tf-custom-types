@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AllowSelfManagement: Optional[bool]
-    Id: Optional[str]
     SshPublicKey: Optional[str]
     SshUsername: Optional[str]
     UserArn: Optional[str]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             AllowSelfManagement=json_data.get("AllowSelfManagement"),
-            Id=json_data.get("Id"),
             SshPublicKey=json_data.get("SshPublicKey"),
             SshUsername=json_data.get("SshUsername"),
             UserArn=json_data.get("UserArn"),

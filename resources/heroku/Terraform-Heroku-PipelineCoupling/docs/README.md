@@ -12,8 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Heroku::PipelineCoupling",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#app" title="App">App</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#appid" title="AppId">AppId</a>" : <i>String</i>,
         "<a href="#pipeline" title="Pipeline">Pipeline</a>" : <i>String</i>,
         "<a href="#stage" title="Stage">Stage</a>" : <i>String</i>
     }
@@ -25,13 +26,24 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Heroku::PipelineCoupling
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#app" title="App">App</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#appid" title="AppId">AppId</a>: <i>String</i>
     <a href="#pipeline" title="Pipeline">Pipeline</a>: <i>String</i>
     <a href="#stage" title="Stage">Stage</a>: <i>String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### App
 
@@ -41,7 +53,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### AppId
 
 _Required_: No
 
@@ -83,5 +95,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AppId
 
-Returns the <code>AppId</code> value.
+Returns the &lt;code&gt;AppId&lt;/code&gt; value.
 

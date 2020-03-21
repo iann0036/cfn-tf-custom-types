@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Href: Optional[str]
-    Id: Optional[str]
     MonitorId: Optional[str]
     Type: Optional[str]
     Value: Optional[str]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Href=json_data.get("Href"),
-            Id=json_data.get("Id"),
             MonitorId=json_data.get("MonitorId"),
             Type=json_data.get("Type"),
             Value=json_data.get("Value"),

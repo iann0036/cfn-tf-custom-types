@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CreationTimestamp: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     NodeAffinityLabels: Optional[Sequence["_NodeAffinityLabels"]]
     NodeType: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CreationTimestamp=json_data.get("CreationTimestamp"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             NodeAffinityLabels=json_data.get("NodeAffinityLabels"),
             NodeType=json_data.get("NodeType"),

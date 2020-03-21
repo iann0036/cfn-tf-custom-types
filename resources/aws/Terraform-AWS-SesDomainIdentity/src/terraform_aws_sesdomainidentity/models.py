@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Arn: Optional[str]
     Domain: Optional[str]
-    Id: Optional[str]
     VerificationToken: Optional[str]
 
     @classmethod
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Arn=json_data.get("Arn"),
             Domain=json_data.get("Domain"),
-            Id=json_data.get("Id"),
             VerificationToken=json_data.get("VerificationToken"),
         )
 

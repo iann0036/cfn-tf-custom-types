@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DisplayName: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     Message: Optional[str]
     Recipients: Optional[str]
     State: Optional[str]
@@ -67,7 +66,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DisplayName=json_data.get("DisplayName"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             Message=json_data.get("Message"),
             Recipients=json_data.get("Recipients"),
             State=json_data.get("State"),

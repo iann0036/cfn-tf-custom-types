@@ -12,23 +12,25 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::MqBroker",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#applyimmediately" title="ApplyImmediately">ApplyImmediately</a>" : <i>Boolean</i>,
+        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#autominorversionupgrade" title="AutoMinorVersionUpgrade">AutoMinorVersionUpgrade</a>" : <i>Boolean</i>,
         "<a href="#brokername" title="BrokerName">BrokerName</a>" : <i>String</i>,
         "<a href="#deploymentmode" title="DeploymentMode">DeploymentMode</a>" : <i>String</i>,
         "<a href="#enginetype" title="EngineType">EngineType</a>" : <i>String</i>,
         "<a href="#engineversion" title="EngineVersion">EngineVersion</a>" : <i>String</i>,
         "<a href="#hostinstancetype" title="HostInstanceType">HostInstanceType</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#instances" title="Instances">Instances</a>" : <i>[ &lt;a href=&#34;instances.md&#34;&gt;Instances&lt;/a&gt;, ... ]</i>,
         "<a href="#publiclyaccessible" title="PubliclyAccessible">PubliclyAccessible</a>" : <i>Boolean</i>,
         "<a href="#securitygroups" title="SecurityGroups">SecurityGroups</a>" : <i>[ String, ... ]</i>,
         "<a href="#subnetids" title="SubnetIds">SubnetIds</a>" : <i>[ String, ... ]</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
-        "<a href="#configuration" title="Configuration">Configuration</a>" : <i>[ <a href="configuration.md">Configuration</a>, ... ]</i>,
-        "<a href="#encryptionoptions" title="EncryptionOptions">EncryptionOptions</a>" : <i>[ <a href="encryptionoptions.md">EncryptionOptions</a>, ... ]</i>,
-        "<a href="#logs" title="Logs">Logs</a>" : <i>[ <a href="logs.md">Logs</a>, ... ]</i>,
-        "<a href="#maintenancewindowstarttime" title="MaintenanceWindowStartTime">MaintenanceWindowStartTime</a>" : <i>[ <a href="maintenancewindowstarttime.md">MaintenanceWindowStartTime</a>, ... ]</i>,
-        "<a href="#user" title="User">User</a>" : <i>[ <a href="user.md">User</a>, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#configuration" title="Configuration">Configuration</a>" : <i>[ &lt;a href=&#34;configuration.md&#34;&gt;Configuration&lt;/a&gt;, ... ]</i>,
+        "<a href="#encryptionoptions" title="EncryptionOptions">EncryptionOptions</a>" : <i>[ &lt;a href=&#34;encryptionoptions.md&#34;&gt;EncryptionOptions&lt;/a&gt;, ... ]</i>,
+        "<a href="#logs" title="Logs">Logs</a>" : <i>[ &lt;a href=&#34;logs.md&#34;&gt;Logs&lt;/a&gt;, ... ]</i>,
+        "<a href="#maintenancewindowstarttime" title="MaintenanceWindowStartTime">MaintenanceWindowStartTime</a>" : <i>[ &lt;a href=&#34;maintenancewindowstarttime.md&#34;&gt;MaintenanceWindowStartTime&lt;/a&gt;, ... ]</i>,
+        "<a href="#user" title="User">User</a>" : <i>[ &lt;a href=&#34;user.md&#34;&gt;User&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -38,40 +40,61 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::MqBroker
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#applyimmediately" title="ApplyImmediately">ApplyImmediately</a>: <i>Boolean</i>
+    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#autominorversionupgrade" title="AutoMinorVersionUpgrade">AutoMinorVersionUpgrade</a>: <i>Boolean</i>
     <a href="#brokername" title="BrokerName">BrokerName</a>: <i>String</i>
     <a href="#deploymentmode" title="DeploymentMode">DeploymentMode</a>: <i>String</i>
     <a href="#enginetype" title="EngineType">EngineType</a>: <i>String</i>
     <a href="#engineversion" title="EngineVersion">EngineVersion</a>: <i>String</i>
     <a href="#hostinstancetype" title="HostInstanceType">HostInstanceType</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#instances" title="Instances">Instances</a>: <i>
+      - &lt;a href=&#34;instances.md&#34;&gt;Instances&lt;/a&gt;</i>
     <a href="#publiclyaccessible" title="PubliclyAccessible">PubliclyAccessible</a>: <i>Boolean</i>
     <a href="#securitygroups" title="SecurityGroups">SecurityGroups</a>: <i>
       - String</i>
     <a href="#subnetids" title="SubnetIds">SubnetIds</a>: <i>
       - String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
     <a href="#configuration" title="Configuration">Configuration</a>: <i>
-      - <a href="configuration.md">Configuration</a></i>
+      - &lt;a href=&#34;configuration.md&#34;&gt;Configuration&lt;/a&gt;</i>
     <a href="#encryptionoptions" title="EncryptionOptions">EncryptionOptions</a>: <i>
-      - <a href="encryptionoptions.md">EncryptionOptions</a></i>
+      - &lt;a href=&#34;encryptionoptions.md&#34;&gt;EncryptionOptions&lt;/a&gt;</i>
     <a href="#logs" title="Logs">Logs</a>: <i>
-      - <a href="logs.md">Logs</a></i>
+      - &lt;a href=&#34;logs.md&#34;&gt;Logs&lt;/a&gt;</i>
     <a href="#maintenancewindowstarttime" title="MaintenanceWindowStartTime">MaintenanceWindowStartTime</a>: <i>
-      - <a href="maintenancewindowstarttime.md">MaintenanceWindowStartTime</a></i>
+      - &lt;a href=&#34;maintenancewindowstarttime.md&#34;&gt;MaintenanceWindowStartTime&lt;/a&gt;</i>
     <a href="#user" title="User">User</a>: <i>
-      - <a href="user.md">User</a></i>
+      - &lt;a href=&#34;user.md&#34;&gt;User&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ApplyImmediately
 
 _Required_: No
 
 _Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Arn
+
+_Required_: No
+
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -123,11 +146,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### Instances
 
 _Required_: No
 
-_Type_: String
+_Type_: List of &lt;a href=&#34;instances.md&#34;&gt;Instances&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -159,7 +182,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -167,7 +190,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="configuration.md">Configuration</a>
+_Type_: List of &lt;a href=&#34;configuration.md&#34;&gt;Configuration&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -175,7 +198,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="encryptionoptions.md">EncryptionOptions</a>
+_Type_: List of &lt;a href=&#34;encryptionoptions.md&#34;&gt;EncryptionOptions&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -183,7 +206,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="logs.md">Logs</a>
+_Type_: List of &lt;a href=&#34;logs.md&#34;&gt;Logs&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -191,7 +214,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="maintenancewindowstarttime.md">MaintenanceWindowStartTime</a>
+_Type_: List of &lt;a href=&#34;maintenancewindowstarttime.md&#34;&gt;MaintenanceWindowStartTime&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -199,7 +222,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="user.md">User</a>
+_Type_: List of &lt;a href=&#34;user.md&#34;&gt;User&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -221,9 +244,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the <code>Arn</code> value.
+Returns the &lt;code&gt;Arn&lt;/code&gt; value.
 
 #### Instances
 
-Returns the <code>Instances</code> value.
+Returns the &lt;code&gt;Instances&lt;/code&gt; value.
 

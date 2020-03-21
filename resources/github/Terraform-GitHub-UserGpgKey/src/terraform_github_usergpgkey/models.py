@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ArmoredPublicKey: Optional[str]
     Etag: Optional[str]
-    Id: Optional[str]
     KeyId: Optional[str]
 
     @classmethod
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ArmoredPublicKey=json_data.get("ArmoredPublicKey"),
             Etag=json_data.get("Etag"),
-            Id=json_data.get("Id"),
             KeyId=json_data.get("KeyId"),
         )
 

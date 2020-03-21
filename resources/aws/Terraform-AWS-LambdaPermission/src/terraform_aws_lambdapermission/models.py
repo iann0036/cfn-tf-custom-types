@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Action: Optional[str]
     EventSourceToken: Optional[str]
     FunctionName: Optional[str]
-    Id: Optional[str]
     Principal: Optional[str]
     Qualifier: Optional[str]
     SourceAccount: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             Action=json_data.get("Action"),
             EventSourceToken=json_data.get("EventSourceToken"),
             FunctionName=json_data.get("FunctionName"),
-            Id=json_data.get("Id"),
             Principal=json_data.get("Principal"),
             Qualifier=json_data.get("Qualifier"),
             SourceAccount=json_data.get("SourceAccount"),

@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     Metadata: Optional[Sequence["_Metadata"]]
     RoleRef: Optional[Sequence["_RoleRef"]]
     Subject: Optional[Sequence["_Subject"]]
@@ -50,7 +49,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             Metadata=json_data.get("Metadata"),
             RoleRef=json_data.get("RoleRef"),
             Subject=json_data.get("Subject"),

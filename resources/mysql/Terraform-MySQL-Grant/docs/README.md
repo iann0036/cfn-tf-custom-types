@@ -12,10 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::MySQL::Grant",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#database" title="Database">Database</a>" : <i>String</i>,
         "<a href="#grant" title="Grant">Grant</a>" : <i>Boolean</i>,
         "<a href="#host" title="Host">Host</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#privileges" title="Privileges">Privileges</a>" : <i>[ String, ... ]</i>,
         "<a href="#role" title="Role">Role</a>" : <i>String</i>,
         "<a href="#roles" title="Roles">Roles</a>" : <i>[ String, ... ]</i>,
@@ -31,10 +31,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::MySQL::Grant
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#database" title="Database">Database</a>: <i>String</i>
     <a href="#grant" title="Grant">Grant</a>: <i>Boolean</i>
     <a href="#host" title="Host">Host</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#privileges" title="Privileges">Privileges</a>: <i>
       - String</i>
     <a href="#role" title="Role">Role</a>: <i>String</i>
@@ -46,6 +46,16 @@ Properties:
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Database
 
@@ -64,14 +74,6 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Host
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 

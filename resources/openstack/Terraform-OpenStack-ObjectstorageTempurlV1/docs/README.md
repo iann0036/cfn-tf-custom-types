@@ -12,14 +12,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OpenStack::ObjectstorageTempurlV1",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#container" title="Container">Container</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#method" title="Method">Method</a>" : <i>String</i>,
         "<a href="#object" title="Object">Object</a>" : <i>String</i>,
         "<a href="#regenerate" title="Regenerate">Regenerate</a>" : <i>Boolean</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
         "<a href="#split" title="Split">Split</a>" : <i>String</i>,
         "<a href="#ttl" title="Ttl">Ttl</a>" : <i>Double</i>,
+        "<a href="#url" title="Url">Url</a>" : <i>String</i>
     }
 }
 </pre>
@@ -29,29 +30,32 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OpenStack::ObjectstorageTempurlV1
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#container" title="Container">Container</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#method" title="Method">Method</a>: <i>String</i>
     <a href="#object" title="Object">Object</a>: <i>String</i>
     <a href="#regenerate" title="Regenerate">Regenerate</a>: <i>Boolean</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
     <a href="#split" title="Split">Split</a>: <i>String</i>
     <a href="#ttl" title="Ttl">Ttl</a>: <i>Double</i>
+    <a href="#url" title="Url">Url</a>: <i>String</i>
 </pre>
 
 ## Properties
 
-#### Container
+#### tfcfnid
 
-_Required_: Yes
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
 
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### Container
 
-_Required_: No
+_Required_: Yes
 
 _Type_: String
 
@@ -105,6 +109,14 @@ _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### Url
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 ## Return Values
 
 ### Ref
@@ -123,5 +135,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Url
 
-Returns the <code>Url</code> value.
+Returns the &lt;code&gt;Url&lt;/code&gt; value.
 

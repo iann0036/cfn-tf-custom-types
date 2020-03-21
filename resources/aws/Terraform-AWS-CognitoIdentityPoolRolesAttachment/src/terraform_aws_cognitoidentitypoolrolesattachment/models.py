@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     IdentityPoolId: Optional[str]
     Roles: Optional[Sequence["_Roles"]]
     RoleMapping: Optional[Sequence["_RoleMapping"]]
@@ -51,7 +50,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             IdentityPoolId=json_data.get("IdentityPoolId"),
             Roles=json_data.get("Roles"),
             RoleMapping=json_data.get("RoleMapping"),

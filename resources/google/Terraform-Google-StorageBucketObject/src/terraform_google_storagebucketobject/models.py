@@ -45,7 +45,6 @@ class ResourceModel(BaseResourceModel):
     ContentType: Optional[str]
     Crc32c: Optional[str]
     DetectMd5hash: Optional[str]
-    Id: Optional[str]
     Md5hash: Optional[str]
     Metadata: Optional[Sequence["_Metadata"]]
     Name: Optional[str]
@@ -72,7 +71,6 @@ class ResourceModel(BaseResourceModel):
             ContentType=json_data.get("ContentType"),
             Crc32c=json_data.get("Crc32c"),
             DetectMd5hash=json_data.get("DetectMd5hash"),
-            Id=json_data.get("Id"),
             Md5hash=json_data.get("Md5hash"),
             Metadata=json_data.get("Metadata"),
             Name=json_data.get("Name"),

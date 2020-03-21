@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AccountId: Optional[str]
     Arn: Optional[str]
-    Id: Optional[str]
     Region: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
 
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AccountId=json_data.get("AccountId"),
             Arn=json_data.get("Arn"),
-            Id=json_data.get("Id"),
             Region=json_data.get("Region"),
             Tags=json_data.get("Tags"),
         )

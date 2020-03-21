@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     EncryptionConfiguration: Optional[Sequence["_EncryptionConfiguration"]]
     CloudwatchEncryption: Optional[Sequence["_CloudwatchEncryption"]]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             EncryptionConfiguration=json_data.get("EncryptionConfiguration"),
             CloudwatchEncryption=json_data.get("CloudwatchEncryption"),

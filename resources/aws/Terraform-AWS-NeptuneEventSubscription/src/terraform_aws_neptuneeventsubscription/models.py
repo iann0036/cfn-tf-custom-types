@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     CustomerAwsId: Optional[str]
     Enabled: Optional[bool]
     EventCategories: Optional[Sequence[str]]
-    Id: Optional[str]
     Name: Optional[str]
     NamePrefix: Optional[str]
     SnsTopicArn: Optional[str]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             CustomerAwsId=json_data.get("CustomerAwsId"),
             Enabled=json_data.get("Enabled"),
             EventCategories=json_data.get("EventCategories"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             NamePrefix=json_data.get("NamePrefix"),
             SnsTopicArn=json_data.get("SnsTopicArn"),

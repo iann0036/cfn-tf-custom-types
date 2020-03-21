@@ -12,12 +12,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::VpcPeeringConnectionAccepter",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#acceptstatus" title="AcceptStatus">AcceptStatus</a>" : <i>String</i>,
         "<a href="#autoaccept" title="AutoAccept">AutoAccept</a>" : <i>Boolean</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#peerownerid" title="PeerOwnerId">PeerOwnerId</a>" : <i>String</i>,
+        "<a href="#peerregion" title="PeerRegion">PeerRegion</a>" : <i>String</i>,
+        "<a href="#peervpcid" title="PeerVpcId">PeerVpcId</a>" : <i>String</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#vpcid" title="VpcId">VpcId</a>" : <i>String</i>,
         "<a href="#vpcpeeringconnectionid" title="VpcPeeringConnectionId">VpcPeeringConnectionId</a>" : <i>String</i>,
-        "<a href="#accepter" title="Accepter">Accepter</a>" : <i>[ <a href="accepter.md">Accepter</a>, ... ]</i>,
-        "<a href="#requester" title="Requester">Requester</a>" : <i>[ <a href="requester.md">Requester</a>, ... ]</i>
+        "<a href="#accepter" title="Accepter">Accepter</a>" : <i>[ &lt;a href=&#34;accepter.md&#34;&gt;Accepter&lt;/a&gt;, ... ]</i>,
+        "<a href="#requester" title="Requester">Requester</a>" : <i>[ &lt;a href=&#34;requester.md&#34;&gt;Requester&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -27,18 +32,41 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::VpcPeeringConnectionAccepter
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#acceptstatus" title="AcceptStatus">AcceptStatus</a>: <i>String</i>
     <a href="#autoaccept" title="AutoAccept">AutoAccept</a>: <i>Boolean</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#peerownerid" title="PeerOwnerId">PeerOwnerId</a>: <i>String</i>
+    <a href="#peerregion" title="PeerRegion">PeerRegion</a>: <i>String</i>
+    <a href="#peervpcid" title="PeerVpcId">PeerVpcId</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+    <a href="#vpcid" title="VpcId">VpcId</a>: <i>String</i>
     <a href="#vpcpeeringconnectionid" title="VpcPeeringConnectionId">VpcPeeringConnectionId</a>: <i>String</i>
     <a href="#accepter" title="Accepter">Accepter</a>: <i>
-      - <a href="accepter.md">Accepter</a></i>
+      - &lt;a href=&#34;accepter.md&#34;&gt;Accepter&lt;/a&gt;</i>
     <a href="#requester" title="Requester">Requester</a>: <i>
-      - <a href="requester.md">Requester</a></i>
+      - &lt;a href=&#34;requester.md&#34;&gt;Requester&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### AcceptStatus
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AutoAccept
 
@@ -48,7 +76,23 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### PeerOwnerId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### PeerRegion
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### PeerVpcId
 
 _Required_: No
 
@@ -60,7 +104,15 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### VpcId
+
+_Required_: No
+
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -76,7 +128,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="accepter.md">Accepter</a>
+_Type_: List of &lt;a href=&#34;accepter.md&#34;&gt;Accepter&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -84,7 +136,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="requester.md">Requester</a>
+_Type_: List of &lt;a href=&#34;requester.md&#34;&gt;Requester&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -106,21 +158,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AcceptStatus
 
-Returns the <code>AcceptStatus</code> value.
+Returns the &lt;code&gt;AcceptStatus&lt;/code&gt; value.
 
 #### PeerOwnerId
 
-Returns the <code>PeerOwnerId</code> value.
+Returns the &lt;code&gt;PeerOwnerId&lt;/code&gt; value.
 
 #### PeerRegion
 
-Returns the <code>PeerRegion</code> value.
+Returns the &lt;code&gt;PeerRegion&lt;/code&gt; value.
 
 #### PeerVpcId
 
-Returns the <code>PeerVpcId</code> value.
+Returns the &lt;code&gt;PeerVpcId&lt;/code&gt; value.
 
 #### VpcId
 
-Returns the <code>VpcId</code> value.
+Returns the &lt;code&gt;VpcId&lt;/code&gt; value.
 

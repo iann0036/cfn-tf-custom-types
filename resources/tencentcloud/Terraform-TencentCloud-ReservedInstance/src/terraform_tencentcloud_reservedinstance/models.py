@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ConfigId: Optional[str]
     EndTime: Optional[str]
-    Id: Optional[str]
     InstanceCount: Optional[float]
     StartTime: Optional[str]
     Status: Optional[str]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ConfigId=json_data.get("ConfigId"),
             EndTime=json_data.get("EndTime"),
-            Id=json_data.get("Id"),
             InstanceCount=json_data.get("InstanceCount"),
             StartTime=json_data.get("StartTime"),
             Status=json_data.get("Status"),

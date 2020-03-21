@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     EmailNotification: Optional[str]
     FeatureSet: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     IdcsAccessToken: Optional[str]
     LicenseType: Optional[str]
     Name: Optional[str]
@@ -68,7 +67,6 @@ class ResourceModel(BaseResourceModel):
             EmailNotification=json_data.get("EmailNotification"),
             FeatureSet=json_data.get("FeatureSet"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             IdcsAccessToken=json_data.get("IdcsAccessToken"),
             LicenseType=json_data.get("LicenseType"),
             Name=json_data.get("Name"),

@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DeviceGroup: Optional[str]
     GcpProjectCredential: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     TemplateStack: Optional[str]
 
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DeviceGroup=json_data.get("DeviceGroup"),
             GcpProjectCredential=json_data.get("GcpProjectCredential"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             TemplateStack=json_data.get("TemplateStack"),
         )

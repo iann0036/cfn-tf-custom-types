@@ -12,22 +12,27 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::MskCluster",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
+        "<a href="#bootstrapbrokers" title="BootstrapBrokers">BootstrapBrokers</a>" : <i>String</i>,
+        "<a href="#bootstrapbrokerstls" title="BootstrapBrokersTls">BootstrapBrokersTls</a>" : <i>String</i>,
         "<a href="#clustername" title="ClusterName">ClusterName</a>" : <i>String</i>,
+        "<a href="#currentversion" title="CurrentVersion">CurrentVersion</a>" : <i>String</i>,
         "<a href="#enhancedmonitoring" title="EnhancedMonitoring">EnhancedMonitoring</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#kafkaversion" title="KafkaVersion">KafkaVersion</a>" : <i>String</i>,
         "<a href="#numberofbrokernodes" title="NumberOfBrokerNodes">NumberOfBrokerNodes</a>" : <i>Double</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
-        "<a href="#brokernodegroupinfo" title="BrokerNodeGroupInfo">BrokerNodeGroupInfo</a>" : <i>[ <a href="brokernodegroupinfo.md">BrokerNodeGroupInfo</a>, ... ]</i>,
-        "<a href="#clientauthentication" title="ClientAuthentication">ClientAuthentication</a>" : <i>[ <a href="clientauthentication.md">ClientAuthentication</a>, ... ]</i>,
-        "<a href="#configurationinfo" title="ConfigurationInfo">ConfigurationInfo</a>" : <i>[ <a href="configurationinfo.md">ConfigurationInfo</a>, ... ]</i>,
-        "<a href="#encryptioninfo" title="EncryptionInfo">EncryptionInfo</a>" : <i>[ <a href="encryptioninfo.md">EncryptionInfo</a>, ... ]</i>,
-        "<a href="#openmonitoring" title="OpenMonitoring">OpenMonitoring</a>" : <i>[ <a href="openmonitoring.md">OpenMonitoring</a>, ... ]</i>,
-        "<a href="#tls" title="Tls">Tls</a>" : <i>[ <a href="tls.md">Tls</a>, ... ]</i>,
-        "<a href="#encryptionintransit" title="EncryptionInTransit">EncryptionInTransit</a>" : <i>[ <a href="encryptionintransit.md">EncryptionInTransit</a>, ... ]</i>,
-        "<a href="#prometheus" title="Prometheus">Prometheus</a>" : <i>[ <a href="prometheus.md">Prometheus</a>, ... ]</i>,
-        "<a href="#jmxexporter" title="JmxExporter">JmxExporter</a>" : <i>[ <a href="jmxexporter.md">JmxExporter</a>, ... ]</i>,
-        "<a href="#nodeexporter" title="NodeExporter">NodeExporter</a>" : <i>[ <a href="nodeexporter.md">NodeExporter</a>, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#zookeeperconnectstring" title="ZookeeperConnectString">ZookeeperConnectString</a>" : <i>String</i>,
+        "<a href="#brokernodegroupinfo" title="BrokerNodeGroupInfo">BrokerNodeGroupInfo</a>" : <i>[ &lt;a href=&#34;brokernodegroupinfo.md&#34;&gt;BrokerNodeGroupInfo&lt;/a&gt;, ... ]</i>,
+        "<a href="#clientauthentication" title="ClientAuthentication">ClientAuthentication</a>" : <i>[ &lt;a href=&#34;clientauthentication.md&#34;&gt;ClientAuthentication&lt;/a&gt;, ... ]</i>,
+        "<a href="#configurationinfo" title="ConfigurationInfo">ConfigurationInfo</a>" : <i>[ &lt;a href=&#34;configurationinfo.md&#34;&gt;ConfigurationInfo&lt;/a&gt;, ... ]</i>,
+        "<a href="#encryptioninfo" title="EncryptionInfo">EncryptionInfo</a>" : <i>[ &lt;a href=&#34;encryptioninfo.md&#34;&gt;EncryptionInfo&lt;/a&gt;, ... ]</i>,
+        "<a href="#openmonitoring" title="OpenMonitoring">OpenMonitoring</a>" : <i>[ &lt;a href=&#34;openmonitoring.md&#34;&gt;OpenMonitoring&lt;/a&gt;, ... ]</i>,
+        "<a href="#tls" title="Tls">Tls</a>" : <i>[ &lt;a href=&#34;tls.md&#34;&gt;Tls&lt;/a&gt;, ... ]</i>,
+        "<a href="#encryptionintransit" title="EncryptionInTransit">EncryptionInTransit</a>" : <i>[ &lt;a href=&#34;encryptionintransit.md&#34;&gt;EncryptionInTransit&lt;/a&gt;, ... ]</i>,
+        "<a href="#prometheus" title="Prometheus">Prometheus</a>" : <i>[ &lt;a href=&#34;prometheus.md&#34;&gt;Prometheus&lt;/a&gt;, ... ]</i>,
+        "<a href="#jmxexporter" title="JmxExporter">JmxExporter</a>" : <i>[ &lt;a href=&#34;jmxexporter.md&#34;&gt;JmxExporter&lt;/a&gt;, ... ]</i>,
+        "<a href="#nodeexporter" title="NodeExporter">NodeExporter</a>" : <i>[ &lt;a href=&#34;nodeexporter.md&#34;&gt;NodeExporter&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -37,36 +42,75 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::MskCluster
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
+    <a href="#bootstrapbrokers" title="BootstrapBrokers">BootstrapBrokers</a>: <i>String</i>
+    <a href="#bootstrapbrokerstls" title="BootstrapBrokersTls">BootstrapBrokersTls</a>: <i>String</i>
     <a href="#clustername" title="ClusterName">ClusterName</a>: <i>String</i>
+    <a href="#currentversion" title="CurrentVersion">CurrentVersion</a>: <i>String</i>
     <a href="#enhancedmonitoring" title="EnhancedMonitoring">EnhancedMonitoring</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#kafkaversion" title="KafkaVersion">KafkaVersion</a>: <i>String</i>
     <a href="#numberofbrokernodes" title="NumberOfBrokerNodes">NumberOfBrokerNodes</a>: <i>Double</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+    <a href="#zookeeperconnectstring" title="ZookeeperConnectString">ZookeeperConnectString</a>: <i>String</i>
     <a href="#brokernodegroupinfo" title="BrokerNodeGroupInfo">BrokerNodeGroupInfo</a>: <i>
-      - <a href="brokernodegroupinfo.md">BrokerNodeGroupInfo</a></i>
+      - &lt;a href=&#34;brokernodegroupinfo.md&#34;&gt;BrokerNodeGroupInfo&lt;/a&gt;</i>
     <a href="#clientauthentication" title="ClientAuthentication">ClientAuthentication</a>: <i>
-      - <a href="clientauthentication.md">ClientAuthentication</a></i>
+      - &lt;a href=&#34;clientauthentication.md&#34;&gt;ClientAuthentication&lt;/a&gt;</i>
     <a href="#configurationinfo" title="ConfigurationInfo">ConfigurationInfo</a>: <i>
-      - <a href="configurationinfo.md">ConfigurationInfo</a></i>
+      - &lt;a href=&#34;configurationinfo.md&#34;&gt;ConfigurationInfo&lt;/a&gt;</i>
     <a href="#encryptioninfo" title="EncryptionInfo">EncryptionInfo</a>: <i>
-      - <a href="encryptioninfo.md">EncryptionInfo</a></i>
+      - &lt;a href=&#34;encryptioninfo.md&#34;&gt;EncryptionInfo&lt;/a&gt;</i>
     <a href="#openmonitoring" title="OpenMonitoring">OpenMonitoring</a>: <i>
-      - <a href="openmonitoring.md">OpenMonitoring</a></i>
+      - &lt;a href=&#34;openmonitoring.md&#34;&gt;OpenMonitoring&lt;/a&gt;</i>
     <a href="#tls" title="Tls">Tls</a>: <i>
-      - <a href="tls.md">Tls</a></i>
+      - &lt;a href=&#34;tls.md&#34;&gt;Tls&lt;/a&gt;</i>
     <a href="#encryptionintransit" title="EncryptionInTransit">EncryptionInTransit</a>: <i>
-      - <a href="encryptionintransit.md">EncryptionInTransit</a></i>
+      - &lt;a href=&#34;encryptionintransit.md&#34;&gt;EncryptionInTransit&lt;/a&gt;</i>
     <a href="#prometheus" title="Prometheus">Prometheus</a>: <i>
-      - <a href="prometheus.md">Prometheus</a></i>
+      - &lt;a href=&#34;prometheus.md&#34;&gt;Prometheus&lt;/a&gt;</i>
     <a href="#jmxexporter" title="JmxExporter">JmxExporter</a>: <i>
-      - <a href="jmxexporter.md">JmxExporter</a></i>
+      - &lt;a href=&#34;jmxexporter.md&#34;&gt;JmxExporter&lt;/a&gt;</i>
     <a href="#nodeexporter" title="NodeExporter">NodeExporter</a>: <i>
-      - <a href="nodeexporter.md">NodeExporter</a></i>
+      - &lt;a href=&#34;nodeexporter.md&#34;&gt;NodeExporter&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Arn
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### BootstrapBrokers
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### BootstrapBrokersTls
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClusterName
 
@@ -76,7 +120,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### EnhancedMonitoring
+#### CurrentVersion
 
 _Required_: No
 
@@ -84,7 +128,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### EnhancedMonitoring
 
 _Required_: No
 
@@ -112,7 +156,15 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ZookeeperConnectString
+
+_Required_: No
+
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -120,7 +172,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="brokernodegroupinfo.md">BrokerNodeGroupInfo</a>
+_Type_: List of &lt;a href=&#34;brokernodegroupinfo.md&#34;&gt;BrokerNodeGroupInfo&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -128,7 +180,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="clientauthentication.md">ClientAuthentication</a>
+_Type_: List of &lt;a href=&#34;clientauthentication.md&#34;&gt;ClientAuthentication&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -136,7 +188,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="configurationinfo.md">ConfigurationInfo</a>
+_Type_: List of &lt;a href=&#34;configurationinfo.md&#34;&gt;ConfigurationInfo&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -144,7 +196,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="encryptioninfo.md">EncryptionInfo</a>
+_Type_: List of &lt;a href=&#34;encryptioninfo.md&#34;&gt;EncryptionInfo&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -152,7 +204,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="openmonitoring.md">OpenMonitoring</a>
+_Type_: List of &lt;a href=&#34;openmonitoring.md&#34;&gt;OpenMonitoring&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -160,7 +212,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tls.md">Tls</a>
+_Type_: List of &lt;a href=&#34;tls.md&#34;&gt;Tls&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -168,7 +220,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="encryptionintransit.md">EncryptionInTransit</a>
+_Type_: List of &lt;a href=&#34;encryptionintransit.md&#34;&gt;EncryptionInTransit&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -176,7 +228,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="prometheus.md">Prometheus</a>
+_Type_: List of &lt;a href=&#34;prometheus.md&#34;&gt;Prometheus&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -184,7 +236,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="jmxexporter.md">JmxExporter</a>
+_Type_: List of &lt;a href=&#34;jmxexporter.md&#34;&gt;JmxExporter&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -192,7 +244,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="nodeexporter.md">NodeExporter</a>
+_Type_: List of &lt;a href=&#34;nodeexporter.md&#34;&gt;NodeExporter&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -214,21 +266,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the <code>Arn</code> value.
+Returns the &lt;code&gt;Arn&lt;/code&gt; value.
 
 #### BootstrapBrokers
 
-Returns the <code>BootstrapBrokers</code> value.
+Returns the &lt;code&gt;BootstrapBrokers&lt;/code&gt; value.
 
 #### BootstrapBrokersTls
 
-Returns the <code>BootstrapBrokersTls</code> value.
+Returns the &lt;code&gt;BootstrapBrokersTls&lt;/code&gt; value.
 
 #### CurrentVersion
 
-Returns the <code>CurrentVersion</code> value.
+Returns the &lt;code&gt;CurrentVersion&lt;/code&gt; value.
 
 #### ZookeeperConnectString
 
-Returns the <code>ZookeeperConnectString</code> value.
+Returns the &lt;code&gt;ZookeeperConnectString&lt;/code&gt; value.
 

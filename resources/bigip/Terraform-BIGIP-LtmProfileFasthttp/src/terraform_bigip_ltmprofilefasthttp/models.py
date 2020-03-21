@@ -44,7 +44,6 @@ class ResourceModel(BaseResourceModel):
     ConnpoolidleTimeoutoverride: Optional[float]
     DefaultsFrom: Optional[str]
     Forcehttp10response: Optional[str]
-    Id: Optional[str]
     IdleTimeout: Optional[float]
     MaxheaderSize: Optional[float]
     Name: Optional[str]
@@ -66,7 +65,6 @@ class ResourceModel(BaseResourceModel):
             ConnpoolidleTimeoutoverride=json_data.get("ConnpoolidleTimeoutoverride"),
             DefaultsFrom=json_data.get("DefaultsFrom"),
             Forcehttp10response=json_data.get("Forcehttp10response"),
-            Id=json_data.get("Id"),
             IdleTimeout=json_data.get("IdleTimeout"),
             MaxheaderSize=json_data.get("MaxheaderSize"),
             Name=json_data.get("Name"),

@@ -12,20 +12,20 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OpenTelekomCloud::CesAlarmrule",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#alarmactionenabled" title="AlarmActionEnabled">AlarmActionEnabled</a>" : <i>Boolean</i>,
         "<a href="#alarmdescription" title="AlarmDescription">AlarmDescription</a>" : <i>String</i>,
         "<a href="#alarmenabled" title="AlarmEnabled">AlarmEnabled</a>" : <i>Boolean</i>,
         "<a href="#alarmname" title="AlarmName">AlarmName</a>" : <i>String</i>,
         "<a href="#alarmstate" title="AlarmState">AlarmState</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#updatetime" title="UpdateTime">UpdateTime</a>" : <i>Double</i>,
-        "<a href="#alarmactions" title="AlarmActions">AlarmActions</a>" : <i>[ <a href="alarmactions.md">AlarmActions</a>, ... ]</i>,
-        "<a href="#condition" title="Condition">Condition</a>" : <i>[ <a href="condition.md">Condition</a>, ... ]</i>,
-        "<a href="#insufficientdataactions" title="InsufficientdataActions">InsufficientdataActions</a>" : <i>[ <a href="insufficientdataactions.md">InsufficientdataActions</a>, ... ]</i>,
-        "<a href="#metric" title="Metric">Metric</a>" : <i>[ <a href="metric.md">Metric</a>, ... ]</i>,
-        "<a href="#okactions" title="OkActions">OkActions</a>" : <i>[ <a href="okactions.md">OkActions</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
-        "<a href="#dimensions" title="Dimensions">Dimensions</a>" : <i>[ <a href="dimensions.md">Dimensions</a>, ... ]</i>
+        "<a href="#alarmactions" title="AlarmActions">AlarmActions</a>" : <i>[ &lt;a href=&#34;alarmactions.md&#34;&gt;AlarmActions&lt;/a&gt;, ... ]</i>,
+        "<a href="#condition" title="Condition">Condition</a>" : <i>[ &lt;a href=&#34;condition.md&#34;&gt;Condition&lt;/a&gt;, ... ]</i>,
+        "<a href="#insufficientdataactions" title="InsufficientdataActions">InsufficientdataActions</a>" : <i>[ &lt;a href=&#34;insufficientdataactions.md&#34;&gt;InsufficientdataActions&lt;/a&gt;, ... ]</i>,
+        "<a href="#metric" title="Metric">Metric</a>" : <i>[ &lt;a href=&#34;metric.md&#34;&gt;Metric&lt;/a&gt;, ... ]</i>,
+        "<a href="#okactions" title="OkActions">OkActions</a>" : <i>[ &lt;a href=&#34;okactions.md&#34;&gt;OkActions&lt;/a&gt;, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
+        "<a href="#dimensions" title="Dimensions">Dimensions</a>" : <i>[ &lt;a href=&#34;dimensions.md&#34;&gt;Dimensions&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -35,29 +35,39 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OpenTelekomCloud::CesAlarmrule
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#alarmactionenabled" title="AlarmActionEnabled">AlarmActionEnabled</a>: <i>Boolean</i>
     <a href="#alarmdescription" title="AlarmDescription">AlarmDescription</a>: <i>String</i>
     <a href="#alarmenabled" title="AlarmEnabled">AlarmEnabled</a>: <i>Boolean</i>
     <a href="#alarmname" title="AlarmName">AlarmName</a>: <i>String</i>
     <a href="#alarmstate" title="AlarmState">AlarmState</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#updatetime" title="UpdateTime">UpdateTime</a>: <i>Double</i>
     <a href="#alarmactions" title="AlarmActions">AlarmActions</a>: <i>
-      - <a href="alarmactions.md">AlarmActions</a></i>
+      - &lt;a href=&#34;alarmactions.md&#34;&gt;AlarmActions&lt;/a&gt;</i>
     <a href="#condition" title="Condition">Condition</a>: <i>
-      - <a href="condition.md">Condition</a></i>
+      - &lt;a href=&#34;condition.md&#34;&gt;Condition&lt;/a&gt;</i>
     <a href="#insufficientdataactions" title="InsufficientdataActions">InsufficientdataActions</a>: <i>
-      - <a href="insufficientdataactions.md">InsufficientdataActions</a></i>
+      - &lt;a href=&#34;insufficientdataactions.md&#34;&gt;InsufficientdataActions&lt;/a&gt;</i>
     <a href="#metric" title="Metric">Metric</a>: <i>
-      - <a href="metric.md">Metric</a></i>
+      - &lt;a href=&#34;metric.md&#34;&gt;Metric&lt;/a&gt;</i>
     <a href="#okactions" title="OkActions">OkActions</a>: <i>
-      - <a href="okactions.md">OkActions</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;okactions.md&#34;&gt;OkActions&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     <a href="#dimensions" title="Dimensions">Dimensions</a>: <i>
-      - <a href="dimensions.md">Dimensions</a></i>
+      - &lt;a href=&#34;dimensions.md&#34;&gt;Dimensions&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AlarmActionEnabled
 
@@ -99,14 +109,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### UpdateTime
 
 _Required_: No
@@ -119,7 +121,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="alarmactions.md">AlarmActions</a>
+_Type_: List of &lt;a href=&#34;alarmactions.md&#34;&gt;AlarmActions&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -127,7 +129,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="condition.md">Condition</a>
+_Type_: List of &lt;a href=&#34;condition.md&#34;&gt;Condition&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -135,7 +137,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="insufficientdataactions.md">InsufficientdataActions</a>
+_Type_: List of &lt;a href=&#34;insufficientdataactions.md&#34;&gt;InsufficientdataActions&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -143,7 +145,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="metric.md">Metric</a>
+_Type_: List of &lt;a href=&#34;metric.md&#34;&gt;Metric&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -151,7 +153,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="okactions.md">OkActions</a>
+_Type_: List of &lt;a href=&#34;okactions.md&#34;&gt;OkActions&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -159,7 +161,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -167,7 +169,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="dimensions.md">Dimensions</a>
+_Type_: List of &lt;a href=&#34;dimensions.md&#34;&gt;Dimensions&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

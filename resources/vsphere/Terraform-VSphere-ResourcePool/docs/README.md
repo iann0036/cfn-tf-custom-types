@@ -12,13 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::VSphere::ResourcePool",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#cpuexpandable" title="CpuExpandable">CpuExpandable</a>" : <i>Boolean</i>,
         "<a href="#cpulimit" title="CpuLimit">CpuLimit</a>" : <i>Double</i>,
         "<a href="#cpureservation" title="CpuReservation">CpuReservation</a>" : <i>Double</i>,
         "<a href="#cpusharelevel" title="CpuShareLevel">CpuShareLevel</a>" : <i>String</i>,
         "<a href="#cpushares" title="CpuShares">CpuShares</a>" : <i>Double</i>,
-        "<a href="#customattributes" title="CustomAttributes">CustomAttributes</a>" : <i>[ <a href="customattributes.md">CustomAttributes</a>, ... ]</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#customattributes" title="CustomAttributes">CustomAttributes</a>" : <i>[ &lt;a href=&#34;customattributes.md&#34;&gt;CustomAttributes&lt;/a&gt;, ... ]</i>,
         "<a href="#memoryexpandable" title="MemoryExpandable">MemoryExpandable</a>" : <i>Boolean</i>,
         "<a href="#memorylimit" title="MemoryLimit">MemoryLimit</a>" : <i>Double</i>,
         "<a href="#memoryreservation" title="MemoryReservation">MemoryReservation</a>" : <i>Double</i>,
@@ -36,14 +36,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::VSphere::ResourcePool
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#cpuexpandable" title="CpuExpandable">CpuExpandable</a>: <i>Boolean</i>
     <a href="#cpulimit" title="CpuLimit">CpuLimit</a>: <i>Double</i>
     <a href="#cpureservation" title="CpuReservation">CpuReservation</a>: <i>Double</i>
     <a href="#cpusharelevel" title="CpuShareLevel">CpuShareLevel</a>: <i>String</i>
     <a href="#cpushares" title="CpuShares">CpuShares</a>: <i>Double</i>
     <a href="#customattributes" title="CustomAttributes">CustomAttributes</a>: <i>
-      - <a href="customattributes.md">CustomAttributes</a></i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+      - &lt;a href=&#34;customattributes.md&#34;&gt;CustomAttributes&lt;/a&gt;</i>
     <a href="#memoryexpandable" title="MemoryExpandable">MemoryExpandable</a>: <i>Boolean</i>
     <a href="#memorylimit" title="MemoryLimit">MemoryLimit</a>: <i>Double</i>
     <a href="#memoryreservation" title="MemoryReservation">MemoryReservation</a>: <i>Double</i>
@@ -56,6 +56,16 @@ Properties:
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CpuExpandable
 
@@ -101,15 +111,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="customattributes.md">CustomAttributes</a>
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
-
-_Type_: String
+_Type_: List of &lt;a href=&#34;customattributes.md&#34;&gt;CustomAttributes&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

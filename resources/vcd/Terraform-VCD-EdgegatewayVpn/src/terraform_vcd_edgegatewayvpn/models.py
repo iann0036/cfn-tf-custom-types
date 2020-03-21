@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     EdgeGateway: Optional[str]
     EncryptionProtocol: Optional[str]
-    Id: Optional[str]
     LocalId: Optional[str]
     LocalIpAddress: Optional[str]
     Mtu: Optional[float]
@@ -64,7 +63,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             EdgeGateway=json_data.get("EdgeGateway"),
             EncryptionProtocol=json_data.get("EncryptionProtocol"),
-            Id=json_data.get("Id"),
             LocalId=json_data.get("LocalId"),
             LocalIpAddress=json_data.get("LocalIpAddress"),
             Mtu=json_data.get("Mtu"),

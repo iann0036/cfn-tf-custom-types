@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     DataNodeSpec: Optional[str]
     Description: Optional[str]
     Domain: Optional[str]
-    Id: Optional[str]
     InstanceChargeType: Optional[str]
     KibanaDomain: Optional[str]
     KibanaPort: Optional[float]
@@ -77,7 +76,6 @@ class ResourceModel(BaseResourceModel):
             DataNodeSpec=json_data.get("DataNodeSpec"),
             Description=json_data.get("Description"),
             Domain=json_data.get("Domain"),
-            Id=json_data.get("Id"),
             InstanceChargeType=json_data.get("InstanceChargeType"),
             KibanaDomain=json_data.get("KibanaDomain"),
             KibanaPort=json_data.get("KibanaPort"),

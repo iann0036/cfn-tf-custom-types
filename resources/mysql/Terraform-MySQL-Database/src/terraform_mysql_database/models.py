@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DefaultCharacterSet: Optional[str]
     DefaultCollation: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
 
     @classmethod
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DefaultCharacterSet=json_data.get("DefaultCharacterSet"),
             DefaultCollation=json_data.get("DefaultCollation"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
         )
 

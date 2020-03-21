@@ -45,7 +45,6 @@ class ResourceModel(BaseResourceModel):
     DocumentType: Optional[str]
     Hash: Optional[str]
     HashType: Optional[str]
-    Id: Optional[str]
     LatestVersion: Optional[str]
     Name: Optional[str]
     Owner: Optional[str]
@@ -76,7 +75,6 @@ class ResourceModel(BaseResourceModel):
             DocumentType=json_data.get("DocumentType"),
             Hash=json_data.get("Hash"),
             HashType=json_data.get("HashType"),
-            Id=json_data.get("Id"),
             LatestVersion=json_data.get("LatestVersion"),
             Name=json_data.get("Name"),
             Owner=json_data.get("Owner"),

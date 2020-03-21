@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     ApiManagementName: Optional[str]
     Description: Optional[str]
     DisplayName: Optional[str]
-    Id: Optional[str]
     IsCurrent: Optional[bool]
     IsOnline: Optional[bool]
     Name: Optional[str]
@@ -68,7 +67,6 @@ class ResourceModel(BaseResourceModel):
             ApiManagementName=json_data.get("ApiManagementName"),
             Description=json_data.get("Description"),
             DisplayName=json_data.get("DisplayName"),
-            Id=json_data.get("Id"),
             IsCurrent=json_data.get("IsCurrent"),
             IsOnline=json_data.get("IsOnline"),
             Name=json_data.get("Name"),

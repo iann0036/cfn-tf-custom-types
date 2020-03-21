@@ -12,14 +12,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Panos::PanoramaBgpExportRuleGroup",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#positionkeyword" title="PositionKeyword">PositionKeyword</a>" : <i>String</i>,
         "<a href="#positionreference" title="PositionReference">PositionReference</a>" : <i>String</i>,
         "<a href="#template" title="Template">Template</a>" : <i>String</i>,
         "<a href="#templatestack" title="TemplateStack">TemplateStack</a>" : <i>String</i>,
         "<a href="#virtualrouter" title="VirtualRouter">VirtualRouter</a>" : <i>String</i>,
-        "<a href="#rule" title="Rule">Rule</a>" : <i>[ <a href="rule.md">Rule</a>, ... ]</i>,
-        "<a href="#matchaddressprefix" title="MatchAddressPrefix">MatchAddressPrefix</a>" : <i>[ <a href="matchaddressprefix.md">MatchAddressPrefix</a>, ... ]</i>
+        "<a href="#rule" title="Rule">Rule</a>" : <i>[ &lt;a href=&#34;rule.md&#34;&gt;Rule&lt;/a&gt;, ... ]</i>,
+        "<a href="#matchaddressprefix" title="MatchAddressPrefix">MatchAddressPrefix</a>" : <i>[ &lt;a href=&#34;matchaddressprefix.md&#34;&gt;MatchAddressPrefix&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -29,21 +29,23 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Panos::PanoramaBgpExportRuleGroup
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#positionkeyword" title="PositionKeyword">PositionKeyword</a>: <i>String</i>
     <a href="#positionreference" title="PositionReference">PositionReference</a>: <i>String</i>
     <a href="#template" title="Template">Template</a>: <i>String</i>
     <a href="#templatestack" title="TemplateStack">TemplateStack</a>: <i>String</i>
     <a href="#virtualrouter" title="VirtualRouter">VirtualRouter</a>: <i>String</i>
     <a href="#rule" title="Rule">Rule</a>: <i>
-      - <a href="rule.md">Rule</a></i>
+      - &lt;a href=&#34;rule.md&#34;&gt;Rule&lt;/a&gt;</i>
     <a href="#matchaddressprefix" title="MatchAddressPrefix">MatchAddressPrefix</a>: <i>
-      - <a href="matchaddressprefix.md">MatchAddressPrefix</a></i>
+      - &lt;a href=&#34;matchaddressprefix.md&#34;&gt;MatchAddressPrefix&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
@@ -95,7 +97,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="rule.md">Rule</a>
+_Type_: List of &lt;a href=&#34;rule.md&#34;&gt;Rule&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -103,7 +105,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="matchaddressprefix.md">MatchAddressPrefix</a>
+_Type_: List of &lt;a href=&#34;matchaddressprefix.md&#34;&gt;MatchAddressPrefix&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

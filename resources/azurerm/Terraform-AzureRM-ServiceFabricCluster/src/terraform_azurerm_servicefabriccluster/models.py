@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AddOnFeatures: Optional[Sequence[str]]
     ClusterCodeVersion: Optional[str]
     ClusterEndpoint: Optional[str]
-    Id: Optional[str]
     Location: Optional[str]
     ManagementEndpoint: Optional[str]
     Name: Optional[str]
@@ -73,7 +72,6 @@ class ResourceModel(BaseResourceModel):
             AddOnFeatures=json_data.get("AddOnFeatures"),
             ClusterCodeVersion=json_data.get("ClusterCodeVersion"),
             ClusterEndpoint=json_data.get("ClusterEndpoint"),
-            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             ManagementEndpoint=json_data.get("ManagementEndpoint"),
             Name=json_data.get("Name"),

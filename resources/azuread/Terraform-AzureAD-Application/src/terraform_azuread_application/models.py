@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     AvailableToOtherTenants: Optional[bool]
     GroupMembershipClaims: Optional[str]
     Homepage: Optional[str]
-    Id: Optional[str]
     IdentifierUris: Optional[Sequence[str]]
     LogoutUrl: Optional[str]
     Name: Optional[str]
@@ -67,7 +66,6 @@ class ResourceModel(BaseResourceModel):
             AvailableToOtherTenants=json_data.get("AvailableToOtherTenants"),
             GroupMembershipClaims=json_data.get("GroupMembershipClaims"),
             Homepage=json_data.get("Homepage"),
-            Id=json_data.get("Id"),
             IdentifierUris=json_data.get("IdentifierUris"),
             LogoutUrl=json_data.get("LogoutUrl"),
             Name=json_data.get("Name"),

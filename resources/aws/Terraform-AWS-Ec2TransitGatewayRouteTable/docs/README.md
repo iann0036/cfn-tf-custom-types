@@ -12,8 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::Ec2TransitGatewayRouteTable",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#defaultassociationroutetable" title="DefaultAssociationRouteTable">DefaultAssociationRouteTable</a>" : <i>Boolean</i>,
+        "<a href="#defaultpropagationroutetable" title="DefaultPropagationRouteTable">DefaultPropagationRouteTable</a>" : <i>Boolean</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
         "<a href="#transitgatewayid" title="TransitGatewayId">TransitGatewayId</a>" : <i>String</i>
     }
 }
@@ -24,15 +26,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::Ec2TransitGatewayRouteTable
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#defaultassociationroutetable" title="DefaultAssociationRouteTable">DefaultAssociationRouteTable</a>: <i>Boolean</i>
+    <a href="#defaultpropagationroutetable" title="DefaultPropagationRouteTable">DefaultPropagationRouteTable</a>: <i>Boolean</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
     <a href="#transitgatewayid" title="TransitGatewayId">TransitGatewayId</a>: <i>String</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
@@ -40,11 +46,27 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### DefaultAssociationRouteTable
+
+_Required_: No
+
+_Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### DefaultPropagationRouteTable
+
+_Required_: No
+
+_Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Tags
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -74,9 +96,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### DefaultAssociationRouteTable
 
-Returns the <code>DefaultAssociationRouteTable</code> value.
+Returns the &lt;code&gt;DefaultAssociationRouteTable&lt;/code&gt; value.
 
 #### DefaultPropagationRouteTable
 
-Returns the <code>DefaultPropagationRouteTable</code> value.
+Returns the &lt;code&gt;DefaultPropagationRouteTable&lt;/code&gt; value.
 

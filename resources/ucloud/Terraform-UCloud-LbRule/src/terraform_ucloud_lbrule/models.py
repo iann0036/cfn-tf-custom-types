@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     BackendIds: Optional[Sequence[str]]
     Domain: Optional[str]
-    Id: Optional[str]
     ListenerId: Optional[str]
     LoadBalancerId: Optional[str]
     Path: Optional[str]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             BackendIds=json_data.get("BackendIds"),
             Domain=json_data.get("Domain"),
-            Id=json_data.get("Id"),
             ListenerId=json_data.get("ListenerId"),
             LoadBalancerId=json_data.get("LoadBalancerId"),
             Path=json_data.get("Path"),

@@ -12,11 +12,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::PolardbEndpointAddress",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#connectionprefix" title="ConnectionPrefix">ConnectionPrefix</a>" : <i>String</i>,
+        "<a href="#connectionstring" title="ConnectionString">ConnectionString</a>" : <i>String</i>,
         "<a href="#dbclusterid" title="DbClusterId">DbClusterId</a>" : <i>String</i>,
         "<a href="#dbendpointid" title="DbEndpointId">DbEndpointId</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#ipaddress" title="IpAddress">IpAddress</a>" : <i>String</i>,
         "<a href="#nettype" title="NetType">NetType</a>" : <i>String</i>,
+        "<a href="#port" title="Port">Port</a>" : <i>String</i>
     }
 }
 </pre>
@@ -26,16 +29,37 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::PolardbEndpointAddress
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#connectionprefix" title="ConnectionPrefix">ConnectionPrefix</a>: <i>String</i>
+    <a href="#connectionstring" title="ConnectionString">ConnectionString</a>: <i>String</i>
     <a href="#dbclusterid" title="DbClusterId">DbClusterId</a>: <i>String</i>
     <a href="#dbendpointid" title="DbEndpointId">DbEndpointId</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#ipaddress" title="IpAddress">IpAddress</a>: <i>String</i>
     <a href="#nettype" title="NetType">NetType</a>: <i>String</i>
+    <a href="#port" title="Port">Port</a>: <i>String</i>
 </pre>
 
 ## Properties
 
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### ConnectionPrefix
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ConnectionString
 
 _Required_: No
 
@@ -59,7 +83,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### IpAddress
 
 _Required_: No
 
@@ -68,6 +92,14 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NetType
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Port
 
 _Required_: No
 
@@ -93,13 +125,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ConnectionString
 
-Returns the <code>ConnectionString</code> value.
+Returns the &lt;code&gt;ConnectionString&lt;/code&gt; value.
 
 #### IpAddress
 
-Returns the <code>IpAddress</code> value.
+Returns the &lt;code&gt;IpAddress&lt;/code&gt; value.
 
 #### Port
 
-Returns the <code>Port</code> value.
+Returns the &lt;code&gt;Port&lt;/code&gt; value.
 

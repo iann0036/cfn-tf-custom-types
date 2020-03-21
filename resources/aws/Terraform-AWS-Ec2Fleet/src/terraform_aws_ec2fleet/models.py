@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ExcessCapacityTerminationPolicy: Optional[str]
-    Id: Optional[str]
     ReplaceUnhealthyInstances: Optional[bool]
     Tags: Optional[Sequence["_Tags"]]
     TerminateInstances: Optional[bool]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             ExcessCapacityTerminationPolicy=json_data.get("ExcessCapacityTerminationPolicy"),
-            Id=json_data.get("Id"),
             ReplaceUnhealthyInstances=json_data.get("ReplaceUnhealthyInstances"),
             Tags=json_data.get("Tags"),
             TerminateInstances=json_data.get("TerminateInstances"),

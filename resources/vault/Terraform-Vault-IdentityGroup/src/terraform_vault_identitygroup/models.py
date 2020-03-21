@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ExternalPolicies: Optional[bool]
-    Id: Optional[str]
     MemberEntityIds: Optional[Sequence[str]]
     MemberGroupIds: Optional[Sequence[str]]
     Metadata: Optional[Sequence["_Metadata"]]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             ExternalPolicies=json_data.get("ExternalPolicies"),
-            Id=json_data.get("Id"),
             MemberEntityIds=json_data.get("MemberEntityIds"),
             MemberGroupIds=json_data.get("MemberGroupIds"),
             Metadata=json_data.get("Metadata"),

@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     PrivateDnsZoneName: Optional[str]
     RegistrationEnabled: Optional[bool]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             PrivateDnsZoneName=json_data.get("PrivateDnsZoneName"),
             RegistrationEnabled=json_data.get("RegistrationEnabled"),

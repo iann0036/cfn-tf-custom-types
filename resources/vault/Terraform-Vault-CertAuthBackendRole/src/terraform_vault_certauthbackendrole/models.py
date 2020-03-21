@@ -46,7 +46,6 @@ class ResourceModel(BaseResourceModel):
     BoundCidrs: Optional[Sequence[str]]
     Certificate: Optional[str]
     DisplayName: Optional[str]
-    Id: Optional[str]
     MaxTtl: Optional[str]
     Name: Optional[str]
     Period: Optional[str]
@@ -82,7 +81,6 @@ class ResourceModel(BaseResourceModel):
             BoundCidrs=json_data.get("BoundCidrs"),
             Certificate=json_data.get("Certificate"),
             DisplayName=json_data.get("DisplayName"),
-            Id=json_data.get("Id"),
             MaxTtl=json_data.get("MaxTtl"),
             Name=json_data.get("Name"),
             Period=json_data.get("Period"),

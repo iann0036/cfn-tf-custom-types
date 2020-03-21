@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CidrBlock: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     IsDefault: Optional[bool]
     Name: Optional[str]
 
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CidrBlock=json_data.get("CidrBlock"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             IsDefault=json_data.get("IsDefault"),
             Name=json_data.get("Name"),
         )

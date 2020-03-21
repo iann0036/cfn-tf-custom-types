@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     DisplayName: Optional[str]
     FarCrossConnectOrCrossConnectGroupId: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     IsActive: Optional[bool]
     LocationName: Optional[str]
     NearCrossConnectOrCrossConnectGroupId: Optional[str]
@@ -69,7 +68,6 @@ class ResourceModel(BaseResourceModel):
             DisplayName=json_data.get("DisplayName"),
             FarCrossConnectOrCrossConnectGroupId=json_data.get("FarCrossConnectOrCrossConnectGroupId"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             IsActive=json_data.get("IsActive"),
             LocationName=json_data.get("LocationName"),
             NearCrossConnectOrCrossConnectGroupId=json_data.get("NearCrossConnectOrCrossConnectGroupId"),

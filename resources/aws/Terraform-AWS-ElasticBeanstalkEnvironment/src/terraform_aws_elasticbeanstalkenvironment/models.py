@@ -44,7 +44,6 @@ class ResourceModel(BaseResourceModel):
     CnamePrefix: Optional[str]
     Description: Optional[str]
     EndpointUrl: Optional[str]
-    Id: Optional[str]
     Instances: Optional[Sequence[str]]
     LaunchConfigurations: Optional[Sequence[str]]
     LoadBalancers: Optional[Sequence[str]]
@@ -78,7 +77,6 @@ class ResourceModel(BaseResourceModel):
             CnamePrefix=json_data.get("CnamePrefix"),
             Description=json_data.get("Description"),
             EndpointUrl=json_data.get("EndpointUrl"),
-            Id=json_data.get("Id"),
             Instances=json_data.get("Instances"),
             LaunchConfigurations=json_data.get("LaunchConfigurations"),
             LoadBalancers=json_data.get("LoadBalancers"),

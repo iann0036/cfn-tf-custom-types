@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     DestinationDatasetId: Optional[str]
     Disabled: Optional[bool]
     DisplayName: Optional[str]
-    Id: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
     Params: Optional[Sequence["_Params"]]
@@ -63,7 +62,6 @@ class ResourceModel(BaseResourceModel):
             DestinationDatasetId=json_data.get("DestinationDatasetId"),
             Disabled=json_data.get("Disabled"),
             DisplayName=json_data.get("DisplayName"),
-            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),
             Params=json_data.get("Params"),

@@ -12,10 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Scaleway::InstanceSecurityGroupRules",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#securitygroupid" title="SecurityGroupId">SecurityGroupId</a>" : <i>String</i>,
-        "<a href="#inboundrule" title="InboundRule">InboundRule</a>" : <i>[ <a href="inboundrule.md">InboundRule</a>, ... ]</i>,
-        "<a href="#outboundrule" title="OutboundRule">OutboundRule</a>" : <i>[ <a href="outboundrule.md">OutboundRule</a>, ... ]</i>
+        "<a href="#inboundrule" title="InboundRule">InboundRule</a>" : <i>[ &lt;a href=&#34;inboundrule.md&#34;&gt;InboundRule&lt;/a&gt;, ... ]</i>,
+        "<a href="#outboundrule" title="OutboundRule">OutboundRule</a>" : <i>[ &lt;a href=&#34;outboundrule.md&#34;&gt;OutboundRule&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -25,17 +25,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Scaleway::InstanceSecurityGroupRules
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#securitygroupid" title="SecurityGroupId">SecurityGroupId</a>: <i>String</i>
     <a href="#inboundrule" title="InboundRule">InboundRule</a>: <i>
-      - <a href="inboundrule.md">InboundRule</a></i>
+      - &lt;a href=&#34;inboundrule.md&#34;&gt;InboundRule&lt;/a&gt;</i>
     <a href="#outboundrule" title="OutboundRule">OutboundRule</a>: <i>
-      - <a href="outboundrule.md">OutboundRule</a></i>
+      - &lt;a href=&#34;outboundrule.md&#34;&gt;OutboundRule&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
@@ -55,7 +57,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="inboundrule.md">InboundRule</a>
+_Type_: List of &lt;a href=&#34;inboundrule.md&#34;&gt;InboundRule&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -63,7 +65,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="outboundrule.md">OutboundRule</a>
+_Type_: List of &lt;a href=&#34;outboundrule.md&#34;&gt;OutboundRule&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

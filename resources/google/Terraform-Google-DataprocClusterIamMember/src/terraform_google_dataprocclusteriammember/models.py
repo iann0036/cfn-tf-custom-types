@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Cluster: Optional[str]
     Etag: Optional[str]
-    Id: Optional[str]
     Member: Optional[str]
     Project: Optional[str]
     Region: Optional[str]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Cluster=json_data.get("Cluster"),
             Etag=json_data.get("Etag"),
-            Id=json_data.get("Id"),
             Member=json_data.get("Member"),
             Project=json_data.get("Project"),
             Region=json_data.get("Region"),

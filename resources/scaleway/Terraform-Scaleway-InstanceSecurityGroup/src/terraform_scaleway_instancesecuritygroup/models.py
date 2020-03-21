@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     ExternalRules: Optional[bool]
-    Id: Optional[str]
     InboundDefaultPolicy: Optional[str]
     Name: Optional[str]
     OrganizationId: Optional[str]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             ExternalRules=json_data.get("ExternalRules"),
-            Id=json_data.get("Id"),
             InboundDefaultPolicy=json_data.get("InboundDefaultPolicy"),
             Name=json_data.get("Name"),
             OrganizationId=json_data.get("OrganizationId"),

@@ -10,7 +10,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#category" title="Category">Category</a>" : <i>String</i>,
     "<a href="#enabled" title="Enabled">Enabled</a>" : <i>Boolean</i>,
-    "<a href="#retentionpolicy" title="RetentionPolicy">RetentionPolicy</a>" : <i>[ <a href="metric-retentionpolicy.md">RetentionPolicy</a>, ... ]</i>
+    "<a href="#retentionpolicy" title="RetentionPolicy">RetentionPolicy</a>" : <i>[ &lt;a href=&#34;metric-retentionpolicy.md&#34;&gt;RetentionPolicy&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -20,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#category" title="Category">Category</a>: <i>String</i>
 <a href="#enabled" title="Enabled">Enabled</a>: <i>Boolean</i>
 <a href="#retentionpolicy" title="RetentionPolicy">RetentionPolicy</a>: <i>
-      - <a href="metric-retentionpolicy.md">RetentionPolicy</a></i>
+      - &lt;a href=&#34;metric-retentionpolicy.md&#34;&gt;RetentionPolicy&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -28,7 +28,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Category
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -36,7 +35,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Enabled
 
 _Required_: No
-
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -44,8 +42,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RetentionPolicy
 
 _Required_: No
-
-_Type_: List of <a href="metric-retentionpolicy.md">RetentionPolicy</a>
+_Type_: List of &lt;a href=&#34;metric-retentionpolicy.md&#34;&gt;RetentionPolicy&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

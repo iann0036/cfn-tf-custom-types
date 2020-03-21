@@ -12,13 +12,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::CmsSiteMonitor",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#address" title="Address">Address</a>" : <i>String</i>,
         "<a href="#alertids" title="AlertIds">AlertIds</a>" : <i>[ String, ... ]</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#createtime" title="CreateTime">CreateTime</a>" : <i>String</i>,
         "<a href="#interval" title="Interval">Interval</a>" : <i>Double</i>,
         "<a href="#optionsjson" title="OptionsJson">OptionsJson</a>" : <i>String</i>,
         "<a href="#taskname" title="TaskName">TaskName</a>" : <i>String</i>,
+        "<a href="#taskstate" title="TaskState">TaskState</a>" : <i>String</i>,
         "<a href="#tasktype" title="TaskType">TaskType</a>" : <i>String</i>,
+        "<a href="#updatetime" title="UpdateTime">UpdateTime</a>" : <i>String</i>
     }
 }
 </pre>
@@ -28,17 +31,30 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::CmsSiteMonitor
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#address" title="Address">Address</a>: <i>String</i>
     <a href="#alertids" title="AlertIds">AlertIds</a>: <i>
       - String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#createtime" title="CreateTime">CreateTime</a>: <i>String</i>
     <a href="#interval" title="Interval">Interval</a>: <i>Double</i>
     <a href="#optionsjson" title="OptionsJson">OptionsJson</a>: <i>String</i>
     <a href="#taskname" title="TaskName">TaskName</a>: <i>String</i>
+    <a href="#taskstate" title="TaskState">TaskState</a>: <i>String</i>
     <a href="#tasktype" title="TaskType">TaskType</a>: <i>String</i>
+    <a href="#updatetime" title="UpdateTime">UpdateTime</a>: <i>String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Address
 
@@ -56,7 +72,7 @@ _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### CreateTime
 
 _Required_: No
 
@@ -88,9 +104,25 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### TaskState
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### TaskType
 
 _Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### UpdateTime
+
+_Required_: No
 
 _Type_: String
 
@@ -114,13 +146,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateTime
 
-Returns the <code>CreateTime</code> value.
+Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
 
 #### TaskState
 
-Returns the <code>TaskState</code> value.
+Returns the &lt;code&gt;TaskState&lt;/code&gt; value.
 
 #### UpdateTime
 
-Returns the <code>UpdateTime</code> value.
+Returns the &lt;code&gt;UpdateTime&lt;/code&gt; value.
 

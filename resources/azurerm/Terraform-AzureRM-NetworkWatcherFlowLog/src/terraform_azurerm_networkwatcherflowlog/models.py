@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Enabled: Optional[bool]
-    Id: Optional[str]
     NetworkSecurityGroupId: Optional[str]
     NetworkWatcherName: Optional[str]
     ResourceGroupName: Optional[str]
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Enabled=json_data.get("Enabled"),
-            Id=json_data.get("Id"),
             NetworkSecurityGroupId=json_data.get("NetworkSecurityGroupId"),
             NetworkWatcherName=json_data.get("NetworkWatcherName"),
             ResourceGroupName=json_data.get("ResourceGroupName"),

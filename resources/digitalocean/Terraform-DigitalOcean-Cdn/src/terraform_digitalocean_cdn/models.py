@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     CreatedAt: Optional[str]
     CustomDomain: Optional[str]
     Endpoint: Optional[str]
-    Id: Optional[str]
     Origin: Optional[str]
     Ttl: Optional[float]
 
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
             CreatedAt=json_data.get("CreatedAt"),
             CustomDomain=json_data.get("CustomDomain"),
             Endpoint=json_data.get("Endpoint"),
-            Id=json_data.get("Id"),
             Origin=json_data.get("Origin"),
             Ttl=json_data.get("Ttl"),
         )

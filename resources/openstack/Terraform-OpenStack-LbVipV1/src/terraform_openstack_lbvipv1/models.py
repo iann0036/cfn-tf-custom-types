@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     ConnLimit: Optional[float]
     Description: Optional[str]
     FloatingIp: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Persistence: Optional[Sequence["_Persistence"]]
     PoolId: Optional[str]
@@ -67,7 +66,6 @@ class ResourceModel(BaseResourceModel):
             ConnLimit=json_data.get("ConnLimit"),
             Description=json_data.get("Description"),
             FloatingIp=json_data.get("FloatingIp"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Persistence=json_data.get("Persistence"),
             PoolId=json_data.get("PoolId"),

@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     EnableDelete: Optional[bool]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     InactiveState: Optional[str]
     IsAccessible: Optional[bool]
     Name: Optional[str]
@@ -63,7 +62,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             EnableDelete=json_data.get("EnableDelete"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             InactiveState=json_data.get("InactiveState"),
             IsAccessible=json_data.get("IsAccessible"),
             Name=json_data.get("Name"),

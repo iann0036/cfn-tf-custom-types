@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CaCertificate: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     ResourceGroupId: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             CaCertificate=json_data.get("CaCertificate"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ResourceGroupId=json_data.get("ResourceGroupId"),
             Tags=json_data.get("Tags"),

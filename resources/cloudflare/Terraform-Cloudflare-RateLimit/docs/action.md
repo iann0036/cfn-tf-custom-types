@@ -10,7 +10,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#mode" title="Mode">Mode</a>" : <i>String</i>,
     "<a href="#timeout" title="Timeout">Timeout</a>" : <i>Double</i>,
-    "<a href="#response" title="Response">Response</a>" : <i>[ <a href="action-response.md">Response</a>, ... ]</i>
+    "<a href="#response" title="Response">Response</a>" : <i>[ &lt;a href=&#34;action-response.md&#34;&gt;Response&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -20,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#mode" title="Mode">Mode</a>: <i>String</i>
 <a href="#timeout" title="Timeout">Timeout</a>: <i>Double</i>
 <a href="#response" title="Response">Response</a>: <i>
-      - <a href="action-response.md">Response</a></i>
+      - &lt;a href=&#34;action-response.md&#34;&gt;Response&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -28,7 +28,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Mode
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -36,7 +35,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Timeout
 
 _Required_: No
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -44,8 +42,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Response
 
 _Required_: No
-
-_Type_: List of <a href="action-response.md">Response</a>
+_Type_: List of &lt;a href=&#34;action-response.md&#34;&gt;Response&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

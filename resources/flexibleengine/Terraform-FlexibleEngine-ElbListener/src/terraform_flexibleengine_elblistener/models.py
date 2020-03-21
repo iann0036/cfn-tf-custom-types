@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     CertificateId: Optional[str]
     CookieTimeout: Optional[float]
     Description: Optional[str]
-    Id: Optional[str]
     LbAlgorithm: Optional[str]
     LoadbalancerId: Optional[str]
     Name: Optional[str]
@@ -72,7 +71,6 @@ class ResourceModel(BaseResourceModel):
             CertificateId=json_data.get("CertificateId"),
             CookieTimeout=json_data.get("CookieTimeout"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             LbAlgorithm=json_data.get("LbAlgorithm"),
             LoadbalancerId=json_data.get("LoadbalancerId"),
             Name=json_data.get("Name"),

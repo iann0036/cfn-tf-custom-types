@@ -12,7 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#ipaddress" title="IpAddress">IpAddress</a>" : <i>String</i>,
     "<a href="#netmask" title="Netmask">Netmask</a>" : <i>String</i>,
     "<a href="#usefordefaultroute" title="UseForDefaultRoute">UseForDefaultRoute</a>" : <i>Boolean</i>,
-    "<a href="#suballocatepool" title="SuballocatePool">SuballocatePool</a>" : <i>[ <a href="externalnetwork-subnet-suballocatepool.md">SuballocatePool</a>, ... ]</i>
+    "<a href="#suballocatepool" title="SuballocatePool">SuballocatePool</a>" : <i>[ &lt;a href=&#34;externalnetwork-subnet-suballocatepool.md&#34;&gt;SuballocatePool&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -24,7 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#netmask" title="Netmask">Netmask</a>: <i>String</i>
 <a href="#usefordefaultroute" title="UseForDefaultRoute">UseForDefaultRoute</a>: <i>Boolean</i>
 <a href="#suballocatepool" title="SuballocatePool">SuballocatePool</a>: <i>
-      - <a href="externalnetwork-subnet-suballocatepool.md">SuballocatePool</a></i>
+      - &lt;a href=&#34;externalnetwork-subnet-suballocatepool.md&#34;&gt;SuballocatePool&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -32,7 +32,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Gateway
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -40,7 +39,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### IpAddress
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -48,7 +46,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Netmask
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -56,7 +53,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### UseForDefaultRoute
 
 _Required_: No
-
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -64,8 +60,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SuballocatePool
 
 _Required_: No
-
-_Type_: List of <a href="externalnetwork-subnet-suballocatepool.md">SuballocatePool</a>
+_Type_: List of &lt;a href=&#34;externalnetwork-subnet-suballocatepool.md&#34;&gt;SuballocatePool&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

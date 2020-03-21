@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     Annotations: Optional[Sequence[str]]
     DataFactoryName: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     IntegrationRuntimeName: Optional[str]
     Name: Optional[str]
     Parameters: Optional[Sequence["_Parameters"]]
@@ -64,7 +63,6 @@ class ResourceModel(BaseResourceModel):
             Annotations=json_data.get("Annotations"),
             DataFactoryName=json_data.get("DataFactoryName"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             IntegrationRuntimeName=json_data.get("IntegrationRuntimeName"),
             Name=json_data.get("Name"),
             Parameters=json_data.get("Parameters"),

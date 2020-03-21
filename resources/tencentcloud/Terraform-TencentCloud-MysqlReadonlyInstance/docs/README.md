@@ -12,17 +12,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::TencentCloud::MysqlReadonlyInstance",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#autorenewflag" title="AutoRenewFlag">AutoRenewFlag</a>" : <i>Double</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#instancename" title="InstanceName">InstanceName</a>" : <i>String</i>,
+        "<a href="#intranetip" title="IntranetIp">IntranetIp</a>" : <i>String</i>,
         "<a href="#intranetport" title="IntranetPort">IntranetPort</a>" : <i>Double</i>,
+        "<a href="#locked" title="Locked">Locked</a>" : <i>Double</i>,
         "<a href="#masterinstanceid" title="MasterInstanceId">MasterInstanceId</a>" : <i>String</i>,
         "<a href="#memsize" title="MemSize">MemSize</a>" : <i>Double</i>,
         "<a href="#paytype" title="PayType">PayType</a>" : <i>Double</i>,
         "<a href="#period" title="Period">Period</a>" : <i>Double</i>,
         "<a href="#securitygroups" title="SecurityGroups">SecurityGroups</a>" : <i>[ String, ... ]</i>,
+        "<a href="#status" title="Status">Status</a>" : <i>Double</i>,
         "<a href="#subnetid" title="SubnetId">SubnetId</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#taskstatus" title="TaskStatus">TaskStatus</a>" : <i>Double</i>,
         "<a href="#volumesize" title="VolumeSize">VolumeSize</a>" : <i>Double</i>,
         "<a href="#vpcid" title="VpcId">VpcId</a>" : <i>String</i>
     }
@@ -34,38 +38,44 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::TencentCloud::MysqlReadonlyInstance
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#autorenewflag" title="AutoRenewFlag">AutoRenewFlag</a>: <i>Double</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#instancename" title="InstanceName">InstanceName</a>: <i>String</i>
+    <a href="#intranetip" title="IntranetIp">IntranetIp</a>: <i>String</i>
     <a href="#intranetport" title="IntranetPort">IntranetPort</a>: <i>Double</i>
+    <a href="#locked" title="Locked">Locked</a>: <i>Double</i>
     <a href="#masterinstanceid" title="MasterInstanceId">MasterInstanceId</a>: <i>String</i>
     <a href="#memsize" title="MemSize">MemSize</a>: <i>Double</i>
     <a href="#paytype" title="PayType">PayType</a>: <i>Double</i>
     <a href="#period" title="Period">Period</a>: <i>Double</i>
     <a href="#securitygroups" title="SecurityGroups">SecurityGroups</a>: <i>
       - String</i>
+    <a href="#status" title="Status">Status</a>: <i>Double</i>
     <a href="#subnetid" title="SubnetId">SubnetId</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+    <a href="#taskstatus" title="TaskStatus">TaskStatus</a>: <i>Double</i>
     <a href="#volumesize" title="VolumeSize">VolumeSize</a>: <i>Double</i>
     <a href="#vpcid" title="VpcId">VpcId</a>: <i>String</i>
 </pre>
 
 ## Properties
 
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### AutoRenewFlag
 
 _Required_: No
 
 _Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -77,7 +87,23 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### IntranetIp
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### IntranetPort
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Locked
 
 _Required_: No
 
@@ -125,6 +151,14 @@ _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### Status
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### SubnetId
 
 _Required_: No
@@ -137,7 +171,15 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### TaskStatus
+
+_Required_: No
+
+_Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -175,17 +217,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### IntranetIp
 
-Returns the <code>IntranetIp</code> value.
+Returns the &lt;code&gt;IntranetIp&lt;/code&gt; value.
 
 #### Locked
 
-Returns the <code>Locked</code> value.
+Returns the &lt;code&gt;Locked&lt;/code&gt; value.
 
 #### Status
 
-Returns the <code>Status</code> value.
+Returns the &lt;code&gt;Status&lt;/code&gt; value.
 
 #### TaskStatus
 
-Returns the <code>TaskStatus</code> value.
+Returns the &lt;code&gt;TaskStatus&lt;/code&gt; value.
 

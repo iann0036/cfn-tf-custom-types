@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     Domain: Optional[str]
     Email: Optional[str]
     Entity: Optional[str]
-    Id: Optional[str]
     Role: Optional[str]
     Timeouts: Optional["_Timeouts"]
 
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
             Domain=json_data.get("Domain"),
             Email=json_data.get("Email"),
             Entity=json_data.get("Entity"),
-            Id=json_data.get("Id"),
             Role=json_data.get("Role"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),
         )

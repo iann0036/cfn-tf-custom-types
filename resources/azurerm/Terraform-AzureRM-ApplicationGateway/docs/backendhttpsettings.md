@@ -19,8 +19,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#protocol" title="Protocol">Protocol</a>" : <i>String</i>,
     "<a href="#requesttimeout" title="RequestTimeout">RequestTimeout</a>" : <i>Double</i>,
     "<a href="#trustedrootcertificatenames" title="TrustedRootCertificateNames">TrustedRootCertificateNames</a>" : <i>[ String, ... ]</i>,
-    "<a href="#authenticationcertificate" title="AuthenticationCertificate">AuthenticationCertificate</a>" : <i>[ <a href="backendhttpsettings-authenticationcertificate.md">AuthenticationCertificate</a>, ... ]</i>,
-    "<a href="#connectiondraining" title="ConnectionDraining">ConnectionDraining</a>" : <i>[ <a href="backendhttpsettings-connectiondraining.md">ConnectionDraining</a>, ... ]</i>
+    "<a href="#authenticationcertificate" title="AuthenticationCertificate">AuthenticationCertificate</a>" : <i>[ &lt;a href=&#34;backendhttpsettings-authenticationcertificate.md&#34;&gt;AuthenticationCertificate&lt;/a&gt;, ... ]</i>,
+    "<a href="#connectiondraining" title="ConnectionDraining">ConnectionDraining</a>" : <i>[ &lt;a href=&#34;backendhttpsettings-connectiondraining.md&#34;&gt;ConnectionDraining&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -40,9 +40,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#trustedrootcertificatenames" title="TrustedRootCertificateNames">TrustedRootCertificateNames</a>: <i>
       - String</i>
 <a href="#authenticationcertificate" title="AuthenticationCertificate">AuthenticationCertificate</a>: <i>
-      - <a href="backendhttpsettings-authenticationcertificate.md">AuthenticationCertificate</a></i>
+      - &lt;a href=&#34;backendhttpsettings-authenticationcertificate.md&#34;&gt;AuthenticationCertificate&lt;/a&gt;</i>
 <a href="#connectiondraining" title="ConnectionDraining">ConnectionDraining</a>: <i>
-      - <a href="backendhttpsettings-connectiondraining.md">ConnectionDraining</a></i>
+      - &lt;a href=&#34;backendhttpsettings-connectiondraining.md&#34;&gt;ConnectionDraining&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -50,7 +50,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### AffinityCookieName
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -58,7 +57,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### CookieBasedAffinity
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -66,7 +64,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### HostName
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -74,7 +71,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Name
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -82,7 +78,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Path
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -90,7 +85,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### PickHostNameFromBackendAddress
 
 _Required_: No
-
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -98,7 +92,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Port
 
 _Required_: Yes
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -106,7 +99,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ProbeName
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -114,7 +106,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Protocol
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -122,7 +113,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RequestTimeout
 
 _Required_: No
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -130,7 +120,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### TrustedRootCertificateNames
 
 _Required_: No
-
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -138,16 +127,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### AuthenticationCertificate
 
 _Required_: No
-
-_Type_: List of <a href="backendhttpsettings-authenticationcertificate.md">AuthenticationCertificate</a>
+_Type_: List of &lt;a href=&#34;backendhttpsettings-authenticationcertificate.md&#34;&gt;AuthenticationCertificate&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ConnectionDraining
 
 _Required_: No
-
-_Type_: List of <a href="backendhttpsettings-connectiondraining.md">ConnectionDraining</a>
+_Type_: List of &lt;a href=&#34;backendhttpsettings-connectiondraining.md&#34;&gt;ConnectionDraining&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

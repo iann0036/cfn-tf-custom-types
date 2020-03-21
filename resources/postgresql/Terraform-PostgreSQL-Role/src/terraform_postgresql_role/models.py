@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     CreateRole: Optional[bool]
     Encrypted: Optional[str]
     EncryptedPassword: Optional[bool]
-    Id: Optional[str]
     Inherit: Optional[bool]
     Login: Optional[bool]
     Name: Optional[str]
@@ -71,7 +70,6 @@ class ResourceModel(BaseResourceModel):
             CreateRole=json_data.get("CreateRole"),
             Encrypted=json_data.get("Encrypted"),
             EncryptedPassword=json_data.get("EncryptedPassword"),
-            Id=json_data.get("Id"),
             Inherit=json_data.get("Inherit"),
             Login=json_data.get("Login"),
             Name=json_data.get("Name"),

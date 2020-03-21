@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DestinationCidr: Optional[str]
-    Id: Optional[str]
     NextHop: Optional[str]
     Region: Optional[str]
     RouterId: Optional[str]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             DestinationCidr=json_data.get("DestinationCidr"),
-            Id=json_data.get("Id"),
             NextHop=json_data.get("NextHop"),
             Region=json_data.get("Region"),
             RouterId=json_data.get("RouterId"),

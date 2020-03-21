@@ -12,7 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Panos::IpsecTunnelProxyIdIpv4",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#ipsectunnel" title="IpsecTunnel">IpsecTunnel</a>" : <i>String</i>,
         "<a href="#local" title="Local">Local</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
@@ -32,7 +32,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Panos::IpsecTunnelProxyIdIpv4
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#ipsectunnel" title="IpsecTunnel">IpsecTunnel</a>: <i>String</i>
     <a href="#local" title="Local">Local</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
@@ -47,7 +47,9 @@ Properties:
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 

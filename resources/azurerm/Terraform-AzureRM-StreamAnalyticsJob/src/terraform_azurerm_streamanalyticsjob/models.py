@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     EventsLateArrivalMaxDelayInSeconds: Optional[float]
     EventsOutOfOrderMaxDelayInSeconds: Optional[float]
     EventsOutOfOrderPolicy: Optional[str]
-    Id: Optional[str]
     JobId: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
@@ -66,7 +65,6 @@ class ResourceModel(BaseResourceModel):
             EventsLateArrivalMaxDelayInSeconds=json_data.get("EventsLateArrivalMaxDelayInSeconds"),
             EventsOutOfOrderMaxDelayInSeconds=json_data.get("EventsOutOfOrderMaxDelayInSeconds"),
             EventsOutOfOrderPolicy=json_data.get("EventsOutOfOrderPolicy"),
-            Id=json_data.get("Id"),
             JobId=json_data.get("JobId"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),

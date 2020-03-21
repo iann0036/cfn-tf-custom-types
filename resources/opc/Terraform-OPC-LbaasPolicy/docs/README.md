@@ -12,19 +12,22 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OPC::LbaasPolicy",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#loadbalancer" title="LoadBalancer">LoadBalancer</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#applicationcookiestickinesspolicy" title="ApplicationCookieStickinessPolicy">ApplicationCookieStickinessPolicy</a>" : <i>[ <a href="applicationcookiestickinesspolicy.md">ApplicationCookieStickinessPolicy</a>, ... ]</i>,
-        "<a href="#cloudgatepolicy" title="CloudgatePolicy">CloudgatePolicy</a>" : <i>[ <a href="cloudgatepolicy.md">CloudgatePolicy</a>, ... ]</i>,
-        "<a href="#loadbalancercookiestickinesspolicy" title="LoadBalancerCookieStickinessPolicy">LoadBalancerCookieStickinessPolicy</a>" : <i>[ <a href="loadbalancercookiestickinesspolicy.md">LoadBalancerCookieStickinessPolicy</a>, ... ]</i>,
-        "<a href="#loadbalancingmechanismpolicy" title="LoadBalancingMechanismPolicy">LoadBalancingMechanismPolicy</a>" : <i>[ <a href="loadbalancingmechanismpolicy.md">LoadBalancingMechanismPolicy</a>, ... ]</i>,
-        "<a href="#ratelimitingrequestpolicy" title="RateLimitingRequestPolicy">RateLimitingRequestPolicy</a>" : <i>[ <a href="ratelimitingrequestpolicy.md">RateLimitingRequestPolicy</a>, ... ]</i>,
-        "<a href="#redirectpolicy" title="RedirectPolicy">RedirectPolicy</a>" : <i>[ <a href="redirectpolicy.md">RedirectPolicy</a>, ... ]</i>,
-        "<a href="#resourceaccesscontrolpolicy" title="ResourceAccessControlPolicy">ResourceAccessControlPolicy</a>" : <i>[ <a href="resourceaccesscontrolpolicy.md">ResourceAccessControlPolicy</a>, ... ]</i>,
-        "<a href="#setrequestheaderpolicy" title="SetRequestHeaderPolicy">SetRequestHeaderPolicy</a>" : <i>[ <a href="setrequestheaderpolicy.md">SetRequestHeaderPolicy</a>, ... ]</i>,
-        "<a href="#sslnegotiationpolicy" title="SslNegotiationPolicy">SslNegotiationPolicy</a>" : <i>[ <a href="sslnegotiationpolicy.md">SslNegotiationPolicy</a>, ... ]</i>,
-        "<a href="#trustedcertificatepolicy" title="TrustedCertificatePolicy">TrustedCertificatePolicy</a>" : <i>[ <a href="trustedcertificatepolicy.md">TrustedCertificatePolicy</a>, ... ]</i>
+        "<a href="#state" title="State">State</a>" : <i>Boolean</i>,
+        "<a href="#type" title="Type">Type</a>" : <i>String</i>,
+        "<a href="#uri" title="Uri">Uri</a>" : <i>String</i>,
+        "<a href="#applicationcookiestickinesspolicy" title="ApplicationCookieStickinessPolicy">ApplicationCookieStickinessPolicy</a>" : <i>[ &lt;a href=&#34;applicationcookiestickinesspolicy.md&#34;&gt;ApplicationCookieStickinessPolicy&lt;/a&gt;, ... ]</i>,
+        "<a href="#cloudgatepolicy" title="CloudgatePolicy">CloudgatePolicy</a>" : <i>[ &lt;a href=&#34;cloudgatepolicy.md&#34;&gt;CloudgatePolicy&lt;/a&gt;, ... ]</i>,
+        "<a href="#loadbalancercookiestickinesspolicy" title="LoadBalancerCookieStickinessPolicy">LoadBalancerCookieStickinessPolicy</a>" : <i>[ &lt;a href=&#34;loadbalancercookiestickinesspolicy.md&#34;&gt;LoadBalancerCookieStickinessPolicy&lt;/a&gt;, ... ]</i>,
+        "<a href="#loadbalancingmechanismpolicy" title="LoadBalancingMechanismPolicy">LoadBalancingMechanismPolicy</a>" : <i>[ &lt;a href=&#34;loadbalancingmechanismpolicy.md&#34;&gt;LoadBalancingMechanismPolicy&lt;/a&gt;, ... ]</i>,
+        "<a href="#ratelimitingrequestpolicy" title="RateLimitingRequestPolicy">RateLimitingRequestPolicy</a>" : <i>[ &lt;a href=&#34;ratelimitingrequestpolicy.md&#34;&gt;RateLimitingRequestPolicy&lt;/a&gt;, ... ]</i>,
+        "<a href="#redirectpolicy" title="RedirectPolicy">RedirectPolicy</a>" : <i>[ &lt;a href=&#34;redirectpolicy.md&#34;&gt;RedirectPolicy&lt;/a&gt;, ... ]</i>,
+        "<a href="#resourceaccesscontrolpolicy" title="ResourceAccessControlPolicy">ResourceAccessControlPolicy</a>" : <i>[ &lt;a href=&#34;resourceaccesscontrolpolicy.md&#34;&gt;ResourceAccessControlPolicy&lt;/a&gt;, ... ]</i>,
+        "<a href="#setrequestheaderpolicy" title="SetRequestHeaderPolicy">SetRequestHeaderPolicy</a>" : <i>[ &lt;a href=&#34;setrequestheaderpolicy.md&#34;&gt;SetRequestHeaderPolicy&lt;/a&gt;, ... ]</i>,
+        "<a href="#sslnegotiationpolicy" title="SslNegotiationPolicy">SslNegotiationPolicy</a>" : <i>[ &lt;a href=&#34;sslnegotiationpolicy.md&#34;&gt;SslNegotiationPolicy&lt;/a&gt;, ... ]</i>,
+        "<a href="#trustedcertificatepolicy" title="TrustedCertificatePolicy">TrustedCertificatePolicy</a>" : <i>[ &lt;a href=&#34;trustedcertificatepolicy.md&#34;&gt;TrustedCertificatePolicy&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -34,34 +37,39 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OPC::LbaasPolicy
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#loadbalancer" title="LoadBalancer">LoadBalancer</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
+    <a href="#state" title="State">State</a>: <i>Boolean</i>
+    <a href="#type" title="Type">Type</a>: <i>String</i>
+    <a href="#uri" title="Uri">Uri</a>: <i>String</i>
     <a href="#applicationcookiestickinesspolicy" title="ApplicationCookieStickinessPolicy">ApplicationCookieStickinessPolicy</a>: <i>
-      - <a href="applicationcookiestickinesspolicy.md">ApplicationCookieStickinessPolicy</a></i>
+      - &lt;a href=&#34;applicationcookiestickinesspolicy.md&#34;&gt;ApplicationCookieStickinessPolicy&lt;/a&gt;</i>
     <a href="#cloudgatepolicy" title="CloudgatePolicy">CloudgatePolicy</a>: <i>
-      - <a href="cloudgatepolicy.md">CloudgatePolicy</a></i>
+      - &lt;a href=&#34;cloudgatepolicy.md&#34;&gt;CloudgatePolicy&lt;/a&gt;</i>
     <a href="#loadbalancercookiestickinesspolicy" title="LoadBalancerCookieStickinessPolicy">LoadBalancerCookieStickinessPolicy</a>: <i>
-      - <a href="loadbalancercookiestickinesspolicy.md">LoadBalancerCookieStickinessPolicy</a></i>
+      - &lt;a href=&#34;loadbalancercookiestickinesspolicy.md&#34;&gt;LoadBalancerCookieStickinessPolicy&lt;/a&gt;</i>
     <a href="#loadbalancingmechanismpolicy" title="LoadBalancingMechanismPolicy">LoadBalancingMechanismPolicy</a>: <i>
-      - <a href="loadbalancingmechanismpolicy.md">LoadBalancingMechanismPolicy</a></i>
+      - &lt;a href=&#34;loadbalancingmechanismpolicy.md&#34;&gt;LoadBalancingMechanismPolicy&lt;/a&gt;</i>
     <a href="#ratelimitingrequestpolicy" title="RateLimitingRequestPolicy">RateLimitingRequestPolicy</a>: <i>
-      - <a href="ratelimitingrequestpolicy.md">RateLimitingRequestPolicy</a></i>
+      - &lt;a href=&#34;ratelimitingrequestpolicy.md&#34;&gt;RateLimitingRequestPolicy&lt;/a&gt;</i>
     <a href="#redirectpolicy" title="RedirectPolicy">RedirectPolicy</a>: <i>
-      - <a href="redirectpolicy.md">RedirectPolicy</a></i>
+      - &lt;a href=&#34;redirectpolicy.md&#34;&gt;RedirectPolicy&lt;/a&gt;</i>
     <a href="#resourceaccesscontrolpolicy" title="ResourceAccessControlPolicy">ResourceAccessControlPolicy</a>: <i>
-      - <a href="resourceaccesscontrolpolicy.md">ResourceAccessControlPolicy</a></i>
+      - &lt;a href=&#34;resourceaccesscontrolpolicy.md&#34;&gt;ResourceAccessControlPolicy&lt;/a&gt;</i>
     <a href="#setrequestheaderpolicy" title="SetRequestHeaderPolicy">SetRequestHeaderPolicy</a>: <i>
-      - <a href="setrequestheaderpolicy.md">SetRequestHeaderPolicy</a></i>
+      - &lt;a href=&#34;setrequestheaderpolicy.md&#34;&gt;SetRequestHeaderPolicy&lt;/a&gt;</i>
     <a href="#sslnegotiationpolicy" title="SslNegotiationPolicy">SslNegotiationPolicy</a>: <i>
-      - <a href="sslnegotiationpolicy.md">SslNegotiationPolicy</a></i>
+      - &lt;a href=&#34;sslnegotiationpolicy.md&#34;&gt;SslNegotiationPolicy&lt;/a&gt;</i>
     <a href="#trustedcertificatepolicy" title="TrustedCertificatePolicy">TrustedCertificatePolicy</a>: <i>
-      - <a href="trustedcertificatepolicy.md">TrustedCertificatePolicy</a></i>
+      - &lt;a href=&#34;trustedcertificatepolicy.md&#34;&gt;TrustedCertificatePolicy&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
@@ -85,11 +93,35 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### State
+
+_Required_: No
+
+_Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Type
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Uri
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### ApplicationCookieStickinessPolicy
 
 _Required_: No
 
-_Type_: List of <a href="applicationcookiestickinesspolicy.md">ApplicationCookieStickinessPolicy</a>
+_Type_: List of &lt;a href=&#34;applicationcookiestickinesspolicy.md&#34;&gt;ApplicationCookieStickinessPolicy&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -97,7 +129,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="cloudgatepolicy.md">CloudgatePolicy</a>
+_Type_: List of &lt;a href=&#34;cloudgatepolicy.md&#34;&gt;CloudgatePolicy&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -105,7 +137,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="loadbalancercookiestickinesspolicy.md">LoadBalancerCookieStickinessPolicy</a>
+_Type_: List of &lt;a href=&#34;loadbalancercookiestickinesspolicy.md&#34;&gt;LoadBalancerCookieStickinessPolicy&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -113,7 +145,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="loadbalancingmechanismpolicy.md">LoadBalancingMechanismPolicy</a>
+_Type_: List of &lt;a href=&#34;loadbalancingmechanismpolicy.md&#34;&gt;LoadBalancingMechanismPolicy&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -121,7 +153,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="ratelimitingrequestpolicy.md">RateLimitingRequestPolicy</a>
+_Type_: List of &lt;a href=&#34;ratelimitingrequestpolicy.md&#34;&gt;RateLimitingRequestPolicy&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -129,7 +161,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="redirectpolicy.md">RedirectPolicy</a>
+_Type_: List of &lt;a href=&#34;redirectpolicy.md&#34;&gt;RedirectPolicy&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -137,7 +169,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="resourceaccesscontrolpolicy.md">ResourceAccessControlPolicy</a>
+_Type_: List of &lt;a href=&#34;resourceaccesscontrolpolicy.md&#34;&gt;ResourceAccessControlPolicy&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -145,7 +177,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="setrequestheaderpolicy.md">SetRequestHeaderPolicy</a>
+_Type_: List of &lt;a href=&#34;setrequestheaderpolicy.md&#34;&gt;SetRequestHeaderPolicy&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -153,7 +185,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="sslnegotiationpolicy.md">SslNegotiationPolicy</a>
+_Type_: List of &lt;a href=&#34;sslnegotiationpolicy.md&#34;&gt;SslNegotiationPolicy&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -161,7 +193,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="trustedcertificatepolicy.md">TrustedCertificatePolicy</a>
+_Type_: List of &lt;a href=&#34;trustedcertificatepolicy.md&#34;&gt;TrustedCertificatePolicy&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -183,13 +215,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### State
 
-Returns the <code>State</code> value.
+Returns the &lt;code&gt;State&lt;/code&gt; value.
 
 #### Type
 
-Returns the <code>Type</code> value.
+Returns the &lt;code&gt;Type&lt;/code&gt; value.
 
 #### Uri
 
-Returns the <code>Uri</code> value.
+Returns the &lt;code&gt;Uri&lt;/code&gt; value.
 

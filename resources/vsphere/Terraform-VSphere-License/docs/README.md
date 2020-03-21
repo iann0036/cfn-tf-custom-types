@@ -12,9 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::VSphere::License",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="labels.md">Labels</a>, ... ]</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#editionkey" title="EditionKey">EditionKey</a>" : <i>String</i>,
+        "<a href="#labels" title="Labels">Labels</a>" : <i>[ &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;, ... ]</i>,
         "<a href="#licensekey" title="LicenseKey">LicenseKey</a>" : <i>String</i>,
+        "<a href="#name" title="Name">Name</a>" : <i>String</i>,
+        "<a href="#total" title="Total">Total</a>" : <i>Double</i>,
+        "<a href="#used" title="Used">Used</a>" : <i>Double</i>
     }
 }
 </pre>
@@ -24,15 +28,29 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::VSphere::License
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#editionkey" title="EditionKey">EditionKey</a>: <i>String</i>
     <a href="#labels" title="Labels">Labels</a>: <i>
-      - <a href="labels.md">Labels</a></i>
+      - &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;</i>
     <a href="#licensekey" title="LicenseKey">LicenseKey</a>: <i>String</i>
+    <a href="#name" title="Name">Name</a>: <i>String</i>
+    <a href="#total" title="Total">Total</a>: <i>Double</i>
+    <a href="#used" title="Used">Used</a>: <i>Double</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### EditionKey
 
 _Required_: No
 
@@ -44,7 +62,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="labels.md">Labels</a>
+_Type_: List of &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -53,6 +71,30 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: Yes
 
 _Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Name
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Total
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Used
+
+_Required_: No
+
+_Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -74,17 +116,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### EditionKey
 
-Returns the <code>EditionKey</code> value.
+Returns the &lt;code&gt;EditionKey&lt;/code&gt; value.
 
 #### Name
 
-Returns the <code>Name</code> value.
+Returns the &lt;code&gt;Name&lt;/code&gt; value.
 
 #### Total
 
-Returns the <code>Total</code> value.
+Returns the &lt;code&gt;Total&lt;/code&gt; value.
 
 #### Used
 
-Returns the <code>Used</code> value.
+Returns the &lt;code&gt;Used&lt;/code&gt; value.
 

@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     Global: Optional[bool]
-    Id: Optional[str]
     Name: Optional[str]
     Organization: Optional[str]
     PoliciesPath: Optional[str]
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             Global=json_data.get("Global"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Organization=json_data.get("Organization"),
             PoliciesPath=json_data.get("PoliciesPath"),

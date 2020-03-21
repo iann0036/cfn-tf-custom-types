@@ -8,9 +8,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#backend" title="Backend">Backend</a>" : <i>[ <a href="spec-backend.md">Backend</a>, ... ]</i>,
-    "<a href="#rule" title="Rule">Rule</a>" : <i>[ <a href="spec-rule.md">Rule</a>, ... ]</i>,
-    "<a href="#tls" title="Tls">Tls</a>" : <i>[ <a href="spec-tls.md">Tls</a>, ... ]</i>
+    "<a href="#backend" title="Backend">Backend</a>" : <i>[ &lt;a href=&#34;spec-backend.md&#34;&gt;Backend&lt;/a&gt;, ... ]</i>,
+    "<a href="#rule" title="Rule">Rule</a>" : <i>[ &lt;a href=&#34;spec-rule.md&#34;&gt;Rule&lt;/a&gt;, ... ]</i>,
+    "<a href="#tls" title="Tls">Tls</a>" : <i>[ &lt;a href=&#34;spec-tls.md&#34;&gt;Tls&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -18,11 +18,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#backend" title="Backend">Backend</a>: <i>
-      - <a href="spec-backend.md">Backend</a></i>
+      - &lt;a href=&#34;spec-backend.md&#34;&gt;Backend&lt;/a&gt;</i>
 <a href="#rule" title="Rule">Rule</a>: <i>
-      - <a href="spec-rule.md">Rule</a></i>
+      - &lt;a href=&#34;spec-rule.md&#34;&gt;Rule&lt;/a&gt;</i>
 <a href="#tls" title="Tls">Tls</a>: <i>
-      - <a href="spec-tls.md">Tls</a></i>
+      - &lt;a href=&#34;spec-tls.md&#34;&gt;Tls&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -30,24 +30,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Backend
 
 _Required_: No
-
-_Type_: List of <a href="spec-backend.md">Backend</a>
+_Type_: List of &lt;a href=&#34;spec-backend.md&#34;&gt;Backend&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Rule
 
 _Required_: No
-
-_Type_: List of <a href="spec-rule.md">Rule</a>
+_Type_: List of &lt;a href=&#34;spec-rule.md&#34;&gt;Rule&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tls
 
 _Required_: No
-
-_Type_: List of <a href="spec-tls.md">Tls</a>
+_Type_: List of &lt;a href=&#34;spec-tls.md&#34;&gt;Tls&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

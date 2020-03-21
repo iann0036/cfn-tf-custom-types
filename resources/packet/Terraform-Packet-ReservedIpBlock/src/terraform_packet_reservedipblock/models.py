@@ -44,7 +44,6 @@ class ResourceModel(BaseResourceModel):
     Facility: Optional[str]
     Gateway: Optional[str]
     Global: Optional[bool]
-    Id: Optional[str]
     Manageable: Optional[bool]
     Management: Optional[bool]
     Netmask: Optional[str]
@@ -71,7 +70,6 @@ class ResourceModel(BaseResourceModel):
             Facility=json_data.get("Facility"),
             Gateway=json_data.get("Gateway"),
             Global=json_data.get("Global"),
-            Id=json_data.get("Id"),
             Manageable=json_data.get("Manageable"),
             Management=json_data.get("Management"),
             Netmask=json_data.get("Netmask"),

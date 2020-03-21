@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ApiKey: Optional[str]
     ApplicationInsightsId: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     ReadPermissions: Optional[Sequence[str]]
     WritePermissions: Optional[Sequence[str]]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ApiKey=json_data.get("ApiKey"),
             ApplicationInsightsId=json_data.get("ApplicationInsightsId"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ReadPermissions=json_data.get("ReadPermissions"),
             WritePermissions=json_data.get("WritePermissions"),

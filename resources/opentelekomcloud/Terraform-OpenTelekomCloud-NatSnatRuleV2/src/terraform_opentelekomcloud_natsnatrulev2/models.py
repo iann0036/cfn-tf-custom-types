@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Cidr: Optional[str]
     FloatingIpId: Optional[str]
-    Id: Optional[str]
     NatGatewayId: Optional[str]
     NetworkId: Optional[str]
     Region: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Cidr=json_data.get("Cidr"),
             FloatingIpId=json_data.get("FloatingIpId"),
-            Id=json_data.get("Id"),
             NatGatewayId=json_data.get("NatGatewayId"),
             NetworkId=json_data.get("NetworkId"),
             Region=json_data.get("Region"),

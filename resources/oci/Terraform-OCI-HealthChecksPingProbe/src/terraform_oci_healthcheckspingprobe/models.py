@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CompartmentId: Optional[str]
     HomeRegion: Optional[str]
-    Id: Optional[str]
     Port: Optional[float]
     Protocol: Optional[str]
     ResultsUrl: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CompartmentId=json_data.get("CompartmentId"),
             HomeRegion=json_data.get("HomeRegion"),
-            Id=json_data.get("Id"),
             Port=json_data.get("Port"),
             Protocol=json_data.get("Protocol"),
             ResultsUrl=json_data.get("ResultsUrl"),

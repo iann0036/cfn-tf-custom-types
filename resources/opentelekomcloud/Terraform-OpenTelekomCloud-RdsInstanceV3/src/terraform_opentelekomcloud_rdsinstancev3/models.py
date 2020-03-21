@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     Created: Optional[str]
     Flavor: Optional[str]
     HaReplicationMode: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Nodes: Optional[Sequence["_Nodes"]]
     ParamGroupId: Optional[str]
@@ -68,7 +67,6 @@ class ResourceModel(BaseResourceModel):
             Created=json_data.get("Created"),
             Flavor=json_data.get("Flavor"),
             HaReplicationMode=json_data.get("HaReplicationMode"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Nodes=json_data.get("Nodes"),
             ParamGroupId=json_data.get("ParamGroupId"),

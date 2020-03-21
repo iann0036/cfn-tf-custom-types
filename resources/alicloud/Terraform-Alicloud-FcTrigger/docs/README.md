@@ -12,15 +12,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::FcTrigger",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#config" title="Config">Config</a>" : <i>String</i>,
         "<a href="#configmns" title="ConfigMns">ConfigMns</a>" : <i>String</i>,
         "<a href="#function" title="Function">Function</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#lastmodified" title="LastModified">LastModified</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#nameprefix" title="NamePrefix">NamePrefix</a>" : <i>String</i>,
         "<a href="#role" title="Role">Role</a>" : <i>String</i>,
         "<a href="#service" title="Service">Service</a>" : <i>String</i>,
         "<a href="#sourcearn" title="SourceArn">SourceArn</a>" : <i>String</i>,
+        "<a href="#triggerid" title="TriggerId">TriggerId</a>" : <i>String</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>
     }
 }
@@ -31,19 +33,31 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::FcTrigger
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#config" title="Config">Config</a>: <i>String</i>
     <a href="#configmns" title="ConfigMns">ConfigMns</a>: <i>String</i>
     <a href="#function" title="Function">Function</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#lastmodified" title="LastModified">LastModified</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#nameprefix" title="NamePrefix">NamePrefix</a>: <i>String</i>
     <a href="#role" title="Role">Role</a>: <i>String</i>
     <a href="#service" title="Service">Service</a>: <i>String</i>
     <a href="#sourcearn" title="SourceArn">SourceArn</a>: <i>String</i>
+    <a href="#triggerid" title="TriggerId">TriggerId</a>: <i>String</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Config
 
@@ -69,7 +83,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### LastModified
 
 _Required_: No
 
@@ -117,6 +131,14 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### TriggerId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Type
 
 _Required_: Yes
@@ -143,9 +165,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### LastModified
 
-Returns the <code>LastModified</code> value.
+Returns the &lt;code&gt;LastModified&lt;/code&gt; value.
 
 #### TriggerId
 
-Returns the <code>TriggerId</code> value.
+Returns the &lt;code&gt;TriggerId&lt;/code&gt; value.
 

@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     EventhubAuthorizationRuleId: Optional[str]
     EventhubName: Optional[str]
-    Id: Optional[str]
     LogAnalyticsDestinationType: Optional[str]
     LogAnalyticsWorkspaceId: Optional[str]
     Name: Optional[str]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             EventhubAuthorizationRuleId=json_data.get("EventhubAuthorizationRuleId"),
             EventhubName=json_data.get("EventhubName"),
-            Id=json_data.get("Id"),
             LogAnalyticsDestinationType=json_data.get("LogAnalyticsDestinationType"),
             LogAnalyticsWorkspaceId=json_data.get("LogAnalyticsWorkspaceId"),
             Name=json_data.get("Name"),

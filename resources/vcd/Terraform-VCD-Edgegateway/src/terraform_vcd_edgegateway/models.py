@@ -49,7 +49,6 @@ class ResourceModel(BaseResourceModel):
     FwDefaultRuleLoggingEnabled: Optional[bool]
     FwEnabled: Optional[bool]
     HaEnabled: Optional[bool]
-    Id: Optional[str]
     LbAccelerationEnabled: Optional[bool]
     LbEnabled: Optional[bool]
     LbLoggingEnabled: Optional[bool]
@@ -84,7 +83,6 @@ class ResourceModel(BaseResourceModel):
             FwDefaultRuleLoggingEnabled=json_data.get("FwDefaultRuleLoggingEnabled"),
             FwEnabled=json_data.get("FwEnabled"),
             HaEnabled=json_data.get("HaEnabled"),
-            Id=json_data.get("Id"),
             LbAccelerationEnabled=json_data.get("LbAccelerationEnabled"),
             LbEnabled=json_data.get("LbEnabled"),
             LbLoggingEnabled=json_data.get("LbLoggingEnabled"),

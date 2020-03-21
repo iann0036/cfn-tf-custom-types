@@ -12,10 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Bitbucket::RepositoryVariable",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#key" title="Key">Key</a>" : <i>String</i>,
         "<a href="#repository" title="Repository">Repository</a>" : <i>String</i>,
         "<a href="#secured" title="Secured">Secured</a>" : <i>Boolean</i>,
+        "<a href="#uuid" title="Uuid">Uuid</a>" : <i>String</i>,
         "<a href="#value" title="Value">Value</a>" : <i>String</i>
     }
 }
@@ -26,16 +27,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Bitbucket::RepositoryVariable
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#key" title="Key">Key</a>: <i>String</i>
     <a href="#repository" title="Repository">Repository</a>: <i>String</i>
     <a href="#secured" title="Secured">Secured</a>: <i>Boolean</i>
+    <a href="#uuid" title="Uuid">Uuid</a>: <i>String</i>
     <a href="#value" title="Value">Value</a>: <i>String</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
@@ -67,6 +71,14 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### Uuid
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Value
 
 _Required_: Yes
@@ -93,5 +105,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Uuid
 
-Returns the <code>Uuid</code> value.
+Returns the &lt;code&gt;Uuid&lt;/code&gt; value.
 

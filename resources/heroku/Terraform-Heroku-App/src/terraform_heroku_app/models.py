@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     ConfigVars: Optional[Sequence["_ConfigVars"]]
     GitUrl: Optional[str]
     HerokuHostname: Optional[str]
-    Id: Optional[str]
     InternalRouting: Optional[bool]
     Name: Optional[str]
     Region: Optional[str]
@@ -68,7 +67,6 @@ class ResourceModel(BaseResourceModel):
             ConfigVars=json_data.get("ConfigVars"),
             GitUrl=json_data.get("GitUrl"),
             HerokuHostname=json_data.get("HerokuHostname"),
-            Id=json_data.get("Id"),
             InternalRouting=json_data.get("InternalRouting"),
             Name=json_data.get("Name"),
             Region=json_data.get("Region"),

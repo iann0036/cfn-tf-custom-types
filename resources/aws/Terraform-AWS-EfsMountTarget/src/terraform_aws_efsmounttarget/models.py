@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     DnsName: Optional[str]
     FileSystemArn: Optional[str]
     FileSystemId: Optional[str]
-    Id: Optional[str]
     IpAddress: Optional[str]
     NetworkInterfaceId: Optional[str]
     SecurityGroups: Optional[Sequence[str]]
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
             DnsName=json_data.get("DnsName"),
             FileSystemArn=json_data.get("FileSystemArn"),
             FileSystemId=json_data.get("FileSystemId"),
-            Id=json_data.get("Id"),
             IpAddress=json_data.get("IpAddress"),
             NetworkInterfaceId=json_data.get("NetworkInterfaceId"),
             SecurityGroups=json_data.get("SecurityGroups"),

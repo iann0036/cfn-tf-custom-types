@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     ByteLength: Optional[float]
     Dec: Optional[str]
     Hex: Optional[str]
-    Id: Optional[str]
     Keepers: Optional[Sequence["_Keepers"]]
     Prefix: Optional[str]
 
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             ByteLength=json_data.get("ByteLength"),
             Dec=json_data.get("Dec"),
             Hex=json_data.get("Hex"),
-            Id=json_data.get("Id"),
             Keepers=json_data.get("Keepers"),
             Prefix=json_data.get("Prefix"),
         )

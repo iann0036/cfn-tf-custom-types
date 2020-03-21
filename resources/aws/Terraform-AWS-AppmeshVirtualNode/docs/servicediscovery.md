@@ -8,8 +8,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#awscloudmap" title="AwsCloudMap">AwsCloudMap</a>" : <i>[ <a href="servicediscovery-awscloudmap.md">AwsCloudMap</a>, ... ]</i>,
-    "<a href="#dns" title="Dns">Dns</a>" : <i>[ <a href="servicediscovery-dns.md">Dns</a>, ... ]</i>
+    "<a href="#awscloudmap" title="AwsCloudMap">AwsCloudMap</a>" : <i>[ &lt;a href=&#34;servicediscovery-awscloudmap.md&#34;&gt;AwsCloudMap&lt;/a&gt;, ... ]</i>,
+    "<a href="#dns" title="Dns">Dns</a>" : <i>[ &lt;a href=&#34;servicediscovery-dns.md&#34;&gt;Dns&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -17,9 +17,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#awscloudmap" title="AwsCloudMap">AwsCloudMap</a>: <i>
-      - <a href="servicediscovery-awscloudmap.md">AwsCloudMap</a></i>
+      - &lt;a href=&#34;servicediscovery-awscloudmap.md&#34;&gt;AwsCloudMap&lt;/a&gt;</i>
 <a href="#dns" title="Dns">Dns</a>: <i>
-      - <a href="servicediscovery-dns.md">Dns</a></i>
+      - &lt;a href=&#34;servicediscovery-dns.md&#34;&gt;Dns&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -27,16 +27,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### AwsCloudMap
 
 _Required_: No
-
-_Type_: List of <a href="servicediscovery-awscloudmap.md">AwsCloudMap</a>
+_Type_: List of &lt;a href=&#34;servicediscovery-awscloudmap.md&#34;&gt;AwsCloudMap&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Dns
 
 _Required_: No
-
-_Type_: List of <a href="servicediscovery-dns.md">Dns</a>
+_Type_: List of &lt;a href=&#34;servicediscovery-dns.md&#34;&gt;Dns&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     Devicegroup: Optional[str]
     ExecuteAction: Optional[str]
-    Id: Optional[str]
     InheritedDevicegroup: Optional[str]
     InheritedTrafficGroup: Optional[str]
     Jsonfile: Optional[str]
@@ -68,7 +67,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             Devicegroup=json_data.get("Devicegroup"),
             ExecuteAction=json_data.get("ExecuteAction"),
-            Id=json_data.get("Id"),
             InheritedDevicegroup=json_data.get("InheritedDevicegroup"),
             InheritedTrafficGroup=json_data.get("InheritedTrafficGroup"),
             Jsonfile=json_data.get("Jsonfile"),

@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DefaultAttributesJson: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     OverrideAttributesJson: Optional[str]
     RunList: Optional[Sequence[str]]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DefaultAttributesJson=json_data.get("DefaultAttributesJson"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             OverrideAttributesJson=json_data.get("OverrideAttributesJson"),
             RunList=json_data.get("RunList"),

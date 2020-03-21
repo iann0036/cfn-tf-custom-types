@@ -12,6 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OraclePaaS::JavaServiceInstance",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#assignpublicip" title="AssignPublicIp">AssignPublicIp</a>" : <i>Boolean</i>,
         "<a href="#availabilitydomain" title="AvailabilityDomain">AvailabilityDomain</a>" : <i>String</i>,
         "<a href="#backupdestination" title="BackupDestination">BackupDestination</a>" : <i>String</i>,
@@ -21,7 +22,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#edition" title="Edition">Edition</a>" : <i>String</i>,
         "<a href="#enableadminconsole" title="EnableAdminConsole">EnableAdminConsole</a>" : <i>Boolean</i>,
         "<a href="#forcedelete" title="ForceDelete">ForceDelete</a>" : <i>Boolean</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#ipnetwork" title="IpNetwork">IpNetwork</a>" : <i>String</i>,
         "<a href="#level" title="Level">Level</a>" : <i>String</i>,
         "<a href="#meteringfrequency" title="MeteringFrequency">MeteringFrequency</a>" : <i>String</i>,
@@ -32,22 +32,23 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#snapshotname" title="SnapshotName">SnapshotName</a>" : <i>String</i>,
         "<a href="#sourceservicename" title="SourceServiceName">SourceServiceName</a>" : <i>String</i>,
         "<a href="#sshpublickey" title="SshPublicKey">SshPublicKey</a>" : <i>String</i>,
+        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
         "<a href="#subnet" title="Subnet">Subnet</a>" : <i>String</i>,
         "<a href="#useidentityservice" title="UseIdentityService">UseIdentityService</a>" : <i>Boolean</i>,
-        "<a href="#backups" title="Backups">Backups</a>" : <i>[ <a href="backups.md">Backups</a>, ... ]</i>,
-        "<a href="#loadbalancer" title="LoadBalancer">LoadBalancer</a>" : <i>[ <a href="loadbalancer.md">LoadBalancer</a>, ... ]</i>,
-        "<a href="#oracletrafficdirector" title="OracleTrafficDirector">OracleTrafficDirector</a>" : <i>[ <a href="oracletrafficdirector.md">OracleTrafficDirector</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
-        "<a href="#weblogicserver" title="WeblogicServer">WeblogicServer</a>" : <i>[ <a href="weblogicserver.md">WeblogicServer</a>, ... ]</i>,
-        "<a href="#admin" title="Admin">Admin</a>" : <i>[ <a href="admin.md">Admin</a>, ... ]</i>,
-        "<a href="#listener" title="Listener">Listener</a>" : <i>[ <a href="listener.md">Listener</a>, ... ]</i>,
-        "<a href="#applicationdatabase" title="ApplicationDatabase">ApplicationDatabase</a>" : <i>[ <a href="applicationdatabase.md">ApplicationDatabase</a>, ... ]</i>,
-        "<a href="#cluster" title="Cluster">Cluster</a>" : <i>[ <a href="cluster.md">Cluster</a>, ... ]</i>,
-        "<a href="#database" title="Database">Database</a>" : <i>[ <a href="database.md">Database</a>, ... ]</i>,
-        "<a href="#domain" title="Domain">Domain</a>" : <i>[ <a href="domain.md">Domain</a>, ... ]</i>,
-        "<a href="#managedservers" title="ManagedServers">ManagedServers</a>" : <i>[ <a href="managedservers.md">ManagedServers</a>, ... ]</i>,
-        "<a href="#nodemanager" title="NodeManager">NodeManager</a>" : <i>[ <a href="nodemanager.md">NodeManager</a>, ... ]</i>,
-        "<a href="#ports" title="Ports">Ports</a>" : <i>[ <a href="ports.md">Ports</a>, ... ]</i>
+        "<a href="#backups" title="Backups">Backups</a>" : <i>[ &lt;a href=&#34;backups.md&#34;&gt;Backups&lt;/a&gt;, ... ]</i>,
+        "<a href="#loadbalancer" title="LoadBalancer">LoadBalancer</a>" : <i>[ &lt;a href=&#34;loadbalancer.md&#34;&gt;LoadBalancer&lt;/a&gt;, ... ]</i>,
+        "<a href="#oracletrafficdirector" title="OracleTrafficDirector">OracleTrafficDirector</a>" : <i>[ &lt;a href=&#34;oracletrafficdirector.md&#34;&gt;OracleTrafficDirector&lt;/a&gt;, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
+        "<a href="#weblogicserver" title="WeblogicServer">WeblogicServer</a>" : <i>[ &lt;a href=&#34;weblogicserver.md&#34;&gt;WeblogicServer&lt;/a&gt;, ... ]</i>,
+        "<a href="#admin" title="Admin">Admin</a>" : <i>[ &lt;a href=&#34;admin.md&#34;&gt;Admin&lt;/a&gt;, ... ]</i>,
+        "<a href="#listener" title="Listener">Listener</a>" : <i>[ &lt;a href=&#34;listener.md&#34;&gt;Listener&lt;/a&gt;, ... ]</i>,
+        "<a href="#applicationdatabase" title="ApplicationDatabase">ApplicationDatabase</a>" : <i>[ &lt;a href=&#34;applicationdatabase.md&#34;&gt;ApplicationDatabase&lt;/a&gt;, ... ]</i>,
+        "<a href="#cluster" title="Cluster">Cluster</a>" : <i>[ &lt;a href=&#34;cluster.md&#34;&gt;Cluster&lt;/a&gt;, ... ]</i>,
+        "<a href="#database" title="Database">Database</a>" : <i>[ &lt;a href=&#34;database.md&#34;&gt;Database&lt;/a&gt;, ... ]</i>,
+        "<a href="#domain" title="Domain">Domain</a>" : <i>[ &lt;a href=&#34;domain.md&#34;&gt;Domain&lt;/a&gt;, ... ]</i>,
+        "<a href="#managedservers" title="ManagedServers">ManagedServers</a>" : <i>[ &lt;a href=&#34;managedservers.md&#34;&gt;ManagedServers&lt;/a&gt;, ... ]</i>,
+        "<a href="#nodemanager" title="NodeManager">NodeManager</a>" : <i>[ &lt;a href=&#34;nodemanager.md&#34;&gt;NodeManager&lt;/a&gt;, ... ]</i>,
+        "<a href="#ports" title="Ports">Ports</a>" : <i>[ &lt;a href=&#34;ports.md&#34;&gt;Ports&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -57,6 +58,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OraclePaaS::JavaServiceInstance
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#assignpublicip" title="AssignPublicIp">AssignPublicIp</a>: <i>Boolean</i>
     <a href="#availabilitydomain" title="AvailabilityDomain">AvailabilityDomain</a>: <i>String</i>
     <a href="#backupdestination" title="BackupDestination">BackupDestination</a>: <i>String</i>
@@ -66,7 +68,6 @@ Properties:
     <a href="#edition" title="Edition">Edition</a>: <i>String</i>
     <a href="#enableadminconsole" title="EnableAdminConsole">EnableAdminConsole</a>: <i>Boolean</i>
     <a href="#forcedelete" title="ForceDelete">ForceDelete</a>: <i>Boolean</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#ipnetwork" title="IpNetwork">IpNetwork</a>: <i>String</i>
     <a href="#level" title="Level">Level</a>: <i>String</i>
     <a href="#meteringfrequency" title="MeteringFrequency">MeteringFrequency</a>: <i>String</i>
@@ -77,38 +78,49 @@ Properties:
     <a href="#snapshotname" title="SnapshotName">SnapshotName</a>: <i>String</i>
     <a href="#sourceservicename" title="SourceServiceName">SourceServiceName</a>: <i>String</i>
     <a href="#sshpublickey" title="SshPublicKey">SshPublicKey</a>: <i>String</i>
+    <a href="#status" title="Status">Status</a>: <i>String</i>
     <a href="#subnet" title="Subnet">Subnet</a>: <i>String</i>
     <a href="#useidentityservice" title="UseIdentityService">UseIdentityService</a>: <i>Boolean</i>
     <a href="#backups" title="Backups">Backups</a>: <i>
-      - <a href="backups.md">Backups</a></i>
+      - &lt;a href=&#34;backups.md&#34;&gt;Backups&lt;/a&gt;</i>
     <a href="#loadbalancer" title="LoadBalancer">LoadBalancer</a>: <i>
-      - <a href="loadbalancer.md">LoadBalancer</a></i>
+      - &lt;a href=&#34;loadbalancer.md&#34;&gt;LoadBalancer&lt;/a&gt;</i>
     <a href="#oracletrafficdirector" title="OracleTrafficDirector">OracleTrafficDirector</a>: <i>
-      - <a href="oracletrafficdirector.md">OracleTrafficDirector</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;oracletrafficdirector.md&#34;&gt;OracleTrafficDirector&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     <a href="#weblogicserver" title="WeblogicServer">WeblogicServer</a>: <i>
-      - <a href="weblogicserver.md">WeblogicServer</a></i>
+      - &lt;a href=&#34;weblogicserver.md&#34;&gt;WeblogicServer&lt;/a&gt;</i>
     <a href="#admin" title="Admin">Admin</a>: <i>
-      - <a href="admin.md">Admin</a></i>
+      - &lt;a href=&#34;admin.md&#34;&gt;Admin&lt;/a&gt;</i>
     <a href="#listener" title="Listener">Listener</a>: <i>
-      - <a href="listener.md">Listener</a></i>
+      - &lt;a href=&#34;listener.md&#34;&gt;Listener&lt;/a&gt;</i>
     <a href="#applicationdatabase" title="ApplicationDatabase">ApplicationDatabase</a>: <i>
-      - <a href="applicationdatabase.md">ApplicationDatabase</a></i>
+      - &lt;a href=&#34;applicationdatabase.md&#34;&gt;ApplicationDatabase&lt;/a&gt;</i>
     <a href="#cluster" title="Cluster">Cluster</a>: <i>
-      - <a href="cluster.md">Cluster</a></i>
+      - &lt;a href=&#34;cluster.md&#34;&gt;Cluster&lt;/a&gt;</i>
     <a href="#database" title="Database">Database</a>: <i>
-      - <a href="database.md">Database</a></i>
+      - &lt;a href=&#34;database.md&#34;&gt;Database&lt;/a&gt;</i>
     <a href="#domain" title="Domain">Domain</a>: <i>
-      - <a href="domain.md">Domain</a></i>
+      - &lt;a href=&#34;domain.md&#34;&gt;Domain&lt;/a&gt;</i>
     <a href="#managedservers" title="ManagedServers">ManagedServers</a>: <i>
-      - <a href="managedservers.md">ManagedServers</a></i>
+      - &lt;a href=&#34;managedservers.md&#34;&gt;ManagedServers&lt;/a&gt;</i>
     <a href="#nodemanager" title="NodeManager">NodeManager</a>: <i>
-      - <a href="nodemanager.md">NodeManager</a></i>
+      - &lt;a href=&#34;nodemanager.md&#34;&gt;NodeManager&lt;/a&gt;</i>
     <a href="#ports" title="Ports">Ports</a>: <i>
-      - <a href="ports.md">Ports</a></i>
+      - &lt;a href=&#34;ports.md&#34;&gt;Ports&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AssignPublicIp
 
@@ -179,14 +191,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -270,6 +274,14 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### Status
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Subnet
 
 _Required_: No
@@ -290,7 +302,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="backups.md">Backups</a>
+_Type_: List of &lt;a href=&#34;backups.md&#34;&gt;Backups&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -298,7 +310,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="loadbalancer.md">LoadBalancer</a>
+_Type_: List of &lt;a href=&#34;loadbalancer.md&#34;&gt;LoadBalancer&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -306,7 +318,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="oracletrafficdirector.md">OracleTrafficDirector</a>
+_Type_: List of &lt;a href=&#34;oracletrafficdirector.md&#34;&gt;OracleTrafficDirector&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -314,7 +326,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -322,7 +334,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="weblogicserver.md">WeblogicServer</a>
+_Type_: List of &lt;a href=&#34;weblogicserver.md&#34;&gt;WeblogicServer&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -330,7 +342,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="admin.md">Admin</a>
+_Type_: List of &lt;a href=&#34;admin.md&#34;&gt;Admin&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -338,7 +350,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="listener.md">Listener</a>
+_Type_: List of &lt;a href=&#34;listener.md&#34;&gt;Listener&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -346,7 +358,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="applicationdatabase.md">ApplicationDatabase</a>
+_Type_: List of &lt;a href=&#34;applicationdatabase.md&#34;&gt;ApplicationDatabase&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -354,7 +366,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="cluster.md">Cluster</a>
+_Type_: List of &lt;a href=&#34;cluster.md&#34;&gt;Cluster&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -362,7 +374,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="database.md">Database</a>
+_Type_: List of &lt;a href=&#34;database.md&#34;&gt;Database&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -370,7 +382,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="domain.md">Domain</a>
+_Type_: List of &lt;a href=&#34;domain.md&#34;&gt;Domain&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -378,7 +390,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="managedservers.md">ManagedServers</a>
+_Type_: List of &lt;a href=&#34;managedservers.md&#34;&gt;ManagedServers&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -386,7 +398,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="nodemanager.md">NodeManager</a>
+_Type_: List of &lt;a href=&#34;nodemanager.md&#34;&gt;NodeManager&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -394,7 +406,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="ports.md">Ports</a>
+_Type_: List of &lt;a href=&#34;ports.md&#34;&gt;Ports&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -416,5 +428,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Status
 
-Returns the <code>Status</code> value.
+Returns the &lt;code&gt;Status&lt;/code&gt; value.
 

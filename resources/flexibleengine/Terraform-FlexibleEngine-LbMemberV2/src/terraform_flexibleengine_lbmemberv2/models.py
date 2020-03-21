@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Address: Optional[str]
     AdminStateUp: Optional[bool]
-    Id: Optional[str]
     Name: Optional[str]
     PoolId: Optional[str]
     ProtocolPort: Optional[float]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Address=json_data.get("Address"),
             AdminStateUp=json_data.get("AdminStateUp"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             PoolId=json_data.get("PoolId"),
             ProtocolPort=json_data.get("ProtocolPort"),

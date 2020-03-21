@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Autolasthop: Optional[str]
     FullPath: Optional[str]
-    Id: Optional[str]
     Mirror: Optional[str]
     Name: Optional[str]
     Partition: Optional[str]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Autolasthop=json_data.get("Autolasthop"),
             FullPath=json_data.get("FullPath"),
-            Id=json_data.get("Id"),
             Mirror=json_data.get("Mirror"),
             Name=json_data.get("Name"),
             Partition=json_data.get("Partition"),

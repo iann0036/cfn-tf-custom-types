@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     Dhcp: Optional[bool]
     End: Optional[str]
     GatewayIp: Optional[str]
-    Id: Optional[str]
     IpPools: Optional[Sequence["_IpPools"]]
     Network: Optional[str]
     NetworkId: Optional[str]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             Dhcp=json_data.get("Dhcp"),
             End=json_data.get("End"),
             GatewayIp=json_data.get("GatewayIp"),
-            Id=json_data.get("Id"),
             IpPools=json_data.get("IpPools"),
             Network=json_data.get("Network"),
             NetworkId=json_data.get("NetworkId"),

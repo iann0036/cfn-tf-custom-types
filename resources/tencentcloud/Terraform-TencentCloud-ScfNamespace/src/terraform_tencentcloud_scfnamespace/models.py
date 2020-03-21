@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CreateTime: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     ModifyTime: Optional[str]
     Namespace: Optional[str]
     Type: Optional[str]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CreateTime=json_data.get("CreateTime"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             ModifyTime=json_data.get("ModifyTime"),
             Namespace=json_data.get("Namespace"),
             Type=json_data.get("Type"),

@@ -44,7 +44,6 @@ class ResourceModel(BaseResourceModel):
     ExampleSuccessResponse: Optional[str]
     GroupId: Optional[str]
     GroupName: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     RequestMethod: Optional[str]
     RequestProtocol: Optional[str]
@@ -76,7 +75,6 @@ class ResourceModel(BaseResourceModel):
             ExampleSuccessResponse=json_data.get("ExampleSuccessResponse"),
             GroupId=json_data.get("GroupId"),
             GroupName=json_data.get("GroupName"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             RequestMethod=json_data.get("RequestMethod"),
             RequestProtocol=json_data.get("RequestProtocol"),

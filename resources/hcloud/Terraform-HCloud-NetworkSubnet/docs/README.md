@@ -12,7 +12,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::HCloud::NetworkSubnet",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#gateway" title="Gateway">Gateway</a>" : <i>String</i>,
         "<a href="#iprange" title="IpRange">IpRange</a>" : <i>String</i>,
         "<a href="#networkid" title="NetworkId">NetworkId</a>" : <i>Double</i>,
         "<a href="#networkzone" title="NetworkZone">NetworkZone</a>" : <i>String</i>,
@@ -26,7 +27,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::HCloud::NetworkSubnet
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#gateway" title="Gateway">Gateway</a>: <i>String</i>
     <a href="#iprange" title="IpRange">IpRange</a>: <i>String</i>
     <a href="#networkid" title="NetworkId">NetworkId</a>: <i>Double</i>
     <a href="#networkzone" title="NetworkZone">NetworkZone</a>: <i>String</i>
@@ -35,7 +37,17 @@ Properties:
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Gateway
 
 _Required_: No
 
@@ -93,5 +105,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Gateway
 
-Returns the <code>Gateway</code> value.
+Returns the &lt;code&gt;Gateway&lt;/code&gt; value.
 

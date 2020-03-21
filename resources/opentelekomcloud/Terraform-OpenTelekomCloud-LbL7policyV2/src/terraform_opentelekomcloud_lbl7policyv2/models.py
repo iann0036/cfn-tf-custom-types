@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Action: Optional[str]
     AdminStateUp: Optional[bool]
     Description: Optional[str]
-    Id: Optional[str]
     ListenerId: Optional[str]
     Name: Optional[str]
     Position: Optional[float]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             Action=json_data.get("Action"),
             AdminStateUp=json_data.get("AdminStateUp"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             ListenerId=json_data.get("ListenerId"),
             Name=json_data.get("Name"),
             Position=json_data.get("Position"),

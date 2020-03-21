@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     CreationTimestamp: Optional[str]
     Description: Optional[str]
     DiskSizeGb: Optional[float]
-    Id: Optional[str]
     LabelFingerprint: Optional[str]
     Labels: Optional[Sequence["_Labels"]]
     Licenses: Optional[Sequence[str]]
@@ -67,7 +66,6 @@ class ResourceModel(BaseResourceModel):
             CreationTimestamp=json_data.get("CreationTimestamp"),
             Description=json_data.get("Description"),
             DiskSizeGb=json_data.get("DiskSizeGb"),
-            Id=json_data.get("Id"),
             LabelFingerprint=json_data.get("LabelFingerprint"),
             Labels=json_data.get("Labels"),
             Licenses=json_data.get("Licenses"),

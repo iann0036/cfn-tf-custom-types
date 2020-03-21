@@ -12,11 +12,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::AlikafkaSaslAcl",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#acloperationtype" title="AclOperationType">AclOperationType</a>" : <i>String</i>,
         "<a href="#aclresourcename" title="AclResourceName">AclResourceName</a>" : <i>String</i>,
         "<a href="#aclresourcepatterntype" title="AclResourcePatternType">AclResourcePatternType</a>" : <i>String</i>,
         "<a href="#aclresourcetype" title="AclResourceType">AclResourceType</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#host" title="Host">Host</a>" : <i>String</i>,
         "<a href="#instanceid" title="InstanceId">InstanceId</a>" : <i>String</i>,
         "<a href="#username" title="Username">Username</a>" : <i>String</i>
     }
@@ -28,16 +29,27 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::AlikafkaSaslAcl
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#acloperationtype" title="AclOperationType">AclOperationType</a>: <i>String</i>
     <a href="#aclresourcename" title="AclResourceName">AclResourceName</a>: <i>String</i>
     <a href="#aclresourcepatterntype" title="AclResourcePatternType">AclResourcePatternType</a>: <i>String</i>
     <a href="#aclresourcetype" title="AclResourceType">AclResourceType</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#host" title="Host">Host</a>: <i>String</i>
     <a href="#instanceid" title="InstanceId">InstanceId</a>: <i>String</i>
     <a href="#username" title="Username">Username</a>: <i>String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AclOperationType
 
@@ -71,7 +83,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### Host
 
 _Required_: No
 
@@ -113,5 +125,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Host
 
-Returns the <code>Host</code> value.
+Returns the &lt;code&gt;Host&lt;/code&gt; value.
 

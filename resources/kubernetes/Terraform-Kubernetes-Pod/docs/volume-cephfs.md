@@ -13,7 +13,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#readonly" title="ReadOnly">ReadOnly</a>" : <i>Boolean</i>,
     "<a href="#secretfile" title="SecretFile">SecretFile</a>" : <i>String</i>,
     "<a href="#user" title="User">User</a>" : <i>String</i>,
-    "<a href="#secretref" title="SecretRef">SecretRef</a>" : <i>[ <a href="volume-cephfs-secretref.md">SecretRef</a>, ... ]</i>
+    "<a href="#secretref" title="SecretRef">SecretRef</a>" : <i>[ &lt;a href=&#34;volume-cephfs-secretref.md&#34;&gt;SecretRef&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -27,7 +27,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#secretfile" title="SecretFile">SecretFile</a>: <i>String</i>
 <a href="#user" title="User">User</a>: <i>String</i>
 <a href="#secretref" title="SecretRef">SecretRef</a>: <i>
-      - <a href="volume-cephfs-secretref.md">SecretRef</a></i>
+      - &lt;a href=&#34;volume-cephfs-secretref.md&#34;&gt;SecretRef&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -35,7 +35,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Monitors
 
 _Required_: Yes
-
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -43,7 +42,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Path
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -51,7 +49,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ReadOnly
 
 _Required_: No
-
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -59,7 +56,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SecretFile
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -67,7 +63,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### User
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -75,8 +70,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SecretRef
 
 _Required_: No
-
-_Type_: List of <a href="volume-cephfs-secretref.md">SecretRef</a>
+_Type_: List of &lt;a href=&#34;volume-cephfs-secretref.md&#34;&gt;SecretRef&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

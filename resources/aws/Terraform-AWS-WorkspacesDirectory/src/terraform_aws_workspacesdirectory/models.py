@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DirectoryId: Optional[str]
-    Id: Optional[str]
     SubnetIds: Optional[Sequence[str]]
     Tags: Optional[Sequence["_Tags"]]
     SelfServicePermissions: Optional[Sequence["_SelfServicePermissions"]]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             DirectoryId=json_data.get("DirectoryId"),
-            Id=json_data.get("Id"),
             SubnetIds=json_data.get("SubnetIds"),
             Tags=json_data.get("Tags"),
             SelfServicePermissions=json_data.get("SelfServicePermissions"),

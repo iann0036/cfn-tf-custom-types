@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Accessor: Optional[str]
     BaseUrl: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     MaxTtl: Optional[str]
     Organization: Optional[str]
     Path: Optional[str]
@@ -67,7 +66,6 @@ class ResourceModel(BaseResourceModel):
             Accessor=json_data.get("Accessor"),
             BaseUrl=json_data.get("BaseUrl"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             MaxTtl=json_data.get("MaxTtl"),
             Organization=json_data.get("Organization"),
             Path=json_data.get("Path"),

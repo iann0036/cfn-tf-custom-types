@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Delete: Optional[bool]
-    Id: Optional[str]
     KeyMaterial: Optional[str]
     Path: Optional[str]
     Url: Optional[str]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Delete=json_data.get("Delete"),
-            Id=json_data.get("Id"),
             KeyMaterial=json_data.get("KeyMaterial"),
             Path=json_data.get("Path"),
             Url=json_data.get("Url"),

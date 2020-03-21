@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Enabled: Optional[bool]
-    Id: Optional[str]
     TargetResourceId: Optional[str]
     Timeouts: Optional["_Timeouts"]
 
@@ -51,7 +50,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Enabled=json_data.get("Enabled"),
-            Id=json_data.get("Id"),
             TargetResourceId=json_data.get("TargetResourceId"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),
         )

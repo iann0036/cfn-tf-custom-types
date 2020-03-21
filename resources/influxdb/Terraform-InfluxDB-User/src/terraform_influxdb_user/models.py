@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Admin: Optional[bool]
-    Id: Optional[str]
     Name: Optional[str]
     Password: Optional[str]
     Grant: Optional[Sequence["_Grant"]]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Admin=json_data.get("Admin"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Password=json_data.get("Password"),
             Grant=json_data.get("Grant"),

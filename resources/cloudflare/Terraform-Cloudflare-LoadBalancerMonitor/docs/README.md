@@ -12,20 +12,22 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Cloudflare::LoadBalancerMonitor",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#allowinsecure" title="AllowInsecure">AllowInsecure</a>" : <i>Boolean</i>,
+        "<a href="#createdon" title="CreatedOn">CreatedOn</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#expectedbody" title="ExpectedBody">ExpectedBody</a>" : <i>String</i>,
         "<a href="#expectedcodes" title="ExpectedCodes">ExpectedCodes</a>" : <i>String</i>,
         "<a href="#followredirects" title="FollowRedirects">FollowRedirects</a>" : <i>Boolean</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#interval" title="Interval">Interval</a>" : <i>Double</i>,
         "<a href="#method" title="Method">Method</a>" : <i>String</i>,
+        "<a href="#modifiedon" title="ModifiedOn">ModifiedOn</a>" : <i>String</i>,
         "<a href="#path" title="Path">Path</a>" : <i>String</i>,
         "<a href="#port" title="Port">Port</a>" : <i>Double</i>,
         "<a href="#retries" title="Retries">Retries</a>" : <i>Double</i>,
         "<a href="#timeout" title="Timeout">Timeout</a>" : <i>Double</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-        "<a href="#header" title="Header">Header</a>" : <i>[ <a href="header.md">Header</a>, ... ]</i>
+        "<a href="#header" title="Header">Header</a>" : <i>[ &lt;a href=&#34;header.md&#34;&gt;Header&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -35,30 +37,50 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Cloudflare::LoadBalancerMonitor
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#allowinsecure" title="AllowInsecure">AllowInsecure</a>: <i>Boolean</i>
+    <a href="#createdon" title="CreatedOn">CreatedOn</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#expectedbody" title="ExpectedBody">ExpectedBody</a>: <i>String</i>
     <a href="#expectedcodes" title="ExpectedCodes">ExpectedCodes</a>: <i>String</i>
     <a href="#followredirects" title="FollowRedirects">FollowRedirects</a>: <i>Boolean</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#interval" title="Interval">Interval</a>: <i>Double</i>
     <a href="#method" title="Method">Method</a>: <i>String</i>
+    <a href="#modifiedon" title="ModifiedOn">ModifiedOn</a>: <i>String</i>
     <a href="#path" title="Path">Path</a>: <i>String</i>
     <a href="#port" title="Port">Port</a>: <i>Double</i>
     <a href="#retries" title="Retries">Retries</a>: <i>Double</i>
     <a href="#timeout" title="Timeout">Timeout</a>: <i>Double</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
     <a href="#header" title="Header">Header</a>: <i>
-      - <a href="header.md">Header</a></i>
+      - &lt;a href=&#34;header.md&#34;&gt;Header&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowInsecure
 
 _Required_: No
 
 _Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### CreatedOn
+
+_Required_: No
+
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -94,14 +116,6 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Interval
 
 _Required_: No
@@ -111,6 +125,14 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Method
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ModifiedOn
 
 _Required_: No
 
@@ -162,7 +184,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="header.md">Header</a>
+_Type_: List of &lt;a href=&#34;header.md&#34;&gt;Header&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -184,9 +206,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreatedOn
 
-Returns the <code>CreatedOn</code> value.
+Returns the &lt;code&gt;CreatedOn&lt;/code&gt; value.
 
 #### ModifiedOn
 
-Returns the <code>ModifiedOn</code> value.
+Returns the &lt;code&gt;ModifiedOn&lt;/code&gt; value.
 

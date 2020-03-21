@@ -12,10 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Consul::AutopilotConfig",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#cleanupdeadservers" title="CleanupDeadServers">CleanupDeadServers</a>" : <i>Boolean</i>,
         "<a href="#datacenter" title="Datacenter">Datacenter</a>" : <i>String</i>,
         "<a href="#disableupgrademigration" title="DisableUpgradeMigration">DisableUpgradeMigration</a>" : <i>Boolean</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#lastcontactthreshold" title="LastContactThreshold">LastContactThreshold</a>" : <i>String</i>,
         "<a href="#maxtrailinglogs" title="MaxTrailingLogs">MaxTrailingLogs</a>" : <i>Double</i>,
         "<a href="#redundancyzonetag" title="RedundancyZoneTag">RedundancyZoneTag</a>" : <i>String</i>,
@@ -30,10 +30,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Consul::AutopilotConfig
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#cleanupdeadservers" title="CleanupDeadServers">CleanupDeadServers</a>: <i>Boolean</i>
     <a href="#datacenter" title="Datacenter">Datacenter</a>: <i>String</i>
     <a href="#disableupgrademigration" title="DisableUpgradeMigration">DisableUpgradeMigration</a>: <i>Boolean</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#lastcontactthreshold" title="LastContactThreshold">LastContactThreshold</a>: <i>String</i>
     <a href="#maxtrailinglogs" title="MaxTrailingLogs">MaxTrailingLogs</a>: <i>Double</i>
     <a href="#redundancyzonetag" title="RedundancyZoneTag">RedundancyZoneTag</a>: <i>String</i>
@@ -42,6 +42,16 @@ Properties:
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CleanupDeadServers
 
@@ -64,14 +74,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     FunctionName: Optional[str]
-    Id: Optional[str]
     MaximumEventAgeInSeconds: Optional[float]
     MaximumRetryAttempts: Optional[float]
     Qualifier: Optional[str]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             FunctionName=json_data.get("FunctionName"),
-            Id=json_data.get("Id"),
             MaximumEventAgeInSeconds=json_data.get("MaximumEventAgeInSeconds"),
             MaximumRetryAttempts=json_data.get("MaximumRetryAttempts"),
             Qualifier=json_data.get("Qualifier"),

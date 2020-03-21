@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Direction: Optional[str]
-    Id: Optional[str]
     MaxBurstKbps: Optional[float]
     MaxKbps: Optional[float]
     QosPolicyId: Optional[str]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Direction=json_data.get("Direction"),
-            Id=json_data.get("Id"),
             MaxBurstKbps=json_data.get("MaxBurstKbps"),
             MaxKbps=json_data.get("MaxKbps"),
             QosPolicyId=json_data.get("QosPolicyId"),

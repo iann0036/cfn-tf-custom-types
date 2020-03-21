@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AccessType: Optional[str]
     AccessUri: Optional[str]
     Bucket: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Namespace: Optional[str]
     Object: Optional[str]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             AccessType=json_data.get("AccessType"),
             AccessUri=json_data.get("AccessUri"),
             Bucket=json_data.get("Bucket"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Namespace=json_data.get("Namespace"),
             Object=json_data.get("Object"),

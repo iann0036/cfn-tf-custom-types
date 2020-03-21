@@ -12,12 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::TencentCloud::TcaplusIdl",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#appid" title="AppId">AppId</a>" : <i>String</i>,
         "<a href="#filecontent" title="FileContent">FileContent</a>" : <i>String</i>,
         "<a href="#fileexttype" title="FileExtType">FileExtType</a>" : <i>String</i>,
         "<a href="#filename" title="FileName">FileName</a>" : <i>String</i>,
         "<a href="#filetype" title="FileType">FileType</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tableinfos" title="TableInfos">TableInfos</a>" : <i>[ &lt;a href=&#34;tableinfos.md&#34;&gt;TableInfos&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -27,15 +28,27 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::TencentCloud::TcaplusIdl
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#appid" title="AppId">AppId</a>: <i>String</i>
     <a href="#filecontent" title="FileContent">FileContent</a>: <i>String</i>
     <a href="#fileexttype" title="FileExtType">FileExtType</a>: <i>String</i>
     <a href="#filename" title="FileName">FileName</a>: <i>String</i>
     <a href="#filetype" title="FileType">FileType</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tableinfos" title="TableInfos">TableInfos</a>: <i>
+      - &lt;a href=&#34;tableinfos.md&#34;&gt;TableInfos&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AppId
 
@@ -77,11 +90,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### TableInfos
 
 _Required_: No
 
-_Type_: String
+_Type_: List of &lt;a href=&#34;tableinfos.md&#34;&gt;TableInfos&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -103,5 +116,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### TableInfos
 
-Returns the <code>TableInfos</code> value.
+Returns the &lt;code&gt;TableInfos&lt;/code&gt; value.
 

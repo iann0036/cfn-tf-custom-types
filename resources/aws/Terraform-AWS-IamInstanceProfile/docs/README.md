@@ -12,12 +12,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::IamInstanceProfile",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
+        "<a href="#createdate" title="CreateDate">CreateDate</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#nameprefix" title="NamePrefix">NamePrefix</a>" : <i>String</i>,
         "<a href="#path" title="Path">Path</a>" : <i>String</i>,
         "<a href="#role" title="Role">Role</a>" : <i>String</i>,
         "<a href="#roles" title="Roles">Roles</a>" : <i>[ String, ... ]</i>,
+        "<a href="#uniqueid" title="UniqueId">UniqueId</a>" : <i>String</i>
     }
 }
 </pre>
@@ -27,18 +30,39 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::IamInstanceProfile
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
+    <a href="#createdate" title="CreateDate">CreateDate</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#nameprefix" title="NamePrefix">NamePrefix</a>: <i>String</i>
     <a href="#path" title="Path">Path</a>: <i>String</i>
     <a href="#role" title="Role">Role</a>: <i>String</i>
     <a href="#roles" title="Roles">Roles</a>: <i>
       - String</i>
+    <a href="#uniqueid" title="UniqueId">UniqueId</a>: <i>String</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Arn
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### CreateDate
 
 _Required_: No
 
@@ -86,6 +110,14 @@ _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### UniqueId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 ## Return Values
 
 ### Ref
@@ -104,13 +136,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the <code>Arn</code> value.
+Returns the &lt;code&gt;Arn&lt;/code&gt; value.
 
 #### CreateDate
 
-Returns the <code>CreateDate</code> value.
+Returns the &lt;code&gt;CreateDate&lt;/code&gt; value.
 
 #### UniqueId
 
-Returns the <code>UniqueId</code> value.
+Returns the &lt;code&gt;UniqueId&lt;/code&gt; value.
 

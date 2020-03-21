@@ -12,10 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::RabbitMQ::Binding",
     "Properties" : {
-        "<a href="#arguments" title="Arguments">Arguments</a>" : <i>[ <a href="arguments.md">Arguments</a>, ... ]</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#arguments" title="Arguments">Arguments</a>" : <i>[ &lt;a href=&#34;arguments.md&#34;&gt;Arguments&lt;/a&gt;, ... ]</i>,
         "<a href="#destination" title="Destination">Destination</a>" : <i>String</i>,
         "<a href="#destinationtype" title="DestinationType">DestinationType</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#propertieskey" title="PropertiesKey">PropertiesKey</a>" : <i>String</i>,
         "<a href="#routingkey" title="RoutingKey">RoutingKey</a>" : <i>String</i>,
         "<a href="#source" title="Source">Source</a>" : <i>String</i>,
         "<a href="#vhost" title="Vhost">Vhost</a>" : <i>String</i>
@@ -28,11 +29,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::RabbitMQ::Binding
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#arguments" title="Arguments">Arguments</a>: <i>
-      - <a href="arguments.md">Arguments</a></i>
+      - &lt;a href=&#34;arguments.md&#34;&gt;Arguments&lt;/a&gt;</i>
     <a href="#destination" title="Destination">Destination</a>: <i>String</i>
     <a href="#destinationtype" title="DestinationType">DestinationType</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#propertieskey" title="PropertiesKey">PropertiesKey</a>: <i>String</i>
     <a href="#routingkey" title="RoutingKey">RoutingKey</a>: <i>String</i>
     <a href="#source" title="Source">Source</a>: <i>String</i>
     <a href="#vhost" title="Vhost">Vhost</a>: <i>String</i>
@@ -40,11 +42,21 @@ Properties:
 
 ## Properties
 
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Arguments
 
 _Required_: No
 
-_Type_: List of <a href="arguments.md">Arguments</a>
+_Type_: List of &lt;a href=&#34;arguments.md&#34;&gt;Arguments&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -64,7 +76,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### PropertiesKey
 
 _Required_: No
 
@@ -114,5 +126,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### PropertiesKey
 
-Returns the <code>PropertiesKey</code> value.
+Returns the &lt;code&gt;PropertiesKey&lt;/code&gt; value.
 

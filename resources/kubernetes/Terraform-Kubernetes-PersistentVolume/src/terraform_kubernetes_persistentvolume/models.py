@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     Metadata: Optional[Sequence["_Metadata"]]
     Spec: Optional[Sequence["_Spec"]]
     Timeouts: Optional["_Timeouts"]
@@ -75,7 +74,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             Metadata=json_data.get("Metadata"),
             Spec=json_data.get("Spec"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),

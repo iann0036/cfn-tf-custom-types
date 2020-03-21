@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     BucketSelfLink: Optional[str]
-    Id: Optional[str]
     Location: Optional[str]
     Project: Optional[str]
 
@@ -51,7 +50,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             BucketSelfLink=json_data.get("BucketSelfLink"),
-            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             Project=json_data.get("Project"),
         )

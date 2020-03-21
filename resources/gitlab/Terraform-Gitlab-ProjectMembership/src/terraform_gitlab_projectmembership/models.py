@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AccessLevel: Optional[str]
-    Id: Optional[str]
     ProjectId: Optional[str]
     UserId: Optional[float]
 
@@ -51,7 +50,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             AccessLevel=json_data.get("AccessLevel"),
-            Id=json_data.get("Id"),
             ProjectId=json_data.get("ProjectId"),
             UserId=json_data.get("UserId"),
         )

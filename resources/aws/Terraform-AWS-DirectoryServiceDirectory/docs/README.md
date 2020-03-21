@@ -12,19 +12,22 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::DirectoryServiceDirectory",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#accessurl" title="AccessUrl">AccessUrl</a>" : <i>String</i>,
         "<a href="#alias" title="Alias">Alias</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
+        "<a href="#dnsipaddresses" title="DnsIpAddresses">DnsIpAddresses</a>" : <i>[ String, ... ]</i>,
         "<a href="#edition" title="Edition">Edition</a>" : <i>String</i>,
         "<a href="#enablesso" title="EnableSso">EnableSso</a>" : <i>Boolean</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#password" title="Password">Password</a>" : <i>String</i>,
+        "<a href="#securitygroupid" title="SecurityGroupId">SecurityGroupId</a>" : <i>String</i>,
         "<a href="#shortname" title="ShortName">ShortName</a>" : <i>String</i>,
         "<a href="#size" title="Size">Size</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-        "<a href="#connectsettings" title="ConnectSettings">ConnectSettings</a>" : <i>[ <a href="connectsettings.md">ConnectSettings</a>, ... ]</i>,
-        "<a href="#vpcsettings" title="VpcSettings">VpcSettings</a>" : <i>[ <a href="vpcsettings.md">VpcSettings</a>, ... ]</i>
+        "<a href="#connectsettings" title="ConnectSettings">ConnectSettings</a>" : <i>[ &lt;a href=&#34;connectsettings.md&#34;&gt;ConnectSettings&lt;/a&gt;, ... ]</i>,
+        "<a href="#vpcsettings" title="VpcSettings">VpcSettings</a>" : <i>[ &lt;a href=&#34;vpcsettings.md&#34;&gt;VpcSettings&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -34,25 +37,47 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::DirectoryServiceDirectory
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#accessurl" title="AccessUrl">AccessUrl</a>: <i>String</i>
     <a href="#alias" title="Alias">Alias</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
+    <a href="#dnsipaddresses" title="DnsIpAddresses">DnsIpAddresses</a>: <i>
+      - String</i>
     <a href="#edition" title="Edition">Edition</a>: <i>String</i>
     <a href="#enablesso" title="EnableSso">EnableSso</a>: <i>Boolean</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#password" title="Password">Password</a>: <i>String</i>
+    <a href="#securitygroupid" title="SecurityGroupId">SecurityGroupId</a>: <i>String</i>
     <a href="#shortname" title="ShortName">ShortName</a>: <i>String</i>
     <a href="#size" title="Size">Size</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
     <a href="#connectsettings" title="ConnectSettings">ConnectSettings</a>: <i>
-      - <a href="connectsettings.md">ConnectSettings</a></i>
+      - &lt;a href=&#34;connectsettings.md&#34;&gt;ConnectSettings&lt;/a&gt;</i>
     <a href="#vpcsettings" title="VpcSettings">VpcSettings</a>: <i>
-      - <a href="vpcsettings.md">VpcSettings</a></i>
+      - &lt;a href=&#34;vpcsettings.md&#34;&gt;VpcSettings&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### AccessUrl
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Alias
 
@@ -67,6 +92,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### DnsIpAddresses
+
+_Required_: No
+
+_Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -86,14 +119,6 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Name
 
 _Required_: Yes
@@ -105,6 +130,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Password
 
 _Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### SecurityGroupId
+
+_Required_: No
 
 _Type_: String
 
@@ -130,7 +163,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -146,7 +179,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="connectsettings.md">ConnectSettings</a>
+_Type_: List of &lt;a href=&#34;connectsettings.md&#34;&gt;ConnectSettings&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -154,7 +187,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="vpcsettings.md">VpcSettings</a>
+_Type_: List of &lt;a href=&#34;vpcsettings.md&#34;&gt;VpcSettings&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -176,13 +209,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AccessUrl
 
-Returns the <code>AccessUrl</code> value.
+Returns the &lt;code&gt;AccessUrl&lt;/code&gt; value.
 
 #### DnsIpAddresses
 
-Returns the <code>DnsIpAddresses</code> value.
+Returns the &lt;code&gt;DnsIpAddresses&lt;/code&gt; value.
 
 #### SecurityGroupId
 
-Returns the <code>SecurityGroupId</code> value.
+Returns the &lt;code&gt;SecurityGroupId&lt;/code&gt; value.
 

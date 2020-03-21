@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     LoggingEnabled: Optional[bool]
     MaximumMessageSize: Optional[float]
     Name: Optional[str]
@@ -50,7 +49,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             LoggingEnabled=json_data.get("LoggingEnabled"),
             MaximumMessageSize=json_data.get("MaximumMessageSize"),
             Name=json_data.get("Name"),

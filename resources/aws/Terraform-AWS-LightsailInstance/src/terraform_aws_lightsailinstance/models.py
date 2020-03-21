@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     BundleId: Optional[str]
     CpuCount: Optional[float]
     CreatedAt: Optional[str]
-    Id: Optional[str]
     Ipv6Address: Optional[str]
     IsStaticIp: Optional[bool]
     KeyPairName: Optional[str]
@@ -69,7 +68,6 @@ class ResourceModel(BaseResourceModel):
             BundleId=json_data.get("BundleId"),
             CpuCount=json_data.get("CpuCount"),
             CreatedAt=json_data.get("CreatedAt"),
-            Id=json_data.get("Id"),
             Ipv6Address=json_data.get("Ipv6Address"),
             IsStaticIp=json_data.get("IsStaticIp"),
             KeyPairName=json_data.get("KeyPairName"),

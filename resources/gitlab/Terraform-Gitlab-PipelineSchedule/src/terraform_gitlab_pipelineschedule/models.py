@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     Cron: Optional[str]
     CronTimezone: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     Project: Optional[str]
     Ref: Optional[str]
 
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
             Cron=json_data.get("Cron"),
             CronTimezone=json_data.get("CronTimezone"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Project=json_data.get("Project"),
             Ref=json_data.get("Ref"),
         )

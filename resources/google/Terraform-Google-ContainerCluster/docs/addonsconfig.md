@@ -8,10 +8,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#horizontalpodautoscaling" title="HorizontalPodAutoscaling">HorizontalPodAutoscaling</a>" : <i>[ <a href="addonsconfig-horizontalpodautoscaling.md">HorizontalPodAutoscaling</a>, ... ]</i>,
-    "<a href="#httploadbalancing" title="HttpLoadBalancing">HttpLoadBalancing</a>" : <i>[ <a href="addonsconfig-httploadbalancing.md">HttpLoadBalancing</a>, ... ]</i>,
-    "<a href="#kubernetesdashboard" title="KubernetesDashboard">KubernetesDashboard</a>" : <i>[ <a href="addonsconfig-kubernetesdashboard.md">KubernetesDashboard</a>, ... ]</i>,
-    "<a href="#networkpolicyconfig" title="NetworkPolicyConfig">NetworkPolicyConfig</a>" : <i>[ <a href="addonsconfig-networkpolicyconfig.md">NetworkPolicyConfig</a>, ... ]</i>
+    "<a href="#horizontalpodautoscaling" title="HorizontalPodAutoscaling">HorizontalPodAutoscaling</a>" : <i>[ &lt;a href=&#34;addonsconfig-horizontalpodautoscaling.md&#34;&gt;HorizontalPodAutoscaling&lt;/a&gt;, ... ]</i>,
+    "<a href="#httploadbalancing" title="HttpLoadBalancing">HttpLoadBalancing</a>" : <i>[ &lt;a href=&#34;addonsconfig-httploadbalancing.md&#34;&gt;HttpLoadBalancing&lt;/a&gt;, ... ]</i>,
+    "<a href="#kubernetesdashboard" title="KubernetesDashboard">KubernetesDashboard</a>" : <i>[ &lt;a href=&#34;addonsconfig-kubernetesdashboard.md&#34;&gt;KubernetesDashboard&lt;/a&gt;, ... ]</i>,
+    "<a href="#networkpolicyconfig" title="NetworkPolicyConfig">NetworkPolicyConfig</a>" : <i>[ &lt;a href=&#34;addonsconfig-networkpolicyconfig.md&#34;&gt;NetworkPolicyConfig&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -19,13 +19,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#horizontalpodautoscaling" title="HorizontalPodAutoscaling">HorizontalPodAutoscaling</a>: <i>
-      - <a href="addonsconfig-horizontalpodautoscaling.md">HorizontalPodAutoscaling</a></i>
+      - &lt;a href=&#34;addonsconfig-horizontalpodautoscaling.md&#34;&gt;HorizontalPodAutoscaling&lt;/a&gt;</i>
 <a href="#httploadbalancing" title="HttpLoadBalancing">HttpLoadBalancing</a>: <i>
-      - <a href="addonsconfig-httploadbalancing.md">HttpLoadBalancing</a></i>
+      - &lt;a href=&#34;addonsconfig-httploadbalancing.md&#34;&gt;HttpLoadBalancing&lt;/a&gt;</i>
 <a href="#kubernetesdashboard" title="KubernetesDashboard">KubernetesDashboard</a>: <i>
-      - <a href="addonsconfig-kubernetesdashboard.md">KubernetesDashboard</a></i>
+      - &lt;a href=&#34;addonsconfig-kubernetesdashboard.md&#34;&gt;KubernetesDashboard&lt;/a&gt;</i>
 <a href="#networkpolicyconfig" title="NetworkPolicyConfig">NetworkPolicyConfig</a>: <i>
-      - <a href="addonsconfig-networkpolicyconfig.md">NetworkPolicyConfig</a></i>
+      - &lt;a href=&#34;addonsconfig-networkpolicyconfig.md&#34;&gt;NetworkPolicyConfig&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -33,32 +33,28 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### HorizontalPodAutoscaling
 
 _Required_: No
-
-_Type_: List of <a href="addonsconfig-horizontalpodautoscaling.md">HorizontalPodAutoscaling</a>
+_Type_: List of &lt;a href=&#34;addonsconfig-horizontalpodautoscaling.md&#34;&gt;HorizontalPodAutoscaling&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HttpLoadBalancing
 
 _Required_: No
-
-_Type_: List of <a href="addonsconfig-httploadbalancing.md">HttpLoadBalancing</a>
+_Type_: List of &lt;a href=&#34;addonsconfig-httploadbalancing.md&#34;&gt;HttpLoadBalancing&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KubernetesDashboard
 
 _Required_: No
-
-_Type_: List of <a href="addonsconfig-kubernetesdashboard.md">KubernetesDashboard</a>
+_Type_: List of &lt;a href=&#34;addonsconfig-kubernetesdashboard.md&#34;&gt;KubernetesDashboard&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NetworkPolicyConfig
 
 _Required_: No
-
-_Type_: List of <a href="addonsconfig-networkpolicyconfig.md">NetworkPolicyConfig</a>
+_Type_: List of &lt;a href=&#34;addonsconfig-networkpolicyconfig.md&#34;&gt;NetworkPolicyConfig&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

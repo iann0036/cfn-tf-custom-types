@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     AuthType: Optional[str]
     Description: Optional[str]
     GroupId: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     ServiceType: Optional[str]
     StageNames: Optional[Sequence[str]]
@@ -66,7 +65,6 @@ class ResourceModel(BaseResourceModel):
             AuthType=json_data.get("AuthType"),
             Description=json_data.get("Description"),
             GroupId=json_data.get("GroupId"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ServiceType=json_data.get("ServiceType"),
             StageNames=json_data.get("StageNames"),

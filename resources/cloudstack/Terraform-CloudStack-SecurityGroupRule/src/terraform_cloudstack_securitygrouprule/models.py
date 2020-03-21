@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     Parallelism: Optional[float]
     Project: Optional[str]
     SecurityGroupId: Optional[str]
@@ -51,7 +50,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             Parallelism=json_data.get("Parallelism"),
             Project=json_data.get("Project"),
             SecurityGroupId=json_data.get("SecurityGroupId"),

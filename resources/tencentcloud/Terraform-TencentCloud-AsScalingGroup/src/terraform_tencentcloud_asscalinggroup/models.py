@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     CreateTime: Optional[str]
     DefaultCooldown: Optional[float]
     DesiredCapacity: Optional[float]
-    Id: Optional[str]
     InstanceCount: Optional[float]
     LoadBalancerIds: Optional[Sequence[str]]
     MaxSize: Optional[float]
@@ -70,7 +69,6 @@ class ResourceModel(BaseResourceModel):
             CreateTime=json_data.get("CreateTime"),
             DefaultCooldown=json_data.get("DefaultCooldown"),
             DesiredCapacity=json_data.get("DesiredCapacity"),
-            Id=json_data.get("Id"),
             InstanceCount=json_data.get("InstanceCount"),
             LoadBalancerIds=json_data.get("LoadBalancerIds"),
             MaxSize=json_data.get("MaxSize"),

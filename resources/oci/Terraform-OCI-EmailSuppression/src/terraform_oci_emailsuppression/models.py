@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CompartmentId: Optional[str]
     EmailAddress: Optional[str]
-    Id: Optional[str]
     Reason: Optional[str]
     TimeCreated: Optional[str]
     Timeouts: Optional["_Timeouts"]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CompartmentId=json_data.get("CompartmentId"),
             EmailAddress=json_data.get("EmailAddress"),
-            Id=json_data.get("Id"),
             Reason=json_data.get("Reason"),
             TimeCreated=json_data.get("TimeCreated"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),

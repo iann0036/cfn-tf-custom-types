@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Bandwidth: Optional[float]
     Description: Optional[str]
-    Id: Optional[str]
     InternetChargeType: Optional[str]
     Name: Optional[str]
     Ratio: Optional[float]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Bandwidth=json_data.get("Bandwidth"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             InternetChargeType=json_data.get("InternetChargeType"),
             Name=json_data.get("Name"),
             Ratio=json_data.get("Ratio"),

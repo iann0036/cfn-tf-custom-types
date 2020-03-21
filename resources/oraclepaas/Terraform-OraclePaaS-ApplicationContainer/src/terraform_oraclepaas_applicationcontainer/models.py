@@ -44,7 +44,6 @@ class ResourceModel(BaseResourceModel):
     GitPassword: Optional[str]
     GitRepository: Optional[str]
     GitUsername: Optional[str]
-    Id: Optional[str]
     LoadBalancerSubnets: Optional[Sequence[str]]
     ManifestFile: Optional[str]
     Name: Optional[str]
@@ -78,7 +77,6 @@ class ResourceModel(BaseResourceModel):
             GitPassword=json_data.get("GitPassword"),
             GitRepository=json_data.get("GitRepository"),
             GitUsername=json_data.get("GitUsername"),
-            Id=json_data.get("Id"),
             LoadBalancerSubnets=json_data.get("LoadBalancerSubnets"),
             ManifestFile=json_data.get("ManifestFile"),
             Name=json_data.get("Name"),

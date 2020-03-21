@@ -12,8 +12,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Google::EndpointsService",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#apis" title="Apis">Apis</a>" : <i>[ &lt;a href=&#34;apis.md&#34;&gt;Apis&lt;/a&gt;, ... ]</i>,
+        "<a href="#configid" title="ConfigId">ConfigId</a>" : <i>String</i>,
+        "<a href="#dnsaddress" title="DnsAddress">DnsAddress</a>" : <i>String</i>,
+        "<a href="#endpoints" title="Endpoints">Endpoints</a>" : <i>[ &lt;a href=&#34;endpoints.md&#34;&gt;Endpoints&lt;/a&gt;, ... ]</i>,
         "<a href="#grpcconfig" title="GrpcConfig">GrpcConfig</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#openapiconfig" title="OpenapiConfig">OpenapiConfig</a>" : <i>String</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
         "<a href="#protocoutputbase64" title="ProtocOutputBase64">ProtocOutputBase64</a>" : <i>String</i>,
@@ -27,8 +31,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Google::EndpointsService
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#apis" title="Apis">Apis</a>: <i>
+      - &lt;a href=&#34;apis.md&#34;&gt;Apis&lt;/a&gt;</i>
+    <a href="#configid" title="ConfigId">ConfigId</a>: <i>String</i>
+    <a href="#dnsaddress" title="DnsAddress">DnsAddress</a>: <i>String</i>
+    <a href="#endpoints" title="Endpoints">Endpoints</a>: <i>
+      - &lt;a href=&#34;endpoints.md&#34;&gt;Endpoints&lt;/a&gt;</i>
     <a href="#grpcconfig" title="GrpcConfig">GrpcConfig</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#openapiconfig" title="OpenapiConfig">OpenapiConfig</a>: <i>String</i>
     <a href="#project" title="Project">Project</a>: <i>String</i>
     <a href="#protocoutputbase64" title="ProtocOutputBase64">ProtocOutputBase64</a>: <i>String</i>
@@ -37,7 +47,9 @@ Properties:
 
 ## Properties
 
-#### GrpcConfig
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
@@ -45,7 +57,39 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### Apis
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;apis.md&#34;&gt;Apis&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ConfigId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### DnsAddress
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Endpoints
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;endpoints.md&#34;&gt;Endpoints&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### GrpcConfig
 
 _Required_: No
 
@@ -103,17 +147,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Apis
 
-Returns the <code>Apis</code> value.
+Returns the &lt;code&gt;Apis&lt;/code&gt; value.
 
 #### ConfigId
 
-Returns the <code>ConfigId</code> value.
+Returns the &lt;code&gt;ConfigId&lt;/code&gt; value.
 
 #### DnsAddress
 
-Returns the <code>DnsAddress</code> value.
+Returns the &lt;code&gt;DnsAddress&lt;/code&gt; value.
 
 #### Endpoints
 
-Returns the <code>Endpoints</code> value.
+Returns the &lt;code&gt;Endpoints&lt;/code&gt; value.
 

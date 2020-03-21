@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     DisplayName: Optional[str]
     ExpirationTime: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     ImageId: Optional[str]
     KmsKeyId: Optional[str]
     SizeInGbs: Optional[str]
@@ -72,7 +71,6 @@ class ResourceModel(BaseResourceModel):
             DisplayName=json_data.get("DisplayName"),
             ExpirationTime=json_data.get("ExpirationTime"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             ImageId=json_data.get("ImageId"),
             KmsKeyId=json_data.get("KmsKeyId"),
             SizeInGbs=json_data.get("SizeInGbs"),

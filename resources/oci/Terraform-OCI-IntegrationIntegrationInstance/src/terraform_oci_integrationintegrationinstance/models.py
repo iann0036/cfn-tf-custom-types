@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     DefinedTags: Optional[Sequence["_DefinedTags"]]
     DisplayName: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     IdcsAt: Optional[str]
     InstanceUrl: Optional[str]
     IntegrationInstanceType: Optional[str]
@@ -65,7 +64,6 @@ class ResourceModel(BaseResourceModel):
             DefinedTags=json_data.get("DefinedTags"),
             DisplayName=json_data.get("DisplayName"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             IdcsAt=json_data.get("IdcsAt"),
             InstanceUrl=json_data.get("InstanceUrl"),
             IntegrationInstanceType=json_data.get("IntegrationInstanceType"),

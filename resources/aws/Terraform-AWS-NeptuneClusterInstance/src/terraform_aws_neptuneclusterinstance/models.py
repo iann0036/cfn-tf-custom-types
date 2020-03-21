@@ -46,7 +46,6 @@ class ResourceModel(BaseResourceModel):
     Endpoint: Optional[str]
     Engine: Optional[str]
     EngineVersion: Optional[str]
-    Id: Optional[str]
     Identifier: Optional[str]
     IdentifierPrefix: Optional[str]
     InstanceClass: Optional[str]
@@ -82,7 +81,6 @@ class ResourceModel(BaseResourceModel):
             Endpoint=json_data.get("Endpoint"),
             Engine=json_data.get("Engine"),
             EngineVersion=json_data.get("EngineVersion"),
-            Id=json_data.get("Id"),
             Identifier=json_data.get("Identifier"),
             IdentifierPrefix=json_data.get("IdentifierPrefix"),
             InstanceClass=json_data.get("InstanceClass"),

@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     EntryPoint: Optional[str]
     EnvironmentVariables: Optional[Sequence["_EnvironmentVariables"]]
     HttpsTriggerUrl: Optional[str]
-    Id: Optional[str]
     Labels: Optional[Sequence["_Labels"]]
     MaxInstances: Optional[float]
     Name: Optional[str]
@@ -73,7 +72,6 @@ class ResourceModel(BaseResourceModel):
             EntryPoint=json_data.get("EntryPoint"),
             EnvironmentVariables=json_data.get("EnvironmentVariables"),
             HttpsTriggerUrl=json_data.get("HttpsTriggerUrl"),
-            Id=json_data.get("Id"),
             Labels=json_data.get("Labels"),
             MaxInstances=json_data.get("MaxInstances"),
             Name=json_data.get("Name"),

@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ActionCategory: Optional[str]
     End: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     PolicyId: Optional[str]
     Priority: Optional[float]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ActionCategory=json_data.get("ActionCategory"),
             End=json_data.get("End"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             PolicyId=json_data.get("PolicyId"),
             Priority=json_data.get("Priority"),

@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     DefinedTags: Optional[Sequence["_DefinedTags"]]
     DisplayName: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     SizeInGbs: Optional[str]
     SizeInMbs: Optional[str]
     State: Optional[str]
@@ -66,7 +65,6 @@ class ResourceModel(BaseResourceModel):
             DefinedTags=json_data.get("DefinedTags"),
             DisplayName=json_data.get("DisplayName"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             SizeInGbs=json_data.get("SizeInGbs"),
             SizeInMbs=json_data.get("SizeInMbs"),
             State=json_data.get("State"),

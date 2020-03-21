@@ -12,9 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::TencentCloud::DcGatewayCcnRoute",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#aspath" title="AsPath">AsPath</a>" : <i>[ String, ... ]</i>,
         "<a href="#cidrblock" title="CidrBlock">CidrBlock</a>" : <i>String</i>,
-        "<a href="#dcgid" title="DcgId">DcgId</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>
+        "<a href="#dcgid" title="DcgId">DcgId</a>" : <i>String</i>
     }
 }
 </pre>
@@ -24,12 +25,32 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::TencentCloud::DcGatewayCcnRoute
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#aspath" title="AsPath">AsPath</a>: <i>
+      - String</i>
     <a href="#cidrblock" title="CidrBlock">CidrBlock</a>: <i>String</i>
     <a href="#dcgid" title="DcgId">DcgId</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### AsPath
+
+_Required_: No
+
+_Type_: List of String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CidrBlock
 
@@ -42,14 +63,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DcgId
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
 
 _Type_: String
 
@@ -73,5 +86,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AsPath
 
-Returns the <code>AsPath</code> value.
+Returns the &lt;code&gt;AsPath&lt;/code&gt; value.
 

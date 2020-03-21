@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     BeforeScripts: Optional[Sequence[str]]
     Body: Optional[str]
     BucketId: Optional[str]
-    Id: Optional[str]
     Method: Optional[str]
     Note: Optional[str]
     Scripts: Optional[Sequence[str]]
@@ -63,7 +62,6 @@ class ResourceModel(BaseResourceModel):
             BeforeScripts=json_data.get("BeforeScripts"),
             Body=json_data.get("Body"),
             BucketId=json_data.get("BucketId"),
-            Id=json_data.get("Id"),
             Method=json_data.get("Method"),
             Note=json_data.get("Note"),
             Scripts=json_data.get("Scripts"),

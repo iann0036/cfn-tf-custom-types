@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     IkeVersion: Optional[float]
     Name: Optional[str]
     PublicIp: Optional[str]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             IkeVersion=json_data.get("IkeVersion"),
             Name=json_data.get("Name"),
             PublicIp=json_data.get("PublicIp"),

@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     AclResourcePatternType: Optional[str]
     AclResourceType: Optional[str]
     Host: Optional[str]
-    Id: Optional[str]
     InstanceId: Optional[str]
     Username: Optional[str]
 
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             AclResourcePatternType=json_data.get("AclResourcePatternType"),
             AclResourceType=json_data.get("AclResourceType"),
             Host=json_data.get("Host"),
-            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
             Username=json_data.get("Username"),
         )

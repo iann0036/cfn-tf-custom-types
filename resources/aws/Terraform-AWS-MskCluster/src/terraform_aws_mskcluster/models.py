@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     ClusterName: Optional[str]
     CurrentVersion: Optional[str]
     EnhancedMonitoring: Optional[str]
-    Id: Optional[str]
     KafkaVersion: Optional[str]
     NumberOfBrokerNodes: Optional[float]
     Tags: Optional[Sequence["_Tags"]]
@@ -73,7 +72,6 @@ class ResourceModel(BaseResourceModel):
             ClusterName=json_data.get("ClusterName"),
             CurrentVersion=json_data.get("CurrentVersion"),
             EnhancedMonitoring=json_data.get("EnhancedMonitoring"),
-            Id=json_data.get("Id"),
             KafkaVersion=json_data.get("KafkaVersion"),
             NumberOfBrokerNodes=json_data.get("NumberOfBrokerNodes"),
             Tags=json_data.get("Tags"),

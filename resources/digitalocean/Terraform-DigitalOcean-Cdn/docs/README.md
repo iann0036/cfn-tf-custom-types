@@ -12,9 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::DigitalOcean::Cdn",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#certificateid" title="CertificateId">CertificateId</a>" : <i>String</i>,
+        "<a href="#createdat" title="CreatedAt">CreatedAt</a>" : <i>String</i>,
         "<a href="#customdomain" title="CustomDomain">CustomDomain</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#endpoint" title="Endpoint">Endpoint</a>" : <i>String</i>,
         "<a href="#origin" title="Origin">Origin</a>" : <i>String</i>,
         "<a href="#ttl" title="Ttl">Ttl</a>" : <i>Double</i>
     }
@@ -26,16 +28,36 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::DigitalOcean::Cdn
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#certificateid" title="CertificateId">CertificateId</a>: <i>String</i>
+    <a href="#createdat" title="CreatedAt">CreatedAt</a>: <i>String</i>
     <a href="#customdomain" title="CustomDomain">CustomDomain</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#endpoint" title="Endpoint">Endpoint</a>: <i>String</i>
     <a href="#origin" title="Origin">Origin</a>: <i>String</i>
     <a href="#ttl" title="Ttl">Ttl</a>: <i>Double</i>
 </pre>
 
 ## Properties
 
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### CertificateId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### CreatedAt
 
 _Required_: No
 
@@ -51,7 +73,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### Endpoint
 
 _Required_: No
 
@@ -93,9 +115,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreatedAt
 
-Returns the <code>CreatedAt</code> value.
+Returns the &lt;code&gt;CreatedAt&lt;/code&gt; value.
 
 #### Endpoint
 
-Returns the <code>Endpoint</code> value.
+Returns the &lt;code&gt;Endpoint&lt;/code&gt; value.
 

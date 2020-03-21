@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     ImageId: Optional[str]
     OssBucket: Optional[str]
     OssPrefix: Optional[str]
@@ -51,7 +50,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             ImageId=json_data.get("ImageId"),
             OssBucket=json_data.get("OssBucket"),
             OssPrefix=json_data.get("OssPrefix"),

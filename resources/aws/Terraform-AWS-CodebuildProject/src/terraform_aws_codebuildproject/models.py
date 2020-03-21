@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     BuildTimeout: Optional[float]
     Description: Optional[str]
     EncryptionKey: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     QueuedTimeout: Optional[float]
     ServiceRole: Optional[str]
@@ -78,7 +77,6 @@ class ResourceModel(BaseResourceModel):
             BuildTimeout=json_data.get("BuildTimeout"),
             Description=json_data.get("Description"),
             EncryptionKey=json_data.get("EncryptionKey"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             QueuedTimeout=json_data.get("QueuedTimeout"),
             ServiceRole=json_data.get("ServiceRole"),

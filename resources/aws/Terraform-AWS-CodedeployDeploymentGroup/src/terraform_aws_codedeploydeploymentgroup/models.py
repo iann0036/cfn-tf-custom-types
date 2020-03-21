@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     AutoscalingGroups: Optional[Sequence[str]]
     DeploymentConfigName: Optional[str]
     DeploymentGroupName: Optional[str]
-    Id: Optional[str]
     ServiceRoleArn: Optional[str]
     AlarmConfiguration: Optional[Sequence["_AlarmConfiguration"]]
     AutoRollbackConfiguration: Optional[Sequence["_AutoRollbackConfiguration"]]
@@ -75,7 +74,6 @@ class ResourceModel(BaseResourceModel):
             AutoscalingGroups=json_data.get("AutoscalingGroups"),
             DeploymentConfigName=json_data.get("DeploymentConfigName"),
             DeploymentGroupName=json_data.get("DeploymentGroupName"),
-            Id=json_data.get("Id"),
             ServiceRoleArn=json_data.get("ServiceRoleArn"),
             AlarmConfiguration=json_data.get("AlarmConfiguration"),
             AutoRollbackConfiguration=json_data.get("AutoRollbackConfiguration"),

@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     Enable: Optional[bool]
     ExtendedCommunityRegex: Optional[str]
     FromPeers: Optional[Sequence[str]]
-    Id: Optional[str]
     Med: Optional[str]
     Name: Optional[str]
     NextHops: Optional[Sequence[str]]
@@ -66,7 +65,6 @@ class ResourceModel(BaseResourceModel):
             Enable=json_data.get("Enable"),
             ExtendedCommunityRegex=json_data.get("ExtendedCommunityRegex"),
             FromPeers=json_data.get("FromPeers"),
-            Id=json_data.get("Id"),
             Med=json_data.get("Med"),
             Name=json_data.get("Name"),
             NextHops=json_data.get("NextHops"),

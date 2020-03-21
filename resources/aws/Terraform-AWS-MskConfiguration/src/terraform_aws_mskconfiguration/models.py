@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Arn: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     KafkaVersions: Optional[Sequence[str]]
     LatestRevision: Optional[float]
     Name: Optional[str]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Arn=json_data.get("Arn"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             KafkaVersions=json_data.get("KafkaVersions"),
             LatestRevision=json_data.get("LatestRevision"),
             Name=json_data.get("Name"),

@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DisplayName: Optional[str]
     GroupId: Optional[str]
-    Id: Optional[str]
     ParentManagementGroupId: Optional[str]
     SubscriptionIds: Optional[Sequence[str]]
     Timeouts: Optional["_Timeouts"]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DisplayName=json_data.get("DisplayName"),
             GroupId=json_data.get("GroupId"),
-            Id=json_data.get("Id"),
             ParentManagementGroupId=json_data.get("ParentManagementGroupId"),
             SubscriptionIds=json_data.get("SubscriptionIds"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),

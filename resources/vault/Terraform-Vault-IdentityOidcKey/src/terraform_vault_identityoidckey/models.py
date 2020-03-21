@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Algorithm: Optional[str]
     AllowedClientIds: Optional[Sequence[str]]
-    Id: Optional[str]
     Name: Optional[str]
     RotationPeriod: Optional[float]
     VerificationTtl: Optional[float]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Algorithm=json_data.get("Algorithm"),
             AllowedClientIds=json_data.get("AllowedClientIds"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             RotationPeriod=json_data.get("RotationPeriod"),
             VerificationTtl=json_data.get("VerificationTtl"),

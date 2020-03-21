@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DefaultResult: Optional[str]
     HeartbeatTimeout: Optional[float]
-    Id: Optional[str]
     LifecycleTransition: Optional[str]
     Name: Optional[str]
     NotificationArn: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DefaultResult=json_data.get("DefaultResult"),
             HeartbeatTimeout=json_data.get("HeartbeatTimeout"),
-            Id=json_data.get("Id"),
             LifecycleTransition=json_data.get("LifecycleTransition"),
             Name=json_data.get("Name"),
             NotificationArn=json_data.get("NotificationArn"),

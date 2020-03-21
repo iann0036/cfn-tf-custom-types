@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     ActualNodeCount: Optional[float]
     AutoScale: Optional[bool]
     ClusterId: Optional[str]
-    Id: Optional[str]
     Labels: Optional[Sequence["_Labels"]]
     MaxNodes: Optional[float]
     MinNodes: Optional[float]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             ActualNodeCount=json_data.get("ActualNodeCount"),
             AutoScale=json_data.get("AutoScale"),
             ClusterId=json_data.get("ClusterId"),
-            Id=json_data.get("Id"),
             Labels=json_data.get("Labels"),
             MaxNodes=json_data.get("MaxNodes"),
             MinNodes=json_data.get("MinNodes"),

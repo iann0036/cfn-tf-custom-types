@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     ClientConnThrottle: Optional[float]
     Created: Optional[str]
     Hostname: Optional[str]
-    Id: Optional[str]
     Ipv4: Optional[str]
     Ipv6: Optional[str]
     Label: Optional[str]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             ClientConnThrottle=json_data.get("ClientConnThrottle"),
             Created=json_data.get("Created"),
             Hostname=json_data.get("Hostname"),
-            Id=json_data.get("Id"),
             Ipv4=json_data.get("Ipv4"),
             Ipv6=json_data.get("Ipv6"),
             Label=json_data.get("Label"),

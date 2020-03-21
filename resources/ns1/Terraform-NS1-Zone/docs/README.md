@@ -12,11 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::NS1::Zone",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#additionalprimaries" title="AdditionalPrimaries">AdditionalPrimaries</a>" : <i>[ String, ... ]</i>,
         "<a href="#autogeneratensrecord" title="AutogenerateNsRecord">AutogenerateNsRecord</a>" : <i>Boolean</i>,
+        "<a href="#dnsservers" title="DnsServers">DnsServers</a>" : <i>String</i>,
         "<a href="#dnssec" title="Dnssec">Dnssec</a>" : <i>Boolean</i>,
         "<a href="#expiry" title="Expiry">Expiry</a>" : <i>Double</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#hostmaster" title="Hostmaster">Hostmaster</a>" : <i>String</i>,
         "<a href="#link" title="Link">Link</a>" : <i>String</i>,
         "<a href="#networks" title="Networks">Networks</a>" : <i>[ Double, ... ]</i>,
         "<a href="#nxttl" title="NxTtl">NxTtl</a>" : <i>Double</i>,
@@ -25,7 +27,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#retry" title="Retry">Retry</a>" : <i>Double</i>,
         "<a href="#ttl" title="Ttl">Ttl</a>" : <i>Double</i>,
         "<a href="#zone" title="Zone">Zone</a>" : <i>String</i>,
-        "<a href="#secondaries" title="Secondaries">Secondaries</a>" : <i>[ <a href="secondaries.md">Secondaries</a>, ... ]</i>
+        "<a href="#secondaries" title="Secondaries">Secondaries</a>" : <i>[ &lt;a href=&#34;secondaries.md&#34;&gt;Secondaries&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -35,12 +37,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::NS1::Zone
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#additionalprimaries" title="AdditionalPrimaries">AdditionalPrimaries</a>: <i>
       - String</i>
     <a href="#autogeneratensrecord" title="AutogenerateNsRecord">AutogenerateNsRecord</a>: <i>Boolean</i>
+    <a href="#dnsservers" title="DnsServers">DnsServers</a>: <i>String</i>
     <a href="#dnssec" title="Dnssec">Dnssec</a>: <i>Boolean</i>
     <a href="#expiry" title="Expiry">Expiry</a>: <i>Double</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#hostmaster" title="Hostmaster">Hostmaster</a>: <i>String</i>
     <a href="#link" title="Link">Link</a>: <i>String</i>
     <a href="#networks" title="Networks">Networks</a>: <i>
       - Double</i>
@@ -51,10 +55,20 @@ Properties:
     <a href="#ttl" title="Ttl">Ttl</a>: <i>Double</i>
     <a href="#zone" title="Zone">Zone</a>: <i>String</i>
     <a href="#secondaries" title="Secondaries">Secondaries</a>: <i>
-      - <a href="secondaries.md">Secondaries</a></i>
+      - &lt;a href=&#34;secondaries.md&#34;&gt;Secondaries&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AdditionalPrimaries
 
@@ -69,6 +83,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### DnsServers
+
+_Required_: No
+
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -88,7 +110,7 @@ _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### Hostmaster
 
 _Required_: No
 
@@ -164,7 +186,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="secondaries.md">Secondaries</a>
+_Type_: List of &lt;a href=&#34;secondaries.md&#34;&gt;Secondaries&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -186,9 +208,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### DnsServers
 
-Returns the <code>DnsServers</code> value.
+Returns the &lt;code&gt;DnsServers&lt;/code&gt; value.
 
 #### Hostmaster
 
-Returns the <code>Hostmaster</code> value.
+Returns the &lt;code&gt;Hostmaster&lt;/code&gt; value.
 

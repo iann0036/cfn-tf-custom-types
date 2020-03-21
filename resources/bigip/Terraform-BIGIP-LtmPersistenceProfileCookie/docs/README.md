@@ -12,6 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::BIGIP::LtmPersistenceProfileCookie",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#alwayssend" title="AlwaysSend">AlwaysSend</a>" : <i>String</i>,
         "<a href="#appservice" title="AppService">AppService</a>" : <i>String</i>,
         "<a href="#cookieencryption" title="CookieEncryption">CookieEncryption</a>" : <i>String</i>,
@@ -22,7 +23,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#hashlength" title="HashLength">HashLength</a>" : <i>Double</i>,
         "<a href="#hashoffset" title="HashOffset">HashOffset</a>" : <i>Double</i>,
         "<a href="#httponly" title="Httponly">Httponly</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#matchacrosspools" title="MatchAcrossPools">MatchAcrossPools</a>" : <i>String</i>,
         "<a href="#matchacrossservices" title="MatchAcrossServices">MatchAcrossServices</a>" : <i>String</i>,
         "<a href="#matchacrossvirtuals" title="MatchAcrossVirtuals">MatchAcrossVirtuals</a>" : <i>String</i>,
@@ -39,6 +39,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::BIGIP::LtmPersistenceProfileCookie
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#alwayssend" title="AlwaysSend">AlwaysSend</a>: <i>String</i>
     <a href="#appservice" title="AppService">AppService</a>: <i>String</i>
     <a href="#cookieencryption" title="CookieEncryption">CookieEncryption</a>: <i>String</i>
@@ -49,7 +50,6 @@ Properties:
     <a href="#hashlength" title="HashLength">HashLength</a>: <i>Double</i>
     <a href="#hashoffset" title="HashOffset">HashOffset</a>: <i>Double</i>
     <a href="#httponly" title="Httponly">Httponly</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#matchacrosspools" title="MatchAcrossPools">MatchAcrossPools</a>: <i>String</i>
     <a href="#matchacrossservices" title="MatchAcrossServices">MatchAcrossServices</a>: <i>String</i>
     <a href="#matchacrossvirtuals" title="MatchAcrossVirtuals">MatchAcrossVirtuals</a>: <i>String</i>
@@ -60,6 +60,16 @@ Properties:
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AlwaysSend
 
@@ -134,14 +144,6 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Httponly
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 

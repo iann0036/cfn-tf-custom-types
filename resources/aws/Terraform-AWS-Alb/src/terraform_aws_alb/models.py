@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     EnableCrossZoneLoadBalancing: Optional[bool]
     EnableDeletionProtection: Optional[bool]
     EnableHttp2: Optional[bool]
-    Id: Optional[str]
     IdleTimeout: Optional[float]
     Internal: Optional[bool]
     IpAddressType: Optional[str]
@@ -75,7 +74,6 @@ class ResourceModel(BaseResourceModel):
             EnableCrossZoneLoadBalancing=json_data.get("EnableCrossZoneLoadBalancing"),
             EnableDeletionProtection=json_data.get("EnableDeletionProtection"),
             EnableHttp2=json_data.get("EnableHttp2"),
-            Id=json_data.get("Id"),
             IdleTimeout=json_data.get("IdleTimeout"),
             Internal=json_data.get("Internal"),
             IpAddressType=json_data.get("IpAddressType"),

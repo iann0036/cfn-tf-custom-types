@@ -10,9 +10,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#name" title="Name">Name</a>" : <i>String</i>,
     "<a href="#rulesequence" title="RuleSequence">RuleSequence</a>" : <i>Double</i>,
-    "<a href="#condition" title="Condition">Condition</a>" : <i>[ <a href="rewriterule-condition.md">Condition</a>, ... ]</i>,
-    "<a href="#requestheaderconfiguration" title="RequestHeaderConfiguration">RequestHeaderConfiguration</a>" : <i>[ <a href="rewriterule-requestheaderconfiguration.md">RequestHeaderConfiguration</a>, ... ]</i>,
-    "<a href="#responseheaderconfiguration" title="ResponseHeaderConfiguration">ResponseHeaderConfiguration</a>" : <i>[ <a href="rewriterule-responseheaderconfiguration.md">ResponseHeaderConfiguration</a>, ... ]</i>
+    "<a href="#condition" title="Condition">Condition</a>" : <i>[ &lt;a href=&#34;rewriterule-condition.md&#34;&gt;Condition&lt;/a&gt;, ... ]</i>,
+    "<a href="#requestheaderconfiguration" title="RequestHeaderConfiguration">RequestHeaderConfiguration</a>" : <i>[ &lt;a href=&#34;rewriterule-requestheaderconfiguration.md&#34;&gt;RequestHeaderConfiguration&lt;/a&gt;, ... ]</i>,
+    "<a href="#responseheaderconfiguration" title="ResponseHeaderConfiguration">ResponseHeaderConfiguration</a>" : <i>[ &lt;a href=&#34;rewriterule-responseheaderconfiguration.md&#34;&gt;ResponseHeaderConfiguration&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -22,11 +22,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#name" title="Name">Name</a>: <i>String</i>
 <a href="#rulesequence" title="RuleSequence">RuleSequence</a>: <i>Double</i>
 <a href="#condition" title="Condition">Condition</a>: <i>
-      - <a href="rewriterule-condition.md">Condition</a></i>
+      - &lt;a href=&#34;rewriterule-condition.md&#34;&gt;Condition&lt;/a&gt;</i>
 <a href="#requestheaderconfiguration" title="RequestHeaderConfiguration">RequestHeaderConfiguration</a>: <i>
-      - <a href="rewriterule-requestheaderconfiguration.md">RequestHeaderConfiguration</a></i>
+      - &lt;a href=&#34;rewriterule-requestheaderconfiguration.md&#34;&gt;RequestHeaderConfiguration&lt;/a&gt;</i>
 <a href="#responseheaderconfiguration" title="ResponseHeaderConfiguration">ResponseHeaderConfiguration</a>: <i>
-      - <a href="rewriterule-responseheaderconfiguration.md">ResponseHeaderConfiguration</a></i>
+      - &lt;a href=&#34;rewriterule-responseheaderconfiguration.md&#34;&gt;ResponseHeaderConfiguration&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -34,7 +34,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Name
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -42,7 +41,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RuleSequence
 
 _Required_: Yes
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -50,24 +48,21 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Condition
 
 _Required_: No
-
-_Type_: List of <a href="rewriterule-condition.md">Condition</a>
+_Type_: List of &lt;a href=&#34;rewriterule-condition.md&#34;&gt;Condition&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RequestHeaderConfiguration
 
 _Required_: No
-
-_Type_: List of <a href="rewriterule-requestheaderconfiguration.md">RequestHeaderConfiguration</a>
+_Type_: List of &lt;a href=&#34;rewriterule-requestheaderconfiguration.md&#34;&gt;RequestHeaderConfiguration&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResponseHeaderConfiguration
 
 _Required_: No
-
-_Type_: List of <a href="rewriterule-responseheaderconfiguration.md">ResponseHeaderConfiguration</a>
+_Type_: List of &lt;a href=&#34;rewriterule-responseheaderconfiguration.md&#34;&gt;ResponseHeaderConfiguration&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

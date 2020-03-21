@@ -12,12 +12,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OPC::LbaasCertificate",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#certificatebody" title="CertificateBody">CertificateBody</a>" : <i>String</i>,
         "<a href="#certificatechain" title="CertificateChain">CertificateChain</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#privatekey" title="PrivateKey">PrivateKey</a>" : <i>String</i>,
+        "<a href="#state" title="State">State</a>" : <i>String</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
+        "<a href="#uri" title="Uri">Uri</a>" : <i>String</i>
     }
 }
 </pre>
@@ -27,15 +29,27 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OPC::LbaasCertificate
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#certificatebody" title="CertificateBody">CertificateBody</a>: <i>String</i>
     <a href="#certificatechain" title="CertificateChain">CertificateChain</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#privatekey" title="PrivateKey">PrivateKey</a>: <i>String</i>
+    <a href="#state" title="State">State</a>: <i>String</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
+    <a href="#uri" title="Uri">Uri</a>: <i>String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CertificateBody
 
@@ -46,14 +60,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CertificateChain
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 
@@ -77,9 +83,25 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### State
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Type
 
 _Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Uri
+
+_Required_: No
 
 _Type_: String
 
@@ -103,9 +125,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### State
 
-Returns the <code>State</code> value.
+Returns the &lt;code&gt;State&lt;/code&gt; value.
 
 #### Uri
 
-Returns the <code>Uri</code> value.
+Returns the &lt;code&gt;Uri&lt;/code&gt; value.
 

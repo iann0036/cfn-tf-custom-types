@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DateFormat: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     PathPattern: Optional[str]
     ResourceGroupName: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             DateFormat=json_data.get("DateFormat"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             PathPattern=json_data.get("PathPattern"),
             ResourceGroupName=json_data.get("ResourceGroupName"),

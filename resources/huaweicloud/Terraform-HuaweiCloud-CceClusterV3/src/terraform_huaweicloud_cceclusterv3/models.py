@@ -50,7 +50,6 @@ class ResourceModel(BaseResourceModel):
     ExtendParam: Optional[Sequence["_ExtendParam"]]
     FlavorId: Optional[str]
     HighwaySubnetId: Optional[str]
-    Id: Optional[str]
     Labels: Optional[Sequence["_Labels"]]
     MultiAz: Optional[bool]
     Name: Optional[str]
@@ -83,7 +82,6 @@ class ResourceModel(BaseResourceModel):
             ExtendParam=json_data.get("ExtendParam"),
             FlavorId=json_data.get("FlavorId"),
             HighwaySubnetId=json_data.get("HighwaySubnetId"),
-            Id=json_data.get("Id"),
             Labels=json_data.get("Labels"),
             MultiAz=json_data.get("MultiAz"),
             Name=json_data.get("Name"),

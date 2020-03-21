@@ -8,7 +8,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#publickeycertificate" title="PublicKeyCertificate">PublicKeyCertificate</a>" : <i>[ <a href="credentials-publickeycertificate.md">PublicKeyCertificate</a>, ... ]</i>
+    "<a href="#publickeycertificate" title="PublicKeyCertificate">PublicKeyCertificate</a>" : <i>[ &lt;a href=&#34;credentials-publickeycertificate.md&#34;&gt;PublicKeyCertificate&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#publickeycertificate" title="PublicKeyCertificate">PublicKeyCertificate</a>: <i>
-      - <a href="credentials-publickeycertificate.md">PublicKeyCertificate</a></i>
+      - &lt;a href=&#34;credentials-publickeycertificate.md&#34;&gt;PublicKeyCertificate&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -24,8 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### PublicKeyCertificate
 
 _Required_: Yes
-
-_Type_: List of <a href="credentials-publickeycertificate.md">PublicKeyCertificate</a>
+_Type_: List of &lt;a href=&#34;credentials-publickeycertificate.md&#34;&gt;PublicKeyCertificate&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

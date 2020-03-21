@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     ClusterName: Optional[str]
     FargateProfileName: Optional[str]
-    Id: Optional[str]
     PodExecutionRoleArn: Optional[str]
     Status: Optional[str]
     SubnetIds: Optional[Sequence[str]]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             ClusterName=json_data.get("ClusterName"),
             FargateProfileName=json_data.get("FargateProfileName"),
-            Id=json_data.get("Id"),
             PodExecutionRoleArn=json_data.get("PodExecutionRoleArn"),
             Status=json_data.get("Status"),
             SubnetIds=json_data.get("SubnetIds"),

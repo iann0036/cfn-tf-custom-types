@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AddressIp: Optional[str]
     HavipId: Optional[str]
-    Id: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -51,7 +50,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AddressIp=json_data.get("AddressIp"),
             HavipId=json_data.get("HavipId"),
-            Id=json_data.get("Id"),
         )
 
 

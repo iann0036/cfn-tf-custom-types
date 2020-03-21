@@ -12,18 +12,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Google::DeploymentManagerDeployment",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#createpolicy" title="CreatePolicy">CreatePolicy</a>" : <i>String</i>,
         "<a href="#deletepolicy" title="DeletePolicy">DeletePolicy</a>" : <i>String</i>,
+        "<a href="#deploymentid" title="DeploymentId">DeploymentId</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#manifest" title="Manifest">Manifest</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#preview" title="Preview">Preview</a>" : <i>Boolean</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
-        "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="labels.md">Labels</a>, ... ]</i>,
-        "<a href="#target" title="Target">Target</a>" : <i>[ <a href="target.md">Target</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
-        "<a href="#config" title="Config">Config</a>" : <i>[ <a href="config.md">Config</a>, ... ]</i>,
-        "<a href="#imports" title="Imports">Imports</a>" : <i>[ <a href="imports.md">Imports</a>, ... ]</i>
+        "<a href="#selflink" title="SelfLink">SelfLink</a>" : <i>String</i>,
+        "<a href="#labels" title="Labels">Labels</a>" : <i>[ &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;, ... ]</i>,
+        "<a href="#target" title="Target">Target</a>" : <i>[ &lt;a href=&#34;target.md&#34;&gt;Target&lt;/a&gt;, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
+        "<a href="#config" title="Config">Config</a>" : <i>[ &lt;a href=&#34;config.md&#34;&gt;Config&lt;/a&gt;, ... ]</i>,
+        "<a href="#imports" title="Imports">Imports</a>" : <i>[ &lt;a href=&#34;imports.md&#34;&gt;Imports&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -33,25 +36,38 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Google::DeploymentManagerDeployment
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#createpolicy" title="CreatePolicy">CreatePolicy</a>: <i>String</i>
     <a href="#deletepolicy" title="DeletePolicy">DeletePolicy</a>: <i>String</i>
+    <a href="#deploymentid" title="DeploymentId">DeploymentId</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#manifest" title="Manifest">Manifest</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#preview" title="Preview">Preview</a>: <i>Boolean</i>
     <a href="#project" title="Project">Project</a>: <i>String</i>
+    <a href="#selflink" title="SelfLink">SelfLink</a>: <i>String</i>
     <a href="#labels" title="Labels">Labels</a>: <i>
-      - <a href="labels.md">Labels</a></i>
+      - &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;</i>
     <a href="#target" title="Target">Target</a>: <i>
-      - <a href="target.md">Target</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;target.md&#34;&gt;Target&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     <a href="#config" title="Config">Config</a>: <i>
-      - <a href="config.md">Config</a></i>
+      - &lt;a href=&#34;config.md&#34;&gt;Config&lt;/a&gt;</i>
     <a href="#imports" title="Imports">Imports</a>: <i>
-      - <a href="imports.md">Imports</a></i>
+      - &lt;a href=&#34;imports.md&#34;&gt;Imports&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CreatePolicy
 
@@ -69,6 +85,14 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### DeploymentId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Description
 
 _Required_: No
@@ -77,7 +101,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### Manifest
 
 _Required_: No
 
@@ -109,11 +133,19 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### SelfLink
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Labels
 
 _Required_: No
 
-_Type_: List of <a href="labels.md">Labels</a>
+_Type_: List of &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -121,7 +153,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="target.md">Target</a>
+_Type_: List of &lt;a href=&#34;target.md&#34;&gt;Target&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -129,7 +161,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -137,7 +169,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="config.md">Config</a>
+_Type_: List of &lt;a href=&#34;config.md&#34;&gt;Config&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -145,7 +177,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="imports.md">Imports</a>
+_Type_: List of &lt;a href=&#34;imports.md&#34;&gt;Imports&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -167,13 +199,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### DeploymentId
 
-Returns the <code>DeploymentId</code> value.
+Returns the &lt;code&gt;DeploymentId&lt;/code&gt; value.
 
 #### Manifest
 
-Returns the <code>Manifest</code> value.
+Returns the &lt;code&gt;Manifest&lt;/code&gt; value.
 
 #### SelfLink
 
-Returns the <code>SelfLink</code> value.
+Returns the &lt;code&gt;SelfLink&lt;/code&gt; value.
 

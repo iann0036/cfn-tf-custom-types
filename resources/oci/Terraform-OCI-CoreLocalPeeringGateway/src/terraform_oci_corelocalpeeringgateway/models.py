@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     DefinedTags: Optional[Sequence["_DefinedTags"]]
     DisplayName: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     IsCrossTenancyPeering: Optional[bool]
     PeerAdvertisedCidr: Optional[str]
     PeerAdvertisedCidrDetails: Optional[Sequence[str]]
@@ -66,7 +65,6 @@ class ResourceModel(BaseResourceModel):
             DefinedTags=json_data.get("DefinedTags"),
             DisplayName=json_data.get("DisplayName"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             IsCrossTenancyPeering=json_data.get("IsCrossTenancyPeering"),
             PeerAdvertisedCidr=json_data.get("PeerAdvertisedCidr"),
             PeerAdvertisedCidrDetails=json_data.get("PeerAdvertisedCidrDetails"),

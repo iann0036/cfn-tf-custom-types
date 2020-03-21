@@ -12,23 +12,30 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureRM::RedisCache",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#capacity" title="Capacity">Capacity</a>" : <i>Double</i>,
         "<a href="#enablenonsslport" title="EnableNonSslPort">EnableNonSslPort</a>" : <i>Boolean</i>,
         "<a href="#family" title="Family">Family</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#hostname" title="Hostname">Hostname</a>" : <i>String</i>,
         "<a href="#location" title="Location">Location</a>" : <i>String</i>,
         "<a href="#minimumtlsversion" title="MinimumTlsVersion">MinimumTlsVersion</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
+        "<a href="#port" title="Port">Port</a>" : <i>Double</i>,
+        "<a href="#primaryaccesskey" title="PrimaryAccessKey">PrimaryAccessKey</a>" : <i>String</i>,
+        "<a href="#primaryconnectionstring" title="PrimaryConnectionString">PrimaryConnectionString</a>" : <i>String</i>,
         "<a href="#privatestaticipaddress" title="PrivateStaticIpAddress">PrivateStaticIpAddress</a>" : <i>String</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
+        "<a href="#secondaryaccesskey" title="SecondaryAccessKey">SecondaryAccessKey</a>" : <i>String</i>,
+        "<a href="#secondaryconnectionstring" title="SecondaryConnectionString">SecondaryConnectionString</a>" : <i>String</i>,
         "<a href="#shardcount" title="ShardCount">ShardCount</a>" : <i>Double</i>,
         "<a href="#skuname" title="SkuName">SkuName</a>" : <i>String</i>,
+        "<a href="#sslport" title="SslPort">SslPort</a>" : <i>Double</i>,
         "<a href="#subnetid" title="SubnetId">SubnetId</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
         "<a href="#zones" title="Zones">Zones</a>" : <i>[ String, ... ]</i>,
-        "<a href="#patchschedule" title="PatchSchedule">PatchSchedule</a>" : <i>[ <a href="patchschedule.md">PatchSchedule</a>, ... ]</i>,
-        "<a href="#redisconfiguration" title="RedisConfiguration">RedisConfiguration</a>" : <i>[ <a href="redisconfiguration.md">RedisConfiguration</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
+        "<a href="#patchschedule" title="PatchSchedule">PatchSchedule</a>" : <i>[ &lt;a href=&#34;patchschedule.md&#34;&gt;PatchSchedule&lt;/a&gt;, ... ]</i>,
+        "<a href="#redisconfiguration" title="RedisConfiguration">RedisConfiguration</a>" : <i>[ &lt;a href=&#34;redisconfiguration.md&#34;&gt;RedisConfiguration&lt;/a&gt;, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     }
 }
 </pre>
@@ -38,30 +45,47 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureRM::RedisCache
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#capacity" title="Capacity">Capacity</a>: <i>Double</i>
     <a href="#enablenonsslport" title="EnableNonSslPort">EnableNonSslPort</a>: <i>Boolean</i>
     <a href="#family" title="Family">Family</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#hostname" title="Hostname">Hostname</a>: <i>String</i>
     <a href="#location" title="Location">Location</a>: <i>String</i>
     <a href="#minimumtlsversion" title="MinimumTlsVersion">MinimumTlsVersion</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
+    <a href="#port" title="Port">Port</a>: <i>Double</i>
+    <a href="#primaryaccesskey" title="PrimaryAccessKey">PrimaryAccessKey</a>: <i>String</i>
+    <a href="#primaryconnectionstring" title="PrimaryConnectionString">PrimaryConnectionString</a>: <i>String</i>
     <a href="#privatestaticipaddress" title="PrivateStaticIpAddress">PrivateStaticIpAddress</a>: <i>String</i>
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
+    <a href="#secondaryaccesskey" title="SecondaryAccessKey">SecondaryAccessKey</a>: <i>String</i>
+    <a href="#secondaryconnectionstring" title="SecondaryConnectionString">SecondaryConnectionString</a>: <i>String</i>
     <a href="#shardcount" title="ShardCount">ShardCount</a>: <i>Double</i>
     <a href="#skuname" title="SkuName">SkuName</a>: <i>String</i>
+    <a href="#sslport" title="SslPort">SslPort</a>: <i>Double</i>
     <a href="#subnetid" title="SubnetId">SubnetId</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
     <a href="#zones" title="Zones">Zones</a>: <i>
       - String</i>
     <a href="#patchschedule" title="PatchSchedule">PatchSchedule</a>: <i>
-      - <a href="patchschedule.md">PatchSchedule</a></i>
+      - &lt;a href=&#34;patchschedule.md&#34;&gt;PatchSchedule&lt;/a&gt;</i>
     <a href="#redisconfiguration" title="RedisConfiguration">RedisConfiguration</a>: <i>
-      - <a href="redisconfiguration.md">RedisConfiguration</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;redisconfiguration.md&#34;&gt;RedisConfiguration&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Capacity
 
@@ -87,7 +111,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### Hostname
 
 _Required_: No
 
@@ -119,6 +143,30 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### Port
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### PrimaryAccessKey
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### PrimaryConnectionString
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### PrivateStaticIpAddress
 
 _Required_: No
@@ -130,6 +178,22 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ResourceGroupName
 
 _Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### SecondaryAccessKey
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### SecondaryConnectionString
+
+_Required_: No
 
 _Type_: String
 
@@ -151,6 +215,14 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### SslPort
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### SubnetId
 
 _Required_: No
@@ -163,7 +235,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -179,7 +251,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="patchschedule.md">PatchSchedule</a>
+_Type_: List of &lt;a href=&#34;patchschedule.md&#34;&gt;PatchSchedule&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -187,7 +259,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="redisconfiguration.md">RedisConfiguration</a>
+_Type_: List of &lt;a href=&#34;redisconfiguration.md&#34;&gt;RedisConfiguration&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -195,7 +267,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -217,29 +289,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Hostname
 
-Returns the <code>Hostname</code> value.
+Returns the &lt;code&gt;Hostname&lt;/code&gt; value.
 
 #### Port
 
-Returns the <code>Port</code> value.
+Returns the &lt;code&gt;Port&lt;/code&gt; value.
 
 #### PrimaryAccessKey
 
-Returns the <code>PrimaryAccessKey</code> value.
+Returns the &lt;code&gt;PrimaryAccessKey&lt;/code&gt; value.
 
 #### PrimaryConnectionString
 
-Returns the <code>PrimaryConnectionString</code> value.
+Returns the &lt;code&gt;PrimaryConnectionString&lt;/code&gt; value.
 
 #### SecondaryAccessKey
 
-Returns the <code>SecondaryAccessKey</code> value.
+Returns the &lt;code&gt;SecondaryAccessKey&lt;/code&gt; value.
 
 #### SecondaryConnectionString
 
-Returns the <code>SecondaryConnectionString</code> value.
+Returns the &lt;code&gt;SecondaryConnectionString&lt;/code&gt; value.
 
 #### SslPort
 
-Returns the <code>SslPort</code> value.
+Returns the &lt;code&gt;SslPort&lt;/code&gt; value.
 

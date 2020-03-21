@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AllowedRoles: Optional[Sequence[str]]
     Backend: Optional[str]
     Data: Optional[Sequence["_Data"]]
-    Id: Optional[str]
     Name: Optional[str]
     RootRotationStatements: Optional[Sequence[str]]
     VerifyConnection: Optional[bool]
@@ -66,7 +65,6 @@ class ResourceModel(BaseResourceModel):
             AllowedRoles=json_data.get("AllowedRoles"),
             Backend=json_data.get("Backend"),
             Data=json_data.get("Data"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             RootRotationStatements=json_data.get("RootRotationStatements"),
             VerifyConnection=json_data.get("VerifyConnection"),

@@ -8,8 +8,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#abort" title="Abort">Abort</a>" : <i>[ <a href="pathmatcher-pathrule-routeaction-faultinjectionpolicy-abort.md">Abort</a>, ... ]</i>,
-    "<a href="#delay" title="Delay">Delay</a>" : <i>[ <a href="pathmatcher-pathrule-routeaction-faultinjectionpolicy-delay.md">Delay</a>, ... ]</i>
+    "<a href="#abort" title="Abort">Abort</a>" : <i>[ &lt;a href=&#34;pathmatcher-pathrule-routeaction-faultinjectionpolicy-abort.md&#34;&gt;Abort&lt;/a&gt;, ... ]</i>,
+    "<a href="#delay" title="Delay">Delay</a>" : <i>[ &lt;a href=&#34;pathmatcher-pathrule-routeaction-faultinjectionpolicy-delay.md&#34;&gt;Delay&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -17,9 +17,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#abort" title="Abort">Abort</a>: <i>
-      - <a href="pathmatcher-pathrule-routeaction-faultinjectionpolicy-abort.md">Abort</a></i>
+      - &lt;a href=&#34;pathmatcher-pathrule-routeaction-faultinjectionpolicy-abort.md&#34;&gt;Abort&lt;/a&gt;</i>
 <a href="#delay" title="Delay">Delay</a>: <i>
-      - <a href="pathmatcher-pathrule-routeaction-faultinjectionpolicy-delay.md">Delay</a></i>
+      - &lt;a href=&#34;pathmatcher-pathrule-routeaction-faultinjectionpolicy-delay.md&#34;&gt;Delay&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -27,16 +27,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Abort
 
 _Required_: No
-
-_Type_: List of <a href="pathmatcher-pathrule-routeaction-faultinjectionpolicy-abort.md">Abort</a>
+_Type_: List of &lt;a href=&#34;pathmatcher-pathrule-routeaction-faultinjectionpolicy-abort.md&#34;&gt;Abort&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Delay
 
 _Required_: No
-
-_Type_: List of <a href="pathmatcher-pathrule-routeaction-faultinjectionpolicy-delay.md">Delay</a>
+_Type_: List of &lt;a href=&#34;pathmatcher-pathrule-routeaction-faultinjectionpolicy-delay.md&#34;&gt;Delay&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

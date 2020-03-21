@@ -45,7 +45,6 @@ class ResourceModel(BaseResourceModel):
     ConfigurationEndpointAddress: Optional[str]
     Engine: Optional[str]
     EngineVersion: Optional[str]
-    Id: Optional[str]
     KmsKeyId: Optional[str]
     MaintenanceWindow: Optional[str]
     MemberClusters: Optional[Sequence[str]]
@@ -87,7 +86,6 @@ class ResourceModel(BaseResourceModel):
             ConfigurationEndpointAddress=json_data.get("ConfigurationEndpointAddress"),
             Engine=json_data.get("Engine"),
             EngineVersion=json_data.get("EngineVersion"),
-            Id=json_data.get("Id"),
             KmsKeyId=json_data.get("KmsKeyId"),
             MaintenanceWindow=json_data.get("MaintenanceWindow"),
             MemberClusters=json_data.get("MemberClusters"),

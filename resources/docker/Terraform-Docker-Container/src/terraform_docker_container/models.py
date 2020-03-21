@@ -53,7 +53,6 @@ class ResourceModel(BaseResourceModel):
     Gateway: Optional[str]
     GroupAdd: Optional[Sequence[str]]
     Hostname: Optional[str]
-    Id: Optional[str]
     Image: Optional[str]
     IpAddress: Optional[str]
     IpPrefixLength: Optional[float]
@@ -125,7 +124,6 @@ class ResourceModel(BaseResourceModel):
             Gateway=json_data.get("Gateway"),
             GroupAdd=json_data.get("GroupAdd"),
             Hostname=json_data.get("Hostname"),
-            Id=json_data.get("Id"),
             Image=json_data.get("Image"),
             IpAddress=json_data.get("IpAddress"),
             IpPrefixLength=json_data.get("IpPrefixLength"),

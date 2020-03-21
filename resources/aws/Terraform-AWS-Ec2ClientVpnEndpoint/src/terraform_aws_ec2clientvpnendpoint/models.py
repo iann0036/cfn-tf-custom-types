@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DnsName: Optional[str]
     DnsServers: Optional[Sequence[str]]
-    Id: Optional[str]
     ServerCertificateArn: Optional[str]
     SplitTunnel: Optional[bool]
     Status: Optional[str]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DnsName=json_data.get("DnsName"),
             DnsServers=json_data.get("DnsServers"),
-            Id=json_data.get("Id"),
             ServerCertificateArn=json_data.get("ServerCertificateArn"),
             SplitTunnel=json_data.get("SplitTunnel"),
             Status=json_data.get("Status"),

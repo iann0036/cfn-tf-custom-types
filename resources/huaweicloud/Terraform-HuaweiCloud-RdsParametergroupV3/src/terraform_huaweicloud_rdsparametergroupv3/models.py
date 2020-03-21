@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ConfigurationParameters: Optional[Sequence["_ConfigurationParameters"]]
     Description: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Values: Optional[Sequence["_Values"]]
     Datastore: Optional[Sequence["_Datastore"]]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ConfigurationParameters=json_data.get("ConfigurationParameters"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Values=json_data.get("Values"),
             Datastore=json_data.get("Datastore"),

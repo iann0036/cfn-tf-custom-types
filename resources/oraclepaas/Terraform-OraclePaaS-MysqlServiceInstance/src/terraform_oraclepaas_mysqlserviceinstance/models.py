@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     BaseReleaseVersion: Optional[str]
     Description: Optional[str]
     EmUrl: Optional[str]
-    Id: Optional[str]
     IpNetwork: Optional[str]
     MeteringFrequency: Optional[str]
     Name: Optional[str]
@@ -72,7 +71,6 @@ class ResourceModel(BaseResourceModel):
             BaseReleaseVersion=json_data.get("BaseReleaseVersion"),
             Description=json_data.get("Description"),
             EmUrl=json_data.get("EmUrl"),
-            Id=json_data.get("Id"),
             IpNetwork=json_data.get("IpNetwork"),
             MeteringFrequency=json_data.get("MeteringFrequency"),
             Name=json_data.get("Name"),

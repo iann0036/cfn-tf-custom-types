@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     CompartmentId: Optional[str]
     Headers: Optional[Sequence["_Headers"]]
     HomeRegion: Optional[str]
-    Id: Optional[str]
     Method: Optional[str]
     Path: Optional[str]
     Port: Optional[float]
@@ -63,7 +62,6 @@ class ResourceModel(BaseResourceModel):
             CompartmentId=json_data.get("CompartmentId"),
             Headers=json_data.get("Headers"),
             HomeRegion=json_data.get("HomeRegion"),
-            Id=json_data.get("Id"),
             Method=json_data.get("Method"),
             Path=json_data.get("Path"),
             Port=json_data.get("Port"),

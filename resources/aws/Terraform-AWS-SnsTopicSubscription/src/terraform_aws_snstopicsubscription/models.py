@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     Endpoint: Optional[str]
     EndpointAutoConfirms: Optional[bool]
     FilterPolicy: Optional[str]
-    Id: Optional[str]
     Protocol: Optional[str]
     RawMessageDelivery: Optional[bool]
     TopicArn: Optional[str]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             Endpoint=json_data.get("Endpoint"),
             EndpointAutoConfirms=json_data.get("EndpointAutoConfirms"),
             FilterPolicy=json_data.get("FilterPolicy"),
-            Id=json_data.get("Id"),
             Protocol=json_data.get("Protocol"),
             RawMessageDelivery=json_data.get("RawMessageDelivery"),
             TopicArn=json_data.get("TopicArn"),

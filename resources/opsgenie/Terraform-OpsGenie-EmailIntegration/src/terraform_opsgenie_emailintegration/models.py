@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     EmailUsername: Optional[str]
     Enabled: Optional[bool]
-    Id: Optional[str]
     IgnoreRespondersFromPayload: Optional[bool]
     Name: Optional[str]
     OwnerTeamId: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             EmailUsername=json_data.get("EmailUsername"),
             Enabled=json_data.get("Enabled"),
-            Id=json_data.get("Id"),
             IgnoreRespondersFromPayload=json_data.get("IgnoreRespondersFromPayload"),
             Name=json_data.get("Name"),
             OwnerTeamId=json_data.get("OwnerTeamId"),

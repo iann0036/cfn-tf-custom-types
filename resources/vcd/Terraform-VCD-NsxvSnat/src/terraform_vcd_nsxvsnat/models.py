@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     EdgeGateway: Optional[str]
     Enabled: Optional[bool]
-    Id: Optional[str]
     LoggingEnabled: Optional[bool]
     NetworkName: Optional[str]
     NetworkType: Optional[str]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             EdgeGateway=json_data.get("EdgeGateway"),
             Enabled=json_data.get("Enabled"),
-            Id=json_data.get("Id"),
             LoggingEnabled=json_data.get("LoggingEnabled"),
             NetworkName=json_data.get("NetworkName"),
             NetworkType=json_data.get("NetworkType"),

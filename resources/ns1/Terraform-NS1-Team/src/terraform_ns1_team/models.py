@@ -54,7 +54,6 @@ class ResourceModel(BaseResourceModel):
     DnsZonesAllow: Optional[Sequence[str]]
     DnsZonesAllowByDefault: Optional[bool]
     DnsZonesDeny: Optional[Sequence[str]]
-    Id: Optional[str]
     IpamManageIpam: Optional[bool]
     IpamViewIpam: Optional[bool]
     MonitoringManageJobs: Optional[bool]
@@ -92,7 +91,6 @@ class ResourceModel(BaseResourceModel):
             DnsZonesAllow=json_data.get("DnsZonesAllow"),
             DnsZonesAllowByDefault=json_data.get("DnsZonesAllowByDefault"),
             DnsZonesDeny=json_data.get("DnsZonesDeny"),
-            Id=json_data.get("Id"),
             IpamManageIpam=json_data.get("IpamManageIpam"),
             IpamViewIpam=json_data.get("IpamViewIpam"),
             MonitoringManageJobs=json_data.get("MonitoringManageJobs"),

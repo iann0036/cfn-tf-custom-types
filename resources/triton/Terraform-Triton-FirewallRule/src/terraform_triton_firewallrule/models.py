@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     Enabled: Optional[bool]
     Global: Optional[bool]
-    Id: Optional[str]
     Rule: Optional[str]
 
     @classmethod
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             Enabled=json_data.get("Enabled"),
             Global=json_data.get("Global"),
-            Id=json_data.get("Id"),
             Rule=json_data.get("Rule"),
         )
 

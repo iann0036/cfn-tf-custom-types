@@ -12,10 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::MarketOrder",
     "Properties" : {
-        "<a href="#components" title="Components">Components</a>" : <i>[ <a href="components.md">Components</a>, ... ]</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#components" title="Components">Components</a>" : <i>[ &lt;a href=&#34;components.md&#34;&gt;Components&lt;/a&gt;, ... ]</i>,
         "<a href="#couponid" title="CouponId">CouponId</a>" : <i>String</i>,
         "<a href="#duration" title="Duration">Duration</a>" : <i>Double</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#packageversion" title="PackageVersion">PackageVersion</a>" : <i>String</i>,
         "<a href="#paytype" title="PayType">PayType</a>" : <i>String</i>,
         "<a href="#pricingcycle" title="PricingCycle">PricingCycle</a>" : <i>String</i>,
@@ -30,11 +30,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::MarketOrder
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#components" title="Components">Components</a>: <i>
-      - <a href="components.md">Components</a></i>
+      - &lt;a href=&#34;components.md&#34;&gt;Components&lt;/a&gt;</i>
     <a href="#couponid" title="CouponId">CouponId</a>: <i>String</i>
     <a href="#duration" title="Duration">Duration</a>: <i>Double</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#packageversion" title="PackageVersion">PackageVersion</a>: <i>String</i>
     <a href="#paytype" title="PayType">PayType</a>: <i>String</i>
     <a href="#pricingcycle" title="PricingCycle">PricingCycle</a>: <i>String</i>
@@ -44,11 +44,21 @@ Properties:
 
 ## Properties
 
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Components
 
 _Required_: No
 
-_Type_: List of <a href="components.md">Components</a>
+_Type_: List of &lt;a href=&#34;components.md&#34;&gt;Components&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -65,14 +75,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -12,6 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Panos::PanoramaApplicationObject",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#abletofiletransfer" title="AbleToFileTransfer">AbleToFileTransfer</a>" : <i>Boolean</i>,
         "<a href="#algdisablecapability" title="AlgDisableCapability">AlgDisableCapability</a>" : <i>String</i>,
         "<a href="#category" title="Category">Category</a>" : <i>String</i>,
@@ -21,7 +22,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#evasivebehavior" title="EvasiveBehavior">EvasiveBehavior</a>" : <i>Boolean</i>,
         "<a href="#excessivebandwidth" title="ExcessiveBandwidth">ExcessiveBandwidth</a>" : <i>Boolean</i>,
         "<a href="#hasknownvulnerability" title="HasKnownVulnerability">HasKnownVulnerability</a>" : <i>Boolean</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#noappidcaching" title="NoAppIdCaching">NoAppIdCaching</a>" : <i>Boolean</i>,
         "<a href="#parentapp" title="ParentApp">ParentApp</a>" : <i>String</i>,
@@ -32,13 +32,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#technology" title="Technology">Technology</a>" : <i>String</i>,
         "<a href="#tunnelsotherapplications" title="TunnelsOtherApplications">TunnelsOtherApplications</a>" : <i>Boolean</i>,
         "<a href="#usedbymalware" title="UsedByMalware">UsedByMalware</a>" : <i>Boolean</i>,
-        "<a href="#defaults" title="Defaults">Defaults</a>" : <i>[ <a href="defaults.md">Defaults</a>, ... ]</i>,
-        "<a href="#scanning" title="Scanning">Scanning</a>" : <i>[ <a href="scanning.md">Scanning</a>, ... ]</i>,
-        "<a href="#timeoutsettings" title="TimeoutSettings">TimeoutSettings</a>" : <i>[ <a href="timeoutsettings.md">TimeoutSettings</a>, ... ]</i>,
-        "<a href="#icmp" title="Icmp">Icmp</a>" : <i>[ <a href="icmp.md">Icmp</a>, ... ]</i>,
-        "<a href="#icmp6" title="Icmp6">Icmp6</a>" : <i>[ <a href="icmp6.md">Icmp6</a>, ... ]</i>,
-        "<a href="#ipprotocol" title="IpProtocol">IpProtocol</a>" : <i>[ <a href="ipprotocol.md">IpProtocol</a>, ... ]</i>,
-        "<a href="#port" title="Port">Port</a>" : <i>[ <a href="port.md">Port</a>, ... ]</i>
+        "<a href="#defaults" title="Defaults">Defaults</a>" : <i>[ &lt;a href=&#34;defaults.md&#34;&gt;Defaults&lt;/a&gt;, ... ]</i>,
+        "<a href="#scanning" title="Scanning">Scanning</a>" : <i>[ &lt;a href=&#34;scanning.md&#34;&gt;Scanning&lt;/a&gt;, ... ]</i>,
+        "<a href="#timeoutsettings" title="TimeoutSettings">TimeoutSettings</a>" : <i>[ &lt;a href=&#34;timeoutsettings.md&#34;&gt;TimeoutSettings&lt;/a&gt;, ... ]</i>,
+        "<a href="#icmp" title="Icmp">Icmp</a>" : <i>[ &lt;a href=&#34;icmp.md&#34;&gt;Icmp&lt;/a&gt;, ... ]</i>,
+        "<a href="#icmp6" title="Icmp6">Icmp6</a>" : <i>[ &lt;a href=&#34;icmp6.md&#34;&gt;Icmp6&lt;/a&gt;, ... ]</i>,
+        "<a href="#ipprotocol" title="IpProtocol">IpProtocol</a>" : <i>[ &lt;a href=&#34;ipprotocol.md&#34;&gt;IpProtocol&lt;/a&gt;, ... ]</i>,
+        "<a href="#port" title="Port">Port</a>" : <i>[ &lt;a href=&#34;port.md&#34;&gt;Port&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -48,6 +48,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Panos::PanoramaApplicationObject
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#abletofiletransfer" title="AbleToFileTransfer">AbleToFileTransfer</a>: <i>Boolean</i>
     <a href="#algdisablecapability" title="AlgDisableCapability">AlgDisableCapability</a>: <i>String</i>
     <a href="#category" title="Category">Category</a>: <i>String</i>
@@ -57,7 +58,6 @@ Properties:
     <a href="#evasivebehavior" title="EvasiveBehavior">EvasiveBehavior</a>: <i>Boolean</i>
     <a href="#excessivebandwidth" title="ExcessiveBandwidth">ExcessiveBandwidth</a>: <i>Boolean</i>
     <a href="#hasknownvulnerability" title="HasKnownVulnerability">HasKnownVulnerability</a>: <i>Boolean</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#noappidcaching" title="NoAppIdCaching">NoAppIdCaching</a>: <i>Boolean</i>
     <a href="#parentapp" title="ParentApp">ParentApp</a>: <i>String</i>
@@ -69,22 +69,32 @@ Properties:
     <a href="#tunnelsotherapplications" title="TunnelsOtherApplications">TunnelsOtherApplications</a>: <i>Boolean</i>
     <a href="#usedbymalware" title="UsedByMalware">UsedByMalware</a>: <i>Boolean</i>
     <a href="#defaults" title="Defaults">Defaults</a>: <i>
-      - <a href="defaults.md">Defaults</a></i>
+      - &lt;a href=&#34;defaults.md&#34;&gt;Defaults&lt;/a&gt;</i>
     <a href="#scanning" title="Scanning">Scanning</a>: <i>
-      - <a href="scanning.md">Scanning</a></i>
+      - &lt;a href=&#34;scanning.md&#34;&gt;Scanning&lt;/a&gt;</i>
     <a href="#timeoutsettings" title="TimeoutSettings">TimeoutSettings</a>: <i>
-      - <a href="timeoutsettings.md">TimeoutSettings</a></i>
+      - &lt;a href=&#34;timeoutsettings.md&#34;&gt;TimeoutSettings&lt;/a&gt;</i>
     <a href="#icmp" title="Icmp">Icmp</a>: <i>
-      - <a href="icmp.md">Icmp</a></i>
+      - &lt;a href=&#34;icmp.md&#34;&gt;Icmp&lt;/a&gt;</i>
     <a href="#icmp6" title="Icmp6">Icmp6</a>: <i>
-      - <a href="icmp6.md">Icmp6</a></i>
+      - &lt;a href=&#34;icmp6.md&#34;&gt;Icmp6&lt;/a&gt;</i>
     <a href="#ipprotocol" title="IpProtocol">IpProtocol</a>: <i>
-      - <a href="ipprotocol.md">IpProtocol</a></i>
+      - &lt;a href=&#34;ipprotocol.md&#34;&gt;IpProtocol&lt;/a&gt;</i>
     <a href="#port" title="Port">Port</a>: <i>
-      - <a href="port.md">Port</a></i>
+      - &lt;a href=&#34;port.md&#34;&gt;Port&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AbleToFileTransfer
 
@@ -155,14 +165,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -250,7 +252,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="defaults.md">Defaults</a>
+_Type_: List of &lt;a href=&#34;defaults.md&#34;&gt;Defaults&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -258,7 +260,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="scanning.md">Scanning</a>
+_Type_: List of &lt;a href=&#34;scanning.md&#34;&gt;Scanning&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -266,7 +268,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="timeoutsettings.md">TimeoutSettings</a>
+_Type_: List of &lt;a href=&#34;timeoutsettings.md&#34;&gt;TimeoutSettings&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -274,7 +276,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="icmp.md">Icmp</a>
+_Type_: List of &lt;a href=&#34;icmp.md&#34;&gt;Icmp&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -282,7 +284,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="icmp6.md">Icmp6</a>
+_Type_: List of &lt;a href=&#34;icmp6.md&#34;&gt;Icmp6&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -290,7 +292,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="ipprotocol.md">IpProtocol</a>
+_Type_: List of &lt;a href=&#34;ipprotocol.md&#34;&gt;IpProtocol&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -298,7 +300,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="port.md">Port</a>
+_Type_: List of &lt;a href=&#34;port.md&#34;&gt;Port&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

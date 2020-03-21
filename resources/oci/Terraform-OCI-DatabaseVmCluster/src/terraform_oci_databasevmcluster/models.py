@@ -45,7 +45,6 @@ class ResourceModel(BaseResourceModel):
     ExadataInfrastructureId: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
     GiVersion: Optional[str]
-    Id: Optional[str]
     IsLocalBackupEnabled: Optional[bool]
     IsSparseDiskgroupEnabled: Optional[bool]
     LicenseModel: Optional[str]
@@ -76,7 +75,6 @@ class ResourceModel(BaseResourceModel):
             ExadataInfrastructureId=json_data.get("ExadataInfrastructureId"),
             FreeformTags=json_data.get("FreeformTags"),
             GiVersion=json_data.get("GiVersion"),
-            Id=json_data.get("Id"),
             IsLocalBackupEnabled=json_data.get("IsLocalBackupEnabled"),
             IsSparseDiskgroupEnabled=json_data.get("IsSparseDiskgroupEnabled"),
             LicenseModel=json_data.get("LicenseModel"),

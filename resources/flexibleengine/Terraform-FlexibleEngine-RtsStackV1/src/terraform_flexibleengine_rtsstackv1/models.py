@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     DisableRollback: Optional[bool]
     Environment: Optional[str]
     Files: Optional[Sequence["_Files"]]
-    Id: Optional[str]
     Name: Optional[str]
     NotificationTopics: Optional[Sequence[str]]
     Outputs: Optional[Sequence["_Outputs"]]
@@ -66,7 +65,6 @@ class ResourceModel(BaseResourceModel):
             DisableRollback=json_data.get("DisableRollback"),
             Environment=json_data.get("Environment"),
             Files=json_data.get("Files"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             NotificationTopics=json_data.get("NotificationTopics"),
             Outputs=json_data.get("Outputs"),

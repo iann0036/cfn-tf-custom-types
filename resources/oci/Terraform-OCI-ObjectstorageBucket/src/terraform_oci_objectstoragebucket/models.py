@@ -45,7 +45,6 @@ class ResourceModel(BaseResourceModel):
     DefinedTags: Optional[Sequence["_DefinedTags"]]
     Etag: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     KmsKeyId: Optional[str]
     Metadata: Optional[Sequence["_Metadata"]]
     Name: Optional[str]
@@ -74,7 +73,6 @@ class ResourceModel(BaseResourceModel):
             DefinedTags=json_data.get("DefinedTags"),
             Etag=json_data.get("Etag"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             KmsKeyId=json_data.get("KmsKeyId"),
             Metadata=json_data.get("Metadata"),
             Name=json_data.get("Name"),

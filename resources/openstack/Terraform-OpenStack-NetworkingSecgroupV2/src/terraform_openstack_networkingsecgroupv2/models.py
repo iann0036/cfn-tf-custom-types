@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AllTags: Optional[Sequence[str]]
     DeleteDefaultRules: Optional[bool]
     Description: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Region: Optional[str]
     Tags: Optional[Sequence[str]]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             AllTags=json_data.get("AllTags"),
             DeleteDefaultRules=json_data.get("DeleteDefaultRules"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Region=json_data.get("Region"),
             Tags=json_data.get("Tags"),

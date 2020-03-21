@@ -17,8 +17,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#statuscode" title="StatusCode">StatusCode</a>" : <i>Double</i>,
     "<a href="#suffix" title="Suffix">Suffix</a>" : <i>String</i>,
     "<a href="#value" title="Value">Value</a>" : <i>String</i>,
-    "<a href="#conditions" title="Conditions">Conditions</a>" : <i>[ <a href="items-conditions.md">Conditions</a>, ... ]</i>,
-    "<a href="#redirecturi" title="RedirectUri">RedirectUri</a>" : <i>[ <a href="items-redirecturi.md">RedirectUri</a>, ... ]</i>
+    "<a href="#conditions" title="Conditions">Conditions</a>" : <i>[ &lt;a href=&#34;items-conditions.md&#34;&gt;Conditions&lt;/a&gt;, ... ]</i>,
+    "<a href="#redirecturi" title="RedirectUri">RedirectUri</a>" : <i>[ &lt;a href=&#34;items-redirecturi.md&#34;&gt;RedirectUri&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -36,9 +36,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#suffix" title="Suffix">Suffix</a>: <i>String</i>
 <a href="#value" title="Value">Value</a>: <i>String</i>
 <a href="#conditions" title="Conditions">Conditions</a>: <i>
-      - <a href="items-conditions.md">Conditions</a></i>
+      - &lt;a href=&#34;items-conditions.md&#34;&gt;Conditions&lt;/a&gt;</i>
 <a href="#redirecturi" title="RedirectUri">RedirectUri</a>: <i>
-      - <a href="items-redirecturi.md">RedirectUri</a></i>
+      - &lt;a href=&#34;items-redirecturi.md&#34;&gt;RedirectUri&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -46,7 +46,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Action
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -54,7 +53,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### AllowedMethods
 
 _Required_: No
-
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -62,7 +60,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Description
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -70,7 +67,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Header
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -78,7 +74,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Prefix
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -86,7 +81,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ResponseCode
 
 _Required_: No
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -94,7 +88,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### StatusCode
 
 _Required_: No
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -102,7 +95,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Suffix
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -110,7 +102,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Value
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -118,16 +109,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Conditions
 
 _Required_: No
-
-_Type_: List of <a href="items-conditions.md">Conditions</a>
+_Type_: List of &lt;a href=&#34;items-conditions.md&#34;&gt;Conditions&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RedirectUri
 
 _Required_: No
-
-_Type_: List of <a href="items-redirecturi.md">RedirectUri</a>
+_Type_: List of &lt;a href=&#34;items-redirecturi.md&#34;&gt;RedirectUri&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

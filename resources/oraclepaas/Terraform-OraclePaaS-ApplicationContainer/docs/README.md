@@ -12,6 +12,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OraclePaaS::ApplicationContainer",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#appurl" title="AppUrl">AppUrl</a>" : <i>String</i>,
         "<a href="#archiveurl" title="ArchiveUrl">ArchiveUrl</a>" : <i>String</i>,
         "<a href="#authtype" title="AuthType">AuthType</a>" : <i>String</i>,
         "<a href="#availabilitydomain" title="AvailabilityDomain">AvailabilityDomain</a>" : <i>[ String, ... ]</i>,
@@ -19,21 +21,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#gitpassword" title="GitPassword">GitPassword</a>" : <i>String</i>,
         "<a href="#gitrepository" title="GitRepository">GitRepository</a>" : <i>String</i>,
         "<a href="#gitusername" title="GitUsername">GitUsername</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#loadbalancersubnets" title="LoadBalancerSubnets">LoadBalancerSubnets</a>" : <i>[ String, ... ]</i>,
         "<a href="#manifestfile" title="ManifestFile">ManifestFile</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#notes" title="Notes">Notes</a>" : <i>String</i>,
         "<a href="#notificationemail" title="NotificationEmail">NotificationEmail</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
-        "<a href="#runtime" title="Runtime">Runtime</a>" : <i>[ <a href="runtime.md">Runtime</a>, ... ]</i>,
+        "<a href="#runtime" title="Runtime">Runtime</a>" : <i>[ &lt;a href=&#34;runtime.md&#34;&gt;Runtime&lt;/a&gt;, ... ]</i>,
         "<a href="#subscriptiontype" title="SubscriptionType">SubscriptionType</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
-        "<a href="#deployment" title="Deployment">Deployment</a>" : <i>[ <a href="deployment.md">Deployment</a>, ... ]</i>,
-        "<a href="#manifest" title="Manifest">Manifest</a>" : <i>[ <a href="manifest.md">Manifest</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
-        "<a href="#services" title="Services">Services</a>" : <i>[ <a href="services.md">Services</a>, ... ]</i>,
-        "<a href="#release" title="Release">Release</a>" : <i>[ <a href="release.md">Release</a>, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#weburl" title="WebUrl">WebUrl</a>" : <i>String</i>,
+        "<a href="#deployment" title="Deployment">Deployment</a>" : <i>[ &lt;a href=&#34;deployment.md&#34;&gt;Deployment&lt;/a&gt;, ... ]</i>,
+        "<a href="#manifest" title="Manifest">Manifest</a>" : <i>[ &lt;a href=&#34;manifest.md&#34;&gt;Manifest&lt;/a&gt;, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
+        "<a href="#services" title="Services">Services</a>" : <i>[ &lt;a href=&#34;services.md&#34;&gt;Services&lt;/a&gt;, ... ]</i>,
+        "<a href="#release" title="Release">Release</a>" : <i>[ &lt;a href=&#34;release.md&#34;&gt;Release&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -43,6 +45,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OraclePaaS::ApplicationContainer
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#appurl" title="AppUrl">AppUrl</a>: <i>String</i>
     <a href="#archiveurl" title="ArchiveUrl">ArchiveUrl</a>: <i>String</i>
     <a href="#authtype" title="AuthType">AuthType</a>: <i>String</i>
     <a href="#availabilitydomain" title="AvailabilityDomain">AvailabilityDomain</a>: <i>
@@ -51,7 +55,6 @@ Properties:
     <a href="#gitpassword" title="GitPassword">GitPassword</a>: <i>String</i>
     <a href="#gitrepository" title="GitRepository">GitRepository</a>: <i>String</i>
     <a href="#gitusername" title="GitUsername">GitUsername</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#loadbalancersubnets" title="LoadBalancerSubnets">LoadBalancerSubnets</a>: <i>
       - String</i>
     <a href="#manifestfile" title="ManifestFile">ManifestFile</a>: <i>String</i>
@@ -60,22 +63,41 @@ Properties:
     <a href="#notificationemail" title="NotificationEmail">NotificationEmail</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
     <a href="#runtime" title="Runtime">Runtime</a>: <i>
-      - <a href="runtime.md">Runtime</a></i>
+      - &lt;a href=&#34;runtime.md&#34;&gt;Runtime&lt;/a&gt;</i>
     <a href="#subscriptiontype" title="SubscriptionType">SubscriptionType</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+    <a href="#weburl" title="WebUrl">WebUrl</a>: <i>String</i>
     <a href="#deployment" title="Deployment">Deployment</a>: <i>
-      - <a href="deployment.md">Deployment</a></i>
+      - &lt;a href=&#34;deployment.md&#34;&gt;Deployment&lt;/a&gt;</i>
     <a href="#manifest" title="Manifest">Manifest</a>: <i>
-      - <a href="manifest.md">Manifest</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;manifest.md&#34;&gt;Manifest&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     <a href="#services" title="Services">Services</a>: <i>
-      - <a href="services.md">Services</a></i>
+      - &lt;a href=&#34;services.md&#34;&gt;Services&lt;/a&gt;</i>
     <a href="#release" title="Release">Release</a>: <i>
-      - <a href="release.md">Release</a></i>
+      - &lt;a href=&#34;release.md&#34;&gt;Release&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### AppUrl
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ArchiveUrl
 
@@ -126,14 +148,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GitUsername
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 
@@ -193,7 +207,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="runtime.md">Runtime</a>
+_Type_: List of &lt;a href=&#34;runtime.md&#34;&gt;Runtime&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -209,7 +223,15 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### WebUrl
+
+_Required_: No
+
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -217,7 +239,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="deployment.md">Deployment</a>
+_Type_: List of &lt;a href=&#34;deployment.md&#34;&gt;Deployment&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -225,7 +247,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="manifest.md">Manifest</a>
+_Type_: List of &lt;a href=&#34;manifest.md&#34;&gt;Manifest&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -233,7 +255,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -241,7 +263,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="services.md">Services</a>
+_Type_: List of &lt;a href=&#34;services.md&#34;&gt;Services&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -249,7 +271,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="release.md">Release</a>
+_Type_: List of &lt;a href=&#34;release.md&#34;&gt;Release&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -271,9 +293,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AppUrl
 
-Returns the <code>AppUrl</code> value.
+Returns the &lt;code&gt;AppUrl&lt;/code&gt; value.
 
 #### WebUrl
 
-Returns the <code>WebUrl</code> value.
+Returns the &lt;code&gt;WebUrl&lt;/code&gt; value.
 

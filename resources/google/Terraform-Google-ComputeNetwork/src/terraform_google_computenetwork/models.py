@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     DeleteDefaultRoutesOnCreate: Optional[bool]
     Description: Optional[str]
     GatewayIpv4: Optional[str]
-    Id: Optional[str]
     Ipv4Range: Optional[str]
     Name: Optional[str]
     Project: Optional[str]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             DeleteDefaultRoutesOnCreate=json_data.get("DeleteDefaultRoutesOnCreate"),
             Description=json_data.get("Description"),
             GatewayIpv4=json_data.get("GatewayIpv4"),
-            Id=json_data.get("Id"),
             Ipv4Range=json_data.get("Ipv4Range"),
             Name=json_data.get("Name"),
             Project=json_data.get("Project"),

@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Address: Optional[str]
     Datacenter: Optional[str]
-    Id: Optional[str]
     Node: Optional[str]
     Token: Optional[str]
     Service: Optional[Sequence["_Service"]]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Address=json_data.get("Address"),
             Datacenter=json_data.get("Datacenter"),
-            Id=json_data.get("Id"),
             Node=json_data.get("Node"),
             Token=json_data.get("Token"),
             Service=json_data.get("Service"),

@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AppId: Optional[str]
-    Id: Optional[str]
     SensitiveVars: Optional[Sequence["_SensitiveVars"]]
     Vars: Optional[Sequence["_Vars"]]
 
@@ -51,7 +50,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             AppId=json_data.get("AppId"),
-            Id=json_data.get("Id"),
             SensitiveVars=json_data.get("SensitiveVars"),
             Vars=json_data.get("Vars"),
         )

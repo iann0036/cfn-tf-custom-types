@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     CidrBlocks: Optional[Sequence[str]]
     Description: Optional[str]
     FromPort: Optional[float]
-    Id: Optional[str]
     Ipv6CidrBlocks: Optional[Sequence[str]]
     PrefixListIds: Optional[Sequence[str]]
     Protocol: Optional[str]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             CidrBlocks=json_data.get("CidrBlocks"),
             Description=json_data.get("Description"),
             FromPort=json_data.get("FromPort"),
-            Id=json_data.get("Id"),
             Ipv6CidrBlocks=json_data.get("Ipv6CidrBlocks"),
             PrefixListIds=json_data.get("PrefixListIds"),
             Protocol=json_data.get("Protocol"),

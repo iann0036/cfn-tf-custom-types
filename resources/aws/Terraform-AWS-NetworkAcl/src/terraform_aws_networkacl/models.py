@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Egress: Optional[Sequence["_Egress"]]
-    Id: Optional[str]
     Ingress: Optional[Sequence["_Ingress"]]
     OwnerId: Optional[str]
     SubnetId: Optional[str]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Egress=json_data.get("Egress"),
-            Id=json_data.get("Id"),
             Ingress=json_data.get("Ingress"),
             OwnerId=json_data.get("OwnerId"),
             SubnetId=json_data.get("SubnetId"),

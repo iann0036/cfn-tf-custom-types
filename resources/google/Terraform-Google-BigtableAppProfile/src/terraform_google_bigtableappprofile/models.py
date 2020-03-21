@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AppProfileId: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     IgnoreWarnings: Optional[bool]
     Instance: Optional[str]
     MultiClusterRoutingUseAny: Optional[bool]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AppProfileId=json_data.get("AppProfileId"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             IgnoreWarnings=json_data.get("IgnoreWarnings"),
             Instance=json_data.get("Instance"),
             MultiClusterRoutingUseAny=json_data.get("MultiClusterRoutingUseAny"),

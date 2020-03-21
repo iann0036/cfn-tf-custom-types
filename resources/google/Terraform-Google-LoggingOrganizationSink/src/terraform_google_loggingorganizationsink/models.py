@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Destination: Optional[str]
     Filter: Optional[str]
-    Id: Optional[str]
     IncludeChildren: Optional[bool]
     Name: Optional[str]
     OrgId: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Destination=json_data.get("Destination"),
             Filter=json_data.get("Filter"),
-            Id=json_data.get("Id"),
             IncludeChildren=json_data.get("IncludeChildren"),
             Name=json_data.get("Name"),
             OrgId=json_data.get("OrgId"),

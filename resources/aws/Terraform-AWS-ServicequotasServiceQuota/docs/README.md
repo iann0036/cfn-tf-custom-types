@@ -12,9 +12,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::ServicequotasServiceQuota",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#adjustable" title="Adjustable">Adjustable</a>" : <i>Boolean</i>,
+        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
+        "<a href="#defaultvalue" title="DefaultValue">DefaultValue</a>" : <i>Double</i>,
         "<a href="#quotacode" title="QuotaCode">QuotaCode</a>" : <i>String</i>,
+        "<a href="#quotaname" title="QuotaName">QuotaName</a>" : <i>String</i>,
+        "<a href="#requestid" title="RequestId">RequestId</a>" : <i>String</i>,
+        "<a href="#requeststatus" title="RequestStatus">RequestStatus</a>" : <i>String</i>,
         "<a href="#servicecode" title="ServiceCode">ServiceCode</a>" : <i>String</i>,
+        "<a href="#servicename" title="ServiceName">ServiceName</a>" : <i>String</i>,
         "<a href="#value" title="Value">Value</a>" : <i>Double</i>
     }
 }
@@ -25,19 +32,52 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::ServicequotasServiceQuota
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#adjustable" title="Adjustable">Adjustable</a>: <i>Boolean</i>
+    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
+    <a href="#defaultvalue" title="DefaultValue">DefaultValue</a>: <i>Double</i>
     <a href="#quotacode" title="QuotaCode">QuotaCode</a>: <i>String</i>
+    <a href="#quotaname" title="QuotaName">QuotaName</a>: <i>String</i>
+    <a href="#requestid" title="RequestId">RequestId</a>: <i>String</i>
+    <a href="#requeststatus" title="RequestStatus">RequestStatus</a>: <i>String</i>
     <a href="#servicecode" title="ServiceCode">ServiceCode</a>: <i>String</i>
+    <a href="#servicename" title="ServiceName">ServiceName</a>: <i>String</i>
     <a href="#value" title="Value">Value</a>: <i>Double</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
 _Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Adjustable
+
+_Required_: No
+
+_Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Arn
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### DefaultValue
+
+_Required_: No
+
+_Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -49,9 +89,41 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### QuotaName
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### RequestId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### RequestStatus
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### ServiceCode
 
 _Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ServiceName
+
+_Required_: No
 
 _Type_: String
 
@@ -83,29 +155,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Adjustable
 
-Returns the <code>Adjustable</code> value.
+Returns the &lt;code&gt;Adjustable&lt;/code&gt; value.
 
 #### Arn
 
-Returns the <code>Arn</code> value.
+Returns the &lt;code&gt;Arn&lt;/code&gt; value.
 
 #### DefaultValue
 
-Returns the <code>DefaultValue</code> value.
+Returns the &lt;code&gt;DefaultValue&lt;/code&gt; value.
 
 #### QuotaName
 
-Returns the <code>QuotaName</code> value.
+Returns the &lt;code&gt;QuotaName&lt;/code&gt; value.
 
 #### RequestId
 
-Returns the <code>RequestId</code> value.
+Returns the &lt;code&gt;RequestId&lt;/code&gt; value.
 
 #### RequestStatus
 
-Returns the <code>RequestStatus</code> value.
+Returns the &lt;code&gt;RequestStatus&lt;/code&gt; value.
 
 #### ServiceName
 
-Returns the <code>ServiceName</code> value.
+Returns the &lt;code&gt;ServiceName&lt;/code&gt; value.
 

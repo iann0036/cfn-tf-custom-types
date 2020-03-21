@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     DefinedTags: Optional[Sequence["_DefinedTags"]]
     Fingerprint: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     InstanceId: Optional[str]
     PublicKey: Optional[str]
     State: Optional[str]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             DefinedTags=json_data.get("DefinedTags"),
             Fingerprint=json_data.get("Fingerprint"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
             PublicKey=json_data.get("PublicKey"),
             State=json_data.get("State"),

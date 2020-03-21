@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     DeleteProtectionValidation: Optional[bool]
     Domain: Optional[str]
     FrontendPort: Optional[float]
-    Id: Optional[str]
     LoadBalancerId: Optional[str]
     ServerCertificateId: Optional[str]
 
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             DeleteProtectionValidation=json_data.get("DeleteProtectionValidation"),
             Domain=json_data.get("Domain"),
             FrontendPort=json_data.get("FrontendPort"),
-            Id=json_data.get("Id"),
             LoadBalancerId=json_data.get("LoadBalancerId"),
             ServerCertificateId=json_data.get("ServerCertificateId"),
         )

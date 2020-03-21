@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     EnableLogsSample: Optional[bool]
     EscalationMessage: Optional[str]
     EvaluationDelay: Optional[float]
-    Id: Optional[str]
     IncludeTags: Optional[bool]
     Locked: Optional[bool]
     Message: Optional[str]
@@ -70,7 +69,6 @@ class ResourceModel(BaseResourceModel):
             EnableLogsSample=json_data.get("EnableLogsSample"),
             EscalationMessage=json_data.get("EscalationMessage"),
             EvaluationDelay=json_data.get("EvaluationDelay"),
-            Id=json_data.get("Id"),
             IncludeTags=json_data.get("IncludeTags"),
             Locked=json_data.get("Locked"),
             Message=json_data.get("Message"),

@@ -12,8 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Scaleway::InstanceIp",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#address" title="Address">Address</a>" : <i>String</i>,
         "<a href="#organizationid" title="OrganizationId">OrganizationId</a>" : <i>String</i>,
+        "<a href="#reverse" title="Reverse">Reverse</a>" : <i>String</i>,
         "<a href="#serverid" title="ServerId">ServerId</a>" : <i>String</i>,
         "<a href="#zone" title="Zone">Zone</a>" : <i>String</i>
     }
@@ -25,15 +27,27 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Scaleway::InstanceIp
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#address" title="Address">Address</a>: <i>String</i>
     <a href="#organizationid" title="OrganizationId">OrganizationId</a>: <i>String</i>
+    <a href="#reverse" title="Reverse">Reverse</a>: <i>String</i>
     <a href="#serverid" title="ServerId">ServerId</a>: <i>String</i>
     <a href="#zone" title="Zone">Zone</a>: <i>String</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Address
 
 _Required_: No
 
@@ -42,6 +56,14 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OrganizationId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Reverse
 
 _Required_: No
 
@@ -83,9 +105,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Address
 
-Returns the <code>Address</code> value.
+Returns the &lt;code&gt;Address&lt;/code&gt; value.
 
 #### Reverse
 
-Returns the <code>Reverse</code> value.
+Returns the &lt;code&gt;Reverse&lt;/code&gt; value.
 

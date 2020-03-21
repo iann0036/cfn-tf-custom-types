@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     ContainerName: Optional[str]
     Encoding: Optional[str]
     FileNameFormat: Optional[str]
-    Id: Optional[str]
     IothubName: Optional[str]
     MaxChunkSizeInBytes: Optional[float]
     Name: Optional[str]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             ContainerName=json_data.get("ContainerName"),
             Encoding=json_data.get("Encoding"),
             FileNameFormat=json_data.get("FileNameFormat"),
-            Id=json_data.get("Id"),
             IothubName=json_data.get("IothubName"),
             MaxChunkSizeInBytes=json_data.get("MaxChunkSizeInBytes"),
             Name=json_data.get("Name"),

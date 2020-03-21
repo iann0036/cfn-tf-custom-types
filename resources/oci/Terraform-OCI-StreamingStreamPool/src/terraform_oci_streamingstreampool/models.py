@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     CompartmentId: Optional[str]
     DefinedTags: Optional[Sequence["_DefinedTags"]]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     LifecycleStateDetails: Optional[str]
     Name: Optional[str]
     State: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             CompartmentId=json_data.get("CompartmentId"),
             DefinedTags=json_data.get("DefinedTags"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             LifecycleStateDetails=json_data.get("LifecycleStateDetails"),
             Name=json_data.get("Name"),
             State=json_data.get("State"),

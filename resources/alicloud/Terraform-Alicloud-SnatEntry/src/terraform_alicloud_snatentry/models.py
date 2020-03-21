@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     SnatEntryId: Optional[str]
     SnatEntryName: Optional[str]
     SnatIp: Optional[str]
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             SnatEntryId=json_data.get("SnatEntryId"),
             SnatEntryName=json_data.get("SnatEntryName"),
             SnatIp=json_data.get("SnatIp"),

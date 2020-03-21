@@ -1,6 +1,6 @@
 # Terraform::Panos::PanoramaHttpServerProfile
 
-An example resource schema demonstrating some basic constructs and validation rules.
+CloudFormation equivalent of panos_panorama_http_server_profile
 
 ## Syntax
 
@@ -12,14 +12,30 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Panos::PanoramaHttpServerProfile",
     "Properties" : {
-        "<a href="#title" title="Title">Title</a>" : <i>String</i>,
-        "<a href="#coversheetincluded" title="CoverSheetIncluded">CoverSheetIncluded</a>" : <i>Boolean</i>,
-        "<a href="#duedate" title="DueDate">DueDate</a>" : <i>String</i>,
-        "<a href="#approvaldate" title="ApprovalDate">ApprovalDate</a>" : <i>String</i>,
-        "<a href="#memo" title="Memo">Memo</a>" : <i>&lt;a href=&#34;secondcopyofmemo.md&#34;&gt;SecondCopyOfMemo&lt;/a&gt;</i>,
-        "<a href="#secondcopyofmemo" title="SecondCopyOfMemo">SecondCopyOfMemo</a>" : <i>&lt;a href=&#34;secondcopyofmemo.md&#34;&gt;SecondCopyOfMemo&lt;/a&gt;</i>,
-        "<a href="#testcode" title="TestCode">TestCode</a>" : <i>String</i>,
-        "<a href="#authors" title="Authors">Authors</a>" : <i>[ String, ... ]</i>
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#devicegroup" title="DeviceGroup">DeviceGroup</a>" : <i>String</i>,
+        "<a href="#name" title="Name">Name</a>" : <i>String</i>,
+        "<a href="#passwordenc" title="PasswordEnc">PasswordEnc</a>" : <i>[ &lt;a href=&#34;passwordenc.md&#34;&gt;PasswordEnc&lt;/a&gt;, ... ]</i>,
+        "<a href="#passwordraw" title="PasswordRaw">PasswordRaw</a>" : <i>[ &lt;a href=&#34;passwordraw.md&#34;&gt;PasswordRaw&lt;/a&gt;, ... ]</i>,
+        "<a href="#tagregistration" title="TagRegistration">TagRegistration</a>" : <i>Boolean</i>,
+        "<a href="#template" title="Template">Template</a>" : <i>String</i>,
+        "<a href="#templatestack" title="TemplateStack">TemplateStack</a>" : <i>String</i>,
+        "<a href="#vsys" title="Vsys">Vsys</a>" : <i>String</i>,
+        "<a href="#authformat" title="AuthFormat">AuthFormat</a>" : <i>[ &lt;a href=&#34;authformat.md&#34;&gt;AuthFormat&lt;/a&gt;, ... ]</i>,
+        "<a href="#configformat" title="ConfigFormat">ConfigFormat</a>" : <i>[ &lt;a href=&#34;configformat.md&#34;&gt;ConfigFormat&lt;/a&gt;, ... ]</i>,
+        "<a href="#dataformat" title="DataFormat">DataFormat</a>" : <i>[ &lt;a href=&#34;dataformat.md&#34;&gt;DataFormat&lt;/a&gt;, ... ]</i>,
+        "<a href="#gtpformat" title="GtpFormat">GtpFormat</a>" : <i>[ &lt;a href=&#34;gtpformat.md&#34;&gt;GtpFormat&lt;/a&gt;, ... ]</i>,
+        "<a href="#hipmatchformat" title="HipMatchFormat">HipMatchFormat</a>" : <i>[ &lt;a href=&#34;hipmatchformat.md&#34;&gt;HipMatchFormat&lt;/a&gt;, ... ]</i>,
+        "<a href="#httpserver" title="HttpServer">HttpServer</a>" : <i>[ &lt;a href=&#34;httpserver.md&#34;&gt;HttpServer&lt;/a&gt;, ... ]</i>,
+        "<a href="#iptagformat" title="IptagFormat">IptagFormat</a>" : <i>[ &lt;a href=&#34;iptagformat.md&#34;&gt;IptagFormat&lt;/a&gt;, ... ]</i>,
+        "<a href="#sctpformat" title="SctpFormat">SctpFormat</a>" : <i>[ &lt;a href=&#34;sctpformat.md&#34;&gt;SctpFormat&lt;/a&gt;, ... ]</i>,
+        "<a href="#systemformat" title="SystemFormat">SystemFormat</a>" : <i>[ &lt;a href=&#34;systemformat.md&#34;&gt;SystemFormat&lt;/a&gt;, ... ]</i>,
+        "<a href="#threatformat" title="ThreatFormat">ThreatFormat</a>" : <i>[ &lt;a href=&#34;threatformat.md&#34;&gt;ThreatFormat&lt;/a&gt;, ... ]</i>,
+        "<a href="#trafficformat" title="TrafficFormat">TrafficFormat</a>" : <i>[ &lt;a href=&#34;trafficformat.md&#34;&gt;TrafficFormat&lt;/a&gt;, ... ]</i>,
+        "<a href="#tunnelformat" title="TunnelFormat">TunnelFormat</a>" : <i>[ &lt;a href=&#34;tunnelformat.md&#34;&gt;TunnelFormat&lt;/a&gt;, ... ]</i>,
+        "<a href="#urlformat" title="UrlFormat">UrlFormat</a>" : <i>[ &lt;a href=&#34;urlformat.md&#34;&gt;UrlFormat&lt;/a&gt;, ... ]</i>,
+        "<a href="#useridformat" title="UserIdFormat">UserIdFormat</a>" : <i>[ &lt;a href=&#34;useridformat.md&#34;&gt;UserIdFormat&lt;/a&gt;, ... ]</i>,
+        "<a href="#wildfireformat" title="WildfireFormat">WildfireFormat</a>" : <i>[ &lt;a href=&#34;wildfireformat.md&#34;&gt;WildfireFormat&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -29,36 +45,94 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Panos::PanoramaHttpServerProfile
 Properties:
-    <a href="#title" title="Title">Title</a>: <i>String</i>
-    <a href="#coversheetincluded" title="CoverSheetIncluded">CoverSheetIncluded</a>: <i>Boolean</i>
-    <a href="#duedate" title="DueDate">DueDate</a>: <i>String</i>
-    <a href="#approvaldate" title="ApprovalDate">ApprovalDate</a>: <i>String</i>
-    <a href="#memo" title="Memo">Memo</a>: <i>&lt;a href=&#34;secondcopyofmemo.md&#34;&gt;SecondCopyOfMemo&lt;/a&gt;</i>
-    <a href="#secondcopyofmemo" title="SecondCopyOfMemo">SecondCopyOfMemo</a>: <i>&lt;a href=&#34;secondcopyofmemo.md&#34;&gt;SecondCopyOfMemo&lt;/a&gt;</i>
-    <a href="#testcode" title="TestCode">TestCode</a>: <i>String</i>
-    <a href="#authors" title="Authors">Authors</a>: <i>
-      - String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#devicegroup" title="DeviceGroup">DeviceGroup</a>: <i>String</i>
+    <a href="#name" title="Name">Name</a>: <i>String</i>
+    <a href="#passwordenc" title="PasswordEnc">PasswordEnc</a>: <i>
+      - &lt;a href=&#34;passwordenc.md&#34;&gt;PasswordEnc&lt;/a&gt;</i>
+    <a href="#passwordraw" title="PasswordRaw">PasswordRaw</a>: <i>
+      - &lt;a href=&#34;passwordraw.md&#34;&gt;PasswordRaw&lt;/a&gt;</i>
+    <a href="#tagregistration" title="TagRegistration">TagRegistration</a>: <i>Boolean</i>
+    <a href="#template" title="Template">Template</a>: <i>String</i>
+    <a href="#templatestack" title="TemplateStack">TemplateStack</a>: <i>String</i>
+    <a href="#vsys" title="Vsys">Vsys</a>: <i>String</i>
+    <a href="#authformat" title="AuthFormat">AuthFormat</a>: <i>
+      - &lt;a href=&#34;authformat.md&#34;&gt;AuthFormat&lt;/a&gt;</i>
+    <a href="#configformat" title="ConfigFormat">ConfigFormat</a>: <i>
+      - &lt;a href=&#34;configformat.md&#34;&gt;ConfigFormat&lt;/a&gt;</i>
+    <a href="#dataformat" title="DataFormat">DataFormat</a>: <i>
+      - &lt;a href=&#34;dataformat.md&#34;&gt;DataFormat&lt;/a&gt;</i>
+    <a href="#gtpformat" title="GtpFormat">GtpFormat</a>: <i>
+      - &lt;a href=&#34;gtpformat.md&#34;&gt;GtpFormat&lt;/a&gt;</i>
+    <a href="#hipmatchformat" title="HipMatchFormat">HipMatchFormat</a>: <i>
+      - &lt;a href=&#34;hipmatchformat.md&#34;&gt;HipMatchFormat&lt;/a&gt;</i>
+    <a href="#httpserver" title="HttpServer">HttpServer</a>: <i>
+      - &lt;a href=&#34;httpserver.md&#34;&gt;HttpServer&lt;/a&gt;</i>
+    <a href="#iptagformat" title="IptagFormat">IptagFormat</a>: <i>
+      - &lt;a href=&#34;iptagformat.md&#34;&gt;IptagFormat&lt;/a&gt;</i>
+    <a href="#sctpformat" title="SctpFormat">SctpFormat</a>: <i>
+      - &lt;a href=&#34;sctpformat.md&#34;&gt;SctpFormat&lt;/a&gt;</i>
+    <a href="#systemformat" title="SystemFormat">SystemFormat</a>: <i>
+      - &lt;a href=&#34;systemformat.md&#34;&gt;SystemFormat&lt;/a&gt;</i>
+    <a href="#threatformat" title="ThreatFormat">ThreatFormat</a>: <i>
+      - &lt;a href=&#34;threatformat.md&#34;&gt;ThreatFormat&lt;/a&gt;</i>
+    <a href="#trafficformat" title="TrafficFormat">TrafficFormat</a>: <i>
+      - &lt;a href=&#34;trafficformat.md&#34;&gt;TrafficFormat&lt;/a&gt;</i>
+    <a href="#tunnelformat" title="TunnelFormat">TunnelFormat</a>: <i>
+      - &lt;a href=&#34;tunnelformat.md&#34;&gt;TunnelFormat&lt;/a&gt;</i>
+    <a href="#urlformat" title="UrlFormat">UrlFormat</a>: <i>
+      - &lt;a href=&#34;urlformat.md&#34;&gt;UrlFormat&lt;/a&gt;</i>
+    <a href="#useridformat" title="UserIdFormat">UserIdFormat</a>: <i>
+      - &lt;a href=&#34;useridformat.md&#34;&gt;UserIdFormat&lt;/a&gt;</i>
+    <a href="#wildfireformat" title="WildfireFormat">WildfireFormat</a>: <i>
+      - &lt;a href=&#34;wildfireformat.md&#34;&gt;WildfireFormat&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
-#### Title
+#### tfcfnid
 
-The title of the TPS report is a mandatory element.
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### DeviceGroup
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Name
 
 _Required_: Yes
 
 _Type_: String
 
-_Minimum_: <code>20</code>
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-_Maximum_: <code>250</code>
+#### PasswordEnc
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;passwordenc.md&#34;&gt;PasswordEnc&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### CoverSheetIncluded
+#### PasswordRaw
 
-Required for all TPS Reports submitted after 2/19/1999
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;passwordraw.md&#34;&gt;PasswordRaw&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### TagRegistration
 
 _Required_: No
 
@@ -66,7 +140,7 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### DueDate
+#### Template
 
 _Required_: No
 
@@ -74,7 +148,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### ApprovalDate
+#### TemplateStack
 
 _Required_: No
 
@@ -82,37 +156,131 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Memo
+#### Vsys
 
 _Required_: No
-
-_Type_: &lt;a href=&#34;secondcopyofmemo.md&#34;&gt;SecondCopyOfMemo&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### SecondCopyOfMemo
-
-_Required_: No
-
-_Type_: &lt;a href=&#34;secondcopyofmemo.md&#34;&gt;SecondCopyOfMemo&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### TestCode
-
-_Required_: Yes
 
 _Type_: String
 
-_Allowed Values_: <code>NOT_STARTED</code> | <code>CANCELLED</code>
-
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Authors
+#### AuthFormat
 
 _Required_: No
 
-_Type_: List of String
+_Type_: List of &lt;a href=&#34;authformat.md&#34;&gt;AuthFormat&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ConfigFormat
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;configformat.md&#34;&gt;ConfigFormat&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### DataFormat
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;dataformat.md&#34;&gt;DataFormat&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### GtpFormat
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;gtpformat.md&#34;&gt;GtpFormat&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### HipMatchFormat
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;hipmatchformat.md&#34;&gt;HipMatchFormat&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### HttpServer
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;httpserver.md&#34;&gt;HttpServer&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### IptagFormat
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;iptagformat.md&#34;&gt;IptagFormat&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### SctpFormat
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;sctpformat.md&#34;&gt;SctpFormat&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### SystemFormat
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;systemformat.md&#34;&gt;SystemFormat&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ThreatFormat
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;threatformat.md&#34;&gt;ThreatFormat&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### TrafficFormat
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;trafficformat.md&#34;&gt;TrafficFormat&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### TunnelFormat
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;tunnelformat.md&#34;&gt;TunnelFormat&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### UrlFormat
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;urlformat.md&#34;&gt;UrlFormat&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### UserIdFormat
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;useridformat.md&#34;&gt;UserIdFormat&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### WildfireFormat
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;wildfireformat.md&#34;&gt;WildfireFormat&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -120,7 +288,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 ### Ref
 
-When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the TPSCode.
+When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the tfcfnid.
 
 ### Fn::GetAtt
 
@@ -128,7 +296,15 @@ The `Fn::GetAtt` intrinsic function returns a value for a specified attribute of
 
 For more information about using the `Fn::GetAtt` intrinsic function, see [Fn::GetAtt](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html).
 
-#### TPSCode
+#### tfcfnid
 
-A TPS Code is automatically generated on creation and assigned as the unique identifier.
+Internal identifier for tracking resource changes. Do not use.
+
+#### PasswordEnc
+
+Returns the &lt;code&gt;PasswordEnc&lt;/code&gt; value.
+
+#### PasswordRaw
+
+Returns the &lt;code&gt;PasswordRaw&lt;/code&gt; value.
 

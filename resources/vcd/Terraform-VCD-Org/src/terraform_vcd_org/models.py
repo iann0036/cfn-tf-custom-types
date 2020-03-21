@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     DeployedVmQuota: Optional[float]
     Description: Optional[str]
     FullName: Optional[str]
-    Id: Optional[str]
     IsEnabled: Optional[bool]
     Name: Optional[str]
     StoredVmQuota: Optional[float]
@@ -66,7 +65,6 @@ class ResourceModel(BaseResourceModel):
             DeployedVmQuota=json_data.get("DeployedVmQuota"),
             Description=json_data.get("Description"),
             FullName=json_data.get("FullName"),
-            Id=json_data.get("Id"),
             IsEnabled=json_data.get("IsEnabled"),
             Name=json_data.get("Name"),
             StoredVmQuota=json_data.get("StoredVmQuota"),

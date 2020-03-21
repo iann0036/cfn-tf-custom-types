@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     GuestProperties: Optional[Sequence["_GuestProperties"]]
     Href: Optional[str]
-    Id: Optional[str]
     Initscript: Optional[str]
     Ip: Optional[str]
     Memory: Optional[float]
@@ -73,7 +72,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             GuestProperties=json_data.get("GuestProperties"),
             Href=json_data.get("Href"),
-            Id=json_data.get("Id"),
             Initscript=json_data.get("Initscript"),
             Ip=json_data.get("Ip"),
             Memory=json_data.get("Memory"),

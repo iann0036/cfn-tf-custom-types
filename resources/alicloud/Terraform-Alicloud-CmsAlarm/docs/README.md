@@ -12,12 +12,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::CmsAlarm",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#contactgroups" title="ContactGroups">ContactGroups</a>" : <i>[ String, ... ]</i>,
-        "<a href="#dimensions" title="Dimensions">Dimensions</a>" : <i>[ <a href="dimensions.md">Dimensions</a>, ... ]</i>,
+        "<a href="#dimensions" title="Dimensions">Dimensions</a>" : <i>[ &lt;a href=&#34;dimensions.md&#34;&gt;Dimensions&lt;/a&gt;, ... ]</i>,
         "<a href="#effectiveinterval" title="EffectiveInterval">EffectiveInterval</a>" : <i>String</i>,
         "<a href="#enabled" title="Enabled">Enabled</a>" : <i>Boolean</i>,
         "<a href="#endtime" title="EndTime">EndTime</a>" : <i>Double</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#metric" title="Metric">Metric</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#notifytype" title="NotifyType">NotifyType</a>" : <i>Double</i>,
@@ -27,6 +27,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#silencetime" title="SilenceTime">SilenceTime</a>" : <i>Double</i>,
         "<a href="#starttime" title="StartTime">StartTime</a>" : <i>Double</i>,
         "<a href="#statistics" title="Statistics">Statistics</a>" : <i>String</i>,
+        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
         "<a href="#threshold" title="Threshold">Threshold</a>" : <i>String</i>,
         "<a href="#triggeredcount" title="TriggeredCount">TriggeredCount</a>" : <i>Double</i>,
         "<a href="#webhook" title="Webhook">Webhook</a>" : <i>String</i>
@@ -39,14 +40,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::CmsAlarm
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#contactgroups" title="ContactGroups">ContactGroups</a>: <i>
       - String</i>
     <a href="#dimensions" title="Dimensions">Dimensions</a>: <i>
-      - <a href="dimensions.md">Dimensions</a></i>
+      - &lt;a href=&#34;dimensions.md&#34;&gt;Dimensions&lt;/a&gt;</i>
     <a href="#effectiveinterval" title="EffectiveInterval">EffectiveInterval</a>: <i>String</i>
     <a href="#enabled" title="Enabled">Enabled</a>: <i>Boolean</i>
     <a href="#endtime" title="EndTime">EndTime</a>: <i>Double</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#metric" title="Metric">Metric</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#notifytype" title="NotifyType">NotifyType</a>: <i>Double</i>
@@ -56,12 +57,23 @@ Properties:
     <a href="#silencetime" title="SilenceTime">SilenceTime</a>: <i>Double</i>
     <a href="#starttime" title="StartTime">StartTime</a>: <i>Double</i>
     <a href="#statistics" title="Statistics">Statistics</a>: <i>String</i>
+    <a href="#status" title="Status">Status</a>: <i>String</i>
     <a href="#threshold" title="Threshold">Threshold</a>: <i>String</i>
     <a href="#triggeredcount" title="TriggeredCount">TriggeredCount</a>: <i>Double</i>
     <a href="#webhook" title="Webhook">Webhook</a>: <i>String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ContactGroups
 
@@ -75,7 +87,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: Yes
 
-_Type_: List of <a href="dimensions.md">Dimensions</a>
+_Type_: List of &lt;a href=&#34;dimensions.md&#34;&gt;Dimensions&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -100,14 +112,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -183,6 +187,14 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### Status
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Threshold
 
 _Required_: Yes
@@ -225,5 +237,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Status
 
-Returns the <code>Status</code> value.
+Returns the &lt;code&gt;Status&lt;/code&gt; value.
 

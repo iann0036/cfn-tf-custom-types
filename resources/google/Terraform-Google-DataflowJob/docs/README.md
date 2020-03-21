@@ -12,21 +12,24 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Google::DataflowJob",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#ipconfiguration" title="IpConfiguration">IpConfiguration</a>" : <i>String</i>,
-        "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="labels.md">Labels</a>, ... ]</i>,
+        "<a href="#jobid" title="JobId">JobId</a>" : <i>String</i>,
+        "<a href="#labels" title="Labels">Labels</a>" : <i>[ &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;, ... ]</i>,
         "<a href="#machinetype" title="MachineType">MachineType</a>" : <i>String</i>,
         "<a href="#maxworkers" title="MaxWorkers">MaxWorkers</a>" : <i>Double</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#network" title="Network">Network</a>" : <i>String</i>,
         "<a href="#ondelete" title="OnDelete">OnDelete</a>" : <i>String</i>,
-        "<a href="#parameters" title="Parameters">Parameters</a>" : <i>[ <a href="parameters.md">Parameters</a>, ... ]</i>,
+        "<a href="#parameters" title="Parameters">Parameters</a>" : <i>[ &lt;a href=&#34;parameters.md&#34;&gt;Parameters&lt;/a&gt;, ... ]</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
         "<a href="#serviceaccountemail" title="ServiceAccountEmail">ServiceAccountEmail</a>" : <i>String</i>,
+        "<a href="#state" title="State">State</a>" : <i>String</i>,
         "<a href="#subnetwork" title="Subnetwork">Subnetwork</a>" : <i>String</i>,
         "<a href="#tempgcslocation" title="TempGcsLocation">TempGcsLocation</a>" : <i>String</i>,
         "<a href="#templategcspath" title="TemplateGcsPath">TemplateGcsPath</a>" : <i>String</i>,
+        "<a href="#type" title="Type">Type</a>" : <i>String</i>,
         "<a href="#zone" title="Zone">Zone</a>" : <i>String</i>
     }
 }
@@ -37,29 +40,34 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Google::DataflowJob
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#ipconfiguration" title="IpConfiguration">IpConfiguration</a>: <i>String</i>
+    <a href="#jobid" title="JobId">JobId</a>: <i>String</i>
     <a href="#labels" title="Labels">Labels</a>: <i>
-      - <a href="labels.md">Labels</a></i>
+      - &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;</i>
     <a href="#machinetype" title="MachineType">MachineType</a>: <i>String</i>
     <a href="#maxworkers" title="MaxWorkers">MaxWorkers</a>: <i>Double</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#network" title="Network">Network</a>: <i>String</i>
     <a href="#ondelete" title="OnDelete">OnDelete</a>: <i>String</i>
     <a href="#parameters" title="Parameters">Parameters</a>: <i>
-      - <a href="parameters.md">Parameters</a></i>
+      - &lt;a href=&#34;parameters.md&#34;&gt;Parameters&lt;/a&gt;</i>
     <a href="#project" title="Project">Project</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
     <a href="#serviceaccountemail" title="ServiceAccountEmail">ServiceAccountEmail</a>: <i>String</i>
+    <a href="#state" title="State">State</a>: <i>String</i>
     <a href="#subnetwork" title="Subnetwork">Subnetwork</a>: <i>String</i>
     <a href="#tempgcslocation" title="TempGcsLocation">TempGcsLocation</a>: <i>String</i>
     <a href="#templategcspath" title="TemplateGcsPath">TemplateGcsPath</a>: <i>String</i>
+    <a href="#type" title="Type">Type</a>: <i>String</i>
     <a href="#zone" title="Zone">Zone</a>: <i>String</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
@@ -75,11 +83,19 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### JobId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Labels
 
 _Required_: No
 
-_Type_: List of <a href="labels.md">Labels</a>
+_Type_: List of &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -127,7 +143,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="parameters.md">Parameters</a>
+_Type_: List of &lt;a href=&#34;parameters.md&#34;&gt;Parameters&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -148,6 +164,14 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServiceAccountEmail
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### State
 
 _Required_: No
 
@@ -179,6 +203,14 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### Type
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Zone
 
 _Required_: No
@@ -205,13 +237,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### JobId
 
-Returns the <code>JobId</code> value.
+Returns the &lt;code&gt;JobId&lt;/code&gt; value.
 
 #### State
 
-Returns the <code>State</code> value.
+Returns the &lt;code&gt;State&lt;/code&gt; value.
 
 #### Type
 
-Returns the <code>Type</code> value.
+Returns the &lt;code&gt;Type&lt;/code&gt; value.
 

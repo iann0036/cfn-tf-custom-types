@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     DefinedTags: Optional[Sequence["_DefinedTags"]]
     DisplayName: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     IpAddress: Optional[str]
     Lifetime: Optional[str]
     PrivateIpId: Optional[str]
@@ -68,7 +67,6 @@ class ResourceModel(BaseResourceModel):
             DefinedTags=json_data.get("DefinedTags"),
             DisplayName=json_data.get("DisplayName"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             IpAddress=json_data.get("IpAddress"),
             Lifetime=json_data.get("Lifetime"),
             PrivateIpId=json_data.get("PrivateIpId"),

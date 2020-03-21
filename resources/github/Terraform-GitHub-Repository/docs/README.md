@@ -12,6 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::GitHub::Repository",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#allowmergecommit" title="AllowMergeCommit">AllowMergeCommit</a>" : <i>Boolean</i>,
         "<a href="#allowrebasemerge" title="AllowRebaseMerge">AllowRebaseMerge</a>" : <i>Boolean</i>,
         "<a href="#allowsquashmerge" title="AllowSquashMerge">AllowSquashMerge</a>" : <i>Boolean</i>,
@@ -19,18 +20,24 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#autoinit" title="AutoInit">AutoInit</a>" : <i>Boolean</i>,
         "<a href="#defaultbranch" title="DefaultBranch">DefaultBranch</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
+        "<a href="#etag" title="Etag">Etag</a>" : <i>String</i>,
+        "<a href="#fullname" title="FullName">FullName</a>" : <i>String</i>,
+        "<a href="#gitcloneurl" title="GitCloneUrl">GitCloneUrl</a>" : <i>String</i>,
         "<a href="#gitignoretemplate" title="GitignoreTemplate">GitignoreTemplate</a>" : <i>String</i>,
         "<a href="#hasdownloads" title="HasDownloads">HasDownloads</a>" : <i>Boolean</i>,
         "<a href="#hasissues" title="HasIssues">HasIssues</a>" : <i>Boolean</i>,
         "<a href="#hasprojects" title="HasProjects">HasProjects</a>" : <i>Boolean</i>,
         "<a href="#haswiki" title="HasWiki">HasWiki</a>" : <i>Boolean</i>,
         "<a href="#homepageurl" title="HomepageUrl">HomepageUrl</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#htmlurl" title="HtmlUrl">HtmlUrl</a>" : <i>String</i>,
+        "<a href="#httpcloneurl" title="HttpCloneUrl">HttpCloneUrl</a>" : <i>String</i>,
         "<a href="#licensetemplate" title="LicenseTemplate">LicenseTemplate</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#private" title="Private">Private</a>" : <i>Boolean</i>,
+        "<a href="#sshcloneurl" title="SshCloneUrl">SshCloneUrl</a>" : <i>String</i>,
+        "<a href="#svnurl" title="SvnUrl">SvnUrl</a>" : <i>String</i>,
         "<a href="#topics" title="Topics">Topics</a>" : <i>[ String, ... ]</i>,
-        "<a href="#template" title="Template">Template</a>" : <i>[ <a href="template.md">Template</a>, ... ]</i>
+        "<a href="#template" title="Template">Template</a>" : <i>[ &lt;a href=&#34;template.md&#34;&gt;Template&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -40,6 +47,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::GitHub::Repository
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#allowmergecommit" title="AllowMergeCommit">AllowMergeCommit</a>: <i>Boolean</i>
     <a href="#allowrebasemerge" title="AllowRebaseMerge">AllowRebaseMerge</a>: <i>Boolean</i>
     <a href="#allowsquashmerge" title="AllowSquashMerge">AllowSquashMerge</a>: <i>Boolean</i>
@@ -47,23 +55,39 @@ Properties:
     <a href="#autoinit" title="AutoInit">AutoInit</a>: <i>Boolean</i>
     <a href="#defaultbranch" title="DefaultBranch">DefaultBranch</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
+    <a href="#etag" title="Etag">Etag</a>: <i>String</i>
+    <a href="#fullname" title="FullName">FullName</a>: <i>String</i>
+    <a href="#gitcloneurl" title="GitCloneUrl">GitCloneUrl</a>: <i>String</i>
     <a href="#gitignoretemplate" title="GitignoreTemplate">GitignoreTemplate</a>: <i>String</i>
     <a href="#hasdownloads" title="HasDownloads">HasDownloads</a>: <i>Boolean</i>
     <a href="#hasissues" title="HasIssues">HasIssues</a>: <i>Boolean</i>
     <a href="#hasprojects" title="HasProjects">HasProjects</a>: <i>Boolean</i>
     <a href="#haswiki" title="HasWiki">HasWiki</a>: <i>Boolean</i>
     <a href="#homepageurl" title="HomepageUrl">HomepageUrl</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#htmlurl" title="HtmlUrl">HtmlUrl</a>: <i>String</i>
+    <a href="#httpcloneurl" title="HttpCloneUrl">HttpCloneUrl</a>: <i>String</i>
     <a href="#licensetemplate" title="LicenseTemplate">LicenseTemplate</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#private" title="Private">Private</a>: <i>Boolean</i>
+    <a href="#sshcloneurl" title="SshCloneUrl">SshCloneUrl</a>: <i>String</i>
+    <a href="#svnurl" title="SvnUrl">SvnUrl</a>: <i>String</i>
     <a href="#topics" title="Topics">Topics</a>: <i>
       - String</i>
     <a href="#template" title="Template">Template</a>: <i>
-      - <a href="template.md">Template</a></i>
+      - &lt;a href=&#34;template.md&#34;&gt;Template&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowMergeCommit
 
@@ -121,6 +145,30 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### Etag
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### FullName
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### GitCloneUrl
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### GitignoreTemplate
 
 _Required_: No
@@ -169,7 +217,15 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### HtmlUrl
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### HttpCloneUrl
 
 _Required_: No
 
@@ -201,6 +257,22 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### SshCloneUrl
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### SvnUrl
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Topics
 
 _Required_: No
@@ -213,7 +285,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="template.md">Template</a>
+_Type_: List of &lt;a href=&#34;template.md&#34;&gt;Template&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -235,29 +307,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Etag
 
-Returns the <code>Etag</code> value.
+Returns the &lt;code&gt;Etag&lt;/code&gt; value.
 
 #### FullName
 
-Returns the <code>FullName</code> value.
+Returns the &lt;code&gt;FullName&lt;/code&gt; value.
 
 #### GitCloneUrl
 
-Returns the <code>GitCloneUrl</code> value.
+Returns the &lt;code&gt;GitCloneUrl&lt;/code&gt; value.
 
 #### HtmlUrl
 
-Returns the <code>HtmlUrl</code> value.
+Returns the &lt;code&gt;HtmlUrl&lt;/code&gt; value.
 
 #### HttpCloneUrl
 
-Returns the <code>HttpCloneUrl</code> value.
+Returns the &lt;code&gt;HttpCloneUrl&lt;/code&gt; value.
 
 #### SshCloneUrl
 
-Returns the <code>SshCloneUrl</code> value.
+Returns the &lt;code&gt;SshCloneUrl&lt;/code&gt; value.
 
 #### SvnUrl
 
-Returns the <code>SvnUrl</code> value.
+Returns the &lt;code&gt;SvnUrl&lt;/code&gt; value.
 

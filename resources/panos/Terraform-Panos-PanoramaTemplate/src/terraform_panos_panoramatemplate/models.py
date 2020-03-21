@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DefaultVsys: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Devices: Optional[Sequence["_Devices"]]
 
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DefaultVsys=json_data.get("DefaultVsys"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Devices=json_data.get("Devices"),
         )

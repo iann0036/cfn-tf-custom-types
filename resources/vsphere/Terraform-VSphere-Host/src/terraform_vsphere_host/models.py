@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     Datacenter: Optional[str]
     Force: Optional[bool]
     Hostname: Optional[str]
-    Id: Optional[str]
     License: Optional[str]
     Lockdown: Optional[str]
     Maintenance: Optional[bool]
@@ -63,7 +62,6 @@ class ResourceModel(BaseResourceModel):
             Datacenter=json_data.get("Datacenter"),
             Force=json_data.get("Force"),
             Hostname=json_data.get("Hostname"),
-            Id=json_data.get("Id"),
             License=json_data.get("License"),
             Lockdown=json_data.get("Lockdown"),
             Maintenance=json_data.get("Maintenance"),

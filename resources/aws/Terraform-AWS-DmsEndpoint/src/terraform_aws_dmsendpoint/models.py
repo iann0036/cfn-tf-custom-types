@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     EndpointType: Optional[str]
     EngineName: Optional[str]
     ExtraConnectionAttributes: Optional[str]
-    Id: Optional[str]
     KmsKeyArn: Optional[str]
     Password: Optional[str]
     Port: Optional[float]
@@ -71,7 +70,6 @@ class ResourceModel(BaseResourceModel):
             EndpointType=json_data.get("EndpointType"),
             EngineName=json_data.get("EngineName"),
             ExtraConnectionAttributes=json_data.get("ExtraConnectionAttributes"),
-            Id=json_data.get("Id"),
             KmsKeyArn=json_data.get("KmsKeyArn"),
             Password=json_data.get("Password"),
             Port=json_data.get("Port"),

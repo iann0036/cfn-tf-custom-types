@@ -12,10 +12,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Heroku::Build",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#app" title="App">App</a>" : <i>String</i>,
         "<a href="#buildpacks" title="Buildpacks">Buildpacks</a>" : <i>[ String, ... ]</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#source" title="Source">Source</a>" : <i>[ <a href="source.md">Source</a>, ... ]</i>,
+        "<a href="#localchecksum" title="LocalChecksum">LocalChecksum</a>" : <i>String</i>,
+        "<a href="#outputstreamurl" title="OutputStreamUrl">OutputStreamUrl</a>" : <i>String</i>,
+        "<a href="#releaseid" title="ReleaseId">ReleaseId</a>" : <i>String</i>,
+        "<a href="#slugid" title="SlugId">SlugId</a>" : <i>String</i>,
+        "<a href="#source" title="Source">Source</a>" : <i>[ &lt;a href=&#34;source.md&#34;&gt;Source&lt;/a&gt;, ... ]</i>,
+        "<a href="#stack" title="Stack">Stack</a>" : <i>String</i>,
+        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
+        "<a href="#user" title="User">User</a>" : <i>[ &lt;a href=&#34;user.md&#34;&gt;User&lt;/a&gt;, ... ]</i>,
+        "<a href="#uuid" title="Uuid">Uuid</a>" : <i>String</i>
     }
 }
 </pre>
@@ -25,15 +33,34 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Heroku::Build
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#app" title="App">App</a>: <i>String</i>
     <a href="#buildpacks" title="Buildpacks">Buildpacks</a>: <i>
       - String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#localchecksum" title="LocalChecksum">LocalChecksum</a>: <i>String</i>
+    <a href="#outputstreamurl" title="OutputStreamUrl">OutputStreamUrl</a>: <i>String</i>
+    <a href="#releaseid" title="ReleaseId">ReleaseId</a>: <i>String</i>
+    <a href="#slugid" title="SlugId">SlugId</a>: <i>String</i>
     <a href="#source" title="Source">Source</a>: <i>
-      - <a href="source.md">Source</a></i>
+      - &lt;a href=&#34;source.md&#34;&gt;Source&lt;/a&gt;</i>
+    <a href="#stack" title="Stack">Stack</a>: <i>String</i>
+    <a href="#status" title="Status">Status</a>: <i>String</i>
+    <a href="#user" title="User">User</a>: <i>
+      - &lt;a href=&#34;user.md&#34;&gt;User&lt;/a&gt;</i>
+    <a href="#uuid" title="Uuid">Uuid</a>: <i>String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### App
 
@@ -51,7 +78,31 @@ _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### LocalChecksum
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### OutputStreamUrl
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ReleaseId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### SlugId
 
 _Required_: No
 
@@ -63,7 +114,39 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: Yes
 
-_Type_: List of <a href="source.md">Source</a>
+_Type_: List of &lt;a href=&#34;source.md&#34;&gt;Source&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Stack
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Status
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### User
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;user.md&#34;&gt;User&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Uuid
+
+_Required_: No
+
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -85,33 +168,33 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### LocalChecksum
 
-Returns the <code>LocalChecksum</code> value.
+Returns the &lt;code&gt;LocalChecksum&lt;/code&gt; value.
 
 #### OutputStreamUrl
 
-Returns the <code>OutputStreamUrl</code> value.
+Returns the &lt;code&gt;OutputStreamUrl&lt;/code&gt; value.
 
 #### ReleaseId
 
-Returns the <code>ReleaseId</code> value.
+Returns the &lt;code&gt;ReleaseId&lt;/code&gt; value.
 
 #### SlugId
 
-Returns the <code>SlugId</code> value.
+Returns the &lt;code&gt;SlugId&lt;/code&gt; value.
 
 #### Stack
 
-Returns the <code>Stack</code> value.
+Returns the &lt;code&gt;Stack&lt;/code&gt; value.
 
 #### Status
 
-Returns the <code>Status</code> value.
+Returns the &lt;code&gt;Status&lt;/code&gt; value.
 
 #### User
 
-Returns the <code>User</code> value.
+Returns the &lt;code&gt;User&lt;/code&gt; value.
 
 #### Uuid
 
-Returns the <code>Uuid</code> value.
+Returns the &lt;code&gt;Uuid&lt;/code&gt; value.
 

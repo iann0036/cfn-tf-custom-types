@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     CleanupDeadServers: Optional[bool]
     Datacenter: Optional[str]
     DisableUpgradeMigration: Optional[bool]
-    Id: Optional[str]
     LastContactThreshold: Optional[str]
     MaxTrailingLogs: Optional[float]
     RedundancyZoneTag: Optional[str]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             CleanupDeadServers=json_data.get("CleanupDeadServers"),
             Datacenter=json_data.get("Datacenter"),
             DisableUpgradeMigration=json_data.get("DisableUpgradeMigration"),
-            Id=json_data.get("Id"),
             LastContactThreshold=json_data.get("LastContactThreshold"),
             MaxTrailingLogs=json_data.get("MaxTrailingLogs"),
             RedundancyZoneTag=json_data.get("RedundancyZoneTag"),

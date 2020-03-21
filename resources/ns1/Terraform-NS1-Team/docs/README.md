@@ -12,6 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::NS1::Team",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#accountmanageaccountsettings" title="AccountManageAccountSettings">AccountManageAccountSettings</a>" : <i>Boolean</i>,
         "<a href="#accountmanageapikeys" title="AccountManageApikeys">AccountManageApikeys</a>" : <i>Boolean</i>,
         "<a href="#accountmanagepaymentmethods" title="AccountManagePaymentMethods">AccountManagePaymentMethods</a>" : <i>Boolean</i>,
@@ -30,7 +31,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#dnszonesallow" title="DnsZonesAllow">DnsZonesAllow</a>" : <i>[ String, ... ]</i>,
         "<a href="#dnszonesallowbydefault" title="DnsZonesAllowByDefault">DnsZonesAllowByDefault</a>" : <i>Boolean</i>,
         "<a href="#dnszonesdeny" title="DnsZonesDeny">DnsZonesDeny</a>" : <i>[ String, ... ]</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#ipammanageipam" title="IpamManageIpam">IpamManageIpam</a>" : <i>Boolean</i>,
         "<a href="#ipamviewipam" title="IpamViewIpam">IpamViewIpam</a>" : <i>Boolean</i>,
         "<a href="#monitoringmanagejobs" title="MonitoringManageJobs">MonitoringManageJobs</a>" : <i>Boolean</i>,
@@ -39,7 +39,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#securitymanageactivedirectory" title="SecurityManageActiveDirectory">SecurityManageActiveDirectory</a>" : <i>Boolean</i>,
         "<a href="#securitymanageglobal2fa" title="SecurityManageGlobal2fa">SecurityManageGlobal2fa</a>" : <i>Boolean</i>,
-        "<a href="#ipwhitelist" title="IpWhitelist">IpWhitelist</a>" : <i>[ <a href="ipwhitelist.md">IpWhitelist</a>, ... ]</i>
+        "<a href="#ipwhitelist" title="IpWhitelist">IpWhitelist</a>" : <i>[ &lt;a href=&#34;ipwhitelist.md&#34;&gt;IpWhitelist&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -49,6 +49,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::NS1::Team
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#accountmanageaccountsettings" title="AccountManageAccountSettings">AccountManageAccountSettings</a>: <i>Boolean</i>
     <a href="#accountmanageapikeys" title="AccountManageApikeys">AccountManageApikeys</a>: <i>Boolean</i>
     <a href="#accountmanagepaymentmethods" title="AccountManagePaymentMethods">AccountManagePaymentMethods</a>: <i>Boolean</i>
@@ -69,7 +70,6 @@ Properties:
     <a href="#dnszonesallowbydefault" title="DnsZonesAllowByDefault">DnsZonesAllowByDefault</a>: <i>Boolean</i>
     <a href="#dnszonesdeny" title="DnsZonesDeny">DnsZonesDeny</a>: <i>
       - String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#ipammanageipam" title="IpamManageIpam">IpamManageIpam</a>: <i>Boolean</i>
     <a href="#ipamviewipam" title="IpamViewIpam">IpamViewIpam</a>: <i>Boolean</i>
     <a href="#monitoringmanagejobs" title="MonitoringManageJobs">MonitoringManageJobs</a>: <i>Boolean</i>
@@ -79,10 +79,20 @@ Properties:
     <a href="#securitymanageactivedirectory" title="SecurityManageActiveDirectory">SecurityManageActiveDirectory</a>: <i>Boolean</i>
     <a href="#securitymanageglobal2fa" title="SecurityManageGlobal2fa">SecurityManageGlobal2fa</a>: <i>Boolean</i>
     <a href="#ipwhitelist" title="IpWhitelist">IpWhitelist</a>: <i>
-      - <a href="ipwhitelist.md">IpWhitelist</a></i>
+      - &lt;a href=&#34;ipwhitelist.md&#34;&gt;IpWhitelist&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AccountManageAccountSettings
 
@@ -228,14 +238,6 @@ _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### IpamManageIpam
 
 _Required_: No
@@ -304,7 +306,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="ipwhitelist.md">IpWhitelist</a>
+_Type_: List of &lt;a href=&#34;ipwhitelist.md&#34;&gt;IpWhitelist&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

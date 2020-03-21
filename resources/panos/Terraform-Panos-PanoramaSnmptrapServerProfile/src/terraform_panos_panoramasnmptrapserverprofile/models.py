@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AuthPasswordEnc: Optional[Sequence["_AuthPasswordEnc"]]
     AuthPasswordRaw: Optional[Sequence["_AuthPasswordRaw"]]
     DeviceGroup: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     PrivPasswordEnc: Optional[Sequence["_PrivPasswordEnc"]]
     PrivPasswordRaw: Optional[Sequence["_PrivPasswordRaw"]]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             AuthPasswordEnc=json_data.get("AuthPasswordEnc"),
             AuthPasswordRaw=json_data.get("AuthPasswordRaw"),
             DeviceGroup=json_data.get("DeviceGroup"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             PrivPasswordEnc=json_data.get("PrivPasswordEnc"),
             PrivPasswordRaw=json_data.get("PrivPasswordRaw"),

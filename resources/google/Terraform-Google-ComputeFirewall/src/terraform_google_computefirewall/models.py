@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     Direction: Optional[str]
     Disabled: Optional[bool]
     EnableLogging: Optional[bool]
-    Id: Optional[str]
     Name: Optional[str]
     Network: Optional[str]
     Priority: Optional[float]
@@ -72,7 +71,6 @@ class ResourceModel(BaseResourceModel):
             Direction=json_data.get("Direction"),
             Disabled=json_data.get("Disabled"),
             EnableLogging=json_data.get("EnableLogging"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Network=json_data.get("Network"),
             Priority=json_data.get("Priority"),

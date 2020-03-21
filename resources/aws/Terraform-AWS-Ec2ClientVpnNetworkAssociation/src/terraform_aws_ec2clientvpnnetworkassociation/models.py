@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ClientVpnEndpointId: Optional[str]
-    Id: Optional[str]
     SecurityGroups: Optional[Sequence[str]]
     Status: Optional[str]
     SubnetId: Optional[str]
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             ClientVpnEndpointId=json_data.get("ClientVpnEndpointId"),
-            Id=json_data.get("Id"),
             SecurityGroups=json_data.get("SecurityGroups"),
             Status=json_data.get("Status"),
             SubnetId=json_data.get("SubnetId"),

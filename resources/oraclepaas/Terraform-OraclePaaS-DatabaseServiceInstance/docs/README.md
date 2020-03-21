@@ -12,13 +12,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OraclePaaS::DatabaseServiceInstance",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#availabilitydomain" title="AvailabilityDomain">AvailabilityDomain</a>" : <i>String</i>,
         "<a href="#bringyourownlicense" title="BringYourOwnLicense">BringYourOwnLicense</a>" : <i>Boolean</i>,
+        "<a href="#cloudstoragecontainer" title="CloudStorageContainer">CloudStorageContainer</a>" : <i>String</i>,
+        "<a href="#computesitename" title="ComputeSiteName">ComputeSiteName</a>" : <i>String</i>,
+        "<a href="#dbaasmonitorurl" title="DbaasMonitorUrl">DbaasMonitorUrl</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#desiredstate" title="DesiredState">DesiredState</a>" : <i>String</i>,
         "<a href="#edition" title="Edition">Edition</a>" : <i>String</i>,
+        "<a href="#emurl" title="EmUrl">EmUrl</a>" : <i>String</i>,
+        "<a href="#glassfishurl" title="GlassfishUrl">GlassfishUrl</a>" : <i>String</i>,
         "<a href="#highperformancestorage" title="HighPerformanceStorage">HighPerformanceStorage</a>" : <i>Boolean</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#identitydomain" title="IdentityDomain">IdentityDomain</a>" : <i>String</i>,
         "<a href="#ipnetwork" title="IpNetwork">IpNetwork</a>" : <i>String</i>,
         "<a href="#ipreservations" title="IpReservations">IpReservations</a>" : <i>[ String, ... ]</i>,
         "<a href="#level" title="Level">Level</a>" : <i>String</i>,
@@ -27,16 +33,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
         "<a href="#shape" title="Shape">Shape</a>" : <i>String</i>,
         "<a href="#sshpublickey" title="SshPublicKey">SshPublicKey</a>" : <i>String</i>,
+        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
         "<a href="#subnet" title="Subnet">Subnet</a>" : <i>String</i>,
         "<a href="#subscriptiontype" title="SubscriptionType">SubscriptionType</a>" : <i>String</i>,
+        "<a href="#uri" title="Uri">Uri</a>" : <i>String</i>,
         "<a href="#version" title="Version">Version</a>" : <i>String</i>,
-        "<a href="#backups" title="Backups">Backups</a>" : <i>[ <a href="backups.md">Backups</a>, ... ]</i>,
-        "<a href="#databaseconfiguration" title="DatabaseConfiguration">DatabaseConfiguration</a>" : <i>[ <a href="databaseconfiguration.md">DatabaseConfiguration</a>, ... ]</i>,
-        "<a href="#defaultaccessrules" title="DefaultAccessRules">DefaultAccessRules</a>" : <i>[ <a href="defaultaccessrules.md">DefaultAccessRules</a>, ... ]</i>,
-        "<a href="#hybriddisasterrecovery" title="HybridDisasterRecovery">HybridDisasterRecovery</a>" : <i>[ <a href="hybriddisasterrecovery.md">HybridDisasterRecovery</a>, ... ]</i>,
-        "<a href="#instantiatefrombackup" title="InstantiateFromBackup">InstantiateFromBackup</a>" : <i>[ <a href="instantiatefrombackup.md">InstantiateFromBackup</a>, ... ]</i>,
-        "<a href="#standby" title="Standby">Standby</a>" : <i>[ <a href="standby.md">Standby</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
+        "<a href="#backups" title="Backups">Backups</a>" : <i>[ &lt;a href=&#34;backups.md&#34;&gt;Backups&lt;/a&gt;, ... ]</i>,
+        "<a href="#databaseconfiguration" title="DatabaseConfiguration">DatabaseConfiguration</a>" : <i>[ &lt;a href=&#34;databaseconfiguration.md&#34;&gt;DatabaseConfiguration&lt;/a&gt;, ... ]</i>,
+        "<a href="#defaultaccessrules" title="DefaultAccessRules">DefaultAccessRules</a>" : <i>[ &lt;a href=&#34;defaultaccessrules.md&#34;&gt;DefaultAccessRules&lt;/a&gt;, ... ]</i>,
+        "<a href="#hybriddisasterrecovery" title="HybridDisasterRecovery">HybridDisasterRecovery</a>" : <i>[ &lt;a href=&#34;hybriddisasterrecovery.md&#34;&gt;HybridDisasterRecovery&lt;/a&gt;, ... ]</i>,
+        "<a href="#instantiatefrombackup" title="InstantiateFromBackup">InstantiateFromBackup</a>" : <i>[ &lt;a href=&#34;instantiatefrombackup.md&#34;&gt;InstantiateFromBackup&lt;/a&gt;, ... ]</i>,
+        "<a href="#standby" title="Standby">Standby</a>" : <i>[ &lt;a href=&#34;standby.md&#34;&gt;Standby&lt;/a&gt;, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     }
 }
 </pre>
@@ -46,13 +54,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OraclePaaS::DatabaseServiceInstance
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#availabilitydomain" title="AvailabilityDomain">AvailabilityDomain</a>: <i>String</i>
     <a href="#bringyourownlicense" title="BringYourOwnLicense">BringYourOwnLicense</a>: <i>Boolean</i>
+    <a href="#cloudstoragecontainer" title="CloudStorageContainer">CloudStorageContainer</a>: <i>String</i>
+    <a href="#computesitename" title="ComputeSiteName">ComputeSiteName</a>: <i>String</i>
+    <a href="#dbaasmonitorurl" title="DbaasMonitorUrl">DbaasMonitorUrl</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#desiredstate" title="DesiredState">DesiredState</a>: <i>String</i>
     <a href="#edition" title="Edition">Edition</a>: <i>String</i>
+    <a href="#emurl" title="EmUrl">EmUrl</a>: <i>String</i>
+    <a href="#glassfishurl" title="GlassfishUrl">GlassfishUrl</a>: <i>String</i>
     <a href="#highperformancestorage" title="HighPerformanceStorage">HighPerformanceStorage</a>: <i>Boolean</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#identitydomain" title="IdentityDomain">IdentityDomain</a>: <i>String</i>
     <a href="#ipnetwork" title="IpNetwork">IpNetwork</a>: <i>String</i>
     <a href="#ipreservations" title="IpReservations">IpReservations</a>: <i>
       - String</i>
@@ -62,25 +76,37 @@ Properties:
     <a href="#region" title="Region">Region</a>: <i>String</i>
     <a href="#shape" title="Shape">Shape</a>: <i>String</i>
     <a href="#sshpublickey" title="SshPublicKey">SshPublicKey</a>: <i>String</i>
+    <a href="#status" title="Status">Status</a>: <i>String</i>
     <a href="#subnet" title="Subnet">Subnet</a>: <i>String</i>
     <a href="#subscriptiontype" title="SubscriptionType">SubscriptionType</a>: <i>String</i>
+    <a href="#uri" title="Uri">Uri</a>: <i>String</i>
     <a href="#version" title="Version">Version</a>: <i>String</i>
     <a href="#backups" title="Backups">Backups</a>: <i>
-      - <a href="backups.md">Backups</a></i>
+      - &lt;a href=&#34;backups.md&#34;&gt;Backups&lt;/a&gt;</i>
     <a href="#databaseconfiguration" title="DatabaseConfiguration">DatabaseConfiguration</a>: <i>
-      - <a href="databaseconfiguration.md">DatabaseConfiguration</a></i>
+      - &lt;a href=&#34;databaseconfiguration.md&#34;&gt;DatabaseConfiguration&lt;/a&gt;</i>
     <a href="#defaultaccessrules" title="DefaultAccessRules">DefaultAccessRules</a>: <i>
-      - <a href="defaultaccessrules.md">DefaultAccessRules</a></i>
+      - &lt;a href=&#34;defaultaccessrules.md&#34;&gt;DefaultAccessRules&lt;/a&gt;</i>
     <a href="#hybriddisasterrecovery" title="HybridDisasterRecovery">HybridDisasterRecovery</a>: <i>
-      - <a href="hybriddisasterrecovery.md">HybridDisasterRecovery</a></i>
+      - &lt;a href=&#34;hybriddisasterrecovery.md&#34;&gt;HybridDisasterRecovery&lt;/a&gt;</i>
     <a href="#instantiatefrombackup" title="InstantiateFromBackup">InstantiateFromBackup</a>: <i>
-      - <a href="instantiatefrombackup.md">InstantiateFromBackup</a></i>
+      - &lt;a href=&#34;instantiatefrombackup.md&#34;&gt;InstantiateFromBackup&lt;/a&gt;</i>
     <a href="#standby" title="Standby">Standby</a>: <i>
-      - <a href="standby.md">Standby</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;standby.md&#34;&gt;Standby&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AvailabilityDomain
 
@@ -95,6 +121,30 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### CloudStorageContainer
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ComputeSiteName
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### DbaasMonitorUrl
+
+_Required_: No
+
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -122,6 +172,22 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### EmUrl
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### GlassfishUrl
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### HighPerformanceStorage
 
 _Required_: No
@@ -130,7 +196,7 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### IdentityDomain
 
 _Required_: No
 
@@ -202,6 +268,14 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### Status
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Subnet
 
 _Required_: No
@@ -213,6 +287,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SubscriptionType
 
 _Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Uri
+
+_Required_: No
 
 _Type_: String
 
@@ -230,7 +312,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="backups.md">Backups</a>
+_Type_: List of &lt;a href=&#34;backups.md&#34;&gt;Backups&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -238,7 +320,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="databaseconfiguration.md">DatabaseConfiguration</a>
+_Type_: List of &lt;a href=&#34;databaseconfiguration.md&#34;&gt;DatabaseConfiguration&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -246,7 +328,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="defaultaccessrules.md">DefaultAccessRules</a>
+_Type_: List of &lt;a href=&#34;defaultaccessrules.md&#34;&gt;DefaultAccessRules&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -254,7 +336,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="hybriddisasterrecovery.md">HybridDisasterRecovery</a>
+_Type_: List of &lt;a href=&#34;hybriddisasterrecovery.md&#34;&gt;HybridDisasterRecovery&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -262,7 +344,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="instantiatefrombackup.md">InstantiateFromBackup</a>
+_Type_: List of &lt;a href=&#34;instantiatefrombackup.md&#34;&gt;InstantiateFromBackup&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -270,7 +352,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="standby.md">Standby</a>
+_Type_: List of &lt;a href=&#34;standby.md&#34;&gt;Standby&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -278,7 +360,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -300,33 +382,33 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CloudStorageContainer
 
-Returns the <code>CloudStorageContainer</code> value.
+Returns the &lt;code&gt;CloudStorageContainer&lt;/code&gt; value.
 
 #### ComputeSiteName
 
-Returns the <code>ComputeSiteName</code> value.
+Returns the &lt;code&gt;ComputeSiteName&lt;/code&gt; value.
 
 #### DbaasMonitorUrl
 
-Returns the <code>DbaasMonitorUrl</code> value.
+Returns the &lt;code&gt;DbaasMonitorUrl&lt;/code&gt; value.
 
 #### EmUrl
 
-Returns the <code>EmUrl</code> value.
+Returns the &lt;code&gt;EmUrl&lt;/code&gt; value.
 
 #### GlassfishUrl
 
-Returns the <code>GlassfishUrl</code> value.
+Returns the &lt;code&gt;GlassfishUrl&lt;/code&gt; value.
 
 #### IdentityDomain
 
-Returns the <code>IdentityDomain</code> value.
+Returns the &lt;code&gt;IdentityDomain&lt;/code&gt; value.
 
 #### Status
 
-Returns the <code>Status</code> value.
+Returns the &lt;code&gt;Status&lt;/code&gt; value.
 
 #### Uri
 
-Returns the <code>Uri</code> value.
+Returns the &lt;code&gt;Uri&lt;/code&gt; value.
 

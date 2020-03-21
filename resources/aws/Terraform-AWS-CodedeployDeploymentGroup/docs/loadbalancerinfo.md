@@ -8,9 +8,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#elbinfo" title="ElbInfo">ElbInfo</a>" : <i>[ <a href="loadbalancerinfo-elbinfo.md">ElbInfo</a>, ... ]</i>,
-    "<a href="#targetgroupinfo" title="TargetGroupInfo">TargetGroupInfo</a>" : <i>[ <a href="loadbalancerinfo-targetgroupinfo.md">TargetGroupInfo</a>, ... ]</i>,
-    "<a href="#targetgrouppairinfo" title="TargetGroupPairInfo">TargetGroupPairInfo</a>" : <i>[ <a href="loadbalancerinfo-targetgrouppairinfo.md">TargetGroupPairInfo</a>, ... ]</i>
+    "<a href="#elbinfo" title="ElbInfo">ElbInfo</a>" : <i>[ &lt;a href=&#34;loadbalancerinfo-elbinfo.md&#34;&gt;ElbInfo&lt;/a&gt;, ... ]</i>,
+    "<a href="#targetgroupinfo" title="TargetGroupInfo">TargetGroupInfo</a>" : <i>[ &lt;a href=&#34;loadbalancerinfo-targetgroupinfo.md&#34;&gt;TargetGroupInfo&lt;/a&gt;, ... ]</i>,
+    "<a href="#targetgrouppairinfo" title="TargetGroupPairInfo">TargetGroupPairInfo</a>" : <i>[ &lt;a href=&#34;loadbalancerinfo-targetgrouppairinfo.md&#34;&gt;TargetGroupPairInfo&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -18,11 +18,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#elbinfo" title="ElbInfo">ElbInfo</a>: <i>
-      - <a href="loadbalancerinfo-elbinfo.md">ElbInfo</a></i>
+      - &lt;a href=&#34;loadbalancerinfo-elbinfo.md&#34;&gt;ElbInfo&lt;/a&gt;</i>
 <a href="#targetgroupinfo" title="TargetGroupInfo">TargetGroupInfo</a>: <i>
-      - <a href="loadbalancerinfo-targetgroupinfo.md">TargetGroupInfo</a></i>
+      - &lt;a href=&#34;loadbalancerinfo-targetgroupinfo.md&#34;&gt;TargetGroupInfo&lt;/a&gt;</i>
 <a href="#targetgrouppairinfo" title="TargetGroupPairInfo">TargetGroupPairInfo</a>: <i>
-      - <a href="loadbalancerinfo-targetgrouppairinfo.md">TargetGroupPairInfo</a></i>
+      - &lt;a href=&#34;loadbalancerinfo-targetgrouppairinfo.md&#34;&gt;TargetGroupPairInfo&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -30,24 +30,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### ElbInfo
 
 _Required_: No
-
-_Type_: List of <a href="loadbalancerinfo-elbinfo.md">ElbInfo</a>
+_Type_: List of &lt;a href=&#34;loadbalancerinfo-elbinfo.md&#34;&gt;ElbInfo&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TargetGroupInfo
 
 _Required_: No
-
-_Type_: List of <a href="loadbalancerinfo-targetgroupinfo.md">TargetGroupInfo</a>
+_Type_: List of &lt;a href=&#34;loadbalancerinfo-targetgroupinfo.md&#34;&gt;TargetGroupInfo&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TargetGroupPairInfo
 
 _Required_: No
-
-_Type_: List of <a href="loadbalancerinfo-targetgrouppairinfo.md">TargetGroupPairInfo</a>
+_Type_: List of &lt;a href=&#34;loadbalancerinfo-targetgrouppairinfo.md&#34;&gt;TargetGroupPairInfo&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

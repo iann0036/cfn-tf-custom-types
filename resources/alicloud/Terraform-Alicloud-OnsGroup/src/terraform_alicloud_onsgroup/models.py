@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     GroupId: Optional[str]
-    Id: Optional[str]
     InstanceId: Optional[str]
     ReadEnable: Optional[bool]
     Remark: Optional[str]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             GroupId=json_data.get("GroupId"),
-            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
             ReadEnable=json_data.get("ReadEnable"),
             Remark=json_data.get("Remark"),

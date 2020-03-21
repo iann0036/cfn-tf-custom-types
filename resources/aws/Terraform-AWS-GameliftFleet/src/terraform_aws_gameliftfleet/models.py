@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     Ec2InstanceType: Optional[str]
     FleetType: Optional[str]
-    Id: Optional[str]
     InstanceRoleArn: Optional[str]
     LogPaths: Optional[Sequence[str]]
     MetricGroups: Optional[Sequence[str]]
@@ -69,7 +68,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             Ec2InstanceType=json_data.get("Ec2InstanceType"),
             FleetType=json_data.get("FleetType"),
-            Id=json_data.get("Id"),
             InstanceRoleArn=json_data.get("InstanceRoleArn"),
             LogPaths=json_data.get("LogPaths"),
             MetricGroups=json_data.get("MetricGroups"),

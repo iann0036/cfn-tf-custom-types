@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     BackupPeriod: Optional[Sequence[str]]
     BackupTime: Optional[str]
     EngineVersion: Optional[str]
-    Id: Optional[str]
     InstanceChargeType: Optional[str]
     KmsEncryptedPassword: Optional[str]
     KmsEncryptionContext: Optional[Sequence["_KmsEncryptionContext"]]
@@ -67,7 +66,6 @@ class ResourceModel(BaseResourceModel):
             BackupPeriod=json_data.get("BackupPeriod"),
             BackupTime=json_data.get("BackupTime"),
             EngineVersion=json_data.get("EngineVersion"),
-            Id=json_data.get("Id"),
             InstanceChargeType=json_data.get("InstanceChargeType"),
             KmsEncryptedPassword=json_data.get("KmsEncryptedPassword"),
             KmsEncryptionContext=json_data.get("KmsEncryptionContext"),

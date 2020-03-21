@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     AlicloudCertificateId: Optional[str]
     AlicloudCertificateName: Optional[str]
     AlicloudCertificateRegionId: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     PrivateKey: Optional[str]
     ResourceGroupId: Optional[str]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             AlicloudCertificateId=json_data.get("AlicloudCertificateId"),
             AlicloudCertificateName=json_data.get("AlicloudCertificateName"),
             AlicloudCertificateRegionId=json_data.get("AlicloudCertificateRegionId"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             PrivateKey=json_data.get("PrivateKey"),
             ResourceGroupId=json_data.get("ResourceGroupId"),

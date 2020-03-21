@@ -12,6 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::SlbListener",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#aclid" title="AclId">AclId</a>" : <i>String</i>,
         "<a href="#aclstatus" title="AclStatus">AclStatus</a>" : <i>String</i>,
         "<a href="#acltype" title="AclType">AclType</a>" : <i>String</i>,
@@ -36,7 +37,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#healthchecktype" title="HealthCheckType">HealthCheckType</a>" : <i>String</i>,
         "<a href="#healthcheckuri" title="HealthCheckUri">HealthCheckUri</a>" : <i>String</i>,
         "<a href="#healthythreshold" title="HealthyThreshold">HealthyThreshold</a>" : <i>Double</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#idletimeout" title="IdleTimeout">IdleTimeout</a>" : <i>Double</i>,
         "<a href="#instanceport" title="InstancePort">InstancePort</a>" : <i>Double</i>,
         "<a href="#lbport" title="LbPort">LbPort</a>" : <i>Double</i>,
@@ -55,7 +55,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#stickysessiontype" title="StickySessionType">StickySessionType</a>" : <i>String</i>,
         "<a href="#tlscipherpolicy" title="TlsCipherPolicy">TlsCipherPolicy</a>" : <i>String</i>,
         "<a href="#unhealthythreshold" title="UnhealthyThreshold">UnhealthyThreshold</a>" : <i>Double</i>,
-        "<a href="#xforwardedfor" title="XForwardedFor">XForwardedFor</a>" : <i>[ <a href="xforwardedfor.md">XForwardedFor</a>, ... ]</i>
+        "<a href="#xforwardedfor" title="XForwardedFor">XForwardedFor</a>" : <i>[ &lt;a href=&#34;xforwardedfor.md&#34;&gt;XForwardedFor&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -65,6 +65,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::SlbListener
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#aclid" title="AclId">AclId</a>: <i>String</i>
     <a href="#aclstatus" title="AclStatus">AclStatus</a>: <i>String</i>
     <a href="#acltype" title="AclType">AclType</a>: <i>String</i>
@@ -89,7 +90,6 @@ Properties:
     <a href="#healthchecktype" title="HealthCheckType">HealthCheckType</a>: <i>String</i>
     <a href="#healthcheckuri" title="HealthCheckUri">HealthCheckUri</a>: <i>String</i>
     <a href="#healthythreshold" title="HealthyThreshold">HealthyThreshold</a>: <i>Double</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#idletimeout" title="IdleTimeout">IdleTimeout</a>: <i>Double</i>
     <a href="#instanceport" title="InstancePort">InstancePort</a>: <i>Double</i>
     <a href="#lbport" title="LbPort">LbPort</a>: <i>Double</i>
@@ -109,10 +109,20 @@ Properties:
     <a href="#tlscipherpolicy" title="TlsCipherPolicy">TlsCipherPolicy</a>: <i>String</i>
     <a href="#unhealthythreshold" title="UnhealthyThreshold">UnhealthyThreshold</a>: <i>Double</i>
     <a href="#xforwardedfor" title="XForwardedFor">XForwardedFor</a>: <i>
-      - <a href="xforwardedfor.md">XForwardedFor</a></i>
+      - &lt;a href=&#34;xforwardedfor.md&#34;&gt;XForwardedFor&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AclId
 
@@ -306,14 +316,6 @@ _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### IdleTimeout
 
 _Required_: No
@@ -462,7 +464,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="xforwardedfor.md">XForwardedFor</a>
+_Type_: List of &lt;a href=&#34;xforwardedfor.md&#34;&gt;XForwardedFor&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

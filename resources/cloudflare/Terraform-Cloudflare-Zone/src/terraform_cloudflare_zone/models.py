@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     JumpStart: Optional[bool]
     Meta: Optional[Sequence["_Meta"]]
     NameServers: Optional[Sequence[str]]
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             JumpStart=json_data.get("JumpStart"),
             Meta=json_data.get("Meta"),
             NameServers=json_data.get("NameServers"),

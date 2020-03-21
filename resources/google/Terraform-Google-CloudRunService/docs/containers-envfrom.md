@@ -9,8 +9,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#prefix" title="Prefix">Prefix</a>" : <i>String</i>,
-    "<a href="#configmapref" title="ConfigMapRef">ConfigMapRef</a>" : <i>[ <a href="containers-envfrom-configmapref.md">ConfigMapRef</a>, ... ]</i>,
-    "<a href="#secretref" title="SecretRef">SecretRef</a>" : <i>[ <a href="containers-envfrom-secretref.md">SecretRef</a>, ... ]</i>
+    "<a href="#configmapref" title="ConfigMapRef">ConfigMapRef</a>" : <i>[ &lt;a href=&#34;containers-envfrom-configmapref.md&#34;&gt;ConfigMapRef&lt;/a&gt;, ... ]</i>,
+    "<a href="#secretref" title="SecretRef">SecretRef</a>" : <i>[ &lt;a href=&#34;containers-envfrom-secretref.md&#34;&gt;SecretRef&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -19,9 +19,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#prefix" title="Prefix">Prefix</a>: <i>String</i>
 <a href="#configmapref" title="ConfigMapRef">ConfigMapRef</a>: <i>
-      - <a href="containers-envfrom-configmapref.md">ConfigMapRef</a></i>
+      - &lt;a href=&#34;containers-envfrom-configmapref.md&#34;&gt;ConfigMapRef&lt;/a&gt;</i>
 <a href="#secretref" title="SecretRef">SecretRef</a>: <i>
-      - <a href="containers-envfrom-secretref.md">SecretRef</a></i>
+      - &lt;a href=&#34;containers-envfrom-secretref.md&#34;&gt;SecretRef&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -29,7 +29,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Prefix
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -37,16 +36,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ConfigMapRef
 
 _Required_: No
-
-_Type_: List of <a href="containers-envfrom-configmapref.md">ConfigMapRef</a>
+_Type_: List of &lt;a href=&#34;containers-envfrom-configmapref.md&#34;&gt;ConfigMapRef&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecretRef
 
 _Required_: No
-
-_Type_: List of <a href="containers-envfrom-secretref.md">SecretRef</a>
+_Type_: List of &lt;a href=&#34;containers-envfrom-secretref.md&#34;&gt;SecretRef&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

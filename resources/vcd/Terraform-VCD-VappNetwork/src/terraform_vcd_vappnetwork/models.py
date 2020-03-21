@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     FirewallEnabled: Optional[bool]
     Gateway: Optional[str]
     GuestVlanAllowed: Optional[bool]
-    Id: Optional[str]
     Name: Optional[str]
     NatEnabled: Optional[bool]
     Netmask: Optional[str]
@@ -71,7 +70,6 @@ class ResourceModel(BaseResourceModel):
             FirewallEnabled=json_data.get("FirewallEnabled"),
             Gateway=json_data.get("Gateway"),
             GuestVlanAllowed=json_data.get("GuestVlanAllowed"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             NatEnabled=json_data.get("NatEnabled"),
             Netmask=json_data.get("Netmask"),

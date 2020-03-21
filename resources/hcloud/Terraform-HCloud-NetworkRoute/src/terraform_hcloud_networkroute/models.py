@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Destination: Optional[str]
     Gateway: Optional[str]
-    Id: Optional[str]
     NetworkId: Optional[float]
 
     @classmethod
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Destination=json_data.get("Destination"),
             Gateway=json_data.get("Gateway"),
-            Id=json_data.get("Id"),
             NetworkId=json_data.get("NetworkId"),
         )
 

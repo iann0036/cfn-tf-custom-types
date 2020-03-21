@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     Duration: Optional[float]
     Enabled: Optional[bool]
     EndDate: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Schedule: Optional[str]
     ScheduleTimezone: Optional[str]
@@ -64,7 +63,6 @@ class ResourceModel(BaseResourceModel):
             Duration=json_data.get("Duration"),
             Enabled=json_data.get("Enabled"),
             EndDate=json_data.get("EndDate"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Schedule=json_data.get("Schedule"),
             ScheduleTimezone=json_data.get("ScheduleTimezone"),

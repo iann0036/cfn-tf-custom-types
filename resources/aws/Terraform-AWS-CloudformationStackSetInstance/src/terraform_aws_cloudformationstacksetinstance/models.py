@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AccountId: Optional[str]
-    Id: Optional[str]
     ParameterOverrides: Optional[Sequence["_ParameterOverrides"]]
     Region: Optional[str]
     RetainStack: Optional[bool]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             AccountId=json_data.get("AccountId"),
-            Id=json_data.get("Id"),
             ParameterOverrides=json_data.get("ParameterOverrides"),
             Region=json_data.get("Region"),
             RetainStack=json_data.get("RetainStack"),

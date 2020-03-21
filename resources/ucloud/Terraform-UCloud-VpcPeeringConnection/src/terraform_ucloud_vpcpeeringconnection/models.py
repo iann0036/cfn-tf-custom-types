@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     PeerProjectId: Optional[str]
     PeerVpcId: Optional[str]
     VpcId: Optional[str]
@@ -50,7 +49,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             PeerProjectId=json_data.get("PeerProjectId"),
             PeerVpcId=json_data.get("PeerVpcId"),
             VpcId=json_data.get("VpcId"),

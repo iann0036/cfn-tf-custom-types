@@ -54,7 +54,6 @@ class ResourceModel(BaseResourceModel):
     HomepageUrl: Optional[str]
     HtmlUrl: Optional[str]
     HttpCloneUrl: Optional[str]
-    Id: Optional[str]
     LicenseTemplate: Optional[str]
     Name: Optional[str]
     Private: Optional[bool]
@@ -90,7 +89,6 @@ class ResourceModel(BaseResourceModel):
             HomepageUrl=json_data.get("HomepageUrl"),
             HtmlUrl=json_data.get("HtmlUrl"),
             HttpCloneUrl=json_data.get("HttpCloneUrl"),
-            Id=json_data.get("Id"),
             LicenseTemplate=json_data.get("LicenseTemplate"),
             Name=json_data.get("Name"),
             Private=json_data.get("Private"),

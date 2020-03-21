@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     CurrentLocationId: Optional[str]
     DisplayName: Optional[str]
     Host: Optional[str]
-    Id: Optional[str]
     Labels: Optional[Sequence["_Labels"]]
     LocationId: Optional[str]
     MemorySizeGb: Optional[float]
@@ -71,7 +70,6 @@ class ResourceModel(BaseResourceModel):
             CurrentLocationId=json_data.get("CurrentLocationId"),
             DisplayName=json_data.get("DisplayName"),
             Host=json_data.get("Host"),
-            Id=json_data.get("Id"),
             Labels=json_data.get("Labels"),
             LocationId=json_data.get("LocationId"),
             MemorySizeGb=json_data.get("MemorySizeGb"),

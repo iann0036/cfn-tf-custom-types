@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AppliesTo: Optional[str]
     Description: Optional[str]
     DisableAlerting: Optional[bool]
-    Id: Optional[str]
     Name: Optional[str]
     ParentId: Optional[float]
     Properties: Optional[Sequence["_Properties"]]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             AppliesTo=json_data.get("AppliesTo"),
             Description=json_data.get("Description"),
             DisableAlerting=json_data.get("DisableAlerting"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ParentId=json_data.get("ParentId"),
             Properties=json_data.get("Properties"),

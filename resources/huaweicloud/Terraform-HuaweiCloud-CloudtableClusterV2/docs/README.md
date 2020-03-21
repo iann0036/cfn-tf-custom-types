@@ -12,19 +12,27 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::HuaweiCloud::CloudtableClusterV2",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#availabilityzone" title="AvailabilityZone">AvailabilityZone</a>" : <i>String</i>,
+        "<a href="#created" title="Created">Created</a>" : <i>String</i>,
         "<a href="#enableiamauth" title="EnableIamAuth">EnableIamAuth</a>" : <i>Boolean</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#hbasepublicendpoint" title="HbasePublicEndpoint">HbasePublicEndpoint</a>" : <i>String</i>,
+        "<a href="#lemonlink" title="LemonLink">LemonLink</a>" : <i>String</i>,
         "<a href="#lemonnum" title="LemonNum">LemonNum</a>" : <i>Double</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
+        "<a href="#opentsdblink" title="OpenTsdbLink">OpenTsdbLink</a>" : <i>String</i>,
         "<a href="#opentsdbnum" title="OpentsdbNum">OpentsdbNum</a>" : <i>Double</i>,
+        "<a href="#opentsdbpublicendpoint" title="OpentsdbPublicEndpoint">OpentsdbPublicEndpoint</a>" : <i>String</i>,
         "<a href="#rsnum" title="RsNum">RsNum</a>" : <i>Double</i>,
         "<a href="#securitygroupid" title="SecurityGroupId">SecurityGroupId</a>" : <i>String</i>,
+        "<a href="#storagequota" title="StorageQuota">StorageQuota</a>" : <i>String</i>,
         "<a href="#storagetype" title="StorageType">StorageType</a>" : <i>String</i>,
         "<a href="#subnetid" title="SubnetId">SubnetId</a>" : <i>String</i>,
+        "<a href="#usedstoragesize" title="UsedStorageSize">UsedStorageSize</a>" : <i>String</i>,
         "<a href="#vpcid" title="VpcId">VpcId</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
+        "<a href="#zookeeperlink" title="ZookeeperLink">ZookeeperLink</a>" : <i>String</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     }
 }
 </pre>
@@ -34,27 +42,53 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::HuaweiCloud::CloudtableClusterV2
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#availabilityzone" title="AvailabilityZone">AvailabilityZone</a>: <i>String</i>
+    <a href="#created" title="Created">Created</a>: <i>String</i>
     <a href="#enableiamauth" title="EnableIamAuth">EnableIamAuth</a>: <i>Boolean</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#hbasepublicendpoint" title="HbasePublicEndpoint">HbasePublicEndpoint</a>: <i>String</i>
+    <a href="#lemonlink" title="LemonLink">LemonLink</a>: <i>String</i>
     <a href="#lemonnum" title="LemonNum">LemonNum</a>: <i>Double</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
+    <a href="#opentsdblink" title="OpenTsdbLink">OpenTsdbLink</a>: <i>String</i>
     <a href="#opentsdbnum" title="OpentsdbNum">OpentsdbNum</a>: <i>Double</i>
+    <a href="#opentsdbpublicendpoint" title="OpentsdbPublicEndpoint">OpentsdbPublicEndpoint</a>: <i>String</i>
     <a href="#rsnum" title="RsNum">RsNum</a>: <i>Double</i>
     <a href="#securitygroupid" title="SecurityGroupId">SecurityGroupId</a>: <i>String</i>
+    <a href="#storagequota" title="StorageQuota">StorageQuota</a>: <i>String</i>
     <a href="#storagetype" title="StorageType">StorageType</a>: <i>String</i>
     <a href="#subnetid" title="SubnetId">SubnetId</a>: <i>String</i>
+    <a href="#usedstoragesize" title="UsedStorageSize">UsedStorageSize</a>: <i>String</i>
     <a href="#vpcid" title="VpcId">VpcId</a>: <i>String</i>
+    <a href="#zookeeperlink" title="ZookeeperLink">ZookeeperLink</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### AvailabilityZone
 
 _Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Created
+
+_Required_: No
 
 _Type_: String
 
@@ -68,7 +102,15 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### HbasePublicEndpoint
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### LemonLink
 
 _Required_: No
 
@@ -92,11 +134,27 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### OpenTsdbLink
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### OpentsdbNum
 
 _Required_: No
 
 _Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### OpentsdbPublicEndpoint
+
+_Required_: No
+
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -111,6 +169,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SecurityGroupId
 
 _Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### StorageQuota
+
+_Required_: No
 
 _Type_: String
 
@@ -132,9 +198,25 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### UsedStorageSize
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### VpcId
 
 _Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ZookeeperLink
+
+_Required_: No
 
 _Type_: String
 
@@ -144,7 +226,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -152,7 +234,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -174,33 +256,33 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Created
 
-Returns the <code>Created</code> value.
+Returns the &lt;code&gt;Created&lt;/code&gt; value.
 
 #### HbasePublicEndpoint
 
-Returns the <code>HbasePublicEndpoint</code> value.
+Returns the &lt;code&gt;HbasePublicEndpoint&lt;/code&gt; value.
 
 #### LemonLink
 
-Returns the <code>LemonLink</code> value.
+Returns the &lt;code&gt;LemonLink&lt;/code&gt; value.
 
 #### OpenTsdbLink
 
-Returns the <code>OpenTsdbLink</code> value.
+Returns the &lt;code&gt;OpenTsdbLink&lt;/code&gt; value.
 
 #### OpentsdbPublicEndpoint
 
-Returns the <code>OpentsdbPublicEndpoint</code> value.
+Returns the &lt;code&gt;OpentsdbPublicEndpoint&lt;/code&gt; value.
 
 #### StorageQuota
 
-Returns the <code>StorageQuota</code> value.
+Returns the &lt;code&gt;StorageQuota&lt;/code&gt; value.
 
 #### UsedStorageSize
 
-Returns the <code>UsedStorageSize</code> value.
+Returns the &lt;code&gt;UsedStorageSize&lt;/code&gt; value.
 
 #### ZookeeperLink
 
-Returns the <code>ZookeeperLink</code> value.
+Returns the &lt;code&gt;ZookeeperLink&lt;/code&gt; value.
 

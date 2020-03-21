@@ -45,7 +45,6 @@ class ResourceModel(BaseResourceModel):
     ContentLanguage: Optional[str]
     ContentType: Optional[str]
     Etag: Optional[str]
-    Id: Optional[str]
     Key: Optional[str]
     ServerSideEncryption: Optional[str]
     Source: Optional[str]
@@ -70,7 +69,6 @@ class ResourceModel(BaseResourceModel):
             ContentLanguage=json_data.get("ContentLanguage"),
             ContentType=json_data.get("ContentType"),
             Etag=json_data.get("Etag"),
-            Id=json_data.get("Id"),
             Key=json_data.get("Key"),
             ServerSideEncryption=json_data.get("ServerSideEncryption"),
             Source=json_data.get("Source"),

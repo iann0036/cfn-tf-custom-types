@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AppId: Optional[str]
     CreateTime: Optional[str]
-    Id: Optional[str]
     TableCount: Optional[float]
     TotalSize: Optional[float]
     ZoneName: Optional[str]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AppId=json_data.get("AppId"),
             CreateTime=json_data.get("CreateTime"),
-            Id=json_data.get("Id"),
             TableCount=json_data.get("TableCount"),
             TotalSize=json_data.get("TotalSize"),
             ZoneName=json_data.get("ZoneName"),

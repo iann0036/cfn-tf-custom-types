@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AddressFamily: Optional[str]
     Enable: Optional[bool]
-    Id: Optional[str]
     Metric: Optional[float]
     Name: Optional[str]
     RouteTable: Optional[str]
@@ -63,7 +62,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AddressFamily=json_data.get("AddressFamily"),
             Enable=json_data.get("Enable"),
-            Id=json_data.get("Id"),
             Metric=json_data.get("Metric"),
             Name=json_data.get("Name"),
             RouteTable=json_data.get("RouteTable"),

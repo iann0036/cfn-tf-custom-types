@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     Location: Optional[str]
     MaxSizeBytes: Optional[float]
     MaxSizeGb: Optional[float]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             MaxSizeBytes=json_data.get("MaxSizeBytes"),
             MaxSizeGb=json_data.get("MaxSizeGb"),

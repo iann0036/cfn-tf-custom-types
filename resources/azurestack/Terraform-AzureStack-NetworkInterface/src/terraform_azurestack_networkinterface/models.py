@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AppliedDnsServers: Optional[Sequence[str]]
     DnsServers: Optional[Sequence[str]]
     EnableIpForwarding: Optional[bool]
-    Id: Optional[str]
     InternalDnsNameLabel: Optional[str]
     InternalFqdn: Optional[str]
     Location: Optional[str]
@@ -65,7 +64,6 @@ class ResourceModel(BaseResourceModel):
             AppliedDnsServers=json_data.get("AppliedDnsServers"),
             DnsServers=json_data.get("DnsServers"),
             EnableIpForwarding=json_data.get("EnableIpForwarding"),
-            Id=json_data.get("Id"),
             InternalDnsNameLabel=json_data.get("InternalDnsNameLabel"),
             InternalFqdn=json_data.get("InternalFqdn"),
             Location=json_data.get("Location"),

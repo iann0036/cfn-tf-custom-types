@@ -10,7 +10,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#uri" title="Uri">Uri</a>" : <i>String</i>,
     "<a href="#version" title="Version">Version</a>" : <i>String</i>,
-    "<a href="#hash" title="Hash">Hash</a>" : <i>[ <a href="publishcontentlink-hash.md">Hash</a>, ... ]</i>
+    "<a href="#hash" title="Hash">Hash</a>" : <i>[ &lt;a href=&#34;publishcontentlink-hash.md&#34;&gt;Hash&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -20,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#uri" title="Uri">Uri</a>: <i>String</i>
 <a href="#version" title="Version">Version</a>: <i>String</i>
 <a href="#hash" title="Hash">Hash</a>: <i>
-      - <a href="publishcontentlink-hash.md">Hash</a></i>
+      - &lt;a href=&#34;publishcontentlink-hash.md&#34;&gt;Hash&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -28,7 +28,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Uri
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -36,7 +35,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Version
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -44,8 +42,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Hash
 
 _Required_: No
-
-_Type_: List of <a href="publishcontentlink-hash.md">Hash</a>
+_Type_: List of &lt;a href=&#34;publishcontentlink-hash.md&#34;&gt;Hash&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

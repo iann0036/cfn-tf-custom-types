@@ -44,7 +44,6 @@ class ResourceModel(BaseResourceModel):
     CheckBeacon: Optional[bool]
     Failback: Optional[bool]
     HostSystemId: Optional[str]
-    Id: Optional[str]
     LinkDiscoveryOperation: Optional[str]
     LinkDiscoveryProtocol: Optional[str]
     Mtu: Optional[float]
@@ -76,7 +75,6 @@ class ResourceModel(BaseResourceModel):
             CheckBeacon=json_data.get("CheckBeacon"),
             Failback=json_data.get("Failback"),
             HostSystemId=json_data.get("HostSystemId"),
-            Id=json_data.get("Id"),
             LinkDiscoveryOperation=json_data.get("LinkDiscoveryOperation"),
             LinkDiscoveryProtocol=json_data.get("LinkDiscoveryProtocol"),
             Mtu=json_data.get("Mtu"),

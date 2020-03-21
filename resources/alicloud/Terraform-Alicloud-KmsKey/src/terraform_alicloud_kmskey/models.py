@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     DeletionWindowInDays: Optional[float]
     Description: Optional[str]
-    Id: Optional[str]
     IsEnabled: Optional[bool]
     KeyUsage: Optional[str]
 
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             DeletionWindowInDays=json_data.get("DeletionWindowInDays"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             IsEnabled=json_data.get("IsEnabled"),
             KeyUsage=json_data.get("KeyUsage"),
         )

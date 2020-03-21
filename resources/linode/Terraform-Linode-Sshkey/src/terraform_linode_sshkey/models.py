@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Created: Optional[str]
-    Id: Optional[str]
     Label: Optional[str]
     SshKey: Optional[str]
 
@@ -51,7 +50,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Created=json_data.get("Created"),
-            Id=json_data.get("Id"),
             Label=json_data.get("Label"),
             SshKey=json_data.get("SshKey"),
         )

@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     Definitions: Optional[Sequence[str]]
     Description: Optional[str]
     ForceDestroy: Optional[bool]
-    Id: Optional[str]
     Identifier: Optional[str]
     IdentifierPrefix: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             Definitions=json_data.get("Definitions"),
             Description=json_data.get("Description"),
             ForceDestroy=json_data.get("ForceDestroy"),
-            Id=json_data.get("Id"),
             Identifier=json_data.get("Identifier"),
             IdentifierPrefix=json_data.get("IdentifierPrefix"),
             Tags=json_data.get("Tags"),

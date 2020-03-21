@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     AllFixedIps: Optional[Sequence[str]]
     DeviceId: Optional[str]
     DeviceOwner: Optional[str]
-    Id: Optional[str]
     MacAddress: Optional[str]
     Name: Optional[str]
     NetworkId: Optional[str]
@@ -65,7 +64,6 @@ class ResourceModel(BaseResourceModel):
             AllFixedIps=json_data.get("AllFixedIps"),
             DeviceId=json_data.get("DeviceId"),
             DeviceOwner=json_data.get("DeviceOwner"),
-            Id=json_data.get("Id"),
             MacAddress=json_data.get("MacAddress"),
             Name=json_data.get("Name"),
             NetworkId=json_data.get("NetworkId"),

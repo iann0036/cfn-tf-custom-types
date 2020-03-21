@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     ExclusionFilter: Optional[Sequence["_ExclusionFilter"]]
     Filter: Optional[Sequence["_Filter"]]
@@ -50,7 +49,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ExclusionFilter=json_data.get("ExclusionFilter"),
             Filter=json_data.get("Filter"),

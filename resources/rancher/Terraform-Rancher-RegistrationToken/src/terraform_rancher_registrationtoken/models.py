@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     EnvironmentId: Optional[str]
     HostLabels: Optional[Sequence["_HostLabels"]]
-    Id: Optional[str]
     Image: Optional[str]
     Name: Optional[str]
     RegistrationUrl: Optional[str]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             EnvironmentId=json_data.get("EnvironmentId"),
             HostLabels=json_data.get("HostLabels"),
-            Id=json_data.get("Id"),
             Image=json_data.get("Image"),
             Name=json_data.get("Name"),
             RegistrationUrl=json_data.get("RegistrationUrl"),

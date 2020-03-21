@@ -45,7 +45,6 @@ class ResourceModel(BaseResourceModel):
     HttpFailureFeedbackRoleArn: Optional[str]
     HttpSuccessFeedbackRoleArn: Optional[str]
     HttpSuccessFeedbackSampleRate: Optional[float]
-    Id: Optional[str]
     KmsMasterKeyId: Optional[str]
     LambdaFailureFeedbackRoleArn: Optional[str]
     LambdaSuccessFeedbackRoleArn: Optional[str]
@@ -76,7 +75,6 @@ class ResourceModel(BaseResourceModel):
             HttpFailureFeedbackRoleArn=json_data.get("HttpFailureFeedbackRoleArn"),
             HttpSuccessFeedbackRoleArn=json_data.get("HttpSuccessFeedbackRoleArn"),
             HttpSuccessFeedbackSampleRate=json_data.get("HttpSuccessFeedbackSampleRate"),
-            Id=json_data.get("Id"),
             KmsMasterKeyId=json_data.get("KmsMasterKeyId"),
             LambdaFailureFeedbackRoleArn=json_data.get("LambdaFailureFeedbackRoleArn"),
             LambdaSuccessFeedbackRoleArn=json_data.get("LambdaSuccessFeedbackRoleArn"),

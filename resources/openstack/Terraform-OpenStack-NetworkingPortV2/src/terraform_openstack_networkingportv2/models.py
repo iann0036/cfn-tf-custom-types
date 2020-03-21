@@ -45,7 +45,6 @@ class ResourceModel(BaseResourceModel):
     DeviceOwner: Optional[str]
     DnsAssignment: Optional[Sequence[Sequence["_DnsAssignment"]]]
     DnsName: Optional[str]
-    Id: Optional[str]
     MacAddress: Optional[str]
     Name: Optional[str]
     NetworkId: Optional[str]
@@ -82,7 +81,6 @@ class ResourceModel(BaseResourceModel):
             DeviceOwner=json_data.get("DeviceOwner"),
             DnsAssignment=json_data.get("DnsAssignment"),
             DnsName=json_data.get("DnsName"),
-            Id=json_data.get("Id"),
             MacAddress=json_data.get("MacAddress"),
             Name=json_data.get("Name"),
             NetworkId=json_data.get("NetworkId"),

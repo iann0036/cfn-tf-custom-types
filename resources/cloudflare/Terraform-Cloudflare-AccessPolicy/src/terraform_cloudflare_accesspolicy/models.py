@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ApplicationId: Optional[str]
     Decision: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Precedence: Optional[float]
     ZoneId: Optional[str]
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ApplicationId=json_data.get("ApplicationId"),
             Decision=json_data.get("Decision"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Precedence=json_data.get("Precedence"),
             ZoneId=json_data.get("ZoneId"),

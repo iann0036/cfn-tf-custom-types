@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     CreationRecord: Optional[Sequence["_CreationRecord"]]
     DisplayName: Optional[str]
     Enabled: Optional[bool]
-    Id: Optional[str]
     Labels: Optional[Sequence[str]]
     Name: Optional[str]
     NotificationChannels: Optional[Sequence[str]]
@@ -68,7 +67,6 @@ class ResourceModel(BaseResourceModel):
             CreationRecord=json_data.get("CreationRecord"),
             DisplayName=json_data.get("DisplayName"),
             Enabled=json_data.get("Enabled"),
-            Id=json_data.get("Id"),
             Labels=json_data.get("Labels"),
             Name=json_data.get("Name"),
             NotificationChannels=json_data.get("NotificationChannels"),

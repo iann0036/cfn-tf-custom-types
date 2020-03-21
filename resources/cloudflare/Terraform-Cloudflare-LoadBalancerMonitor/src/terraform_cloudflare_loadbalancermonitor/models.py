@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     ExpectedBody: Optional[str]
     ExpectedCodes: Optional[str]
     FollowRedirects: Optional[bool]
-    Id: Optional[str]
     Interval: Optional[float]
     Method: Optional[str]
     ModifiedOn: Optional[str]
@@ -68,7 +67,6 @@ class ResourceModel(BaseResourceModel):
             ExpectedBody=json_data.get("ExpectedBody"),
             ExpectedCodes=json_data.get("ExpectedCodes"),
             FollowRedirects=json_data.get("FollowRedirects"),
-            Id=json_data.get("Id"),
             Interval=json_data.get("Interval"),
             Method=json_data.get("Method"),
             ModifiedOn=json_data.get("ModifiedOn"),

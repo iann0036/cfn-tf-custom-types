@@ -12,9 +12,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OVH::CloudNetworkPrivateSubnet",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#cidr" title="Cidr">Cidr</a>" : <i>String</i>,
         "<a href="#dhcp" title="Dhcp">Dhcp</a>" : <i>Boolean</i>,
         "<a href="#end" title="End">End</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#gatewayip" title="GatewayIp">GatewayIp</a>" : <i>String</i>,
+        "<a href="#ippools" title="IpPools">IpPools</a>" : <i>[ &lt;a href=&#34;ippools.md&#34;&gt;IpPools&lt;/a&gt;, ... ]</i>,
         "<a href="#network" title="Network">Network</a>" : <i>String</i>,
         "<a href="#networkid" title="NetworkId">NetworkId</a>" : <i>String</i>,
         "<a href="#nogateway" title="NoGateway">NoGateway</a>" : <i>Boolean</i>,
@@ -30,9 +33,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OVH::CloudNetworkPrivateSubnet
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#cidr" title="Cidr">Cidr</a>: <i>String</i>
     <a href="#dhcp" title="Dhcp">Dhcp</a>: <i>Boolean</i>
     <a href="#end" title="End">End</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#gatewayip" title="GatewayIp">GatewayIp</a>: <i>String</i>
+    <a href="#ippools" title="IpPools">IpPools</a>: <i>
+      - &lt;a href=&#34;ippools.md&#34;&gt;IpPools&lt;/a&gt;</i>
     <a href="#network" title="Network">Network</a>: <i>String</i>
     <a href="#networkid" title="NetworkId">NetworkId</a>: <i>String</i>
     <a href="#nogateway" title="NoGateway">NoGateway</a>: <i>Boolean</i>
@@ -42,6 +49,24 @@ Properties:
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Cidr
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Dhcp
 
@@ -59,11 +84,19 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### GatewayIp
 
 _Required_: No
 
 _Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### IpPools
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;ippools.md&#34;&gt;IpPools&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -133,13 +166,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Cidr
 
-Returns the <code>Cidr</code> value.
+Returns the &lt;code&gt;Cidr&lt;/code&gt; value.
 
 #### GatewayIp
 
-Returns the <code>GatewayIp</code> value.
+Returns the &lt;code&gt;GatewayIp&lt;/code&gt; value.
 
 #### IpPools
 
-Returns the <code>IpPools</code> value.
+Returns the &lt;code&gt;IpPools&lt;/code&gt; value.
 

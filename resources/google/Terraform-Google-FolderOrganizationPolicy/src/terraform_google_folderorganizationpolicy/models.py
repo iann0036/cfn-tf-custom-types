@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Constraint: Optional[str]
     Etag: Optional[str]
     Folder: Optional[str]
-    Id: Optional[str]
     UpdateTime: Optional[str]
     Version: Optional[float]
     BooleanPolicy: Optional[Sequence["_BooleanPolicy"]]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             Constraint=json_data.get("Constraint"),
             Etag=json_data.get("Etag"),
             Folder=json_data.get("Folder"),
-            Id=json_data.get("Id"),
             UpdateTime=json_data.get("UpdateTime"),
             Version=json_data.get("Version"),
             BooleanPolicy=json_data.get("BooleanPolicy"),

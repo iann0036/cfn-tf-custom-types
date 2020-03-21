@@ -49,7 +49,6 @@ class ResourceModel(BaseResourceModel):
     DnsServer: Optional[Sequence[str]]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
     Gateway: Optional[str]
-    Id: Optional[str]
     InfiniBandNetworkCidr: Optional[str]
     LifecycleDetails: Optional[str]
     Netmask: Optional[str]
@@ -82,7 +81,6 @@ class ResourceModel(BaseResourceModel):
             DnsServer=json_data.get("DnsServer"),
             FreeformTags=json_data.get("FreeformTags"),
             Gateway=json_data.get("Gateway"),
-            Id=json_data.get("Id"),
             InfiniBandNetworkCidr=json_data.get("InfiniBandNetworkCidr"),
             LifecycleDetails=json_data.get("LifecycleDetails"),
             Netmask=json_data.get("Netmask"),

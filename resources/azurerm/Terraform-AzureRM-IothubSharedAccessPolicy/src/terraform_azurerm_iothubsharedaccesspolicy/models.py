@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DeviceConnect: Optional[bool]
-    Id: Optional[str]
     IothubName: Optional[str]
     Name: Optional[str]
     PrimaryConnectionString: Optional[str]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             DeviceConnect=json_data.get("DeviceConnect"),
-            Id=json_data.get("Id"),
             IothubName=json_data.get("IothubName"),
             Name=json_data.get("Name"),
             PrimaryConnectionString=json_data.get("PrimaryConnectionString"),

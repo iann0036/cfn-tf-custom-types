@@ -47,7 +47,6 @@ class ResourceModel(BaseResourceModel):
     EdgeClusterId: Optional[str]
     EnableRouterAdvertisement: Optional[bool]
     FailoverMode: Optional[str]
-    Id: Optional[str]
     Revision: Optional[float]
     FirewallSections: Optional[Sequence["_FirewallSections"]]
     Tag: Optional[Sequence["_Tag"]]
@@ -72,7 +71,6 @@ class ResourceModel(BaseResourceModel):
             EdgeClusterId=json_data.get("EdgeClusterId"),
             EnableRouterAdvertisement=json_data.get("EnableRouterAdvertisement"),
             FailoverMode=json_data.get("FailoverMode"),
-            Id=json_data.get("Id"),
             Revision=json_data.get("Revision"),
             FirewallSections=json_data.get("FirewallSections"),
             Tag=json_data.get("Tag"),

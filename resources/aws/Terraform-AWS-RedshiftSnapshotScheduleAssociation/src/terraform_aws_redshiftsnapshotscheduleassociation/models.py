@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ClusterIdentifier: Optional[str]
-    Id: Optional[str]
     ScheduleIdentifier: Optional[str]
 
     @classmethod
@@ -50,7 +49,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             ClusterIdentifier=json_data.get("ClusterIdentifier"),
-            Id=json_data.get("Id"),
             ScheduleIdentifier=json_data.get("ScheduleIdentifier"),
         )
 

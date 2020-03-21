@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DisplayName: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     ManagedInstanceCount: Optional[float]
     ManagedInstances: Optional[Sequence["_ManagedInstances"]]
     State: Optional[str]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DisplayName=json_data.get("DisplayName"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             ManagedInstanceCount=json_data.get("ManagedInstanceCount"),
             ManagedInstances=json_data.get("ManagedInstances"),
             State=json_data.get("State"),

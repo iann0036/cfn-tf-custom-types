@@ -8,8 +8,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ <a href="volumeclaimtemplate-metadata.md">Metadata</a>, ... ]</i>,
-    "<a href="#spec" title="Spec">Spec</a>" : <i>[ <a href="volumeclaimtemplate-spec.md">Spec</a>, ... ]</i>
+    "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ &lt;a href=&#34;volumeclaimtemplate-metadata.md&#34;&gt;Metadata&lt;/a&gt;, ... ]</i>,
+    "<a href="#spec" title="Spec">Spec</a>" : <i>[ &lt;a href=&#34;volumeclaimtemplate-spec.md&#34;&gt;Spec&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -17,9 +17,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#metadata" title="Metadata">Metadata</a>: <i>
-      - <a href="volumeclaimtemplate-metadata.md">Metadata</a></i>
+      - &lt;a href=&#34;volumeclaimtemplate-metadata.md&#34;&gt;Metadata&lt;/a&gt;</i>
 <a href="#spec" title="Spec">Spec</a>: <i>
-      - <a href="volumeclaimtemplate-spec.md">Spec</a></i>
+      - &lt;a href=&#34;volumeclaimtemplate-spec.md&#34;&gt;Spec&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -27,16 +27,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Metadata
 
 _Required_: No
-
-_Type_: List of <a href="volumeclaimtemplate-metadata.md">Metadata</a>
+_Type_: List of &lt;a href=&#34;volumeclaimtemplate-metadata.md&#34;&gt;Metadata&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Spec
 
 _Required_: No
-
-_Type_: List of <a href="volumeclaimtemplate-spec.md">Spec</a>
+_Type_: List of &lt;a href=&#34;volumeclaimtemplate-spec.md&#34;&gt;Spec&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

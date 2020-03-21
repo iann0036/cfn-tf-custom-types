@@ -12,14 +12,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Google::ComputeInstanceGroup",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#instances" title="Instances">Instances</a>" : <i>[ String, ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#network" title="Network">Network</a>" : <i>String</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
+        "<a href="#selflink" title="SelfLink">SelfLink</a>" : <i>String</i>,
+        "<a href="#size" title="Size">Size</a>" : <i>Double</i>,
         "<a href="#zone" title="Zone">Zone</a>" : <i>String</i>,
-        "<a href="#namedport" title="NamedPort">NamedPort</a>" : <i>[ <a href="namedport.md">NamedPort</a>, ... ]</i>
+        "<a href="#namedport" title="NamedPort">NamedPort</a>" : <i>[ &lt;a href=&#34;namedport.md&#34;&gt;NamedPort&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -29,21 +31,25 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Google::ComputeInstanceGroup
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#instances" title="Instances">Instances</a>: <i>
       - String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#network" title="Network">Network</a>: <i>String</i>
     <a href="#project" title="Project">Project</a>: <i>String</i>
+    <a href="#selflink" title="SelfLink">SelfLink</a>: <i>String</i>
+    <a href="#size" title="Size">Size</a>: <i>Double</i>
     <a href="#zone" title="Zone">Zone</a>: <i>String</i>
     <a href="#namedport" title="NamedPort">NamedPort</a>: <i>
-      - <a href="namedport.md">NamedPort</a></i>
+      - &lt;a href=&#34;namedport.md&#34;&gt;NamedPort&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
-#### Description
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
@@ -51,7 +57,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### Description
 
 _Required_: No
 
@@ -91,6 +97,22 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### SelfLink
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Size
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Zone
 
 _Required_: No
@@ -103,7 +125,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="namedport.md">NamedPort</a>
+_Type_: List of &lt;a href=&#34;namedport.md&#34;&gt;NamedPort&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -125,9 +147,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### SelfLink
 
-Returns the <code>SelfLink</code> value.
+Returns the &lt;code&gt;SelfLink&lt;/code&gt; value.
 
 #### Size
 
-Returns the <code>Size</code> value.
+Returns the &lt;code&gt;Size&lt;/code&gt; value.
 

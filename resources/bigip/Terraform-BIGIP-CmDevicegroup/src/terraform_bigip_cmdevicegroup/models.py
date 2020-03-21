@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AutoSync: Optional[str]
     Description: Optional[str]
     FullLoadOnSync: Optional[str]
-    Id: Optional[str]
     IncrementalConfig: Optional[float]
     Name: Optional[str]
     NetworkFailover: Optional[str]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             AutoSync=json_data.get("AutoSync"),
             Description=json_data.get("Description"),
             FullLoadOnSync=json_data.get("FullLoadOnSync"),
-            Id=json_data.get("Id"),
             IncrementalConfig=json_data.get("IncrementalConfig"),
             Name=json_data.get("Name"),
             NetworkFailover=json_data.get("NetworkFailover"),

@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Arn: Optional[str]
-    Id: Optional[str]
     SecretBinary: Optional[str]
     SecretId: Optional[str]
     SecretString: Optional[str]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Arn=json_data.get("Arn"),
-            Id=json_data.get("Id"),
             SecretBinary=json_data.get("SecretBinary"),
             SecretId=json_data.get("SecretId"),
             SecretString=json_data.get("SecretString"),

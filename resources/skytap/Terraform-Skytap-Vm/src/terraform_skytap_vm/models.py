@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Cpus: Optional[float]
     EnvironmentId: Optional[str]
-    Id: Optional[str]
     MaxCpus: Optional[float]
     MaxRam: Optional[float]
     Name: Optional[str]
@@ -65,7 +64,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Cpus=json_data.get("Cpus"),
             EnvironmentId=json_data.get("EnvironmentId"),
-            Id=json_data.get("Id"),
             MaxCpus=json_data.get("MaxCpus"),
             MaxRam=json_data.get("MaxRam"),
             Name=json_data.get("Name"),

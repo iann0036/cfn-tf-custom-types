@@ -12,6 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Spotinst::OceanAws",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#associatepublicipaddress" title="AssociatePublicIpAddress">AssociatePublicIpAddress</a>" : <i>Boolean</i>,
         "<a href="#blacklist" title="Blacklist">Blacklist</a>" : <i>[ String, ... ]</i>,
         "<a href="#controllerid" title="ControllerId">ControllerId</a>" : <i>String</i>,
@@ -20,7 +21,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#ebsoptimized" title="EbsOptimized">EbsOptimized</a>" : <i>Boolean</i>,
         "<a href="#fallbacktoondemand" title="FallbackToOndemand">FallbackToOndemand</a>" : <i>Boolean</i>,
         "<a href="#iaminstanceprofile" title="IamInstanceProfile">IamInstanceProfile</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#imageid" title="ImageId">ImageId</a>" : <i>String</i>,
         "<a href="#keyname" title="KeyName">KeyName</a>" : <i>String</i>,
         "<a href="#maxsize" title="MaxSize">MaxSize</a>" : <i>Double</i>,
@@ -35,14 +35,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#userdata" title="UserData">UserData</a>" : <i>String</i>,
         "<a href="#utilizereservedinstances" title="UtilizeReservedInstances">UtilizeReservedInstances</a>" : <i>Boolean</i>,
         "<a href="#whitelist" title="Whitelist">Whitelist</a>" : <i>[ String, ... ]</i>,
-        "<a href="#autoscaler" title="Autoscaler">Autoscaler</a>" : <i>[ <a href="autoscaler.md">Autoscaler</a>, ... ]</i>,
-        "<a href="#loadbalancers" title="LoadBalancers">LoadBalancers</a>" : <i>[ <a href="loadbalancers.md">LoadBalancers</a>, ... ]</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
-        "<a href="#updatepolicy" title="UpdatePolicy">UpdatePolicy</a>" : <i>[ <a href="updatepolicy.md">UpdatePolicy</a>, ... ]</i>,
-        "<a href="#autoscaledown" title="AutoscaleDown">AutoscaleDown</a>" : <i>[ <a href="autoscaledown.md">AutoscaleDown</a>, ... ]</i>,
-        "<a href="#autoscaleheadroom" title="AutoscaleHeadroom">AutoscaleHeadroom</a>" : <i>[ <a href="autoscaleheadroom.md">AutoscaleHeadroom</a>, ... ]</i>,
-        "<a href="#resourcelimits" title="ResourceLimits">ResourceLimits</a>" : <i>[ <a href="resourcelimits.md">ResourceLimits</a>, ... ]</i>,
-        "<a href="#rollconfig" title="RollConfig">RollConfig</a>" : <i>[ <a href="rollconfig.md">RollConfig</a>, ... ]</i>
+        "<a href="#autoscaler" title="Autoscaler">Autoscaler</a>" : <i>[ &lt;a href=&#34;autoscaler.md&#34;&gt;Autoscaler&lt;/a&gt;, ... ]</i>,
+        "<a href="#loadbalancers" title="LoadBalancers">LoadBalancers</a>" : <i>[ &lt;a href=&#34;loadbalancers.md&#34;&gt;LoadBalancers&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#updatepolicy" title="UpdatePolicy">UpdatePolicy</a>" : <i>[ &lt;a href=&#34;updatepolicy.md&#34;&gt;UpdatePolicy&lt;/a&gt;, ... ]</i>,
+        "<a href="#autoscaledown" title="AutoscaleDown">AutoscaleDown</a>" : <i>[ &lt;a href=&#34;autoscaledown.md&#34;&gt;AutoscaleDown&lt;/a&gt;, ... ]</i>,
+        "<a href="#autoscaleheadroom" title="AutoscaleHeadroom">AutoscaleHeadroom</a>" : <i>[ &lt;a href=&#34;autoscaleheadroom.md&#34;&gt;AutoscaleHeadroom&lt;/a&gt;, ... ]</i>,
+        "<a href="#resourcelimits" title="ResourceLimits">ResourceLimits</a>" : <i>[ &lt;a href=&#34;resourcelimits.md&#34;&gt;ResourceLimits&lt;/a&gt;, ... ]</i>,
+        "<a href="#rollconfig" title="RollConfig">RollConfig</a>" : <i>[ &lt;a href=&#34;rollconfig.md&#34;&gt;RollConfig&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -52,6 +52,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Spotinst::OceanAws
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#associatepublicipaddress" title="AssociatePublicIpAddress">AssociatePublicIpAddress</a>: <i>Boolean</i>
     <a href="#blacklist" title="Blacklist">Blacklist</a>: <i>
       - String</i>
@@ -61,7 +62,6 @@ Properties:
     <a href="#ebsoptimized" title="EbsOptimized">EbsOptimized</a>: <i>Boolean</i>
     <a href="#fallbacktoondemand" title="FallbackToOndemand">FallbackToOndemand</a>: <i>Boolean</i>
     <a href="#iaminstanceprofile" title="IamInstanceProfile">IamInstanceProfile</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#imageid" title="ImageId">ImageId</a>: <i>String</i>
     <a href="#keyname" title="KeyName">KeyName</a>: <i>String</i>
     <a href="#maxsize" title="MaxSize">MaxSize</a>: <i>Double</i>
@@ -80,24 +80,34 @@ Properties:
     <a href="#whitelist" title="Whitelist">Whitelist</a>: <i>
       - String</i>
     <a href="#autoscaler" title="Autoscaler">Autoscaler</a>: <i>
-      - <a href="autoscaler.md">Autoscaler</a></i>
+      - &lt;a href=&#34;autoscaler.md&#34;&gt;Autoscaler&lt;/a&gt;</i>
     <a href="#loadbalancers" title="LoadBalancers">LoadBalancers</a>: <i>
-      - <a href="loadbalancers.md">LoadBalancers</a></i>
+      - &lt;a href=&#34;loadbalancers.md&#34;&gt;LoadBalancers&lt;/a&gt;</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
     <a href="#updatepolicy" title="UpdatePolicy">UpdatePolicy</a>: <i>
-      - <a href="updatepolicy.md">UpdatePolicy</a></i>
+      - &lt;a href=&#34;updatepolicy.md&#34;&gt;UpdatePolicy&lt;/a&gt;</i>
     <a href="#autoscaledown" title="AutoscaleDown">AutoscaleDown</a>: <i>
-      - <a href="autoscaledown.md">AutoscaleDown</a></i>
+      - &lt;a href=&#34;autoscaledown.md&#34;&gt;AutoscaleDown&lt;/a&gt;</i>
     <a href="#autoscaleheadroom" title="AutoscaleHeadroom">AutoscaleHeadroom</a>: <i>
-      - <a href="autoscaleheadroom.md">AutoscaleHeadroom</a></i>
+      - &lt;a href=&#34;autoscaleheadroom.md&#34;&gt;AutoscaleHeadroom&lt;/a&gt;</i>
     <a href="#resourcelimits" title="ResourceLimits">ResourceLimits</a>: <i>
-      - <a href="resourcelimits.md">ResourceLimits</a></i>
+      - &lt;a href=&#34;resourcelimits.md&#34;&gt;ResourceLimits&lt;/a&gt;</i>
     <a href="#rollconfig" title="RollConfig">RollConfig</a>: <i>
-      - <a href="rollconfig.md">RollConfig</a></i>
+      - &lt;a href=&#34;rollconfig.md&#34;&gt;RollConfig&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AssociatePublicIpAddress
 
@@ -156,14 +166,6 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IamInstanceProfile
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 
@@ -287,7 +289,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="autoscaler.md">Autoscaler</a>
+_Type_: List of &lt;a href=&#34;autoscaler.md&#34;&gt;Autoscaler&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -295,7 +297,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="loadbalancers.md">LoadBalancers</a>
+_Type_: List of &lt;a href=&#34;loadbalancers.md&#34;&gt;LoadBalancers&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -303,7 +305,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -311,7 +313,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="updatepolicy.md">UpdatePolicy</a>
+_Type_: List of &lt;a href=&#34;updatepolicy.md&#34;&gt;UpdatePolicy&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -319,7 +321,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="autoscaledown.md">AutoscaleDown</a>
+_Type_: List of &lt;a href=&#34;autoscaledown.md&#34;&gt;AutoscaleDown&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -327,7 +329,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="autoscaleheadroom.md">AutoscaleHeadroom</a>
+_Type_: List of &lt;a href=&#34;autoscaleheadroom.md&#34;&gt;AutoscaleHeadroom&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -335,7 +337,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="resourcelimits.md">ResourceLimits</a>
+_Type_: List of &lt;a href=&#34;resourcelimits.md&#34;&gt;ResourceLimits&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -343,7 +345,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="rollconfig.md">RollConfig</a>
+_Type_: List of &lt;a href=&#34;rollconfig.md&#34;&gt;RollConfig&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

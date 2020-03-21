@@ -12,10 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::CsSwarm",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#agentversion" title="AgentVersion">AgentVersion</a>" : <i>String</i>,
         "<a href="#cidrblock" title="CidrBlock">CidrBlock</a>" : <i>String</i>,
         "<a href="#diskcategory" title="DiskCategory">DiskCategory</a>" : <i>String</i>,
         "<a href="#disksize" title="DiskSize">DiskSize</a>" : <i>Double</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#imageid" title="ImageId">ImageId</a>" : <i>String</i>,
         "<a href="#instancetype" title="InstanceType">InstanceType</a>" : <i>String</i>,
         "<a href="#isoutdated" title="IsOutdated">IsOutdated</a>" : <i>Boolean</i>,
@@ -23,9 +24,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#nameprefix" title="NamePrefix">NamePrefix</a>" : <i>String</i>,
         "<a href="#needslb" title="NeedSlb">NeedSlb</a>" : <i>Boolean</i>,
         "<a href="#nodenumber" title="NodeNumber">NodeNumber</a>" : <i>Double</i>,
+        "<a href="#nodes" title="Nodes">Nodes</a>" : <i>[ &lt;a href=&#34;nodes.md&#34;&gt;Nodes&lt;/a&gt;, ... ]</i>,
         "<a href="#password" title="Password">Password</a>" : <i>String</i>,
         "<a href="#releaseeip" title="ReleaseEip">ReleaseEip</a>" : <i>Boolean</i>,
+        "<a href="#securitygroupid" title="SecurityGroupId">SecurityGroupId</a>" : <i>String</i>,
         "<a href="#size" title="Size">Size</a>" : <i>Double</i>,
+        "<a href="#slbid" title="SlbId">SlbId</a>" : <i>String</i>,
+        "<a href="#vpcid" title="VpcId">VpcId</a>" : <i>String</i>,
         "<a href="#vswitchid" title="VswitchId">VswitchId</a>" : <i>String</i>
     }
 }
@@ -36,10 +41,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::CsSwarm
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#agentversion" title="AgentVersion">AgentVersion</a>: <i>String</i>
     <a href="#cidrblock" title="CidrBlock">CidrBlock</a>: <i>String</i>
     <a href="#diskcategory" title="DiskCategory">DiskCategory</a>: <i>String</i>
     <a href="#disksize" title="DiskSize">DiskSize</a>: <i>Double</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#imageid" title="ImageId">ImageId</a>: <i>String</i>
     <a href="#instancetype" title="InstanceType">InstanceType</a>: <i>String</i>
     <a href="#isoutdated" title="IsOutdated">IsOutdated</a>: <i>Boolean</i>
@@ -47,13 +53,36 @@ Properties:
     <a href="#nameprefix" title="NamePrefix">NamePrefix</a>: <i>String</i>
     <a href="#needslb" title="NeedSlb">NeedSlb</a>: <i>Boolean</i>
     <a href="#nodenumber" title="NodeNumber">NodeNumber</a>: <i>Double</i>
+    <a href="#nodes" title="Nodes">Nodes</a>: <i>
+      - &lt;a href=&#34;nodes.md&#34;&gt;Nodes&lt;/a&gt;</i>
     <a href="#password" title="Password">Password</a>: <i>String</i>
     <a href="#releaseeip" title="ReleaseEip">ReleaseEip</a>: <i>Boolean</i>
+    <a href="#securitygroupid" title="SecurityGroupId">SecurityGroupId</a>: <i>String</i>
     <a href="#size" title="Size">Size</a>: <i>Double</i>
+    <a href="#slbid" title="SlbId">SlbId</a>: <i>String</i>
+    <a href="#vpcid" title="VpcId">VpcId</a>: <i>String</i>
     <a href="#vswitchid" title="VswitchId">VswitchId</a>: <i>String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### AgentVersion
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CidrBlock
 
@@ -76,14 +105,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -143,6 +164,14 @@ _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### Nodes
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;nodes.md&#34;&gt;Nodes&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Password
 
 _Required_: Yes
@@ -159,11 +188,35 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### SecurityGroupId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Size
 
 _Required_: No
 
 _Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### SlbId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### VpcId
+
+_Required_: No
+
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -193,21 +246,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AgentVersion
 
-Returns the <code>AgentVersion</code> value.
+Returns the &lt;code&gt;AgentVersion&lt;/code&gt; value.
 
 #### Nodes
 
-Returns the <code>Nodes</code> value.
+Returns the &lt;code&gt;Nodes&lt;/code&gt; value.
 
 #### SecurityGroupId
 
-Returns the <code>SecurityGroupId</code> value.
+Returns the &lt;code&gt;SecurityGroupId&lt;/code&gt; value.
 
 #### SlbId
 
-Returns the <code>SlbId</code> value.
+Returns the &lt;code&gt;SlbId&lt;/code&gt; value.
 
 #### VpcId
 
-Returns the <code>VpcId</code> value.
+Returns the &lt;code&gt;VpcId&lt;/code&gt; value.
 

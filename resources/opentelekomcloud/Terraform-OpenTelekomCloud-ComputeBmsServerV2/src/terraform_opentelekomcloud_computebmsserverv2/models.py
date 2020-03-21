@@ -45,7 +45,6 @@ class ResourceModel(BaseResourceModel):
     FlavorName: Optional[str]
     HostId: Optional[str]
     HostStatus: Optional[str]
-    Id: Optional[str]
     ImageId: Optional[str]
     ImageName: Optional[str]
     KernelId: Optional[str]
@@ -81,7 +80,6 @@ class ResourceModel(BaseResourceModel):
             FlavorName=json_data.get("FlavorName"),
             HostId=json_data.get("HostId"),
             HostStatus=json_data.get("HostStatus"),
-            Id=json_data.get("Id"),
             ImageId=json_data.get("ImageId"),
             ImageName=json_data.get("ImageName"),
             KernelId=json_data.get("KernelId"),

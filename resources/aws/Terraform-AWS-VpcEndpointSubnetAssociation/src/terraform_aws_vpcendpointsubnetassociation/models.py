@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     SubnetId: Optional[str]
     VpcEndpointId: Optional[str]
     Timeouts: Optional["_Timeouts"]
@@ -50,7 +49,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             SubnetId=json_data.get("SubnetId"),
             VpcEndpointId=json_data.get("VpcEndpointId"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),

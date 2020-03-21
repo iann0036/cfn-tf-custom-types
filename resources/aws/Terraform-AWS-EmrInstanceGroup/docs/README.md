@@ -12,16 +12,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::EmrInstanceGroup",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#autoscalingpolicy" title="AutoscalingPolicy">AutoscalingPolicy</a>" : <i>String</i>,
         "<a href="#bidprice" title="BidPrice">BidPrice</a>" : <i>String</i>,
         "<a href="#clusterid" title="ClusterId">ClusterId</a>" : <i>String</i>,
         "<a href="#configurationsjson" title="ConfigurationsJson">ConfigurationsJson</a>" : <i>String</i>,
         "<a href="#ebsoptimized" title="EbsOptimized">EbsOptimized</a>" : <i>Boolean</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#instancecount" title="InstanceCount">InstanceCount</a>" : <i>Double</i>,
         "<a href="#instancetype" title="InstanceType">InstanceType</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#ebsconfig" title="EbsConfig">EbsConfig</a>" : <i>[ <a href="ebsconfig.md">EbsConfig</a>, ... ]</i>
+        "<a href="#runninginstancecount" title="RunningInstanceCount">RunningInstanceCount</a>" : <i>Double</i>,
+        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
+        "<a href="#ebsconfig" title="EbsConfig">EbsConfig</a>" : <i>[ &lt;a href=&#34;ebsconfig.md&#34;&gt;EbsConfig&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -31,20 +33,32 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::EmrInstanceGroup
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#autoscalingpolicy" title="AutoscalingPolicy">AutoscalingPolicy</a>: <i>String</i>
     <a href="#bidprice" title="BidPrice">BidPrice</a>: <i>String</i>
     <a href="#clusterid" title="ClusterId">ClusterId</a>: <i>String</i>
     <a href="#configurationsjson" title="ConfigurationsJson">ConfigurationsJson</a>: <i>String</i>
     <a href="#ebsoptimized" title="EbsOptimized">EbsOptimized</a>: <i>Boolean</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#instancecount" title="InstanceCount">InstanceCount</a>: <i>Double</i>
     <a href="#instancetype" title="InstanceType">InstanceType</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
+    <a href="#runninginstancecount" title="RunningInstanceCount">RunningInstanceCount</a>: <i>Double</i>
+    <a href="#status" title="Status">Status</a>: <i>String</i>
     <a href="#ebsconfig" title="EbsConfig">EbsConfig</a>: <i>
-      - <a href="ebsconfig.md">EbsConfig</a></i>
+      - &lt;a href=&#34;ebsconfig.md&#34;&gt;EbsConfig&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AutoscalingPolicy
 
@@ -86,14 +100,6 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### InstanceCount
 
 _Required_: No
@@ -118,11 +124,27 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### RunningInstanceCount
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Status
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### EbsConfig
 
 _Required_: No
 
-_Type_: List of <a href="ebsconfig.md">EbsConfig</a>
+_Type_: List of &lt;a href=&#34;ebsconfig.md&#34;&gt;EbsConfig&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -144,9 +166,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### RunningInstanceCount
 
-Returns the <code>RunningInstanceCount</code> value.
+Returns the &lt;code&gt;RunningInstanceCount&lt;/code&gt; value.
 
 #### Status
 
-Returns the <code>Status</code> value.
+Returns the &lt;code&gt;Status&lt;/code&gt; value.
 

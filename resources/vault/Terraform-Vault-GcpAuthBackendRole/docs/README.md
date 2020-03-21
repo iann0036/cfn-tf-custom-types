@@ -12,6 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Vault::GcpAuthBackendRole",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#addgroupaliases" title="AddGroupAliases">AddGroupAliases</a>" : <i>Boolean</i>,
         "<a href="#allowgceinference" title="AllowGceInference">AllowGceInference</a>" : <i>Boolean</i>,
         "<a href="#backend" title="Backend">Backend</a>" : <i>String</i>,
@@ -21,7 +22,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#boundregions" title="BoundRegions">BoundRegions</a>" : <i>[ String, ... ]</i>,
         "<a href="#boundserviceaccounts" title="BoundServiceAccounts">BoundServiceAccounts</a>" : <i>[ String, ... ]</i>,
         "<a href="#boundzones" title="BoundZones">BoundZones</a>" : <i>[ String, ... ]</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#maxjwtexp" title="MaxJwtExp">MaxJwtExp</a>" : <i>String</i>,
         "<a href="#maxttl" title="MaxTtl">MaxTtl</a>" : <i>String</i>,
         "<a href="#period" title="Period">Period</a>" : <i>String</i>,
@@ -48,6 +48,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Vault::GcpAuthBackendRole
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#addgroupaliases" title="AddGroupAliases">AddGroupAliases</a>: <i>Boolean</i>
     <a href="#allowgceinference" title="AllowGceInference">AllowGceInference</a>: <i>Boolean</i>
     <a href="#backend" title="Backend">Backend</a>: <i>String</i>
@@ -63,7 +64,6 @@ Properties:
       - String</i>
     <a href="#boundzones" title="BoundZones">BoundZones</a>: <i>
       - String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#maxjwtexp" title="MaxJwtExp">MaxJwtExp</a>: <i>String</i>
     <a href="#maxttl" title="MaxTtl">MaxTtl</a>: <i>String</i>
     <a href="#period" title="Period">Period</a>: <i>String</i>
@@ -87,6 +87,16 @@ Properties:
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AddGroupAliases
 
@@ -157,14 +167,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: List of String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     Az: Optional[str]
     Bandwidth: Optional[float]
     Description: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Region: Optional[str]
     SecurityGroupId: Optional[str]
@@ -63,7 +62,6 @@ class ResourceModel(BaseResourceModel):
             Az=json_data.get("Az"),
             Bandwidth=json_data.get("Bandwidth"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Region=json_data.get("Region"),
             SecurityGroupId=json_data.get("SecurityGroupId"),

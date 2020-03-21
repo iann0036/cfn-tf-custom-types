@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Common: Optional[Sequence["_Common"]]
     Description: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     ProviderId: Optional[str]
     Region: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Common=json_data.get("Common"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ProviderId=json_data.get("ProviderId"),
             Region=json_data.get("Region"),

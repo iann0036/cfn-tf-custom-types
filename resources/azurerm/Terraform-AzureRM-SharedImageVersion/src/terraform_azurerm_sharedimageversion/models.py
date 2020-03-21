@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ExcludeFromLatest: Optional[bool]
     GalleryName: Optional[str]
-    Id: Optional[str]
     ImageName: Optional[str]
     Location: Optional[str]
     ManagedImageId: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ExcludeFromLatest=json_data.get("ExcludeFromLatest"),
             GalleryName=json_data.get("GalleryName"),
-            Id=json_data.get("Id"),
             ImageName=json_data.get("ImageName"),
             Location=json_data.get("Location"),
             ManagedImageId=json_data.get("ManagedImageId"),

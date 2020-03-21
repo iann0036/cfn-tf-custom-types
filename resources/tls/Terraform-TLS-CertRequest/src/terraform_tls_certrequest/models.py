@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CertRequestPem: Optional[str]
     DnsNames: Optional[Sequence[str]]
-    Id: Optional[str]
     IpAddresses: Optional[Sequence[str]]
     KeyAlgorithm: Optional[str]
     PrivateKeyPem: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CertRequestPem=json_data.get("CertRequestPem"),
             DnsNames=json_data.get("DnsNames"),
-            Id=json_data.get("Id"),
             IpAddresses=json_data.get("IpAddresses"),
             KeyAlgorithm=json_data.get("KeyAlgorithm"),
             PrivateKeyPem=json_data.get("PrivateKeyPem"),

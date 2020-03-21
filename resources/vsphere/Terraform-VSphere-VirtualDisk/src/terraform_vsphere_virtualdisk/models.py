@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     CreateDirectories: Optional[bool]
     Datacenter: Optional[str]
     Datastore: Optional[str]
-    Id: Optional[str]
     Size: Optional[float]
     Type: Optional[str]
     VmdkPath: Optional[str]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             CreateDirectories=json_data.get("CreateDirectories"),
             Datacenter=json_data.get("Datacenter"),
             Datastore=json_data.get("Datastore"),
-            Id=json_data.get("Id"),
             Size=json_data.get("Size"),
             Type=json_data.get("Type"),
             VmdkPath=json_data.get("VmdkPath"),

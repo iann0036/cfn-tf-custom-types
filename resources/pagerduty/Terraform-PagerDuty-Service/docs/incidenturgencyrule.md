@@ -10,8 +10,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#type" title="Type">Type</a>" : <i>String</i>,
     "<a href="#urgency" title="Urgency">Urgency</a>" : <i>String</i>,
-    "<a href="#duringsupporthours" title="DuringSupportHours">DuringSupportHours</a>" : <i>[ <a href="incidenturgencyrule-duringsupporthours.md">DuringSupportHours</a>, ... ]</i>,
-    "<a href="#outsidesupporthours" title="OutsideSupportHours">OutsideSupportHours</a>" : <i>[ <a href="incidenturgencyrule-outsidesupporthours.md">OutsideSupportHours</a>, ... ]</i>
+    "<a href="#duringsupporthours" title="DuringSupportHours">DuringSupportHours</a>" : <i>[ &lt;a href=&#34;incidenturgencyrule-duringsupporthours.md&#34;&gt;DuringSupportHours&lt;/a&gt;, ... ]</i>,
+    "<a href="#outsidesupporthours" title="OutsideSupportHours">OutsideSupportHours</a>" : <i>[ &lt;a href=&#34;incidenturgencyrule-outsidesupporthours.md&#34;&gt;OutsideSupportHours&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -21,9 +21,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#type" title="Type">Type</a>: <i>String</i>
 <a href="#urgency" title="Urgency">Urgency</a>: <i>String</i>
 <a href="#duringsupporthours" title="DuringSupportHours">DuringSupportHours</a>: <i>
-      - <a href="incidenturgencyrule-duringsupporthours.md">DuringSupportHours</a></i>
+      - &lt;a href=&#34;incidenturgencyrule-duringsupporthours.md&#34;&gt;DuringSupportHours&lt;/a&gt;</i>
 <a href="#outsidesupporthours" title="OutsideSupportHours">OutsideSupportHours</a>: <i>
-      - <a href="incidenturgencyrule-outsidesupporthours.md">OutsideSupportHours</a></i>
+      - &lt;a href=&#34;incidenturgencyrule-outsidesupporthours.md&#34;&gt;OutsideSupportHours&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -31,7 +31,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Type
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -39,7 +38,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Urgency
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -47,16 +45,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DuringSupportHours
 
 _Required_: No
-
-_Type_: List of <a href="incidenturgencyrule-duringsupporthours.md">DuringSupportHours</a>
+_Type_: List of &lt;a href=&#34;incidenturgencyrule-duringsupporthours.md&#34;&gt;DuringSupportHours&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OutsideSupportHours
 
 _Required_: No
-
-_Type_: List of <a href="incidenturgencyrule-outsidesupporthours.md">OutsideSupportHours</a>
+_Type_: List of &lt;a href=&#34;incidenturgencyrule-outsidesupporthours.md&#34;&gt;OutsideSupportHours&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

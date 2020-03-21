@@ -54,7 +54,6 @@ class ResourceModel(BaseResourceModel):
     EgressShapingEnabled: Optional[bool]
     EgressShapingPeakBandwidth: Optional[float]
     Failback: Optional[bool]
-    Id: Optional[str]
     IngressShapingAverageBandwidth: Optional[float]
     IngressShapingBurstSize: Optional[float]
     IngressShapingEnabled: Optional[bool]
@@ -113,7 +112,6 @@ class ResourceModel(BaseResourceModel):
             EgressShapingEnabled=json_data.get("EgressShapingEnabled"),
             EgressShapingPeakBandwidth=json_data.get("EgressShapingPeakBandwidth"),
             Failback=json_data.get("Failback"),
-            Id=json_data.get("Id"),
             IngressShapingAverageBandwidth=json_data.get("IngressShapingAverageBandwidth"),
             IngressShapingBurstSize=json_data.get("IngressShapingBurstSize"),
             IngressShapingEnabled=json_data.get("IngressShapingEnabled"),

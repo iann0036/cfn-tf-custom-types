@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Active: Optional[bool]
     Enable: Optional[bool]
     ForceDelete: Optional[bool]
-    Id: Optional[str]
     ImageId: Optional[str]
     InstanceIds: Optional[Sequence[str]]
     InstanceName: Optional[str]
@@ -80,7 +79,6 @@ class ResourceModel(BaseResourceModel):
             Active=json_data.get("Active"),
             Enable=json_data.get("Enable"),
             ForceDelete=json_data.get("ForceDelete"),
-            Id=json_data.get("Id"),
             ImageId=json_data.get("ImageId"),
             InstanceIds=json_data.get("InstanceIds"),
             InstanceName=json_data.get("InstanceName"),

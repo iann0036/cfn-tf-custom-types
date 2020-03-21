@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     FrontendIpConfigurationId: Optional[str]
     FrontendIpConfigurationName: Optional[str]
     FrontendPort: Optional[float]
-    Id: Optional[str]
     IdleTimeoutInMinutes: Optional[float]
     LoadbalancerId: Optional[str]
     Name: Optional[str]
@@ -67,7 +66,6 @@ class ResourceModel(BaseResourceModel):
             FrontendIpConfigurationId=json_data.get("FrontendIpConfigurationId"),
             FrontendIpConfigurationName=json_data.get("FrontendIpConfigurationName"),
             FrontendPort=json_data.get("FrontendPort"),
-            Id=json_data.get("Id"),
             IdleTimeoutInMinutes=json_data.get("IdleTimeoutInMinutes"),
             LoadbalancerId=json_data.get("LoadbalancerId"),
             Name=json_data.get("Name"),

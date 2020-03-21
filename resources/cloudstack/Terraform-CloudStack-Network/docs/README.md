@@ -12,17 +12,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::CloudStack::Network",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#aclid" title="AclId">AclId</a>" : <i>String</i>,
         "<a href="#cidr" title="Cidr">Cidr</a>" : <i>String</i>,
         "<a href="#displaytext" title="DisplayText">DisplayText</a>" : <i>String</i>,
         "<a href="#endip" title="Endip">Endip</a>" : <i>String</i>,
         "<a href="#gateway" title="Gateway">Gateway</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#networkdomain" title="NetworkDomain">NetworkDomain</a>" : <i>String</i>,
         "<a href="#networkoffering" title="NetworkOffering">NetworkOffering</a>" : <i>String</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
         "<a href="#sourcenatip" title="SourceNatIp">SourceNatIp</a>" : <i>Boolean</i>,
+        "<a href="#sourcenatipid" title="SourceNatIpId">SourceNatIpId</a>" : <i>String</i>,
         "<a href="#startip" title="Startip">Startip</a>" : <i>String</i>,
         "<a href="#vlan" title="Vlan">Vlan</a>" : <i>Double</i>,
         "<a href="#vpcid" title="VpcId">VpcId</a>" : <i>String</i>,
@@ -36,17 +37,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::CloudStack::Network
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#aclid" title="AclId">AclId</a>: <i>String</i>
     <a href="#cidr" title="Cidr">Cidr</a>: <i>String</i>
     <a href="#displaytext" title="DisplayText">DisplayText</a>: <i>String</i>
     <a href="#endip" title="Endip">Endip</a>: <i>String</i>
     <a href="#gateway" title="Gateway">Gateway</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#networkdomain" title="NetworkDomain">NetworkDomain</a>: <i>String</i>
     <a href="#networkoffering" title="NetworkOffering">NetworkOffering</a>: <i>String</i>
     <a href="#project" title="Project">Project</a>: <i>String</i>
     <a href="#sourcenatip" title="SourceNatIp">SourceNatIp</a>: <i>Boolean</i>
+    <a href="#sourcenatipid" title="SourceNatIpId">SourceNatIpId</a>: <i>String</i>
     <a href="#startip" title="Startip">Startip</a>: <i>String</i>
     <a href="#vlan" title="Vlan">Vlan</a>: <i>Double</i>
     <a href="#vpcid" title="VpcId">VpcId</a>: <i>String</i>
@@ -54,6 +56,16 @@ Properties:
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AclId
 
@@ -88,14 +100,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Gateway
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 
@@ -140,6 +144,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### SourceNatIpId
+
+_Required_: No
+
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -193,5 +205,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### SourceNatIpId
 
-Returns the <code>SourceNatIpId</code> value.
+Returns the &lt;code&gt;SourceNatIpId&lt;/code&gt; value.
 

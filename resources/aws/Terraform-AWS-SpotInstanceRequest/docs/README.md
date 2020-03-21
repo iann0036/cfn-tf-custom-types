@@ -12,7 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::SpotInstanceRequest",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#ami" title="Ami">Ami</a>" : <i>String</i>,
+        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#associatepublicipaddress" title="AssociatePublicIpAddress">AssociatePublicIpAddress</a>" : <i>Boolean</i>,
         "<a href="#availabilityzone" title="AvailabilityZone">AvailabilityZone</a>" : <i>String</i>,
         "<a href="#blockdurationminutes" title="BlockDurationMinutes">BlockDurationMinutes</a>" : <i>Double</i>,
@@ -24,37 +26,46 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#hibernation" title="Hibernation">Hibernation</a>" : <i>Boolean</i>,
         "<a href="#hostid" title="HostId">HostId</a>" : <i>String</i>,
         "<a href="#iaminstanceprofile" title="IamInstanceProfile">IamInstanceProfile</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#instanceinitiatedshutdownbehavior" title="InstanceInitiatedShutdownBehavior">InstanceInitiatedShutdownBehavior</a>" : <i>String</i>,
         "<a href="#instanceinterruptionbehaviour" title="InstanceInterruptionBehaviour">InstanceInterruptionBehaviour</a>" : <i>String</i>,
+        "<a href="#instancestate" title="InstanceState">InstanceState</a>" : <i>String</i>,
         "<a href="#instancetype" title="InstanceType">InstanceType</a>" : <i>String</i>,
         "<a href="#ipv6addresscount" title="Ipv6AddressCount">Ipv6AddressCount</a>" : <i>Double</i>,
         "<a href="#ipv6addresses" title="Ipv6Addresses">Ipv6Addresses</a>" : <i>[ String, ... ]</i>,
         "<a href="#keyname" title="KeyName">KeyName</a>" : <i>String</i>,
         "<a href="#launchgroup" title="LaunchGroup">LaunchGroup</a>" : <i>String</i>,
         "<a href="#monitoring" title="Monitoring">Monitoring</a>" : <i>Boolean</i>,
+        "<a href="#networkinterfaceid" title="NetworkInterfaceId">NetworkInterfaceId</a>" : <i>String</i>,
+        "<a href="#passworddata" title="PasswordData">PasswordData</a>" : <i>String</i>,
         "<a href="#placementgroup" title="PlacementGroup">PlacementGroup</a>" : <i>String</i>,
+        "<a href="#primarynetworkinterfaceid" title="PrimaryNetworkInterfaceId">PrimaryNetworkInterfaceId</a>" : <i>String</i>,
+        "<a href="#privatedns" title="PrivateDns">PrivateDns</a>" : <i>String</i>,
         "<a href="#privateip" title="PrivateIp">PrivateIp</a>" : <i>String</i>,
+        "<a href="#publicdns" title="PublicDns">PublicDns</a>" : <i>String</i>,
+        "<a href="#publicip" title="PublicIp">PublicIp</a>" : <i>String</i>,
         "<a href="#securitygroups" title="SecurityGroups">SecurityGroups</a>" : <i>[ String, ... ]</i>,
         "<a href="#sourcedestcheck" title="SourceDestCheck">SourceDestCheck</a>" : <i>Boolean</i>,
+        "<a href="#spotbidstatus" title="SpotBidStatus">SpotBidStatus</a>" : <i>String</i>,
+        "<a href="#spotinstanceid" title="SpotInstanceId">SpotInstanceId</a>" : <i>String</i>,
         "<a href="#spotprice" title="SpotPrice">SpotPrice</a>" : <i>String</i>,
+        "<a href="#spotrequeststate" title="SpotRequestState">SpotRequestState</a>" : <i>String</i>,
         "<a href="#spottype" title="SpotType">SpotType</a>" : <i>String</i>,
         "<a href="#subnetid" title="SubnetId">SubnetId</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
         "<a href="#tenancy" title="Tenancy">Tenancy</a>" : <i>String</i>,
         "<a href="#userdata" title="UserData">UserData</a>" : <i>String</i>,
         "<a href="#userdatabase64" title="UserDataBase64">UserDataBase64</a>" : <i>String</i>,
         "<a href="#validfrom" title="ValidFrom">ValidFrom</a>" : <i>String</i>,
         "<a href="#validuntil" title="ValidUntil">ValidUntil</a>" : <i>String</i>,
-        "<a href="#volumetags" title="VolumeTags">VolumeTags</a>" : <i>[ <a href="volumetags.md">VolumeTags</a>, ... ]</i>,
+        "<a href="#volumetags" title="VolumeTags">VolumeTags</a>" : <i>[ &lt;a href=&#34;volumetags.md&#34;&gt;VolumeTags&lt;/a&gt;, ... ]</i>,
         "<a href="#vpcsecuritygroupids" title="VpcSecurityGroupIds">VpcSecurityGroupIds</a>" : <i>[ String, ... ]</i>,
         "<a href="#waitforfulfillment" title="WaitForFulfillment">WaitForFulfillment</a>" : <i>Boolean</i>,
-        "<a href="#creditspecification" title="CreditSpecification">CreditSpecification</a>" : <i>[ <a href="creditspecification.md">CreditSpecification</a>, ... ]</i>,
-        "<a href="#ebsblockdevice" title="EbsBlockDevice">EbsBlockDevice</a>" : <i>[ <a href="ebsblockdevice.md">EbsBlockDevice</a>, ... ]</i>,
-        "<a href="#ephemeralblockdevice" title="EphemeralBlockDevice">EphemeralBlockDevice</a>" : <i>[ <a href="ephemeralblockdevice.md">EphemeralBlockDevice</a>, ... ]</i>,
-        "<a href="#networkinterface" title="NetworkInterface">NetworkInterface</a>" : <i>[ <a href="networkinterface.md">NetworkInterface</a>, ... ]</i>,
-        "<a href="#rootblockdevice" title="RootBlockDevice">RootBlockDevice</a>" : <i>[ <a href="rootblockdevice.md">RootBlockDevice</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
+        "<a href="#creditspecification" title="CreditSpecification">CreditSpecification</a>" : <i>[ &lt;a href=&#34;creditspecification.md&#34;&gt;CreditSpecification&lt;/a&gt;, ... ]</i>,
+        "<a href="#ebsblockdevice" title="EbsBlockDevice">EbsBlockDevice</a>" : <i>[ &lt;a href=&#34;ebsblockdevice.md&#34;&gt;EbsBlockDevice&lt;/a&gt;, ... ]</i>,
+        "<a href="#ephemeralblockdevice" title="EphemeralBlockDevice">EphemeralBlockDevice</a>" : <i>[ &lt;a href=&#34;ephemeralblockdevice.md&#34;&gt;EphemeralBlockDevice&lt;/a&gt;, ... ]</i>,
+        "<a href="#networkinterface" title="NetworkInterface">NetworkInterface</a>" : <i>[ &lt;a href=&#34;networkinterface.md&#34;&gt;NetworkInterface&lt;/a&gt;, ... ]</i>,
+        "<a href="#rootblockdevice" title="RootBlockDevice">RootBlockDevice</a>" : <i>[ &lt;a href=&#34;rootblockdevice.md&#34;&gt;RootBlockDevice&lt;/a&gt;, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     }
 }
 </pre>
@@ -64,7 +75,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::SpotInstanceRequest
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#ami" title="Ami">Ami</a>: <i>String</i>
+    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#associatepublicipaddress" title="AssociatePublicIpAddress">AssociatePublicIpAddress</a>: <i>Boolean</i>
     <a href="#availabilityzone" title="AvailabilityZone">AvailabilityZone</a>: <i>String</i>
     <a href="#blockdurationminutes" title="BlockDurationMinutes">BlockDurationMinutes</a>: <i>Double</i>
@@ -76,9 +89,9 @@ Properties:
     <a href="#hibernation" title="Hibernation">Hibernation</a>: <i>Boolean</i>
     <a href="#hostid" title="HostId">HostId</a>: <i>String</i>
     <a href="#iaminstanceprofile" title="IamInstanceProfile">IamInstanceProfile</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#instanceinitiatedshutdownbehavior" title="InstanceInitiatedShutdownBehavior">InstanceInitiatedShutdownBehavior</a>: <i>String</i>
     <a href="#instanceinterruptionbehaviour" title="InstanceInterruptionBehaviour">InstanceInterruptionBehaviour</a>: <i>String</i>
+    <a href="#instancestate" title="InstanceState">InstanceState</a>: <i>String</i>
     <a href="#instancetype" title="InstanceType">InstanceType</a>: <i>String</i>
     <a href="#ipv6addresscount" title="Ipv6AddressCount">Ipv6AddressCount</a>: <i>Double</i>
     <a href="#ipv6addresses" title="Ipv6Addresses">Ipv6Addresses</a>: <i>
@@ -86,44 +99,71 @@ Properties:
     <a href="#keyname" title="KeyName">KeyName</a>: <i>String</i>
     <a href="#launchgroup" title="LaunchGroup">LaunchGroup</a>: <i>String</i>
     <a href="#monitoring" title="Monitoring">Monitoring</a>: <i>Boolean</i>
+    <a href="#networkinterfaceid" title="NetworkInterfaceId">NetworkInterfaceId</a>: <i>String</i>
+    <a href="#passworddata" title="PasswordData">PasswordData</a>: <i>String</i>
     <a href="#placementgroup" title="PlacementGroup">PlacementGroup</a>: <i>String</i>
+    <a href="#primarynetworkinterfaceid" title="PrimaryNetworkInterfaceId">PrimaryNetworkInterfaceId</a>: <i>String</i>
+    <a href="#privatedns" title="PrivateDns">PrivateDns</a>: <i>String</i>
     <a href="#privateip" title="PrivateIp">PrivateIp</a>: <i>String</i>
+    <a href="#publicdns" title="PublicDns">PublicDns</a>: <i>String</i>
+    <a href="#publicip" title="PublicIp">PublicIp</a>: <i>String</i>
     <a href="#securitygroups" title="SecurityGroups">SecurityGroups</a>: <i>
       - String</i>
     <a href="#sourcedestcheck" title="SourceDestCheck">SourceDestCheck</a>: <i>Boolean</i>
+    <a href="#spotbidstatus" title="SpotBidStatus">SpotBidStatus</a>: <i>String</i>
+    <a href="#spotinstanceid" title="SpotInstanceId">SpotInstanceId</a>: <i>String</i>
     <a href="#spotprice" title="SpotPrice">SpotPrice</a>: <i>String</i>
+    <a href="#spotrequeststate" title="SpotRequestState">SpotRequestState</a>: <i>String</i>
     <a href="#spottype" title="SpotType">SpotType</a>: <i>String</i>
     <a href="#subnetid" title="SubnetId">SubnetId</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
     <a href="#tenancy" title="Tenancy">Tenancy</a>: <i>String</i>
     <a href="#userdata" title="UserData">UserData</a>: <i>String</i>
     <a href="#userdatabase64" title="UserDataBase64">UserDataBase64</a>: <i>String</i>
     <a href="#validfrom" title="ValidFrom">ValidFrom</a>: <i>String</i>
     <a href="#validuntil" title="ValidUntil">ValidUntil</a>: <i>String</i>
     <a href="#volumetags" title="VolumeTags">VolumeTags</a>: <i>
-      - <a href="volumetags.md">VolumeTags</a></i>
+      - &lt;a href=&#34;volumetags.md&#34;&gt;VolumeTags&lt;/a&gt;</i>
     <a href="#vpcsecuritygroupids" title="VpcSecurityGroupIds">VpcSecurityGroupIds</a>: <i>
       - String</i>
     <a href="#waitforfulfillment" title="WaitForFulfillment">WaitForFulfillment</a>: <i>Boolean</i>
     <a href="#creditspecification" title="CreditSpecification">CreditSpecification</a>: <i>
-      - <a href="creditspecification.md">CreditSpecification</a></i>
+      - &lt;a href=&#34;creditspecification.md&#34;&gt;CreditSpecification&lt;/a&gt;</i>
     <a href="#ebsblockdevice" title="EbsBlockDevice">EbsBlockDevice</a>: <i>
-      - <a href="ebsblockdevice.md">EbsBlockDevice</a></i>
+      - &lt;a href=&#34;ebsblockdevice.md&#34;&gt;EbsBlockDevice&lt;/a&gt;</i>
     <a href="#ephemeralblockdevice" title="EphemeralBlockDevice">EphemeralBlockDevice</a>: <i>
-      - <a href="ephemeralblockdevice.md">EphemeralBlockDevice</a></i>
+      - &lt;a href=&#34;ephemeralblockdevice.md&#34;&gt;EphemeralBlockDevice&lt;/a&gt;</i>
     <a href="#networkinterface" title="NetworkInterface">NetworkInterface</a>: <i>
-      - <a href="networkinterface.md">NetworkInterface</a></i>
+      - &lt;a href=&#34;networkinterface.md&#34;&gt;NetworkInterface&lt;/a&gt;</i>
     <a href="#rootblockdevice" title="RootBlockDevice">RootBlockDevice</a>: <i>
-      - <a href="rootblockdevice.md">RootBlockDevice</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;rootblockdevice.md&#34;&gt;RootBlockDevice&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Ami
 
 _Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Arn
+
+_Required_: No
 
 _Type_: String
 
@@ -217,14 +257,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### InstanceInitiatedShutdownBehavior
 
 _Required_: No
@@ -234,6 +266,14 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceInterruptionBehaviour
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### InstanceState
 
 _Required_: No
 
@@ -289,6 +329,22 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### NetworkInterfaceId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### PasswordData
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### PlacementGroup
 
 _Required_: No
@@ -297,7 +353,39 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### PrimaryNetworkInterfaceId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### PrivateDns
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### PrivateIp
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### PublicDns
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### PublicIp
 
 _Required_: No
 
@@ -321,7 +409,31 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### SpotBidStatus
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### SpotInstanceId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### SpotPrice
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### SpotRequestState
 
 _Required_: No
 
@@ -349,7 +461,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -397,7 +509,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="volumetags.md">VolumeTags</a>
+_Type_: List of &lt;a href=&#34;volumetags.md&#34;&gt;VolumeTags&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -421,7 +533,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="creditspecification.md">CreditSpecification</a>
+_Type_: List of &lt;a href=&#34;creditspecification.md&#34;&gt;CreditSpecification&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -429,7 +541,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="ebsblockdevice.md">EbsBlockDevice</a>
+_Type_: List of &lt;a href=&#34;ebsblockdevice.md&#34;&gt;EbsBlockDevice&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -437,7 +549,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="ephemeralblockdevice.md">EphemeralBlockDevice</a>
+_Type_: List of &lt;a href=&#34;ephemeralblockdevice.md&#34;&gt;EphemeralBlockDevice&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -445,7 +557,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="networkinterface.md">NetworkInterface</a>
+_Type_: List of &lt;a href=&#34;networkinterface.md&#34;&gt;NetworkInterface&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -453,7 +565,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="rootblockdevice.md">RootBlockDevice</a>
+_Type_: List of &lt;a href=&#34;rootblockdevice.md&#34;&gt;RootBlockDevice&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -461,7 +573,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -483,45 +595,45 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the <code>Arn</code> value.
+Returns the &lt;code&gt;Arn&lt;/code&gt; value.
 
 #### InstanceState
 
-Returns the <code>InstanceState</code> value.
+Returns the &lt;code&gt;InstanceState&lt;/code&gt; value.
 
 #### NetworkInterfaceId
 
-Returns the <code>NetworkInterfaceId</code> value.
+Returns the &lt;code&gt;NetworkInterfaceId&lt;/code&gt; value.
 
 #### PasswordData
 
-Returns the <code>PasswordData</code> value.
+Returns the &lt;code&gt;PasswordData&lt;/code&gt; value.
 
 #### PrimaryNetworkInterfaceId
 
-Returns the <code>PrimaryNetworkInterfaceId</code> value.
+Returns the &lt;code&gt;PrimaryNetworkInterfaceId&lt;/code&gt; value.
 
 #### PrivateDns
 
-Returns the <code>PrivateDns</code> value.
+Returns the &lt;code&gt;PrivateDns&lt;/code&gt; value.
 
 #### PublicDns
 
-Returns the <code>PublicDns</code> value.
+Returns the &lt;code&gt;PublicDns&lt;/code&gt; value.
 
 #### PublicIp
 
-Returns the <code>PublicIp</code> value.
+Returns the &lt;code&gt;PublicIp&lt;/code&gt; value.
 
 #### SpotBidStatus
 
-Returns the <code>SpotBidStatus</code> value.
+Returns the &lt;code&gt;SpotBidStatus&lt;/code&gt; value.
 
 #### SpotInstanceId
 
-Returns the <code>SpotInstanceId</code> value.
+Returns the &lt;code&gt;SpotInstanceId&lt;/code&gt; value.
 
 #### SpotRequestState
 
-Returns the <code>SpotRequestState</code> value.
+Returns the &lt;code&gt;SpotRequestState&lt;/code&gt; value.
 

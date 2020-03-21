@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     EngineVersion: Optional[str]
     FirstSlaveZone: Optional[str]
     Gtid: Optional[float]
-    Id: Optional[str]
     InstanceName: Optional[str]
     InternetHost: Optional[str]
     InternetPort: Optional[float]
@@ -80,7 +79,6 @@ class ResourceModel(BaseResourceModel):
             EngineVersion=json_data.get("EngineVersion"),
             FirstSlaveZone=json_data.get("FirstSlaveZone"),
             Gtid=json_data.get("Gtid"),
-            Id=json_data.get("Id"),
             InstanceName=json_data.get("InstanceName"),
             InternetHost=json_data.get("InternetHost"),
             InternetPort=json_data.get("InternetPort"),

@@ -12,14 +12,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureRM::LbRule",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#backendaddresspoolid" title="BackendAddressPoolId">BackendAddressPoolId</a>" : <i>String</i>,
         "<a href="#backendport" title="BackendPort">BackendPort</a>" : <i>Double</i>,
         "<a href="#disableoutboundsnat" title="DisableOutboundSnat">DisableOutboundSnat</a>" : <i>Boolean</i>,
         "<a href="#enablefloatingip" title="EnableFloatingIp">EnableFloatingIp</a>" : <i>Boolean</i>,
         "<a href="#enabletcpreset" title="EnableTcpReset">EnableTcpReset</a>" : <i>Boolean</i>,
+        "<a href="#frontendipconfigurationid" title="FrontendIpConfigurationId">FrontendIpConfigurationId</a>" : <i>String</i>,
         "<a href="#frontendipconfigurationname" title="FrontendIpConfigurationName">FrontendIpConfigurationName</a>" : <i>String</i>,
         "<a href="#frontendport" title="FrontendPort">FrontendPort</a>" : <i>Double</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#idletimeoutinminutes" title="IdleTimeoutInMinutes">IdleTimeoutInMinutes</a>" : <i>Double</i>,
         "<a href="#loaddistribution" title="LoadDistribution">LoadDistribution</a>" : <i>String</i>,
         "<a href="#loadbalancerid" title="LoadbalancerId">LoadbalancerId</a>" : <i>String</i>,
@@ -27,7 +28,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#probeid" title="ProbeId">ProbeId</a>" : <i>String</i>,
         "<a href="#protocol" title="Protocol">Protocol</a>" : <i>String</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     }
 }
 </pre>
@@ -37,14 +38,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureRM::LbRule
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#backendaddresspoolid" title="BackendAddressPoolId">BackendAddressPoolId</a>: <i>String</i>
     <a href="#backendport" title="BackendPort">BackendPort</a>: <i>Double</i>
     <a href="#disableoutboundsnat" title="DisableOutboundSnat">DisableOutboundSnat</a>: <i>Boolean</i>
     <a href="#enablefloatingip" title="EnableFloatingIp">EnableFloatingIp</a>: <i>Boolean</i>
     <a href="#enabletcpreset" title="EnableTcpReset">EnableTcpReset</a>: <i>Boolean</i>
+    <a href="#frontendipconfigurationid" title="FrontendIpConfigurationId">FrontendIpConfigurationId</a>: <i>String</i>
     <a href="#frontendipconfigurationname" title="FrontendIpConfigurationName">FrontendIpConfigurationName</a>: <i>String</i>
     <a href="#frontendport" title="FrontendPort">FrontendPort</a>: <i>Double</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#idletimeoutinminutes" title="IdleTimeoutInMinutes">IdleTimeoutInMinutes</a>: <i>Double</i>
     <a href="#loaddistribution" title="LoadDistribution">LoadDistribution</a>: <i>String</i>
     <a href="#loadbalancerid" title="LoadbalancerId">LoadbalancerId</a>: <i>String</i>
@@ -52,10 +54,20 @@ Properties:
     <a href="#probeid" title="ProbeId">ProbeId</a>: <i>String</i>
     <a href="#protocol" title="Protocol">Protocol</a>: <i>String</i>
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BackendAddressPoolId
 
@@ -97,6 +109,14 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### FrontendIpConfigurationId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### FrontendIpConfigurationName
 
 _Required_: Yes
@@ -110,14 +130,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: Yes
 
 _Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -181,7 +193,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -203,5 +215,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### FrontendIpConfigurationId
 
-Returns the <code>FrontendIpConfigurationId</code> value.
+Returns the &lt;code&gt;FrontendIpConfigurationId&lt;/code&gt; value.
 

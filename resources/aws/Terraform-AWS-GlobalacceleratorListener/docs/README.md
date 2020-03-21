@@ -12,11 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::GlobalacceleratorListener",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#acceleratorarn" title="AcceleratorArn">AcceleratorArn</a>" : <i>String</i>,
         "<a href="#clientaffinity" title="ClientAffinity">ClientAffinity</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#protocol" title="Protocol">Protocol</a>" : <i>String</i>,
-        "<a href="#portrange" title="PortRange">PortRange</a>" : <i>[ <a href="portrange.md">PortRange</a>, ... ]</i>
+        "<a href="#portrange" title="PortRange">PortRange</a>" : <i>[ &lt;a href=&#34;portrange.md&#34;&gt;PortRange&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -26,15 +26,25 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::GlobalacceleratorListener
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#acceleratorarn" title="AcceleratorArn">AcceleratorArn</a>: <i>String</i>
     <a href="#clientaffinity" title="ClientAffinity">ClientAffinity</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#protocol" title="Protocol">Protocol</a>: <i>String</i>
     <a href="#portrange" title="PortRange">PortRange</a>: <i>
-      - <a href="portrange.md">PortRange</a></i>
+      - &lt;a href=&#34;portrange.md&#34;&gt;PortRange&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AcceleratorArn
 
@@ -45,14 +55,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClientAffinity
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 
@@ -72,7 +74,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="portrange.md">PortRange</a>
+_Type_: List of &lt;a href=&#34;portrange.md&#34;&gt;PortRange&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

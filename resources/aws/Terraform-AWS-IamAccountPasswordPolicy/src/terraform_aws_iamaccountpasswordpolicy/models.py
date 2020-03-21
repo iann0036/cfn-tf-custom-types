@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AllowUsersToChangePassword: Optional[bool]
     ExpirePasswords: Optional[bool]
     HardExpiry: Optional[bool]
-    Id: Optional[str]
     MaxPasswordAge: Optional[float]
     MinimumPasswordLength: Optional[float]
     PasswordReusePrevention: Optional[float]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             AllowUsersToChangePassword=json_data.get("AllowUsersToChangePassword"),
             ExpirePasswords=json_data.get("ExpirePasswords"),
             HardExpiry=json_data.get("HardExpiry"),
-            Id=json_data.get("Id"),
             MaxPasswordAge=json_data.get("MaxPasswordAge"),
             MinimumPasswordLength=json_data.get("MinimumPasswordLength"),
             PasswordReusePrevention=json_data.get("PasswordReusePrevention"),

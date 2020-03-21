@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     MaxNumberOfRecordSets: Optional[float]
     Name: Optional[str]
     NameServers: Optional[Sequence[str]]
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             MaxNumberOfRecordSets=json_data.get("MaxNumberOfRecordSets"),
             Name=json_data.get("Name"),
             NameServers=json_data.get("NameServers"),

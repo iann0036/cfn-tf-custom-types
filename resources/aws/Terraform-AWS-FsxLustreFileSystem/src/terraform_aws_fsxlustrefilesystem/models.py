@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     DnsName: Optional[str]
     ExportPath: Optional[str]
-    Id: Optional[str]
     ImportPath: Optional[str]
     ImportedFileChunkSize: Optional[float]
     NetworkInterfaceIds: Optional[Sequence[str]]
@@ -64,7 +63,6 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             DnsName=json_data.get("DnsName"),
             ExportPath=json_data.get("ExportPath"),
-            Id=json_data.get("Id"),
             ImportPath=json_data.get("ImportPath"),
             ImportedFileChunkSize=json_data.get("ImportedFileChunkSize"),
             NetworkInterfaceIds=json_data.get("NetworkInterfaceIds"),

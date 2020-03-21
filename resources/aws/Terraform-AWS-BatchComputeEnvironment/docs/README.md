@@ -12,14 +12,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::BatchComputeEnvironment",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#computeenvironmentname" title="ComputeEnvironmentName">ComputeEnvironmentName</a>" : <i>String</i>,
         "<a href="#computeenvironmentnameprefix" title="ComputeEnvironmentNamePrefix">ComputeEnvironmentNamePrefix</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#eccclusterarn" title="EccClusterArn">EccClusterArn</a>" : <i>String</i>,
+        "<a href="#ecsclusterarn" title="EcsClusterArn">EcsClusterArn</a>" : <i>String</i>,
         "<a href="#servicerole" title="ServiceRole">ServiceRole</a>" : <i>String</i>,
         "<a href="#state" title="State">State</a>" : <i>String</i>,
+        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
+        "<a href="#statusreason" title="StatusReason">StatusReason</a>" : <i>String</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-        "<a href="#computeresources" title="ComputeResources">ComputeResources</a>" : <i>[ <a href="computeresources.md">ComputeResources</a>, ... ]</i>,
-        "<a href="#launchtemplate" title="LaunchTemplate">LaunchTemplate</a>" : <i>[ <a href="launchtemplate.md">LaunchTemplate</a>, ... ]</i>
+        "<a href="#computeresources" title="ComputeResources">ComputeResources</a>" : <i>[ &lt;a href=&#34;computeresources.md&#34;&gt;ComputeResources&lt;/a&gt;, ... ]</i>,
+        "<a href="#launchtemplate" title="LaunchTemplate">LaunchTemplate</a>" : <i>[ &lt;a href=&#34;launchtemplate.md&#34;&gt;LaunchTemplate&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -29,19 +34,42 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::BatchComputeEnvironment
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#computeenvironmentname" title="ComputeEnvironmentName">ComputeEnvironmentName</a>: <i>String</i>
     <a href="#computeenvironmentnameprefix" title="ComputeEnvironmentNamePrefix">ComputeEnvironmentNamePrefix</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#eccclusterarn" title="EccClusterArn">EccClusterArn</a>: <i>String</i>
+    <a href="#ecsclusterarn" title="EcsClusterArn">EcsClusterArn</a>: <i>String</i>
     <a href="#servicerole" title="ServiceRole">ServiceRole</a>: <i>String</i>
     <a href="#state" title="State">State</a>: <i>String</i>
+    <a href="#status" title="Status">Status</a>: <i>String</i>
+    <a href="#statusreason" title="StatusReason">StatusReason</a>: <i>String</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
     <a href="#computeresources" title="ComputeResources">ComputeResources</a>: <i>
-      - <a href="computeresources.md">ComputeResources</a></i>
+      - &lt;a href=&#34;computeresources.md&#34;&gt;ComputeResources&lt;/a&gt;</i>
     <a href="#launchtemplate" title="LaunchTemplate">LaunchTemplate</a>: <i>
-      - <a href="launchtemplate.md">LaunchTemplate</a></i>
+      - &lt;a href=&#34;launchtemplate.md&#34;&gt;LaunchTemplate&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Arn
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ComputeEnvironmentName
 
@@ -59,7 +87,15 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### EccClusterArn
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### EcsClusterArn
 
 _Required_: No
 
@@ -83,6 +119,22 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### Status
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### StatusReason
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Type
 
 _Required_: Yes
@@ -95,7 +147,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="computeresources.md">ComputeResources</a>
+_Type_: List of &lt;a href=&#34;computeresources.md&#34;&gt;ComputeResources&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -103,7 +155,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="launchtemplate.md">LaunchTemplate</a>
+_Type_: List of &lt;a href=&#34;launchtemplate.md&#34;&gt;LaunchTemplate&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -125,21 +177,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the <code>Arn</code> value.
+Returns the &lt;code&gt;Arn&lt;/code&gt; value.
 
 #### EccClusterArn
 
-Returns the <code>EccClusterArn</code> value.
+Returns the &lt;code&gt;EccClusterArn&lt;/code&gt; value.
 
 #### EcsClusterArn
 
-Returns the <code>EcsClusterArn</code> value.
+Returns the &lt;code&gt;EcsClusterArn&lt;/code&gt; value.
 
 #### Status
 
-Returns the <code>Status</code> value.
+Returns the &lt;code&gt;Status&lt;/code&gt; value.
 
 #### StatusReason
 
-Returns the <code>StatusReason</code> value.
+Returns the &lt;code&gt;StatusReason&lt;/code&gt; value.
 

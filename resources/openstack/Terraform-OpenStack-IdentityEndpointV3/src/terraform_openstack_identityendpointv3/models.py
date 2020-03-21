@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     EndpointRegion: Optional[str]
-    Id: Optional[str]
     Interface: Optional[str]
     Name: Optional[str]
     Region: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             EndpointRegion=json_data.get("EndpointRegion"),
-            Id=json_data.get("Id"),
             Interface=json_data.get("Interface"),
             Name=json_data.get("Name"),
             Region=json_data.get("Region"),

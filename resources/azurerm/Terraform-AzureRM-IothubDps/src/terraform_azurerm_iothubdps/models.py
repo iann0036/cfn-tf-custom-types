@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AllocationPolicy: Optional[str]
     DeviceProvisioningHostName: Optional[str]
-    Id: Optional[str]
     IdScope: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AllocationPolicy=json_data.get("AllocationPolicy"),
             DeviceProvisioningHostName=json_data.get("DeviceProvisioningHostName"),
-            Id=json_data.get("Id"),
             IdScope=json_data.get("IdScope"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),

@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     EnvironmentId: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Value: Optional[str]
 
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             EnvironmentId=json_data.get("EnvironmentId"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Value=json_data.get("Value"),
         )

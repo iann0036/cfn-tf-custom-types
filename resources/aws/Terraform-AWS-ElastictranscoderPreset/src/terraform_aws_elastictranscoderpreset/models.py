@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     Container: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Type: Optional[str]
     VideoCodecOptions: Optional[Sequence["_VideoCodecOptions"]]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             Container=json_data.get("Container"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Type=json_data.get("Type"),
             VideoCodecOptions=json_data.get("VideoCodecOptions"),

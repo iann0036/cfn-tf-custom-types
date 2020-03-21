@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Arn: Optional[str]
     DxGatewayId: Optional[str]
-    Id: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
     VirtualInterfaceId: Optional[str]
     VpnGatewayId: Optional[str]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Arn=json_data.get("Arn"),
             DxGatewayId=json_data.get("DxGatewayId"),
-            Id=json_data.get("Id"),
             Tags=json_data.get("Tags"),
             VirtualInterfaceId=json_data.get("VirtualInterfaceId"),
             VpnGatewayId=json_data.get("VpnGatewayId"),

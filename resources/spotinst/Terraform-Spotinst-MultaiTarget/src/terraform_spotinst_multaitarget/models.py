@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     BalancerId: Optional[str]
     Host: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Port: Optional[float]
     TargetSetId: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             BalancerId=json_data.get("BalancerId"),
             Host=json_data.get("Host"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Port=json_data.get("Port"),
             TargetSetId=json_data.get("TargetSetId"),

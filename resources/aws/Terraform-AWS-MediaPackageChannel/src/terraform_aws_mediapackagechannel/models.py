@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     ChannelId: Optional[str]
     Description: Optional[str]
     HlsIngest: Optional[Sequence["_HlsIngest"]]
-    Id: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
 
     @classmethod
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             ChannelId=json_data.get("ChannelId"),
             Description=json_data.get("Description"),
             HlsIngest=json_data.get("HlsIngest"),
-            Id=json_data.get("Id"),
             Tags=json_data.get("Tags"),
         )
 

@@ -52,7 +52,6 @@ class ResourceModel(BaseResourceModel):
     EngineVersion: Optional[str]
     FinalSnapshotIdentifier: Optional[str]
     HostedZoneId: Optional[str]
-    Id: Optional[str]
     KmsKeyId: Optional[str]
     MasterPassword: Optional[str]
     MasterUsername: Optional[str]
@@ -92,7 +91,6 @@ class ResourceModel(BaseResourceModel):
             EngineVersion=json_data.get("EngineVersion"),
             FinalSnapshotIdentifier=json_data.get("FinalSnapshotIdentifier"),
             HostedZoneId=json_data.get("HostedZoneId"),
-            Id=json_data.get("Id"),
             KmsKeyId=json_data.get("KmsKeyId"),
             MasterPassword=json_data.get("MasterPassword"),
             MasterUsername=json_data.get("MasterUsername"),

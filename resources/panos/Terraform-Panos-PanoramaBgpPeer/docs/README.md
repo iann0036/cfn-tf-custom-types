@@ -12,6 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Panos::PanoramaBgpPeer",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#addressfamilytype" title="AddressFamilyType">AddressFamilyType</a>" : <i>String</i>,
         "<a href="#allowincomingconnections" title="AllowIncomingConnections">AllowIncomingConnections</a>" : <i>Boolean</i>,
         "<a href="#allowoutgoingconnections" title="AllowOutgoingConnections">AllowOutgoingConnections</a>" : <i>Boolean</i>,
@@ -22,7 +23,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#enablempbgp" title="EnableMpBgp">EnableMpBgp</a>" : <i>Boolean</i>,
         "<a href="#enablesendersideloopdetection" title="EnableSenderSideLoopDetection">EnableSenderSideLoopDetection</a>" : <i>Boolean</i>,
         "<a href="#holdtime" title="HoldTime">HoldTime</a>" : <i>Double</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#idleholdtime" title="IdleHoldTime">IdleHoldTime</a>" : <i>Double</i>,
         "<a href="#incomingconnectionsremoteport" title="IncomingConnectionsRemotePort">IncomingConnectionsRemotePort</a>" : <i>Double</i>,
         "<a href="#keepaliveinterval" title="KeepAliveInterval">KeepAliveInterval</a>" : <i>Double</i>,
@@ -52,6 +52,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Panos::PanoramaBgpPeer
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#addressfamilytype" title="AddressFamilyType">AddressFamilyType</a>: <i>String</i>
     <a href="#allowincomingconnections" title="AllowIncomingConnections">AllowIncomingConnections</a>: <i>Boolean</i>
     <a href="#allowoutgoingconnections" title="AllowOutgoingConnections">AllowOutgoingConnections</a>: <i>Boolean</i>
@@ -62,7 +63,6 @@ Properties:
     <a href="#enablempbgp" title="EnableMpBgp">EnableMpBgp</a>: <i>Boolean</i>
     <a href="#enablesendersideloopdetection" title="EnableSenderSideLoopDetection">EnableSenderSideLoopDetection</a>: <i>Boolean</i>
     <a href="#holdtime" title="HoldTime">HoldTime</a>: <i>Double</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#idleholdtime" title="IdleHoldTime">IdleHoldTime</a>: <i>Double</i>
     <a href="#incomingconnectionsremoteport" title="IncomingConnectionsRemotePort">IncomingConnectionsRemotePort</a>: <i>Double</i>
     <a href="#keepaliveinterval" title="KeepAliveInterval">KeepAliveInterval</a>: <i>Double</i>
@@ -86,6 +86,16 @@ Properties:
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AddressFamilyType
 
@@ -164,14 +174,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

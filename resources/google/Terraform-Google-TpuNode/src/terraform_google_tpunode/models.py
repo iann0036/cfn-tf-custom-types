@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AcceleratorType: Optional[str]
     CidrBlock: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     Labels: Optional[Sequence["_Labels"]]
     Name: Optional[str]
     Network: Optional[str]
@@ -63,7 +62,6 @@ class ResourceModel(BaseResourceModel):
             AcceleratorType=json_data.get("AcceleratorType"),
             CidrBlock=json_data.get("CidrBlock"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Labels=json_data.get("Labels"),
             Name=json_data.get("Name"),
             Network=json_data.get("Network"),

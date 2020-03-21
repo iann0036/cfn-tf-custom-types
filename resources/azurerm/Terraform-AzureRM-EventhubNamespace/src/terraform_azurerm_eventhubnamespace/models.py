@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     DefaultPrimaryKey: Optional[str]
     DefaultSecondaryConnectionString: Optional[str]
     DefaultSecondaryKey: Optional[str]
-    Id: Optional[str]
     Location: Optional[str]
     MaximumThroughputUnits: Optional[float]
     Name: Optional[str]
@@ -67,7 +66,6 @@ class ResourceModel(BaseResourceModel):
             DefaultPrimaryKey=json_data.get("DefaultPrimaryKey"),
             DefaultSecondaryConnectionString=json_data.get("DefaultSecondaryConnectionString"),
             DefaultSecondaryKey=json_data.get("DefaultSecondaryKey"),
-            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             MaximumThroughputUnits=json_data.get("MaximumThroughputUnits"),
             Name=json_data.get("Name"),

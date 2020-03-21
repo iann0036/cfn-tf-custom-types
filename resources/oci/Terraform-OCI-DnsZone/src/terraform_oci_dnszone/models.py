@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     CompartmentId: Optional[str]
     DefinedTags: Optional[Sequence["_DefinedTags"]]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     Name: Optional[str]
     Nameservers: Optional[Sequence["_Nameservers"]]
     Self: Optional[str]
@@ -64,7 +63,6 @@ class ResourceModel(BaseResourceModel):
             CompartmentId=json_data.get("CompartmentId"),
             DefinedTags=json_data.get("DefinedTags"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Nameservers=json_data.get("Nameservers"),
             Self=json_data.get("Self"),

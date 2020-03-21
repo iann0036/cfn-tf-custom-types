@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     Distributed: Optional[bool]
     EnableSnat: Optional[bool]
     ExternalNetworkId: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Region: Optional[str]
     TenantId: Optional[str]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             Distributed=json_data.get("Distributed"),
             EnableSnat=json_data.get("EnableSnat"),
             ExternalNetworkId=json_data.get("ExternalNetworkId"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Region=json_data.get("Region"),
             TenantId=json_data.get("TenantId"),

@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DestinationDir: Optional[str]
-    Id: Optional[str]
     SourceDir: Optional[str]
     Vars: Optional[Sequence["_Vars"]]
 
@@ -51,7 +50,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             DestinationDir=json_data.get("DestinationDir"),
-            Id=json_data.get("Id"),
             SourceDir=json_data.get("SourceDir"),
             Vars=json_data.get("Vars"),
         )

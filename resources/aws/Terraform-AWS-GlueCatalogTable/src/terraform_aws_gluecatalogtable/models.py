@@ -35,15 +35,23 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 
 @dataclass
 class ResourceModel(BaseResourceModel):
-    TPSCode: Optional[str]
-    Title: Optional[str]
-    CoverSheetIncluded: Optional[bool]
-    DueDate: Optional[str]
-    ApprovalDate: Optional[str]
-    Memo: Optional["_Memo"]
-    SecondCopyOfMemo: Optional["_Memo"]
-    TestCode: Optional[str]
-    Authors: Optional[Sequence[str]]
+    tfcfnid: Optional[str]
+    CatalogId: Optional[str]
+    DatabaseName: Optional[str]
+    Description: Optional[str]
+    Name: Optional[str]
+    Owner: Optional[str]
+    Parameters: Optional[Sequence["_Parameters"]]
+    Retention: Optional[float]
+    TableType: Optional[str]
+    ViewExpandedText: Optional[str]
+    ViewOriginalText: Optional[str]
+    PartitionKeys: Optional[Sequence["_PartitionKeys"]]
+    StorageDescriptor: Optional[Sequence["_StorageDescriptor"]]
+    Columns: Optional[Sequence["_Columns"]]
+    SerDeInfo: Optional[Sequence["_SerDeInfo"]]
+    SkewedInfo: Optional[Sequence["_SkewedInfo"]]
+    SortColumns: Optional[Sequence["_SortColumns"]]
 
     @classmethod
     def _deserialize(
@@ -53,15 +61,23 @@ class ResourceModel(BaseResourceModel):
         if not json_data:
             return None
         return cls(
-            TPSCode=json_data.get("TPSCode"),
-            Title=json_data.get("Title"),
-            CoverSheetIncluded=json_data.get("CoverSheetIncluded"),
-            DueDate=json_data.get("DueDate"),
-            ApprovalDate=json_data.get("ApprovalDate"),
-            Memo=Memo._deserialize(json_data.get("Memo")),
-            SecondCopyOfMemo=Memo._deserialize(json_data.get("SecondCopyOfMemo")),
-            TestCode=json_data.get("TestCode"),
-            Authors=json_data.get("Authors"),
+            tfcfnid=json_data.get("tfcfnid"),
+            CatalogId=json_data.get("CatalogId"),
+            DatabaseName=json_data.get("DatabaseName"),
+            Description=json_data.get("Description"),
+            Name=json_data.get("Name"),
+            Owner=json_data.get("Owner"),
+            Parameters=json_data.get("Parameters"),
+            Retention=json_data.get("Retention"),
+            TableType=json_data.get("TableType"),
+            ViewExpandedText=json_data.get("ViewExpandedText"),
+            ViewOriginalText=json_data.get("ViewOriginalText"),
+            PartitionKeys=json_data.get("PartitionKeys"),
+            StorageDescriptor=json_data.get("StorageDescriptor"),
+            Columns=json_data.get("Columns"),
+            SerDeInfo=json_data.get("SerDeInfo"),
+            SkewedInfo=json_data.get("SkewedInfo"),
+            SortColumns=json_data.get("SortColumns"),
         )
 
 
@@ -70,24 +86,250 @@ _ResourceModel = ResourceModel
 
 
 @dataclass
-class Memo:
-    Heading: Optional[str]
-    Body: Optional[str]
+class Parameters:
+    Key: Optional[str]
+    Value: Optional[str]
 
     @classmethod
     def _deserialize(
-        cls: Type["_Memo"],
+        cls: Type["_Parameters"],
         json_data: Optional[Mapping[str, Any]],
-    ) -> Optional["_Memo"]:
+    ) -> Optional["_Parameters"]:
         if not json_data:
             return None
         return cls(
-            Heading=json_data.get("Heading"),
-            Body=json_data.get("Body"),
+            Key=json_data.get("Key"),
+            Value=json_data.get("Value"),
         )
 
 
 # work around possible type aliasing issues when variable has same name as a model
-_Memo = Memo
+_Parameters = Parameters
+
+
+@dataclass
+class PartitionKeys:
+    Comment: Optional[str]
+    Name: Optional[str]
+    Type: Optional[str]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_PartitionKeys"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_PartitionKeys"]:
+        if not json_data:
+            return None
+        return cls(
+            Comment=json_data.get("Comment"),
+            Name=json_data.get("Name"),
+            Type=json_data.get("Type"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_PartitionKeys = PartitionKeys
+
+
+@dataclass
+class StorageDescriptor:
+    BucketColumns: Optional[Sequence[str]]
+    Compressed: Optional[bool]
+    InputFormat: Optional[str]
+    Location: Optional[str]
+    NumberOfBuckets: Optional[float]
+    OutputFormat: Optional[str]
+    Parameters: Optional[Sequence["_Parameters2"]]
+    StoredAsSubDirectories: Optional[bool]
+    Columns: Optional[Sequence["_Columns"]]
+    SerDeInfo: Optional[Sequence["_SerDeInfo"]]
+    SkewedInfo: Optional[Sequence["_SkewedInfo"]]
+    SortColumns: Optional[Sequence["_SortColumns"]]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_StorageDescriptor"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_StorageDescriptor"]:
+        if not json_data:
+            return None
+        return cls(
+            BucketColumns=json_data.get("BucketColumns"),
+            Compressed=json_data.get("Compressed"),
+            InputFormat=json_data.get("InputFormat"),
+            Location=json_data.get("Location"),
+            NumberOfBuckets=json_data.get("NumberOfBuckets"),
+            OutputFormat=json_data.get("OutputFormat"),
+            Parameters=json_data.get("Parameters"),
+            StoredAsSubDirectories=json_data.get("StoredAsSubDirectories"),
+            Columns=json_data.get("Columns"),
+            SerDeInfo=json_data.get("SerDeInfo"),
+            SkewedInfo=json_data.get("SkewedInfo"),
+            SortColumns=json_data.get("SortColumns"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_StorageDescriptor = StorageDescriptor
+
+
+@dataclass
+class Parameters2:
+    Key: Optional[str]
+    Value: Optional[str]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_Parameters2"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_Parameters2"]:
+        if not json_data:
+            return None
+        return cls(
+            Key=json_data.get("Key"),
+            Value=json_data.get("Value"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_Parameters2 = Parameters2
+
+
+@dataclass
+class Columns:
+    Comment: Optional[str]
+    Name: Optional[str]
+    Type: Optional[str]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_Columns"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_Columns"]:
+        if not json_data:
+            return None
+        return cls(
+            Comment=json_data.get("Comment"),
+            Name=json_data.get("Name"),
+            Type=json_data.get("Type"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_Columns = Columns
+
+
+@dataclass
+class SerDeInfo:
+    Name: Optional[str]
+    Parameters: Optional[Sequence["_Parameters3"]]
+    SerializationLibrary: Optional[str]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_SerDeInfo"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_SerDeInfo"]:
+        if not json_data:
+            return None
+        return cls(
+            Name=json_data.get("Name"),
+            Parameters=json_data.get("Parameters"),
+            SerializationLibrary=json_data.get("SerializationLibrary"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_SerDeInfo = SerDeInfo
+
+
+@dataclass
+class Parameters3:
+    Key: Optional[str]
+    Value: Optional[str]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_Parameters3"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_Parameters3"]:
+        if not json_data:
+            return None
+        return cls(
+            Key=json_data.get("Key"),
+            Value=json_data.get("Value"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_Parameters3 = Parameters3
+
+
+@dataclass
+class SkewedInfo:
+    SkewedColumnNames: Optional[Sequence[str]]
+    SkewedColumnValueLocationMaps: Optional[Sequence["_SkewedColumnValueLocationMaps"]]
+    SkewedColumnValues: Optional[Sequence[str]]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_SkewedInfo"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_SkewedInfo"]:
+        if not json_data:
+            return None
+        return cls(
+            SkewedColumnNames=json_data.get("SkewedColumnNames"),
+            SkewedColumnValueLocationMaps=json_data.get("SkewedColumnValueLocationMaps"),
+            SkewedColumnValues=json_data.get("SkewedColumnValues"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_SkewedInfo = SkewedInfo
+
+
+@dataclass
+class SkewedColumnValueLocationMaps:
+    Key: Optional[str]
+    Value: Optional[str]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_SkewedColumnValueLocationMaps"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_SkewedColumnValueLocationMaps"]:
+        if not json_data:
+            return None
+        return cls(
+            Key=json_data.get("Key"),
+            Value=json_data.get("Value"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_SkewedColumnValueLocationMaps = SkewedColumnValueLocationMaps
+
+
+@dataclass
+class SortColumns:
+    Column: Optional[str]
+    SortOrder: Optional[float]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_SortColumns"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_SortColumns"]:
+        if not json_data:
+            return None
+        return cls(
+            Column=json_data.get("Column"),
+            SortOrder=json_data.get("SortOrder"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_SortColumns = SortColumns
 
 

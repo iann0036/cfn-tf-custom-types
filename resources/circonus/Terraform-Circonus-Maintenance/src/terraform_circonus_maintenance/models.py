@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Account: Optional[str]
     Check: Optional[str]
-    Id: Optional[str]
     Notes: Optional[str]
     RuleSet: Optional[str]
     Severities: Optional[Sequence[str]]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Account=json_data.get("Account"),
             Check=json_data.get("Check"),
-            Id=json_data.get("Id"),
             Notes=json_data.get("Notes"),
             RuleSet=json_data.get("RuleSet"),
             Severities=json_data.get("Severities"),

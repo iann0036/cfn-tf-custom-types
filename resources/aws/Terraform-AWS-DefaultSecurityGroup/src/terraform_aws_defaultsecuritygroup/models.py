@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     Description: Optional[str]
     Egress: Optional[Sequence["_Egress"]]
-    Id: Optional[str]
     Ingress: Optional[Sequence["_Ingress"]]
     Name: Optional[str]
     OwnerId: Optional[str]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             Description=json_data.get("Description"),
             Egress=json_data.get("Egress"),
-            Id=json_data.get("Id"),
             Ingress=json_data.get("Ingress"),
             Name=json_data.get("Name"),
             OwnerId=json_data.get("OwnerId"),

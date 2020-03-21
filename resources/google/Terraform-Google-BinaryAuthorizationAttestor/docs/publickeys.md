@@ -11,7 +11,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#asciiarmoredpgppublickey" title="AsciiArmoredPgpPublicKey">AsciiArmoredPgpPublicKey</a>" : <i>String</i>,
     "<a href="#comment" title="Comment">Comment</a>" : <i>String</i>,
     "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-    "<a href="#pkixpublickey" title="PkixPublicKey">PkixPublicKey</a>" : <i>[ <a href="publickeys-pkixpublickey.md">PkixPublicKey</a>, ... ]</i>
+    "<a href="#pkixpublickey" title="PkixPublicKey">PkixPublicKey</a>" : <i>[ &lt;a href=&#34;publickeys-pkixpublickey.md&#34;&gt;PkixPublicKey&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -22,7 +22,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#comment" title="Comment">Comment</a>: <i>String</i>
 <a href="#id" title="Id">Id</a>: <i>String</i>
 <a href="#pkixpublickey" title="PkixPublicKey">PkixPublicKey</a>: <i>
-      - <a href="publickeys-pkixpublickey.md">PkixPublicKey</a></i>
+      - &lt;a href=&#34;publickeys-pkixpublickey.md&#34;&gt;PkixPublicKey&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -30,7 +30,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### AsciiArmoredPgpPublicKey
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -38,7 +37,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Comment
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -46,7 +44,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Id
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -54,8 +51,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### PkixPublicKey
 
 _Required_: No
-
-_Type_: List of <a href="publickeys-pkixpublickey.md">PkixPublicKey</a>
+_Type_: List of &lt;a href=&#34;publickeys-pkixpublickey.md&#34;&gt;PkixPublicKey&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

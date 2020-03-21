@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     CpuShareLevel: Optional[str]
     CpuShares: Optional[float]
     CustomAttributes: Optional[Sequence["_CustomAttributes"]]
-    Id: Optional[str]
     MemoryExpandable: Optional[bool]
     MemoryLimit: Optional[float]
     MemoryReservation: Optional[float]
@@ -68,7 +67,6 @@ class ResourceModel(BaseResourceModel):
             CpuShareLevel=json_data.get("CpuShareLevel"),
             CpuShares=json_data.get("CpuShares"),
             CustomAttributes=json_data.get("CustomAttributes"),
-            Id=json_data.get("Id"),
             MemoryExpandable=json_data.get("MemoryExpandable"),
             MemoryLimit=json_data.get("MemoryLimit"),
             MemoryReservation=json_data.get("MemoryReservation"),

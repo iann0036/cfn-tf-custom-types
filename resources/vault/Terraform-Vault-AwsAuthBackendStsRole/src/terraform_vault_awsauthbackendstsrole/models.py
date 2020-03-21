@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AccountId: Optional[str]
     Backend: Optional[str]
-    Id: Optional[str]
     StsRole: Optional[str]
 
     @classmethod
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AccountId=json_data.get("AccountId"),
             Backend=json_data.get("Backend"),
-            Id=json_data.get("Id"),
             StsRole=json_data.get("StsRole"),
         )
 

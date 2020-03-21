@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CloudFunction: Optional[str]
     Etag: Optional[str]
-    Id: Optional[str]
     PolicyData: Optional[str]
     Project: Optional[str]
     Region: Optional[str]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CloudFunction=json_data.get("CloudFunction"),
             Etag=json_data.get("Etag"),
-            Id=json_data.get("Id"),
             PolicyData=json_data.get("PolicyData"),
             Project=json_data.get("Project"),
             Region=json_data.get("Region"),

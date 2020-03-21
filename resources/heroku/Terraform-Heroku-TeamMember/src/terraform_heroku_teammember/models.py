@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Email: Optional[str]
     Federated: Optional[bool]
-    Id: Optional[str]
     Role: Optional[str]
     Team: Optional[str]
 
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Email=json_data.get("Email"),
             Federated=json_data.get("Federated"),
-            Id=json_data.get("Id"),
             Role=json_data.get("Role"),
             Team=json_data.get("Team"),
         )

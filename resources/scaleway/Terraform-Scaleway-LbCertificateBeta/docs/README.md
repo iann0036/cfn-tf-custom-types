@@ -12,11 +12,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Scaleway::LbCertificateBeta",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#commonname" title="CommonName">CommonName</a>" : <i>String</i>,
+        "<a href="#fingerprint" title="Fingerprint">Fingerprint</a>" : <i>String</i>,
         "<a href="#lbid" title="LbId">LbId</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#customcertificate" title="CustomCertificate">CustomCertificate</a>" : <i>[ <a href="customcertificate.md">CustomCertificate</a>, ... ]</i>,
-        "<a href="#letsencrypt" title="Letsencrypt">Letsencrypt</a>" : <i>[ <a href="letsencrypt.md">Letsencrypt</a>, ... ]</i>
+        "<a href="#notvalidafter" title="NotValidAfter">NotValidAfter</a>" : <i>String</i>,
+        "<a href="#notvalidbefore" title="NotValidBefore">NotValidBefore</a>" : <i>String</i>,
+        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
+        "<a href="#subjectalternativename" title="SubjectAlternativeName">SubjectAlternativeName</a>" : <i>String</i>,
+        "<a href="#customcertificate" title="CustomCertificate">CustomCertificate</a>" : <i>[ &lt;a href=&#34;customcertificate.md&#34;&gt;CustomCertificate&lt;/a&gt;, ... ]</i>,
+        "<a href="#letsencrypt" title="Letsencrypt">Letsencrypt</a>" : <i>[ &lt;a href=&#34;letsencrypt.md&#34;&gt;Letsencrypt&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -26,18 +32,42 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Scaleway::LbCertificateBeta
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#commonname" title="CommonName">CommonName</a>: <i>String</i>
+    <a href="#fingerprint" title="Fingerprint">Fingerprint</a>: <i>String</i>
     <a href="#lbid" title="LbId">LbId</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
+    <a href="#notvalidafter" title="NotValidAfter">NotValidAfter</a>: <i>String</i>
+    <a href="#notvalidbefore" title="NotValidBefore">NotValidBefore</a>: <i>String</i>
+    <a href="#status" title="Status">Status</a>: <i>String</i>
+    <a href="#subjectalternativename" title="SubjectAlternativeName">SubjectAlternativeName</a>: <i>String</i>
     <a href="#customcertificate" title="CustomCertificate">CustomCertificate</a>: <i>
-      - <a href="customcertificate.md">CustomCertificate</a></i>
+      - &lt;a href=&#34;customcertificate.md&#34;&gt;CustomCertificate&lt;/a&gt;</i>
     <a href="#letsencrypt" title="Letsencrypt">Letsencrypt</a>: <i>
-      - <a href="letsencrypt.md">Letsencrypt</a></i>
+      - &lt;a href=&#34;letsencrypt.md&#34;&gt;Letsencrypt&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### CommonName
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Fingerprint
 
 _Required_: No
 
@@ -61,11 +91,43 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### NotValidAfter
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### NotValidBefore
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Status
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### SubjectAlternativeName
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### CustomCertificate
 
 _Required_: No
 
-_Type_: List of <a href="customcertificate.md">CustomCertificate</a>
+_Type_: List of &lt;a href=&#34;customcertificate.md&#34;&gt;CustomCertificate&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -73,7 +135,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="letsencrypt.md">Letsencrypt</a>
+_Type_: List of &lt;a href=&#34;letsencrypt.md&#34;&gt;Letsencrypt&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -95,25 +157,25 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CommonName
 
-Returns the <code>CommonName</code> value.
+Returns the &lt;code&gt;CommonName&lt;/code&gt; value.
 
 #### Fingerprint
 
-Returns the <code>Fingerprint</code> value.
+Returns the &lt;code&gt;Fingerprint&lt;/code&gt; value.
 
 #### NotValidAfter
 
-Returns the <code>NotValidAfter</code> value.
+Returns the &lt;code&gt;NotValidAfter&lt;/code&gt; value.
 
 #### NotValidBefore
 
-Returns the <code>NotValidBefore</code> value.
+Returns the &lt;code&gt;NotValidBefore&lt;/code&gt; value.
 
 #### Status
 
-Returns the <code>Status</code> value.
+Returns the &lt;code&gt;Status&lt;/code&gt; value.
 
 #### SubjectAlternativeName
 
-Returns the <code>SubjectAlternativeName</code> value.
+Returns the &lt;code&gt;SubjectAlternativeName&lt;/code&gt; value.
 

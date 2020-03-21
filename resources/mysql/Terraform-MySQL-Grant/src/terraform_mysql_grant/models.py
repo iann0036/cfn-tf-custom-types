@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Database: Optional[str]
     Grant: Optional[bool]
     Host: Optional[str]
-    Id: Optional[str]
     Privileges: Optional[Sequence[str]]
     Role: Optional[str]
     Roles: Optional[Sequence[str]]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             Database=json_data.get("Database"),
             Grant=json_data.get("Grant"),
             Host=json_data.get("Host"),
-            Id=json_data.get("Id"),
             Privileges=json_data.get("Privileges"),
             Role=json_data.get("Role"),
             Roles=json_data.get("Roles"),

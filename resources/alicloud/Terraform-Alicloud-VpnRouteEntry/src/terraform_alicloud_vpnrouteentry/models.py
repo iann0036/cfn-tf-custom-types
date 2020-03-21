@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     NextHop: Optional[str]
     PublishVpc: Optional[bool]
     RouteDest: Optional[str]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             NextHop=json_data.get("NextHop"),
             PublishVpc=json_data.get("PublishVpc"),
             RouteDest=json_data.get("RouteDest"),

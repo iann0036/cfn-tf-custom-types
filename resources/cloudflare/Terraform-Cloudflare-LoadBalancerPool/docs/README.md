@@ -12,15 +12,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Cloudflare::LoadBalancerPool",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#checkregions" title="CheckRegions">CheckRegions</a>" : <i>[ String, ... ]</i>,
+        "<a href="#createdon" title="CreatedOn">CreatedOn</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#enabled" title="Enabled">Enabled</a>" : <i>Boolean</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#minimumorigins" title="MinimumOrigins">MinimumOrigins</a>" : <i>Double</i>,
+        "<a href="#modifiedon" title="ModifiedOn">ModifiedOn</a>" : <i>String</i>,
         "<a href="#monitor" title="Monitor">Monitor</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#notificationemail" title="NotificationEmail">NotificationEmail</a>" : <i>String</i>,
-        "<a href="#origins" title="Origins">Origins</a>" : <i>[ <a href="origins.md">Origins</a>, ... ]</i>
+        "<a href="#origins" title="Origins">Origins</a>" : <i>[ &lt;a href=&#34;origins.md&#34;&gt;Origins&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -30,26 +32,46 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Cloudflare::LoadBalancerPool
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#checkregions" title="CheckRegions">CheckRegions</a>: <i>
       - String</i>
+    <a href="#createdon" title="CreatedOn">CreatedOn</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#enabled" title="Enabled">Enabled</a>: <i>Boolean</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#minimumorigins" title="MinimumOrigins">MinimumOrigins</a>: <i>Double</i>
+    <a href="#modifiedon" title="ModifiedOn">ModifiedOn</a>: <i>String</i>
     <a href="#monitor" title="Monitor">Monitor</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#notificationemail" title="NotificationEmail">NotificationEmail</a>: <i>String</i>
     <a href="#origins" title="Origins">Origins</a>: <i>
-      - <a href="origins.md">Origins</a></i>
+      - &lt;a href=&#34;origins.md&#34;&gt;Origins&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CheckRegions
 
 _Required_: No
 
 _Type_: List of String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### CreatedOn
+
+_Required_: No
+
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -69,19 +91,19 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### MinimumOrigins
 
 _Required_: No
 
 _Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ModifiedOn
+
+_Required_: No
+
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -113,7 +135,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="origins.md">Origins</a>
+_Type_: List of &lt;a href=&#34;origins.md&#34;&gt;Origins&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -135,9 +157,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreatedOn
 
-Returns the <code>CreatedOn</code> value.
+Returns the &lt;code&gt;CreatedOn&lt;/code&gt; value.
 
 #### ModifiedOn
 
-Returns the <code>ModifiedOn</code> value.
+Returns the &lt;code&gt;ModifiedOn&lt;/code&gt; value.
 

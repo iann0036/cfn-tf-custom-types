@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     ConnectionString: Optional[str]
     DbNodeId: Optional[str]
     Fingerprint: Optional[str]
-    Id: Optional[str]
     PublicKey: Optional[str]
     State: Optional[str]
     Timeouts: Optional["_Timeouts"]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             ConnectionString=json_data.get("ConnectionString"),
             DbNodeId=json_data.get("DbNodeId"),
             Fingerprint=json_data.get("Fingerprint"),
-            Id=json_data.get("Id"),
             PublicKey=json_data.get("PublicKey"),
             State=json_data.get("State"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),

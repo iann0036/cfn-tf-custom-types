@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AccountName: Optional[str]
     DatabaseName: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     PartitionKeyPath: Optional[str]
     ResourceGroupName: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AccountName=json_data.get("AccountName"),
             DatabaseName=json_data.get("DatabaseName"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             PartitionKeyPath=json_data.get("PartitionKeyPath"),
             ResourceGroupName=json_data.get("ResourceGroupName"),

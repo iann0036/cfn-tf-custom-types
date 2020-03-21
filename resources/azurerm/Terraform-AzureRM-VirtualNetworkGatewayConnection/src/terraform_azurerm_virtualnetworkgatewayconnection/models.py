@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     EnableBgp: Optional[bool]
     ExpressRouteCircuitId: Optional[str]
     ExpressRouteGatewayBypass: Optional[bool]
-    Id: Optional[str]
     LocalNetworkGatewayId: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
@@ -70,7 +69,6 @@ class ResourceModel(BaseResourceModel):
             EnableBgp=json_data.get("EnableBgp"),
             ExpressRouteCircuitId=json_data.get("ExpressRouteCircuitId"),
             ExpressRouteGatewayBypass=json_data.get("ExpressRouteGatewayBypass"),
-            Id=json_data.get("Id"),
             LocalNetworkGatewayId=json_data.get("LocalNetworkGatewayId"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),

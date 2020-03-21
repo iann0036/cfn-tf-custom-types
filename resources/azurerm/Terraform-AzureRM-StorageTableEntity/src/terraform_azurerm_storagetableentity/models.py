@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Entity: Optional[Sequence["_Entity"]]
-    Id: Optional[str]
     PartitionKey: Optional[str]
     RowKey: Optional[str]
     StorageAccountName: Optional[str]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Entity=json_data.get("Entity"),
-            Id=json_data.get("Id"),
             PartitionKey=json_data.get("PartitionKey"),
             RowKey=json_data.get("RowKey"),
             StorageAccountName=json_data.get("StorageAccountName"),

@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     WaitUntilBound: Optional[bool]
     Metadata: Optional[Sequence["_Metadata"]]
     Spec: Optional[Sequence["_Spec"]]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             WaitUntilBound=json_data.get("WaitUntilBound"),
             Metadata=json_data.get("Metadata"),
             Spec=json_data.get("Spec"),

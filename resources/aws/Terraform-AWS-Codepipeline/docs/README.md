@@ -12,14 +12,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::Codepipeline",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#rolearn" title="RoleArn">RoleArn</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
-        "<a href="#artifactstore" title="ArtifactStore">ArtifactStore</a>" : <i>[ <a href="artifactstore.md">ArtifactStore</a>, ... ]</i>,
-        "<a href="#stage" title="Stage">Stage</a>" : <i>[ <a href="stage.md">Stage</a>, ... ]</i>,
-        "<a href="#encryptionkey" title="EncryptionKey">EncryptionKey</a>" : <i>[ <a href="encryptionkey.md">EncryptionKey</a>, ... ]</i>,
-        "<a href="#action" title="Action">Action</a>" : <i>[ <a href="action.md">Action</a>, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#artifactstore" title="ArtifactStore">ArtifactStore</a>" : <i>[ &lt;a href=&#34;artifactstore.md&#34;&gt;ArtifactStore&lt;/a&gt;, ... ]</i>,
+        "<a href="#stage" title="Stage">Stage</a>" : <i>[ &lt;a href=&#34;stage.md&#34;&gt;Stage&lt;/a&gt;, ... ]</i>,
+        "<a href="#encryptionkey" title="EncryptionKey">EncryptionKey</a>" : <i>[ &lt;a href=&#34;encryptionkey.md&#34;&gt;EncryptionKey&lt;/a&gt;, ... ]</i>,
+        "<a href="#action" title="Action">Action</a>" : <i>[ &lt;a href=&#34;action.md&#34;&gt;Action&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -29,24 +30,35 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::Codepipeline
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#rolearn" title="RoleArn">RoleArn</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
     <a href="#artifactstore" title="ArtifactStore">ArtifactStore</a>: <i>
-      - <a href="artifactstore.md">ArtifactStore</a></i>
+      - &lt;a href=&#34;artifactstore.md&#34;&gt;ArtifactStore&lt;/a&gt;</i>
     <a href="#stage" title="Stage">Stage</a>: <i>
-      - <a href="stage.md">Stage</a></i>
+      - &lt;a href=&#34;stage.md&#34;&gt;Stage&lt;/a&gt;</i>
     <a href="#encryptionkey" title="EncryptionKey">EncryptionKey</a>: <i>
-      - <a href="encryptionkey.md">EncryptionKey</a></i>
+      - &lt;a href=&#34;encryptionkey.md&#34;&gt;EncryptionKey&lt;/a&gt;</i>
     <a href="#action" title="Action">Action</a>: <i>
-      - <a href="action.md">Action</a></i>
+      - &lt;a href=&#34;action.md&#34;&gt;Action&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Arn
 
 _Required_: No
 
@@ -74,7 +86,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -82,7 +94,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="artifactstore.md">ArtifactStore</a>
+_Type_: List of &lt;a href=&#34;artifactstore.md&#34;&gt;ArtifactStore&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -90,7 +102,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="stage.md">Stage</a>
+_Type_: List of &lt;a href=&#34;stage.md&#34;&gt;Stage&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -98,7 +110,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="encryptionkey.md">EncryptionKey</a>
+_Type_: List of &lt;a href=&#34;encryptionkey.md&#34;&gt;EncryptionKey&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -106,7 +118,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="action.md">Action</a>
+_Type_: List of &lt;a href=&#34;action.md&#34;&gt;Action&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -128,5 +140,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the <code>Arn</code> value.
+Returns the &lt;code&gt;Arn&lt;/code&gt; value.
 

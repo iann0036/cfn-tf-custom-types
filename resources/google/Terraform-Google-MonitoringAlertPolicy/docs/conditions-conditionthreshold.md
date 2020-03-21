@@ -13,9 +13,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#duration" title="Duration">Duration</a>" : <i>String</i>,
     "<a href="#filter" title="Filter">Filter</a>" : <i>String</i>,
     "<a href="#thresholdvalue" title="ThresholdValue">ThresholdValue</a>" : <i>Double</i>,
-    "<a href="#aggregations" title="Aggregations">Aggregations</a>" : <i>[ <a href="conditions-conditionthreshold-aggregations.md">Aggregations</a>, ... ]</i>,
-    "<a href="#denominatoraggregations" title="DenominatorAggregations">DenominatorAggregations</a>" : <i>[ <a href="conditions-conditionthreshold-denominatoraggregations.md">DenominatorAggregations</a>, ... ]</i>,
-    "<a href="#trigger" title="Trigger">Trigger</a>" : <i>[ <a href="conditions-conditionthreshold-trigger.md">Trigger</a>, ... ]</i>
+    "<a href="#aggregations" title="Aggregations">Aggregations</a>" : <i>[ &lt;a href=&#34;conditions-conditionthreshold-aggregations.md&#34;&gt;Aggregations&lt;/a&gt;, ... ]</i>,
+    "<a href="#denominatoraggregations" title="DenominatorAggregations">DenominatorAggregations</a>" : <i>[ &lt;a href=&#34;conditions-conditionthreshold-denominatoraggregations.md&#34;&gt;DenominatorAggregations&lt;/a&gt;, ... ]</i>,
+    "<a href="#trigger" title="Trigger">Trigger</a>" : <i>[ &lt;a href=&#34;conditions-conditionthreshold-trigger.md&#34;&gt;Trigger&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -28,11 +28,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#filter" title="Filter">Filter</a>: <i>String</i>
 <a href="#thresholdvalue" title="ThresholdValue">ThresholdValue</a>: <i>Double</i>
 <a href="#aggregations" title="Aggregations">Aggregations</a>: <i>
-      - <a href="conditions-conditionthreshold-aggregations.md">Aggregations</a></i>
+      - &lt;a href=&#34;conditions-conditionthreshold-aggregations.md&#34;&gt;Aggregations&lt;/a&gt;</i>
 <a href="#denominatoraggregations" title="DenominatorAggregations">DenominatorAggregations</a>: <i>
-      - <a href="conditions-conditionthreshold-denominatoraggregations.md">DenominatorAggregations</a></i>
+      - &lt;a href=&#34;conditions-conditionthreshold-denominatoraggregations.md&#34;&gt;DenominatorAggregations&lt;/a&gt;</i>
 <a href="#trigger" title="Trigger">Trigger</a>: <i>
-      - <a href="conditions-conditionthreshold-trigger.md">Trigger</a></i>
+      - &lt;a href=&#34;conditions-conditionthreshold-trigger.md&#34;&gt;Trigger&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -40,7 +40,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Comparison
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -48,7 +47,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DenominatorFilter
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -56,7 +54,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Duration
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -64,7 +61,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Filter
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -72,7 +68,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ThresholdValue
 
 _Required_: No
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -80,24 +75,21 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Aggregations
 
 _Required_: No
-
-_Type_: List of <a href="conditions-conditionthreshold-aggregations.md">Aggregations</a>
+_Type_: List of &lt;a href=&#34;conditions-conditionthreshold-aggregations.md&#34;&gt;Aggregations&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DenominatorAggregations
 
 _Required_: No
-
-_Type_: List of <a href="conditions-conditionthreshold-denominatoraggregations.md">DenominatorAggregations</a>
+_Type_: List of &lt;a href=&#34;conditions-conditionthreshold-denominatoraggregations.md&#34;&gt;DenominatorAggregations&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Trigger
 
 _Required_: No
-
-_Type_: List of <a href="conditions-conditionthreshold-trigger.md">Trigger</a>
+_Type_: List of &lt;a href=&#34;conditions-conditionthreshold-trigger.md&#34;&gt;Trigger&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

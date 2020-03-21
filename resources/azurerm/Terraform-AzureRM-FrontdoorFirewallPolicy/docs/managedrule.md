@@ -10,8 +10,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#type" title="Type">Type</a>" : <i>String</i>,
     "<a href="#version" title="Version">Version</a>" : <i>String</i>,
-    "<a href="#exclusion" title="Exclusion">Exclusion</a>" : <i>[ <a href="managedrule-exclusion.md">Exclusion</a>, ... ]</i>,
-    "<a href="#override" title="Override">Override</a>" : <i>[ <a href="managedrule-override.md">Override</a>, ... ]</i>
+    "<a href="#exclusion" title="Exclusion">Exclusion</a>" : <i>[ &lt;a href=&#34;managedrule-exclusion.md&#34;&gt;Exclusion&lt;/a&gt;, ... ]</i>,
+    "<a href="#override" title="Override">Override</a>" : <i>[ &lt;a href=&#34;managedrule-override.md&#34;&gt;Override&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -21,9 +21,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#type" title="Type">Type</a>: <i>String</i>
 <a href="#version" title="Version">Version</a>: <i>String</i>
 <a href="#exclusion" title="Exclusion">Exclusion</a>: <i>
-      - <a href="managedrule-exclusion.md">Exclusion</a></i>
+      - &lt;a href=&#34;managedrule-exclusion.md&#34;&gt;Exclusion&lt;/a&gt;</i>
 <a href="#override" title="Override">Override</a>: <i>
-      - <a href="managedrule-override.md">Override</a></i>
+      - &lt;a href=&#34;managedrule-override.md&#34;&gt;Override&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -31,7 +31,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Type
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -39,7 +38,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Version
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -47,16 +45,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Exclusion
 
 _Required_: No
-
-_Type_: List of <a href="managedrule-exclusion.md">Exclusion</a>
+_Type_: List of &lt;a href=&#34;managedrule-exclusion.md&#34;&gt;Exclusion&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Override
 
 _Required_: No
-
-_Type_: List of <a href="managedrule-override.md">Override</a>
+_Type_: List of &lt;a href=&#34;managedrule-override.md&#34;&gt;Override&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

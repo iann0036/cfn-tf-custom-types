@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     AvailabilityZone: Optional[str]
     DeleteDisksOnTermination: Optional[bool]
     Flavor: Optional[str]
-    Id: Optional[str]
     ImageId: Optional[str]
     KeyName: Optional[str]
     Name: Optional[str]
@@ -68,7 +67,6 @@ class ResourceModel(BaseResourceModel):
             AvailabilityZone=json_data.get("AvailabilityZone"),
             DeleteDisksOnTermination=json_data.get("DeleteDisksOnTermination"),
             Flavor=json_data.get("Flavor"),
-            Id=json_data.get("Id"),
             ImageId=json_data.get("ImageId"),
             KeyName=json_data.get("KeyName"),
             Name=json_data.get("Name"),

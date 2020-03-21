@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     BasicAuthPassword: Optional[str]
     BasicAuthUsername: Optional[str]
     DatabaseName: Optional[str]
-    Id: Optional[str]
     IsDefault: Optional[bool]
     Name: Optional[str]
     Password: Optional[str]
@@ -65,7 +64,6 @@ class ResourceModel(BaseResourceModel):
             BasicAuthPassword=json_data.get("BasicAuthPassword"),
             BasicAuthUsername=json_data.get("BasicAuthUsername"),
             DatabaseName=json_data.get("DatabaseName"),
-            Id=json_data.get("Id"),
             IsDefault=json_data.get("IsDefault"),
             Name=json_data.get("Name"),
             Password=json_data.get("Password"),

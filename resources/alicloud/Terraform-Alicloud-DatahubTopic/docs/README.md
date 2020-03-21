@@ -12,12 +12,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::DatahubTopic",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#comment" title="Comment">Comment</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#createtime" title="CreateTime">CreateTime</a>" : <i>String</i>,
+        "<a href="#lastmodifytime" title="LastModifyTime">LastModifyTime</a>" : <i>String</i>,
         "<a href="#lifecycle" title="LifeCycle">LifeCycle</a>" : <i>Double</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#projectname" title="ProjectName">ProjectName</a>" : <i>String</i>,
-        "<a href="#recordschema" title="RecordSchema">RecordSchema</a>" : <i>[ <a href="recordschema.md">RecordSchema</a>, ... ]</i>,
+        "<a href="#recordschema" title="RecordSchema">RecordSchema</a>" : <i>[ &lt;a href=&#34;recordschema.md&#34;&gt;RecordSchema&lt;/a&gt;, ... ]</i>,
         "<a href="#recordtype" title="RecordType">RecordType</a>" : <i>String</i>,
         "<a href="#shardcount" title="ShardCount">ShardCount</a>" : <i>Double</i>
     }
@@ -29,18 +31,30 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::DatahubTopic
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#comment" title="Comment">Comment</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#createtime" title="CreateTime">CreateTime</a>: <i>String</i>
+    <a href="#lastmodifytime" title="LastModifyTime">LastModifyTime</a>: <i>String</i>
     <a href="#lifecycle" title="LifeCycle">LifeCycle</a>: <i>Double</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#projectname" title="ProjectName">ProjectName</a>: <i>String</i>
     <a href="#recordschema" title="RecordSchema">RecordSchema</a>: <i>
-      - <a href="recordschema.md">RecordSchema</a></i>
+      - &lt;a href=&#34;recordschema.md&#34;&gt;RecordSchema&lt;/a&gt;</i>
     <a href="#recordtype" title="RecordType">RecordType</a>: <i>String</i>
     <a href="#shardcount" title="ShardCount">ShardCount</a>: <i>Double</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Comment
 
@@ -50,7 +64,15 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### CreateTime
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### LastModifyTime
 
 _Required_: No
 
@@ -86,7 +108,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="recordschema.md">RecordSchema</a>
+_Type_: List of &lt;a href=&#34;recordschema.md&#34;&gt;RecordSchema&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -124,9 +146,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateTime
 
-Returns the <code>CreateTime</code> value.
+Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
 
 #### LastModifyTime
 
-Returns the <code>LastModifyTime</code> value.
+Returns the &lt;code&gt;LastModifyTime&lt;/code&gt; value.
 

@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     BufferSize: Optional[float]
     CertificatePem: Optional[str]
     CertificatePrivateKey: Optional[str]
-    Id: Optional[str]
     Locked: Optional[bool]
     Name: Optional[str]
     Nodes: Optional[Sequence[str]]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             BufferSize=json_data.get("BufferSize"),
             CertificatePem=json_data.get("CertificatePem"),
             CertificatePrivateKey=json_data.get("CertificatePrivateKey"),
-            Id=json_data.get("Id"),
             Locked=json_data.get("Locked"),
             Name=json_data.get("Name"),
             Nodes=json_data.get("Nodes"),

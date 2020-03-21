@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     CreationTime: Optional[str]
     DataRetentionInHours: Optional[float]
     DeviceName: Optional[str]
-    Id: Optional[str]
     KmsKeyId: Optional[str]
     MediaType: Optional[str]
     Name: Optional[str]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             CreationTime=json_data.get("CreationTime"),
             DataRetentionInHours=json_data.get("DataRetentionInHours"),
             DeviceName=json_data.get("DeviceName"),
-            Id=json_data.get("Id"),
             KmsKeyId=json_data.get("KmsKeyId"),
             MediaType=json_data.get("MediaType"),
             Name=json_data.get("Name"),

@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AccountName: Optional[str]
     DatabaseName: Optional[str]
     DefaultTtl: Optional[float]
-    Id: Optional[str]
     Name: Optional[str]
     PartitionKeyPath: Optional[str]
     ResourceGroupName: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             AccountName=json_data.get("AccountName"),
             DatabaseName=json_data.get("DatabaseName"),
             DefaultTtl=json_data.get("DefaultTtl"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             PartitionKeyPath=json_data.get("PartitionKeyPath"),
             ResourceGroupName=json_data.get("ResourceGroupName"),

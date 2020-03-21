@@ -12,6 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::TencentCloud::GaapHttpDomain",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#basicauth" title="BasicAuth">BasicAuth</a>" : <i>Boolean</i>,
         "<a href="#basicauthid" title="BasicAuthId">BasicAuthId</a>" : <i>String</i>,
         "<a href="#certificateid" title="CertificateId">CertificateId</a>" : <i>String</i>,
@@ -20,7 +21,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#domain" title="Domain">Domain</a>" : <i>String</i>,
         "<a href="#gaapauth" title="GaapAuth">GaapAuth</a>" : <i>Boolean</i>,
         "<a href="#gaapauthid" title="GaapAuthId">GaapAuthId</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#listenerid" title="ListenerId">ListenerId</a>" : <i>String</i>,
         "<a href="#realserverauth" title="RealserverAuth">RealserverAuth</a>" : <i>Boolean</i>,
         "<a href="#realservercertificatedomain" title="RealserverCertificateDomain">RealserverCertificateDomain</a>" : <i>String</i>,
@@ -35,6 +35,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::TencentCloud::GaapHttpDomain
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#basicauth" title="BasicAuth">BasicAuth</a>: <i>Boolean</i>
     <a href="#basicauthid" title="BasicAuthId">BasicAuthId</a>: <i>String</i>
     <a href="#certificateid" title="CertificateId">CertificateId</a>: <i>String</i>
@@ -44,7 +45,6 @@ Properties:
     <a href="#domain" title="Domain">Domain</a>: <i>String</i>
     <a href="#gaapauth" title="GaapAuth">GaapAuth</a>: <i>Boolean</i>
     <a href="#gaapauthid" title="GaapAuthId">GaapAuthId</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#listenerid" title="ListenerId">ListenerId</a>: <i>String</i>
     <a href="#realserverauth" title="RealserverAuth">RealserverAuth</a>: <i>Boolean</i>
     <a href="#realservercertificatedomain" title="RealserverCertificateDomain">RealserverCertificateDomain</a>: <i>String</i>
@@ -54,6 +54,16 @@ Properties:
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BasicAuth
 
@@ -112,14 +122,6 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GaapAuthId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 

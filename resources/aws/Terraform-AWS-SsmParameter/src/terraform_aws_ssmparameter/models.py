@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AllowedPattern: Optional[str]
     Arn: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     KeyId: Optional[str]
     Name: Optional[str]
     Overwrite: Optional[bool]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             AllowedPattern=json_data.get("AllowedPattern"),
             Arn=json_data.get("Arn"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             KeyId=json_data.get("KeyId"),
             Name=json_data.get("Name"),
             Overwrite=json_data.get("Overwrite"),

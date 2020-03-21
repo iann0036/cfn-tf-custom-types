@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     ConfigurationEndpoint: Optional[str]
     Description: Optional[str]
     IamRoleArn: Optional[str]
-    Id: Optional[str]
     MaintenanceWindow: Optional[str]
     NodeType: Optional[str]
     Nodes: Optional[Sequence["_Nodes"]]
@@ -73,7 +72,6 @@ class ResourceModel(BaseResourceModel):
             ConfigurationEndpoint=json_data.get("ConfigurationEndpoint"),
             Description=json_data.get("Description"),
             IamRoleArn=json_data.get("IamRoleArn"),
-            Id=json_data.get("Id"),
             MaintenanceWindow=json_data.get("MaintenanceWindow"),
             NodeType=json_data.get("NodeType"),
             Nodes=json_data.get("Nodes"),

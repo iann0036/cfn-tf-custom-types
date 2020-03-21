@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     Code: Optional[str]
     CreateTimestamp: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     LastUpdateTimestamp: Optional[str]
     Name: Optional[str]
     Status: Optional[str]
@@ -76,7 +75,6 @@ class ResourceModel(BaseResourceModel):
             Code=json_data.get("Code"),
             CreateTimestamp=json_data.get("CreateTimestamp"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             LastUpdateTimestamp=json_data.get("LastUpdateTimestamp"),
             Name=json_data.get("Name"),
             Status=json_data.get("Status"),

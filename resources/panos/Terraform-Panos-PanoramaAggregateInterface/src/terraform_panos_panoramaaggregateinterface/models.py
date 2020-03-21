@@ -45,7 +45,6 @@ class ResourceModel(BaseResourceModel):
     DhcpSendHostnameValue: Optional[str]
     EnableDhcp: Optional[bool]
     EnableUntaggedSubinterface: Optional[bool]
-    Id: Optional[str]
     Ipv4MssAdjust: Optional[float]
     Ipv6Enabled: Optional[bool]
     Ipv6InterfaceId: Optional[str]
@@ -77,7 +76,6 @@ class ResourceModel(BaseResourceModel):
             DhcpSendHostnameValue=json_data.get("DhcpSendHostnameValue"),
             EnableDhcp=json_data.get("EnableDhcp"),
             EnableUntaggedSubinterface=json_data.get("EnableUntaggedSubinterface"),
-            Id=json_data.get("Id"),
             Ipv4MssAdjust=json_data.get("Ipv4MssAdjust"),
             Ipv6Enabled=json_data.get("Ipv6Enabled"),
             Ipv6InterfaceId=json_data.get("Ipv6InterfaceId"),

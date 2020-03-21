@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     DisablePublicIp: Optional[bool]
     EnableDynamicIp: Optional[bool]
     EnableIpv6: Optional[bool]
-    Id: Optional[str]
     Image: Optional[str]
     IpId: Optional[str]
     Ipv6Address: Optional[str]
@@ -79,7 +78,6 @@ class ResourceModel(BaseResourceModel):
             DisablePublicIp=json_data.get("DisablePublicIp"),
             EnableDynamicIp=json_data.get("EnableDynamicIp"),
             EnableIpv6=json_data.get("EnableIpv6"),
-            Id=json_data.get("Id"),
             Image=json_data.get("Image"),
             IpId=json_data.get("IpId"),
             Ipv6Address=json_data.get("Ipv6Address"),

@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DefaultsFrom: Optional[str]
-    Id: Optional[str]
     IdleTimeoutOverride: Optional[str]
     MaxAge: Optional[float]
     MaxReuse: Optional[float]
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             DefaultsFrom=json_data.get("DefaultsFrom"),
-            Id=json_data.get("Id"),
             IdleTimeoutOverride=json_data.get("IdleTimeoutOverride"),
             MaxAge=json_data.get("MaxAge"),
             MaxReuse=json_data.get("MaxReuse"),

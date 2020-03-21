@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     EnableAutomaticFailover: Optional[bool]
     EnableMultipleWriteLocations: Optional[bool]
     Endpoint: Optional[str]
-    Id: Optional[str]
     IpRangeFilter: Optional[str]
     IsVirtualNetworkFilterEnabled: Optional[bool]
     Kind: Optional[str]
@@ -74,7 +73,6 @@ class ResourceModel(BaseResourceModel):
             EnableAutomaticFailover=json_data.get("EnableAutomaticFailover"),
             EnableMultipleWriteLocations=json_data.get("EnableMultipleWriteLocations"),
             Endpoint=json_data.get("Endpoint"),
-            Id=json_data.get("Id"),
             IpRangeFilter=json_data.get("IpRangeFilter"),
             IsVirtualNetworkFilterEnabled=json_data.get("IsVirtualNetworkFilterEnabled"),
             Kind=json_data.get("Kind"),

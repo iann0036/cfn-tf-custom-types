@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Comment: Optional[str]
     DelegationSetId: Optional[str]
     ForceDestroy: Optional[bool]
-    Id: Optional[str]
     Name: Optional[str]
     NameServers: Optional[Sequence[str]]
     Tags: Optional[Sequence["_Tags"]]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             Comment=json_data.get("Comment"),
             DelegationSetId=json_data.get("DelegationSetId"),
             ForceDestroy=json_data.get("ForceDestroy"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             NameServers=json_data.get("NameServers"),
             Tags=json_data.get("Tags"),

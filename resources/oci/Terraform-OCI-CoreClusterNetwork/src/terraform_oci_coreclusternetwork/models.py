@@ -35,15 +35,18 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 
 @dataclass
 class ResourceModel(BaseResourceModel):
-    TPSCode: Optional[str]
-    Title: Optional[str]
-    CoverSheetIncluded: Optional[bool]
-    DueDate: Optional[str]
-    ApprovalDate: Optional[str]
-    Memo: Optional["_Memo"]
-    SecondCopyOfMemo: Optional["_Memo"]
-    TestCode: Optional[str]
-    Authors: Optional[Sequence[str]]
+    tfcfnid: Optional[str]
+    CompartmentId: Optional[str]
+    DefinedTags: Optional[Sequence["_DefinedTags"]]
+    DisplayName: Optional[str]
+    FreeformTags: Optional[Sequence["_FreeformTags"]]
+    State: Optional[str]
+    TimeCreated: Optional[str]
+    TimeUpdated: Optional[str]
+    InstancePools: Optional[Sequence["_InstancePools"]]
+    PlacementConfiguration: Optional[Sequence["_PlacementConfiguration"]]
+    Timeouts: Optional["_Timeouts"]
+    SecondaryVnicSubnets: Optional[Sequence["_SecondaryVnicSubnets"]]
 
     @classmethod
     def _deserialize(
@@ -53,15 +56,18 @@ class ResourceModel(BaseResourceModel):
         if not json_data:
             return None
         return cls(
-            TPSCode=json_data.get("TPSCode"),
-            Title=json_data.get("Title"),
-            CoverSheetIncluded=json_data.get("CoverSheetIncluded"),
-            DueDate=json_data.get("DueDate"),
-            ApprovalDate=json_data.get("ApprovalDate"),
-            Memo=Memo._deserialize(json_data.get("Memo")),
-            SecondCopyOfMemo=Memo._deserialize(json_data.get("SecondCopyOfMemo")),
-            TestCode=json_data.get("TestCode"),
-            Authors=json_data.get("Authors"),
+            tfcfnid=json_data.get("tfcfnid"),
+            CompartmentId=json_data.get("CompartmentId"),
+            DefinedTags=json_data.get("DefinedTags"),
+            DisplayName=json_data.get("DisplayName"),
+            FreeformTags=json_data.get("FreeformTags"),
+            State=json_data.get("State"),
+            TimeCreated=json_data.get("TimeCreated"),
+            TimeUpdated=json_data.get("TimeUpdated"),
+            InstancePools=json_data.get("InstancePools"),
+            PlacementConfiguration=json_data.get("PlacementConfiguration"),
+            Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),
+            SecondaryVnicSubnets=json_data.get("SecondaryVnicSubnets"),
         )
 
 
@@ -70,24 +76,188 @@ _ResourceModel = ResourceModel
 
 
 @dataclass
-class Memo:
-    Heading: Optional[str]
-    Body: Optional[str]
+class DefinedTags:
+    Key: Optional[str]
+    Value: Optional[str]
 
     @classmethod
     def _deserialize(
-        cls: Type["_Memo"],
+        cls: Type["_DefinedTags"],
         json_data: Optional[Mapping[str, Any]],
-    ) -> Optional["_Memo"]:
+    ) -> Optional["_DefinedTags"]:
         if not json_data:
             return None
         return cls(
-            Heading=json_data.get("Heading"),
-            Body=json_data.get("Body"),
+            Key=json_data.get("Key"),
+            Value=json_data.get("Value"),
         )
 
 
 # work around possible type aliasing issues when variable has same name as a model
-_Memo = Memo
+_DefinedTags = DefinedTags
+
+
+@dataclass
+class FreeformTags:
+    Key: Optional[str]
+    Value: Optional[str]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_FreeformTags"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_FreeformTags"]:
+        if not json_data:
+            return None
+        return cls(
+            Key=json_data.get("Key"),
+            Value=json_data.get("Value"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_FreeformTags = FreeformTags
+
+
+@dataclass
+class InstancePools:
+    DefinedTags: Optional[Sequence["_DefinedTags2"]]
+    DisplayName: Optional[str]
+    FreeformTags: Optional[Sequence["_FreeformTags2"]]
+    InstanceConfigurationId: Optional[str]
+    Size: Optional[float]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_InstancePools"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_InstancePools"]:
+        if not json_data:
+            return None
+        return cls(
+            DefinedTags=json_data.get("DefinedTags"),
+            DisplayName=json_data.get("DisplayName"),
+            FreeformTags=json_data.get("FreeformTags"),
+            InstanceConfigurationId=json_data.get("InstanceConfigurationId"),
+            Size=json_data.get("Size"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_InstancePools = InstancePools
+
+
+@dataclass
+class DefinedTags2:
+    Key: Optional[str]
+    Value: Optional[str]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_DefinedTags2"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_DefinedTags2"]:
+        if not json_data:
+            return None
+        return cls(
+            Key=json_data.get("Key"),
+            Value=json_data.get("Value"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_DefinedTags2 = DefinedTags2
+
+
+@dataclass
+class FreeformTags2:
+    Key: Optional[str]
+    Value: Optional[str]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_FreeformTags2"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_FreeformTags2"]:
+        if not json_data:
+            return None
+        return cls(
+            Key=json_data.get("Key"),
+            Value=json_data.get("Value"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_FreeformTags2 = FreeformTags2
+
+
+@dataclass
+class PlacementConfiguration:
+    AvailabilityDomain: Optional[str]
+    PrimarySubnetId: Optional[str]
+    SecondaryVnicSubnets: Optional[Sequence["_SecondaryVnicSubnets"]]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_PlacementConfiguration"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_PlacementConfiguration"]:
+        if not json_data:
+            return None
+        return cls(
+            AvailabilityDomain=json_data.get("AvailabilityDomain"),
+            PrimarySubnetId=json_data.get("PrimarySubnetId"),
+            SecondaryVnicSubnets=json_data.get("SecondaryVnicSubnets"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_PlacementConfiguration = PlacementConfiguration
+
+
+@dataclass
+class SecondaryVnicSubnets:
+    DisplayName: Optional[str]
+    SubnetId: Optional[str]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_SecondaryVnicSubnets"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_SecondaryVnicSubnets"]:
+        if not json_data:
+            return None
+        return cls(
+            DisplayName=json_data.get("DisplayName"),
+            SubnetId=json_data.get("SubnetId"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_SecondaryVnicSubnets = SecondaryVnicSubnets
+
+
+@dataclass
+class Timeouts:
+    Create: Optional[str]
+    Delete: Optional[str]
+    Update: Optional[str]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_Timeouts"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_Timeouts"]:
+        if not json_data:
+            return None
+        return cls(
+            Create=json_data.get("Create"),
+            Delete=json_data.get("Delete"),
+            Update=json_data.get("Update"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_Timeouts = Timeouts
 
 

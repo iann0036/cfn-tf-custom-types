@@ -12,16 +12,20 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OpenTelekomCloud::ImsDataImageV2",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#cmkid" title="CmkId">CmkId</a>" : <i>String</i>,
+        "<a href="#dataorigin" title="DataOrigin">DataOrigin</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#diskformat" title="DiskFormat">DiskFormat</a>" : <i>String</i>,
+        "<a href="#imagesize" title="ImageSize">ImageSize</a>" : <i>String</i>,
         "<a href="#imageurl" title="ImageUrl">ImageUrl</a>" : <i>String</i>,
         "<a href="#mindisk" title="MinDisk">MinDisk</a>" : <i>Double</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#ostype" title="OsType">OsType</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#visibility" title="Visibility">Visibility</a>" : <i>String</i>,
         "<a href="#volumeid" title="VolumeId">VolumeId</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     }
 }
 </pre>
@@ -31,22 +35,44 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OpenTelekomCloud::ImsDataImageV2
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#cmkid" title="CmkId">CmkId</a>: <i>String</i>
+    <a href="#dataorigin" title="DataOrigin">DataOrigin</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#diskformat" title="DiskFormat">DiskFormat</a>: <i>String</i>
+    <a href="#imagesize" title="ImageSize">ImageSize</a>: <i>String</i>
     <a href="#imageurl" title="ImageUrl">ImageUrl</a>: <i>String</i>
     <a href="#mindisk" title="MinDisk">MinDisk</a>: <i>Double</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#ostype" title="OsType">OsType</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+    <a href="#visibility" title="Visibility">Visibility</a>: <i>String</i>
     <a href="#volumeid" title="VolumeId">VolumeId</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### CmkId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### DataOrigin
 
 _Required_: No
 
@@ -62,7 +88,15 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### DiskFormat
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ImageSize
 
 _Required_: No
 
@@ -106,7 +140,15 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Visibility
+
+_Required_: No
+
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -122,7 +164,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -144,17 +186,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### DataOrigin
 
-Returns the <code>DataOrigin</code> value.
+Returns the &lt;code&gt;DataOrigin&lt;/code&gt; value.
 
 #### DiskFormat
 
-Returns the <code>DiskFormat</code> value.
+Returns the &lt;code&gt;DiskFormat&lt;/code&gt; value.
 
 #### ImageSize
 
-Returns the <code>ImageSize</code> value.
+Returns the &lt;code&gt;ImageSize&lt;/code&gt; value.
 
 #### Visibility
 
-Returns the <code>Visibility</code> value.
+Returns the &lt;code&gt;Visibility&lt;/code&gt; value.
 

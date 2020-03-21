@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AckDeadlineSeconds: Optional[float]
-    Id: Optional[str]
     Labels: Optional[Sequence["_Labels"]]
     MessageRetentionDuration: Optional[str]
     Name: Optional[str]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             AckDeadlineSeconds=json_data.get("AckDeadlineSeconds"),
-            Id=json_data.get("Id"),
             Labels=json_data.get("Labels"),
             MessageRetentionDuration=json_data.get("MessageRetentionDuration"),
             Name=json_data.get("Name"),

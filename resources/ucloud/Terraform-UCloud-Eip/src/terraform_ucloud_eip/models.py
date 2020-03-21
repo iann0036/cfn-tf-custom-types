@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     CreateTime: Optional[str]
     Duration: Optional[float]
     ExpireTime: Optional[str]
-    Id: Optional[str]
     InternetType: Optional[str]
     IpSet: Optional[Sequence["_IpSet"]]
     Name: Optional[str]
@@ -67,7 +66,6 @@ class ResourceModel(BaseResourceModel):
             CreateTime=json_data.get("CreateTime"),
             Duration=json_data.get("Duration"),
             ExpireTime=json_data.get("ExpireTime"),
-            Id=json_data.get("Id"),
             InternetType=json_data.get("InternetType"),
             IpSet=json_data.get("IpSet"),
             Name=json_data.get("Name"),

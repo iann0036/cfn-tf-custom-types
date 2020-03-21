@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     AntiAffinityHostGroupName: Optional[str]
     ComputeClusterId: Optional[str]
     Enabled: Optional[bool]
-    Id: Optional[str]
     Mandatory: Optional[bool]
     Name: Optional[str]
     VmGroupName: Optional[str]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             AntiAffinityHostGroupName=json_data.get("AntiAffinityHostGroupName"),
             ComputeClusterId=json_data.get("ComputeClusterId"),
             Enabled=json_data.get("Enabled"),
-            Id=json_data.get("Id"),
             Mandatory=json_data.get("Mandatory"),
             Name=json_data.get("Name"),
             VmGroupName=json_data.get("VmGroupName"),

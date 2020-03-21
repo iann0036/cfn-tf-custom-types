@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#signedurlcachemaxagesec" title="SignedUrlCacheMaxAgeSec">SignedUrlCacheMaxAgeSec</a>" : <i>Double</i>,
-    "<a href="#cachekeypolicy" title="CacheKeyPolicy">CacheKeyPolicy</a>" : <i>[ <a href="cdnpolicy-cachekeypolicy.md">CacheKeyPolicy</a>, ... ]</i>
+    "<a href="#cachekeypolicy" title="CacheKeyPolicy">CacheKeyPolicy</a>" : <i>[ &lt;a href=&#34;cdnpolicy-cachekeypolicy.md&#34;&gt;CacheKeyPolicy&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#signedurlcachemaxagesec" title="SignedUrlCacheMaxAgeSec">SignedUrlCacheMaxAgeSec</a>: <i>Double</i>
 <a href="#cachekeypolicy" title="CacheKeyPolicy">CacheKeyPolicy</a>: <i>
-      - <a href="cdnpolicy-cachekeypolicy.md">CacheKeyPolicy</a></i>
+      - &lt;a href=&#34;cdnpolicy-cachekeypolicy.md&#34;&gt;CacheKeyPolicy&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -26,7 +26,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### SignedUrlCacheMaxAgeSec
 
 _Required_: No
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -34,8 +33,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### CacheKeyPolicy
 
 _Required_: No
-
-_Type_: List of <a href="cdnpolicy-cachekeypolicy.md">CacheKeyPolicy</a>
+_Type_: List of &lt;a href=&#34;cdnpolicy-cachekeypolicy.md&#34;&gt;CacheKeyPolicy&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

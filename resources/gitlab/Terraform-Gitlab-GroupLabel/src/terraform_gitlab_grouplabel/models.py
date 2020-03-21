@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Color: Optional[str]
     Description: Optional[str]
     Group: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
 
     @classmethod
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             Color=json_data.get("Color"),
             Description=json_data.get("Description"),
             Group=json_data.get("Group"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
         )
 

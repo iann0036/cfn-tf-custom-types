@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     EnableSslVerification: Optional[bool]
-    Id: Optional[str]
     IssuesEvents: Optional[bool]
     JobEvents: Optional[bool]
     MergeRequestsEvents: Optional[bool]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             EnableSslVerification=json_data.get("EnableSslVerification"),
-            Id=json_data.get("Id"),
             IssuesEvents=json_data.get("IssuesEvents"),
             JobEvents=json_data.get("JobEvents"),
             MergeRequestsEvents=json_data.get("MergeRequestsEvents"),

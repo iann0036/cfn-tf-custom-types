@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Condition: Optional[str]
     Enabled: Optional[bool]
     EndpointNames: Optional[Sequence[str]]
-    Id: Optional[str]
     IothubName: Optional[str]
     Name: Optional[str]
     ResourceGroupName: Optional[str]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             Condition=json_data.get("Condition"),
             Enabled=json_data.get("Enabled"),
             EndpointNames=json_data.get("EndpointNames"),
-            Id=json_data.get("Id"),
             IothubName=json_data.get("IothubName"),
             Name=json_data.get("Name"),
             ResourceGroupName=json_data.get("ResourceGroupName"),

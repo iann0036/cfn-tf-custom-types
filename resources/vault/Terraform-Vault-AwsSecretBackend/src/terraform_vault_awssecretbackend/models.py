@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AccessKey: Optional[str]
     DefaultLeaseTtlSeconds: Optional[float]
     Description: Optional[str]
-    Id: Optional[str]
     MaxLeaseTtlSeconds: Optional[float]
     Path: Optional[str]
     Region: Optional[str]
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
             AccessKey=json_data.get("AccessKey"),
             DefaultLeaseTtlSeconds=json_data.get("DefaultLeaseTtlSeconds"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             MaxLeaseTtlSeconds=json_data.get("MaxLeaseTtlSeconds"),
             Path=json_data.get("Path"),
             Region=json_data.get("Region"),

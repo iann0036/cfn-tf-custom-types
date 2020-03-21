@@ -13,7 +13,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#healthchecktype" title="HealthCheckType">HealthCheckType</a>" : <i>String</i>,
     "<a href="#waitforrollpercentage" title="WaitForRollPercentage">WaitForRollPercentage</a>" : <i>Double</i>,
     "<a href="#waitforrolltimeout" title="WaitForRollTimeout">WaitForRollTimeout</a>" : <i>Double</i>,
-    "<a href="#strategy" title="Strategy">Strategy</a>" : <i>[ <a href="updatepolicy-rollconfig-strategy.md">Strategy</a>, ... ]</i>
+    "<a href="#strategy" title="Strategy">Strategy</a>" : <i>[ &lt;a href=&#34;updatepolicy-rollconfig-strategy.md&#34;&gt;Strategy&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -26,7 +26,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#waitforrollpercentage" title="WaitForRollPercentage">WaitForRollPercentage</a>: <i>Double</i>
 <a href="#waitforrolltimeout" title="WaitForRollTimeout">WaitForRollTimeout</a>: <i>Double</i>
 <a href="#strategy" title="Strategy">Strategy</a>: <i>
-      - <a href="updatepolicy-rollconfig-strategy.md">Strategy</a></i>
+      - &lt;a href=&#34;updatepolicy-rollconfig-strategy.md&#34;&gt;Strategy&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -34,7 +34,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### BatchSizePercentage
 
 _Required_: Yes
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -42,7 +41,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### GracePeriod
 
 _Required_: No
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -50,7 +48,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### HealthCheckType
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -58,7 +55,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### WaitForRollPercentage
 
 _Required_: No
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -66,7 +62,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### WaitForRollTimeout
 
 _Required_: No
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -74,8 +69,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Strategy
 
 _Required_: No
-
-_Type_: List of <a href="updatepolicy-rollconfig-strategy.md">Strategy</a>
+_Type_: List of &lt;a href=&#34;updatepolicy-rollconfig-strategy.md&#34;&gt;Strategy&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

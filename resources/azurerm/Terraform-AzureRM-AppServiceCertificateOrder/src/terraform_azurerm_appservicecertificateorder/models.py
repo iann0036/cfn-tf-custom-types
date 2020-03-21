@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     DistinguishedName: Optional[str]
     DomainVerificationToken: Optional[str]
     ExpirationTime: Optional[str]
-    Id: Optional[str]
     IntermediateThumbprint: Optional[str]
     IsPrivateKeyExternal: Optional[bool]
     KeySize: Optional[float]
@@ -74,7 +73,6 @@ class ResourceModel(BaseResourceModel):
             DistinguishedName=json_data.get("DistinguishedName"),
             DomainVerificationToken=json_data.get("DomainVerificationToken"),
             ExpirationTime=json_data.get("ExpirationTime"),
-            Id=json_data.get("Id"),
             IntermediateThumbprint=json_data.get("IntermediateThumbprint"),
             IsPrivateKeyExternal=json_data.get("IsPrivateKeyExternal"),
             KeySize=json_data.get("KeySize"),

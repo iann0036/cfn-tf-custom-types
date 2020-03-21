@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     BillingMode: Optional[str]
     HashKey: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     RangeKey: Optional[str]
     ReadCapacity: Optional[float]
@@ -69,7 +68,6 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             BillingMode=json_data.get("BillingMode"),
             HashKey=json_data.get("HashKey"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             RangeKey=json_data.get("RangeKey"),
             ReadCapacity=json_data.get("ReadCapacity"),

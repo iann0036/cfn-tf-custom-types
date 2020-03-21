@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     EnhancedLogging: Optional[bool]
-    Id: Optional[str]
     Name: Optional[str]
     Vsys: Optional[str]
     MatchList: Optional[Sequence["_MatchList"]]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             EnhancedLogging=json_data.get("EnhancedLogging"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Vsys=json_data.get("Vsys"),
             MatchList=json_data.get("MatchList"),

@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AccessedBy: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     InstanceType: Optional[str]
     Name: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AccessedBy=json_data.get("AccessedBy"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             InstanceType=json_data.get("InstanceType"),
             Name=json_data.get("Name"),
             Tags=json_data.get("Tags"),

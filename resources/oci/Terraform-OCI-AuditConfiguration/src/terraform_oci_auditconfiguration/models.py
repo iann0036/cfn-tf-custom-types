@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CompartmentId: Optional[str]
-    Id: Optional[str]
     RetentionPeriodDays: Optional[float]
     Timeouts: Optional["_Timeouts"]
 
@@ -51,7 +50,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             CompartmentId=json_data.get("CompartmentId"),
-            Id=json_data.get("Id"),
             RetentionPeriodDays=json_data.get("RetentionPeriodDays"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),
         )

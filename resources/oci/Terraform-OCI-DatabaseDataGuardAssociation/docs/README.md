@@ -12,6 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OCI::DatabaseDataGuardAssociation",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#applylag" title="ApplyLag">ApplyLag</a>" : <i>String</i>,
+        "<a href="#applyrate" title="ApplyRate">ApplyRate</a>" : <i>String</i>,
         "<a href="#availabilitydomain" title="AvailabilityDomain">AvailabilityDomain</a>" : <i>String</i>,
         "<a href="#backupnetworknsgids" title="BackupNetworkNsgIds">BackupNetworkNsgIds</a>" : <i>[ String, ... ]</i>,
         "<a href="#creationtype" title="CreationType">CreationType</a>" : <i>String</i>,
@@ -20,14 +23,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#deletestandbydbhomeondelete" title="DeleteStandbyDbHomeOnDelete">DeleteStandbyDbHomeOnDelete</a>" : <i>String</i>,
         "<a href="#displayname" title="DisplayName">DisplayName</a>" : <i>String</i>,
         "<a href="#hostname" title="Hostname">Hostname</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#lifecycledetails" title="LifecycleDetails">LifecycleDetails</a>" : <i>String</i>,
         "<a href="#nsgids" title="NsgIds">NsgIds</a>" : <i>[ String, ... ]</i>,
+        "<a href="#peerdataguardassociationid" title="PeerDataGuardAssociationId">PeerDataGuardAssociationId</a>" : <i>String</i>,
+        "<a href="#peerdatabaseid" title="PeerDatabaseId">PeerDatabaseId</a>" : <i>String</i>,
+        "<a href="#peerdbhomeid" title="PeerDbHomeId">PeerDbHomeId</a>" : <i>String</i>,
         "<a href="#peerdbsystemid" title="PeerDbSystemId">PeerDbSystemId</a>" : <i>String</i>,
+        "<a href="#peerrole" title="PeerRole">PeerRole</a>" : <i>String</i>,
         "<a href="#protectionmode" title="ProtectionMode">ProtectionMode</a>" : <i>String</i>,
+        "<a href="#role" title="Role">Role</a>" : <i>String</i>,
         "<a href="#shape" title="Shape">Shape</a>" : <i>String</i>,
+        "<a href="#state" title="State">State</a>" : <i>String</i>,
         "<a href="#subnetid" title="SubnetId">SubnetId</a>" : <i>String</i>,
+        "<a href="#timecreated" title="TimeCreated">TimeCreated</a>" : <i>String</i>,
         "<a href="#transporttype" title="TransportType">TransportType</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     }
 }
 </pre>
@@ -37,6 +47,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OCI::DatabaseDataGuardAssociation
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#applylag" title="ApplyLag">ApplyLag</a>: <i>String</i>
+    <a href="#applyrate" title="ApplyRate">ApplyRate</a>: <i>String</i>
     <a href="#availabilitydomain" title="AvailabilityDomain">AvailabilityDomain</a>: <i>String</i>
     <a href="#backupnetworknsgids" title="BackupNetworkNsgIds">BackupNetworkNsgIds</a>: <i>
       - String</i>
@@ -46,18 +59,51 @@ Properties:
     <a href="#deletestandbydbhomeondelete" title="DeleteStandbyDbHomeOnDelete">DeleteStandbyDbHomeOnDelete</a>: <i>String</i>
     <a href="#displayname" title="DisplayName">DisplayName</a>: <i>String</i>
     <a href="#hostname" title="Hostname">Hostname</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#lifecycledetails" title="LifecycleDetails">LifecycleDetails</a>: <i>String</i>
     <a href="#nsgids" title="NsgIds">NsgIds</a>: <i>
       - String</i>
+    <a href="#peerdataguardassociationid" title="PeerDataGuardAssociationId">PeerDataGuardAssociationId</a>: <i>String</i>
+    <a href="#peerdatabaseid" title="PeerDatabaseId">PeerDatabaseId</a>: <i>String</i>
+    <a href="#peerdbhomeid" title="PeerDbHomeId">PeerDbHomeId</a>: <i>String</i>
     <a href="#peerdbsystemid" title="PeerDbSystemId">PeerDbSystemId</a>: <i>String</i>
+    <a href="#peerrole" title="PeerRole">PeerRole</a>: <i>String</i>
     <a href="#protectionmode" title="ProtectionMode">ProtectionMode</a>: <i>String</i>
+    <a href="#role" title="Role">Role</a>: <i>String</i>
     <a href="#shape" title="Shape">Shape</a>: <i>String</i>
+    <a href="#state" title="State">State</a>: <i>String</i>
     <a href="#subnetid" title="SubnetId">SubnetId</a>: <i>String</i>
+    <a href="#timecreated" title="TimeCreated">TimeCreated</a>: <i>String</i>
     <a href="#transporttype" title="TransportType">TransportType</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ApplyLag
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ApplyRate
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AvailabilityDomain
 
@@ -123,7 +169,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### LifecycleDetails
 
 _Required_: No
 
@@ -139,7 +185,39 @@ _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### PeerDataGuardAssociationId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### PeerDatabaseId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### PeerDbHomeId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### PeerDbSystemId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### PeerRole
 
 _Required_: No
 
@@ -155,6 +233,14 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### Role
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Shape
 
 _Required_: No
@@ -163,7 +249,23 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### State
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### SubnetId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### TimeCreated
 
 _Required_: No
 
@@ -183,7 +285,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -205,41 +307,41 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ApplyLag
 
-Returns the <code>ApplyLag</code> value.
+Returns the &lt;code&gt;ApplyLag&lt;/code&gt; value.
 
 #### ApplyRate
 
-Returns the <code>ApplyRate</code> value.
+Returns the &lt;code&gt;ApplyRate&lt;/code&gt; value.
 
 #### LifecycleDetails
 
-Returns the <code>LifecycleDetails</code> value.
+Returns the &lt;code&gt;LifecycleDetails&lt;/code&gt; value.
 
 #### PeerDataGuardAssociationId
 
-Returns the <code>PeerDataGuardAssociationId</code> value.
+Returns the &lt;code&gt;PeerDataGuardAssociationId&lt;/code&gt; value.
 
 #### PeerDatabaseId
 
-Returns the <code>PeerDatabaseId</code> value.
+Returns the &lt;code&gt;PeerDatabaseId&lt;/code&gt; value.
 
 #### PeerDbHomeId
 
-Returns the <code>PeerDbHomeId</code> value.
+Returns the &lt;code&gt;PeerDbHomeId&lt;/code&gt; value.
 
 #### PeerRole
 
-Returns the <code>PeerRole</code> value.
+Returns the &lt;code&gt;PeerRole&lt;/code&gt; value.
 
 #### Role
 
-Returns the <code>Role</code> value.
+Returns the &lt;code&gt;Role&lt;/code&gt; value.
 
 #### State
 
-Returns the <code>State</code> value.
+Returns the &lt;code&gt;State&lt;/code&gt; value.
 
 #### TimeCreated
 
-Returns the <code>TimeCreated</code> value.
+Returns the &lt;code&gt;TimeCreated&lt;/code&gt; value.
 

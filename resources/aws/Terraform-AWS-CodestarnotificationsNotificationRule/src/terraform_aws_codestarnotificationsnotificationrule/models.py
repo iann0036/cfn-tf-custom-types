@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     DetailType: Optional[str]
     EventTypeIds: Optional[Sequence[str]]
-    Id: Optional[str]
     Name: Optional[str]
     Resource: Optional[str]
     Status: Optional[str]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             DetailType=json_data.get("DetailType"),
             EventTypeIds=json_data.get("EventTypeIds"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Resource=json_data.get("Resource"),
             Status=json_data.get("Status"),

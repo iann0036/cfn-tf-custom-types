@@ -46,7 +46,6 @@ class ResourceModel(BaseResourceModel):
     DryRun: Optional[bool]
     ForceDelete: Optional[bool]
     HostName: Optional[str]
-    Id: Optional[str]
     ImageId: Optional[str]
     IncludeDataDisks: Optional[bool]
     InstanceChargeType: Optional[str]
@@ -103,7 +102,6 @@ class ResourceModel(BaseResourceModel):
             DryRun=json_data.get("DryRun"),
             ForceDelete=json_data.get("ForceDelete"),
             HostName=json_data.get("HostName"),
-            Id=json_data.get("Id"),
             ImageId=json_data.get("ImageId"),
             IncludeDataDisks=json_data.get("IncludeDataDisks"),
             InstanceChargeType=json_data.get("InstanceChargeType"),

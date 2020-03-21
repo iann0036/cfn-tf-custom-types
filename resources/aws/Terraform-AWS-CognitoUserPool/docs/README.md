@@ -12,31 +12,35 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::CognitoUserPool",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#aliasattributes" title="AliasAttributes">AliasAttributes</a>" : <i>[ String, ... ]</i>,
+        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#autoverifiedattributes" title="AutoVerifiedAttributes">AutoVerifiedAttributes</a>" : <i>[ String, ... ]</i>,
+        "<a href="#creationdate" title="CreationDate">CreationDate</a>" : <i>String</i>,
         "<a href="#emailverificationmessage" title="EmailVerificationMessage">EmailVerificationMessage</a>" : <i>String</i>,
         "<a href="#emailverificationsubject" title="EmailVerificationSubject">EmailVerificationSubject</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#endpoint" title="Endpoint">Endpoint</a>" : <i>String</i>,
+        "<a href="#lastmodifieddate" title="LastModifiedDate">LastModifiedDate</a>" : <i>String</i>,
         "<a href="#mfaconfiguration" title="MfaConfiguration">MfaConfiguration</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#smsauthenticationmessage" title="SmsAuthenticationMessage">SmsAuthenticationMessage</a>" : <i>String</i>,
         "<a href="#smsverificationmessage" title="SmsVerificationMessage">SmsVerificationMessage</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
         "<a href="#usernameattributes" title="UsernameAttributes">UsernameAttributes</a>" : <i>[ String, ... ]</i>,
-        "<a href="#admincreateuserconfig" title="AdminCreateUserConfig">AdminCreateUserConfig</a>" : <i>[ <a href="admincreateuserconfig.md">AdminCreateUserConfig</a>, ... ]</i>,
-        "<a href="#deviceconfiguration" title="DeviceConfiguration">DeviceConfiguration</a>" : <i>[ <a href="deviceconfiguration.md">DeviceConfiguration</a>, ... ]</i>,
-        "<a href="#emailconfiguration" title="EmailConfiguration">EmailConfiguration</a>" : <i>[ <a href="emailconfiguration.md">EmailConfiguration</a>, ... ]</i>,
-        "<a href="#lambdaconfig" title="LambdaConfig">LambdaConfig</a>" : <i>[ <a href="lambdaconfig.md">LambdaConfig</a>, ... ]</i>,
-        "<a href="#passwordpolicy" title="PasswordPolicy">PasswordPolicy</a>" : <i>[ <a href="passwordpolicy.md">PasswordPolicy</a>, ... ]</i>,
-        "<a href="#schema" title="Schema">Schema</a>" : <i>[ <a href="schema.md">Schema</a>, ... ]</i>,
-        "<a href="#smsconfiguration" title="SmsConfiguration">SmsConfiguration</a>" : <i>[ <a href="smsconfiguration.md">SmsConfiguration</a>, ... ]</i>,
-        "<a href="#softwaretokenmfaconfiguration" title="SoftwareTokenMfaConfiguration">SoftwareTokenMfaConfiguration</a>" : <i>[ <a href="softwaretokenmfaconfiguration.md">SoftwareTokenMfaConfiguration</a>, ... ]</i>,
-        "<a href="#userpooladdons" title="UserPoolAddOns">UserPoolAddOns</a>" : <i>[ <a href="userpooladdons.md">UserPoolAddOns</a>, ... ]</i>,
-        "<a href="#usernameconfiguration" title="UsernameConfiguration">UsernameConfiguration</a>" : <i>[ <a href="usernameconfiguration.md">UsernameConfiguration</a>, ... ]</i>,
-        "<a href="#verificationmessagetemplate" title="VerificationMessageTemplate">VerificationMessageTemplate</a>" : <i>[ <a href="verificationmessagetemplate.md">VerificationMessageTemplate</a>, ... ]</i>,
-        "<a href="#invitemessagetemplate" title="InviteMessageTemplate">InviteMessageTemplate</a>" : <i>[ <a href="invitemessagetemplate.md">InviteMessageTemplate</a>, ... ]</i>,
-        "<a href="#numberattributeconstraints" title="NumberAttributeConstraints">NumberAttributeConstraints</a>" : <i>[ <a href="numberattributeconstraints.md">NumberAttributeConstraints</a>, ... ]</i>,
-        "<a href="#stringattributeconstraints" title="StringAttributeConstraints">StringAttributeConstraints</a>" : <i>[ <a href="stringattributeconstraints.md">StringAttributeConstraints</a>, ... ]</i>
+        "<a href="#admincreateuserconfig" title="AdminCreateUserConfig">AdminCreateUserConfig</a>" : <i>[ &lt;a href=&#34;admincreateuserconfig.md&#34;&gt;AdminCreateUserConfig&lt;/a&gt;, ... ]</i>,
+        "<a href="#deviceconfiguration" title="DeviceConfiguration">DeviceConfiguration</a>" : <i>[ &lt;a href=&#34;deviceconfiguration.md&#34;&gt;DeviceConfiguration&lt;/a&gt;, ... ]</i>,
+        "<a href="#emailconfiguration" title="EmailConfiguration">EmailConfiguration</a>" : <i>[ &lt;a href=&#34;emailconfiguration.md&#34;&gt;EmailConfiguration&lt;/a&gt;, ... ]</i>,
+        "<a href="#lambdaconfig" title="LambdaConfig">LambdaConfig</a>" : <i>[ &lt;a href=&#34;lambdaconfig.md&#34;&gt;LambdaConfig&lt;/a&gt;, ... ]</i>,
+        "<a href="#passwordpolicy" title="PasswordPolicy">PasswordPolicy</a>" : <i>[ &lt;a href=&#34;passwordpolicy.md&#34;&gt;PasswordPolicy&lt;/a&gt;, ... ]</i>,
+        "<a href="#schema" title="Schema">Schema</a>" : <i>[ &lt;a href=&#34;schema.md&#34;&gt;Schema&lt;/a&gt;, ... ]</i>,
+        "<a href="#smsconfiguration" title="SmsConfiguration">SmsConfiguration</a>" : <i>[ &lt;a href=&#34;smsconfiguration.md&#34;&gt;SmsConfiguration&lt;/a&gt;, ... ]</i>,
+        "<a href="#softwaretokenmfaconfiguration" title="SoftwareTokenMfaConfiguration">SoftwareTokenMfaConfiguration</a>" : <i>[ &lt;a href=&#34;softwaretokenmfaconfiguration.md&#34;&gt;SoftwareTokenMfaConfiguration&lt;/a&gt;, ... ]</i>,
+        "<a href="#userpooladdons" title="UserPoolAddOns">UserPoolAddOns</a>" : <i>[ &lt;a href=&#34;userpooladdons.md&#34;&gt;UserPoolAddOns&lt;/a&gt;, ... ]</i>,
+        "<a href="#usernameconfiguration" title="UsernameConfiguration">UsernameConfiguration</a>" : <i>[ &lt;a href=&#34;usernameconfiguration.md&#34;&gt;UsernameConfiguration&lt;/a&gt;, ... ]</i>,
+        "<a href="#verificationmessagetemplate" title="VerificationMessageTemplate">VerificationMessageTemplate</a>" : <i>[ &lt;a href=&#34;verificationmessagetemplate.md&#34;&gt;VerificationMessageTemplate&lt;/a&gt;, ... ]</i>,
+        "<a href="#invitemessagetemplate" title="InviteMessageTemplate">InviteMessageTemplate</a>" : <i>[ &lt;a href=&#34;invitemessagetemplate.md&#34;&gt;InviteMessageTemplate&lt;/a&gt;, ... ]</i>,
+        "<a href="#numberattributeconstraints" title="NumberAttributeConstraints">NumberAttributeConstraints</a>" : <i>[ &lt;a href=&#34;numberattributeconstraints.md&#34;&gt;NumberAttributeConstraints&lt;/a&gt;, ... ]</i>,
+        "<a href="#stringattributeconstraints" title="StringAttributeConstraints">StringAttributeConstraints</a>" : <i>[ &lt;a href=&#34;stringattributeconstraints.md&#34;&gt;StringAttributeConstraints&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -46,52 +50,66 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::CognitoUserPool
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#aliasattributes" title="AliasAttributes">AliasAttributes</a>: <i>
       - String</i>
+    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#autoverifiedattributes" title="AutoVerifiedAttributes">AutoVerifiedAttributes</a>: <i>
       - String</i>
+    <a href="#creationdate" title="CreationDate">CreationDate</a>: <i>String</i>
     <a href="#emailverificationmessage" title="EmailVerificationMessage">EmailVerificationMessage</a>: <i>String</i>
     <a href="#emailverificationsubject" title="EmailVerificationSubject">EmailVerificationSubject</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#endpoint" title="Endpoint">Endpoint</a>: <i>String</i>
+    <a href="#lastmodifieddate" title="LastModifiedDate">LastModifiedDate</a>: <i>String</i>
     <a href="#mfaconfiguration" title="MfaConfiguration">MfaConfiguration</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#smsauthenticationmessage" title="SmsAuthenticationMessage">SmsAuthenticationMessage</a>: <i>String</i>
     <a href="#smsverificationmessage" title="SmsVerificationMessage">SmsVerificationMessage</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
     <a href="#usernameattributes" title="UsernameAttributes">UsernameAttributes</a>: <i>
       - String</i>
     <a href="#admincreateuserconfig" title="AdminCreateUserConfig">AdminCreateUserConfig</a>: <i>
-      - <a href="admincreateuserconfig.md">AdminCreateUserConfig</a></i>
+      - &lt;a href=&#34;admincreateuserconfig.md&#34;&gt;AdminCreateUserConfig&lt;/a&gt;</i>
     <a href="#deviceconfiguration" title="DeviceConfiguration">DeviceConfiguration</a>: <i>
-      - <a href="deviceconfiguration.md">DeviceConfiguration</a></i>
+      - &lt;a href=&#34;deviceconfiguration.md&#34;&gt;DeviceConfiguration&lt;/a&gt;</i>
     <a href="#emailconfiguration" title="EmailConfiguration">EmailConfiguration</a>: <i>
-      - <a href="emailconfiguration.md">EmailConfiguration</a></i>
+      - &lt;a href=&#34;emailconfiguration.md&#34;&gt;EmailConfiguration&lt;/a&gt;</i>
     <a href="#lambdaconfig" title="LambdaConfig">LambdaConfig</a>: <i>
-      - <a href="lambdaconfig.md">LambdaConfig</a></i>
+      - &lt;a href=&#34;lambdaconfig.md&#34;&gt;LambdaConfig&lt;/a&gt;</i>
     <a href="#passwordpolicy" title="PasswordPolicy">PasswordPolicy</a>: <i>
-      - <a href="passwordpolicy.md">PasswordPolicy</a></i>
+      - &lt;a href=&#34;passwordpolicy.md&#34;&gt;PasswordPolicy&lt;/a&gt;</i>
     <a href="#schema" title="Schema">Schema</a>: <i>
-      - <a href="schema.md">Schema</a></i>
+      - &lt;a href=&#34;schema.md&#34;&gt;Schema&lt;/a&gt;</i>
     <a href="#smsconfiguration" title="SmsConfiguration">SmsConfiguration</a>: <i>
-      - <a href="smsconfiguration.md">SmsConfiguration</a></i>
+      - &lt;a href=&#34;smsconfiguration.md&#34;&gt;SmsConfiguration&lt;/a&gt;</i>
     <a href="#softwaretokenmfaconfiguration" title="SoftwareTokenMfaConfiguration">SoftwareTokenMfaConfiguration</a>: <i>
-      - <a href="softwaretokenmfaconfiguration.md">SoftwareTokenMfaConfiguration</a></i>
+      - &lt;a href=&#34;softwaretokenmfaconfiguration.md&#34;&gt;SoftwareTokenMfaConfiguration&lt;/a&gt;</i>
     <a href="#userpooladdons" title="UserPoolAddOns">UserPoolAddOns</a>: <i>
-      - <a href="userpooladdons.md">UserPoolAddOns</a></i>
+      - &lt;a href=&#34;userpooladdons.md&#34;&gt;UserPoolAddOns&lt;/a&gt;</i>
     <a href="#usernameconfiguration" title="UsernameConfiguration">UsernameConfiguration</a>: <i>
-      - <a href="usernameconfiguration.md">UsernameConfiguration</a></i>
+      - &lt;a href=&#34;usernameconfiguration.md&#34;&gt;UsernameConfiguration&lt;/a&gt;</i>
     <a href="#verificationmessagetemplate" title="VerificationMessageTemplate">VerificationMessageTemplate</a>: <i>
-      - <a href="verificationmessagetemplate.md">VerificationMessageTemplate</a></i>
+      - &lt;a href=&#34;verificationmessagetemplate.md&#34;&gt;VerificationMessageTemplate&lt;/a&gt;</i>
     <a href="#invitemessagetemplate" title="InviteMessageTemplate">InviteMessageTemplate</a>: <i>
-      - <a href="invitemessagetemplate.md">InviteMessageTemplate</a></i>
+      - &lt;a href=&#34;invitemessagetemplate.md&#34;&gt;InviteMessageTemplate&lt;/a&gt;</i>
     <a href="#numberattributeconstraints" title="NumberAttributeConstraints">NumberAttributeConstraints</a>: <i>
-      - <a href="numberattributeconstraints.md">NumberAttributeConstraints</a></i>
+      - &lt;a href=&#34;numberattributeconstraints.md&#34;&gt;NumberAttributeConstraints&lt;/a&gt;</i>
     <a href="#stringattributeconstraints" title="StringAttributeConstraints">StringAttributeConstraints</a>: <i>
-      - <a href="stringattributeconstraints.md">StringAttributeConstraints</a></i>
+      - &lt;a href=&#34;stringattributeconstraints.md&#34;&gt;StringAttributeConstraints&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AliasAttributes
 
@@ -101,11 +119,27 @@ _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### Arn
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### AutoVerifiedAttributes
 
 _Required_: No
 
 _Type_: List of String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### CreationDate
+
+_Required_: No
+
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -125,7 +159,15 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### Endpoint
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### LastModifiedDate
 
 _Required_: No
 
@@ -169,7 +211,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -185,7 +227,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="admincreateuserconfig.md">AdminCreateUserConfig</a>
+_Type_: List of &lt;a href=&#34;admincreateuserconfig.md&#34;&gt;AdminCreateUserConfig&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -193,7 +235,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="deviceconfiguration.md">DeviceConfiguration</a>
+_Type_: List of &lt;a href=&#34;deviceconfiguration.md&#34;&gt;DeviceConfiguration&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -201,7 +243,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="emailconfiguration.md">EmailConfiguration</a>
+_Type_: List of &lt;a href=&#34;emailconfiguration.md&#34;&gt;EmailConfiguration&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -209,7 +251,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="lambdaconfig.md">LambdaConfig</a>
+_Type_: List of &lt;a href=&#34;lambdaconfig.md&#34;&gt;LambdaConfig&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -217,7 +259,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="passwordpolicy.md">PasswordPolicy</a>
+_Type_: List of &lt;a href=&#34;passwordpolicy.md&#34;&gt;PasswordPolicy&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -225,7 +267,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="schema.md">Schema</a>
+_Type_: List of &lt;a href=&#34;schema.md&#34;&gt;Schema&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -233,7 +275,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="smsconfiguration.md">SmsConfiguration</a>
+_Type_: List of &lt;a href=&#34;smsconfiguration.md&#34;&gt;SmsConfiguration&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -241,7 +283,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="softwaretokenmfaconfiguration.md">SoftwareTokenMfaConfiguration</a>
+_Type_: List of &lt;a href=&#34;softwaretokenmfaconfiguration.md&#34;&gt;SoftwareTokenMfaConfiguration&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -249,7 +291,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="userpooladdons.md">UserPoolAddOns</a>
+_Type_: List of &lt;a href=&#34;userpooladdons.md&#34;&gt;UserPoolAddOns&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -257,7 +299,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="usernameconfiguration.md">UsernameConfiguration</a>
+_Type_: List of &lt;a href=&#34;usernameconfiguration.md&#34;&gt;UsernameConfiguration&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -265,7 +307,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="verificationmessagetemplate.md">VerificationMessageTemplate</a>
+_Type_: List of &lt;a href=&#34;verificationmessagetemplate.md&#34;&gt;VerificationMessageTemplate&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -273,7 +315,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="invitemessagetemplate.md">InviteMessageTemplate</a>
+_Type_: List of &lt;a href=&#34;invitemessagetemplate.md&#34;&gt;InviteMessageTemplate&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -281,7 +323,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="numberattributeconstraints.md">NumberAttributeConstraints</a>
+_Type_: List of &lt;a href=&#34;numberattributeconstraints.md&#34;&gt;NumberAttributeConstraints&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -289,7 +331,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="stringattributeconstraints.md">StringAttributeConstraints</a>
+_Type_: List of &lt;a href=&#34;stringattributeconstraints.md&#34;&gt;StringAttributeConstraints&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -311,17 +353,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the <code>Arn</code> value.
+Returns the &lt;code&gt;Arn&lt;/code&gt; value.
 
 #### CreationDate
 
-Returns the <code>CreationDate</code> value.
+Returns the &lt;code&gt;CreationDate&lt;/code&gt; value.
 
 #### Endpoint
 
-Returns the <code>Endpoint</code> value.
+Returns the &lt;code&gt;Endpoint&lt;/code&gt; value.
 
 #### LastModifiedDate
 
-Returns the <code>LastModifiedDate</code> value.
+Returns the &lt;code&gt;LastModifiedDate&lt;/code&gt; value.
 

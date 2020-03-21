@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     ConnectionProperties: Optional[Sequence["_ConnectionProperties"]]
     ConnectionType: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     MatchCriteria: Optional[Sequence[str]]
     Name: Optional[str]
     PhysicalConnectionRequirements: Optional[Sequence["_PhysicalConnectionRequirements"]]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             ConnectionProperties=json_data.get("ConnectionProperties"),
             ConnectionType=json_data.get("ConnectionType"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             MatchCriteria=json_data.get("MatchCriteria"),
             Name=json_data.get("Name"),
             PhysicalConnectionRequirements=json_data.get("PhysicalConnectionRequirements"),

@@ -19,8 +19,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#targetoriginid" title="TargetOriginId">TargetOriginId</a>" : <i>String</i>,
     "<a href="#trustedsigners" title="TrustedSigners">TrustedSigners</a>" : <i>[ String, ... ]</i>,
     "<a href="#viewerprotocolpolicy" title="ViewerProtocolPolicy">ViewerProtocolPolicy</a>" : <i>String</i>,
-    "<a href="#forwardedvalues" title="ForwardedValues">ForwardedValues</a>" : <i>[ <a href="defaultcachebehavior-forwardedvalues.md">ForwardedValues</a>, ... ]</i>,
-    "<a href="#lambdafunctionassociation" title="LambdaFunctionAssociation">LambdaFunctionAssociation</a>" : <i>[ <a href="defaultcachebehavior-lambdafunctionassociation.md">LambdaFunctionAssociation</a>, ... ]</i>
+    "<a href="#forwardedvalues" title="ForwardedValues">ForwardedValues</a>" : <i>[ &lt;a href=&#34;defaultcachebehavior-forwardedvalues.md&#34;&gt;ForwardedValues&lt;/a&gt;, ... ]</i>,
+    "<a href="#lambdafunctionassociation" title="LambdaFunctionAssociation">LambdaFunctionAssociation</a>" : <i>[ &lt;a href=&#34;defaultcachebehavior-lambdafunctionassociation.md&#34;&gt;LambdaFunctionAssociation&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -42,9 +42,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
       - String</i>
 <a href="#viewerprotocolpolicy" title="ViewerProtocolPolicy">ViewerProtocolPolicy</a>: <i>String</i>
 <a href="#forwardedvalues" title="ForwardedValues">ForwardedValues</a>: <i>
-      - <a href="defaultcachebehavior-forwardedvalues.md">ForwardedValues</a></i>
+      - &lt;a href=&#34;defaultcachebehavior-forwardedvalues.md&#34;&gt;ForwardedValues&lt;/a&gt;</i>
 <a href="#lambdafunctionassociation" title="LambdaFunctionAssociation">LambdaFunctionAssociation</a>: <i>
-      - <a href="defaultcachebehavior-lambdafunctionassociation.md">LambdaFunctionAssociation</a></i>
+      - &lt;a href=&#34;defaultcachebehavior-lambdafunctionassociation.md&#34;&gt;LambdaFunctionAssociation&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -52,7 +52,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### AllowedMethods
 
 _Required_: Yes
-
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -60,7 +59,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### CachedMethods
 
 _Required_: Yes
-
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -68,7 +66,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Compress
 
 _Required_: No
-
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -76,7 +73,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DefaultTtl
 
 _Required_: No
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -84,7 +80,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### FieldLevelEncryptionId
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -92,7 +87,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### MaxTtl
 
 _Required_: No
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -100,7 +94,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### MinTtl
 
 _Required_: No
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -108,7 +101,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SmoothStreaming
 
 _Required_: No
-
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -116,7 +108,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### TargetOriginId
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -124,7 +115,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### TrustedSigners
 
 _Required_: No
-
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -132,7 +122,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ViewerProtocolPolicy
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -140,16 +129,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ForwardedValues
 
 _Required_: No
-
-_Type_: List of <a href="defaultcachebehavior-forwardedvalues.md">ForwardedValues</a>
+_Type_: List of &lt;a href=&#34;defaultcachebehavior-forwardedvalues.md&#34;&gt;ForwardedValues&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LambdaFunctionAssociation
 
 _Required_: No
-
-_Type_: List of <a href="defaultcachebehavior-lambdafunctionassociation.md">LambdaFunctionAssociation</a>
+_Type_: List of &lt;a href=&#34;defaultcachebehavior-lambdafunctionassociation.md&#34;&gt;LambdaFunctionAssociation&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

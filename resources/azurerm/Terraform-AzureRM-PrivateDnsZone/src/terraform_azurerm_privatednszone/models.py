@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     MaxNumberOfRecordSets: Optional[float]
     MaxNumberOfVirtualNetworkLinks: Optional[float]
     MaxNumberOfVirtualNetworkLinksWithRegistration: Optional[float]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             MaxNumberOfRecordSets=json_data.get("MaxNumberOfRecordSets"),
             MaxNumberOfVirtualNetworkLinks=json_data.get("MaxNumberOfVirtualNetworkLinks"),
             MaxNumberOfVirtualNetworkLinksWithRegistration=json_data.get("MaxNumberOfVirtualNetworkLinksWithRegistration"),

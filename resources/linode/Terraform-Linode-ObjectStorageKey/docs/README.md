@@ -12,8 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Linode::ObjectStorageKey",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#accesskey" title="AccessKey">AccessKey</a>" : <i>String</i>,
         "<a href="#label" title="Label">Label</a>" : <i>String</i>,
+        "<a href="#secretkey" title="SecretKey">SecretKey</a>" : <i>String</i>
     }
 }
 </pre>
@@ -23,13 +25,25 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Linode::ObjectStorageKey
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#accesskey" title="AccessKey">AccessKey</a>: <i>String</i>
     <a href="#label" title="Label">Label</a>: <i>String</i>
+    <a href="#secretkey" title="SecretKey">SecretKey</a>: <i>String</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### AccessKey
 
 _Required_: No
 
@@ -40,6 +54,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Label
 
 _Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### SecretKey
+
+_Required_: No
 
 _Type_: String
 
@@ -63,9 +85,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AccessKey
 
-Returns the <code>AccessKey</code> value.
+Returns the &lt;code&gt;AccessKey&lt;/code&gt; value.
 
 #### SecretKey
 
-Returns the <code>SecretKey</code> value.
+Returns the &lt;code&gt;SecretKey&lt;/code&gt; value.
 

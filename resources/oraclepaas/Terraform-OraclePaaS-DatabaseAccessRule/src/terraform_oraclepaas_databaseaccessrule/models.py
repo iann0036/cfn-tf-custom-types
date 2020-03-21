@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     Destination: Optional[str]
     Enabled: Optional[bool]
-    Id: Optional[str]
     Name: Optional[str]
     Ports: Optional[str]
     ServiceInstanceId: Optional[str]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             Destination=json_data.get("Destination"),
             Enabled=json_data.get("Enabled"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Ports=json_data.get("Ports"),
             ServiceInstanceId=json_data.get("ServiceInstanceId"),

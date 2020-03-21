@@ -12,22 +12,23 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::MongodbShardingInstance",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#accountpassword" title="AccountPassword">AccountPassword</a>" : <i>String</i>,
         "<a href="#backupperiod" title="BackupPeriod">BackupPeriod</a>" : <i>[ String, ... ]</i>,
         "<a href="#backuptime" title="BackupTime">BackupTime</a>" : <i>String</i>,
         "<a href="#engineversion" title="EngineVersion">EngineVersion</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#instancechargetype" title="InstanceChargeType">InstanceChargeType</a>" : <i>String</i>,
         "<a href="#kmsencryptedpassword" title="KmsEncryptedPassword">KmsEncryptedPassword</a>" : <i>String</i>,
-        "<a href="#kmsencryptioncontext" title="KmsEncryptionContext">KmsEncryptionContext</a>" : <i>[ <a href="kmsencryptioncontext.md">KmsEncryptionContext</a>, ... ]</i>,
+        "<a href="#kmsencryptioncontext" title="KmsEncryptionContext">KmsEncryptionContext</a>" : <i>[ &lt;a href=&#34;kmsencryptioncontext.md&#34;&gt;KmsEncryptionContext&lt;/a&gt;, ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#period" title="Period">Period</a>" : <i>Double</i>,
+        "<a href="#retentionperiod" title="RetentionPeriod">RetentionPeriod</a>" : <i>Double</i>,
         "<a href="#securityiplist" title="SecurityIpList">SecurityIpList</a>" : <i>[ String, ... ]</i>,
         "<a href="#storageengine" title="StorageEngine">StorageEngine</a>" : <i>String</i>,
         "<a href="#vswitchid" title="VswitchId">VswitchId</a>" : <i>String</i>,
         "<a href="#zoneid" title="ZoneId">ZoneId</a>" : <i>String</i>,
-        "<a href="#mongolist" title="MongoList">MongoList</a>" : <i>[ <a href="mongolist.md">MongoList</a>, ... ]</i>,
-        "<a href="#shardlist" title="ShardList">ShardList</a>" : <i>[ <a href="shardlist.md">ShardList</a>, ... ]</i>
+        "<a href="#mongolist" title="MongoList">MongoList</a>" : <i>[ &lt;a href=&#34;mongolist.md&#34;&gt;MongoList&lt;/a&gt;, ... ]</i>,
+        "<a href="#shardlist" title="ShardList">ShardList</a>" : <i>[ &lt;a href=&#34;shardlist.md&#34;&gt;ShardList&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -37,30 +38,41 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::MongodbShardingInstance
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#accountpassword" title="AccountPassword">AccountPassword</a>: <i>String</i>
     <a href="#backupperiod" title="BackupPeriod">BackupPeriod</a>: <i>
       - String</i>
     <a href="#backuptime" title="BackupTime">BackupTime</a>: <i>String</i>
     <a href="#engineversion" title="EngineVersion">EngineVersion</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#instancechargetype" title="InstanceChargeType">InstanceChargeType</a>: <i>String</i>
     <a href="#kmsencryptedpassword" title="KmsEncryptedPassword">KmsEncryptedPassword</a>: <i>String</i>
     <a href="#kmsencryptioncontext" title="KmsEncryptionContext">KmsEncryptionContext</a>: <i>
-      - <a href="kmsencryptioncontext.md">KmsEncryptionContext</a></i>
+      - &lt;a href=&#34;kmsencryptioncontext.md&#34;&gt;KmsEncryptionContext&lt;/a&gt;</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#period" title="Period">Period</a>: <i>Double</i>
+    <a href="#retentionperiod" title="RetentionPeriod">RetentionPeriod</a>: <i>Double</i>
     <a href="#securityiplist" title="SecurityIpList">SecurityIpList</a>: <i>
       - String</i>
     <a href="#storageengine" title="StorageEngine">StorageEngine</a>: <i>String</i>
     <a href="#vswitchid" title="VswitchId">VswitchId</a>: <i>String</i>
     <a href="#zoneid" title="ZoneId">ZoneId</a>: <i>String</i>
     <a href="#mongolist" title="MongoList">MongoList</a>: <i>
-      - <a href="mongolist.md">MongoList</a></i>
+      - &lt;a href=&#34;mongolist.md&#34;&gt;MongoList&lt;/a&gt;</i>
     <a href="#shardlist" title="ShardList">ShardList</a>: <i>
-      - <a href="shardlist.md">ShardList</a></i>
+      - &lt;a href=&#34;shardlist.md&#34;&gt;ShardList&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AccountPassword
 
@@ -94,14 +106,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### InstanceChargeType
 
 _Required_: No
@@ -122,7 +126,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="kmsencryptioncontext.md">KmsEncryptionContext</a>
+_Type_: List of &lt;a href=&#34;kmsencryptioncontext.md&#34;&gt;KmsEncryptionContext&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -135,6 +139,14 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Period
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### RetentionPeriod
 
 _Required_: No
 
@@ -178,7 +190,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="mongolist.md">MongoList</a>
+_Type_: List of &lt;a href=&#34;mongolist.md&#34;&gt;MongoList&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -186,7 +198,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="shardlist.md">ShardList</a>
+_Type_: List of &lt;a href=&#34;shardlist.md&#34;&gt;ShardList&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -208,5 +220,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### RetentionPeriod
 
-Returns the <code>RetentionPeriod</code> value.
+Returns the &lt;code&gt;RetentionPeriod&lt;/code&gt; value.
 

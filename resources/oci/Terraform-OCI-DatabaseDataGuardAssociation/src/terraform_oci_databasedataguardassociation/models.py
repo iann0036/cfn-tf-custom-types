@@ -46,7 +46,6 @@ class ResourceModel(BaseResourceModel):
     DeleteStandbyDbHomeOnDelete: Optional[str]
     DisplayName: Optional[str]
     Hostname: Optional[str]
-    Id: Optional[str]
     LifecycleDetails: Optional[str]
     NsgIds: Optional[Sequence[str]]
     PeerDataGuardAssociationId: Optional[str]
@@ -82,7 +81,6 @@ class ResourceModel(BaseResourceModel):
             DeleteStandbyDbHomeOnDelete=json_data.get("DeleteStandbyDbHomeOnDelete"),
             DisplayName=json_data.get("DisplayName"),
             Hostname=json_data.get("Hostname"),
-            Id=json_data.get("Id"),
             LifecycleDetails=json_data.get("LifecycleDetails"),
             NsgIds=json_data.get("NsgIds"),
             PeerDataGuardAssociationId=json_data.get("PeerDataGuardAssociationId"),

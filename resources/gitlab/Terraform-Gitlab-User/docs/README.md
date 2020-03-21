@@ -12,9 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Gitlab::User",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#cancreategroup" title="CanCreateGroup">CanCreateGroup</a>" : <i>Boolean</i>,
         "<a href="#email" title="Email">Email</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#isadmin" title="IsAdmin">IsAdmin</a>" : <i>Boolean</i>,
         "<a href="#isexternal" title="IsExternal">IsExternal</a>" : <i>Boolean</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
@@ -32,9 +32,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Gitlab::User
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#cancreategroup" title="CanCreateGroup">CanCreateGroup</a>: <i>Boolean</i>
     <a href="#email" title="Email">Email</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#isadmin" title="IsAdmin">IsAdmin</a>: <i>Boolean</i>
     <a href="#isexternal" title="IsExternal">IsExternal</a>: <i>Boolean</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
@@ -47,6 +47,16 @@ Properties:
 
 ## Properties
 
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### CanCreateGroup
 
 _Required_: No
@@ -58,14 +68,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Email
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
 
 _Type_: String
 

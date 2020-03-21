@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Action: Optional[str]
     ConfigId: Optional[str]
-    Id: Optional[str]
     InputValues: Optional[Sequence["_InputValues"]]
     OutputValues: Optional[Sequence["_OutputValues"]]
     Region: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Action=json_data.get("Action"),
             ConfigId=json_data.get("ConfigId"),
-            Id=json_data.get("Id"),
             InputValues=json_data.get("InputValues"),
             OutputValues=json_data.get("OutputValues"),
             Region=json_data.get("Region"),

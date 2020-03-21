@@ -12,13 +12,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::TencentCloud::DayuDdosPolicyCase",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#appprotocols" title="AppProtocols">AppProtocols</a>" : <i>[ String, ... ]</i>,
         "<a href="#apptype" title="AppType">AppType</a>" : <i>String</i>,
+        "<a href="#createtime" title="CreateTime">CreateTime</a>" : <i>String</i>,
         "<a href="#hasabroad" title="HasAbroad">HasAbroad</a>" : <i>String</i>,
         "<a href="#hasinitiatetcp" title="HasInitiateTcp">HasInitiateTcp</a>" : <i>String</i>,
         "<a href="#hasinitiateudp" title="HasInitiateUdp">HasInitiateUdp</a>" : <i>String</i>,
         "<a href="#hasvpn" title="HasVpn">HasVpn</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#maxtcppackagelen" title="MaxTcpPackageLen">MaxTcpPackageLen</a>" : <i>String</i>,
         "<a href="#maxudppackagelen" title="MaxUdpPackageLen">MaxUdpPackageLen</a>" : <i>String</i>,
         "<a href="#mintcppackagelen" title="MinTcpPackageLen">MinTcpPackageLen</a>" : <i>String</i>,
@@ -28,6 +29,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#peerudpport" title="PeerUdpPort">PeerUdpPort</a>" : <i>String</i>,
         "<a href="#platformtypes" title="PlatformTypes">PlatformTypes</a>" : <i>[ String, ... ]</i>,
         "<a href="#resourcetype" title="ResourceType">ResourceType</a>" : <i>String</i>,
+        "<a href="#sceneid" title="SceneId">SceneId</a>" : <i>String</i>,
         "<a href="#tcpendport" title="TcpEndPort">TcpEndPort</a>" : <i>String</i>,
         "<a href="#tcpfootprint" title="TcpFootprint">TcpFootprint</a>" : <i>String</i>,
         "<a href="#tcpstartport" title="TcpStartPort">TcpStartPort</a>" : <i>String</i>,
@@ -44,14 +46,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::TencentCloud::DayuDdosPolicyCase
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#appprotocols" title="AppProtocols">AppProtocols</a>: <i>
       - String</i>
     <a href="#apptype" title="AppType">AppType</a>: <i>String</i>
+    <a href="#createtime" title="CreateTime">CreateTime</a>: <i>String</i>
     <a href="#hasabroad" title="HasAbroad">HasAbroad</a>: <i>String</i>
     <a href="#hasinitiatetcp" title="HasInitiateTcp">HasInitiateTcp</a>: <i>String</i>
     <a href="#hasinitiateudp" title="HasInitiateUdp">HasInitiateUdp</a>: <i>String</i>
     <a href="#hasvpn" title="HasVpn">HasVpn</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#maxtcppackagelen" title="MaxTcpPackageLen">MaxTcpPackageLen</a>: <i>String</i>
     <a href="#maxudppackagelen" title="MaxUdpPackageLen">MaxUdpPackageLen</a>: <i>String</i>
     <a href="#mintcppackagelen" title="MinTcpPackageLen">MinTcpPackageLen</a>: <i>String</i>
@@ -62,6 +65,7 @@ Properties:
     <a href="#platformtypes" title="PlatformTypes">PlatformTypes</a>: <i>
       - String</i>
     <a href="#resourcetype" title="ResourceType">ResourceType</a>: <i>String</i>
+    <a href="#sceneid" title="SceneId">SceneId</a>: <i>String</i>
     <a href="#tcpendport" title="TcpEndPort">TcpEndPort</a>: <i>String</i>
     <a href="#tcpfootprint" title="TcpFootprint">TcpFootprint</a>: <i>String</i>
     <a href="#tcpstartport" title="TcpStartPort">TcpStartPort</a>: <i>String</i>
@@ -74,6 +78,16 @@ Properties:
 
 ## Properties
 
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### AppProtocols
 
 _Required_: Yes
@@ -85,6 +99,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### AppType
 
 _Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### CreateTime
+
+_Required_: No
 
 _Type_: String
 
@@ -115,14 +137,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HasVpn
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 
@@ -202,6 +216,14 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### SceneId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### TcpEndPort
 
 _Required_: Yes
@@ -276,9 +298,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateTime
 
-Returns the <code>CreateTime</code> value.
+Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
 
 #### SceneId
 
-Returns the <code>SceneId</code> value.
+Returns the &lt;code&gt;SceneId&lt;/code&gt; value.
 

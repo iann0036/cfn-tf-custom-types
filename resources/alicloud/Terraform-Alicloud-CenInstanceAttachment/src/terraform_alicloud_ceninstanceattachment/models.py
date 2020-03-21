@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     ChildInstanceId: Optional[str]
     ChildInstanceOwnerId: Optional[str]
     ChildInstanceRegionId: Optional[str]
-    Id: Optional[str]
     InstanceId: Optional[str]
 
     @classmethod
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             ChildInstanceId=json_data.get("ChildInstanceId"),
             ChildInstanceOwnerId=json_data.get("ChildInstanceOwnerId"),
             ChildInstanceRegionId=json_data.get("ChildInstanceRegionId"),
-            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
         )
 

@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ContainerAccessType: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Properties: Optional[Sequence["_Properties"]]
     ResourceGroupName: Optional[str]
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             ContainerAccessType=json_data.get("ContainerAccessType"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Properties=json_data.get("Properties"),
             ResourceGroupName=json_data.get("ResourceGroupName"),

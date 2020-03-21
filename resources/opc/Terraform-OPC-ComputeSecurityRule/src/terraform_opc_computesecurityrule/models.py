@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     DstVnicSet: Optional[str]
     Enabled: Optional[bool]
     FlowDirection: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     SecurityProtocols: Optional[Sequence[str]]
     SrcIpAddressPrefixes: Optional[Sequence[str]]
@@ -65,7 +64,6 @@ class ResourceModel(BaseResourceModel):
             DstVnicSet=json_data.get("DstVnicSet"),
             Enabled=json_data.get("Enabled"),
             FlowDirection=json_data.get("FlowDirection"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             SecurityProtocols=json_data.get("SecurityProtocols"),
             SrcIpAddressPrefixes=json_data.get("SrcIpAddressPrefixes"),

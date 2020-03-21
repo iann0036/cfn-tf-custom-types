@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     InnerAccess: Optional[bool]
     InnerAccessPolicy: Optional[str]
     Name: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             InnerAccess=json_data.get("InnerAccess"),
             InnerAccessPolicy=json_data.get("InnerAccessPolicy"),
             Name=json_data.get("Name"),

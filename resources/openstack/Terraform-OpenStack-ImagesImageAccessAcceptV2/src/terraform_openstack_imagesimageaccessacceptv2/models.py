@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CreatedAt: Optional[str]
-    Id: Optional[str]
     ImageId: Optional[str]
     MemberId: Optional[str]
     Region: Optional[str]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             CreatedAt=json_data.get("CreatedAt"),
-            Id=json_data.get("Id"),
             ImageId=json_data.get("ImageId"),
             MemberId=json_data.get("MemberId"),
             Region=json_data.get("Region"),

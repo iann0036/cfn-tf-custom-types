@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     ReplicationSubnetGroupArn: Optional[str]
     ReplicationSubnetGroupDescription: Optional[str]
     ReplicationSubnetGroupId: Optional[str]
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             ReplicationSubnetGroupArn=json_data.get("ReplicationSubnetGroupArn"),
             ReplicationSubnetGroupDescription=json_data.get("ReplicationSubnetGroupDescription"),
             ReplicationSubnetGroupId=json_data.get("ReplicationSubnetGroupId"),

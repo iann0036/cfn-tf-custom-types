@@ -12,12 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Grafana::Organization",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#adminuser" title="AdminUser">AdminUser</a>" : <i>String</i>,
         "<a href="#admins" title="Admins">Admins</a>" : <i>[ String, ... ]</i>,
         "<a href="#createusers" title="CreateUsers">CreateUsers</a>" : <i>Boolean</i>,
         "<a href="#editors" title="Editors">Editors</a>" : <i>[ String, ... ]</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
+        "<a href="#orgid" title="OrgId">OrgId</a>" : <i>Double</i>,
         "<a href="#viewers" title="Viewers">Viewers</a>" : <i>[ String, ... ]</i>
     }
 }
@@ -28,19 +29,30 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Grafana::Organization
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#adminuser" title="AdminUser">AdminUser</a>: <i>String</i>
     <a href="#admins" title="Admins">Admins</a>: <i>
       - String</i>
     <a href="#createusers" title="CreateUsers">CreateUsers</a>: <i>Boolean</i>
     <a href="#editors" title="Editors">Editors</a>: <i>
       - String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
+    <a href="#orgid" title="OrgId">OrgId</a>: <i>Double</i>
     <a href="#viewers" title="Viewers">Viewers</a>: <i>
       - String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AdminUser
 
@@ -74,19 +86,19 @@ _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Name
 
 _Required_: Yes
 
 _Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### OrgId
+
+_Required_: No
+
+_Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -116,5 +128,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### OrgId
 
-Returns the <code>OrgId</code> value.
+Returns the &lt;code&gt;OrgId&lt;/code&gt; value.
 

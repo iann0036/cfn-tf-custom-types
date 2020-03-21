@@ -47,7 +47,6 @@ class ResourceModel(BaseResourceModel):
     FlavorName: Optional[str]
     FloatingIp: Optional[str]
     ForceDelete: Optional[bool]
-    Id: Optional[str]
     ImageId: Optional[str]
     ImageName: Optional[str]
     KeyPair: Optional[str]
@@ -87,7 +86,6 @@ class ResourceModel(BaseResourceModel):
             FlavorName=json_data.get("FlavorName"),
             FloatingIp=json_data.get("FloatingIp"),
             ForceDelete=json_data.get("ForceDelete"),
-            Id=json_data.get("Id"),
             ImageId=json_data.get("ImageId"),
             ImageName=json_data.get("ImageName"),
             KeyPair=json_data.get("KeyPair"),

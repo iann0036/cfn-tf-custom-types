@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CdcStartTime: Optional[str]
-    Id: Optional[str]
     MigrationType: Optional[str]
     ReplicationInstanceArn: Optional[str]
     ReplicationTaskArn: Optional[str]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             CdcStartTime=json_data.get("CdcStartTime"),
-            Id=json_data.get("Id"),
             MigrationType=json_data.get("MigrationType"),
             ReplicationInstanceArn=json_data.get("ReplicationInstanceArn"),
             ReplicationTaskArn=json_data.get("ReplicationTaskArn"),

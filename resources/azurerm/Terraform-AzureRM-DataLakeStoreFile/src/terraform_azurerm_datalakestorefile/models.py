@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AccountName: Optional[str]
-    Id: Optional[str]
     LocalFilePath: Optional[str]
     RemoteFilePath: Optional[str]
     Timeouts: Optional["_Timeouts"]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             AccountName=json_data.get("AccountName"),
-            Id=json_data.get("Id"),
             LocalFilePath=json_data.get("LocalFilePath"),
             RemoteFilePath=json_data.get("RemoteFilePath"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),

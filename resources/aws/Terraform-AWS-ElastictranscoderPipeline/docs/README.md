@@ -12,17 +12,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::ElastictranscoderPipeline",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#awskmskeyarn" title="AwsKmsKeyArn">AwsKmsKeyArn</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#inputbucket" title="InputBucket">InputBucket</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#outputbucket" title="OutputBucket">OutputBucket</a>" : <i>String</i>,
         "<a href="#role" title="Role">Role</a>" : <i>String</i>,
-        "<a href="#contentconfig" title="ContentConfig">ContentConfig</a>" : <i>[ <a href="contentconfig.md">ContentConfig</a>, ... ]</i>,
-        "<a href="#contentconfigpermissions" title="ContentConfigPermissions">ContentConfigPermissions</a>" : <i>[ <a href="contentconfigpermissions.md">ContentConfigPermissions</a>, ... ]</i>,
-        "<a href="#notifications" title="Notifications">Notifications</a>" : <i>[ <a href="notifications.md">Notifications</a>, ... ]</i>,
-        "<a href="#thumbnailconfig" title="ThumbnailConfig">ThumbnailConfig</a>" : <i>[ <a href="thumbnailconfig.md">ThumbnailConfig</a>, ... ]</i>,
-        "<a href="#thumbnailconfigpermissions" title="ThumbnailConfigPermissions">ThumbnailConfigPermissions</a>" : <i>[ <a href="thumbnailconfigpermissions.md">ThumbnailConfigPermissions</a>, ... ]</i>
+        "<a href="#contentconfig" title="ContentConfig">ContentConfig</a>" : <i>[ &lt;a href=&#34;contentconfig.md&#34;&gt;ContentConfig&lt;/a&gt;, ... ]</i>,
+        "<a href="#contentconfigpermissions" title="ContentConfigPermissions">ContentConfigPermissions</a>" : <i>[ &lt;a href=&#34;contentconfigpermissions.md&#34;&gt;ContentConfigPermissions&lt;/a&gt;, ... ]</i>,
+        "<a href="#notifications" title="Notifications">Notifications</a>" : <i>[ &lt;a href=&#34;notifications.md&#34;&gt;Notifications&lt;/a&gt;, ... ]</i>,
+        "<a href="#thumbnailconfig" title="ThumbnailConfig">ThumbnailConfig</a>" : <i>[ &lt;a href=&#34;thumbnailconfig.md&#34;&gt;ThumbnailConfig&lt;/a&gt;, ... ]</i>,
+        "<a href="#thumbnailconfigpermissions" title="ThumbnailConfigPermissions">ThumbnailConfigPermissions</a>" : <i>[ &lt;a href=&#34;thumbnailconfigpermissions.md&#34;&gt;ThumbnailConfigPermissions&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -32,27 +33,30 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::ElastictranscoderPipeline
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#awskmskeyarn" title="AwsKmsKeyArn">AwsKmsKeyArn</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#inputbucket" title="InputBucket">InputBucket</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#outputbucket" title="OutputBucket">OutputBucket</a>: <i>String</i>
     <a href="#role" title="Role">Role</a>: <i>String</i>
     <a href="#contentconfig" title="ContentConfig">ContentConfig</a>: <i>
-      - <a href="contentconfig.md">ContentConfig</a></i>
+      - &lt;a href=&#34;contentconfig.md&#34;&gt;ContentConfig&lt;/a&gt;</i>
     <a href="#contentconfigpermissions" title="ContentConfigPermissions">ContentConfigPermissions</a>: <i>
-      - <a href="contentconfigpermissions.md">ContentConfigPermissions</a></i>
+      - &lt;a href=&#34;contentconfigpermissions.md&#34;&gt;ContentConfigPermissions&lt;/a&gt;</i>
     <a href="#notifications" title="Notifications">Notifications</a>: <i>
-      - <a href="notifications.md">Notifications</a></i>
+      - &lt;a href=&#34;notifications.md&#34;&gt;Notifications&lt;/a&gt;</i>
     <a href="#thumbnailconfig" title="ThumbnailConfig">ThumbnailConfig</a>: <i>
-      - <a href="thumbnailconfig.md">ThumbnailConfig</a></i>
+      - &lt;a href=&#34;thumbnailconfig.md&#34;&gt;ThumbnailConfig&lt;/a&gt;</i>
     <a href="#thumbnailconfigpermissions" title="ThumbnailConfigPermissions">ThumbnailConfigPermissions</a>: <i>
-      - <a href="thumbnailconfigpermissions.md">ThumbnailConfigPermissions</a></i>
+      - &lt;a href=&#34;thumbnailconfigpermissions.md&#34;&gt;ThumbnailConfigPermissions&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
-#### AwsKmsKeyArn
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
@@ -60,7 +64,15 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### Arn
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### AwsKmsKeyArn
 
 _Required_: No
 
@@ -104,7 +116,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="contentconfig.md">ContentConfig</a>
+_Type_: List of &lt;a href=&#34;contentconfig.md&#34;&gt;ContentConfig&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -112,7 +124,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="contentconfigpermissions.md">ContentConfigPermissions</a>
+_Type_: List of &lt;a href=&#34;contentconfigpermissions.md&#34;&gt;ContentConfigPermissions&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -120,7 +132,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="notifications.md">Notifications</a>
+_Type_: List of &lt;a href=&#34;notifications.md&#34;&gt;Notifications&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -128,7 +140,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="thumbnailconfig.md">ThumbnailConfig</a>
+_Type_: List of &lt;a href=&#34;thumbnailconfig.md&#34;&gt;ThumbnailConfig&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -136,7 +148,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="thumbnailconfigpermissions.md">ThumbnailConfigPermissions</a>
+_Type_: List of &lt;a href=&#34;thumbnailconfigpermissions.md&#34;&gt;ThumbnailConfigPermissions&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -158,5 +170,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the <code>Arn</code> value.
+Returns the &lt;code&gt;Arn&lt;/code&gt; value.
 

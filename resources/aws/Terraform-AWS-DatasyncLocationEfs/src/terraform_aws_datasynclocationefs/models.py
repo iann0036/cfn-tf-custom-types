@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Arn: Optional[str]
     EfsFileSystemArn: Optional[str]
-    Id: Optional[str]
     Subdirectory: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
     Uri: Optional[str]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Arn=json_data.get("Arn"),
             EfsFileSystemArn=json_data.get("EfsFileSystemArn"),
-            Id=json_data.get("Id"),
             Subdirectory=json_data.get("Subdirectory"),
             Tags=json_data.get("Tags"),
             Uri=json_data.get("Uri"),

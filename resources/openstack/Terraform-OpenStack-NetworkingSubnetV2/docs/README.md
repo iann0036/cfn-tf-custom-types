@@ -12,12 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OpenStack::NetworkingSubnetV2",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#alltags" title="AllTags">AllTags</a>" : <i>[ String, ... ]</i>,
         "<a href="#cidr" title="Cidr">Cidr</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#dnsnameservers" title="DnsNameservers">DnsNameservers</a>" : <i>[ String, ... ]</i>,
         "<a href="#enabledhcp" title="EnableDhcp">EnableDhcp</a>" : <i>Boolean</i>,
         "<a href="#gatewayip" title="GatewayIp">GatewayIp</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#ipversion" title="IpVersion">IpVersion</a>" : <i>Double</i>,
         "<a href="#ipv6addressmode" title="Ipv6AddressMode">Ipv6AddressMode</a>" : <i>String</i>,
         "<a href="#ipv6ramode" title="Ipv6RaMode">Ipv6RaMode</a>" : <i>String</i>,
@@ -29,11 +30,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#subnetpoolid" title="SubnetpoolId">SubnetpoolId</a>" : <i>String</i>,
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
         "<a href="#tenantid" title="TenantId">TenantId</a>" : <i>String</i>,
-        "<a href="#valuespecs" title="ValueSpecs">ValueSpecs</a>" : <i>[ <a href="valuespecs.md">ValueSpecs</a>, ... ]</i>,
-        "<a href="#allocationpool" title="AllocationPool">AllocationPool</a>" : <i>[ <a href="allocationpool.md">AllocationPool</a>, ... ]</i>,
-        "<a href="#allocationpools" title="AllocationPools">AllocationPools</a>" : <i>[ <a href="allocationpools.md">AllocationPools</a>, ... ]</i>,
-        "<a href="#hostroutes" title="HostRoutes">HostRoutes</a>" : <i>[ <a href="hostroutes.md">HostRoutes</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
+        "<a href="#valuespecs" title="ValueSpecs">ValueSpecs</a>" : <i>[ &lt;a href=&#34;valuespecs.md&#34;&gt;ValueSpecs&lt;/a&gt;, ... ]</i>,
+        "<a href="#allocationpool" title="AllocationPool">AllocationPool</a>" : <i>[ &lt;a href=&#34;allocationpool.md&#34;&gt;AllocationPool&lt;/a&gt;, ... ]</i>,
+        "<a href="#allocationpools" title="AllocationPools">AllocationPools</a>" : <i>[ &lt;a href=&#34;allocationpools.md&#34;&gt;AllocationPools&lt;/a&gt;, ... ]</i>,
+        "<a href="#hostroutes" title="HostRoutes">HostRoutes</a>" : <i>[ &lt;a href=&#34;hostroutes.md&#34;&gt;HostRoutes&lt;/a&gt;, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     }
 }
 </pre>
@@ -43,13 +44,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OpenStack::NetworkingSubnetV2
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#alltags" title="AllTags">AllTags</a>: <i>
+      - String</i>
     <a href="#cidr" title="Cidr">Cidr</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#dnsnameservers" title="DnsNameservers">DnsNameservers</a>: <i>
       - String</i>
     <a href="#enabledhcp" title="EnableDhcp">EnableDhcp</a>: <i>Boolean</i>
     <a href="#gatewayip" title="GatewayIp">GatewayIp</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#ipversion" title="IpVersion">IpVersion</a>: <i>Double</i>
     <a href="#ipv6addressmode" title="Ipv6AddressMode">Ipv6AddressMode</a>: <i>String</i>
     <a href="#ipv6ramode" title="Ipv6RaMode">Ipv6RaMode</a>: <i>String</i>
@@ -63,17 +66,35 @@ Properties:
       - String</i>
     <a href="#tenantid" title="TenantId">TenantId</a>: <i>String</i>
     <a href="#valuespecs" title="ValueSpecs">ValueSpecs</a>: <i>
-      - <a href="valuespecs.md">ValueSpecs</a></i>
+      - &lt;a href=&#34;valuespecs.md&#34;&gt;ValueSpecs&lt;/a&gt;</i>
     <a href="#allocationpool" title="AllocationPool">AllocationPool</a>: <i>
-      - <a href="allocationpool.md">AllocationPool</a></i>
+      - &lt;a href=&#34;allocationpool.md&#34;&gt;AllocationPool&lt;/a&gt;</i>
     <a href="#allocationpools" title="AllocationPools">AllocationPools</a>: <i>
-      - <a href="allocationpools.md">AllocationPools</a></i>
+      - &lt;a href=&#34;allocationpools.md&#34;&gt;AllocationPools&lt;/a&gt;</i>
     <a href="#hostroutes" title="HostRoutes">HostRoutes</a>: <i>
-      - <a href="hostroutes.md">HostRoutes</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;hostroutes.md&#34;&gt;HostRoutes&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### AllTags
+
+_Required_: No
+
+_Type_: List of String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Cidr
 
@@ -108,14 +129,6 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GatewayIp
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 
@@ -215,7 +228,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="valuespecs.md">ValueSpecs</a>
+_Type_: List of &lt;a href=&#34;valuespecs.md&#34;&gt;ValueSpecs&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -223,7 +236,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="allocationpool.md">AllocationPool</a>
+_Type_: List of &lt;a href=&#34;allocationpool.md&#34;&gt;AllocationPool&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -231,7 +244,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="allocationpools.md">AllocationPools</a>
+_Type_: List of &lt;a href=&#34;allocationpools.md&#34;&gt;AllocationPools&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -239,7 +252,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="hostroutes.md">HostRoutes</a>
+_Type_: List of &lt;a href=&#34;hostroutes.md&#34;&gt;HostRoutes&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -247,7 +260,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -269,5 +282,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AllTags
 
-Returns the <code>AllTags</code> value.
+Returns the &lt;code&gt;AllTags&lt;/code&gt; value.
 

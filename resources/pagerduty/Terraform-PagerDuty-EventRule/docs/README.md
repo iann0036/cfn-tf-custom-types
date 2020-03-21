@@ -12,10 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::PagerDuty::EventRule",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#actionjson" title="ActionJson">ActionJson</a>" : <i>String</i>,
         "<a href="#advancedconditionjson" title="AdvancedConditionJson">AdvancedConditionJson</a>" : <i>String</i>,
-        "<a href="#conditionjson" title="ConditionJson">ConditionJson</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>
+        "<a href="#catchall" title="CatchAll">CatchAll</a>" : <i>Boolean</i>,
+        "<a href="#conditionjson" title="ConditionJson">ConditionJson</a>" : <i>String</i>
     }
 }
 </pre>
@@ -25,13 +26,24 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::PagerDuty::EventRule
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#actionjson" title="ActionJson">ActionJson</a>: <i>String</i>
     <a href="#advancedconditionjson" title="AdvancedConditionJson">AdvancedConditionJson</a>: <i>String</i>
+    <a href="#catchall" title="CatchAll">CatchAll</a>: <i>Boolean</i>
     <a href="#conditionjson" title="ConditionJson">ConditionJson</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ActionJson
 
@@ -49,17 +61,17 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### ConditionJson
+#### CatchAll
 
-_Required_: Yes
+_Required_: No
 
-_Type_: String
+_Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### ConditionJson
 
-_Required_: No
+_Required_: Yes
 
 _Type_: String
 
@@ -83,5 +95,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CatchAll
 
-Returns the <code>CatchAll</code> value.
+Returns the &lt;code&gt;CatchAll&lt;/code&gt; value.
 

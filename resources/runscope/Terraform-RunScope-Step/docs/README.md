@@ -12,20 +12,20 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::RunScope::Step",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#beforescripts" title="BeforeScripts">BeforeScripts</a>" : <i>[ String, ... ]</i>,
         "<a href="#body" title="Body">Body</a>" : <i>String</i>,
         "<a href="#bucketid" title="BucketId">BucketId</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#method" title="Method">Method</a>" : <i>String</i>,
         "<a href="#note" title="Note">Note</a>" : <i>String</i>,
         "<a href="#scripts" title="Scripts">Scripts</a>" : <i>[ String, ... ]</i>,
         "<a href="#steptype" title="StepType">StepType</a>" : <i>String</i>,
         "<a href="#testid" title="TestId">TestId</a>" : <i>String</i>,
         "<a href="#url" title="Url">Url</a>" : <i>String</i>,
-        "<a href="#assertions" title="Assertions">Assertions</a>" : <i>[ <a href="assertions.md">Assertions</a>, ... ]</i>,
-        "<a href="#auth" title="Auth">Auth</a>" : <i>[ <a href="auth.md">Auth</a>, ... ]</i>,
-        "<a href="#headers" title="Headers">Headers</a>" : <i>[ <a href="headers.md">Headers</a>, ... ]</i>,
-        "<a href="#variables" title="Variables">Variables</a>" : <i>[ <a href="variables.md">Variables</a>, ... ]</i>
+        "<a href="#assertions" title="Assertions">Assertions</a>" : <i>[ &lt;a href=&#34;assertions.md&#34;&gt;Assertions&lt;/a&gt;, ... ]</i>,
+        "<a href="#auth" title="Auth">Auth</a>" : <i>[ &lt;a href=&#34;auth.md&#34;&gt;Auth&lt;/a&gt;, ... ]</i>,
+        "<a href="#headers" title="Headers">Headers</a>" : <i>[ &lt;a href=&#34;headers.md&#34;&gt;Headers&lt;/a&gt;, ... ]</i>,
+        "<a href="#variables" title="Variables">Variables</a>" : <i>[ &lt;a href=&#34;variables.md&#34;&gt;Variables&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -35,11 +35,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::RunScope::Step
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#beforescripts" title="BeforeScripts">BeforeScripts</a>: <i>
       - String</i>
     <a href="#body" title="Body">Body</a>: <i>String</i>
     <a href="#bucketid" title="BucketId">BucketId</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#method" title="Method">Method</a>: <i>String</i>
     <a href="#note" title="Note">Note</a>: <i>String</i>
     <a href="#scripts" title="Scripts">Scripts</a>: <i>
@@ -48,16 +48,26 @@ Properties:
     <a href="#testid" title="TestId">TestId</a>: <i>String</i>
     <a href="#url" title="Url">Url</a>: <i>String</i>
     <a href="#assertions" title="Assertions">Assertions</a>: <i>
-      - <a href="assertions.md">Assertions</a></i>
+      - &lt;a href=&#34;assertions.md&#34;&gt;Assertions&lt;/a&gt;</i>
     <a href="#auth" title="Auth">Auth</a>: <i>
-      - <a href="auth.md">Auth</a></i>
+      - &lt;a href=&#34;auth.md&#34;&gt;Auth&lt;/a&gt;</i>
     <a href="#headers" title="Headers">Headers</a>: <i>
-      - <a href="headers.md">Headers</a></i>
+      - &lt;a href=&#34;headers.md&#34;&gt;Headers&lt;/a&gt;</i>
     <a href="#variables" title="Variables">Variables</a>: <i>
-      - <a href="variables.md">Variables</a></i>
+      - &lt;a href=&#34;variables.md&#34;&gt;Variables&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BeforeScripts
 
@@ -78,14 +88,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### BucketId
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
 
 _Type_: String
 
@@ -143,7 +145,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="assertions.md">Assertions</a>
+_Type_: List of &lt;a href=&#34;assertions.md&#34;&gt;Assertions&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -151,7 +153,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="auth.md">Auth</a>
+_Type_: List of &lt;a href=&#34;auth.md&#34;&gt;Auth&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -159,7 +161,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="headers.md">Headers</a>
+_Type_: List of &lt;a href=&#34;headers.md&#34;&gt;Headers&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -167,7 +169,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="variables.md">Variables</a>
+_Type_: List of &lt;a href=&#34;variables.md&#34;&gt;Variables&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

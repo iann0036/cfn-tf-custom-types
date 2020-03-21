@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CiphertextBlob: Optional[str]
     EncryptionContext: Optional[Sequence["_EncryptionContext"]]
-    Id: Optional[str]
     KeyId: Optional[str]
     Plaintext: Optional[str]
 
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CiphertextBlob=json_data.get("CiphertextBlob"),
             EncryptionContext=json_data.get("EncryptionContext"),
-            Id=json_data.get("Id"),
             KeyId=json_data.get("KeyId"),
             Plaintext=json_data.get("Plaintext"),
         )

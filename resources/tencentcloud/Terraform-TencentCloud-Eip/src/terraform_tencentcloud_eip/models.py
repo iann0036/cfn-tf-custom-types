@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AnycastZone: Optional[str]
     ApplicableForClb: Optional[bool]
-    Id: Optional[str]
     InternetChargeType: Optional[str]
     InternetMaxBandwidthOut: Optional[float]
     InternetServiceProvider: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AnycastZone=json_data.get("AnycastZone"),
             ApplicableForClb=json_data.get("ApplicableForClb"),
-            Id=json_data.get("Id"),
             InternetChargeType=json_data.get("InternetChargeType"),
             InternetMaxBandwidthOut=json_data.get("InternetMaxBandwidthOut"),
             InternetServiceProvider=json_data.get("InternetServiceProvider"),

@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#metrictype" title="MetricType">MetricType</a>" : <i>String</i>,
-    "<a href="#threshold" title="Threshold">Threshold</a>" : <i>[ <a href="metric-threshold.md">Threshold</a>, ... ]</i>
+    "<a href="#threshold" title="Threshold">Threshold</a>" : <i>[ &lt;a href=&#34;metric-threshold.md&#34;&gt;Threshold&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#metrictype" title="MetricType">MetricType</a>: <i>String</i>
 <a href="#threshold" title="Threshold">Threshold</a>: <i>
-      - <a href="metric-threshold.md">Threshold</a></i>
+      - &lt;a href=&#34;metric-threshold.md&#34;&gt;Threshold&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -26,7 +26,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### MetricType
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -34,8 +33,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Threshold
 
 _Required_: No
-
-_Type_: List of <a href="metric-threshold.md">Threshold</a>
+_Type_: List of &lt;a href=&#34;metric-threshold.md&#34;&gt;Threshold&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

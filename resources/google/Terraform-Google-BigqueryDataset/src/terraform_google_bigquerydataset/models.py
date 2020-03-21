@@ -44,7 +44,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     Etag: Optional[str]
     FriendlyName: Optional[str]
-    Id: Optional[str]
     Labels: Optional[Sequence["_Labels"]]
     LastModifiedTime: Optional[float]
     Location: Optional[str]
@@ -72,7 +71,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             Etag=json_data.get("Etag"),
             FriendlyName=json_data.get("FriendlyName"),
-            Id=json_data.get("Id"),
             Labels=json_data.get("Labels"),
             LastModifiedTime=json_data.get("LastModifiedTime"),
             Location=json_data.get("Location"),

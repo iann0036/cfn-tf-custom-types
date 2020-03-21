@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Device: Optional[str]
-    Id: Optional[str]
     TemplateStack: Optional[str]
 
     @classmethod
@@ -50,7 +49,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Device=json_data.get("Device"),
-            Id=json_data.get("Id"),
             TemplateStack=json_data.get("TemplateStack"),
         )
 

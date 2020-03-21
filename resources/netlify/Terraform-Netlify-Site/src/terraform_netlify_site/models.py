@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     AccountSlug: Optional[str]
     CustomDomain: Optional[str]
     DeployUrl: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Repo: Optional[Sequence["_Repo"]]
 
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
             AccountSlug=json_data.get("AccountSlug"),
             CustomDomain=json_data.get("CustomDomain"),
             DeployUrl=json_data.get("DeployUrl"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Repo=json_data.get("Repo"),
         )

@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CreationTimestamp: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     Instance: Optional[str]
     Name: Optional[str]
     NatPolicy: Optional[str]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CreationTimestamp=json_data.get("CreationTimestamp"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Instance=json_data.get("Instance"),
             Name=json_data.get("Name"),
             NatPolicy=json_data.get("NatPolicy"),

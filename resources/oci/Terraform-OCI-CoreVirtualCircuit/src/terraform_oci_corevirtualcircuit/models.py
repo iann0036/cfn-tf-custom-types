@@ -46,7 +46,6 @@ class ResourceModel(BaseResourceModel):
     DisplayName: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
     GatewayId: Optional[str]
-    Id: Optional[str]
     OracleBgpAsn: Optional[float]
     ProviderServiceId: Optional[str]
     ProviderServiceKeyName: Optional[str]
@@ -80,7 +79,6 @@ class ResourceModel(BaseResourceModel):
             DisplayName=json_data.get("DisplayName"),
             FreeformTags=json_data.get("FreeformTags"),
             GatewayId=json_data.get("GatewayId"),
-            Id=json_data.get("Id"),
             OracleBgpAsn=json_data.get("OracleBgpAsn"),
             ProviderServiceId=json_data.get("ProviderServiceId"),
             ProviderServiceKeyName=json_data.get("ProviderServiceKeyName"),

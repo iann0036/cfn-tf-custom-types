@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     ApiAccessPort: Optional[float]
     AppName: Optional[str]
     CreateTime: Optional[str]
-    Id: Optional[str]
     IdlType: Optional[str]
     NetworkType: Optional[str]
     OldPasswordExpireLast: Optional[float]
@@ -65,7 +64,6 @@ class ResourceModel(BaseResourceModel):
             ApiAccessPort=json_data.get("ApiAccessPort"),
             AppName=json_data.get("AppName"),
             CreateTime=json_data.get("CreateTime"),
-            Id=json_data.get("Id"),
             IdlType=json_data.get("IdlType"),
             NetworkType=json_data.get("NetworkType"),
             OldPasswordExpireLast=json_data.get("OldPasswordExpireLast"),

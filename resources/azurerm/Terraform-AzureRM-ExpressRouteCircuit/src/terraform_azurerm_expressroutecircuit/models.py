@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AllowClassicOperations: Optional[bool]
     BandwidthInMbps: Optional[float]
-    Id: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
     PeeringLocation: Optional[str]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AllowClassicOperations=json_data.get("AllowClassicOperations"),
             BandwidthInMbps=json_data.get("BandwidthInMbps"),
-            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),
             PeeringLocation=json_data.get("PeeringLocation"),

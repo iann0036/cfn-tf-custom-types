@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     BotName: Optional[str]
-    Id: Optional[str]
     Location: Optional[str]
     ResourceGroupName: Optional[str]
     Site: Optional[Sequence["_Site"]]
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             BotName=json_data.get("BotName"),
-            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             ResourceGroupName=json_data.get("ResourceGroupName"),
             Site=json_data.get("Site"),

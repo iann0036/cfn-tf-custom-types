@@ -9,8 +9,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-    "<a href="#timebasedcanary" title="TimeBasedCanary">TimeBasedCanary</a>" : <i>[ <a href="trafficroutingconfig-timebasedcanary.md">TimeBasedCanary</a>, ... ]</i>,
-    "<a href="#timebasedlinear" title="TimeBasedLinear">TimeBasedLinear</a>" : <i>[ <a href="trafficroutingconfig-timebasedlinear.md">TimeBasedLinear</a>, ... ]</i>
+    "<a href="#timebasedcanary" title="TimeBasedCanary">TimeBasedCanary</a>" : <i>[ &lt;a href=&#34;trafficroutingconfig-timebasedcanary.md&#34;&gt;TimeBasedCanary&lt;/a&gt;, ... ]</i>,
+    "<a href="#timebasedlinear" title="TimeBasedLinear">TimeBasedLinear</a>" : <i>[ &lt;a href=&#34;trafficroutingconfig-timebasedlinear.md&#34;&gt;TimeBasedLinear&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -19,9 +19,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#type" title="Type">Type</a>: <i>String</i>
 <a href="#timebasedcanary" title="TimeBasedCanary">TimeBasedCanary</a>: <i>
-      - <a href="trafficroutingconfig-timebasedcanary.md">TimeBasedCanary</a></i>
+      - &lt;a href=&#34;trafficroutingconfig-timebasedcanary.md&#34;&gt;TimeBasedCanary&lt;/a&gt;</i>
 <a href="#timebasedlinear" title="TimeBasedLinear">TimeBasedLinear</a>: <i>
-      - <a href="trafficroutingconfig-timebasedlinear.md">TimeBasedLinear</a></i>
+      - &lt;a href=&#34;trafficroutingconfig-timebasedlinear.md&#34;&gt;TimeBasedLinear&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -29,7 +29,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Type
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -37,16 +36,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### TimeBasedCanary
 
 _Required_: No
-
-_Type_: List of <a href="trafficroutingconfig-timebasedcanary.md">TimeBasedCanary</a>
+_Type_: List of &lt;a href=&#34;trafficroutingconfig-timebasedcanary.md&#34;&gt;TimeBasedCanary&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TimeBasedLinear
 
 _Required_: No
-
-_Type_: List of <a href="trafficroutingconfig-timebasedlinear.md">TimeBasedLinear</a>
+_Type_: List of &lt;a href=&#34;trafficroutingconfig-timebasedlinear.md&#34;&gt;TimeBasedLinear&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

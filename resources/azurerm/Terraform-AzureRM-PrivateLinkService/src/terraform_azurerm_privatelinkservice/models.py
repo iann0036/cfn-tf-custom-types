@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Alias: Optional[str]
     AutoApprovalSubscriptionIds: Optional[Sequence[str]]
     EnableProxyProtocol: Optional[bool]
-    Id: Optional[str]
     LoadBalancerFrontendIpConfigurationIds: Optional[Sequence[str]]
     Location: Optional[str]
     Name: Optional[str]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             Alias=json_data.get("Alias"),
             AutoApprovalSubscriptionIds=json_data.get("AutoApprovalSubscriptionIds"),
             EnableProxyProtocol=json_data.get("EnableProxyProtocol"),
-            Id=json_data.get("Id"),
             LoadBalancerFrontendIpConfigurationIds=json_data.get("LoadBalancerFrontendIpConfigurationIds"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),

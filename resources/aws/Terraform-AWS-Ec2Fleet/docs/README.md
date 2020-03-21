@@ -12,20 +12,20 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::Ec2Fleet",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#excesscapacityterminationpolicy" title="ExcessCapacityTerminationPolicy">ExcessCapacityTerminationPolicy</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#replaceunhealthyinstances" title="ReplaceUnhealthyInstances">ReplaceUnhealthyInstances</a>" : <i>Boolean</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
         "<a href="#terminateinstances" title="TerminateInstances">TerminateInstances</a>" : <i>Boolean</i>,
         "<a href="#terminateinstanceswithexpiration" title="TerminateInstancesWithExpiration">TerminateInstancesWithExpiration</a>" : <i>Boolean</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-        "<a href="#launchtemplateconfig" title="LaunchTemplateConfig">LaunchTemplateConfig</a>" : <i>[ <a href="launchtemplateconfig.md">LaunchTemplateConfig</a>, ... ]</i>,
-        "<a href="#ondemandoptions" title="OnDemandOptions">OnDemandOptions</a>" : <i>[ <a href="ondemandoptions.md">OnDemandOptions</a>, ... ]</i>,
-        "<a href="#spotoptions" title="SpotOptions">SpotOptions</a>" : <i>[ <a href="spotoptions.md">SpotOptions</a>, ... ]</i>,
-        "<a href="#targetcapacityspecification" title="TargetCapacitySpecification">TargetCapacitySpecification</a>" : <i>[ <a href="targetcapacityspecification.md">TargetCapacitySpecification</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
-        "<a href="#launchtemplatespecification" title="LaunchTemplateSpecification">LaunchTemplateSpecification</a>" : <i>[ <a href="launchtemplatespecification.md">LaunchTemplateSpecification</a>, ... ]</i>,
-        "<a href="#override" title="Override">Override</a>" : <i>[ <a href="override.md">Override</a>, ... ]</i>
+        "<a href="#launchtemplateconfig" title="LaunchTemplateConfig">LaunchTemplateConfig</a>" : <i>[ &lt;a href=&#34;launchtemplateconfig.md&#34;&gt;LaunchTemplateConfig&lt;/a&gt;, ... ]</i>,
+        "<a href="#ondemandoptions" title="OnDemandOptions">OnDemandOptions</a>" : <i>[ &lt;a href=&#34;ondemandoptions.md&#34;&gt;OnDemandOptions&lt;/a&gt;, ... ]</i>,
+        "<a href="#spotoptions" title="SpotOptions">SpotOptions</a>" : <i>[ &lt;a href=&#34;spotoptions.md&#34;&gt;SpotOptions&lt;/a&gt;, ... ]</i>,
+        "<a href="#targetcapacityspecification" title="TargetCapacitySpecification">TargetCapacitySpecification</a>" : <i>[ &lt;a href=&#34;targetcapacityspecification.md&#34;&gt;TargetCapacitySpecification&lt;/a&gt;, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
+        "<a href="#launchtemplatespecification" title="LaunchTemplateSpecification">LaunchTemplateSpecification</a>" : <i>[ &lt;a href=&#34;launchtemplatespecification.md&#34;&gt;LaunchTemplateSpecification&lt;/a&gt;, ... ]</i>,
+        "<a href="#override" title="Override">Override</a>" : <i>[ &lt;a href=&#34;override.md&#34;&gt;Override&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -35,32 +35,34 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::Ec2Fleet
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#excesscapacityterminationpolicy" title="ExcessCapacityTerminationPolicy">ExcessCapacityTerminationPolicy</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#replaceunhealthyinstances" title="ReplaceUnhealthyInstances">ReplaceUnhealthyInstances</a>: <i>Boolean</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
     <a href="#terminateinstances" title="TerminateInstances">TerminateInstances</a>: <i>Boolean</i>
     <a href="#terminateinstanceswithexpiration" title="TerminateInstancesWithExpiration">TerminateInstancesWithExpiration</a>: <i>Boolean</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
     <a href="#launchtemplateconfig" title="LaunchTemplateConfig">LaunchTemplateConfig</a>: <i>
-      - <a href="launchtemplateconfig.md">LaunchTemplateConfig</a></i>
+      - &lt;a href=&#34;launchtemplateconfig.md&#34;&gt;LaunchTemplateConfig&lt;/a&gt;</i>
     <a href="#ondemandoptions" title="OnDemandOptions">OnDemandOptions</a>: <i>
-      - <a href="ondemandoptions.md">OnDemandOptions</a></i>
+      - &lt;a href=&#34;ondemandoptions.md&#34;&gt;OnDemandOptions&lt;/a&gt;</i>
     <a href="#spotoptions" title="SpotOptions">SpotOptions</a>: <i>
-      - <a href="spotoptions.md">SpotOptions</a></i>
+      - &lt;a href=&#34;spotoptions.md&#34;&gt;SpotOptions&lt;/a&gt;</i>
     <a href="#targetcapacityspecification" title="TargetCapacitySpecification">TargetCapacitySpecification</a>: <i>
-      - <a href="targetcapacityspecification.md">TargetCapacitySpecification</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;targetcapacityspecification.md&#34;&gt;TargetCapacitySpecification&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     <a href="#launchtemplatespecification" title="LaunchTemplateSpecification">LaunchTemplateSpecification</a>: <i>
-      - <a href="launchtemplatespecification.md">LaunchTemplateSpecification</a></i>
+      - &lt;a href=&#34;launchtemplatespecification.md&#34;&gt;LaunchTemplateSpecification&lt;/a&gt;</i>
     <a href="#override" title="Override">Override</a>: <i>
-      - <a href="override.md">Override</a></i>
+      - &lt;a href=&#34;override.md&#34;&gt;Override&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
-#### ExcessCapacityTerminationPolicy
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
@@ -68,7 +70,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### ExcessCapacityTerminationPolicy
 
 _Required_: No
 
@@ -88,7 +90,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -120,7 +122,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="launchtemplateconfig.md">LaunchTemplateConfig</a>
+_Type_: List of &lt;a href=&#34;launchtemplateconfig.md&#34;&gt;LaunchTemplateConfig&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -128,7 +130,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="ondemandoptions.md">OnDemandOptions</a>
+_Type_: List of &lt;a href=&#34;ondemandoptions.md&#34;&gt;OnDemandOptions&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -136,7 +138,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="spotoptions.md">SpotOptions</a>
+_Type_: List of &lt;a href=&#34;spotoptions.md&#34;&gt;SpotOptions&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -144,7 +146,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="targetcapacityspecification.md">TargetCapacitySpecification</a>
+_Type_: List of &lt;a href=&#34;targetcapacityspecification.md&#34;&gt;TargetCapacitySpecification&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -152,7 +154,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -160,7 +162,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="launchtemplatespecification.md">LaunchTemplateSpecification</a>
+_Type_: List of &lt;a href=&#34;launchtemplatespecification.md&#34;&gt;LaunchTemplateSpecification&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -168,7 +170,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="override.md">Override</a>
+_Type_: List of &lt;a href=&#34;override.md&#34;&gt;Override&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

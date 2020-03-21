@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Color: Optional[str]
     Comment: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Vsys: Optional[str]
 
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Color=json_data.get("Color"),
             Comment=json_data.get("Comment"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Vsys=json_data.get("Vsys"),
         )

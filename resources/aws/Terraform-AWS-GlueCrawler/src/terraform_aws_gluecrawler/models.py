@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     Configuration: Optional[str]
     DatabaseName: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Role: Optional[str]
     Schedule: Optional[str]
@@ -68,7 +67,6 @@ class ResourceModel(BaseResourceModel):
             Configuration=json_data.get("Configuration"),
             DatabaseName=json_data.get("DatabaseName"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Role=json_data.get("Role"),
             Schedule=json_data.get("Schedule"),

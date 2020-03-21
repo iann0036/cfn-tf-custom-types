@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     Eula: Optional[str]
     GalleryName: Optional[str]
-    Id: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
     OsType: Optional[str]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             Eula=json_data.get("Eula"),
             GalleryName=json_data.get("GalleryName"),
-            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),
             OsType=json_data.get("OsType"),

@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DisplayName: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     LifecycleSubState: Optional[str]
     ShapeName: Optional[str]
     State: Optional[str]
@@ -67,7 +66,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DisplayName=json_data.get("DisplayName"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             LifecycleSubState=json_data.get("LifecycleSubState"),
             ShapeName=json_data.get("ShapeName"),
             State=json_data.get("State"),

@@ -45,7 +45,6 @@ class ResourceModel(BaseResourceModel):
     Enable: Optional[bool]
     ExtendedCommunityType: Optional[str]
     ExtendedCommunityValue: Optional[str]
-    Id: Optional[str]
     LocalPreference: Optional[str]
     Med: Optional[str]
     Name: Optional[str]
@@ -74,7 +73,6 @@ class ResourceModel(BaseResourceModel):
             Enable=json_data.get("Enable"),
             ExtendedCommunityType=json_data.get("ExtendedCommunityType"),
             ExtendedCommunityValue=json_data.get("ExtendedCommunityValue"),
-            Id=json_data.get("Id"),
             LocalPreference=json_data.get("LocalPreference"),
             Med=json_data.get("Med"),
             Name=json_data.get("Name"),

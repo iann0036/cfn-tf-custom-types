@@ -12,11 +12,28 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::DbSnapshot",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#allocatedstorage" title="AllocatedStorage">AllocatedStorage</a>" : <i>Double</i>,
+        "<a href="#availabilityzone" title="AvailabilityZone">AvailabilityZone</a>" : <i>String</i>,
         "<a href="#dbinstanceidentifier" title="DbInstanceIdentifier">DbInstanceIdentifier</a>" : <i>String</i>,
+        "<a href="#dbsnapshotarn" title="DbSnapshotArn">DbSnapshotArn</a>" : <i>String</i>,
         "<a href="#dbsnapshotidentifier" title="DbSnapshotIdentifier">DbSnapshotIdentifier</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
+        "<a href="#encrypted" title="Encrypted">Encrypted</a>" : <i>Boolean</i>,
+        "<a href="#engine" title="Engine">Engine</a>" : <i>String</i>,
+        "<a href="#engineversion" title="EngineVersion">EngineVersion</a>" : <i>String</i>,
+        "<a href="#iops" title="Iops">Iops</a>" : <i>Double</i>,
+        "<a href="#kmskeyid" title="KmsKeyId">KmsKeyId</a>" : <i>String</i>,
+        "<a href="#licensemodel" title="LicenseModel">LicenseModel</a>" : <i>String</i>,
+        "<a href="#optiongroupname" title="OptionGroupName">OptionGroupName</a>" : <i>String</i>,
+        "<a href="#port" title="Port">Port</a>" : <i>Double</i>,
+        "<a href="#snapshottype" title="SnapshotType">SnapshotType</a>" : <i>String</i>,
+        "<a href="#sourcedbsnapshotidentifier" title="SourceDbSnapshotIdentifier">SourceDbSnapshotIdentifier</a>" : <i>String</i>,
+        "<a href="#sourceregion" title="SourceRegion">SourceRegion</a>" : <i>String</i>,
+        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
+        "<a href="#storagetype" title="StorageType">StorageType</a>" : <i>String</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#vpcid" title="VpcId">VpcId</a>" : <i>String</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     }
 }
 </pre>
@@ -26,19 +43,70 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::DbSnapshot
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#allocatedstorage" title="AllocatedStorage">AllocatedStorage</a>: <i>Double</i>
+    <a href="#availabilityzone" title="AvailabilityZone">AvailabilityZone</a>: <i>String</i>
     <a href="#dbinstanceidentifier" title="DbInstanceIdentifier">DbInstanceIdentifier</a>: <i>String</i>
+    <a href="#dbsnapshotarn" title="DbSnapshotArn">DbSnapshotArn</a>: <i>String</i>
     <a href="#dbsnapshotidentifier" title="DbSnapshotIdentifier">DbSnapshotIdentifier</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#encrypted" title="Encrypted">Encrypted</a>: <i>Boolean</i>
+    <a href="#engine" title="Engine">Engine</a>: <i>String</i>
+    <a href="#engineversion" title="EngineVersion">EngineVersion</a>: <i>String</i>
+    <a href="#iops" title="Iops">Iops</a>: <i>Double</i>
+    <a href="#kmskeyid" title="KmsKeyId">KmsKeyId</a>: <i>String</i>
+    <a href="#licensemodel" title="LicenseModel">LicenseModel</a>: <i>String</i>
+    <a href="#optiongroupname" title="OptionGroupName">OptionGroupName</a>: <i>String</i>
+    <a href="#port" title="Port">Port</a>: <i>Double</i>
+    <a href="#snapshottype" title="SnapshotType">SnapshotType</a>: <i>String</i>
+    <a href="#sourcedbsnapshotidentifier" title="SourceDbSnapshotIdentifier">SourceDbSnapshotIdentifier</a>: <i>String</i>
+    <a href="#sourceregion" title="SourceRegion">SourceRegion</a>: <i>String</i>
+    <a href="#status" title="Status">Status</a>: <i>String</i>
+    <a href="#storagetype" title="StorageType">StorageType</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+    <a href="#vpcid" title="VpcId">VpcId</a>: <i>String</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### AllocatedStorage
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### AvailabilityZone
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### DbInstanceIdentifier
 
 _Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### DbSnapshotArn
+
+_Required_: No
 
 _Type_: String
 
@@ -52,7 +120,103 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### Encrypted
+
+_Required_: No
+
+_Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Engine
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### EngineVersion
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Iops
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### KmsKeyId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### LicenseModel
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### OptionGroupName
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Port
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### SnapshotType
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### SourceDbSnapshotIdentifier
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### SourceRegion
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Status
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### StorageType
 
 _Required_: No
 
@@ -64,7 +228,15 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### VpcId
+
+_Required_: No
+
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -72,7 +244,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -94,69 +266,69 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AllocatedStorage
 
-Returns the <code>AllocatedStorage</code> value.
+Returns the &lt;code&gt;AllocatedStorage&lt;/code&gt; value.
 
 #### AvailabilityZone
 
-Returns the <code>AvailabilityZone</code> value.
+Returns the &lt;code&gt;AvailabilityZone&lt;/code&gt; value.
 
 #### DbSnapshotArn
 
-Returns the <code>DbSnapshotArn</code> value.
+Returns the &lt;code&gt;DbSnapshotArn&lt;/code&gt; value.
 
 #### Encrypted
 
-Returns the <code>Encrypted</code> value.
+Returns the &lt;code&gt;Encrypted&lt;/code&gt; value.
 
 #### Engine
 
-Returns the <code>Engine</code> value.
+Returns the &lt;code&gt;Engine&lt;/code&gt; value.
 
 #### EngineVersion
 
-Returns the <code>EngineVersion</code> value.
+Returns the &lt;code&gt;EngineVersion&lt;/code&gt; value.
 
 #### Iops
 
-Returns the <code>Iops</code> value.
+Returns the &lt;code&gt;Iops&lt;/code&gt; value.
 
 #### KmsKeyId
 
-Returns the <code>KmsKeyId</code> value.
+Returns the &lt;code&gt;KmsKeyId&lt;/code&gt; value.
 
 #### LicenseModel
 
-Returns the <code>LicenseModel</code> value.
+Returns the &lt;code&gt;LicenseModel&lt;/code&gt; value.
 
 #### OptionGroupName
 
-Returns the <code>OptionGroupName</code> value.
+Returns the &lt;code&gt;OptionGroupName&lt;/code&gt; value.
 
 #### Port
 
-Returns the <code>Port</code> value.
+Returns the &lt;code&gt;Port&lt;/code&gt; value.
 
 #### SnapshotType
 
-Returns the <code>SnapshotType</code> value.
+Returns the &lt;code&gt;SnapshotType&lt;/code&gt; value.
 
 #### SourceDbSnapshotIdentifier
 
-Returns the <code>SourceDbSnapshotIdentifier</code> value.
+Returns the &lt;code&gt;SourceDbSnapshotIdentifier&lt;/code&gt; value.
 
 #### SourceRegion
 
-Returns the <code>SourceRegion</code> value.
+Returns the &lt;code&gt;SourceRegion&lt;/code&gt; value.
 
 #### Status
 
-Returns the <code>Status</code> value.
+Returns the &lt;code&gt;Status&lt;/code&gt; value.
 
 #### StorageType
 
-Returns the <code>StorageType</code> value.
+Returns the &lt;code&gt;StorageType&lt;/code&gt; value.
 
 #### VpcId
 
-Returns the <code>VpcId</code> value.
+Returns the &lt;code&gt;VpcId&lt;/code&gt; value.
 

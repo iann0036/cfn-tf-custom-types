@@ -12,10 +12,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OCI::MarketplaceListingPackageAgreement",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#agreementid" title="AgreementId">AgreementId</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#author" title="Author">Author</a>" : <i>String</i>,
+        "<a href="#compartmentid" title="CompartmentId">CompartmentId</a>" : <i>String</i>,
+        "<a href="#contenturl" title="ContentUrl">ContentUrl</a>" : <i>String</i>,
         "<a href="#listingid" title="ListingId">ListingId</a>" : <i>String</i>,
         "<a href="#packageversion" title="PackageVersion">PackageVersion</a>" : <i>String</i>,
+        "<a href="#prompt" title="Prompt">Prompt</a>" : <i>String</i>,
+        "<a href="#signature" title="Signature">Signature</a>" : <i>String</i>
     }
 }
 </pre>
@@ -25,13 +30,28 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OCI::MarketplaceListingPackageAgreement
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#agreementid" title="AgreementId">AgreementId</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#author" title="Author">Author</a>: <i>String</i>
+    <a href="#compartmentid" title="CompartmentId">CompartmentId</a>: <i>String</i>
+    <a href="#contenturl" title="ContentUrl">ContentUrl</a>: <i>String</i>
     <a href="#listingid" title="ListingId">ListingId</a>: <i>String</i>
     <a href="#packageversion" title="PackageVersion">PackageVersion</a>: <i>String</i>
+    <a href="#prompt" title="Prompt">Prompt</a>: <i>String</i>
+    <a href="#signature" title="Signature">Signature</a>: <i>String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AgreementId
 
@@ -41,7 +61,23 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### Author
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### CompartmentId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ContentUrl
 
 _Required_: No
 
@@ -65,6 +101,22 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### Prompt
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Signature
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 ## Return Values
 
 ### Ref
@@ -83,21 +135,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Author
 
-Returns the <code>Author</code> value.
+Returns the &lt;code&gt;Author&lt;/code&gt; value.
 
 #### CompartmentId
 
-Returns the <code>CompartmentId</code> value.
+Returns the &lt;code&gt;CompartmentId&lt;/code&gt; value.
 
 #### ContentUrl
 
-Returns the <code>ContentUrl</code> value.
+Returns the &lt;code&gt;ContentUrl&lt;/code&gt; value.
 
 #### Prompt
 
-Returns the <code>Prompt</code> value.
+Returns the &lt;code&gt;Prompt&lt;/code&gt; value.
 
 #### Signature
 
-Returns the <code>Signature</code> value.
+Returns the &lt;code&gt;Signature&lt;/code&gt; value.
 

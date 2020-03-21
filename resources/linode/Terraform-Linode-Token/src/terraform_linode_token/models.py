@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Created: Optional[str]
     Expiry: Optional[str]
-    Id: Optional[str]
     Label: Optional[str]
     Scopes: Optional[str]
     Token: Optional[str]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Created=json_data.get("Created"),
             Expiry=json_data.get("Expiry"),
-            Id=json_data.get("Id"),
             Label=json_data.get("Label"),
             Scopes=json_data.get("Scopes"),
             Token=json_data.get("Token"),

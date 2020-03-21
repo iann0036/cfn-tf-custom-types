@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     CreatedDate: Optional[str]
     Description: Optional[str]
     Filename: Optional[str]
-    Id: Optional[str]
     LayerArn: Optional[str]
     LayerName: Optional[str]
     LicenseInfo: Optional[str]
@@ -66,7 +65,6 @@ class ResourceModel(BaseResourceModel):
             CreatedDate=json_data.get("CreatedDate"),
             Description=json_data.get("Description"),
             Filename=json_data.get("Filename"),
-            Id=json_data.get("Id"),
             LayerArn=json_data.get("LayerArn"),
             LayerName=json_data.get("LayerName"),
             LicenseInfo=json_data.get("LicenseInfo"),

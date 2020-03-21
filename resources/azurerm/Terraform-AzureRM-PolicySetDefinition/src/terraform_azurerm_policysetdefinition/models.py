@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     DisplayName: Optional[str]
-    Id: Optional[str]
     ManagementGroupId: Optional[str]
     Metadata: Optional[str]
     Name: Optional[str]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             DisplayName=json_data.get("DisplayName"),
-            Id=json_data.get("Id"),
             ManagementGroupId=json_data.get("ManagementGroupId"),
             Metadata=json_data.get("Metadata"),
             Name=json_data.get("Name"),

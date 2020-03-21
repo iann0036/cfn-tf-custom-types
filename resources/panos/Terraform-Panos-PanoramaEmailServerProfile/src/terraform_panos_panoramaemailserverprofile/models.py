@@ -44,7 +44,6 @@ class ResourceModel(BaseResourceModel):
     EscapedCharacters: Optional[str]
     GtpFormat: Optional[str]
     HipMatchFormat: Optional[str]
-    Id: Optional[str]
     IptagFormat: Optional[str]
     Name: Optional[str]
     SctpFormat: Optional[str]
@@ -77,7 +76,6 @@ class ResourceModel(BaseResourceModel):
             EscapedCharacters=json_data.get("EscapedCharacters"),
             GtpFormat=json_data.get("GtpFormat"),
             HipMatchFormat=json_data.get("HipMatchFormat"),
-            Id=json_data.get("Id"),
             IptagFormat=json_data.get("IptagFormat"),
             Name=json_data.get("Name"),
             SctpFormat=json_data.get("SctpFormat"),

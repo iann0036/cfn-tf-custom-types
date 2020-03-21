@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     HubToVitualNetworkTrafficAllowed: Optional[bool]
-    Id: Optional[str]
     InternetSecurityEnabled: Optional[bool]
     Name: Optional[str]
     RemoteVirtualNetworkId: Optional[str]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             HubToVitualNetworkTrafficAllowed=json_data.get("HubToVitualNetworkTrafficAllowed"),
-            Id=json_data.get("Id"),
             InternetSecurityEnabled=json_data.get("InternetSecurityEnabled"),
             Name=json_data.get("Name"),
             RemoteVirtualNetworkId=json_data.get("RemoteVirtualNetworkId"),

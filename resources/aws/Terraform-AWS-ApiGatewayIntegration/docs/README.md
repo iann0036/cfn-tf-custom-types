@@ -12,6 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::ApiGatewayIntegration",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#cachekeyparameters" title="CacheKeyParameters">CacheKeyParameters</a>" : <i>[ String, ... ]</i>,
         "<a href="#cachenamespace" title="CacheNamespace">CacheNamespace</a>" : <i>String</i>,
         "<a href="#connectionid" title="ConnectionId">ConnectionId</a>" : <i>String</i>,
@@ -19,12 +20,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#contenthandling" title="ContentHandling">ContentHandling</a>" : <i>String</i>,
         "<a href="#credentials" title="Credentials">Credentials</a>" : <i>String</i>,
         "<a href="#httpmethod" title="HttpMethod">HttpMethod</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#integrationhttpmethod" title="IntegrationHttpMethod">IntegrationHttpMethod</a>" : <i>String</i>,
         "<a href="#passthroughbehavior" title="PassthroughBehavior">PassthroughBehavior</a>" : <i>String</i>,
-        "<a href="#requestparameters" title="RequestParameters">RequestParameters</a>" : <i>[ <a href="requestparameters.md">RequestParameters</a>, ... ]</i>,
+        "<a href="#requestparameters" title="RequestParameters">RequestParameters</a>" : <i>[ &lt;a href=&#34;requestparameters.md&#34;&gt;RequestParameters&lt;/a&gt;, ... ]</i>,
         "<a href="#requestparametersinjson" title="RequestParametersInJson">RequestParametersInJson</a>" : <i>String</i>,
-        "<a href="#requesttemplates" title="RequestTemplates">RequestTemplates</a>" : <i>[ <a href="requesttemplates.md">RequestTemplates</a>, ... ]</i>,
+        "<a href="#requesttemplates" title="RequestTemplates">RequestTemplates</a>" : <i>[ &lt;a href=&#34;requesttemplates.md&#34;&gt;RequestTemplates&lt;/a&gt;, ... ]</i>,
         "<a href="#resourceid" title="ResourceId">ResourceId</a>" : <i>String</i>,
         "<a href="#restapiid" title="RestApiId">RestApiId</a>" : <i>String</i>,
         "<a href="#timeoutmilliseconds" title="TimeoutMilliseconds">TimeoutMilliseconds</a>" : <i>Double</i>,
@@ -39,6 +39,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::ApiGatewayIntegration
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#cachekeyparameters" title="CacheKeyParameters">CacheKeyParameters</a>: <i>
       - String</i>
     <a href="#cachenamespace" title="CacheNamespace">CacheNamespace</a>: <i>String</i>
@@ -47,14 +48,13 @@ Properties:
     <a href="#contenthandling" title="ContentHandling">ContentHandling</a>: <i>String</i>
     <a href="#credentials" title="Credentials">Credentials</a>: <i>String</i>
     <a href="#httpmethod" title="HttpMethod">HttpMethod</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#integrationhttpmethod" title="IntegrationHttpMethod">IntegrationHttpMethod</a>: <i>String</i>
     <a href="#passthroughbehavior" title="PassthroughBehavior">PassthroughBehavior</a>: <i>String</i>
     <a href="#requestparameters" title="RequestParameters">RequestParameters</a>: <i>
-      - <a href="requestparameters.md">RequestParameters</a></i>
+      - &lt;a href=&#34;requestparameters.md&#34;&gt;RequestParameters&lt;/a&gt;</i>
     <a href="#requestparametersinjson" title="RequestParametersInJson">RequestParametersInJson</a>: <i>String</i>
     <a href="#requesttemplates" title="RequestTemplates">RequestTemplates</a>: <i>
-      - <a href="requesttemplates.md">RequestTemplates</a></i>
+      - &lt;a href=&#34;requesttemplates.md&#34;&gt;RequestTemplates&lt;/a&gt;</i>
     <a href="#resourceid" title="ResourceId">ResourceId</a>: <i>String</i>
     <a href="#restapiid" title="RestApiId">RestApiId</a>: <i>String</i>
     <a href="#timeoutmilliseconds" title="TimeoutMilliseconds">TimeoutMilliseconds</a>: <i>Double</i>
@@ -63,6 +63,16 @@ Properties:
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CacheKeyParameters
 
@@ -120,14 +130,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### IntegrationHttpMethod
 
 _Required_: No
@@ -148,7 +150,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="requestparameters.md">RequestParameters</a>
+_Type_: List of &lt;a href=&#34;requestparameters.md&#34;&gt;RequestParameters&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -164,7 +166,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="requesttemplates.md">RequestTemplates</a>
+_Type_: List of &lt;a href=&#34;requesttemplates.md&#34;&gt;RequestTemplates&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     DiskSize: Optional[float]
     DiskType: Optional[float]
     EipMax: Optional[float]
-    Id: Optional[str]
     IoMax: Optional[float]
     Name: Optional[str]
     PaidType: Optional[str]
@@ -64,7 +63,6 @@ class ResourceModel(BaseResourceModel):
             DiskSize=json_data.get("DiskSize"),
             DiskType=json_data.get("DiskType"),
             EipMax=json_data.get("EipMax"),
-            Id=json_data.get("Id"),
             IoMax=json_data.get("IoMax"),
             Name=json_data.get("Name"),
             PaidType=json_data.get("PaidType"),

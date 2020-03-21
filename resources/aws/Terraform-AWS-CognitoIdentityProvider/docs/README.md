@@ -12,10 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::CognitoIdentityProvider",
     "Properties" : {
-        "<a href="#attributemapping" title="AttributeMapping">AttributeMapping</a>" : <i>[ <a href="attributemapping.md">AttributeMapping</a>, ... ]</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#attributemapping" title="AttributeMapping">AttributeMapping</a>" : <i>[ &lt;a href=&#34;attributemapping.md&#34;&gt;AttributeMapping&lt;/a&gt;, ... ]</i>,
         "<a href="#idpidentifiers" title="IdpIdentifiers">IdpIdentifiers</a>" : <i>[ String, ... ]</i>,
-        "<a href="#providerdetails" title="ProviderDetails">ProviderDetails</a>" : <i>[ <a href="providerdetails.md">ProviderDetails</a>, ... ]</i>,
+        "<a href="#providerdetails" title="ProviderDetails">ProviderDetails</a>" : <i>[ &lt;a href=&#34;providerdetails.md&#34;&gt;ProviderDetails&lt;/a&gt;, ... ]</i>,
         "<a href="#providername" title="ProviderName">ProviderName</a>" : <i>String</i>,
         "<a href="#providertype" title="ProviderType">ProviderType</a>" : <i>String</i>,
         "<a href="#userpoolid" title="UserPoolId">UserPoolId</a>" : <i>String</i>
@@ -28,13 +28,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::CognitoIdentityProvider
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#attributemapping" title="AttributeMapping">AttributeMapping</a>: <i>
-      - <a href="attributemapping.md">AttributeMapping</a></i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+      - &lt;a href=&#34;attributemapping.md&#34;&gt;AttributeMapping&lt;/a&gt;</i>
     <a href="#idpidentifiers" title="IdpIdentifiers">IdpIdentifiers</a>: <i>
       - String</i>
     <a href="#providerdetails" title="ProviderDetails">ProviderDetails</a>: <i>
-      - <a href="providerdetails.md">ProviderDetails</a></i>
+      - &lt;a href=&#34;providerdetails.md&#34;&gt;ProviderDetails&lt;/a&gt;</i>
     <a href="#providername" title="ProviderName">ProviderName</a>: <i>String</i>
     <a href="#providertype" title="ProviderType">ProviderType</a>: <i>String</i>
     <a href="#userpoolid" title="UserPoolId">UserPoolId</a>: <i>String</i>
@@ -42,19 +42,21 @@ Properties:
 
 ## Properties
 
-#### AttributeMapping
+#### tfcfnid
 
-_Required_: No
-
-_Type_: List of <a href="attributemapping.md">AttributeMapping</a>
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
 _Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### AttributeMapping
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;attributemapping.md&#34;&gt;AttributeMapping&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -70,7 +72,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: Yes
 
-_Type_: List of <a href="providerdetails.md">ProviderDetails</a>
+_Type_: List of &lt;a href=&#34;providerdetails.md&#34;&gt;ProviderDetails&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

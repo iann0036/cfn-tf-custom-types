@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     ClientToken: Optional[str]
     DisplayName: Optional[str]
     ExplicitMaxTtl: Optional[str]
-    Id: Optional[str]
     LeaseDuration: Optional[float]
     LeaseStarted: Optional[str]
     NoDefaultPolicy: Optional[bool]
@@ -68,7 +67,6 @@ class ResourceModel(BaseResourceModel):
             ClientToken=json_data.get("ClientToken"),
             DisplayName=json_data.get("DisplayName"),
             ExplicitMaxTtl=json_data.get("ExplicitMaxTtl"),
-            Id=json_data.get("Id"),
             LeaseDuration=json_data.get("LeaseDuration"),
             LeaseStarted=json_data.get("LeaseStarted"),
             NoDefaultPolicy=json_data.get("NoDefaultPolicy"),

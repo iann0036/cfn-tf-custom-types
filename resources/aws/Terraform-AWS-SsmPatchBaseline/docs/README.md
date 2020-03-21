@@ -12,17 +12,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::SsmPatchBaseline",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#approvedpatches" title="ApprovedPatches">ApprovedPatches</a>" : <i>[ String, ... ]</i>,
         "<a href="#approvedpatchescompliancelevel" title="ApprovedPatchesComplianceLevel">ApprovedPatchesComplianceLevel</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#operatingsystem" title="OperatingSystem">OperatingSystem</a>" : <i>String</i>,
         "<a href="#rejectedpatches" title="RejectedPatches">RejectedPatches</a>" : <i>[ String, ... ]</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
-        "<a href="#approvalrule" title="ApprovalRule">ApprovalRule</a>" : <i>[ <a href="approvalrule.md">ApprovalRule</a>, ... ]</i>,
-        "<a href="#globalfilter" title="GlobalFilter">GlobalFilter</a>" : <i>[ <a href="globalfilter.md">GlobalFilter</a>, ... ]</i>,
-        "<a href="#patchfilter" title="PatchFilter">PatchFilter</a>" : <i>[ <a href="patchfilter.md">PatchFilter</a>, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#approvalrule" title="ApprovalRule">ApprovalRule</a>" : <i>[ &lt;a href=&#34;approvalrule.md&#34;&gt;ApprovalRule&lt;/a&gt;, ... ]</i>,
+        "<a href="#globalfilter" title="GlobalFilter">GlobalFilter</a>" : <i>[ &lt;a href=&#34;globalfilter.md&#34;&gt;GlobalFilter&lt;/a&gt;, ... ]</i>,
+        "<a href="#patchfilter" title="PatchFilter">PatchFilter</a>" : <i>[ &lt;a href=&#34;patchfilter.md&#34;&gt;PatchFilter&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -32,26 +32,36 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::SsmPatchBaseline
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#approvedpatches" title="ApprovedPatches">ApprovedPatches</a>: <i>
       - String</i>
     <a href="#approvedpatchescompliancelevel" title="ApprovedPatchesComplianceLevel">ApprovedPatchesComplianceLevel</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#operatingsystem" title="OperatingSystem">OperatingSystem</a>: <i>String</i>
     <a href="#rejectedpatches" title="RejectedPatches">RejectedPatches</a>: <i>
       - String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
     <a href="#approvalrule" title="ApprovalRule">ApprovalRule</a>: <i>
-      - <a href="approvalrule.md">ApprovalRule</a></i>
+      - &lt;a href=&#34;approvalrule.md&#34;&gt;ApprovalRule&lt;/a&gt;</i>
     <a href="#globalfilter" title="GlobalFilter">GlobalFilter</a>: <i>
-      - <a href="globalfilter.md">GlobalFilter</a></i>
+      - &lt;a href=&#34;globalfilter.md&#34;&gt;GlobalFilter&lt;/a&gt;</i>
     <a href="#patchfilter" title="PatchFilter">PatchFilter</a>: <i>
-      - <a href="patchfilter.md">PatchFilter</a></i>
+      - &lt;a href=&#34;patchfilter.md&#34;&gt;PatchFilter&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ApprovedPatches
 
@@ -70,14 +80,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 
@@ -113,7 +115,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -121,7 +123,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="approvalrule.md">ApprovalRule</a>
+_Type_: List of &lt;a href=&#34;approvalrule.md&#34;&gt;ApprovalRule&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -129,7 +131,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="globalfilter.md">GlobalFilter</a>
+_Type_: List of &lt;a href=&#34;globalfilter.md&#34;&gt;GlobalFilter&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -137,7 +139,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="patchfilter.md">PatchFilter</a>
+_Type_: List of &lt;a href=&#34;patchfilter.md&#34;&gt;PatchFilter&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

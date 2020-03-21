@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Data: Optional[Sequence["_Data"]]
     Event: Optional[str]
-    Id: Optional[str]
     SiteId: Optional[str]
     Type: Optional[str]
 
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Data=json_data.get("Data"),
             Event=json_data.get("Event"),
-            Id=json_data.get("Id"),
             SiteId=json_data.get("SiteId"),
             Type=json_data.get("Type"),
         )

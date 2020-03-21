@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AvailabilityZone: Optional[str]
     CreateTime: Optional[str]
-    Id: Optional[str]
     Ip: Optional[str]
     MemSize: Optional[float]
     Name: Optional[str]
@@ -63,7 +62,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AvailabilityZone=json_data.get("AvailabilityZone"),
             CreateTime=json_data.get("CreateTime"),
-            Id=json_data.get("Id"),
             Ip=json_data.get("Ip"),
             MemSize=json_data.get("MemSize"),
             Name=json_data.get("Name"),

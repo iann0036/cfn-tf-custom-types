@@ -12,11 +12,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::PvtzZone",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#creationtime" title="CreationTime">CreationTime</a>" : <i>String</i>,
+        "<a href="#isptr" title="IsPtr">IsPtr</a>" : <i>Boolean</i>,
         "<a href="#lang" title="Lang">Lang</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#proxypattern" title="ProxyPattern">ProxyPattern</a>" : <i>String</i>,
+        "<a href="#recordcount" title="RecordCount">RecordCount</a>" : <i>Double</i>,
         "<a href="#remark" title="Remark">Remark</a>" : <i>String</i>,
+        "<a href="#updatetime" title="UpdateTime">UpdateTime</a>" : <i>String</i>,
         "<a href="#userclientip" title="UserClientIp">UserClientIp</a>" : <i>String</i>
     }
 }
@@ -27,21 +31,43 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::PvtzZone
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#creationtime" title="CreationTime">CreationTime</a>: <i>String</i>
+    <a href="#isptr" title="IsPtr">IsPtr</a>: <i>Boolean</i>
     <a href="#lang" title="Lang">Lang</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#proxypattern" title="ProxyPattern">ProxyPattern</a>: <i>String</i>
+    <a href="#recordcount" title="RecordCount">RecordCount</a>: <i>Double</i>
     <a href="#remark" title="Remark">Remark</a>: <i>String</i>
+    <a href="#updatetime" title="UpdateTime">UpdateTime</a>: <i>String</i>
     <a href="#userclientip" title="UserClientIp">UserClientIp</a>: <i>String</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
 _Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### CreationTime
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### IsPtr
+
+_Required_: No
+
+_Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -69,7 +95,23 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### RecordCount
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Remark
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### UpdateTime
 
 _Required_: No
 
@@ -103,17 +145,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreationTime
 
-Returns the <code>CreationTime</code> value.
+Returns the &lt;code&gt;CreationTime&lt;/code&gt; value.
 
 #### IsPtr
 
-Returns the <code>IsPtr</code> value.
+Returns the &lt;code&gt;IsPtr&lt;/code&gt; value.
 
 #### RecordCount
 
-Returns the <code>RecordCount</code> value.
+Returns the &lt;code&gt;RecordCount&lt;/code&gt; value.
 
 #### UpdateTime
 
-Returns the <code>UpdateTime</code> value.
+Returns the &lt;code&gt;UpdateTime&lt;/code&gt; value.
 

@@ -12,27 +12,27 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Datadog::LogsCustomPipeline",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#isenabled" title="IsEnabled">IsEnabled</a>" : <i>Boolean</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#filter" title="Filter">Filter</a>" : <i>[ <a href="filter.md">Filter</a>, ... ]</i>,
-        "<a href="#processor" title="Processor">Processor</a>" : <i>[ <a href="processor.md">Processor</a>, ... ]</i>,
-        "<a href="#arithmeticprocessor" title="ArithmeticProcessor">ArithmeticProcessor</a>" : <i>[ <a href="arithmeticprocessor.md">ArithmeticProcessor</a>, ... ]</i>,
-        "<a href="#attributeremapper" title="AttributeRemapper">AttributeRemapper</a>" : <i>[ <a href="attributeremapper.md">AttributeRemapper</a>, ... ]</i>,
-        "<a href="#categoryprocessor" title="CategoryProcessor">CategoryProcessor</a>" : <i>[ <a href="categoryprocessor.md">CategoryProcessor</a>, ... ]</i>,
-        "<a href="#dateremapper" title="DateRemapper">DateRemapper</a>" : <i>[ <a href="dateremapper.md">DateRemapper</a>, ... ]</i>,
-        "<a href="#geoipparser" title="GeoIpParser">GeoIpParser</a>" : <i>[ <a href="geoipparser.md">GeoIpParser</a>, ... ]</i>,
-        "<a href="#grokparser" title="GrokParser">GrokParser</a>" : <i>[ <a href="grokparser.md">GrokParser</a>, ... ]</i>,
-        "<a href="#messageremapper" title="MessageRemapper">MessageRemapper</a>" : <i>[ <a href="messageremapper.md">MessageRemapper</a>, ... ]</i>,
-        "<a href="#pipeline" title="Pipeline">Pipeline</a>" : <i>[ <a href="pipeline.md">Pipeline</a>, ... ]</i>,
-        "<a href="#serviceremapper" title="ServiceRemapper">ServiceRemapper</a>" : <i>[ <a href="serviceremapper.md">ServiceRemapper</a>, ... ]</i>,
-        "<a href="#statusremapper" title="StatusRemapper">StatusRemapper</a>" : <i>[ <a href="statusremapper.md">StatusRemapper</a>, ... ]</i>,
-        "<a href="#stringbuilderprocessor" title="StringBuilderProcessor">StringBuilderProcessor</a>" : <i>[ <a href="stringbuilderprocessor.md">StringBuilderProcessor</a>, ... ]</i>,
-        "<a href="#traceidremapper" title="TraceIdRemapper">TraceIdRemapper</a>" : <i>[ <a href="traceidremapper.md">TraceIdRemapper</a>, ... ]</i>,
-        "<a href="#urlparser" title="UrlParser">UrlParser</a>" : <i>[ <a href="urlparser.md">UrlParser</a>, ... ]</i>,
-        "<a href="#useragentparser" title="UserAgentParser">UserAgentParser</a>" : <i>[ <a href="useragentparser.md">UserAgentParser</a>, ... ]</i>,
-        "<a href="#category" title="Category">Category</a>" : <i>[ <a href="category.md">Category</a>, ... ]</i>,
-        "<a href="#grok" title="Grok">Grok</a>" : <i>[ <a href="grok.md">Grok</a>, ... ]</i>
+        "<a href="#filter" title="Filter">Filter</a>" : <i>[ &lt;a href=&#34;filter.md&#34;&gt;Filter&lt;/a&gt;, ... ]</i>,
+        "<a href="#processor" title="Processor">Processor</a>" : <i>[ &lt;a href=&#34;processor.md&#34;&gt;Processor&lt;/a&gt;, ... ]</i>,
+        "<a href="#arithmeticprocessor" title="ArithmeticProcessor">ArithmeticProcessor</a>" : <i>[ &lt;a href=&#34;arithmeticprocessor.md&#34;&gt;ArithmeticProcessor&lt;/a&gt;, ... ]</i>,
+        "<a href="#attributeremapper" title="AttributeRemapper">AttributeRemapper</a>" : <i>[ &lt;a href=&#34;attributeremapper.md&#34;&gt;AttributeRemapper&lt;/a&gt;, ... ]</i>,
+        "<a href="#categoryprocessor" title="CategoryProcessor">CategoryProcessor</a>" : <i>[ &lt;a href=&#34;categoryprocessor.md&#34;&gt;CategoryProcessor&lt;/a&gt;, ... ]</i>,
+        "<a href="#dateremapper" title="DateRemapper">DateRemapper</a>" : <i>[ &lt;a href=&#34;dateremapper.md&#34;&gt;DateRemapper&lt;/a&gt;, ... ]</i>,
+        "<a href="#geoipparser" title="GeoIpParser">GeoIpParser</a>" : <i>[ &lt;a href=&#34;geoipparser.md&#34;&gt;GeoIpParser&lt;/a&gt;, ... ]</i>,
+        "<a href="#grokparser" title="GrokParser">GrokParser</a>" : <i>[ &lt;a href=&#34;grokparser.md&#34;&gt;GrokParser&lt;/a&gt;, ... ]</i>,
+        "<a href="#messageremapper" title="MessageRemapper">MessageRemapper</a>" : <i>[ &lt;a href=&#34;messageremapper.md&#34;&gt;MessageRemapper&lt;/a&gt;, ... ]</i>,
+        "<a href="#pipeline" title="Pipeline">Pipeline</a>" : <i>[ &lt;a href=&#34;pipeline.md&#34;&gt;Pipeline&lt;/a&gt;, ... ]</i>,
+        "<a href="#serviceremapper" title="ServiceRemapper">ServiceRemapper</a>" : <i>[ &lt;a href=&#34;serviceremapper.md&#34;&gt;ServiceRemapper&lt;/a&gt;, ... ]</i>,
+        "<a href="#statusremapper" title="StatusRemapper">StatusRemapper</a>" : <i>[ &lt;a href=&#34;statusremapper.md&#34;&gt;StatusRemapper&lt;/a&gt;, ... ]</i>,
+        "<a href="#stringbuilderprocessor" title="StringBuilderProcessor">StringBuilderProcessor</a>" : <i>[ &lt;a href=&#34;stringbuilderprocessor.md&#34;&gt;StringBuilderProcessor&lt;/a&gt;, ... ]</i>,
+        "<a href="#traceidremapper" title="TraceIdRemapper">TraceIdRemapper</a>" : <i>[ &lt;a href=&#34;traceidremapper.md&#34;&gt;TraceIdRemapper&lt;/a&gt;, ... ]</i>,
+        "<a href="#urlparser" title="UrlParser">UrlParser</a>" : <i>[ &lt;a href=&#34;urlparser.md&#34;&gt;UrlParser&lt;/a&gt;, ... ]</i>,
+        "<a href="#useragentparser" title="UserAgentParser">UserAgentParser</a>" : <i>[ &lt;a href=&#34;useragentparser.md&#34;&gt;UserAgentParser&lt;/a&gt;, ... ]</i>,
+        "<a href="#category" title="Category">Category</a>" : <i>[ &lt;a href=&#34;category.md&#34;&gt;Category&lt;/a&gt;, ... ]</i>,
+        "<a href="#grok" title="Grok">Grok</a>" : <i>[ &lt;a href=&#34;grok.md&#34;&gt;Grok&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -42,50 +42,52 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Datadog::LogsCustomPipeline
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#isenabled" title="IsEnabled">IsEnabled</a>: <i>Boolean</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#filter" title="Filter">Filter</a>: <i>
-      - <a href="filter.md">Filter</a></i>
+      - &lt;a href=&#34;filter.md&#34;&gt;Filter&lt;/a&gt;</i>
     <a href="#processor" title="Processor">Processor</a>: <i>
-      - <a href="processor.md">Processor</a></i>
+      - &lt;a href=&#34;processor.md&#34;&gt;Processor&lt;/a&gt;</i>
     <a href="#arithmeticprocessor" title="ArithmeticProcessor">ArithmeticProcessor</a>: <i>
-      - <a href="arithmeticprocessor.md">ArithmeticProcessor</a></i>
+      - &lt;a href=&#34;arithmeticprocessor.md&#34;&gt;ArithmeticProcessor&lt;/a&gt;</i>
     <a href="#attributeremapper" title="AttributeRemapper">AttributeRemapper</a>: <i>
-      - <a href="attributeremapper.md">AttributeRemapper</a></i>
+      - &lt;a href=&#34;attributeremapper.md&#34;&gt;AttributeRemapper&lt;/a&gt;</i>
     <a href="#categoryprocessor" title="CategoryProcessor">CategoryProcessor</a>: <i>
-      - <a href="categoryprocessor.md">CategoryProcessor</a></i>
+      - &lt;a href=&#34;categoryprocessor.md&#34;&gt;CategoryProcessor&lt;/a&gt;</i>
     <a href="#dateremapper" title="DateRemapper">DateRemapper</a>: <i>
-      - <a href="dateremapper.md">DateRemapper</a></i>
+      - &lt;a href=&#34;dateremapper.md&#34;&gt;DateRemapper&lt;/a&gt;</i>
     <a href="#geoipparser" title="GeoIpParser">GeoIpParser</a>: <i>
-      - <a href="geoipparser.md">GeoIpParser</a></i>
+      - &lt;a href=&#34;geoipparser.md&#34;&gt;GeoIpParser&lt;/a&gt;</i>
     <a href="#grokparser" title="GrokParser">GrokParser</a>: <i>
-      - <a href="grokparser.md">GrokParser</a></i>
+      - &lt;a href=&#34;grokparser.md&#34;&gt;GrokParser&lt;/a&gt;</i>
     <a href="#messageremapper" title="MessageRemapper">MessageRemapper</a>: <i>
-      - <a href="messageremapper.md">MessageRemapper</a></i>
+      - &lt;a href=&#34;messageremapper.md&#34;&gt;MessageRemapper&lt;/a&gt;</i>
     <a href="#pipeline" title="Pipeline">Pipeline</a>: <i>
-      - <a href="pipeline.md">Pipeline</a></i>
+      - &lt;a href=&#34;pipeline.md&#34;&gt;Pipeline&lt;/a&gt;</i>
     <a href="#serviceremapper" title="ServiceRemapper">ServiceRemapper</a>: <i>
-      - <a href="serviceremapper.md">ServiceRemapper</a></i>
+      - &lt;a href=&#34;serviceremapper.md&#34;&gt;ServiceRemapper&lt;/a&gt;</i>
     <a href="#statusremapper" title="StatusRemapper">StatusRemapper</a>: <i>
-      - <a href="statusremapper.md">StatusRemapper</a></i>
+      - &lt;a href=&#34;statusremapper.md&#34;&gt;StatusRemapper&lt;/a&gt;</i>
     <a href="#stringbuilderprocessor" title="StringBuilderProcessor">StringBuilderProcessor</a>: <i>
-      - <a href="stringbuilderprocessor.md">StringBuilderProcessor</a></i>
+      - &lt;a href=&#34;stringbuilderprocessor.md&#34;&gt;StringBuilderProcessor&lt;/a&gt;</i>
     <a href="#traceidremapper" title="TraceIdRemapper">TraceIdRemapper</a>: <i>
-      - <a href="traceidremapper.md">TraceIdRemapper</a></i>
+      - &lt;a href=&#34;traceidremapper.md&#34;&gt;TraceIdRemapper&lt;/a&gt;</i>
     <a href="#urlparser" title="UrlParser">UrlParser</a>: <i>
-      - <a href="urlparser.md">UrlParser</a></i>
+      - &lt;a href=&#34;urlparser.md&#34;&gt;UrlParser&lt;/a&gt;</i>
     <a href="#useragentparser" title="UserAgentParser">UserAgentParser</a>: <i>
-      - <a href="useragentparser.md">UserAgentParser</a></i>
+      - &lt;a href=&#34;useragentparser.md&#34;&gt;UserAgentParser&lt;/a&gt;</i>
     <a href="#category" title="Category">Category</a>: <i>
-      - <a href="category.md">Category</a></i>
+      - &lt;a href=&#34;category.md&#34;&gt;Category&lt;/a&gt;</i>
     <a href="#grok" title="Grok">Grok</a>: <i>
-      - <a href="grok.md">Grok</a></i>
+      - &lt;a href=&#34;grok.md&#34;&gt;Grok&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
@@ -113,7 +115,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="filter.md">Filter</a>
+_Type_: List of &lt;a href=&#34;filter.md&#34;&gt;Filter&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -121,7 +123,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="processor.md">Processor</a>
+_Type_: List of &lt;a href=&#34;processor.md&#34;&gt;Processor&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -129,7 +131,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="arithmeticprocessor.md">ArithmeticProcessor</a>
+_Type_: List of &lt;a href=&#34;arithmeticprocessor.md&#34;&gt;ArithmeticProcessor&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -137,7 +139,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="attributeremapper.md">AttributeRemapper</a>
+_Type_: List of &lt;a href=&#34;attributeremapper.md&#34;&gt;AttributeRemapper&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -145,7 +147,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="categoryprocessor.md">CategoryProcessor</a>
+_Type_: List of &lt;a href=&#34;categoryprocessor.md&#34;&gt;CategoryProcessor&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -153,7 +155,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="dateremapper.md">DateRemapper</a>
+_Type_: List of &lt;a href=&#34;dateremapper.md&#34;&gt;DateRemapper&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -161,7 +163,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="geoipparser.md">GeoIpParser</a>
+_Type_: List of &lt;a href=&#34;geoipparser.md&#34;&gt;GeoIpParser&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -169,7 +171,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="grokparser.md">GrokParser</a>
+_Type_: List of &lt;a href=&#34;grokparser.md&#34;&gt;GrokParser&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -177,7 +179,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="messageremapper.md">MessageRemapper</a>
+_Type_: List of &lt;a href=&#34;messageremapper.md&#34;&gt;MessageRemapper&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -185,7 +187,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="pipeline.md">Pipeline</a>
+_Type_: List of &lt;a href=&#34;pipeline.md&#34;&gt;Pipeline&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -193,7 +195,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="serviceremapper.md">ServiceRemapper</a>
+_Type_: List of &lt;a href=&#34;serviceremapper.md&#34;&gt;ServiceRemapper&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -201,7 +203,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="statusremapper.md">StatusRemapper</a>
+_Type_: List of &lt;a href=&#34;statusremapper.md&#34;&gt;StatusRemapper&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -209,7 +211,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="stringbuilderprocessor.md">StringBuilderProcessor</a>
+_Type_: List of &lt;a href=&#34;stringbuilderprocessor.md&#34;&gt;StringBuilderProcessor&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -217,7 +219,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="traceidremapper.md">TraceIdRemapper</a>
+_Type_: List of &lt;a href=&#34;traceidremapper.md&#34;&gt;TraceIdRemapper&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -225,7 +227,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="urlparser.md">UrlParser</a>
+_Type_: List of &lt;a href=&#34;urlparser.md&#34;&gt;UrlParser&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -233,7 +235,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="useragentparser.md">UserAgentParser</a>
+_Type_: List of &lt;a href=&#34;useragentparser.md&#34;&gt;UserAgentParser&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -241,7 +243,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="category.md">Category</a>
+_Type_: List of &lt;a href=&#34;category.md&#34;&gt;Category&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -249,7 +251,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="grok.md">Grok</a>
+_Type_: List of &lt;a href=&#34;grok.md&#34;&gt;Grok&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

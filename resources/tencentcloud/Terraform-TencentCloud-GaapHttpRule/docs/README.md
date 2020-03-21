@@ -12,6 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::TencentCloud::GaapHttpRule",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#connecttimeout" title="ConnectTimeout">ConnectTimeout</a>" : <i>Double</i>,
         "<a href="#domain" title="Domain">Domain</a>" : <i>String</i>,
         "<a href="#forwardhost" title="ForwardHost">ForwardHost</a>" : <i>String</i>,
@@ -19,13 +20,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#healthcheckmethod" title="HealthCheckMethod">HealthCheckMethod</a>" : <i>String</i>,
         "<a href="#healthcheckpath" title="HealthCheckPath">HealthCheckPath</a>" : <i>String</i>,
         "<a href="#healthcheckstatuscodes" title="HealthCheckStatusCodes">HealthCheckStatusCodes</a>" : <i>[ Double, ... ]</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#interval" title="Interval">Interval</a>" : <i>Double</i>,
         "<a href="#listenerid" title="ListenerId">ListenerId</a>" : <i>String</i>,
         "<a href="#path" title="Path">Path</a>" : <i>String</i>,
         "<a href="#realservertype" title="RealserverType">RealserverType</a>" : <i>String</i>,
         "<a href="#scheduler" title="Scheduler">Scheduler</a>" : <i>String</i>,
-        "<a href="#realservers" title="Realservers">Realservers</a>" : <i>[ <a href="realservers.md">Realservers</a>, ... ]</i>
+        "<a href="#realservers" title="Realservers">Realservers</a>" : <i>[ &lt;a href=&#34;realservers.md&#34;&gt;Realservers&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -35,6 +35,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::TencentCloud::GaapHttpRule
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#connecttimeout" title="ConnectTimeout">ConnectTimeout</a>: <i>Double</i>
     <a href="#domain" title="Domain">Domain</a>: <i>String</i>
     <a href="#forwardhost" title="ForwardHost">ForwardHost</a>: <i>String</i>
@@ -43,17 +44,26 @@ Properties:
     <a href="#healthcheckpath" title="HealthCheckPath">HealthCheckPath</a>: <i>String</i>
     <a href="#healthcheckstatuscodes" title="HealthCheckStatusCodes">HealthCheckStatusCodes</a>: <i>
       - Double</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#interval" title="Interval">Interval</a>: <i>Double</i>
     <a href="#listenerid" title="ListenerId">ListenerId</a>: <i>String</i>
     <a href="#path" title="Path">Path</a>: <i>String</i>
     <a href="#realservertype" title="RealserverType">RealserverType</a>: <i>String</i>
     <a href="#scheduler" title="Scheduler">Scheduler</a>: <i>String</i>
     <a href="#realservers" title="Realservers">Realservers</a>: <i>
-      - <a href="realservers.md">Realservers</a></i>
+      - &lt;a href=&#34;realservers.md&#34;&gt;Realservers&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ConnectTimeout
 
@@ -111,14 +121,6 @@ _Type_: List of Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Interval
 
 _Required_: No
@@ -163,7 +165,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="realservers.md">Realservers</a>
+_Type_: List of &lt;a href=&#34;realservers.md&#34;&gt;Realservers&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     DefaultsFrom: Optional[str]
     Destination: Optional[str]
     Filename: Optional[str]
-    Id: Optional[str]
     Interval: Optional[float]
     IpDscp: Optional[float]
     ManualResume: Optional[str]
@@ -76,7 +75,6 @@ class ResourceModel(BaseResourceModel):
             DefaultsFrom=json_data.get("DefaultsFrom"),
             Destination=json_data.get("Destination"),
             Filename=json_data.get("Filename"),
-            Id=json_data.get("Id"),
             Interval=json_data.get("Interval"),
             IpDscp=json_data.get("IpDscp"),
             ManualResume=json_data.get("ManualResume"),

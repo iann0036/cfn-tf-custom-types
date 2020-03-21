@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     ForceDestroy: Optional[bool]
     HostKey: Optional[str]
     HostKeyFingerprint: Optional[str]
-    Id: Optional[str]
     IdentityProviderType: Optional[str]
     InvocationRole: Optional[str]
     LoggingRole: Optional[str]
@@ -65,7 +64,6 @@ class ResourceModel(BaseResourceModel):
             ForceDestroy=json_data.get("ForceDestroy"),
             HostKey=json_data.get("HostKey"),
             HostKeyFingerprint=json_data.get("HostKeyFingerprint"),
-            Id=json_data.get("Id"),
             IdentityProviderType=json_data.get("IdentityProviderType"),
             InvocationRole=json_data.get("InvocationRole"),
             LoggingRole=json_data.get("LoggingRole"),

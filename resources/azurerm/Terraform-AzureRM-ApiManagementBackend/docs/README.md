@@ -12,22 +12,22 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureRM::ApiManagementBackend",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#apimanagementname" title="ApiManagementName">ApiManagementName</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#protocol" title="Protocol">Protocol</a>" : <i>String</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
         "<a href="#resourceid" title="ResourceId">ResourceId</a>" : <i>String</i>,
         "<a href="#title" title="Title">Title</a>" : <i>String</i>,
         "<a href="#url" title="Url">Url</a>" : <i>String</i>,
-        "<a href="#credentials" title="Credentials">Credentials</a>" : <i>[ <a href="credentials.md">Credentials</a>, ... ]</i>,
-        "<a href="#proxy" title="Proxy">Proxy</a>" : <i>[ <a href="proxy.md">Proxy</a>, ... ]</i>,
-        "<a href="#servicefabriccluster" title="ServiceFabricCluster">ServiceFabricCluster</a>" : <i>[ <a href="servicefabriccluster.md">ServiceFabricCluster</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
-        "<a href="#tls" title="Tls">Tls</a>" : <i>[ <a href="tls.md">Tls</a>, ... ]</i>,
-        "<a href="#authorization" title="Authorization">Authorization</a>" : <i>[ <a href="authorization.md">Authorization</a>, ... ]</i>,
-        "<a href="#serverx509name" title="ServerX509Name">ServerX509Name</a>" : <i>[ <a href="serverx509name.md">ServerX509Name</a>, ... ]</i>
+        "<a href="#credentials" title="Credentials">Credentials</a>" : <i>[ &lt;a href=&#34;credentials.md&#34;&gt;Credentials&lt;/a&gt;, ... ]</i>,
+        "<a href="#proxy" title="Proxy">Proxy</a>" : <i>[ &lt;a href=&#34;proxy.md&#34;&gt;Proxy&lt;/a&gt;, ... ]</i>,
+        "<a href="#servicefabriccluster" title="ServiceFabricCluster">ServiceFabricCluster</a>" : <i>[ &lt;a href=&#34;servicefabriccluster.md&#34;&gt;ServiceFabricCluster&lt;/a&gt;, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
+        "<a href="#tls" title="Tls">Tls</a>" : <i>[ &lt;a href=&#34;tls.md&#34;&gt;Tls&lt;/a&gt;, ... ]</i>,
+        "<a href="#authorization" title="Authorization">Authorization</a>" : <i>[ &lt;a href=&#34;authorization.md&#34;&gt;Authorization&lt;/a&gt;, ... ]</i>,
+        "<a href="#serverx509name" title="ServerX509Name">ServerX509Name</a>" : <i>[ &lt;a href=&#34;serverx509name.md&#34;&gt;ServerX509Name&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -37,9 +37,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureRM::ApiManagementBackend
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#apimanagementname" title="ApiManagementName">ApiManagementName</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#protocol" title="Protocol">Protocol</a>: <i>String</i>
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
@@ -47,21 +47,31 @@ Properties:
     <a href="#title" title="Title">Title</a>: <i>String</i>
     <a href="#url" title="Url">Url</a>: <i>String</i>
     <a href="#credentials" title="Credentials">Credentials</a>: <i>
-      - <a href="credentials.md">Credentials</a></i>
+      - &lt;a href=&#34;credentials.md&#34;&gt;Credentials&lt;/a&gt;</i>
     <a href="#proxy" title="Proxy">Proxy</a>: <i>
-      - <a href="proxy.md">Proxy</a></i>
+      - &lt;a href=&#34;proxy.md&#34;&gt;Proxy&lt;/a&gt;</i>
     <a href="#servicefabriccluster" title="ServiceFabricCluster">ServiceFabricCluster</a>: <i>
-      - <a href="servicefabriccluster.md">ServiceFabricCluster</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;servicefabriccluster.md&#34;&gt;ServiceFabricCluster&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     <a href="#tls" title="Tls">Tls</a>: <i>
-      - <a href="tls.md">Tls</a></i>
+      - &lt;a href=&#34;tls.md&#34;&gt;Tls&lt;/a&gt;</i>
     <a href="#authorization" title="Authorization">Authorization</a>: <i>
-      - <a href="authorization.md">Authorization</a></i>
+      - &lt;a href=&#34;authorization.md&#34;&gt;Authorization&lt;/a&gt;</i>
     <a href="#serverx509name" title="ServerX509Name">ServerX509Name</a>: <i>
-      - <a href="serverx509name.md">ServerX509Name</a></i>
+      - &lt;a href=&#34;serverx509name.md&#34;&gt;ServerX509Name&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ApiManagementName
 
@@ -72,14 +82,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 
@@ -139,7 +141,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="credentials.md">Credentials</a>
+_Type_: List of &lt;a href=&#34;credentials.md&#34;&gt;Credentials&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -147,7 +149,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="proxy.md">Proxy</a>
+_Type_: List of &lt;a href=&#34;proxy.md&#34;&gt;Proxy&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -155,7 +157,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="servicefabriccluster.md">ServiceFabricCluster</a>
+_Type_: List of &lt;a href=&#34;servicefabriccluster.md&#34;&gt;ServiceFabricCluster&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -163,7 +165,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -171,7 +173,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tls.md">Tls</a>
+_Type_: List of &lt;a href=&#34;tls.md&#34;&gt;Tls&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -179,7 +181,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="authorization.md">Authorization</a>
+_Type_: List of &lt;a href=&#34;authorization.md&#34;&gt;Authorization&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -187,7 +189,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="serverx509name.md">ServerX509Name</a>
+_Type_: List of &lt;a href=&#34;serverx509name.md&#34;&gt;ServerX509Name&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

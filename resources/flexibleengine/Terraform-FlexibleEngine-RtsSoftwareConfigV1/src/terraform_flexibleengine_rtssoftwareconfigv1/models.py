@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Config: Optional[str]
     Group: Optional[str]
-    Id: Optional[str]
     InputValues: Optional[Sequence[Sequence["_InputValues"]]]
     Name: Optional[str]
     Options: Optional[Sequence["_Options"]]
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Config=json_data.get("Config"),
             Group=json_data.get("Group"),
-            Id=json_data.get("Id"),
             InputValues=json_data.get("InputValues"),
             Name=json_data.get("Name"),
             Options=json_data.get("Options"),

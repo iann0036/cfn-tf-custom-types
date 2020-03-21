@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     FileExtType: Optional[str]
     FileName: Optional[str]
     FileType: Optional[str]
-    Id: Optional[str]
     TableInfos: Optional[Sequence["_TableInfos"]]
 
     @classmethod
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             FileExtType=json_data.get("FileExtType"),
             FileName=json_data.get("FileName"),
             FileType=json_data.get("FileType"),
-            Id=json_data.get("Id"),
             TableInfos=json_data.get("TableInfos"),
         )
 

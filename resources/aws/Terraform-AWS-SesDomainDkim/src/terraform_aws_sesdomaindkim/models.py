@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DkimTokens: Optional[Sequence[str]]
     Domain: Optional[str]
-    Id: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -51,7 +50,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DkimTokens=json_data.get("DkimTokens"),
             Domain=json_data.get("Domain"),
-            Id=json_data.get("Id"),
         )
 
 

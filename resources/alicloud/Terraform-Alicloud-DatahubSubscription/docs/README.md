@@ -12,9 +12,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::DatahubSubscription",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#comment" title="Comment">Comment</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#createtime" title="CreateTime">CreateTime</a>" : <i>String</i>,
+        "<a href="#lastmodifytime" title="LastModifyTime">LastModifyTime</a>" : <i>String</i>,
         "<a href="#projectname" title="ProjectName">ProjectName</a>" : <i>String</i>,
+        "<a href="#subid" title="SubId">SubId</a>" : <i>String</i>,
         "<a href="#topicname" title="TopicName">TopicName</a>" : <i>String</i>
     }
 }
@@ -25,13 +28,26 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::DatahubSubscription
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#comment" title="Comment">Comment</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#createtime" title="CreateTime">CreateTime</a>: <i>String</i>
+    <a href="#lastmodifytime" title="LastModifyTime">LastModifyTime</a>: <i>String</i>
     <a href="#projectname" title="ProjectName">ProjectName</a>: <i>String</i>
+    <a href="#subid" title="SubId">SubId</a>: <i>String</i>
     <a href="#topicname" title="TopicName">TopicName</a>: <i>String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Comment
 
@@ -41,7 +57,15 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### CreateTime
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### LastModifyTime
 
 _Required_: No
 
@@ -52,6 +76,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ProjectName
 
 _Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### SubId
+
+_Required_: No
 
 _Type_: String
 
@@ -83,13 +115,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateTime
 
-Returns the <code>CreateTime</code> value.
+Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
 
 #### LastModifyTime
 
-Returns the <code>LastModifyTime</code> value.
+Returns the &lt;code&gt;LastModifyTime&lt;/code&gt; value.
 
 #### SubId
 
-Returns the <code>SubId</code> value.
+Returns the &lt;code&gt;SubId&lt;/code&gt; value.
 

@@ -47,7 +47,6 @@ class ResourceModel(BaseResourceModel):
     CoreInstanceType: Optional[str]
     CustomAmiId: Optional[str]
     EbsRootVolumeSize: Optional[float]
-    Id: Optional[str]
     KeepJobFlowAliveWhenNoSteps: Optional[bool]
     LogUri: Optional[str]
     MasterInstanceType: Optional[str]
@@ -90,7 +89,6 @@ class ResourceModel(BaseResourceModel):
             CoreInstanceType=json_data.get("CoreInstanceType"),
             CustomAmiId=json_data.get("CustomAmiId"),
             EbsRootVolumeSize=json_data.get("EbsRootVolumeSize"),
-            Id=json_data.get("Id"),
             KeepJobFlowAliveWhenNoSteps=json_data.get("KeepJobFlowAliveWhenNoSteps"),
             LogUri=json_data.get("LogUri"),
             MasterInstanceType=json_data.get("MasterInstanceType"),

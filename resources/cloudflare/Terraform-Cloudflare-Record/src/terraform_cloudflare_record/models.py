@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     CreatedOn: Optional[str]
     Data: Optional[Sequence["_Data"]]
     Hostname: Optional[str]
-    Id: Optional[str]
     Metadata: Optional[Sequence["_Metadata"]]
     ModifiedOn: Optional[str]
     Name: Optional[str]
@@ -63,7 +62,6 @@ class ResourceModel(BaseResourceModel):
             CreatedOn=json_data.get("CreatedOn"),
             Data=json_data.get("Data"),
             Hostname=json_data.get("Hostname"),
-            Id=json_data.get("Id"),
             Metadata=json_data.get("Metadata"),
             ModifiedOn=json_data.get("ModifiedOn"),
             Name=json_data.get("Name"),

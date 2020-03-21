@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     DataSourceId: Optional[str]
     Description: Optional[str]
     Enabled: Optional[bool]
-    Id: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
     ResourceGroupName: Optional[str]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             DataSourceId=json_data.get("DataSourceId"),
             Description=json_data.get("Description"),
             Enabled=json_data.get("Enabled"),
-            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),
             ResourceGroupName=json_data.get("ResourceGroupName"),

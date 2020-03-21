@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AvailabilityZone: Optional[str]
     CidrBlock: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
     VpcId: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             AvailabilityZone=json_data.get("AvailabilityZone"),
             CidrBlock=json_data.get("CidrBlock"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Tags=json_data.get("Tags"),
             VpcId=json_data.get("VpcId"),

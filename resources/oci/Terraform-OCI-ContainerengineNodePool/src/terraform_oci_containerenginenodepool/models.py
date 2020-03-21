@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ClusterId: Optional[str]
     CompartmentId: Optional[str]
-    Id: Optional[str]
     KubernetesVersion: Optional[str]
     Name: Optional[str]
     NodeImageId: Optional[str]
@@ -67,7 +66,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ClusterId=json_data.get("ClusterId"),
             CompartmentId=json_data.get("CompartmentId"),
-            Id=json_data.get("Id"),
             KubernetesVersion=json_data.get("KubernetesVersion"),
             Name=json_data.get("Name"),
             NodeImageId=json_data.get("NodeImageId"),

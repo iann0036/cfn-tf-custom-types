@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Commitment: Optional[str]
     CreationTimestamp: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Project: Optional[str]
     SelfLink: Optional[str]
@@ -64,7 +63,6 @@ class ResourceModel(BaseResourceModel):
             Commitment=json_data.get("Commitment"),
             CreationTimestamp=json_data.get("CreationTimestamp"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Project=json_data.get("Project"),
             SelfLink=json_data.get("SelfLink"),

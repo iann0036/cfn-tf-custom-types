@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     Enabled: Optional[bool]
     EnvironmentScope: Optional[str]
     Group: Optional[str]
-    Id: Optional[str]
     KubernetesApiUrl: Optional[str]
     KubernetesAuthorizationType: Optional[str]
     KubernetesCaCert: Optional[str]
@@ -67,7 +66,6 @@ class ResourceModel(BaseResourceModel):
             Enabled=json_data.get("Enabled"),
             EnvironmentScope=json_data.get("EnvironmentScope"),
             Group=json_data.get("Group"),
-            Id=json_data.get("Id"),
             KubernetesApiUrl=json_data.get("KubernetesApiUrl"),
             KubernetesAuthorizationType=json_data.get("KubernetesAuthorizationType"),
             KubernetesCaCert=json_data.get("KubernetesCaCert"),

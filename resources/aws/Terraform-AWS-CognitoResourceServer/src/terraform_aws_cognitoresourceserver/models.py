@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     Identifier: Optional[str]
     Name: Optional[str]
     ScopeIdentifiers: Optional[Sequence[str]]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             Identifier=json_data.get("Identifier"),
             Name=json_data.get("Name"),
             ScopeIdentifiers=json_data.get("ScopeIdentifiers"),

@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     Data: Optional[Sequence["_Data"]]
     DataJson: Optional[str]
     DisableRead: Optional[bool]
-    Id: Optional[str]
     Path: Optional[str]
 
     @classmethod
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             Data=json_data.get("Data"),
             DataJson=json_data.get("DataJson"),
             DisableRead=json_data.get("DisableRead"),
-            Id=json_data.get("Id"),
             Path=json_data.get("Path"),
         )
 

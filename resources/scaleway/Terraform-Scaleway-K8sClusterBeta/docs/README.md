@@ -12,21 +12,28 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Scaleway::K8sClusterBeta",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#admissionplugins" title="AdmissionPlugins">AdmissionPlugins</a>" : <i>[ String, ... ]</i>,
+        "<a href="#apiserverurl" title="ApiserverUrl">ApiserverUrl</a>" : <i>String</i>,
         "<a href="#cni" title="Cni">Cni</a>" : <i>String</i>,
+        "<a href="#createdat" title="CreatedAt">CreatedAt</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#enabledashboard" title="EnableDashboard">EnableDashboard</a>" : <i>Boolean</i>,
         "<a href="#featuregates" title="FeatureGates">FeatureGates</a>" : <i>[ String, ... ]</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#ingress" title="Ingress">Ingress</a>" : <i>String</i>,
+        "<a href="#kubeconfig" title="Kubeconfig">Kubeconfig</a>" : <i>[ &lt;a href=&#34;kubeconfig.md&#34;&gt;Kubeconfig&lt;/a&gt;, ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#organizationid" title="OrganizationId">OrganizationId</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
+        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
+        "<a href="#updatedat" title="UpdatedAt">UpdatedAt</a>" : <i>String</i>,
+        "<a href="#upgradeavailable" title="UpgradeAvailable">UpgradeAvailable</a>" : <i>Boolean</i>,
         "<a href="#version" title="Version">Version</a>" : <i>String</i>,
-        "<a href="#autoupgrade" title="AutoUpgrade">AutoUpgrade</a>" : <i>[ <a href="autoupgrade.md">AutoUpgrade</a>, ... ]</i>,
-        "<a href="#autoscalerconfig" title="AutoscalerConfig">AutoscalerConfig</a>" : <i>[ <a href="autoscalerconfig.md">AutoscalerConfig</a>, ... ]</i>,
-        "<a href="#defaultpool" title="DefaultPool">DefaultPool</a>" : <i>[ <a href="defaultpool.md">DefaultPool</a>, ... ]</i>
+        "<a href="#wildcarddns" title="WildcardDns">WildcardDns</a>" : <i>String</i>,
+        "<a href="#autoupgrade" title="AutoUpgrade">AutoUpgrade</a>" : <i>[ &lt;a href=&#34;autoupgrade.md&#34;&gt;AutoUpgrade&lt;/a&gt;, ... ]</i>,
+        "<a href="#autoscalerconfig" title="AutoscalerConfig">AutoscalerConfig</a>" : <i>[ &lt;a href=&#34;autoscalerconfig.md&#34;&gt;AutoscalerConfig&lt;/a&gt;, ... ]</i>,
+        "<a href="#defaultpool" title="DefaultPool">DefaultPool</a>" : <i>[ &lt;a href=&#34;defaultpool.md&#34;&gt;DefaultPool&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -36,30 +43,48 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Scaleway::K8sClusterBeta
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#admissionplugins" title="AdmissionPlugins">AdmissionPlugins</a>: <i>
       - String</i>
+    <a href="#apiserverurl" title="ApiserverUrl">ApiserverUrl</a>: <i>String</i>
     <a href="#cni" title="Cni">Cni</a>: <i>String</i>
+    <a href="#createdat" title="CreatedAt">CreatedAt</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#enabledashboard" title="EnableDashboard">EnableDashboard</a>: <i>Boolean</i>
     <a href="#featuregates" title="FeatureGates">FeatureGates</a>: <i>
       - String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#ingress" title="Ingress">Ingress</a>: <i>String</i>
+    <a href="#kubeconfig" title="Kubeconfig">Kubeconfig</a>: <i>
+      - &lt;a href=&#34;kubeconfig.md&#34;&gt;Kubeconfig&lt;/a&gt;</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#organizationid" title="OrganizationId">OrganizationId</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
+    <a href="#status" title="Status">Status</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
       - String</i>
+    <a href="#updatedat" title="UpdatedAt">UpdatedAt</a>: <i>String</i>
+    <a href="#upgradeavailable" title="UpgradeAvailable">UpgradeAvailable</a>: <i>Boolean</i>
     <a href="#version" title="Version">Version</a>: <i>String</i>
+    <a href="#wildcarddns" title="WildcardDns">WildcardDns</a>: <i>String</i>
     <a href="#autoupgrade" title="AutoUpgrade">AutoUpgrade</a>: <i>
-      - <a href="autoupgrade.md">AutoUpgrade</a></i>
+      - &lt;a href=&#34;autoupgrade.md&#34;&gt;AutoUpgrade&lt;/a&gt;</i>
     <a href="#autoscalerconfig" title="AutoscalerConfig">AutoscalerConfig</a>: <i>
-      - <a href="autoscalerconfig.md">AutoscalerConfig</a></i>
+      - &lt;a href=&#34;autoscalerconfig.md&#34;&gt;AutoscalerConfig&lt;/a&gt;</i>
     <a href="#defaultpool" title="DefaultPool">DefaultPool</a>: <i>
-      - <a href="defaultpool.md">DefaultPool</a></i>
+      - &lt;a href=&#34;defaultpool.md&#34;&gt;DefaultPool&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AdmissionPlugins
 
@@ -69,9 +94,25 @@ _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### ApiserverUrl
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Cni
 
 _Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### CreatedAt
+
+_Required_: No
 
 _Type_: String
 
@@ -101,7 +142,7 @@ _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### Ingress
 
 _Required_: No
 
@@ -109,11 +150,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Ingress
+#### Kubeconfig
 
 _Required_: No
 
-_Type_: String
+_Type_: List of &lt;a href=&#34;kubeconfig.md&#34;&gt;Kubeconfig&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -141,11 +182,35 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### Status
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Tags
 
 _Required_: No
 
 _Type_: List of String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### UpdatedAt
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### UpgradeAvailable
+
+_Required_: No
+
+_Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -157,11 +222,19 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### WildcardDns
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### AutoUpgrade
 
 _Required_: No
 
-_Type_: List of <a href="autoupgrade.md">AutoUpgrade</a>
+_Type_: List of &lt;a href=&#34;autoupgrade.md&#34;&gt;AutoUpgrade&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -169,7 +242,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="autoscalerconfig.md">AutoscalerConfig</a>
+_Type_: List of &lt;a href=&#34;autoscalerconfig.md&#34;&gt;AutoscalerConfig&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -177,7 +250,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="defaultpool.md">DefaultPool</a>
+_Type_: List of &lt;a href=&#34;defaultpool.md&#34;&gt;DefaultPool&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -199,29 +272,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ApiserverUrl
 
-Returns the <code>ApiserverUrl</code> value.
+Returns the &lt;code&gt;ApiserverUrl&lt;/code&gt; value.
 
 #### CreatedAt
 
-Returns the <code>CreatedAt</code> value.
+Returns the &lt;code&gt;CreatedAt&lt;/code&gt; value.
 
 #### Kubeconfig
 
-Returns the <code>Kubeconfig</code> value.
+Returns the &lt;code&gt;Kubeconfig&lt;/code&gt; value.
 
 #### Status
 
-Returns the <code>Status</code> value.
+Returns the &lt;code&gt;Status&lt;/code&gt; value.
 
 #### UpdatedAt
 
-Returns the <code>UpdatedAt</code> value.
+Returns the &lt;code&gt;UpdatedAt&lt;/code&gt; value.
 
 #### UpgradeAvailable
 
-Returns the <code>UpgradeAvailable</code> value.
+Returns the &lt;code&gt;UpgradeAvailable&lt;/code&gt; value.
 
 #### WildcardDns
 
-Returns the <code>WildcardDns</code> value.
+Returns the &lt;code&gt;WildcardDns&lt;/code&gt; value.
 

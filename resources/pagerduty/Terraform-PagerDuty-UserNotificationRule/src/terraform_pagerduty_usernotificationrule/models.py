@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ContactMethod: Optional[Sequence["_ContactMethod"]]
-    Id: Optional[str]
     StartDelayInMinutes: Optional[float]
     Urgency: Optional[str]
     UserId: Optional[str]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             ContactMethod=json_data.get("ContactMethod"),
-            Id=json_data.get("Id"),
             StartDelayInMinutes=json_data.get("StartDelayInMinutes"),
             Urgency=json_data.get("Urgency"),
             UserId=json_data.get("UserId"),

@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Force: Optional[bool]
-    Id: Optional[str]
     ScalingGroupId: Optional[str]
     VserverGroups: Optional[Sequence["_VserverGroups"]]
     VserverAttributes: Optional[Sequence["_VserverAttributes"]]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Force=json_data.get("Force"),
-            Id=json_data.get("Id"),
             ScalingGroupId=json_data.get("ScalingGroupId"),
             VserverGroups=json_data.get("VserverGroups"),
             VserverAttributes=json_data.get("VserverAttributes"),

@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     BpduFilterWhitelist: Optional[Sequence[str]]
     Description: Optional[str]
     DisplayName: Optional[str]
-    Id: Optional[str]
     Revision: Optional[float]
     RateLimits: Optional[Sequence["_RateLimits"]]
     Tag: Optional[Sequence["_Tag"]]
@@ -64,7 +63,6 @@ class ResourceModel(BaseResourceModel):
             BpduFilterWhitelist=json_data.get("BpduFilterWhitelist"),
             Description=json_data.get("Description"),
             DisplayName=json_data.get("DisplayName"),
-            Id=json_data.get("Id"),
             Revision=json_data.get("Revision"),
             RateLimits=json_data.get("RateLimits"),
             Tag=json_data.get("Tag"),

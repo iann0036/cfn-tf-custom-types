@@ -12,21 +12,28 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OpenStack::KeymanagerSecretV1",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#algorithm" title="Algorithm">Algorithm</a>" : <i>String</i>,
+        "<a href="#allmetadata" title="AllMetadata">AllMetadata</a>" : <i>[ &lt;a href=&#34;allmetadata.md&#34;&gt;AllMetadata&lt;/a&gt;, ... ]</i>,
         "<a href="#bitlength" title="BitLength">BitLength</a>" : <i>Double</i>,
+        "<a href="#contenttypes" title="ContentTypes">ContentTypes</a>" : <i>[ &lt;a href=&#34;contenttypes.md&#34;&gt;ContentTypes&lt;/a&gt;, ... ]</i>,
+        "<a href="#createdat" title="CreatedAt">CreatedAt</a>" : <i>String</i>,
+        "<a href="#creatorid" title="CreatorId">CreatorId</a>" : <i>String</i>,
         "<a href="#expiration" title="Expiration">Expiration</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ <a href="metadata.md">Metadata</a>, ... ]</i>,
+        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;, ... ]</i>,
         "<a href="#mode" title="Mode">Mode</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#payload" title="Payload">Payload</a>" : <i>String</i>,
         "<a href="#payloadcontentencoding" title="PayloadContentEncoding">PayloadContentEncoding</a>" : <i>String</i>,
         "<a href="#payloadcontenttype" title="PayloadContentType">PayloadContentType</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
+        "<a href="#secretref" title="SecretRef">SecretRef</a>" : <i>String</i>,
         "<a href="#secrettype" title="SecretType">SecretType</a>" : <i>String</i>,
-        "<a href="#acl" title="Acl">Acl</a>" : <i>[ <a href="acl.md">Acl</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
-        "<a href="#read" title="Read">Read</a>" : <i>[ <a href="read.md">Read</a>, ... ]</i>
+        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
+        "<a href="#updatedat" title="UpdatedAt">UpdatedAt</a>" : <i>String</i>,
+        "<a href="#acl" title="Acl">Acl</a>" : <i>[ &lt;a href=&#34;acl.md&#34;&gt;Acl&lt;/a&gt;, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
+        "<a href="#read" title="Read">Read</a>" : <i>[ &lt;a href=&#34;read.md&#34;&gt;Read&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -36,33 +43,60 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OpenStack::KeymanagerSecretV1
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#algorithm" title="Algorithm">Algorithm</a>: <i>String</i>
+    <a href="#allmetadata" title="AllMetadata">AllMetadata</a>: <i>
+      - &lt;a href=&#34;allmetadata.md&#34;&gt;AllMetadata&lt;/a&gt;</i>
     <a href="#bitlength" title="BitLength">BitLength</a>: <i>Double</i>
+    <a href="#contenttypes" title="ContentTypes">ContentTypes</a>: <i>
+      - &lt;a href=&#34;contenttypes.md&#34;&gt;ContentTypes&lt;/a&gt;</i>
+    <a href="#createdat" title="CreatedAt">CreatedAt</a>: <i>String</i>
+    <a href="#creatorid" title="CreatorId">CreatorId</a>: <i>String</i>
     <a href="#expiration" title="Expiration">Expiration</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#metadata" title="Metadata">Metadata</a>: <i>
-      - <a href="metadata.md">Metadata</a></i>
+      - &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;</i>
     <a href="#mode" title="Mode">Mode</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#payload" title="Payload">Payload</a>: <i>String</i>
     <a href="#payloadcontentencoding" title="PayloadContentEncoding">PayloadContentEncoding</a>: <i>String</i>
     <a href="#payloadcontenttype" title="PayloadContentType">PayloadContentType</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
+    <a href="#secretref" title="SecretRef">SecretRef</a>: <i>String</i>
     <a href="#secrettype" title="SecretType">SecretType</a>: <i>String</i>
+    <a href="#status" title="Status">Status</a>: <i>String</i>
+    <a href="#updatedat" title="UpdatedAt">UpdatedAt</a>: <i>String</i>
     <a href="#acl" title="Acl">Acl</a>: <i>
-      - <a href="acl.md">Acl</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;acl.md&#34;&gt;Acl&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     <a href="#read" title="Read">Read</a>: <i>
-      - <a href="read.md">Read</a></i>
+      - &lt;a href=&#34;read.md&#34;&gt;Read&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Algorithm
 
 _Required_: No
 
 _Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### AllMetadata
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;allmetadata.md&#34;&gt;AllMetadata&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -74,7 +108,15 @@ _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Expiration
+#### ContentTypes
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;contenttypes.md&#34;&gt;ContentTypes&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### CreatedAt
 
 _Required_: No
 
@@ -82,7 +124,15 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### CreatorId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Expiration
 
 _Required_: No
 
@@ -94,7 +144,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="metadata.md">Metadata</a>
+_Type_: List of &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -146,7 +196,31 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### SecretRef
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### SecretType
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Status
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### UpdatedAt
 
 _Required_: No
 
@@ -158,7 +232,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="acl.md">Acl</a>
+_Type_: List of &lt;a href=&#34;acl.md&#34;&gt;Acl&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -166,7 +240,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -174,7 +248,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="read.md">Read</a>
+_Type_: List of &lt;a href=&#34;read.md&#34;&gt;Read&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -196,29 +270,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AllMetadata
 
-Returns the <code>AllMetadata</code> value.
+Returns the &lt;code&gt;AllMetadata&lt;/code&gt; value.
 
 #### ContentTypes
 
-Returns the <code>ContentTypes</code> value.
+Returns the &lt;code&gt;ContentTypes&lt;/code&gt; value.
 
 #### CreatedAt
 
-Returns the <code>CreatedAt</code> value.
+Returns the &lt;code&gt;CreatedAt&lt;/code&gt; value.
 
 #### CreatorId
 
-Returns the <code>CreatorId</code> value.
+Returns the &lt;code&gt;CreatorId&lt;/code&gt; value.
 
 #### SecretRef
 
-Returns the <code>SecretRef</code> value.
+Returns the &lt;code&gt;SecretRef&lt;/code&gt; value.
 
 #### Status
 
-Returns the <code>Status</code> value.
+Returns the &lt;code&gt;Status&lt;/code&gt; value.
 
 #### UpdatedAt
 
-Returns the <code>UpdatedAt</code> value.
+Returns the &lt;code&gt;UpdatedAt&lt;/code&gt; value.
 

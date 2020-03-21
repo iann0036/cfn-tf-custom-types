@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     Bucket: Optional[str]
     Description: Optional[str]
     ForceDelete: Optional[bool]
-    Id: Optional[str]
     Key: Optional[str]
     Name: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             Bucket=json_data.get("Bucket"),
             Description=json_data.get("Description"),
             ForceDelete=json_data.get("ForceDelete"),
-            Id=json_data.get("Id"),
             Key=json_data.get("Key"),
             Name=json_data.get("Name"),
             Tags=json_data.get("Tags"),

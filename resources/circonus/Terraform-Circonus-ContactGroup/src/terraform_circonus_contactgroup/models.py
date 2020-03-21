@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AggregationWindow: Optional[str]
     AlwaysSendClear: Optional[bool]
     GroupType: Optional[str]
-    Id: Optional[str]
     LastModified: Optional[float]
     LastModifiedBy: Optional[str]
     LongMessage: Optional[str]
@@ -71,7 +70,6 @@ class ResourceModel(BaseResourceModel):
             AggregationWindow=json_data.get("AggregationWindow"),
             AlwaysSendClear=json_data.get("AlwaysSendClear"),
             GroupType=json_data.get("GroupType"),
-            Id=json_data.get("Id"),
             LastModified=json_data.get("LastModified"),
             LastModifiedBy=json_data.get("LastModifiedBy"),
             LongMessage=json_data.get("LongMessage"),

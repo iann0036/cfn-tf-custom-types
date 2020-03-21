@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     BotName: Optional[str]
     ClientId: Optional[str]
     ClientSecret: Optional[str]
-    Id: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
     Parameters: Optional[Sequence["_Parameters"]]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             BotName=json_data.get("BotName"),
             ClientId=json_data.get("ClientId"),
             ClientSecret=json_data.get("ClientSecret"),
-            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),
             Parameters=json_data.get("Parameters"),

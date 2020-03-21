@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     AutomationTargetParameterName: Optional[str]
     ComplianceSeverity: Optional[str]
     DocumentVersion: Optional[str]
-    Id: Optional[str]
     InstanceId: Optional[str]
     MaxConcurrency: Optional[str]
     MaxErrors: Optional[str]
@@ -65,7 +64,6 @@ class ResourceModel(BaseResourceModel):
             AutomationTargetParameterName=json_data.get("AutomationTargetParameterName"),
             ComplianceSeverity=json_data.get("ComplianceSeverity"),
             DocumentVersion=json_data.get("DocumentVersion"),
-            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
             MaxConcurrency=json_data.get("MaxConcurrency"),
             MaxErrors=json_data.get("MaxErrors"),

@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     ClusterVersion: Optional[str]
     EdgeSshEndpoint: Optional[str]
     HttpsEndpoint: Optional[str]
-    Id: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
     ResourceGroupName: Optional[str]
@@ -68,7 +67,6 @@ class ResourceModel(BaseResourceModel):
             ClusterVersion=json_data.get("ClusterVersion"),
             EdgeSshEndpoint=json_data.get("EdgeSshEndpoint"),
             HttpsEndpoint=json_data.get("HttpsEndpoint"),
-            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),
             ResourceGroupName=json_data.get("ResourceGroupName"),

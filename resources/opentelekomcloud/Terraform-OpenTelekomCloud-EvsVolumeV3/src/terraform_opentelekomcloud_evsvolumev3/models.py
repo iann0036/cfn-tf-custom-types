@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     Cascade: Optional[bool]
     Description: Optional[str]
     DeviceType: Optional[str]
-    Id: Optional[str]
     ImageId: Optional[str]
     KmsId: Optional[str]
     Multiattach: Optional[bool]
@@ -69,7 +68,6 @@ class ResourceModel(BaseResourceModel):
             Cascade=json_data.get("Cascade"),
             Description=json_data.get("Description"),
             DeviceType=json_data.get("DeviceType"),
-            Id=json_data.get("Id"),
             ImageId=json_data.get("ImageId"),
             KmsId=json_data.get("KmsId"),
             Multiattach=json_data.get("Multiattach"),

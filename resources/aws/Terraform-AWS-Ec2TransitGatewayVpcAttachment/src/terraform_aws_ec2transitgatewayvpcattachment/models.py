@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DnsSupport: Optional[str]
-    Id: Optional[str]
     Ipv6Support: Optional[str]
     SubnetIds: Optional[Sequence[str]]
     Tags: Optional[Sequence["_Tags"]]
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             DnsSupport=json_data.get("DnsSupport"),
-            Id=json_data.get("Id"),
             Ipv6Support=json_data.get("Ipv6Support"),
             SubnetIds=json_data.get("SubnetIds"),
             Tags=json_data.get("Tags"),

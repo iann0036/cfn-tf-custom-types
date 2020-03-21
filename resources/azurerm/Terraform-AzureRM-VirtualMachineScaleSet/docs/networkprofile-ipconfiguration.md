@@ -15,7 +15,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#name" title="Name">Name</a>" : <i>String</i>,
     "<a href="#primary" title="Primary">Primary</a>" : <i>Boolean</i>,
     "<a href="#subnetid" title="SubnetId">SubnetId</a>" : <i>String</i>,
-    "<a href="#publicipaddressconfiguration" title="PublicIpAddressConfiguration">PublicIpAddressConfiguration</a>" : <i>[ <a href="networkprofile-ipconfiguration-publicipaddressconfiguration.md">PublicIpAddressConfiguration</a>, ... ]</i>
+    "<a href="#publicipaddressconfiguration" title="PublicIpAddressConfiguration">PublicIpAddressConfiguration</a>" : <i>[ &lt;a href=&#34;networkprofile-ipconfiguration-publicipaddressconfiguration.md&#34;&gt;PublicIpAddressConfiguration&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -34,7 +34,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#primary" title="Primary">Primary</a>: <i>Boolean</i>
 <a href="#subnetid" title="SubnetId">SubnetId</a>: <i>String</i>
 <a href="#publicipaddressconfiguration" title="PublicIpAddressConfiguration">PublicIpAddressConfiguration</a>: <i>
-      - <a href="networkprofile-ipconfiguration-publicipaddressconfiguration.md">PublicIpAddressConfiguration</a></i>
+      - &lt;a href=&#34;networkprofile-ipconfiguration-publicipaddressconfiguration.md&#34;&gt;PublicIpAddressConfiguration&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -42,7 +42,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### ApplicationGatewayBackendAddressPoolIds
 
 _Required_: No
-
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -50,7 +49,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ApplicationSecurityGroupIds
 
 _Required_: No
-
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -58,7 +56,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### LoadBalancerBackendAddressPoolIds
 
 _Required_: No
-
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -66,7 +63,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### LoadBalancerInboundNatRulesIds
 
 _Required_: No
-
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -74,7 +70,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Name
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -82,7 +77,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Primary
 
 _Required_: Yes
-
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -90,7 +84,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SubnetId
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -98,8 +91,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### PublicIpAddressConfiguration
 
 _Required_: No
-
-_Type_: List of <a href="networkprofile-ipconfiguration-publicipaddressconfiguration.md">PublicIpAddressConfiguration</a>
+_Type_: List of &lt;a href=&#34;networkprofile-ipconfiguration-publicipaddressconfiguration.md&#34;&gt;PublicIpAddressConfiguration&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     CreatedAt: Optional[str]
     CreatorId: Optional[str]
     Expiration: Optional[str]
-    Id: Optional[str]
     Metadata: Optional[Sequence["_Metadata"]]
     Mode: Optional[str]
     Name: Optional[str]
@@ -75,7 +74,6 @@ class ResourceModel(BaseResourceModel):
             CreatedAt=json_data.get("CreatedAt"),
             CreatorId=json_data.get("CreatorId"),
             Expiration=json_data.get("Expiration"),
-            Id=json_data.get("Id"),
             Metadata=json_data.get("Metadata"),
             Mode=json_data.get("Mode"),
             Name=json_data.get("Name"),

@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     CreateTime: Optional[str]
     EnhancedMonitorService: Optional[bool]
     EnhancedSecurityService: Optional[bool]
-    Id: Optional[str]
     ImageId: Optional[str]
     InstanceTags: Optional[Sequence["_InstanceTags"]]
     InstanceTypes: Optional[Sequence[str]]
@@ -71,7 +70,6 @@ class ResourceModel(BaseResourceModel):
             CreateTime=json_data.get("CreateTime"),
             EnhancedMonitorService=json_data.get("EnhancedMonitorService"),
             EnhancedSecurityService=json_data.get("EnhancedSecurityService"),
-            Id=json_data.get("Id"),
             ImageId=json_data.get("ImageId"),
             InstanceTags=json_data.get("InstanceTags"),
             InstanceTypes=json_data.get("InstanceTypes"),

@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#mode" title="Mode">Mode</a>" : <i>String</i>,
-    "<a href="#ports" title="Ports">Ports</a>" : <i>[ <a href="endpointspec-ports.md">Ports</a>, ... ]</i>
+    "<a href="#ports" title="Ports">Ports</a>" : <i>[ &lt;a href=&#34;endpointspec-ports.md&#34;&gt;Ports&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#mode" title="Mode">Mode</a>: <i>String</i>
 <a href="#ports" title="Ports">Ports</a>: <i>
-      - <a href="endpointspec-ports.md">Ports</a></i>
+      - &lt;a href=&#34;endpointspec-ports.md&#34;&gt;Ports&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -26,7 +26,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Mode
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -34,8 +33,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Ports
 
 _Required_: No
-
-_Type_: List of <a href="endpointspec-ports.md">Ports</a>
+_Type_: List of &lt;a href=&#34;endpointspec-ports.md&#34;&gt;Ports&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

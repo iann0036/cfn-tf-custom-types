@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     DefaultService: Optional[str]
     Description: Optional[str]
     Fingerprint: Optional[str]
-    Id: Optional[str]
     MapId: Optional[float]
     Name: Optional[str]
     Project: Optional[str]
@@ -87,7 +86,6 @@ class ResourceModel(BaseResourceModel):
             DefaultService=json_data.get("DefaultService"),
             Description=json_data.get("Description"),
             Fingerprint=json_data.get("Fingerprint"),
-            Id=json_data.get("Id"),
             MapId=json_data.get("MapId"),
             Name=json_data.get("Name"),
             Project=json_data.get("Project"),

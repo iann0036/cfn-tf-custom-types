@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Arn: Optional[str]
     HomeDirectory: Optional[str]
-    Id: Optional[str]
     Policy: Optional[str]
     Role: Optional[str]
     ServerId: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Arn=json_data.get("Arn"),
             HomeDirectory=json_data.get("HomeDirectory"),
-            Id=json_data.get("Id"),
             Policy=json_data.get("Policy"),
             Role=json_data.get("Role"),
             ServerId=json_data.get("ServerId"),

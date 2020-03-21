@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     GraphStyle: Optional[str]
-    Id: Optional[str]
     Left: Optional[Sequence["_Left"]]
     LineStyle: Optional[str]
     Name: Optional[str]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             GraphStyle=json_data.get("GraphStyle"),
-            Id=json_data.get("Id"),
             Left=json_data.get("Left"),
             LineStyle=json_data.get("LineStyle"),
             Name=json_data.get("Name"),

@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     AlertTags: Optional[Sequence[str]]
     Description: Optional[str]
     Enabled: Optional[bool]
-    Id: Optional[str]
     Interval: Optional[float]
     IntervalUnit: Optional[str]
     Name: Optional[str]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             AlertTags=json_data.get("AlertTags"),
             Description=json_data.get("Description"),
             Enabled=json_data.get("Enabled"),
-            Id=json_data.get("Id"),
             Interval=json_data.get("Interval"),
             IntervalUnit=json_data.get("IntervalUnit"),
             Name=json_data.get("Name"),

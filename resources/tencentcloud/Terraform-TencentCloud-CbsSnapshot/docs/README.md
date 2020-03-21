@@ -12,9 +12,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::TencentCloud::CbsSnapshot",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#createtime" title="CreateTime">CreateTime</a>" : <i>String</i>,
+        "<a href="#disktype" title="DiskType">DiskType</a>" : <i>String</i>,
+        "<a href="#percent" title="Percent">Percent</a>" : <i>Double</i>,
         "<a href="#snapshotname" title="SnapshotName">SnapshotName</a>" : <i>String</i>,
+        "<a href="#snapshotstatus" title="SnapshotStatus">SnapshotStatus</a>" : <i>String</i>,
         "<a href="#storageid" title="StorageId">StorageId</a>" : <i>String</i>,
+        "<a href="#storagesize" title="StorageSize">StorageSize</a>" : <i>Double</i>
     }
 }
 </pre>
@@ -24,18 +29,49 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::TencentCloud::CbsSnapshot
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#createtime" title="CreateTime">CreateTime</a>: <i>String</i>
+    <a href="#disktype" title="DiskType">DiskType</a>: <i>String</i>
+    <a href="#percent" title="Percent">Percent</a>: <i>Double</i>
     <a href="#snapshotname" title="SnapshotName">SnapshotName</a>: <i>String</i>
+    <a href="#snapshotstatus" title="SnapshotStatus">SnapshotStatus</a>: <i>String</i>
     <a href="#storageid" title="StorageId">StorageId</a>: <i>String</i>
+    <a href="#storagesize" title="StorageSize">StorageSize</a>: <i>Double</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
 _Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### CreateTime
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### DiskType
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Percent
+
+_Required_: No
+
+_Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -47,11 +83,27 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### SnapshotStatus
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### StorageId
 
 _Required_: Yes
 
 _Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### StorageSize
+
+_Required_: No
+
+_Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -73,21 +125,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateTime
 
-Returns the <code>CreateTime</code> value.
+Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
 
 #### DiskType
 
-Returns the <code>DiskType</code> value.
+Returns the &lt;code&gt;DiskType&lt;/code&gt; value.
 
 #### Percent
 
-Returns the <code>Percent</code> value.
+Returns the &lt;code&gt;Percent&lt;/code&gt; value.
 
 #### SnapshotStatus
 
-Returns the <code>SnapshotStatus</code> value.
+Returns the &lt;code&gt;SnapshotStatus&lt;/code&gt; value.
 
 #### StorageSize
 
-Returns the <code>StorageSize</code> value.
+Returns the &lt;code&gt;StorageSize&lt;/code&gt; value.
 

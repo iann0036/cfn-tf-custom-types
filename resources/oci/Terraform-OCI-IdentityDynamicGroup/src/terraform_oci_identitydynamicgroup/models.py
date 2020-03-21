@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     DefinedTags: Optional[Sequence["_DefinedTags"]]
     Description: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     InactiveState: Optional[str]
     MatchingRule: Optional[str]
     Name: Optional[str]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             DefinedTags=json_data.get("DefinedTags"),
             Description=json_data.get("Description"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             InactiveState=json_data.get("InactiveState"),
             MatchingRule=json_data.get("MatchingRule"),
             Name=json_data.get("Name"),

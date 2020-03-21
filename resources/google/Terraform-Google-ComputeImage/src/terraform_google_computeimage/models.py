@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DiskSizeGb: Optional[float]
     Family: Optional[str]
-    Id: Optional[str]
     LabelFingerprint: Optional[str]
     Labels: Optional[Sequence["_Labels"]]
     Licenses: Optional[Sequence[str]]
@@ -67,7 +66,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DiskSizeGb=json_data.get("DiskSizeGb"),
             Family=json_data.get("Family"),
-            Id=json_data.get("Id"),
             LabelFingerprint=json_data.get("LabelFingerprint"),
             Labels=json_data.get("Labels"),
             Licenses=json_data.get("Licenses"),

@@ -10,7 +10,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#backendsetname" title="BackendSetName">BackendSetName</a>" : <i>String</i>,
     "<a href="#path" title="Path">Path</a>" : <i>String</i>,
-    "<a href="#pathmatchtype" title="PathMatchType">PathMatchType</a>" : <i>[ <a href="pathroutes-pathmatchtype.md">PathMatchType</a>, ... ]</i>
+    "<a href="#pathmatchtype" title="PathMatchType">PathMatchType</a>" : <i>[ &lt;a href=&#34;pathroutes-pathmatchtype.md&#34;&gt;PathMatchType&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -20,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#backendsetname" title="BackendSetName">BackendSetName</a>: <i>String</i>
 <a href="#path" title="Path">Path</a>: <i>String</i>
 <a href="#pathmatchtype" title="PathMatchType">PathMatchType</a>: <i>
-      - <a href="pathroutes-pathmatchtype.md">PathMatchType</a></i>
+      - &lt;a href=&#34;pathroutes-pathmatchtype.md&#34;&gt;PathMatchType&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -28,7 +28,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### BackendSetName
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -36,7 +35,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Path
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -44,8 +42,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### PathMatchType
 
 _Required_: No
-
-_Type_: List of <a href="pathroutes-pathmatchtype.md">PathMatchType</a>
+_Type_: List of &lt;a href=&#34;pathroutes-pathmatchtype.md&#34;&gt;PathMatchType&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

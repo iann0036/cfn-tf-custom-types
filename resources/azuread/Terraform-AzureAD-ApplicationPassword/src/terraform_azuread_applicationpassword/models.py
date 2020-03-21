@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     ApplicationObjectId: Optional[str]
     EndDate: Optional[str]
     EndDateRelative: Optional[str]
-    Id: Optional[str]
     KeyId: Optional[str]
     StartDate: Optional[str]
     Value: Optional[str]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             ApplicationObjectId=json_data.get("ApplicationObjectId"),
             EndDate=json_data.get("EndDate"),
             EndDateRelative=json_data.get("EndDateRelative"),
-            Id=json_data.get("Id"),
             KeyId=json_data.get("KeyId"),
             StartDate=json_data.get("StartDate"),
             Value=json_data.get("Value"),

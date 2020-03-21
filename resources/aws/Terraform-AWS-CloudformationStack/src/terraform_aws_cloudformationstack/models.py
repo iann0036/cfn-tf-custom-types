@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Capabilities: Optional[Sequence[str]]
     DisableRollback: Optional[bool]
     IamRoleArn: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     NotificationArns: Optional[Sequence[str]]
     OnFailure: Optional[str]
@@ -65,7 +64,6 @@ class ResourceModel(BaseResourceModel):
             Capabilities=json_data.get("Capabilities"),
             DisableRollback=json_data.get("DisableRollback"),
             IamRoleArn=json_data.get("IamRoleArn"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             NotificationArns=json_data.get("NotificationArns"),
             OnFailure=json_data.get("OnFailure"),

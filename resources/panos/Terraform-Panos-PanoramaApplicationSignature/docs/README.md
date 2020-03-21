@@ -1,6 +1,6 @@
 # Terraform::Panos::PanoramaApplicationSignature
 
-An example resource schema demonstrating some basic constructs and validation rules.
+CloudFormation equivalent of panos_panorama_application_signature
 
 ## Syntax
 
@@ -12,14 +12,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Panos::PanoramaApplicationSignature",
     "Properties" : {
-        "<a href="#title" title="Title">Title</a>" : <i>String</i>,
-        "<a href="#coversheetincluded" title="CoverSheetIncluded">CoverSheetIncluded</a>" : <i>Boolean</i>,
-        "<a href="#duedate" title="DueDate">DueDate</a>" : <i>String</i>,
-        "<a href="#approvaldate" title="ApprovalDate">ApprovalDate</a>" : <i>String</i>,
-        "<a href="#memo" title="Memo">Memo</a>" : <i>&lt;a href=&#34;secondcopyofmemo.md&#34;&gt;SecondCopyOfMemo&lt;/a&gt;</i>,
-        "<a href="#secondcopyofmemo" title="SecondCopyOfMemo">SecondCopyOfMemo</a>" : <i>&lt;a href=&#34;secondcopyofmemo.md&#34;&gt;SecondCopyOfMemo&lt;/a&gt;</i>,
-        "<a href="#testcode" title="TestCode">TestCode</a>" : <i>String</i>,
-        "<a href="#authors" title="Authors">Authors</a>" : <i>[ String, ... ]</i>
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#applicationobject" title="ApplicationObject">ApplicationObject</a>" : <i>String</i>,
+        "<a href="#comment" title="Comment">Comment</a>" : <i>String</i>,
+        "<a href="#devicegroup" title="DeviceGroup">DeviceGroup</a>" : <i>String</i>,
+        "<a href="#name" title="Name">Name</a>" : <i>String</i>,
+        "<a href="#orderedmatch" title="OrderedMatch">OrderedMatch</a>" : <i>Boolean</i>,
+        "<a href="#scope" title="Scope">Scope</a>" : <i>String</i>,
+        "<a href="#andcondition" title="AndCondition">AndCondition</a>" : <i>[ &lt;a href=&#34;andcondition.md&#34;&gt;AndCondition&lt;/a&gt;, ... ]</i>,
+        "<a href="#orcondition" title="OrCondition">OrCondition</a>" : <i>[ &lt;a href=&#34;orcondition.md&#34;&gt;OrCondition&lt;/a&gt;, ... ]</i>,
+        "<a href="#equalto" title="EqualTo">EqualTo</a>" : <i>[ &lt;a href=&#34;equalto.md&#34;&gt;EqualTo&lt;/a&gt;, ... ]</i>,
+        "<a href="#greaterthan" title="GreaterThan">GreaterThan</a>" : <i>[ &lt;a href=&#34;greaterthan.md&#34;&gt;GreaterThan&lt;/a&gt;, ... ]</i>,
+        "<a href="#lessthan" title="LessThan">LessThan</a>" : <i>[ &lt;a href=&#34;lessthan.md&#34;&gt;LessThan&lt;/a&gt;, ... ]</i>,
+        "<a href="#patternmatch" title="PatternMatch">PatternMatch</a>" : <i>[ &lt;a href=&#34;patternmatch.md&#34;&gt;PatternMatch&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -29,36 +34,72 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Panos::PanoramaApplicationSignature
 Properties:
-    <a href="#title" title="Title">Title</a>: <i>String</i>
-    <a href="#coversheetincluded" title="CoverSheetIncluded">CoverSheetIncluded</a>: <i>Boolean</i>
-    <a href="#duedate" title="DueDate">DueDate</a>: <i>String</i>
-    <a href="#approvaldate" title="ApprovalDate">ApprovalDate</a>: <i>String</i>
-    <a href="#memo" title="Memo">Memo</a>: <i>&lt;a href=&#34;secondcopyofmemo.md&#34;&gt;SecondCopyOfMemo&lt;/a&gt;</i>
-    <a href="#secondcopyofmemo" title="SecondCopyOfMemo">SecondCopyOfMemo</a>: <i>&lt;a href=&#34;secondcopyofmemo.md&#34;&gt;SecondCopyOfMemo&lt;/a&gt;</i>
-    <a href="#testcode" title="TestCode">TestCode</a>: <i>String</i>
-    <a href="#authors" title="Authors">Authors</a>: <i>
-      - String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#applicationobject" title="ApplicationObject">ApplicationObject</a>: <i>String</i>
+    <a href="#comment" title="Comment">Comment</a>: <i>String</i>
+    <a href="#devicegroup" title="DeviceGroup">DeviceGroup</a>: <i>String</i>
+    <a href="#name" title="Name">Name</a>: <i>String</i>
+    <a href="#orderedmatch" title="OrderedMatch">OrderedMatch</a>: <i>Boolean</i>
+    <a href="#scope" title="Scope">Scope</a>: <i>String</i>
+    <a href="#andcondition" title="AndCondition">AndCondition</a>: <i>
+      - &lt;a href=&#34;andcondition.md&#34;&gt;AndCondition&lt;/a&gt;</i>
+    <a href="#orcondition" title="OrCondition">OrCondition</a>: <i>
+      - &lt;a href=&#34;orcondition.md&#34;&gt;OrCondition&lt;/a&gt;</i>
+    <a href="#equalto" title="EqualTo">EqualTo</a>: <i>
+      - &lt;a href=&#34;equalto.md&#34;&gt;EqualTo&lt;/a&gt;</i>
+    <a href="#greaterthan" title="GreaterThan">GreaterThan</a>: <i>
+      - &lt;a href=&#34;greaterthan.md&#34;&gt;GreaterThan&lt;/a&gt;</i>
+    <a href="#lessthan" title="LessThan">LessThan</a>: <i>
+      - &lt;a href=&#34;lessthan.md&#34;&gt;LessThan&lt;/a&gt;</i>
+    <a href="#patternmatch" title="PatternMatch">PatternMatch</a>: <i>
+      - &lt;a href=&#34;patternmatch.md&#34;&gt;PatternMatch&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
-#### Title
+#### tfcfnid
 
-The title of the TPS report is a mandatory element.
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ApplicationObject
 
 _Required_: Yes
 
 _Type_: String
 
-_Minimum_: <code>20</code>
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-_Maximum_: <code>250</code>
+#### Comment
+
+_Required_: No
+
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### CoverSheetIncluded
+#### DeviceGroup
 
-Required for all TPS Reports submitted after 2/19/1999
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Name
+
+_Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### OrderedMatch
 
 _Required_: No
 
@@ -66,7 +107,7 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### DueDate
+#### Scope
 
 _Required_: No
 
@@ -74,45 +115,51 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### ApprovalDate
+#### AndCondition
 
 _Required_: No
 
-_Type_: String
+_Type_: List of &lt;a href=&#34;andcondition.md&#34;&gt;AndCondition&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Memo
+#### OrCondition
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;secondcopyofmemo.md&#34;&gt;SecondCopyOfMemo&lt;/a&gt;
+_Type_: List of &lt;a href=&#34;orcondition.md&#34;&gt;OrCondition&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### SecondCopyOfMemo
+#### EqualTo
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;secondcopyofmemo.md&#34;&gt;SecondCopyOfMemo&lt;/a&gt;
+_Type_: List of &lt;a href=&#34;equalto.md&#34;&gt;EqualTo&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### TestCode
-
-_Required_: Yes
-
-_Type_: String
-
-_Allowed Values_: <code>NOT_STARTED</code> | <code>CANCELLED</code>
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Authors
+#### GreaterThan
 
 _Required_: No
 
-_Type_: List of String
+_Type_: List of &lt;a href=&#34;greaterthan.md&#34;&gt;GreaterThan&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### LessThan
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;lessthan.md&#34;&gt;LessThan&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### PatternMatch
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;patternmatch.md&#34;&gt;PatternMatch&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -120,7 +167,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 ### Ref
 
-When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the TPSCode.
+When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the tfcfnid.
 
 ### Fn::GetAtt
 
@@ -128,7 +175,7 @@ The `Fn::GetAtt` intrinsic function returns a value for a specified attribute of
 
 For more information about using the `Fn::GetAtt` intrinsic function, see [Fn::GetAtt](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html).
 
-#### TPSCode
+#### tfcfnid
 
-A TPS Code is automatically generated on creation and assigned as the unique identifier.
+Internal identifier for tracking resource changes. Do not use.
 

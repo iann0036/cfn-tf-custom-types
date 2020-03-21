@@ -12,17 +12,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::TencentCloud::Dcx",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#bandwidth" title="Bandwidth">Bandwidth</a>" : <i>Double</i>,
         "<a href="#bgpasn" title="BgpAsn">BgpAsn</a>" : <i>Double</i>,
         "<a href="#bgpauthkey" title="BgpAuthKey">BgpAuthKey</a>" : <i>String</i>,
+        "<a href="#createtime" title="CreateTime">CreateTime</a>" : <i>String</i>,
         "<a href="#customeraddress" title="CustomerAddress">CustomerAddress</a>" : <i>String</i>,
         "<a href="#dcid" title="DcId">DcId</a>" : <i>String</i>,
         "<a href="#dcgid" title="DcgId">DcgId</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#networktype" title="NetworkType">NetworkType</a>" : <i>String</i>,
         "<a href="#routefilterprefixes" title="RouteFilterPrefixes">RouteFilterPrefixes</a>" : <i>[ String, ... ]</i>,
         "<a href="#routetype" title="RouteType">RouteType</a>" : <i>String</i>,
+        "<a href="#state" title="State">State</a>" : <i>String</i>,
         "<a href="#tencentaddress" title="TencentAddress">TencentAddress</a>" : <i>String</i>,
         "<a href="#vlan" title="Vlan">Vlan</a>" : <i>Double</i>,
         "<a href="#vpcid" title="VpcId">VpcId</a>" : <i>String</i>
@@ -35,24 +37,36 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::TencentCloud::Dcx
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#bandwidth" title="Bandwidth">Bandwidth</a>: <i>Double</i>
     <a href="#bgpasn" title="BgpAsn">BgpAsn</a>: <i>Double</i>
     <a href="#bgpauthkey" title="BgpAuthKey">BgpAuthKey</a>: <i>String</i>
+    <a href="#createtime" title="CreateTime">CreateTime</a>: <i>String</i>
     <a href="#customeraddress" title="CustomerAddress">CustomerAddress</a>: <i>String</i>
     <a href="#dcid" title="DcId">DcId</a>: <i>String</i>
     <a href="#dcgid" title="DcgId">DcgId</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#networktype" title="NetworkType">NetworkType</a>: <i>String</i>
     <a href="#routefilterprefixes" title="RouteFilterPrefixes">RouteFilterPrefixes</a>: <i>
       - String</i>
     <a href="#routetype" title="RouteType">RouteType</a>: <i>String</i>
+    <a href="#state" title="State">State</a>: <i>String</i>
     <a href="#tencentaddress" title="TencentAddress">TencentAddress</a>: <i>String</i>
     <a href="#vlan" title="Vlan">Vlan</a>: <i>Double</i>
     <a href="#vpcid" title="VpcId">VpcId</a>: <i>String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Bandwidth
 
@@ -71,6 +85,14 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BgpAuthKey
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### CreateTime
 
 _Required_: No
 
@@ -102,14 +124,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Name
 
 _Required_: Yes
@@ -135,6 +149,14 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RouteType
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### State
 
 _Required_: No
 
@@ -184,9 +206,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateTime
 
-Returns the <code>CreateTime</code> value.
+Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
 
 #### State
 
-Returns the <code>State</code> value.
+Returns the &lt;code&gt;State&lt;/code&gt; value.
 

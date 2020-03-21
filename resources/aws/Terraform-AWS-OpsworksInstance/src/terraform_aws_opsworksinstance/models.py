@@ -49,7 +49,6 @@ class ResourceModel(BaseResourceModel):
     EcsClusterArn: Optional[str]
     ElasticIp: Optional[str]
     Hostname: Optional[str]
-    Id: Optional[str]
     InfrastructureClass: Optional[str]
     InstallUpdatesOnBoot: Optional[bool]
     InstanceProfileArn: Optional[str]
@@ -106,7 +105,6 @@ class ResourceModel(BaseResourceModel):
             EcsClusterArn=json_data.get("EcsClusterArn"),
             ElasticIp=json_data.get("ElasticIp"),
             Hostname=json_data.get("Hostname"),
-            Id=json_data.get("Id"),
             InfrastructureClass=json_data.get("InfrastructureClass"),
             InstallUpdatesOnBoot=json_data.get("InstallUpdatesOnBoot"),
             InstanceProfileArn=json_data.get("InstanceProfileArn"),

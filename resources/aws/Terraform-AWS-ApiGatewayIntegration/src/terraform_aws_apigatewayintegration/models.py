@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     ContentHandling: Optional[str]
     Credentials: Optional[str]
     HttpMethod: Optional[str]
-    Id: Optional[str]
     IntegrationHttpMethod: Optional[str]
     PassthroughBehavior: Optional[str]
     RequestParameters: Optional[Sequence["_RequestParameters"]]
@@ -71,7 +70,6 @@ class ResourceModel(BaseResourceModel):
             ContentHandling=json_data.get("ContentHandling"),
             Credentials=json_data.get("Credentials"),
             HttpMethod=json_data.get("HttpMethod"),
-            Id=json_data.get("Id"),
             IntegrationHttpMethod=json_data.get("IntegrationHttpMethod"),
             PassthroughBehavior=json_data.get("PassthroughBehavior"),
             RequestParameters=json_data.get("RequestParameters"),

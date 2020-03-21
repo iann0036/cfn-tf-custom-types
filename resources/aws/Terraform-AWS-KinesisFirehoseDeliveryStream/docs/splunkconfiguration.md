@@ -14,8 +14,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#hectoken" title="HecToken">HecToken</a>" : <i>String</i>,
     "<a href="#retryduration" title="RetryDuration">RetryDuration</a>" : <i>Double</i>,
     "<a href="#s3backupmode" title="S3BackupMode">S3BackupMode</a>" : <i>String</i>,
-    "<a href="#cloudwatchloggingoptions" title="CloudwatchLoggingOptions">CloudwatchLoggingOptions</a>" : <i>[ <a href="splunkconfiguration-cloudwatchloggingoptions.md">CloudwatchLoggingOptions</a>, ... ]</i>,
-    "<a href="#processingconfiguration" title="ProcessingConfiguration">ProcessingConfiguration</a>" : <i>[ <a href="splunkconfiguration-processingconfiguration.md">ProcessingConfiguration</a>, ... ]</i>
+    "<a href="#cloudwatchloggingoptions" title="CloudwatchLoggingOptions">CloudwatchLoggingOptions</a>" : <i>[ &lt;a href=&#34;splunkconfiguration-cloudwatchloggingoptions.md&#34;&gt;CloudwatchLoggingOptions&lt;/a&gt;, ... ]</i>,
+    "<a href="#processingconfiguration" title="ProcessingConfiguration">ProcessingConfiguration</a>" : <i>[ &lt;a href=&#34;splunkconfiguration-processingconfiguration.md&#34;&gt;ProcessingConfiguration&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -29,9 +29,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#retryduration" title="RetryDuration">RetryDuration</a>: <i>Double</i>
 <a href="#s3backupmode" title="S3BackupMode">S3BackupMode</a>: <i>String</i>
 <a href="#cloudwatchloggingoptions" title="CloudwatchLoggingOptions">CloudwatchLoggingOptions</a>: <i>
-      - <a href="splunkconfiguration-cloudwatchloggingoptions.md">CloudwatchLoggingOptions</a></i>
+      - &lt;a href=&#34;splunkconfiguration-cloudwatchloggingoptions.md&#34;&gt;CloudwatchLoggingOptions&lt;/a&gt;</i>
 <a href="#processingconfiguration" title="ProcessingConfiguration">ProcessingConfiguration</a>: <i>
-      - <a href="splunkconfiguration-processingconfiguration.md">ProcessingConfiguration</a></i>
+      - &lt;a href=&#34;splunkconfiguration-processingconfiguration.md&#34;&gt;ProcessingConfiguration&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -39,7 +39,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### HecAcknowledgmentTimeout
 
 _Required_: No
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -47,7 +46,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### HecEndpoint
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -55,7 +53,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### HecEndpointType
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -63,7 +60,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### HecToken
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -71,7 +67,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RetryDuration
 
 _Required_: No
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -79,7 +74,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### S3BackupMode
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -87,16 +81,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### CloudwatchLoggingOptions
 
 _Required_: No
-
-_Type_: List of <a href="splunkconfiguration-cloudwatchloggingoptions.md">CloudwatchLoggingOptions</a>
+_Type_: List of &lt;a href=&#34;splunkconfiguration-cloudwatchloggingoptions.md&#34;&gt;CloudwatchLoggingOptions&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProcessingConfiguration
 
 _Required_: No
-
-_Type_: List of <a href="splunkconfiguration-processingconfiguration.md">ProcessingConfiguration</a>
+_Type_: List of &lt;a href=&#34;splunkconfiguration-processingconfiguration.md&#34;&gt;ProcessingConfiguration&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

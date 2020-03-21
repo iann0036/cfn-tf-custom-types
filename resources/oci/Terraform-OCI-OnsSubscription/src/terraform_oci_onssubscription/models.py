@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     Endpoint: Optional[str]
     Etag: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     Protocol: Optional[str]
     State: Optional[str]
     TopicId: Optional[str]
@@ -65,7 +64,6 @@ class ResourceModel(BaseResourceModel):
             Endpoint=json_data.get("Endpoint"),
             Etag=json_data.get("Etag"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             Protocol=json_data.get("Protocol"),
             State=json_data.get("State"),
             TopicId=json_data.get("TopicId"),

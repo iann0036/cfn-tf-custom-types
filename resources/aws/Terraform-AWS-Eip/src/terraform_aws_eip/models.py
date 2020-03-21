@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     AssociateWithPrivateIp: Optional[str]
     AssociationId: Optional[str]
     Domain: Optional[str]
-    Id: Optional[str]
     Instance: Optional[str]
     NetworkInterface: Optional[str]
     PrivateDns: Optional[str]
@@ -65,7 +64,6 @@ class ResourceModel(BaseResourceModel):
             AssociateWithPrivateIp=json_data.get("AssociateWithPrivateIp"),
             AssociationId=json_data.get("AssociationId"),
             Domain=json_data.get("Domain"),
-            Id=json_data.get("Id"),
             Instance=json_data.get("Instance"),
             NetworkInterface=json_data.get("NetworkInterface"),
             PrivateDns=json_data.get("PrivateDns"),

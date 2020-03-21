@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     DefaultKeyFlag: Optional[str]
     DomainId: Optional[str]
     ExpirationTime: Optional[str]
-    Id: Optional[str]
     IsEnabled: Optional[bool]
     KeyAlias: Optional[str]
     KeyDescription: Optional[str]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             DefaultKeyFlag=json_data.get("DefaultKeyFlag"),
             DomainId=json_data.get("DomainId"),
             ExpirationTime=json_data.get("ExpirationTime"),
-            Id=json_data.get("Id"),
             IsEnabled=json_data.get("IsEnabled"),
             KeyAlias=json_data.get("KeyAlias"),
             KeyDescription=json_data.get("KeyDescription"),

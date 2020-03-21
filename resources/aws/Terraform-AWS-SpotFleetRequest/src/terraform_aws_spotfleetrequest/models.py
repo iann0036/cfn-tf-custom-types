@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     ExcessCapacityTerminationPolicy: Optional[str]
     FleetType: Optional[str]
     IamFleetRole: Optional[str]
-    Id: Optional[str]
     InstanceInterruptionBehaviour: Optional[str]
     InstancePoolsToUseCount: Optional[float]
     LoadBalancers: Optional[Sequence[str]]
@@ -74,7 +73,6 @@ class ResourceModel(BaseResourceModel):
             ExcessCapacityTerminationPolicy=json_data.get("ExcessCapacityTerminationPolicy"),
             FleetType=json_data.get("FleetType"),
             IamFleetRole=json_data.get("IamFleetRole"),
-            Id=json_data.get("Id"),
             InstanceInterruptionBehaviour=json_data.get("InstanceInterruptionBehaviour"),
             InstancePoolsToUseCount=json_data.get("InstancePoolsToUseCount"),
             LoadBalancers=json_data.get("LoadBalancers"),

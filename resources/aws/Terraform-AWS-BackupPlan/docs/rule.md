@@ -9,12 +9,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#completionwindow" title="CompletionWindow">CompletionWindow</a>" : <i>Double</i>,
-    "<a href="#recoverypointtags" title="RecoveryPointTags">RecoveryPointTags</a>" : <i>[ <a href="rule-recoverypointtags.md">RecoveryPointTags</a>, ... ]</i>,
+    "<a href="#recoverypointtags" title="RecoveryPointTags">RecoveryPointTags</a>" : <i>[ &lt;a href=&#34;rule-recoverypointtags.md&#34;&gt;RecoveryPointTags&lt;/a&gt;, ... ]</i>,
     "<a href="#rulename" title="RuleName">RuleName</a>" : <i>String</i>,
     "<a href="#schedule" title="Schedule">Schedule</a>" : <i>String</i>,
     "<a href="#startwindow" title="StartWindow">StartWindow</a>" : <i>Double</i>,
     "<a href="#targetvaultname" title="TargetVaultName">TargetVaultName</a>" : <i>String</i>,
-    "<a href="#lifecycle" title="Lifecycle">Lifecycle</a>" : <i>[ <a href="rule-lifecycle.md">Lifecycle</a>, ... ]</i>
+    "<a href="#lifecycle" title="Lifecycle">Lifecycle</a>" : <i>[ &lt;a href=&#34;rule-lifecycle.md&#34;&gt;Lifecycle&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -23,13 +23,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#completionwindow" title="CompletionWindow">CompletionWindow</a>: <i>Double</i>
 <a href="#recoverypointtags" title="RecoveryPointTags">RecoveryPointTags</a>: <i>
-      - <a href="rule-recoverypointtags.md">RecoveryPointTags</a></i>
+      - &lt;a href=&#34;rule-recoverypointtags.md&#34;&gt;RecoveryPointTags&lt;/a&gt;</i>
 <a href="#rulename" title="RuleName">RuleName</a>: <i>String</i>
 <a href="#schedule" title="Schedule">Schedule</a>: <i>String</i>
 <a href="#startwindow" title="StartWindow">StartWindow</a>: <i>Double</i>
 <a href="#targetvaultname" title="TargetVaultName">TargetVaultName</a>: <i>String</i>
 <a href="#lifecycle" title="Lifecycle">Lifecycle</a>: <i>
-      - <a href="rule-lifecycle.md">Lifecycle</a></i>
+      - &lt;a href=&#34;rule-lifecycle.md&#34;&gt;Lifecycle&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -37,7 +37,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### CompletionWindow
 
 _Required_: No
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -45,15 +44,13 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RecoveryPointTags
 
 _Required_: No
-
-_Type_: List of <a href="rule-recoverypointtags.md">RecoveryPointTags</a>
+_Type_: List of &lt;a href=&#34;rule-recoverypointtags.md&#34;&gt;RecoveryPointTags&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RuleName
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -61,7 +58,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Schedule
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -69,7 +65,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### StartWindow
 
 _Required_: No
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -77,7 +72,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### TargetVaultName
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -85,8 +79,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Lifecycle
 
 _Required_: No
-
-_Type_: List of <a href="rule-lifecycle.md">Lifecycle</a>
+_Type_: List of &lt;a href=&#34;rule-lifecycle.md&#34;&gt;Lifecycle&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

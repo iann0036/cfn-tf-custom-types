@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DisplayName: Optional[str]
     FrontendId: Optional[float]
-    Id: Optional[str]
     ServiceName: Optional[str]
     Weight: Optional[float]
     Action: Optional[Sequence["_Action"]]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DisplayName=json_data.get("DisplayName"),
             FrontendId=json_data.get("FrontendId"),
-            Id=json_data.get("Id"),
             ServiceName=json_data.get("ServiceName"),
             Weight=json_data.get("Weight"),
             Action=json_data.get("Action"),

@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ConfigsyncIp: Optional[str]
-    Id: Optional[str]
     MirrorIp: Optional[str]
     MirrorSecondaryIp: Optional[str]
     Name: Optional[str]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             ConfigsyncIp=json_data.get("ConfigsyncIp"),
-            Id=json_data.get("Id"),
             MirrorIp=json_data.get("MirrorIp"),
             MirrorSecondaryIp=json_data.get("MirrorSecondaryIp"),
             Name=json_data.get("Name"),

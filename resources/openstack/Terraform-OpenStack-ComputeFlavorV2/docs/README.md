@@ -12,10 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OpenStack::ComputeFlavorV2",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#disk" title="Disk">Disk</a>" : <i>Double</i>,
         "<a href="#ephemeral" title="Ephemeral">Ephemeral</a>" : <i>Double</i>,
-        "<a href="#extraspecs" title="ExtraSpecs">ExtraSpecs</a>" : <i>[ <a href="extraspecs.md">ExtraSpecs</a>, ... ]</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#extraspecs" title="ExtraSpecs">ExtraSpecs</a>" : <i>[ &lt;a href=&#34;extraspecs.md&#34;&gt;ExtraSpecs&lt;/a&gt;, ... ]</i>,
         "<a href="#ispublic" title="IsPublic">IsPublic</a>" : <i>Boolean</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#ram" title="Ram">Ram</a>" : <i>Double</i>,
@@ -32,11 +32,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OpenStack::ComputeFlavorV2
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#disk" title="Disk">Disk</a>: <i>Double</i>
     <a href="#ephemeral" title="Ephemeral">Ephemeral</a>: <i>Double</i>
     <a href="#extraspecs" title="ExtraSpecs">ExtraSpecs</a>: <i>
-      - <a href="extraspecs.md">ExtraSpecs</a></i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+      - &lt;a href=&#34;extraspecs.md&#34;&gt;ExtraSpecs&lt;/a&gt;</i>
     <a href="#ispublic" title="IsPublic">IsPublic</a>: <i>Boolean</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#ram" title="Ram">Ram</a>: <i>Double</i>
@@ -47,6 +47,16 @@ Properties:
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Disk
 
@@ -68,15 +78,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="extraspecs.md">ExtraSpecs</a>
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
-
-_Type_: String
+_Type_: List of &lt;a href=&#34;extraspecs.md&#34;&gt;ExtraSpecs&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

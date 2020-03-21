@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     DxGatewayAssociationId: Optional[str]
     DxGatewayId: Optional[str]
     DxGatewayOwnerAccountId: Optional[str]
-    Id: Optional[str]
     ProposalId: Optional[str]
     VpnGatewayId: Optional[str]
     Timeouts: Optional["_Timeouts"]
@@ -64,7 +63,6 @@ class ResourceModel(BaseResourceModel):
             DxGatewayAssociationId=json_data.get("DxGatewayAssociationId"),
             DxGatewayId=json_data.get("DxGatewayId"),
             DxGatewayOwnerAccountId=json_data.get("DxGatewayOwnerAccountId"),
-            Id=json_data.get("Id"),
             ProposalId=json_data.get("ProposalId"),
             VpnGatewayId=json_data.get("VpnGatewayId"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),

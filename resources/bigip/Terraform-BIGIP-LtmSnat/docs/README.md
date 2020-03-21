@@ -12,9 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::BIGIP::LtmSnat",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#autolasthop" title="Autolasthop">Autolasthop</a>" : <i>String</i>,
         "<a href="#fullpath" title="FullPath">FullPath</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#mirror" title="Mirror">Mirror</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#partition" title="Partition">Partition</a>" : <i>String</i>,
@@ -23,7 +23,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#translation" title="Translation">Translation</a>" : <i>String</i>,
         "<a href="#vlans" title="Vlans">Vlans</a>" : <i>[ String, ... ]</i>,
         "<a href="#vlansdisabled" title="Vlansdisabled">Vlansdisabled</a>" : <i>Boolean</i>,
-        "<a href="#origins" title="Origins">Origins</a>" : <i>[ <a href="origins.md">Origins</a>, ... ]</i>
+        "<a href="#origins" title="Origins">Origins</a>" : <i>[ &lt;a href=&#34;origins.md&#34;&gt;Origins&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -33,9 +33,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::BIGIP::LtmSnat
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#autolasthop" title="Autolasthop">Autolasthop</a>: <i>String</i>
     <a href="#fullpath" title="FullPath">FullPath</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#mirror" title="Mirror">Mirror</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#partition" title="Partition">Partition</a>: <i>String</i>
@@ -46,10 +46,20 @@ Properties:
       - String</i>
     <a href="#vlansdisabled" title="Vlansdisabled">Vlansdisabled</a>: <i>Boolean</i>
     <a href="#origins" title="Origins">Origins</a>: <i>
-      - <a href="origins.md">Origins</a></i>
+      - &lt;a href=&#34;origins.md&#34;&gt;Origins&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Autolasthop
 
@@ -60,14 +70,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FullPath
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 
@@ -143,7 +145,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="origins.md">Origins</a>
+_Type_: List of &lt;a href=&#34;origins.md&#34;&gt;Origins&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     ExportLocations: Optional[Sequence["_ExportLocations"]]
     HasReplicas: Optional[bool]
     Host: Optional[str]
-    Id: Optional[str]
     IsPublic: Optional[bool]
     Metadata: Optional[Sequence["_Metadata"]]
     Name: Optional[str]
@@ -72,7 +71,6 @@ class ResourceModel(BaseResourceModel):
             ExportLocations=json_data.get("ExportLocations"),
             HasReplicas=json_data.get("HasReplicas"),
             Host=json_data.get("Host"),
-            Id=json_data.get("Id"),
             IsPublic=json_data.get("IsPublic"),
             Metadata=json_data.get("Metadata"),
             Name=json_data.get("Name"),

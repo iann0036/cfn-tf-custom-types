@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Arguments: Optional[str]
     ClusterId: Optional[str]
     HiveScriptPath: Optional[str]
-    Id: Optional[str]
     Input: Optional[str]
     IsProtected: Optional[bool]
     IsPublic: Optional[bool]
@@ -64,7 +63,6 @@ class ResourceModel(BaseResourceModel):
             Arguments=json_data.get("Arguments"),
             ClusterId=json_data.get("ClusterId"),
             HiveScriptPath=json_data.get("HiveScriptPath"),
-            Id=json_data.get("Id"),
             Input=json_data.get("Input"),
             IsProtected=json_data.get("IsProtected"),
             IsPublic=json_data.get("IsPublic"),

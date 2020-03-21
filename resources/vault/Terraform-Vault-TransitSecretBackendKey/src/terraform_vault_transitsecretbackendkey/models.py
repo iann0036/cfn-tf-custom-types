@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     DeletionAllowed: Optional[bool]
     Derived: Optional[bool]
     Exportable: Optional[bool]
-    Id: Optional[str]
     Keys: Optional[Sequence[Sequence["_Keys"]]]
     LatestVersion: Optional[float]
     MinAvailableVersion: Optional[float]
@@ -70,7 +69,6 @@ class ResourceModel(BaseResourceModel):
             DeletionAllowed=json_data.get("DeletionAllowed"),
             Derived=json_data.get("Derived"),
             Exportable=json_data.get("Exportable"),
-            Id=json_data.get("Id"),
             Keys=json_data.get("Keys"),
             LatestVersion=json_data.get("LatestVersion"),
             MinAvailableVersion=json_data.get("MinAvailableVersion"),

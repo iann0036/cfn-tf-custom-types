@@ -12,11 +12,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::SslVpnServer",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#cipher" title="Cipher">Cipher</a>" : <i>String</i>,
         "<a href="#clientippool" title="ClientIpPool">ClientIpPool</a>" : <i>String</i>,
         "<a href="#compress" title="Compress">Compress</a>" : <i>Boolean</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#connections" title="Connections">Connections</a>" : <i>Double</i>,
+        "<a href="#internetip" title="InternetIp">InternetIp</a>" : <i>String</i>,
         "<a href="#localsubnet" title="LocalSubnet">LocalSubnet</a>" : <i>String</i>,
+        "<a href="#maxconnections" title="MaxConnections">MaxConnections</a>" : <i>Double</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#port" title="Port">Port</a>" : <i>Double</i>,
         "<a href="#protocol" title="Protocol">Protocol</a>" : <i>String</i>,
@@ -30,11 +33,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::SslVpnServer
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#cipher" title="Cipher">Cipher</a>: <i>String</i>
     <a href="#clientippool" title="ClientIpPool">ClientIpPool</a>: <i>String</i>
     <a href="#compress" title="Compress">Compress</a>: <i>Boolean</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#connections" title="Connections">Connections</a>: <i>Double</i>
+    <a href="#internetip" title="InternetIp">InternetIp</a>: <i>String</i>
     <a href="#localsubnet" title="LocalSubnet">LocalSubnet</a>: <i>String</i>
+    <a href="#maxconnections" title="MaxConnections">MaxConnections</a>: <i>Double</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#port" title="Port">Port</a>: <i>Double</i>
     <a href="#protocol" title="Protocol">Protocol</a>: <i>String</i>
@@ -42,6 +48,16 @@ Properties:
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Cipher
 
@@ -67,7 +83,15 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### Connections
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### InternetIp
 
 _Required_: No
 
@@ -80,6 +104,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: Yes
 
 _Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### MaxConnections
+
+_Required_: No
+
+_Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -133,13 +165,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Connections
 
-Returns the <code>Connections</code> value.
+Returns the &lt;code&gt;Connections&lt;/code&gt; value.
 
 #### InternetIp
 
-Returns the <code>InternetIp</code> value.
+Returns the &lt;code&gt;InternetIp&lt;/code&gt; value.
 
 #### MaxConnections
 
-Returns the <code>MaxConnections</code> value.
+Returns the &lt;code&gt;MaxConnections&lt;/code&gt; value.
 

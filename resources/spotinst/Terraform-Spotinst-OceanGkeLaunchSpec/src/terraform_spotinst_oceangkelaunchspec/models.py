@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     OceanId: Optional[str]
     SourceImage: Optional[str]
     AutoscaleHeadrooms: Optional[Sequence["_AutoscaleHeadrooms"]]
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             OceanId=json_data.get("OceanId"),
             SourceImage=json_data.get("SourceImage"),
             AutoscaleHeadrooms=json_data.get("AutoscaleHeadrooms"),

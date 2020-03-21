@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     Entity: Optional[str]
     EntityId: Optional[str]
     Generation: Optional[float]
-    Id: Optional[str]
     Object: Optional[str]
     ProjectTeam: Optional[Sequence["_ProjectTeam"]]
     Role: Optional[str]
@@ -63,7 +62,6 @@ class ResourceModel(BaseResourceModel):
             Entity=json_data.get("Entity"),
             EntityId=json_data.get("EntityId"),
             Generation=json_data.get("Generation"),
-            Id=json_data.get("Id"),
             Object=json_data.get("Object"),
             ProjectTeam=json_data.get("ProjectTeam"),
             Role=json_data.get("Role"),

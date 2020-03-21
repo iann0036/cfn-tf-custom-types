@@ -12,13 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OpsGenie::Escalation",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#ownerteamid" title="OwnerTeamId">OwnerTeamId</a>" : <i>String</i>,
-        "<a href="#repeat" title="Repeat">Repeat</a>" : <i>[ <a href="repeat.md">Repeat</a>, ... ]</i>,
-        "<a href="#rules" title="Rules">Rules</a>" : <i>[ <a href="rules.md">Rules</a>, ... ]</i>,
-        "<a href="#recipient" title="Recipient">Recipient</a>" : <i>[ <a href="recipient.md">Recipient</a>, ... ]</i>
+        "<a href="#repeat" title="Repeat">Repeat</a>" : <i>[ &lt;a href=&#34;repeat.md&#34;&gt;Repeat&lt;/a&gt;, ... ]</i>,
+        "<a href="#rules" title="Rules">Rules</a>" : <i>[ &lt;a href=&#34;rules.md&#34;&gt;Rules&lt;/a&gt;, ... ]</i>,
+        "<a href="#recipient" title="Recipient">Recipient</a>" : <i>[ &lt;a href=&#34;recipient.md&#34;&gt;Recipient&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -28,21 +28,23 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OpsGenie::Escalation
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#ownerteamid" title="OwnerTeamId">OwnerTeamId</a>: <i>String</i>
     <a href="#repeat" title="Repeat">Repeat</a>: <i>
-      - <a href="repeat.md">Repeat</a></i>
+      - &lt;a href=&#34;repeat.md&#34;&gt;Repeat&lt;/a&gt;</i>
     <a href="#rules" title="Rules">Rules</a>: <i>
-      - <a href="rules.md">Rules</a></i>
+      - &lt;a href=&#34;rules.md&#34;&gt;Rules&lt;/a&gt;</i>
     <a href="#recipient" title="Recipient">Recipient</a>: <i>
-      - <a href="recipient.md">Recipient</a></i>
+      - &lt;a href=&#34;recipient.md&#34;&gt;Recipient&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
-#### Description
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
@@ -50,7 +52,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### Description
 
 _Required_: No
 
@@ -78,7 +80,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="repeat.md">Repeat</a>
+_Type_: List of &lt;a href=&#34;repeat.md&#34;&gt;Repeat&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -86,7 +88,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="rules.md">Rules</a>
+_Type_: List of &lt;a href=&#34;rules.md&#34;&gt;Rules&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -94,7 +96,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="recipient.md">Recipient</a>
+_Type_: List of &lt;a href=&#34;recipient.md&#34;&gt;Recipient&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

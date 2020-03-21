@@ -12,9 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Google::ComputeRouterNat",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#drainnatips" title="DrainNatIps">DrainNatIps</a>" : <i>[ String, ... ]</i>,
         "<a href="#icmpidletimeoutsec" title="IcmpIdleTimeoutSec">IcmpIdleTimeoutSec</a>" : <i>Double</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#minportspervm" title="MinPortsPerVm">MinPortsPerVm</a>" : <i>Double</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#natipallocateoption" title="NatIpAllocateOption">NatIpAllocateOption</a>" : <i>String</i>,
@@ -26,9 +26,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#tcpestablishedidletimeoutsec" title="TcpEstablishedIdleTimeoutSec">TcpEstablishedIdleTimeoutSec</a>" : <i>Double</i>,
         "<a href="#tcptransitoryidletimeoutsec" title="TcpTransitoryIdleTimeoutSec">TcpTransitoryIdleTimeoutSec</a>" : <i>Double</i>,
         "<a href="#udpidletimeoutsec" title="UdpIdleTimeoutSec">UdpIdleTimeoutSec</a>" : <i>Double</i>,
-        "<a href="#logconfig" title="LogConfig">LogConfig</a>" : <i>[ <a href="logconfig.md">LogConfig</a>, ... ]</i>,
-        "<a href="#subnetwork" title="Subnetwork">Subnetwork</a>" : <i>[ <a href="subnetwork.md">Subnetwork</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
+        "<a href="#logconfig" title="LogConfig">LogConfig</a>" : <i>[ &lt;a href=&#34;logconfig.md&#34;&gt;LogConfig&lt;/a&gt;, ... ]</i>,
+        "<a href="#subnetwork" title="Subnetwork">Subnetwork</a>" : <i>[ &lt;a href=&#34;subnetwork.md&#34;&gt;Subnetwork&lt;/a&gt;, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     }
 }
 </pre>
@@ -38,10 +38,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Google::ComputeRouterNat
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#drainnatips" title="DrainNatIps">DrainNatIps</a>: <i>
       - String</i>
     <a href="#icmpidletimeoutsec" title="IcmpIdleTimeoutSec">IcmpIdleTimeoutSec</a>: <i>Double</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#minportspervm" title="MinPortsPerVm">MinPortsPerVm</a>: <i>Double</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#natipallocateoption" title="NatIpAllocateOption">NatIpAllocateOption</a>: <i>String</i>
@@ -55,13 +55,23 @@ Properties:
     <a href="#tcptransitoryidletimeoutsec" title="TcpTransitoryIdleTimeoutSec">TcpTransitoryIdleTimeoutSec</a>: <i>Double</i>
     <a href="#udpidletimeoutsec" title="UdpIdleTimeoutSec">UdpIdleTimeoutSec</a>: <i>Double</i>
     <a href="#logconfig" title="LogConfig">LogConfig</a>: <i>
-      - <a href="logconfig.md">LogConfig</a></i>
+      - &lt;a href=&#34;logconfig.md&#34;&gt;LogConfig&lt;/a&gt;</i>
     <a href="#subnetwork" title="Subnetwork">Subnetwork</a>: <i>
-      - <a href="subnetwork.md">Subnetwork</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;subnetwork.md&#34;&gt;Subnetwork&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DrainNatIps
 
@@ -76,14 +86,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -179,7 +181,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="logconfig.md">LogConfig</a>
+_Type_: List of &lt;a href=&#34;logconfig.md&#34;&gt;LogConfig&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -187,7 +189,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="subnetwork.md">Subnetwork</a>
+_Type_: List of &lt;a href=&#34;subnetwork.md&#34;&gt;Subnetwork&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -195,7 +197,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

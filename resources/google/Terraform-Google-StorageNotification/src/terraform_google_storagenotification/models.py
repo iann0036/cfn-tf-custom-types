@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Bucket: Optional[str]
     CustomAttributes: Optional[Sequence["_CustomAttributes"]]
     EventTypes: Optional[Sequence[str]]
-    Id: Optional[str]
     NotificationId: Optional[str]
     ObjectNamePrefix: Optional[str]
     PayloadFormat: Optional[str]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             Bucket=json_data.get("Bucket"),
             CustomAttributes=json_data.get("CustomAttributes"),
             EventTypes=json_data.get("EventTypes"),
-            Id=json_data.get("Id"),
             NotificationId=json_data.get("NotificationId"),
             ObjectNamePrefix=json_data.get("ObjectNamePrefix"),
             PayloadFormat=json_data.get("PayloadFormat"),

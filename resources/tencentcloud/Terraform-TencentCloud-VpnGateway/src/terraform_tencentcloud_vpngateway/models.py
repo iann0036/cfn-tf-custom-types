@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     ChargeType: Optional[str]
     CreateTime: Optional[str]
     ExpiredTime: Optional[str]
-    Id: Optional[str]
     IsAddressBlocked: Optional[bool]
     Name: Optional[str]
     NewPurchasePlan: Optional[str]
@@ -67,7 +66,6 @@ class ResourceModel(BaseResourceModel):
             ChargeType=json_data.get("ChargeType"),
             CreateTime=json_data.get("CreateTime"),
             ExpiredTime=json_data.get("ExpiredTime"),
-            Id=json_data.get("Id"),
             IsAddressBlocked=json_data.get("IsAddressBlocked"),
             Name=json_data.get("Name"),
             NewPurchasePlan=json_data.get("NewPurchasePlan"),

@@ -12,15 +12,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::KmsGrant",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#grantcreationtokens" title="GrantCreationTokens">GrantCreationTokens</a>" : <i>[ String, ... ]</i>,
+        "<a href="#grantid" title="GrantId">GrantId</a>" : <i>String</i>,
+        "<a href="#granttoken" title="GrantToken">GrantToken</a>" : <i>String</i>,
         "<a href="#granteeprincipal" title="GranteePrincipal">GranteePrincipal</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#keyid" title="KeyId">KeyId</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#operations" title="Operations">Operations</a>" : <i>[ String, ... ]</i>,
         "<a href="#retireondelete" title="RetireOnDelete">RetireOnDelete</a>" : <i>Boolean</i>,
         "<a href="#retiringprincipal" title="RetiringPrincipal">RetiringPrincipal</a>" : <i>String</i>,
-        "<a href="#constraints" title="Constraints">Constraints</a>" : <i>[ <a href="constraints.md">Constraints</a>, ... ]</i>
+        "<a href="#constraints" title="Constraints">Constraints</a>" : <i>[ &lt;a href=&#34;constraints.md&#34;&gt;Constraints&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -30,10 +32,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::KmsGrant
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#grantcreationtokens" title="GrantCreationTokens">GrantCreationTokens</a>: <i>
       - String</i>
+    <a href="#grantid" title="GrantId">GrantId</a>: <i>String</i>
+    <a href="#granttoken" title="GrantToken">GrantToken</a>: <i>String</i>
     <a href="#granteeprincipal" title="GranteePrincipal">GranteePrincipal</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#keyid" title="KeyId">KeyId</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#operations" title="Operations">Operations</a>: <i>
@@ -41,10 +45,20 @@ Properties:
     <a href="#retireondelete" title="RetireOnDelete">RetireOnDelete</a>: <i>Boolean</i>
     <a href="#retiringprincipal" title="RetiringPrincipal">RetiringPrincipal</a>: <i>String</i>
     <a href="#constraints" title="Constraints">Constraints</a>: <i>
-      - <a href="constraints.md">Constraints</a></i>
+      - &lt;a href=&#34;constraints.md&#34;&gt;Constraints&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GrantCreationTokens
 
@@ -54,17 +68,25 @@ _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### GranteePrincipal
+#### GrantId
 
-_Required_: Yes
+_Required_: No
 
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### GrantToken
 
 _Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### GranteePrincipal
+
+_Required_: Yes
 
 _Type_: String
 
@@ -114,7 +136,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="constraints.md">Constraints</a>
+_Type_: List of &lt;a href=&#34;constraints.md&#34;&gt;Constraints&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -136,9 +158,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### GrantId
 
-Returns the <code>GrantId</code> value.
+Returns the &lt;code&gt;GrantId&lt;/code&gt; value.
 
 #### GrantToken
 
-Returns the <code>GrantToken</code> value.
+Returns the &lt;code&gt;GrantToken&lt;/code&gt; value.
 

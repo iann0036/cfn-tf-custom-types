@@ -45,7 +45,6 @@ class ResourceModel(BaseResourceModel):
     DocumentRoot: Optional[str]
     Domains: Optional[Sequence[str]]
     EnableSsl: Optional[bool]
-    Id: Optional[str]
     Name: Optional[str]
     RailsEnv: Optional[str]
     ShortName: Optional[str]
@@ -73,7 +72,6 @@ class ResourceModel(BaseResourceModel):
             DocumentRoot=json_data.get("DocumentRoot"),
             Domains=json_data.get("Domains"),
             EnableSsl=json_data.get("EnableSsl"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             RailsEnv=json_data.get("RailsEnv"),
             ShortName=json_data.get("ShortName"),

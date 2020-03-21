@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Backend: Optional[str]
     Groupname: Optional[str]
-    Id: Optional[str]
     Policies: Optional[Sequence[str]]
 
     @classmethod
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Backend=json_data.get("Backend"),
             Groupname=json_data.get("Groupname"),
-            Id=json_data.get("Id"),
             Policies=json_data.get("Policies"),
         )
 

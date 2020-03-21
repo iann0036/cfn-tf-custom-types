@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     Created: Optional[str]
     EnableIamAuth: Optional[bool]
     HbasePublicEndpoint: Optional[str]
-    Id: Optional[str]
     LemonLink: Optional[str]
     LemonNum: Optional[float]
     Name: Optional[str]
@@ -71,7 +70,6 @@ class ResourceModel(BaseResourceModel):
             Created=json_data.get("Created"),
             EnableIamAuth=json_data.get("EnableIamAuth"),
             HbasePublicEndpoint=json_data.get("HbasePublicEndpoint"),
-            Id=json_data.get("Id"),
             LemonLink=json_data.get("LemonLink"),
             LemonNum=json_data.get("LemonNum"),
             Name=json_data.get("Name"),

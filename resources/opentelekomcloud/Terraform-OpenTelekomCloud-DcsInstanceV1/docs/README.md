@@ -12,6 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OpenTelekomCloud::DcsInstanceV1",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#accessuser" title="AccessUser">AccessUser</a>" : <i>String</i>,
         "<a href="#availablezones" title="AvailableZones">AvailableZones</a>" : <i>[ String, ... ]</i>,
         "<a href="#backupat" title="BackupAt">BackupAt</a>" : <i>[ Double, ... ]</i>,
@@ -21,17 +22,27 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#engine" title="Engine">Engine</a>" : <i>String</i>,
         "<a href="#engineversion" title="EngineVersion">EngineVersion</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#internalversion" title="InternalVersion">InternalVersion</a>" : <i>String</i>,
+        "<a href="#ip" title="Ip">Ip</a>" : <i>String</i>,
         "<a href="#maintainbegin" title="MaintainBegin">MaintainBegin</a>" : <i>String</i>,
         "<a href="#maintainend" title="MaintainEnd">MaintainEnd</a>" : <i>String</i>,
+        "<a href="#maxmemory" title="MaxMemory">MaxMemory</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
+        "<a href="#orderid" title="OrderId">OrderId</a>" : <i>String</i>,
         "<a href="#password" title="Password">Password</a>" : <i>String</i>,
         "<a href="#periodtype" title="PeriodType">PeriodType</a>" : <i>String</i>,
+        "<a href="#port" title="Port">Port</a>" : <i>Double</i>,
         "<a href="#productid" title="ProductId">ProductId</a>" : <i>String</i>,
+        "<a href="#resourcespeccode" title="ResourceSpecCode">ResourceSpecCode</a>" : <i>String</i>,
         "<a href="#savedays" title="SaveDays">SaveDays</a>" : <i>Double</i>,
         "<a href="#securitygroupid" title="SecurityGroupId">SecurityGroupId</a>" : <i>String</i>,
+        "<a href="#securitygroupname" title="SecurityGroupName">SecurityGroupName</a>" : <i>String</i>,
         "<a href="#subnetid" title="SubnetId">SubnetId</a>" : <i>String</i>,
+        "<a href="#subnetname" title="SubnetName">SubnetName</a>" : <i>String</i>,
+        "<a href="#usedmemory" title="UsedMemory">UsedMemory</a>" : <i>Double</i>,
+        "<a href="#userid" title="UserId">UserId</a>" : <i>String</i>,
         "<a href="#vpcid" title="VpcId">VpcId</a>" : <i>String</i>,
+        "<a href="#vpcname" title="VpcName">VpcName</a>" : <i>String</i>
     }
 }
 </pre>
@@ -41,6 +52,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OpenTelekomCloud::DcsInstanceV1
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#accessuser" title="AccessUser">AccessUser</a>: <i>String</i>
     <a href="#availablezones" title="AvailableZones">AvailableZones</a>: <i>
       - String</i>
@@ -52,20 +64,40 @@ Properties:
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#engine" title="Engine">Engine</a>: <i>String</i>
     <a href="#engineversion" title="EngineVersion">EngineVersion</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#internalversion" title="InternalVersion">InternalVersion</a>: <i>String</i>
+    <a href="#ip" title="Ip">Ip</a>: <i>String</i>
     <a href="#maintainbegin" title="MaintainBegin">MaintainBegin</a>: <i>String</i>
     <a href="#maintainend" title="MaintainEnd">MaintainEnd</a>: <i>String</i>
+    <a href="#maxmemory" title="MaxMemory">MaxMemory</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
+    <a href="#orderid" title="OrderId">OrderId</a>: <i>String</i>
     <a href="#password" title="Password">Password</a>: <i>String</i>
     <a href="#periodtype" title="PeriodType">PeriodType</a>: <i>String</i>
+    <a href="#port" title="Port">Port</a>: <i>Double</i>
     <a href="#productid" title="ProductId">ProductId</a>: <i>String</i>
+    <a href="#resourcespeccode" title="ResourceSpecCode">ResourceSpecCode</a>: <i>String</i>
     <a href="#savedays" title="SaveDays">SaveDays</a>: <i>Double</i>
     <a href="#securitygroupid" title="SecurityGroupId">SecurityGroupId</a>: <i>String</i>
+    <a href="#securitygroupname" title="SecurityGroupName">SecurityGroupName</a>: <i>String</i>
     <a href="#subnetid" title="SubnetId">SubnetId</a>: <i>String</i>
+    <a href="#subnetname" title="SubnetName">SubnetName</a>: <i>String</i>
+    <a href="#usedmemory" title="UsedMemory">UsedMemory</a>: <i>Double</i>
+    <a href="#userid" title="UserId">UserId</a>: <i>String</i>
     <a href="#vpcid" title="VpcId">VpcId</a>: <i>String</i>
+    <a href="#vpcname" title="VpcName">VpcName</a>: <i>String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AccessUser
 
@@ -139,7 +171,15 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### InternalVersion
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Ip
 
 _Required_: No
 
@@ -163,9 +203,25 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### MaxMemory
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Name
 
 _Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### OrderId
+
+_Required_: No
 
 _Type_: String
 
@@ -187,9 +243,25 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### Port
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### ProductId
 
 _Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ResourceSpecCode
+
+_Required_: No
 
 _Type_: String
 
@@ -211,6 +283,14 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### SecurityGroupName
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### SubnetId
 
 _Required_: Yes
@@ -219,9 +299,41 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### SubnetName
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### UsedMemory
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### UserId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### VpcId
 
 _Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### VpcName
+
+_Required_: No
 
 _Type_: String
 
@@ -245,45 +357,45 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### InternalVersion
 
-Returns the <code>InternalVersion</code> value.
+Returns the &lt;code&gt;InternalVersion&lt;/code&gt; value.
 
 #### Ip
 
-Returns the <code>Ip</code> value.
+Returns the &lt;code&gt;Ip&lt;/code&gt; value.
 
 #### MaxMemory
 
-Returns the <code>MaxMemory</code> value.
+Returns the &lt;code&gt;MaxMemory&lt;/code&gt; value.
 
 #### OrderId
 
-Returns the <code>OrderId</code> value.
+Returns the &lt;code&gt;OrderId&lt;/code&gt; value.
 
 #### Port
 
-Returns the <code>Port</code> value.
+Returns the &lt;code&gt;Port&lt;/code&gt; value.
 
 #### ResourceSpecCode
 
-Returns the <code>ResourceSpecCode</code> value.
+Returns the &lt;code&gt;ResourceSpecCode&lt;/code&gt; value.
 
 #### SecurityGroupName
 
-Returns the <code>SecurityGroupName</code> value.
+Returns the &lt;code&gt;SecurityGroupName&lt;/code&gt; value.
 
 #### SubnetName
 
-Returns the <code>SubnetName</code> value.
+Returns the &lt;code&gt;SubnetName&lt;/code&gt; value.
 
 #### UsedMemory
 
-Returns the <code>UsedMemory</code> value.
+Returns the &lt;code&gt;UsedMemory&lt;/code&gt; value.
 
 #### UserId
 
-Returns the <code>UserId</code> value.
+Returns the &lt;code&gt;UserId&lt;/code&gt; value.
 
 #### VpcName
 
-Returns the <code>VpcName</code> value.
+Returns the &lt;code&gt;VpcName&lt;/code&gt; value.
 

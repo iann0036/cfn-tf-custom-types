@@ -8,10 +8,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#automationparameters" title="AutomationParameters">AutomationParameters</a>" : <i>[ <a href="taskinvocationparameters-automationparameters.md">AutomationParameters</a>, ... ]</i>,
-    "<a href="#lambdaparameters" title="LambdaParameters">LambdaParameters</a>" : <i>[ <a href="taskinvocationparameters-lambdaparameters.md">LambdaParameters</a>, ... ]</i>,
-    "<a href="#runcommandparameters" title="RunCommandParameters">RunCommandParameters</a>" : <i>[ <a href="taskinvocationparameters-runcommandparameters.md">RunCommandParameters</a>, ... ]</i>,
-    "<a href="#stepfunctionsparameters" title="StepFunctionsParameters">StepFunctionsParameters</a>" : <i>[ <a href="taskinvocationparameters-stepfunctionsparameters.md">StepFunctionsParameters</a>, ... ]</i>
+    "<a href="#automationparameters" title="AutomationParameters">AutomationParameters</a>" : <i>[ &lt;a href=&#34;taskinvocationparameters-automationparameters.md&#34;&gt;AutomationParameters&lt;/a&gt;, ... ]</i>,
+    "<a href="#lambdaparameters" title="LambdaParameters">LambdaParameters</a>" : <i>[ &lt;a href=&#34;taskinvocationparameters-lambdaparameters.md&#34;&gt;LambdaParameters&lt;/a&gt;, ... ]</i>,
+    "<a href="#runcommandparameters" title="RunCommandParameters">RunCommandParameters</a>" : <i>[ &lt;a href=&#34;taskinvocationparameters-runcommandparameters.md&#34;&gt;RunCommandParameters&lt;/a&gt;, ... ]</i>,
+    "<a href="#stepfunctionsparameters" title="StepFunctionsParameters">StepFunctionsParameters</a>" : <i>[ &lt;a href=&#34;taskinvocationparameters-stepfunctionsparameters.md&#34;&gt;StepFunctionsParameters&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -19,13 +19,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#automationparameters" title="AutomationParameters">AutomationParameters</a>: <i>
-      - <a href="taskinvocationparameters-automationparameters.md">AutomationParameters</a></i>
+      - &lt;a href=&#34;taskinvocationparameters-automationparameters.md&#34;&gt;AutomationParameters&lt;/a&gt;</i>
 <a href="#lambdaparameters" title="LambdaParameters">LambdaParameters</a>: <i>
-      - <a href="taskinvocationparameters-lambdaparameters.md">LambdaParameters</a></i>
+      - &lt;a href=&#34;taskinvocationparameters-lambdaparameters.md&#34;&gt;LambdaParameters&lt;/a&gt;</i>
 <a href="#runcommandparameters" title="RunCommandParameters">RunCommandParameters</a>: <i>
-      - <a href="taskinvocationparameters-runcommandparameters.md">RunCommandParameters</a></i>
+      - &lt;a href=&#34;taskinvocationparameters-runcommandparameters.md&#34;&gt;RunCommandParameters&lt;/a&gt;</i>
 <a href="#stepfunctionsparameters" title="StepFunctionsParameters">StepFunctionsParameters</a>: <i>
-      - <a href="taskinvocationparameters-stepfunctionsparameters.md">StepFunctionsParameters</a></i>
+      - &lt;a href=&#34;taskinvocationparameters-stepfunctionsparameters.md&#34;&gt;StepFunctionsParameters&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -33,32 +33,28 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### AutomationParameters
 
 _Required_: No
-
-_Type_: List of <a href="taskinvocationparameters-automationparameters.md">AutomationParameters</a>
+_Type_: List of &lt;a href=&#34;taskinvocationparameters-automationparameters.md&#34;&gt;AutomationParameters&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LambdaParameters
 
 _Required_: No
-
-_Type_: List of <a href="taskinvocationparameters-lambdaparameters.md">LambdaParameters</a>
+_Type_: List of &lt;a href=&#34;taskinvocationparameters-lambdaparameters.md&#34;&gt;LambdaParameters&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RunCommandParameters
 
 _Required_: No
-
-_Type_: List of <a href="taskinvocationparameters-runcommandparameters.md">RunCommandParameters</a>
+_Type_: List of &lt;a href=&#34;taskinvocationparameters-runcommandparameters.md&#34;&gt;RunCommandParameters&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StepFunctionsParameters
 
 _Required_: No
-
-_Type_: List of <a href="taskinvocationparameters-stepfunctionsparameters.md">StepFunctionsParameters</a>
+_Type_: List of &lt;a href=&#34;taskinvocationparameters-stepfunctionsparameters.md&#34;&gt;StepFunctionsParameters&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -12,17 +12,22 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureRM::KeyVaultKey",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#curve" title="Curve">Curve</a>" : <i>String</i>,
+        "<a href="#e" title="E">E</a>" : <i>String</i>,
         "<a href="#expirationdate" title="ExpirationDate">ExpirationDate</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#keyopts" title="KeyOpts">KeyOpts</a>" : <i>[ String, ... ]</i>,
         "<a href="#keysize" title="KeySize">KeySize</a>" : <i>Double</i>,
         "<a href="#keytype" title="KeyType">KeyType</a>" : <i>String</i>,
         "<a href="#keyvaultid" title="KeyVaultId">KeyVaultId</a>" : <i>String</i>,
+        "<a href="#n" title="N">N</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#notbeforedate" title="NotBeforeDate">NotBeforeDate</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#version" title="Version">Version</a>" : <i>String</i>,
+        "<a href="#x" title="X">X</a>" : <i>String</i>,
+        "<a href="#y" title="Y">Y</a>" : <i>String</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     }
 }
 </pre>
@@ -32,22 +37,37 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureRM::KeyVaultKey
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#curve" title="Curve">Curve</a>: <i>String</i>
+    <a href="#e" title="E">E</a>: <i>String</i>
     <a href="#expirationdate" title="ExpirationDate">ExpirationDate</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#keyopts" title="KeyOpts">KeyOpts</a>: <i>
       - String</i>
     <a href="#keysize" title="KeySize">KeySize</a>: <i>Double</i>
     <a href="#keytype" title="KeyType">KeyType</a>: <i>String</i>
     <a href="#keyvaultid" title="KeyVaultId">KeyVaultId</a>: <i>String</i>
+    <a href="#n" title="N">N</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#notbeforedate" title="NotBeforeDate">NotBeforeDate</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+    <a href="#version" title="Version">Version</a>: <i>String</i>
+    <a href="#x" title="X">X</a>: <i>String</i>
+    <a href="#y" title="Y">Y</a>: <i>String</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Curve
 
@@ -57,7 +77,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### ExpirationDate
+#### E
 
 _Required_: No
 
@@ -65,7 +85,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### ExpirationDate
 
 _Required_: No
 
@@ -105,6 +125,14 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### N
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Name
 
 _Required_: Yes
@@ -125,7 +153,31 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Version
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### X
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Y
+
+_Required_: No
+
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -133,7 +185,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -155,21 +207,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### E
 
-Returns the <code>E</code> value.
+Returns the &lt;code&gt;E&lt;/code&gt; value.
 
 #### N
 
-Returns the <code>N</code> value.
+Returns the &lt;code&gt;N&lt;/code&gt; value.
 
 #### Version
 
-Returns the <code>Version</code> value.
+Returns the &lt;code&gt;Version&lt;/code&gt; value.
 
 #### X
 
-Returns the <code>X</code> value.
+Returns the &lt;code&gt;X&lt;/code&gt; value.
 
 #### Y
 
-Returns the <code>Y</code> value.
+Returns the &lt;code&gt;Y&lt;/code&gt; value.
 

@@ -12,8 +12,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Skytap::Project",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#autoaddrolename" title="AutoAddRoleName">AutoAddRoleName</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#showprojectmembers" title="ShowProjectMembers">ShowProjectMembers</a>" : <i>Boolean</i>,
         "<a href="#summary" title="Summary">Summary</a>" : <i>String</i>
@@ -26,8 +26,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Skytap::Project
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#autoaddrolename" title="AutoAddRoleName">AutoAddRoleName</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#showprojectmembers" title="ShowProjectMembers">ShowProjectMembers</a>: <i>Boolean</i>
     <a href="#summary" title="Summary">Summary</a>: <i>String</i>
@@ -35,7 +35,9 @@ Properties:
 
 ## Properties
 
-#### AutoAddRoleName
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
@@ -43,7 +45,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### AutoAddRoleName
 
 _Required_: No
 

@@ -44,7 +44,6 @@ class ResourceModel(BaseResourceModel):
     Engine: Optional[str]
     EngineVersion: Optional[str]
     ForceRestart: Optional[bool]
-    Id: Optional[str]
     InstanceChargeType: Optional[str]
     InstanceName: Optional[str]
     InstanceStorage: Optional[float]
@@ -82,7 +81,6 @@ class ResourceModel(BaseResourceModel):
             Engine=json_data.get("Engine"),
             EngineVersion=json_data.get("EngineVersion"),
             ForceRestart=json_data.get("ForceRestart"),
-            Id=json_data.get("Id"),
             InstanceChargeType=json_data.get("InstanceChargeType"),
             InstanceName=json_data.get("InstanceName"),
             InstanceStorage=json_data.get("InstanceStorage"),

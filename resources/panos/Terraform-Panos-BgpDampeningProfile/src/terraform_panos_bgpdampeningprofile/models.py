@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     DecayHalfLifeReachable: Optional[float]
     DecayHalfLifeUnreachable: Optional[float]
     Enable: Optional[bool]
-    Id: Optional[str]
     MaxHoldTime: Optional[float]
     Name: Optional[str]
     Reuse: Optional[float]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             DecayHalfLifeReachable=json_data.get("DecayHalfLifeReachable"),
             DecayHalfLifeUnreachable=json_data.get("DecayHalfLifeUnreachable"),
             Enable=json_data.get("Enable"),
-            Id=json_data.get("Id"),
             MaxHoldTime=json_data.get("MaxHoldTime"),
             Name=json_data.get("Name"),
             Reuse=json_data.get("Reuse"),

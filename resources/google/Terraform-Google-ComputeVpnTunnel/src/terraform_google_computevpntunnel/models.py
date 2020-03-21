@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     CreationTimestamp: Optional[str]
     Description: Optional[str]
     DetailedStatus: Optional[str]
-    Id: Optional[str]
     IkeVersion: Optional[float]
     LocalTrafficSelector: Optional[Sequence[str]]
     Name: Optional[str]
@@ -67,7 +66,6 @@ class ResourceModel(BaseResourceModel):
             CreationTimestamp=json_data.get("CreationTimestamp"),
             Description=json_data.get("Description"),
             DetailedStatus=json_data.get("DetailedStatus"),
-            Id=json_data.get("Id"),
             IkeVersion=json_data.get("IkeVersion"),
             LocalTrafficSelector=json_data.get("LocalTrafficSelector"),
             Name=json_data.get("Name"),

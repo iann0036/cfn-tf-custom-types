@@ -12,7 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::LogtailConfig",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#inputdetail" title="InputDetail">InputDetail</a>" : <i>String</i>,
         "<a href="#inputtype" title="InputType">InputType</a>" : <i>String</i>,
         "<a href="#logsample" title="LogSample">LogSample</a>" : <i>String</i>,
@@ -29,7 +29,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::LogtailConfig
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#inputdetail" title="InputDetail">InputDetail</a>: <i>String</i>
     <a href="#inputtype" title="InputType">InputType</a>: <i>String</i>
     <a href="#logsample" title="LogSample">LogSample</a>: <i>String</i>
@@ -41,7 +41,9 @@ Properties:
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 

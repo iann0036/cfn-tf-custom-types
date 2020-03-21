@@ -8,8 +8,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#virtualnode" title="VirtualNode">VirtualNode</a>" : <i>[ <a href="spec-provider-virtualnode.md">VirtualNode</a>, ... ]</i>,
-    "<a href="#virtualrouter" title="VirtualRouter">VirtualRouter</a>" : <i>[ <a href="spec-provider-virtualrouter.md">VirtualRouter</a>, ... ]</i>
+    "<a href="#virtualnode" title="VirtualNode">VirtualNode</a>" : <i>[ &lt;a href=&#34;spec-provider-virtualnode.md&#34;&gt;VirtualNode&lt;/a&gt;, ... ]</i>,
+    "<a href="#virtualrouter" title="VirtualRouter">VirtualRouter</a>" : <i>[ &lt;a href=&#34;spec-provider-virtualrouter.md&#34;&gt;VirtualRouter&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -17,9 +17,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#virtualnode" title="VirtualNode">VirtualNode</a>: <i>
-      - <a href="spec-provider-virtualnode.md">VirtualNode</a></i>
+      - &lt;a href=&#34;spec-provider-virtualnode.md&#34;&gt;VirtualNode&lt;/a&gt;</i>
 <a href="#virtualrouter" title="VirtualRouter">VirtualRouter</a>: <i>
-      - <a href="spec-provider-virtualrouter.md">VirtualRouter</a></i>
+      - &lt;a href=&#34;spec-provider-virtualrouter.md&#34;&gt;VirtualRouter&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -27,16 +27,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### VirtualNode
 
 _Required_: No
-
-_Type_: List of <a href="spec-provider-virtualnode.md">VirtualNode</a>
+_Type_: List of &lt;a href=&#34;spec-provider-virtualnode.md&#34;&gt;VirtualNode&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VirtualRouter
 
 _Required_: No
-
-_Type_: List of <a href="spec-provider-virtualrouter.md">VirtualRouter</a>
+_Type_: List of &lt;a href=&#34;spec-provider-virtualrouter.md&#34;&gt;VirtualRouter&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

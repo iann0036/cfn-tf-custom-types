@@ -12,19 +12,25 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::FlexibleEngine::SfsFileSystemV2",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#accesslevel" title="AccessLevel">AccessLevel</a>" : <i>String</i>,
+        "<a href="#accessrulestatus" title="AccessRuleStatus">AccessRuleStatus</a>" : <i>String</i>,
         "<a href="#accessto" title="AccessTo">AccessTo</a>" : <i>String</i>,
         "<a href="#accesstype" title="AccessType">AccessType</a>" : <i>String</i>,
         "<a href="#availabilityzone" title="AvailabilityZone">AvailabilityZone</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#exportlocation" title="ExportLocation">ExportLocation</a>" : <i>String</i>,
+        "<a href="#host" title="Host">Host</a>" : <i>String</i>,
         "<a href="#ispublic" title="IsPublic">IsPublic</a>" : <i>Boolean</i>,
-        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ <a href="metadata.md">Metadata</a>, ... ]</i>,
+        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;, ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
+        "<a href="#shareaccessid" title="ShareAccessId">ShareAccessId</a>" : <i>String</i>,
         "<a href="#shareproto" title="ShareProto">ShareProto</a>" : <i>String</i>,
         "<a href="#size" title="Size">Size</a>" : <i>Double</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
+        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
+        "<a href="#volumetype" title="VolumeType">VolumeType</a>" : <i>String</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     }
 }
 </pre>
@@ -34,27 +40,51 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::FlexibleEngine::SfsFileSystemV2
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#accesslevel" title="AccessLevel">AccessLevel</a>: <i>String</i>
+    <a href="#accessrulestatus" title="AccessRuleStatus">AccessRuleStatus</a>: <i>String</i>
     <a href="#accessto" title="AccessTo">AccessTo</a>: <i>String</i>
     <a href="#accesstype" title="AccessType">AccessType</a>: <i>String</i>
     <a href="#availabilityzone" title="AvailabilityZone">AvailabilityZone</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#exportlocation" title="ExportLocation">ExportLocation</a>: <i>String</i>
+    <a href="#host" title="Host">Host</a>: <i>String</i>
     <a href="#ispublic" title="IsPublic">IsPublic</a>: <i>Boolean</i>
     <a href="#metadata" title="Metadata">Metadata</a>: <i>
-      - <a href="metadata.md">Metadata</a></i>
+      - &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
+    <a href="#shareaccessid" title="ShareAccessId">ShareAccessId</a>: <i>String</i>
     <a href="#shareproto" title="ShareProto">ShareProto</a>: <i>String</i>
     <a href="#size" title="Size">Size</a>: <i>Double</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+    <a href="#status" title="Status">Status</a>: <i>String</i>
+    <a href="#volumetype" title="VolumeType">VolumeType</a>: <i>String</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### AccessLevel
 
 _Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### AccessRuleStatus
+
+_Required_: No
 
 _Type_: String
 
@@ -92,7 +122,15 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### ExportLocation
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Host
 
 _Required_: No
 
@@ -112,7 +150,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="metadata.md">Metadata</a>
+_Type_: List of &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -125,6 +163,14 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ShareAccessId
 
 _Required_: No
 
@@ -148,11 +194,27 @@ _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### Status
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### VolumeType
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Timeouts
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -174,25 +236,25 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AccessRuleStatus
 
-Returns the <code>AccessRuleStatus</code> value.
+Returns the &lt;code&gt;AccessRuleStatus&lt;/code&gt; value.
 
 #### ExportLocation
 
-Returns the <code>ExportLocation</code> value.
+Returns the &lt;code&gt;ExportLocation&lt;/code&gt; value.
 
 #### Host
 
-Returns the <code>Host</code> value.
+Returns the &lt;code&gt;Host&lt;/code&gt; value.
 
 #### ShareAccessId
 
-Returns the <code>ShareAccessId</code> value.
+Returns the &lt;code&gt;ShareAccessId&lt;/code&gt; value.
 
 #### Status
 
-Returns the <code>Status</code> value.
+Returns the &lt;code&gt;Status&lt;/code&gt; value.
 
 #### VolumeType
 
-Returns the <code>VolumeType</code> value.
+Returns the &lt;code&gt;VolumeType&lt;/code&gt; value.
 

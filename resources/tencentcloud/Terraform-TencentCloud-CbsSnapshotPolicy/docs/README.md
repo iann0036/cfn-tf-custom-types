@@ -12,7 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::TencentCloud::CbsSnapshotPolicy",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#repeathours" title="RepeatHours">RepeatHours</a>" : <i>[ Double, ... ]</i>,
         "<a href="#repeatweekdays" title="RepeatWeekdays">RepeatWeekdays</a>" : <i>[ Double, ... ]</i>,
         "<a href="#retentiondays" title="RetentionDays">RetentionDays</a>" : <i>Double</i>,
@@ -26,7 +26,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::TencentCloud::CbsSnapshotPolicy
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#repeathours" title="RepeatHours">RepeatHours</a>: <i>
       - Double</i>
     <a href="#repeatweekdays" title="RepeatWeekdays">RepeatWeekdays</a>: <i>
@@ -37,7 +37,9 @@ Properties:
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 

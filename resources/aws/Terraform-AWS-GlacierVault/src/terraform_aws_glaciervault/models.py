@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AccessPolicy: Optional[str]
     Arn: Optional[str]
-    Id: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AccessPolicy=json_data.get("AccessPolicy"),
             Arn=json_data.get("Arn"),
-            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),
             Tags=json_data.get("Tags"),

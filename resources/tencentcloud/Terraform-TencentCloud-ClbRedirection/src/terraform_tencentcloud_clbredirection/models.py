@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ClbId: Optional[str]
-    Id: Optional[str]
     IsAutoRewrite: Optional[bool]
     SourceListenerId: Optional[str]
     SourceRuleId: Optional[str]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             ClbId=json_data.get("ClbId"),
-            Id=json_data.get("Id"),
             IsAutoRewrite=json_data.get("IsAutoRewrite"),
             SourceListenerId=json_data.get("SourceListenerId"),
             SourceRuleId=json_data.get("SourceRuleId"),

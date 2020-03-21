@@ -12,6 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::OpsworksApplication",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#autobundleondeploy" title="AutoBundleOnDeploy">AutoBundleOnDeploy</a>" : <i>String</i>,
         "<a href="#awsflowrubysettings" title="AwsFlowRubySettings">AwsFlowRubySettings</a>" : <i>String</i>,
         "<a href="#datasourcearn" title="DataSourceArn">DataSourceArn</a>" : <i>String</i>,
@@ -21,15 +22,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#documentroot" title="DocumentRoot">DocumentRoot</a>" : <i>String</i>,
         "<a href="#domains" title="Domains">Domains</a>" : <i>[ String, ... ]</i>,
         "<a href="#enablessl" title="EnableSsl">EnableSsl</a>" : <i>Boolean</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#railsenv" title="RailsEnv">RailsEnv</a>" : <i>String</i>,
         "<a href="#shortname" title="ShortName">ShortName</a>" : <i>String</i>,
         "<a href="#stackid" title="StackId">StackId</a>" : <i>String</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-        "<a href="#appsource" title="AppSource">AppSource</a>" : <i>[ <a href="appsource.md">AppSource</a>, ... ]</i>,
-        "<a href="#environment" title="Environment">Environment</a>" : <i>[ <a href="environment.md">Environment</a>, ... ]</i>,
-        "<a href="#sslconfiguration" title="SslConfiguration">SslConfiguration</a>" : <i>[ <a href="sslconfiguration.md">SslConfiguration</a>, ... ]</i>
+        "<a href="#appsource" title="AppSource">AppSource</a>" : <i>[ &lt;a href=&#34;appsource.md&#34;&gt;AppSource&lt;/a&gt;, ... ]</i>,
+        "<a href="#environment" title="Environment">Environment</a>" : <i>[ &lt;a href=&#34;environment.md&#34;&gt;Environment&lt;/a&gt;, ... ]</i>,
+        "<a href="#sslconfiguration" title="SslConfiguration">SslConfiguration</a>" : <i>[ &lt;a href=&#34;sslconfiguration.md&#34;&gt;SslConfiguration&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -39,6 +39,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::OpsworksApplication
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#autobundleondeploy" title="AutoBundleOnDeploy">AutoBundleOnDeploy</a>: <i>String</i>
     <a href="#awsflowrubysettings" title="AwsFlowRubySettings">AwsFlowRubySettings</a>: <i>String</i>
     <a href="#datasourcearn" title="DataSourceArn">DataSourceArn</a>: <i>String</i>
@@ -49,21 +50,30 @@ Properties:
     <a href="#domains" title="Domains">Domains</a>: <i>
       - String</i>
     <a href="#enablessl" title="EnableSsl">EnableSsl</a>: <i>Boolean</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#railsenv" title="RailsEnv">RailsEnv</a>: <i>String</i>
     <a href="#shortname" title="ShortName">ShortName</a>: <i>String</i>
     <a href="#stackid" title="StackId">StackId</a>: <i>String</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
     <a href="#appsource" title="AppSource">AppSource</a>: <i>
-      - <a href="appsource.md">AppSource</a></i>
+      - &lt;a href=&#34;appsource.md&#34;&gt;AppSource&lt;/a&gt;</i>
     <a href="#environment" title="Environment">Environment</a>: <i>
-      - <a href="environment.md">Environment</a></i>
+      - &lt;a href=&#34;environment.md&#34;&gt;Environment&lt;/a&gt;</i>
     <a href="#sslconfiguration" title="SslConfiguration">SslConfiguration</a>: <i>
-      - <a href="sslconfiguration.md">SslConfiguration</a></i>
+      - &lt;a href=&#34;sslconfiguration.md&#34;&gt;SslConfiguration&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AutoBundleOnDeploy
 
@@ -137,14 +147,6 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Name
 
 _Required_: Yes
@@ -189,7 +191,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="appsource.md">AppSource</a>
+_Type_: List of &lt;a href=&#34;appsource.md&#34;&gt;AppSource&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -197,7 +199,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="environment.md">Environment</a>
+_Type_: List of &lt;a href=&#34;environment.md&#34;&gt;Environment&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -205,7 +207,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="sslconfiguration.md">SslConfiguration</a>
+_Type_: List of &lt;a href=&#34;sslconfiguration.md&#34;&gt;SslConfiguration&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

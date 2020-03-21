@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DbPassword: Optional[str]
     DbUser: Optional[str]
-    Id: Optional[str]
     RdsDbInstanceArn: Optional[str]
     StackId: Optional[str]
 
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DbPassword=json_data.get("DbPassword"),
             DbUser=json_data.get("DbUser"),
-            Id=json_data.get("Id"),
             RdsDbInstanceArn=json_data.get("RdsDbInstanceArn"),
             StackId=json_data.get("StackId"),
         )

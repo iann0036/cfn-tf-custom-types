@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     EnableBatchedOperations: Optional[bool]
     EnableExpress: Optional[bool]
     EnablePartitioning: Optional[bool]
-    Id: Optional[str]
     MaxSizeInMegabytes: Optional[float]
     Name: Optional[str]
     NamespaceName: Optional[str]
@@ -67,7 +66,6 @@ class ResourceModel(BaseResourceModel):
             EnableBatchedOperations=json_data.get("EnableBatchedOperations"),
             EnableExpress=json_data.get("EnableExpress"),
             EnablePartitioning=json_data.get("EnablePartitioning"),
-            Id=json_data.get("Id"),
             MaxSizeInMegabytes=json_data.get("MaxSizeInMegabytes"),
             Name=json_data.get("Name"),
             NamespaceName=json_data.get("NamespaceName"),

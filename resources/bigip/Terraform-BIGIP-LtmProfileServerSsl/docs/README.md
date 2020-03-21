@@ -12,6 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::BIGIP::LtmProfileServerSsl",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#alerttimeout" title="AlertTimeout">AlertTimeout</a>" : <i>String</i>,
         "<a href="#authenticate" title="Authenticate">Authenticate</a>" : <i>String</i>,
         "<a href="#authenticatedepth" title="AuthenticateDepth">AuthenticateDepth</a>" : <i>Double</i>,
@@ -27,7 +28,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#generation" title="Generation">Generation</a>" : <i>Double</i>,
         "<a href="#genericalert" title="GenericAlert">GenericAlert</a>" : <i>String</i>,
         "<a href="#handshaketimeout" title="HandshakeTimeout">HandshakeTimeout</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#key" title="Key">Key</a>" : <i>String</i>,
         "<a href="#modsslmethods" title="ModSslMethods">ModSslMethods</a>" : <i>String</i>,
         "<a href="#mode" title="Mode">Mode</a>" : <i>String</i>,
@@ -62,6 +62,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::BIGIP::LtmProfileServerSsl
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#alerttimeout" title="AlertTimeout">AlertTimeout</a>: <i>String</i>
     <a href="#authenticate" title="Authenticate">Authenticate</a>: <i>String</i>
     <a href="#authenticatedepth" title="AuthenticateDepth">AuthenticateDepth</a>: <i>Double</i>
@@ -77,7 +78,6 @@ Properties:
     <a href="#generation" title="Generation">Generation</a>: <i>Double</i>
     <a href="#genericalert" title="GenericAlert">GenericAlert</a>: <i>String</i>
     <a href="#handshaketimeout" title="HandshakeTimeout">HandshakeTimeout</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#key" title="Key">Key</a>: <i>String</i>
     <a href="#modsslmethods" title="ModSslMethods">ModSslMethods</a>: <i>String</i>
     <a href="#mode" title="Mode">Mode</a>: <i>String</i>
@@ -107,6 +107,16 @@ Properties:
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AlertTimeout
 
@@ -221,14 +231,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HandshakeTimeout
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 

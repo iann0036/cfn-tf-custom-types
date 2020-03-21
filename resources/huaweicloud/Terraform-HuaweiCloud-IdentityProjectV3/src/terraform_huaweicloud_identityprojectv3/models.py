@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     DomainId: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     ParentId: Optional[str]
     Region: Optional[str]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             DomainId=json_data.get("DomainId"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ParentId=json_data.get("ParentId"),
             Region=json_data.get("Region"),

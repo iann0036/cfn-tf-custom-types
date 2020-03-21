@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     DefinedTags: Optional[Sequence["_DefinedTags"]]
     DisplayName: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     State: Optional[str]
     SubnetIds: Optional[Sequence[str]]
     TimeCreated: Optional[str]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             DefinedTags=json_data.get("DefinedTags"),
             DisplayName=json_data.get("DisplayName"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             State=json_data.get("State"),
             SubnetIds=json_data.get("SubnetIds"),
             TimeCreated=json_data.get("TimeCreated"),

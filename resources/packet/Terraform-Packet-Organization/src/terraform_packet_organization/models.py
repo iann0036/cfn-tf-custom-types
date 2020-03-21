@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Created: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     Logo: Optional[str]
     Name: Optional[str]
     Twitter: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Created=json_data.get("Created"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Logo=json_data.get("Logo"),
             Name=json_data.get("Name"),
             Twitter=json_data.get("Twitter"),

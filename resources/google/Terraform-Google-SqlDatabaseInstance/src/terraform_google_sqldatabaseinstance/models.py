@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     ConnectionName: Optional[str]
     DatabaseVersion: Optional[str]
     FirstIpAddress: Optional[str]
-    Id: Optional[str]
     IpAddress: Optional[Sequence["_IpAddress"]]
     MasterInstanceName: Optional[str]
     Name: Optional[str]
@@ -72,7 +71,6 @@ class ResourceModel(BaseResourceModel):
             ConnectionName=json_data.get("ConnectionName"),
             DatabaseVersion=json_data.get("DatabaseVersion"),
             FirstIpAddress=json_data.get("FirstIpAddress"),
-            Id=json_data.get("Id"),
             IpAddress=json_data.get("IpAddress"),
             MasterInstanceName=json_data.get("MasterInstanceName"),
             Name=json_data.get("Name"),

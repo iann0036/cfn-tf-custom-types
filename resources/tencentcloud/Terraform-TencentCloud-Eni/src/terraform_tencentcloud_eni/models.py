@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CreateTime: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     Ipv4Count: Optional[float]
     Ipv4Info: Optional[Sequence["_Ipv4Info"]]
     Mac: Optional[str]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CreateTime=json_data.get("CreateTime"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Ipv4Count=json_data.get("Ipv4Count"),
             Ipv4Info=json_data.get("Ipv4Info"),
             Mac=json_data.get("Mac"),

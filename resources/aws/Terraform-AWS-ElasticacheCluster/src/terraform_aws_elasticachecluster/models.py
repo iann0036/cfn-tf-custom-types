@@ -47,7 +47,6 @@ class ResourceModel(BaseResourceModel):
     ConfigurationEndpoint: Optional[str]
     Engine: Optional[str]
     EngineVersion: Optional[str]
-    Id: Optional[str]
     MaintenanceWindow: Optional[str]
     NodeType: Optional[str]
     NotificationTopicArn: Optional[str]
@@ -85,7 +84,6 @@ class ResourceModel(BaseResourceModel):
             ConfigurationEndpoint=json_data.get("ConfigurationEndpoint"),
             Engine=json_data.get("Engine"),
             EngineVersion=json_data.get("EngineVersion"),
-            Id=json_data.get("Id"),
             MaintenanceWindow=json_data.get("MaintenanceWindow"),
             NodeType=json_data.get("NodeType"),
             NotificationTopicArn=json_data.get("NotificationTopicArn"),

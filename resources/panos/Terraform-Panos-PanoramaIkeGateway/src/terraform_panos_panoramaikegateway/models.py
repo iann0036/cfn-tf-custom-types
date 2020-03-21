@@ -52,7 +52,6 @@ class ResourceModel(BaseResourceModel):
     EnableLivenessCheck: Optional[bool]
     EnableNatTraversal: Optional[bool]
     EnablePassiveMode: Optional[bool]
-    Id: Optional[str]
     Ikev1CryptoProfile: Optional[str]
     Ikev1ExchangeMode: Optional[str]
     Ikev2CookieValidation: Optional[bool]
@@ -103,7 +102,6 @@ class ResourceModel(BaseResourceModel):
             EnableLivenessCheck=json_data.get("EnableLivenessCheck"),
             EnableNatTraversal=json_data.get("EnableNatTraversal"),
             EnablePassiveMode=json_data.get("EnablePassiveMode"),
-            Id=json_data.get("Id"),
             Ikev1CryptoProfile=json_data.get("Ikev1CryptoProfile"),
             Ikev1ExchangeMode=json_data.get("Ikev1ExchangeMode"),
             Ikev2CookieValidation=json_data.get("Ikev2CookieValidation"),

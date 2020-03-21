@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     Facility: Optional[str]
-    Id: Optional[str]
     ProjectId: Optional[str]
     Vxlan: Optional[float]
 
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             Facility=json_data.get("Facility"),
-            Id=json_data.get("Id"),
             ProjectId=json_data.get("ProjectId"),
             Vxlan=json_data.get("Vxlan"),
         )

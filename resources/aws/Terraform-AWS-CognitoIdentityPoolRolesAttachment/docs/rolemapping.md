@@ -11,7 +11,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#ambiguousroleresolution" title="AmbiguousRoleResolution">AmbiguousRoleResolution</a>" : <i>String</i>,
     "<a href="#identityprovider" title="IdentityProvider">IdentityProvider</a>" : <i>String</i>,
     "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-    "<a href="#mappingrule" title="MappingRule">MappingRule</a>" : <i>[ <a href="rolemapping-mappingrule.md">MappingRule</a>, ... ]</i>
+    "<a href="#mappingrule" title="MappingRule">MappingRule</a>" : <i>[ &lt;a href=&#34;rolemapping-mappingrule.md&#34;&gt;MappingRule&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -22,7 +22,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#identityprovider" title="IdentityProvider">IdentityProvider</a>: <i>String</i>
 <a href="#type" title="Type">Type</a>: <i>String</i>
 <a href="#mappingrule" title="MappingRule">MappingRule</a>: <i>
-      - <a href="rolemapping-mappingrule.md">MappingRule</a></i>
+      - &lt;a href=&#34;rolemapping-mappingrule.md&#34;&gt;MappingRule&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -30,7 +30,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### AmbiguousRoleResolution
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -38,7 +37,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### IdentityProvider
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -46,7 +44,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Type
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -54,8 +51,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### MappingRule
 
 _Required_: No
-
-_Type_: List of <a href="rolemapping-mappingrule.md">MappingRule</a>
+_Type_: List of &lt;a href=&#34;rolemapping-mappingrule.md&#34;&gt;MappingRule&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

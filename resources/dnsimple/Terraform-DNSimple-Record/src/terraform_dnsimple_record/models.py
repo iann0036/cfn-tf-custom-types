@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Domain: Optional[str]
     DomainId: Optional[str]
     Hostname: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Priority: Optional[str]
     Ttl: Optional[str]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             Domain=json_data.get("Domain"),
             DomainId=json_data.get("DomainId"),
             Hostname=json_data.get("Hostname"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Priority=json_data.get("Priority"),
             Ttl=json_data.get("Ttl"),

@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     DisplayName: Optional[str]
     Expunge: Optional[bool]
     Group: Optional[str]
-    Id: Optional[str]
     IpAddress: Optional[str]
     Keypair: Optional[str]
     Name: Optional[str]
@@ -70,7 +69,6 @@ class ResourceModel(BaseResourceModel):
             DisplayName=json_data.get("DisplayName"),
             Expunge=json_data.get("Expunge"),
             Group=json_data.get("Group"),
-            Id=json_data.get("Id"),
             IpAddress=json_data.get("IpAddress"),
             Keypair=json_data.get("Keypair"),
             Name=json_data.get("Name"),

@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AccessPolicyObjectIds: Optional[Sequence[str]]
     CosmosdbThroughput: Optional[float]
-    Id: Optional[str]
     Kind: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AccessPolicyObjectIds=json_data.get("AccessPolicyObjectIds"),
             CosmosdbThroughput=json_data.get("CosmosdbThroughput"),
-            Id=json_data.get("Id"),
             Kind=json_data.get("Kind"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),

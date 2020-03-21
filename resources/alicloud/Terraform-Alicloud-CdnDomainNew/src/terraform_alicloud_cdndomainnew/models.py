@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CdnType: Optional[str]
     DomainName: Optional[str]
-    Id: Optional[str]
     ResourceGroupId: Optional[str]
     Scope: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CdnType=json_data.get("CdnType"),
             DomainName=json_data.get("DomainName"),
-            Id=json_data.get("Id"),
             ResourceGroupId=json_data.get("ResourceGroupId"),
             Scope=json_data.get("Scope"),
             Tags=json_data.get("Tags"),

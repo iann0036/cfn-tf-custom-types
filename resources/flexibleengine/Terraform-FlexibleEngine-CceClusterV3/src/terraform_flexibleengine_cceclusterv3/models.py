@@ -52,7 +52,6 @@ class ResourceModel(BaseResourceModel):
     ExternalEndpoint: Optional[str]
     FlavorId: Optional[str]
     HighwaySubnetId: Optional[str]
-    Id: Optional[str]
     InternalEndpoint: Optional[str]
     Labels: Optional[Sequence["_Labels"]]
     Name: Optional[str]
@@ -88,7 +87,6 @@ class ResourceModel(BaseResourceModel):
             ExternalEndpoint=json_data.get("ExternalEndpoint"),
             FlavorId=json_data.get("FlavorId"),
             HighwaySubnetId=json_data.get("HighwaySubnetId"),
-            Id=json_data.get("Id"),
             InternalEndpoint=json_data.get("InternalEndpoint"),
             Labels=json_data.get("Labels"),
             Name=json_data.get("Name"),

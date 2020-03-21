@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     BinaryData: Optional[Sequence["_BinaryData"]]
     Data: Optional[Sequence["_Data"]]
-    Id: Optional[str]
     Metadata: Optional[Sequence["_Metadata"]]
 
     @classmethod
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             BinaryData=json_data.get("BinaryData"),
             Data=json_data.get("Data"),
-            Id=json_data.get("Id"),
             Metadata=json_data.get("Metadata"),
         )
 

@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     MigrateTraffic: Optional[bool]
     Project: Optional[str]
     Service: Optional[str]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             MigrateTraffic=json_data.get("MigrateTraffic"),
             Project=json_data.get("Project"),
             Service=json_data.get("Service"),

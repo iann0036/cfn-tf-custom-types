@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     DisplayName: Optional[str]
-    Id: Optional[str]
     MacChangeAllowed: Optional[bool]
     Revision: Optional[float]
     MacLearning: Optional[Sequence["_MacLearning"]]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             DisplayName=json_data.get("DisplayName"),
-            Id=json_data.get("Id"),
             MacChangeAllowed=json_data.get("MacChangeAllowed"),
             Revision=json_data.get("Revision"),
             MacLearning=json_data.get("MacLearning"),

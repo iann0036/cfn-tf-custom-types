@@ -12,10 +12,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::LightsailKeyPair",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
+        "<a href="#encryptedfingerprint" title="EncryptedFingerprint">EncryptedFingerprint</a>" : <i>String</i>,
+        "<a href="#encryptedprivatekey" title="EncryptedPrivateKey">EncryptedPrivateKey</a>" : <i>String</i>,
+        "<a href="#fingerprint" title="Fingerprint">Fingerprint</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#nameprefix" title="NamePrefix">NamePrefix</a>" : <i>String</i>,
         "<a href="#pgpkey" title="PgpKey">PgpKey</a>" : <i>String</i>,
+        "<a href="#privatekey" title="PrivateKey">PrivateKey</a>" : <i>String</i>,
         "<a href="#publickey" title="PublicKey">PublicKey</a>" : <i>String</i>
     }
 }
@@ -26,16 +31,55 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::LightsailKeyPair
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
+    <a href="#encryptedfingerprint" title="EncryptedFingerprint">EncryptedFingerprint</a>: <i>String</i>
+    <a href="#encryptedprivatekey" title="EncryptedPrivateKey">EncryptedPrivateKey</a>: <i>String</i>
+    <a href="#fingerprint" title="Fingerprint">Fingerprint</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#nameprefix" title="NamePrefix">NamePrefix</a>: <i>String</i>
     <a href="#pgpkey" title="PgpKey">PgpKey</a>: <i>String</i>
+    <a href="#privatekey" title="PrivateKey">PrivateKey</a>: <i>String</i>
     <a href="#publickey" title="PublicKey">PublicKey</a>: <i>String</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Arn
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### EncryptedFingerprint
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### EncryptedPrivateKey
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Fingerprint
 
 _Required_: No
 
@@ -60,6 +104,14 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PgpKey
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### PrivateKey
 
 _Required_: No
 
@@ -93,21 +145,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the <code>Arn</code> value.
+Returns the &lt;code&gt;Arn&lt;/code&gt; value.
 
 #### EncryptedFingerprint
 
-Returns the <code>EncryptedFingerprint</code> value.
+Returns the &lt;code&gt;EncryptedFingerprint&lt;/code&gt; value.
 
 #### EncryptedPrivateKey
 
-Returns the <code>EncryptedPrivateKey</code> value.
+Returns the &lt;code&gt;EncryptedPrivateKey&lt;/code&gt; value.
 
 #### Fingerprint
 
-Returns the <code>Fingerprint</code> value.
+Returns the &lt;code&gt;Fingerprint&lt;/code&gt; value.
 
 #### PrivateKey
 
-Returns the <code>PrivateKey</code> value.
+Returns the &lt;code&gt;PrivateKey&lt;/code&gt; value.
 

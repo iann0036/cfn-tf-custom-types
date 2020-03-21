@@ -10,8 +10,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#duration" title="Duration">Duration</a>" : <i>String</i>,
     "<a href="#filter" title="Filter">Filter</a>" : <i>String</i>,
-    "<a href="#aggregations" title="Aggregations">Aggregations</a>" : <i>[ <a href="conditions-conditionabsent-aggregations.md">Aggregations</a>, ... ]</i>,
-    "<a href="#trigger" title="Trigger">Trigger</a>" : <i>[ <a href="conditions-conditionabsent-trigger.md">Trigger</a>, ... ]</i>
+    "<a href="#aggregations" title="Aggregations">Aggregations</a>" : <i>[ &lt;a href=&#34;conditions-conditionabsent-aggregations.md&#34;&gt;Aggregations&lt;/a&gt;, ... ]</i>,
+    "<a href="#trigger" title="Trigger">Trigger</a>" : <i>[ &lt;a href=&#34;conditions-conditionabsent-trigger.md&#34;&gt;Trigger&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -21,9 +21,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#duration" title="Duration">Duration</a>: <i>String</i>
 <a href="#filter" title="Filter">Filter</a>: <i>String</i>
 <a href="#aggregations" title="Aggregations">Aggregations</a>: <i>
-      - <a href="conditions-conditionabsent-aggregations.md">Aggregations</a></i>
+      - &lt;a href=&#34;conditions-conditionabsent-aggregations.md&#34;&gt;Aggregations&lt;/a&gt;</i>
 <a href="#trigger" title="Trigger">Trigger</a>: <i>
-      - <a href="conditions-conditionabsent-trigger.md">Trigger</a></i>
+      - &lt;a href=&#34;conditions-conditionabsent-trigger.md&#34;&gt;Trigger&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -31,7 +31,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Duration
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -39,7 +38,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Filter
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -47,16 +45,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Aggregations
 
 _Required_: No
-
-_Type_: List of <a href="conditions-conditionabsent-aggregations.md">Aggregations</a>
+_Type_: List of &lt;a href=&#34;conditions-conditionabsent-aggregations.md&#34;&gt;Aggregations&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Trigger
 
 _Required_: No
-
-_Type_: List of <a href="conditions-conditionabsent-trigger.md">Trigger</a>
+_Type_: List of &lt;a href=&#34;conditions-conditionabsent-trigger.md&#34;&gt;Trigger&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

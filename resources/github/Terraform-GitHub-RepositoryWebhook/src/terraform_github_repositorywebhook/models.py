@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Active: Optional[bool]
     Etag: Optional[str]
     Events: Optional[Sequence[str]]
-    Id: Optional[str]
     Name: Optional[str]
     Repository: Optional[str]
     Url: Optional[str]
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
             Active=json_data.get("Active"),
             Etag=json_data.get("Etag"),
             Events=json_data.get("Events"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Repository=json_data.get("Repository"),
             Url=json_data.get("Url"),

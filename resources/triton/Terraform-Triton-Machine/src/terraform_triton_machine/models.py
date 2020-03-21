@@ -46,7 +46,6 @@ class ResourceModel(BaseResourceModel):
     Disk: Optional[float]
     DomainNames: Optional[Sequence[str]]
     FirewallEnabled: Optional[bool]
-    Id: Optional[str]
     Image: Optional[str]
     Ips: Optional[Sequence[str]]
     Memory: Optional[float]
@@ -85,7 +84,6 @@ class ResourceModel(BaseResourceModel):
             Disk=json_data.get("Disk"),
             DomainNames=json_data.get("DomainNames"),
             FirewallEnabled=json_data.get("FirewallEnabled"),
-            Id=json_data.get("Id"),
             Image=json_data.get("Image"),
             Ips=json_data.get("Ips"),
             Memory=json_data.get("Memory"),

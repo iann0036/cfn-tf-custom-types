@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     ClusterName: Optional[str]
     DiskSize: Optional[float]
-    Id: Optional[str]
     InstanceTypes: Optional[Sequence[str]]
     Labels: Optional[Sequence["_Labels"]]
     NodeGroupName: Optional[str]
@@ -68,7 +67,6 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             ClusterName=json_data.get("ClusterName"),
             DiskSize=json_data.get("DiskSize"),
-            Id=json_data.get("Id"),
             InstanceTypes=json_data.get("InstanceTypes"),
             Labels=json_data.get("Labels"),
             NodeGroupName=json_data.get("NodeGroupName"),

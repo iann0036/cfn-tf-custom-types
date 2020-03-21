@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Endpoint: Optional[str]
     EventhubConsumerGroupName: Optional[str]
-    Id: Optional[str]
     IothubNamespace: Optional[str]
     Name: Optional[str]
     ResourceGroupName: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Endpoint=json_data.get("Endpoint"),
             EventhubConsumerGroupName=json_data.get("EventhubConsumerGroupName"),
-            Id=json_data.get("Id"),
             IothubNamespace=json_data.get("IothubNamespace"),
             Name=json_data.get("Name"),
             ResourceGroupName=json_data.get("ResourceGroupName"),

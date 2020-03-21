@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     FnIntent: Optional[str]
     FnInvokeType: Optional[str]
     FunctionId: Optional[str]
-    Id: Optional[str]
     InputBodySourcePath: Optional[str]
     InvokeEndpoint: Optional[str]
     InvokeFunctionBody: Optional[str]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             FnIntent=json_data.get("FnIntent"),
             FnInvokeType=json_data.get("FnInvokeType"),
             FunctionId=json_data.get("FunctionId"),
-            Id=json_data.get("Id"),
             InputBodySourcePath=json_data.get("InputBodySourcePath"),
             InvokeEndpoint=json_data.get("InvokeEndpoint"),
             InvokeFunctionBody=json_data.get("InvokeFunctionBody"),

@@ -44,7 +44,6 @@ class ResourceModel(BaseResourceModel):
     HealthCheckPath: Optional[str]
     HealthCheckSwitch: Optional[bool]
     HealthCheckUnhealthNum: Optional[float]
-    Id: Optional[str]
     Name: Optional[str]
     Protocol: Optional[str]
     ResourceId: Optional[str]
@@ -73,7 +72,6 @@ class ResourceModel(BaseResourceModel):
             HealthCheckPath=json_data.get("HealthCheckPath"),
             HealthCheckSwitch=json_data.get("HealthCheckSwitch"),
             HealthCheckUnhealthNum=json_data.get("HealthCheckUnhealthNum"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Protocol=json_data.get("Protocol"),
             ResourceId=json_data.get("ResourceId"),

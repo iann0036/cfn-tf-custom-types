@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Action: Optional[str]
     AzureFirewallName: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Priority: Optional[float]
     ResourceGroupName: Optional[str]
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Action=json_data.get("Action"),
             AzureFirewallName=json_data.get("AzureFirewallName"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Priority=json_data.get("Priority"),
             ResourceGroupName=json_data.get("ResourceGroupName"),

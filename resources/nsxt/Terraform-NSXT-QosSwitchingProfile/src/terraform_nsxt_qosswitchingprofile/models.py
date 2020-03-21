@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     DisplayName: Optional[str]
     DscpPriority: Optional[float]
     DscpTrusted: Optional[bool]
-    Id: Optional[str]
     Revision: Optional[float]
     EgressRateShaper: Optional[Sequence["_EgressRateShaper"]]
     IngressBroadcastRateShaper: Optional[Sequence["_IngressBroadcastRateShaper"]]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             DisplayName=json_data.get("DisplayName"),
             DscpPriority=json_data.get("DscpPriority"),
             DscpTrusted=json_data.get("DscpTrusted"),
-            Id=json_data.get("Id"),
             Revision=json_data.get("Revision"),
             EgressRateShaper=json_data.get("EgressRateShaper"),
             IngressBroadcastRateShaper=json_data.get("IngressBroadcastRateShaper"),

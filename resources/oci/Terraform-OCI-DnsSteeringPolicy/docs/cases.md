@@ -10,7 +10,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#casecondition" title="CaseCondition">CaseCondition</a>" : <i>String</i>,
     "<a href="#count" title="Count">Count</a>" : <i>Double</i>,
-    "<a href="#answerdata" title="AnswerData">AnswerData</a>" : <i>[ <a href="cases-answerdata.md">AnswerData</a>, ... ]</i>
+    "<a href="#answerdata" title="AnswerData">AnswerData</a>" : <i>[ &lt;a href=&#34;cases-answerdata.md&#34;&gt;AnswerData&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -20,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#casecondition" title="CaseCondition">CaseCondition</a>: <i>String</i>
 <a href="#count" title="Count">Count</a>: <i>Double</i>
 <a href="#answerdata" title="AnswerData">AnswerData</a>: <i>
-      - <a href="cases-answerdata.md">AnswerData</a></i>
+      - &lt;a href=&#34;cases-answerdata.md&#34;&gt;AnswerData&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -28,7 +28,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### CaseCondition
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -36,7 +35,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Count
 
 _Required_: No
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -44,8 +42,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### AnswerData
 
 _Required_: No
-
-_Type_: List of <a href="cases-answerdata.md">AnswerData</a>
+_Type_: List of &lt;a href=&#34;cases-answerdata.md&#34;&gt;AnswerData&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

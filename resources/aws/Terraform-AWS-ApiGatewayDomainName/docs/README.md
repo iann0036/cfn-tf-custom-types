@@ -12,18 +12,24 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::ApiGatewayDomainName",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#certificatearn" title="CertificateArn">CertificateArn</a>" : <i>String</i>,
         "<a href="#certificatebody" title="CertificateBody">CertificateBody</a>" : <i>String</i>,
         "<a href="#certificatechain" title="CertificateChain">CertificateChain</a>" : <i>String</i>,
         "<a href="#certificatename" title="CertificateName">CertificateName</a>" : <i>String</i>,
         "<a href="#certificateprivatekey" title="CertificatePrivateKey">CertificatePrivateKey</a>" : <i>String</i>,
+        "<a href="#certificateuploaddate" title="CertificateUploadDate">CertificateUploadDate</a>" : <i>String</i>,
+        "<a href="#cloudfrontdomainname" title="CloudfrontDomainName">CloudfrontDomainName</a>" : <i>String</i>,
+        "<a href="#cloudfrontzoneid" title="CloudfrontZoneId">CloudfrontZoneId</a>" : <i>String</i>,
         "<a href="#domainname" title="DomainName">DomainName</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#regionalcertificatearn" title="RegionalCertificateArn">RegionalCertificateArn</a>" : <i>String</i>,
         "<a href="#regionalcertificatename" title="RegionalCertificateName">RegionalCertificateName</a>" : <i>String</i>,
+        "<a href="#regionaldomainname" title="RegionalDomainName">RegionalDomainName</a>" : <i>String</i>,
+        "<a href="#regionalzoneid" title="RegionalZoneId">RegionalZoneId</a>" : <i>String</i>,
         "<a href="#securitypolicy" title="SecurityPolicy">SecurityPolicy</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
-        "<a href="#endpointconfiguration" title="EndpointConfiguration">EndpointConfiguration</a>" : <i>[ <a href="endpointconfiguration.md">EndpointConfiguration</a>, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#endpointconfiguration" title="EndpointConfiguration">EndpointConfiguration</a>" : <i>[ &lt;a href=&#34;endpointconfiguration.md&#34;&gt;EndpointConfiguration&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -33,23 +39,47 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::ApiGatewayDomainName
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#certificatearn" title="CertificateArn">CertificateArn</a>: <i>String</i>
     <a href="#certificatebody" title="CertificateBody">CertificateBody</a>: <i>String</i>
     <a href="#certificatechain" title="CertificateChain">CertificateChain</a>: <i>String</i>
     <a href="#certificatename" title="CertificateName">CertificateName</a>: <i>String</i>
     <a href="#certificateprivatekey" title="CertificatePrivateKey">CertificatePrivateKey</a>: <i>String</i>
+    <a href="#certificateuploaddate" title="CertificateUploadDate">CertificateUploadDate</a>: <i>String</i>
+    <a href="#cloudfrontdomainname" title="CloudfrontDomainName">CloudfrontDomainName</a>: <i>String</i>
+    <a href="#cloudfrontzoneid" title="CloudfrontZoneId">CloudfrontZoneId</a>: <i>String</i>
     <a href="#domainname" title="DomainName">DomainName</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#regionalcertificatearn" title="RegionalCertificateArn">RegionalCertificateArn</a>: <i>String</i>
     <a href="#regionalcertificatename" title="RegionalCertificateName">RegionalCertificateName</a>: <i>String</i>
+    <a href="#regionaldomainname" title="RegionalDomainName">RegionalDomainName</a>: <i>String</i>
+    <a href="#regionalzoneid" title="RegionalZoneId">RegionalZoneId</a>: <i>String</i>
     <a href="#securitypolicy" title="SecurityPolicy">SecurityPolicy</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
     <a href="#endpointconfiguration" title="EndpointConfiguration">EndpointConfiguration</a>: <i>
-      - <a href="endpointconfiguration.md">EndpointConfiguration</a></i>
+      - &lt;a href=&#34;endpointconfiguration.md&#34;&gt;EndpointConfiguration&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Arn
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CertificateArn
 
@@ -91,17 +121,33 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### DomainName
+#### CertificateUploadDate
 
-_Required_: Yes
+_Required_: No
 
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### CloudfrontDomainName
 
 _Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### CloudfrontZoneId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### DomainName
+
+_Required_: Yes
 
 _Type_: String
 
@@ -123,6 +169,22 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### RegionalDomainName
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### RegionalZoneId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### SecurityPolicy
 
 _Required_: No
@@ -135,7 +197,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -143,7 +205,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="endpointconfiguration.md">EndpointConfiguration</a>
+_Type_: List of &lt;a href=&#34;endpointconfiguration.md&#34;&gt;EndpointConfiguration&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -165,25 +227,25 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the <code>Arn</code> value.
+Returns the &lt;code&gt;Arn&lt;/code&gt; value.
 
 #### CertificateUploadDate
 
-Returns the <code>CertificateUploadDate</code> value.
+Returns the &lt;code&gt;CertificateUploadDate&lt;/code&gt; value.
 
 #### CloudfrontDomainName
 
-Returns the <code>CloudfrontDomainName</code> value.
+Returns the &lt;code&gt;CloudfrontDomainName&lt;/code&gt; value.
 
 #### CloudfrontZoneId
 
-Returns the <code>CloudfrontZoneId</code> value.
+Returns the &lt;code&gt;CloudfrontZoneId&lt;/code&gt; value.
 
 #### RegionalDomainName
 
-Returns the <code>RegionalDomainName</code> value.
+Returns the &lt;code&gt;RegionalDomainName&lt;/code&gt; value.
 
 #### RegionalZoneId
 
-Returns the <code>RegionalZoneId</code> value.
+Returns the &lt;code&gt;RegionalZoneId&lt;/code&gt; value.
 

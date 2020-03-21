@@ -12,9 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Circonus::Maintenance",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#account" title="Account">Account</a>" : <i>String</i>,
         "<a href="#check" title="Check">Check</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#notes" title="Notes">Notes</a>" : <i>String</i>,
         "<a href="#ruleset" title="RuleSet">RuleSet</a>" : <i>String</i>,
         "<a href="#severities" title="Severities">Severities</a>" : <i>[ String, ... ]</i>,
@@ -31,9 +31,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Circonus::Maintenance
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#account" title="Account">Account</a>: <i>String</i>
     <a href="#check" title="Check">Check</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#notes" title="Notes">Notes</a>: <i>String</i>
     <a href="#ruleset" title="RuleSet">RuleSet</a>: <i>String</i>
     <a href="#severities" title="Severities">Severities</a>: <i>
@@ -47,6 +47,16 @@ Properties:
 
 ## Properties
 
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Account
 
 _Required_: No
@@ -56,14 +66,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Check
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 

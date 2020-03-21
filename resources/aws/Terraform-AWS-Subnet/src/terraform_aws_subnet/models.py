@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     AvailabilityZone: Optional[str]
     AvailabilityZoneId: Optional[str]
     CidrBlock: Optional[str]
-    Id: Optional[str]
     Ipv6CidrBlock: Optional[str]
     Ipv6CidrBlockAssociationId: Optional[str]
     MapPublicIpOnLaunch: Optional[bool]
@@ -64,7 +63,6 @@ class ResourceModel(BaseResourceModel):
             AvailabilityZone=json_data.get("AvailabilityZone"),
             AvailabilityZoneId=json_data.get("AvailabilityZoneId"),
             CidrBlock=json_data.get("CidrBlock"),
-            Id=json_data.get("Id"),
             Ipv6CidrBlock=json_data.get("Ipv6CidrBlock"),
             Ipv6CidrBlockAssociationId=json_data.get("Ipv6CidrBlockAssociationId"),
             MapPublicIpOnLaunch=json_data.get("MapPublicIpOnLaunch"),

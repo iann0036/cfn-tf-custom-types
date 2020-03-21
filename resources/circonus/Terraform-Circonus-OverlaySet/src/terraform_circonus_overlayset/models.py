@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     GraphCid: Optional[str]
-    Id: Optional[str]
     Title: Optional[str]
     Overlays: Optional[Sequence["_Overlays"]]
     DataOpts: Optional[Sequence["_DataOpts"]]
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             GraphCid=json_data.get("GraphCid"),
-            Id=json_data.get("Id"),
             Title=json_data.get("Title"),
             Overlays=json_data.get("Overlays"),
             DataOpts=json_data.get("DataOpts"),

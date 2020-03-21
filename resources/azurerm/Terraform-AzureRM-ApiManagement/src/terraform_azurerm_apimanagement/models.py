@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     GatewayRegionalUrl: Optional[str]
     GatewayUrl: Optional[str]
-    Id: Optional[str]
     Location: Optional[str]
     ManagementApiUrl: Optional[str]
     Name: Optional[str]
@@ -78,7 +77,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             GatewayRegionalUrl=json_data.get("GatewayRegionalUrl"),
             GatewayUrl=json_data.get("GatewayUrl"),
-            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             ManagementApiUrl=json_data.get("ManagementApiUrl"),
             Name=json_data.get("Name"),

@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     CustomEndpointType: Optional[str]
     Endpoint: Optional[str]
     ExcludedMembers: Optional[Sequence[str]]
-    Id: Optional[str]
     StaticMembers: Optional[Sequence[str]]
     Tags: Optional[Sequence["_Tags"]]
 
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             CustomEndpointType=json_data.get("CustomEndpointType"),
             Endpoint=json_data.get("Endpoint"),
             ExcludedMembers=json_data.get("ExcludedMembers"),
-            Id=json_data.get("Id"),
             StaticMembers=json_data.get("StaticMembers"),
             Tags=json_data.get("Tags"),
         )

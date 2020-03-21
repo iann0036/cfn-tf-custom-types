@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     EdgeGateway: Optional[str]
     ExternalIp: Optional[str]
-    Id: Optional[str]
     InternalIp: Optional[str]
     NetworkName: Optional[str]
     NetworkType: Optional[str]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             EdgeGateway=json_data.get("EdgeGateway"),
             ExternalIp=json_data.get("ExternalIp"),
-            Id=json_data.get("Id"),
             InternalIp=json_data.get("InternalIp"),
             NetworkName=json_data.get("NetworkName"),
             NetworkType=json_data.get("NetworkType"),

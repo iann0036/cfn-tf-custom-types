@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     DomainId: Optional[str]
     Enabled: Optional[bool]
     Extra: Optional[Sequence["_Extra"]]
-    Id: Optional[str]
     IgnoreChangePasswordUponFirstUse: Optional[bool]
     IgnoreLockoutFailureAttempts: Optional[bool]
     IgnorePasswordExpiry: Optional[bool]
@@ -65,7 +64,6 @@ class ResourceModel(BaseResourceModel):
             DomainId=json_data.get("DomainId"),
             Enabled=json_data.get("Enabled"),
             Extra=json_data.get("Extra"),
-            Id=json_data.get("Id"),
             IgnoreChangePasswordUponFirstUse=json_data.get("IgnoreChangePasswordUponFirstUse"),
             IgnoreLockoutFailureAttempts=json_data.get("IgnoreLockoutFailureAttempts"),
             IgnorePasswordExpiry=json_data.get("IgnorePasswordExpiry"),

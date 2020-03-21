@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DestinationCidrBlock: Optional[str]
-    Id: Optional[str]
     VpnConnectionId: Optional[str]
 
     @classmethod
@@ -50,7 +49,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             DestinationCidrBlock=json_data.get("DestinationCidrBlock"),
-            Id=json_data.get("Id"),
             VpnConnectionId=json_data.get("VpnConnectionId"),
         )
 

@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     EnabledFeatures: Optional[Sequence[str]]
     Fingerprint: Optional[str]
-    Id: Optional[str]
     MinTlsVersion: Optional[str]
     Name: Optional[str]
     Profile: Optional[str]
@@ -63,7 +62,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             EnabledFeatures=json_data.get("EnabledFeatures"),
             Fingerprint=json_data.get("Fingerprint"),
-            Id=json_data.get("Id"),
             MinTlsVersion=json_data.get("MinTlsVersion"),
             Name=json_data.get("Name"),
             Profile=json_data.get("Profile"),

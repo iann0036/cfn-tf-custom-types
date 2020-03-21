@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     Filename: Optional[str]
     FunctionId: Optional[str]
     Handler: Optional[str]
-    Id: Optional[str]
     LastModified: Optional[str]
     MemorySize: Optional[float]
     Name: Optional[str]
@@ -68,7 +67,6 @@ class ResourceModel(BaseResourceModel):
             Filename=json_data.get("Filename"),
             FunctionId=json_data.get("FunctionId"),
             Handler=json_data.get("Handler"),
-            Id=json_data.get("Id"),
             LastModified=json_data.get("LastModified"),
             MemorySize=json_data.get("MemorySize"),
             Name=json_data.get("Name"),

@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     CompartmentId: Optional[str]
     DisplayName: Optional[str]
     DrgId: Optional[str]
-    Id: Optional[str]
     RouteTableId: Optional[str]
     State: Optional[str]
     TimeCreated: Optional[str]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             CompartmentId=json_data.get("CompartmentId"),
             DisplayName=json_data.get("DisplayName"),
             DrgId=json_data.get("DrgId"),
-            Id=json_data.get("Id"),
             RouteTableId=json_data.get("RouteTableId"),
             State=json_data.get("State"),
             TimeCreated=json_data.get("TimeCreated"),

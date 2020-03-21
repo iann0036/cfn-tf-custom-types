@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Destination: Optional[str]
     Filter: Optional[str]
     Folder: Optional[str]
-    Id: Optional[str]
     IncludeChildren: Optional[bool]
     Name: Optional[str]
     WriterIdentity: Optional[str]
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
             Destination=json_data.get("Destination"),
             Filter=json_data.get("Filter"),
             Folder=json_data.get("Folder"),
-            Id=json_data.get("Id"),
             IncludeChildren=json_data.get("IncludeChildren"),
             Name=json_data.get("Name"),
             WriterIdentity=json_data.get("WriterIdentity"),

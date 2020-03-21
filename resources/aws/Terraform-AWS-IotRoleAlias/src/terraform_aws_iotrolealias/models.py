@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Alias: Optional[str]
     Arn: Optional[str]
     CredentialDuration: Optional[float]
-    Id: Optional[str]
     RoleArn: Optional[str]
 
     @classmethod
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             Alias=json_data.get("Alias"),
             Arn=json_data.get("Arn"),
             CredentialDuration=json_data.get("CredentialDuration"),
-            Id=json_data.get("Id"),
             RoleArn=json_data.get("RoleArn"),
         )
 

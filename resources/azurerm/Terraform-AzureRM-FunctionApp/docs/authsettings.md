@@ -8,7 +8,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#additionalloginparams" title="AdditionalLoginParams">AdditionalLoginParams</a>" : <i>[ <a href="authsettings-additionalloginparams.md">AdditionalLoginParams</a>, ... ]</i>,
+    "<a href="#additionalloginparams" title="AdditionalLoginParams">AdditionalLoginParams</a>" : <i>[ &lt;a href=&#34;authsettings-additionalloginparams.md&#34;&gt;AdditionalLoginParams&lt;/a&gt;, ... ]</i>,
     "<a href="#allowedexternalredirecturls" title="AllowedExternalRedirectUrls">AllowedExternalRedirectUrls</a>" : <i>[ String, ... ]</i>,
     "<a href="#defaultprovider" title="DefaultProvider">DefaultProvider</a>" : <i>String</i>,
     "<a href="#enabled" title="Enabled">Enabled</a>" : <i>Boolean</i>,
@@ -17,11 +17,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#tokenrefreshextensionhours" title="TokenRefreshExtensionHours">TokenRefreshExtensionHours</a>" : <i>Double</i>,
     "<a href="#tokenstoreenabled" title="TokenStoreEnabled">TokenStoreEnabled</a>" : <i>Boolean</i>,
     "<a href="#unauthenticatedclientaction" title="UnauthenticatedClientAction">UnauthenticatedClientAction</a>" : <i>String</i>,
-    "<a href="#activedirectory" title="ActiveDirectory">ActiveDirectory</a>" : <i>[ <a href="authsettings-activedirectory.md">ActiveDirectory</a>, ... ]</i>,
-    "<a href="#facebook" title="Facebook">Facebook</a>" : <i>[ <a href="authsettings-facebook.md">Facebook</a>, ... ]</i>,
-    "<a href="#google" title="Google">Google</a>" : <i>[ <a href="authsettings-google.md">Google</a>, ... ]</i>,
-    "<a href="#microsoft" title="Microsoft">Microsoft</a>" : <i>[ <a href="authsettings-microsoft.md">Microsoft</a>, ... ]</i>,
-    "<a href="#twitter" title="Twitter">Twitter</a>" : <i>[ <a href="authsettings-twitter.md">Twitter</a>, ... ]</i>
+    "<a href="#activedirectory" title="ActiveDirectory">ActiveDirectory</a>" : <i>[ &lt;a href=&#34;authsettings-activedirectory.md&#34;&gt;ActiveDirectory&lt;/a&gt;, ... ]</i>,
+    "<a href="#facebook" title="Facebook">Facebook</a>" : <i>[ &lt;a href=&#34;authsettings-facebook.md&#34;&gt;Facebook&lt;/a&gt;, ... ]</i>,
+    "<a href="#google" title="Google">Google</a>" : <i>[ &lt;a href=&#34;authsettings-google.md&#34;&gt;Google&lt;/a&gt;, ... ]</i>,
+    "<a href="#microsoft" title="Microsoft">Microsoft</a>" : <i>[ &lt;a href=&#34;authsettings-microsoft.md&#34;&gt;Microsoft&lt;/a&gt;, ... ]</i>,
+    "<a href="#twitter" title="Twitter">Twitter</a>" : <i>[ &lt;a href=&#34;authsettings-twitter.md&#34;&gt;Twitter&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -29,7 +29,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#additionalloginparams" title="AdditionalLoginParams">AdditionalLoginParams</a>: <i>
-      - <a href="authsettings-additionalloginparams.md">AdditionalLoginParams</a></i>
+      - &lt;a href=&#34;authsettings-additionalloginparams.md&#34;&gt;AdditionalLoginParams&lt;/a&gt;</i>
 <a href="#allowedexternalredirecturls" title="AllowedExternalRedirectUrls">AllowedExternalRedirectUrls</a>: <i>
       - String</i>
 <a href="#defaultprovider" title="DefaultProvider">DefaultProvider</a>: <i>String</i>
@@ -40,15 +40,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#tokenstoreenabled" title="TokenStoreEnabled">TokenStoreEnabled</a>: <i>Boolean</i>
 <a href="#unauthenticatedclientaction" title="UnauthenticatedClientAction">UnauthenticatedClientAction</a>: <i>String</i>
 <a href="#activedirectory" title="ActiveDirectory">ActiveDirectory</a>: <i>
-      - <a href="authsettings-activedirectory.md">ActiveDirectory</a></i>
+      - &lt;a href=&#34;authsettings-activedirectory.md&#34;&gt;ActiveDirectory&lt;/a&gt;</i>
 <a href="#facebook" title="Facebook">Facebook</a>: <i>
-      - <a href="authsettings-facebook.md">Facebook</a></i>
+      - &lt;a href=&#34;authsettings-facebook.md&#34;&gt;Facebook&lt;/a&gt;</i>
 <a href="#google" title="Google">Google</a>: <i>
-      - <a href="authsettings-google.md">Google</a></i>
+      - &lt;a href=&#34;authsettings-google.md&#34;&gt;Google&lt;/a&gt;</i>
 <a href="#microsoft" title="Microsoft">Microsoft</a>: <i>
-      - <a href="authsettings-microsoft.md">Microsoft</a></i>
+      - &lt;a href=&#34;authsettings-microsoft.md&#34;&gt;Microsoft&lt;/a&gt;</i>
 <a href="#twitter" title="Twitter">Twitter</a>: <i>
-      - <a href="authsettings-twitter.md">Twitter</a></i>
+      - &lt;a href=&#34;authsettings-twitter.md&#34;&gt;Twitter&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -56,15 +56,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### AdditionalLoginParams
 
 _Required_: No
-
-_Type_: List of <a href="authsettings-additionalloginparams.md">AdditionalLoginParams</a>
+_Type_: List of &lt;a href=&#34;authsettings-additionalloginparams.md&#34;&gt;AdditionalLoginParams&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowedExternalRedirectUrls
 
 _Required_: No
-
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -72,7 +70,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DefaultProvider
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -80,7 +77,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Enabled
 
 _Required_: Yes
-
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -88,7 +84,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Issuer
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -96,7 +91,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RuntimeVersion
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -104,7 +98,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### TokenRefreshExtensionHours
 
 _Required_: No
-
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -112,7 +105,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### TokenStoreEnabled
 
 _Required_: No
-
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -120,7 +112,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### UnauthenticatedClientAction
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -128,40 +119,35 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ActiveDirectory
 
 _Required_: No
-
-_Type_: List of <a href="authsettings-activedirectory.md">ActiveDirectory</a>
+_Type_: List of &lt;a href=&#34;authsettings-activedirectory.md&#34;&gt;ActiveDirectory&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Facebook
 
 _Required_: No
-
-_Type_: List of <a href="authsettings-facebook.md">Facebook</a>
+_Type_: List of &lt;a href=&#34;authsettings-facebook.md&#34;&gt;Facebook&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Google
 
 _Required_: No
-
-_Type_: List of <a href="authsettings-google.md">Google</a>
+_Type_: List of &lt;a href=&#34;authsettings-google.md&#34;&gt;Google&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Microsoft
 
 _Required_: No
-
-_Type_: List of <a href="authsettings-microsoft.md">Microsoft</a>
+_Type_: List of &lt;a href=&#34;authsettings-microsoft.md&#34;&gt;Microsoft&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Twitter
 
 _Required_: No
-
-_Type_: List of <a href="authsettings-twitter.md">Twitter</a>
+_Type_: List of &lt;a href=&#34;authsettings-twitter.md&#34;&gt;Twitter&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

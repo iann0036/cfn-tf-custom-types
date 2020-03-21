@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     BgpCommunities: Optional[Sequence[str]]
     BgpExtendedCommunities: Optional[Sequence[str]]
     Destinations: Optional[Sequence[str]]
-    Id: Optional[str]
     Interfaces: Optional[Sequence[str]]
     Name: Optional[str]
     NextHops: Optional[Sequence[str]]
@@ -66,7 +65,6 @@ class ResourceModel(BaseResourceModel):
             BgpCommunities=json_data.get("BgpCommunities"),
             BgpExtendedCommunities=json_data.get("BgpExtendedCommunities"),
             Destinations=json_data.get("Destinations"),
-            Id=json_data.get("Id"),
             Interfaces=json_data.get("Interfaces"),
             Name=json_data.get("Name"),
             NextHops=json_data.get("NextHops"),

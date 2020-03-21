@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Agency: Optional[str]
     Created: Optional[str]
     Flavor: Optional[str]
-    Id: Optional[str]
     InnerEndpoint: Optional[str]
     Name: Optional[str]
     PublicEndpoint: Optional[str]
@@ -64,7 +63,6 @@ class ResourceModel(BaseResourceModel):
             Agency=json_data.get("Agency"),
             Created=json_data.get("Created"),
             Flavor=json_data.get("Flavor"),
-            Id=json_data.get("Id"),
             InnerEndpoint=json_data.get("InnerEndpoint"),
             Name=json_data.get("Name"),
             PublicEndpoint=json_data.get("PublicEndpoint"),

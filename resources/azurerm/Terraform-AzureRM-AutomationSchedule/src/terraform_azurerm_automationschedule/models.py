@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     ExpiryTime: Optional[str]
     Frequency: Optional[str]
-    Id: Optional[str]
     Interval: Optional[float]
     MonthDays: Optional[Sequence[float]]
     Name: Optional[str]
@@ -64,7 +63,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             ExpiryTime=json_data.get("ExpiryTime"),
             Frequency=json_data.get("Frequency"),
-            Id=json_data.get("Id"),
             Interval=json_data.get("Interval"),
             MonthDays=json_data.get("MonthDays"),
             Name=json_data.get("Name"),

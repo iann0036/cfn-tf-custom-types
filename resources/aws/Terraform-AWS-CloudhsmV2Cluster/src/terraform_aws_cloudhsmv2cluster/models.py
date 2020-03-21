@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     ClusterId: Optional[str]
     ClusterState: Optional[str]
     HsmType: Optional[str]
-    Id: Optional[str]
     SecurityGroupId: Optional[str]
     SourceBackupIdentifier: Optional[str]
     SubnetIds: Optional[Sequence[str]]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             ClusterId=json_data.get("ClusterId"),
             ClusterState=json_data.get("ClusterState"),
             HsmType=json_data.get("HsmType"),
-            Id=json_data.get("Id"),
             SecurityGroupId=json_data.get("SecurityGroupId"),
             SourceBackupIdentifier=json_data.get("SourceBackupIdentifier"),
             SubnetIds=json_data.get("SubnetIds"),

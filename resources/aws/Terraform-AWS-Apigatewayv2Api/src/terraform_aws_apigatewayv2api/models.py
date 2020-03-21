@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     Description: Optional[str]
     ExecutionArn: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     ProtocolType: Optional[str]
     RouteSelectionExpression: Optional[str]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             Description=json_data.get("Description"),
             ExecutionArn=json_data.get("ExecutionArn"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ProtocolType=json_data.get("ProtocolType"),
             RouteSelectionExpression=json_data.get("RouteSelectionExpression"),

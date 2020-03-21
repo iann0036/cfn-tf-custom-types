@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     ExpirationDate: Optional[str]
     FriendlyName: Optional[str]
     HostNames: Optional[Sequence[str]]
-    Id: Optional[str]
     IssueDate: Optional[str]
     Issuer: Optional[str]
     KeyVaultSecretId: Optional[str]
@@ -65,7 +64,6 @@ class ResourceModel(BaseResourceModel):
             ExpirationDate=json_data.get("ExpirationDate"),
             FriendlyName=json_data.get("FriendlyName"),
             HostNames=json_data.get("HostNames"),
-            Id=json_data.get("Id"),
             IssueDate=json_data.get("IssueDate"),
             Issuer=json_data.get("Issuer"),
             KeyVaultSecretId=json_data.get("KeyVaultSecretId"),

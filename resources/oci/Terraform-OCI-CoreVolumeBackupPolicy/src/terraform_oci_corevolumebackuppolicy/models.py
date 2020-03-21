@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     DefinedTags: Optional[Sequence["_DefinedTags"]]
     DisplayName: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     TimeCreated: Optional[str]
     Schedules: Optional[Sequence["_Schedules"]]
     Timeouts: Optional["_Timeouts"]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             DefinedTags=json_data.get("DefinedTags"),
             DisplayName=json_data.get("DisplayName"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             TimeCreated=json_data.get("TimeCreated"),
             Schedules=json_data.get("Schedules"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),

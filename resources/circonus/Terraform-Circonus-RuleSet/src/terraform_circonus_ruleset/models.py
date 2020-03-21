@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Check: Optional[str]
-    Id: Optional[str]
     Link: Optional[str]
     MetricFilter: Optional[str]
     MetricName: Optional[str]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Check=json_data.get("Check"),
-            Id=json_data.get("Id"),
             Link=json_data.get("Link"),
             MetricFilter=json_data.get("MetricFilter"),
             MetricName=json_data.get("MetricName"),

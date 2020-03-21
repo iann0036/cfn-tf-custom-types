@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     HealthCheckPath: Optional[str]
     HealthCheckPort: Optional[float]
     HealthCheckProtocol: Optional[str]
-    Id: Optional[str]
     ListenerArn: Optional[str]
     ThresholdCount: Optional[float]
     TrafficDialPercentage: Optional[float]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             HealthCheckPath=json_data.get("HealthCheckPath"),
             HealthCheckPort=json_data.get("HealthCheckPort"),
             HealthCheckProtocol=json_data.get("HealthCheckProtocol"),
-            Id=json_data.get("Id"),
             ListenerArn=json_data.get("ListenerArn"),
             ThresholdCount=json_data.get("ThresholdCount"),
             TrafficDialPercentage=json_data.get("TrafficDialPercentage"),

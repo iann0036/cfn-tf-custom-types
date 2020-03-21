@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     CookbookConstraints: Optional[Sequence["_CookbookConstraints"]]
     DefaultAttributesJson: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     OverrideAttributesJson: Optional[str]
 
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             CookbookConstraints=json_data.get("CookbookConstraints"),
             DefaultAttributesJson=json_data.get("DefaultAttributesJson"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             OverrideAttributesJson=json_data.get("OverrideAttributesJson"),
         )

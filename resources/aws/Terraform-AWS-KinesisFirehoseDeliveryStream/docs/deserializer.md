@@ -8,8 +8,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#hivejsonserde" title="HiveJsonSerDe">HiveJsonSerDe</a>" : <i>[ <a href="deserializer-hivejsonserde.md">HiveJsonSerDe</a>, ... ]</i>,
-    "<a href="#openxjsonserde" title="OpenXJsonSerDe">OpenXJsonSerDe</a>" : <i>[ <a href="deserializer-openxjsonserde.md">OpenXJsonSerDe</a>, ... ]</i>
+    "<a href="#hivejsonserde" title="HiveJsonSerDe">HiveJsonSerDe</a>" : <i>[ &lt;a href=&#34;deserializer-hivejsonserde.md&#34;&gt;HiveJsonSerDe&lt;/a&gt;, ... ]</i>,
+    "<a href="#openxjsonserde" title="OpenXJsonSerDe">OpenXJsonSerDe</a>" : <i>[ &lt;a href=&#34;deserializer-openxjsonserde.md&#34;&gt;OpenXJsonSerDe&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -17,9 +17,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#hivejsonserde" title="HiveJsonSerDe">HiveJsonSerDe</a>: <i>
-      - <a href="deserializer-hivejsonserde.md">HiveJsonSerDe</a></i>
+      - &lt;a href=&#34;deserializer-hivejsonserde.md&#34;&gt;HiveJsonSerDe&lt;/a&gt;</i>
 <a href="#openxjsonserde" title="OpenXJsonSerDe">OpenXJsonSerDe</a>: <i>
-      - <a href="deserializer-openxjsonserde.md">OpenXJsonSerDe</a></i>
+      - &lt;a href=&#34;deserializer-openxjsonserde.md&#34;&gt;OpenXJsonSerDe&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -27,16 +27,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### HiveJsonSerDe
 
 _Required_: No
-
-_Type_: List of <a href="deserializer-hivejsonserde.md">HiveJsonSerDe</a>
+_Type_: List of &lt;a href=&#34;deserializer-hivejsonserde.md&#34;&gt;HiveJsonSerDe&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OpenXJsonSerDe
 
 _Required_: No
-
-_Type_: List of <a href="deserializer-openxjsonserde.md">OpenXJsonSerDe</a>
+_Type_: List of &lt;a href=&#34;deserializer-openxjsonserde.md&#34;&gt;OpenXJsonSerDe&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

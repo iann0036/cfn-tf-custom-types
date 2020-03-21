@@ -47,7 +47,6 @@ class ResourceModel(BaseResourceModel):
     Etag: Optional[str]
     HostedZoneId: Optional[str]
     HttpVersion: Optional[str]
-    Id: Optional[str]
     InProgressValidationBatches: Optional[float]
     IsIpv6Enabled: Optional[bool]
     LastModifiedTime: Optional[str]
@@ -96,7 +95,6 @@ class ResourceModel(BaseResourceModel):
             Etag=json_data.get("Etag"),
             HostedZoneId=json_data.get("HostedZoneId"),
             HttpVersion=json_data.get("HttpVersion"),
-            Id=json_data.get("Id"),
             InProgressValidationBatches=json_data.get("InProgressValidationBatches"),
             IsIpv6Enabled=json_data.get("IsIpv6Enabled"),
             LastModifiedTime=json_data.get("LastModifiedTime"),

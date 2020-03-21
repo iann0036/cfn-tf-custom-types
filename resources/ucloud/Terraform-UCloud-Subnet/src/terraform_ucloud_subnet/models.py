@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CidrBlock: Optional[str]
     CreateTime: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Remark: Optional[str]
     Tag: Optional[str]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CidrBlock=json_data.get("CidrBlock"),
             CreateTime=json_data.get("CreateTime"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Remark=json_data.get("Remark"),
             Tag=json_data.get("Tag"),

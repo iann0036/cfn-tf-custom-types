@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DisplayName: Optional[str]
     FallCount: Optional[float]
-    Id: Optional[str]
     Interval: Optional[float]
     MonitorPort: Optional[str]
     Revision: Optional[float]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DisplayName=json_data.get("DisplayName"),
             FallCount=json_data.get("FallCount"),
-            Id=json_data.get("Id"),
             Interval=json_data.get("Interval"),
             MonitorPort=json_data.get("MonitorPort"),
             Revision=json_data.get("Revision"),

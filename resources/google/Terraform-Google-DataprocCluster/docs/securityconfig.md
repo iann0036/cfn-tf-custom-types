@@ -8,7 +8,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#kerberosconfig" title="KerberosConfig">KerberosConfig</a>" : <i>[ <a href="securityconfig-kerberosconfig.md">KerberosConfig</a>, ... ]</i>
+    "<a href="#kerberosconfig" title="KerberosConfig">KerberosConfig</a>" : <i>[ &lt;a href=&#34;securityconfig-kerberosconfig.md&#34;&gt;KerberosConfig&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#kerberosconfig" title="KerberosConfig">KerberosConfig</a>: <i>
-      - <a href="securityconfig-kerberosconfig.md">KerberosConfig</a></i>
+      - &lt;a href=&#34;securityconfig-kerberosconfig.md&#34;&gt;KerberosConfig&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -24,8 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### KerberosConfig
 
 _Required_: No
-
-_Type_: List of <a href="securityconfig-kerberosconfig.md">KerberosConfig</a>
+_Type_: List of &lt;a href=&#34;securityconfig-kerberosconfig.md&#34;&gt;KerberosConfig&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

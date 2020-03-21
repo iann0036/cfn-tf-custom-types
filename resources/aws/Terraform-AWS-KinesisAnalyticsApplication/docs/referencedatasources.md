@@ -9,8 +9,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#tablename" title="TableName">TableName</a>" : <i>String</i>,
-    "<a href="#s3" title="S3">S3</a>" : <i>[ <a href="referencedatasources-s3.md">S3</a>, ... ]</i>,
-    "<a href="#schema" title="Schema">Schema</a>" : <i>[ <a href="referencedatasources-schema.md">Schema</a>, ... ]</i>
+    "<a href="#s3" title="S3">S3</a>" : <i>[ &lt;a href=&#34;referencedatasources-s3.md&#34;&gt;S3&lt;/a&gt;, ... ]</i>,
+    "<a href="#schema" title="Schema">Schema</a>" : <i>[ &lt;a href=&#34;referencedatasources-schema.md&#34;&gt;Schema&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -19,9 +19,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#tablename" title="TableName">TableName</a>: <i>String</i>
 <a href="#s3" title="S3">S3</a>: <i>
-      - <a href="referencedatasources-s3.md">S3</a></i>
+      - &lt;a href=&#34;referencedatasources-s3.md&#34;&gt;S3&lt;/a&gt;</i>
 <a href="#schema" title="Schema">Schema</a>: <i>
-      - <a href="referencedatasources-schema.md">Schema</a></i>
+      - &lt;a href=&#34;referencedatasources-schema.md&#34;&gt;Schema&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -29,7 +29,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### TableName
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -37,16 +36,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### S3
 
 _Required_: No
-
-_Type_: List of <a href="referencedatasources-s3.md">S3</a>
+_Type_: List of &lt;a href=&#34;referencedatasources-s3.md&#34;&gt;S3&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Schema
 
 _Required_: No
-
-_Type_: List of <a href="referencedatasources-schema.md">Schema</a>
+_Type_: List of &lt;a href=&#34;referencedatasources-schema.md&#34;&gt;Schema&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

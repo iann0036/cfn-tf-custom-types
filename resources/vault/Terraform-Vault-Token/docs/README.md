@@ -12,9 +12,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Vault::Token",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#clienttoken" title="ClientToken">ClientToken</a>" : <i>String</i>,
         "<a href="#displayname" title="DisplayName">DisplayName</a>" : <i>String</i>,
         "<a href="#explicitmaxttl" title="ExplicitMaxTtl">ExplicitMaxTtl</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#leaseduration" title="LeaseDuration">LeaseDuration</a>" : <i>Double</i>,
+        "<a href="#leasestarted" title="LeaseStarted">LeaseStarted</a>" : <i>String</i>,
         "<a href="#nodefaultpolicy" title="NoDefaultPolicy">NoDefaultPolicy</a>" : <i>Boolean</i>,
         "<a href="#noparent" title="NoParent">NoParent</a>" : <i>Boolean</i>,
         "<a href="#numuses" title="NumUses">NumUses</a>" : <i>Double</i>,
@@ -25,6 +28,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#renewable" title="Renewable">Renewable</a>" : <i>Boolean</i>,
         "<a href="#rolename" title="RoleName">RoleName</a>" : <i>String</i>,
         "<a href="#ttl" title="Ttl">Ttl</a>" : <i>String</i>,
+        "<a href="#wrappedtoken" title="WrappedToken">WrappedToken</a>" : <i>String</i>,
+        "<a href="#wrappingaccessor" title="WrappingAccessor">WrappingAccessor</a>" : <i>String</i>,
         "<a href="#wrappingttl" title="WrappingTtl">WrappingTtl</a>" : <i>String</i>
     }
 }
@@ -35,9 +40,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Vault::Token
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#clienttoken" title="ClientToken">ClientToken</a>: <i>String</i>
     <a href="#displayname" title="DisplayName">DisplayName</a>: <i>String</i>
     <a href="#explicitmaxttl" title="ExplicitMaxTtl">ExplicitMaxTtl</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#leaseduration" title="LeaseDuration">LeaseDuration</a>: <i>Double</i>
+    <a href="#leasestarted" title="LeaseStarted">LeaseStarted</a>: <i>String</i>
     <a href="#nodefaultpolicy" title="NoDefaultPolicy">NoDefaultPolicy</a>: <i>Boolean</i>
     <a href="#noparent" title="NoParent">NoParent</a>: <i>Boolean</i>
     <a href="#numuses" title="NumUses">NumUses</a>: <i>Double</i>
@@ -49,10 +57,30 @@ Properties:
     <a href="#renewable" title="Renewable">Renewable</a>: <i>Boolean</i>
     <a href="#rolename" title="RoleName">RoleName</a>: <i>String</i>
     <a href="#ttl" title="Ttl">Ttl</a>: <i>String</i>
+    <a href="#wrappedtoken" title="WrappedToken">WrappedToken</a>: <i>String</i>
+    <a href="#wrappingaccessor" title="WrappingAccessor">WrappingAccessor</a>: <i>String</i>
     <a href="#wrappingttl" title="WrappingTtl">WrappingTtl</a>: <i>String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ClientToken
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
 
@@ -70,7 +98,15 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### LeaseDuration
+
+_Required_: No
+
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### LeaseStarted
 
 _Required_: No
 
@@ -158,6 +194,22 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### WrappedToken
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### WrappingAccessor
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### WrappingTtl
 
 _Required_: No
@@ -184,21 +236,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ClientToken
 
-Returns the <code>ClientToken</code> value.
+Returns the &lt;code&gt;ClientToken&lt;/code&gt; value.
 
 #### LeaseDuration
 
-Returns the <code>LeaseDuration</code> value.
+Returns the &lt;code&gt;LeaseDuration&lt;/code&gt; value.
 
 #### LeaseStarted
 
-Returns the <code>LeaseStarted</code> value.
+Returns the &lt;code&gt;LeaseStarted&lt;/code&gt; value.
 
 #### WrappedToken
 
-Returns the <code>WrappedToken</code> value.
+Returns the &lt;code&gt;WrappedToken&lt;/code&gt; value.
 
 #### WrappingAccessor
 
-Returns the <code>WrappingAccessor</code> value.
+Returns the &lt;code&gt;WrappingAccessor&lt;/code&gt; value.
 

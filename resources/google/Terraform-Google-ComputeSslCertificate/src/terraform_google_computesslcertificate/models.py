@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     CertificateId: Optional[float]
     CreationTimestamp: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     NamePrefix: Optional[str]
     PrivateKey: Optional[str]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             CertificateId=json_data.get("CertificateId"),
             CreationTimestamp=json_data.get("CreationTimestamp"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             NamePrefix=json_data.get("NamePrefix"),
             PrivateKey=json_data.get("PrivateKey"),

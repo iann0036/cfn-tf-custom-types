@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DisplayName: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     ModSecurityRuleIds: Optional[Sequence[str]]
     State: Optional[str]
     Template: Optional[str]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DisplayName=json_data.get("DisplayName"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             ModSecurityRuleIds=json_data.get("ModSecurityRuleIds"),
             State=json_data.get("State"),
             Template=json_data.get("Template"),

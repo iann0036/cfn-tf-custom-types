@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     DesiredCapacity: Optional[float]
     DrainingTimeout: Optional[float]
     FallbackToOndemand: Optional[bool]
-    Id: Optional[str]
     InstanceTypesOndemand: Optional[str]
     InstanceTypesPreemptible: Optional[Sequence[str]]
     IpForwarding: Optional[bool]
@@ -89,7 +88,6 @@ class ResourceModel(BaseResourceModel):
             DesiredCapacity=json_data.get("DesiredCapacity"),
             DrainingTimeout=json_data.get("DrainingTimeout"),
             FallbackToOndemand=json_data.get("FallbackToOndemand"),
-            Id=json_data.get("Id"),
             InstanceTypesOndemand=json_data.get("InstanceTypesOndemand"),
             InstanceTypesPreemptible=json_data.get("InstanceTypesPreemptible"),
             IpForwarding=json_data.get("IpForwarding"),

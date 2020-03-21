@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AdminStateUp: Optional[bool]
     Description: Optional[str]
-    Id: Optional[str]
     LbMethod: Optional[str]
     ListenerId: Optional[str]
     LoadbalancerId: Optional[str]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AdminStateUp=json_data.get("AdminStateUp"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             LbMethod=json_data.get("LbMethod"),
             ListenerId=json_data.get("ListenerId"),
             LoadbalancerId=json_data.get("LoadbalancerId"),

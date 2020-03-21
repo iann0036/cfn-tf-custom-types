@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AllowBranchToBranchTraffic: Optional[bool]
     AllowVnetToVnetTraffic: Optional[bool]
     DisableVpnEncryption: Optional[bool]
-    Id: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
     Office365LocalBreakoutCategory: Optional[str]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             AllowBranchToBranchTraffic=json_data.get("AllowBranchToBranchTraffic"),
             AllowVnetToVnetTraffic=json_data.get("AllowVnetToVnetTraffic"),
             DisableVpnEncryption=json_data.get("DisableVpnEncryption"),
-            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),
             Office365LocalBreakoutCategory=json_data.get("Office365LocalBreakoutCategory"),

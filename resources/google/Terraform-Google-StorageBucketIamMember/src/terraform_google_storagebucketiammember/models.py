@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Bucket: Optional[str]
     Etag: Optional[str]
-    Id: Optional[str]
     Member: Optional[str]
     Role: Optional[str]
 
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Bucket=json_data.get("Bucket"),
             Etag=json_data.get("Etag"),
-            Id=json_data.get("Id"),
             Member=json_data.get("Member"),
             Role=json_data.get("Role"),
         )

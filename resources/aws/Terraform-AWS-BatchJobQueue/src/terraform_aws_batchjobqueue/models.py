@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Arn: Optional[str]
     ComputeEnvironments: Optional[Sequence[str]]
-    Id: Optional[str]
     Name: Optional[str]
     Priority: Optional[float]
     State: Optional[str]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Arn=json_data.get("Arn"),
             ComputeEnvironments=json_data.get("ComputeEnvironments"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Priority=json_data.get("Priority"),
             State=json_data.get("State"),

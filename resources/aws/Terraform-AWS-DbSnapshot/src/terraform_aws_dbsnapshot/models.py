@@ -44,7 +44,6 @@ class ResourceModel(BaseResourceModel):
     Encrypted: Optional[bool]
     Engine: Optional[str]
     EngineVersion: Optional[str]
-    Id: Optional[str]
     Iops: Optional[float]
     KmsKeyId: Optional[str]
     LicenseModel: Optional[str]
@@ -76,7 +75,6 @@ class ResourceModel(BaseResourceModel):
             Encrypted=json_data.get("Encrypted"),
             Engine=json_data.get("Engine"),
             EngineVersion=json_data.get("EngineVersion"),
-            Id=json_data.get("Id"),
             Iops=json_data.get("Iops"),
             KmsKeyId=json_data.get("KmsKeyId"),
             LicenseModel=json_data.get("LicenseModel"),

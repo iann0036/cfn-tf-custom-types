@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     Capabilities: Optional[Sequence[str]]
     Description: Optional[str]
     ExecutionRoleName: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Parameters: Optional[Sequence["_Parameters"]]
     StackSetId: Optional[str]
@@ -64,7 +63,6 @@ class ResourceModel(BaseResourceModel):
             Capabilities=json_data.get("Capabilities"),
             Description=json_data.get("Description"),
             ExecutionRoleName=json_data.get("ExecutionRoleName"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Parameters=json_data.get("Parameters"),
             StackSetId=json_data.get("StackSetId"),

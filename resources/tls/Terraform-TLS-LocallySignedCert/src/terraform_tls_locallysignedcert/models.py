@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     CertPem: Optional[str]
     CertRequestPem: Optional[str]
     EarlyRenewalHours: Optional[float]
-    Id: Optional[str]
     IsCaCertificate: Optional[bool]
     ReadyForRenewal: Optional[bool]
     SetSubjectKeyId: Optional[bool]
@@ -67,7 +66,6 @@ class ResourceModel(BaseResourceModel):
             CertPem=json_data.get("CertPem"),
             CertRequestPem=json_data.get("CertRequestPem"),
             EarlyRenewalHours=json_data.get("EarlyRenewalHours"),
-            Id=json_data.get("Id"),
             IsCaCertificate=json_data.get("IsCaCertificate"),
             ReadyForRenewal=json_data.get("ReadyForRenewal"),
             SetSubjectKeyId=json_data.get("SetSubjectKeyId"),

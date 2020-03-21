@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     ClusterControllerId: Optional[str]
     ClusterName: Optional[str]
     DesiredCapacity: Optional[float]
-    Id: Optional[str]
     Location: Optional[str]
     MaxSize: Optional[float]
     MinSize: Optional[float]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             ClusterControllerId=json_data.get("ClusterControllerId"),
             ClusterName=json_data.get("ClusterName"),
             DesiredCapacity=json_data.get("DesiredCapacity"),
-            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             MaxSize=json_data.get("MaxSize"),
             MinSize=json_data.get("MinSize"),

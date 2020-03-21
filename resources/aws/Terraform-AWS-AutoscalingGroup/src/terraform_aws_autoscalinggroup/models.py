@@ -44,7 +44,6 @@ class ResourceModel(BaseResourceModel):
     ForceDelete: Optional[bool]
     HealthCheckGracePeriod: Optional[float]
     HealthCheckType: Optional[str]
-    Id: Optional[str]
     LaunchConfiguration: Optional[str]
     LoadBalancers: Optional[Sequence[str]]
     MaxInstanceLifetime: Optional[float]
@@ -90,7 +89,6 @@ class ResourceModel(BaseResourceModel):
             ForceDelete=json_data.get("ForceDelete"),
             HealthCheckGracePeriod=json_data.get("HealthCheckGracePeriod"),
             HealthCheckType=json_data.get("HealthCheckType"),
-            Id=json_data.get("Id"),
             LaunchConfiguration=json_data.get("LaunchConfiguration"),
             LoadBalancers=json_data.get("LoadBalancers"),
             MaxInstanceLifetime=json_data.get("MaxInstanceLifetime"),

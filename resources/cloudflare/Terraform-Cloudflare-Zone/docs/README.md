@@ -12,11 +12,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Cloudflare::Zone",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#jumpstart" title="JumpStart">JumpStart</a>" : <i>Boolean</i>,
+        "<a href="#meta" title="Meta">Meta</a>" : <i>[ &lt;a href=&#34;meta.md&#34;&gt;Meta&lt;/a&gt;, ... ]</i>,
+        "<a href="#nameservers" title="NameServers">NameServers</a>" : <i>[ String, ... ]</i>,
         "<a href="#paused" title="Paused">Paused</a>" : <i>Boolean</i>,
         "<a href="#plan" title="Plan">Plan</a>" : <i>String</i>,
+        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
+        "<a href="#vanitynameservers" title="VanityNameServers">VanityNameServers</a>" : <i>[ String, ... ]</i>,
+        "<a href="#verificationkey" title="VerificationKey">VerificationKey</a>" : <i>String</i>,
         "<a href="#zone" title="Zone">Zone</a>" : <i>String</i>
     }
 }
@@ -27,17 +32,27 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Cloudflare::Zone
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#jumpstart" title="JumpStart">JumpStart</a>: <i>Boolean</i>
+    <a href="#meta" title="Meta">Meta</a>: <i>
+      - &lt;a href=&#34;meta.md&#34;&gt;Meta&lt;/a&gt;</i>
+    <a href="#nameservers" title="NameServers">NameServers</a>: <i>
+      - String</i>
     <a href="#paused" title="Paused">Paused</a>: <i>Boolean</i>
     <a href="#plan" title="Plan">Plan</a>: <i>String</i>
+    <a href="#status" title="Status">Status</a>: <i>String</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
+    <a href="#vanitynameservers" title="VanityNameServers">VanityNameServers</a>: <i>
+      - String</i>
+    <a href="#verificationkey" title="VerificationKey">VerificationKey</a>: <i>String</i>
     <a href="#zone" title="Zone">Zone</a>: <i>String</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
@@ -50,6 +65,22 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Meta
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;meta.md&#34;&gt;Meta&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### NameServers
+
+_Required_: No
+
+_Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -69,7 +100,31 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### Status
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Type
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### VanityNameServers
+
+_Required_: No
+
+_Type_: List of String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### VerificationKey
 
 _Required_: No
 
@@ -103,21 +158,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Meta
 
-Returns the <code>Meta</code> value.
+Returns the &lt;code&gt;Meta&lt;/code&gt; value.
 
 #### NameServers
 
-Returns the <code>NameServers</code> value.
+Returns the &lt;code&gt;NameServers&lt;/code&gt; value.
 
 #### Status
 
-Returns the <code>Status</code> value.
+Returns the &lt;code&gt;Status&lt;/code&gt; value.
 
 #### VanityNameServers
 
-Returns the <code>VanityNameServers</code> value.
+Returns the &lt;code&gt;VanityNameServers&lt;/code&gt; value.
 
 #### VerificationKey
 
-Returns the <code>VerificationKey</code> value.
+Returns the &lt;code&gt;VerificationKey&lt;/code&gt; value.
 

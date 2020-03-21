@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Attached: Optional[bool]
     AvailabilityZone: Optional[str]
     Encrypt: Optional[bool]
-    Id: Optional[str]
     Period: Optional[float]
     ProjectId: Optional[float]
     SnapshotId: Optional[str]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             Attached=json_data.get("Attached"),
             AvailabilityZone=json_data.get("AvailabilityZone"),
             Encrypt=json_data.get("Encrypt"),
-            Id=json_data.get("Id"),
             Period=json_data.get("Period"),
             ProjectId=json_data.get("ProjectId"),
             SnapshotId=json_data.get("SnapshotId"),

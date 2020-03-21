@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     LicenseTextLink: Optional[str]
     Offer: Optional[str]
     Plan: Optional[str]
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             LicenseTextLink=json_data.get("LicenseTextLink"),
             Offer=json_data.get("Offer"),
             Plan=json_data.get("Plan"),

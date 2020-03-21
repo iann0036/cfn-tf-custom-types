@@ -8,7 +8,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#arguments" title="Arguments">Arguments</a>" : <i>[ <a href="settings-arguments.md">Arguments</a>, ... ]</i>,
+    "<a href="#arguments" title="Arguments">Arguments</a>" : <i>[ &lt;a href=&#34;settings-arguments.md&#34;&gt;Arguments&lt;/a&gt;, ... ]</i>,
     "<a href="#argumentsjson" title="ArgumentsJson">ArgumentsJson</a>" : <i>String</i>,
     "<a href="#autodelete" title="AutoDelete">AutoDelete</a>" : <i>Boolean</i>,
     "<a href="#durable" title="Durable">Durable</a>" : <i>Boolean</i>
@@ -19,7 +19,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#arguments" title="Arguments">Arguments</a>: <i>
-      - <a href="settings-arguments.md">Arguments</a></i>
+      - &lt;a href=&#34;settings-arguments.md&#34;&gt;Arguments&lt;/a&gt;</i>
 <a href="#argumentsjson" title="ArgumentsJson">ArgumentsJson</a>: <i>String</i>
 <a href="#autodelete" title="AutoDelete">AutoDelete</a>: <i>Boolean</i>
 <a href="#durable" title="Durable">Durable</a>: <i>Boolean</i>
@@ -30,15 +30,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Arguments
 
 _Required_: No
-
-_Type_: List of <a href="settings-arguments.md">Arguments</a>
+_Type_: List of &lt;a href=&#34;settings-arguments.md&#34;&gt;Arguments&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ArgumentsJson
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -46,7 +44,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### AutoDelete
 
 _Required_: No
-
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -54,7 +51,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Durable
 
 _Required_: No
-
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

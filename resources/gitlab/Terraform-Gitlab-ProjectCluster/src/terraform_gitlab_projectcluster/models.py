@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     Domain: Optional[str]
     Enabled: Optional[bool]
     EnvironmentScope: Optional[str]
-    Id: Optional[str]
     KubernetesApiUrl: Optional[str]
     KubernetesAuthorizationType: Optional[str]
     KubernetesCaCert: Optional[str]
@@ -67,7 +66,6 @@ class ResourceModel(BaseResourceModel):
             Domain=json_data.get("Domain"),
             Enabled=json_data.get("Enabled"),
             EnvironmentScope=json_data.get("EnvironmentScope"),
-            Id=json_data.get("Id"),
             KubernetesApiUrl=json_data.get("KubernetesApiUrl"),
             KubernetesAuthorizationType=json_data.get("KubernetesAuthorizationType"),
             KubernetesCaCert=json_data.get("KubernetesCaCert"),

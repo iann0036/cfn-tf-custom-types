@@ -12,7 +12,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Google::BigtableInstanceIamMember",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#etag" title="Etag">Etag</a>" : <i>String</i>,
         "<a href="#instance" title="Instance">Instance</a>" : <i>String</i>,
         "<a href="#member" title="Member">Member</a>" : <i>String</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
@@ -26,7 +27,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Google::BigtableInstanceIamMember
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#etag" title="Etag">Etag</a>: <i>String</i>
     <a href="#instance" title="Instance">Instance</a>: <i>String</i>
     <a href="#member" title="Member">Member</a>: <i>String</i>
     <a href="#project" title="Project">Project</a>: <i>String</i>
@@ -35,7 +37,17 @@ Properties:
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Etag
 
 _Required_: No
 
@@ -93,5 +105,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Etag
 
-Returns the <code>Etag</code> value.
+Returns the &lt;code&gt;Etag&lt;/code&gt; value.
 

@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     AssociatedGatewayType: Optional[str]
     DxGatewayId: Optional[str]
     DxGatewayOwnerAccountId: Optional[str]
-    Id: Optional[str]
     VpnGatewayId: Optional[str]
 
     @classmethod
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             AssociatedGatewayType=json_data.get("AssociatedGatewayType"),
             DxGatewayId=json_data.get("DxGatewayId"),
             DxGatewayOwnerAccountId=json_data.get("DxGatewayOwnerAccountId"),
-            Id=json_data.get("Id"),
             VpnGatewayId=json_data.get("VpnGatewayId"),
         )
 

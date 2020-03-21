@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AuthAlgorithm: Optional[str]
     Description: Optional[str]
     EncryptionAlgorithm: Optional[str]
-    Id: Optional[str]
     IkeVersion: Optional[str]
     Name: Optional[str]
     Pfs: Optional[str]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             AuthAlgorithm=json_data.get("AuthAlgorithm"),
             Description=json_data.get("Description"),
             EncryptionAlgorithm=json_data.get("EncryptionAlgorithm"),
-            Id=json_data.get("Id"),
             IkeVersion=json_data.get("IkeVersion"),
             Name=json_data.get("Name"),
             Pfs=json_data.get("Pfs"),

@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     HashKey: Optional[str]
-    Id: Optional[str]
     Item: Optional[str]
     RangeKey: Optional[str]
     TableName: Optional[str]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             HashKey=json_data.get("HashKey"),
-            Id=json_data.get("Id"),
             Item=json_data.get("Item"),
             RangeKey=json_data.get("RangeKey"),
             TableName=json_data.get("TableName"),

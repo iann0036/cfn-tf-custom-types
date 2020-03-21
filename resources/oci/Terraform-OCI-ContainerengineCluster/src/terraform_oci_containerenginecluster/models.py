@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AvailableKubernetesUpgrades: Optional[Sequence[str]]
     CompartmentId: Optional[str]
     Endpoints: Optional[Sequence["_Endpoints"]]
-    Id: Optional[str]
     KmsKeyId: Optional[str]
     KubernetesVersion: Optional[str]
     LifecycleDetails: Optional[str]
@@ -64,7 +63,6 @@ class ResourceModel(BaseResourceModel):
             AvailableKubernetesUpgrades=json_data.get("AvailableKubernetesUpgrades"),
             CompartmentId=json_data.get("CompartmentId"),
             Endpoints=json_data.get("Endpoints"),
-            Id=json_data.get("Id"),
             KmsKeyId=json_data.get("KmsKeyId"),
             KubernetesVersion=json_data.get("KubernetesVersion"),
             LifecycleDetails=json_data.get("LifecycleDetails"),

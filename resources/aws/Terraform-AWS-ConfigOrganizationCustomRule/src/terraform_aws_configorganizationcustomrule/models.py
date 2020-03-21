@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     Description: Optional[str]
     ExcludedAccounts: Optional[Sequence[str]]
-    Id: Optional[str]
     InputParameters: Optional[str]
     LambdaFunctionArn: Optional[str]
     MaximumExecutionFrequency: Optional[str]
@@ -63,7 +62,6 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             Description=json_data.get("Description"),
             ExcludedAccounts=json_data.get("ExcludedAccounts"),
-            Id=json_data.get("Id"),
             InputParameters=json_data.get("InputParameters"),
             LambdaFunctionArn=json_data.get("LambdaFunctionArn"),
             MaximumExecutionFrequency=json_data.get("MaximumExecutionFrequency"),

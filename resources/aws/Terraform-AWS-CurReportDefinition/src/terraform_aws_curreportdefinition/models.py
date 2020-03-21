@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     AdditionalSchemaElements: Optional[Sequence[str]]
     Compression: Optional[str]
     Format: Optional[str]
-    Id: Optional[str]
     ReportName: Optional[str]
     S3Bucket: Optional[str]
     S3Prefix: Optional[str]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             AdditionalSchemaElements=json_data.get("AdditionalSchemaElements"),
             Compression=json_data.get("Compression"),
             Format=json_data.get("Format"),
-            Id=json_data.get("Id"),
             ReportName=json_data.get("ReportName"),
             S3Bucket=json_data.get("S3Bucket"),
             S3Prefix=json_data.get("S3Prefix"),

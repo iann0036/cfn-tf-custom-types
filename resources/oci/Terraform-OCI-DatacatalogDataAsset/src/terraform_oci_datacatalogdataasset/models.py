@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DisplayName: Optional[str]
     ExternalKey: Optional[str]
-    Id: Optional[str]
     Key: Optional[str]
     Properties: Optional[Sequence["_Properties"]]
     State: Optional[str]
@@ -66,7 +65,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DisplayName=json_data.get("DisplayName"),
             ExternalKey=json_data.get("ExternalKey"),
-            Id=json_data.get("Id"),
             Key=json_data.get("Key"),
             Properties=json_data.get("Properties"),
             State=json_data.get("State"),

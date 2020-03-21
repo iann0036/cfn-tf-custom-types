@@ -12,12 +12,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::ApiGatewayDeployment",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#createddate" title="CreatedDate">CreatedDate</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#executionarn" title="ExecutionArn">ExecutionArn</a>" : <i>String</i>,
+        "<a href="#invokeurl" title="InvokeUrl">InvokeUrl</a>" : <i>String</i>,
         "<a href="#restapiid" title="RestApiId">RestApiId</a>" : <i>String</i>,
         "<a href="#stagedescription" title="StageDescription">StageDescription</a>" : <i>String</i>,
         "<a href="#stagename" title="StageName">StageName</a>" : <i>String</i>,
-        "<a href="#variables" title="Variables">Variables</a>" : <i>[ <a href="variables.md">Variables</a>, ... ]</i>
+        "<a href="#variables" title="Variables">Variables</a>" : <i>[ &lt;a href=&#34;variables.md&#34;&gt;Variables&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -27,16 +30,37 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::ApiGatewayDeployment
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#createddate" title="CreatedDate">CreatedDate</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#executionarn" title="ExecutionArn">ExecutionArn</a>: <i>String</i>
+    <a href="#invokeurl" title="InvokeUrl">InvokeUrl</a>: <i>String</i>
     <a href="#restapiid" title="RestApiId">RestApiId</a>: <i>String</i>
     <a href="#stagedescription" title="StageDescription">StageDescription</a>: <i>String</i>
     <a href="#stagename" title="StageName">StageName</a>: <i>String</i>
     <a href="#variables" title="Variables">Variables</a>: <i>
-      - <a href="variables.md">Variables</a></i>
+      - &lt;a href=&#34;variables.md&#34;&gt;Variables&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### CreatedDate
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -46,7 +70,15 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### ExecutionArn
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### InvokeUrl
 
 _Required_: No
 
@@ -82,7 +114,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="variables.md">Variables</a>
+_Type_: List of &lt;a href=&#34;variables.md&#34;&gt;Variables&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -104,13 +136,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreatedDate
 
-Returns the <code>CreatedDate</code> value.
+Returns the &lt;code&gt;CreatedDate&lt;/code&gt; value.
 
 #### ExecutionArn
 
-Returns the <code>ExecutionArn</code> value.
+Returns the &lt;code&gt;ExecutionArn&lt;/code&gt; value.
 
 #### InvokeUrl
 
-Returns the <code>InvokeUrl</code> value.
+Returns the &lt;code&gt;InvokeUrl&lt;/code&gt; value.
 

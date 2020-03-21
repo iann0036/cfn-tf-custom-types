@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Address: Optional[str]
     Datacenter: Optional[str]
-    Id: Optional[str]
     Meta: Optional[Sequence["_Meta"]]
     Name: Optional[str]
     Token: Optional[str]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Address=json_data.get("Address"),
             Datacenter=json_data.get("Datacenter"),
-            Id=json_data.get("Id"),
             Meta=json_data.get("Meta"),
             Name=json_data.get("Name"),
             Token=json_data.get("Token"),

@@ -46,7 +46,6 @@ class ResourceModel(BaseResourceModel):
     DefinedTags: Optional[Sequence["_DefinedTags"]]
     DisplayName: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
-    Id: Optional[str]
     LicenseModel: Optional[str]
     LifecycleDetails: Optional[str]
     ServiceConsoleUrl: Optional[str]
@@ -73,7 +72,6 @@ class ResourceModel(BaseResourceModel):
             DefinedTags=json_data.get("DefinedTags"),
             DisplayName=json_data.get("DisplayName"),
             FreeformTags=json_data.get("FreeformTags"),
-            Id=json_data.get("Id"),
             LicenseModel=json_data.get("LicenseModel"),
             LifecycleDetails=json_data.get("LifecycleDetails"),
             ServiceConsoleUrl=json_data.get("ServiceConsoleUrl"),

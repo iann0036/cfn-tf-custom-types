@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     EncryptedPassword: Optional[str]
-    Id: Optional[str]
     KeyFingerprint: Optional[str]
     PasswordLength: Optional[float]
     PasswordResetRequired: Optional[bool]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             EncryptedPassword=json_data.get("EncryptedPassword"),
-            Id=json_data.get("Id"),
             KeyFingerprint=json_data.get("KeyFingerprint"),
             PasswordLength=json_data.get("PasswordLength"),
             PasswordResetRequired=json_data.get("PasswordResetRequired"),

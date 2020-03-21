@@ -12,11 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::VSphere::File",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#createdirectories" title="CreateDirectories">CreateDirectories</a>" : <i>Boolean</i>,
         "<a href="#datacenter" title="Datacenter">Datacenter</a>" : <i>String</i>,
         "<a href="#datastore" title="Datastore">Datastore</a>" : <i>String</i>,
         "<a href="#destinationfile" title="DestinationFile">DestinationFile</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#sourcedatacenter" title="SourceDatacenter">SourceDatacenter</a>" : <i>String</i>,
         "<a href="#sourcedatastore" title="SourceDatastore">SourceDatastore</a>" : <i>String</i>,
         "<a href="#sourcefile" title="SourceFile">SourceFile</a>" : <i>String</i>
@@ -29,17 +29,27 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::VSphere::File
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#createdirectories" title="CreateDirectories">CreateDirectories</a>: <i>Boolean</i>
     <a href="#datacenter" title="Datacenter">Datacenter</a>: <i>String</i>
     <a href="#datastore" title="Datastore">Datastore</a>: <i>String</i>
     <a href="#destinationfile" title="DestinationFile">DestinationFile</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#sourcedatacenter" title="SourceDatacenter">SourceDatacenter</a>: <i>String</i>
     <a href="#sourcedatastore" title="SourceDatastore">SourceDatastore</a>: <i>String</i>
     <a href="#sourcefile" title="SourceFile">SourceFile</a>: <i>String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CreateDirectories
 
@@ -68,14 +78,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DestinationFile
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
 
 _Type_: String
 

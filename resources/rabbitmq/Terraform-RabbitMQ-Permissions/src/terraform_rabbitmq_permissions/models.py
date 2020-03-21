@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     User: Optional[str]
     Vhost: Optional[str]
     Permissions: Optional[Sequence["_Permissions"]]
@@ -50,7 +49,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             User=json_data.get("User"),
             Vhost=json_data.get("Vhost"),
             Permissions=json_data.get("Permissions"),

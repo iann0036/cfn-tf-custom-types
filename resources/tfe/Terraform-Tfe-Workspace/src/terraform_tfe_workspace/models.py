@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AutoApply: Optional[bool]
     ExternalId: Optional[str]
     FileTriggersEnabled: Optional[bool]
-    Id: Optional[str]
     Name: Optional[str]
     Operations: Optional[bool]
     Organization: Optional[str]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             AutoApply=json_data.get("AutoApply"),
             ExternalId=json_data.get("ExternalId"),
             FileTriggersEnabled=json_data.get("FileTriggersEnabled"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Operations=json_data.get("Operations"),
             Organization=json_data.get("Organization"),

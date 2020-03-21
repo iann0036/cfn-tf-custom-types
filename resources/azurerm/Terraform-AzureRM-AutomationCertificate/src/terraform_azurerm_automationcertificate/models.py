@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     Base64: Optional[str]
     Description: Optional[str]
     Exportable: Optional[bool]
-    Id: Optional[str]
     Name: Optional[str]
     ResourceGroupName: Optional[str]
     Thumbprint: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             Base64=json_data.get("Base64"),
             Description=json_data.get("Description"),
             Exportable=json_data.get("Exportable"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ResourceGroupName=json_data.get("ResourceGroupName"),
             Thumbprint=json_data.get("Thumbprint"),

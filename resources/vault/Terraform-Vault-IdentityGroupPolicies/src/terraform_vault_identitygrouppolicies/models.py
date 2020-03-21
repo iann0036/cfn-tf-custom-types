@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Exclusive: Optional[bool]
     GroupId: Optional[str]
     GroupName: Optional[str]
-    Id: Optional[str]
     Policies: Optional[Sequence[str]]
 
     @classmethod
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             Exclusive=json_data.get("Exclusive"),
             GroupId=json_data.get("GroupId"),
             GroupName=json_data.get("GroupName"),
-            Id=json_data.get("Id"),
             Policies=json_data.get("Policies"),
         )
 

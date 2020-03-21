@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     DisplayName: Optional[str]
     IcmpCode: Optional[float]
     IcmpType: Optional[float]
-    Id: Optional[str]
     Protocol: Optional[str]
     Revision: Optional[float]
     Tag: Optional[Sequence["_Tag"]]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             DisplayName=json_data.get("DisplayName"),
             IcmpCode=json_data.get("IcmpCode"),
             IcmpType=json_data.get("IcmpType"),
-            Id=json_data.get("Id"),
             Protocol=json_data.get("Protocol"),
             Revision=json_data.get("Revision"),
             Tag=json_data.get("Tag"),

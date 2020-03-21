@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AdminStateUp: Optional[bool]
     CompareType: Optional[str]
-    Id: Optional[str]
     Invert: Optional[bool]
     Key: Optional[str]
     L7policyId: Optional[str]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AdminStateUp=json_data.get("AdminStateUp"),
             CompareType=json_data.get("CompareType"),
-            Id=json_data.get("Id"),
             Invert=json_data.get("Invert"),
             Key=json_data.get("Key"),
             L7policyId=json_data.get("L7policyId"),

@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AzureAsn: Optional[float]
     ExpressRouteCircuitName: Optional[str]
-    Id: Optional[str]
     PeerAsn: Optional[float]
     PeeringType: Optional[str]
     PrimaryAzurePort: Optional[str]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AzureAsn=json_data.get("AzureAsn"),
             ExpressRouteCircuitName=json_data.get("ExpressRouteCircuitName"),
-            Id=json_data.get("Id"),
             PeerAsn=json_data.get("PeerAsn"),
             PeeringType=json_data.get("PeeringType"),
             PrimaryAzurePort=json_data.get("PrimaryAzurePort"),

@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Http: Optional[bool]
     HttpOcsp: Optional[bool]
     Https: Optional[bool]
-    Id: Optional[str]
     Name: Optional[str]
     PermittedIps: Optional[Sequence[str]]
     Ping: Optional[bool]
@@ -65,7 +64,6 @@ class ResourceModel(BaseResourceModel):
             Http=json_data.get("Http"),
             HttpOcsp=json_data.get("HttpOcsp"),
             Https=json_data.get("Https"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             PermittedIps=json_data.get("PermittedIps"),
             Ping=json_data.get("Ping"),

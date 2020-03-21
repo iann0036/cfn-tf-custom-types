@@ -12,7 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::AppautoscalingTarget",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#maxcapacity" title="MaxCapacity">MaxCapacity</a>" : <i>Double</i>,
         "<a href="#mincapacity" title="MinCapacity">MinCapacity</a>" : <i>Double</i>,
         "<a href="#resourceid" title="ResourceId">ResourceId</a>" : <i>String</i>,
@@ -28,7 +28,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::AppautoscalingTarget
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#maxcapacity" title="MaxCapacity">MaxCapacity</a>: <i>Double</i>
     <a href="#mincapacity" title="MinCapacity">MinCapacity</a>: <i>Double</i>
     <a href="#resourceid" title="ResourceId">ResourceId</a>: <i>String</i>
@@ -39,7 +39,9 @@ Properties:
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 

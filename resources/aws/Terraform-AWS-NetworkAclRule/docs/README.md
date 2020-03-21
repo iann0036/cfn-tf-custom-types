@@ -12,12 +12,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::NetworkAclRule",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#cidrblock" title="CidrBlock">CidrBlock</a>" : <i>String</i>,
         "<a href="#egress" title="Egress">Egress</a>" : <i>Boolean</i>,
         "<a href="#fromport" title="FromPort">FromPort</a>" : <i>Double</i>,
         "<a href="#icmpcode" title="IcmpCode">IcmpCode</a>" : <i>String</i>,
         "<a href="#icmptype" title="IcmpType">IcmpType</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#ipv6cidrblock" title="Ipv6CidrBlock">Ipv6CidrBlock</a>" : <i>String</i>,
         "<a href="#networkaclid" title="NetworkAclId">NetworkAclId</a>" : <i>String</i>,
         "<a href="#protocol" title="Protocol">Protocol</a>" : <i>String</i>,
@@ -33,12 +33,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::NetworkAclRule
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#cidrblock" title="CidrBlock">CidrBlock</a>: <i>String</i>
     <a href="#egress" title="Egress">Egress</a>: <i>Boolean</i>
     <a href="#fromport" title="FromPort">FromPort</a>: <i>Double</i>
     <a href="#icmpcode" title="IcmpCode">IcmpCode</a>: <i>String</i>
     <a href="#icmptype" title="IcmpType">IcmpType</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#ipv6cidrblock" title="Ipv6CidrBlock">Ipv6CidrBlock</a>: <i>String</i>
     <a href="#networkaclid" title="NetworkAclId">NetworkAclId</a>: <i>String</i>
     <a href="#protocol" title="Protocol">Protocol</a>: <i>String</i>
@@ -48,6 +48,16 @@ Properties:
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CidrBlock
 
@@ -82,14 +92,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IcmpType
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 

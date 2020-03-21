@@ -12,15 +12,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::FlexibleEngine::RtsSoftwareConfigV1",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#config" title="Config">Config</a>" : <i>String</i>,
         "<a href="#group" title="Group">Group</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#inputvalues" title="InputValues">InputValues</a>" : <i>[ [ <a href="inputvalues.md">InputValues</a>, ... ], ... ]</i>,
+        "<a href="#inputvalues" title="InputValues">InputValues</a>" : <i>[ [ &lt;a href=&#34;inputvalues.md&#34;&gt;InputValues&lt;/a&gt;, ... ], ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#options" title="Options">Options</a>" : <i>[ <a href="options.md">Options</a>, ... ]</i>,
-        "<a href="#outputvalues" title="OutputValues">OutputValues</a>" : <i>[ [ <a href="outputvalues.md">OutputValues</a>, ... ], ... ]</i>,
+        "<a href="#options" title="Options">Options</a>" : <i>[ &lt;a href=&#34;options.md&#34;&gt;Options&lt;/a&gt;, ... ]</i>,
+        "<a href="#outputvalues" title="OutputValues">OutputValues</a>" : <i>[ [ &lt;a href=&#34;outputvalues.md&#34;&gt;OutputValues&lt;/a&gt;, ... ], ... ]</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     }
 }
 </pre>
@@ -30,21 +30,31 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::FlexibleEngine::RtsSoftwareConfigV1
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#config" title="Config">Config</a>: <i>String</i>
     <a href="#group" title="Group">Group</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#inputvalues" title="InputValues">InputValues</a>: <i>
-      - List of <a href="inputvalues.md">InputValues</a></i>
+      - List of &lt;a href=&#34;inputvalues.md&#34;&gt;InputValues&lt;/a&gt;</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#options" title="Options">Options</a>: <i>
-      - <a href="options.md">Options</a></i>
+      - &lt;a href=&#34;options.md&#34;&gt;Options&lt;/a&gt;</i>
     <a href="#outputvalues" title="OutputValues">OutputValues</a>: <i>
-      - List of <a href="outputvalues.md">OutputValues</a></i>
+      - List of &lt;a href=&#34;outputvalues.md&#34;&gt;OutputValues&lt;/a&gt;</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Config
 
@@ -62,19 +72,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### InputValues
 
 _Required_: No
 
-_Type_: List of List of <a href="inputvalues.md">InputValues</a>
+_Type_: List of List of &lt;a href=&#34;inputvalues.md&#34;&gt;InputValues&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -90,7 +92,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="options.md">Options</a>
+_Type_: List of &lt;a href=&#34;options.md&#34;&gt;Options&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -98,7 +100,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of List of <a href="outputvalues.md">OutputValues</a>
+_Type_: List of List of &lt;a href=&#34;outputvalues.md&#34;&gt;OutputValues&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -114,7 +116,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

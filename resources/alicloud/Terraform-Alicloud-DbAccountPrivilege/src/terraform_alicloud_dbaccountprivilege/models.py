@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AccountName: Optional[str]
     DbNames: Optional[Sequence[str]]
-    Id: Optional[str]
     InstanceId: Optional[str]
     Privilege: Optional[str]
 
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AccountName=json_data.get("AccountName"),
             DbNames=json_data.get("DbNames"),
-            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
             Privilege=json_data.get("Privilege"),
         )

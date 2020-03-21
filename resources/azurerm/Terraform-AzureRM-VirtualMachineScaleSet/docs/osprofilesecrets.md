@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#sourcevaultid" title="SourceVaultId">SourceVaultId</a>" : <i>String</i>,
-    "<a href="#vaultcertificates" title="VaultCertificates">VaultCertificates</a>" : <i>[ <a href="osprofilesecrets-vaultcertificates.md">VaultCertificates</a>, ... ]</i>
+    "<a href="#vaultcertificates" title="VaultCertificates">VaultCertificates</a>" : <i>[ &lt;a href=&#34;osprofilesecrets-vaultcertificates.md&#34;&gt;VaultCertificates&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#sourcevaultid" title="SourceVaultId">SourceVaultId</a>: <i>String</i>
 <a href="#vaultcertificates" title="VaultCertificates">VaultCertificates</a>: <i>
-      - <a href="osprofilesecrets-vaultcertificates.md">VaultCertificates</a></i>
+      - &lt;a href=&#34;osprofilesecrets-vaultcertificates.md&#34;&gt;VaultCertificates&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -26,7 +26,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### SourceVaultId
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -34,8 +33,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### VaultCertificates
 
 _Required_: No
-
-_Type_: List of <a href="osprofilesecrets-vaultcertificates.md">VaultCertificates</a>
+_Type_: List of &lt;a href=&#34;osprofilesecrets-vaultcertificates.md&#34;&gt;VaultCertificates&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

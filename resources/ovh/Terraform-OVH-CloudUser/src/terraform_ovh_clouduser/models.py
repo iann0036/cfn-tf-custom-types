@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CreationDate: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     OpenstackRc: Optional[Sequence["_OpenstackRc"]]
     Password: Optional[str]
     ProjectId: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CreationDate=json_data.get("CreationDate"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             OpenstackRc=json_data.get("OpenstackRc"),
             Password=json_data.get("Password"),
             ProjectId=json_data.get("ProjectId"),

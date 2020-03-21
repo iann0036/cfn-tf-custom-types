@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     Description: Optional[str]
     ExecutionRoleArn: Optional[str]
-    Id: Optional[str]
     State: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
     PolicyDetails: Optional[Sequence["_PolicyDetails"]]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             Description=json_data.get("Description"),
             ExecutionRoleArn=json_data.get("ExecutionRoleArn"),
-            Id=json_data.get("Id"),
             State=json_data.get("State"),
             Tags=json_data.get("Tags"),
             PolicyDetails=json_data.get("PolicyDetails"),

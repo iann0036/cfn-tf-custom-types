@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     DestinationCidrBlock: Optional[str]
-    Id: Optional[str]
     Protocol: Optional[float]
     RuleAction: Optional[str]
     RuleNumber: Optional[float]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             DestinationCidrBlock=json_data.get("DestinationCidrBlock"),
-            Id=json_data.get("Id"),
             Protocol=json_data.get("Protocol"),
             RuleAction=json_data.get("RuleAction"),
             RuleNumber=json_data.get("RuleNumber"),

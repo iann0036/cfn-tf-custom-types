@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     BehaviorOnMxFailure: Optional[str]
     Domain: Optional[str]
-    Id: Optional[str]
     MailFromDomain: Optional[str]
 
     @classmethod
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             BehaviorOnMxFailure=json_data.get("BehaviorOnMxFailure"),
             Domain=json_data.get("Domain"),
-            Id=json_data.get("Id"),
             MailFromDomain=json_data.get("MailFromDomain"),
         )
 

@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     FirewallEnabled: Optional[bool]
-    Id: Optional[str]
     Image: Optional[str]
     Metadata: Optional[Sequence["_Metadata"]]
     Networks: Optional[Sequence[str]]
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             FirewallEnabled=json_data.get("FirewallEnabled"),
-            Id=json_data.get("Id"),
             Image=json_data.get("Image"),
             Metadata=json_data.get("Metadata"),
             Networks=json_data.get("Networks"),

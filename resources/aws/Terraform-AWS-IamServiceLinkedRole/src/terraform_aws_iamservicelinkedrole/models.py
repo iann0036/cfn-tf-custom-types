@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     CreateDate: Optional[str]
     CustomSuffix: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Path: Optional[str]
     UniqueId: Optional[str]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             CreateDate=json_data.get("CreateDate"),
             CustomSuffix=json_data.get("CustomSuffix"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Path=json_data.get("Path"),
             UniqueId=json_data.get("UniqueId"),

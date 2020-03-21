@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     ChapEnabled: Optional[bool]
     GatewayArn: Optional[str]
-    Id: Optional[str]
     LunNumber: Optional[float]
     NetworkInterfaceId: Optional[str]
     NetworkInterfacePort: Optional[float]
@@ -64,7 +63,6 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             ChapEnabled=json_data.get("ChapEnabled"),
             GatewayArn=json_data.get("GatewayArn"),
-            Id=json_data.get("Id"),
             LunNumber=json_data.get("LunNumber"),
             NetworkInterfaceId=json_data.get("NetworkInterfaceId"),
             NetworkInterfacePort=json_data.get("NetworkInterfacePort"),

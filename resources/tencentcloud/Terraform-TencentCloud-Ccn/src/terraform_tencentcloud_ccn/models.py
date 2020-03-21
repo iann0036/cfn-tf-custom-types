@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CreateTime: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     InstanceCount: Optional[float]
     Name: Optional[str]
     Qos: Optional[str]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CreateTime=json_data.get("CreateTime"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             InstanceCount=json_data.get("InstanceCount"),
             Name=json_data.get("Name"),
             Qos=json_data.get("Qos"),

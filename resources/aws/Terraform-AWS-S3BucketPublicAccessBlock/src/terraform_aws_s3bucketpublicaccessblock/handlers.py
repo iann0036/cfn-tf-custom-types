@@ -28,12 +28,10 @@ def check_call(args, cwd):
         stderr=subprocess.PIPE,
         cwd=cwd)
     stdout, stderr = proc.communicate()
-    LOG.warn(stdout)
-    LOG.warn(stderr)
+    LOG.warn(stdout.decode('utf-8'))
+    LOG.warn(stderr.decode('utf-8'))
     if proc.returncode != 0:
-        raise subprocess.CalledProcessError(
-            returncode=proc.returncode,
-            cmd=args)
+        raise exceptions.InternalFailure(f"{stderr.decode('utf-8')}")
     
     return stdout
 
@@ -100,16 +98,14 @@ def create_handler(
         for prop, value in vars(model).items():
             if value is not None and prop != "tfcfnid":
                 tf['resource']['aws_s3_bucket_public_access_block'][request.logicalResourceIdentifier][cfn_to_tf_str(prop)] = parse_obj(value)
-        
-        LOG.warn(json.dumps(tf))
 
         with open("/tmp/main.tf.json", "w") as f:
             f.write(json.dumps(tf, indent=2))
 
         LOG.warn("Initializing provider")
-        check_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'init'], "/tmp/")
+        check_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'init', '-no-color'], "/tmp/")
         LOG.warn("Executing create")
-        check_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'apply', '-auto-approve'], "/tmp/")
+        check_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'apply', '-auto-approve', '-no-color'], "/tmp/")
 
         LOG.warn("Storing result")
         with open("/tmp/terraform.tfstate", "rb") as f:
@@ -121,8 +117,9 @@ def create_handler(
         model.tfcfnid = trackingid
 
         progress.status = OperationStatus.SUCCESS
-    except TypeError as e:
-        raise exceptions.InternalFailure(f"{e}")
+    except Exception as e:
+        progress.message = str(e)
+        progress.status = OperationStatus.FAILED
     return progress
 
 
@@ -183,17 +180,18 @@ def update_handler(
             f.write(json.dumps(tf, indent=2))
 
         LOG.warn("Initializing provider")
-        check_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'init'], "/tmp/")
+        check_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'init', '-no-color'], "/tmp/")
         LOG.warn("Executing update")
-        check_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'apply', '-auto-approve'], "/tmp/")
+        check_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'apply', '-auto-approve', '-no-color'], "/tmp/")
 
         LOG.warn("Storing result")
         with open("/tmp/terraform.tfstate", "rb") as f:
             s3client.upload_fileobj(f, statebucketname, "{}.tfstate".format(trackingid))
 
         progress.status = OperationStatus.SUCCESS
-    except TypeError as e:
-        raise exceptions.InternalFailure(f"{e}")
+    except Exception as e:
+        progress.message = str(e)
+        progress.status = OperationStatus.FAILED
     return progress
 
 
@@ -257,9 +255,9 @@ def delete_handler(
             f.write(json.dumps(tf, indent=2))
         
         LOG.warn("Initializing provider")
-        check_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'init'], "/tmp/")
+        check_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'init', '-no-color'], "/tmp/")
         LOG.warn("Executing delete")
-        check_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'destroy', '-auto-approve'], "/tmp/")
+        check_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'destroy', '-auto-approve', '-no-color'], "/tmp/")
 
         LOG.warn("Deleting state S3 object")
         s3client.delete_object(
@@ -268,8 +266,9 @@ def delete_handler(
         )
 
         progress.status = OperationStatus.SUCCESS
-    except TypeError as e:
-        raise exceptions.InternalFailure(f"{e}")
+    except Exception as e:
+        progress.message = str(e)
+        progress.status = OperationStatus.FAILED
     return progress
 
 

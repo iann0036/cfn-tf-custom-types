@@ -44,7 +44,6 @@ class ResourceModel(BaseResourceModel):
     Folder: Optional[str]
     FreeSpace: Optional[float]
     HostSystemIds: Optional[Sequence[str]]
-    Id: Optional[str]
     MaintenanceMode: Optional[str]
     MultipleHostAccess: Optional[bool]
     Name: Optional[str]
@@ -74,7 +73,6 @@ class ResourceModel(BaseResourceModel):
             Folder=json_data.get("Folder"),
             FreeSpace=json_data.get("FreeSpace"),
             HostSystemIds=json_data.get("HostSystemIds"),
-            Id=json_data.get("Id"),
             MaintenanceMode=json_data.get("MaintenanceMode"),
             MultipleHostAccess=json_data.get("MultipleHostAccess"),
             Name=json_data.get("Name"),

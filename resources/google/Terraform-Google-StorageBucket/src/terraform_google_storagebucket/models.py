@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     BucketPolicyOnly: Optional[bool]
     DefaultEventBasedHold: Optional[bool]
     ForceDestroy: Optional[bool]
-    Id: Optional[str]
     Labels: Optional[Sequence["_Labels"]]
     Location: Optional[str]
     Name: Optional[str]
@@ -70,7 +69,6 @@ class ResourceModel(BaseResourceModel):
             BucketPolicyOnly=json_data.get("BucketPolicyOnly"),
             DefaultEventBasedHold=json_data.get("DefaultEventBasedHold"),
             ForceDestroy=json_data.get("ForceDestroy"),
-            Id=json_data.get("Id"),
             Labels=json_data.get("Labels"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),

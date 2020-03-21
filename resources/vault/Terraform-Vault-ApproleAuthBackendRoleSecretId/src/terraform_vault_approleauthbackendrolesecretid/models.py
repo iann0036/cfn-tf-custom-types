@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Accessor: Optional[str]
     Backend: Optional[str]
     CidrList: Optional[Sequence[str]]
-    Id: Optional[str]
     Metadata: Optional[str]
     RoleName: Optional[str]
     SecretId: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             Accessor=json_data.get("Accessor"),
             Backend=json_data.get("Backend"),
             CidrList=json_data.get("CidrList"),
-            Id=json_data.get("Id"),
             Metadata=json_data.get("Metadata"),
             RoleName=json_data.get("RoleName"),
             SecretId=json_data.get("SecretId"),

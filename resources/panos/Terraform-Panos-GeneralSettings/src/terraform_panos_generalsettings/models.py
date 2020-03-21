@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     DnsSecondary: Optional[str]
     Domain: Optional[str]
     Hostname: Optional[str]
-    Id: Optional[str]
     NtpPrimaryAddress: Optional[str]
     NtpPrimaryAlgorithm: Optional[str]
     NtpPrimaryAuthKey: Optional[str]
@@ -73,7 +72,6 @@ class ResourceModel(BaseResourceModel):
             DnsSecondary=json_data.get("DnsSecondary"),
             Domain=json_data.get("Domain"),
             Hostname=json_data.get("Hostname"),
-            Id=json_data.get("Id"),
             NtpPrimaryAddress=json_data.get("NtpPrimaryAddress"),
             NtpPrimaryAlgorithm=json_data.get("NtpPrimaryAlgorithm"),
             NtpPrimaryAuthKey=json_data.get("NtpPrimaryAuthKey"),

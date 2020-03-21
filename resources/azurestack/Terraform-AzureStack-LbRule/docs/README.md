@@ -12,12 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureStack::LbRule",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#backendaddresspoolid" title="BackendAddressPoolId">BackendAddressPoolId</a>" : <i>String</i>,
         "<a href="#backendport" title="BackendPort">BackendPort</a>" : <i>Double</i>,
         "<a href="#enablefloatingip" title="EnableFloatingIp">EnableFloatingIp</a>" : <i>Boolean</i>,
+        "<a href="#frontendipconfigurationid" title="FrontendIpConfigurationId">FrontendIpConfigurationId</a>" : <i>String</i>,
         "<a href="#frontendipconfigurationname" title="FrontendIpConfigurationName">FrontendIpConfigurationName</a>" : <i>String</i>,
         "<a href="#frontendport" title="FrontendPort">FrontendPort</a>" : <i>Double</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#idletimeoutinminutes" title="IdleTimeoutInMinutes">IdleTimeoutInMinutes</a>" : <i>Double</i>,
         "<a href="#loaddistribution" title="LoadDistribution">LoadDistribution</a>" : <i>String</i>,
         "<a href="#loadbalancerid" title="LoadbalancerId">LoadbalancerId</a>" : <i>String</i>,
@@ -34,12 +35,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureStack::LbRule
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#backendaddresspoolid" title="BackendAddressPoolId">BackendAddressPoolId</a>: <i>String</i>
     <a href="#backendport" title="BackendPort">BackendPort</a>: <i>Double</i>
     <a href="#enablefloatingip" title="EnableFloatingIp">EnableFloatingIp</a>: <i>Boolean</i>
+    <a href="#frontendipconfigurationid" title="FrontendIpConfigurationId">FrontendIpConfigurationId</a>: <i>String</i>
     <a href="#frontendipconfigurationname" title="FrontendIpConfigurationName">FrontendIpConfigurationName</a>: <i>String</i>
     <a href="#frontendport" title="FrontendPort">FrontendPort</a>: <i>Double</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#idletimeoutinminutes" title="IdleTimeoutInMinutes">IdleTimeoutInMinutes</a>: <i>Double</i>
     <a href="#loaddistribution" title="LoadDistribution">LoadDistribution</a>: <i>String</i>
     <a href="#loadbalancerid" title="LoadbalancerId">LoadbalancerId</a>: <i>String</i>
@@ -50,6 +52,16 @@ Properties:
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BackendAddressPoolId
 
@@ -75,6 +87,14 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### FrontendIpConfigurationId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### FrontendIpConfigurationName
 
 _Required_: Yes
@@ -88,14 +108,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: Yes
 
 _Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -173,5 +185,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### FrontendIpConfigurationId
 
-Returns the <code>FrontendIpConfigurationId</code> value.
+Returns the &lt;code&gt;FrontendIpConfigurationId&lt;/code&gt; value.
 

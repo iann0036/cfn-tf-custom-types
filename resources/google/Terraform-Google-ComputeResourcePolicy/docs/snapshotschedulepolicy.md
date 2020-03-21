@@ -8,9 +8,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#retentionpolicy" title="RetentionPolicy">RetentionPolicy</a>" : <i>[ <a href="snapshotschedulepolicy-retentionpolicy.md">RetentionPolicy</a>, ... ]</i>,
-    "<a href="#schedule" title="Schedule">Schedule</a>" : <i>[ <a href="snapshotschedulepolicy-schedule.md">Schedule</a>, ... ]</i>,
-    "<a href="#snapshotproperties" title="SnapshotProperties">SnapshotProperties</a>" : <i>[ <a href="snapshotschedulepolicy-snapshotproperties.md">SnapshotProperties</a>, ... ]</i>
+    "<a href="#retentionpolicy" title="RetentionPolicy">RetentionPolicy</a>" : <i>[ &lt;a href=&#34;snapshotschedulepolicy-retentionpolicy.md&#34;&gt;RetentionPolicy&lt;/a&gt;, ... ]</i>,
+    "<a href="#schedule" title="Schedule">Schedule</a>" : <i>[ &lt;a href=&#34;snapshotschedulepolicy-schedule.md&#34;&gt;Schedule&lt;/a&gt;, ... ]</i>,
+    "<a href="#snapshotproperties" title="SnapshotProperties">SnapshotProperties</a>" : <i>[ &lt;a href=&#34;snapshotschedulepolicy-snapshotproperties.md&#34;&gt;SnapshotProperties&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -18,11 +18,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#retentionpolicy" title="RetentionPolicy">RetentionPolicy</a>: <i>
-      - <a href="snapshotschedulepolicy-retentionpolicy.md">RetentionPolicy</a></i>
+      - &lt;a href=&#34;snapshotschedulepolicy-retentionpolicy.md&#34;&gt;RetentionPolicy&lt;/a&gt;</i>
 <a href="#schedule" title="Schedule">Schedule</a>: <i>
-      - <a href="snapshotschedulepolicy-schedule.md">Schedule</a></i>
+      - &lt;a href=&#34;snapshotschedulepolicy-schedule.md&#34;&gt;Schedule&lt;/a&gt;</i>
 <a href="#snapshotproperties" title="SnapshotProperties">SnapshotProperties</a>: <i>
-      - <a href="snapshotschedulepolicy-snapshotproperties.md">SnapshotProperties</a></i>
+      - &lt;a href=&#34;snapshotschedulepolicy-snapshotproperties.md&#34;&gt;SnapshotProperties&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -30,24 +30,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### RetentionPolicy
 
 _Required_: No
-
-_Type_: List of <a href="snapshotschedulepolicy-retentionpolicy.md">RetentionPolicy</a>
+_Type_: List of &lt;a href=&#34;snapshotschedulepolicy-retentionpolicy.md&#34;&gt;RetentionPolicy&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Schedule
 
 _Required_: No
-
-_Type_: List of <a href="snapshotschedulepolicy-schedule.md">Schedule</a>
+_Type_: List of &lt;a href=&#34;snapshotschedulepolicy-schedule.md&#34;&gt;Schedule&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SnapshotProperties
 
 _Required_: No
-
-_Type_: List of <a href="snapshotschedulepolicy-snapshotproperties.md">SnapshotProperties</a>
+_Type_: List of &lt;a href=&#34;snapshotschedulepolicy-snapshotproperties.md&#34;&gt;SnapshotProperties&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

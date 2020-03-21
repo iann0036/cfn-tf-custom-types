@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Architecture: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     ImageName: Optional[str]
     LicenseType: Optional[str]
     OsType: Optional[str]
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Architecture=json_data.get("Architecture"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             ImageName=json_data.get("ImageName"),
             LicenseType=json_data.get("LicenseType"),
             OsType=json_data.get("OsType"),

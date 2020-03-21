@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Domain: Optional[str]
     Flags: Optional[float]
     Fqdn: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Port: Optional[float]
     Priority: Optional[float]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             Domain=json_data.get("Domain"),
             Flags=json_data.get("Flags"),
             Fqdn=json_data.get("Fqdn"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Port=json_data.get("Port"),
             Priority=json_data.get("Priority"),

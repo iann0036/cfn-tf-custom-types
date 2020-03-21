@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     EnforcementLevel: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Paths: Optional[Sequence[str]]
     Policy: Optional[str]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             EnforcementLevel=json_data.get("EnforcementLevel"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Paths=json_data.get("Paths"),
             Policy=json_data.get("Policy"),

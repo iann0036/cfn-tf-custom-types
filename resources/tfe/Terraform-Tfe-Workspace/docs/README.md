@@ -12,9 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Tfe::Workspace",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#autoapply" title="AutoApply">AutoApply</a>" : <i>Boolean</i>,
+        "<a href="#externalid" title="ExternalId">ExternalId</a>" : <i>String</i>,
         "<a href="#filetriggersenabled" title="FileTriggersEnabled">FileTriggersEnabled</a>" : <i>Boolean</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#operations" title="Operations">Operations</a>" : <i>Boolean</i>,
         "<a href="#organization" title="Organization">Organization</a>" : <i>String</i>,
@@ -23,7 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#terraformversion" title="TerraformVersion">TerraformVersion</a>" : <i>String</i>,
         "<a href="#triggerprefixes" title="TriggerPrefixes">TriggerPrefixes</a>" : <i>[ String, ... ]</i>,
         "<a href="#workingdirectory" title="WorkingDirectory">WorkingDirectory</a>" : <i>String</i>,
-        "<a href="#vcsrepo" title="VcsRepo">VcsRepo</a>" : <i>[ <a href="vcsrepo.md">VcsRepo</a>, ... ]</i>
+        "<a href="#vcsrepo" title="VcsRepo">VcsRepo</a>" : <i>[ &lt;a href=&#34;vcsrepo.md&#34;&gt;VcsRepo&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -33,9 +34,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Tfe::Workspace
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#autoapply" title="AutoApply">AutoApply</a>: <i>Boolean</i>
+    <a href="#externalid" title="ExternalId">ExternalId</a>: <i>String</i>
     <a href="#filetriggersenabled" title="FileTriggersEnabled">FileTriggersEnabled</a>: <i>Boolean</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#operations" title="Operations">Operations</a>: <i>Boolean</i>
     <a href="#organization" title="Organization">Organization</a>: <i>String</i>
@@ -46,10 +48,20 @@ Properties:
       - String</i>
     <a href="#workingdirectory" title="WorkingDirectory">WorkingDirectory</a>: <i>String</i>
     <a href="#vcsrepo" title="VcsRepo">VcsRepo</a>: <i>
-      - <a href="vcsrepo.md">VcsRepo</a></i>
+      - &lt;a href=&#34;vcsrepo.md&#34;&gt;VcsRepo&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AutoApply
 
@@ -59,19 +71,19 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### ExternalId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### FileTriggersEnabled
 
 _Required_: No
 
 _Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -143,7 +155,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="vcsrepo.md">VcsRepo</a>
+_Type_: List of &lt;a href=&#34;vcsrepo.md&#34;&gt;VcsRepo&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -165,5 +177,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ExternalId
 
-Returns the <code>ExternalId</code> value.
+Returns the &lt;code&gt;ExternalId&lt;/code&gt; value.
 

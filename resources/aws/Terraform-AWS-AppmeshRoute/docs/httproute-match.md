@@ -12,7 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#prefix" title="Prefix">Prefix</a>" : <i>String</i>,
     "<a href="#regex" title="Regex">Regex</a>" : <i>String</i>,
     "<a href="#suffix" title="Suffix">Suffix</a>" : <i>String</i>,
-    "<a href="#range" title="Range">Range</a>" : <i>[ <a href="httproute-match-range.md">Range</a>, ... ]</i>
+    "<a href="#range" title="Range">Range</a>" : <i>[ &lt;a href=&#34;httproute-match-range.md&#34;&gt;Range&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -24,7 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#regex" title="Regex">Regex</a>: <i>String</i>
 <a href="#suffix" title="Suffix">Suffix</a>: <i>String</i>
 <a href="#range" title="Range">Range</a>: <i>
-      - <a href="httproute-match-range.md">Range</a></i>
+      - &lt;a href=&#34;httproute-match-range.md&#34;&gt;Range&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -32,7 +32,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Exact
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -40,7 +39,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Prefix
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -48,7 +46,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Regex
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -56,7 +53,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Suffix
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -64,8 +60,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Range
 
 _Required_: No
-
-_Type_: List of <a href="httproute-match-range.md">Range</a>
+_Type_: List of &lt;a href=&#34;httproute-match-range.md&#34;&gt;Range&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

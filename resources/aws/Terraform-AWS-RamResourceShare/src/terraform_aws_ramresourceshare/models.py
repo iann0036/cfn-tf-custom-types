@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AllowExternalPrincipals: Optional[bool]
     Arn: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
     Timeouts: Optional["_Timeouts"]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AllowExternalPrincipals=json_data.get("AllowExternalPrincipals"),
             Arn=json_data.get("Arn"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Tags=json_data.get("Tags"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),

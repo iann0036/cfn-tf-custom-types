@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     Csr: Optional[str]
     ExcludeCnFromSans: Optional[bool]
     Format: Optional[str]
-    Id: Optional[str]
     IpSans: Optional[Sequence[str]]
     KeyBits: Optional[float]
     KeyType: Optional[str]
@@ -76,7 +75,6 @@ class ResourceModel(BaseResourceModel):
             Csr=json_data.get("Csr"),
             ExcludeCnFromSans=json_data.get("ExcludeCnFromSans"),
             Format=json_data.get("Format"),
-            Id=json_data.get("Id"),
             IpSans=json_data.get("IpSans"),
             KeyBits=json_data.get("KeyBits"),
             KeyType=json_data.get("KeyType"),

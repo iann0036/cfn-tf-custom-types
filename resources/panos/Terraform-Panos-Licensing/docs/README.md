@@ -12,9 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Panos::Licensing",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#authcodes" title="AuthCodes">AuthCodes</a>" : <i>[ String, ... ]</i>,
         "<a href="#delicense" title="Delicense">Delicense</a>" : <i>Boolean</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#licenses" title="Licenses">Licenses</a>" : <i>[ &lt;a href=&#34;licenses.md&#34;&gt;Licenses&lt;/a&gt;, ... ]</i>,
         "<a href="#mode" title="Mode">Mode</a>" : <i>String</i>
     }
 }
@@ -25,14 +26,26 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Panos::Licensing
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#authcodes" title="AuthCodes">AuthCodes</a>: <i>
       - String</i>
     <a href="#delicense" title="Delicense">Delicense</a>: <i>Boolean</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#licenses" title="Licenses">Licenses</a>: <i>
+      - &lt;a href=&#34;licenses.md&#34;&gt;Licenses&lt;/a&gt;</i>
     <a href="#mode" title="Mode">Mode</a>: <i>String</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AuthCodes
 
@@ -50,11 +63,11 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### Licenses
 
 _Required_: No
 
-_Type_: String
+_Type_: List of &lt;a href=&#34;licenses.md&#34;&gt;Licenses&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -84,5 +97,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Licenses
 
-Returns the <code>Licenses</code> value.
+Returns the &lt;code&gt;Licenses&lt;/code&gt; value.
 

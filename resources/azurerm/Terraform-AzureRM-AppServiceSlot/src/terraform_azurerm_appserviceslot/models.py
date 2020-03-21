@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     DefaultSiteHostname: Optional[str]
     Enabled: Optional[bool]
     HttpsOnly: Optional[bool]
-    Id: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
     ResourceGroupName: Optional[str]
@@ -82,7 +81,6 @@ class ResourceModel(BaseResourceModel):
             DefaultSiteHostname=json_data.get("DefaultSiteHostname"),
             Enabled=json_data.get("Enabled"),
             HttpsOnly=json_data.get("HttpsOnly"),
-            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),
             ResourceGroupName=json_data.get("ResourceGroupName"),

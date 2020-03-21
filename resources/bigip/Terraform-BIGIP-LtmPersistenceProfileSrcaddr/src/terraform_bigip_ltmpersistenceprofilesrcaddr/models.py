@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     AppService: Optional[str]
     DefaultsFrom: Optional[str]
     HashAlgorithm: Optional[str]
-    Id: Optional[str]
     MapProxies: Optional[str]
     Mask: Optional[str]
     MatchAcrossPools: Optional[str]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             AppService=json_data.get("AppService"),
             DefaultsFrom=json_data.get("DefaultsFrom"),
             HashAlgorithm=json_data.get("HashAlgorithm"),
-            Id=json_data.get("Id"),
             MapProxies=json_data.get("MapProxies"),
             Mask=json_data.get("Mask"),
             MatchAcrossPools=json_data.get("MatchAcrossPools"),

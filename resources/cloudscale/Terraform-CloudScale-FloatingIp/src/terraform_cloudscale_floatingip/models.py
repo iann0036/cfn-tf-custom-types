@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Href: Optional[str]
-    Id: Optional[str]
     IpVersion: Optional[float]
     Network: Optional[str]
     NextHop: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Href=json_data.get("Href"),
-            Id=json_data.get("Id"),
             IpVersion=json_data.get("IpVersion"),
             Network=json_data.get("Network"),
             NextHop=json_data.get("NextHop"),

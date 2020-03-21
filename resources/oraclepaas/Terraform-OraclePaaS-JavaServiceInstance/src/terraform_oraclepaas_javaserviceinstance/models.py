@@ -45,7 +45,6 @@ class ResourceModel(BaseResourceModel):
     Edition: Optional[str]
     EnableAdminConsole: Optional[bool]
     ForceDelete: Optional[bool]
-    Id: Optional[str]
     IpNetwork: Optional[str]
     Level: Optional[str]
     MeteringFrequency: Optional[str]
@@ -92,7 +91,6 @@ class ResourceModel(BaseResourceModel):
             Edition=json_data.get("Edition"),
             EnableAdminConsole=json_data.get("EnableAdminConsole"),
             ForceDelete=json_data.get("ForceDelete"),
-            Id=json_data.get("Id"),
             IpNetwork=json_data.get("IpNetwork"),
             Level=json_data.get("Level"),
             MeteringFrequency=json_data.get("MeteringFrequency"),

@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     RouteTableId: Optional[str]
     SubnetId: Optional[str]
     Timeouts: Optional["_Timeouts"]
@@ -50,7 +49,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             RouteTableId=json_data.get("RouteTableId"),
             SubnetId=json_data.get("SubnetId"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),

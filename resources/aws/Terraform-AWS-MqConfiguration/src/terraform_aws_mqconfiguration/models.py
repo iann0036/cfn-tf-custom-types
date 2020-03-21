@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     EngineType: Optional[str]
     EngineVersion: Optional[str]
-    Id: Optional[str]
     LatestRevision: Optional[float]
     Name: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
@@ -60,7 +59,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             EngineType=json_data.get("EngineType"),
             EngineVersion=json_data.get("EngineVersion"),
-            Id=json_data.get("Id"),
             LatestRevision=json_data.get("LatestRevision"),
             Name=json_data.get("Name"),
             Tags=json_data.get("Tags"),

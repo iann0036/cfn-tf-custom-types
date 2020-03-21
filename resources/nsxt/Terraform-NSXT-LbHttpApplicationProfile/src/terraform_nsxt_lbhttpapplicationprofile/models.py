@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     DisplayName: Optional[str]
     HttpRedirectTo: Optional[str]
     HttpRedirectToHttps: Optional[bool]
-    Id: Optional[str]
     IdleTimeout: Optional[float]
     Ntlm: Optional[bool]
     RequestBodySize: Optional[float]
@@ -63,7 +62,6 @@ class ResourceModel(BaseResourceModel):
             DisplayName=json_data.get("DisplayName"),
             HttpRedirectTo=json_data.get("HttpRedirectTo"),
             HttpRedirectToHttps=json_data.get("HttpRedirectToHttps"),
-            Id=json_data.get("Id"),
             IdleTimeout=json_data.get("IdleTimeout"),
             Ntlm=json_data.get("Ntlm"),
             RequestBodySize=json_data.get("RequestBodySize"),

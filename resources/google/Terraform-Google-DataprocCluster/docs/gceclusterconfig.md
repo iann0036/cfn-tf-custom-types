@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#internaliponly" title="InternalIpOnly">InternalIpOnly</a>" : <i>Boolean</i>,
-    "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ <a href="gceclusterconfig-metadata.md">Metadata</a>, ... ]</i>,
+    "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ &lt;a href=&#34;gceclusterconfig-metadata.md&#34;&gt;Metadata&lt;/a&gt;, ... ]</i>,
     "<a href="#network" title="Network">Network</a>" : <i>String</i>,
     "<a href="#serviceaccount" title="ServiceAccount">ServiceAccount</a>" : <i>String</i>,
     "<a href="#serviceaccountscopes" title="ServiceAccountScopes">ServiceAccountScopes</a>" : <i>[ String, ... ]</i>,
@@ -24,7 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#internaliponly" title="InternalIpOnly">InternalIpOnly</a>: <i>Boolean</i>
 <a href="#metadata" title="Metadata">Metadata</a>: <i>
-      - <a href="gceclusterconfig-metadata.md">Metadata</a></i>
+      - &lt;a href=&#34;gceclusterconfig-metadata.md&#34;&gt;Metadata&lt;/a&gt;</i>
 <a href="#network" title="Network">Network</a>: <i>String</i>
 <a href="#serviceaccount" title="ServiceAccount">ServiceAccount</a>: <i>String</i>
 <a href="#serviceaccountscopes" title="ServiceAccountScopes">ServiceAccountScopes</a>: <i>
@@ -40,7 +40,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### InternalIpOnly
 
 _Required_: No
-
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -48,15 +47,13 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Metadata
 
 _Required_: No
-
-_Type_: List of <a href="gceclusterconfig-metadata.md">Metadata</a>
+_Type_: List of &lt;a href=&#34;gceclusterconfig-metadata.md&#34;&gt;Metadata&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Network
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -64,7 +61,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ServiceAccount
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -72,7 +68,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ServiceAccountScopes
 
 _Required_: No
-
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -80,7 +75,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Subnetwork
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -88,7 +82,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Tags
 
 _Required_: No
-
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -96,7 +89,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Zone
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

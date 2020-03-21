@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     DisableAlerting: Optional[bool]
     DisplayName: Optional[str]
     HostgroupId: Optional[str]
-    Id: Optional[str]
     IpAddr: Optional[str]
     Properties: Optional[Sequence["_Properties"]]
 
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             DisableAlerting=json_data.get("DisableAlerting"),
             DisplayName=json_data.get("DisplayName"),
             HostgroupId=json_data.get("HostgroupId"),
-            Id=json_data.get("Id"),
             IpAddr=json_data.get("IpAddr"),
             Properties=json_data.get("Properties"),
         )

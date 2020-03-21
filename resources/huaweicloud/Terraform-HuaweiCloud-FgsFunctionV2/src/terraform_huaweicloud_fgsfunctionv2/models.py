@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     FuncCode: Optional[str]
     Handler: Optional[str]
-    Id: Optional[str]
     MemorySize: Optional[float]
     Name: Optional[str]
     Package: Optional[str]
@@ -67,7 +66,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             FuncCode=json_data.get("FuncCode"),
             Handler=json_data.get("Handler"),
-            Id=json_data.get("Id"),
             MemorySize=json_data.get("MemorySize"),
             Name=json_data.get("Name"),
             Package=json_data.get("Package"),

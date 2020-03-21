@@ -12,15 +12,20 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureRM::LogicAppWorkflow",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#accessendpoint" title="AccessEndpoint">AccessEndpoint</a>" : <i>String</i>,
+        "<a href="#connectorendpointipaddresses" title="ConnectorEndpointIpAddresses">ConnectorEndpointIpAddresses</a>" : <i>[ String, ... ]</i>,
+        "<a href="#connectoroutboundipaddresses" title="ConnectorOutboundIpAddresses">ConnectorOutboundIpAddresses</a>" : <i>[ String, ... ]</i>,
         "<a href="#location" title="Location">Location</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#parameters" title="Parameters">Parameters</a>" : <i>[ <a href="parameters.md">Parameters</a>, ... ]</i>,
+        "<a href="#parameters" title="Parameters">Parameters</a>" : <i>[ &lt;a href=&#34;parameters.md&#34;&gt;Parameters&lt;/a&gt;, ... ]</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#workflowendpointipaddresses" title="WorkflowEndpointIpAddresses">WorkflowEndpointIpAddresses</a>" : <i>[ String, ... ]</i>,
+        "<a href="#workflowoutboundipaddresses" title="WorkflowOutboundIpAddresses">WorkflowOutboundIpAddresses</a>" : <i>[ String, ... ]</i>,
         "<a href="#workflowschema" title="WorkflowSchema">WorkflowSchema</a>" : <i>String</i>,
         "<a href="#workflowversion" title="WorkflowVersion">WorkflowVersion</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     }
 }
 </pre>
@@ -30,26 +35,61 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureRM::LogicAppWorkflow
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#accessendpoint" title="AccessEndpoint">AccessEndpoint</a>: <i>String</i>
+    <a href="#connectorendpointipaddresses" title="ConnectorEndpointIpAddresses">ConnectorEndpointIpAddresses</a>: <i>
+      - String</i>
+    <a href="#connectoroutboundipaddresses" title="ConnectorOutboundIpAddresses">ConnectorOutboundIpAddresses</a>: <i>
+      - String</i>
     <a href="#location" title="Location">Location</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#parameters" title="Parameters">Parameters</a>: <i>
-      - <a href="parameters.md">Parameters</a></i>
+      - &lt;a href=&#34;parameters.md&#34;&gt;Parameters&lt;/a&gt;</i>
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+    <a href="#workflowendpointipaddresses" title="WorkflowEndpointIpAddresses">WorkflowEndpointIpAddresses</a>: <i>
+      - String</i>
+    <a href="#workflowoutboundipaddresses" title="WorkflowOutboundIpAddresses">WorkflowOutboundIpAddresses</a>: <i>
+      - String</i>
     <a href="#workflowschema" title="WorkflowSchema">WorkflowSchema</a>: <i>String</i>
     <a href="#workflowversion" title="WorkflowVersion">WorkflowVersion</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 
 _Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### AccessEndpoint
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ConnectorEndpointIpAddresses
+
+_Required_: No
+
+_Type_: List of String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ConnectorOutboundIpAddresses
+
+_Required_: No
+
+_Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -73,7 +113,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="parameters.md">Parameters</a>
+_Type_: List of &lt;a href=&#34;parameters.md&#34;&gt;Parameters&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -89,7 +129,23 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### WorkflowEndpointIpAddresses
+
+_Required_: No
+
+_Type_: List of String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### WorkflowOutboundIpAddresses
+
+_Required_: No
+
+_Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -113,7 +169,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -135,21 +191,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AccessEndpoint
 
-Returns the <code>AccessEndpoint</code> value.
+Returns the &lt;code&gt;AccessEndpoint&lt;/code&gt; value.
 
 #### ConnectorEndpointIpAddresses
 
-Returns the <code>ConnectorEndpointIpAddresses</code> value.
+Returns the &lt;code&gt;ConnectorEndpointIpAddresses&lt;/code&gt; value.
 
 #### ConnectorOutboundIpAddresses
 
-Returns the <code>ConnectorOutboundIpAddresses</code> value.
+Returns the &lt;code&gt;ConnectorOutboundIpAddresses&lt;/code&gt; value.
 
 #### WorkflowEndpointIpAddresses
 
-Returns the <code>WorkflowEndpointIpAddresses</code> value.
+Returns the &lt;code&gt;WorkflowEndpointIpAddresses&lt;/code&gt; value.
 
 #### WorkflowOutboundIpAddresses
 
-Returns the <code>WorkflowOutboundIpAddresses</code> value.
+Returns the &lt;code&gt;WorkflowOutboundIpAddresses&lt;/code&gt; value.
 

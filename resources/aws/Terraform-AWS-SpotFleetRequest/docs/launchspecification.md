@@ -21,13 +21,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#placementtenancy" title="PlacementTenancy">PlacementTenancy</a>" : <i>String</i>,
     "<a href="#spotprice" title="SpotPrice">SpotPrice</a>" : <i>String</i>,
     "<a href="#subnetid" title="SubnetId">SubnetId</a>" : <i>String</i>,
-    "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="launchspecification-tags.md">Tags</a>, ... ]</i>,
+    "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;launchspecification-tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
     "<a href="#userdata" title="UserData">UserData</a>" : <i>String</i>,
     "<a href="#vpcsecuritygroupids" title="VpcSecurityGroupIds">VpcSecurityGroupIds</a>" : <i>[ String, ... ]</i>,
     "<a href="#weightedcapacity" title="WeightedCapacity">WeightedCapacity</a>" : <i>String</i>,
-    "<a href="#ebsblockdevice" title="EbsBlockDevice">EbsBlockDevice</a>" : <i>[ <a href="launchspecification-ebsblockdevice.md">EbsBlockDevice</a>, ... ]</i>,
-    "<a href="#ephemeralblockdevice" title="EphemeralBlockDevice">EphemeralBlockDevice</a>" : <i>[ <a href="launchspecification-ephemeralblockdevice.md">EphemeralBlockDevice</a>, ... ]</i>,
-    "<a href="#rootblockdevice" title="RootBlockDevice">RootBlockDevice</a>" : <i>[ <a href="launchspecification-rootblockdevice.md">RootBlockDevice</a>, ... ]</i>
+    "<a href="#ebsblockdevice" title="EbsBlockDevice">EbsBlockDevice</a>" : <i>[ &lt;a href=&#34;launchspecification-ebsblockdevice.md&#34;&gt;EbsBlockDevice&lt;/a&gt;, ... ]</i>,
+    "<a href="#ephemeralblockdevice" title="EphemeralBlockDevice">EphemeralBlockDevice</a>" : <i>[ &lt;a href=&#34;launchspecification-ephemeralblockdevice.md&#34;&gt;EphemeralBlockDevice&lt;/a&gt;, ... ]</i>,
+    "<a href="#rootblockdevice" title="RootBlockDevice">RootBlockDevice</a>" : <i>[ &lt;a href=&#34;launchspecification-rootblockdevice.md&#34;&gt;RootBlockDevice&lt;/a&gt;, ... ]</i>
 }
 </pre>
 
@@ -48,17 +48,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#spotprice" title="SpotPrice">SpotPrice</a>: <i>String</i>
 <a href="#subnetid" title="SubnetId">SubnetId</a>: <i>String</i>
 <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="launchspecification-tags.md">Tags</a></i>
+      - &lt;a href=&#34;launchspecification-tags.md&#34;&gt;Tags&lt;/a&gt;</i>
 <a href="#userdata" title="UserData">UserData</a>: <i>String</i>
 <a href="#vpcsecuritygroupids" title="VpcSecurityGroupIds">VpcSecurityGroupIds</a>: <i>
       - String</i>
 <a href="#weightedcapacity" title="WeightedCapacity">WeightedCapacity</a>: <i>String</i>
 <a href="#ebsblockdevice" title="EbsBlockDevice">EbsBlockDevice</a>: <i>
-      - <a href="launchspecification-ebsblockdevice.md">EbsBlockDevice</a></i>
+      - &lt;a href=&#34;launchspecification-ebsblockdevice.md&#34;&gt;EbsBlockDevice&lt;/a&gt;</i>
 <a href="#ephemeralblockdevice" title="EphemeralBlockDevice">EphemeralBlockDevice</a>: <i>
-      - <a href="launchspecification-ephemeralblockdevice.md">EphemeralBlockDevice</a></i>
+      - &lt;a href=&#34;launchspecification-ephemeralblockdevice.md&#34;&gt;EphemeralBlockDevice&lt;/a&gt;</i>
 <a href="#rootblockdevice" title="RootBlockDevice">RootBlockDevice</a>: <i>
-      - <a href="launchspecification-rootblockdevice.md">RootBlockDevice</a></i>
+      - &lt;a href=&#34;launchspecification-rootblockdevice.md&#34;&gt;RootBlockDevice&lt;/a&gt;</i>
 </pre>
 
 ## Properties
@@ -66,7 +66,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Ami
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -74,7 +73,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### AssociatePublicIpAddress
 
 _Required_: No
-
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -82,7 +80,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### AvailabilityZone
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -90,7 +87,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### EbsOptimized
 
 _Required_: No
-
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -98,7 +94,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### IamInstanceProfile
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -106,7 +101,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### IamInstanceProfileArn
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -114,7 +108,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### InstanceType
 
 _Required_: Yes
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -122,7 +115,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### KeyName
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -130,7 +122,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Monitoring
 
 _Required_: No
-
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -138,7 +129,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### PlacementGroup
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -146,7 +136,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### PlacementTenancy
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -154,7 +143,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SpotPrice
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -162,7 +150,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SubnetId
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -170,15 +157,13 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Tags
 
 _Required_: No
-
-_Type_: List of <a href="launchspecification-tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;launchspecification-tags.md&#34;&gt;Tags&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserData
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -186,7 +171,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### VpcSecurityGroupIds
 
 _Required_: No
-
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -194,7 +178,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### WeightedCapacity
 
 _Required_: No
-
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -202,24 +185,21 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### EbsBlockDevice
 
 _Required_: No
-
-_Type_: List of <a href="launchspecification-ebsblockdevice.md">EbsBlockDevice</a>
+_Type_: List of &lt;a href=&#34;launchspecification-ebsblockdevice.md&#34;&gt;EbsBlockDevice&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EphemeralBlockDevice
 
 _Required_: No
-
-_Type_: List of <a href="launchspecification-ephemeralblockdevice.md">EphemeralBlockDevice</a>
+_Type_: List of &lt;a href=&#34;launchspecification-ephemeralblockdevice.md&#34;&gt;EphemeralBlockDevice&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RootBlockDevice
 
 _Required_: No
-
-_Type_: List of <a href="launchspecification-rootblockdevice.md">RootBlockDevice</a>
+_Type_: List of &lt;a href=&#34;launchspecification-rootblockdevice.md&#34;&gt;RootBlockDevice&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

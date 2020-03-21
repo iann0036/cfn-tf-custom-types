@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     Email: Optional[Sequence[str]]
     EnterpriseProjectId: Optional[Sequence[str]]
     FlavorId: Optional[str]
-    Id: Optional[str]
     Instances: Optional[Sequence["_Instances"]]
     IsAutoOff: Optional[bool]
     Name: Optional[str]
@@ -69,7 +68,6 @@ class ResourceModel(BaseResourceModel):
             Email=json_data.get("Email"),
             EnterpriseProjectId=json_data.get("EnterpriseProjectId"),
             FlavorId=json_data.get("FlavorId"),
-            Id=json_data.get("Id"),
             Instances=json_data.get("Instances"),
             IsAutoOff=json_data.get("IsAutoOff"),
             Name=json_data.get("Name"),

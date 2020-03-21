@@ -44,7 +44,6 @@ class ResourceModel(BaseResourceModel):
     EnableAutomaticUpdates: Optional[bool]
     EvictionPolicy: Optional[str]
     HealthProbeId: Optional[str]
-    Id: Optional[str]
     Instances: Optional[float]
     LicenseType: Optional[str]
     Location: Optional[str]
@@ -103,7 +102,6 @@ class ResourceModel(BaseResourceModel):
             EnableAutomaticUpdates=json_data.get("EnableAutomaticUpdates"),
             EvictionPolicy=json_data.get("EvictionPolicy"),
             HealthProbeId=json_data.get("HealthProbeId"),
-            Id=json_data.get("Id"),
             Instances=json_data.get("Instances"),
             LicenseType=json_data.get("LicenseType"),
             Location=json_data.get("Location"),

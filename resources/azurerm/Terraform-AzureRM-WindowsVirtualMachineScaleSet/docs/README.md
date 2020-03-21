@@ -12,6 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureRM::WindowsVirtualMachineScaleSet",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#adminpassword" title="AdminPassword">AdminPassword</a>" : <i>String</i>,
         "<a href="#adminusername" title="AdminUsername">AdminUsername</a>" : <i>String</i>,
         "<a href="#computernameprefix" title="ComputerNamePrefix">ComputerNamePrefix</a>" : <i>String</i>,
@@ -20,7 +21,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#enableautomaticupdates" title="EnableAutomaticUpdates">EnableAutomaticUpdates</a>" : <i>Boolean</i>,
         "<a href="#evictionpolicy" title="EvictionPolicy">EvictionPolicy</a>" : <i>String</i>,
         "<a href="#healthprobeid" title="HealthProbeId">HealthProbeId</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#instances" title="Instances">Instances</a>" : <i>Double</i>,
         "<a href="#licensetype" title="LicenseType">LicenseType</a>" : <i>String</i>,
         "<a href="#location" title="Location">Location</a>" : <i>String</i>,
@@ -35,31 +35,32 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#singleplacementgroup" title="SinglePlacementGroup">SinglePlacementGroup</a>" : <i>Boolean</i>,
         "<a href="#sku" title="Sku">Sku</a>" : <i>String</i>,
         "<a href="#sourceimageid" title="SourceImageId">SourceImageId</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
         "<a href="#timezone" title="Timezone">Timezone</a>" : <i>String</i>,
+        "<a href="#uniqueid" title="UniqueId">UniqueId</a>" : <i>String</i>,
         "<a href="#upgrademode" title="UpgradeMode">UpgradeMode</a>" : <i>String</i>,
         "<a href="#zonebalance" title="ZoneBalance">ZoneBalance</a>" : <i>Boolean</i>,
         "<a href="#zones" title="Zones">Zones</a>" : <i>[ String, ... ]</i>,
-        "<a href="#additionalcapabilities" title="AdditionalCapabilities">AdditionalCapabilities</a>" : <i>[ <a href="additionalcapabilities.md">AdditionalCapabilities</a>, ... ]</i>,
-        "<a href="#additionalunattendcontent" title="AdditionalUnattendContent">AdditionalUnattendContent</a>" : <i>[ <a href="additionalunattendcontent.md">AdditionalUnattendContent</a>, ... ]</i>,
-        "<a href="#automaticosupgradepolicy" title="AutomaticOsUpgradePolicy">AutomaticOsUpgradePolicy</a>" : <i>[ <a href="automaticosupgradepolicy.md">AutomaticOsUpgradePolicy</a>, ... ]</i>,
-        "<a href="#bootdiagnostics" title="BootDiagnostics">BootDiagnostics</a>" : <i>[ <a href="bootdiagnostics.md">BootDiagnostics</a>, ... ]</i>,
-        "<a href="#datadisk" title="DataDisk">DataDisk</a>" : <i>[ <a href="datadisk.md">DataDisk</a>, ... ]</i>,
-        "<a href="#identity" title="Identity">Identity</a>" : <i>[ <a href="identity.md">Identity</a>, ... ]</i>,
-        "<a href="#networkinterface" title="NetworkInterface">NetworkInterface</a>" : <i>[ <a href="networkinterface.md">NetworkInterface</a>, ... ]</i>,
-        "<a href="#osdisk" title="OsDisk">OsDisk</a>" : <i>[ <a href="osdisk.md">OsDisk</a>, ... ]</i>,
-        "<a href="#plan" title="Plan">Plan</a>" : <i>[ <a href="plan.md">Plan</a>, ... ]</i>,
-        "<a href="#rollingupgradepolicy" title="RollingUpgradePolicy">RollingUpgradePolicy</a>" : <i>[ <a href="rollingupgradepolicy.md">RollingUpgradePolicy</a>, ... ]</i>,
-        "<a href="#secret" title="Secret">Secret</a>" : <i>[ <a href="secret.md">Secret</a>, ... ]</i>,
-        "<a href="#sourceimagereference" title="SourceImageReference">SourceImageReference</a>" : <i>[ <a href="sourceimagereference.md">SourceImageReference</a>, ... ]</i>,
-        "<a href="#terminatenotification" title="TerminateNotification">TerminateNotification</a>" : <i>[ <a href="terminatenotification.md">TerminateNotification</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
-        "<a href="#winrmlistener" title="WinrmListener">WinrmListener</a>" : <i>[ <a href="winrmlistener.md">WinrmListener</a>, ... ]</i>,
-        "<a href="#ipconfiguration" title="IpConfiguration">IpConfiguration</a>" : <i>[ <a href="ipconfiguration.md">IpConfiguration</a>, ... ]</i>,
-        "<a href="#diffdisksettings" title="DiffDiskSettings">DiffDiskSettings</a>" : <i>[ <a href="diffdisksettings.md">DiffDiskSettings</a>, ... ]</i>,
-        "<a href="#certificate" title="Certificate">Certificate</a>" : <i>[ <a href="certificate.md">Certificate</a>, ... ]</i>,
-        "<a href="#publicipaddress" title="PublicIpAddress">PublicIpAddress</a>" : <i>[ <a href="publicipaddress.md">PublicIpAddress</a>, ... ]</i>,
-        "<a href="#iptag" title="IpTag">IpTag</a>" : <i>[ <a href="iptag.md">IpTag</a>, ... ]</i>
+        "<a href="#additionalcapabilities" title="AdditionalCapabilities">AdditionalCapabilities</a>" : <i>[ &lt;a href=&#34;additionalcapabilities.md&#34;&gt;AdditionalCapabilities&lt;/a&gt;, ... ]</i>,
+        "<a href="#additionalunattendcontent" title="AdditionalUnattendContent">AdditionalUnattendContent</a>" : <i>[ &lt;a href=&#34;additionalunattendcontent.md&#34;&gt;AdditionalUnattendContent&lt;/a&gt;, ... ]</i>,
+        "<a href="#automaticosupgradepolicy" title="AutomaticOsUpgradePolicy">AutomaticOsUpgradePolicy</a>" : <i>[ &lt;a href=&#34;automaticosupgradepolicy.md&#34;&gt;AutomaticOsUpgradePolicy&lt;/a&gt;, ... ]</i>,
+        "<a href="#bootdiagnostics" title="BootDiagnostics">BootDiagnostics</a>" : <i>[ &lt;a href=&#34;bootdiagnostics.md&#34;&gt;BootDiagnostics&lt;/a&gt;, ... ]</i>,
+        "<a href="#datadisk" title="DataDisk">DataDisk</a>" : <i>[ &lt;a href=&#34;datadisk.md&#34;&gt;DataDisk&lt;/a&gt;, ... ]</i>,
+        "<a href="#identity" title="Identity">Identity</a>" : <i>[ &lt;a href=&#34;identity.md&#34;&gt;Identity&lt;/a&gt;, ... ]</i>,
+        "<a href="#networkinterface" title="NetworkInterface">NetworkInterface</a>" : <i>[ &lt;a href=&#34;networkinterface.md&#34;&gt;NetworkInterface&lt;/a&gt;, ... ]</i>,
+        "<a href="#osdisk" title="OsDisk">OsDisk</a>" : <i>[ &lt;a href=&#34;osdisk.md&#34;&gt;OsDisk&lt;/a&gt;, ... ]</i>,
+        "<a href="#plan" title="Plan">Plan</a>" : <i>[ &lt;a href=&#34;plan.md&#34;&gt;Plan&lt;/a&gt;, ... ]</i>,
+        "<a href="#rollingupgradepolicy" title="RollingUpgradePolicy">RollingUpgradePolicy</a>" : <i>[ &lt;a href=&#34;rollingupgradepolicy.md&#34;&gt;RollingUpgradePolicy&lt;/a&gt;, ... ]</i>,
+        "<a href="#secret" title="Secret">Secret</a>" : <i>[ &lt;a href=&#34;secret.md&#34;&gt;Secret&lt;/a&gt;, ... ]</i>,
+        "<a href="#sourceimagereference" title="SourceImageReference">SourceImageReference</a>" : <i>[ &lt;a href=&#34;sourceimagereference.md&#34;&gt;SourceImageReference&lt;/a&gt;, ... ]</i>,
+        "<a href="#terminatenotification" title="TerminateNotification">TerminateNotification</a>" : <i>[ &lt;a href=&#34;terminatenotification.md&#34;&gt;TerminateNotification&lt;/a&gt;, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
+        "<a href="#winrmlistener" title="WinrmListener">WinrmListener</a>" : <i>[ &lt;a href=&#34;winrmlistener.md&#34;&gt;WinrmListener&lt;/a&gt;, ... ]</i>,
+        "<a href="#ipconfiguration" title="IpConfiguration">IpConfiguration</a>" : <i>[ &lt;a href=&#34;ipconfiguration.md&#34;&gt;IpConfiguration&lt;/a&gt;, ... ]</i>,
+        "<a href="#diffdisksettings" title="DiffDiskSettings">DiffDiskSettings</a>" : <i>[ &lt;a href=&#34;diffdisksettings.md&#34;&gt;DiffDiskSettings&lt;/a&gt;, ... ]</i>,
+        "<a href="#certificate" title="Certificate">Certificate</a>" : <i>[ &lt;a href=&#34;certificate.md&#34;&gt;Certificate&lt;/a&gt;, ... ]</i>,
+        "<a href="#publicipaddress" title="PublicIpAddress">PublicIpAddress</a>" : <i>[ &lt;a href=&#34;publicipaddress.md&#34;&gt;PublicIpAddress&lt;/a&gt;, ... ]</i>,
+        "<a href="#iptag" title="IpTag">IpTag</a>" : <i>[ &lt;a href=&#34;iptag.md&#34;&gt;IpTag&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -69,6 +70,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureRM::WindowsVirtualMachineScaleSet
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#adminpassword" title="AdminPassword">AdminPassword</a>: <i>String</i>
     <a href="#adminusername" title="AdminUsername">AdminUsername</a>: <i>String</i>
     <a href="#computernameprefix" title="ComputerNamePrefix">ComputerNamePrefix</a>: <i>String</i>
@@ -77,7 +79,6 @@ Properties:
     <a href="#enableautomaticupdates" title="EnableAutomaticUpdates">EnableAutomaticUpdates</a>: <i>Boolean</i>
     <a href="#evictionpolicy" title="EvictionPolicy">EvictionPolicy</a>: <i>String</i>
     <a href="#healthprobeid" title="HealthProbeId">HealthProbeId</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#instances" title="Instances">Instances</a>: <i>Double</i>
     <a href="#licensetype" title="LicenseType">LicenseType</a>: <i>String</i>
     <a href="#location" title="Location">Location</a>: <i>String</i>
@@ -93,54 +94,65 @@ Properties:
     <a href="#sku" title="Sku">Sku</a>: <i>String</i>
     <a href="#sourceimageid" title="SourceImageId">SourceImageId</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
     <a href="#timezone" title="Timezone">Timezone</a>: <i>String</i>
+    <a href="#uniqueid" title="UniqueId">UniqueId</a>: <i>String</i>
     <a href="#upgrademode" title="UpgradeMode">UpgradeMode</a>: <i>String</i>
     <a href="#zonebalance" title="ZoneBalance">ZoneBalance</a>: <i>Boolean</i>
     <a href="#zones" title="Zones">Zones</a>: <i>
       - String</i>
     <a href="#additionalcapabilities" title="AdditionalCapabilities">AdditionalCapabilities</a>: <i>
-      - <a href="additionalcapabilities.md">AdditionalCapabilities</a></i>
+      - &lt;a href=&#34;additionalcapabilities.md&#34;&gt;AdditionalCapabilities&lt;/a&gt;</i>
     <a href="#additionalunattendcontent" title="AdditionalUnattendContent">AdditionalUnattendContent</a>: <i>
-      - <a href="additionalunattendcontent.md">AdditionalUnattendContent</a></i>
+      - &lt;a href=&#34;additionalunattendcontent.md&#34;&gt;AdditionalUnattendContent&lt;/a&gt;</i>
     <a href="#automaticosupgradepolicy" title="AutomaticOsUpgradePolicy">AutomaticOsUpgradePolicy</a>: <i>
-      - <a href="automaticosupgradepolicy.md">AutomaticOsUpgradePolicy</a></i>
+      - &lt;a href=&#34;automaticosupgradepolicy.md&#34;&gt;AutomaticOsUpgradePolicy&lt;/a&gt;</i>
     <a href="#bootdiagnostics" title="BootDiagnostics">BootDiagnostics</a>: <i>
-      - <a href="bootdiagnostics.md">BootDiagnostics</a></i>
+      - &lt;a href=&#34;bootdiagnostics.md&#34;&gt;BootDiagnostics&lt;/a&gt;</i>
     <a href="#datadisk" title="DataDisk">DataDisk</a>: <i>
-      - <a href="datadisk.md">DataDisk</a></i>
+      - &lt;a href=&#34;datadisk.md&#34;&gt;DataDisk&lt;/a&gt;</i>
     <a href="#identity" title="Identity">Identity</a>: <i>
-      - <a href="identity.md">Identity</a></i>
+      - &lt;a href=&#34;identity.md&#34;&gt;Identity&lt;/a&gt;</i>
     <a href="#networkinterface" title="NetworkInterface">NetworkInterface</a>: <i>
-      - <a href="networkinterface.md">NetworkInterface</a></i>
+      - &lt;a href=&#34;networkinterface.md&#34;&gt;NetworkInterface&lt;/a&gt;</i>
     <a href="#osdisk" title="OsDisk">OsDisk</a>: <i>
-      - <a href="osdisk.md">OsDisk</a></i>
+      - &lt;a href=&#34;osdisk.md&#34;&gt;OsDisk&lt;/a&gt;</i>
     <a href="#plan" title="Plan">Plan</a>: <i>
-      - <a href="plan.md">Plan</a></i>
+      - &lt;a href=&#34;plan.md&#34;&gt;Plan&lt;/a&gt;</i>
     <a href="#rollingupgradepolicy" title="RollingUpgradePolicy">RollingUpgradePolicy</a>: <i>
-      - <a href="rollingupgradepolicy.md">RollingUpgradePolicy</a></i>
+      - &lt;a href=&#34;rollingupgradepolicy.md&#34;&gt;RollingUpgradePolicy&lt;/a&gt;</i>
     <a href="#secret" title="Secret">Secret</a>: <i>
-      - <a href="secret.md">Secret</a></i>
+      - &lt;a href=&#34;secret.md&#34;&gt;Secret&lt;/a&gt;</i>
     <a href="#sourceimagereference" title="SourceImageReference">SourceImageReference</a>: <i>
-      - <a href="sourceimagereference.md">SourceImageReference</a></i>
+      - &lt;a href=&#34;sourceimagereference.md&#34;&gt;SourceImageReference&lt;/a&gt;</i>
     <a href="#terminatenotification" title="TerminateNotification">TerminateNotification</a>: <i>
-      - <a href="terminatenotification.md">TerminateNotification</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;terminatenotification.md&#34;&gt;TerminateNotification&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     <a href="#winrmlistener" title="WinrmListener">WinrmListener</a>: <i>
-      - <a href="winrmlistener.md">WinrmListener</a></i>
+      - &lt;a href=&#34;winrmlistener.md&#34;&gt;WinrmListener&lt;/a&gt;</i>
     <a href="#ipconfiguration" title="IpConfiguration">IpConfiguration</a>: <i>
-      - <a href="ipconfiguration.md">IpConfiguration</a></i>
+      - &lt;a href=&#34;ipconfiguration.md&#34;&gt;IpConfiguration&lt;/a&gt;</i>
     <a href="#diffdisksettings" title="DiffDiskSettings">DiffDiskSettings</a>: <i>
-      - <a href="diffdisksettings.md">DiffDiskSettings</a></i>
+      - &lt;a href=&#34;diffdisksettings.md&#34;&gt;DiffDiskSettings&lt;/a&gt;</i>
     <a href="#certificate" title="Certificate">Certificate</a>: <i>
-      - <a href="certificate.md">Certificate</a></i>
+      - &lt;a href=&#34;certificate.md&#34;&gt;Certificate&lt;/a&gt;</i>
     <a href="#publicipaddress" title="PublicIpAddress">PublicIpAddress</a>: <i>
-      - <a href="publicipaddress.md">PublicIpAddress</a></i>
+      - &lt;a href=&#34;publicipaddress.md&#34;&gt;PublicIpAddress&lt;/a&gt;</i>
     <a href="#iptag" title="IpTag">IpTag</a>: <i>
-      - <a href="iptag.md">IpTag</a></i>
+      - &lt;a href=&#34;iptag.md&#34;&gt;IpTag&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AdminPassword
 
@@ -199,14 +211,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HealthProbeId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 
@@ -330,11 +334,19 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Timezone
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### UniqueId
 
 _Required_: No
 
@@ -370,7 +382,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="additionalcapabilities.md">AdditionalCapabilities</a>
+_Type_: List of &lt;a href=&#34;additionalcapabilities.md&#34;&gt;AdditionalCapabilities&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -378,7 +390,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="additionalunattendcontent.md">AdditionalUnattendContent</a>
+_Type_: List of &lt;a href=&#34;additionalunattendcontent.md&#34;&gt;AdditionalUnattendContent&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -386,7 +398,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="automaticosupgradepolicy.md">AutomaticOsUpgradePolicy</a>
+_Type_: List of &lt;a href=&#34;automaticosupgradepolicy.md&#34;&gt;AutomaticOsUpgradePolicy&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -394,7 +406,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="bootdiagnostics.md">BootDiagnostics</a>
+_Type_: List of &lt;a href=&#34;bootdiagnostics.md&#34;&gt;BootDiagnostics&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -402,7 +414,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="datadisk.md">DataDisk</a>
+_Type_: List of &lt;a href=&#34;datadisk.md&#34;&gt;DataDisk&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -410,7 +422,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="identity.md">Identity</a>
+_Type_: List of &lt;a href=&#34;identity.md&#34;&gt;Identity&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -418,7 +430,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="networkinterface.md">NetworkInterface</a>
+_Type_: List of &lt;a href=&#34;networkinterface.md&#34;&gt;NetworkInterface&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -426,7 +438,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="osdisk.md">OsDisk</a>
+_Type_: List of &lt;a href=&#34;osdisk.md&#34;&gt;OsDisk&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -434,7 +446,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="plan.md">Plan</a>
+_Type_: List of &lt;a href=&#34;plan.md&#34;&gt;Plan&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -442,7 +454,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="rollingupgradepolicy.md">RollingUpgradePolicy</a>
+_Type_: List of &lt;a href=&#34;rollingupgradepolicy.md&#34;&gt;RollingUpgradePolicy&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -450,7 +462,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="secret.md">Secret</a>
+_Type_: List of &lt;a href=&#34;secret.md&#34;&gt;Secret&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -458,7 +470,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="sourceimagereference.md">SourceImageReference</a>
+_Type_: List of &lt;a href=&#34;sourceimagereference.md&#34;&gt;SourceImageReference&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -466,7 +478,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="terminatenotification.md">TerminateNotification</a>
+_Type_: List of &lt;a href=&#34;terminatenotification.md&#34;&gt;TerminateNotification&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -474,7 +486,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -482,7 +494,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="winrmlistener.md">WinrmListener</a>
+_Type_: List of &lt;a href=&#34;winrmlistener.md&#34;&gt;WinrmListener&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -490,7 +502,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="ipconfiguration.md">IpConfiguration</a>
+_Type_: List of &lt;a href=&#34;ipconfiguration.md&#34;&gt;IpConfiguration&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -498,7 +510,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="diffdisksettings.md">DiffDiskSettings</a>
+_Type_: List of &lt;a href=&#34;diffdisksettings.md&#34;&gt;DiffDiskSettings&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -506,7 +518,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="certificate.md">Certificate</a>
+_Type_: List of &lt;a href=&#34;certificate.md&#34;&gt;Certificate&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -514,7 +526,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="publicipaddress.md">PublicIpAddress</a>
+_Type_: List of &lt;a href=&#34;publicipaddress.md&#34;&gt;PublicIpAddress&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -522,7 +534,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="iptag.md">IpTag</a>
+_Type_: List of &lt;a href=&#34;iptag.md&#34;&gt;IpTag&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -544,5 +556,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### UniqueId
 
-Returns the <code>UniqueId</code> value.
+Returns the &lt;code&gt;UniqueId&lt;/code&gt; value.
 

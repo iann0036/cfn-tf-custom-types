@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Action: Optional[str]
-    Id: Optional[str]
     Principal: Optional[str]
     StatementId: Optional[str]
     Condition: Optional[Sequence["_Condition"]]
@@ -52,7 +51,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Action=json_data.get("Action"),
-            Id=json_data.get("Id"),
             Principal=json_data.get("Principal"),
             StatementId=json_data.get("StatementId"),
             Condition=json_data.get("Condition"),

@@ -12,14 +12,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Datadog::User",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#accessrole" title="AccessRole">AccessRole</a>" : <i>String</i>,
         "<a href="#disabled" title="Disabled">Disabled</a>" : <i>Boolean</i>,
         "<a href="#email" title="Email">Email</a>" : <i>String</i>,
         "<a href="#handle" title="Handle">Handle</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#isadmin" title="IsAdmin">IsAdmin</a>" : <i>Boolean</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#role" title="Role">Role</a>" : <i>String</i>,
+        "<a href="#verified" title="Verified">Verified</a>" : <i>Boolean</i>
     }
 }
 </pre>
@@ -29,17 +30,28 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Datadog::User
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#accessrole" title="AccessRole">AccessRole</a>: <i>String</i>
     <a href="#disabled" title="Disabled">Disabled</a>: <i>Boolean</i>
     <a href="#email" title="Email">Email</a>: <i>String</i>
     <a href="#handle" title="Handle">Handle</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#isadmin" title="IsAdmin">IsAdmin</a>: <i>Boolean</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#role" title="Role">Role</a>: <i>String</i>
+    <a href="#verified" title="Verified">Verified</a>: <i>Boolean</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AccessRole
 
@@ -73,14 +85,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### IsAdmin
 
 _Required_: No
@@ -105,6 +109,14 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### Verified
+
+_Required_: No
+
+_Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 ## Return Values
 
 ### Ref
@@ -123,5 +135,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Verified
 
-Returns the <code>Verified</code> value.
+Returns the &lt;code&gt;Verified&lt;/code&gt; value.
 

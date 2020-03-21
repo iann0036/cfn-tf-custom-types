@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     DisplayName: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
     HomeRegion: Optional[str]
-    Id: Optional[str]
     IntervalInSeconds: Optional[float]
     IsEnabled: Optional[bool]
     Port: Optional[float]
@@ -67,7 +66,6 @@ class ResourceModel(BaseResourceModel):
             DisplayName=json_data.get("DisplayName"),
             FreeformTags=json_data.get("FreeformTags"),
             HomeRegion=json_data.get("HomeRegion"),
-            Id=json_data.get("Id"),
             IntervalInSeconds=json_data.get("IntervalInSeconds"),
             IsEnabled=json_data.get("IsEnabled"),
             Port=json_data.get("Port"),

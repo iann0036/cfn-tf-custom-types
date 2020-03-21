@@ -35,15 +35,19 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 
 @dataclass
 class ResourceModel(BaseResourceModel):
-    TPSCode: Optional[str]
-    Title: Optional[str]
-    CoverSheetIncluded: Optional[bool]
-    DueDate: Optional[str]
-    ApprovalDate: Optional[str]
-    Memo: Optional["_Memo"]
-    SecondCopyOfMemo: Optional["_Memo"]
-    TestCode: Optional[str]
-    Authors: Optional[Sequence[str]]
+    tfcfnid: Optional[str]
+    ApplicationObject: Optional[str]
+    Comment: Optional[str]
+    DeviceGroup: Optional[str]
+    Name: Optional[str]
+    OrderedMatch: Optional[bool]
+    Scope: Optional[str]
+    AndCondition: Optional[Sequence["_AndCondition"]]
+    OrCondition: Optional[Sequence["_OrCondition"]]
+    EqualTo: Optional[Sequence["_EqualTo"]]
+    GreaterThan: Optional[Sequence["_GreaterThan"]]
+    LessThan: Optional[Sequence["_LessThan"]]
+    PatternMatch: Optional[Sequence["_PatternMatch"]]
 
     @classmethod
     def _deserialize(
@@ -53,15 +57,19 @@ class ResourceModel(BaseResourceModel):
         if not json_data:
             return None
         return cls(
-            TPSCode=json_data.get("TPSCode"),
-            Title=json_data.get("Title"),
-            CoverSheetIncluded=json_data.get("CoverSheetIncluded"),
-            DueDate=json_data.get("DueDate"),
-            ApprovalDate=json_data.get("ApprovalDate"),
-            Memo=Memo._deserialize(json_data.get("Memo")),
-            SecondCopyOfMemo=Memo._deserialize(json_data.get("SecondCopyOfMemo")),
-            TestCode=json_data.get("TestCode"),
-            Authors=json_data.get("Authors"),
+            tfcfnid=json_data.get("tfcfnid"),
+            ApplicationObject=json_data.get("ApplicationObject"),
+            Comment=json_data.get("Comment"),
+            DeviceGroup=json_data.get("DeviceGroup"),
+            Name=json_data.get("Name"),
+            OrderedMatch=json_data.get("OrderedMatch"),
+            Scope=json_data.get("Scope"),
+            AndCondition=json_data.get("AndCondition"),
+            OrCondition=json_data.get("OrCondition"),
+            EqualTo=json_data.get("EqualTo"),
+            GreaterThan=json_data.get("GreaterThan"),
+            LessThan=json_data.get("LessThan"),
+            PatternMatch=json_data.get("PatternMatch"),
         )
 
 
@@ -70,24 +78,212 @@ _ResourceModel = ResourceModel
 
 
 @dataclass
-class Memo:
-    Heading: Optional[str]
-    Body: Optional[str]
+class AndCondition:
+    OrCondition: Optional[Sequence["_OrCondition"]]
 
     @classmethod
     def _deserialize(
-        cls: Type["_Memo"],
+        cls: Type["_AndCondition"],
         json_data: Optional[Mapping[str, Any]],
-    ) -> Optional["_Memo"]:
+    ) -> Optional["_AndCondition"]:
         if not json_data:
             return None
         return cls(
-            Heading=json_data.get("Heading"),
-            Body=json_data.get("Body"),
+            OrCondition=json_data.get("OrCondition"),
         )
 
 
 # work around possible type aliasing issues when variable has same name as a model
-_Memo = Memo
+_AndCondition = AndCondition
+
+
+@dataclass
+class OrCondition:
+    EqualTo: Optional[Sequence["_EqualTo"]]
+    GreaterThan: Optional[Sequence["_GreaterThan"]]
+    LessThan: Optional[Sequence["_LessThan"]]
+    PatternMatch: Optional[Sequence["_PatternMatch"]]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_OrCondition"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_OrCondition"]:
+        if not json_data:
+            return None
+        return cls(
+            EqualTo=json_data.get("EqualTo"),
+            GreaterThan=json_data.get("GreaterThan"),
+            LessThan=json_data.get("LessThan"),
+            PatternMatch=json_data.get("PatternMatch"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_OrCondition = OrCondition
+
+
+@dataclass
+class EqualTo:
+    Context: Optional[str]
+    Mask: Optional[str]
+    Position: Optional[str]
+    Value: Optional[str]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_EqualTo"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_EqualTo"]:
+        if not json_data:
+            return None
+        return cls(
+            Context=json_data.get("Context"),
+            Mask=json_data.get("Mask"),
+            Position=json_data.get("Position"),
+            Value=json_data.get("Value"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_EqualTo = EqualTo
+
+
+@dataclass
+class GreaterThan:
+    Context: Optional[str]
+    Qualifiers: Optional[Sequence["_Qualifiers"]]
+    Value: Optional[str]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_GreaterThan"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_GreaterThan"]:
+        if not json_data:
+            return None
+        return cls(
+            Context=json_data.get("Context"),
+            Qualifiers=json_data.get("Qualifiers"),
+            Value=json_data.get("Value"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_GreaterThan = GreaterThan
+
+
+@dataclass
+class Qualifiers:
+    Key: Optional[str]
+    Value: Optional[str]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_Qualifiers"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_Qualifiers"]:
+        if not json_data:
+            return None
+        return cls(
+            Key=json_data.get("Key"),
+            Value=json_data.get("Value"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_Qualifiers = Qualifiers
+
+
+@dataclass
+class LessThan:
+    Context: Optional[str]
+    Qualifiers: Optional[Sequence["_Qualifiers2"]]
+    Value: Optional[str]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_LessThan"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_LessThan"]:
+        if not json_data:
+            return None
+        return cls(
+            Context=json_data.get("Context"),
+            Qualifiers=json_data.get("Qualifiers"),
+            Value=json_data.get("Value"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_LessThan = LessThan
+
+
+@dataclass
+class Qualifiers2:
+    Key: Optional[str]
+    Value: Optional[str]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_Qualifiers2"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_Qualifiers2"]:
+        if not json_data:
+            return None
+        return cls(
+            Key=json_data.get("Key"),
+            Value=json_data.get("Value"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_Qualifiers2 = Qualifiers2
+
+
+@dataclass
+class PatternMatch:
+    Context: Optional[str]
+    Pattern: Optional[str]
+    Qualifiers: Optional[Sequence["_Qualifiers3"]]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_PatternMatch"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_PatternMatch"]:
+        if not json_data:
+            return None
+        return cls(
+            Context=json_data.get("Context"),
+            Pattern=json_data.get("Pattern"),
+            Qualifiers=json_data.get("Qualifiers"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_PatternMatch = PatternMatch
+
+
+@dataclass
+class Qualifiers3:
+    Key: Optional[str]
+    Value: Optional[str]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_Qualifiers3"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_Qualifiers3"]:
+        if not json_data:
+            return None
+        return cls(
+            Key=json_data.get("Key"),
+            Value=json_data.get("Value"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_Qualifiers3 = Qualifiers3
 
 

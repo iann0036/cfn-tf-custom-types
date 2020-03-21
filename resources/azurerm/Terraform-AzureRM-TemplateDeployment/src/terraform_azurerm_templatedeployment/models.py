@@ -37,7 +37,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DeploymentMode: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     Outputs: Optional[Sequence["_Outputs"]]
     Parameters: Optional[Sequence["_Parameters"]]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             DeploymentMode=json_data.get("DeploymentMode"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Outputs=json_data.get("Outputs"),
             Parameters=json_data.get("Parameters"),

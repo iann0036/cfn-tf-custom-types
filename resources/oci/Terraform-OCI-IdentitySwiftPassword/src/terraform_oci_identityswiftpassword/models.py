@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     ExpiresOn: Optional[str]
-    Id: Optional[str]
     InactiveState: Optional[str]
     Password: Optional[str]
     State: Optional[str]
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             ExpiresOn=json_data.get("ExpiresOn"),
-            Id=json_data.get("Id"),
             InactiveState=json_data.get("InactiveState"),
             Password=json_data.get("Password"),
             State=json_data.get("State"),

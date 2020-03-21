@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DisplayName: Optional[str]
     Enabled: Optional[bool]
-    Id: Optional[str]
     IpAddress: Optional[str]
     MaxConcurrentConnections: Optional[float]
     MaxNewConnectionRate: Optional[float]
@@ -71,7 +70,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DisplayName=json_data.get("DisplayName"),
             Enabled=json_data.get("Enabled"),
-            Id=json_data.get("Id"),
             IpAddress=json_data.get("IpAddress"),
             MaxConcurrentConnections=json_data.get("MaxConcurrentConnections"),
             MaxNewConnectionRate=json_data.get("MaxNewConnectionRate"),

@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     AutomaticStopTimeMinutes: Optional[float]
     Description: Optional[str]
-    Id: Optional[str]
     InstanceType: Optional[str]
     Name: Optional[str]
     OwnerArn: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             AutomaticStopTimeMinutes=json_data.get("AutomaticStopTimeMinutes"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             InstanceType=json_data.get("InstanceType"),
             Name=json_data.get("Name"),
             OwnerArn=json_data.get("OwnerArn"),

@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     CreationDate: Optional[str]
     ExtranetEndpoint: Optional[str]
     ForceDestroy: Optional[bool]
-    Id: Optional[str]
     IntranetEndpoint: Optional[str]
     Location: Optional[str]
     LoggingIsenable: Optional[bool]
@@ -73,7 +72,6 @@ class ResourceModel(BaseResourceModel):
             CreationDate=json_data.get("CreationDate"),
             ExtranetEndpoint=json_data.get("ExtranetEndpoint"),
             ForceDestroy=json_data.get("ForceDestroy"),
-            Id=json_data.get("Id"),
             IntranetEndpoint=json_data.get("IntranetEndpoint"),
             Location=json_data.get("Location"),
             LoggingIsenable=json_data.get("LoggingIsenable"),

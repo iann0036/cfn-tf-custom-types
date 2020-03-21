@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     CreatedOn: Optional[str]
     Description: Optional[str]
     Enabled: Optional[bool]
-    Id: Optional[str]
     MinimumOrigins: Optional[float]
     ModifiedOn: Optional[str]
     Monitor: Optional[str]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             CreatedOn=json_data.get("CreatedOn"),
             Description=json_data.get("Description"),
             Enabled=json_data.get("Enabled"),
-            Id=json_data.get("Id"),
             MinimumOrigins=json_data.get("MinimumOrigins"),
             ModifiedOn=json_data.get("ModifiedOn"),
             Monitor=json_data.get("Monitor"),

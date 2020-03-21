@@ -12,19 +12,22 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::AppmeshRoute",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
+        "<a href="#createddate" title="CreatedDate">CreatedDate</a>" : <i>String</i>,
+        "<a href="#lastupdateddate" title="LastUpdatedDate">LastUpdatedDate</a>" : <i>String</i>,
         "<a href="#meshname" title="MeshName">MeshName</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
         "<a href="#virtualroutername" title="VirtualRouterName">VirtualRouterName</a>" : <i>String</i>,
-        "<a href="#spec" title="Spec">Spec</a>" : <i>[ <a href="spec.md">Spec</a>, ... ]</i>,
-        "<a href="#httproute" title="HttpRoute">HttpRoute</a>" : <i>[ <a href="httproute.md">HttpRoute</a>, ... ]</i>,
-        "<a href="#tcproute" title="TcpRoute">TcpRoute</a>" : <i>[ <a href="tcproute.md">TcpRoute</a>, ... ]</i>,
-        "<a href="#action" title="Action">Action</a>" : <i>[ <a href="action.md">Action</a>, ... ]</i>,
-        "<a href="#match" title="Match">Match</a>" : <i>[ <a href="match.md">Match</a>, ... ]</i>,
-        "<a href="#weightedtarget" title="WeightedTarget">WeightedTarget</a>" : <i>[ <a href="weightedtarget.md">WeightedTarget</a>, ... ]</i>,
-        "<a href="#header" title="Header">Header</a>" : <i>[ <a href="header.md">Header</a>, ... ]</i>,
-        "<a href="#range" title="Range">Range</a>" : <i>[ <a href="range.md">Range</a>, ... ]</i>
+        "<a href="#spec" title="Spec">Spec</a>" : <i>[ &lt;a href=&#34;spec.md&#34;&gt;Spec&lt;/a&gt;, ... ]</i>,
+        "<a href="#httproute" title="HttpRoute">HttpRoute</a>" : <i>[ &lt;a href=&#34;httproute.md&#34;&gt;HttpRoute&lt;/a&gt;, ... ]</i>,
+        "<a href="#tcproute" title="TcpRoute">TcpRoute</a>" : <i>[ &lt;a href=&#34;tcproute.md&#34;&gt;TcpRoute&lt;/a&gt;, ... ]</i>,
+        "<a href="#action" title="Action">Action</a>" : <i>[ &lt;a href=&#34;action.md&#34;&gt;Action&lt;/a&gt;, ... ]</i>,
+        "<a href="#match" title="Match">Match</a>" : <i>[ &lt;a href=&#34;match.md&#34;&gt;Match&lt;/a&gt;, ... ]</i>,
+        "<a href="#weightedtarget" title="WeightedTarget">WeightedTarget</a>" : <i>[ &lt;a href=&#34;weightedtarget.md&#34;&gt;WeightedTarget&lt;/a&gt;, ... ]</i>,
+        "<a href="#header" title="Header">Header</a>" : <i>[ &lt;a href=&#34;header.md&#34;&gt;Header&lt;/a&gt;, ... ]</i>,
+        "<a href="#range" title="Range">Range</a>" : <i>[ &lt;a href=&#34;range.md&#34;&gt;Range&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -34,33 +37,62 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::AppmeshRoute
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
+    <a href="#createddate" title="CreatedDate">CreatedDate</a>: <i>String</i>
+    <a href="#lastupdateddate" title="LastUpdatedDate">LastUpdatedDate</a>: <i>String</i>
     <a href="#meshname" title="MeshName">MeshName</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
     <a href="#virtualroutername" title="VirtualRouterName">VirtualRouterName</a>: <i>String</i>
     <a href="#spec" title="Spec">Spec</a>: <i>
-      - <a href="spec.md">Spec</a></i>
+      - &lt;a href=&#34;spec.md&#34;&gt;Spec&lt;/a&gt;</i>
     <a href="#httproute" title="HttpRoute">HttpRoute</a>: <i>
-      - <a href="httproute.md">HttpRoute</a></i>
+      - &lt;a href=&#34;httproute.md&#34;&gt;HttpRoute&lt;/a&gt;</i>
     <a href="#tcproute" title="TcpRoute">TcpRoute</a>: <i>
-      - <a href="tcproute.md">TcpRoute</a></i>
+      - &lt;a href=&#34;tcproute.md&#34;&gt;TcpRoute&lt;/a&gt;</i>
     <a href="#action" title="Action">Action</a>: <i>
-      - <a href="action.md">Action</a></i>
+      - &lt;a href=&#34;action.md&#34;&gt;Action&lt;/a&gt;</i>
     <a href="#match" title="Match">Match</a>: <i>
-      - <a href="match.md">Match</a></i>
+      - &lt;a href=&#34;match.md&#34;&gt;Match&lt;/a&gt;</i>
     <a href="#weightedtarget" title="WeightedTarget">WeightedTarget</a>: <i>
-      - <a href="weightedtarget.md">WeightedTarget</a></i>
+      - &lt;a href=&#34;weightedtarget.md&#34;&gt;WeightedTarget&lt;/a&gt;</i>
     <a href="#header" title="Header">Header</a>: <i>
-      - <a href="header.md">Header</a></i>
+      - &lt;a href=&#34;header.md&#34;&gt;Header&lt;/a&gt;</i>
     <a href="#range" title="Range">Range</a>: <i>
-      - <a href="range.md">Range</a></i>
+      - &lt;a href=&#34;range.md&#34;&gt;Range&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Arn
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### CreatedDate
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### LastUpdatedDate
 
 _Required_: No
 
@@ -88,7 +120,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -104,7 +136,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="spec.md">Spec</a>
+_Type_: List of &lt;a href=&#34;spec.md&#34;&gt;Spec&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -112,7 +144,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="httproute.md">HttpRoute</a>
+_Type_: List of &lt;a href=&#34;httproute.md&#34;&gt;HttpRoute&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -120,7 +152,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tcproute.md">TcpRoute</a>
+_Type_: List of &lt;a href=&#34;tcproute.md&#34;&gt;TcpRoute&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -128,7 +160,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="action.md">Action</a>
+_Type_: List of &lt;a href=&#34;action.md&#34;&gt;Action&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -136,7 +168,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="match.md">Match</a>
+_Type_: List of &lt;a href=&#34;match.md&#34;&gt;Match&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -144,7 +176,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="weightedtarget.md">WeightedTarget</a>
+_Type_: List of &lt;a href=&#34;weightedtarget.md&#34;&gt;WeightedTarget&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -152,7 +184,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="header.md">Header</a>
+_Type_: List of &lt;a href=&#34;header.md&#34;&gt;Header&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -160,7 +192,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="range.md">Range</a>
+_Type_: List of &lt;a href=&#34;range.md&#34;&gt;Range&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -182,13 +214,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the <code>Arn</code> value.
+Returns the &lt;code&gt;Arn&lt;/code&gt; value.
 
 #### CreatedDate
 
-Returns the <code>CreatedDate</code> value.
+Returns the &lt;code&gt;CreatedDate&lt;/code&gt; value.
 
 #### LastUpdatedDate
 
-Returns the <code>LastUpdatedDate</code> value.
+Returns the &lt;code&gt;LastUpdatedDate&lt;/code&gt; value.
 

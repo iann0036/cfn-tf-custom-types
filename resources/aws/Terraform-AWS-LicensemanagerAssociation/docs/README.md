@@ -12,7 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::LicensemanagerAssociation",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#licenseconfigurationarn" title="LicenseConfigurationArn">LicenseConfigurationArn</a>" : <i>String</i>,
         "<a href="#resourcearn" title="ResourceArn">ResourceArn</a>" : <i>String</i>
     }
@@ -24,14 +24,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::LicensemanagerAssociation
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#licenseconfigurationarn" title="LicenseConfigurationArn">LicenseConfigurationArn</a>: <i>String</i>
     <a href="#resourcearn" title="ResourceArn">ResourceArn</a>: <i>String</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
 
 _Required_: No
 

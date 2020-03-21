@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     Actions: Optional[Sequence[str]]
     Description: Optional[str]
     Expression: Optional[str]
-    Id: Optional[str]
     Priority: Optional[float]
     Region: Optional[str]
 
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             Actions=json_data.get("Actions"),
             Description=json_data.get("Description"),
             Expression=json_data.get("Expression"),
-            Id=json_data.get("Id"),
             Priority=json_data.get("Priority"),
             Region=json_data.get("Region"),
         )

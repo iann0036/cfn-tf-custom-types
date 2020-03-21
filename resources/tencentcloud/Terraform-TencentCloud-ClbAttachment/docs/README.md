@@ -12,11 +12,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::TencentCloud::ClbAttachment",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#clbid" title="ClbId">ClbId</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#listenerid" title="ListenerId">ListenerId</a>" : <i>String</i>,
+        "<a href="#protocoltype" title="ProtocolType">ProtocolType</a>" : <i>String</i>,
         "<a href="#ruleid" title="RuleId">RuleId</a>" : <i>String</i>,
-        "<a href="#targets" title="Targets">Targets</a>" : <i>[ <a href="targets.md">Targets</a>, ... ]</i>
+        "<a href="#targets" title="Targets">Targets</a>" : <i>[ &lt;a href=&#34;targets.md&#34;&gt;Targets&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -26,15 +27,26 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::TencentCloud::ClbAttachment
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#clbid" title="ClbId">ClbId</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#listenerid" title="ListenerId">ListenerId</a>: <i>String</i>
+    <a href="#protocoltype" title="ProtocolType">ProtocolType</a>: <i>String</i>
     <a href="#ruleid" title="RuleId">RuleId</a>: <i>String</i>
     <a href="#targets" title="Targets">Targets</a>: <i>
-      - <a href="targets.md">Targets</a></i>
+      - &lt;a href=&#34;targets.md&#34;&gt;Targets&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClbId
 
@@ -44,17 +56,17 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### ListenerId
 
-_Required_: No
+_Required_: Yes
 
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### ListenerId
+#### ProtocolType
 
-_Required_: Yes
+_Required_: No
 
 _Type_: String
 
@@ -72,7 +84,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="targets.md">Targets</a>
+_Type_: List of &lt;a href=&#34;targets.md&#34;&gt;Targets&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -94,5 +106,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ProtocolType
 
-Returns the <code>ProtocolType</code> value.
+Returns the &lt;code&gt;ProtocolType&lt;/code&gt; value.
 

@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AccessorId: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     Local: Optional[bool]
     Policies: Optional[Sequence[str]]
 
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AccessorId=json_data.get("AccessorId"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Local=json_data.get("Local"),
             Policies=json_data.get("Policies"),
         )

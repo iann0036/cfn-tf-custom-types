@@ -12,10 +12,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::DefaultVpcDhcpOptions",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#domainname" title="DomainName">DomainName</a>" : <i>String</i>,
+        "<a href="#domainnameservers" title="DomainNameServers">DomainNameServers</a>" : <i>String</i>,
         "<a href="#netbiosnameservers" title="NetbiosNameServers">NetbiosNameServers</a>" : <i>[ String, ... ]</i>,
         "<a href="#netbiosnodetype" title="NetbiosNodeType">NetbiosNodeType</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>
+        "<a href="#ntpservers" title="NtpServers">NtpServers</a>" : <i>String</i>,
+        "<a href="#ownerid" title="OwnerId">OwnerId</a>" : <i>String</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -25,17 +29,39 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::DefaultVpcDhcpOptions
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#domainname" title="DomainName">DomainName</a>: <i>String</i>
+    <a href="#domainnameservers" title="DomainNameServers">DomainNameServers</a>: <i>String</i>
     <a href="#netbiosnameservers" title="NetbiosNameServers">NetbiosNameServers</a>: <i>
       - String</i>
     <a href="#netbiosnodetype" title="NetbiosNodeType">NetbiosNodeType</a>: <i>String</i>
+    <a href="#ntpservers" title="NtpServers">NtpServers</a>: <i>String</i>
+    <a href="#ownerid" title="OwnerId">OwnerId</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### DomainName
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### DomainNameServers
 
 _Required_: No
 
@@ -59,11 +85,27 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### NtpServers
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### OwnerId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### Tags
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -85,17 +127,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### DomainName
 
-Returns the <code>DomainName</code> value.
+Returns the &lt;code&gt;DomainName&lt;/code&gt; value.
 
 #### DomainNameServers
 
-Returns the <code>DomainNameServers</code> value.
+Returns the &lt;code&gt;DomainNameServers&lt;/code&gt; value.
 
 #### NtpServers
 
-Returns the <code>NtpServers</code> value.
+Returns the &lt;code&gt;NtpServers&lt;/code&gt; value.
 
 #### OwnerId
 
-Returns the <code>OwnerId</code> value.
+Returns the &lt;code&gt;OwnerId&lt;/code&gt; value.
 

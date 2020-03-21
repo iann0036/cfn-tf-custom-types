@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     EnaSupport: Optional[bool]
     Encrypted: Optional[bool]
-    Id: Optional[str]
     ImageLocation: Optional[str]
     KernelId: Optional[str]
     KmsKeyId: Optional[str]
@@ -69,7 +68,6 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             EnaSupport=json_data.get("EnaSupport"),
             Encrypted=json_data.get("Encrypted"),
-            Id=json_data.get("Id"),
             ImageLocation=json_data.get("ImageLocation"),
             KernelId=json_data.get("KernelId"),
             KmsKeyId=json_data.get("KmsKeyId"),

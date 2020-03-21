@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     LoadBalancerIngress: Optional[Sequence["_LoadBalancerIngress"]]
     Metadata: Optional[Sequence["_Metadata"]]
     Spec: Optional[Sequence["_Spec"]]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             LoadBalancerIngress=json_data.get("LoadBalancerIngress"),
             Metadata=json_data.get("Metadata"),
             Spec=json_data.get("Spec"),

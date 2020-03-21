@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     EnableDefaultSecurity: Optional[bool]
-    Id: Optional[str]
     InboundDefaultPolicy: Optional[str]
     Name: Optional[str]
     OutboundDefaultPolicy: Optional[str]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             EnableDefaultSecurity=json_data.get("EnableDefaultSecurity"),
-            Id=json_data.get("Id"),
             InboundDefaultPolicy=json_data.get("InboundDefaultPolicy"),
             Name=json_data.get("Name"),
             OutboundDefaultPolicy=json_data.get("OutboundDefaultPolicy"),

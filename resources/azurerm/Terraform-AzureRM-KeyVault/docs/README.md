@@ -12,21 +12,22 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureRM::KeyVault",
     "Properties" : {
-        "<a href="#accesspolicy" title="AccessPolicy">AccessPolicy</a>" : <i>[ <a href="accesspolicy.md">AccessPolicy</a>, ... ]</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#accesspolicy" title="AccessPolicy">AccessPolicy</a>" : <i>[ &lt;a href=&#34;accesspolicy.md&#34;&gt;AccessPolicy&lt;/a&gt;, ... ]</i>,
         "<a href="#enabledfordeployment" title="EnabledForDeployment">EnabledForDeployment</a>" : <i>Boolean</i>,
         "<a href="#enabledfordiskencryption" title="EnabledForDiskEncryption">EnabledForDiskEncryption</a>" : <i>Boolean</i>,
         "<a href="#enabledfortemplatedeployment" title="EnabledForTemplateDeployment">EnabledForTemplateDeployment</a>" : <i>Boolean</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#location" title="Location">Location</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#purgeprotectionenabled" title="PurgeProtectionEnabled">PurgeProtectionEnabled</a>" : <i>Boolean</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
         "<a href="#skuname" title="SkuName">SkuName</a>" : <i>String</i>,
         "<a href="#softdeleteenabled" title="SoftDeleteEnabled">SoftDeleteEnabled</a>" : <i>Boolean</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
         "<a href="#tenantid" title="TenantId">TenantId</a>" : <i>String</i>,
-        "<a href="#networkacls" title="NetworkAcls">NetworkAcls</a>" : <i>[ <a href="networkacls.md">NetworkAcls</a>, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
+        "<a href="#vaulturi" title="VaultUri">VaultUri</a>" : <i>String</i>,
+        "<a href="#networkacls" title="NetworkAcls">NetworkAcls</a>" : <i>[ &lt;a href=&#34;networkacls.md&#34;&gt;NetworkAcls&lt;/a&gt;, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
     }
 }
 </pre>
@@ -36,12 +37,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureRM::KeyVault
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#accesspolicy" title="AccessPolicy">AccessPolicy</a>: <i>
-      - <a href="accesspolicy.md">AccessPolicy</a></i>
+      - &lt;a href=&#34;accesspolicy.md&#34;&gt;AccessPolicy&lt;/a&gt;</i>
     <a href="#enabledfordeployment" title="EnabledForDeployment">EnabledForDeployment</a>: <i>Boolean</i>
     <a href="#enabledfordiskencryption" title="EnabledForDiskEncryption">EnabledForDiskEncryption</a>: <i>Boolean</i>
     <a href="#enabledfortemplatedeployment" title="EnabledForTemplateDeployment">EnabledForTemplateDeployment</a>: <i>Boolean</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#location" title="Location">Location</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#purgeprotectionenabled" title="PurgeProtectionEnabled">PurgeProtectionEnabled</a>: <i>Boolean</i>
@@ -49,20 +50,31 @@ Properties:
     <a href="#skuname" title="SkuName">SkuName</a>: <i>String</i>
     <a href="#softdeleteenabled" title="SoftDeleteEnabled">SoftDeleteEnabled</a>: <i>Boolean</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
     <a href="#tenantid" title="TenantId">TenantId</a>: <i>String</i>
+    <a href="#vaulturi" title="VaultUri">VaultUri</a>: <i>String</i>
     <a href="#networkacls" title="NetworkAcls">NetworkAcls</a>: <i>
-      - <a href="networkacls.md">NetworkAcls</a></i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
+      - &lt;a href=&#34;networkacls.md&#34;&gt;NetworkAcls&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AccessPolicy
 
 _Required_: No
 
-_Type_: List of <a href="accesspolicy.md">AccessPolicy</a>
+_Type_: List of &lt;a href=&#34;accesspolicy.md&#34;&gt;AccessPolicy&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -87,14 +99,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -150,7 +154,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -162,11 +166,19 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
+#### VaultUri
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
 #### NetworkAcls
 
 _Required_: No
 
-_Type_: List of <a href="networkacls.md">NetworkAcls</a>
+_Type_: List of &lt;a href=&#34;networkacls.md&#34;&gt;NetworkAcls&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -174,7 +186,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: <a href="timeouts.md">Timeouts</a>
+_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -196,5 +208,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### VaultUri
 
-Returns the <code>VaultUri</code> value.
+Returns the &lt;code&gt;VaultUri&lt;/code&gt; value.
 

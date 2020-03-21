@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     ConnectionLimit: Optional[float]
     Description: Optional[str]
     DynamicRatio: Optional[float]
-    Id: Optional[str]
     Monitor: Optional[str]
     Name: Optional[str]
     RateLimit: Optional[str]
@@ -61,7 +60,6 @@ class ResourceModel(BaseResourceModel):
             ConnectionLimit=json_data.get("ConnectionLimit"),
             Description=json_data.get("Description"),
             DynamicRatio=json_data.get("DynamicRatio"),
-            Id=json_data.get("Id"),
             Monitor=json_data.get("Monitor"),
             Name=json_data.get("Name"),
             RateLimit=json_data.get("RateLimit"),

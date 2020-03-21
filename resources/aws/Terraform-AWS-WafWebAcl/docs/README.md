@@ -12,17 +12,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::WafWebAcl",
     "Properties" : {
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
+        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#metricname" title="MetricName">MetricName</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
-        "<a href="#defaultaction" title="DefaultAction">DefaultAction</a>" : <i>[ <a href="defaultaction.md">DefaultAction</a>, ... ]</i>,
-        "<a href="#loggingconfiguration" title="LoggingConfiguration">LoggingConfiguration</a>" : <i>[ <a href="loggingconfiguration.md">LoggingConfiguration</a>, ... ]</i>,
-        "<a href="#rules" title="Rules">Rules</a>" : <i>[ <a href="rules.md">Rules</a>, ... ]</i>,
-        "<a href="#redactedfields" title="RedactedFields">RedactedFields</a>" : <i>[ <a href="redactedfields.md">RedactedFields</a>, ... ]</i>,
-        "<a href="#action" title="Action">Action</a>" : <i>[ <a href="action.md">Action</a>, ... ]</i>,
-        "<a href="#overrideaction" title="OverrideAction">OverrideAction</a>" : <i>[ <a href="overrideaction.md">OverrideAction</a>, ... ]</i>,
-        "<a href="#fieldtomatch" title="FieldToMatch">FieldToMatch</a>" : <i>[ <a href="fieldtomatch.md">FieldToMatch</a>, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#defaultaction" title="DefaultAction">DefaultAction</a>" : <i>[ &lt;a href=&#34;defaultaction.md&#34;&gt;DefaultAction&lt;/a&gt;, ... ]</i>,
+        "<a href="#loggingconfiguration" title="LoggingConfiguration">LoggingConfiguration</a>" : <i>[ &lt;a href=&#34;loggingconfiguration.md&#34;&gt;LoggingConfiguration&lt;/a&gt;, ... ]</i>,
+        "<a href="#rules" title="Rules">Rules</a>" : <i>[ &lt;a href=&#34;rules.md&#34;&gt;Rules&lt;/a&gt;, ... ]</i>,
+        "<a href="#redactedfields" title="RedactedFields">RedactedFields</a>" : <i>[ &lt;a href=&#34;redactedfields.md&#34;&gt;RedactedFields&lt;/a&gt;, ... ]</i>,
+        "<a href="#action" title="Action">Action</a>" : <i>[ &lt;a href=&#34;action.md&#34;&gt;Action&lt;/a&gt;, ... ]</i>,
+        "<a href="#overrideaction" title="OverrideAction">OverrideAction</a>" : <i>[ &lt;a href=&#34;overrideaction.md&#34;&gt;OverrideAction&lt;/a&gt;, ... ]</i>,
+        "<a href="#fieldtomatch" title="FieldToMatch">FieldToMatch</a>" : <i>[ &lt;a href=&#34;fieldtomatch.md&#34;&gt;FieldToMatch&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -32,30 +33,41 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::WafWebAcl
 Properties:
-    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
+    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#metricname" title="MetricName">MetricName</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
     <a href="#defaultaction" title="DefaultAction">DefaultAction</a>: <i>
-      - <a href="defaultaction.md">DefaultAction</a></i>
+      - &lt;a href=&#34;defaultaction.md&#34;&gt;DefaultAction&lt;/a&gt;</i>
     <a href="#loggingconfiguration" title="LoggingConfiguration">LoggingConfiguration</a>: <i>
-      - <a href="loggingconfiguration.md">LoggingConfiguration</a></i>
+      - &lt;a href=&#34;loggingconfiguration.md&#34;&gt;LoggingConfiguration&lt;/a&gt;</i>
     <a href="#rules" title="Rules">Rules</a>: <i>
-      - <a href="rules.md">Rules</a></i>
+      - &lt;a href=&#34;rules.md&#34;&gt;Rules&lt;/a&gt;</i>
     <a href="#redactedfields" title="RedactedFields">RedactedFields</a>: <i>
-      - <a href="redactedfields.md">RedactedFields</a></i>
+      - &lt;a href=&#34;redactedfields.md&#34;&gt;RedactedFields&lt;/a&gt;</i>
     <a href="#action" title="Action">Action</a>: <i>
-      - <a href="action.md">Action</a></i>
+      - &lt;a href=&#34;action.md&#34;&gt;Action&lt;/a&gt;</i>
     <a href="#overrideaction" title="OverrideAction">OverrideAction</a>: <i>
-      - <a href="overrideaction.md">OverrideAction</a></i>
+      - &lt;a href=&#34;overrideaction.md&#34;&gt;OverrideAction&lt;/a&gt;</i>
     <a href="#fieldtomatch" title="FieldToMatch">FieldToMatch</a>: <i>
-      - <a href="fieldtomatch.md">FieldToMatch</a></i>
+      - &lt;a href=&#34;fieldtomatch.md&#34;&gt;FieldToMatch&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
-#### Id
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Arn
 
 _Required_: No
 
@@ -83,7 +95,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -91,7 +103,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="defaultaction.md">DefaultAction</a>
+_Type_: List of &lt;a href=&#34;defaultaction.md&#34;&gt;DefaultAction&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -99,7 +111,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="loggingconfiguration.md">LoggingConfiguration</a>
+_Type_: List of &lt;a href=&#34;loggingconfiguration.md&#34;&gt;LoggingConfiguration&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -107,7 +119,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="rules.md">Rules</a>
+_Type_: List of &lt;a href=&#34;rules.md&#34;&gt;Rules&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -115,7 +127,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="redactedfields.md">RedactedFields</a>
+_Type_: List of &lt;a href=&#34;redactedfields.md&#34;&gt;RedactedFields&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -123,7 +135,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="action.md">Action</a>
+_Type_: List of &lt;a href=&#34;action.md&#34;&gt;Action&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -131,7 +143,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="overrideaction.md">OverrideAction</a>
+_Type_: List of &lt;a href=&#34;overrideaction.md&#34;&gt;OverrideAction&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -139,7 +151,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="fieldtomatch.md">FieldToMatch</a>
+_Type_: List of &lt;a href=&#34;fieldtomatch.md&#34;&gt;FieldToMatch&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -161,5 +173,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the <code>Arn</code> value.
+Returns the &lt;code&gt;Arn&lt;/code&gt; value.
 

@@ -36,7 +36,6 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     ReceivingRecords: Optional[Sequence["_ReceivingRecords"]]
     Region: Optional[str]
@@ -55,7 +54,6 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ReceivingRecords=json_data.get("ReceivingRecords"),
             Region=json_data.get("Region"),

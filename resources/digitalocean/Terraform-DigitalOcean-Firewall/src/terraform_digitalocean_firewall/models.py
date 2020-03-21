@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CreatedAt: Optional[str]
     DropletIds: Optional[Sequence[float]]
-    Id: Optional[str]
     Name: Optional[str]
     PendingChanges: Optional[Sequence["_PendingChanges"]]
     Status: Optional[str]
@@ -57,7 +56,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CreatedAt=json_data.get("CreatedAt"),
             DropletIds=json_data.get("DropletIds"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             PendingChanges=json_data.get("PendingChanges"),
             Status=json_data.get("Status"),

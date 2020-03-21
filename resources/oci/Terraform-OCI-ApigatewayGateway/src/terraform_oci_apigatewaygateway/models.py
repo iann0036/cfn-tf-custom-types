@@ -42,7 +42,6 @@ class ResourceModel(BaseResourceModel):
     EndpointType: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
     Hostname: Optional[str]
-    Id: Optional[str]
     LifecycleDetails: Optional[str]
     State: Optional[str]
     SubnetId: Optional[str]
@@ -65,7 +64,6 @@ class ResourceModel(BaseResourceModel):
             EndpointType=json_data.get("EndpointType"),
             FreeformTags=json_data.get("FreeformTags"),
             Hostname=json_data.get("Hostname"),
-            Id=json_data.get("Id"),
             LifecycleDetails=json_data.get("LifecycleDetails"),
             State=json_data.get("State"),
             SubnetId=json_data.get("SubnetId"),

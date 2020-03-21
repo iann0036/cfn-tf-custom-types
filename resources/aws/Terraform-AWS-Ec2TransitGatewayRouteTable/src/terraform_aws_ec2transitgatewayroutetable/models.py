@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DefaultAssociationRouteTable: Optional[bool]
     DefaultPropagationRouteTable: Optional[bool]
-    Id: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
     TransitGatewayId: Optional[str]
 
@@ -53,7 +52,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DefaultAssociationRouteTable=json_data.get("DefaultAssociationRouteTable"),
             DefaultPropagationRouteTable=json_data.get("DefaultPropagationRouteTable"),
-            Id=json_data.get("Id"),
             Tags=json_data.get("Tags"),
             TransitGatewayId=json_data.get("TransitGatewayId"),
         )

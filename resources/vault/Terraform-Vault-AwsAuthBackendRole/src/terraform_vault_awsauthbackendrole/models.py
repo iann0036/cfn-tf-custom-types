@@ -58,7 +58,6 @@ class ResourceModel(BaseResourceModel):
     BoundVpcId: Optional[str]
     BoundVpcIds: Optional[Sequence[str]]
     DisallowReauthentication: Optional[bool]
-    Id: Optional[str]
     InferredAwsRegion: Optional[str]
     InferredEntityType: Optional[str]
     MaxTtl: Optional[float]
@@ -109,7 +108,6 @@ class ResourceModel(BaseResourceModel):
             BoundVpcId=json_data.get("BoundVpcId"),
             BoundVpcIds=json_data.get("BoundVpcIds"),
             DisallowReauthentication=json_data.get("DisallowReauthentication"),
-            Id=json_data.get("Id"),
             InferredAwsRegion=json_data.get("InferredAwsRegion"),
             InferredEntityType=json_data.get("InferredEntityType"),
             MaxTtl=json_data.get("MaxTtl"),

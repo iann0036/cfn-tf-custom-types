@@ -41,7 +41,6 @@ class ResourceModel(BaseResourceModel):
     DeveloperAppInsightsKey: Optional[str]
     DisplayName: Optional[str]
     Endpoint: Optional[str]
-    Id: Optional[str]
     Location: Optional[str]
     MicrosoftAppId: Optional[str]
     Name: Optional[str]
@@ -64,7 +63,6 @@ class ResourceModel(BaseResourceModel):
             DeveloperAppInsightsKey=json_data.get("DeveloperAppInsightsKey"),
             DisplayName=json_data.get("DisplayName"),
             Endpoint=json_data.get("Endpoint"),
-            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             MicrosoftAppId=json_data.get("MicrosoftAppId"),
             Name=json_data.get("Name"),

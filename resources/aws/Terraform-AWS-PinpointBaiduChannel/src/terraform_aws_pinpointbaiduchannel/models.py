@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     ApiKey: Optional[str]
     ApplicationId: Optional[str]
     Enabled: Optional[bool]
-    Id: Optional[str]
     SecretKey: Optional[str]
 
     @classmethod
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             ApiKey=json_data.get("ApiKey"),
             ApplicationId=json_data.get("ApplicationId"),
             Enabled=json_data.get("Enabled"),
-            Id=json_data.get("Id"),
             SecretKey=json_data.get("SecretKey"),
         )
 

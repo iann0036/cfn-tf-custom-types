@@ -40,7 +40,6 @@ class ResourceModel(BaseResourceModel):
     Author: Optional[str]
     CompartmentId: Optional[str]
     ContentUrl: Optional[str]
-    Id: Optional[str]
     ListingId: Optional[str]
     PackageVersion: Optional[str]
     Prompt: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             Author=json_data.get("Author"),
             CompartmentId=json_data.get("CompartmentId"),
             ContentUrl=json_data.get("ContentUrl"),
-            Id=json_data.get("Id"),
             ListingId=json_data.get("ListingId"),
             PackageVersion=json_data.get("PackageVersion"),
             Prompt=json_data.get("Prompt"),

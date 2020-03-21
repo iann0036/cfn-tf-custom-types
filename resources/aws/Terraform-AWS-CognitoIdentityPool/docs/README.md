@@ -12,15 +12,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::CognitoIdentityPool",
     "Properties" : {
+        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#allowunauthenticatedidentities" title="AllowUnauthenticatedIdentities">AllowUnauthenticatedIdentities</a>" : <i>Boolean</i>,
+        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#developerprovidername" title="DeveloperProviderName">DeveloperProviderName</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#identitypoolname" title="IdentityPoolName">IdentityPoolName</a>" : <i>String</i>,
         "<a href="#openidconnectproviderarns" title="OpenidConnectProviderArns">OpenidConnectProviderArns</a>" : <i>[ String, ... ]</i>,
         "<a href="#samlproviderarns" title="SamlProviderArns">SamlProviderArns</a>" : <i>[ String, ... ]</i>,
-        "<a href="#supportedloginproviders" title="SupportedLoginProviders">SupportedLoginProviders</a>" : <i>[ <a href="supportedloginproviders.md">SupportedLoginProviders</a>, ... ]</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
-        "<a href="#cognitoidentityproviders" title="CognitoIdentityProviders">CognitoIdentityProviders</a>" : <i>[ <a href="cognitoidentityproviders.md">CognitoIdentityProviders</a>, ... ]</i>
+        "<a href="#supportedloginproviders" title="SupportedLoginProviders">SupportedLoginProviders</a>" : <i>[ &lt;a href=&#34;supportedloginproviders.md&#34;&gt;SupportedLoginProviders&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#cognitoidentityproviders" title="CognitoIdentityProviders">CognitoIdentityProviders</a>" : <i>[ &lt;a href=&#34;cognitoidentityproviders.md&#34;&gt;CognitoIdentityProviders&lt;/a&gt;, ... ]</i>
     }
 }
 </pre>
@@ -30,23 +31,34 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::CognitoIdentityPool
 Properties:
+    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#allowunauthenticatedidentities" title="AllowUnauthenticatedIdentities">AllowUnauthenticatedIdentities</a>: <i>Boolean</i>
+    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#developerprovidername" title="DeveloperProviderName">DeveloperProviderName</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#identitypoolname" title="IdentityPoolName">IdentityPoolName</a>: <i>String</i>
     <a href="#openidconnectproviderarns" title="OpenidConnectProviderArns">OpenidConnectProviderArns</a>: <i>
       - String</i>
     <a href="#samlproviderarns" title="SamlProviderArns">SamlProviderArns</a>: <i>
       - String</i>
     <a href="#supportedloginproviders" title="SupportedLoginProviders">SupportedLoginProviders</a>: <i>
-      - <a href="supportedloginproviders.md">SupportedLoginProviders</a></i>
+      - &lt;a href=&#34;supportedloginproviders.md&#34;&gt;SupportedLoginProviders&lt;/a&gt;</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - <a href="tags.md">Tags</a></i>
+      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
     <a href="#cognitoidentityproviders" title="CognitoIdentityProviders">CognitoIdentityProviders</a>: <i>
-      - <a href="cognitoidentityproviders.md">CognitoIdentityProviders</a></i>
+      - &lt;a href=&#34;cognitoidentityproviders.md&#34;&gt;CognitoIdentityProviders&lt;/a&gt;</i>
 </pre>
 
 ## Properties
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowUnauthenticatedIdentities
 
@@ -56,7 +68,7 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### DeveloperProviderName
+#### Arn
 
 _Required_: No
 
@@ -64,7 +76,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Id
+#### DeveloperProviderName
 
 _Required_: No
 
@@ -100,7 +112,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="supportedloginproviders.md">SupportedLoginProviders</a>
+_Type_: List of &lt;a href=&#34;supportedloginproviders.md&#34;&gt;SupportedLoginProviders&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -108,7 +120,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="tags.md">Tags</a>
+_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -116,7 +128,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of <a href="cognitoidentityproviders.md">CognitoIdentityProviders</a>
+_Type_: List of &lt;a href=&#34;cognitoidentityproviders.md&#34;&gt;CognitoIdentityProviders&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -138,5 +150,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the <code>Arn</code> value.
+Returns the &lt;code&gt;Arn&lt;/code&gt; value.
 

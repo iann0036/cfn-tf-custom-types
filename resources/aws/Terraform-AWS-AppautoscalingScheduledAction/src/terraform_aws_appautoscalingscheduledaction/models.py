@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Arn: Optional[str]
     EndTime: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     ResourceId: Optional[str]
     ScalableDimension: Optional[str]
@@ -58,7 +57,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Arn=json_data.get("Arn"),
             EndTime=json_data.get("EndTime"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ResourceId=json_data.get("ResourceId"),
             ScalableDimension=json_data.get("ScalableDimension"),

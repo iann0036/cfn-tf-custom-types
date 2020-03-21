@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     ComputeClusterId: Optional[str]
     DependencyVmGroupName: Optional[str]
     Enabled: Optional[bool]
-    Id: Optional[str]
     Mandatory: Optional[bool]
     Name: Optional[str]
     VmGroupName: Optional[str]
@@ -56,7 +55,6 @@ class ResourceModel(BaseResourceModel):
             ComputeClusterId=json_data.get("ComputeClusterId"),
             DependencyVmGroupName=json_data.get("DependencyVmGroupName"),
             Enabled=json_data.get("Enabled"),
-            Id=json_data.get("Id"),
             Mandatory=json_data.get("Mandatory"),
             Name=json_data.get("Name"),
             VmGroupName=json_data.get("VmGroupName"),

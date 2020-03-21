@@ -39,7 +39,6 @@ class ResourceModel(BaseResourceModel):
     DscPrimaryAccessKey: Optional[str]
     DscSecondaryAccessKey: Optional[str]
     DscServerEndpoint: Optional[str]
-    Id: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
     ResourceGroupName: Optional[str]
@@ -59,7 +58,6 @@ class ResourceModel(BaseResourceModel):
             DscPrimaryAccessKey=json_data.get("DscPrimaryAccessKey"),
             DscSecondaryAccessKey=json_data.get("DscSecondaryAccessKey"),
             DscServerEndpoint=json_data.get("DscServerEndpoint"),
-            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),
             ResourceGroupName=json_data.get("ResourceGroupName"),

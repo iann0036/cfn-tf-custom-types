@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Domain: Optional[str]
     HealthCheckType: Optional[str]
-    Id: Optional[str]
     IdleTimeout: Optional[float]
     ListenType: Optional[str]
     LoadBalancerId: Optional[str]
@@ -62,7 +61,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Domain=json_data.get("Domain"),
             HealthCheckType=json_data.get("HealthCheckType"),
-            Id=json_data.get("Id"),
             IdleTimeout=json_data.get("IdleTimeout"),
             ListenType=json_data.get("ListenType"),
             LoadBalancerId=json_data.get("LoadBalancerId"),
