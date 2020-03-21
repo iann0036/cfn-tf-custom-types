@@ -42,7 +42,7 @@ Note that generating all files may take several minutes depending upon the amoun
 
 You can also use `all` as the provider name to generate resources for all providers. Note this can take 20 minutes or more to complete.
 
-## Resource Submission
+### Resource Submission
 
 Once you have generated the required resource files, you can submit the type by running the following:
 
