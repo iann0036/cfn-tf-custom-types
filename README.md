@@ -1,6 +1,6 @@
 # Terraform Custom Types
 
-[![Resource Count](https://img.shields.io/badge/resource%20count-3098-green.svg)](docs/README.md)
+[![Resource Count](https://img.shields.io/badge/resource%20count-3098-blue.svg)](docs/README.md)
 
 > Deploy over 3,000 new resource types with CloudFormation custom types.
 
@@ -60,7 +60,7 @@ Most providers will require you to store credentials and/or other provider-speci
 
 A full list of documentation can be found [here](docs/README.md).
 
-You can use a submitted resource like any other CloudFormation native resource, provided you follow the appropriate documentation. Check out some of the [examples](tree/master/examples) to get started.
+You can use a submitted resource like any other CloudFormation native resource, provided you follow the appropriate documentation. Check out some of the [examples](https://github.com/iann0036/cfn-tf-custom-types/tree/master/examples) to get started.
 
 ## Acknowledgements
 
