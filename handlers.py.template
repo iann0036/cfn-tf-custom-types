@@ -31,9 +31,7 @@ def check_call(args, cwd):
     LOG.warn(stdout)
     LOG.warn(stderr)
     if proc.returncode != 0:
-        raise subprocess.CalledProcessError(
-            returncode=proc.returncode,
-            cmd=args)
+        raise exceptions.InternalFailure(f"{stderr}")
     
     return stdout
 

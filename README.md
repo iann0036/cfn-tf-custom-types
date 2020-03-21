@@ -38,12 +38,16 @@ python3 generate.py aws
 
 Note that generating all files may take several minutes depending upon the amount of resources the provider has.
 
+You can also use `all` as the provider name to generate resources for all providers. Note this can take 20 minutes or more to complete.
+
+## Resource Submission
+
 Once you have generated the required resource files, you can submit the type by running the following:
 
 ```
-python3 upload.py <resourcename>
+python3 submit.py <resourcename>
 # For example:
-python3 upload.py Terraform::AWS::Instance
+python3 submit.py Terraform::AWS::Instance
 ```
 
 Note that resource submission will also generally take several minutes.
@@ -53,3 +57,9 @@ Note that resource submission will also generally take several minutes.
 Most providers will require you to store credentials and/or other provider-specific settings within AWS Secrets Manager in order to access their services, generally in the secret name format **terraform/_provider-name-lowercase_**. For the AWS provider only, the resources permissions will suffice, however you may choose to override those values in the secret.
 
 A full list of documentation can be found [here](docs/README.md).
+
+You can use a submitted resource like any other CloudFormation native resource, provided you follow the appropriate documentation. Check out some of the [examples](tree/master/examples) to get started.
+
+## Acknowledgements
+
+This project would not be possible without the work from the contributors to Terraform providers and the Terraform core product.
