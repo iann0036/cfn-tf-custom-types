@@ -17,6 +17,7 @@ To configure this resource, you must create an AWS Secrets Manager secret with t
 * [Terraform::Circonus::Maintenance](../resources/circonus/Terraform-Circonus-Maintenance/docs/README.md)
 * [Terraform::Circonus::MetricCluster](../resources/circonus/Terraform-Circonus-MetricCluster/docs/README.md)
 * [Terraform::Circonus::Metric](../resources/circonus/Terraform-Circonus-Metric/docs/README.md)
+* [Terraform::Circonus::OverlaySet](../resources/circonus/Terraform-Circonus-OverlaySet/docs/README.md)
 * [Terraform::Circonus::RuleSetGroup](../resources/circonus/Terraform-Circonus-RuleSetGroup/docs/README.md)
 * [Terraform::Circonus::RuleSet](../resources/circonus/Terraform-Circonus-RuleSet/docs/README.md)
 * [Terraform::Circonus::Worksheet](../resources/circonus/Terraform-Circonus-Worksheet/docs/README.md)

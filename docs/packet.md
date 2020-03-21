@@ -10,7 +10,6 @@ To configure this resource, you must create an AWS Secrets Manager secret with t
 ## Supported Resources
 
 * [Terraform::Packet::BgpSession](../resources/packet/Terraform-Packet-BgpSession/docs/README.md)
-* [Terraform::Packet::Connect](../resources/packet/Terraform-Packet-Connect/docs/README.md)
 * [Terraform::Packet::Device](../resources/packet/Terraform-Packet-Device/docs/README.md)
 * [Terraform::Packet::IpAttachment](../resources/packet/Terraform-Packet-IpAttachment/docs/README.md)
 * [Terraform::Packet::Organization](../resources/packet/Terraform-Packet-Organization/docs/README.md)

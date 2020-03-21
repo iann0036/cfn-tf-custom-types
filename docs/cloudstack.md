@@ -28,7 +28,6 @@ To configure this resource, you may optionally create an AWS Secrets Manager sec
 ## Supported Resources
 
 * [Terraform::CloudStack::AffinityGroup](../resources/cloudstack/Terraform-CloudStack-AffinityGroup/docs/README.md)
-* [Terraform::CloudStack::AutoscaleVmProfile](../resources/cloudstack/Terraform-CloudStack-AutoscaleVmProfile/docs/README.md)
 * [Terraform::CloudStack::Disk](../resources/cloudstack/Terraform-CloudStack-Disk/docs/README.md)
 * [Terraform::CloudStack::EgressFirewall](../resources/cloudstack/Terraform-CloudStack-EgressFirewall/docs/README.md)
 * [Terraform::CloudStack::Firewall](../resources/cloudstack/Terraform-CloudStack-Firewall/docs/README.md)

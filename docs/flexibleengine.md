@@ -88,7 +88,7 @@ To configure this resource, you must create an AWS Secrets Manager secret with t
 * [Terraform::FlexibleEngine::AsPolicyV1](../resources/flexibleengine/Terraform-FlexibleEngine-AsPolicyV1/docs/README.md)
 * [Terraform::FlexibleEngine::BlockstorageVolumeV2](../resources/flexibleengine/Terraform-FlexibleEngine-BlockstorageVolumeV2/docs/README.md)
 * [Terraform::FlexibleEngine::CceClusterV3](../resources/flexibleengine/Terraform-FlexibleEngine-CceClusterV3/docs/README.md)
-* [Terraform::FlexibleEngine::CceNodesV3](../resources/flexibleengine/Terraform-FlexibleEngine-CceNodesV3/docs/README.md)
+* [Terraform::FlexibleEngine::CceNodeV3](../resources/flexibleengine/Terraform-FlexibleEngine-CceNodeV3/docs/README.md)
 * [Terraform::FlexibleEngine::CesAlarmrule](../resources/flexibleengine/Terraform-FlexibleEngine-CesAlarmrule/docs/README.md)
 * [Terraform::FlexibleEngine::ComputeBmsServerV2](../resources/flexibleengine/Terraform-FlexibleEngine-ComputeBmsServerV2/docs/README.md)
 * [Terraform::FlexibleEngine::ComputeFloatingipAssociateV2](../resources/flexibleengine/Terraform-FlexibleEngine-ComputeFloatingipAssociateV2/docs/README.md)

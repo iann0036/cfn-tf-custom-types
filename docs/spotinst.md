@@ -16,7 +16,7 @@ To configure this resource, you must create an AWS Secrets Manager secret with t
 * [Terraform::Spotinst::ElastigroupGcp](../resources/spotinst/Terraform-Spotinst-ElastigroupGcp/docs/README.md)
 * [Terraform::Spotinst::ElastigroupGke](../resources/spotinst/Terraform-Spotinst-ElastigroupGke/docs/README.md)
 * [Terraform::Spotinst::ManagedInstanceAws](../resources/spotinst/Terraform-Spotinst-ManagedInstanceAws/docs/README.md)
-* [Terraform::Spotinst::Mrscaler](../resources/spotinst/Terraform-Spotinst-Mrscaler/docs/README.md)
+* [Terraform::Spotinst::MrscalerAws](../resources/spotinst/Terraform-Spotinst-MrscalerAws/docs/README.md)
 * [Terraform::Spotinst::MultaiBalancer](../resources/spotinst/Terraform-Spotinst-MultaiBalancer/docs/README.md)
 * [Terraform::Spotinst::MultaiDeployment](../resources/spotinst/Terraform-Spotinst-MultaiDeployment/docs/README.md)
 * [Terraform::Spotinst::MultaiListener](../resources/spotinst/Terraform-Spotinst-MultaiListener/docs/README.md)

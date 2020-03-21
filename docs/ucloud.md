@@ -33,6 +33,7 @@ To configure this resource, you must create an AWS Secrets Manager secret with t
 * [Terraform::UCloud::LbAttachment](../resources/ucloud/Terraform-UCloud-LbAttachment/docs/README.md)
 * [Terraform::UCloud::LbListener](../resources/ucloud/Terraform-UCloud-LbListener/docs/README.md)
 * [Terraform::UCloud::LbRule](../resources/ucloud/Terraform-UCloud-LbRule/docs/README.md)
+* [Terraform::UCloud::LbSslAttachment](../resources/ucloud/Terraform-UCloud-LbSslAttachment/docs/README.md)
 * [Terraform::UCloud::LbSsl](../resources/ucloud/Terraform-UCloud-LbSsl/docs/README.md)
 * [Terraform::UCloud::Lb](../resources/ucloud/Terraform-UCloud-Lb/docs/README.md)
 * [Terraform::UCloud::MemcacheInstance](../resources/ucloud/Terraform-UCloud-MemcacheInstance/docs/README.md)

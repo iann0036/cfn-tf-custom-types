@@ -28,8 +28,6 @@ To configure this resource, you must create an AWS Secrets Manager secret with t
 * [Terraform::VSphere::ComputeClusterVmGroup](../resources/vsphere/Terraform-VSphere-ComputeClusterVmGroup/docs/README.md)
 * [Terraform::VSphere::ComputeClusterVmHostRule](../resources/vsphere/Terraform-VSphere-ComputeClusterVmHostRule/docs/README.md)
 * [Terraform::VSphere::ComputeCluster](../resources/vsphere/Terraform-VSphere-ComputeCluster/docs/README.md)
-* [Terraform::VSphere::ContentLibraryItem](../resources/vsphere/Terraform-VSphere-ContentLibraryItem/docs/README.md)
-* [Terraform::VSphere::ContentLibrary](../resources/vsphere/Terraform-VSphere-ContentLibrary/docs/README.md)
 * [Terraform::VSphere::CustomAttribute](../resources/vsphere/Terraform-VSphere-CustomAttribute/docs/README.md)
 * [Terraform::VSphere::Datacenter](../resources/vsphere/Terraform-VSphere-Datacenter/docs/README.md)
 * [Terraform::VSphere::DatastoreClusterVmAntiAffinityRule](../resources/vsphere/Terraform-VSphere-DatastoreClusterVmAntiAffinityRule/docs/README.md)

@@ -438,7 +438,7 @@ def process_provider(provider_type):
             traceback.print_exc(file=sys.stdout)
             print("Failed to generate " + cfntypename)
 
-    generate_docs(tempdir, provider_type)
+    generate_docs(tempdir, provider_type, tfschema)
 
 # Docs
 def process_resource_docs(provider_name, file_contents, provider_readme_items):
@@ -588,7 +588,7 @@ def process_resource_docs(provider_name, file_contents, provider_readme_items):
             resource_readme.write(output)
         '''
 
-def generate_docs(tempdir, provider_type):
+def generate_docs(tempdir, provider_type, tfschema):
     resources_path = (tempdir / provider_type / "website" / "docs" / "r").absolute()
     index_path = (tempdir / provider_type / "website" / "docs" / "index.html.markdown").absolute()
     provider_reference_path = (tempdir / provider_type / "website" / "docs" / "provider_reference.html.markdown").absolute()
@@ -671,12 +671,31 @@ def generate_docs(tempdir, provider_type):
             # iterate provider resources
             provider_readme.write("## Supported Resources\n\n")
             provider_readme_items = []
+
+            '''
             files = [f for f in os.listdir(resources_path) if os.path.isfile(os.path.join(resources_path, f))]
             for filename in files:
                 with open(os.path.join(resources_path, filename), 'r') as f:
                     #print(filename)
                     resource_file_contents = f.read()
                     process_resource_docs(provider_type, resource_file_contents, provider_readme_items)
+            '''
+            
+            for k,v in tfschema['provider_schemas'][provider_type]['resource_schemas'].items():
+                split_provider_name = k.split("_")
+                split_provider_name.pop(0)
+
+                endnaming = tf_to_cfn_str(k)
+                if k.startswith(provider_type + "_"):
+                    endnaming = tf_to_cfn_str(k[(len(provider_type)+1):])
+                
+                cfn_type = "Terraform::" + PROVIDERS_MAP[provider_type][0] + "::" + endnaming
+                
+                provider_readme_items.append("* [{cfn_type}](../resources/{provider_name}/{type_stub}/docs/README.md)".format(
+                    cfn_type=cfn_type,
+                    provider_name=provider_type,
+                    type_stub=tf_type_to_cfn_type(provider_type + "_" + "_".join(split_provider_name), provider_type).replace("::","-")
+                ))
             
             provider_readme_items = list(set(provider_readme_items))
             provider_readme_items.sort()

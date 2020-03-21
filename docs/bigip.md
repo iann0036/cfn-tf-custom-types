@@ -39,6 +39,7 @@ No configuration is required for this provider.
 * [Terraform::BIGIP::NetVlan](../resources/bigip/Terraform-BIGIP-NetVlan/docs/README.md)
 * [Terraform::BIGIP::SslCertificate](../resources/bigip/Terraform-BIGIP-SslCertificate/docs/README.md)
 * [Terraform::BIGIP::SslKey](../resources/bigip/Terraform-BIGIP-SslKey/docs/README.md)
+* [Terraform::BIGIP::SysBigiplicense](../resources/bigip/Terraform-BIGIP-SysBigiplicense/docs/README.md)
 * [Terraform::BIGIP::SysDns](../resources/bigip/Terraform-BIGIP-SysDns/docs/README.md)
 * [Terraform::BIGIP::SysIapp](../resources/bigip/Terraform-BIGIP-SysIapp/docs/README.md)
 * [Terraform::BIGIP::SysNtp](../resources/bigip/Terraform-BIGIP-SysNtp/docs/README.md)

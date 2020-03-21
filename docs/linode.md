@@ -13,6 +13,7 @@ To configure this resource, you must create an AWS Secrets Manager secret with t
 
 ## Supported Resources
 
+* [Terraform::Linode::DomainRecord](../resources/linode/Terraform-Linode-DomainRecord/docs/README.md)
 * [Terraform::Linode::Domain](../resources/linode/Terraform-Linode-Domain/docs/README.md)
 * [Terraform::Linode::Image](../resources/linode/Terraform-Linode-Image/docs/README.md)
 * [Terraform::Linode::Instance](../resources/linode/Terraform-Linode-Instance/docs/README.md)

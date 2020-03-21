@@ -31,7 +31,6 @@ To configure this resource, you must create an AWS Secrets Manager secret with t
 * [Terraform::Consul::Intention](../resources/consul/Terraform-Consul-Intention/docs/README.md)
 * [Terraform::Consul::KeyPrefix](../resources/consul/Terraform-Consul-KeyPrefix/docs/README.md)
 * [Terraform::Consul::Keys](../resources/consul/Terraform-Consul-Keys/docs/README.md)
-* [Terraform::Consul::License](../resources/consul/Terraform-Consul-License/docs/README.md)
 * [Terraform::Consul::Node](../resources/consul/Terraform-Consul-Node/docs/README.md)
 * [Terraform::Consul::PreparedQuery](../resources/consul/Terraform-Consul-PreparedQuery/docs/README.md)
 * [Terraform::Consul::Service](../resources/consul/Terraform-Consul-Service/docs/README.md)

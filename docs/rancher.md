@@ -17,6 +17,6 @@ To configure this resource, you must create an AWS Secrets Manager secret with t
 * [Terraform::Rancher::RegistrationToken](../resources/rancher/Terraform-Rancher-RegistrationToken/docs/README.md)
 * [Terraform::Rancher::RegistryCredential](../resources/rancher/Terraform-Rancher-RegistryCredential/docs/README.md)
 * [Terraform::Rancher::Registry](../resources/rancher/Terraform-Rancher-Registry/docs/README.md)
-* [Terraform::Rancher::Secrets](../resources/rancher/Terraform-Rancher-Secrets/docs/README.md)
+* [Terraform::Rancher::Secret](../resources/rancher/Terraform-Rancher-Secret/docs/README.md)
 * [Terraform::Rancher::Stack](../resources/rancher/Terraform-Rancher-Stack/docs/README.md)
-* [Terraform::Rancher::Volumes](../resources/rancher/Terraform-Rancher-Volumes/docs/README.md)
+* [Terraform::Rancher::Volume](../resources/rancher/Terraform-Rancher-Volume/docs/README.md)
