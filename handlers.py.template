@@ -28,8 +28,8 @@ def check_call(args, cwd):
         stderr=subprocess.PIPE,
         cwd=cwd)
     stdout, stderr = proc.communicate()
-    LOG.warn(stdout)
-    LOG.warn(stderr)
+    LOG.warn(stdout.decode('utf-8'))
+    LOG.warn(stderr.decode('utf-8'))
     if proc.returncode != 0:
         raise exceptions.InternalFailure(f"{stderr.decode('utf-8')}")
     
@@ -98,8 +98,6 @@ def create_handler(
         for prop, value in vars(model).items():
             if value is not None and prop != "tfcfnid":
                 tf['resource']['###TFTYPENAME###'][request.logicalResourceIdentifier][cfn_to_tf_str(prop)] = parse_obj(value)
-        
-        LOG.warn(json.dumps(tf))
 
         with open("/tmp/main.tf.json", "w") as f:
             f.write(json.dumps(tf, indent=2))
